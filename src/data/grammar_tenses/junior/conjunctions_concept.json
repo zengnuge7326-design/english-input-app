@@ -1,0 +1,107 @@
+[
+  {
+    "id": "conj_c1",
+    "question": "“连词”在句子中的作用是：",
+    "options": ["代替名词", "连接单词、短语或句子", "修饰动词", "表达情感"],
+    "answer": 1,
+    "explanation": "连词（Conjunctions）就像胶水，把句子成分黏合在一起。"
+  },
+  {
+    "id": "conj_c2",
+    "question": "表示“顺接、并列”的常用连词是：",
+    "options": ["but", "and", "or", "so"],
+    "answer": 1,
+    "explanation": "and 意为“并且，和”。"
+  },
+  {
+    "id": "conj_c3",
+    "question": "表示“转折”的常用连词是：",
+    "options": ["and", "but", "or", "so"],
+    "answer": 1,
+    "explanation": "but 意为“但是”。"
+  },
+  {
+    "id": "conj_c4",
+    "question": "表示“选择”的常用连词是：",
+    "options": ["and", "but", "or", "so"],
+    "answer": 2,
+    "explanation": "or 意为“或者，还是”。"
+  },
+  {
+    "id": "conj_c5",
+    "question": "在英语中，because (因为) 和 so (所以) 能在同一个句子里同时出现吗？",
+    "options": ["可以", "不可以"],
+    "answer": 1,
+    "explanation": "“因为……所以……”在英语中只能留一个。有 because 就没有 so。"
+  },
+  {
+    "id": "conj_c6",
+    "question": "同样的，although (虽然) 和 but (但是) 能同时出现吗？",
+    "options": ["可以", "不可以"],
+    "answer": 1,
+    "explanation": "两者二选一。虽然有 although，但后面句子不能再加 but。"
+  },
+  {
+    "id": "conj_c7",
+    "question": "连词短语 “both ... and ...” 表示：",
+    "options": ["或者……或者", "既不……也不", "两者都……"],
+    "answer": 2,
+    "explanation": "连接两个并列主语时，谓语动词永远用复数。"
+  },
+  {
+    "id": "conj_c8",
+    "question": "“not only ... but also ...” 连接两个并列主语时，谓语动词遵循：",
+    "options": ["就远原则", "就近原则", "复数原则"],
+    "answer": 1,
+    "explanation": "谓语动词的单复数由离它最近的那个主语决定。"
+  },
+  {
+    "id": "conj_c9",
+    "question": "“either ... or ...” 的意思是：",
+    "options": ["两者都", "不是……就是……（二选一）", "既不……也不"],
+    "answer": 1,
+    "explanation": "例如：Either you or I am right. (遵循就近原则，所以用 am)。"
+  },
+  {
+    "id": "conj_c10",
+    "question": "“neither ... nor ...” 的意思是：",
+    "options": ["两者都", "……和……", "既不……也不……（两者皆非）"],
+    "answer": 2,
+    "explanation": "表示双重否定。同样遵循“就近原则”。"
+  },
+  {
+    "id": "conj_c11",
+    "question": "表示“目的”的连词词组是：",
+    "options": ["so that", "because", "after", "while"],
+    "answer": 0,
+    "explanation": "so that 意为“以便，为了”。"
+  },
+  {
+    "id": "conj_c12",
+    "question": "“such ... that ...” 结构中，such 后面通常接：",
+    "options": ["形容词", "名词（或形容词+名词）", "动词"],
+    "answer": 1,
+    "explanation": "He is such a brave boy that... (注意与 so ... that 的别)。"
+  },
+  {
+    "id": "conj_c13",
+    "question": "“so ... that ...” 结构中，so 后面通常接：",
+    "options": ["形容词或副词", "名词", "句子"],
+    "answer": 0,
+    "explanation": "He is so brave that... (意为“如此……以至于……”)"
+  },
+  {
+    "id": "conj_c14",
+    "question": "表示时间先后顺序的连词不包括：",
+    "options": ["before", "after", "as soon as", "unless"],
+    "answer": 3,
+    "explanation": "unless 是条件连词。"
+  },
+  {
+    "id": "conj_c15",
+    "question": "总结：并列连词连接的两个部分在结构上应该：",
+    "options": ["完全不一样", "是对等的、平衡的", "长短一致"],
+    "answer": 1,
+    "explanation": "这叫“平行结构”。例如：and 连接两个动词或两个句子。"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "fcont_c1",
+    "question": "“将来进行时”主要表示：",
+    "options": ["将来会发生的事", "将来某个时间点正在进行的动作", "过去正在进行的动作", "反复发生的动作"],
+    "answer": 1,
+    "explanation": "将来进行时（Future Continuous）强调在未来的某一时刻，动作正处于“进行状态”。"
+  },
+  {
+    "id": "fcont_c2",
+    "question": "将来进行时的基本结构是：",
+    "options": ["will do", "will be doing", "will have done", "am/is/are doing"],
+    "answer": 1,
+    "explanation": "公式是：will + be + 动词-ing。"
+  },
+  {
+    "id": "fcont_c3",
+    "question": "下列哪个时间状语提示要用将来进行时？",
+    "options": ["tomorrow", "at this time tomorrow", "yesterday", "now"],
+    "answer": 1,
+    "explanation": "需要一个具体的未来时间点（如明天这个时候）。"
+  },
+  {
+    "id": "fcont_c4",
+    "question": "“Don't phone me at 8 tomorrow morning. I ______ (have) a meeting.” 填：",
+    "options": ["will have", "will be having", "am having", "have"],
+    "answer": 1,
+    "explanation": "明早八点我正忙着开会呢，用将来进行时表示状态。"
+  },
+  {
+    "id": "fcont_c5",
+    "question": "将来进行时常用于表示“礼貌的询问”，例如：",
+    "options": ["Will you come?", "Will you be coming with us?", "Are you coming?", "Can you come?"],
+    "answer": 1,
+    "explanation": "使用将来进行时询问比单纯用 will 更显礼貌，因为它暗示“你是否已经有此打算”。"
+  },
+  {
+    "id": "fcont_c6",
+    "question": "将 “He will be sleeping.” 变成否定句：",
+    "options": ["He won't be sleeping.", "He will be not sleeping.", "He doesn't be sleeping.", "He won't sleeping."],
+    "answer": 0,
+    "explanation": "在第一个助动词 will 后面加 not。will not = won't。"
+  },
+  {
+    "id": "fcont_c7",
+    "question": "将 “They will be working.” 变成一般疑问句：",
+    "options": ["Will they be working?", "Will be they working?", "Do they will be working?", "Are they will be working?"],
+    "answer": 0,
+    "explanation": "只需将 will 提前。be 和 doing 顺序不变。"
+  },
+  {
+    "id": "fcont_c8",
+    "question": "将来进行时可以表示一个已经确定好的“常规動作”或“日程表”吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "是的，它常用来描述自然而然就要发生或按计划要发生的事。"
+  },
+  {
+    "id": "fcont_c9",
+    "question": "“This time next week, I ______ (lie) on the beach.” 填：",
+    "options": ["will lie", "will be lying", "am lying", "will lying"],
+    "answer": 1,
+    "explanation": "描述下周此时的具体画面感，进行时最合适。注意 lie 的 ing 形式是 lying。"
+  },
+  {
+    "id": "fcont_c10",
+    "question": "将来进行时中的 be 需要根据人称变为 am/is/are 吗？",
+    "options": ["需要", "不需要，永远用原形 be"],
+    "answer": 1,
+    "explanation": "在 will 后面，不论主语是谁，都必须用原形 be。"
+  },
+  {
+    "id": "fcont_c11",
+    "question": "与一般将来时 will do 相比，将来进行时 will be doing：",
+    "options": ["语气更生动、具有画面感", "更简洁", "是一样的"],
+    "answer": 0,
+    "explanation": "进行时态通常比一般时态更富有动感和视觉描述力。"
+  },
+  {
+    "id": "fcont_c12",
+    "question": "“When you arrive, I ______ (wait) for you at the gate.” 填：",
+    "options": ["will wait", "will be waiting", "am waiting", "wait"],
+    "answer": 1,
+    "explanation": "当你到达那个时刻，我正处于等待的状态中。"
+  },
+  {
+    "id": "fcont_c13",
+    "question": "如果表示“将来某一阶段持续进行的动作”，可以用这个时态吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "例如：They will be working on this project all next month."
+  },
+  {
+    "id": "fcont_c14",
+    "question": "这种时态在日常口语中多吗？",
+    "options": ["非常少见", "比较常用", "只有正式文书才用"],
+    "answer": 1,
+    "explanation": "在描述未来安排或展望时，它是比较地道和常用的。"
+  },
+  {
+    "id": "fcont_c15",
+    "question": "总结：将来进行时的两个关键词是：",
+    "options": ["未来 + 完成", "未来 + 正在进行", "未来 + 过去"],
+    "answer": 1,
+    "explanation": "Future + Continuous = will be doing。"
+  }
+]

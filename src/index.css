@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* Rounded font loaded via index.html <link> tag */
+
+* {
+  font-family: 'Nunito', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+  background-color: #000;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.pop {
+  animation: pop 0.2s ease-in-out;
+}
+
+/* Space theme (replaces ocean) */
+@keyframes bubble-rise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0.55; }
+  50%  { transform: translateY(-45vh) translateX(10px); opacity: 0.3; }
+  100% { transform: translateY(-92vh) translateX(-6px); opacity: 0; }
+}
+
+@keyframes fish-drift {
+  0%   { transform: translateX(-100px); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateX(110vw); opacity: 0; }
+}
+
+.ocean-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255,255,255,0.32) 0%, transparent 22%),
+    radial-gradient(circle at 65% 68%, rgba(140,210,255,0.1) 0%, transparent 28%),
+    radial-gradient(circle at 50% 50%, rgba(80,160,220,0.04) 0%, transparent 70%);
+  border: 1px solid rgba(180, 220, 255, 0.3);
+  box-shadow: inset 1px 1px 4px rgba(255,255,255,0.22), 0 0 5px rgba(100,180,255,0.08);
+  animation: bubble-rise linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.bikini-character {
+  animation: bob ease-in-out infinite;
+}
+
+.ocean-fish {
+  position: absolute;
+  animation: fish-drift linear infinite;
+  pointer-events: none;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(160, 120, 255, 0.5));
+}
+
+/* Space background */
+.ocean-main {
+  background: linear-gradient(to bottom, #0a0a0a 0%, #111111 50%, #0d0d0d 100%) !important;
+}
+
+/* Twinkling stars */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+.star {
+  position: fixed;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  animation: twinkle ease-in-out infinite;
+}
+
+/* Milky way */
+.milky-way {
+  position: fixed;
+  pointer-events: none;
+  background: linear-gradient(105deg,
+    transparent 0%,
+    rgba(200,200,200,0.02) 20%,
+    rgba(220,220,220,0.04) 40%,
+    rgba(200,200,200,0.02) 60%,
+    transparent 80%
+  );
+  filter: blur(18px);
+}
+
+@keyframes word-bubble-pop {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  12%  { opacity: 0.85; }
+  100% { transform: translateY(-110px) translateX(var(--dx, 0px)); opacity: 0; }
+}
+.word-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255,255,255,0.55) 0%, transparent 22%),
+    radial-gradient(circle at 50% 50%, rgba(120,200,255,0.08) 0%, transparent 70%);
+  border: 1px solid rgba(180, 230, 255, 0.5);
+  box-shadow: inset 1px 1px 4px rgba(255,255,255,0.35);
+  animation: word-bubble-pop 0.7s ease-out both;
+  pointer-events: none;
+  bottom: 4px;
+}
+
+/* Word translation popup */
+.word-translation span {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", serif !important;
+  font-weight: bold !important;
+}
+
+.word-translation {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.word-translation.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes color-bubble-rise {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.92; }
+  70%  { opacity: 0.65; }
+  100% { transform: translateY(-280px) translateX(var(--dx, 0px)) scale(0.4); opacity: 0; }
+}
+@keyframes fw-spark {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--fx), var(--fy)) scale(0); opacity: 0; }
+}
+.fw-spark {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fw-spark ease-out forwards;
+}
+
+.color-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.7) 0%, transparent 20%),
+    radial-gradient(circle at 68% 68%, rgba(180,230,255,0.18) 0%, transparent 26%),
+    radial-gradient(circle at 50% 50%, rgba(200,160,255,0.08) 0%, transparent 65%);
+  border: 1.5px solid rgba(210, 240, 255, 0.5);
+  box-shadow:
+    inset 2px 2px 6px rgba(255,255,255,0.45),
+    inset -1px -1px 4px rgba(150,200,255,0.18);
+  animation: color-bubble-rise ease-out forwards;
+  pointer-events: none;
+}

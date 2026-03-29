@@ -1,0 +1,107 @@
+[
+  {
+    "id": "apv_senior_c1",
+    "question": "高阶被动结构中，常用 “It is ______ (say / believe / reported) that ...” 它的意思是：",
+    "options": ["我是说……", "据说是…… / 人们认为……", "我觉得……"],
+    "answer": 1,
+    "explanation": "这是为了增强表达的客观性，避免主观立场。"
+  },
+  {
+    "id": "apv_senior_c2",
+    "question": "上述结构也可以转换为代词或名词作主语的结构，如 “She is said ______ (be) beautiful.” 填：",
+    "options": ["being", "to be", "that she is", "is"],
+    "answer": 1,
+    "explanation": "结构：Subject + be + said/thought... + to do。"
+  },
+  {
+    "id": "apv_senior_c3",
+    "question": "如果转述的是“已经发生”的事，上述结构要用不定式的完成式：",
+    "options": ["to do", "to have done", "to be doing", "to having done"],
+    "answer": 1,
+    "explanation": "例如：He is said to have won the prize. (据说明已经领了奖)。"
+  },
+  {
+    "id": "apv_senior_c4",
+    "question": "“Get” 也可以引导被动，如 “He got married yesterday.”，与 be 被动相比，它：",
+    "options": ["更正式", "更口语化，且强调动态变化或突发性", "是一样的"],
+    "answer": 1,
+    "explanation": "Get-passive 在日常交流中非常常见。"
+  },
+  {
+    "id": "apv_senior_c5",
+    "question": "有些词如 “need, want, deserve” 后面接 ______ 表示被动？",
+    "options": ["to be done", "doing", "A和B都可以", "done"],
+    "answer": 2,
+    "explanation": "例如：The car needs washing. = The car needs to be washed."
+  },
+  {
+    "id": "apv_senior_c6",
+    "question": "在 “have / get something ______ (do)” 结构中，表示“让某事被做”，横线填：",
+    "options": ["doing", "done", "to do", "did"],
+    "answer": 1,
+    "explanation": "例如：I had my hair cut. (我理发了)。"
+  },
+  {
+    "id": "apv_senior_c7",
+    "question": "有些及物动词（如 sell, wash, read, write）带有状语（如 well, easily）时，常用主动表被动：",
+    "options": ["正确", "错误"],
+    "answer": 0,
+    "explanation": "例如：The book sells well. (书卖得好)。强调书本身的属性。"
+  },
+  {
+    "id": "apv_senior_c8",
+    "question": "带双宾语的动词（如 give, show, tell）变被动时：",
+    "options": ["只能把间接宾语（人）变为主语", "只能把直接宾语（物）变为主语", "两个宾语都可以变为主语（物变主语时人前常加to）"],
+    "answer": 2,
+    "explanation": "例如：I was given a book. / A book was given to me."
+  },
+  {
+    "id": "apv_senior_c9",
+    "question": "“He was heard ______ (sing).” (有人听到他在唱歌) 强调正在进行：",
+    "options": ["to sing", "singing", "sung", "sang"],
+    "answer": 1,
+    "explanation": "感官动词被动语态后接 doing 强调正在进行的画面。"
+  },
+  {
+    "id": "apv_senior_c10",
+    "question": "否定词放在 be 动词和过去分词之间吗？",
+    "options": ["是", "不是", "不确定"],
+    "answer": 0,
+    "explanation": "例如：The letter was not written."
+  },
+  {
+    "id": "apv_senior_c11",
+    "question": "含有短语动词的被动（如 look after, take care of），变被动时介词能省略吗？",
+    "options": ["绝对不能，它是动词不可分割的部分", "可以省略看简洁度"],
+    "answer": 0,
+    "explanation": "例如：The baby was well looked AFTER. (after不能丢)。"
+  },
+  {
+    "id": "apv_senior_c12",
+    "question": "“be supposed to do” 这种结构属于：",
+    "options": ["被动形式表示‘理应、应当……’", "现在进行时", "将来时"],
+    "answer": 0,
+    "explanation": "它是典型的被动结构习语化用法。"
+  },
+  {
+    "id": "apv_senior_c13",
+    "question": "“It is worth ______ (do).” 这里的 do 应该用什么形式？",
+    "options": ["to be done", "doing", "done", "to doing"],
+    "answer": 1,
+    "explanation": "注意：worth 后面必须接 doing (主动形式表被动意义)。"
+  },
+  {
+    "id": "apv_senior_c14",
+    "question": "虚拟语气中的被动语态，形式是：",
+    "options": ["be + done", "should be done", "would be done", "根据时态回退配合 be + done"],
+    "answer": 3,
+    "explanation": "例如：If it were done..."
+  },
+  {
+    "id": "apv_senior_c15",
+    "question": "总结：高级被动结构的特点是：",
+    "options": ["更注重表达的客观性、学术性和地道程度", "字数更多", "更难背"],
+    "answer": 0,
+    "explanation": "它们是地道英语写作和阅读中的核心。"
+  }
+]

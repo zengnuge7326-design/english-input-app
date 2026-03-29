@@ -1,0 +1,107 @@
+[
+  {
+    "id": "cond_c1",
+    "question": "“条件状语从句”通常是由哪个引导词引导的？",
+    "options": ["because", "if", "when", "that"],
+    "answer": 1,
+    "explanation": "if 意为“如果”，是引导条件从句最常见的词。"
+  },
+  {
+    "id": "cond_c2",
+    "question": "“真实条件句”（第一类条件句）描述的是：",
+    "options": ["过去没发生的事", "现在或未来可能发生的事", "绝对不可能的事"],
+    "answer": 1,
+    "explanation": "例如：如果明天不下雨，我们就去野餐。"
+  },
+  {
+    "id": "cond_c3",
+    "question": "真实条件句的时态规则是“主将从现”，意思是：",
+    "options": ["主句用将来时，从句用一般现在时", "主句用现在时，从句用将来时", "全部用将来时"],
+    "answer": 0,
+    "explanation": "因为条件还未成立，所以从句用现在时代替将来。例如：If it rains, I will stay at home."
+  },
+  {
+    "id": "cond_c4",
+    "question": "“If I ______ (have) enough money next year, I ______ (buy) a car.” 填：",
+    "options": ["will have; will buy", "have; will buy", "will have; buy", "have; buy"],
+    "answer": 1,
+    "explanation": "遵循“主将从现”原则。"
+  },
+  {
+    "id": "cond_c5",
+    "question": "“非真实条件句”（虚拟语气）用来表达：",
+    "options": ["真实的计划", "对现在或过去事实的相反假设（不可能的事）", "客观规律"],
+    "answer": 1,
+    "explanation": "例如：如果我是你（但我不是）。"
+  },
+  {
+    "id": "cond_c6",
+    "question": "对“现在”事实的虚假假设，if 从句的时态通常用：",
+    "options": ["一般现在时", "一般过去时", "现在完成时"],
+    "answer": 1,
+    "explanation": "时态要往回退一个。例如：If I were you, I would go."
+  },
+  {
+    "id": "cond_c7",
+    "question": "在虚拟语气的 if 从句中，be 动词无论人称通常都用：",
+    "options": ["was", "were", "been", "am"],
+    "answer": 1,
+    "explanation": "在正式及练习中，即使主语是 I/He/She，通常也统一用 were。"
+  },
+  {
+    "id": "cond_c8",
+    "question": "“If I ______ (be) a bird, I ______ (fly) to the moon.” 填：",
+    "options": ["am; will fly", "was; would fly", "were; would fly", "were; will fly"],
+    "answer": 2,
+    "explanation": "这是对现状的不可能假设，用虚拟语气（were + would do）。"
+  },
+  {
+    "id": "cond_c9",
+    "question": "引导词 “unless” 相当于：",
+    "options": ["if not", "if so", "because", "although"],
+    "answer": 0,
+    "explanation": "unless 意为“除非……否则”，即如果不……。"
+  },
+  {
+    "id": "cond_c10",
+    "question": "“Unless it ______ (rain) tomorrow, we will play football.” 填：",
+    "options": ["rains", "will rain", "didn't rain", "doesn't rain"],
+    "answer": 0,
+    "explanation": "unless 引导的从句同样遵循“主将从现”，且 unless 本身含否定，后接肯定形式。"
+  },
+  {
+    "id": "cond_c11",
+    "question": "“as long as” 引导条件句时，意为：",
+    "options": ["和……一样长", "只要", "虽然", "既然"],
+    "answer": 1,
+    "explanation": "You can stay here as long as you keep quiet. (只要你保持安静，你就能待在这)。"
+  },
+  {
+    "id": "cond_c12",
+    "question": "在 “if ... will ...” 结构中，will 总是出现在 if 引导的那个小句子里吗？",
+    "options": ["是", "平时不是，will 出现在主句里"],
+    "answer": 1,
+    "explanation": "if 引导的是条件，条件的动作要用现在时体现。"
+  },
+  {
+    "id": "cond_c13",
+    "question": "如果是客观真理或必然结果（零类条件句），时态：",
+    "options": ["主句从句都用一般现在时", "主将从现", "虚拟语气"],
+    "answer": 0,
+    "explanation": "例如：If you heat ice, it melts. (如果加热冰，它就融化)。"
+  },
+  {
+    "id": "cond_c14",
+    "question": "“What ______ (happen) if you ______ (not / do) your homework?” 填：",
+    "options": ["will happen; don't do", "happens; won't do", "will happen; won't do"],
+    "answer": 0,
+    "explanation": "主句（将来）+ 从句（现在）。"
+  },
+  {
+    "id": "cond_c15",
+    "question": "总结：if 引导的从句在句子中的位置：",
+    "options": ["必须在句首", "必须在句中", "可以在句首也可以在句中"],
+    "answer": 2,
+    "explanation": "if 从句在前通常加逗号，在后则不用。"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ppc_c1",
+    "question": "“现在完成进行时”主要强调：",
+    "options": ["动作已经彻底结束", "动作从过去开始，一直持续到现在，且还在继续或刚停止", "未来要发生的动作", "过去发生的断断续续的动作"],
+    "answer": 1,
+    "explanation": "现在完成进行时（Present Perfect Continuous）比完成时更强调动作的“不间断持续性”和“过程”。"
+  },
+  {
+    "id": "ppc_c2",
+    "question": "现在完成进行时的结构是：",
+    "options": ["have/has + doing", "have/has been + doing", "have/has been + done", "had been + doing"],
+    "answer": 1,
+    "explanation": "结构：have/has (完成志) + been (进行志) + V-ing。"
+  },
+  {
+    "id": "ppc_c3",
+    "question": "什么时候助动词用 “has been + doing”？",
+    "options": ["主语是三单 (He/She/It)", "主语是 I/You", "主语是复数"],
+    "answer": 0,
+    "explanation": "与完成时一样，三单主语用 has。"
+  },
+  {
+    "id": "ppc_c4",
+    "question": "下列哪个时间状语最常出现在这个时态中？",
+    "options": ["yesterday", "for two hours / since this morning", "tomorrow", "long ago"],
+    "answer": 1,
+    "explanation": "因为它描述持续动作，所以常带有表示长度的时间段。"
+  },
+  {
+    "id": "ppc_c5",
+    "question": "“It ______ (rain) since 8 o'clock. The ground is very wet.” 填：",
+    "options": ["has rained", "has been raining", "is raining", "rained"],
+    "answer": 1,
+    "explanation": "强调从八点到现在雨一直没停，用完成进行时最生动。"
+  },
+  {
+    "id": "ppc_c6",
+    "question": "与现在完成时 have done 相比，完成进行时 have been doing 更倾向于表达：",
+    "options": ["动作的圆满结果", "动作的艰辛过程和不间断性", "动作的将来趋势"],
+    "answer": 1,
+    "explanation": "比如：I've read this book. (读完了); I've been reading this book. (一直在读，还没读完)。"
+  },
+  {
+    "id": "ppc_c7",
+    "question": "将 “I have been waiting.” 变成否定句：",
+    "options": ["I haven't been waiting.", "I have been not waiting.", "I didn't been waiting.", "I haven't waiting."],
+    "answer": 0,
+    "explanation": "在第一个助动词 have 后面加 not。"
+  },
+  {
+    "id": "ppc_c8",
+    "question": "将 “She has been crying.” 变成一般疑问句：",
+    "options": ["Has she been crying?", "Has been she crying?", "Is she been crying?", "Has she been cry?"],
+    "answer": 0,
+    "explanation": "将 has 提前，其余不动。"
+  },
+  {
+    "id": "ppc_c9",
+    "question": "那些“非延续性动词”（如 jump, kill, join）能用于完成进行时吗？",
+    "options": ["绝对不能", "可以，但表示该动作在反复发生", "可以，表示动作很慢"],
+    "answer": 1,
+    "explanation": "例如：He has been jumping for 5 minutes. (他一直跳了五分钟，指反复跳)。"
+  },
+  {
+    "id": "ppc_c10",
+    "question": "如果动作已经结束，但为了强调刚结束时那个“热乎乎”的状态或后果，可以用这个时态吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "例如：Your eyes are red. Have you been crying? (虽然没在哭了，但强调刚刚哭过的状态)。"
+  },
+  {
+    "id": "ppc_c11",
+    "question": "询问别人“你最近在忙什么？”地道的问法是：",
+    "options": ["What are you doing?", "What have you been doing lately?", "What did you do?", "What have you done?"],
+    "answer": 1,
+    "explanation": "What have you been doing (lately)? 询问一段时间以来持续的状态。"
+  },
+  {
+    "id": "ppc_c12",
+    "question": "“I ______ (learn) English for six years.” 填：",
+    "options": ["have been learning", "am learning", "have learned", "A和C都可以"],
+    "answer": 3,
+    "explanation": "对于 learn, live 等延续性动词，have done 和 have been doing 往往可以通用。"
+  },
+  {
+    "id": "ppc_c13",
+    "question": "这种时态通常带有一种“感情色彩”（如赞美、厌恶或不耐烦），对吗？",
+    "options": ["对", "不对", "不确定"],
+    "answer": 0,
+    "explanation": "通常比普通完成时更有感情。比如：You have been telling me the same story for 5 times! (表示厌烦)。"
+  },
+  {
+    "id": "ppc_c14",
+    "question": "完成进行时中的 been 是可以省略的吗？",
+    "options": ["绝对不能", "可以", "口语中可以"],
+    "answer": 0,
+    "explanation": "been 是结构的核心部分，不可或缺。"
+  },
+  {
+    "id": "ppc_c15",
+    "question": "总结：现在完成进行时的公式可以记为：",
+    "options": ["have/has + been + V-ing", "be + doing", "have/has + done"],
+    "answer": 0,
+    "explanation": "记得是“双重结合”：完成 + 进行。"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "es_senior_c1",
+    "question": "什么是“省略” (Ellipsis)？",
+    "options": ["增加多余的词", "为了简洁而省去不言自明的词", "改变单词拼写", "把句子变短"],
+    "answer": 1,
+    "explanation": "在上下文中，如果某些词已经出现过或显而易见，省去它们可以使语言更精炼。"
+  },
+  {
+    "id": "es_senior_c2",
+    "question": "在状语从句中，如果从句主语与主句主语一致，且包含 be 动词，可以：",
+    "options": ["省去主语和 be 动词", "只省去 be", "只省去主语"],
+    "answer": 0,
+    "explanation": "例如：When (he was) young, he was very shy."
+  },
+  {
+    "id": "es_senior_c3",
+    "question": "“I'm afraid ______.” (恐怕不行) 常用哪种省略/替代形式？",
+    "options": ["not so", "so", "not", "B和C均可"],
+    "answer": 3,
+    "explanation": "I'm afraid so (恐怕是这样); I'm afraid not (恐怕不是/不行)。"
+  },
+  {
+    "id": "es_senior_c4",
+    "question": "使用 “do / does / did” 替代前面的动词，这属于：",
+    "options": ["省略", "替代 (Substitution)", "强调", "倒装"],
+    "answer": 1,
+    "explanation": "为了避免重复动词。例如：He likes apples. So do I. (do 替代了 like apples)。"
+  },
+  {
+    "id": "es_senior_c5",
+    "question": "“I hope so.” 这里的 so 替代的是：",
+    "options": ["前面的整个内容", "一个名词", "一个形容词"],
+    "answer": 0,
+    "explanation": "so 替代前面的宾语从句内容。"
+  },
+  {
+    "id": "es_senior_c6",
+    "question": "在不定式中，为了避免重复，常保留哪一部分？",
+    "options": ["to", "动词原形", "not"],
+    "answer": 0,
+    "explanation": "保留符号 to。例如：I'd like to go, but I don't have time TO."
+  },
+  {
+    "id": "es_senior_c7",
+    "question": "“The weather in Beijing is colder than ______ in Shanghai.” 填：",
+    "options": ["that", "it", "this", "one"],
+    "answer": 0,
+    "explanation": "that 替代不可数名词 the weather，起比较替代作用。"
+  },
+  {
+    "id": "es_senior_c8",
+    "question": "“I have two bikes. The red ______ is new.” 填：",
+    "options": ["one", "that", "it", "so"],
+    "answer": 0,
+    "explanation": "one 替代前面出现过的可数名词单数 bike。"
+  },
+  {
+    "id": "es_senior_c9",
+    "question": "并列句中，如果后一个句子的谓语与前一个相同，可以：",
+    "options": ["全部省去", "改为 do", "保留原样"],
+    "answer": 0,
+    "explanation": "例如：He went to Beijing and she (went) to London."
+  },
+  {
+    "id": "es_senior_c10",
+    "question": "“Believe it or ______.” (信不信由你) 省略了什么？",
+    "options": ["not", "yes", "no", "maybe"],
+    "answer": 0,
+    "explanation": "省略了 not believe it。"
+  },
+  {
+    "id": "es_senior_c11",
+    "question": "在回答 “Will it rain?” 时，否定回答用：",
+    "options": ["I hope not.", "I don't hope so.", "I not hope so."],
+    "answer": 0,
+    "explanation": "hope, believe, suppose 等词的否定替代习惯用 not。"
+  },
+  {
+    "id": "es_senior_c12",
+    "question": "“I don't think so.” 也是一种替代吗？",
+    "options": ["是", "不是"],
+    "answer": 0,
+    "explanation": "是的，so 替代前面的观点内容。"
+  },
+  {
+    "id": "es_senior_c13",
+    "question": "“the same” 也可以作为替代词使用吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "例如：I'll have the same. (我也要一样的)。"
+  },
+  {
+    "id": "es_senior_c14",
+    "question": "在祈使句中，经常省略的是：",
+    "options": ["主语 You", "谓语", "宾语"],
+    "answer": 0,
+    "explanation": "直接说“坐下” (Sit down)，而不说 You sit down。"
+  },
+  {
+    "id": "es_senior_c15",
+    "question": "总结：省略和替代的主要目的是：",
+    "options": ["提高考试难度", "使语言简洁、地道、避免重复", "增加文学感"],
+    "answer": 1,
+    "explanation": "它是高阶英语表达流畅性的关键。"
+  }
+]

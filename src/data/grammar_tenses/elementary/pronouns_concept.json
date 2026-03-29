@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pro_c1",
+    "question": "英语中的“人称代词”分为哪两种格？",
+    "options": ["主格和宾格", "所有格和名词性", "单数和复数", "第一和第二人称"],
+    "answer": 0,
+    "explanation": "人称代词主要分为主格（作主语）和宾格（作宾语）。"
+  },
+  {
+    "id": "pro_c2",
+    "question": "在句子“______ am a student.”中，横线处应填代词的什么格？",
+    "options": ["主格（如 I）", "宾格（如 me）", "所有格（如 my）"],
+    "answer": 0,
+    "explanation": "动词前面通常是主语，需要用主格形式。"
+  },
+  {
+    "id": "pro_c3",
+    "question": "在句子“Tell ______ the truth.”中，动词 tell 后面应填代词的什么格？",
+    "options": ["主格（如 he）", "宾格（如 him）", "所有格（如 his）"],
+    "answer": 1,
+    "explanation": "及物动词或介词后面通常是宾语，需要用宾格形式。"
+  },
+  {
+    "id": "pro_c4",
+    "question": "“I” 的宾格形式是：",
+    "options": ["my", "mine", "me", "myself"],
+    "answer": 2,
+    "explanation": "I（主格） -> me（宾格）。例如：She likes me."
+  },
+  {
+    "id": "pro_c5",
+    "question": "“They” 的宾格形式是：",
+    "options": ["their", "theirs", "them", "those"],
+    "answer": 2,
+    "explanation": "They（主格） -> them（宾格）。例如：I know them."
+  },
+  {
+    "id": "pro_c6",
+    "question": "“He” 和 “She” 的宾格分别是：",
+    "options": ["his / her", "him / hers", "him / her", "his / hers"],
+    "answer": 2,
+    "explanation": "He -> him, She -> her。注意 her 的宾格和形容词性物主代词长得一样。"
+  },
+  {
+    "id": "pro_c7",
+    "question": "“形容词性物主代词”（如 my, your）后面必须接什么？",
+    "options": ["动词", "名词", "形容词", "什么都不接"],
+    "answer": 1,
+    "explanation": "形容词性物主代词相当于形容词，必须带一个“家属”（名词）。例如：my book。"
+  },
+  {
+    "id": "pro_c8",
+    "question": "“名词性物主代词”（如 mine, yours）的作用是：",
+    "options": ["修饰名词", "代替“形容词性物主代词 + 名词”", "作谓语", "表示动作"],
+    "answer": 1,
+    "explanation": "mine = my + 名词。它自己就能独立行动，后面不能再加名词。"
+  },
+  {
+    "id": "pro_c9",
+    "question": "“This is my pen. That one is ______.” 横线处应填：",
+    "options": ["your", "yours", "you", "my"],
+    "answer": 1,
+    "explanation": "这里需要用名词性物主代词 yours 来代替 your pen。"
+  },
+  {
+    "id": "pro_c10",
+    "question": "“It” 的形容词性物主代词（它的）是：",
+    "options": ["its", "it's", "it", "his"],
+    "answer": 0,
+    "explanation": "its 是“它的”；it's 是 it is 的缩写。这也是超级容易混淆的考点。"
+  },
+  {
+    "id": "pro_c11",
+    "question": "如果是“我们自己的”，用名词性物主代词表达是：",
+    "options": ["our", "ours", "us", "we"],
+    "answer": 1,
+    "explanation": "our（形容词性） -> ours（名词性）。"
+  },
+  {
+    "id": "pro_c12",
+    "question": "如果你在求助，你应该说：",
+    "options": ["Please help I.", "Please help my.", "Please help me.", "Please help mine."],
+    "answer": 2,
+    "explanation": "help 是动词，后面用宾格 me。"
+  },
+  {
+    "id": "pro_c13",
+    "question": "“Look at ______!”（看他们！）横线处填：",
+    "options": ["they", "them", "their", "theirs"],
+    "answer": 1,
+    "explanation": "at 是介词，介词后面要用宾格 them。"
+  },
+  {
+    "id": "pro_c14",
+    "question": "“Whose book is this?” 回答正确的是：",
+    "options": ["It's my.", "It's mine.", "It's me.", "It's I."],
+    "answer": 1,
+    "explanation": "问是谁的，用名词性物主代词 mine（我的）独立回答。"
+  },
+  {
+    "id": "pro_c15",
+    "question": "英语中描述主语和宾语顺序时，如果有 I 和 others，通常的礼貌顺序是：",
+    "options": ["I and Tom", "Tom and I", "Me and Tom", "Tom and me"],
+    "answer": 1,
+    "explanation": "出于礼貌，英语习惯把“他人”放在前面，“自己”放在后面。作主语用 I。"
+  }
+]

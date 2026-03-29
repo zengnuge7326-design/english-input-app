@@ -1,0 +1,107 @@
+[
+  {
+    "id": "cun_c1",
+    "question": "“不可数名词”通常是指：",
+    "options": ["单个的东西", "无法计算数量的物质、抽象概念或者是整体", "只有复数的东西"],
+    "answer": 1,
+    "explanation": "例如：水(water)、钱(money)、建议(advice)、作业(homework)。"
+  },
+  {
+    "id": "cun_c2",
+    "question": "不可数名词在句子中通常被看作：",
+    "options": ["单数", "复数", "看心情"],
+    "answer": 0,
+    "explanation": "谓语动词要用单三。例如：Water IS important."
+  },
+  {
+    "id": "cun_c3",
+    "question": "修饰“不可数名词”表示“很多”时，常用哪个词？",
+    "options": ["many", "much", "few", "number"],
+    "answer": 1,
+    "explanation": "much 修饰不可数；many 修饰可数复数。"
+  },
+  {
+    "id": "cun_c4",
+    "question": "修饰“不可数名词”表示“很少（但有一点）”用：",
+    "options": ["a few", "a little", "few", "little"],
+    "answer": 1,
+    "explanation": "a little 修饰不可数；a few 修饰可数。"
+  },
+  {
+    "id": "cun_c5",
+    "question": "修饰“不可数名词”表示“几乎没有（否定含义）”用：",
+    "options": ["little", "few", "a little", "a few"],
+    "answer": 0,
+    "explanation": "没有 a 的 little/few 带有否定消失的意味。little 配不可数。"
+  },
+  {
+    "id": "cun_c6",
+    "question": "“some” 和 “any” 可以修饰不可数名词吗？",
+    "options": ["可以", "不可以", "只能修饰复数"],
+    "answer": 0,
+    "explanation": "可以。例如：some milk, any tea。"
+  },
+  {
+    "id": "cun_c7",
+    "question": "下列哪个词组既可以修饰可数也可以修饰不可数？",
+    "options": ["a lot of / lots of", "many", "much", "a few"],
+    "answer": 0,
+    "explanation": "a lot of 是通用的“许多”。"
+  },
+  {
+    "id": "cun_c8",
+    "question": "“advice”（建议）在英语中是：",
+    "options": ["可数名词", "不可数名词"],
+    "answer": 1,
+    "explanation": "这是中考高频考点。哪怕是“许多建议”，也不能说 many advices，要用 much advice。"
+  },
+  {
+    "id": "cun_c9",
+    "question": "如果要表达“三张纸”，应该说：",
+    "options": ["three papers", "three pieces of paper", "three paper", "piece of paper three"],
+    "answer": 1,
+    "explanation": "不可数名词要用“数词 + 量词 + of + 名词”。"
+  },
+  {
+    "id": "cun_c10",
+    "question": "“information”（信息/消息）是：",
+    "options": ["可数名词", "不可数名词"],
+    "answer": 1,
+    "explanation": "常考词。没有 informations 这种写法。"
+  },
+  {
+    "id": "cun_c11",
+    "question": "“How ______ milk do you want?” 横线填：",
+    "options": ["many", "much", "often", "old"],
+    "answer": 1,
+    "explanation": "milk 不可数，问多少用 how much。"
+  },
+  {
+    "id": "cun_c12",
+    "question": "名词 “news” 虽然以 s 结尾，但它是：",
+    "options": ["复数名词", "不可数名词", "动词"],
+    "answer": 1,
+    "explanation": "它是不可数的“新闻”。谓语动词用单数 is。"
+  },
+  {
+    "id": "cun_c13",
+    "question": "当名词表示“种类”时，有些不可数名词也可以变复数（如 fruits, fishes），对吗？",
+    "options": ["正确", "错误", "视特殊情况而定"],
+    "answer": 2,
+    "explanation": "在表达“多种多样的水果/鱼类”时，可以加 s。但在小学初中基础语法中，通常视作不可数。"
+  },
+  {
+    "id": "cun_c14",
+    "question": "“Bread ______ (be) delicious.” 填：",
+    "options": ["is", "are", "be", "am"],
+    "answer": 0,
+    "explanation": "bread (面包) 是不可数名词。"
+  },
+  {
+    "id": "cun_c15",
+    "question": "总结：不可数名词前能直接加 a / an 吗？",
+    "options": ["能", "不能", "有时候能"],
+    "answer": 1,
+    "explanation": "通常不能直接加 a，除非表示“一类、一种”或有形容词修饰的特殊含义。"
+  }
+]

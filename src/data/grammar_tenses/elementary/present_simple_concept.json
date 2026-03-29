@@ -1,0 +1,227 @@
+[
+  {
+    "id": "ps_concept_1",
+    "type": "mc",
+    "question": "【1/15 概念认知】“一般现在时”通常用来表达什么场景？",
+    "chinese": "理解时态的本质作用",
+    "options": [
+      "此时此刻正在发生的事",
+      "经常性、习惯性的动作或客观真理",
+      "昨天发生的事",
+      "以后打算做的事"
+    ],
+    "correct": 1,
+    "tag": "核心概念",
+    "explanation": "一般现在时主要描述一种“常态”，比如你每天刷牙、地球每天转动，它不一定非要是“此刻正在做”的事。"
+  },
+  {
+    "id": "ps_concept_2",
+    "type": "mc",
+    "question": "【2/15 概念认知】构成“一般现在时”的核心公式是什么？",
+    "chinese": "掌握时态的基础构成",
+    "options": [
+      "be动词 + 动词ing",
+      "总是保持动词原形不动",
+      "主语不同，动词可能加 s/es 或保持原形",
+      "动词前面加 will"
+    ],
+    "correct": 2,
+    "tag": "核心公式",
+    "explanation": "一般现在时最大的特征是：动词形态会因为主语的不同（比如是我，还是他）而发生“变形”。"
+  },
+  {
+    "id": "ps_concept_3",
+    "type": "mc",
+    "question": "【3/15 概念认知】当我们在句子中看到 \"always\", \"usually\", \"every day\" 这类频率词时，通常暗示要用什么时态？",
+    "chinese": "对时间标志词的敏感度",
+    "options": [
+      "一般过去时",
+      "一般将来时",
+      "一般现在时",
+      "现在进行时"
+    ],
+    "correct": 2,
+    "tag": "标志词",
+    "explanation": "always(总是), usually(通常), every day(每天) 等词汇，都在暗示这是一个“日常经常发生的习惯”，因此首选一般现在时。"
+  },
+  {
+    "id": "ps_concept_4",
+    "type": "mc",
+    "question": "【4/15 概念认知】以下哪句话描述的是“客观真理”，必须用一般现在时？",
+    "chinese": "大自然法则与时态的关系",
+    "options": [
+      "我正在听音乐",
+      "他昨天去了北京",
+      "地球绕着太阳转",
+      "我明天要上学"
+    ],
+    "correct": 2,
+    "tag": "客观真理",
+    "explanation": "“地球绕太阳转”是恒古不变的真理，不受时间、地点的改变而改变，所以永远使用一般现在时。"
+  },
+  {
+    "id": "ps_concept_5",
+    "type": "mc",
+    "question": "【5/15 概念认知】如果英文句子里没有任何“实义动词”（比如跑、跳、吃），我们通常需要请谁出山来作谓语？",
+    "chinese": "句子不能没有谓语动词",
+    "options": [
+      "doing",
+      "be动词 (am / is / are)",
+      "have / has",
+      "can"
+    ],
+    "correct": 1,
+    "tag": "be动词用法",
+    "explanation": "英语句子的灵魂是必须要有动词。比如中文的“她很漂亮”，没有动作词，在英文就是 \"She is beautiful\"，is 充当了谓语骨架。"
+  },
+  {
+    "id": "ps_concept_6",
+    "type": "mc",
+    "question": "【6/15 规律法则】当主语是 I 的时候，如果要借用 be动词，必须选谁？",
+    "chinese": "be动词的三者分工",
+    "options": [
+      "is",
+      "are",
+      "am",
+      "be"
+    ],
+    "correct": 2,
+    "tag": "法理规则",
+    "explanation": "I am 是雷打不动的组合，永远不会说 I is 或者 I are。"
+  },
+  {
+    "id": "ps_concept_7",
+    "type": "mc",
+    "question": "【7/15 规律法则】当主语是 He / She / It 或单个人名（第三人称单数）时，实义动词（如 play）应该怎么变？",
+    "chinese": "核心变身法则，中国学生失分重灾区",
+    "options": [
+      "绝对不变化，保持 play",
+      "动词最后要加 s 或 es (变成 plays)",
+      "在动词前面加 is (is play)",
+      "变成 playing"
+    ],
+    "correct": 1,
+    "tag": "三单变化",
+    "explanation": "主语是“单只的别人（他/她/它）”时，动词这根尾巴必须要加 s 或 es，这叫“第三人称单数变化”。"
+  },
+  {
+    "id": "ps_concept_8",
+    "type": "mc",
+    "question": "【8/15 规律法则】对于动词 \"go\"，当它遇到第三人称单数主语时，应该变成什么样子？",
+    "chinese": "以o结尾的特殊变形",
+    "options": [
+      "gos",
+      "goes",
+      "going",
+      "goed"
+    ],
+    "correct": 1,
+    "tag": "拼写规律",
+    "explanation": "以 o 结尾的常用词，如 do 和 go，在变三单时，都需要在词尾加 es，变成 does 和 goes。"
+  },
+  {
+    "id": "ps_concept_9",
+    "type": "mc",
+    "question": "【9/15 规律法则】当主语是复数（We, They, The boys）时，动词应该怎么处理？",
+    "chinese": "主语是复数的情况",
+    "options": [
+      "保持原形不动",
+      "动词末尾加 s",
+      "动词末尾加 es",
+      "动词变 ing"
+    ],
+    "correct": 0,
+    "tag": "复数主语",
+    "explanation": "如果主语不是第三人称单数，而是 I, You 以及所有的复数时，动词非常省事，直接保持原形。"
+  },
+  {
+    "id": "ps_concept_10",
+    "type": "mc",
+    "question": "【10/15 规律法则】动词 \"have\" (有) 是一个非常特别的词，它的“第三人称单数形式”长什么样？",
+    "chinese": "极其高频的特殊词",
+    "options": [
+      "haves",
+      "has",
+      "have",
+      "having"
+    ],
+    "correct": 1,
+    "tag": "不规则变形",
+    "explanation": "have 是死记硬背的特例，它的三单变形不是 haves，而是完全独立的词：has。"
+  },
+  {
+    "id": "ps_concept_11",
+    "type": "mc",
+    "question": "【11/15 扫雷排坑】火眼金睛找病句：\"He like playing football.\" 错在哪儿？",
+    "chinese": "中国学生错得最多的地方",
+    "options": [
+      "like 应该保持原形，句子没毛病",
+      "like 应该变成 likes，因为主语是 He (第三人称单数)",
+      "football 前面少了一个 at",
+      "He 必须换成 They"
+    ],
+    "correct": 1,
+    "tag": "陷阱排雷",
+    "explanation": "He 是单数第三人称，后面的动词 like 必须加上 s，变成 He likes..."
+  },
+  {
+    "id": "ps_concept_12",
+    "type": "mc",
+    "question": "【12/15 扫雷排坑】动词变“第三人称单数”时，如果单词以辅音字母加 y 结尾（如 study），该怎么变脸？",
+    "chinese": "高频率拼写易错点",
+    "options": [
+      "直接在后面加 s (studys)",
+      "把 y 换成 i，再加 es (studies)",
+      "去 y 加 ies",
+      "直接加 es (studyes)"
+    ],
+    "correct": 1,
+    "tag": "辅音+y结构",
+    "explanation": "遇到辅音+y，法则是“变 y 为 i 加 es”。只有字母组合是元音(a,e,i,o,u)+y的（比如 play），才直接加 s (plays)。"
+  },
+  {
+    "id": "ps_concept_13",
+    "type": "mc",
+    "question": "【13/15 扫雷排坑】火眼金睛再找病句：\"I am play tennis every day.\" 致命错误在哪？",
+    "chinese": "句型中西混合的后遗症",
+    "options": [
+      "play 应该变成 plays",
+      "every day 放错位置了",
+      "am 和实义动词 play 不能连用，必须只保留一个，直接说 I play",
+      "I 必须小写"
+    ],
+    "correct": 2,
+    "tag": "陷阱排雷",
+    "explanation": "一个简单句不能出现“一山容二虎”的情况：be动词(am/is/are)和实义动词原形绝对不能背靠背连着出现。"
+  },
+  {
+    "id": "ps_concept_14",
+    "type": "mc",
+    "question": "【14/15 扫雷排坑】\"My brother\"（我哥哥）属于哪种人称？后面的动词需要加 s 吗？",
+    "chinese": "代词转换的迷惑性",
+    "options": [
+      "第一人称（因为有个My），不加 s",
+      "第三人称单数（相当于He），绝对需要加 s 或 es",
+      "第三人称复数，不加 s",
+      "第二人称，加 s"
+    ],
+    "correct": 1,
+    "tag": "迷惑识别",
+    "explanation": "千万不要被 My 骗了，\"My brother\" 核心词是 brother，只有一人，等同于 He，动词必须加 s。"
+  },
+  {
+    "id": "ps_concept_15",
+    "type": "mc",
+    "question": "【15/15 扫雷排坑】\"Tom and Jerry\" 是几个人？后面的动词需要加 s 吗？",
+    "chinese": "多重主语叠加时的判断",
+    "options": [
+      "两个人，属于复数（相当于 They），动词保原形不加 s",
+      "一个人，必须加 s",
+      "动物不需要管时态",
+      "只要看到人名就加 s"
+    ],
+    "correct": 0,
+    "tag": "复数主语",
+    "explanation": "两人及以上就是复数，等同于 They，这时候动词就不再有负担，直接用最简单的原形。"
+  }
+]

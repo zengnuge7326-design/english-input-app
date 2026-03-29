@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pl_c1",
+    "question": "英语名词变复数，最常见的规则是在词尾加：",
+    "options": ["-es", "-s", "-ing", "-ed"],
+    "answer": 1,
+    "explanation": "绝大多数名词变复数直接加 -s。例如：book -> books, apple -> apples。"
+  },
+  {
+    "id": "pl_c2",
+    "question": "以 s, x, ch, sh 结尾的名词，变复数通常加：",
+    "options": ["-s", "-es", "-ies", "-ves"],
+    "answer": 1,
+    "explanation": "为了发音方便，这些结尾的名词要加 -es。例如：bus -> buses, box -> boxes, watch -> watches。"
+  },
+  {
+    "id": "pl_c3",
+    "question": "以“辅音字母 + y”结尾的名词，变复数规则是：",
+    "options": ["直接加 -s", "加 -es", "变 y 为 i 再加 -es", "去 y 加 -s"],
+    "answer": 2,
+    "explanation": "例如：baby -> babies, city -> cities。注意：如果是元音+y（如 boy），直接加 s。"
+  },
+  {
+    "id": "pl_c4",
+    "question": "单词“boy”变复数是：",
+    "options": ["boies", "boys", "boyes", "boy"],
+    "answer": 1,
+    "explanation": "boy 是“元音字母+y”结尾，直接加 s 即可。"
+  },
+  {
+    "id": "pl_c5",
+    "question": "以 f 或 fe 结尾的名词（如 leaf, knife），变复数通常：",
+    "options": ["直接加 -s", "变 f/fe 为 v 再加 -es", "加 -es", "变 f 为 i 加 -es"],
+    "answer": 1,
+    "explanation": "例如：leaf -> leaves, knife -> knives, wife -> wives。"
+  },
+  {
+    "id": "pl_c6",
+    "question": "下列哪个单词变复数需要“变 f 为 v 再加 -es”？",
+    "options": ["roof", "wolf", "cliff", "belief"],
+    "answer": 1,
+    "explanation": "wolf (狼) 符合变化规律，变为 wolves。其余三个是特殊的，直接加 s。"
+  },
+  {
+    "id": "pl_c7",
+    "question": "以“辅音字母 + o”结尾的名词中，哪些需要加 -es？(黑人英雄爱吃西红柿土豆)",
+    "options": ["photo / piano", "hero / tomato / potato", "zoo / radio", "video"],
+    "answer": 1,
+    "explanation": "口诀：黑人(Negro)英雄(hero)爱吃西红柿(tomato)和土豆(potato)，这四个常用词加 -es。"
+  },
+  {
+    "id": "pl_c8",
+    "question": "有些名词变复数“不规则”，man 的复数是：",
+    "options": ["mans", "mens", "men", "manes"],
+    "answer": 2,
+    "explanation": "man -> men, woman -> women 这种属于改变中间元音字母的不规则变化。"
+  },
+  {
+    "id": "pl_c9",
+    "question": "child (孩子) 的复数形式是：",
+    "options": ["childs", "childes", "children", "childre"],
+    "answer": 2,
+    "explanation": "child -> children 是非常典型的不规则变化。"
+  },
+  {
+    "id": "pl_c10",
+    "question": "foot (脚) 和 tooth (牙齿) 的复数变化规律是：",
+    "options": ["加 -s", "oo 变 ee", "加 -es", "不变"],
+    "answer": 1,
+    "explanation": "foot -> feet, tooth -> teeth。这种双 o 变双 e 的变化也是常见的。"
+  },
+  {
+    "id": "pl_c11",
+    "question": "有些名词“单复数同形”（单数和复数长得一样），例如：",
+    "options": ["apple", "sheep", "bus", "dog"],
+    "answer": 1,
+    "explanation": "sheep (绵羊), deer (鹿), fish (鱼) 经常单复数同形。"
+  },
+  {
+    "id": "pl_c12",
+    "question": "“不可数名词”（如 water, milk, rice）有复数形式吗？",
+    "options": ["有，加 -s", "没有复数形式", "加 -es", "看情况"],
+    "answer": 1,
+    "explanation": "不可数名词通常被看作一个整体，没有复数形式，不能在词尾加 -s。"
+  },
+  {
+    "id": "pl_c13",
+    "question": "如果要表达“两杯水”，应该怎么说？",
+    "options": ["two waters", "two cup of water", "two cups of water", "water two"],
+    "answer": 2,
+    "explanation": "不可数名词需要通过量词（如 cup, bag, piece）来表达数量。量词要有复数变化。"
+  },
+  {
+    "id": "pl_c14",
+    "question": "mouse (老鼠) 的复数是：",
+    "options": ["mouses", "mices", "mice", "mousees"],
+    "answer": 2,
+    "explanation": "mouse -> mice 属于特殊的不规则变化。"
+  },
+  {
+    "id": "pl_c15",
+    "question": "在句子“There are some ______ on the desk.”中，不能填入：",
+    "options": ["books", "pens", "apple", "boxes"],
+    "answer": 2,
+    "explanation": "are + some 提示后面要用复数名词。apple 是单数，如果不加 s 就是错误的。"
+  }
+]

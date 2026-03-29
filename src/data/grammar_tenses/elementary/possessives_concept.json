@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pos_c1",
+    "question": "英语中表示“某人的”（名词所有格），最常用的符号是：",
+    "options": ["-s", "'s", "of", "-ing"],
+    "answer": 1,
+    "explanation": "在名词后面加 's 是表示所属关系最直接的方法。"
+  },
+  {
+    "id": "pos_c2",
+    "question": "“这就是 Tom 的书。” 正确的翻译是：",
+    "options": ["This is Tom book.", "This is Toms book.", "This is Tom's book.", "This is book of Tom."],
+    "answer": 2,
+    "explanation": "所有格符号是 's。注意撇号（'）的位置。"
+  },
+  {
+    "id": "pos_c3",
+    "question": "如果是单数名词，且末位字符不是 s，所有格直接加：",
+    "options": ["'s", "'", "s", "es"],
+    "answer": 0,
+    "explanation": "基本的规则就是加 's。例如：my mother's bag。"
+  },
+  {
+    "id": "pos_c4",
+    "question": "如果是以 s 结尾的复数名词（如 teachers），变所有格时：",
+    "options": ["加 's", "只在末尾加 '（撇号）", "加 es", "不变"],
+    "answer": 1,
+    "explanation": "为了避免读音里出现太多 s，以 s 结尾的复数名词只加撇号即可。例如：the teachers' room。"
+  },
+  {
+    "id": "pos_c5",
+    "question": "“那些女孩们的自行车” 应该写成：",
+    "options": ["The girl's bikes.", "The girls' bikes.", "The girlses' bikes."],
+    "answer": 1,
+    "explanation": "girls 是复数，且以 s 结尾，所以只加 '。"
+  },
+  {
+    "id": "pos_c6",
+    "question": "如果不规则复数名词末尾不是 s（如 children），所有格应：",
+    "options": ["只加 '", "加 's", "不加任何东西", "加 s'"],
+    "answer": 1,
+    "explanation": "不论单复数，只要末尾不是 s，一律用 's。例如：the children's toys。"
+  },
+  {
+    "id": "pos_c7",
+    "question": "“My father's brother” 是指谁？",
+    "options": ["我妈妈的兄弟", "我爸爸的兄弟", "我的兄弟", "我的弟弟"],
+    "answer": 1,
+    "explanation": "所有的格前面的词是“主人”，后面是“所属物/人”。"
+  },
+  {
+    "id": "pos_c8",
+    "question": "如果是“A 和 B 共有”的一件东西，'s 加在：",
+    "options": ["两个人都加", "只在最后一个名字后面加", "只在第一个名字后面加", "都不加"],
+    "answer": 1,
+    "explanation": "共有关系只需在最后一个词后加 's。例如：Lucy and Lily's bedroom (同一间房间)。"
+  },
+  {
+    "id": "pos_c9",
+    "question": "如果是“A 和 B 各自拥有”的东西，'s 加在：",
+    "options": ["只在最后一个名字加", "两个名字后面都各加一个", "都不加"],
+    "answer": 1,
+    "explanation": "各自拥有就要各自加 's。例如：Lucy's and Lily's rooms (两人的房间)。"
+  },
+  {
+    "id": "pos_c10",
+    "question": "对于无生命的东西（如桌腿），习惯上常用 ______ 来表示所属关系？",
+    "options": ["'s", "of", "with", "by"],
+    "answer": 1,
+    "explanation": "通常人/动物用 's，无生命物体用 of 结构。例如：the legs of the table。"
+  },
+  {
+    "id": "pos_c11",
+    "question": "“一天的步行”应该怎么表达？",
+    "options": ["a day's walk", "a week's walk", "walk of a day", "a days' walk"],
+    "answer": 0,
+    "explanation": "时间、距离、金钱等也可以用 's 表示所有格。"
+  },
+  {
+    "id": "pos_c12",
+    "question": "在 “at the doctor's” 中，省略了哪个词？",
+    "options": ["home", "office / clinic", "car", "shop"],
+    "answer": 1,
+    "explanation": "当提到诊所、商店、某人的家时，'s 后的地点名词常省略。例如：at my aunt's (在我阿姨家)。"
+  },
+  {
+    "id": "pos_c13",
+    "question": "名词所有格 Tom's 和物主代词 his 的作用：",
+    "options": ["完全不同", "基本相似，都是表示“他的”", "用法相反"],
+    "answer": 1,
+    "explanation": "Tom's book = his book。一个是明确人名，一个是代词。"
+  },
+  {
+    "id": "pos_c14",
+    "question": "“It's my cat's tail.” 这里有两个 's，它们的意思分别是：",
+    "options": ["两处都是“是”", "两处都是“……的”", "第一处是“是”，第二处是“……的”", "第一处是“……的”，第二处是“是”"],
+    "answer": 2,
+    "explanation": "It's = It is (它是); cat's = 猫的。这也是阅读中的一个小重点。"
+  },
+  {
+    "id": "pos_c15",
+    "question": "“Whose”用来询问谁的所有权。如果回答 “It's the dog's.” 是指：",
+    "options": ["它是这只狗", "它是属于这只狗的", "这只狗在这里", "狗是谁"],
+    "answer": 1,
+    "explanation": "所有格独立使用时，后面省略了所属的名词内容。指“这只狗的东西”。"
+  }
+]

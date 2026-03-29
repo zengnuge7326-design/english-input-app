@@ -1,0 +1,107 @@
+[
+  {
+    "id": "mc_senior_c1",
+    "question": "什么是“混合条件句” (Mixed Conditionals)？",
+    "options": ["同一句中条件从句和主句所指的时间不一致", "主从句时态完全一致的句子", "只有一种可能性的句子"],
+    "answer": 0,
+    "explanation": "比如：“如果我过去……（过去虚拟），我现在就……（现在虚拟）”。"
+  },
+  {
+    "id": "mc_senior_c2",
+    "question": "最常见的混合条件句是：",
+    "options": ["过去假设 -> 现在结果", "现在假设 -> 未来结果", "过去假设 -> 过去结果"],
+    "answer": 0,
+    "explanation": "例如：如果我当初（过去）好好学，我现在（现在）就是大叔了。"
+  },
+  {
+    "id": "mc_senior_c3",
+    "question": "“If I ______ (listen) to you yesterday, I ______ (not / be) in trouble now.” 填：",
+    "options": ["had listened; would not be", "listened; would not be", "had listened; would not have been"],
+    "answer": 0,
+    "explanation": "从句是过去虚拟（had done），主句是现在虚拟（would do）。"
+  },
+  {
+    "id": "mc_senior_c4",
+    "question": "判断混合条件句的关键是：",
+    "options": ["看 if", "寻找句中的时间状语（如 yesterday 与 now 搭配）", "看句子的长短"],
+    "answer": 1,
+    "explanation": "时间状语是打破常规时态对应的重要旗帜。"
+  },
+  {
+    "id": "mc_senior_c5",
+    "question": "如果假设是对“现在/经常”状况的虚拟，而结果是对“过去”的虚拟：",
+    "options": ["If从句用过去完成时，主句用would do", "If从句用一般过去时，主句用would have done", "不支持这种用法"],
+    "answer": 1,
+    "explanation": "虽然少见但存在。例如：如果你不是那么粗心（现状虚拟），你那次考试（过去虚拟）就通过了。"
+  },
+  {
+    "id": "mc_senior_c6",
+    "question": "“If I weren't so busy today, I ______ (join) you yesterday.” 填：",
+    "options": ["would join", "would have joined", "joined"],
+    "answer": 1,
+    "explanation": "主句针对过去进行假设/推测，用 would have done。"
+  },
+  {
+    "id": "mc_senior_c7",
+    "question": "混合条件句是虚拟语气中的：",
+    "options": ["基础考点", "进阶/甚至高级难点", "错误用法"],
+    "answer": 1,
+    "explanation": "它要求学习者灵活理解时间线的错位。"
+  },
+  {
+    "id": "mc_senior_c8",
+    "question": "“But for your advice then, he ______ (not / succeed) now.” 填：",
+    "options": ["would not succeed", "would not have succeeded", "succeeds"],
+    "answer": 0,
+    "explanation": "But for...then 指过去，主句 now 指现在。混合逻辑。"
+  },
+  {
+    "id": "mc_senior_c9",
+    "question": "在混合条件句中，if 省略的倒装依然适用吗？",
+    "options": ["适用", "不适用"],
+    "answer": 0,
+    "explanation": "例如：Had I taken your advice (if I had...), I would be fine now."
+  },
+  {
+    "id": "mc_senior_c10",
+    "question": "混合条件句的本质是：",
+    "options": ["时态的混乱", "逻辑的严谨对接", "语法的随意性"],
+    "answer": 1,
+    "explanation": "它完美地模拟了现实生活中复杂的因果时间关系。"
+  },
+  {
+    "id": "mc_senior_c11",
+    "question": "“Now” 在主句中出现时，是判定主句使用 “would do” 的强力标志吗？",
+    "options": ["是", "不一定", "不是"],
+    "answer": 0,
+    "explanation": "“now” 明确了结果发生的时间点是现在。"
+  },
+  {
+    "id": "mc_senior_c12",
+    "question": "“If the rain hadn't stopped, the ground ______ (be) wet still.” 填：",
+    "options": ["would be", "would have been", "is"],
+    "answer": 0,
+    "explanation": "如果过去雨没停（过去虚拟），现在地还是湿的（现在状态）。"
+  },
+  {
+    "id": "mc_senior_c13",
+    "question": "这种时态组合在英语母语者的日常交流中：",
+    "options": ["非常罕见", "比较地道且符合逻辑", "语法错误"],
+    "answer": 1,
+    "explanation": "因为生活中的后悔（早知道……我现在就……）往往跨越了时间线。"
+  },
+  {
+    "id": "mc_senior_c14",
+    "question": "如果主从句时间一致，还叫混合条件句吗？",
+    "options": ["不叫", "叫"],
+    "answer": 0,
+    "explanation": "那叫普通的虚拟语气。"
+  },
+  {
+    "id": "mc_senior_c15",
+    "question": "总结：处理混合条件句最快的方法是：",
+    "options": ["背公式", "根据主从句各自对应的时间状语分别判断时态", "全部写过去式"],
+    "answer": 1,
+    "explanation": "“各自为政”又是“整体和谐”。"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "dm_senior_c1",
+    "question": "什么是“语篇衔接词” (Discourse Markers)？",
+    "options": ["用来装饰句子的虚词", "组织语言、标记逻辑关系和衔接段落的词", "只有在演讲中才用的词"],
+    "answer": 1,
+    "explanation": "衔接词就像文章的导游，告诉读者接下来是转折、递进还是总结。"
+  },
+  {
+    "id": "dm_senior_c2",
+    "question": "表示“然而、但是（转折）”的最正式衔接词是：",
+    "options": ["but", "however", "and", "so"],
+    "answer": 1,
+    "explanation": "however 语气比 but 更正式，通常用逗号隔开。"
+  },
+  {
+    "id": "dm_senior_c3",
+    "question": "表示“此外、而且（递进）”的词不包括：",
+    "options": ["Moreover", "In addition", "Furthermore", "Instead"],
+    "answer": 3,
+    "explanation": "Instead 意为“相反、作为替代”，属于转折或对比关系。"
+  },
+  {
+    "id": "dm_senior_c4",
+    "question": "表示“因此、所以（结果）”的词是：",
+    "options": ["Therefore", "Thus", "Consequently", "以上皆是"],
+    "answer": 3,
+    "explanation": "这些词都用于引出结果。"
+  },
+  {
+    "id": "dm_senior_c5",
+    "question": "“On the contrary” 引导的是：",
+    "options": ["递进关系", "对比/相反的关系", "总结方案"],
+    "answer": 1,
+    "explanation": "意为“恰恰相反”。"
+  },
+  {
+    "id": "dm_senior_c6",
+    "question": "当你想举例说明时，应该用：",
+    "options": ["For example", "For instance", "Such as", "以上皆是"],
+    "answer": 3,
+    "explanation": "它们都是引导例证的利器。"
+  },
+  {
+    "id": "dm_senior_c7",
+    "question": "“Anyway / Anyhow” 的作用通常是：",
+    "options": ["继续深入讨论", "修正话题、或者回到主题、或者结束话题", "表示原因"],
+    "answer": 1,
+    "explanation": "常用于口语中转换或结束讨论。"
+  },
+  {
+    "id": "dm_senior_c8",
+    "question": "“In a word / To sum up” 提示读者：",
+    "options": ["下面是细节", "下面是总结", "下面是新观点"],
+    "answer": 1,
+    "explanation": "标志着文章进入收尾阶段。"
+  },
+  {
+    "id": "dm_senior_c9",
+    "question": "“Instead of” 后面通常接：",
+    "options": ["名词或 doing", "一个完整的句子", "形容词"],
+    "answer": 0,
+    "explanation": "它是一个介词短语。"
+  },
+  {
+    "id": "dm_senior_c10",
+    "question": "你想表示“无论如何、至少”时，可以用哪种口语衔接词？",
+    "options": ["At least", "Nevertheless", "Otherwise"],
+    "answer": 0,
+    "explanation": "At least 比较灵活。"
+  },
+  {
+    "id": "dm_senior_c11",
+    "question": "“In other words” 的作用是：",
+    "options": ["道歉", "换一种更通俗/准确的说法来解释", "否定前面的观点"],
+    "answer": 1,
+    "explanation": "意为“换句话说”。"
+  },
+  {
+    "id": "dm_senior_c12",
+    "question": "衔接词在英语写作中的作用类似于：",
+    "options": ["骨骼", "关节", "皮肤"],
+    "answer": 1,
+    "explanation": "它是灵活连接句子的“关节”。"
+  },
+  {
+    "id": "dm_senior_c13",
+    "question": "“Actually / In fact” 用来强调：",
+    "options": ["虚假信息", "事实和真实情况", "未来可能"],
+    "answer": 1,
+    "explanation": "常用于纠正误解。"
+  },
+  {
+    "id": "dm_senior_c14",
+    "question": "在段落中使用 “Firstly, Secondly, Finally” 的好处是：",
+    "options": ["凑字数", "增加条理性和清晰度", "显得博学"],
+    "answer": 1,
+    "explanation": "标志词能极其直观地展示逻辑层级。"
+  },
+  {
+    "id": "dm_senior_c15",
+    "question": "总结：掌握衔接词是提高哪方面能力的关键？",
+    "options": ["词汇拼写", "写作水平和逻辑思维", "发音"],
+    "answer": 1,
+    "explanation": "没有衔接词的文章只是一堆句子的堆砌。"
+  }
+]

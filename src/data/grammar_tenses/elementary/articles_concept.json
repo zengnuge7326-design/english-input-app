@@ -1,0 +1,107 @@
+[
+  {
+    "id": "art_c1",
+    "question": "英语中的“不定冠词”是指哪两个词？",
+    "options": ["a 和 the", "a 和 an", "the 和 some", "an 和 the"],
+    "answer": 1,
+    "explanation": "不定冠词包括 a 和 an，表示“一个”，用于泛指。"
+  },
+  {
+    "id": "art_c2",
+    "question": "不定冠词“a”通常用在什么开头的单词前？",
+    "options": ["元音字母开头", "辅音音素开头", "大写字母开头", "s开头"],
+    "answer": 1,
+    "explanation": "注意是看“音素”而不是字母。辅音音素（发音像b, p, d, k等）开头用 a。"
+  },
+  {
+    "id": "art_c3",
+    "question": "不定冠词“an”通常用在什么开头的单词前？",
+    "options": ["元音音素开头", "辅音音素开头", "所有字母"],
+    "answer": 0,
+    "explanation": "元音音素（发音像/a/, /e/, /i/, /o/, /u/等）开头用 an。"
+  },
+  {
+    "id": "art_c4",
+    "question": "下列哪个单词前面应该用“an”？",
+    "options": ["book", "apple", "cat", "dog"],
+    "answer": 1,
+    "explanation": "apple 是元音音素开头，所以用 an apple。"
+  },
+  {
+    "id": "art_c5",
+    "question": "单词“hour”（小时）的h不发音，开头读音是元音，应该用：",
+    "options": ["a hour", "an hour", "the hour", "不需要冠词"],
+    "answer": 1,
+    "explanation": "因为 hour 的第一个音是元音，所以必须用 an。这是常考的陷阱题。"
+  },
+  {
+    "id": "art_c6",
+    "question": "单词“university”（大学）虽然是u开头，但发音是/j/（辅音），应该用：",
+    "options": ["a university", "an university", "the university", "不需要冠词"],
+    "answer": 0,
+    "explanation": "university 的首音是辅音/j/，所以用 a。这也是一个常见陷阱。"
+  },
+  {
+    "id": "art_c7",
+    "question": "“定冠词”是指哪个词？",
+    "options": ["a", "an", "the", "some"],
+    "answer": 2,
+    "explanation": "the 是定冠词，表示“这/那（个）”，用于特指。"
+  },
+  {
+    "id": "art_c8",
+    "question": "当你第二次提到刚才说过的一个事物时，应该用：",
+    "options": ["a / an", "the", "不需要冠词", "some"],
+    "answer": 1,
+    "explanation": "第一次提到用 a/an（泛指），第二次提到就变成了特指，要用 the。"
+  },
+  {
+    "id": "art_c9",
+    "question": "在世界上独一无二的事物前（如 sun, moon）通常用：",
+    "options": ["a", "an", "the", "zero"],
+    "answer": 2,
+    "explanation": "对于太阳、月亮、地球等唯一的事物，必须加 the。"
+  },
+  {
+    "id": "art_c10",
+    "question": "在乐器名称前（如 play ______ piano）通常要加：",
+    "options": ["a", "an", "the", "什么都不加"],
+    "answer": 2,
+    "explanation": "在英语中，弹奏某种乐器习惯上要加 the。例如：play the guitar。"
+  },
+  {
+    "id": "art_c11",
+    "question": "在三餐（早餐/午餐/晚餐）名称前通常：",
+    "options": ["加 a", "加 an", "加 the", "不加冠词"],
+    "answer": 3,
+    "explanation": "在没有形容词修饰的情况下，三餐前通常不加冠词。例如：have breakfast。"
+  },
+  {
+    "id": "art_c12",
+    "question": "在球类运动前（如 play ______ basketball）通常：",
+    "options": ["加 a", "加 the", "不加冠词", "加 an"],
+    "answer": 2,
+    "explanation": "球类运动和乐器相反，不需要冠词。例如：play football。"
+  },
+  {
+    "id": "art_c13",
+    "question": "“I have ______ umbrella.” 横线处应填：",
+    "options": ["a", "an", "the", "zero"],
+    "answer": 1,
+    "explanation": "umbrella元音开头，用 an。"
+  },
+  {
+    "id": "art_c14",
+    "question": "如果不确定是用 a 还是 an，最科学的方法是：",
+    "options": ["看单词第一个字母", "读出单词，听第一个音是元音还是辅音", "随便选一个", "看单词长度"],
+    "answer": 1,
+    "explanation": "冠词的选择完全取决于单词发音的第一个“音素”。"
+  },
+  {
+    "id": "art_c15",
+    "question": "“He is ______ honest boy.” 横线处填：",
+    "options": ["a", "an", "the", "zero"],
+    "answer": 1,
+    "explanation": "honest 的 h 不发音，开头是元音音素，因此用 an honest boy。"
+  }
+]

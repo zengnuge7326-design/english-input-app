@@ -1,0 +1,107 @@
+[
+  {
+    "id": "inv_senior_c1",
+    "question": "什么是“倒装句” (Inversion)？",
+    "options": ["把单词写反", "把主语和谓语（或其部分助动词）的位置颠倒", "省略一些成分", "把动词放在句末"],
+    "answer": 1,
+    "explanation": "为了强调、平衡句子或由于语法规范，将谓语提到主语之前。"
+  },
+  {
+    "id": "inv_senior_c2",
+    "question": "“全部倒装” (Full Inversion) 是指：",
+    "options": ["只提助动词", "把整个谓语动词都移到主语前", "只提 not"],
+    "answer": 1,
+    "explanation": "常见于 Here/There/Away 开头的句子。例如：Here comes the bus."
+  },
+  {
+    "id": "inv_senior_c3",
+    "question": "“部分倒装” (Partial Inversion) 是指：",
+    "options": ["把整个谓语提前", "只把助动词、情态动词或 be 动词提到主语前", "只把宾语提前"],
+    "answer": 1,
+    "explanation": "它的结构非常像疑问句。例如：Never have I seen him."
+  },
+  {
+    "id": "inv_senior_c4",
+    "question": "当否定副词 (never, seldom, hardly, rarely, little, nowhere) 位于句首时，要用：",
+    "options": ["部分倒装", "全部倒装", "不倒装"],
+    "answer": 0,
+    "explanation": "这是倒装句最核心的考点。例如：Seldom does she cry."
+  },
+  {
+    "id": "inv_senior_c5",
+    "question": "“Only” 引导状语且位于句首时，也要用部分倒装，对吗？",
+    "options": ["正确", "错误，直接加名词时不倒装"],
+    "answer": 0,
+    "explanation": "注意：Only + 状语（词/短语/从句）在句首才倒装。例如：Only then did I realize..."
+  },
+  {
+    "id": "inv_senior_c6",
+    "question": "“So / Neither / Nor” 引导的句子，表示“……也是/也不是”时：",
+    "options": ["用部分倒装", "用全部倒装", "不倒装"],
+    "answer": 0,
+    "explanation": "例如：I am hungry. -> So am I."
+  },
+  {
+    "id": "inv_senior_c7",
+    "question": "“Not only ... but also ...” 位于句首连接两个分句时：",
+    "options": ["前一个分句倒装，后一个不倒装", "后一个分句倒装", "两个都倒装"],
+    "answer": 0,
+    "explanation": "例如：Not only is he smart, but he is also kind."
+  },
+  {
+    "id": "inv_senior_c8",
+    "question": "在虚拟语气省略 if 时（Were I..., Had I...），这属于：",
+    "options": ["部分倒装", "全部倒装", "不倒装"],
+    "answer": 0,
+    "explanation": "因为它只提升了助动词或 be。"
+  },
+  {
+    "id": "inv_senior_c9",
+    "question": "在 “Here comes the bus!” 这种全部倒装中，如果主语是“代词” (如 it)，还倒装吗？",
+    "options": ["继续倒装 (Here comes it)", "不倒装 (Here it comes)", "随心所欲"],
+    "answer": 1,
+    "explanation": "这是陷阱题。代词作主语时不倒装。"
+  },
+  {
+    "id": "inv_senior_c10",
+    "question": "“Hardly had I arrived ______ it began to rain.” 填：",
+    "options": ["when", "than", "so", "that"],
+    "answer": 0,
+    "explanation": "Hardly...when 是固定句型，前句部分倒装且用过去完成时。"
+  },
+  {
+    "id": "inv_senior_c11",
+    "question": "“No sooner had he left ______ the phone rang.” 填：",
+    "options": ["when", "than", "so", "that"],
+    "answer": 1,
+    "explanation": "No sooner ... than 是固定句型，也要部分倒装。"
+  },
+  {
+    "id": "inv_senior_c12",
+    "question": "“So + 形容词”位于句首时（为了强调程度）：",
+    "options": ["部分倒装", "全部倒装", "不倒装"],
+    "answer": 0,
+    "explanation": "例如：So moved was she that she cried."
+  },
+  {
+    "id": "inv_senior_c13",
+    "question": "“Under no circumstances” (在任何情况下绝不) 位于句首：",
+    "options": ["必须倒装", "不能倒装", "随意"],
+    "answer": 0,
+    "explanation": "它相当于一个大的否定词，必须用部分倒装。例如：Under no circumstances should you open it."
+  },
+  {
+    "id": "inv_senior_c14",
+    "question": "全部倒装通常用于描述：",
+    "options": ["生动的动作、位置或背景", "逻辑推理", "询问信息"],
+    "answer": 0,
+    "explanation": "常见于文学描写中。例如：Out rushed the boys."
+  },
+  {
+    "id": "inv_senior_c15",
+    "question": "总结：倒装句的最关键作用是：",
+    "options": ["把句子变复杂", "平衡重心或起到强调作用", "节省字数"],
+    "answer": 1,
+    "explanation": "它改变了正常的语序，给读者/听者视觉上的刺激。"
+  }
+]

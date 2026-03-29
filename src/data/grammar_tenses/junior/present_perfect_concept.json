@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pp_c1",
+    "question": "“现在完成时”的核心概念是什么？",
+    "options": ["过去发生的动作对现在产生的影响", "现在正在进行的动作", "将来打算做的事", "过去某个点正在进行的动作"],
+    "answer": 0,
+    "explanation": "现在完成时（Present Perfect）架起了过去与现在的桥梁，强调“过去的事”与“现在”的关系。"
+  },
+  {
+    "id": "pp_c2",
+    "question": "现在完成时的基本结构是：have/has + ______。",
+    "options": ["动词原形", "动词的过去分词 (Past Participle)", "动词的过去式", "动词-ing"],
+    "answer": 1,
+    "explanation": "公式是：have/has + done（过去分词）。"
+  },
+  {
+    "id": "pp_c3",
+    "question": "什么时候助动词要用 “has”？",
+    "options": ["主语是 I/You", "主语是复数", "主语是第三人称单数 (He/She/It)", "主语是 We"],
+    "answer": 2,
+    "explanation": "只有三单主语用 has，其余人称一律用 have。"
+  },
+  {
+    "id": "pp_c4",
+    "question": "下列哪个词是现在完成时非常标志性的副词？",
+    "options": ["yesterday", "now", "already / yet", "tomorrow"],
+    "answer": 2,
+    "explanation": "already（已经）, yet（还，用于否定/疑问）, just（刚刚）, ever, never 等是完成时的典型伴侣。"
+  },
+  {
+    "id": "pp_c5",
+    "question": "“for + 时间段” 和 “since + 时间点” 提示动作从过去持续到现在，常用：",
+    "options": ["一般过去时", "现在完成时", "过去完成时", "现在进行时"],
+    "answer": 1,
+    "explanation": "例如：I have lived here for ten years."
+  },
+  {
+    "id": "pp_c6",
+    "question": "“Hurry up! The film ______ already ______ (start).” 横线填：",
+    "options": ["is; started", "has; started", "was; started", "have; started"],
+    "answer": 1,
+    "explanation": "表示动作已经完成。主语 the film 是单数，用 has。"
+  },
+  {
+    "id": "pp_c7",
+    "question": "将 “I have seen this movie.” 变成否定句：",
+    "options": ["I haven't seen this movie.", "I don't have seen...", "I didn't seen...", "I not seen..."],
+    "answer": 0,
+    "explanation": "在 have/has 后面直接加 not 变成 haven't / hasn't。"
+  },
+  {
+    "id": "pp_c8",
+    "question": "将 “He has finished.” 变成疑问句：",
+    "options": ["Has he finished?", "Does he has finished?", "Is he finished?", "Has he finish?"],
+    "answer": 0,
+    "explanation": "把 have/has 提到句首。注意动词仍用过去分词。"
+  },
+  {
+    "id": "pp_c9",
+    "question": "“have gone to” 和 “have been to” 的区别是：",
+    "options": ["没有区别", "前者指“去了还没回来”，后者指“去过已经回来了”", "前者指回国了，后者指还没走"],
+    "answer": 1,
+    "explanation": "gone to 强调“在去的路上或在那儿”；been to 强调“曾经的经历”。"
+  },
+  {
+    "id": "pp_c10",
+    "question": "在 for 和 since 引导的持续性句子中，谓语动词必须使用：",
+    "options": ["延续性动词 (如 stay, live, keep)", "短暂性动词 (如 join, buy, die)", "随便选"],
+    "answer": 0,
+    "explanation": "短暂动作不能持续。比如不能说“死了十天了”用 died for 10 days，要改用 been dead。"
+  },
+  {
+    "id": "pp_c11",
+    "question": "“I ______ (buy) this book three days ago.” 应用什么时态？",
+    "options": ["现在完成时", "一般过去时", "过去完成时", "一般现在时"],
+    "answer": 1,
+    "explanation": "句中有确定的过去时间 three days ago，必须用一般过去时。不能和完成时连用。"
+  },
+  {
+    "id": "pp_c12",
+    "question": "询问某人“去过……几次”或“做过……几次”，常用：",
+    "options": ["How old", "How many times", "How much", "How soon"],
+    "answer": 1,
+    "explanation": "How many times have you been to... 是常用句型。"
+  },
+  {
+    "id": "pp_c13",
+    "question": "过去分词 (done) 对所有动词来说都和过去式 (did) 长得一样吗？",
+    "options": ["是，都加 -ed", "不，有些不规则动词长得不一样（如 go-went-gone）", "不，全都不一样"],
+    "answer": 1,
+    "explanation": "规则动词是一样的，但大量不规则动词需要单独记忆过去分词。"
+  },
+  {
+    "id": "pp_c14",
+    "question": "“It has been five years ______ I left school.” 横线应填：",
+    "options": ["since", "for", "when", "ago"],
+    "answer": 0,
+    "explanation": "It + has been + 时间段 + since + 一般过去时，是表示“自从……以来已经多久了”的固定句型。"
+  },
+  {
+    "id": "pp_c15",
+    "question": "总结：现在完成时关注的是：",
+    "options": ["过去发生的动作现在还记不记得", "过去发生的动作对现在造成的结果或状态", "未来要发生的事"],
+    "answer": 1,
+    "explanation": "它的重点落脚点在“现在”。"
+  }
+]

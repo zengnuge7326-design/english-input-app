@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pcont_c1",
+    "question": "“过去进行时”主要用来表示什么？",
+    "options": ["过去习惯性的动作", "过去某个时间点正在进行的动作", "现在正在进行的动作", "过去已经完成的动作"],
+    "answer": 1,
+    "explanation": "过去进行时（Past Continuous）强调在过去特定的某一时刻，动作正在“发生中”。"
+  },
+  {
+    "id": "pcont_c2",
+    "question": "过去进行时的基本结构是：______ + 动词-ing。",
+    "options": ["am/is/are", "was/were", "do/does", "had"],
+    "answer": 1,
+    "explanation": "结构是 be 动词的过去式 + V-ing。例如：I was reading."
+  },
+  {
+    "id": "pcont_c3",
+    "question": "下列哪个时间状语最常用于过去进行时？",
+    "options": ["often", "at 8 o'clock last night", "now", "tomorrow"],
+    "answer": 1,
+    "explanation": "它通常需要一个具体的时间点（如昨晚八点）或另一个动作作为参照。"
+  },
+  {
+    "id": "pcont_c4",
+    "question": "“When I ______ (come) in, he ______ (sleep).” 横线处应填：",
+    "options": ["came; was sleeping", "was coming; slept", "come; sleeps", "was coming; was sleeping"],
+    "answer": 0,
+    "explanation": "通常一个短动作（came）打断了一个正在进行的长动作（was sleeping）。"
+  },
+  {
+    "id": "pcont_c5",
+    "question": "在过去进行时中，while 引导的从句通常接什么时态？",
+    "options": ["一般过去时", "过去进行时", "现在进行时", "一般现在时"],
+    "answer": 1,
+    "explanation": "while 表示“当……在进行时”，其引导的动词必须是延续性的，常用进行时。"
+  },
+  {
+    "id": "pcont_c6",
+    "question": "“While my mother ______ (cook), I ______ (do) my homework.” 表示两个动作同时在进行，应填：",
+    "options": ["cooked; did", "was cooking; was doing", "is cooking; am doing", "was cooking; did"],
+    "answer": 1,
+    "explanation": "while 连接两个并列的长动作，通常两个都用过去进行时。"
+  },
+  {
+    "id": "pcont_c7",
+    "question": "主语是 “They” 时，be 动词用哪个？",
+    "options": ["was", "were", "are", "be"],
+    "answer": 1,
+    "explanation": "you/we/they 以及复数主语使用 were。"
+  },
+  {
+    "id": "pcont_c8",
+    "question": "将 “I was watching TV.” 变成否定句：",
+    "options": ["I wasn't watching TV.", "I didn't watching TV.", "I was not watch TV.", "I wouldn't watching TV."],
+    "answer": 0,
+    "explanation": "在 was/were 后面直接加 not。was not = wasn't。"
+  },
+  {
+    "id": "pcont_c9",
+    "question": "将 “She was crying.” 变成一般疑问句：",
+    "options": ["Was she crying?", "Did she crying?", "She was crying?", "Was she cry?"],
+    "answer": 0,
+    "explanation": "把 was/were 提到句首。注意动词仍保持 -ing 形式。"
+  },
+  {
+    "id": "pcont_c10",
+    "question": "过去进行时可以用来描述故事的“背景”或“氛围”吗？",
+    "options": ["可以", "不可以", "视情况而定"],
+    "answer": 0,
+    "explanation": "是的，比如“那天风在刮，雨在下，人们在奔跑……”常用过去进行时渲染背景。"
+  },
+  {
+    "id": "pcont_c11",
+    "question": "“What ______ you ______ at this time yesterday?” (昨天的这个时候你在做什么？) 横线填：",
+    "options": ["did; do", "were; doing", "was; doing", "are; doing"],
+    "answer": 1,
+    "explanation": "at this time yesterday 是明确的过去时间点，主语 you 配合 were。"
+  },
+  {
+    "id": "pcont_c12",
+    "question": "有些词（如 notice, hear, see）表示瞬时的知觉，通常不用于进行时，对吗？",
+    "options": ["正确", "错误"],
+    "answer": 0,
+    "explanation": "是的，知觉动词、情感动词和表示状态的动词（如 like, know）通常不用进行时。"
+  },
+  {
+    "id": "pcont_c13",
+    "question": "“We were haveing a party.” 这句话有错误吗？",
+    "options": ["没有", "有，haveing 拼写错了，应为 having", "有，were 应为 was"],
+    "answer": 1,
+    "explanation": "以 e 结尾的动词变 -ing 要去 e。have -> having。"
+  },
+  {
+    "id": "pcont_c14",
+    "question": "过去进行时和一般过去时的区别是：",
+    "options": ["没区别", "前者强调动作正在进行的过程，后者强调动作已经发生的结果/事实", "前者是现在，后者是过去"],
+    "answer": 1,
+    "explanation": "一般过去时只说“做了”，过去进行时强调“在做”。"
+  },
+  {
+    "id": "pcont_c15",
+    "question": "“The phone rang while I ______ (take) a bath.” 应该用：",
+    "options": ["was taking", "took", "is taking", "am taking"],
+    "answer": 0,
+    "explanation": "电话铃响是一个瞬时动作，打断了“洗澡”这个正在进行的动作。"
+  }
+]

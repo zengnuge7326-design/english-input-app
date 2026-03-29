@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pc_c1",
+    "question": "“现在进行时”主要用来表示什么时候发生的动作？",
+    "options": ["过去发生的动作", "现在正在进行的动作", "经常性、习惯性的动作", "将来打算做的动作"],
+    "answer": 1,
+    "explanation": "现在进行时（Present Continuous）的核心就是表示“此时此刻”正在发生的动作或状态。"
+  },
+  {
+    "id": "pc_c2",
+    "question": "现在进行时的基本结构是：be动词 + ______。",
+    "options": ["动词原形", "动词过去式", "动词的-ing形式", "动词三单形式"],
+    "answer": 2,
+    "explanation": "现在进行时的公式是：am/is/are + V-ing。二者缺一不可。"
+  },
+  {
+    "id": "pc_c3",
+    "question": "下列哪个词是“现在进行时”最标志性的时间状语？",
+    "options": ["often", "yesterday", "now", "sometimes"],
+    "answer": 2,
+    "explanation": "now（现在）和 at the moment（此时）是现在进行时的典型标志。"
+  },
+  {
+    "id": "pc_c4",
+    "question": "当句子以“Look!”（看！）或“Listen!”（听！）开头时，通常提示后面要用什么时态？",
+    "options": ["一般现在时", "现在进行时", "一般过去时", "一般将来时"],
+    "answer": 1,
+    "explanation": "“看！”和“听！”都是在提醒对方注意当下正在发生的事，所以用现在进行时。"
+  },
+  {
+    "id": "pc_c5",
+    "question": "动词“play”的进行时形式（-ing形式）是：",
+    "options": ["plaing", "playing", "playes", "plays"],
+    "answer": 1,
+    "explanation": "以元音字母+y结尾的动词，直接在词尾加-ing。"
+  },
+  {
+    "id": "pc_c6",
+    "question": "动词“write”变进行时，规则是：",
+    "options": ["直接加-ing", "双写t再加-ing", "去e加-ing", "变y为i加-ing"],
+    "answer": 2,
+    "explanation": "以不发音的字母e结尾的动词，要先去掉e，再加-ing。例如：write -> writing, dance -> dancing。"
+  },
+  {
+    "id": "pc_c7",
+    "question": "下列哪个单词变-ing时需要“双写词尾字母”？",
+    "options": ["look", "sleep", "run", "eat"],
+    "answer": 2,
+    "explanation": "重读闭音节（辅+元+辅结构）的短动词，要双写末尾字母再加-ing。例如：run -> running, swim -> swimming。"
+  },
+  {
+    "id": "pc_c8",
+    "question": "在句子“I am ______ a book.”中，横线处应填：",
+    "options": ["read", "reads", "reading", "readed"],
+    "answer": 2,
+    "explanation": "前面有了am，后面必须配合动词的-ing形式构成进行时。"
+  },
+  {
+    "id": "pc_c9",
+    "question": "“She is cleaning the room.” 的否定句是：",
+    "options": ["She not cleaning...", "She doesn't cleaning...", "She is not cleaning...", "She isn't clean..."],
+    "answer": 2,
+    "explanation": "现在进行时的否定句在be动词后直接加not。"
+  },
+  {
+    "id": "pc_c10",
+    "question": "“Are you listening to music?” 的肯定回答是：",
+    "options": ["Yes, I am.", "Yes, I do.", "Yes, I listening.", "Yes, I'm."],
+    "answer": 0,
+    "explanation": "问句用be动词开头，简略回答也用be动词。注意Yes回答不能缩写成Yes, I'm。"
+  },
+  {
+    "id": "pc_c11",
+    "question": "现在进行时里的“be动词”（am/is/are）是由什么决定的？",
+    "options": ["后面的动词", "句子的主语", "句子的时间状语", "心情"],
+    "answer": 1,
+    "explanation": "be动词必须与主语保持一致：I用am，he/she/it/单数用is，you/we/they/复数用are。"
+  },
+  {
+    "id": "pc_c12",
+    "question": "有些表示心理状态或感觉的词（如 like, want, know）通常不用于进行时，对吗？",
+    "options": ["正确", "错误", "视情况而定", "不知道"],
+    "answer": 0,
+    "explanation": "表示情感、心智状态或所属关系的静止动词（Stative Verbs），通常只用一般现在时，不用进行时。"
+  },
+  {
+    "id": "pc_c13",
+    "question": "“They ______ playing football in the park.” 中横线应填：",
+    "options": ["am", "is", "are", "be"],
+    "answer": 2,
+    "explanation": "主语They是复数，be动词用are。"
+  },
+  {
+    "id": "pc_c14",
+    "question": "如果你想描述一张照片里人们正在做的事，应该用什么时态？",
+    "options": ["现在进行时", "一般现在时", "一般过去时", "一般将来时"],
+    "answer": 0,
+    "explanation": "描述照片、画报中正在发生的场景，常使用现在进行时，增加生动感。"
+  },
+  {
+    "id": "pc_c15",
+    "question": "“It is raining outside.” 这句话表示：",
+    "options": ["外面经常下雨", "外面昨天在下雨", "外面现在正在下雨", "外面明天会下雨"],
+    "answer": 2,
+    "explanation": "is + raining 明确表示“此刻正在下雨”。"
+  }
+]

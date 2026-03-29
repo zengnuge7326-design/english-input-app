@@ -1,0 +1,107 @@
+[
+  {
+    "id": "nfv_senior_c1",
+    "question": "“非谓语动词” (Non-finite Verbs) 之所以叫这个名字，是因为：",
+    "options": ["它们很难学", "它们不能单独在句中充当谓语", "它们没有变化", "它们不是动词"],
+    "answer": 1,
+    "explanation": "它们虽然是动词变的，但主要起名词、形容词或副词的作用。"
+  },
+  {
+    "id": "nfv_senior_c2",
+    "question": "现在分词 (doing) 与过去分词 (done) 作定语/状语的主要区别是：",
+    "options": ["doing 表示主动、进行；done 表示被动、完成", "doing 是现在；done 是过去", "没有区别"],
+    "answer": 0,
+    "explanation": "这是非谓语最核心的“主被动”逻辑。"
+  },
+  {
+    "id": "nfv_senior_c3",
+    "question": "“a ______ (break) glass” (一个破碎的杯子) 填：",
+    "options": ["breaking", "broken", "broke", "to break"],
+    "answer": 1,
+    "explanation": "杯子是被打破的，且已完成，用过去分词 broken。"
+  },
+  {
+    "id": "nfv_senior_c4",
+    "question": "“the ______ (sun) sun” (正在升起的太阳) 填：",
+    "options": ["rising", "risen", "rose", "to rise"],
+    "answer": 0,
+    "explanation": "太阳是自己升起（主动），且正在进行中，用现在分词 rising。"
+  },
+  {
+    "id": "nfv_senior_c5",
+    "question": "不定式 (to do) 作定语或状语，通常表达什么动作？",
+    "options": ["已经发生的", "正在发生的", "将要发生的 / 目的性的", "反复发生的"],
+    "answer": 2,
+    "explanation": "to do 通常具有“未来感”。例如：the meeting to be held tomorrow。"
+  },
+  {
+    "id": "nfv_senior_c6",
+    "question": "非谓语动词的“完成式” (having done / to have done) 强调：",
+    "options": ["动作发生在主句谓语动词之前", "动作很完美", "动作还没做"],
+    "answer": 0,
+    "explanation": "例如：Having finished my homework, I went out. (做完作业先，出去后)。"
+  },
+  {
+    "id": "nfv_senior_c7",
+    "question": "当分词短语作状语时，其逻辑主语必须与 ______ 一致？",
+    "options": ["句子的宾语", "句子的主语", "先行词"],
+    "answer": 1,
+    "explanation": "“悬空分词”是常见错误。必须保证“做动作的人”是句子的主语。"
+  },
+  {
+    "id": "nfv_senior_c8",
+    "question": "“______ (hear) the news, he jumped with joy.” 填：",
+    "options": ["Heard", "Hearing", "To hear", "Having heard"],
+    "answer": 1,
+    "explanation": "“听到消息”与“跳起来”几乎同时发生，且 he 是听的主动者，用 Hearing。"
+  },
+  {
+    "id": "nfv_senior_c9",
+    "question": "“With” 引导的复合结构 (With-structure) 常用的形式是：with + 宾语 + ______？",
+    "options": ["doing", "done", "to do", "以上皆可，根据逻辑决定"],
+    "answer": 3,
+    "explanation": "例如：with the lights on / with him crying / with work done。"
+  },
+  {
+    "id": "nfv_senior_c10",
+    "question": "在 “make, let, have” (使役动词) 后面，作宾补的不定式：",
+    "options": ["不带 to", "带 to", "用 doing"],
+    "answer": 0,
+    "explanation": "例如：Make him go. 但注意，在被动语态中 to 必须还原 (He was made TO go)。"
+  },
+  {
+    "id": "nfv_senior_c11",
+    "question": "“Seeing is believing.” (眼见为实) 中，seeing 是：",
+    "options": ["动名词作主语", "现在分词作状语", "谓语"],
+    "answer": 0,
+    "explanation": "动名词具有名词属性，经常在句首作主语。"
+  },
+  {
+    "id": "nfv_senior_c12",
+    "question": "如果是“独立主格结构”，意味着非谓语动词有自己独立的：",
+    "options": ["谓语", "逻辑主语", "宾语"],
+    "answer": 1,
+    "explanation": "例如：Weather permitting, we will go. (Weather 是 permitting 的主语，不是主句主语)。"
+  },
+  {
+    "id": "nfv_senior_c13",
+    "question": "不定式的“被动式”是：",
+    "options": ["to being done", "to be done", "being done", "to done"],
+    "answer": 1,
+    "explanation": "例如：There is much work to be done."
+  },
+  {
+    "id": "nfv_senior_c14",
+    "question": "分词短语作状语可以表示：",
+    "options": ["时间、原因、伴随、方式、结果等", "只有时间", "只有目的"],
+    "answer": 0,
+    "explanation": "它是一个全能型状语工具。"
+  },
+  {
+    "id": "nfv_senior_c15",
+    "question": "总结：解决非谓语动词题目的三个核心步骤：",
+    "options": ["找句子主语、看主被动关系、定时间先后", "翻译、背单词、查字典", "猜、蒙、选C"],
+    "answer": 0,
+    "explanation": "这三步法能解决 90% 的非谓语题目。"
+  }
+]

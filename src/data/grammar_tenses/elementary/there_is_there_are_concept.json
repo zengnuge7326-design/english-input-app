@@ -1,0 +1,107 @@
+[
+  {
+    "id": "tia_c1",
+    "question": "“There be”句型主要用来表示：",
+    "options": ["某人正在做某事", "某地存在某物/某人", "某人的职业", "某人的爱好"],
+    "answer": 1,
+    "explanation": "There be 意为“有”，表示客观存在。例如：桌子上有一本书。"
+  },
+  {
+    "id": "tia_c2",
+    "question": "在 There be 句型中，如果是单数可数名词（如 a book），用哪个 be 动词？",
+    "options": ["is", "are", "am", "be"],
+    "answer": 0,
+    "explanation": "单数名词用 is。例如：There is a book."
+  },
+  {
+    "id": "tia_c3",
+    "question": "在 There be 句型中，如果是复数名词（如 some books），用哪个 be 动词？",
+    "options": ["is", "are", "am", "be"],
+    "answer": 1,
+    "explanation": "复数名词用 are。例如：There are two books."
+  },
+  {
+    "id": "tia_c4",
+    "question": "如果是“不可数名词”（如 water, milk），be 动词应该用：",
+    "options": ["is", "are", "am", "be"],
+    "answer": 0,
+    "explanation": "不可数名词在语法上视作单数，所以用 is。例如：There is some water."
+  },
+  {
+    "id": "tia_c5",
+    "question": "“就近原则”是 There be 句型的重要规则，它的意思是：",
+    "options": ["be 动词由最后一个名词决定", "be 动词由离它最近的第一个名词决定", "be 动词永远用 is", "be 动词永远用 are"],
+    "answer": 1,
+    "explanation": "如果后面有多个并列名词，be 动词只看挨着它的第一个。例如：There is a pen and two books."
+  },
+  {
+    "id": "tia_c6",
+    "question": "“There ______ a teacher and thirty students in the classroom.” 横线填：",
+    "options": ["is", "are", "am", "be"],
+    "answer": 0,
+    "explanation": "离 be 动词最近的是 a teacher（单数），所以填 is。"
+  },
+  {
+    "id": "tia_c7",
+    "question": "“There ______ two apples and an orange on the plate.” 横线填：",
+    "options": ["is", "are", "am", "be"],
+    "answer": 1,
+    "explanation": "离 be 动词最近的是 two apples（复数），所以填 are。"
+  },
+  {
+    "id": "tia_c8",
+    "question": "There be 句型的否定形式是在 be 动词后加：",
+    "options": ["no", "not", "don't", "doesn't"],
+    "answer": 1,
+    "explanation": "例如：There is not (isn't) any water."
+  },
+  {
+    "id": "tia_c9",
+    "question": "在 There be 的疑问句和否定句中，通常把 some 变成：",
+    "options": ["many", "any", "a lot of", "much"],
+    "answer": 1,
+    "explanation": "这是英语句式变化的通用规律：肯定用 some，否定/疑问常用 any。"
+  },
+  {
+    "id": "tia_c10",
+    "question": "将 “There is a bird in the tree.” 变成疑问句：",
+    "options": ["There is a bird...?", "Is there a bird...?", "Does there a bird...?", "Is a bird there...?"],
+    "answer": 1,
+    "explanation": "变疑问句只需将 be 动词（is/are）提前。"
+  },
+  {
+    "id": "tia_c11",
+    "question": "对 “Are there any students?” 进行肯定回答：",
+    "options": ["Yes, there are.", "Yes, they are.", "Yes, there is.", "Yes, there're."],
+    "answer": 0,
+    "explanation": "问什么回什么：Are there ...? -> Yes, there are."
+  },
+  {
+    "id": "tia_c12",
+    "question": "如果你想问“书箱里有多少本书？”，正确的开头是：",
+    "options": ["How many books is there...?", "How many books are there...?", "How much books are there...?", "Are there how many books...?"],
+    "answer": 1,
+    "explanation": "How many + 复数名词 + are there ...? 是固定询问数量的句型。"
+  },
+  {
+    "id": "tia_c13",
+    "question": "“There be” 和 “Have” 的区别是：",
+    "options": ["没有区别", "There be 表示“存在有”，Have 表示“所属有”", "There be 是人的动作，Have 是物"],
+    "answer": 1,
+    "explanation": "There be 强调“某地有什么”；Have/Has 强调“某人拥有什么”。"
+  },
+  {
+    "id": "tia_c14",
+    "question": "“I have a brother.” 这句话如果用 There be 改写：",
+    "options": ["There is a brother for me.", "不能改写，因为这是所属关系", "There are a brother."],
+    "answer": 1,
+    "explanation": "所属关系（我有……）通常不用 There be 表达。"
+  },
+  {
+    "id": "tia_c15",
+    "question": "“There's ______ news today.” (今天没新闻) 横线处填：",
+    "options": ["not", "no", "any", "some"],
+    "answer": 1,
+    "explanation": "There is no ... 是非常地道的否定表达，相当于 There isn't any ...。"
+  }
+]

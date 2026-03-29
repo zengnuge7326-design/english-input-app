@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "zh": "你好",
+    "en": "Hello"
+  },
+  {
+    "id": 2,
+    "zh": "一 二 三",
+    "en": "One, two, three"
+  },
+  {
+    "id": 3,
+    "zh": "我的玩偶很漂漂",
+    "en": "My doll is beautiful"
+  },
+  {
+    "id": 4,
+    "zh": "他的头发很短",
+    "en": "He has short hair"
+  },
+  {
+    "id": 5,
+    "zh": "我喜欢英语",
+    "en": "I like English"
+  },
+  {
+    "id": 6,
+    "zh": "那有三本书",
+    "en": "There are three books"
+  },
+  {
+    "id": 7,
+    "zh": "这是我的玩具",
+    "en": "This is my toy"
+  },
+  {
+    "id": 8,
+    "zh": "她有黑色的长发",
+    "en": "She has long black hair"
+  },
+  {
+    "id": 9,
+    "zh": "它非常有趣",
+    "en": "It's interesting"
+  },
+  {
+    "id": 10,
+    "zh": "你叫什么名字",
+    "en": "What's your name"
+  },
+  {
+    "id": 11,
+    "zh": "我是学生",
+    "en": "I am a student"
+  },
+  {
+    "id": 12,
+    "zh": "这是我的",
+    "en": "It's mine"
+  },
+  {
+    "id": 13,
+    "zh": "他戴着眼镜",
+    "en": "He wears glasses"
+  },
+  {
+    "id": 14,
+    "zh": "它很容易",
+    "en": "it's easy"
+  },
+  {
+    "id": 15,
+    "zh": "我的名字叫牧阁",
+    "en": "My name is muge"
+  },
+  {
+    "id": 16,
+    "zh": "你是学生吗",
+    "en": "Are you a student"
+  },
+  {
+    "id": 17,
+    "zh": "这是谁的玩具",
+    "en": "Whose toy is this"
+  },
+  {
+    "id": 18,
+    "zh": "他友好而善良",
+    "en": "He's friendly and kind"
+  },
+  {
+    "id": 19,
+    "zh": "它很难",
+    "en": "it's difficult"
+  },
+  {
+    "id": 20,
+    "zh": "我是牧阁",
+    "en": "I'm muge"
+  },
+  {
+    "id": 21,
+    "zh": "早上好",
+    "en": "Good morning"
+  },
+  {
+    "id": 22,
+    "zh": "让咱们玩吧",
+    "en": "Let's play"
+  },
+  {
+    "id": 23,
+    "zh": "她很有趣",
+    "en": "she's very funny"
+  },
+  {
+    "id": 24,
+    "zh": "你喜欢体育吗",
+    "en": "Do you like PE"
+  },
+  {
+    "id": 25,
+    "zh": "你几岁了",
+    "en": "How old are you"
+  },
+  {
+    "id": 26,
+    "zh": "再见",
+    "en": "Goodbye"
+  },
+  {
+    "id": 27,
+    "zh": "我可以和你一起玩吗",
+    "en": "Can I play with you"
+  },
+  {
+    "id": 28,
+    "zh": "我的朋友很安静",
+    "en": "My friend is quiet"
+  },
+  {
+    "id": 29,
+    "zh": "是的我喜欢，它很有趣",
+    "en": "Yes, I do. It's fun"
+  },
+  {
+    "id": 30,
+    "zh": "我十岁了",
+    "en": "I'm ten years old"
+  },
+  {
+    "id": 31,
+    "zh": "谢谢",
+    "en": "Thank you"
+  },
+  {
+    "id": 32,
+    "zh": "让咱们分享吧",
+    "en": "Let's share"
+  },
+  {
+    "id": 33,
+    "zh": "他很有用",
+    "en": "He's helpful"
+  },
+  {
+    "id": 34,
+    "zh": "今天周几",
+    "en": "What day is it today"
+  },
+  {
+    "id": 35,
+    "zh": "你好吗",
+    "en": "How are you"
+  },
+  {
+    "id": 36,
+    "zh": "你太客气了",
+    "en": "You're welcome"
+  },
+  {
+    "id": 37,
+    "zh": "多少",
+    "en": "How many"
+  },
+  {
+    "id": 38,
+    "zh": "他长得怎么样",
+    "en": "What does he look like"
+  },
+  {
+    "id": 39,
+    "zh": "今天周一",
+    "en": "It's Monday"
+  },
+  {
+    "id": 40,
+    "zh": "我很好，谢谢",
+    "en": "I'm fine, thank you"
+  },
+  {
+    "id": 41,
+    "zh": "我来自中国",
+    "en": "I'm from China"
+  },
+  {
+    "id": 42,
+    "zh": "你有多少",
+    "en": "How many do you have"
+  },
+  {
+    "id": 43,
+    "zh": "他又高又壮",
+    "en": "He's tall and strong"
+  },
+  {
+    "id": 44,
+    "zh": "放学后你干什么",
+    "en": "What do you do after school"
+  },
+  {
+    "id": 45,
+    "zh": "你喜欢读书吗",
+    "en": "Do you like reading books"
+  },
+  {
+    "id": 46,
+    "zh": "这是我的朋友",
+    "en": "This is my friend"
+  },
+  {
+    "id": 47,
+    "zh": "我有十美元",
+    "en": "I have ten dollars"
+  },
+  {
+    "id": 48,
+    "zh": "谁是你最好的朋友",
+    "en": "Who's your best friend"
+  },
+  {
+    "id": 49,
+    "zh": "我做我的家庭作业",
+    "en": "I do my homework"
+  },
+  {
+    "id": 50,
+    "zh": "是的我喜欢",
+    "en": "Yes, I do"
+  },
+  {
+    "id": 51,
+    "zh": "那个男孩是谁",
+    "en": "Who's that boy"
+  },
+  {
+    "id": 52,
+    "zh": "咱们数一数",
+    "en": "Let's count"
+  },
+  {
+    "id": 53,
+    "zh": "我的挚友是Tom",
+    "en": "My best friend is Tom"
+  },
+  {
+    "id": 54,
+    "zh": "我擅长音乐",
+    "en": "I'm good at music"
+  },
+  {
+    "id": 55,
+    "zh": "不，我不",
+    "en": "No, I don't"
+  },
+  {
+    "id": 56,
+    "zh": "他来自英国",
+    "en": "He's from the UK"
+  },
+  {
+    "id": 57,
+    "zh": "你的电话号码是多少",
+    "en": "What's your phone number"
+  },
+  {
+    "id": 58,
+    "zh": "他高吗",
+    "en": "Is he tall"
+  },
+  {
+    "id": 59,
+    "zh": "他擅长数学",
+    "en": "He's good at maths"
+  },
+  {
+    "id": 60,
+    "zh": "这是我的父亲",
+    "en": "This is my father"
+  },
+  {
+    "id": 61,
+    "zh": "那个女孩是谁",
+    "en": "Who's that girl"
+  },
+  {
+    "id": 62,
+    "zh": "那够了",
+    "en": "That's enough"
+  },
+  {
+    "id": 63,
+    "zh": "是的他高",
+    "en": "Yes, he is"
+  },
+  {
+    "id": 64,
+    "zh": "我们周五有艺术课",
+    "en": "We have art on Friday"
+  },
+  {
+    "id": 65,
+    "zh": "她是我的母亲",
+    "en": "She's my mother"
+  },
+  {
+    "id": 66,
+    "zh": "她是塞拉",
+    "en": "She's Sara"
+  },
+  {
+    "id": 67,
+    "zh": "我们需要更多",
+    "en": "We need more"
+  },
+  {
+    "id": 68,
+    "zh": "不，她不是",
+    "en": "No, she isn't"
+  },
+  {
+    "id": 69,
+    "zh": "你的爱好是什么",
+    "en": "What's your hobby"
+  },
+  {
+    "id": 70,
+    "zh": "她是我的姐妹",
+    "en": "She's my sister"
+  },
+  {
+    "id": 71,
+    "zh": "幸会",
+    "en": "Nice to meet you"
+  },
+  {
+    "id": 72,
+    "zh": "太多了",
+    "en": "Too many"
+  },
+  {
+    "id": 73,
+    "zh": "她有长发吗",
+    "en": "Does she have long hair"
+  },
+  {
+    "id": 74,
+    "zh": "我喜欢打篮球",
+    "en": "I like playing basketball"
+  },
+  {
+    "id": 75,
+    "zh": "那个男人是谁",
+    "en": "Who's that man"
+  },
+  {
+    "id": 76,
+    "zh": "您请",
+    "en": "After you"
+  },
+  {
+    "id": 77,
+    "zh": "是的她有",
+    "en": "Yes, she does"
+  },
+  {
+    "id": 78,
+    "zh": "我的爱好是阅读",
+    "en": "My hobby is reading"
+  },
+  {
+    "id": 79,
+    "zh": "他是我的父亲",
+    "en": "He's my father"
+  },
+  {
+    "id": 80,
+    "zh": "我喜欢游戏",
+    "en": "I like playing games"
+  },
+  {
+    "id": 81,
+    "zh": "你父亲是干什么的",
+    "en": "What's your father's job"
+  },
+  {
+    "id": 82,
+    "zh": "不，他没有",
+    "en": "No, he doesn't"
+  },
+  {
+    "id": 83,
+    "zh": "你喜欢唱歌吗",
+    "en": "Do you like singing"
+  },
+  {
+    "id": 84,
+    "zh": "那个女人是谁",
+    "en": "Who's that woman"
+  },
+  {
+    "id": 85,
+    "zh": "我不喜欢踢足球",
+    "en": "I don't like football"
+  },
+  {
+    "id": 86,
+    "zh": "你的妈妈是干什么的",
+    "en": "What does your mother do"
+  },
+  {
+    "id": 87,
+    "zh": "我的书在哪里",
+    "en": "Where is my book"
+  },
+  {
+    "id": 88,
+    "zh": "我可以弹琴",
+    "en": "I can play the piano"
+  },
+  {
+    "id": 89,
+    "zh": "我很开心",
+    "en": "I'm happy"
+  },
+  {
+    "id": 90,
+    "zh": "他是一个农民",
+    "en": "He's a farmer"
+  },
+  {
+    "id": 91,
+    "zh": "它在包里",
+    "en": "It's in the bag"
+  },
+  {
+    "id": 92,
+    "zh": "你可以游泳吗",
+    "en": "Can you swim"
+  },
+  {
+    "id": 93,
+    "zh": "我有一个兄弟",
+    "en": "I have a brother"
+  },
+  {
+    "id": 94,
+    "zh": "我感到难过",
+    "en": "I feel bad"
+  },
+  {
+    "id": 95,
+    "zh": "她是一个护士",
+    "en": "She's a nurse"
+  },
+  {
+    "id": 96,
+    "zh": "它在课桌上",
+    "en": "It's on the desk"
+  },
+  {
+    "id": 97,
+    "zh": "是的我能",
+    "en": "Yes, I can"
+  },
+  {
+    "id": 98,
+    "zh": "我有一个姐妹",
+    "en": "I have a sister"
+  },
+  {
+    "id": 99,
+    "zh": "我想要一些水",
+    "en": "I want some water"
+  },
+  {
+    "id": 100,
+    "zh": "我有一个开心的家庭",
+    "en": "I have a happy family"
+  },
+  {
+    "id": 101,
+    "zh": "它在椅子下",
+    "en": "It's under the chair"
+  },
+  {
+    "id": 102,
+    "zh": "他的足球踢得非常好",
+    "en": "He can play football very well"
+  },
+  {
+    "id": 103,
+    "zh": "我爱我的家庭",
+    "en": "I love my family"
+  },
+  {
+    "id": 104,
+    "zh": "我需要帮助",
+    "en": "I need some help"
+  },
+  {
+    "id": 105,
+    "zh": "我们经常一起工作",
+    "en": "We often work together"
+  },
+  {
+    "id": 106,
+    "zh": "这是我的卧室",
+    "en": "This is my bedroom"
+  },
+  {
+    "id": 107,
+    "zh": "你周末干什么",
+    "en": "What do you do on weekends"
+  },
+  {
+    "id": 108,
+    "zh": "这是什么",
+    "en": "What's this"
+  },
+  {
+    "id": 109,
+    "zh": "你感觉如何",
+    "en": "How do you feel"
+  },
+  {
+    "id": 110,
+    "zh": "他能干什么",
+    "en": "What can he do"
+  },
+  {
+    "id": 111,
+    "zh": "我有一个大的客厅",
+    "en": "I have a big living room"
+  },
+  {
+    "id": 112,
+    "zh": "我经常体育锻炼",
+    "en": "I often play sports"
+  },
+  {
+    "id": 113,
+    "zh": "它是一只猫",
+    "en": "It's a cat"
+  },
+  {
+    "id": 114,
+    "zh": "我能要一些水吗",
+    "en": "Can I have some water"
+  },
+  {
+    "id": 115,
+    "zh": "她可以洗盘子",
+    "en": "She can wash the dishes"
+  },
+  {
+    "id": 116,
+    "zh": "我的卧室有一张床",
+    "en": "There is a bed in my room"
+  },
+  {
+    "id": 117,
+    "zh": "那是什么",
+    "en": "What's that"
+  },
+  {
+    "id": 118,
+    "zh": "我能读一些书",
+    "en": "I can read books"
+  },
+  {
+    "id": 119,
+    "zh": "你可以叠床吗",
+    "en": "Can you make the bed"
+  },
+  {
+    "id": 120,
+    "zh": "这里有两张椅子",
+    "en": "There are two chairs"
+  },
+  {
+    "id": 121,
+    "zh": "我经常打篮球",
+    "en": "I usually play basketball"
+  },
+  {
+    "id": 122,
+    "zh": "它是一只狗",
+    "en": "It's a dog"
+  },
+  {
+    "id": 123,
+    "zh": "我可以写文章",
+    "en": "I can write articles"
+  },
+  {
+    "id": 124,
+    "zh": "不，我不可以",
+    "en": "No, I can't"
+  },
+  {
+    "id": 125,
+    "zh": "这是你的卧室吗",
+    "en": "Is this your bedroom"
+  },
+  {
+    "id": 126,
+    "zh": "让咱们一起玩",
+    "en": "Let's play together"
+  },
+  {
+    "id": 127,
+    "zh": "我喜欢狗",
+    "en": "I like dogs"
+  },
+  {
+    "id": 128,
+    "zh": "让咱们做一些运动",
+    "en": "Let's do some sport"
+  },
+  {
+    "id": 129,
+    "zh": "让我帮助你",
+    "en": "Let me help you"
+  },
+  {
+    "id": 130,
+    "zh": "是的它是",
+    "en": "Yes, it is"
+  },
+  {
+    "id": 131,
+    "zh": "你愿意和我一起玩吗",
+    "en": "Would you like to play with me"
+  },
+  {
+    "id": 132,
+    "zh": "它是什么动物",
+    "en": "What animal is it"
+  },
+  {
+    "id": 133,
+    "zh": "试一试",
+    "en": "Try it"
+  },
+  {
+    "id": 134,
+    "zh": "你可以帮助我吗",
+    "en": "Can you help me"
+  },
+  {
+    "id": 135,
+    "zh": "不，它不是",
+    "en": "No, it isn't"
+  },
+  {
+    "id": 136,
+    "zh": "这听起来很不错",
+    "en": "That sounds great"
+  },
+  {
+    "id": 137,
+    "zh": "它是一只熊猫",
+    "en": "It's a panda"
+  },
+  {
+    "id": 138,
+    "zh": "干得好",
+    "en": "Good job"
+  },
+  {
+    "id": 139,
+    "zh": "当然",
+    "en": "Sure"
+  },
+  {
+    "id": 140,
+    "zh": "你有几间房",
+    "en": "How many rooms do you have"
+  },
+  {
+    "id": 141,
+    "zh": "好主意",
+    "en": "Good idea"
+  },
+  {
+    "id": 142,
+    "zh": "它是一只鸟吗",
+    "en": "Is it a bird"
+  },
+  {
+    "id": 143,
+    "zh": "干得漂亮",
+    "en": "Well done"
+  },
+  {
+    "id": 144,
+    "zh": "当然",
+    "en": "Of course"
+  },
+  {
+    "id": 145,
+    "zh": "我有五间房",
+    "en": "I have five rooms"
+  },
+  {
+    "id": 146,
+    "zh": "那有一个男孩",
+    "en": "There is a boy"
+  },
+  {
+    "id": 147,
+    "zh": "我正在读书",
+    "en": "I'm reading a book"
+  },
+  {
+    "id": 148,
+    "zh": "对不起，我不能",
+    "en": "I'm sorry, I can't"
+  },
+  {
+    "id": 149,
+    "zh": "到客厅去",
+    "en": "Go to the living room"
+  },
+  {
+    "id": 150,
+    "zh": "那里有一个男孩吗",
+    "en": "Is there a boy"
+  },
+  {
+    "id": 151,
+    "zh": "它很大",
+    "en": "It's big"
+  },
+  {
+    "id": 152,
+    "zh": "仔细听",
+    "en": "Listen carefully"
+  },
+  {
+    "id": 153,
+    "zh": "你很有能耐",
+    "en": "You're helpful"
+  },
+  {
+    "id": 154,
+    "zh": "看电视",
+    "en": "Watch TV"
+  },
+  {
+    "id": 155,
+    "zh": "那里没有一个男孩",
+    "en": "There isn't a boy"
+  },
+  {
+    "id": 156,
+    "zh": "它很小",
+    "en": "It's small"
+  },
+  {
+    "id": 157,
+    "zh": "看着黑板",
+    "en": "Look at the board"
+  },
+  {
+    "id": 158,
+    "zh": "我清理我的房间",
+    "en": "I clean my room"
+  },
+  {
+    "id": 159,
+    "zh": "到厨房去",
+    "en": "Go to the kitchen"
+  },
+  {
+    "id": 160,
+    "zh": "那里有一些苹果",
+    "en": "There are some apples"
+  }
+]

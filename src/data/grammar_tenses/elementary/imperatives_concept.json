@@ -1,0 +1,107 @@
+[
+  {
+    "id": "imp_c1",
+    "question": "“祈使句”的主要作用是：",
+    "options": ["描述一个事实", "表达请求、命令或劝告", "询问一个问题", "表达感叹"],
+    "answer": 1,
+    "explanation": "祈使句（Imperatives）用来让别人去做某事或别做某事。"
+  },
+  {
+    "id": "imp_c2",
+    "question": "祈使句通常省略了句子的主语，这个隐藏的主语其实是：",
+    "options": ["I", "You", "We", "They"],
+    "answer": 1,
+    "explanation": "因为祈使句是面对面说话，所以省略了主语 You。"
+  },
+  {
+    "id": "imp_c3",
+    "question": "肯定祈使句通常以什么开头？",
+    "options": ["名词", "动词原形", "代词", "形容词"],
+    "answer": 1,
+    "explanation": "直接以动词原形开头是祈使句最显著的特征。例如：Close the door."
+  },
+  {
+    "id": "imp_c4",
+    "question": "如果你想让对方“保持安静”，应该说：",
+    "options": ["You be quiet.", "Be quiet.", "Is quiet.", "Being quiet."],
+    "answer": 1,
+    "explanation": "Be 是系动词的原形，直接开头表示命令或要求。"
+  },
+  {
+    "id": "imp_c5",
+    "question": "否定祈使句通常在动词原形前加上：",
+    "options": ["Not", "No", "Don't", "Doesn't"],
+    "answer": 2,
+    "explanation": "不论动词是什么，否定祈使句一律以 Don't 开头。例如：Don't talk."
+  },
+  {
+    "id": "imp_c6",
+    "question": "“请别迟到。” 的正确表达是：",
+    "options": ["Please don't late.", "Please not be late.", "Please don't be late.", "Don't please be late."],
+    "answer": 2,
+    "explanation": "Don't 后面接动词原形 be。late 是形容词，不能直接跟在 Don't 后面。"
+  },
+  {
+    "id": "imp_c7",
+    "question": "为了表示礼貌，我们常在祈使句中加入哪个词？",
+    "options": ["Thanks", "Sorry", "Please", "Hello"],
+    "answer": 2,
+    "explanation": "Please 可以放在句首，也可以放在句末（句末通常加逗号）。"
+  },
+  {
+    "id": "imp_c8",
+    "question": "当 Please 放在句末时，标准写法是：",
+    "options": ["Come here please.", "Come here, please.", "Come, please here.", "Please come here."],
+    "answer": 1,
+    "explanation": "放在句末通常需要用逗号隔开。"
+  },
+  {
+    "id": "imp_c9",
+    "question": "由 “Let's” 引导的祈使句，通常表示：",
+    "options": ["强烈的命令", "提议或建议", "询问意见", "拒绝别人"],
+    "answer": 1,
+    "explanation": "Let's ... 意为“让我们……吧”，是一种委婉的建议。"
+  },
+  {
+    "id": "imp_c10",
+    "question": "“Let's” 后面应该接什么形式的动词？",
+    "options": ["动词原形", "动词-ing", "to + 动词原形", "动词过去式"],
+    "answer": 0,
+    "explanation": "Let's 后面必须接动词原形。例如：Let's go!"
+  },
+  {
+    "id": "imp_c11",
+    "question": "“让咱们不要在那儿玩。” 的正确表达是：",
+    "options": ["Let's don't play there.", "Let's not play there.", "Don't let's play there.", "Let's not to play."],
+    "answer": 1,
+    "explanation": "Let's 的否定形式通常是 Let's not + 动词原形。"
+  },
+  {
+    "id": "imp_c12",
+    "question": "在公共场合的警示语中，除了 Don't，还常用 “No + ______” 来表示禁止？",
+    "options": ["动词原形", "动词-ing", "名词复数", "代词"],
+    "answer": 1,
+    "explanation": "No + V-ing（或名词）是常见的禁止标志。例如：No smoking! (禁止吸烟)"
+  },
+  {
+    "id": "imp_c13",
+    "question": "“Never” 也可以引导否定祈使句，它表示：",
+    "options": ["偶尔", "绝不（更强烈的否定）", "可能", "请"],
+    "answer": 1,
+    "explanation": "Never talk to strangers. (绝不要和陌生人说话)"
+  },
+  {
+    "id": "imp_c14",
+    "question": "祈使句能变成反意疑问句吗？例如 “Open the window, ______?”",
+    "options": ["can't you", "will you", "don't you", "do you"],
+    "answer": 1,
+    "explanation": "祈使句后的反意疑问句通常用 will you? 表示委婉请求。"
+  },
+  {
+    "id": "imp_c15",
+    "question": "下列哪个句子**不是**祈使句？",
+    "options": ["Stand up!", "No parking.", "He is standing up.", "Let me see."],
+    "answer": 2,
+    "explanation": "“He is standing up” 是陈述句（现在进行时），描述事实而非发出指令。"
+  }
+]

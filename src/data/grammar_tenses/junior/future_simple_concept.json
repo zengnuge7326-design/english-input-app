@@ -1,0 +1,107 @@
+[
+  {
+    "id": "fsim_c1",
+    "question": "“一般将来时”主要表示：",
+    "options": ["正在发生的动作", "将来某个时间要发生的动作", "过去发生的动作", "经常发生的动作"],
+    "answer": 1,
+    "explanation": "一般将来时（Simple Future）用于描述未来打算、计划或预测要发生的事。"
+  },
+  {
+    "id": "fsim_c2",
+    "question": "一般将来时最常用的标志词（助动词）是：",
+    "options": ["can", "will", "do", "did"],
+    "answer": 1,
+    "explanation": "will 是最通用的将来时标志，没有人称变化。"
+  },
+  {
+    "id": "fsim_c3",
+    "question": "在 “will” 后面，动词必须用：",
+    "options": ["原形", "-ing 形式", "过去式", "三单形式"],
+    "answer": 0,
+    "explanation": "will 是情态助动词，后面接不带 to 的动词原形。"
+  },
+  {
+    "id": "fsim_c4",
+    "question": "除了 will，另一个表示“计划、打算做某事”的常用结构是：",
+    "options": ["be going to", "be doing", "want to", "go to"],
+    "answer": 0,
+    "explanation": "be going to 表示根据主观意图或客观迹象判断未来要发生的事。"
+  },
+  {
+    "id": "fsim_c5",
+    "question": "在 “be going to” 结构中，be 动词的形式由什么决定？",
+    "options": ["由主语决定（am/is/are）", "永远用 be", "由后面的动词决定"],
+    "answer": 0,
+    "explanation": "be 必须根据主语进行人称变化。例如：I am going to..., He is going to..."
+  },
+  {
+    "id": "fsim_c6",
+    "question": "下列哪个时间状语提示要用将来时？",
+    "options": ["yesterday", "tomorrow", "now", "last week"],
+    "answer": 1,
+    "explanation": "tomorrow（明天）, next week（下周）, in two days（两天后）都是将来时的常见标志。"
+  },
+  {
+    "id": "fsim_c7",
+    "question": "将 “I will go there.” 变成否定句：",
+    "options": ["I won't go there.", "I will not going there.", "I don't will go there.", "I not go there."],
+    "answer": 0,
+    "explanation": "will not 的缩写是 won't。注意其拼写（不是 willn't）。"
+  },
+  {
+    "id": "fsim_c8",
+    "question": "将 “He is going to play.” 变成疑问句：",
+    "options": ["Is he going to play?", "Does he going to play?", "He is going to play?", "Will he going to play?"],
+    "answer": 0,
+    "explanation": "含有 be 动词的结构，变疑问句将 be 提前即可。"
+  },
+  {
+    "id": "fsim_c9",
+    "question": "“Look at the dark clouds! It ______ (rain).” (看那乌云！要下雨了) 最合适的表达是：",
+    "options": ["will rain", "is going to rain", "rains", "is raining"],
+    "answer": 1,
+    "explanation": "根据当前明显迹象（黑云）作出的预测，倾向于用 be going to。"
+  },
+  {
+    "id": "fsim_c10",
+    "question": "在大脑中临时作出的决定（比如“我来帮你吧”），通常用：",
+    "options": ["will", "be going to"],
+    "answer": 0,
+    "explanation": "will 常用于临时决定；be going to 常用于事先计划好的打算。"
+  },
+  {
+    "id": "fsim_c11",
+    "question": "“There will ______ a meeting tomorrow.” 横线处应填：",
+    "options": ["is", "are", "be", "have"],
+    "answer": 2,
+    "explanation": "There be 句型的将来时是 There will be ...。will 后用原形 be。"
+  },
+  {
+    "id": "fsim_c12",
+    "question": "一些移动性动词（如 come, go, leave）的现在进行时可以表示将来吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "是的，表示按计划即将发生的动作。例如：I'm coming. (我要来了)"
+  },
+  {
+    "id": "fsim_c13",
+    "question": "“I ______ (tell) him as soon as he ______ (get) here.” (他一到这我就告诉他) 此处的时态规则是：",
+    "options": ["will tell; gets", "tell; will get", "will tell; will get", "am telling; get"],
+    "answer": 0,
+    "explanation": "“主将从现”原则：在时间或条件状语从句中，主句用将来时，从句用一般现在时代替将来时。"
+  },
+  {
+    "id": "fsim_c14",
+    "question": "shall 这个词也表示将来，它通常用于第几人称？",
+    "options": ["第一人称 (I/We)", "第二人称 (You)", "第三人称 (He/She)", "所有人称"],
+    "answer": 0,
+    "explanation": "虽然 will 现在通用，但在传统语法或提建议时，shall 常用于第一人称（如 Shall we go?）。"
+  },
+  {
+    "id": "fsim_c15",
+    "question": "“will” 结构和 “be going to” 结构在大多数情况下是可以互换的吗？",
+    "options": ["是", "否"],
+    "answer": 0,
+    "explanation": "是的，在描述未来普通预测或打算时，通常可以通用。"
+  }
+]

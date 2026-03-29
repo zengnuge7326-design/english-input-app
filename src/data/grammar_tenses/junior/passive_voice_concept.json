@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pv_c1",
+    "question": "什么是“被动语态”？",
+    "options": ["表示动作的承受者作主语的语态", "表示动作的执行者作主语的语态", "表示动作正在进行的语态", "表示将来发生的语态"],
+    "answer": 0,
+    "explanation": "被动语态（Passive Voice）关注的是“某物/某人被……”了。"
+  },
+  {
+    "id": "pv_c2",
+    "question": "被动语态的基本结构是：",
+    "options": ["be + V-ing", "be + 过去分词 (done)", "have + done", "do + 原形"],
+    "answer": 1,
+    "explanation": "公式：be + Done。be 动词决定时态，Done 决定含义。"
+  },
+  {
+    "id": "pv_c3",
+    "question": "“这封信是昨天写的。” 应该翻译为：",
+    "options": ["The letter wrote yesterday.", "The letter was written yesterday.", "The letter is writing yesterday.", "The letter written yesterday."],
+    "answer": 1,
+    "explanation": "letter 是承受者，且是过去的时间，用 was + written。"
+  },
+  {
+    "id": "pv_c4",
+    "question": "在被动语态中，如果想提到动作的“执行者”，通常用哪个介词引导？",
+    "options": ["with", "by", "of", "to"],
+    "answer": 1,
+    "explanation": "by意为“被……；由……”。例如：by Shakespeare (由莎士比亚所写)。"
+  },
+  {
+    "id": "pv_c5",
+    "question": "一般现在时的被动语态结构是：",
+    "options": ["was/were + done", "am/is/are + done", "be + done", "is/are + doing"],
+    "answer": 1,
+    "explanation": "例如：English is spoken all over the world."
+  },
+  {
+    "id": "pv_c6",
+    "question": "“含有情态动词”的被动语态结构是：情态动词 + ______ + done。",
+    "options": ["is", "be", "been", "was"],
+    "answer": 1,
+    "explanation": "情态动词后跟原形 be。例如：Trees must be planted."
+  },
+  {
+    "id": "pv_c7",
+    "question": "“这条河正在被污染。” (现在进行时的被动语态) 结构应该是：",
+    "options": ["is being polluted", "is polluted", "is polluting", "has been polluted"],
+    "answer": 0,
+    "explanation": "进行被动：be + being + done。"
+  },
+  {
+    "id": "pv_c8",
+    "question": "“这个杯子已经被打破了。” (现在完成时的被动语态) 结构应该是：",
+    "options": ["is broken", "has broken", "has been broken", "was broken"],
+    "answer": 2,
+    "explanation": "完成被动：have/has + been + done。"
+  },
+  {
+    "id": "pv_c9",
+    "question": "下列哪个句子的被动语态转换是正确的？(Tom cleaned the room.)",
+    "options": ["The room was cleaned by Tom.", "The room was cleaning by Tom.", "The room cleaned by Tom."],
+    "answer": 0,
+    "explanation": "原来的一般过去时(cleaned)转换为 be 的过去式(was/were) + done。"
+  },
+  {
+    "id": "pv_c10",
+    "question": "有些词（如 smell, look, taste）在表示“感官性质”时，常用主动形式表示被动意义，对吗？",
+    "options": ["正确", "错误"],
+    "answer": 0,
+    "explanation": "例如：The food tastes good. (食物尝起来很好)。虽然食物是被尝，但不用被动语态。"
+  },
+  {
+    "id": "pv_c11",
+    "question": "有些动词（如 happen, take place, occur）是“不及物动词”，它们：",
+    "options": ["有被动语态", "没有被动语态", "看句意"],
+    "answer": 1,
+    "explanation": "不及物动词后面不跟宾语，因此没有“受动者”来当主语，不能用被动语态。"
+  },
+  {
+    "id": "pv_c12",
+    "question": "在被动语态中，如果宾语补足语是不带 to 的不定式（如 make sb do），变被动时：",
+    "options": ["保持原样", "必须把 to 还原（be made to do）", "变 doing"],
+    "answer": 1,
+    "explanation": "“省 to 的词（make, let, watch, hear 等），变被动，to 还原”。"
+  },
+  {
+    "id": "pv_c13",
+    "question": "将 “They say he is a doctor.” 变为被动常用 “It is ______ that...” 句型：",
+    "options": ["saying", "said", "say", "been said"],
+    "answer": 1,
+    "explanation": "It is said that ... 意为“据说……”，是典型的被动结构。"
+  },
+  {
+    "id": "pv_c14",
+    "question": "“Rice ______ (grow) in South China.” 填：",
+    "options": ["is grown", "is growing", "grows", "grown"],
+    "answer": 0,
+    "explanation": "水稻是被种植。Rice 是不可数名词，用 is grown。"
+  },
+  {
+    "id": "pv_c15",
+    "question": "总结：决定一个句子是否用被动语态的关键是：",
+    "options": ["看动词难不难", "看主语和动词之间的关系是‘主动’还是‘受动’", "看句子长不长"],
+    "answer": 1,
+    "explanation": "如果主语是动作的承受者，就用被动。"
+  }
+]

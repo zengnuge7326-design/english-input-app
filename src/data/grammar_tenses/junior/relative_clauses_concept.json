@@ -1,0 +1,107 @@
+[
+  {
+    "id": "rc_c1",
+    "question": "什么是“定语从句”？",
+    "options": ["修饰主句中某个名词或代词的从句", "说明动作时间的从句", "作为动词宾语的从句", "表示原因的从句"],
+    "answer": 0,
+    "explanation": "定语从句（Relative Clauses/Attributive Clauses）的作用相当于一个巨大的形容词，用来修饰它前面的词。"
+  },
+  {
+    "id": "rc_c2",
+    "question": "被定语从句修饰的名词或代词，在语法上被称为：",
+    "options": ["宾语", "先行词 (Antecedent)", "谓语", "定语"],
+    "answer": 1,
+    "explanation": "它在从句之前，所以叫“先行词”。"
+  },
+  {
+    "id": "rc_c3",
+    "question": "引导定语从句的词被称为：",
+    "options": ["连词", "关系词 (Relative words)", "助动词", "副词"],
+    "answer": 1,
+    "explanation": "它们既起引导作用，又在从句中担当成分。"
+  },
+  {
+    "id": "rc_c4",
+    "question": "当先行词是指“人”时，常用的关系代词是：",
+    "options": ["which", "who / that", "where", "when"],
+    "answer": 1,
+    "explanation": "who 修饰人，that 既可以修饰人也可以修饰物。"
+  },
+  {
+    "id": "rc_c5",
+    "question": "当先行词是指“物”时，常用的关系代词是：",
+    "options": ["who", "which / that", "whose", "whom"],
+    "answer": 1,
+    "explanation": "which 修饰物，that 既可以修饰人也可以修饰物。"
+  },
+  {
+    "id": "rc_c6",
+    "question": "“whose” 引导定语从句时，表示：",
+    "options": ["谁", "属于先行词的（……的）", "在哪里", "为什么"],
+    "answer": 1,
+    "explanation": "whose 是所有格关系词，后面通常接一个名词。例如：the boy whose father is a doctor。"
+  },
+  {
+    "id": "rc_c7",
+    "question": "“The girl ______ is wearing a red dress is my sister.” 填：",
+    "options": ["which", "who", "whom", "where"],
+    "answer": 1,
+    "explanation": "先行词 girl 是人，在从句中作主语，用 who。"
+  },
+  {
+    "id": "rc_c8",
+    "question": "关系代词在由 “who, which, that” 引导的从句中作“宾语”时，通常可以：",
+    "options": ["必须保留", "省略", "改为 when"],
+    "answer": 1,
+    "explanation": "在限制性定语从句中，关系词作宾语时常可省略（特别是口语）。"
+  },
+  {
+    "id": "rc_c9",
+    "question": "下列哪种情况通常只能用 “that”，而不用 “which”？",
+    "options": ["修饰人时", "先行词被形容词最高级或序数词修饰时", "先行词是名词复数时"],
+    "answer": 1,
+    "explanation": "当先行词有 the most..., the first... 或 all, everything 等词修饰时，强调用 that。"
+  },
+  {
+    "id": "rc_c10",
+    "question": "当先行词是表示“地点”的名词，且在从句中作状语时，用：",
+    "options": ["which", "where", "when", "that"],
+    "answer": 1,
+    "explanation": "where 表示“在那个地方”。注意：如果关系词作主语/宾语，仍要用 which/that。"
+  },
+  {
+    "id": "rc_c11",
+    "question": "“I'll never forget the day ______ we met.” 填：",
+    "options": ["which", "when", "where", "who"],
+    "answer": 1,
+    "explanation": "先行词 the day 是时间，在从句中作时间状语，用 when。"
+  },
+  {
+    "id": "rc_c12",
+    "question": "“This is the factory ______ I visited last year.” 填哪个最合适？",
+    "options": ["where", "which / that", "who", "when"],
+    "answer": 1,
+    "explanation": "虽然 factory 是地点，但在从句中 I visited (宾语)，所以不能用 where，要用 which 或 that 作宾语。"
+  },
+  {
+    "id": "rc_c13",
+    "question": "定语从句的谓语动词的单复数（s）取决于：",
+    "options": ["永远用单数", "先行词的单复数", "从句的第一个单词"],
+    "answer": 1,
+    "explanation": "因为关系词代表的就是先行词。例如：The students (复数) who ARE here..."
+  },
+  {
+    "id": "rc_c14",
+    "question": "带有逗号隔开的定语从句被称为：",
+    "options": ["限制性定语从句", "非限制性定语从句", "时间状语从句"],
+    "answer": 1,
+    "explanation": "非限制性定语从句起补充说明作用，不能用 that 引导。"
+  },
+  {
+    "id": "rc_c15",
+    "question": "总结：定语从句的核心逻辑是：",
+    "options": ["把两个句子通过一个关联词合并成一个句子", "询问一个复杂的问题", "把一个动词变成名词"],
+    "answer": 0,
+    "explanation": "它通过关系词把修饰信息“挂”在先行词后面。"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "fp_senior_c1",
+    "question": "“将来完成时”主要表示：",
+    "options": ["将来会开始的动作", "在将来某个时间之前已经完成的动作", "将来正在进行的动作", "现在的计划"],
+    "answer": 1,
+    "explanation": "将来完成时（Future Perfect）强调“截止到未来的某个点，某事已经做完了”。"
+  },
+  {
+    "id": "fp_senior_c2",
+    "question": "将来完成时的基本结构是：",
+    "options": ["will do", "will have done", "will be doing", "will been done"],
+    "answer": 1,
+    "explanation": "公式：will (将来志) + have (完成标志) + V-done (分词形式)。"
+  },
+  {
+    "id": "fp_senior_c3",
+    "question": "将来完成时最典型的标志性介词短语是：",
+    "options": ["at this time", "by the time ... / by + 将来时间", "for two hours", "next week"],
+    "answer": 1,
+    "explanation": "by 意为“到……为止”。例如：by the end of this month。"
+  },
+  {
+    "id": "fp_senior_c4",
+    "question": "“By the end of this year, I ______ (learn) 2000 words.” 填：",
+    "options": ["will learn", "will have learned", "am learning", "learned"],
+    "answer": 1,
+    "explanation": "到今年年底（未来点），我就已经学完了（动作完成）。"
+  },
+  {
+    "id": "fp_senior_c5",
+    "question": "在 “by the time” 引导的时间状语从句中，时态应为：",
+    "options": ["一般将来时", "一般现在时", "现在完成时"],
+    "answer": 1,
+    "explanation": "遵循“主将从现”原则，从句用一般现在时表示将来某时刻。例如：By the time you get here..."
+  },
+  {
+    "id": "fp_senior_c6",
+    "question": "将 “I will have finished.” 变否定句：",
+    "options": ["I won't have finished.", "I will have not finished.", "I don't will have finished."],
+    "answer": 0,
+    "explanation": "在第一个助动词 will 后面加 not。"
+  },
+  {
+    "id": "fp_senior_c7",
+    "question": "将 “Will you have graduated by then?” 变陈述：",
+    "options": ["You will have graduated by then.", "You will graduate by then.", "You are going to graduate by then."],
+    "answer": 0,
+    "explanation": "把 will 调回主语后。"
+  },
+  {
+    "id": "fp_senior_c8",
+    "question": "将来完成时强调的是动作的：",
+    "options": ["开始", "过程", "截止到某点的状态或结果", "反复性"],
+    "answer": 2,
+    "explanation": "它提供了一个“回头看”的视角，站在未来看过去。"
+  },
+  {
+    "id": "fp_senior_c9",
+    "question": "“I ______ (read) this book through by the time my father comes back.” 填：",
+    "options": ["read", "will have read", "am reading", "will read"],
+    "answer": 1,
+    "explanation": "到爸爸回来时，书就已经读完了。注意 read 的过去分词发音为 [red]，但拼写不变。"
+  },
+  {
+    "id": "fp_senior_c10",
+    "question": "这个时态中的 “have” 是否需要根据人称变为 “has”？",
+    "options": ["需要", "不需要，永远用原形 have"],
+    "answer": 1,
+    "explanation": "因为 will 是情态助动词，后面必须接动词原形 have。"
+  },
+  {
+    "id": "fp_senior_c11",
+    "question": "将来完成时可以用来表示“礼貌的请客或询问”吗？",
+    "options": ["通常不用于此，主要是事实陈述和逻辑预测", "主要用于此"],
+    "answer": 0,
+    "explanation": "它语气较硬，主要是表达某种期限前的成就或状态。"
+  },
+  {
+    "id": "fp_senior_c12",
+    "question": "“Next Monday he ______ (be) in London for three days.” 填：",
+    "options": ["will be", "will have been", "is", "is going to be"],
+    "answer": 1,
+    "explanation": "到了下周一，他在伦敦的状态就已经持续了三天了。表示状态的完成持续。"
+  },
+  {
+    "id": "fp_senior_c13",
+    "question": "这种时态在高考或高级英语考试中重要吗？",
+    "options": ["不重要", "非常重要，是区分高手和基础选手的考点之一"],
+    "answer": 1,
+    "explanation": "因为它涉及复杂的时间逻辑和标志词的对应。"
+  },
+  {
+    "id": "fp_senior_c14",
+    "question": "如果不用 by 而用 in (如 in two months)，也可以用将来完成时吗？",
+    "options": ["可以，in 指‘……之内’也可以表达期限完成", "不可以"],
+    "answer": 0,
+    "explanation": "例如：He will have finished the building in two months."
+  },
+  {
+    "id": "fp_senior_c15",
+    "question": "总结：将来完成时的坐标是：",
+    "options": ["从过去看未来", "从现在的视角预测未来的完结状态", "从未来看过去"],
+    "answer": 1,
+    "explanation": "它设定了一个未来期限，然后陈述该期限前的事实。"
+  }
+]

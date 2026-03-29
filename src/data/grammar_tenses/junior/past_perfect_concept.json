@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pper_c1",
+    "question": "“过去完成时”表示动作发生在：",
+    "options": ["现在的之前", "一个过去动作或时间的之前（过去的过去）", "未来的之前", "正在发生的动作"],
+    "answer": 1,
+    "explanation": "过去完成时（Past Perfect）的核心是“过去的过去”。"
+  },
+  {
+    "id": "pper_c2",
+    "question": "过去完成时的基本结构是：",
+    "options": ["have/has + done", "had + done", "was/were + done", "will have + done"],
+    "answer": 1,
+    "explanation": "助动词一律用 had，后面接动词的过去分词。"
+  },
+  {
+    "id": "pper_c3",
+    "question": "在包含了 “before, after, by the end of last year” 的过去描述中，常用什么时态？",
+    "options": ["一般过去时", "过去完成时", "过去进行时"],
+    "answer": 1,
+    "explanation": "这些词语常用来标记动作发生的先后顺序，提示“更早的过去”。"
+  },
+  {
+    "id": "pper_c4",
+    "question": "“When I got home, my mother ______ (cook) dinner.” (我到家时，妈妈已经做好了饭) 填：",
+    "options": ["cooked", "had cooked", "was cooking", "is cooking"],
+    "answer": 1,
+    "explanation": "“到家”是过去，“做饭完成”是在那之前，用过去完成时。"
+  },
+  {
+    "id": "pper_c5",
+    "question": "将 “They had left.” 变成否定句：",
+    "options": ["They hadn't left.", "They didn't had left.", "They haven't left.", "They not had left."],
+    "answer": 0,
+    "explanation": "直接在 had 后加 not。had not = hadn't。"
+  },
+  {
+    "id": "pper_c6",
+    "question": "将 “He had finished his work.” 变成一般疑问句：",
+    "options": ["Had he finished his work?", "Did he finished his work?", "Has he finished his work?", "Is he finished his work?"],
+    "answer": 0,
+    "explanation": "直接将 had 提到句首。"
+  },
+  {
+    "id": "pper_c7",
+    "question": "过去完成时能脱离“一般过去时”单独存在而没有上下文参照吗？",
+    "options": ["可以", "不可以，必须有‘过去的某个点’作为参照"],
+    "answer": 1,
+    "explanation": "没有“过去”，就没有“过去的过去”。"
+  },
+  {
+    "id": "pper_c8",
+    "question": "“By the end of last term, we ______ (learn) 2000 words.” 填：",
+    "options": ["learned", "had learned", "have learned", "learn"],
+    "answer": 1,
+    "explanation": "by the end of + 过去时间，是过去完成时的经典标志。"
+  },
+  {
+    "id": "pper_c9",
+    "question": "间接引语中，如果主句是过去时（said），从句的一般过去时通常要变为：",
+    "options": ["现在完成时", "过去完成时", "过去进行时", "不变"],
+    "answer": 1,
+    "explanation": "时态回退原则：过去式回退到过去完成时。"
+  },
+  {
+    "id": "pper_c10",
+    "question": "“had better” (最好) 中的 had 是过去完成时的标志吗？",
+    "options": ["是", "不是，它是固定搭配，表示现在的建议"],
+    "answer": 1,
+    "explanation": "had better 是固定用法，接动词原形，与过去完成时无关。"
+  },
+  {
+    "id": "pper_c11",
+    "question": "过去完成时可以表示一个动作在过去持续了多久吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "可以，只要参照点是过去。例如：He had been a teacher for 30 years before he retired."
+  },
+  {
+    "id": "pper_c12",
+    "question": "“I ______ (want) to see you, but I was too busy.” (我本想见你，但太忙了) 表示没实现的愿望，常填：",
+    "options": ["wanted", "had wanted", "have wanted", "want"],
+    "answer": 1,
+    "explanation": "某些动词（如 want, hope, think）的过去完成时可表示“过去未曾实现的愿望”。"
+  },
+  {
+    "id": "pper_c13",
+    "question": "在 “hardly... when...” 或 “no sooner... than...” 结构中，常用什么时态？",
+    "options": ["过去完成时", "一般过去时", "将来时"],
+    "answer": 0,
+    "explanation": "这两个固定结构意为“一……就……”，前一个分句常用过去完成时。"
+  },
+  {
+    "id": "pper_c14",
+    "question": "“She said she ______ (already / see) the film.” 填：",
+    "options": ["already saw", "had already seen", "has already seen"],
+    "answer": 1,
+    "explanation": "已经看过是在“说”之前，故用过去完成时。"
+  },
+  {
+    "id": "pper_c15",
+    "question": "总结：过去完成时的参照坐标是：",
+    "options": ["现在的时刻", "过去的某个时刻", "未来的时刻"],
+    "answer": 1,
+    "explanation": "它的所有逻辑都建立在“先于过去”的基础上。"
+  }
+]

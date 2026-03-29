@@ -1,0 +1,107 @@
+[
+  {
+    "id": "subj_senior_c1",
+    "question": "“虚拟语气” (Subjunctive Mood) 在英语中主要表示：",
+    "options": ["真实发生的事", "主观愿望、假设、怀疑或与客观事实相反的建议", "已经完成的事", "正在发生的事"],
+    "answer": 1,
+    "explanation": "它表达的是“非真实的、假设的、想象的”世界。"
+  },
+  {
+    "id": "subj_senior_c2",
+    "question": "与“现在”事实相反的虚拟，if 从句用 ______，主句用 ______：",
+    "options": ["一般现在时; will do", "一般过去时（be用were）; would/could/should/might + do", "过去完成时; would have done"],
+    "answer": 1,
+    "explanation": "退回一个时态表示虚拟。例如：If I were you, I would go."
+  },
+  {
+    "id": "subj_senior_c3",
+    "question": "与“过去”事实相反的虚拟，if 从句用 ______，主句用 ______：",
+    "options": ["一般过去时; would do", "过去完成时 (had done); would/could/should/might + have + done", "现在完成时; would do"],
+    "answer": 1,
+    "explanation": "过去的事实要退回到“过去的过去”来虚拟。例如：If you had come yesterday, you would have seen him."
+  },
+  {
+    "id": "subj_senior_c4",
+    "question": "与“将来”事实相反的虚拟，if 从句可用：",
+    "options": ["一般过去时", "should + 动词原形", "were to + 动词原形", "以上三者皆可"],
+    "answer": 3,
+    "explanation": "将来的虚拟有三种形式，should 和 were to 语气更微弱。"
+  },
+  {
+    "id": "subj_senior_c5",
+    "question": "在 “I wish ...” 引导的从句中，表示“现在”的愿望时态应退回为：",
+    "options": ["一般现在时", "一般过去时", "过去完成时"],
+    "answer": 1,
+    "explanation": "例如：I wish I were rich now."
+  },
+  {
+    "id": "subj_senior_c6",
+    "question": "在 “I wish ...” 中表示对“过去”感到遗憾，时态应退回为：",
+    "options": ["一般过去时", "过去完成时", "现在完成时"],
+    "answer": 1,
+    "explanation": "例如：I wish I hadn't eaten so much yesterday."
+  },
+  {
+    "id": "subj_senior_c7",
+    "question": "表示“建议、要求、命令”的词（如 suggest, order, insist, demand）后的宾语从句用：",
+    "options": ["would do", "should + 动词原形（should可省略）", "must do"],
+    "answer": 1,
+    "explanation": "这是重要的“一坚持、二命令、三建议、四要求”考点。例如：I suggest that he (should) leave."
+  },
+  {
+    "id": "subj_senior_c8",
+    "question": "在虚拟语气的 if 从句中，如果包含 were, had 或 should，可以省略 if 并：",
+    "options": ["保持原样", "把 were/had/should 提到主语前（倒装）", "加 not"],
+    "answer": 1,
+    "explanation": "例如：If I were you -> Were I you; If I had known -> Had I known。"
+  },
+  {
+    "id": "subj_senior_c9",
+    "question": "“If only ...” 意为“要是……就好了”，它的用法类似于：",
+    "options": ["because", "I wish", "although", "unless"],
+    "answer": 1,
+    "explanation": "它也需要使用虚拟语气时态后移。"
+  },
+  {
+    "id": "subj_senior_c10",
+    "question": "“It's time that ...” (该是做……的时候了) 后面的从句动词常用：",
+    "options": ["一般现在时", "一般过去时 (或 should do，should不可省)", "过去完成时"],
+    "answer": 1,
+    "explanation": "例如：It's time that we went home."
+  },
+  {
+    "id": "subj_senior_c11",
+    "question": "“Would rather” (宁愿) 后接从句时，如果动作指向“现在/将来”，用什么时态？",
+    "options": ["一般现在时", "一般过去时", "将来时"],
+    "answer": 1,
+    "explanation": "注意 would rather 后面如果不接从句而是直接跟动词，则用原形。"
+  },
+  {
+    "id": "subj_senior_c12",
+    "question": "“as if / as though” (好像) 引导的从句如果表示非真实情况：",
+    "options": ["也要用虚拟语气相应时态", "用一般现在时", "用将来时"],
+    "answer": 0,
+    "explanation": "语气随事实可能性而定。如果是不可能的假设，就要虚拟。"
+  },
+  {
+    "id": "subj_senior_c13",
+    "question": "有些含蓄条件句没有 if，而是用 ______ 来表达虚拟的前提？",
+    "options": ["without / but for / or / otherwise", "because / so / that"],
+    "answer": 0,
+    "explanation": "例如：Without your help (If you hadn't helped me), I would have failed."
+  },
+  {
+    "id": "subj_senior_c14",
+    "question": "在 “It is natural / important / necessary that ...” 句型中，从句常用：",
+    "options": ["would do", "(should) + 动词原形", "doing"],
+    "answer": 1,
+    "explanation": "主句带有评价性质的形容词，从句常虚拟。"
+  },
+  {
+    "id": "subj_senior_c15",
+    "question": "总结：虚拟语气的本质特征是：",
+    "options": ["时态整体向后退一步", "时态保持一致", "随意变换"],
+    "answer": 0,
+    "explanation": "通过时态的后移来拉开语言与现实世界的距离。"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "nc_senior_c1",
+    "question": "“名词性从句” (Noun Clauses) 的作用相当于一个：",
+    "options": ["名词", "形容词", "副词", "动词"],
+    "answer": 0,
+    "explanation": "它可以在句中充当主语、宾语、表语或同位语。"
+  },
+  {
+    "id": "nc_senior_c2",
+    "question": "当名词性从句由陈述句变来时，连接词用：",
+    "options": ["that", "whether", "if", "what"],
+    "answer": 0,
+    "explanation": "that 在从句中不当成分，也没有含义，只起连接作用。"
+  },
+  {
+    "id": "nc_senior_c3",
+    "question": "所有的名词性从句都必须使用什么语序？",
+    "options": ["疑问句语序", "陈述句语序（主语 + 谓语）", "倒装语序"],
+    "answer": 1,
+    "explanation": "一旦变成从句，就不能用助动词提前了。"
+  },
+  {
+    "id": "nc_senior_c4",
+    "question": "在“宾语从句”中，that 经常可以：",
+    "options": ["省略", "改为 which", "必须保留"],
+    "answer": 0,
+    "explanation": "但在主语从句、同位语从句中，that 通常不能省略。"
+  },
+  {
+    "id": "nc_senior_c5",
+    "question": "由“一般疑问句”变来的名词性从句，连接词用：",
+    "options": ["that", "if / whether", "what", "because"],
+    "answer": 1,
+    "explanation": "表示“是否”。"
+  },
+  {
+    "id": "nc_senior_c6",
+    "question": "“what” 引导名词性从句时：",
+    "options": ["只起关联作用", "在从句中充当成分（如主语、宾语）且有含义", "不能引导名词性从句"],
+    "answer": 1,
+    "explanation": "例如：What he said is true. (what 作 said 的宾语，意为“所说的话”)。"
+  },
+  {
+    "id": "nc_senior_c7",
+    "question": "“主语从句”放在句首太重时，常用哪个词作形式主语？",
+    "options": ["this", "that", "it", "there"],
+    "answer": 2,
+    "explanation": "例如：It is a pity that he failed. (it 是形式主语，that... 是真正主语)。"
+  },
+  {
+    "id": "nc_senior_c8",
+    "question": "“同位语从句”通常跟在哪些抽象名词（如 fact, news, idea, hope）后面？",
+    "options": ["that", "which", "who", "whom"],
+    "answer": 0,
+    "explanation": "同位语从句是对前面名词的具体解释。注意与定语从句的区别。"
+  },
+  {
+    "id": "nc_senior_c9",
+    "question": "如何区分 that 引导的是定语从句还是同位语从句？",
+    "options": ["看先行词", "看 that 是否在从句中充当主、宾成分", "看句子长短"],
+    "answer": 1,
+    "explanation": "that 在同位语从句中不当成分；在定语从句中必须充当成分。"
+  },
+  {
+    "id": "nc_senior_c10",
+    "question": "引导“表语从句”的词位于：",
+    "options": ["句首", "系动词（如 am, is, are, look）之后", "句末"],
+    "answer": 1,
+    "explanation": "这就是为什么它叫“表语”从句。"
+  },
+  {
+    "id": "nc_senior_c11",
+    "question": "“whether” 和 “if” 引导宾语从句时通常可互换，但在下列哪种情况只能用 “whether”？",
+    "options": ["引导主语从句位于句首时", "介词之后", "与 or not 连用时", "以上三者皆是"],
+    "answer": 3,
+    "explanation": "whether 的用法比 if 更广、更正式。"
+  },
+  {
+    "id": "nc_senior_c12",
+    "question": "“I don't know ______ we will meet.” (我不知道我们何时见面) 填：",
+    "options": ["that", "when", "how", "what"],
+    "answer": 1,
+    "explanation": "根据上下文的逻辑含义选择疑问代词或疑问副词。"
+  },
+  {
+    "id": "nc_senior_c13",
+    "question": "“it” 也可以作形式宾语，常见结构是：verb + it + adj + ______。",
+    "options": ["doing", "that clause / to do", "done"],
+    "answer": 1,
+    "explanation": "例如：I find it important that we should learn English."
+  },
+  {
+    "id": "nc_senior_c14",
+    "question": "名词性从句中的“三位一体”是指：",
+    "options": ["引导词、主语、谓语", "连接词、语序、时态", "主、谓、宾"],
+    "answer": 1,
+    "explanation": "这是做名词性考题的三个检查维度。"
+  },
+  {
+    "id": "nc_senior_c15",
+    "question": "总结：名词性从句变为了：",
+    "options": ["一个句子替代了一个名词的位置", "一个单词替代了一个句子的位置", "两个句子的合并"],
+    "answer": 0,
+    "explanation": "掌握这一点就掌握了它的精髓。"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "rs_c1",
+    "question": "什么是“间接引语”？",
+    "options": ["引用某人的原话", "用自己的话转述某人的话", "询问别人的意见", "大声朗读"],
+    "answer": 1,
+    "explanation": "间接引语（Reported Speech）是指转述内容。例如：他说他很忙（而非他说：“我很忙”）。"
+  },
+  {
+    "id": "rs_c2",
+    "question": "将直接引语变为间接引语时，如果主句谓语（如 said）是过去时，从句的时态通常要：",
+    "options": ["保持不变", "向过去推移一个时态（时态回退）", "变为将来时"],
+    "answer": 1,
+    "explanation": "这是英语转述中的“一致性”原则。过去说的事，在转述时通常也看作过去。"
+  },
+  {
+    "id": "rs_c3",
+    "question": "原句的一般现在时（do/does）变间接引语通常变为：",
+    "options": ["一般过去时 (did)", "现在完成时", "过去进行时", "过去完成时"],
+    "answer": 0,
+    "explanation": "现在 -> 过去。"
+  },
+  {
+    "id": "rs_c4",
+    "question": "原句的现在完成时（have done）变间接引语通常变为：",
+    "options": ["一般过去时", "过去完成时 (had done)", "过去进行时"],
+    "answer": 1,
+    "explanation": "现在完成 -> 过去完成。"
+  },
+  {
+    "id": "rs_c5",
+    "question": "原句的一般将来时（will）变间接引语通常变为：",
+    "options": ["would", "should", "could", "must"],
+    "answer": 0,
+    "explanation": "will -> would (过去将来时)。"
+  },
+  {
+    "id": "rs_c6",
+    "question": "“人称”在转述时也要相应改变吗？",
+    "options": ["要改变，根据谁对谁说来调整", "不用改"],
+    "answer": 0,
+    "explanation": "比如：他说：“我爱英语”。转述为：他说他（he）爱英语。代词要变。"
+  },
+  {
+    "id": "rs_c7",
+    "question": "时间状语在转述时往往也会变化，例如 “now” 通常变为：",
+    "options": ["at that time", "then", "before", "today"],
+    "answer": 1,
+    "explanation": "now -> then; today -> that day; last week -> the week before。"
+  },
+  {
+    "id": "rs_c8",
+    "question": "如果引述的内容是“客观真理”或“自然习性”，时态：",
+    "options": ["仍需回退", "保持一般现在时不变", "变为过去时"],
+    "answer": 1,
+    "explanation": "真理不受转述时刻的影响。例如：老师说地球绕着太阳转（用 turns）。"
+  },
+  {
+    "id": "rs_c9",
+    "question": "转述一个“一般疑问句”（Yes/No问句）时，常用哪个连词引导？",
+    "options": ["that", "if / whether", "what", "which"],
+    "answer": 1,
+    "explanation": "意为“是否”。例如：He asked me if I liked English."
+  },
+  {
+    "id": "rs_c10",
+    "question": "转述疑问句时，语序必须变成：",
+    "options": ["疑问句语序 (助动词提前)", "陈述句语序 (主语在前)", "不变"],
+    "answer": 1,
+    "explanation": "一旦变成从句，就不再是独立疑问句，语序要调回“主语 + 动词”。"
+  },
+  {
+    "id": "rs_c11",
+    "question": "转述“特殊疑问句”时，关系词用：",
+    "options": ["that", "if", "原句的疑问词（如 who, where, what）", "不需要关系词"],
+    "answer": 2,
+    "explanation": "例如：She asked me where I lived."
+  },
+  {
+    "id": "rs_c12",
+    "question": "转述“祈使句”（命令/请求）时，通常使用以下哪种结构？",
+    "options": ["tell / ask sb to do sth", "tell sb that do", "say sb do", "tell sb doing"],
+    "answer": 0,
+    "explanation": "例如：He told me to sit down. (他说：“坐下。”)"
+  },
+  {
+    "id": "rs_c13",
+    "question": "否定祈使句转述时，变成：",
+    "options": ["ask sb not to do sth", "ask sb don't to do sth", "not telling sth"],
+    "answer": 0,
+    "explanation": "Don't -> not to。例如：He ask me not to shout."
+  },
+  {
+    "id": "rs_c14",
+    "question": "“I said to him, 'Where are you going?'” 变为间接引语：",
+    "options": ["I asked him where he was going.", "I asked him where was he going.", "I told him where he is going."],
+    "answer": 0,
+    "explanation": "时态回退(are->was)，人称改变(you->he)，语序变陈述。"
+  },
+  {
+    "id": "rs_c15",
+    "question": "总结：间接引语的三大变化是：",
+    "options": ["时态、人称、状语与语序", "单词、句子、段落", "读音、拼写、意思"],
+    "answer": 0,
+    "explanation": "掌握这几点就能处理大部分转述题。"
+  }
+]

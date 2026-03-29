@@ -1,0 +1,107 @@
+[
+  {
+    "id": "cr_senior_c1",
+    "question": "在高级英语中，决定谓语动词形式的三个维度是：",
+    "options": ["时态、语态、主谓一致", "单词量、句子长度、发音", "纸、笔、墨水"],
+    "answer": 0,
+    "explanation": "这三者共同构成了一个动词的标准形式。"
+  },
+  {
+    "id": "cr_senior_c2",
+    "question": "“主谓一致” (Subject-Verb Agreement) 中，若主语是 “Together with / as well as” 连接，谓语取决于：",
+    "options": ["就近的名词", "第一个名词（主语核心）", "一律用复数"],
+    "answer": 1,
+    "explanation": "修饰成分不影响主语核心单复数。例如：The teacher as well as students IS coming."
+  },
+  {
+    "id": "cr_senior_c3",
+    "question": "当 “Neither...nor / Either...or” 连接主语时，谓语取决于：",
+    "options": ["就近原则", "复数原则", "第一个"],
+    "answer": 0,
+    "explanation": "离谁近跟谁变。"
+  },
+  {
+    "id": "cr_senior_c4",
+    "question": "“The number of students ______ (be) 50.”",
+    "options": ["is", "are", "be"],
+    "answer": 0,
+    "explanation": "The number (……的数量) 是单数。如果是 A number of 则表示“许多”，用复数。"
+  },
+  {
+    "id": "cr_senior_c5",
+    "question": "当从句作主语时，谓语动词通常用：",
+    "options": ["单数", "复数", "看心情"],
+    "answer": 0,
+    "explanation": "整个从句作为一个整体，视为单数。"
+  },
+  {
+    "id": "cr_senior_c6",
+    "question": "英语句子的“平行结构”要求：",
+    "options": ["句子看起来很整齐", "并列连词连接的部分在词性、结构、形式上保持高度一致", "只有两个词"],
+    "answer": 1,
+    "explanation": "例如：Not only reading but also writing (都要V-ing)。"
+  },
+  {
+    "id": "cr_senior_c7",
+    "question": "在长句分析中，最快锁定句子真意的方法是：",
+    "options": ["逐字翻译", "先找主谓宾（主干成分），屏蔽层层嵌套的修饰语", "查所有生词"],
+    "answer": 1,
+    "explanation": "“剥洋葱法”是精读长难句的核心。"
+  },
+  {
+    "id": "cr_senior_c8",
+    "question": "“Done” 作状语表示被动，而 “Doing” 作状语表示主动，这个判断对吗？",
+    "options": ["对，它是非谓语基本逻辑", "不对", "只适用于过去时"],
+    "answer": 0,
+    "explanation": "这是非谓语中考、高考、考研的不二法门。"
+  },
+  {
+    "id": "cr_senior_c9",
+    "question": "英语语序的本质是：",
+    "options": ["修饰语一定要放在主语前面", "核心信息优先，修饰语层层向后扩展（或后置）", "没有固定语序"],
+    "answer": 1,
+    "explanation": "这就是为什么会有定语从句、分词后置等现象。"
+  },
+  {
+    "id": "cr_senior_c10",
+    "question": "在英语写作中，为了展现高级感，应该：",
+    "options": ["把所有词都换成生僻词", "长短句结合，灵活使用非谓语、倒装、强调等句式", "尽量用长句子"],
+    "answer": 1,
+    "explanation": "句式多样性（Variety）是高分作文的核心。"
+  },
+  {
+    "id": "cr_senior_c11",
+    "question": "“One-third of the population ______ (be) farmers.”",
+    "options": ["is", "are", "be"],
+    "answer": 1,
+    "explanation": "分数/百分数修饰主语，谓语动词取决于所修饰名词的性质 (population 视为人，取复数语境)。"
+  },
+  {
+    "id": "cr_senior_c12",
+    "question": "当 “and” 连接两个名词表示同一个概念时，谓语用：",
+    "options": ["单数", "复数", "双数"],
+    "answer": 0,
+    "explanation": "例如：The writer and teacher (指同一个人) IS speaking."
+  },
+  {
+    "id": "cr_senior_c13",
+    "question": "“Only ______ a way ______ (can / you) find out the truth.”",
+    "options": ["in; you can", "in; can you", "on; can you"],
+    "answer": 1,
+    "explanation": "Only + 介词短语状语放句首，部分倒装。"
+  },
+  {
+    "id": "cr_senior_c14",
+    "question": "综合复习的目的是：",
+    "options": ["记住孤立的知识点", "建立系统化的语法网络模型，提升语感", "应对考试"],
+    "answer": 1,
+    "explanation": "语法是一套严谨的逻辑算法。"
+  },
+  {
+    "id": "cr_senior_c15",
+    "question": "最后一题：英语学习的终极目标是：",
+    "options": ["为了考试得高分", "为了能够无障碍地阅读、交流并表达思想", "为了显摆"],
+    "answer": 1,
+    "explanation": "语法只是工具，沟通才是目的。恭喜你通关！"
+  }
+]

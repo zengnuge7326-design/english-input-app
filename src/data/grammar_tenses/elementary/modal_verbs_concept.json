@@ -1,0 +1,107 @@
+[
+  {
+    "id": "mv_c1",
+    "question": "英语中的情态动词“can”主要用来表示：",
+    "options": ["动作正在进行", "能力（能，会）或许可（可以）", "过去发生的事", "客观真理"],
+    "answer": 1,
+    "explanation": "can 是最基本的情态动词，表示“能力”或“请求许可”。"
+  },
+  {
+    "id": "mv_c2",
+    "question": "情态动词（如 can）后面必须接动词的什么形式？",
+    "options": ["动词原形", "动词三单形式（加s）", "动词ing形式", "动词过去式"],
+    "answer": 0,
+    "explanation": "在情态动词后面，动词必须保持“素颜”，即动词原形。例如：I can swim."
+  },
+  {
+    "id": "mv_c3",
+    "question": "如果主语是“He”或“She”，can 后面需要加 -s 变成 cans 吗？",
+    "options": ["需要", "不需要", "看心情"],
+    "answer": 1,
+    "explanation": "情态动词没有人称的变化，不论主语是谁，都用 can。"
+  },
+  {
+    "id": "mv_c4",
+    "question": "“I can ______ English.” 横线处应填：",
+    "options": ["speak", "speaks", "speaking", "to speak"],
+    "answer": 0,
+    "explanation": "can 后面直接跟动词原形 speak。"
+  },
+  {
+    "id": "mv_c5",
+    "question": "“can” 的否定形式（不能，不会）通常写作：",
+    "options": ["cann't", "can not / cannot / can't", "don't can", "isn't can"],
+    "answer": 1,
+    "explanation": "常用缩写是 can't，正式写法是 cannot 或 can not。"
+  },
+  {
+    "id": "mv_c6",
+    "question": "将 “You can fly.” 变成一般疑问句：",
+    "options": ["Can you fly?", "Do you can fly?", "You can fly?", "Are you can fly?"],
+    "answer": 0,
+    "explanation": "变疑问句只需将 can 提到句首。不需要借用 do/does。"
+  },
+  {
+    "id": "mv_c7",
+    "question": "对 “Can you help me?” 进行肯定回答：",
+    "options": ["Yes, I can.", "Yes, I do.", "Yes, I am.", "Yes, I'm can."],
+    "answer": 0,
+    "explanation": "问什么回什么：Can you ...? -> Yes, I can."
+  },
+  {
+    "id": "mv_c8",
+    "question": "在请求许可（可以吗？）时，虽然用 can，但用哪个词会更委婉有礼貌？",
+    "options": ["should", "could", "must", "will"],
+    "answer": 1,
+    "explanation": "could 是 can 的过去式，但在请求许可时表示语气更委婉。小学阶段常用 can 即可。"
+  },
+  {
+    "id": "mv_c9",
+    "question": "“I ______ run fast when I was five.” (五岁时我跑得快)，用哪个词表示过去的某种能力？",
+    "options": ["can", "could", "am", "was"],
+    "answer": 1,
+    "explanation": "could 是 can 的过去式，表示过去的能力。"
+  },
+  {
+    "id": "mv_c10",
+    "question": "“He can't ______.” 下列哪个填法是错误的？",
+    "options": ["swim", "swimming", "jump", "sing"],
+    "answer": 1,
+    "explanation": "否定形式 can't 后面也要接原形，不能加 ing。"
+  },
+  {
+    "id": "mv_c11",
+    "question": "当你问 “Can I have a look?” 时，是在表示：",
+    "options": ["我有看它的能力", "请求对方允许我看一眼", "我必须要看", "我想看"],
+    "answer": 1,
+    "explanation": "这里的 can 表示请求许可。"
+  },
+  {
+    "id": "mv_c12",
+    "question": "如果主语是复数 “Birds”，can 的用法会改变吗？",
+    "options": ["改变，加复数s", "不改变，仍用 can", "不知道"],
+    "answer": 1,
+    "explanation": "情态动词没有任何数的变化。"
+  },
+  {
+    "id": "mv_c13",
+    "question": "“We can see ______ stars in the sky.” 其否定句是：",
+    "options": ["We don't can see...", "We can not see...", "We are not can see...", "We can't see any..."],
+    "answer": 3,
+    "explanation": "变否定加 not 变成 can't，且 some 通常要变 any。"
+  },
+  {
+    "id": "mv_c14",
+    "question": "can 除了表示能和可以，还能表示“可能性”，例如：",
+    "options": ["It can be very cold in winter.", "I can ride a bike.", "Can I sit here?", "She can't find her keys."],
+    "answer": 0,
+    "explanation": "“冬天的天气可能非常冷”这里的 can 表示客观的可能性。"
+  },
+  {
+    "id": "mv_c15",
+    "question": "下列哪个句子结构是正确的？",
+    "options": ["She can to dance.", "She can dance.", "She cans dance.", "She is can dance."],
+    "answer": 1,
+    "explanation": "正确结构：情态动词 + 动词原形。没有 to，没有 s，没有 be。"
+  }
+]

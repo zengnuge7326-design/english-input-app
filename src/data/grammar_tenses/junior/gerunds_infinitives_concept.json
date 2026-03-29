@@ -1,0 +1,107 @@
+[
+  {
+    "id": "gi_c1",
+    "question": "什么是“动词不定式”？",
+    "options": ["v-ing", "to + 动词原形", "v-ed", "不规则变化"],
+    "answer": 1,
+    "explanation": "不定式（Infinitives）的基本形式是 to do。"
+  },
+  {
+    "id": "gi_c2",
+    "question": "什么是“动名词”？",
+    "options": ["to do", "动词原形 + -ing", "单纯的名词", "动词过去式"],
+    "answer": 1,
+    "explanation": "动名词（Gerunds）在形式上和现在分词一样，但在句中作名词用。"
+  },
+  {
+    "id": "gi_c3",
+    "question": "下列哪个词后面习惯接“doing”作宾语？",
+    "options": ["want", "hope", "enjoy", "decide"],
+    "answer": 2,
+    "explanation": "enjoy, finish, mind, practice, keep 等词后接 doing。"
+  },
+  {
+    "id": "gi_c4",
+    "question": "下列哪个词后面习惯接“to do”作宾语？",
+    "options": ["finish", "plan", "suggest", "miss"],
+    "answer": 1,
+    "explanation": "plan, want, hope, decide, would like 等词后接 to do。"
+  },
+  {
+    "id": "gi_c5",
+    "question": "“stop doing sth” 的意思是：",
+    "options": ["停下来去做另一件事", "停止正在做的这件事", "继续做某事"],
+    "answer": 1,
+    "explanation": "doing 是已经开始的动作，停止它即“戒掉、中断”。"
+  },
+  {
+    "id": "gi_c6",
+    "question": "“stop to do sth” 的意思是：",
+    "options": ["停止当前的事，停下来去做（to引导的目的）那件事", "不停止", "一直做"],
+    "answer": 0,
+    "explanation": "to do 是目的状语，停下的目的是为了去做。例如：Stop to have a rest."
+  },
+  {
+    "id": "gi_c7",
+    "question": "“remember doing sth” 表示：",
+    "options": ["记得去做某事（还没做）", "记得做过某事（已经做了）", "忘记做了"],
+    "answer": 1,
+    "explanation": "例如：I remember locking the door. (我记得我锁过门了)。"
+  },
+  {
+    "id": "gi_c8",
+    "question": "“remember to do sth” 表示：",
+    "options": ["记得去做某事（叮嘱以后要做）", "记得过去的事", "已经完成"],
+    "answer": 0,
+    "explanation": "例如：Remember to lock the door. (记得去锁门)。"
+  },
+  {
+    "id": "gi_c9",
+    "question": "不定式（to do）可以用来表示“目的”吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "例如：I went to the library to read books. (去图书馆的目的是看书)。"
+  },
+  {
+    "id": "gi_c10",
+    "question": "动名词（doing）可以作主语吗？例如 “______ is good for health.”",
+    "options": ["Swim", "Swimming", "To swim", "B和C都可以"],
+    "answer": 3,
+    "explanation": "非谓语动词都可以作主语，但 doing 作主语更常见，表示一种习惯或普遍行为。"
+  },
+  {
+    "id": "gi_c11",
+    "question": "在介词（如 in, on, at, about, without）后面，动词必须用：",
+    "options": ["to do", "doing", "原形", "done"],
+    "answer": 1,
+    "explanation": "“介词后接动名词”是铁律。例如：I'm interested in playing football."
+  },
+  {
+    "id": "gi_c12",
+    "question": "“look forward to” (期待) 中的 to 是：",
+    "options": ["不定式符号", "介词（后接 doing）"],
+    "answer": 1,
+    "explanation": "这是超高频考点。look forward to doing sth。"
+  },
+  {
+    "id": "gi_c13",
+    "question": "有些词（如 help, make, let）在主动语态中，后面的不定式：",
+    "options": ["必须带 to", "必须省去 to", "随意"],
+    "answer": 1,
+    "explanation": "例如：Make him do it. (使他做)。不带 to。"
+  },
+  {
+    "id": "gi_c14",
+    "question": "“try doing sth” 意为：",
+    "options": ["努力去做", "尝试着做做看", "不想做"],
+    "answer": 1,
+    "explanation": "try to do 是“尽力、努力去做”；try doing 是“试一试某种方法”。"
+  },
+  {
+    "id": "gi_c15",
+    "question": "总结：非谓语动词（to do / doing）在一个句子里：",
+    "options": ["可以当作唯一的谓语动词", "不能单独充当谓语，必须依附于主句动词", "可以随便放"],
+    "answer": 1,
+    "explanation": "它们叫“非谓语”，所以不能直接当谓语。"
+  }
+]

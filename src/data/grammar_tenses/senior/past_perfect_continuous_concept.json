@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ppc_senior_c1",
+    "question": "“过去完成进行时”主要表示：",
+    "options": ["一个动作在过去某个点已经完成", "一个动作在过去某个时刻之前一直在进行，且在该时刻还在继续或刚刚停止", "现在正在进行的动作", "未来要发生的动作"],
+    "answer": 1,
+    "explanation": "过去完成进行时（Past Perfect Continuous）是“过去的过去”加“进行状态”的结合。"
+  },
+  {
+    "id": "ppc_senior_c2",
+    "question": "过去完成进行时的基本结构是：",
+    "options": ["had been + doing", "have been + doing", "was been + doing", "had done"],
+    "answer": 0,
+    "explanation": "公式：had (过去完成志) + been (被动/进行中介) + V-ing (进行志)。"
+  },
+  {
+    "id": "ppc_senior_c3",
+    "question": "该时态与“过去完成时” (had done) 的主要区别在于：",
+    "options": ["没有区别", "前者强调动作的持续性和过程，后者强调动作的完成和结果", "前者是现在，后者是过去"],
+    "answer": 1,
+    "explanation": "had been doing 画面感更强，侧重于动作没停、一直在做。"
+  },
+  {
+    "id": "ppc_senior_c4",
+    "question": "“When the teacher came in, many students ______ (talk) for ten minutes.” 填：",
+    "options": ["were talking", "had been talking", "had talked", "talked"],
+    "answer": 1,
+    "explanation": "强调在老师进来（过去点）之前，谈话已经持续了十分钟，用过去完成进行时最贴切。"
+  },
+  {
+    "id": "ppc_senior_c5",
+    "question": "在使用 had been doing 时，通常会伴随表示什么意思的词？",
+    "options": ["yesterday", "for / since / all day", "tomorrow", "just now"],
+    "answer": 1,
+    "explanation": "因为它描述的是一个过程，所以常有表示长度的时间状语。"
+  },
+  {
+    "id": "ppc_senior_c6",
+    "question": "如果过去某个动作虽然已经停止，但其“后果”在过去那个时刻依然明显，可用此时态吗？",
+    "options": ["可以", "不可以"],
+    "answer": 0,
+    "explanation": "例如：He was out of breath. He had been running. (他气喘吁吁，因为在那之前他一直在跑)。"
+  },
+  {
+    "id": "ppc_senior_c7",
+    "question": "将 “They had been working.” 变成否定句：",
+    "options": ["They hadn't been working.", "They had been not working.", "They didn't had been working."],
+    "answer": 0,
+    "explanation": "在第一个助动词 had 后加 not。"
+  },
+  {
+    "id": "ppc_senior_c8",
+    "question": "将 “Had he been waiting?” 变成陈述句：",
+    "options": ["He had been waiting.", "He has been waiting.", "He was waiting."],
+    "answer": 0,
+    "explanation": "把 had 调回主语后。"
+  },
+  {
+    "id": "ppc_senior_c9",
+    "question": "“She ______ (study) English for 5 years before she moved to London.” 填：",
+    "options": ["has been studying", "had been studying", "was studying", "studied"],
+    "answer": 1,
+    "explanation": "参照点是 moved (过去式)，且动作持续了5年，用过去完成进行时。"
+  },
+  {
+    "id": "ppc_senior_c10",
+    "question": "这种时态常用于什么文体中？",
+    "options": ["叙述过去发生的一连串动作的故事或报道", "科学论文", "商业简报"],
+    "answer": 0,
+    "explanation": "它能细腻地描述过去某个特定情节发生前的背景动作。"
+  },
+  {
+    "id": "ppc_senior_c11",
+    "question": "如果动作是瞬间完成的（如 break, join），通常不用于此时态，除非：",
+    "options": ["动作反复发生", "动作很慢", "不可以"],
+    "answer": 1,
+    "explanation": "某些词在进行时态中表示动作的反复性。"
+  },
+  {
+    "id": "ppc_senior_c12",
+    "question": "与 Past Continuous (was doing) 相比，Past Perfect Continuous (had been doing)：",
+    "options": ["强调动作在过去某点正在发生", "强调动作在过去某点之前已经持续了多久", "意思一样"],
+    "answer": 1,
+    "explanation": "was doing 关注“当时正做”，had been doing 关注“之前已做了多久”。"
+  },
+  {
+    "id": "ppc_senior_c13",
+    "question": "“I ______ (wait) for an hour when the bus finally arrived.” 填：",
+    "options": ["was waiting", "had been waiting", "waited", "have been waiting"],
+    "answer": 1,
+    "explanation": "强调在“车等到了”之前已等了一小时。"
+  },
+  {
+    "id": "ppc_senior_c14",
+    "question": "“The ground was wet. It ______ (rain) all night.” 填：",
+    "options": ["was raining", "had been raining", "rained", "has rained"],
+    "answer": 1,
+    "explanation": "描述过去某个时刻（地是湿的）之前的持续降雨状态。"
+  },
+  {
+    "id": "ppc_senior_c15",
+    "question": "总结：过去完成进行时的核心公式是：",
+    "options": ["had + been + doing", "have + been + doing", "was + doing"],
+    "answer": 0,
+    "explanation": "记住三个组件：had, been, V-ing。"
+  }
+]

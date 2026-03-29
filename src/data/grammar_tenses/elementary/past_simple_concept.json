@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ps_c1",
+    "question": "“一般过去时”的核心定义是表示什么？",
+    "options": ["过去某个时间发生的动作或存在的状态", "现在正在发生的动作", "将来计划要做的事", "一直持续到现在的动作"],
+    "answer": 0,
+    "explanation": "一般过去时（Past Simple）关注的是“过去的时间”和“已经完成的事”。"
+  },
+  {
+    "id": "ps_c2",
+    "question": "一般过去时最标志性的时间状语通常包含哪个词？",
+    "options": ["now", "yesterday / ...ago", "often", "tomorrow"],
+    "answer": 1,
+    "explanation": "yesterday（昨天）, last week（上周）, two days ago（两天前）等都是明显的过去时间标志。"
+  },
+  {
+    "id": "ps_c3",
+    "question": "动词“be”的过去式形式是：",
+    "options": ["am / is / are", "was / were", "been", "did"],
+    "answer": 1,
+    "explanation": "be动词的过去式只有两个：was（用于I/he/she/it/单数）和were（用于you/we/they/复数）。"
+  },
+  {
+    "id": "ps_c4",
+    "question": "规则动词变过去式，大部分直接在词尾加：",
+    "options": ["-s", "-ing", "-ed", "-es"],
+    "answer": 2,
+    "explanation": "规则变化就是在动词原型后加-ed，例如：work -> worked, visit -> visited。"
+  },
+  {
+    "id": "ps_c5",
+    "question": "以不发音字母“e”结尾的动词，变过去式的规则是：",
+    "options": ["双写e加-ed", "去e加-ed", "直接加-d", "变e为i加-ed"],
+    "answer": 2,
+    "explanation": "结尾已经有e了，直接加d即可。例如：live -> lived, dance -> danced。"
+  },
+  {
+    "id": "ps_c6",
+    "question": "动词“stop”变过去式，规则是：",
+    "options": ["直接加-ed", "去p加-ed", "双写p加-ed", "变o为a加-ed"],
+    "answer": 2,
+    "explanation": "重读闭音节短动词（辅+元+辅），要双写末尾字母再加-ed。例如：stop -> stopped, plan -> planned。"
+  },
+  {
+    "id": "ps_c7",
+    "question": "动词“study”变过去式的规则是：",
+    "options": ["直接加-ed", "去y加-ed", "变y为i加-ed", "双写y加-ed"],
+    "answer": 2,
+    "explanation": "以“辅音字母+y”结尾的动词，要变y为i，再加-ed。注意：play中间是元音a，所以直接加ed（played）。"
+  },
+  {
+    "id": "ps_c8",
+    "question": "下列哪个单词是“不规则动词”的过去式？（变化没有任何规律）",
+    "options": ["watched", "went", "cleaned", "played"],
+    "answer": 1,
+    "explanation": "go 的过去式是 went，这种属于不规则动词，需要死记硬背。其他三个都是加ed的规则动词。"
+  },
+  {
+    "id": "ps_c9",
+    "question": "在含有“实义动词”的一般过去时否定句中，通常借用哪个助动词？",
+    "options": ["doesn't", "don't", "didn't", "wasn't"],
+    "answer": 2,
+    "explanation": "实义动词变否定用 didn't (did not)。例如：I didn't play."
+  },
+  {
+    "id": "ps_c10",
+    "question": "当句子中出现了助动词“did”或“didn't”后，后面的动词必须：",
+    "options": ["用过去式", "用进行时", "恢复原形", "用三单形式"],
+    "answer": 2,
+    "explanation": "Did/Didn't 已经帮动词承担了过去时的时态，后面的动词必须“卸妆”，恢复原形。"
+  },
+  {
+    "id": "ps_c11",
+    "question": "“I was at home yesterday.” 的否定句是：",
+    "options": ["I didn't at home...", "I was not at home...", "I not was at home...", "I wasn't be at home..."],
+    "answer": 1,
+    "explanation": "be动词（was/were）变否定直接在后面加not，不需要借用didn't。"
+  },
+  {
+    "id": "ps_c12",
+    "question": "疑问句“Did you see the movie last night?” 的肯定回答是：",
+    "options": ["Yes, I did.", "Yes, I saw.", "Yes, I was.", "Yes, I do."],
+    "answer": 0,
+    "explanation": "用Did开头问，回答也回馈Did。"
+  },
+  {
+    "id": "ps_c13",
+    "question": "动词“get”的过去式是：",
+    "options": ["getted", "got", "gots", "gotten"],
+    "answer": 1,
+    "explanation": "get -> got 是常见的不规则动词变化。"
+  },
+  {
+    "id": "ps_c14",
+    "question": "“We ______ happy when we were kids.” 横线处应填：",
+    "options": ["am", "is", "was", "were"],
+    "answer": 3,
+    "explanation": "主语We是第一人称复数，be动词过去式用were。"
+  },
+  {
+    "id": "ps_c15",
+    "question": "如果一个动作发生在过去，但主语是“He/She”，动词过去式需要加-s吗？",
+    "options": ["需要", "不需要", "看动词类型", "不知道"],
+    "answer": 1,
+    "explanation": "三单形式（加-s/-es）只适用于“一般现在时”。在“一般过去时”中，所有人称的动词变化都是一样的（都是加-ed或不规则变形式）。"
+  }
+]

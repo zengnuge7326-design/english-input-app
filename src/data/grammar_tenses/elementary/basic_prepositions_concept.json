@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pre_c1",
+    "question": "表示在某个东西的“上面”（接触表面），用哪个介词？",
+    "options": ["in", "on", "under", "behind"],
+    "answer": 1,
+    "explanation": "on 表示在表面上方且有接触。例如：on the table。"
+  },
+  {
+    "id": "pre_c2",
+    "question": "表示在某个东西的“里面”（处于内部空间），用哪个介词？",
+    "options": ["on", "in", "at", "to"],
+    "answer": 1,
+    "explanation": "in 表示在……里面。例如：in the box。"
+  },
+  {
+    "id": "pre_c3",
+    "question": "表示在某个东西的“正下方”，用哪个介词？",
+    "options": ["under", "below", "next to", "in"],
+    "answer": 0,
+    "explanation": "under 表示在正下方。例如：under the tree。"
+  },
+  {
+    "id": "pre_c4",
+    "question": "表示在某个东西的“旁边”，用哪个词组？",
+    "options": ["next to", "on", "in front of", "behind"],
+    "answer": 0,
+    "explanation": "next to 意为“紧邻，在……旁边”。"
+  },
+  {
+    "id": "pre_c5",
+    "question": "“in front of” 表示在……的前面，那么“在……的后面”怎么说？",
+    "options": ["beside", "behind", "between", "above"],
+    "answer": 1,
+    "explanation": "behind 意为“在……后面”。"
+  },
+  {
+    "id": "pre_c6",
+    "question": "当你在具体的“几点钟”前（如 7:00），应该使用哪个时间介词？",
+    "options": ["in", "on", "at", "for"],
+    "answer": 2,
+    "explanation": "at 用于具体的时间点。例如：at seven o'clock。"
+  },
+  {
+    "id": "pre_c7",
+    "question": "当遇到具体的“某一天”（如周一、生日或具体的几月几日），用哪个时间介词？",
+    "options": ["in", "on", "at", "to"],
+    "answer": 1,
+    "explanation": "on 用于具体的某一天或某一天的上午/下午。例如：on Monday, on my birthday。"
+  },
+  {
+    "id": "pre_c8",
+    "question": "针对“年、月、季节”这种比较宽泛的时间段，用哪个时间介词？",
+    "options": ["at", "on", "in", "by"],
+    "answer": 2,
+    "explanation": "in 用于年、月、季节。例如：in 2024, in May, in spring。"
+  },
+  {
+    "id": "pre_c9",
+    "question": "口诀“大 in 小 at”是指：如果是大城市或国家用 in，如果是小地点（如车站）用：",
+    "options": ["in", "on", "at", "to"],
+    "answer": 2,
+    "explanation": "at 通常用于指向具体的小地点或某个位置。例如：at the bus stop。"
+  },
+  {
+    "id": "pre_c10",
+    "question": "“在上午/下午/晚上”的固定表达是：______ the morning/afternoon/evening。",
+    "options": ["at", "on", "in", "with"],
+    "answer": 2,
+    "explanation": "in the morning 是固定搭配。注意：如果变成具体的“周一上午”，就要用 on Monday morning。"
+  },
+  {
+    "id": "pre_c11",
+    "question": "但是，“在深夜”这个固定搭配却很特殊，它是：",
+    "options": ["in night", "at night", "on night", "with night"],
+    "answer": 1,
+    "explanation": "at night 是习惯表达，这里不用 in。"
+  },
+  {
+    "id": "pre_c12",
+    "question": "表示“在两个事物之间”，用哪个介词？",
+    "options": ["among", "between", "inside", "outside"],
+    "answer": 1,
+    "explanation": "between ... and ... 表示在两者之间。among 表示在三者或更多者之中。"
+  },
+  {
+    "id": "pre_c13",
+    "question": "当你去往某个目的地（如“去学校”），通常用哪个介词？",
+    "options": ["to", "at", "in", "for"],
+    "answer": 0,
+    "explanation": "to 表示方向和目的地。例如：go to school。"
+  },
+  {
+    "id": "pre_c14",
+    "question": "“苹果在树上”通常有两种表达：长在树上用 on，落在树上（如鸟、球）用：",
+    "options": ["on", "in", "under", "at"],
+    "answer": 1,
+    "explanation": "如果是外来物落在树丛中，用 in the tree；如果是树上结的果实，用 on the tree。"
+  },
+  {
+    "id": "pre_c15",
+    "question": "“in the front of” 和 “in front of” 的区别是：",
+    "options": ["没有区别", "前者是在物体内部的前部，后者是在物体外部的前面", "前者是外部，后者是内部", "用法完全一样"],
+    "answer": 1,
+    "explanation": "in the front of the bus 是在公交车厢里的前排；in front of the bus 是在公交车车头外面站着。有没有 the 区别非常大！"
+  }
+]

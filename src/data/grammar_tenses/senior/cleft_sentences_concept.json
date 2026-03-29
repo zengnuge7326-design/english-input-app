@@ -1,0 +1,107 @@
+[
+  {
+    "id": "cleft_senior_c1",
+    "question": "“强调句” (Cleft Sentences) 最基本、最常用的结构是：",
+    "options": ["It is/was + 被强调部分 + that/who + 剩余部分", "Subject + focus + Verb", "What I want is ...", "Do + Verb"],
+    "answer": 0,
+    "explanation": "这是最经典的强调句型，通过把要强调的内容放在 it is...that 中间来实现。"
+  },
+  {
+    "id": "cleft_senior_c2",
+    "question": "在该结构中，可以被强调的成分不包括：",
+    "options": ["主语", "宾语", "状语 (时间、地点等)", "谓语动词"],
+    "answer": 3,
+    "explanation": "谓语动词不能放在 it is...that 结构中强调，强调谓语要用 do/does/did + 原形。"
+  },
+  {
+    "id": "cleft_senior_c3",
+    "question": "如果被强调的是“人”，关系词可以用：",
+    "options": ["only that", "that 或 who", "which", "whom"],
+    "answer": 1,
+    "explanation": "通常强调人时用 who 或 that 都可以。"
+  },
+  {
+    "id": "cleft_senior_c4",
+    "question": "“It was in this room ______ I first met her.” 填：",
+    "options": ["where", "that", "which", "when"],
+    "answer": 1,
+    "explanation": "强调句的关系词统一用 that (强调人时可用who)，不能用 where/when。"
+  },
+  {
+    "id": "cleft_senior_c5",
+    "question": "如何判断一个句子是否是强调句？",
+    "options": ["看句子长短", "去掉 It is/was...that 之后，剩下的部分还能组成一个完整的句子", "看有没有 It"],
+    "answer": 1,
+    "explanation": "“还原法”是判断强调句的金标准。"
+  },
+  {
+    "id": "cleft_senior_c6",
+    "question": "将 “I met Tom yesterday.” 强调“昨天”，应写为：",
+    "options": ["It was yesterday that I met Tom.", "Yesterday was I met Tom.", "It is yesterday that I met Tom."],
+    "answer": 0,
+    "explanation": "原句是过去时，强调句主句也要用 was。"
+  },
+  {
+    "id": "cleft_senior_c7",
+    "question": "强调句的“一般疑问句”形式是：",
+    "options": ["Is/Was it + 被强调部分 + that...?", "It is/was it + ...?", "What is it that...?"],
+    "answer": 0,
+    "explanation": "例如：Was it yesterday that you met him?"
+  },
+  {
+    "id": "cleft_senior_c8",
+    "question": "强调句的“特殊疑问句”形式是：",
+    "options": ["疑问词 + is/was it + that + 剩余部分?", "It is which that ...?", "Which is that ...?"],
+    "answer": 0,
+    "explanation": "例如：Where was it that you found the key?"
+  },
+  {
+    "id": "cleft_senior_c9",
+    "question": "“not ... until ...” 结构的强调形式是：",
+    "options": ["It is not until ... that ...", "It is until ... that not ...", "Not until is it that ..."],
+    "answer": 0,
+    "explanation": "这是超高频考点。注意 that 后面不再有 not。例如：It was not until he came back that I went home."
+  },
+  {
+    "id": "cleft_senior_c10",
+    "question": "另一种强调形式 “Pseudo-cleft sentence” (伪强调句) 的常涉及引导词：",
+    "options": ["What", "Which", "Who", "Where"],
+    "answer": 0,
+    "explanation": "例如：What I need is a rest. (我需要的是休息)。"
+  },
+  {
+    "id": "cleft_senior_c11",
+    "question": "在陈述句中，用 “do / does / did + 动词原形” 强调的是：",
+    "options": ["名词", "形容词", "谓语动词", "代词"],
+    "answer": 2,
+    "explanation": "例如：I DO love English. (我真的爱英语)。"
+  },
+  {
+    "id": "cleft_senior_c12",
+    "question": "“It is you who ______ (be) wrong.” 填：",
+    "options": ["is", "are", "am", "be"],
+    "answer": 1,
+    "explanation": "强调句中 that/who 后的谓语动词单复数应与被强调的主语一致 (you are)。"
+  },
+  {
+    "id": "cleft_senior_c13",
+    "question": "“It is that he is honest that makes him popular.” 这句话强调的是：",
+    "options": ["he", "honest", "that he is honest (整个从句)", "popular"],
+    "answer": 2,
+    "explanation": "整个从句也可以作为被强调部分。"
+  },
+  {
+    "id": "cleft_senior_c14",
+    "question": "在感官上，强调句的作用类似于中文里的：",
+    "options": ["“正是……” / “就是……”", "“也许……”", "“之所以……”"],
+    "answer": 0,
+    "explanation": "它起到聚焦作用。"
+  },
+  {
+    "id": "cleft_senior_c15",
+    "question": "总结：强调句的最核心词就是：",
+    "options": ["Focus (焦点)", "Sequence (顺序)", "Passive (被动)"],
+    "answer": 0,
+    "explanation": "它的存在就是为了突出某一个重点。"
+  }
+]

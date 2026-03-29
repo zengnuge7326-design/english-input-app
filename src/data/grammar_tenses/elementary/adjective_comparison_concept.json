@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ac_c1",
+    "question": "英语形容词的“比较级”通常用于：",
+    "options": ["描述一个事物", "两者之间的比较", "三者或更多者之间的比较", "打招呼"],
+    "answer": 1,
+    "explanation": "比较级（Comparatives）用于 A 和 B 之间的对比。例如：A 比 B 高。"
+  },
+  {
+    "id": "ac_c2",
+    "question": "大部分单音节形容词（如 tall, short）变比较级，是在词尾加：",
+    "options": ["-s", "-est", "-er", "-ing"],
+    "answer": 2,
+    "explanation": "规则变化通常加 -er。例如：tall -> taller, old -> older。"
+  },
+  {
+    "id": "ac_c3",
+    "question": "单音节形容词变“最高级”（三者及以上比较），通常在词尾加：",
+    "options": ["-ed", "-er", "-est", "-es"],
+    "answer": 2,
+    "explanation": "最高级（Superlatives）通常加 -est。例如：tall -> tallest。"
+  },
+  {
+    "id": "ac_c4",
+    "question": "以不发音字母“e”结尾的形容词（如 nice, large），比较级应：",
+    "options": ["去e加-er", "直接加-r", "双写e加-er"],
+    "answer": 1,
+    "explanation": "结尾有e，直接加r即可。例如：nice -> nicer。"
+  },
+  {
+    "id": "ac_c5",
+    "question": "重读闭音节形容词（辅+元+辅，如 big, hot），变化规则是：",
+    "options": ["直接加-er", "双写末尾字母加-er", "去元音加-er"],
+    "answer": 1,
+    "explanation": "双写末尾辅音字母再加er/est。例如：big -> bigger, hot -> hotter。"
+  },
+  {
+    "id": "ac_c6",
+    "question": "以“辅音字母 + y”结尾的形容词（如 happy, heavy），变化规则是：",
+    "options": ["变 y 为 i 加 -er", "直接加 -er", "双写 y 加 -er"],
+    "answer": 0,
+    "explanation": "变 y 为 i 再加 er/est。例如：happy -> happier。"
+  },
+  {
+    "id": "ac_c7",
+    "question": "多音节及部分双音节形容词（如 beautiful, important），应如何变比较级？",
+    "options": ["词尾加-er", "词首加 more", "词首加 best", "词尾加-est"],
+    "answer": 1,
+    "explanation": "长单词不能在后面堆字母，要在前面加 more（更）或 most（最）。"
+  },
+  {
+    "id": "ac_c8",
+    "question": "在比较级句中，常出现哪个词表示“比……”？",
+    "options": ["then", "than", "that", "the"],
+    "answer": 1,
+    "explanation": "than 是比较级的标志性单词。例如：I am taller than you."
+  },
+  {
+    "id": "ac_c9",
+    "question": "在使用“最高级”时，形容词前通常必须加哪个定冠词？",
+    "options": ["a", "an", "the", "some"],
+    "answer": 2,
+    "explanation": "最高级表示唯一，习惯上要加 the。例如：the tallest boy。"
+  },
+  {
+    "id": "ac_c10",
+    "question": "下列哪个是 good 的不规则比较级形式？",
+    "options": ["gooder", "better", "best", "well"],
+    "answer": 1,
+    "explanation": "good/well 的比较级是 better，最高级是 best。这是最常用的不规则词。"
+  },
+  {
+    "id": "ac_c11",
+    "question": "bad (坏的) 和 ill (病的) 的比较级是：",
+    "options": ["badder", "badest", "worse", "worst"],
+    "answer": 2,
+    "explanation": "bad/ill -> worse（比较级） -> worst（最高级）。"
+  },
+  {
+    "id": "ac_c12",
+    "question": "“My classroom is ______ than yours.” 横线处应填：",
+    "options": ["biggest", "bigger", "big", "the biggest"],
+    "answer": 1,
+    "explanation": "句中有 than，需要使用比较级 bigger。"
+  },
+  {
+    "id": "ac_c13",
+    "question": "表示“两者一样……”（等比结构），使用：",
+    "options": ["so ... so", "as ... as", "more ... more", "er ... er"],
+    "answer": 1,
+    "explanation": "as + 原级 + as 意为“和……一样”。例如：as tall as me。"
+  },
+  {
+    "id": "ac_c14",
+    "question": "“Tom is ______ boy in our class.” 横线处应填：",
+    "options": ["taller", "the tallest", "tall", "taller than"],
+    "answer": 1,
+    "explanation": "in our class 表示在集体范围内比较，需用最高级且加 the。"
+  },
+  {
+    "id": "ac_c15",
+    "question": "如果想表达“越来越……”，应该用：",
+    "options": ["更多形容词", "比较级 + and + 比较级", "最高级 + and + 最高级", "比较级 + than + 比较级"],
+    "answer": 1,
+    "explanation": "比较级 + and + 比较级。例如：bigger and bigger (越来越大)。"
+  }
+]

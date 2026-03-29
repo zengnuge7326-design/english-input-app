@@ -1,0 +1,107 @@
+[
+  {
+    "id": "qf_c1",
+    "question": "英语中的“一般疑问句”通常可以用什么来回答？",
+    "options": ["用 Yes 或 No", "用详细的信息句子", "用中文", "不用回答"],
+    "answer": 0,
+    "explanation": "一般疑问句（Yes/No Questions）是询问事情是否属实的问句。"
+  },
+  {
+    "id": "qf_c2",
+    "question": "如果句子中有 be 动词（am/is/are），变疑问句的方法是：",
+    "options": ["在句末加问号", "把 be 动词提到句首", "借用 do/does", "加 not"],
+    "answer": 1,
+    "explanation": "含有 be 动词的句子，变疑问直接“一提（be提首）、二改（字母大小写）、三问号”。"
+  },
+  {
+    "id": "qf_c3",
+    "question": "“She is a teacher.” 变一般疑问句是：",
+    "options": ["Is she a teacher?", "She is a teacher?", "Does she is a teacher?", "Is she teacher?"],
+    "answer": 0,
+    "explanation": "Is 提到句首，S 小写，末尾点问号。"
+  },
+  {
+    "id": "qf_c4",
+    "question": "如果句子是“实义动词”（如 play, like），变疑问句通常借用：",
+    "options": ["be 动词", "助动词 do 或 does", "can", "will"],
+    "answer": 1,
+    "explanation": "没有 be 动词和情态动词时，必须请助动词 do 或 does 来帮忙。"
+  },
+  {
+    "id": "qf_c5",
+    "question": "主语是“三单”（He/She/It）时，借用的助动词是：",
+    "options": ["do", "does", "is", "did"],
+    "answer": 1,
+    "explanation": "三单主语配合 does。注意使用 does 后，后面的动词要恢复原形。"
+  },
+  {
+    "id": "qf_c6",
+    "question": "“He likes apples.” 变一般疑问句是：",
+    "options": ["Likes he apples?", "Does he likes apples?", "Does he like apples?", "Is he like apples?"],
+    "answer": 2,
+    "explanation": "借用助动词 does，后面的 likes 必须变回原形 like。"
+  },
+  {
+    "id": "qf_c7",
+    "question": "“特殊疑问句”是指由什么引导的问句？",
+    "options": ["Do/Does", "Yes/No", "疑问词（如 Who, What, Where）", "Am/Is/Are"],
+    "answer": 2,
+    "explanation": "特殊疑问句用来询问具体的信息。例如：你的名字是什么？"
+  },
+  {
+    "id": "qf_c8",
+    "question": "询问“时间”用哪个疑问词？",
+    "options": ["What", "Where", "When", "Who"],
+    "answer": 2,
+    "explanation": "When 意为“什么时候”。"
+  },
+  {
+    "id": "qf_c9",
+    "question": "询问“地点”用哪个疑问词？",
+    "options": ["What", "Where", "When", "Why"],
+    "answer": 1,
+    "explanation": "Where 意为“在哪里”。"
+  },
+  {
+    "id": "qf_c10",
+    "question": "询问“原因”用哪个疑问词？",
+    "options": ["Who", "Why", "Which", "How"],
+    "answer": 1,
+    "explanation": "Why 意为“为什么”。"
+  },
+  {
+    "id": "qf_c11",
+    "question": "下列哪个句子的语序是正确的特殊疑问句？",
+    "options": ["Where you are going?", "Where are you going?", "Where are going you?", "You are going where?"],
+    "answer": 1,
+    "explanation": "特殊疑问句的公式：疑问词 + 一般疑问句语序。"
+  },
+  {
+    "id": "qf_c12",
+    "question": "询问“多少”（指数量，接复数名词）用：",
+    "options": ["How old", "How many", "How much", "How often"],
+    "answer": 1,
+    "explanation": "How many 用于询问可数名词的数量。"
+  },
+  {
+    "id": "qf_c13",
+    "question": "询问“价格”或“不可数名词的数量”用：",
+    "options": ["How many", "How much", "How old", "How far"],
+    "answer": 1,
+    "explanation": "How much 可以问价格，也可以问不可数名词（如水、米）的多少。"
+  },
+  {
+    "id": "qf_c14",
+    "question": "询问“年龄”用哪个词组？",
+    "options": ["How big", "How long", "How old", "How many"],
+    "answer": 2,
+    "explanation": "How old 意为“多大年纪”。"
+  },
+  {
+    "id": "qf_c15",
+    "question": "“What color ______ your eyes?” 横线处填：",
+    "options": ["is", "are", "do", "does"],
+    "answer": 1,
+    "explanation": "主语是 your eyes（复数），所以系动词用 are。"
+  }
+]

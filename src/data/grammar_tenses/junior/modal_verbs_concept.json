@@ -1,0 +1,107 @@
+[
+  {
+    "id": "mvj_c1",
+    "question": "初中阶段的情态动词除了 can，还包括哪些表示“义务、建议、推测”的词？",
+    "options": ["must, should, may, might", "do, does, did", "am, is, are", "will, shall"],
+    "answer": 0,
+    "explanation": "初中情态动词学习重点在于理解不同词表达的语气强弱和逻辑含义。"
+  },
+  {
+    "id": "mvj_c2",
+    "question": "“must” 表示强烈的“必须”，那么它的否定形式 “mustn't” 表示：",
+    "options": ["不必", "没必要", "禁止，千万别", "可能不"],
+    "answer": 2,
+    "explanation": "mustn't 语气非常强，意为“禁止”。"
+  },
+  {
+    "id": "mvj_c3",
+    "question": "如果你想表达“不必、没必要”，应该用：",
+    "options": ["mustn't", "don't have to / needn't", "can't", "shouldn't"],
+    "answer": 1,
+    "explanation": "don't have to 或 needn't 表示没有义务做某事。"
+  },
+  {
+    "id": "mvj_c4",
+    "question": "“should” 主要用于表达：",
+    "options": ["强烈的命令", "建议或劝告（应该）", "绝对的可能", "请求许可"],
+    "answer": 1,
+    "explanation": "should 语气的强弱程度介于 must 和 can 之间，意为“应该”。"
+  },
+  {
+    "id": "mvj_c5",
+    "question": "表示“推测”时，语气最肯定（一定是）用哪个词？",
+    "options": ["can", "may", "must", "might"],
+    "answer": 2,
+    "explanation": "must be ... 意为“肯定……，一定是……”。"
+  },
+  {
+    "id": "mvj_c6",
+    "question": "表示“推测”时，语气最不肯定（可能，也许）用哪些词？",
+    "options": ["must", "may / might / could", "can't", "should"],
+    "answer": 1,
+    "explanation": "may, might, could 在肯定句中都可以表达不确定的推测。"
+  },
+  {
+    "id": "mvj_c7",
+    "question": "在否定推测中，“肯定不、绝对不”用哪个词？",
+    "options": ["mustn't", "can't", "shouldn't", "may not"],
+    "answer": 1,
+    "explanation": "can't be ... 意为“绝对不是，不可能”。注意不能用 mustn't。"
+  },
+  {
+    "id": "mvj_c8",
+    "question": "“May I come in?” 的否定回答（不行/不可以）通常用：",
+    "options": ["No, you may not.", "No, you mustn't / No, you can't.", "No, you don't.", "No, you needn't."],
+    "answer": 1,
+    "explanation": "用 may 询问许可，否定回答常表现为拒绝，用语气更强的 mustn't 或 can't。"
+  },
+  {
+    "id": "mvj_c9",
+    "question": "“have to” 与 “must” 的区别是：",
+    "options": ["没有区别", "must 强调主观想法，have to 强调客观需要/被迫", "must 语气更弱"],
+    "answer": 1,
+    "explanation": "must 是“我觉得必须”；have to 是“由于环境原因我不得不”。"
+  },
+  {
+    "id": "mvj_c10",
+    "question": "“It ______ be Tom. He has gone to London.” (那不可能是汤姆，他去伦敦了) 填：",
+    "options": ["mustn't", "can't", "may not", "shouldn't"],
+    "answer": 1,
+    "explanation": "基于事实的否定推测，用 can't。"
+  },
+  {
+    "id": "mvj_c11",
+    "question": "询问别人意见或提建议 “我应该怎样做呢？”，用：",
+    "options": ["Must I do?", "What should I do?", "May I do?", "Can I do?"],
+    "answer": 1,
+    "explanation": "should 用于征求建议。"
+  },
+  {
+    "id": "mvj_c12",
+    "question": "“might” 只能作为 “may” 的过去式使用吗？",
+    "options": ["是", "不是，它也可以用于现在，表示比 may 更不肯定的推测"],
+    "answer": 1,
+    "explanation": "might 在表达推测时，语气比 may 更委婉或更微弱。"
+  },
+  {
+    "id": "mvj_c13",
+    "question": "“You ______ watch too much TV. It's bad for your eyes.” (你不应该看太多电视) 填：",
+    "options": ["mustn't", "shouldn't", "can't", "don't have to"],
+    "answer": 1,
+    "explanation": "给予不应该做某事的建议，用 shouldn't。"
+  },
+  {
+    "id": "mvj_c14",
+    "question": "对 “Must I finish it now?” (我必须现在完成吗？) 的否定回答：",
+    "options": ["No, you mustn't.", "No, you needn't / No, you don't have to.", "No, you shouldn't."],
+    "answer": 1,
+    "explanation": "否定回答意为“不必”，而不是“禁止”。"
+  },
+  {
+    "id": "mvj_c15",
+    "question": "总结：所有情态动词后面始终遵循什么原则？",
+    "options": ["接动词原形", "接 to do", "接 doing", "接 done"],
+    "answer": 0,
+    "explanation": "一律接不带 to 的动词原形（除 have to 等带有 to 的短语外）。"
+  }
+]
