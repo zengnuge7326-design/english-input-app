@@ -359,7 +359,7 @@ export default function App() {
           <img src="/logo.png" alt="哇塞学英语" style={{height:'48px', width:'auto', display:'block'}} />
         </div>
         {/* Left group: 返回 + 首页 + 设置 + 登录 + 练习 */}
-        <div className="flex items-center gap-0.5 flex-1 shrink-0">
+        <div className="flex items-center gap-0.5 shrink-0">
           <button
             onClick={handleBack}
             disabled={!canGoBack}
@@ -409,7 +409,7 @@ export default function App() {
         </div>
 
         {/* Right group: 课程 + 教材 + 语法 + 同步练习 */}
-        <div className="flex items-center gap-0.5 flex-1 justify-end shrink-0 whitespace-nowrap">
+        <div className="flex items-center gap-0.5 shrink-0 whitespace-nowrap ml-auto">
           <button onClick={() => navigateTo('courses')}
             className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'courses' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
@@ -441,8 +441,8 @@ export default function App() {
 
         {/* Main content */}
         <main
-          className={`flex-1 flex flex-col items-center justify-start px-4 pb-24 transition-all duration-200${tab === 'exercise' ? ' ocean-main' : ''}`}
-          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice') ? '1.5rem' : '12vh' }}
+          className={`flex-1 flex flex-col items-center justify-start px-4 pb-4 transition-all duration-200${tab === 'exercise' ? ' ocean-main' : ''}`}
+          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice') ? '0.75rem' : '8vh' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
             <Dashboard

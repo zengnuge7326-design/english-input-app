@@ -389,7 +389,7 @@ export default function ExerciseQuiz({ questions, title, onClose }) {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 py-6 flex flex-col gap-5">
+    <div className="w-full max-w-lg mx-auto px-2 py-3 flex flex-col gap-3">
 
       {/* 进度条 */}
       <div className="flex items-center gap-3">
@@ -409,7 +409,7 @@ export default function ExerciseQuiz({ questions, title, onClose }) {
       </div>
 
       {/* 题目内容 */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-7">
+      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
         {(q.type === 'listen_word' || q.type === 'listen_qa') && (
           <ListenQuestion q={q} speak={speak} onAnswer={handleAnswer} answered={showAnswer} />
         )}
