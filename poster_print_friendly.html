@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语输入练习 - 推广海报 (省墨打印版)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+SC:wght@300;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1d4ed8;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --border: #e5e7eb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  }
+
+  /* A4 Dimensions */
+  .poster {
+    width: 794px;
+    min-height: 1123px;
+    background: white;
+    color: var(--text-main);
+    padding: 60px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 30px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1.5px solid var(--primary);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+  }
+
+  h1 { font-size: 48px; font-weight: 900; margin-bottom: 10px; color: var(--text-main); }
+  h1 span { color: var(--primary); }
+  .slogan { font-size: 18px; color: var(--text-muted); font-style: italic; }
+
+  /* Unique Features Section */
+  .section-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 40px 0 20px;
+    border-left: 6px solid var(--primary);
+    padding-left: 15px;
+  }
+
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .feature-card {
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .f-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+  .f-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .f-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+  .highlight { color: var(--primary); font-weight: 700; }
+
+  /* Mockup Representation */
+  .mockup-alt {
+    background: #f9fafb;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+  }
+  .mockup-alt p { font-size: 14px; color: #64748b; }
+
+  /* Bottom Area */
+  .footer {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cta { font-size: 20px; font-weight: 700; color: var(--primary); }
+  .url { font-size: 16px; font-weight: 700; margin-top: 5px; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .poster { border: none; box-shadow: none; width: 210mm; height: 297mm; }
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <header>
+      <div class="badge">专业英语输入训练系统</div>
+      <h1>输入 · <span>塞学英语</span></h1>
+      <p class="slogan">真正的“输入”式学习，让每个单词都入脑入心</p>
+    </header>
+
+    <div class="mockup-alt">
+      <p>【 这里本应是应用截图，打印时建议在此粘贴您的手写说明或贴图 】</p>
+      <div style="font-size: 20px; font-weight: 700; margin-top: 10px; color: #1e3a8a;">
+        She is a d_ct_r and my mother.
+      </div>
+      <div style="font-size: 12px; color: #64748b; margin-top: 5px;">(Level 2 提示模式：隐藏元音辅助记忆)</div>
+    </div>
+
+    <div class="section-title">独有的功能设计</div>
+    
+    <div class="features">
+      <div class="feature-card">
+        <span class="f-icon">💡</span>
+        <div class="f-title">多级按需提示</div>
+        <p class="f-desc">首字母、元音隐藏、辅音隐藏等 <span class="highlight">5大提示模式</span>，根据掌握程度动态调整，循序渐进构建记忆。</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="f-icon">🛡️</span>
+        <div class="f-title">错题强制重练</div>
+        <p class="f-desc">自动捕捉薄弱环节。遇到错题，系统将 <span class="highlight">强制重新练习 3-5 次</span>，确保每一个知识点都达到肌肉记忆级别。</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="f-icon">🤖</span>
+        <div class="f-title">AI 语法直连</div>
+        <p class="f-desc">独家 <span class="highlight">“此句语法”</span> 复制逻辑。遇到难点一键复制到 AI，秒获精准深度语法分析。</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="f-icon">⚙️</span>
+        <div class="f-title">深度自定义设置</div>
+        <p class="f-desc">首字母、元音隐藏等 <span class="highlight">5大提示等级</span>。支持机械键盘音效、0.5x-1.5x语速调节及强制跟读模式。</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="f-icon">📚</span>
+        <div class="f-title">教材同步全覆盖</div>
+        <p class="f-desc">全面适配 <span class="highlight">PEP 人教版</span> 三至六年级。内置同步练习、语法专项、选择/填空题库，闭环学习。</p>
+      </div>
+    </div>
+
+    <div class="section-title">如何开始</div>
+    <p style="font-size: 15px; line-height: 1.8; color: var(--text-muted);">
+      1. 浏览器访问下方网址 (无需下载安装)<br>
+      2. 注册账号 (可选) 以实时同步进度<br>
+      3. 选择教材或语法专项，开启沉浸式录入练习
+    </p>
+
+    <div class="footer">
+      <div>
+        <div class="cta">开启高效英语学习新篇章</div>
+        <div class="url">english-input-app-o3op.vercel.app</div>
+      </div>
+      <div style="border: 1px solid #ddd; padding: 10px; border-radius: 4px; font-size: 12px; text-align: center;">
+        浏览器直接打开<br>无需下载
+      </div>
+    </div>
+  </div>
+</body>
+</html>

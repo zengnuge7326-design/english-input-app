@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>英语输入练习 - 推广单 A4</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* A4 = 794px × 1123px */
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: #0f172a;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 背景装饰 */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page::after {
+    content: '';
+    position: absolute;
+    bottom: 200px; left: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(29,78,216,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+    padding: 36px 48px 30px;
+    position: relative;
+  }
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  .badge {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+    padding: 5px 16px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+  .free-tag {
+    background: #15803d;
+    border: 1px solid #22c55e;
+    border-radius: 999px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #86efac;
+    letter-spacing: 1px;
+  }
+  .app-name {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .app-sub {
+    font-size: 15px;
+    opacity: 0.85;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .url-row {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .url-icon { font-size: 18px; }
+  .url-label { font-size: 11px; opacity: 0.65; margin-bottom: 2px; letter-spacing: 1px; }
+  .url-text { font-size: 17px; font-weight: 800; letter-spacing: 0.5px; }
+
+  /* ── Body ── */
+  .body { padding: 32px 48px; }
+
+  .section-title {
+    font-size: 10px;
+    color: #475569;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #1e293b;
+  }
+  .mb { margin-bottom: 28px; }
+
+  /* 功能 */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .feat {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 16px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .feat-icon { font-size: 22px; flex-shrink: 0; }
+  .feat-title { font-size: 13px; font-weight: 700; color: #f1f5f9; margin-bottom: 3px; }
+  .feat-desc { font-size: 11px; color: #64748b; line-height: 1.5; }
+
+  /* 设备 */
+  .devices { display: flex; flex-direction: column; gap: 8px; }
+  .device {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .dev-icon { font-size: 24px; width: 34px; text-align: center; flex-shrink: 0; }
+  .dev-name { font-size: 14px; font-weight: 700; color: #f1f5f9; }
+  .dev-detail { font-size: 11px; color: #64748b; margin-top: 2px; }
+  .dev-status {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+  .s-best { background: #14532d; color: #4ade80; }
+  .s-ok   { background: #292524; color: #a8a29e; }
+
+  /* 网络 */
+  .networks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .net {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .net-icon { font-size: 26px; margin-bottom: 8px; }
+  .net-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .net-desc { font-size: 11px; color: #64748b; margin-bottom: 8px; }
+  .net-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .t-best { background: #14532d; color: #4ade80; }
+  .t-good { background: #1e3a5f; color: #60a5fa; }
+  .t-ok   { background: #292524; color: #a8a29e; }
+
+  /* 步骤 */
+  .steps { display: flex; gap: 0; }
+  .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -12px;
+    top: 14px;
+    font-size: 18px;
+    color: #334155;
+  }
+  .step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+  .step-title { font-size: 13px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+  .step-desc { font-size: 11px; color: #64748b; line-height: 1.6; padding: 0 8px; }
+
+  /* Footer */
+  .footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: #020617;
+    border-top: 1px solid #1e293b;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-left { font-size: 11px; color: #334155; line-height: 1.8; }
+  .footer-right { text-align: right; }
+  .footer-url { font-size: 13px; font-weight: 800; color: #60a5fa; }
+  .footer-sub { font-size: 10px; color: #334155; margin-top: 2px; }
+
+  /* divider */
+  .divider { height: 1px; background: #1e293b; margin: 0 0 28px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="top-row">
+      <div class="badge">小学英语学习工具</div>
+      <div class="free-tag">✦ 完全免费</div>
+    </div>
+    <div class="app-name">英语输入练习</div>
+    <div class="app-sub">
+      人教版教材同步 · 逐词打字练习 · 错题自动复习 · 云端进度保存<br>
+      适合小学三至五年级 · 无需下载 · 浏览器直接打开
+    </div>
+    <div class="url-row">
+      <div class="url-icon">🌐</div>
+      <div>
+        <div class="url-label">网址（复制到浏览器打开）</div>
+        <div class="url-text">english-input-app-o3op.vercel.app</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- 功能 -->
+    <div class="mb">
+      <div class="section-title">核心功能</div>
+      <div class="features">
+        <div class="feat">
+          <div class="feat-icon">📚</div>
+          <div>
+            <div class="feat-title">教材同步</div>
+            <div class="feat-desc">三四五年级人教版 PEP 全覆盖，单元分章节练习</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">⌨️</div>
+          <div>
+            <div class="feat-title">逐词输入</div>
+            <div class="feat-desc">打对变绿，打错立即提示，多级提示辅助</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">📊</div>
+          <div>
+            <div class="feat-title">错题统计</div>
+            <div class="feat-desc">自动记录高频错词，生成复习列表</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">🔊</div>
+          <div>
+            <div class="feat-title">跟读朗读</div>
+            <div class="feat-desc">标准英语发音示范，支持跟读练习</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">☁️</div>
+          <div>
+            <div class="feat-title">云端同步</div>
+            <div class="feat-desc">注册账号，多设备共享学习进度</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">🎯</div>
+          <div>
+            <div class="feat-title">多邻国课程</div>
+            <div class="feat-desc">1050 句系统英语训练，6 个难度单元</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 设备推荐 -->
+    <div class="mb">
+      <div class="section-title">设备推荐</div>
+      <div class="devices">
+        <div class="device">
+          <div class="dev-icon">💻</div>
+          <div>
+            <div class="dev-name">电脑（Windows / Mac）</div>
+            <div class="dev-detail">Chrome · Edge · Safari · 百度浏览器 均支持</div>
+          </div>
+          <div class="dev-status s-best">最佳体验</div>
+        </div>
+        <div class="device">
+          <div class="dev-icon">📱</div>
+          <div>
+            <div class="dev-name">iPad（配外接键盘更佳）</div>
+            <div class="dev-detail">Safari · Chrome 均支持，横竖屏自适应</div>
+          </div>
+          <div class="dev-status s-best">最佳体验</div>
+        </div>
+        <div class="device">
+          <div class="dev-icon">📲</div>
+          <div>
+            <div class="dev-name">手机（iPhone / 安卓）</div>
+            <div class="dev-detail">可正常使用，建议横屏，移动端持续优化中</div>
+          </div>
+          <div class="dev-status s-ok">可以使用</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 网络 -->
+    <div class="mb">
+      <div class="section-title">网络要求</div>
+      <div class="networks">
+        <div class="net">
+          <div class="net-icon">🏠</div>
+          <div class="net-name">家庭宽带</div>
+          <div class="net-desc">10 Mbps 以上即可<br>加载流畅，体验最佳</div>
+          <div class="net-tag t-best">强烈推荐</div>
+        </div>
+        <div class="net">
+          <div class="net-icon">📶</div>
+          <div class="net-name">4G / 5G 流量</div>
+          <div class="net-desc">每次使用约 5MB<br>流量消耗极低</div>
+          <div class="net-tag t-good">正常可用</div>
+        </div>
+        <div class="net">
+          <div class="net-icon">🏫</div>
+          <div class="net-name">学校 / 公共 WiFi</div>
+          <div class="net-desc">需可访问境外网站<br>部分学校网络受限</div>
+          <div class="net-tag t-ok">视情况而定</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 步骤 -->
+    <div style="margin-bottom: 80px;">
+      <div class="section-title">三步开始学习</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">打开网址</div>
+          <div class="step-desc">浏览器输入网址<br>无需下载安装</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">注册账号</div>
+          <div class="step-desc">邮箱注册即可<br>进度云端永久保存</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">选择教材</div>
+          <div class="step-desc">点"教材"选年级<br>按单元开始练习</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      适合小学三至五年级 · 人教版 PEP 教材配套<br>
+      数据加密存储 · 注册仅需邮箱 · 完全免费使用
+    </div>
+    <div class="footer-right">
+      <div class="footer-url">english-input-app-o3op.vercel.app</div>
+      <div class="footer-sub">浏览器直接打开，无需下载</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

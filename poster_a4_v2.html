@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语输入练习 - 推广海报 A4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #030712;
+    --bg-card: rgba(17, 24, 39, 0.7);
+    --primary: #1d4ed8;
+    --accent: #c5a55a;
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  }
+
+  /* A4 Dimensions at 96 DPI */
+  .poster {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    background-image: 
+      radial-gradient(circle at 0% 0%, rgba(29, 78, 216, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+  }
+
+  /* Decorative Background Elements */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.4;
+  }
+  .blob-1 { top: -100px; right: -100px; width: 400px; height: 400px; background: var(--primary); }
+  .blob-2 { bottom: 100px; left: -150px; width: 500px; height: 500px; background: #6366f1; }
+
+  .content { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; }
+
+  /* --- Header --- */
+  .header {
+    padding: 60px 60px 40px;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(29, 78, 216, 0.2);
+    border: 1px solid rgba(29, 78, 216, 0.4);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #60a5fa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(4px);
+  }
+  .title-group { margin-bottom: 20px; }
+  .title {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    background: linear-gradient(to bottom, #ffffff 30%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .title span { color: var(--accent); -webkit-text-fill-color: initial; }
+  .slogan {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--text-muted);
+    letter-spacing: 4px;
+    margin-top: 15px;
+    font-family: 'Ma Shan Zheng', cursive;
+  }
+
+  /* --- Mockup Section --- */
+  .visual {
+    padding: 0 60px;
+    margin-bottom: 50px;
+  }
+  .mockup {
+    width: 600px;
+    height: 380px;
+    margin: 0 auto;
+    background: #020617;
+    border: 8px solid #334155;
+    border-radius: 32px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+  .mockup-header {
+    height: 44px;
+    background: #1e293b;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .mockup-body { padding: 30px; }
+  .sentence-zh { font-size: 18px; color: #94a3b8; margin-bottom: 20px; text-align: center; }
+  .sentence-en { font-size: 28px; font-weight: 700; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+  .word-box { padding: 6px 12px; background: rgba(59, 130, 246, 0.1); border-bottom: 2px solid #3b82f6; min-width: 60px; text-align: center; color: #60a5fa; }
+  .keyboard { position: absolute; bottom: 20px; left: 30px; right: 30px; display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; opacity: 0.3; }
+  .key { height: 32px; background: #334155; border-radius: 6px; }
+
+  /* --- Features --- */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0 60px;
+    margin-bottom: 60px;
+  }
+  .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 24px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(12px);
+  }
+  .f-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: inline-block;
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .f-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
+  .f-desc { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+  .highlight { color: #60a5fa; font-weight: 700; }
+
+  /* --- Footer --- */
+  .footer {
+    margin-top: auto;
+    background: rgba(0,0,0,0.5);
+    padding: 40px 60px;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cta-text { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .url { font-size: 18px; font-weight: 400; color: #60a5fa; font-family: 'Inter', sans-serif; }
+  
+  .qr-placeholder {
+    width: 100px; height: 100px;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="content">
+      <!-- Header -->
+      <header class="header">
+        <div class="badge">Professional English Training</div>
+        <div class="title-group">
+          <h1 class="title">输入 · <span>塞学英语</span></h1>
+          <p class="slogan">真正的“输入”式学习，让每个单词都入脑入心</p>
+        </div>
+      </header>
+
+      <!-- Mockup Area -->
+      <section class="visual">
+        <div class="mockup">
+          <div class="mockup-header">
+            <div class="dot" style="background: #ff5f57;"></div>
+            <div class="dot" style="background: #febc2e;"></div>
+            <div class="dot" style="background: #28c840;"></div>
+            <div style="flex:1; text-align:center; font-size:12px; color:#94a3b8;">Level 2 提示模式 · 全面隐藏元音</div>
+          </div>
+          <div class="mockup-body">
+            <div class="sentence-zh">她是一名医生，也是我的母亲。</div>
+            <div class="sentence-en">
+              <div style="color: #4ade80;">She</div>
+              <div style="color: #4ade80;">is</div>
+              <div style="color: #4ade80;">a</div>
+              <div class="word-box" style="animation: pulse 1.5s infinite;">d_ct_r</div>
+              <div style="opacity: 0.3;">and</div>
+              <div style="opacity: 0.3;">my</div>
+              <div style="opacity: 0.3;">mother</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="display:inline-block; padding:10px 40px; background:var(--primary); border-radius:12px; font-weight:700; font-size:14px; box-shadow:0 10px 20px rgba(29,78,216,0.5);">检查拼写 (Enter)</div>
+            </div>
+          </div>
+          <div class="keyboard">
+            <div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div>
+            <div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Grid -->
+      <section class="features-grid">
+        <div class="feature-card">
+          <div class="f-icon">💡</div>
+          <h3 class="f-title">多级按需提示</h3>
+          <p class="f-desc">
+            拒绝死记硬背！首字母、元音隐藏、辅音隐藏等 <span class="highlight">5大提示模式</span>，根据掌握程度动态调整，循序渐进构建记忆。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">🛡️</div>
+          <h3 class="f-title">错题强制重练</h3>
+          <p class="f-desc">
+            自动捕捉学习薄弱环节。遇到错题，系统将 <span class="highlight">强制重新练习 3-5 次</span>，确保每一个知识点都达到肌肉记忆级别。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">🤖</div>
+          <h3 class="f-title">AI 语法直连</h3>
+          <p class="f-desc">
+            独家 <span class="highlight">“此句语法”</span> 复制逻辑。遇到难点一键复制到 AI，秒获精准深度语法分析。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">⚙️</div>
+          <h3 class="f-title">深度自定义设置</h3>
+          <p class="f-desc">
+            支持 <span class="highlight">5大提示模式</span>、键盘音效、0.5x-1.5x 语速调节及强制跟读模式。量身定制你的学习体验。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">📚</div>
+          <h3 class="f-title">教材同步全覆盖</h3>
+          <p class="f-desc">
+            匹配 <span class="highlight">PEP 人教版</span> 三至六年级全系列。涵盖单元同步、语法专项、选择/填空题库。学习更完整！
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div>
+          <h2 class="cta-text">开启高效英语学习新篇章</h2>
+          <div class="url">english-input-app-o3op.vercel.app</div>
+        </div>
+        <div class="qr-placeholder">
+          <div style="font-size: 14px; margin-bottom: 5px;">扫码</div>
+          <div style="font-size: 8px;">或浏览器输入网址</div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <style>
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+    }
+  </style>
+</body>
+</html>

@@ -353,7 +353,11 @@ export default function App() {
     <div className="min-h-screen bg-black text-white flex flex-col">
 
       {/* Header */}
-      <header className="border-b border-gray-800/60 bg-gray-950/80 backdrop-blur px-3 py-2 flex items-center z-30 relative">
+      <header className="border-b border-gray-800/60 bg-gray-950/80 backdrop-blur py-0 flex items-center z-30 relative flex-nowrap overflow-x-auto" style={{minHeight:'48px'}}>
+        {/* Logo */}
+        <div className="shrink-0 cursor-pointer" onClick={() => navigateTo('home')}>
+          <img src="/logo.png" alt="哇塞学英语" style={{height:'48px', width:'auto', display:'block'}} />
+        </div>
         {/* Left group: 返回 + 首页 + 设置 + 登录 + 练习 */}
         <div className="flex items-center gap-0.5 flex-1 shrink-0">
           <button
@@ -365,27 +369,27 @@ export default function App() {
             <IconChevronLeft size={14} /><span>返回</span>
           </button>
           <button onClick={() => navigateTo('home')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'home' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
             <span className={tab === 'home' ? 'text-blue-400' : ''}><IconHome size={14} /></span>
             <span>首页</span>
           </button>
           <button onClick={() => setShowSettings(true)}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors text-gray-500 hover:bg-gray-800/60 hover:text-gray-200">
+            className="flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-500 hover:bg-gray-800/60 hover:text-gray-200">
             <IconSettings size={14} /><span>设置</span>
           </button>
           {user ? (
-            <button onClick={() => supabase.auth.signOut()} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors text-gray-500 hover:bg-gray-800/60 hover:text-gray-200" title="点击退出登录">
+            <button onClick={() => supabase.auth.signOut()} className="flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-500 hover:bg-gray-800/60 hover:text-gray-200" title="点击退出登录">
               <div className="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold text-white">{user.email[0].toUpperCase()}</div>
               <span className="max-w-[80px] truncate">{user.email.split('@')[0]}</span>
             </button>
           ) : (
-            <button onClick={() => setShowLogin(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors text-gray-500 hover:bg-gray-800/60 hover:text-gray-200">
+            <button onClick={() => setShowLogin(true)} className="flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-500 hover:bg-gray-800/60 hover:text-gray-200">
               <IconUser size={14} /><span>登录</span>
             </button>
           )}
           <button onClick={() => setShowExerciseHistory(v => !v)}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'exercise' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
             <span className={tab === 'exercise' ? 'text-blue-400' : ''}><IconPencil size={14} /></span>
             <span>练习</span>
@@ -404,31 +408,31 @@ export default function App() {
           ) : null}
         </div>
 
-        {/* Right group: 课程 + 教材 + 语法 + 选择 + 填空 */}
-        <div className="flex items-center gap-0.5 flex-1 justify-end shrink-0">
+        {/* Right group: 课程 + 教材 + 语法 + 同步练习 */}
+        <div className="flex items-center gap-0.5 flex-1 justify-end shrink-0 whitespace-nowrap">
           <button onClick={() => navigateTo('courses')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'courses' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
             <span className={tab === 'courses' ? 'text-blue-400' : ''}><IconBookOpen size={14} /></span>
             <span>课程</span>
           </button>
           <button onClick={() => navigateTo('textbook')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'textbook' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
             <span className={tab === 'textbook' ? 'text-blue-400' : ''}><IconBook size={14} /></span>
             <span>教材</span>
           </button>
           <button onClick={() => navigateTo('grammar')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'grammar' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
             <span className={tab === 'grammar' ? 'text-blue-400' : ''}><IconGraduationCap size={14} /></span>
             <span>语法</span>
           </button>
           <button onClick={() => navigateTo('syncpractice')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'syncpractice' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
             <span className={tab === 'syncpractice' ? 'text-blue-400' : ''}><IconRefresh size={14} /></span>
-            <span>同步练习</span>
+            <span>同步</span>
           </button>
         </div>
       </header>
@@ -703,7 +707,6 @@ export default function App() {
 
       {/* Login modal */}
       {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
-      )}
     </div>
   )
 }
