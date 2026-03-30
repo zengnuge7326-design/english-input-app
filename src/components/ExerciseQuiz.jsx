@@ -187,7 +187,7 @@ function useTTS() {
 // ── 单题渲染 ──────────────────────────────────────────────────────────────────
 
 function OptionBtn({ label, selected, correct, wrong, disabled, onClick }) {
-  let cls = 'w-full text-left px-4 py-3 rounded-xl border text-sm transition-all '
+  let cls = 'w-full text-left px-5 py-4 rounded-xl border text-base transition-all '
   if (correct) cls += 'bg-green-900/40 border-green-500 text-green-300'
   else if (wrong) cls += 'bg-red-900/40 border-red-500 text-red-300'
   else if (selected) cls += 'bg-blue-900/40 border-blue-500 text-blue-200'
@@ -242,10 +242,10 @@ function ChoiceQuestion({ q, onAnswer, answered }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-white text-base leading-relaxed bg-gray-800/60 rounded-xl px-4 py-3 text-center">
+      <p className="text-white text-xl leading-relaxed bg-gray-800/60 rounded-xl px-5 py-4 text-center font-medium">
         {q.question}
       </p>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         {q.options.map((opt, i) => (
           <OptionBtn
             key={i} label={opt}
@@ -389,7 +389,7 @@ export default function ExerciseQuiz({ questions, title, onClose }) {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto px-4 py-6 flex flex-col gap-5">
+    <div className="w-full max-w-2xl mx-auto px-4 py-6 flex flex-col gap-5">
 
       {/* 进度条 */}
       <div className="flex items-center gap-3">
@@ -409,7 +409,7 @@ export default function ExerciseQuiz({ questions, title, onClose }) {
       </div>
 
       {/* 题目内容 */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
+      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-7">
         {(q.type === 'listen_word' || q.type === 'listen_qa') && (
           <ListenQuestion q={q} speak={speak} onAnswer={handleAnswer} answered={showAnswer} />
         )}

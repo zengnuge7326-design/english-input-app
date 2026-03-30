@@ -86,7 +86,10 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
 
   // Auto-play when speak gate activates (so child hears sentence before reading)
   useEffect(() => {
-    if (speakActive && sentence) setTimeout(() => speak(sentence.en), 700)
+    if (speakActive && sentence) {
+      const textToSpeak = (splitMode && chunks) ? chunks[chunkIndex] : sentence.en
+      setTimeout(() => speak(textToSpeak), 700)
+    }
   }, [speakActive])
 
   useEffect(() => {
@@ -433,9 +436,9 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
                   ))}
                 </div>
               ) : speakPhase === 'success' ? (
-                <div className="text-green-400 font-mono text-sm">{sentence.en}</div>
+                <div className="text-green-400 font-mono text-sm">{splitMode && chunks ? chunks[chunkIndex] : sentence.en}</div>
               ) : (
-                <div className="text-white/90 font-mono text-sm leading-relaxed">{sentence.en}</div>
+                <div className="text-green-400 font-mono text-base font-semibold leading-relaxed">{splitMode && chunks ? chunks[chunkIndex] : sentence.en}</div>
               )}
             </div>
 
