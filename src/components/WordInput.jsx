@@ -31,10 +31,10 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
   const [errorCount, setErrorCount] = useState(() => words.map(() => 0))
   const [shaking, setShaking] = useState(false)
   const [wordBubbles, setWordBubbles] = useState([])
-  const [translation, setTranslation] = useState({ text: '', show: false, idx: -1 })
   const bubbleIdRef = useRef(0)
   const inputRefs = useRef([])
   const { translate } = useWordTranslate()
+  const [translations, setTranslations] = useState({}) // idx → zh text
 
   useEffect(() => {
     setCurrent(0)
@@ -43,7 +43,23 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
     setRetryCount(words.map(() => 0))
     setErrorCount(words.map(() => 0))
     setShaking(false)
+    setTranslations({})
     onCurrentChange?.(0, words.length)
+  }, [sentence.id])
+
+  // Pre-fetch translations for ALL words when sentence changes
+  useEffect(() => {
+    words.forEach((wordStr, i) => {
+      const [core] = splitPunct(wordStr)
+      if (!core) return
+      // Try pre-annotated data first
+      const ann = getWordAnnotation(sentence, wordStr)
+      if (ann) { setTranslations(prev => ({ ...prev, [i]: ann.zh })); return }
+      // API fallback (cached by useWordTranslate)
+      translate(core).then(text => {
+        if (text) setTranslations(prev => ({ ...prev, [i]: text }))
+      })
+    })
   }, [sentence.id])
 
   useEffect(() => {
@@ -53,34 +69,13 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
     }
   }, [current, sentence.id])
 
-  // Fetch translation for current word
-  useEffect(() => {
-    const wordStr = words[current] || ''
-    const [core] = splitPunct(wordStr)
-    if (!core || statuses[current] === 'correct') {
-      setTranslation(t => ({ ...t, show: false }))
-      return
-    }
-    // Try pre-annotated data first
-    const ann = getWordAnnotation(sentence, wordStr)
-    if (ann) {
-      setTranslation({ text: ann.zh, show: true, idx: current })
-      return
-    }
-    // Fallback to mymemory API
-    setTranslation(t => ({ ...t, show: false }))
-    let cancelled = false
-    translate(core).then(text => {
-      if (cancelled) return
-      if (text) setTranslation({ text, show: true, idx: current })
-      else setTranslation(t => ({ ...t, show: false }))
-    })
-    return () => { cancelled = true }
-  }, [current, sentence.id])
 
   useEffect(() => {
-    const el = inputRefs.current[current]
-    if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length) }
+    const t = setTimeout(() => {
+      const el = inputRefs.current[current]
+      if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length) }
+    }, 30)
+    return () => clearTimeout(t)
   }, [current, sentence.id])
 
   useEffect(() => {
@@ -241,7 +236,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
   }
 
   return (
-    <div className="flex flex-wrap gap-x-5 gap-y-8 items-end justify-center mt-3">
+    <div className="flex flex-wrap gap-x-5 gap-y-6 items-end justify-center mt-3">
       {words.map((word, i) => {
         const [core, punct] = splitPunct(word)
         const status = statuses[i]
@@ -308,14 +303,14 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
               ) : (
                 <div className={`w-full h-0.5 mt-0.5 transition-colors duration-150 ${underlineColor}`} />
               )}
-              {translation.idx === i && (
-                <div className={`word-translation ${translation.show ? 'show' : ''}`}>
-                  <span className={`text-base font-semibold ${
-                    isShaking ? 'text-red-400'
-                    : 'text-orange-400'
-                  }`} style={{ fontFamily: '"Kaiti SC", "STKaiti", "KaiTi", serif', fontWeight: 'bold', WebkitFontSmoothing: 'antialiased' }}>{translation.text}</span>
-                </div>
-              )}
+              <div className="h-5 flex items-center justify-center mt-0.5 overflow-hidden">
+                {translations[i] && (
+                  <span className={`text-sm whitespace-nowrap ${isShaking ? 'text-red-400' : 'text-orange-400'}`}
+                    style={{ fontFamily: '"Kaiti SC","STKaiti","KaiTi",serif', fontWeight: 'bold' }}>
+                    {translations[i]}
+                  </span>
+                )}
+              </div>
 
               {/* invisible input */}
               <input

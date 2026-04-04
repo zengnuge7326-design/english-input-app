@@ -231,24 +231,43 @@ function playDrum(ctx, isVictory) {
   })
 }
 
-let _fwBuffer = null
-async function loadFireworksBuffer(ctx) {
-  if (_fwBuffer) return _fwBuffer
-  const res = await fetch('./fireworks.mp3')
-  const arr = await res.arrayBuffer()
-  _fwBuffer = await ctx.decodeAudioData(arr)
-  return _fwBuffer
-}
-function playFireworksBoom(ctx, volume = 1) {
-  loadFireworksBuffer(ctx).then(buf => {
-    const src = ctx.createBufferSource()
-    src.buffer = buf
+function playCheer(ctx) {
+  const t = ctx.currentTime
+  // 上行琶音：C大调五声音阶，竖琴风格
+  const harpNotes = [523, 659, 784, 988, 1175, 1319, 1568, 1976]
+  harpNotes.forEach((freq, i) => {
+    const osc = ctx.createOscillator()
+    osc.type = 'sine'
     const gain = ctx.createGain()
-    gain.gain.value = volume
-    src.connect(gain)
-    gain.connect(ctx.destination)
-    src.start()
-  }).catch(() => {})
+    // 叠加一个泛音让音色更丰富
+    const osc2 = ctx.createOscillator()
+    osc2.type = 'triangle'
+    osc2.frequency.value = freq * 2
+    const gain2 = ctx.createGain()
+    const start = t + i * 0.07
+    osc.frequency.value = freq
+    gain.gain.setValueAtTime(0, start)
+    gain.gain.linearRampToValueAtTime(0.18, start + 0.015)
+    gain.gain.exponentialRampToValueAtTime(0.001, start + 0.55)
+    gain2.gain.setValueAtTime(0, start)
+    gain2.gain.linearRampToValueAtTime(0.06, start + 0.015)
+    gain2.gain.exponentialRampToValueAtTime(0.001, start + 0.35)
+    osc.connect(gain); gain.connect(ctx.destination)
+    osc2.connect(gain2); gain2.connect(ctx.destination)
+    osc.start(start); osc.stop(start + 0.6)
+    osc2.start(start); osc2.stop(start + 0.4)
+  })
+  // 结尾：一个清脆的高音铃
+  const bell = ctx.createOscillator()
+  bell.type = 'sine'
+  bell.frequency.value = 2093
+  const bellGain = ctx.createGain()
+  const bs = t + harpNotes.length * 0.07 + 0.05
+  bellGain.gain.setValueAtTime(0, bs)
+  bellGain.gain.linearRampToValueAtTime(0.22, bs + 0.01)
+  bellGain.gain.exponentialRampToValueAtTime(0.001, bs + 0.8)
+  bell.connect(bellGain); bellGain.connect(ctx.destination)
+  bell.start(bs); bell.stop(bs + 0.85)
 }
 
 function playBubblePop(ctx) {
@@ -341,8 +360,8 @@ export function useSound(settings) {
 
   const playFireworks = useCallback(() => {
     if (settings?.fireworksSound === false) return
-    try { playFireworksBoom(getCtx(), volume) } catch {}
-  }, [settings?.fireworksSound, volume])
+    try { playCheer(getCtx()) } catch {}
+  }, [settings?.fireworksSound])
 
   return { playKeypress, playError, playCorrect, playVictory, playBubble, playFireworks }
 }

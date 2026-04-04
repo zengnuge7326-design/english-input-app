@@ -355,19 +355,18 @@ export default function App() {
       {/* Header */}
       <header className="border-b border-gray-800/60 bg-gray-950/80 backdrop-blur py-0 flex items-center z-30 relative flex-nowrap overflow-x-auto" style={{minHeight:'48px'}}>
         {/* Logo */}
-        <div className="shrink-0 cursor-pointer" onClick={() => navigateTo('home')}>
-          <img src="/logo.png" alt="哇塞学英语" style={{height:'48px', width:'auto', display:'block'}} />
+        <div className="shrink-0 cursor-pointer flex items-center gap-1.5 px-3 select-none" onClick={() => navigateTo('home')}>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+            style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)' }}>
+            <span className="text-white font-black text-sm leading-none tracking-tight">OK</span>
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="text-white font-bold text-sm tracking-wide">OK英语</span>
+            <span className="text-blue-400/70 text-[9px] tracking-widest font-medium">ENGLISH</span>
+          </div>
         </div>
         {/* Left group: 返回 + 首页 + 设置 + 登录 + 练习 */}
-        <div className="flex items-center gap-0.5 shrink-0">
-          <button
-            onClick={handleBack}
-            disabled={!canGoBack}
-            className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-sm font-medium transition-colors shrink-0
-              ${canGoBack ? 'text-gray-400 hover:bg-gray-800 hover:text-white' : 'text-gray-800 cursor-default'}`}
-          >
-            <IconChevronLeft size={14} /><span>返回</span>
-          </button>
+        <div className="flex items-center gap-0.5 shrink-0 pl-4">
           <button onClick={() => navigateTo('home')}
             className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'home' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
@@ -408,8 +407,8 @@ export default function App() {
           ) : null}
         </div>
 
-        {/* Right group: 课程 + 教材 + 语法 + 同步练习 */}
-        <div className="flex items-center gap-0.5 shrink-0 whitespace-nowrap ml-auto">
+        {/* Right group: 课程 + 教材 + 语法 + 返回 */}
+        <div className="flex items-center gap-0.5 shrink-0 whitespace-nowrap ml-auto pr-4">
           <button onClick={() => navigateTo('courses')}
             className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'courses' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
@@ -428,11 +427,13 @@ export default function App() {
             <span className={tab === 'grammar' ? 'text-blue-400' : ''}><IconGraduationCap size={14} /></span>
             <span>语法</span>
           </button>
-          <button onClick={() => navigateTo('syncpractice')}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'syncpractice' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
-            <span className={tab === 'syncpractice' ? 'text-blue-400' : ''}><IconRefresh size={14} /></span>
-            <span>同步</span>
+          <button
+            onClick={handleBack}
+            disabled={!canGoBack}
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors shrink-0
+              ${canGoBack ? 'text-gray-400 hover:bg-gray-800 hover:text-white' : 'text-gray-800 cursor-default'}`}
+          >
+            <IconChevronLeft size={14} /><span>返回</span>
           </button>
         </div>
       </header>
@@ -470,6 +471,8 @@ export default function App() {
               onClose={() => setTab('exercise')}
               onSetBack={setBackFn}
               progress={progress}
+              onNavigate={navigateTo}
+              requireSpeak={settings?.requireSpeak}
             />
           </div>
           <div style={{ display: tab === 'grammar' ? 'contents' : 'none' }}>
@@ -522,7 +525,7 @@ export default function App() {
           {tab === 'exercise' && nav && (
             <>
               <div className="px-4 pt-2.5 pb-3 flex items-center justify-center gap-1.5 flex-wrap">
-                {/* Navigation group: 上一句 / 下一句 */}
+                {/* 上一句 / 下一句 */}
                 <div className="flex items-center gap-1 bg-gray-900 border border-gray-800 rounded-xl p-1">
                   <button onClick={nav.prev} disabled={!nav.canPrev}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-gray-800 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors">
@@ -536,31 +539,7 @@ export default function App() {
 
                 <div className="w-px h-5 bg-gray-800 mx-0.5" />
 
-                {/* Unit group: 上单元 / 下单元 */}
-                <div className="flex items-center gap-1 bg-gray-900 border border-gray-800 rounded-xl p-1">
-                  <button
-                    disabled={!prevUnit}
-                    onClick={() => prevUnit && handleImport(prevUnit.data.slice(prevUnit.slice[0], prevUnit.slice[1]), prevUnit.label)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-gray-800 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors"
-                    title={prevUnit ? `上单元：${prevUnit.label}` : '已是第一单元'}>
-                    <IconArrowLeft size={14} /><span>上单元</span>
-                  </button>
-                  <button
-                    disabled={!isTextbookLesson || nextUnit === null}
-                    onClick={() => {
-                      if (!nextUnit) return
-                      if (nextUnit === 'textbook') navigateTo('textbook')
-                      else handleImport(nextUnit.data.slice(nextUnit.slice[0], nextUnit.slice[1]), nextUnit.label)
-                    }}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-gray-800 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors"
-                    title={nextUnit ? (nextUnit === 'textbook' ? '返回教材页' : `下单元：${nextUnit.label}`) : '已是最后单元'}>
-                    <span>下单元</span><IconArrowRight size={14} />
-                  </button>
-                </div>
-
-                <div className="w-px h-5 bg-gray-800 mx-0.5" />
-
-                {/* Status group */}
+                {/* 已掌握 / 复习 */}
                 <div className="flex items-center gap-1 bg-gray-900 border border-gray-800 rounded-xl p-1">
                   <button onClick={nav.mastered}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
@@ -576,23 +555,35 @@ export default function App() {
 
                 <div className="w-px h-5 bg-gray-800 mx-0.5" />
 
-                {/* Tools group */}
+                {/* 解释 */}
                 <div className="flex items-center gap-1 bg-gray-900 border border-gray-800 rounded-xl p-1">
                   <button onClick={nav.toggleCard}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-gray-800 hover:text-white transition-colors">
                     <IconInfo size={14} /><span>解释</span>
                   </button>
-                  <button onClick={nav.toggleSplit}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
-                      ${nav.splitMode ? 'bg-white/10 text-white border border-white/20' : 'text-white/70 hover:bg-gray-800 hover:text-white'}`}>
-                    <IconSplit size={14} /><span>拆句</span>
-                  </button>
+                </div>
+
+                <div className="w-px h-5 bg-gray-800 mx-0.5" />
+
+                {/* 拆句: 初级 / 中级 / 高级 */}
+                <div className="flex items-center gap-1 bg-gray-900 border border-gray-800 rounded-xl p-1">
+                  {[1, 2, 3].map(level => {
+                    const labels = { 1: '初级', 2: '中级', 3: '高级' }
+                    const isActive = nav.splitLevel === level
+                    return (
+                      <button key={level} onClick={() => nav.setSplitLevel?.(level)}
+                        className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+                          ${isActive ? 'bg-white/10 text-white border border-white/20' : 'text-white/70 hover:bg-gray-800 hover:text-white'}`}>
+                        {isActive && <IconSplit size={12} />}
+                        <span>拆{labels[level]}</span>
+                      </button>
+                    )
+                  })}
                 </div>
 
                 {lessonProgress.total > 0 && (
                   <span className="text-white/30 text-xs tabular-nums ml-1 font-mono">{lessonProgress.index + 1}/{lessonProgress.total}</span>
                 )}
-
               </div>
               <div className="px-4 pb-2.5">
                 <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">

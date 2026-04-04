@@ -75,15 +75,9 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                   options={[['en-US','🇺🇸 美式'],['en-GB','🇬🇧 英式']]}
                   onSelect={v => set({ lang: v })} />
 
-                <div className="flex flex-col gap-2">
-                  <div className="text-gray-400 text-sm">语速 <span className="text-white font-bold">{s.rate}x</span></div>
-                  <input type="range" min="0.5" max="1.5" step="0.1" value={s.rate}
-                    onChange={e => set({ rate: parseFloat(e.target.value) })}
-                    className="accent-blue-500 w-full" />
-                  <div className="flex justify-between text-gray-500 text-xs">
-                    <span>慢</span><span>正常</span><span>快</span>
-                  </div>
-                </div>
+                <Seg label="朗读速度" value={s.rate}
+                  options={[[0.5,'0.5x 慢速'], [0.7,'0.7x 正常'], [1.0,'1x 标准']]}
+                  onSelect={v => set({ rate: v })} />
 
                 <div className="flex flex-col gap-2">
                   <div className="text-gray-400 text-sm">音量 <span className="text-white font-bold">{Math.round((s.volume ?? 1) * 100)}%</span></div>
@@ -182,6 +176,20 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                         onSelect={v => set({ hintTriggerCount: v })} />
                     </div>
                   )}
+                </div>
+
+                <div className="border-t border-gray-800 pt-4">
+                  <div className="text-gray-500 text-xs mb-2 uppercase tracking-wider">拆句模式</div>
+                  <Toggle label="拆句模式隐藏跳过按钮" checked={s.hideSplitSkip !== false}
+                    onChange={v => set({ hideSplitSkip: v })} />
+                  <div className="text-xs text-gray-600 mb-2">关闭后，拆句时孩子也能看到跳过按钮</div>
+                </div>
+
+                <div className="border-t border-gray-800 pt-4">
+                  <div className="text-gray-500 text-xs mb-2 uppercase tracking-wider">防作弊</div>
+                  <Toggle label="录音时禁用领读按钮" checked={s.blockTTSDuringRec !== false}
+                    onChange={v => set({ blockTTSDuringRec: v })} />
+                  <div className="text-xs text-gray-600 mb-2">防止用领读声音欺骗录音；录不上时可关闭</div>
                 </div>
 
                 <div className="border-t border-gray-800 pt-4 mt-4">

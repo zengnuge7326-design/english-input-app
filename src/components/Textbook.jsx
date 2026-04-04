@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Unit1Flow from './Unit1Flow'
 import grade4DownData from '../data/grade4_down.json'
 import grade3UpData from '../data/grade3_up.json'
 import grade3DownData from '../data/grade3_down.json'
@@ -10,7 +11,7 @@ const TEXTBOOK_SLOTS = [
     id: 'grade3_up',
     name: '三年级上册',
     desc: '人教版三年级上册 Unit 1-6',
-    cover: '/covers/grade3_up.jpg',
+    cover: './covers/grade3_up.jpg',
     data: grade3UpData,
     lessons: [
       { label: 'Unit 1', desc: "Hello! I'm Mike Black.", slice: [0, 11] },
@@ -25,7 +26,7 @@ const TEXTBOOK_SLOTS = [
     id: 'grade3_down',
     name: '三年级下册',
     desc: '人教版三年级下册 Unit 1-6',
-    cover: '/covers/grade3_down.jpg',
+    cover: './covers/grade3_down.jpg',
     data: grade3DownData,
     lessons: [
       { label: 'Unit 1', desc: "What's your name?", slice: [0, 13] },
@@ -40,7 +41,7 @@ const TEXTBOOK_SLOTS = [
     id: 'grade4_up',
     name: '四年级上册',
     desc: '人教版四年级上册 Unit 1-6',
-    cover: '/covers/grade4_up.jpg',
+    cover: './covers/grade4_up.jpg',
     data: grade4UpData,
     lessons: [
       { label: 'Unit 1A', desc: 'How are families different? (1)', slice: [0, 9] },
@@ -59,7 +60,7 @@ const TEXTBOOK_SLOTS = [
     id: 'grade4_down',
     name: '四年级下册',
     desc: '人教版四年级下册 Unit 1-6',
-    cover: '/covers/grade4_down.jpg',
+    cover: './covers/grade4_down.jpg',
     data: grade4DownData,
     lessons: [
       { label: 'Unit 1A', desc: 'Class rules (1)', slice: [0, 10] },
@@ -85,7 +86,7 @@ const TEXTBOOK_SLOTS = [
     id: 'grade5_up',
     name: '五年级上册',
     desc: '人教版五年级上册 Unit 1-6',
-    cover: '/covers/grade5_up.jpg',
+    cover: './covers/grade5_up.jpg',
     data: grade5UpData,
     lessons: [
       { label: 'Unit 1', desc: "What's he like?", slice: [0, 8] },
@@ -113,12 +114,28 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Textbook({ onImport, onClose, onSetBack, progress = {} }) {
+export default function Textbook({ onImport, onClose, onSetBack, progress = {}, onNavigate, requireSpeak }) {
   const [detail, setDetail] = useState(null)
+  const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
 
   useEffect(() => {
-    onSetBack?.(detail ? () => () => setDetail(null) : null)
-  }, [detail, onSetBack])
+    if (syncUnit) {
+      onSetBack?.(() => () => setSyncUnit(null))
+    } else {
+      onSetBack?.(detail ? () => () => setDetail(null) : null)
+    }
+  }, [detail, syncUnit, onSetBack])
+
+  if (syncUnit) {
+    return (
+      <Unit1Flow
+        unitLabel={syncUnit.label}
+        bookId={syncUnit.bookId}
+        requireSpeak={requireSpeak}
+        onClose={() => setSyncUnit(null)}
+      />
+    )
+  }
 
   if (detail) {
     const book = TEXTBOOK_SLOTS.find(b => b.id === detail)
@@ -163,28 +180,35 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {} }
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const done = stats.mastered === stats.total && stats.total > 0
             return (
-              <button
-                key={i}
-                onClick={() => onImport(data, `${book.name} · ${lesson.label}`)}
-                className="text-left bg-gray-900 border border-gray-800 hover:border-gray-600 rounded-xl p-4 flex flex-col gap-2 transition-colors"
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <span className="text-white text-sm font-medium">{lesson.label}</span>
-                  {done
-                    ? <span className="text-xs text-green-400 bg-green-900/40 border border-green-700/50 px-2 py-0.5 rounded-full shrink-0">已完成</span>
-                    : stats.attempted > 0
-                      ? <span className="text-xs text-blue-400 bg-blue-900/40 border border-blue-700/50 px-2 py-0.5 rounded-full shrink-0">进行中</span>
-                      : <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full shrink-0">{data.length} 句</span>
-                  }
-                </div>
-                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
-                  <div className={`h-full rounded-full transition-all duration-500 ${done ? 'bg-green-500' : 'bg-blue-500'}`} style={{ width: `${percent}%` }} />
-                </div>
-                <div className="flex items-center justify-between text-xs text-gray-500">
-                  <span className="leading-snug line-clamp-1 text-gray-500">{lesson.desc}</span>
-                  <span className="text-gray-600 font-mono shrink-0 ml-1">#{i + 1}</span>
-                </div>
-              </button>
+              <div key={i} className="text-left bg-gray-900 border border-gray-800 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
+                <button
+                  onClick={() => onImport(data, `${book.name} · ${lesson.label}`)}
+                  className="p-4 flex flex-col gap-2 flex-1 text-left"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="text-white text-sm font-medium">{lesson.label}</span>
+                    {done
+                      ? <span className="text-xs text-green-400 bg-green-900/40 border border-green-700/50 px-2 py-0.5 rounded-full shrink-0">已完成</span>
+                      : stats.attempted > 0
+                        ? <span className="text-xs text-blue-400 bg-blue-900/40 border border-blue-700/50 px-2 py-0.5 rounded-full shrink-0">进行中</span>
+                        : <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full shrink-0">{data.length} 句</span>
+                    }
+                  </div>
+                  <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
+                    <div className={`h-full rounded-full transition-all duration-500 ${done ? 'bg-green-500' : 'bg-blue-500'}`} style={{ width: `${percent}%` }} />
+                  </div>
+                  <div className="flex items-center justify-between text-xs text-gray-500">
+                    <span className="leading-snug line-clamp-1 text-gray-500">{lesson.desc}</span>
+                    <span className="text-gray-600 font-mono shrink-0 ml-1">#{i + 1}</span>
+                  </div>
+                </button>
+                <button
+                  onClick={() => setSyncUnit({ bookId: book.id, label: lesson.label })}
+                  className="w-full py-1.5 text-xs font-semibold text-white bg-green-700 hover:bg-green-600 border-t border-green-900 transition-colors text-center rounded-b-xl"
+                >
+                  {lesson.label} 同步练习
+                </button>
+              </div>
             )
           })}
         </div>

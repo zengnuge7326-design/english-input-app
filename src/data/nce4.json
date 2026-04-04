@@ -1,0 +1,4646 @@
+[
+  {
+    "id": 40001,
+    "lesson": 1,
+    "zh": "史籍载述，五千年前近东一带已有人掌握书写之术，是为人类记事之嚆矢。",
+    "en": "We can read of things that happened 5,000 years ago in the Near East,where people first learned to write."
+  },
+  {
+    "id": 40002,
+    "lesson": 1,
+    "zh": "然世界仍有若干地域，迄今未尝有文字传世。",
+    "en": "But there are some parts of the world where even now people cannot write."
+  },
+  {
+    "id": 40003,
+    "lesson": 1,
+    "zh": "彼辈欲存其史，唯赖口传之萨迦——即一代代说书人递相授受之英雄传说。",
+    "en": "The only way that they can preserve their history is to recount it as sagas—legends handed down from one generation of storytelers to another."
+  },
+  {
+    "id": 40004,
+    "lesson": 1,
+    "zh": "此类传说自有其价值，可略示远古部族迁徙之迹，惟当时无人能执笔以录其行事。",
+    "en": "These legends are useful because they can tell us something about migrations of people who lived 5 long ago,but none could write down what they did."
+  },
+  {
+    "id": 40005,
+    "lesson": 1,
+    "zh": "人类学家想知道现在生活在太平洋岛屿上的波利尼西亚人的远祖来自哪里。",
+    "en": "Anthropologists wondered where the remote ancestors of the Polynesian peoples now living in the Pacific Islands came from."
+  },
+  {
+    "id": 40006,
+    "lesson": 1,
+    "zh": "这些人的传说表明，他们中的一些人来自大约 2000 年前的印度尼西亚。",
+    "en": "The sagas of these people explain that some of them came from Indonesia about 2,000 years ago."
+  },
+  {
+    "id": 40007,
+    "lesson": 1,
+    "zh": "但是，第一批像我们一样的人生活在很久以前，甚至连他们的传奇故事（如果有的话）也被遗忘了。",
+    "en": "But the first people who were like ourselves lived so long ago that even their sagas,if they had any,are forgotten."
+  },
+  {
+    "id": 40008,
+    "lesson": 1,
+    "zh": "因此考古学家既没有历史也没有传说来帮助他们找出第一批“现代人”的来源。",
+    "en": "So archaeologists have neither history nor legends to help them to find out where the first ‘modern men'came from."
+  },
+  {
+    "id": 40009,
+    "lesson": 1,
+    "zh": "然而幸运的是，古人用石头制造工具，特别是燧石，因为它比其他种类更容易成型。",
+    "en": "Fortunately,however,ancient men made tools of stone,especially flint,because this is easier to shape than other kinds."
+  },
+  {
+    "id": 40010,
+    "lesson": 1,
+    "zh": "他们也可能使用过木头和兽皮，但这些都已经腐烂了。",
+    "en": "They may also have used wood and skins,but these have rotted away."
+  },
+  {
+    "id": 40011,
+    "lesson": 1,
+    "zh": "石头不会腐烂，因此很久以前的工具仍然存在，即使制造它们的人的骨头也消失得无影无踪。",
+    "en": "Stone does not decay,and so the tools of long ago have remained when even the bones of the men who made them have disappeared without trace."
+  },
+  {
+    "id": 40012,
+    "lesson": 1,
+    "zh": "罗宾·普莱斯《寻觅化石人》插图：出土于约克郡锡默斯沼之磨光石斧 第一单元 第一课",
+    "en": "RoBIN PLACE Finding fossil man 三 Polished axeheads found at Seamers Moor in Yorkshire Unit 1 Lesson 1"
+  },
+  {
+    "id": 40013,
+    "lesson": 2,
+    "zh": "您可能想知道，为什么蜘蛛应该成为我们的朋友？",
+    "en": "Why,you may wonder,should spiders be our friends?"
+  },
+  {
+    "id": 40014,
+    "lesson": 2,
+    "zh": "因为它们消灭了如此多的昆虫，而昆虫中包括一些人类最大的敌人。",
+    "en": "Because they destroy so many insects,and insects include some of the greatest enemies of the human race."
+  },
+  {
+    "id": 40015,
+    "lesson": 2,
+    "zh": "昆虫将使我们无法在这个世界上生存；如果没有食虫动物的保护，它们会吞噬我们所有的庄稼，杀死我们的牛羊。",
+    "en": "Insects would make it impossible for us to live in the world;they woulddevour all our crops and kill our flocks and herds, if it were not for the protection we get from insect-eating animals."
+  },
+  {
+    "id": 40016,
+    "lesson": 2,
+    "zh": "我们固然要感谢那些捕食昆虫的飞禽走兽，但若将其所杀昆虫悉数合计，其数目仍远不及蜘蛛所消杀者。",
+    "en": "We owe a lot to the birds and beasts who eat insects but all of them put 5 together kill only a fraction of the number destroyed by spiders."
+  },
+  {
+    "id": 40017,
+    "lesson": 2,
+    "zh": "此外，与其他一些食虫动物不同，蜘蛛永远不会对我们或我们的财物造成最小的伤害。",
+    "en": "Moreover,unlike some of the other insect eaters,spiders never do the least harm tous or our belongings."
+  },
+  {
+    "id": 40018,
+    "lesson": 2,
+    "zh": "正如许多人认为的那样，蜘蛛不是昆虫，甚至与昆虫也没有近亲关系。",
+    "en": "Spiders are not insects,as many people think,nor even nearly related to them."
+  },
+  {
+    "id": 40019,
+    "lesson": 2,
+    "zh": "略加审视即可分辨：蜘蛛恒具八足，昆虫之足则至多不过六。曾有人在英格兰南部草地上估算，每英亩蜘蛛逾二百二十五万只；若以此推之，一块足球场大小的地面上，不同种类蜘蛛总数约可达六百万之众。",
+    "en": "One can tell the difference almost at a glance,for a spider always has eight legs and an insect never more than six. 10 spiders in a grass field in the south of England,and he estimated that there were more than 2,250,000 in one acre;that is something like 6,C00,000 spiders of different kinds on a football pitch."
+  },
+  {
+    "id": 40020,
+    "lesson": 2,
+    "zh": "蜘蛛至少有半年时间忙于捕杀昆虫。",
+    "en": "Spiders are busy for at least half the year in killing insects."
+  },
+  {
+    "id": 40021,
+    "lesson": 2,
+    "zh": "我们无法对它们杀死的数量做出最疯狂的猜测，但它们是饥饿的生物，不满足于一日三餐。",
+    "en": "It is impossible to make more than the wildest guess at how many they kill,but they are hungry creatures,not content with only three meals a day."
+  },
+  {
+    "id": 40022,
+    "lesson": 2,
+    "zh": "据估计，英国一年内被蜘蛛消灭的所有昆虫的重量将超过该国所有人类的总重量。 10ck 102 T。",
+    "en": "It has been estimated that the weight of all the insects destroyed by spiders in Britain in one year would be greater than the total weight of 15 all the human beings in the country. 10ck 102 T."
+  },
+  {
+    "id": 40023,
+    "lesson": 2,
+    "zh": "GILLESPIE 饶恕《倾听者》中的那只蜘蛛 一只蜘蛛消灭了一只蚱蜢 第 1 单元第 2 课",
+    "en": "GILLESPIE Spare that spider from The Listener A spider destroys a grasshopper Unit 1 Lesson 2"
+  },
+  {
+    "id": 40024,
+    "lesson": 3,
+    "zh": "现代登山运动员试图沿着一条能给他们带来良好运动的路线来登山，而且越困难，就越受重视。",
+    "en": "Modern alpinists try to climb mountains by a route which will give them good sport,and the more difficult it is,the more highly it is regarded."
+  },
+  {
+    "id": 40025,
+    "lesson": 3,
+    "zh": "然而，在开拓时期，情况根本不是这样。",
+    "en": "In the pioneering days,however,this was not the case at all."
+  },
+  {
+    "id": 40026,
+    "lesson": 3,
+    "zh": "早期的登山者正在寻找最简单的登顶方法，因为登顶是他们所寻求的奖品，尤其是如果以前从未到达过。",
+    "en": "The early climbers were looking for the easiest way to the top,because the summit was the prize they sought, especially if it had never been attained before."
+  },
+  {
+    "id": 40027,
+    "lesson": 3,
+    "zh": "确实，在他们的探索过程中，他们经常面临最危险的困难和危险，其装备方式会让现代登山者一想到就会不寒而栗，但他们并没有特意去如此兴奋。",
+    "en": "It is true that during their explorations they often faced 5 difficulties and dangers of the most perilous nature,equipped in a manner which would make a modern climber shudder at the thought,but they did not go out of their way to uch excitement."
+  },
+  {
+    "id": 40028,
+    "lesson": 3,
+    "zh": "他们只有一个目标，一个唯一的目标——登顶！",
+    "en": "They had a single aim,a solitary goal—the top!"
+  },
+  {
+    "id": 40029,
+    "lesson": 3,
+    "zh": "现在我们很难体会到先驱者们的艰辛。",
+    "en": "It is hard for us to realize nowadays how difficult it was for the pioneers."
+  },
+  {
+    "id": 40030,
+    "lesson": 3,
+    "zh": "除了采尔马特和夏蒙尼等一两个地方迅速流行起来外，阿尔卑斯山的村庄大多是被高山与文明隔绝的贫困聚居地。",
+    "en": "Except for one or two places such as Zermatt and Chamonix,which had rapidly become popular,Alpine villages tended to be impov- 10 erished settlements cut off from civilization by the high mountains."
+  },
+  {
+    "id": 40031,
+    "lesson": 3,
+    "zh": "这样的旅馆一般都很脏，跳蚤猖獗；食物只是当地的奶酪，配上通常十二个月的面包，全部用粗酒冲下。",
+    "en": "Such inns as there were were generally dirty and flea-ridde n;the food simply local cheese accompanied by bread pften twelve months old,all washed down with coarse wine."
+  },
+  {
+    "id": 40032,
+    "lesson": 3,
+    "zh": "通常，一个山谷根本没有旅馆，登山者会尽可能地找到庇护所——有时是当地的牧师（他通常和他的教区居民一样贫穷），有时是牧羊人或奶酪制造商。",
+    "en": "Often a valley boasted no inn at all,and climbers found shelter wherever they could—sometimes with the local priest(who was usually as poor as his parishioners),sometimes with shepherds or cheese-makers."
+  },
+  {
+    "id": 40033,
+    "lesson": 3,
+    "zh": "背景总是一样的：肮脏、贫穷，而且非常不舒服。",
+    "en": "Invariably the background was the same:dirt and poverty,and very uncom- fortable."
+  },
+  {
+    "id": 40034,
+    "lesson": 4,
+    "zh": "最近，俄罗斯报道了几起案例，人们可以用手指阅读和检测颜色，甚至可以透过坚固的门和墙壁看到东西。",
+    "en": "Several cases have been reported in Russia recently of people who can read and detect colours with their fingers,and even see through solid doors and walls."
+  },
+  {
+    "id": 40035,
+    "lesson": 4,
+    "zh": "其中一个案例涉及一名 11 岁的女学生维拉·佩特洛娃 (Vera Petrova)，她视力正常，但也能用皮肤的不同部位以及透过坚固的墙壁感知事物。",
+    "en": "One case concerns an eleven-year-old schoolgirl,Vera Petrova,who has normal vision but who can also perceive things with different parts of her skin,and through solid walls."
+  },
+  {
+    "id": 40036,
+    "lesson": 4,
+    "zh": "这种能力首先被她的父亲注意到。",
+    "en": "This ability was first noticed by her father."
+  },
+  {
+    "id": 40037,
+    "lesson": 4,
+    "zh": "有一天，她走进他的办公室，碰巧把手放在了锁着的保险箱的门上。",
+    "en": "One day she came into his office and happened to put 5 her hands on the door of a locked safe."
+  },
+  {
+    "id": 40038,
+    "lesson": 4,
+    "zh": "突然，她问父亲为什么把这么多旧报纸锁在那里，甚至还描述了它们是如何捆扎起来的。",
+    "en": "Suddenly she asked her father why he kept so many old newspapers locked away there,and even described the way they were done up in bundles."
+  },
+  {
+    "id": 40039,
+    "lesson": 4,
+    "zh": "维拉的好奇天赋引起了她居住地附近乌里扬诺夫斯克镇一家科学研究机构的注意，四月份，俄罗斯联邦共和国卫生部的一个特别委员会对她进行了一系列测试。",
+    "en": "Vera's curious talent was brought to the notice of a scientific research institute in the town of Ulyanovsk, near where she lives,and in April she was given a series oftests by a special commission of the Ministry of Health of the Russian Federal Republic."
+  },
+  {
+    "id": 40040,
+    "lesson": 4,
+    "zh": "在这些测试中，她能够通过不透明的屏幕阅读报纸，更奇怪的是，通过将肘部移到儿童的乐透游戏上，她能够描述印刷在上面的数字和颜色；并且，在另一个例子中，穿着丝袜和拖鞋，用她的脚辨认出隐藏在地毯下的图片的轮廓和颜色。",
+    "en": "During these tests she was able to read a newspaper through an 10 opaque screen and,stranger still,by moving her elbow over a child's game of Lotto she was able to describe the figures and colours printed on it;and,in another instance,wearing stockings and slippers,to make out with her foot the outlines and colours of a picture hidden under a carpet."
+  },
+  {
+    "id": 40041,
+    "lesson": 4,
+    "zh": "其他实验表明她的膝盖和肩膀也有类似的敏感性。",
+    "en": "Other experiments showed that her knees and shoulders had a similar sensitivity."
+  },
+  {
+    "id": 40042,
+    "lesson": 4,
+    "zh": "在所有这些测试中，维拉都被蒙住眼睛；事实上，除了蒙住眼睛的时候，她缺乏用皮肤感知事物的能力。",
+    "en": "During all these tests Vera was blindfold;and,indeed,except when blindfold she lacked the ability to perceive things with her skin."
+  },
+  {
+    "id": 40043,
+    "lesson": 4,
+    "zh": "研究还发现，虽然她可以用手指感知事物，但当她的手湿了时，这种能力就消失了。",
+    "en": "It was also found that although she 15 could perceive things with her fingers this ability ceased the moment her hands were wet."
+  },
+  {
+    "id": 40044,
+    "lesson": 4,
+    "zh": "埃里克·德·莫尼 (ERIC DE MAUNY) 看到《倾听者》的双手 另一位俄罗斯女孩罗莎·库勒绍娃 (Rosa Kuleshova) 蒙着眼睛在朗读。",
+    "en": "ERIC DE MAUNY Seeing hands from The Listener Another Russian girl,Rosa Kuleshova,reads blindfold."
+  },
+  {
+    "id": 40045,
+    "lesson": 4,
+    "zh": "第一单元第 4 课",
+    "en": "Unit 1 Lesson 4"
+  },
+  {
+    "id": 40046,
+    "lesson": 5,
+    "zh": "人们总是在谈论“青年问题”。",
+    "en": "People are always talking about 'the problem of youth'."
+  },
+  {
+    "id": 40047,
+    "lesson": 5,
+    "zh": "如果有的话——我对此表示怀疑——那么创造它的就是老年人，而不是年轻人自己。",
+    "en": "If there is one—which I take leave to doubt—then it is older people who create it,not the young themselves."
+  },
+  {
+    "id": 40048,
+    "lesson": 5,
+    "zh": "让我们脚踏实地，承认年轻人毕竟也是人——就像他们的长辈一样。",
+    "en": "Let us get down to fundamentals and agree that the young are afterall human beings—people just like their elders."
+  },
+  {
+    "id": 40049,
+    "lesson": 5,
+    "zh": "老人和年轻人之间只有一个区别：年轻人前面有一个光辉的未来，而老人后面有一个辉煌的未来：也许这就是摩擦所在。",
+    "en": "There is only one difference between an old man and a young one:the young man has a glorious future before him and the old one has a splendid future 5 behind him:and maybe that is where the rub is."
+  },
+  {
+    "id": 40050,
+    "lesson": 5,
+    "zh": "我发现年轻人令人兴奋。",
+    "en": "I find young people exciting."
+  },
+  {
+    "id": 40051,
+    "lesson": 5,
+    "zh": "他们有一种自由的气息，他们没有沉闷的承诺，没有卑鄙的野心，也没有贪图安逸的感觉。",
+    "en": "They have an air of freedom,and they have not a dreary commitment to mean ambitions or love of comfort."
+  },
+  {
+    "id": 40052,
+    "lesson": 5,
+    "zh": "他们不是焦虑的社会攀登者，也不热衷于物质事物。",
+    "en": "They are not anxious social climbers,and they have no devotion to material things."
+  },
+  {
+    "id": 40053,
+    "lesson": 5,
+    "zh": "在我看来，这一切都将它们与生命和事物的起源联系起来。",
+    "en": "All this seems to me to link them with life,and the origins of things."
+  },
+  {
+    "id": 40054,
+    "lesson": 5,
+    "zh": "从某种意义上说，他们似乎是宇宙生物，与我们郊区的生物形成了暴力而可爱的对比。",
+    "en": "It's as if they were,in some sense,cosmic beings in violent and lovely contrast with us suburban creatures."
+  },
+  {
+    "id": 40055,
+    "lesson": 5,
+    "zh": "当我遇到一个年轻人时，所有这些都在我的脑海里。",
+    "en": "All that is in my mind when I meet a young person."
+  },
+  {
+    "id": 40056,
+    "lesson": 5,
+    "zh": "他可能自负、无礼、自以为是或愚蠢，但我不会用尊重长辈的陈词滥调来寻求保护——就好像年龄本身就是尊重的理由一样。",
+    "en": "He may be conceited,ill-mannered,presumptuous or fatuous,but I do not turn 15 for protection to dreary clichés about respect for elders—as if mere age were a reason for respect."
+  },
+  {
+    "id": 40057,
+    "lesson": 5,
+    "zh": "我承认我们是平等的，如果我认为他错了，我会作为平等的人与他争论。",
+    "en": "I accept that we are equals,and I will argue with him,as an equal,if I think he is wrong."
+  },
+  {
+    "id": 40058,
+    "lesson": 5,
+    "zh": "菲尔登·休斯 (Fielden Hughes) 出自《空中》、《倾听者》 一群年轻人 第 1 单元第 5 课",
+    "en": "FIELDEN HUGHES from Out of the Air,The Listener A group of young people Unit 1 Lesson 5"
+  },
+  {
+    "id": 40059,
+    "lesson": 6,
+    "zh": "当我听到人们说体育在国家之间创造了善意，如果世界上的普通民众能够在足球或板球比赛中相遇，他们就不会愿意在战场上相遇，我总是感到惊讶。",
+    "en": "I am always amazed when I hear people saying that sport creates goodwill between the nations,and that if only the common peoples of the world could meet one another at football or cricket,they would have no inclination to meet on the battlefield."
+  },
+  {
+    "id": 40060,
+    "lesson": 6,
+    "zh": "即使人们不从具体例子（例如1936年奥运会）知道国际体育竞赛会导致仇恨狂欢，人们也可以从一般原则中推断出这一点。",
+    "en": "Even if one didn't know from concrete examples(the 1936 Olympic Games,for instance)that international sporting contests lead to orgies of hatred,one could deduce it from general principles."
+  },
+  {
+    "id": 40061,
+    "lesson": 6,
+    "zh": "当今几乎所有的运动都是竞技性的。",
+    "en": "Nearly all the sports practised nowadays are competitive."
+  },
+  {
+    "id": 40062,
+    "lesson": 6,
+    "zh": "你玩游戏就是为了赢，除非你竭尽全力去赢，否则游戏就没有什么意义。",
+    "en": "You play to win,and the game has little mean- ing unless you do your utmost to win."
+  },
+  {
+    "id": 40063,
+    "lesson": 6,
+    "zh": "在乡村绿地里，你站在一边，不涉及当地的爱国主义感情，你可以纯粹为了乐趣和锻炼而打球：但一旦出现声望问题，一旦你觉得如果输了，你和一些更大的单位就会蒙羞，最野蛮的好斗本能就会被唤起。",
+    "en": "On the village green,where you pick up sides and no feeling of local patriotism is involved,it is possible to play simply for the fun and exercise:but as soon as the question of prestige arises,as soon as you feel that you and some larger unit will be disgraced if you lose,the most savage combative instincts are aroused."
+  },
+  {
+    "id": 40064,
+    "lesson": 6,
+    "zh": "任何参加过学校足球比赛的人都知道这一点。",
+    "en": "Anyone who has played even in a school football match knows this."
+  },
+  {
+    "id": 40065,
+    "lesson": 6,
+    "zh": "在国际层面，体育运动坦白说就是模仿战争。",
+    "en": "At the international level,sport is frankly mimic warfare."
+  },
+  {
+    "id": 40066,
+    "lesson": 6,
+    "zh": "但重要的不是运动员的行为，而是观众的态度：以及在观众背后，那些对这些荒谬的比赛感到愤怒的国家，他们认真地相信——至少在短时间内——跑、跳和踢球是对民族美德的考验。",
+    "en": "But the significant thing is not the behaviour of the players but the attitude of the spectators:and,behind the spectators,of the nations who work themselves into furies over these absurd contests,and seriously believe—at any rate for short periods—that running, jumping and kicking a ball are tests of national virtue."
+  },
+  {
+    "id": 40067,
+    "lesson": 6,
+    "zh": "乔治·奥威尔 体育精神",
+    "en": "GEORGE ORWELL The sporting spirit"
+  },
+  {
+    "id": 40068,
+    "lesson": 7,
+    "zh": "并非动物发出的所有声音都可以用作语言，我们只需求助于蝙蝠回声定位的非凡发现，就能看到声音发挥严格功利作用的情况。",
+    "en": "Not all sounds made by animals serve as language,and we have only to turn to that extraordinary discovery of echo-location in bats to see a case in which the voice plays a strictly utilitarian role."
+  },
+  {
+    "id": 40069,
+    "lesson": 7,
+    "zh": "为了充分理解这意味着什么，我们必须首先回顾一些人类最近的发明。",
+    "en": "To get a full appreciation of what this means we must turn first to some recent human inventions."
+  },
+  {
+    "id": 40070,
+    "lesson": 7,
+    "zh": "大家都知道，如果他在墙壁或山腰附近喊叫，就会有回声回来。",
+    "en": "Everyone knows that if he shouts in the vicinity of a wallor a mountainside,an echo willcome back."
+  },
+  {
+    "id": 40071,
+    "lesson": 7,
+    "zh": "距离固体障碍物越远，回声返回所需的时间就越长。",
+    "en": "The 5 further off this solid obstruction,the longer time will elapse for the return of the echo."
+  },
+  {
+    "id": 40072,
+    "lesson": 7,
+    "zh": "敲击船体发出的声音会从海底反射出来，通过测量敲击与收到回声之间的时间间隔，就可以计算出该点的海水深度。",
+    "en": "A sound made by tapping on the hull of a ship will be reflected from the sea bottom,and by measuring the time interval between the taps and the receipt of the echoes,the depth of the sea at that point can be calculated."
+  },
+  {
+    "id": 40073,
+    "lesson": 7,
+    "zh": "于是回声测深仪诞生了，现在在船舶上普遍使用。",
+    "en": "So was born the echo-sounding apparatus,now in general use in ships."
+  },
+  {
+    "id": 40074,
+    "lesson": 7,
+    "zh": "每个固体物体都会反射声音，声音根据物体的大小和性质而变化。",
+    "en": "Every solid object will reflect a sound, varying according to the size and nature of the object."
+  },
+  {
+    "id": 40075,
+    "lesson": 7,
+    "zh": "一群鱼就能做到这一点。",
+    "en": "A shoal of fish will do this."
+  },
+  {
+    "id": 40076,
+    "lesson": 7,
+    "zh": "因此，从定位海底到定位鱼群是一个相对简单的步骤。",
+    "en": "So it is a comparatively 10 simple step from locating the sea bottom to locating a shoal of fish."
+  },
+  {
+    "id": 40077,
+    "lesson": 7,
+    "zh": "凭借经验和改进的设备，现在不仅可以定位浅滩，还可以通过回声模式判断它是否是鲱鱼、鳕鱼或其他知名鱼类。",
+    "en": "With experience,and with improved apparatus,it is now possible not only to locate a shoal but to tellif it is herring,cod,or other well-known fish,by the pattern of its echo."
+  },
+  {
+    "id": 40078,
+    "lesson": 7,
+    "zh": "研究发现，某些蝙蝠会发出吱吱声，通过接收回声，它们可以定位并避开障碍物，或者定位它们所吃的飞行昆虫。",
+    "en": "It has been found that certain bats emit squeaks and by receiving the echoes,they can locate and steer clear of obstacles—or locate flying insects on which they feed."
+  },
+  {
+    "id": 40079,
+    "lesson": 7,
+    "zh": "蝙蝠的这种回声定位经常与雷达进行比较，其原理相似。",
+    "en": "This echo-location in bats is often compared 15 with radar,the principle of which is similar."
+  },
+  {
+    "id": 40080,
+    "lesson": 7,
+    "zh": "莫里斯·伯顿 (MAURICE BURTON) 对动物生命的好奇 蝙蝠的回声定位通常与雷达进行比较。",
+    "en": "MAURICE BuRTON Curiosities of animal life Echo-location in bats is often compared with radar."
+  },
+  {
+    "id": 40081,
+    "lesson": 7,
+    "zh": "第一单元第 7 课",
+    "en": "Unit 1 Lesson 7"
+  },
+  {
+    "id": 40082,
+    "lesson": 8,
+    "zh": "布鲁塞尔官员称，在美国屠宰的鸡不适合登上欧洲餐桌。",
+    "en": "Chickens slaughtered in the United States,claim officials in Brussels,are not fit to grace European tables."
+  },
+  {
+    "id": 40083,
+    "lesson": 8,
+    "zh": "不，美国人说：我们的家禽很好，我们只是用不同的方式清洁它们。",
+    "en": "No,say the Americans:our fowl are fine,we simply clean them in a different way."
+  },
+  {
+    "id": 40084,
+    "lesson": 8,
+    "zh": "如今，让富裕国家之间的贸易车轮陷入困境的，是国家法规的差异，而不仅仅是关税。",
+    "en": "These days,it is differences in national regulations,far more than tariffs,that put sand in the wheels of trade between rich countries."
+  },
+  {
+    "id": 40085,
+    "lesson": 8,
+    "zh": "抱怨的不仅仅是农民。",
+    "en": "It is not just farmers who are complaining."
+  },
+  {
+    "id": 40086,
+    "lesson": 8,
+    "zh": "一款符合欧盟安全标准的电动剃须刀必须经过美国测试人员的批准才能在美国销售，而美国制造的透析机则需要获得欧盟的批准才能进入欧洲市场。",
+    "en": "An electric razor that meets the European Union's safety standards 5 must be approved by American testers before it can be sold in the United States,and an American-made dialysis machine needs the EU's okay before it hits the market in Europe."
+  },
+  {
+    "id": 40087,
+    "lesson": 8,
+    "zh": "事实上，一把在欧洲安全的剃须刀不太可能让美国人触电身亡。",
+    "en": "As it happens,a razor that is safe in Europe is unlikely to electrocute Americans."
+  },
+  {
+    "id": 40088,
+    "lesson": 8,
+    "zh": "那么，问问大西洋两岸的企业，为什么要进行两次本来可以进行的测试呢？",
+    "en": "So,ask businesses on both sides of the Atlantic,why have two lots of tests where one would do?"
+  },
+  {
+    "id": 40089,
+    "lesson": 8,
+    "zh": "政治家们原则上同意，因此美国和欧盟一直在努力达成一项协议，以消除对许多产品进行双重测试的需要。",
+    "en": "Politicians agree,in principle,so America and the EU have been trying to reach a deal which would eliminate the need to double-test many 10 products."
+  },
+  {
+    "id": 40090,
+    "lesson": 8,
+    "zh": "他们希望能在 5 月 28 日举行的美国和欧盟贸易峰会前及时结束。",
+    "en": "They hope to finish in time for a trade summit between America and the EU on May 28th."
+  },
+  {
+    "id": 40091,
+    "lesson": 8,
+    "zh": "尽管谈判代表很乐观，但细节足够复杂，他们可能很难达成协议。",
+    "en": "Although negotiators are optimistic,the details are complex enough that they may be hard-pressed to get a deal at all."
+  },
+  {
+    "id": 40092,
+    "lesson": 8,
+    "zh": "一个困难是制定协议。",
+    "en": "One difficulty is to construct the agreements."
+  },
+  {
+    "id": 40093,
+    "lesson": 8,
+    "zh": "美国人很乐意就医疗设备标准达成一项协议，然后敲定涵盖电子产品和药品制造等领域的不同协议。",
+    "en": "The Americans would happily reach one accord on standards for medical devices and then hammer out different pacts covering,say,electronic goods and drug manufacturing."
+  },
+  {
+    "id": 40094,
+    "lesson": 8,
+    "zh": "遵循欧洲大陆优良传统的欧盟希望就一般原则达成一致，这些原则可以适用于多种类型的产品，或许还可以扩展到其他国家。",
+    "en": "The EU—following fine continental traditions—wants agreement on general principles, which could be applied to many types of products and perhaps extended to other countries."
+  },
+  {
+    "id": 40095,
+    "lesson": 8,
+    "zh": "摘自：《经济学人》1997年5月24日 符合欧盟安全标准的电动剃须刀必须经过美国测试人员的认可后才能在美国销售。",
+    "en": "From:The Economist,May 24th,1997 An electric razor that meets the European Union's safety standards must be approved by American testers before it can be sold in the United States."
+  },
+  {
+    "id": 40096,
+    "lesson": 8,
+    "zh": "第 1 单元第 8 课",
+    "en": "Unit 1 Lesson 8"
+  },
+  {
+    "id": 40097,
+    "lesson": 9,
+    "zh": "阿尔弗雷德大帝充当自己的间谍，伪装成吟游诗人访问丹麦营地。",
+    "en": "Alfred the Great acted as his own spy,visiting Danish camps disguised as a minstrel."
+  },
+  {
+    "id": 40098,
+    "lesson": 9,
+    "zh": "那时，流浪的吟游诗人到处都受到欢迎。",
+    "en": "In those days wandering minstrels were welcome everywhere."
+  },
+  {
+    "id": 40099,
+    "lesson": 9,
+    "zh": "他们不是战士，他们的竖琴就是他们的护照。",
+    "en": "They were not fighting men,and their harp was their passport."
+  },
+  {
+    "id": 40100,
+    "lesson": 9,
+    "zh": "阿尔弗雷德年轻时就学过他们的许多歌谣，并且可以通过杂技技巧和简单的魔术来改变他的节目。",
+    "en": "Alfred had learned many of their ballads in his youth,and could vary his programme with acrobatic tricks and simple conjuring."
+  },
+  {
+    "id": 40101,
+    "lesson": 9,
+    "zh": "当阿尔弗雷德的小军队慢慢开始在阿瑟尔尼集结时，国王亲自出发渗透丹麦入侵者指挥官古斯鲁姆的营地。",
+    "en": "While Alfred's little army slowly began to gather at Athelney,the king himself set out to penetrate the camp of Guthrum,the commander of the Danish invaders."
+  },
+  {
+    "id": 40102,
+    "lesson": 9,
+    "zh": "他们在奇彭纳姆定居过冬：阿尔弗雷德去了那里。",
+    "en": "These had settled down for the winter at Chippenham:thither Alfred went."
+  },
+  {
+    "id": 40103,
+    "lesson": 9,
+    "zh": "他立刻注意到纪律松懈：丹麦人有着征服者般的自信，他们的安全预防措施也很随意。",
+    "en": "He noticed at once that discipline was slack:the Danes had the self- confidence of conquerors,and their security precautions were casual."
+  },
+  {
+    "id": 40104,
+    "lesson": 9,
+    "zh": "他们靠袭击邻近地区的收入过着很好的生活。",
+    "en": "They lived well,on the proceeds of raids on neighbouring regions."
+  },
+  {
+    "id": 40105,
+    "lesson": 9,
+    "zh": "他们在那里聚集了女人和食物和饮料，安逸的生活使他们变得柔软。",
+    "en": "There they collected women as well as food and drink,and a life of ease had 10 made them soft."
+  },
+  {
+    "id": 40106,
+    "lesson": 9,
+    "zh": "阿尔弗雷德在返回阿瑟尔尼之前在营地待了一周。",
+    "en": "Alfred stayed in the camp a week before he returned to Athelney."
+  },
+  {
+    "id": 40107,
+    "lesson": 9,
+    "zh": "与丹麦游牧部落相比，那里集结的兵力微不足道。",
+    "en": "The force there assembled was trivial compared with the Danish horde."
+  },
+  {
+    "id": 40108,
+    "lesson": 9,
+    "zh": "但阿尔弗雷德推断丹麦人不再适合长期战斗：他们的粮食部门没有组织，只能依靠不定期的袭击。",
+    "en": "But Alfred had deduced that the Danes were no longer fit for prolonged battle:and that their commissariat had no organization,but depended on irregular raids."
+  },
+  {
+    "id": 40109,
+    "lesson": 9,
+    "zh": "因此，面对丹麦人的进攻，阿尔弗雷德没有冒险公开战斗，而是骚扰敌人。",
+    "en": "So,faced with the Danish advance,Alfred did not risk open battle but harried the enemy."
+  },
+  {
+    "id": 40110,
+    "lesson": 9,
+    "zh": "他不断地移动，吸引着丹麦人追随他。",
+    "en": "He was constantly 15 on the move,drawing the Danes after him."
+  },
+  {
+    "id": 40111,
+    "lesson": 9,
+    "zh": "他的巡逻阻止了突袭队伍：饥饿袭击了丹麦军队。",
+    "en": "His patrols halted the raiding parties:hunger assailed the Danish army."
+  },
+  {
+    "id": 40112,
+    "lesson": 9,
+    "zh": "现在，阿尔弗雷德开始了一系列的小冲突——不到一个月，丹麦人就投降了。",
+    "en": "Now Alfred began a long series of skirmishes—and within a month the Danes had surrendered."
+  },
+  {
+    "id": 40113,
+    "lesson": 9,
+    "zh": "这一集可以说是一部独特的皇家间谍史诗！",
+    "en": "The episode could reasonably serve as a unique epic of royal espionage!"
+  },
+  {
+    "id": 40114,
+    "lesson": 9,
+    "zh": "伯纳德·纽曼 在英国的间谍 阿尔弗雷德，伪装成竖琴手，在丹麦人的营地 第 2 单元第 9 课",
+    "en": "BERNARD NEWMAN Spies in Britain Alfred,disguised as a harpist,in the camp of the Danes Unit 2 Lesson 9"
+  },
+  {
+    "id": 40115,
+    "lesson": 10,
+    "zh": "技术趋势可能会推动硅谷回到未来。",
+    "en": "Technology trends may push Silicon Valley back to the future."
+  },
+  {
+    "id": 40116,
+    "lesson": 10,
+    "zh": "集成电路先驱、加州理工学院计算机科学教授卡弗·米德 (Carver Mead) 指出，现在的工作站使工程师能够在办公桌上设计、测试和生产芯片，就像编辑在麦金塔电脑上创建时事通讯一样。",
+    "en": "Carver Mead,a pioneer in integrated circuits and a professor of computer science at the California Institute of Technology,notes there are now work- stations that enable engineers to design,test and produce chips right on their desks,much the way an editor creates a newsletter on a Macintosh."
+  },
+  {
+    "id": 40117,
+    "lesson": 10,
+    "zh": "随着制造芯片的时间和成本下降到几天和几百美元，工程师们很快就可以自由地发挥他们的想象力，而不会因昂贵的失败而受到惩罚。",
+    "en": "As the time and cost of making a chip drop to a few days and a few hundred dollars,engineers may soon be free to let their imaginations soar without being penalized by expensive failures."
+  },
+  {
+    "id": 40118,
+    "lesson": 10,
+    "zh": "米德预测，发明家将能够在办公室一个周末完善强大的定制芯片，从而催生新一代车库初创企业，并为美国带来新的机遇。",
+    "en": "Mead predicts that inventors will be able to perfect powerful customized chips over a weekend at the office—spawning a new generation of garage start-ups and giving the U."
+  },
+  {
+    "id": 40119,
+    "lesson": 10,
+    "zh": "这将使美国在将新产品快速推向市场方面领先于其外国竞争对手。",
+    "en": "S.a jump on its foreign rivals in getting new products to market fast."
+  },
+  {
+    "id": 40120,
+    "lesson": 10,
+    "zh": "“我们有更多的车库，里面都是聪明人，”米德说。",
+    "en": "'We've got more garages with smart people,'Mead observes."
+  },
+  {
+    "id": 40121,
+    "lesson": 10,
+    "zh": "“我们确实在无政府状态下茁壮成长。",
+    "en": "'We really thrive on anarchy."
+  },
+  {
+    "id": 40122,
+    "lesson": 10,
+    "zh": "’还有亚洲人。",
+    "en": "' And on Asians."
+  },
+  {
+    "id": 40123,
+    "lesson": 10,
+    "zh": "东方人和亚裔美国人已经构成许多硅谷公司的工程人员的大多数。",
+    "en": "Already,orientals and Asian Americans constitute the majority of the engineering staffs at many Valley firms."
+  },
+  {
+    "id": 40124,
+    "lesson": 10,
+    "zh": "中国、韩国、菲律宾和印度工程师正成群结队地从加州大学毕业。",
+    "en": "And Chinese,Korean,Filipino and Indian engineers are graduating in droves from California's colleges."
+  },
+  {
+    "id": 40125,
+    "lesson": 10,
+    "zh": "作为下一代初创企业的负责人，这些亚洲创新者可以利用习俗和语言与重要的环太平洋市场建立更紧密的联系。",
+    "en": "As the heads of next-generation start-ups,these Asian innovators can draw on customs and languages to forge tighter links with crucial Pacific Rim markets."
+  },
+  {
+    "id": 40126,
+    "lesson": 10,
+    "zh": "例如，斯坦福大学博士 Alex Au。来自香港，",
+    "en": "For instance,Alex Au,a Stanford Ph."
+  },
+  {
+    "id": 40127,
+    "lesson": 10,
+    "zh": "已在台湾设立工厂，挑战日本近乎锁定的存储芯片市场。",
+    "en": "D.from Hong Kong,has set up a Taiwan factory to challenge Japan's near lock on the memory- chip market."
+  },
+  {
+    "id": 40128,
+    "lesson": 10,
+    "zh": "印度出生的N.",
+    "en": "India-born N."
+  },
+  {
+    "id": 40129,
+    "lesson": 10,
+    "zh": "去年春天，达莫达尔·雷迪 (Damodar Reddy) 的加州小公司在密苏里州的资助下，在堪萨斯城重新开设了一家 AT&T 芯片工厂。",
+    "en": "Damodar Reddy's tiny California company reopened an AT&T chip plant in Kansas City last spring with financing from the state of Missouri."
+  },
+  {
+    "id": 40130,
+    "lesson": 10,
+    "zh": "在成为退休村之前，硅谷可能会成为建立全球企业的课堂。",
+    "en": "Before it becomes a retirement village, Silicon Valley may prove a classroom for building a global business."
+  },
+  {
+    "id": 40131,
+    "lesson": 10,
+    "zh": "美国新闻与世界报道，1989 年 10 月 2 日",
+    "en": "US NEWS AND WoRLD REPORT,October 2,1989"
+  },
+  {
+    "id": 40132,
+    "lesson": 11,
+    "zh": "一些老人因对死亡的恐惧而感到压抑。",
+    "en": "Some old people are oppressed by the fear of death."
+  },
+  {
+    "id": 40133,
+    "lesson": 11,
+    "zh": "对于年轻人来说，这种感觉是有道理的。",
+    "en": "In the young there is a justification for this feeling."
+  },
+  {
+    "id": 40134,
+    "lesson": 11,
+    "zh": "有理由担心自己会战死沙场的年轻人可能会因为自己被欺骗而失去了生活所提供的最好的东西而感到痛苦。",
+    "en": "Young men who have reason to fear that they will be killed in battle may justifiably feel bitter in the thought that they have been cheated of the best things that life has to offer."
+  },
+  {
+    "id": 40135,
+    "lesson": 11,
+    "zh": "但对于一个尝尽人间悲欢离合、完成了自己该做的事的老人来说，对死亡的恐惧就显得有些卑鄙和不光彩了。",
+    "en": "But in an old man who has known human joys and sorrows,and has achieved whatever work it was in him to do,the fear of death is somewhat abject 5 and ignoble."
+  },
+  {
+    "id": 40136,
+    "lesson": 11,
+    "zh": "克服它的最好方法——至少在我看来——就是让你的兴趣逐渐更广泛、更客观，直到自我的围墙一点点消退，你的生活越来越融入普遍的生活。",
+    "en": "The best way to overcome it—so at least it seems to me—is to make your interests gradually wider and more impersonal,until bit by bit the walls of the ego recede,and your life becomes increasingly merged in the universal life."
+  },
+  {
+    "id": 40137,
+    "lesson": 11,
+    "zh": "一个人的存在应该像一条河流——起初很小，被狭窄的河岸所包围，然后热情地流过巨石和瀑布。",
+    "en": "An individual human existence should be like a river—small at first,narrowly contained within its banks,and rushing passionately past boulders and over waterfalls."
+  },
+  {
+    "id": 40138,
+    "lesson": 11,
+    "zh": "渐渐地，河面变宽，河岸后退，水流更加平静，最后，它们没有任何明显的断裂，融入大海，毫无痛苦地失去了个体的存在。",
+    "en": "Gradually the river grows wider,the banks recede,the waters flow more quietly,and in the end,without any visible break,they 10 become merged in the sea,and painlessly lose their individual being."
+  },
+  {
+    "id": 40139,
+    "lesson": 11,
+    "zh": "一个人到了晚年，能够以这种方式看待自己的生活，就不会遭受对死亡的恐惧，因为他所关心的事情会继续下去。",
+    "en": "The man who,in old age,can see his life in this way,will not suffer from the fear of death,since the things he cares for will continue."
+  },
+  {
+    "id": 40140,
+    "lesson": 11,
+    "zh": "如果随着活力的衰退，疲倦增加，休息的想法也不会不受欢迎。",
+    "en": "And if,with the decay of vitality,weariness increases,the thought of rest will be not unwelcome."
+  },
+  {
+    "id": 40141,
+    "lesson": 11,
+    "zh": "我希望在工作中死去，知道其他人会继续做我不再能做的事情，并满足于认为可能的事情已经完成了。",
+    "en": "I should wish to die while still at work,knowing that others will carry on what I can no longer do,and content in the thought that what was possible has been done."
+  },
+  {
+    "id": 40142,
+    "lesson": 11,
+    "zh": "伯特兰·罗素 如何从记忆中的肖像中变老 伯特兰·罗素在特拉法加广场的抗议集会上讲话 第 2 单元 第 11 课",
+    "en": "BERTRAND RuSSELL How to grow old from Portraits from Memory Bertrand Russell speaking at a protest meeting in Trafalgar Square Unit 2 Lesson 11"
+  },
+  {
+    "id": 40143,
+    "lesson": 12,
+    "zh": "银行与其客户彼此之间，负有多重权利义务关系。",
+    "en": "5 and its customer owe a large number of obligations to one another."
+  },
+  {
+    "id": 40144,
+    "lesson": 12,
+    "zh": "其中许多义务可能会引起问题和复杂化，但与商品买家不同，银行客户不能抱怨法律对他不利。",
+    "en": "Many of these obligations can give rise to problems and complications but a bank customer,unlike,say,a buyer of goods,cannot complain that the law is loaded against him."
+  },
+  {
+    "id": 40145,
+    "lesson": 12,
+    "zh": "银行必须服从客户的指示，而不是其他任何人的指示。",
+    "en": "The bank must obey its customer's instructions,and not those of anyone else."
+  },
+  {
+    "id": 40146,
+    "lesson": 12,
+    "zh": "例如，当客户第一次开立账户时，他指示银行仅将自己开出的支票从其账户中扣除。",
+    "en": "When,for example,a customer first opens an account,he instructs the bank to debit his account only in respect of cheques drawn 10 by himself."
+  },
+  {
+    "id": 40147,
+    "lesson": 12,
+    "zh": "他向银行提供了他的签名样本，并且有一条非常严格的规则，即银行无权或授权在伪造客户签名的支票上支付客户的钱。",
+    "en": "He gives the bank specimens of his signature,and there is a very firm rule that the bank has no right or authority to pay out a customer's money on a cheque on which its customer's signature has been forged."
+  },
+  {
+    "id": 40148,
+    "lesson": 12,
+    "zh": "伪造的技术可能非常高明，但这并没有什么区别：银行必须识别其客户的签名。",
+    "en": "It makes no difference that the forgery may have been a very skilful one:the bank must recognize its customer's signature."
+  },
+  {
+    "id": 40149,
+    "lesson": 12,
+    "zh": "因此，银行采用的在支票上印上客户姓名的做法不会给客户带来任何风险。",
+    "en": "For this reason there is no risk to the customer in the practice,adopted by banks,of printing the customer's name on his cheques."
+  },
+  {
+    "id": 40150,
+    "lesson": 12,
+    "zh": "如果这有利于伪造，损失的是银行，而不是客户。",
+    "en": "If this facilitates forgery,it is the bank which will lose,not the customer."
+  },
+  {
+    "id": 40151,
+    "lesson": 12,
+    "zh": "戈登·巴里和奥布里·L.",
+    "en": "GORDON BARRIE and AUBREYL."
+  },
+  {
+    "id": 40152,
+    "lesson": 12,
+    "zh": "钻石 消费者协会和法律 National Westminster Bank at Queen St.in Cardiff 第 2 单元第 12 课",
+    "en": "DIAMOND The Consumer Society and the Law National Westminster Bank at Queen St.in Cardiff Unit 2 Lesson 12"
+  },
+  {
+    "id": 40153,
+    "lesson": 13,
+    "zh": "最深的洞是为石油而挖的，深达 25,000 英尺。",
+    "en": "The deepest holes of allare made for oil,and they go down to as much as 25,000 feet."
+  },
+  {
+    "id": 40154,
+    "lesson": 13,
+    "zh": "但我们不需要像开采其他矿藏那样派人下去开采石油。",
+    "en": "But we do not need to send men down to get the oil out,as we must with other mineral deposits."
+  },
+  {
+    "id": 40155,
+    "lesson": 13,
+    "zh": "这些孔只是钻孔，直径不到一英尺。",
+    "en": "The holes are only borings,less than a foot in diameter."
+  },
+  {
+    "id": 40156,
+    "lesson": 13,
+    "zh": "我的特殊经验主要是在石油方面，与任何其他采矿活动相比，寻找石油对改善深部钻探的贡献更大。",
+    "en": "My particular experience is largely in oil,and the search for oil has done more to improve deep drilling than any other mining activity."
+  },
+  {
+    "id": 40157,
+    "lesson": 13,
+    "zh": "当决定了要在哪里钻探后，我们就在地面搭建了一个石油井架。",
+    "en": "When it has been decided where we are going to drll, 5 we put up at the surface an oil derrick."
+  },
+  {
+    "id": 40158,
+    "lesson": 13,
+    "zh": "它必须很高，因为它就像一个巨大的滑轮组，我们必须降低到地面并从地面拖出很长的钻杆，这些钻杆由顶部的发动机旋转，并在底部装有切削钻头。",
+    "en": "It has to be tallbecause it is like a giant block and tackle,and we have to lower into the ground and haul out of the ground great lengths of drill pipe which are rotated by an engine at the top and are fitted with a cutting bit at the bottom."
+  },
+  {
+    "id": 40159,
+    "lesson": 13,
+    "zh": "地质学家需要知道钻头已经到达了哪些岩石，因此时常使用取芯钻头获取样本。",
+    "en": "The geologist needs to know what rocks the drillhas reached,so every so often a sample is obtained with a coring bit."
+  },
+  {
+    "id": 40160,
+    "lesson": 13,
+    "zh": "它切割出干净的圆柱体岩石，从中可以看到钻头已经切割过的地层。",
+    "en": "It cuts a clean cylinder of rock,from which can be seen the strata the drill has been cutting 10 through."
+  },
+  {
+    "id": 40161,
+    "lesson": 13,
+    "zh": "一旦我们到达石油，它通常会流到地面，因为来自气体或水的巨大压力正在推动它。",
+    "en": "Once we get down to the oil,it usually flows to the surface because great pressure,either from gas or water,is pushing it."
+  },
+  {
+    "id": 40162,
+    "lesson": 13,
+    "zh": "该压力必须受到控制，我们通过沿着钻杆循环的泥浆来控制它。",
+    "en": "This pressure must be under control,and we control it by means of the mud which we circulate down the drill pipe."
+  },
+  {
+    "id": 40163,
+    "lesson": 13,
+    "zh": "我们努力避免传统的、浪漫的喷井观念，这种观念会浪费石油和天然气。",
+    "en": "We endeavour to avoid the old,romantic idea of a gusher,which wastes oil and gas."
+  },
+  {
+    "id": 40164,
+    "lesson": 13,
+    "zh": "我们希望它留在洞里，直到我们能以可控的方式引导它离开。",
+    "en": "We want it to stay down the hole until we can lead it off in a controlled manner."
+  },
+  {
+    "id": 40165,
+    "lesson": 13,
+    "zh": "GASKELL 从 Discovery 中寻找地球矿物 波斯湾阿布扎比海上油田的石油钻井平台钻探 第 2 单元 第 13 课",
+    "en": "GASKELL The Search for the Earth's Minerals from Discovery An oil rig drilling in the Abu Dhabi offshore oilfields in the Persian Gulf Unit 2 Lesson 13"
+  },
+  {
+    "id": 40166,
+    "lesson": 14,
+    "zh": "超过两三天，世界上最好的天气预报都是推测性的，超过六七天就毫无价值了。",
+    "en": "Beyond two or three days,the world's best weather forecasts are speculative,and beyond six or seven they are worthless."
+  },
+  {
+    "id": 40167,
+    "lesson": 14,
+    "zh": "蝴蝶效应就是原因。",
+    "en": "The Butterfly Effect is the reason."
+  },
+  {
+    "id": 40168,
+    "lesson": 14,
+    "zh": "对于小天气——对于全球预报员来说，小天气可能意味着雷暴和暴风雪——任何预测都会迅速恶化。",
+    "en": "For small pieces of weather—and to aglobal forecaster,smallcan mean thunderstorms and blizzards—any prediction deteriorates rapidly."
+  },
+  {
+    "id": 40169,
+    "lesson": 14,
+    "zh": "误差和不确定性成倍增加，通过一系列湍流特征向上级联，从尘暴和飑到只有卫星才能看到的大陆大小的漩涡。",
+    "en": "Errors and uncertainties multiply, 5 cascading upward through a chain of turbulent features,from dust devils and squalls up to continent-size eddies that only satellites can see."
+  },
+  {
+    "id": 40170,
+    "lesson": 14,
+    "zh": "现代天气模型使用相距六十英里的点网格，即使如此，也必须猜测一些起始数据，因为地面站和卫星无法看到任何地方。",
+    "en": "The modern weather models work with a grid of points of the order of sixty miles apart,and even so, some starting data has to be guessed,since ground stations and satellites cannot see everywhere."
+  },
+  {
+    "id": 40171,
+    "lesson": 14,
+    "zh": "但假设·地球上布满了​​间隔一英尺的传感器，并以一英尺的间隔一直上升到大气层的顶部。",
+    "en": "But suppose · the earth could be covered with sensors spaced one foot apart,rising at one-foot intervals all the way to the 10 top of the atmosphere."
+  },
+  {
+    "id": 40172,
+    "lesson": 14,
+    "zh": "假设每个传感器都能提供完全准确的温度、压力、湿度以及气象学家想要的任何其他量的读数。",
+    "en": "Suppose every sensor gives perfectly accurate readings of temperature,pressure, humidity,and any other quantity a meteorologist would want."
+  },
+  {
+    "id": 40173,
+    "lesson": 14,
+    "zh": "恰好在中午，一台功能无限的计算机会获取所有数据并计算 12.01、12.02、12.03 各时间点会发生什么……",
+    "en": "Precisely at noon an infinitely powerful computer takes all the data and calculates what will happen at each point at 12.01,then 12.02,then 12.03 ..."
+  },
+  {
+    "id": 40174,
+    "lesson": 14,
+    "zh": "计算机仍然无法预测一个月后新泽西州普林斯顿的某一天是否会晴天或下雨。",
+    "en": "The computer will stillbe unable to predict whether Princeton,New Jersey,will have sun or rain on a day one month away."
+  },
+  {
+    "id": 40175,
+    "lesson": 14,
+    "zh": "中午，传感器之间的空间会隐藏计算机无法识别的波动，即与平均值的微小偏差。",
+    "en": "At noon the spaces between the sensors will hide fluctuations that the computer will 15 not know about,tiny deviations from the average."
+  },
+  {
+    "id": 40176,
+    "lesson": 14,
+    "zh": "到 12.01，这些波动已经在一英尺之外造成了小误差。",
+    "en": "By 12.01,those fluctuations will already have created small errors one foot away."
+  },
+  {
+    "id": 40177,
+    "lesson": 14,
+    "zh": "很快，误差就会扩大到十英尺的规模，依此类推，扩大到地球的大小。",
+    "en": "Soon the errors will have multiplied to the ten-foot scale,and so on up to the size of the globe."
+  },
+  {
+    "id": 40178,
+    "lesson": 14,
+    "zh": "詹姆斯·格莱克《混沌》",
+    "en": "JAMES GLEICK,Chaos"
+  },
+  {
+    "id": 40179,
+    "lesson": 15,
+    "zh": "有两个因素严重影响工业科学研究的有效性。",
+    "en": "Two factors weigh heavily against the effectiveness of scientific research in industry."
+  },
+  {
+    "id": 40180,
+    "lesson": 15,
+    "zh": "一是研究进行时普遍的保密气氛，二是研究人员个人缺乏自由。",
+    "en": "One is the general atmosphere of secrecy in which it is carried out,the other the lack of freedom of the individual research worker."
+  },
+  {
+    "id": 40181,
+    "lesson": 15,
+    "zh": "只要任何调查都是秘密的，它自然会限制所有参与调查的人员与其他国家或大学的科学家同事进行有效的接触，甚至经常与同一公司的其他部门的科学家进行有效接触。",
+    "en": "In so far as any inquiry is a secret one,it naturally limits all those engaged in carrying it out from effective contact with their fellow scientists either in other countries or in universities,or even,often enough, 5 in other departments of the same firm."
+  },
+  {
+    "id": 40182,
+    "lesson": 15,
+    "zh": "保密程度自然差异很大。",
+    "en": "The degree of secrecy naturally varies considerably."
+  },
+  {
+    "id": 40183,
+    "lesson": 15,
+    "zh": "一些较大的公司从事的研究具有普遍性和基础性，因此不保守秘密对他们来说是一个积极的优势。",
+    "en": "Some of the bigger firms are engaged in researches which are of such general and fundamental nature that it is a positive advantage to them not to keep them secret."
+  },
+  {
+    "id": 40184,
+    "lesson": 15,
+    "zh": "然而，许多依赖于此类研究的过程都是在完全保密的情况下进行的，直到可以申请专利的阶段为止。",
+    "en": "Yet a great many processes depending on such research are sought for with complete secrecy until the stage at which patents can be taken out."
+  },
+  {
+    "id": 40185,
+    "lesson": 15,
+    "zh": "更多的工艺根本没有申请专利，而是作为秘密工艺保存。",
+    "en": "Even more processes are never patented at all but kept as secret processes."
+  },
+  {
+    "id": 40186,
+    "lesson": 15,
+    "zh": "这尤其适用于化学工业，其中偶然发现比物理和机械工业发挥更大的作用。",
+    "en": "This applies particularly to chemical industries,where 10 chance discoveries play a much larger part than they do in physical and mechanical industries."
+  },
+  {
+    "id": 40187,
+    "lesson": 15,
+    "zh": "有时，保密程度达到了无法提及研究的全部性质的程度。",
+    "en": "Sometimes the secrecy goes to such an extent that the whole nature of the research cannot be mentioned."
+  },
+  {
+    "id": 40188,
+    "lesson": 15,
+    "zh": "例如，许多公司很难从图书馆获取技术或科学书籍，因为他们不愿意将自己的名字输入为已取出某本书，因为担心其他公司的代理人应该能够追踪他们可能正在进行的研究类型。",
+    "en": "Many firms, for instance,have great difficulty in obtaining technical or scientific books from libraries because they are unwilling to have their names entered as having taken out such and such a book,for fear the agents of other firms should be able to trace the kind of research they are likely to be undertaking."
+  },
+  {
+    "id": 40189,
+    "lesson": 15,
+    "zh": "BERNAL 科学的社会功能 一位在柴郡“阿克顿”实验室工作的科学家 第 2 单元第 15 课",
+    "en": "BERNAL The Social Function of Science A scientist working at the ‘Arcton'Laboratories in Cheshire Unit 2 Lesson 15"
+  },
+  {
+    "id": 40190,
+    "lesson": 16,
+    "zh": "在工业生活的组织中，工厂对工人生理和心理状态的影响被完全忽视了。",
+    "en": "In the organization of industrial life the influence of the factory upon the physiological and mental state of the workers has been completely neglected."
+  },
+  {
+    "id": 40191,
+    "lesson": 16,
+    "zh": "现代工业基于以最低成本获得最大产量的理念，以便个人或一群人可以赚到尽可能多的钱。",
+    "en": "Modern industry is based on the conception of the maximum production at lowest cost,in order that an individual or a group of individuals may earn as much money as possible."
+  },
+  {
+    "id": 40192,
+    "lesson": 16,
+    "zh": "它的扩张完全没有考虑到操作机器的人类的真实本质，也没有考虑到工厂强加的人工生存模式对个人及其后代产生的影响。",
+    "en": "It has expanded without any idea of the true nature of the human beings who run the machines,and 5 without giving any consideration to the effects produced on the individuals and on their descendants by the artificial mode of existence imposed by the factory."
+  },
+  {
+    "id": 40193,
+    "lesson": 16,
+    "zh": "大城市的建造并没有考虑到我们。",
+    "en": "The great cities have been built with no regard for us."
+  },
+  {
+    "id": 40194,
+    "lesson": 16,
+    "zh": "摩天大楼的形状和尺寸完全取决于获得每平方英尺土地最大收入的必要性，以及为租户提供令他们满意的办公室和公寓的必要性。",
+    "en": "The shape and dimensions of the skyscrapers depend entirely on the necessity of obtaining the maximum income per square foot of ground,and of offering to the tenants offices and apartments that please them."
+  },
+  {
+    "id": 40195,
+    "lesson": 16,
+    "zh": "这导致了巨大的建筑物的建造，太多的人挤在一起。",
+    "en": "This caused the construction of gigantic buildings where too large masses of human beings are crowded 10 together."
+  },
+  {
+    "id": 40196,
+    "lesson": 16,
+    "zh": "文明人喜欢这样的生活方式。",
+    "en": "Civilized men like such a way of living."
+  },
+  {
+    "id": 40197,
+    "lesson": 16,
+    "zh": "当他们享受住所的舒适和平庸的奢华时，他们没有意识到他们被剥夺了生活必需品。",
+    "en": "While they enjoy the comfort and banal luxury of their dwelling,they do not realize that they are deprived of the necessities of life."
+  },
+  {
+    "id": 40198,
+    "lesson": 16,
+    "zh": "现代城市由巨大的大厦和充满汽油味和有毒气体的黑暗狭窄的街道组成，被出租车、卡车和公共汽车的噪音撕裂，并且不断地挤满了人群。",
+    "en": "The modern city consists of monstrous edifices and of dark,narrow streets full of petrol fumes and toxic gases,torn by the noise of the taxicabs,lorries and buses,and thronged ceaselessly by great crowds."
+  },
+  {
+    "id": 40199,
+    "lesson": 16,
+    "zh": "显然，这并不是为了居民的利益而规划的。",
+    "en": "Obviously,it has not been planned for the good of its inhabitants."
+  },
+  {
+    "id": 40200,
+    "lesson": 16,
+    "zh": "ALEXIS CARREL'Man，未知者 宾夕法尼亚州匹兹堡的鸟瞰图 第 2 单元 第 16 课",
+    "en": "ALEXIS CARREL'Man,the Unknown An aerial veiw of Pittsburgh,Pennsylvania Unit 2 Lesson 16"
+  },
+  {
+    "id": 40201,
+    "lesson": 17,
+    "zh": "在澳大利亚定居初期，有进取心的定居者不明智地引入了欧洲兔。",
+    "en": "In the early days of the settlement of Australia,enterprising settlers unwisely introduced the European rabbit."
+  },
+  {
+    "id": 40202,
+    "lesson": 17,
+    "zh": "这种兔子在对足动物中没有天敌，因此它以兔子的杂乱抛弃特性繁殖。",
+    "en": "This rabbit had no natural enemies in the Antipodes,so that it multiplied with that promiscuous abandon characteristic of rabbits."
+  },
+  {
+    "id": 40203,
+    "lesson": 17,
+    "zh": "它覆盖了整个大陆。",
+    "en": "It overran a whole continent."
+  },
+  {
+    "id": 40204,
+    "lesson": 17,
+    "zh": "它通过挖洞和吞噬原本可以养活数百万只羊和牛的牧草而造成破坏。",
+    "en": "It caused devastation by burrowing and by devouring the herbage which might have maintained millions of sheep and cattle."
+  },
+  {
+    "id": 40205,
+    "lesson": 17,
+    "zh": "科学家发现，这种特殊品种的兔子（显然没有其他动物）容易感染致命的病毒性疾病——粘液瘤病。",
+    "en": "Scientists discovered that this particular variety of rabbit(and apparently no other animal)was susceptible to a fatal virus disease, myxomatosis."
+  },
+  {
+    "id": 40206,
+    "lesson": 17,
+    "zh": "通过感染动物并将它们释放到洞穴中，可能会造成这种疾病的局部流行。",
+    "en": "By infecting animals and letting them loose in the burrows,local epidemics of this disease could be created."
+  },
+  {
+    "id": 40207,
+    "lesson": 17,
+    "zh": "后来发现有一种蚊子是这种疾病的携带者，并将其传染给兔子。",
+    "en": "Later it was found that there was a type of mosquito which acted as the carrier of this disease and passed it on to the rabbits."
+  },
+  {
+    "id": 40208,
+    "lesson": 17,
+    "zh": "因此，当世界其他国家都在努力消灭蚊子时，澳大利亚却在鼓励这种蚊子。",
+    "en": "So while the rest of the world was trying to get rid of mosquitoes, Australia was encouraging this one."
+  },
+  {
+    "id": 40209,
+    "lesson": 17,
+    "zh": "它有效地将疾病传播到整个大陆，并大幅减少了兔子的数量。",
+    "en": "It effectively spread the disease all over the continent and drastically reduced the rabbit population."
+  },
+  {
+    "id": 40210,
+    "lesson": 17,
+    "zh": "后来发现兔子对这种疾病产生了一定程度的抵抗力，因此兔子种群不太可能被完全消灭。",
+    "en": "It later became apparent that rabbits were developing a degree of resistance to this disease,so that the rabbit population was unlikely to be completely exterminated."
+  },
+  {
+    "id": 40211,
+    "lesson": 17,
+    "zh": "然而，人们希望兔子的问题能够得到解决。",
+    "en": "There were hopes, however,that the problem of the rabbit would become manageable."
+  },
+  {
+    "id": 40212,
+    "lesson": 17,
+    "zh": "具有讽刺意味的是，欧洲将兔子作为害虫遗赠给澳大利亚，却将这种人造疾病作为瘟疫传染给了澳大利亚。",
+    "en": "Ironically,Europe,which had bequeathed the rabbit as a pest to Australia,acquired this man-made disease as a pestilence."
+  },
+  {
+    "id": 40213,
+    "lesson": 17,
+    "zh": "一位法国医生决定消灭他自己庄园里的野兔，并引入了粘液瘤病。",
+    "en": "A French physician decided to get rid of the wild rabbits on his own estate and introduced myxomatosis."
+  },
+  {
+    "id": 40214,
+    "lesson": 17,
+    "zh": "然而，它并不属于他的庄园范围。",
+    "en": "It did not,however,remain within the confines of his estate."
+  },
+  {
+    "id": 40215,
+    "lesson": 17,
+    "zh": "它传播到了法国，在法国，野兔通常不被视为害虫，而是一种运动和有用的食物供应；它还传播到了英国，在英国，野兔被视为害虫，但同样容易感染这种疾病的家兔是有利可图的毛皮工业的基础。",
+    "en": "It spread through France,where wild rabbits are not generally regarded as a pest but as a sport and a useful food supply,and it spread to Britain where wild rabbits are regarded as a pest but where domesticated rabbits,equally suscep- tible to the disease,are the basis of a profitable fur industry."
+  },
+  {
+    "id": 40216,
+    "lesson": 17,
+    "zh": "问题之一是人类能否控制他发明的疾病。",
+    "en": "The question became one of whether Man could control the disease he had invented."
+  },
+  {
+    "id": 40217,
+    "lesson": 17,
+    "zh": "里奇·卡尔德 科学有道理",
+    "en": "RITCHIE CALDER Science Makes Sense"
+  },
+  {
+    "id": 40218,
+    "lesson": 18,
+    "zh": "我们也不必假设他们这样做主要是出于好奇或为了消遣，比如乘船游览船头的波浪。",
+    "en": "5 being they have much more likely done it out of curiosity or for sport,as in riding the bow waves of a ship."
+  },
+  {
+    "id": 40219,
+    "lesson": 18,
+    "zh": "1928 年，一些海豚被拍到像海狸一样将浸水的床垫推上岸。",
+    "en": "In 1928 some porpoises were photographed working like beavers to push ashore a waterlogged mattress."
+  },
+  {
+    "id": 40220,
+    "lesson": 18,
+    "zh": "如果真如报道的那样，它们保护了人类免受鲨鱼的侵害，那可能是因为好奇心吸引了它们，也可能是因为可能的食物的气味吸引了鲨鱼。",
+    "en": "If, as has been reported,they have protected humans from sharks,it may have been because curiosity attracted them and because the scent of a possible meal attracted the sharks."
+  },
+  {
+    "id": 40221,
+    "lesson": 18,
+    "zh": "海豚和鲨鱼是天敌。",
+    "en": "Porpoises and sharks are natural enemies."
+  },
+  {
+    "id": 40222,
+    "lesson": 18,
+    "zh": "在这种情况下，可能会发生一场战斗，鲨鱼被赶走或杀死。",
+    "en": "It is possible that upon such an occasion a battle ensued,with the sharks being driven away or killed."
+  },
+  {
+    "id": 40223,
+    "lesson": 18,
+    "zh": "无论是鸟、鱼还是兽，海豚对任何有生命的东西都感兴趣。",
+    "en": "Whether it be bird,fish or beast,the porpoise is intrigued with anything that is alive."
+  },
+  {
+    "id": 40224,
+    "lesson": 18,
+    "zh": "他们不断地追捕海龟，而海龟却平静地接受了各种侮辱。",
+    "en": "They are constantly after the turtles,who peacefully submit to all sorts of indignities."
+  },
+  {
+    "id": 40225,
+    "lesson": 18,
+    "zh": "一只小牛特别喜欢用鼻子把海龟举到水面，然后像滑水机一样将它推过水箱。",
+    "en": "One young calf especially enjoyed raising a turtle to the surface with his snout and then shoving him across the tank like an aquaplane."
+  },
+  {
+    "id": 40226,
+    "lesson": 18,
+    "zh": "几乎每天，人们都会看到一只年幼的江豚试图将一只 300 磅重的海龟翻过来，将鼻子伸到贝壳的边缘下，拼命挣扎。",
+    "en": "Almost any day a young porpoise may be seen trying to turn a 300-pound sea turtle over by sticking his snout under the edge of his shelland pushing up for dear life."
+  },
+  {
+    "id": 40227,
+    "lesson": 18,
+    "zh": "这并不容易，可能需要两只海豚一起工作。",
+    "en": "This is not easy,and may require two porpoises working together."
+  },
+  {
+    "id": 40228,
+    "lesson": 18,
+    "zh": "在另一场游戏中，当海龟游过海洋馆时，第一只鼠海豚从上方俯冲下来，用腹部抵住龟壳。",
+    "en": "In another game,as the turtle swims across the oceanarium,the first porpoise swoops down from above and butts his shell with his belly."
+  },
+  {
+    "id": 40229,
+    "lesson": 18,
+    "zh": "这将乌龟击落了几英尺。",
+    "en": "This knocks the turtle down several feet."
+  },
+  {
+    "id": 40230,
+    "lesson": 18,
+    "zh": "他刚恢复平衡，下一只海豚就出现并再次击中他。",
+    "en": "He no sooner recovers his equilibrium than the next porpoise comes along and hits him another crack."
+  },
+  {
+    "id": 40231,
+    "lesson": 18,
+    "zh": "最终，乌龟被一路撞到了水箱的地板上。",
+    "en": "Eventually the turtle has been butted all the way down to the floor of the tank."
+  },
+  {
+    "id": 40232,
+    "lesson": 18,
+    "zh": "现在他只要试着站起来就心满意足了，但当他站起来时，一只海豚把他撞倒了。",
+    "en": "He is now satisfied merely to try to stand up,but as soon as he does so a porpoise knocks him flat."
+  },
+  {
+    "id": 40233,
+    "lesson": 18,
+    "zh": "乌龟最终放弃了，把脚拉到龟壳下面，游戏结束了。",
+    "en": "The turtle at last gives up by pulling his feet under his shelland the game is over."
+  },
+  {
+    "id": 40234,
+    "lesson": 18,
+    "zh": "拉尔夫·纳丁山 海中之窗",
+    "en": "RALPH NADING HILL Window in the Sea"
+  },
+  {
+    "id": 40235,
+    "lesson": 19,
+    "zh": "很明显，睡眠时间一定有某种功能，而且由于睡眠时间如此之多，所以这种功能似乎很重要。",
+    "en": "It is fairly clear that the sleeping period must have some function,and because there is so much of it the function would seem to be important."
+  },
+  {
+    "id": 40236,
+    "lesson": 19,
+    "zh": "关于睡眠本质的猜测已经持续了数千年，而一个让这个问题令人费解的奇怪发现是，睡眠看起来似乎不仅仅是让身体休息的问题。",
+    "en": "Speculations about its nature have been going on for literally thousands of years,and one odd finding that makes the problem puzzling is that it looks very much as if sleeping is not simply a matter of giving the body a rest."
+  },
+  {
+    "id": 40237,
+    "lesson": 19,
+    "zh": "“休息”，即肌肉放松等，可以通过短暂的躺着，甚至坐着来实现。",
+    "en": "'Rest',in terms of muscle relaxation and so on,can be achieved by a brief period lying,or even sitting down."
+  },
+  {
+    "id": 40238,
+    "lesson": 19,
+    "zh": "身体的组织在一定程度上具有自我修复和自我恢复的能力，当或多或少持续活跃时，其功能最佳。",
+    "en": "The body's tissues are self-repairing and self-restoring to a degree,and function best when more or less continuously active."
+  },
+  {
+    "id": 40239,
+    "lesson": 19,
+    "zh": "事实上，睡眠期间会发生基本的运动量，这特别与防止肌肉不活动有关。",
+    "en": "In fact a basic amount of movement occurs during sleep which is specifically concerned with preventing muscle inactivity."
+  },
+  {
+    "id": 40240,
+    "lesson": 19,
+    "zh": "如果不是身体休息的问题，那么或许是大脑需要休息？",
+    "en": "If it is not a question of resting the body,then perhaps it is the brain that needs resting?"
+  },
+  {
+    "id": 40241,
+    "lesson": 19,
+    "zh": "如果没有两个因素的话，这可能是一个合理的假设。",
+    "en": "This might be a plausible hypothesis were it not for two factors."
+  },
+  {
+    "id": 40242,
+    "lesson": 19,
+    "zh": "首先，脑电图仪（只是一种通过将电极连接到头皮上来记录大脑电活动的设备）显示，虽然睡眠期间的活动模式发生了变化，但没有证据表明活动总量有所减少。",
+    "en": "First the electroencephalograph(which is simply a device for recording the electrical activity of the brain by attaching electrodes to the scalp)shows that while there is a change in the pattern of activity during sleep,there is no evidence that the total amount of activity is any less."
+  },
+  {
+    "id": 40243,
+    "lesson": 19,
+    "zh": "第二个因素更有趣，也更基本。",
+    "en": "The second factor is more interesting and more fundamental."
+  },
+  {
+    "id": 40244,
+    "lesson": 19,
+    "zh": "几年前，一位名叫威廉·德门特的美国精神病学家发表了记录睡眠期间眼球运动的实验。",
+    "en": "Some years ago an American psychiatrist named William Dement published experiments dealing with the recording of eye-movements during sleep."
+  },
+  {
+    "id": 40245,
+    "lesson": 19,
+    "zh": "他表明，普通人的睡眠周期会不时出现特殊的眼球运动，有些是漂移且缓慢的，另一些是不稳定且快速的。",
+    "en": "He showed that the average individual's sleep cycle is punctuated with peculiar bursts of eye-movements, some drifting and slow,others jerky and rapid."
+  },
+  {
+    "id": 40246,
+    "lesson": 19,
+    "zh": "在这些眼球运动期间醒来的人通常报告说他们一直在做梦。",
+    "en": "People woken during these periods of eye-movements generally reported that they had been dreaming."
+  },
+  {
+    "id": 40247,
+    "lesson": 19,
+    "zh": "当其他时间醒来时，他们报告说没有做梦。",
+    "en": "When woken at other times they reported no dreams."
+  },
+  {
+    "id": 40248,
+    "lesson": 19,
+    "zh": "如果一组人连续几个晚上的眼动睡眠受到干扰，而另一组人在同样的时间内受到干扰，但当他们没有表现出眼动睡眠时，第一组人开始表现出一些人格障碍，而其他人似乎或多或少不受影响。",
+    "en": "If one group of people were disturbed from their eye-movement sleep for several nights on end,and another group were disturbed for an equal period of time but when they were not exhibiting eye-movements,the first group began to show some personality disorders while the others seemed more or less unaffected."
+  },
+  {
+    "id": 40249,
+    "lesson": 19,
+    "zh": "所有这一切的含义是，重要的不是睡眠的干扰，而是梦的干扰。",
+    "en": "The implications of all this were that it was not the disturbance of sleep that mattered,but the disturbance of dreaming."
+  },
+  {
+    "id": 40250,
+    "lesson": 19,
+    "zh": "克里斯托弗·埃文斯《倾听者》昼夜节律实验中的梦想之物。",
+    "en": "CHRISTOPHER EvANS The stuff of dreams from The Listener Circadian rhythm experiment."
+  },
+  {
+    "id": 40251,
+    "lesson": 19,
+    "zh": "一名患者在睡眠研究实验室里熟睡。",
+    "en": "A patient is asleep in a sleep research laboratory."
+  },
+  {
+    "id": 40252,
+    "lesson": 19,
+    "zh": "电极连接到他的头上来测量脑电波。",
+    "en": "Electrodes are attached to his head to measure brainwaves."
+  },
+  {
+    "id": 40253,
+    "lesson": 19,
+    "zh": "第 3 单元第 19 课",
+    "en": "Unit 3 Lesson 19"
+  },
+  {
+    "id": 40254,
+    "lesson": 20,
+    "zh": "凭借它们所拥有的下颚，蛇可以毫不费力地吃掉食物——不超过一口。",
+    "en": "5 food with very little effort,no more effort than one bite."
+  },
+  {
+    "id": 40255,
+    "lesson": 20,
+    "zh": "为什么只有蛇？",
+    "en": "And why only snakes?"
+  },
+  {
+    "id": 40256,
+    "lesson": 20,
+    "zh": "例如，猫会得到很大的帮助；不需要与大型、凶猛的老鼠打架，也不需要与成年兔子打架——只需咬一口，不需要更多的努力。",
+    "en": "Cats,for instance,would be greatly helped;no running fights with large,fierce rats or tussles with grown rabbits—just a bite and no more effort needed."
+  },
+  {
+    "id": 40257,
+    "lesson": 20,
+    "zh": "事实上，它对所有食肉动物来说都是一种帮助，尽管在它们互相争斗时它是一把两刃武器。",
+    "en": "In fact,it would be an assistance to all carnivores though it would be a two-edged weapon when they fought each other."
+  },
+  {
+    "id": 40258,
+    "lesson": 20,
+    "zh": "但是，在脊椎动物中，不可预测的大自然只选择了蛇（和一只蜥蜴）。",
+    "en": "But,of the vertebrates,unpredictable Nature selected only snakes(and one lizard)."
+  },
+  {
+    "id": 40259,
+    "lesson": 20,
+    "zh": "人们还想知道为什么大自然和一些蛇一起调制出如此威力的毒药。",
+    "en": "One wonders also why Nature,with some snakes,concocted poison of such extreme potency."
+  },
+  {
+    "id": 40260,
+    "lesson": 20,
+    "zh": "在唾液转化为毒物的过程中，人们可能会认为发生了一个固定的过程。",
+    "en": "In the conversion of saliva into poison,one might suppose that a fixed process took place."
+  },
+  {
+    "id": 40261,
+    "lesson": 20,
+    "zh": "事实并非如此；有些蛇制造的毒药在各方面都与其他蛇不同，就像砷与士的宁不同一样，并且具有不同的效果。",
+    "en": "It did not;some snakes manufactured a poison different in every respect from that of others,as different as arsenic is from strychnine,and having different effects."
+  },
+  {
+    "id": 40262,
+    "lesson": 20,
+    "zh": "一种毒物作用于神经，另一种毒物作用于血液。",
+    "en": "One poison acts on the nerves,the other on the blood."
+  },
+  {
+    "id": 40263,
+    "lesson": 20,
+    "zh": "神经毒的制造者包括曼巴蛇和眼镜蛇，它们的毒液被称为神经毒。",
+    "en": "The makers of the nerve poison include the mambas and the cobras and their venom is called neurotoxic."
+  },
+  {
+    "id": 40264,
+    "lesson": 20,
+    "zh": "蝰蛇和响尾蛇会产生血液毒物，称为溶血性毒物。",
+    "en": "Vipers(adders)and rattlesnakes manufacture the blood poison,which is known as haemolytic."
+  },
+  {
+    "id": 40265,
+    "lesson": 20,
+    "zh": "这两种毒都令人不快，但迄今为止更令人不快的是血毒。",
+    "en": "Both poisons are unpleasant,but by far the more unpleasant is the blood poison."
+  },
+  {
+    "id": 40266,
+    "lesson": 20,
+    "zh": "据说神经毒是两者中更原始的，血液毒可以说是改进配方的新产品。",
+    "en": "It is said that the nerve poison is the more primitive of the two,that the blood poison is,so to speak,a newer product from an improved formula."
+  },
+  {
+    "id": 40267,
+    "lesson": 20,
+    "zh": "尽管如此，神经毒物对人的作用比血液毒物要快得多。",
+    "en": "Be that as it may,the nerve poison does its business with man far more quickly than the blood poison."
+  },
+  {
+    "id": 40268,
+    "lesson": 20,
+    "zh": "然而，这没有任何意义。",
+    "en": "This, however,means nothing."
+  },
+  {
+    "id": 40269,
+    "lesson": 20,
+    "zh": "蛇获得毒液并不是为了对付人类，而是为了对付老鼠等猎物，而蝰蛇毒液对这些猎物的作用几乎是立竿见影的。",
+    "en": "Snakes did not acquire their poison for use against man but for use against prey such as rats and mice,and the effects on these of viperine poison is almost immediate."
+  },
+  {
+    "id": 40270,
+    "lesson": 20,
+    "zh": "约翰·克朗普顿 蛇",
+    "en": "JOHN CROMPTON The snake"
+  },
+  {
+    "id": 40271,
+    "lesson": 21,
+    "zh": "威廉·S。",
+    "en": "William S."
+  },
+  {
+    "id": 40272,
+    "lesson": 21,
+    "zh": "哈特也许是所有西部片明星中最伟大的，因为与加里·库珀和约翰·韦恩不同，他只出现在西部片中。",
+    "en": "Hart was,perhaps,the greatest of all Western stars,for unlike Gary Cooper and John Wayne he appeared in nothing but Westerns."
+  },
+  {
+    "id": 40273,
+    "lesson": 21,
+    "zh": "从1914年到1924年，他处于至高无上的地位，无人能挑战。",
+    "en": "From 1914 to 1924 he was supreme and unchallenged."
+  },
+  {
+    "id": 40274,
+    "lesson": 21,
+    "zh": "正是哈特创造了西部片的基本模式，并设计了他在每一部电影中扮演的主角，好人与坏人，意外的高贵亡命之徒，或者诚实但被陷害的牛仔，或者被恶意流言蜚语所怀疑的警长；简而言之，就是与自己和边疆环境发生冲突的个体。",
+    "en": "It was Hart who created the basic formula of the Western film,and devised the protagonist he played in every film he made, the good-bad man,the accidental-noble outlaw,or the honest-but-framed cowboy,or the sheriff made suspect by vicious gossip;in short,the individual in conflict with himself and his frontier environment."
+  },
+  {
+    "id": 40275,
+    "lesson": 21,
+    "zh": "与好莱坞的大多数同时代人不同，哈特实际上对旧西部有所了解。",
+    "en": "Unlike most of his contemporaries in Hollywood,Hart actually knew something of the old West."
+  },
+  {
+    "id": 40276,
+    "lesson": 21,
+    "zh": "当他还是个孩子的时候，当它已经消失时，他就生活在其中，他的英雄深深地扎根于他的记忆和经历中，扎根于消失的边疆的历史和神话中。",
+    "en": "He had lived in it as a child when it was already disappearing,and his hero was firmly rooted in his memories and experiences,and in both the history and the mythology of the vanished frontier."
+  },
+  {
+    "id": 40277,
+    "lesson": 21,
+    "zh": "尽管美国历史上没有哪个时期或地方比这更荒谬地浪漫化，但神话和现实至少在一个舞台上携手并进，即个人与入侵文明之间的冲突。",
+    "en": "And although no period or place in American history has been more absurdly romanticized,myth and reality did join hands in at least one arena,the conflict between the individual and encroaching civilization."
+  },
+  {
+    "id": 40278,
+    "lesson": 21,
+    "zh": "习惯于与自然环境作斗争的人和印第安人都被政客、银行家和商人迷惑了，并被栅栏、法律和外来禁忌所束缚。",
+    "en": "Men accustomed to struggling for survival against the elements and Indians were bewildered by politicians,bankers and businessmen,and unhorsed by fences,laws and alien taboos."
+  },
+  {
+    "id": 40279,
+    "lesson": 21,
+    "zh": "哈特笔下的好坏人始终是一个局外人，总是一个被剥夺继承权的人，如果他发现有必要一路上射杀治安官或抢劫银行，他的早期观众发现很容易理解和原谅，特别是当哈特最终战胜了进攻的印第安人时。",
+    "en": "Hart's good-bad man was always an outsider,always one of the disinherited,and if he found it necessary to shoot a sheriff or rob a bank along the way,his early audiences found it easy to understand and forgive,especially when it was Hart who,in the end,overcame the attacking Indians."
+  },
+  {
+    "id": 40280,
+    "lesson": 21,
+    "zh": "二十世纪第二个十年的观众发现，逃离到生活虽然艰苦但相对简单的时代是件愉快的事。",
+    "en": "Audiences in the second decade of the twentieth century found it pleasant to escape to a time when life, though hard,was relatively simple."
+  },
+  {
+    "id": 40281,
+    "lesson": 21,
+    "zh": "我们仍然如此；生活在一个不公开的侵略、战争、虚伪、欺骗、无政府状态和即将发生的自焚成为我们日常生活一部分的世界，我们都希望有一个生活准则。",
+    "en": "We still do;living in a world in which undeclared aggression,war, hypocrisy,chicanery,anarchy and impending immolation are part of our daily lives,we all want a code to live by."
+  },
+  {
+    "id": 40282,
+    "lesson": 21,
+    "zh": "卡尔·福尔曼的美德和《观察家报》的快枪",
+    "en": "CARL FoREMAN Virtue and a Fast Gun from The Observer"
+  },
+  {
+    "id": 40283,
+    "lesson": 22,
+    "zh": "它们只能通过言语的方式与他人交流。",
+    "en": "5 be communicated to another by means of speech."
+  },
+  {
+    "id": 40284,
+    "lesson": 22,
+    "zh": "随着文字的发明，取得了巨大的进步，因为知识不仅可以交流，还可以存储。",
+    "en": "With the invention of writing,a great advance was made, for knowledge could then be not only communicated but also stored."
+  },
+  {
+    "id": 40285,
+    "lesson": 22,
+    "zh": "图书馆使教育成为可能，而教育反过来又为图书馆增光添彩：知识的增长遵循一种复利规律，而印刷术的发明大大增强了这种规律。",
+    "en": "Libraries made education possible,and education in its turn aded to libraries:the growth of knowledge followed a kind of compound interest law, which was greatly enhanced by the invention of printing."
+  },
+  {
+    "id": 40286,
+    "lesson": 22,
+    "zh": "这一切都比较缓慢，直到随着科学的到来，节奏突然加快了。",
+    "en": "All this was comparatively slow until,with the coming of science,the tempo was suddenly raised."
+  },
+  {
+    "id": 40287,
+    "lesson": 22,
+    "zh": "然后知识开始按照系统的计划积累。",
+    "en": "Then knowledge began to be accumulated according to a 10 systematic plan."
+  },
+  {
+    "id": 40288,
+    "lesson": 22,
+    "zh": "细流变成了溪流；溪流现在变成了激流。",
+    "en": "The trickle became a stream;the stream has now become a torrent."
+  },
+  {
+    "id": 40289,
+    "lesson": 22,
+    "zh": "而且，一旦获得新知识，它就会立即转化为实际用途。",
+    "en": "Moreover,as soon as new knowledge is acquired,it is now turned to practical account."
+  },
+  {
+    "id": 40290,
+    "lesson": 22,
+    "zh": "所谓“现代文明”并不是人性均衡发展的结果，而是积累的知识应用于实际生活的结果。",
+    "en": "What is called ‘modern civilization'is not the result of a balanced development ofall man's nature,but of accumulated knowledge applied to practical life."
+  },
+  {
+    "id": 40291,
+    "lesson": 22,
+    "zh": "人类现在面临的问题是：如何利用所有这些知识？",
+    "en": "The problem now facing humanity is:What is going to be done with all this knowledge?"
+  },
+  {
+    "id": 40292,
+    "lesson": 22,
+    "zh": "正如人们经常指出的那样，知识是一把双刃武器，既可以用于善行，也可以用于作恶。",
+    "en": "As is so often pointed out,knowledge is a two-edged weapon which can be used equallyfor good or evil."
+  },
+  {
+    "id": 40293,
+    "lesson": 22,
+    "zh": "现在它对两者都被漠不关心地使用。",
+    "en": "It is now being 15 used indifferently for both."
+  },
+  {
+    "id": 40294,
+    "lesson": 22,
+    "zh": "例如，还有什么奇观比炮手利用科学粉碎人类的身体，而外科医生近在咫尺地利用科学来恢复身体的景象更残酷、异想天开吗？",
+    "en": "Could any spectacle,for instance,be more grimly whimsical than that of gunners using science to shatter men's bodies while,close at hand,surgeons use it to restore them?"
+  },
+  {
+    "id": 40295,
+    "lesson": 22,
+    "zh": "我们必须非常严肃地问自己，如果知识的这种双重使用及其不断增长的力量继续下去，将会发生什么。",
+    "en": "We have to ask ourselves very seriously what will happen if this twofold use of knowledge,with its ever-increasing power, continues."
+  },
+  {
+    "id": 40296,
+    "lesson": 22,
+    "zh": "泰瑞尔 人的性格 军事野战医院 第三单元 第 22 课",
+    "en": "TYRRELL The Personality of Man A military field-hospital Unit 3 Lesson 22"
+  },
+  {
+    "id": 40297,
+    "lesson": 23,
+    "zh": "没有两种鸟具有完全相同的飞行方式；种类是无限的；但可以粗略地看出两个类别。",
+    "en": "No two sorts of birds practise quite the same sort of flight;the varieties are infinite;but two classes may be roughly seen."
+  },
+  {
+    "id": 40298,
+    "lesson": 23,
+    "zh": "任何穿越太平洋的船只都会有较小的信天翁陪伴许多天，它可能会与船只陪伴一个小时，而不会看到或只是偶尔移动翅膀。",
+    "en": "Any ship that crosses the Pacific is accompanied for many days by the smaller albatross, which may keep company with the vessel for an hour without visible or more than occasional movement of wing."
+  },
+  {
+    "id": 40299,
+    "lesson": 23,
+    "zh": "船壁向上的气流以及其航线上的气流足以为这只拥有巨大翅膀的巨鸟提供足够的食物和进步。",
+    "en": "The currents of air that the walls of the ship direct upwards,as well as in the line of its course,are 5 enough to give the great bird with its immense wings sufficient sustenance and progress."
+  },
+  {
+    "id": 40300,
+    "lesson": 23,
+    "zh": "信天翁是滑翔机之王，这一类飞行者利用空气达到其目的，但必须屈服于空气的反对。",
+    "en": "The albatross is the king of the gliders,the class of fliers which harness the air to their purpose,but must yield to its opposition."
+  },
+  {
+    "id": 40301,
+    "lesson": 23,
+    "zh": "在相反的学校里，鸭子是至高无上的。",
+    "en": "In the contrary school,the duck is supreme."
+  },
+  {
+    "id": 40302,
+    "lesson": 23,
+    "zh": "正如他所吹嘘的那样，它更接近人类“征服”空气的引擎。",
+    "en": "It comes nearer to the engines with which man has 'conquered' the air,as he boasts."
+  },
+  {
+    "id": 40303,
+    "lesson": 23,
+    "zh": "鸭子和鸽子一样，都拥有钢铁般的肌肉，这些肌肉占了鸟的重量的很大一部分，这些肌肉使短翅膀具有不可抗拒的力量，使得它们可以在疲惫之前在逆风中飞很长的距离。",
+    "en": "Duck,and like them the pigeons,are endowed with steel-like muscles,that are a good part of the weight of the bird,and these willply the short wings with such irresistible power that they can 10 bore for long distances through an opposing gale before exhaustion follows."
+  },
+  {
+    "id": 40304,
+    "lesson": 23,
+    "zh": "它们的卑微追随者，如鹧鸪，也有类似的强大推进力，但很快就会疲倦。",
+    "en": "Their humbler followers,such as partridges,have a like power of strong propulsion,but soon tire."
+  },
+  {
+    "id": 40305,
+    "lesson": 23,
+    "zh": "如果海上的风把它们赶上了长途旅行，你可能会在极度疲惫的情况下接起它们。",
+    "en": "You may pick them up in utter exhaus- tion,if wind over the sea has driven them to a long journey."
+  },
+  {
+    "id": 40306,
+    "lesson": 23,
+    "zh": "燕子在很大程度上分享了两所学校的优点。",
+    "en": "The swallow shares the virtues of both schools in highest measure."
+  },
+  {
+    "id": 40307,
+    "lesson": 23,
+    "zh": "它不疲倦，也不吹嘘自己的力量；而是属于空气，它往返于北方筑巢地的路程可能有六千英里，在飞行时喂养它的幼崽，并滑过一种即使在逆风时也能帮助它通过的介质。",
+    "en": "It tires not,nor does it boast of its power;but belongs to the air,travelling it may be six thousand miles to and from its northern nesting home,feeding its flown young as it flies,and slipping 15 through a medium that seems to help its passage even when the wind is adverse."
+  },
+  {
+    "id": 40308,
+    "lesson": 23,
+    "zh": "这些鸟对我们有好处，尽管我们不再从它们的飞来飞去中获取预兆；甚至最迷信的村民也不再向喜鹊脱帽祝它早安。",
+    "en": "Such birds do us good, though we no longer take omens from their flight on this side and that;and even the most superstitious villagers no longer take off their hats to the magpie and wish it good-morning."
+  },
+  {
+    "id": 40309,
+    "lesson": 23,
+    "zh": "威廉·比奇·托马斯 乡下人的信条 1 一群飞翔的大雁 第 3 单元 第 23 课",
+    "en": "WILLIAM BEACH THOMAS A Countryman's Creed 1 A flock of wild geese in flight Unit 3 Lesson 23"
+  },
+  {
+    "id": 40310,
+    "lesson": 24,
+    "zh": "一个年轻人看到日落，无法理解或表达它在他心中激起的情感，得出的结论是，它一定是通往彼岸世界的大门。",
+    "en": "A young man sees a sunset and,unable to understand or to express the emotion that it rouses in him, concludes that it must be the gateway to a world that lies beyond."
+  },
+  {
+    "id": 40311,
+    "lesson": 24,
+    "zh": "我们中的任何人在强烈的审美体验时刻都很难抗拒这样的暗示：我们正在瞥见从不同的存在领域照射到我们身上的光，不同的，并且因为体验是强烈感人的，在某种程度上更高。",
+    "en": "It is difficult for any of us in moments of intense aesthetic experience to resist the suggestion that we are catching a glimpse of a light that shines down to us from a different realm of existence,different and,because the experience is intensely moving,in some way higher."
+  },
+  {
+    "id": 40312,
+    "lesson": 24,
+    "zh": "而且，尽管这些光芒令人眼花缭乱，但它们所传达的美丽和宁静比我们所知道或想象的要大。",
+    "en": "And,though the gleams blind and dazzle,yet do they convey a hint of beauty and serenity greater than we have known or imagined."
+  },
+  {
+    "id": 40313,
+    "lesson": 24,
+    "zh": "其意义也超出了我们所能描述的范围；因为语言是为了传达这个世界的意义而发明的，但它不能轻易地适应另一个世界的用途。",
+    "en": "Greater too than we can describe;for language,which was invented to convey the meanings of this world,cannot readily be fitted to the uses of another."
+  },
+  {
+    "id": 40314,
+    "lesson": 24,
+    "zh": "不可否认的是，所有伟大的艺术都具有暗示彼岸世界的力量。",
+    "en": "That all great art has this power of suggesting a world beyond is undeniable."
+  },
+  {
+    "id": 40315,
+    "lesson": 24,
+    "zh": "在某些情绪下，大自然也有同样的感受。",
+    "en": "In some moods,Nature shares it."
+  },
+  {
+    "id": 40316,
+    "lesson": 24,
+    "zh": "六月的天空没有那么蓝，不会指向更蓝的地方；没有美丽的夕阳，不会唤醒更美的憧憬；那份美好的憧憬，还未完全瞥见，便已逝去，匆匆而过，留下了说不清的向往和遗憾。",
+    "en": "There is no sky in June so blue that it does not point forward to a bluer,no sunset so beautiful that it does not waken the vision of a greater beauty,a vision which passes before it is fully glimpsed,and in passing leaves an indefinable longing and regret."
+  },
+  {
+    "id": 40317,
+    "lesson": 24,
+    "zh": "但是，如果这个世界不只是一个糟糕的笑话，生活只是星星冷光中的庸俗闪光，存在只是穿越神秘的空洞笑声；如果这些背后和超越的暗示不是消化不良产生的邪恶幽默，或者魔鬼发出的奇思妙想来嘲笑和疯狂我们，如果总而言之，美意味着某种东西，但我们决不能试图解释其意义。",
+    "en": "But,if this world is not merely a bad joke,life a vulgar flare amid the cool radiance of the stars,and existence an empty laugh braying across the mysteries;if these intimations of a something behind and beyond are not evil humour born of indigestion,or whimsies sent by the devil to mock and madden us,if,in a word,beauty means something,yet we must not seek to interpret the meaning."
+  },
+  {
+    "id": 40318,
+    "lesson": 24,
+    "zh": "如果我们瞥见了无法言喻的事物，那么试图说出它是不明智的，我们也不应该试图赋予我们无法理解的事物以意义。",
+    "en": "If we glimpse the unutterable,it is unwise to try to utter it,nor should we seek to invest with significance that which we cannot grasp."
+  },
+  {
+    "id": 40319,
+    "lesson": 24,
+    "zh": "美对于我们人类的意义来说是毫无意义的。",
+    "en": "Beauty in terms of our human meanings is meaningless."
+  },
+  {
+    "id": 40320,
+    "lesson": 24,
+    "zh": "JoAD 心事",
+    "en": "JoAD Pieces of Mind"
+  },
+  {
+    "id": 40321,
+    "lesson": 25,
+    "zh": "许多对噪声有实际经验的工业界和服务业人士认为，对这个问题的任何调查都是浪费时间；他们甚至不准备承认噪声影响人类的可能性。",
+    "en": "Many people in industry and the Services,who have practical experience of noise,regard any investigation of this question as a waste of time;they are not prepared even to admit the possibility that noise affects people."
+  },
+  {
+    "id": 40322,
+    "lesson": 25,
+    "zh": "另一方面，那些不喜欢噪音的人有时会用最不充分的证据来支持他们对更安静的社会的呼吁。",
+    "en": "On the other hand,those who dislike noise will sometimes use most inadequate evidence to support their pleas for a quieter society."
+  },
+  {
+    "id": 40323,
+    "lesson": 25,
+    "zh": "这很遗憾，因为减少噪音确实是一个很好的事业，如果它与糟糕的科学联系在一起，它可能会失去信誉。",
+    "en": "This is a pity,because noise abatement really is a good cause,and it is likely 5 to be discredited if it gets to be associated with bad science."
+  },
+  {
+    "id": 40324,
+    "lesson": 25,
+    "zh": "一项经常被提出的指控是噪音会导致精神疾病。",
+    "en": "One allegation often made is that noise produces mental illness."
+  },
+  {
+    "id": 40325,
+    "lesson": 25,
+    "zh": "例如，一份周报最近发表的一篇文章，在标题中添加了一幅引人注目的插图，描绘了一位处于相当痛苦状态的女士，标题是“她是又一个受害者，沦为尖叫的残骸”。",
+    "en": "A recent article in a weekly newspaper, for instance,was headed with a striking illustration of a lady in a state of considerable distress,with the caption 'She was yet another victim,reduced to a screaming wreck’."
+  },
+  {
+    "id": 40326,
+    "lesson": 25,
+    "zh": "当急切地翻阅文字时，人们得知这位女士是一名打字员，她发现办公室打字机的声音让她越来越担心，直到最终她不得不住进精神病院。",
+    "en": "On turning eagerly to the text,one learns that the lady was a typist who found the sound of office typewriters worried her more and more until 10 eventually she had to go into a mental hospital."
+  },
+  {
+    "id": 40327,
+    "lesson": 25,
+    "zh": "当然，这种轶事的问题在于人们无法区分因果关系。",
+    "en": "Now the snag in this sort of anecdote is of course that one cannot distinguish cause and effect."
+  },
+  {
+    "id": 40328,
+    "lesson": 25,
+    "zh": "噪音是导致疾病的原因，还是对噪音的抱怨只是一种症状？",
+    "en": "Was the noise a cause of the illness,or were the complaints about noise merely a symptom?"
+  },
+  {
+    "id": 40329,
+    "lesson": 25,
+    "zh": "另一位病人也可能抱怨她的邻居联合起来诽谤她、迫害她，但人们可能对相信这种说法持谨慎态度。海军是研究噪声的好地方。",
+    "en": "Another patient might equally well complain that her neighbours were combining to slander her and persecute her,and yet one might be cautious about believing this statement. navy is a good place to study noise."
+  },
+  {
+    "id": 40330,
+    "lesson": 25,
+    "zh": "但无论是精神病学访谈还是客观测试都无法显示出这些美国水手受到任何影响。",
+    "en": "But neither psychiatric interviews nor objective tests were able to show 20 any effects upon these American sailors."
+  },
+  {
+    "id": 40331,
+    "lesson": 25,
+    "zh": "这一结果仅仅证实了美国和英国早期的研究：如果噪音对心理健康有任何影响，那么它一定很小，以至于现有的精神病诊断方法无法发现它。",
+    "en": "This result merely confirms earlier American and British studies:if there is any effect of noise upon mental health,it must be so small that present methods of psychiatric diagnosis cannot find it."
+  },
+  {
+    "id": 40332,
+    "lesson": 25,
+    "zh": "这并不能证明它不存在；但它确实意味着噪音比在孤儿院长大的危险要小——孤儿院确实是一种心理健康危害。",
+    "en": "That does not prove that it does not exist;but it does mean that noise is less dangerous than,say,being brought up in an orphanage—which really is a mental health hazard."
+  },
+  {
+    "id": 40333,
+    "lesson": 25,
+    "zh": "布罗德本特《科学调查》中噪音的非听觉影响",
+    "en": "BROADBENT Non-auditory effects ofnoise from Science Survey"
+  },
+  {
+    "id": 40334,
+    "lesson": 26,
+    "zh": "生活在水里或水附近的动植物遗骸最有可能被保存下来，因为保存的必要条件之一就是快速埋葬，只有在海洋、河流，有时还有湖泊等泥沙不断沉积的地方，尸体等才能被迅速覆盖和保存。",
+    "en": "It is animals and plants which lived in or near water whose remains are most likely to be preserved,for one of the necessary conditions of preservation is quick burial,and it is only in the seas and rivers,and sometimes lakes,where mud and silt have been continuously deposited,that bodies and the like can be rapidly covered over and preserved."
+  },
+  {
+    "id": 40335,
+    "lesson": 26,
+    "zh": "但即使在最有利的情况下，只有一小部分死亡的生物在腐烂之前，或者更有可能的是，在食腐动物吃掉它们之前，以这种方式保存下来。",
+    "en": "But even in the most favourable circumstances only a small fraction of the creatures that die are preserved in this way before decay sets in or,even more likely,before scavengers eat them."
+  },
+  {
+    "id": 40336,
+    "lesson": 26,
+    "zh": "毕竟，所有生物都靠吃其他东西而生存，无论是植物还是动物，死的还是活的，避免这样的命运只是偶然的。",
+    "en": "After all,all living creatures live by feeding on something else,whether it be plant or animal,dead or alive,and it is only by chance that such a fate is avoided."
+  },
+  {
+    "id": 40337,
+    "lesson": 26,
+    "zh": "生活在陆地上的植物和动物的遗骸很少被保存下来，因为很少有任何东西可以覆盖它们。",
+    "en": "The remains of plants and animals that lived on land are much moree rarely preserved,for there is seldom anything to cover them over."
+  },
+  {
+    "id": 40338,
+    "lesson": 26,
+    "zh": "当你想到无数飞来飞去的鸟类，更不用说同样数量众多的田鼠和田鼠等你看不到的小动物时，人们很少会遇到尸体，当然，除了在路上。",
+    "en": "When you think of the innumerable birds that one sees flying about,not to mention the equally numerous small animals like field mice and voles which you do not see,it is very rarely that one comes across a dead body,except,of course,on the roads."
+  },
+  {
+    "id": 40339,
+    "lesson": 26,
+    "zh": "它们会分解并很快被天气破坏或被其他生物吃掉。",
+    "en": "They decompose and are quickly destroyed by the weather or eaten by some other creature."
+  },
+  {
+    "id": 40340,
+    "lesson": 26,
+    "zh": "陆地动物的痕迹几乎总是由于一些非常特殊的情况而得以幸存，例如掉入难以进入的洞穴，或落入冰缝，如西伯利亚猛犸象，而有时整个动物被保存下来，如放在冰箱中。",
+    "en": "It is almost always due to some very special circumstances that traces of land animals survive,as by falling into inaccessible caves,or into an ice crevasse,like the Siberian mammoths,when the whole animal is sometimes preserved,as in a refrigerator."
+  },
+  {
+    "id": 40341,
+    "lesson": 26,
+    "zh": "这就是著名的别列索夫卡猛犸象的遭遇，它被发现保存完好且状况良好。",
+    "en": "This is what happened to the famous Beresovka mammoth which was found preserved and in good condition."
+  },
+  {
+    "id": 40342,
+    "lesson": 26,
+    "zh": "他嘴里含着冷杉树的残骸——这是他掉进裂缝、折断背部之前吃的最后一顿饭。",
+    "en": "In his mouth were the remains of fir trees—the last meal that he had before he fell into the crevasse and broke his back."
+  },
+  {
+    "id": 40343,
+    "lesson": 26,
+    "zh": "这头猛犸象现已在圣路易斯古生物学博物馆中修复。",
+    "en": "The mammoth has now been restored in the Palaeontological Museum in St."
+  },
+  {
+    "id": 40344,
+    "lesson": 26,
+    "zh": "圣彼得堡。",
+    "en": "Petersburg."
+  },
+  {
+    "id": 40345,
+    "lesson": 26,
+    "zh": "其他动物也被困在焦油坑里，比如大象、剑齿虎，以及在兰乔拉布雷亚（现在只是洛杉矶郊区）发现的许多其他生物。",
+    "en": "Other animals were trapped in tar pits,like the elephants,sabre- toothed cats,and numerous other creatures that are found at Rancho la Brea,which is now just a suburb of Los Angeles."
+  },
+  {
+    "id": 40346,
+    "lesson": 26,
+    "zh": "显然发生的事情是，水聚集在这些焦油坑上，像大象这样的大型动物冒险到明显坚硬的表面喝水，但很快就陷入了焦油之中。",
+    "en": "Apparently what happened was that water collected on these tar pits,and the bigger animals like the elephants ventured out on to the apparently firm surface to drink,and were promptly bogged in the tar."
+  },
+  {
+    "id": 40347,
+    "lesson": 26,
+    "zh": "然后，当它们死后，剑齿虎、巨狼等食肉动物也出来觅食，也遭受了同样的命运。",
+    "en": "And then,when they were dead,the carnivores,like the sabre-toothed cats and the giant wolves,came out to feed and suffered exactly the same fate."
+  },
+  {
+    "id": 40348,
+    "lesson": 26,
+    "zh": "焦油里也有无数的鸟类。",
+    "en": "There are also endless numbers of birds in the tar as well."
+  },
+  {
+    "id": 40349,
+    "lesson": 26,
+    "zh": "埃罗尔·怀特（ERROL WHITE）：《发现》中地球的前世生活",
+    "en": "ERROL WHITE The past life of the earth from Discovery"
+  },
+  {
+    "id": 40350,
+    "lesson": 27,
+    "zh": "来自 17 世纪瑞典帝国的一艘大帆船在 1628 年处女航开始时沉没的故事一定是海上最奇怪的故事之一。",
+    "en": "From the seventeenth-century empire of Sweden,the story of a galleon that sank at the start of her maiden voyage in 1628 must be one of the strangest tales of the sea."
+  },
+  {
+    "id": 40351,
+    "lesson": 27,
+    "zh": "她在斯德哥尔摩港的海底沉睡了近三个半世纪，直到 1956 年被发现。",
+    "en": "For nearly three and a half centuries she lay at the bottom of Stockholm harbour until her discovery in 1956."
+  },
+  {
+    "id": 40352,
+    "lesson": 27,
+    "zh": "这是瓦萨号，伟大帝国舰队的皇家旗舰。",
+    "en": "This was the Vasa,royal flagship of the great imperial fleet."
+  },
+  {
+    "id": 40353,
+    "lesson": 27,
+    "zh": "古斯塔夫·阿道夫国王，即“北方飓风”，当时正值三十年战争中军事胜利的鼎盛时期，他决定了她的尺寸和武器装备。",
+    "en": "King Gustavus Adolphus,'The Northern Hurricane’,then at the height of his military success in the Thirty Years'War,had dictated her measurements and armament."
+  },
+  {
+    "id": 40354,
+    "lesson": 27,
+    "zh": "三重炮甲板上装有六十四门青铜大炮。",
+    "en": "Triple gun-decks mounted sixty-four bronze cannon."
+  },
+  {
+    "id": 40355,
+    "lesson": 27,
+    "zh": "她的目的是在瑞典日益强大的力量中发挥领导作用。",
+    "en": "She was intended to play a leading role in the growing might of Sweden."
+  },
+  {
+    "id": 40356,
+    "lesson": 27,
+    "zh": "1628 年 8 月 10 日，当她​​准备首次航行时，斯德哥尔摩正处于骚动之中。",
+    "en": "As she was prepared for her maiden voyage on August 10,1628,Stockholm was in a ferment."
+  },
+  {
+    "id": 40357,
+    "lesson": 27,
+    "zh": "从斯科普斯布隆和周围的岛屿上，人们目睹了这个美丽的事物开始扬帆迎风。",
+    "en": "From the Skeppsbron and surrounding islands the people watched this thing of beauty begin to spread her sails and 10 catch the wind."
+  },
+  {
+    "id": 40358,
+    "lesson": 27,
+    "zh": "他们花了三年的时间才制作出这艘漂浮的艺术品；她的雕刻和装饰比以前的任何一艘船都更加丰富。",
+    "en": "They had laboured for three years to produce this floating work of art;she was more richly carved and ornamented than any previous ship."
+  },
+  {
+    "id": 40359,
+    "lesson": 27,
+    "zh": "高高的船尾城堡上雕刻着各种神灵、恶魔、骑士、国王、战士、美人鱼、小天使；动物形状的动物形状闪烁着红色、金色和蓝色的光芒，象征着勇气、力量和残酷，激发了当时迷信水手的想象力。",
+    "en": "The high stern castle was a riot of carved gods,demons, knights,kings,warriors,mermaids,cherubs;and zoomorphic animal shapes ablaze with red and gold and blue,symbols of courage,power,and cruelty,were portrayed to stir the imaginations of the superstitious sailors of the day."
+  },
+  {
+    "id": 40360,
+    "lesson": 27,
+    "zh": "随后，停泊的战舰上的大炮发出雷鸣般的礼炮，瓦萨号也鸣枪回应。",
+    "en": "Then the cannons of the anchored warships thundered a salute to which the Vasa fired in reply."
+  },
+  {
+    "id": 40361,
+    "lesson": 27,
+    "zh": "当她从飘散的炮烟云中出现时，船头下的水翻腾着泡沫，她的旗帜飘扬，三角旗飘扬，风帆在微风中飘扬，她的上层建筑的红色和金色闪闪发光，她呈现出斯德哥尔摩人以前从未见过的更加雄伟的景象。",
+    "en": "As she emerged from her drifting cloud of gun smoke with the water churned to foam beneath her bow,her flags flying,pennants waving,sails filling in the breeze,and the red and gold of her superstructure ablaze with colour,she presented a more majestic spectacle than Stockholmers had ever seen before."
+  },
+  {
+    "id": 40362,
+    "lesson": 27,
+    "zh": "所有的炮口都敞开着，枪口邪恶地从炮口中探出头来。",
+    "en": "All gun-ports were open and the muzzles peeped wickedly from them."
+  },
+  {
+    "id": 40363,
+    "lesson": 27,
+    "zh": "风刮得更猛烈了，突然刮起了狂风，船做出了奇怪的动作，向左舷倾斜。",
+    "en": "As the wind freshened there came a sudden squall and the ship made a strange movement,listing to port."
+  },
+  {
+    "id": 40364,
+    "lesson": 27,
+    "zh": "军械官命令将所有左舷大炮移至右舷以抵消倾斜，但甲板的陡峭角度增加。",
+    "en": "The Ordnance Officer ordered all the port cannon to be heaved to starboard to counteract the list,but the steepening angle of the decks increased."
+  },
+  {
+    "id": 40365,
+    "lesson": 27,
+    "zh": "然后隆隆的雷声传到了岸上的观察者那里，货物、压舱物、弹药和 400 人滑落到这艘陡峭倾斜的船的左舷。",
+    "en": "Then the sound of rumbling thunder reached the watchers on the shore,as cargo,ballast,ammunition and 400 people went sliding and crashing down to the port side of the steeply listing ship."
+  },
+  {
+    "id": 40366,
+    "lesson": 27,
+    "zh": "下部的炮口现在已经在水下，涌入的水流决定了这艘船的命运。",
+    "en": "The lower gun-ports were now below water and the inrush sealed the ship's fate."
+  },
+  {
+    "id": 40367,
+    "lesson": 27,
+    "zh": "在第一个辉煌的25小时里，原本打算统治波罗的海的强大的瓦萨号在她出生的港口沉没了，所有的旗帜都在飘扬。",
+    "en": "In that 25 first glorious hour,the mighty Vasa,which was intended to rule the Baltic,sank with all flags flying—in the harbour of her birth."
+  },
+  {
+    "id": 40368,
+    "lesson": 27,
+    "zh": "罗伊·桑德斯 (Roy SAUNDERS) 《聆听者》中的《瓦萨号的崛起》",
+    "en": "Roy SAUNDERS The Raising of the 'Vasa'from The Listener"
+  },
+  {
+    "id": 40369,
+    "lesson": 28,
+    "zh": "这是一个怀疑论的时代，但是，尽管我们对许多我们的祖先所热切相信的事物的信心已经减弱，但我们对那瓶药的疗效的信心仍然和他们一样。",
+    "en": "This is a sceptical age,but although our faith in many of the things in which our forefathers fervently believed has weakened,our confidence in the curative properties of the bottle of medicine remains the same as theirs."
+  },
+  {
+    "id": 40370,
+    "lesson": 28,
+    "zh": "卫生服务部门每年的药品费用已达到天文数字，而且目前还没有显示出停止增长的迹象，这一事实证明了现代人对药物的信心。",
+    "en": "This modern faith in medicines is proved by the fact that the annual drug bill of the Health Services is mounting to astronomical figures and shows no signs at present of ceasing to rise."
+  },
+  {
+    "id": 40371,
+    "lesson": 28,
+    "zh": "大多数到我们医院门诊就诊的病人都觉得自己没有得到足够的治疗，除非他们能带一些有形的药物回家，比如一瓶药、一盒药片或一小罐药膏，而科室的负责医生也很乐意满足他们的这些要求。",
+    "en": "The majority of the 5 patients attending the medical out-patients departments of our hospitals feel that they have not received adequate treatment unless they are able to carry home with them some tangible remedy in the shape of a bottle of medicine,a box of pills,or a small jar of ointment,and the doctor in charge of the department is only too ready to provide them with these requirements."
+  },
+  {
+    "id": 40372,
+    "lesson": 28,
+    "zh": "处理病人的方法没有比满足他们的要求更快的了，而且由于卫生服务部门的大多数医务人员都工作过度，几乎没有时间就饮食、正确的生活、放弃坏习惯等问题提供耗时且不被重视的建议，所以瓶子、盒子和罐子几乎总是给他们。",
+    "en": "There is no quicker method of disposing of patients than by giving them what they are asking for,and since most medical men in the Health Services are 10 overworked and have little time for offering time-consuming and little-appreciated advice on such subjects as diet,right living,and the need for abandoning bad habits etc.,the bottle,the box,and the jar are almost always granted them."
+  },
+  {
+    "id": 40373,
+    "lesson": 28,
+    "zh": "并不是只有无知和没有受过教育的人才会对那瓶药抱有如此的信心。",
+    "en": "Nor is it only the ignorant and ill-educated person who has such faith in the bottle of medicine."
+  },
+  {
+    "id": 40374,
+    "lesson": 28,
+    "zh": "据托马斯·卡莱尔回忆，当他听说他的朋友亨利·泰勒生病时，他立即去看望他，口袋里揣着一瓶以前为卡莱尔夫人的身体不适开的药的剩余部分。",
+    "en": "It is recounted of Thomas Carlyle that when he heard of the illness of his friend,Henry Taylor,he went off 15 immediately to visit him,carrying with him in his pocket what remained of a bottle of medicine formerly prescribed for an indisposition of Mrs."
+  },
+  {
+    "id": 40375,
+    "lesson": 28,
+    "zh": "（与上条末句连读为 Mrs. Carlyle's，即“卡莱尔夫人”。）",
+    "en": "Carlyle's."
+  },
+  {
+    "id": 40376,
+    "lesson": 28,
+    "zh": "卡莱尔完全不知道他口袋里的瓶子里装的是什么，不知道他的朋友所患的疾病的性质，也不知道他的妻子以前出了什么问题，但是一种对一种疾病有效的药物肯定对另一种疾病也有同样的益处，想到他为他的朋友带来的帮助，他感到安慰，他急忙赶到亨利·泰勒的家。",
+    "en": "Carlyle was entirely ignorant of what the bottle in his pocket contained,of the nature of the illness from which his friend was suffering,and of what had previously been wrong with his wife,but a medicine that had worked so well in one form of illness would surely be of equal benefit in another,and comforted by the thought of the help he was bringing to his friend, 20 he hastened to Henry Taylor's house."
+  },
+  {
+    "id": 40377,
+    "lesson": 28,
+    "zh": "历史并没有记载他的朋友是否接受了他的医疗帮助，但他很可能接受了。",
+    "en": "History does not relate whether his friend accepted his medical help, but in all probability he did."
+  },
+  {
+    "id": 40378,
+    "lesson": 28,
+    "zh": "服药的最大好处在于，它对服药者没有任何要求，除了忍受片刻恶心的味道之外，这也是所有病人对医生的要求——在不给自己带来任何不便的情况下治愈疾病。",
+    "en": "The great advantage of taking medicine is that it makes no demands on the taker beyond that of putting up for a moment with a disgusting taste,and that is what all patients demand of their doctors—to be cured at no inconvenience to themselves."
+  },
+  {
+    "id": 40379,
+    "lesson": 28,
+    "zh": "肯尼思·沃克 患者和医生",
+    "en": "KENNETH WALKER Patients and doctors"
+  },
+  {
+    "id": 40380,
+    "lesson": 29,
+    "zh": "本世纪已经开发出许多奇怪的新交通工具，其中最奇怪的也许是气垫船。",
+    "en": "Many strange new means of transport have been developed in our century,the strangest of them being perhaps the hovercraft."
+  },
+  {
+    "id": 40381,
+    "lesson": 29,
+    "zh": "1953年，五十多岁的前电子工程师克里斯托弗·科克雷尔(Christopher Cockerell)转向诺福克湖区的造船业，向英国政府和工业界提出了他多年来一直致力于的一个想法。",
+    "en": "In 1953,a former electronics engineer in his fifties,Christopher Cockerell,who had turned to boat-building on the Norfolk Broads,suggested an idea on which he had been working for many years to the British Government and industrial circles."
+  },
+  {
+    "id": 40382,
+    "lesson": 29,
+    "zh": "这个想法是将飞行器支撑在低压空气的“垫”或垫子上，周围环绕着高压空气幕。",
+    "en": "It was the idea of supporting a craft on a 'pad’,or cushion,of low-pressure air,ringed with a curtain of higher pressure air."
+  },
+  {
+    "id": 40383,
+    "lesson": 29,
+    "zh": "从那时起，人们就很难决定这种飞行器应该属于轮船、飞机还是陆地车辆——因为它介于船和飞机之间。",
+    "en": "Ever since,people have had difficulty in deciding whether the craft should be ranged among ships,planes,or land vehicles—for it is something in between a boat and an aircraft."
+  },
+  {
+    "id": 40384,
+    "lesson": 29,
+    "zh": "作为一名造船商，科克雷尔试图找到解决波浪阻力问题的方法，波浪阻力浪费了水面舰艇的大量动力并限制了其速度。",
+    "en": "As a shipbuilder,Cockerell was trying to find a solution to the problem of the wave resistance which wastes a good deal of a surface ship's power and limits its speed."
+  },
+  {
+    "id": 40385,
+    "lesson": 29,
+    "zh": "他的答案是让船在不超过一两英尺厚的气垫上行驶，从而将船从水中提起。",
+    "en": "His answer was to lift the vessel out of the water by making it ride on a cushion of air,no more than one or two feet thick."
+  },
+  {
+    "id": 40386,
+    "lesson": 29,
+    "zh": "这是通过飞行器底部的大量环形喷气口来完成的。",
+    "en": "This is done by a great number of ring-shaped air jets on the bottom of the craft."
+  },
+  {
+    "id": 40387,
+    "lesson": 29,
+    "zh": "因此，它“飞”了，但它不能飞得更高——它的行动取决于它所骑过的表面、水或地面。",
+    "en": "It ‘flies', therefore,but it cannot fly higher—its action depends on the surface,water or ground,over which it rides."
+  },
+  {
+    "id": 40388,
+    "lesson": 29,
+    "zh": "1959 年在索伦特海峡进行的首次测试引起了轰动。",
+    "en": "The first tests on the Solent in 1959 caused a sensation."
+  },
+  {
+    "id": 40389,
+    "lesson": 29,
+    "zh": "气垫船首先在水面上航行，然后登上海滩，爬上沙丘，最后停在路上。",
+    "en": "The hovercraft travelled first over the water,then mounted the beach,climbed up the dunes,and sat down on a road."
+  },
+  {
+    "id": 40390,
+    "lesson": 29,
+    "zh": "后来它横渡英吉利海峡，平稳地渡过海浪，没有出现任何问题。",
+    "en": "Later it crossed the Channel,riding smoothly over the waves,which presented no problem."
+  },
+  {
+    "id": 40391,
+    "lesson": 29,
+    "zh": "从那时起，各种类型的气垫船出现并开始定期服役。",
+    "en": "Since that time,various types of hovercraft have appeared and taken up regular service."
+  },
+  {
+    "id": 40392,
+    "lesson": 29,
+    "zh": "气垫船在非洲或澳大利亚等交通不便的大片地区特别有用；它可以成为“飞行的水果碗”，将香蕉从种植园运到港口；巨型气垫船班轮可以横跨大西洋；未来的铁路很可能是“气垫列车”，它依靠气垫行驶在一根从未接触过的铁轨上，速度高达 300 英里/小时——可能性似乎是无限的。",
+    "en": "The hovercraft is particularly useful in large areas with poor communications such as Africa or Australia;it can become a 'flying fruit-bowl’,carrying bananas from the plantations to the ports;giant hovercraft liners could span the Atlantic;and the railway of the future may well be the ^hovertrain',riding on its air cushion over a single rail,which it never touches,at speeds up to 300 m.p.h.—the possibilities appear unlimited."
+  },
+  {
+    "id": 40393,
+    "lesson": 29,
+    "zh": "埃贡·拉森《飞马发明家之书》",
+    "en": "EGON LARSEN The Pegasus Book of Inventors"
+  },
+  {
+    "id": 40394,
+    "lesson": 30,
+    "zh": "一百年前，我们对海洋的了解仅限于海面的二维形状以及靠近陆地的浅水深度不规则所带来的航行危险。",
+    "en": "Our knowledge of the oceans a hundred years ago was confined to the two-dimensional shape of the sea surface and the hazards of navigation presented by the irregularities in depth of the shallow water close to the land."
+  },
+  {
+    "id": 40395,
+    "lesson": 30,
+    "zh": "公海深邃而神秘，任何对海底有过深入思考的人都可能认为海床是平坦的。",
+    "en": "The open sea was deep and mysterious,and anyone who gave more than a passing thought to the bottom confines of the oceans probably assumed that the sea bed was flat."
+  },
+  {
+    "id": 40396,
+    "lesson": 30,
+    "zh": "詹姆斯·克拉克·罗斯爵士 (Sir James Clark Ross) 在 1839 年测得了超过 2,400 英寻的水深，但直到 1869 年，H.",
+    "en": "Sir James Clark Ross had obtained 5 a sounding of over 2,400 fathoms in 1839,but it was not until 1869,when H."
+  },
+  {
+    "id": 40397,
+    "lesson": 30,
+    "zh": "豪猪号曾多次被英国皇家学会使用，在大西洋进行了一系列深度探测，并通过疏浚海底收集了第一批样本。",
+    "en": "Porcupine was put at the disposal of the Royal Society for several cruises,that a series of deep soundings was obtained in the Atlantic and the first samples were collected by dredging the bottom."
+  },
+  {
+    "id": 40398,
+    "lesson": 30,
+    "zh": "此后不久，著名的 H.M.S.",
+    "en": "Shortly after this the famous H."
+  },
+  {
+    "id": 40399,
+    "lesson": 30,
+    "zh": "挑战者号探险队将海底研究确立为最有资格的物理学家和地质学家值得研究的课题。",
+    "en": "Challenger expedition established the study of the sea-floor as a subject worthy of the most qualified physicists and geologists."
+  },
+  {
+    "id": 40400,
+    "lesson": 30,
+    "zh": "与海底电缆铺设相关的一系列活动很快证实了挑战者号的观察，即海洋的许多部分有两到三英里深，并且存在相当大的水下特征。",
+    "en": "A burst of activity associated with the laying of submarine cables soon confirmed the Challenger's 10 observation that many parts of the ocean were two to three miles deep,and the existence of underwater features of considerable magnitude."
+  },
+  {
+    "id": 40401,
+    "lesson": 30,
+    "zh": "今天，有足够的探测资料可以绘制大西洋的地形图，并且我们对海底地形的多样性有所了解。",
+    "en": "Today,enough soundings are available to enable a relief map of the Atlantic to be drawn and we know something of the great variety of the sea bed's topography."
+  },
+  {
+    "id": 40402,
+    "lesson": 30,
+    "zh": "由于海洋覆盖了地球表面的大部分，因此将海底视为地壳的基本形式，并叠加在其上的大陆、岛屿和海洋的其他特征是相当合理的。",
+    "en": "Since the sea covers the greater part of the earth’s surface,it is quite reasonable to regard the sea floor as the basic form of the crust of the earth,with, 15 superimposed upon,it the continents,together with the islands and other features of the oceans."
+  },
+  {
+    "id": 40403,
+    "lesson": 30,
+    "zh": "这些大陆形成崎岖的台地，高出公海海底近三英里。",
+    "en": "The continents form rugged tablelands which stand nearly three miles above the floor of the open ocean."
+  },
+  {
+    "id": 40404,
+    "lesson": 30,
+    "zh": "从海岸线到几英里到几百英里不等的地方，有大陆架的缓坡，在地质上是大陆的一部分。",
+    "en": "From the shore line,out to a distance which may be anywhere from a few miles to a few hundred miles,runs the gentle slope of the continental shelf,geologically part of the continents."
+  },
+  {
+    "id": 40405,
+    "lesson": 30,
+    "zh": "大陆和海洋之间的真正分界线出现在更陡峭的斜坡脚下。",
+    "en": "The real dividing line between continents and oceans occurs at the foot of a steeper slope."
+  },
+  {
+    "id": 40406,
+    "lesson": 30,
+    "zh": "这个大陆坡通常从接近 100 噚的地方开始，在几百英里的过程中到达真正的海底 2,500-3,500 噚。",
+    "en": "This continental slope usually starts at a place somewhere near the 100-fathom mark and in the course of a few hundred miles reaches the true ocean floor at 2,500-3,500 fathoms."
+  },
+  {
+    "id": 40407,
+    "lesson": 30,
+    "zh": "坡度平均约为十分之一，但包含陡峭的、可能是垂直的悬崖和平缓的沉积物覆盖的阶地，在其下游附近有一个长期的尾部，这几乎可以肯定是物质被大陆块侵蚀后输送到深水的结果。",
+    "en": "The slope averages about 1 in 30, but contains steep,probably vertical,cliffs,and gentle sediment-covered terraces,and near its lower reaches there is a long tailing-off which is almost certainly the result of material transported out to deep water after being eroded from the continental masses."
+  },
+  {
+    "id": 40408,
+    "lesson": 30,
+    "zh": "加斯克尔通过科学调查探索海底",
+    "en": "GASKELL Exploring the Sea-floor from Science Survey"
+  },
+  {
+    "id": 40409,
+    "lesson": 31,
+    "zh": "对雕塑的欣赏取决于对三个维度的形式做出反应的能力。",
+    "en": "Appreciation of sculpture depends upon the ability to respond to form in three dimensions."
+  },
+  {
+    "id": 40410,
+    "lesson": 31,
+    "zh": "这也许就是为什么雕塑被描述为所有艺术中最难的；当然它比涉及平面形式、仅二维形状的艺术更难。",
+    "en": "That is perhaps why sculpture has been described as the most difficult of all arts;certainly it is more difficult than the arts which involve appreciation of flat forms,shape in only two dimensions."
+  },
+  {
+    "id": 40411,
+    "lesson": 31,
+    "zh": "“色盲”的人比“色盲”的人多得多。",
+    "en": "Many more people are ‘form-blind' than colour-blind."
+  },
+  {
+    "id": 40412,
+    "lesson": 31,
+    "zh": "孩子在学习看东西时，首先只能辨别二维形状，无法判断距离、深度。",
+    "en": "The child learning to see,first distinguishes only two-dimensional shape;it cannot judge distances,depths."
+  },
+  {
+    "id": 40413,
+    "lesson": 31,
+    "zh": "后来，出于人身安全和实际需要，它不得不发展（部分通过触摸）粗略判断三维距离的能力。",
+    "en": "Later,for its personal safety and practical needs,it has to develop(partly by means of touch)the ability to judge roughly three-dimensonal distances."
+  },
+  {
+    "id": 40414,
+    "lesson": 31,
+    "zh": "但在满足了现实需要后，大多数人就不再继续了。",
+    "en": "But having satisfied the requirements of practical necessity,most people go no further."
+  },
+  {
+    "id": 40415,
+    "lesson": 31,
+    "zh": "尽管他们可能在对平面形式的感知上获得相当大的准确性，但他们并没有做出进一步的智力和情感努力来理解形式的完整空间存在。",
+    "en": "Though they may attain considerable accuracy in the perception of flat form,they do not make the further intellectual and emotionaleffort needed to comprehend form in its full spatial existence."
+  },
+  {
+    "id": 40416,
+    "lesson": 31,
+    "zh": "这是雕塑家必须做的。",
+    "en": "This is what the sculptor must do."
+  },
+  {
+    "id": 40417,
+    "lesson": 31,
+    "zh": "他必须不断努力思考和使用形式的完整空间。",
+    "en": "He must strive continually to think of,and use,form in its full spatial completeness."
+  },
+  {
+    "id": 40418,
+    "lesson": 31,
+    "zh": "可以说，他在他的脑袋里得到了实体的形状——他想到它，无论它有多大，就好像他把它完全封闭在他的手掌中一样。",
+    "en": "He gets the solid shape,as it were,inside his head—he thinks of it,whatever its size,as if he were holding it completely enclosed in the hollow of his hand."
+  },
+  {
+    "id": 40419,
+    "lesson": 31,
+    "zh": "他在心里想象出一个复杂的形状，从四周看去；当他看一侧时，他知道另一侧是什么样子；他用它的重心、质量、重量来识别自己；他认识到它的体积，作为形状在空气中移动的空间。",
+    "en": "He mentally visualizes a complex form from all round itself;he knows while he looks at one side what the other side is like;he identifies himself with its centre of gravity,its mass,its weight;he realizes its volume,as the space that the shape displaces in the air."
+  },
+  {
+    "id": 40420,
+    "lesson": 31,
+    "zh": "敏感的雕塑观察者也必须学会将形状简单地当作形状来感受，而不是作为描述或回忆。",
+    "en": "And the sensitive observer of sculpture must also learn to feel shape simply as shape,not as description or reminiscence."
+  },
+  {
+    "id": 40421,
+    "lesson": 31,
+    "zh": "例如，他必须将鸡蛋视为一个简单的单一固体形状，这与它作为食物的意义，或者与它会变成一只鸟的文学观念完全不同。",
+    "en": "He must,for example,perceive an egg as a simple single solid shape,quite apart from its significance as food,or from the literary idea that it will become a bird."
+  },
+  {
+    "id": 40422,
+    "lesson": 31,
+    "zh": "贝壳、坚果、李子、梨、蝌蚪、蘑菇、山峰、肾脏、胡萝卜、树干、鸟、花蕾、云雀、瓢虫、芦苇、骨头等固体也是如此。",
+    "en": "And so with solids such as a shell, a nut,a plum,a pear,a tadpole,a mushroom,a mountain peak,a kidney,a carrot,a tree-trunk,a bird,a bud, a lark,a ladybird,a bulrush,a bone."
+  },
+  {
+    "id": 40423,
+    "lesson": 31,
+    "zh": "由此，他可以继续欣赏更复杂的形式或几种形式的组合。",
+    "en": "From these he can go on to appreciate more complex forms or combinations of several forms."
+  },
+  {
+    "id": 40424,
+    "lesson": 31,
+    "zh": "雕塑家亨利·摩尔 (HENRY MOORE) 的《倾听者》",
+    "en": "HENRY MOORE The Sculptor Speaks from The Listener"
+  },
+  {
+    "id": 40425,
+    "lesson": 32,
+    "zh": "伽利略在世时曾是激烈争议的中心；但科学尘埃早已尘埃落定，今天我们甚至可以从正确的角度看待他与宗教裁判所的著名冲突。",
+    "en": "In his own lifetime Galileo was the centre of violent controversy;but the scientific dust has long since settled,and today we can see even his famous clash with the Inquisition in something like its proper perspective."
+  },
+  {
+    "id": 40426,
+    "lesson": 32,
+    "zh": "但相比之下，直到近代，伽利略才成为科学史学家的问题儿童。",
+    "en": "But,in contrast,it is only in modern times that Galileo has become a problem child for historians of science."
+  },
+  {
+    "id": 40427,
+    "lesson": 32,
+    "zh": "伽利略的旧观点非常简单。",
+    "en": "The old view of Galileo was delightfully uncomplicated."
+  },
+  {
+    "id": 40428,
+    "lesson": 32,
+    "zh": "首先，他是一个勇于实验的人：他鄙视亚里士多德学派的偏见和书本知识，他向自然而不是古人提出问题，并且无所畏惧地得出结论。",
+    "en": "He was,above all,a man who experimented: who despised the prejudices and book learning of the Aristotelians,who put his questions to nature instead of to the ancients,and who drew his conclusions fearlessly."
+  },
+  {
+    "id": 40429,
+    "lesson": 32,
+    "zh": "他是第一个将望远镜转向天空的人，他所看到的证据足以推翻亚里士多德和托勒密。",
+    "en": "He had been the first to turn a telescope to the sky,and he had seen there evidence enough to overthrow Aristotle and Ptolemy together."
+  },
+  {
+    "id": 40430,
+    "lesson": 32,
+    "zh": "他是那个爬上比萨斜塔并从塔顶落下各种重物、让球滚下斜面，然后将他的许多实验结果推广到著名的自由落体定律的人。",
+    "en": "He was the man who climbed the Leaning Tower of Pisa and dropped various weights from the top,who rolled balls down inclined planes,and then generalized the results of his many experiments into the famous law of free fall."
+  },
+  {
+    "id": 40431,
+    "lesson": 32,
+    "zh": "但是，对证据的更仔细的研究，以及对那个时代的更深刻的认识，特别是对科学革命中哲学暗流的新意识的支持，已经深刻地改变了伽利略的这一观点。",
+    "en": "But a closer study of the evidence,supported by a deeper sense of the period,and particularly by a new consciousness of the philosophical undercurrents in the scientific revolution,has profoundly modified this view of Galileo."
+  },
+  {
+    "id": 40432,
+    "lesson": 32,
+    "zh": "如今，尽管古老的伽利略仍然存在于许多流行著作中，但科学史学家们却出现了一幅新的、更复杂的图景。",
+    "en": "Today,although the old Galileo lives on in many popular writings,among historians of science a new and more sophisticated picture has emerged."
+  },
+  {
+    "id": 40433,
+    "lesson": 32,
+    "zh": "与此同时，我们对伽利略的反对者的同情有所增加。",
+    "en": "At the same time our sympathy for Galileo's opponents has grown somewhat."
+  },
+  {
+    "id": 40434,
+    "lesson": 32,
+    "zh": "他的望远镜观测是不朽的；它们在当时引起了极大的兴趣，产生了重要的理论后果，并为仪器和设备中隐藏的潜力提供了惊人的展示。",
+    "en": "His telescopic observations are justly immortal;they aroused great interest at the time,they had important theoretical consequences,and they provided a striking demonstration of the potentialities hidden in instruments and apparatus."
+  },
+  {
+    "id": 40435,
+    "lesson": 32,
+    "zh": "但是，如果我们记得使用望远镜的极限能力需要长期的经验和对仪器的熟悉，我们是否可以责怪那些看过但未能看到伽利略所看到的东西的人呢？",
+    "en": "But can we blame those who looked and failed to see what Galileo saw,if we remember that to use a telescope at the limit of its powers calls for long experience and intimate familiarity with one's instrument?"
+  },
+  {
+    "id": 40436,
+    "lesson": 32,
+    "zh": "拒绝通过伽利略望远镜观察的哲学家是否比那些声称十八世纪四十年代用罗塞勋爵的大望远镜观察到的螺旋星云是研磨机留下的划痕的哲学家更有罪？",
+    "en": "Was the philosopher who refused to look through Galileo's telescope more culpable than those who alleged that the spiral nebulae observed with Lord Rosse's great telescope in the eighteen-forties were scratches left by the grinder?"
+  },
+  {
+    "id": 40437,
+    "lesson": 32,
+    "zh": "如果我们回想一下，在他那个时代，就像几个世纪之前一样，曲面玻璃是一种流行的发明，它不是产生真理，而是产生幻觉和谎言；如果单个曲面玻璃会扭曲自然，那么一对曲面玻璃会扭曲多少呢？",
+    "en": "We can perhaps forgive those who said the moons of Jupiter were produced by Galileo's spyglass if we recall that in his day,as for centuries before, curved glass was the popular contrivance for producing not truth but illusion,untruth;and if a single curved glass would distort nature,how much more would a pair of them?"
+  },
+  {
+    "id": 40438,
+    "lesson": 32,
+    "zh": "迈克尔·霍金 伽利略重生，来自《倾听者》",
+    "en": "MICHAELHoSKIN Galileo Reborn from The Listener"
+  },
+  {
+    "id": 40439,
+    "lesson": 33,
+    "zh": "教育是我们这个时代的关键词之一。",
+    "en": "Education is one of the key words of our time."
+  },
+  {
+    "id": 40440,
+    "lesson": 33,
+    "zh": "我们许多人认为，一个没有受过教育的人是不利环境的不幸受害者，被剥夺了二十世纪最伟大的机会之一。",
+    "en": "A man without an education,many of us believe,is an unfortunate victim of adverse circumstances,deprived of one of the greatest twentieth-century opportunities."
+  },
+  {
+    "id": 40441,
+    "lesson": 33,
+    "zh": "现代国家深信教育的重要性，对学习机构进行“投资”，以培养大批开明的青年男女，他们是潜在的领导者，以重新获得“兴趣”。",
+    "en": "Convinced of the importance of education,modern states ‘invest'in institutions of learning to get back 'interest'in the form of a large group of enlightened young men and women who are potential leaders."
+  },
+  {
+    "id": 40442,
+    "lesson": 33,
+    "zh": "教育，其教学周期如此精心设计，并以教科书为间断——那些可以购买的智慧之井——如果没有它的好处，文明会是什么样子？",
+    "en": "Education,with its cycles of instruction so carefully worked out,punctuated by textbooks—those purchasable wells of wisdom—what would civilization be like without its benefits?"
+  },
+  {
+    "id": 40443,
+    "lesson": 33,
+    "zh": "可以肯定的是：我们会有医生和传教士、律师和被告、婚姻和生育——但我们的精神面貌会有所不同。",
+    "en": "So much is certain:that we would have doctors and preachers,lawyers and defendants,marriages and births—but our spiritual outlook would be different."
+  },
+  {
+    "id": 40444,
+    "lesson": 33,
+    "zh": "我们将更少地强调“事实和数据”，而更多地强调良好的记忆力、应用心理学以及一个人与同胞相处的能力。",
+    "en": "We would lay less stress on 'facts and figures'and more on a good memory,on applied psychology,and on the capacity of a man to get along with his fellow- citizens."
+  },
+  {
+    "id": 40445,
+    "lesson": 33,
+    "zh": "如果我们的教育体系是按照过去无书本的方式建立的，我们就会拥有可以想象到的最民主的“大学”形式。",
+    "en": "If our educational system were fashioned after its bookless past we would have the most democratic form of ‘college'imaginable."
+  },
+  {
+    "id": 40446,
+    "lesson": 33,
+    "zh": "在部落人民中，所有传统继承的知识都是所有人共享的；它被传授给部落的每个成员，以便在这方面每个人都平等地为生活做好准备。",
+    "en": "Among tribal people all knowledge inherited by tradition is shared by all;it is taught to every member of the tribe so that in this respect everybody is equally equipped for life."
+  },
+  {
+    "id": 40447,
+    "lesson": 33,
+    "zh": "这是“平等起点”的理想条件，只有我们最先进的现代教育形式才能试图重新获得这种条件。",
+    "en": "It is the ideal condition of the ‘equal start’which only our most progressive forms of modern education try to regain."
+  },
+  {
+    "id": 40448,
+    "lesson": 33,
+    "zh": "在原始文化中，寻求和接受传统指导的义务对所有人都有约束力。",
+    "en": "In primitive cultures the obligation to seek and to receive the traditional instruction is binding to all."
+  },
+  {
+    "id": 40449,
+    "lesson": 33,
+    "zh": "不存在“文盲”——如果这个词可以适用于没有文字的民族的话——而我们自己的义务教育制度在德国于 1642 年、在法国于 1806 年、在英国于 1876 年成为法律，并且在许多“文明”国家中仍然不存在。",
+    "en": "There are no 'illiterates'—if the term can be applied to peoples without a script—while our own compulsory school attendance became law in Germany in 1642,in France in 1806,and in England in 1876, and is still non-existent in a number of 'civilized'nations."
+  },
+  {
+    "id": 40450,
+    "lesson": 33,
+    "zh": "这表明我们花了多长时间才认为有必要确保我们所有的孩子都能分享过去几个世纪中幸福的少数人积累的知识。",
+    "en": "This shows how long it was before we deemed it necessary to make sure that all our children could share in the knowledge accumulated by the happy few' during the past centuries."
+  },
+  {
+    "id": 40451,
+    "lesson": 33,
+    "zh": "荒野教育不是金钱问题。",
+    "en": "Education in the wilderness is not a matter of monetary means."
+  },
+  {
+    "id": 40452,
+    "lesson": 33,
+    "zh": "所有人都有权享有平等的起点。",
+    "en": "All are entitled to an equal start."
+  },
+  {
+    "id": 40453,
+    "lesson": 33,
+    "zh": "在我们的社会中，不存在常常妨碍成长中个性的充分发展的匆忙。",
+    "en": "There is none of the hurry which,in our society,often hampers the full development of a growing personality."
+  },
+  {
+    "id": 40454,
+    "lesson": 33,
+    "zh": "在那里，孩子在父母无时无刻的关注下长大；因此丛林和大草原上不存在“青少年犯罪”。",
+    "en": "There, a child grows up under the ever-present attention of his parents;therefore the jungles and the savannahs know of no ‘juvenile delinquency'."
+  },
+  {
+    "id": 40455,
+    "lesson": 33,
+    "zh": "离家谋生的必要性不会导致对孩子的忽视，也没有哪个父亲会面临自己无力为孩子“花钱”接受教育的情况。",
+    "en": "No necessity of making a living away from home results in neglect of children,and no father is confronted with his inability to 'buy'an education for his child."
+  },
+  {
+    "id": 40456,
+    "lesson": 33,
+    "zh": "朱利叶斯·E.",
+    "en": "JULIUS E."
+  },
+  {
+    "id": 40457,
+    "lesson": 33,
+    "zh": "嘴唇 事物的起源",
+    "en": "LIPS The Origin of Things"
+  },
+  {
+    "id": 40458,
+    "lesson": 34,
+    "zh": "这几乎总是让青少年感到震惊，并让他们下定决心，今后不再与父母谈论他们去过的地方或人。",
+    "en": "5 adolescents,and makes them resolve that in future they will not talk to their parents about the places or people they visit."
+  },
+  {
+    "id": 40459,
+    "lesson": 34,
+    "zh": "不久之后，父母就会抱怨孩子太守口如瓶，从不告诉他们任何事情，但他们很少意识到这是他们自己造成的。",
+    "en": "Before very long the parents will be complaining that the child is so secretive and never tells them anything,but they seldom realize that they have brought this on themselves."
+  },
+  {
+    "id": 40460,
+    "lesson": 34,
+    "zh": "对父母的幻想破灭，无论他们作为父母和个人多么优秀和足够，在某种程度上都是不可避免的。",
+    "en": "Disillusionment with the parents,however good and adequate they may be both as parents and as individuals,is to some degree inevitable."
+  },
+  {
+    "id": 40461,
+    "lesson": 34,
+    "zh": "大多数孩子对父母抱有如此高的理想，除非父母本身一直不如人意，否则很难指望经得起现实的评价。",
+    "en": "Most children have such a high ideal of their parents,unless the 10 parents themselves have been unsatisfactory,that it can hardly hope to stand up to a realistic evaluation."
+  },
+  {
+    "id": 40462,
+    "lesson": 34,
+    "zh": "如果父母意识到他们的孩子通常对自己的品格和正确性抱有多大的信念，以及这种信念对孩子的意义有多大，他们会感到非常惊讶和深深的感动。",
+    "en": "Parents would be greatly surprised and deeply touched if they realized how much belief their children usually have in their character and infallibility,and how much this faith means to a child."
+  },
+  {
+    "id": 40463,
+    "lesson": 34,
+    "zh": "如果父母对青少年的这种反应有所准备，并认识到这是孩子成长并发展宝贵的观察力和独立判断力的标志，他们就不会受到如此伤害，因此也不会通过怨恨和抵制来驱使孩子反对。",
+    "en": "If parents were prepared for this adolescent reaction,and realized that it was a sign that the child was growing up and developing valuable powers of observation and independent judgment,they would not be so hurt,and 15 therefore would not drive the child into opposition by resenting and resisting it."
+  },
+  {
+    "id": 40464,
+    "lesson": 34,
+    "zh": "青少年热衷于真诚，总是尊重承认自己错误、无知、甚至不公平或不公正的父母。",
+    "en": "The adolescent,with his passion for sincerity,always respects a parent who admits that he is wrong,or ignorant,or even that he has been unfair or unjust."
+  },
+  {
+    "id": 40465,
+    "lesson": 34,
+    "zh": "孩子无法原谅的是，如果孩子知道这些指控是真的，父母却拒绝承认这些指控。",
+    "en": "What the child cannot forgive is the parents'refusal to admit these charges if the child knows them to be true."
+  },
+  {
+    "id": 40466,
+    "lesson": 34,
+    "zh": "维多利亚时代的父母认为，他们通过退却不合理的独裁态度来维护自己的尊严；事实上，他们并没有做这样的事情，但孩子们太害怕了，不敢让他们知道自己的真实感受。",
+    "en": "Victorian parents believed that they kept their dignity by retreating behind an unreasoning authoritarian 20 attitude;in fact they did nothing of the kind,but children were then too cowed to let them know how they really felt."
+  },
+  {
+    "id": 40467,
+    "lesson": 34,
+    "zh": "今天我们倾向于走向另一个极端，但总的来说，这对孩子和父母来说都是更健康的态度。",
+    "en": "Today we tend to go to the other extreme,but on the whole this is a healthier attitude both for the child and the parent."
+  },
+  {
+    "id": 40468,
+    "lesson": 34,
+    "zh": "面对现实总是更明智、更安全的做法，无论此刻有多痛苦。",
+    "en": "It is always wiser and safer to face up to reality,however painful it may be at the moment."
+  },
+  {
+    "id": 40469,
+    "lesson": 34,
+    "zh": "DoRIS ODLUM 青春期之旅",
+    "en": "DoRIS ODLUM Journey Through Adolescence"
+  },
+  {
+    "id": 40470,
+    "lesson": 35,
+    "zh": "月球很可能成为太阳系的工业中心，为其飞船提供火箭燃料，这些燃料很容易从月球岩石中以液氧的形式获得。",
+    "en": "The Moon is likely to become the industrial hub of the Solar System,supplying the rocket fuels for its ships, easily obtainable from the lunar rocks in the form of liquid oxygen."
+  },
+  {
+    "id": 40471,
+    "lesson": 35,
+    "zh": "原因就在于它的重力。",
+    "en": "The reason lies in its gravity."
+  },
+  {
+    "id": 40472,
+    "lesson": 35,
+    "zh": "由于月球的质量只有地球的八十分之一，因此从月球到地球轨道行驶 25 万英里所需的能量比从地球表面进入轨道 200 英里所需的能量少 97%！",
+    "en": "Because the Moon has only an eightieth of the Earth's mass,it requires 97 per cent less energy to travel the quarter of a million miles from the Moon to Earth-orbit than the 200 mile-journey from Earth's surface into orbit!"
+  },
+  {
+    "id": 40473,
+    "lesson": 35,
+    "zh": "这听起来可能很不可思议，但很容易计算。",
+    "en": "This may sound fantastic,but it is easily calculated."
+  },
+  {
+    "id": 40474,
+    "lesson": 35,
+    "zh": "要乘坐火箭逃离地球，必须以每秒七英里的速度行驶。",
+    "en": "To escape from the Earth in a rocket,one must travel at seven miles per second."
+  },
+  {
+    "id": 40475,
+    "lesson": 35,
+    "zh": "从月球出发的可比速度仅为每秒 1.5 英里。",
+    "en": "The comparable speed from the Moon is only 1.5 miles per second."
+  },
+  {
+    "id": 40476,
+    "lesson": 35,
+    "zh": "由于月球表面的重力仅为地球的六分之一（请记住阿波罗宇航员是多么容易地跳跃），因此加速到每秒 1.5 英里所需的能量比在地球上要少得多。",
+    "en": "Because the gravity on the Moon's surface is only a sixth of Earth's (remember how easily the Apollo astronauts bounded along),it takes much less energy to accelerate to that 1.5 miles per second than it does on Earth."
+  },
+  {
+    "id": 40477,
+    "lesson": 35,
+    "zh": "月球居民将能够在太空中飞行，而成本仅为其陆地表亲类似旅行的百分之三。",
+    "en": "Moon- dwellers willbe able to fly in space at only three per cent of the cost of similar journeys by their terrestrial cousins."
+  },
+  {
+    "id": 40478,
+    "lesson": 35,
+    "zh": "阿瑟·C.",
+    "en": "Arthur C."
+  },
+  {
+    "id": 40479,
+    "lesson": 35,
+    "zh": "克拉克曾经建议，一个革命性的想法要经历三个阶段：“这是不可能的——别浪费我的时间。”",
+    "en": "Clark once suggested a revolutionary idea passes through three phases: 'It's impossible—don't waste my time."
+  },
+  {
+    "id": 40480,
+    "lesson": 35,
+    "zh": "’这是可能的，但不值得做。",
+    "en": "' It's possible,but not worth doing."
+  },
+  {
+    "id": 40481,
+    "lesson": 35,
+    "zh": "” 3 “我说过这一直都是个好主意。",
+    "en": "' 3 'I said it was a good idea all along."
+  },
+  {
+    "id": 40482,
+    "lesson": 35,
+    "zh": "殖民火星——一个比月球远160倍的世界——的想法将从第二阶段决定性地转向第三阶段，届时将有大量的人永久生活在太空中。",
+    "en": "' The idea of colonising Mars—a world 160 times more distant than the Moon—will move decisively from the second phase to the third,when a significant number of people are living permanently in space."
+  },
+  {
+    "id": 40483,
+    "lesson": 35,
+    "zh": "火星对未来的航行者有着非凡的吸引力。",
+    "en": "Mars has an extraordinary fascination for would-be voyagers."
+  },
+  {
+    "id": 40484,
+    "lesson": 35,
+    "zh": "美国、俄罗斯和欧洲充满了热衷者，其中许多人是认真的资深科学家，他们梦想着将人们送往那里。",
+    "en": "America,Russia and Europe are filled with enthusiasts—many of them serious and senior scientists—who dream of sending people to it."
+  },
+  {
+    "id": 40485,
+    "lesson": 35,
+    "zh": "他们的目的是可以理解的。",
+    "en": "Their aim is understandable."
+  },
+  {
+    "id": 40486,
+    "lesson": 35,
+    "zh": "它是太阳系中最像地球的一个世界。",
+    "en": "It is the one world in the Solar System that is most like the Earth."
+  },
+  {
+    "id": 40487,
+    "lesson": 35,
+    "zh": "这是一个充满红色沙漠（因此得名“红色星球”）、万里无云的天空、狂暴的沙尘暴、比大峡谷更宽的峡谷和至少一座比珠穆朗玛峰高两倍以上的山峰的世界。",
+    "en": "It is a world of red sandy deserts (hence its name —the Red Planet),cloudless skies,savage sandstorms,chasms wider than the Grand Canyon and at least one mountain more than twice as tall as Everest."
+  },
+  {
+    "id": 40488,
+    "lesson": 35,
+    "zh": "这似乎是解决问题的理想选择。 1989年2月19日7天",
+    "en": "It seems ideal for settlement. 7DAYS,February 19,1989"
+  },
+  {
+    "id": 40489,
+    "lesson": 36,
+    "zh": "如果一个国家本质上不团结，那就由政府来维持它。",
+    "en": "If a nation is essentially disunited,it is left to the government to hold it together."
+  },
+  {
+    "id": 40490,
+    "lesson": 36,
+    "zh": "这增加了政府的开支，相应地减少了可用于国家发展的经济资源。",
+    "en": "This increases the expense of government,and reduces correspondingly the amount of economic resources that could be used for developing the country."
+  },
+  {
+    "id": 40491,
+    "lesson": 36,
+    "zh": "我们不应该忘记，在一个贫穷落后的国家，这些资源是多么的少。",
+    "en": "And it should not be forgotten how small those resources are in a poor and backward country."
+  },
+  {
+    "id": 40492,
+    "lesson": 36,
+    "zh": "政府成本高的地方，发展资源相应就低。",
+    "en": "Where the cost of government is high,resources for development are correspondingly low."
+  },
+  {
+    "id": 40493,
+    "lesson": 36,
+    "zh": "这可以通过将一个国家的地位与一个私营企业的地位进行比较来说明。",
+    "en": "This may be ilustrated by comparing the position of a nation with that of a private business enterprise."
+  },
+  {
+    "id": 40494,
+    "lesson": 36,
+    "zh": "企业为了维持经营，必须承担一定的成本和费用。",
+    "en": "An enterprise has to incur certain costs and expenses in order to stay in business."
+  },
+  {
+    "id": 40495,
+    "lesson": 36,
+    "zh": "就我们的目的而言，我们只关心一种成本——管理和管理业务的成本。",
+    "en": "For our purposes,we are concerned only with one kind of cost--the cost of managing and administering the business."
+  },
+  {
+    "id": 40496,
+    "lesson": 36,
+    "zh": "企业的此类行政管理费用类似于一个国家的政府成本。",
+    "en": "Such administrative overheads in a business are analogous to the cost of government in a nation."
+  },
+  {
+    "id": 40497,
+    "lesson": 36,
+    "zh": "企业的管理费用很低，以至于可以相信在企业中工作的每个人都会以最有利于公司利益的方式行事。",
+    "en": "The administrative overheads of a business are low to the extent that everyone working in the business can be trusted to behave 10 in a way that best promotes the interests of the firm."
+  },
+  {
+    "id": 40498,
+    "lesson": 36,
+    "zh": "如果可以相信他们每个人都能承担这样的责任，并在自己的职责范围内发挥主动性，那么行政管理费用就会很低。",
+    "en": "If they can each be trusted to take such responsibilities, and to exercise such initiative as falls within their sphere,then administrative overheads will be low."
+  },
+  {
+    "id": 40499,
+    "lesson": 36,
+    "zh": "它会很低，因为每项工作只需要一个人来负责，而不需要另一个人来检查他正在做的事情，让他保持一致，并向其他人报告他的情况。",
+    "en": "It will be low because it willbe necessary to have only one man looking after each job,without having another man to check upon what he is doing,keep him in line,and report on him to someone else."
+  },
+  {
+    "id": 40500,
+    "lesson": 36,
+    "zh": "但如果没有人可以被信任以忠诚和负责任的方式对待他的工作，那么企业将需要大量的管理员、检查员和领班，管理费用也会相应增加。",
+    "en": "But if no one can be trusted to act in a loyal and responsible manner towards his job,then the business will require armies of administrators,checkers,and foremen,and administrative overheads will rise correspondingly."
+  },
+  {
+    "id": 40501,
+    "lesson": 36,
+    "zh": "随着管理费用的增加，企业在支付管理费用后的收益将会下降；企业用于分配股息或直接投资于其未来进步和发展的资金将会减少。",
+    "en": "As administrative overheads rise,so the earnings of the business after meeting the expense of administration, willfall;and the business will have less money to distribute as dividends or invest directly in its future progress and development."
+  },
+  {
+    "id": 40502,
+    "lesson": 36,
+    "zh": "对于一个民族来说也是如此。",
+    "en": "It is precisely the same with a nation."
+  },
+  {
+    "id": 40503,
+    "lesson": 36,
+    "zh": "如果可以信赖人民以忠诚和负责任的方式行事，政府就不需要警察和公务员军队来维持秩序。",
+    "en": "To the extent that the people can be relied upon to behave in a loyal 20 and responsible manner,the government does not require armies of police and civil servants to keep them in order."
+  },
+  {
+    "id": 40504,
+    "lesson": 36,
+    "zh": "但如果一个国家不团结，政府就不能确定人民的行为是否符合国家的利益，而必须相应地监视、检查和控制人民。",
+    "en": "But if a nation is disunited,the government cannot be sure that the actions of the people will be in the interests of the nation;and it will have to watch,check,and control the people accordingly."
+  },
+  {
+    "id": 40505,
+    "lesson": 36,
+    "zh": "因此，一个分裂的国家必须承担过高的政府成本。",
+    "en": "A disunited nation therefore has to incur unduly high costs of government."
+  },
+  {
+    "id": 40506,
+    "lesson": 36,
+    "zh": "雷蒙德·弗罗斯特 落后社会",
+    "en": "RAYMOND FROST The Backward Society"
+  },
+  {
+    "id": 40507,
+    "lesson": 37,
+    "zh": "十二岁是人体最旺盛的时期。",
+    "en": "At the age of twelve years,the human body is at its most vigorous."
+  },
+  {
+    "id": 40508,
+    "lesson": 37,
+    "zh": "它还没有达到其最大的尺寸和力量，其主人也尚未达到其全部的智力；但在这个年龄，死亡的可能性是最小的。",
+    "en": "It has yet to reach its full size and strength,and its owner his or her full intelligence;but at this age the likelihood of death is least."
+  },
+  {
+    "id": 40509,
+    "lesson": 37,
+    "zh": "早些时候，我们还是婴儿和幼儿，因此更加脆弱；后来，我们将经历活力和抵抗力的逐渐丧失，尽管一开始难以察觉，但最终将变得如此严重，以至于我们无法再活下去，无论我们如何照顾自己，无论社会和医生如何照顾我们。",
+    "en": "Earlier,we were infants and young children,and consequently more vulnerable;later,we shall undergo a progressive loss of our vigour and resistance which,though imperceptible at first,will finally become so steep that we 5 can live no longer,however wellwe look after ourselves,and however well society,and our doctors,look after us."
+  },
+  {
+    "id": 40510,
+    "lesson": 37,
+    "zh": "这种活力随着时间的流逝而下降的现象称为衰老。",
+    "en": "This decline in vigour with the passing of time is called ageing."
+  },
+  {
+    "id": 40511,
+    "lesson": 37,
+    "zh": "我们所有人都做出的最令人不快的发现之一是，我们必须以这种方式衰落，如果我们逃避战争、事故和疾病，我们最终将“死于老年”，而且这种情况发生的速度因人而异，因此，我们在六十五岁到八十岁之间死亡的可能性很大。我们中的一些人会死得更快，一些人会活得更久——活到第九个或第十个十年。",
+    "en": "It is one of the most.unpleasant discoveries which we all make that we must decline in this way,that if we escape wars,accidents and diseases we shall eventually 'die of old age',and that this happens at a rate which differs little from person to person,so that there are heavy odds in favour of our dying between the ages of sixty-five and eighty. 10 Some of us will die sooner,a few will live longer—on into a ninth or tenth decade."
+  },
+  {
+    "id": 40512,
+    "lesson": 37,
+    "zh": "但机会渺茫，无论我们多么幸运和坚强，我们能活多久实际上是有限的。",
+    "en": "But the chances are against it,and there is a virtual limit on how long we can hope to remain alive,however lucky and robust we are."
+  },
+  {
+    "id": 40513,
+    "lesson": 37,
+    "zh": "普通人往往会忘记这个过程，除非他们被提醒。",
+    "en": "Normal people tend to forget this process unless and until they are reminded of it."
+  },
+  {
+    "id": 40514,
+    "lesson": 37,
+    "zh": "我们对人会衰老的事实如此熟悉，多年来人们一直认为随着时间的流逝而失去活力，随着年龄的增长而更有可能死亡的过程是不言而喻的，就像热水壶的冷却或一双鞋子的磨损一样。",
+    "en": "We are sofamiliar with the fact that man ages,that people have for years assumed that the process of losing vigour with time, 15 of becoming more likely to die the older we get,was something self-evident,like the cooling of a hot kettle or the wearing-out of a pair of shoes."
+  },
+  {
+    "id": 40515,
+    "lesson": 37,
+    "zh": "他们还假设所有动物，可能还有树木等其他有机体，甚至宇宙本身，本质上都必须“磨损”。",
+    "en": "They have also assumed that all animals,and probably other organisms such as trees,or even the universe itself,must in the nature of things‘wear out'."
+  },
+  {
+    "id": 40516,
+    "lesson": 37,
+    "zh": "如果有机会活得足够长，我们通常观察到的大多数动物实际上都会像我们一样衰老；而像上链手表或太阳这样的机械系统，实际上会根据热力学第二定律 20 耗尽能量（目前整个宇宙是否会这样做还是一个有争议的问题）。",
+    "en": "Most animals we commonly observe do in fact age as we do,if given the chance to live long enough;and mechanical systems like a wound watch,or the sun,do in fact run out of energy in accordance with the second law of thermodynamics 20(whether the whole universe does so is a moot point at present)."
+  },
+  {
+    "id": 40517,
+    "lesson": 37,
+    "zh": "但这些与人类衰老时发生的情况不同。",
+    "en": "But these are not analogous to what happens when man ages."
+  },
+  {
+    "id": 40518,
+    "lesson": 37,
+    "zh": "破旧的手表仍然是手表，可以重新上发条。",
+    "en": "A run-down watch is still a watch and can be rewound."
+  },
+  {
+    "id": 40519,
+    "lesson": 37,
+    "zh": "相比之下，一块旧手表会变得非常磨损且不可靠，最终不值得修理。",
+    "en": "An old watch,by contrast,becomes so worn and unreliable that it eventually is not worth mending."
+  },
+  {
+    "id": 40520,
+    "lesson": 37,
+    "zh": "但手表永远无法自我修复——它不包含活动部件，仅由金属组成，会因摩擦而磨损。",
+    "en": "But a watch could never repair itself—it does not consist of living parts,only of metal,which wears away by friction."
+  },
+  {
+    "id": 40521,
+    "lesson": 37,
+    "zh": "我们可以一次修复自己——至少足以克服除最直接致命的疾病和事故之外的所有疾病和事故。 25 在十二岁到八十岁之间，我们逐渐失去了这种力量；十二岁时，疾病会将我们击倒，八十岁时，疾病会将我们击倒，带入坟墓。",
+    "en": "We could,at one time,repair ourselves—well enough,at least,to overcome all but the most instantly fatal illnesses and accidents. 25 Between twelve and eighty years we gradually lose this power;an llnesswhich at twelve would knock us over,at eighty can knock us out,and into our grave."
+  },
+  {
+    "id": 40522,
+    "lesson": 37,
+    "zh": "如果我们能像十二岁时那样精力充沛，大约需要700年，我们就会有一半的人死亡，而另外700年，幸存者又会减少一半。",
+    "en": "If we could stay as vigorous as we are at twelve,itwould take about 700 years for half of us to die,and another 700 for the survivors to be reduced by half again."
+  },
+  {
+    "id": 40523,
+    "lesson": 37,
+    "zh": "ALEX CoMFORT 衰老的过程",
+    "en": "ALEx CoMFORT The process of ageing"
+  },
+  {
+    "id": 40524,
+    "lesson": 38,
+    "zh": "供水污染通常是由于水源附近的卫生条件差、污水排入水源本身、污水泄漏到分配系统或工业或农业废物污染造成的。",
+    "en": "Contamination of water supplies is usually due to poor sanitation close to water sources,sewage disposal into the sources themselves,leakage of sewage into distribution systems or contamination with industrial or farm waste."
+  },
+  {
+    "id": 40525,
+    "lesson": 38,
+    "zh": "即使管道供水在其源头是安全的，但到达水龙头时并不总是安全的。",
+    "en": "Even if a piped water supply is safe at its source,it is not always safe by the time it reaches the tap."
+  },
+  {
+    "id": 40526,
+    "lesson": 38,
+    "zh": "间歇性的自来水供应尤其值得怀疑。",
+    "en": "Intermittent tap-water supplies should be regarded as particularly suspect."
+  },
+  {
+    "id": 40527,
+    "lesson": 38,
+    "zh": "前往供水质量不稳定地区短途旅行的旅行者应避免饮用自来水或任何其他来源的未经处理的水。",
+    "en": "Travellers on short trips to areas with water supplies of uncertain quality should avoid drinking tap- water,or untreated water from any other source."
+  },
+  {
+    "id": 40528,
+    "lesson": 38,
+    "zh": "最好只喝热饮、知名品牌的瓶装或罐装饮料——装瓶厂通常遵循国际水处理标准。",
+    "en": "It is best to keep to hot drinks,bottled or canned drinks of well-known brand names—international standards of water treatment are usually followed at bottling plants."
+  },
+  {
+    "id": 40529,
+    "lesson": 38,
+    "zh": "碳酸饮料是酸性的，稍微安全一些。",
+    "en": "Carbonated drinks are acidic,and slightly safer."
+  },
+  {
+    "id": 40530,
+    "lesson": 38,
+    "zh": "确保所有瓶子都在您在场的情况下打开，并且其边缘干净且干燥。",
+    "en": "Make sure that all bottles are opened in your presence,and that their rims are clean and dry."
+  },
+  {
+    "id": 40531,
+    "lesson": 38,
+    "zh": "煮沸始终是处理水的好方法。",
+    "en": "Boiling is always a good way of treating water."
+  },
+  {
+    "id": 40532,
+    "lesson": 38,
+    "zh": "一些酒店可应要求提供开水，可用于饮用或刷牙。",
+    "en": "Some hotels supply boiled water on request and this can be used for drinking,or for brushing teeth."
+  },
+  {
+    "id": 40533,
+    "lesson": 38,
+    "zh": "当电压合适时，可以煮沸少量水的便携式煮沸元件非常有用。",
+    "en": "Portable boiling elements that can boil small quantities of water are useful when the right voltage of electricity is available."
+  },
+  {
+    "id": 40534,
+    "lesson": 38,
+    "zh": "礼貌地拒绝任何来源不明的冷饮。",
+    "en": "Refuse politely any cold drink from an unknown source."
+  },
+  {
+    "id": 40535,
+    "lesson": 38,
+    "zh": "冰的安全性取决于其所用的水，除非已知冰是安全的，否则不应将其放入饮料中。",
+    "en": "Ice is only as safe as the water from which it is made,and should not be put in drinks unless it is known to be safe."
+  },
+  {
+    "id": 40536,
+    "lesson": 38,
+    "zh": "饮料可以通过将其放在冰上而不是加冰来冷却。",
+    "en": "Drinks can be cooled by placing them on ice rather than adding ice to them."
+  },
+  {
+    "id": 40537,
+    "lesson": 38,
+    "zh": "酒精可能是一种医用消毒剂，但不能用来对水进行消毒。",
+    "en": "Alcohol may be a medical disinfectant,but should not be relied upon to sterilize water."
+  },
+  {
+    "id": 40538,
+    "lesson": 38,
+    "zh": "乙醇浓度在50-70%时效果较好；低于1%时，其杀菌作用可以忽略不计。",
+    "en": "Ethanol is more effective at a concentration of 50-70 per cent;below 20 per cent,its bactericidal action is negligible."
+  },
+  {
+    "id": 40539,
+    "lesson": 38,
+    "zh": "标有 95 度的烈酒仅含有约 47% 的酒精度。",
+    "en": "Spirits labelled 95 proof contain only about 47 per cent alcohol."
+  },
+  {
+    "id": 40540,
+    "lesson": 38,
+    "zh": "谨防甲基化酒精，它的毒性非常大，切勿将其添加到饮用水中。",
+    "en": "Beware of methylated alcohol,which is very poisonous,and should never be added to drinking water."
+  },
+  {
+    "id": 40541,
+    "lesson": 38,
+    "zh": "如果无法获得其他安全供水，可以将太热而无法触摸的自来水冷却，通常可以安全饮用。",
+    "en": "If no other safe water supply can be obtained,tap water that is too hot to touch can be left to cool and is generally safe to drink."
+  },
+  {
+    "id": 40542,
+    "lesson": 38,
+    "zh": "那些计划前往偏远地区旅行或打算居住在饮用水缺乏的国家的人应该了解确保水安全的各种可能方法。",
+    "en": "Those planning a trip to remote areas,or intending to live in countries where drinking water is not readily available,should know about the various possible methods for making water safe."
+  },
+  {
+    "id": 40543,
+    "lesson": 38,
+    "zh": "理查德·达伍德 旅行者健康",
+    "en": "RICHARD DAWOOD Travellers'Health"
+  },
+  {
+    "id": 40544,
+    "lesson": 39,
+    "zh": "我认识的作家很少，但那些我认识的、我尊敬的作家立刻承认，当他们第一次动笔写字时，他们几乎不知道自己要去哪里。",
+    "en": "I have known very few writers,but those I have known,and whom I respect,confess at once that they have little idea where they are going when they first set pen to paper."
+  },
+  {
+    "id": 40545,
+    "lesson": 39,
+    "zh": "他们有一个性格，也许有两个；他们处于那种被视为灵感的急切不适的状态；一旦旅程开始，所有人都承认目的地发生了根本性的变化；据我所知，其中一个花了九个月的时间写了一本关于克什米尔的小说，然后在苏格兰高地重置了整个事情。",
+    "en": "They have a character,perhaps two;they are in that condition of eager discomfort which passes for inspiration;all admit radical changes of destination once the journey has begun;one,to my certain knowledge,spent nine months on a novel about Kashmir, then reset the whole thing in the Scottish Highlands."
+  },
+  {
+    "id": 40546,
+    "lesson": 39,
+    "zh": "我从来没有听说过有人制作“骨架”，正如我们在学校所教的那样。",
+    "en": "I never heard of anyone making a 'skeleton’,as we were taught at school."
+  },
+  {
+    "id": 40547,
+    "lesson": 39,
+    "zh": "在打破和重塑中，在时机、交织和重新开始中，作家开始在材料中辨别出那些在他开始时没有意识到的东西。",
+    "en": "In the breaking and remaking,in the timing,interweaving,beginning afresh,the writer comes to discern things in his material which were not consciously in his mind when he began."
+  },
+  {
+    "id": 40548,
+    "lesson": 39,
+    "zh": "这种有机的过程往往会带来非凡的自我发现时刻，具有难以形容的魅力。",
+    "en": "This organic process,often leading to moments of extraordinary self-discovery,is of an indescribable fascination."
+  },
+  {
+    "id": 40549,
+    "lesson": 39,
+    "zh": "一个模糊的图像出现了；他加上了一笔又一笔，它就消失了；但有一些东西在那里，他不会休息，直到他捕捉到它。",
+    "en": "A blurred image appears;he adds a brushstroke and another,and it is gone;but something was there,and he will not rest till he has captured it."
+  },
+  {
+    "id": 40550,
+    "lesson": 39,
+    "zh": "有时，作家内心的酵母比他写的书还要长久。",
+    "en": "Sometimes the yeast within a writer outlives a book he has written."
+  },
+  {
+    "id": 40551,
+    "lesson": 39,
+    "zh": "我听说有些作家只读自己的书，就像青少年一样站在镜子前，仍然无法理解眼前景象的确切轮廓。",
+    "en": "I have heard of writers who read nothing but their own books;like adolescents they stand before the mirror,and still cannot fathom the exact outline of the vision before them."
+  },
+  {
+    "id": 40552,
+    "lesson": 39,
+    "zh": "出于同样的原因，作家们没完没了地谈论自己的书，揭示隐藏的含义，叠加新的含义，乞求周围人的回应。",
+    "en": "For the same reason,writers talk interminably about their own books,winkling out hidden meanings,super-imposing new ones,begging response from those around them."
+  },
+  {
+    "id": 40553,
+    "lesson": 39,
+    "zh": "当然，这样做的作家会被误解：他还不如尝试解释犯罪或爱情。",
+    "en": "Of course a writer doing this is misunderstood:he might as well try to explain a crime or a love affair."
+  },
+  {
+    "id": 40554,
+    "lesson": 39,
+    "zh": "顺便说一句，他也是一个不可原谅的讨厌鬼。",
+    "en": "He is also,incidentally,an unforgivable bore."
+  },
+  {
+    "id": 40555,
+    "lesson": 39,
+    "zh": "这种拉近自己与读者之间的距离、研究他在那些不认识他的人眼中的形象的诱惑，可能会导致他的毁灭：他已经开始为了取悦而写作。",
+    "en": "This temptation to cover the distance between himself and the reader,to study his image in the sight of those who do not know him,can be his undoing:he has begun to write to please."
+  },
+  {
+    "id": 40556,
+    "lesson": 39,
+    "zh": "一位年轻的英国作家在一两年前做出了相关的观察：才华进入初稿，艺术进入随后的草稿。",
+    "en": "A young English writer made the pertinent observation a year or two back that the talent goes into the first draft,and the art into the drafts that follow."
+  },
+  {
+    "id": 40557,
+    "lesson": 39,
+    "zh": "因此，作家也像其他艺术家一样，没有休息的地方，没有人群或运动可以让他感到安慰，没有外部的判断可以取代内部的判断。",
+    "en": "For this reason also the writer,like any other artist,has no resting place,no crowd or movement in which he may take comfort,no judgment from outside which can replace the judgment from within."
+  },
+  {
+    "id": 40558,
+    "lesson": 39,
+    "zh": "作家从内心的无政府状态中恢复秩序；他让自己服从比任何批评家所梦想的更无情的纪律，当他与名声调情时，他就从与自己相处的时间中抽出时间，从寻找他的世界最深处所包含的东西中抽出时间。",
+    "en": "A writer makes order out of the anarchy of his heart;he submits himself to a more ruthless discipline than any critic dreamed of,and when he flirts with fame,he is taking time off from living with himself,from the search for what his world contains at its inmost point."
+  },
+  {
+    "id": 40559,
+    "lesson": 39,
+    "zh": "约翰·勒·卡雷 (John LE CARRÉ) 每个作家都想从《哈珀》杂志获得什么",
+    "en": "JoHN LE CARRÉ What every writer wants from Harper's"
+  },
+  {
+    "id": 40560,
+    "lesson": 40,
+    "zh": "波浪是海洋和大气之间斗争的产物，是无限的持续特征。",
+    "en": "Waves are the children of the struggle between ocean and atmosphere,the ongoing signatures of infinity."
+  },
+  {
+    "id": 40561,
+    "lesson": 40,
+    "zh": "来自太阳的光线激发并激发了地球的大气层，唤醒它流动、运动、节奏和生命。",
+    "en": "Rays from the sun excite and energize the atmosphere of the earth,awakening it to flow,to movement,to rhythm,to life."
+  },
+  {
+    "id": 40562,
+    "lesson": 40,
+    "zh": "然后，风向大海传达太阳的信息，而大海则通过波浪将其传递——这是一个古老、精致、有力的信息。",
+    "en": "The wind then speaks the message of the sun to the sea and the sea transmits it on through waves—an ancient,exquisite,powerful message."
+  },
+  {
+    "id": 40563,
+    "lesson": 40,
+    "zh": "这些海浪是地球上最复杂的自然现象之一。",
+    "en": "These ocean waves are among the earth's most complicated natural phenomena."
+  },
+  {
+    "id": 40564,
+    "lesson": 40,
+    "zh": "基本特征包括波峰（波的最高点）、波谷（最低点）、高度（从波谷到波峰的垂直距离）、波长（两个波峰之间的水平距离）和周期（波峰传播一个波长所需的时间）。",
+    "en": "The basic features include a crest(the highest point of the wave),a trough(the lowest point),a height(the vertical distance from the trough to the crest),a wave length(the horizontal distance between two wave crests),and a period (which is the time it takes a wave crest to travel one wave length)."
+  },
+  {
+    "id": 40565,
+    "lesson": 40,
+    "zh": "尽管海浪给人的印象是一堵水墙朝您的方向移动，但实际上，海浪在水中移动，使水保持在原来的位置。",
+    "en": "Although an ocean wave gives the impression of a wallof water moving in your direction,in actuality 10 waves move through the water leaving the water about where it was."
+  },
+  {
+    "id": 40566,
+    "lesson": 40,
+    "zh": "如果水随波浪移动，海洋和海洋上的一切都会冲向海岸，造成明显的灾难性后果。",
+    "en": "If the water was moving with the wave, the ocean and everything on it would be racing in to the shore with obviously catastrophic results."
+  },
+  {
+    "id": 40567,
+    "lesson": 40,
+    "zh": "穿过深水的海浪导致表面上的粒子沿着大致圆形的轨道移动，首先将粒子拉向前进的波浪，然后向上进入波浪，然后与波浪一起前进，然后——当波浪将粒子抛在后面时——再次回到其起点。",
+    "en": "An ocean wave passing through deep water causes a particle on the surface to move in a roughly circular orbit,drawing the particle first towards the advancing wave,then up into the wave,then forward with it and then—as the wave leaves the particles behind—back to its starting point again."
+  },
+  {
+    "id": 40568,
+    "lesson": 40,
+    "zh": "从成熟到死亡，波浪与任何其他生物都遵循相同的法则。",
+    "en": "From both maturity to death,a wave is subject to the same laws as any other living’thing."
+  },
+  {
+    "id": 40569,
+    "lesson": 40,
+    "zh": "有一段时间，它呈现出一种神奇的个性，最终被重新吸收到生命的浩瀚海洋中。",
+    "en": "For a time it assumes a miraculous individuality that,in the end,is reabsorbed into the great ocean of life."
+  },
+  {
+    "id": 40570,
+    "lesson": 40,
+    "zh": "公海起伏的波浪是由三种自然原因产生的：风、地球运动或震动、以及月球和太阳的引力。",
+    "en": "The undulating waves of the open sea are generated by three natural causes:wind,earth movements or tremors,and the gravitational pull of the moon and the sun."
+  },
+  {
+    "id": 40571,
+    "lesson": 40,
+    "zh": "一旦波浪产生，重力就会驱动它们不断尝试将海洋表面恢复为平坦的平原。来自世界杂志（BBC Enterprises）",
+    "en": "Once waves have been generated,gravity is the force that drives them in a continual attempt to restore the ocean surface to a flat plain. from World Magazine(BBC Enterprises)"
+  },
+  {
+    "id": 40572,
+    "lesson": 41,
+    "zh": "训练大象主要使用两种技术，我们可以分别称之为“强硬”和“温和”。",
+    "en": "Two main techniques have been used for training elephants,which we may call respectively the tough and the gentle."
+  },
+  {
+    "id": 40573,
+    "lesson": 41,
+    "zh": "前一种方法只是让大象工作并殴打它，直到它完成预期的任务。",
+    "en": "The former method simply consists of setting an elephant to work and beating him until he does what is expected of him."
+  },
+  {
+    "id": 40574,
+    "lesson": 41,
+    "zh": "撇开任何道德考虑不谈，这是一种愚蠢的训练方法，因为它会产生一种怨恨的动物，而这些动物在后期很可能会变成杀人犯。",
+    "en": "Apart from any moral considerations this is a stupid method of training,for it produces a resentful animal who at a later stage may well turn man-killer."
+  },
+  {
+    "id": 40575,
+    "lesson": 41,
+    "zh": "温和的方法在早期阶段需要更多的耐心，但会产生一头开朗、脾气好的大象，它将提供多年的忠诚服务。",
+    "en": "The gentle method requires more 5 patience in the early stages,but produces a cheerful,good-tempered elephant who will give many years of loyal service."
+  },
+  {
+    "id": 40576,
+    "lesson": 41,
+    "zh": "大象训练的首要任务是为大象指派一名驯象师，他将完全负责这项工作。",
+    "en": "The first essential in elephant training is to assign to the animal a single mahout who will be entirely responsible for the job."
+  },
+  {
+    "id": 40577,
+    "lesson": 41,
+    "zh": "大象和狗一样喜欢有一个主人，并且有相当程度的个人感情。",
+    "en": "Elephants like to have one master just as dogs do,and are capable of a considerable degree of personal affection."
+  },
+  {
+    "id": 40578,
+    "lesson": 41,
+    "zh": "甚至有这样的故事：未经训练的小象由于某种不可避免的情况而被剥夺了自己的训练师，因此拒绝进食并被活活饿死。",
+    "en": "There are even stories of half-trained elephant calves who have refused to feed 10 and pined to death when by some unavoidable circumstance they have been deprived of their own trainer."
+  },
+  {
+    "id": 40579,
+    "lesson": 41,
+    "zh": "对于这样的极端案例，我们可能必须持保留态度，但它们确实强调了一个普遍原则：大象和驯象师之间的关系是成功训练的关键。",
+    "en": "Such extreme cases must probably be taken with a grain of salt,but they do underline the general principle that the relationship between elephant and mahout is the key to successful training."
+  },
+  {
+    "id": 40580,
+    "lesson": 41,
+    "zh": "捕获大象进行训练最经济的年龄是十五岁到二十岁之间，因为此时大象几乎已经准备好承担繁重的工作，并且可以立即开始赚取收入。",
+    "en": "The most economical age to capture an elephant for training is between fifteen and twenty years,for it is then almost ready to undertake heavy work and can begin to earn its keep straight away."
+  },
+  {
+    "id": 40581,
+    "lesson": 41,
+    "zh": "但这个时代的动物不容易屈服于人类，在早期阶段必须采取非常严厉的手段。",
+    "en": "But animals of this 15 age do not easily become subservient to man,and a very firm hand must be employed in the early stages."
+  },
+  {
+    "id": 40582,
+    "lesson": 41,
+    "zh": "被圈养的大象仍然被绳子绑在树上，每当有人靠近时，它就会猛地扑倒并尖叫起来，并且可能会在几天之内因愤怒和恐惧而拒绝所有食物。",
+    "en": "The captive elephant,still roped to a tree,plunges and screams every time a man approaches,and for several days willprobably refuse all food through anger and fear."
+  },
+  {
+    "id": 40583,
+    "lesson": 41,
+    "zh": "有时，一头驯服的大象会被拴在附近，以给野生大象带来信心，而在大多数情况下，被俘虏的大象会逐渐安静下来并开始接受食物。",
+    "en": "Sometimes a tame elephant is tethered nearby to give the wild one confidence,and in most cases the captive gradually quietens down and begins to accept its food."
+  },
+  {
+    "id": 40584,
+    "lesson": 41,
+    "zh": "下一步是将大象带到训练场所，这是一项棘手的任务，需要用绳子拴在两侧的驯服大象的帮助下才能完成。",
+    "en": "The next stage is to get the elephant to the training establishment,a ticklish business which is achieved 20 with the aid of two tame elephants roped to the captive on either side."
+  },
+  {
+    "id": 40585,
+    "lesson": 41,
+    "zh": "理查德·卡林顿大象 第 6 单元第 41 课 在训练的最初几天，一头野生印度象被用绳子拴在两只受过训练的大象身上。",
+    "en": "RICHARD CARRINGTON Elephants Unit 6 Lesson 41 A wild Indian elephant is roped to two trained ones during the first few days of training."
+  },
+  {
+    "id": 40586,
+    "lesson": 42,
+    "zh": "地震就像夜间的小偷一样，毫无征兆地来袭。",
+    "en": "An earthquake comes like a thief in the night,without warning."
+  },
+  {
+    "id": 40587,
+    "lesson": 42,
+    "zh": "因此，有必要发明一种既不打盹也不睡觉的仪器。",
+    "en": "It was necessary,therefore,to invent instruments that neither slumbered nor slept."
+  },
+  {
+    "id": 40588,
+    "lesson": 42,
+    "zh": "有些设备非常简单。",
+    "en": "Some devices were quite simple."
+  },
+  {
+    "id": 40589,
+    "lesson": 42,
+    "zh": "例如，其中一种由不同长度和粗细的杆组成，这些杆可以像九瓶柱一样直立起来。",
+    "en": "One,for instance,consisted of rods of various lengths and thicknesses which would stand up on end like ninepins."
+  },
+  {
+    "id": 40590,
+    "lesson": 42,
+    "zh": "当震动袭来时，这些东西所在的坚硬桌子都震动了。",
+    "en": "When a shock came, it shook the rigid table upon which these stood."
+  },
+  {
+    "id": 40591,
+    "lesson": 42,
+    "zh": "如果动作轻柔，只有更不稳定的杆会掉落。",
+    "en": "If it were gentle,only the more unstable rods fell."
+  },
+  {
+    "id": 40592,
+    "lesson": 42,
+    "zh": "如果严重的话，他们都会倒下。",
+    "en": "If it were severe,they all fell."
+  },
+  {
+    "id": 40593,
+    "lesson": 42,
+    "zh": "因此，棒通过下落以及下落的方向，为沉睡的科学家记录了太弱而无法唤醒他的冲击的强度，以及冲击的方向。",
+    "en": "Thus the rods,by falling,and by the direction in which they fell,recorded for the slumbering scientist the strength of a shock that was too weak to waken him,and the direction from which it came."
+  },
+  {
+    "id": 40594,
+    "lesson": 42,
+    "zh": "但如果要取得任何真正重大的进展，就需要比这更精密的仪器。",
+    "en": "But instruments far more delicate than that were needed if any really serious advance was to be made."
+  },
+  {
+    "id": 40595,
+    "lesson": 42,
+    "zh": "我们的理想目标是设计一种仪器，可以用笔在纸上记录地震经过时地面或桌子的运动。",
+    "en": "The ideal to be aimed at was to devise an instrument that could record with a pen on paper,the movements of the ground or of the table as the quake passed by."
+  },
+  {
+    "id": 40596,
+    "lesson": 42,
+    "zh": "当我写字时，笔在动，但纸却保持静止。",
+    "en": "While I write my pen moves,but the paper keeps still."
+  },
+  {
+    "id": 40597,
+    "lesson": 42,
+    "zh": "毫无疑问，通过练习，我很快就能学会握笔不动而纸动来写字。",
+    "en": "With practice,no doubt,I could in time learn to write by holding the pen stillwhile the paper moved."
+  },
+  {
+    "id": 40598,
+    "lesson": 42,
+    "zh": "这听起来是一个愚蠢的建议，但这正是一些早期记录地震波的仪器（地震计）所采用的想法。",
+    "en": "That sounds a silly suggestion,but that was precisely the idea adopted in some of the early instruments(seismo- meters)for recording earthquake waves."
+  },
+  {
+    "id": 40599,
+    "lesson": 42,
+    "zh": "但桌子、笔杆、纸都在动，怎么可能写得清楚呢？",
+    "en": "But when table,penholder and paper are all moving,how is it possible to write legibly?"
+  },
+  {
+    "id": 40600,
+    "lesson": 42,
+    "zh": "解决这个问题的关键在于日常观察。",
+    "en": "The key to a solution of that problem lay in an everyday observation."
+  },
+  {
+    "id": 40601,
+    "lesson": 42,
+    "zh": "为什么站在公交车或火车上的人突然启动时容易摔倒？",
+    "en": "Why does a person standing in a bus or train tend to fall when a sudden start is made?"
+  },
+  {
+    "id": 40602,
+    "lesson": 42,
+    "zh": "这是因为他的脚在前进，但他的头却保持静止。",
+    "en": "It is because his feet move on,but his head stays still."
+  },
+  {
+    "id": 40603,
+    "lesson": 42,
+    "zh": "一个简单的实验将帮助我们更进一步。",
+    "en": "A simple experiment will help us a little further."
+  },
+  {
+    "id": 40604,
+    "lesson": 42,
+    "zh": "在一根长绳子的末端系上一个重物。",
+    "en": "Tie a heavy weight at the end of a long piece of string."
+  },
+  {
+    "id": 40605,
+    "lesson": 42,
+    "zh": "手高举在空中，握住绳子，使重物几乎接触地面。",
+    "en": "With the hand held high in the air,hold the string so that the weight nearly touches the ground."
+  },
+  {
+    "id": 40606,
+    "lesson": 42,
+    "zh": "现在来回移动手，但不要上下移动。",
+    "en": "Now move the hand to and fro and around but not up and down."
+  },
+  {
+    "id": 40607,
+    "lesson": 42,
+    "zh": "会发现重量移动但轻微或根本没有移动。",
+    "en": "It will be found that the weight moves but slightiy or not at all."
+  },
+  {
+    "id": 40608,
+    "lesson": 42,
+    "zh": "想象一下，一支钢笔以这样一种方式连接到重物上，使其笔尖停留在地板上的一张纸上。",
+    "en": "Imagine a pen attached to the weight in such a way that its point rests upon a piece of paper on the floor."
+  },
+  {
+    "id": 40609,
+    "lesson": 42,
+    "zh": "想象一下地震震动了地板、纸张、你和你的手。",
+    "en": "Imagine an earthquake shock shaking the floor,the paper,you and your hand."
+  },
+  {
+    "id": 40610,
+    "lesson": 42,
+    "zh": "在所有这些运动过程中，重量和笔都是静止的。",
+    "en": "In the midst of all this movement,the weight and the pen would be still."
+  },
+  {
+    "id": 40611,
+    "lesson": 42,
+    "zh": "但是，当纸在笔尖下从一侧移动到另一侧时，其移动会被墨水记录在其表面上。",
+    "en": "But as the paper moved from side to side under the pen point,its movement would be recorded in ink upon its surface."
+  },
+  {
+    "id": 40612,
+    "lesson": 42,
+    "zh": "正是根据这个原理，第一批乐器被制造出来，但纸被包裹在一个缓慢旋转的鼓上。",
+    "en": "It was upon this principle that the first instruments were made,but the paper was wrapped round a drum which rotated slowly."
+  },
+  {
+    "id": 40613,
+    "lesson": 42,
+    "zh": "只要一切静止，笔就画出一条直线，但当鼓摇动时，笔所画的线就会左右蠕动。",
+    "en": "As long as all was still,the pen drew a straight line,but while the drum was being shaken,the line that the pen was drawing wriggled from side to side."
+  },
+  {
+    "id": 40614,
+    "lesson": 42,
+    "zh": "然而，这样描述的装置仅记录波浪运动的水平分量，这实际上要复杂得多。",
+    "en": "The apparatus thus described,however,records only the horizontal component of the wave movement,which is,in fact,much more complicated."
+  },
+  {
+    "id": 40615,
+    "lesson": 42,
+    "zh": "如果我们真的能看到粒子所描述的路径，比如岩石中的沙粒，它会更像是一只蓝瓶苍蝇在房间里嗡嗡作响；它会上下、来回、从一边到另一边。",
+    "en": "If we could actually see the path described by a particle,such as a sand grain in the rock,it would be more like that of a bluebottle buzzing round the room;it would be up and down,to and fro and from side to side."
+  },
+  {
+    "id": 40616,
+    "lesson": 42,
+    "zh": "仪器的设计和放置可以使所有三个元素都可以记录在不同的图表中。",
+    "en": "Instruments have been devised and can be so placed that all three elements can be recorded in different graphs."
+  },
+  {
+    "id": 40617,
+    "lesson": 42,
+    "zh": "SwINNERTON 我们下面的地球 第 6 单元 第 42 课 伦敦科学博物馆的 Shaw 地震仪 地震仪记录的地震",
+    "en": "SwINNERTON The Earth beneath Us Unit 6 Lesson 42 The Shaw seismograph at the Science Museum,London An earthquake recorded on a seismograph"
+  },
+  {
+    "id": 40618,
+    "lesson": 43,
+    "zh": "我们必须从那些研究生命起源的人的工作中得出结论，只要有一颗与我们的行星大致相似的行星，生命几乎肯定会开始。",
+    "en": "We must conclude from the work of those who have studied the origin of life,that given a planet only approximately like our own,life is almost certain to start."
+  },
+  {
+    "id": 40619,
+    "lesson": 43,
+    "zh": "在我们太阳系的所有行星中，我们现在非常确定地球是唯一一个有生命可以生存的行星。",
+    "en": "Of all the planets in our own solar system,we are now pretty certain the Earth is the only one on which life can survive."
+  },
+  {
+    "id": 40620,
+    "lesson": 43,
+    "zh": "火星太干燥且缺氧，金星太热，水星也是如此，外行星的温度接近零，大气层以氢为主。",
+    "en": "Mars is too dry and poor in oxygen, Venus far too hot,and so is Mercury,and the outer planets have temperatures near absolute zero and hydrogen-dominated atmospheres."
+  },
+  {
+    "id": 40621,
+    "lesson": 43,
+    "zh": "但其他太阳，即天文学家所说的恒星，必然有像我们自己的行星一样的行星，而且由于宇宙中恒星的数量如此巨大，这种可能性几乎成为必然。",
+    "en": "But other suns,stars as the astronomers call them,are bound to have planets like our own,and as the number of stars in the universe is so vast,this possibility becomes virtual certainty."
+  },
+  {
+    "id": 40622,
+    "lesson": 43,
+    "zh": "仅在我们的银河系中就有十亿颗恒星，而宇宙中还有三亿个其他银河系或星系。",
+    "en": "There are one hundred thousand million stars in our own Milky Way alone,and then there are three thousand million other Milky Ways,or galaxies,in the universe."
+  },
+  {
+    "id": 40623,
+    "lesson": 43,
+    "zh": "因此，我们目前所知存在的恒星数量估计约为 3 亿颗。",
+    "en": "So the number of stars that we know exist is now estimated at about 300 million million million."
+  },
+  {
+    "id": 40624,
+    "lesson": 43,
+    "zh": "虽然也许只有百分之一的生命在某个地方开始发展成为高度复杂和智能的模式，但行星的数量如此之多，智能生命必然是宇宙的自然组成部分。",
+    "en": "Although perhaps only 1 per cent of the life that has started somewhere will develop into highly complex and intelligent patterns,so vast is the number of planets,that intelligent life is bound to be a natural part of the universe."
+  },
+  {
+    "id": 40625,
+    "lesson": 43,
+    "zh": "如果我们如此确信宇宙中存在其他智慧生命，为什么我们还没有来自外太空的访客呢？",
+    "en": "If then we are so certain that other intelligent life exists in the universe,why have we had no visitors from outer space yet?"
+  },
+  {
+    "id": 40626,
+    "lesson": 43,
+    "zh": "首先，他们可能在数千或数百万年前来到了我们这个星球，并发现我们当时盛行的原始状态对他们自己的先进知识完全不感兴趣。",
+    "en": "First of all,they may have come to this planet of ours thousands or millions of years ago, 15 and found our then prevailing primitive state completely uninteresting to their own advanced knowledge."
+  },
+  {
+    "id": 40627,
+    "lesson": 43,
+    "zh": "美国著名射电天文学家罗纳德·布雷斯韦尔教授在《自然》杂志上提出，这样一个高级文明在访问我们的太阳系时，可能会留下一个自动信使，等待一个先进文明可能的觉醒。",
+    "en": "Professor Ronald Bracewell,a leading American radio astronomer,argued in Nature that such a superior civilization,on a visit to our own solar system,may have left an automatic messenger behind to await the possible awakening of an advanced civilization."
+  },
+  {
+    "id": 40628,
+    "lesson": 43,
+    "zh": "这样的信使，接收到我们的无线电和电视信号，很可能将它们重新传输回其母星，尽管任何其他文明会因此从我们这里得到什么印象最好不要说出来。",
+    "en": "Such a messenger,receiving our radio and television signals,might well re-transmit them back to its home-planet,although what impression any other 20 civilization would thus get from us is best left unsaid."
+  },
+  {
+    "id": 40629,
+    "lesson": 43,
+    "zh": "但在这里，我们遇到了与其他星球上的人们接触的最困难的障碍——我们之间的天文距离。",
+    "en": "But here we come up against the most difficult of all obstacles to contact with people on other planets —the astronomical distances which separate us."
+  },
+  {
+    "id": 40630,
+    "lesson": 43,
+    "zh": "根据合理的猜测，它们平均距离可能有 100 光年。",
+    "en": "As a reasonable guess,they might,on an average,be 100 light years away."
+  },
+  {
+    "id": 40631,
+    "lesson": 43,
+    "zh": "（一光年是光在一年内以每秒 186,000 英里的速度传播的距离，即 600 万英里。）无线电波也以光速传播，假设这样一个 25 个自动信使收到了我们 1920 年代的第一次广播，那么发送到其母星的信息就只到了一半。",
+    "en": "(A light year is the distance which light travels at 186,000 miles per second in one year, namely 6 million million miles.)Radio waves also travel at the speed of light,and assuming such an 25 automatic messenger picked up our first broadcasts of the 1920's,the message to its home planet is barely halfway there."
+  },
+  {
+    "id": 40632,
+    "lesson": 43,
+    "zh": "同样，我们现有的原始化学火箭虽然足以绕人类运行，但没有机会将我们运送到四光年之外最近的其他恒星，更不用说数十或数百光年的距离了。",
+    "en": "Similarly,our own present primitive chemical rockets,though good enough to orbit men, have no chance of transporting us to the nearest other star,four light years away,let alone distances of tens or hundreds of light years."
+  },
+  {
+    "id": 40633,
+    "lesson": 43,
+    "zh": "幸运的是，正如沃尔特·沙利文 30 岁的沃尔特·沙利文在他的优秀著作《我们并不孤单》中所说，我们有一种“独特的理性方式”与其他智慧生物进行交流。",
+    "en": "Fortunately,there is a 'uniquely rational way'for us to communicate with other intelligent beings,as 30 Walter Sullivan has put it in his excellent book,We Are not Alone."
+  },
+  {
+    "id": 40634,
+    "lesson": 43,
+    "zh": "这取决于 21 厘米波长的精确射频，即每秒 1420 兆周期。",
+    "en": "This depends on the precise radio frequency of the 21-cm wavelength,or 1420 megacycles per second."
+  },
+  {
+    "id": 40635,
+    "lesson": 43,
+    "zh": "它是氢原子在太空中发射的固有频率，由我们于1951年发现；宇宙中任何类型的射电天文学家都必须知道它。",
+    "en": "It is the natural frequency of emission of the hydrogen atoms in space and was discovered by us in 1951;it must be known to any kind of radio astronomer in the universe."
+  },
+  {
+    "id": 40636,
+    "lesson": 43,
+    "zh": "一旦这个波长的存在被发现，不久之后就有人建议将其用作星际通信中唯一可识别的 35 个广播频率。",
+    "en": "Once the existence of this wave-length had been discovered,it was not long before its use as the uniquely 35 recognizable broadcasting frequency for interstellar communication was suggested."
+  },
+  {
+    "id": 40637,
+    "lesson": 43,
+    "zh": "如果没有第 6 单元第 43 课中的此类内容，在其他星球上寻找智慧生物就像试图在没有预先安排的约会的情况下在伦敦与一位朋友见面一样，并且荒谬地在街道上徘徊，希望有机会相遇。",
+    "en": "Without something of Unit 6 Lesson 43 this kind,searching for intelligences on other planets would be like trying to meet a friend in London without a pre-aranged rendezvous and absurdly wandering the streets in the hope of a chance encounter."
+  },
+  {
+    "id": 40638,
+    "lesson": 43,
+    "zh": "安东尼·米凯利斯 太空中有陌生人吗？摘自《周末电讯报》 3 模拟在美国威斯康星州贝尔维尔小镇假设目击 UFO（不明飞行物）。",
+    "en": "ANTHONY MICHAELIS Are There Strangers in Space?from The Weekend Telegraph 3 Simulation of a hypothetical sighting of a UFO(unidentified flying object) in the small town of Belleville,Wisconsin,USA."
+  },
+  {
+    "id": 40639,
+    "lesson": 43,
+    "zh": "1986 年至 1989 年的几个月里，该镇一直受到 UFO 目击事件的困扰。",
+    "en": "For several months in 1986- 1989,the town was plagued by UFO sightings."
+  },
+  {
+    "id": 40640,
+    "lesson": 44,
+    "zh": "习俗通常不被视为任何伟大时刻的主题。",
+    "en": "Custom has not commonly been regarded as a subject of any great moment."
+  },
+  {
+    "id": 40641,
+    "lesson": 44,
+    "zh": "我们觉得我们大脑的内部运作方式特别值得研究，但习惯，我们有一种思维方式，是最常见的行为。",
+    "en": "The inner workings of our own brains we feel to be uniquely worthy of investigation,but custom,we have a way of thinking,is behaviour at its most commonplace."
+  },
+  {
+    "id": 40642,
+    "lesson": 44,
+    "zh": "事实上，情况恰恰相反。",
+    "en": "As a matter of fact,it is the other way around."
+  },
+  {
+    "id": 40643,
+    "lesson": 44,
+    "zh": "世界各地的传统习俗是一整套详细的行为，比任何一个人在个人行为中所能演化出的东西都要令人惊讶，无论它有多么反常。",
+    "en": "Traditional custom,taken the world over,is a mass of detailed behaviour more astonishing than what any one person can ever evolve in individual actions,no matter how aberrant."
+  },
+  {
+    "id": 40644,
+    "lesson": 44,
+    "zh": "但这只是问题的一个相当微不足道的方面。",
+    "en": "Yet that is a rather trivial aspect of the matter."
+  },
+  {
+    "id": 40645,
+    "lesson": 44,
+    "zh": "最重要的事实是，习俗在经验和信仰中发挥着主导作用，而且它可能表现出各种各样的变化。",
+    "en": "The fact off first-rate importance is the predominant role that custom plays in experience and in belief,and the very great varieties it may manifest."
+  },
+  {
+    "id": 40646,
+    "lesson": 44,
+    "zh": "没有人用纯净的眼睛看世界。",
+    "en": "No man ever looks at the world with pristine eyes."
+  },
+  {
+    "id": 40647,
+    "lesson": 44,
+    "zh": "他认为它是由一套明确的习俗、制度和思维方式编辑的。",
+    "en": "He sees it edited by a definite set of customs and institutions and ways of thinking."
+  },
+  {
+    "id": 40648,
+    "lesson": 44,
+    "zh": "即使在他的哲学探索中，他也不能落后于这些刻板印象。他对真与假的概念仍然与他特定的传统习俗有关。",
+    "en": "Even in his philosophical probings he cannot go behind these stereotypes; 10 his very concepts of the true and the false will still have reference to his particular traditional customs."
+  },
+  {
+    "id": 40649,
+    "lesson": 44,
+    "zh": "约翰·杜威严肃地说，习惯在塑造个人行为方面所起的作用，与他影响传统习惯的任何方式相比，就如同他的母语总词汇量与他自己的儿语词汇中被吸收到他的家庭方言中的词汇的比例一样。",
+    "en": "John Dewey has said in all seriousness that the part played by custom in shaping the behaviour of the individual, as against any way in which he can affect traditional custom,is as the proportion of the total vocabulary of his mother tongue against those words of his own baby talk that are taken up into the vernacular of his family."
+  },
+  {
+    "id": 40650,
+    "lesson": 44,
+    "zh": "当人们认真研究有机会自主发展的社会秩序时，这个数字只不过是一种精确而实事求是的观察。",
+    "en": "When one seriously studies the social orders that have had the opportunity to develop autonomously, 15 the figure becomes no more than an exact and matter-of-fact observation."
+  },
+  {
+    "id": 40651,
+    "lesson": 44,
+    "zh": "个人的生活史首先是对其社区传统上传承的模式和标准的适应。",
+    "en": "The life history of the individual is first and foremost an accommodation to the patterns and standards traditionally handed down in his community."
+  },
+  {
+    "id": 40652,
+    "lesson": 44,
+    "zh": "从他出生的那一刻起，他出生的习俗就塑造了他的经历和行为。",
+    "en": "From the moment of his birth,the customs into which he is born shape his experience and behaviour."
+  },
+  {
+    "id": 40653,
+    "lesson": 44,
+    "zh": "当他会说话的时候，他就是他文化中的小生物，当他长大并能够参与其活动时，它的习惯就是他的习惯，它的信仰就是他的信仰，它的不可能就是他的不可能。每个出生在他的群体中的孩子都会与他分享，而地球另一端出生的孩子永远无法达到千分之一。",
+    "en": "By the time he can talk,he is the little creature of his culture,and by the time he is grown and able to take part in its activities,its habits are his habits,its beliefs his beliefs,its impossibilities his impossibilities. 20 Every child that is born into his group will share them with him,and no child born into one on the opposite side of the globe can ever achieve the thousandth part."
+  },
+  {
+    "id": 40654,
+    "lesson": 44,
+    "zh": "没有什么社会问题比习俗的作用更值得我们去理解了。",
+    "en": "There is no social problem it is more incumbent upon us to understand than this of the role of custom."
+  },
+  {
+    "id": 40655,
+    "lesson": 44,
+    "zh": "在我们了解其规律和多样性之前，人类生活的主要复杂事实必定仍然难以理解。",
+    "en": "Until we are intelligent as to its laws and varieties,the main complicating facts of human life must remain unintelligible."
+  },
+  {
+    "id": 40656,
+    "lesson": 44,
+    "zh": "只有在某些初步主张被接受后，对习俗的研究才能有利可图，25并且其中一些主张遭到了强烈反对。",
+    "en": "The study of custom can be profitable only after certain preliminary propositions have been accepted, 25 and some of these propositions have been violently opposed."
+  },
+  {
+    "id": 40657,
+    "lesson": 44,
+    "zh": "首先，任何科学研究都要求对其选择考虑的系列中的一个或另一个项目没有优先权重。",
+    "en": "In the first place,any scientific study requires that there be no preferential weighting of one or another of the items in the series it selects for its consideration."
+  },
+  {
+    "id": 40658,
+    "lesson": 44,
+    "zh": "在所有争议较小的领域，例如仙人掌或白蚁或星云性质的研究，必要的研究方法是将相关材料分组并记录所有可能的变异形式和条件。",
+    "en": "In all the less controversial fields,like the study of cacti or termites or the nature of nebulae, the necessary method of study is to group the relevant material and to take note of all possible variant forms and conditions."
+  },
+  {
+    "id": 40659,
+    "lesson": 44,
+    "zh": "通过这种方式，我们已经了解了所有我们所知道的天文学定律，或者说，30种社会性昆虫的习性。",
+    "en": "In this way,we have learned all that we know of the laws of astronomy,or of the habits of 30 the social insects,let us say."
+  },
+  {
+    "id": 40660,
+    "lesson": 44,
+    "zh": "只有在对人本身的研究中，主要的社会科学才取代了对一种局部变异即西方文明的研究。",
+    "en": "It is only in the study of man himself that the major social sciences have substituted the study of one local variation,that of Western civilization."
+  },
+  {
+    "id": 40661,
+    "lesson": 44,
+    "zh": "只要我们自己与原始人、我们自己与野蛮人、我们自己与异教徒之间的这些区别在人们的思想中占据主导地位，人类学从定义上来说就是不可能的。",
+    "en": "Anthropology was by definition impossible,as long as these distinctions between ourselves and the primitive,ourselves and the barbarian,ourselves and the pagan,held sway.over people's minds."
+  },
+  {
+    "id": 40662,
+    "lesson": 44,
+    "zh": "首先有必要达到一定程度的复杂性，使我们不再以自己的信仰来反对我们第六单元第 44 课邻居的迷信。",
+    "en": "It was necessary first to arrive at that degree of sophistication where we no longer set our own belief against our Unit 6 Lesson 44 neighbour's superstition."
+  },
+  {
+    "id": 40663,
+    "lesson": 44,
+    "zh": "有必要认识到，这些基于相同前提的机构，比如说超自然机构，必须一起考虑，我们自己的机构也应该放在一起考虑。",
+    "en": "It was necessary to recognize that these institutions which are based on the same premises,let us say the supernatural,must be considered together,our own among the rest."
+  },
+  {
+    "id": 40664,
+    "lesson": 44,
+    "zh": "露丝·本尼迪克特 (RuTH BENEDICT) 文化模式 戴着黄铜项链的缅甸巴东女孩",
+    "en": "RuTH BENEDICT Patterns of Culture A Padaung girl from Burma in her brass necklace"
+  },
+  {
+    "id": 40665,
+    "lesson": 45,
+    "zh": "在人类早期，与其他生物的竞争一定是至关重要的。",
+    "en": "In man's early days,competition with other creatures must have been critical."
+  },
+  {
+    "id": 40666,
+    "lesson": 45,
+    "zh": "但我们的这一阶段的开发现已结束。",
+    "en": "But this phase of our development is now finished."
+  },
+  {
+    "id": 40667,
+    "lesson": 45,
+    "zh": "事实上，我们现在缺乏应对原始条件的实践和经验。",
+    "en": "Indeed,we lack practice and experience nowadays in dealing with primitive conditions."
+  },
+  {
+    "id": 40668,
+    "lesson": 45,
+    "zh": "我确信，如果没有现代武器，我会在与熊争论洞穴所有权时表现得非常糟糕，在这方面我不认为我是孤立的。",
+    "en": "I am sure that,without modern weapons,I would make a very poor show of disputing the ownership of a cave with a bear,and in this I do not think that I stand alone."
+  },
+  {
+    "id": 40669,
+    "lesson": 45,
+    "zh": "最后一个与人类竞争的生物是蚊子。",
+    "en": "The last creature to compete 5 with man was the mosquito."
+  },
+  {
+    "id": 40670,
+    "lesson": 45,
+    "zh": "但即使是蚊子也因注意排水和化学喷雾而被抑制住了。",
+    "en": "But even the mosquito has been subdued by attention to drainage and by chemical sprays."
+  },
+  {
+    "id": 40671,
+    "lesson": 45,
+    "zh": "然而，我们之间、人与人、社区与社区之间的竞争仍然存在，而且一如既往地激烈。",
+    "en": "Competition between ourselves,person against person,community against community,still persists, however;and it is as fierce as it ever was."
+  },
+  {
+    "id": 40672,
+    "lesson": 45,
+    "zh": "但人与人之间的竞争并不是生物学中想象的简单过程。",
+    "en": "But the competition of man against man is not the simple process envisioned in biology."
+  },
+  {
+    "id": 40673,
+    "lesson": 45,
+    "zh": "它不是由物理环境决定的固定食物量的简单竞争，因为决定我们进化的环境本质上不再是物理的。",
+    "en": "It is not a simple 10 competition for a fixed amount of food determined by the physical environment,because the environment that determines our evolution is no longer essentially physical."
+  },
+  {
+    "id": 40674,
+    "lesson": 45,
+    "zh": "我们的环境主要取决于我们所信仰的事物。",
+    "en": "Our environment is chiefly conditoned by the things we believe."
+  },
+  {
+    "id": 40675,
+    "lesson": 45,
+    "zh": "摩洛哥和加利福尼亚是地球上纬度非常相似的两个国家，都位于气候相似的大陆西海岸，并且可能拥有相当相似的自然资源。",
+    "en": "Morocco and California are bits ofthe Earth in very similar latitudes,both on the west coasts of continents with similar climates,and probably with rather similar natural resources."
+  },
+  {
+    "id": 40676,
+    "lesson": 45,
+    "zh": "然而他们目前的发展却完全不同，这并不是因为不同的人，而是因为他们的居民心中存在着不同的思想。",
+    "en": "Yet their present development is wholly different,not so much because of different people even,but because of the 15 different thoughts that exist in the minds of their inhabitants."
+  },
+  {
+    "id": 40677,
+    "lesson": 45,
+    "zh": "这是我想强调的一点。",
+    "en": "This is the point I wish to emphasize."
+  },
+  {
+    "id": 40678,
+    "lesson": 45,
+    "zh": "我们的环境中最重要的因素是我们自己的心态。",
+    "en": "The most important factor in our environment is the state of our own minds."
+  },
+  {
+    "id": 40679,
+    "lesson": 45,
+    "zh": "众所周知，白人入侵原始文化时，最具破坏性的影响不是来自物质武器，而是来自思想。",
+    "en": "It is well known that where the white man has invaded a primitive culture,the most destructive effects have come not from physical weapons but from ideas."
+  },
+  {
+    "id": 40680,
+    "lesson": 45,
+    "zh": "想法是危险的。",
+    "en": "Ideas are dangerous."
+  },
+  {
+    "id": 40681,
+    "lesson": 45,
+    "zh": "神圣办公室在过去导致异端分子被烧死的时候就清楚地知道这一点。",
+    "en": "The Holy Office knew this full well when it caused heretics to be burned in days gone by."
+  },
+  {
+    "id": 40682,
+    "lesson": 45,
+    "zh": "事实上，言论自由的概念只存在于我们的现代社会中，因为当你在一个社区内时，你受到社区惯例的制约，以至于很难想象任何真正具有破坏性的事情。",
+    "en": "Indeed,the concept of free speech only exists in 20 our modern society because when you are inside a community,you are conditioned by the conventions of the community to such a degree that it is very difficult to conceive of anything really destructive."
+  },
+  {
+    "id": 40683,
+    "lesson": 45,
+    "zh": "只有旁观者才能注入危险的想法。",
+    "en": "It is only someone looking on from outside that can inject the dangerous thoughts."
+  },
+  {
+    "id": 40684,
+    "lesson": 45,
+    "zh": "我毫不怀疑，向现代世界注入会彻底摧毁我们的思想是可能的。",
+    "en": "I do not doubt that it would be possible to inject ideas into the modern world that would utterly destroy us."
+  },
+  {
+    "id": 40685,
+    "lesson": 45,
+    "zh": "我想给你举个例子，但幸运的是我不能这样做。",
+    "en": "I would like to give you an example,but fortunately I cannot do so."
+  },
+  {
+    "id": 40686,
+    "lesson": 45,
+    "zh": "或许只要提及核弹就足够了。",
+    "en": "Perhaps it willsuffice to mention the nuclear bomb."
+  },
+  {
+    "id": 40687,
+    "lesson": 45,
+    "zh": "想象一下 25 对一个相当先进的技术社会的影响，一个仍然没有炸弹的社会，让它意识到可能性，提供足够的细节来建造这个东西。",
+    "en": "Imagine the 25 effect on a reasonably advanced technological society,one that still does not possess the bomb,of making it aware of the possibility,of supplying sufficient details to enable the thing to be constructed."
+  },
+  {
+    "id": 40688,
+    "lesson": 45,
+    "zh": "1925 年左右交给任何一个世界大国的二十或三十页信息就足以改变世界历史的进程。",
+    "en": "Twenty or thirty pages of information handed to any of the major world powers around the year 1925 would have been sufficient to change the course of world history."
+  },
+  {
+    "id": 40689,
+    "lesson": 45,
+    "zh": "这是一个奇怪的想法，但我相信这是一个正确的想法，二十或三十页的想法和信息将能够使当今世界发生三十个翻天覆地的变化，甚至摧毁它。",
+    "en": "It is a strange thought,but I believe a correct one,that twenty or thirty pages of ideas and information would be capable of turning the present-day world upside 30 down,or even destroying it."
+  },
+  {
+    "id": 40690,
+    "lesson": 45,
+    "zh": "我经常尝试设想这些页面可能包含什么内容，但我当然不能这样做，因为我是当今世界的囚犯，就像你们所有人一样。",
+    "en": "I have often tried to conceive of what those pages might contain,but of course I cannot do so because I am a prisoner of the present-day world,just as all of you are."
+  },
+  {
+    "id": 40691,
+    "lesson": 45,
+    "zh": "我们不能在我们的大脑所适应的特定模式之外思考，或者，更准确地说，我们只能在外面思考一点点，而且只有当我们非常有创意时。",
+    "en": "We cannot think outside the particular patterns that our brains are conditioned to,or,to be more accurate,we can think only a very little way outside,and then only if we are very original."
+  },
+  {
+    "id": 40692,
+    "lesson": 45,
+    "zh": "FRED HoYLE 《人类与星系》第 6 单元第 45 课 加利福尼亚州索萨利托的鸟瞰图",
+    "en": "FRED HoYLE Of Men and Galaxies Unit 6 Lesson 45 An aerial view of Sausalito,California"
+  },
+  {
+    "id": 40693,
+    "lesson": 46,
+    "zh": "一位才华横溢的美国心理学家曾说过：“忧虑是一种情绪的痉挛；头脑抓住某样东西，不肯放手。”",
+    "en": "A gifted American psychologist has said,'Worry is a spasm of the emotion;the mind catches hold of something and will not let it go."
+  },
+  {
+    "id": 40694,
+    "lesson": 46,
+    "zh": "在这种情况下与头脑争论是没有用的。",
+    "en": "'It is useless to argue with the mind in this condition."
+  },
+  {
+    "id": 40695,
+    "lesson": 46,
+    "zh": "意志越坚强，任务就越徒劳。",
+    "en": "The stronger the will, the more futile the task."
+  },
+  {
+    "id": 40696,
+    "lesson": 46,
+    "zh": "一个人只能轻轻地将其他东西引入它的痉挛之中。",
+    "en": "One can only gently insinuate something else into its convulsive grasp."
+  },
+  {
+    "id": 40697,
+    "lesson": 46,
+    "zh": "如果正确地选择了其他的东西，如果它确实伴随着另一个感兴趣领域的启发，逐渐地，而且往往很快，旧的不适当的束缚就会放松，恢复和修复的过程就会开始。",
+    "en": "And if this something else is rightly chosen,if it is really attended by the illumination of another field of interest, 5 gradually,and often quite swiftly,the old undue grip relaxes and the process of recuperation and repair begins."
+  },
+  {
+    "id": 40698,
+    "lesson": 46,
+    "zh": "因此，培养一种爱好和新的兴趣形式对于一个公众人物来说是最重要的政策。",
+    "en": "The cultivation of a hobby and new forms of interest is therefore a policy of the first importance to a public man."
+  },
+  {
+    "id": 40699,
+    "lesson": 46,
+    "zh": "但这不是一天就能完成的事情，也不是仅仅靠意志就能迅速完成的事情。",
+    "en": "But this is not a business that can be undertaken in a day or swiftly improvised by a mere command of the will."
+  },
+  {
+    "id": 40700,
+    "lesson": 46,
+    "zh": "另类心理兴趣的成长是一个漫长的过程。",
+    "en": "The growth of alternative mental interests is a long process."
+  },
+  {
+    "id": 40701,
+    "lesson": 46,
+    "zh": "种子必须精心挑选；它们必须落在好土里；它们必须精心照料，这样才能在需要时结出充满活力的果实。",
+    "en": "The seeds must be carefully 10 chosen;they must fallon good ground;they must be sedulously tended,if the vivifying fruits are to be at hand when needed."
+  },
+  {
+    "id": 40702,
+    "lesson": 46,
+    "zh": "要想真正快乐、真正安全，一个人至少应该有两到三种爱好，而且它们都必须是真实的。",
+    "en": "To be really happy and really safe,one ought to have at least two or three hobbies,and they must all be real."
+  },
+  {
+    "id": 40703,
+    "lesson": 46,
+    "zh": "在晚年才说：我会对这个或那个感兴趣，这是没有用的。",
+    "en": "It is no use starting late in life to say:I will take an interest in this or that."
+  },
+  {
+    "id": 40704,
+    "lesson": 46,
+    "zh": "“这样的尝试只会加剧脑力劳动的压力。",
+    "en": "'Such an attempt only aggravates the strain of mental effort."
+  },
+  {
+    "id": 40705,
+    "lesson": 46,
+    "zh": "一个人可能会获得与日常工作无关的大量知识，但几乎得不到任何好处或缓解。",
+    "en": "A man may acquire great knowledge of topics unconnected with his 15 daily work,and yet get hardly any benefit or relief."
+  },
+  {
+    "id": 40706,
+    "lesson": 46,
+    "zh": "做你喜欢做的事是没有用的；你必须喜欢你所做的事。",
+    "en": "It is no use doing what you like;you have got to like what you do."
+  },
+  {
+    "id": 40707,
+    "lesson": 46,
+    "zh": "从广义上讲，人可以分为三类：劳累死的人、忧虑死的人、无聊死的人。",
+    "en": "Broadly speaking,human beings may be divided into three classes:those who are toiled to death, those who are worried to death,and those who are bored to death."
+  },
+  {
+    "id": 40708,
+    "lesson": 46,
+    "zh": "对于体力劳动者来说，一周辛苦的汗水和努力已经让他们筋疲力尽，周六下午给他们提供踢足球或棒球的机会是没有用的。",
+    "en": "It is no use offering the manual labourer, tired out with a hard week's sweat and effort,the chance of playing a game of football or baseball on Saturday afternoon."
+  },
+  {
+    "id": 40709,
+    "lesson": 46,
+    "zh": "邀请已经工作或担心了六天严肃事情的政治家、专业人士或商人在周末工作或担心琐事是没有用的。",
+    "en": "It is no use inviting the politician or the professional or business man,who has been working or worrying about serious things for six days,to work or worry about trifling things at the weekend."
+  },
+  {
+    "id": 40710,
+    "lesson": 46,
+    "zh": "至于那些可以掌控自己想要的一切、可以满足一切任性、几乎可以得到所有欲望对象的不幸的人——对他们来说，新的快乐、新的兴奋只是一种额外的满足。",
+    "en": "As for the unfortunate people who can command everything they want,who can gratify every caprice and lay their hands on almost every object of desire—for them a new pleasure,a new excitement is only an additional satiation."
+  },
+  {
+    "id": 40711,
+    "lesson": 46,
+    "zh": "他们徒劳地疯狂地从一个地方跑到另一个地方，试图通过仅仅敲击声和运动来摆脱 25 的无聊。",
+    "en": "In vain they rush frantically round from place to place,trying to escape from avenging 25 boredom by mere clatter and motion."
+  },
+  {
+    "id": 40712,
+    "lesson": 46,
+    "zh": "对他们来说，某种形式的纪律是最有希望的道路。",
+    "en": "For them discipline in one form or another is the most hopeful path."
+  },
+  {
+    "id": 40713,
+    "lesson": 46,
+    "zh": "也可以说，理性、勤奋、有用的人可以分为两类：第一类，工作就是工作，快乐就是快乐；第二类，工作与快乐合而为一。",
+    "en": "It may also be said that rational,industrious,useful human beings are divided into two classes:first, those whose work is work and whose pleasure is pleasure;and secondly,those whose work and pleasure are one."
+  },
+  {
+    "id": 40714,
+    "lesson": 46,
+    "zh": "其中，前者占大多数。",
+    "en": "Of these the former are the majority."
+  },
+  {
+    "id": 40715,
+    "lesson": 46,
+    "zh": "他们有他们的补偿。",
+    "en": "They have their compensations."
+  },
+  {
+    "id": 40716,
+    "lesson": 46,
+    "zh": "在办公室或工厂里长时间工作给他们带来的回报不仅是维持生计，而且是对快乐的强烈渴望 30 ，即使是最简单和最谦虚的形式。",
+    "en": "The long hours in the office or the factory bring with them as their reward,not only the means of sustenance,but a keen appetite for pleasure 30 even in its simplest and most modest forms."
+  },
+  {
+    "id": 40717,
+    "lesson": 46,
+    "zh": "但命运眷顾的孩子却属于第二等。",
+    "en": "But Fortune's favoured children belong to the second class."
+  },
+  {
+    "id": 40718,
+    "lesson": 46,
+    "zh": "他们的生活是自然和谐的。",
+    "en": "Their life is a natural harmony."
+  },
+  {
+    "id": 40719,
+    "lesson": 46,
+    "zh": "对他们来说，工作时间永远不够长。",
+    "en": "For them the working hours are never long enough."
+  },
+  {
+    "id": 40720,
+    "lesson": 46,
+    "zh": "每天都是假期，而普通的假期一旦到来，就会被视为强行打断令人着迷的职业而感到不情愿。",
+    "en": "Each day is a holiday, and ordinary holidays,when they come,are grudged as enforced interruptions in an absorbing vocation."
+  },
+  {
+    "id": 40721,
+    "lesson": 46,
+    "zh": "然而，对于这两个班级来说，需要另一种观点、改变气氛、转移精力，这是第 6 单元第 46 课的本质。",
+    "en": "Yet to both classes,the need of an alternative outlook,of a change of atmosphere,of a diversion of effort,is Unit 6 Lesson 46 essentia."
+  },
+  {
+    "id": 40722,
+    "lesson": 46,
+    "zh": "事实上，那些以工作为乐趣的人很可能最需要采取措施35将工作从他们的脑海中消除。",
+    "en": "Inded,it may well be that those whose workis their pleasure are those who most need the means 35 of banishing it at intervals from their minds."
+  },
+  {
+    "id": 40723,
+    "lesson": 46,
+    "zh": "温斯顿·丘吉尔 (WINSTON CHURCHIL) 绘画作为一种消遣 温斯顿·丘吉尔爵士 1946 年在瑞士作画",
+    "en": "WINSTON CHURCHIL Painting as a Pastime Sir Winston Churchill painting in Switzerland in 1946"
+  },
+  {
+    "id": 40724,
+    "lesson": 47,
+    "zh": "经济是露营的一个强大动机，因为在设备的初始费用或通过租赁之后，总费用可以远远低于酒店的费用。",
+    "en": "Economy is one powerful motive for camping,since after the initial outlay upon equipment,or through hiring it,the total expense can be far less than the cost of hotels."
+  },
+  {
+    "id": 40725,
+    "lesson": 47,
+    "zh": "但是，与流行的假设相反，它远不是唯一的，甚至不是最伟大的。",
+    "en": "But,contrary to a popular assumption,it is far from being the only one,or even the greatest."
+  },
+  {
+    "id": 40726,
+    "lesson": 47,
+    "zh": "一个人如果不小心进入欧洲无数永久地点之一的二十磅重的空间，可能会发现自己撞上了一辆宾利车。",
+    "en": "The man who manoeuvres carelessly into his twenty pounds' worth of space at one of Europe's myriad permanent sites may find himself bumping a Bentley."
+  },
+  {
+    "id": 40727,
+    "lesson": 47,
+    "zh": "更有可能的是，福特护航将与雷诺或梅赛德斯建立枢纽对枢纽，但很少与两人合作的自行车。",
+    "en": "More likely, 5 Ford Escort will be hub to hub with Renault or Mercedes,but rarely with bicycles made for two."
+  },
+  {
+    "id": 40728,
+    "lesson": 47,
+    "zh": "现代露营的设备每年都变得更加先进，这对于愤世嫉俗的人来说是一个有趣的悖论，对于那些发誓要远离这一切的满怀希望的旅行者来说，这是一个更光明的希望。",
+    "en": "That the equipment of modern camping becomes yearly more sophisticated is an entertaining paradox for the cynic,a brighter promise for the hopeful traveller who has sworn to get away from it all."
+  },
+  {
+    "id": 40729,
+    "lesson": 47,
+    "zh": "它还提供了另一种逃避方式——一些学生社会学家可能愿意将他的论文建立在这种现象的基础上。",
+    "en": "It also provides—and some student sociologist might care to base his thesis upon the phenomenon—an escape of another kind."
+  },
+  {
+    "id": 40730,
+    "lesson": 47,
+    "zh": "现代旅行者常常不喜欢辉煌和贝拉维斯塔，不是因为他买不起或回避它们的物质享受，而是因为他害怕它们。",
+    "en": "The modern traveller is often a man who dislikes the Splendide and the Bellavista,not because 10 he cannot afford,or shuns their material comforts,but because he is afraid of them."
+  },
+  {
+    "id": 40731,
+    "lesson": 47,
+    "zh": "他可能很富有，但他决不知道该给门童或女服务员多少小费。",
+    "en": "Affluent he may be,but he is by no means sure what to tip the doorman or the chambermaid."
+  },
+  {
+    "id": 40732,
+    "lesson": 47,
+    "zh": "作为自己家里的主人，他不知道什么时候该对酒店领班说“嘘”。",
+    "en": "Master in his own house,he has little idea of when to say boo to a maitre d'hôtel."
+  },
+  {
+    "id": 40733,
+    "lesson": 47,
+    "zh": "露营让他摆脱了所有这些恐惧。",
+    "en": "From all such fears camping releases him."
+  },
+  {
+    "id": 40734,
+    "lesson": 47,
+    "zh": "诚然，基于装备和技术的露营本身的势利已经存在；但它是一种，如果他遇到它，他可以很容易地理解和处理。管理层和酒店等级制度中没有高级的“他们”让他的假期变得黑暗。",
+    "en": "Granted,a snobbery of camping itself,based upon equipment and techniques,already exists;but it is of a kind that,if he meets it,he can readily understand and deal with. 15 There is no superior 'they'in the shape of managements and hotel hierarchies to darken his holiday days."
+  },
+  {
+    "id": 40735,
+    "lesson": 47,
+    "zh": "除了这样的动机之外，还必须加上另一个动机。",
+    "en": "To such motives,yet another must be added."
+  },
+  {
+    "id": 40736,
+    "lesson": 47,
+    "zh": "当代汽车崇拜现象的一个重要原因是拥有汽车所带来的独立和自由感。",
+    "en": "The contemporary phenomenon of car worship is to be explained not least by the sense of independence and freedom that ownershipentails."
+  },
+  {
+    "id": 40737,
+    "lesson": 47,
+    "zh": "露营给这种乐趣带来了精致的享受。",
+    "en": "To this pleasure camping gives an exquisite refinement."
+  },
+  {
+    "id": 40738,
+    "lesson": 47,
+    "zh": "从自己的家门到家乡或外国的山丘或沙地再回来，一切都在手边。",
+    "en": "From one's own front door to home or foreign hills or sands and back again,everything is to hand."
+  },
+  {
+    "id": 40739,
+    "lesson": 47,
+    "zh": "不仅到达度假天堂的方法完全在自己的指挥和掌控之内，而且逃离假日地狱的方法（如果海滩太拥挤，当地的天气太恶劣）就在那里，在帐篷外面——或者很可能是帐篷的一部分。",
+    "en": "Not 20 only are the means of arriving at the holiday paradise entirely within one's own command and keeping,but the means of escape from holiday hell(if the beach proves too crowded,the local weather too inclement)are there,outside—or,as likely,part of—the tent."
+  },
+  {
+    "id": 40740,
+    "lesson": 47,
+    "zh": "理想主义者反对露营的做法，正如旅行团一样，出国旅游的人因此而失去了了解所到国家人民的机会。",
+    "en": "Idealists have objected to the practice of camping,as to the package tour,that the traveller abroad thereby denies himself the opportunity of getting to know the people of the country visited."
+  },
+  {
+    "id": 40741,
+    "lesson": 47,
+    "zh": "有人认为，孤立性和自我封闭是相辅相成的。",
+    "en": "Insularity and self-containment,it is argued,go hand in hand."
+  },
+  {
+    "id": 40742,
+    "lesson": 47,
+    "zh": "这种观点并不适用于流行的大陆露营地的体验。",
+    "en": "The opinion does not survive experience of a popular Continental camping place."
+  },
+  {
+    "id": 40743,
+    "lesson": 47,
+    "zh": "度假酒店往往专门为某一国籍的游客提供服务，有时甚至专门针对某一国籍的游客。",
+    "en": "Holiday hotels tend to cater for one nationality of visitors especially,sometimes exclusively."
+  },
+  {
+    "id": 40744,
+    "lesson": 47,
+    "zh": "相比之下，露营地则高度国际化。",
+    "en": "Camping sites,by contrast,are highly cosmopolitan."
+  },
+  {
+    "id": 40745,
+    "lesson": 47,
+    "zh": "诚然，德国人占多数是大多数地中海地区的共同特征；但迄今为止还没有压倒性的专业赞助。",
+    "en": "Granted,a preponderance of Germans is a characteristic that seems common to most Mediterranean sites;but as yet there is no overwhelmingly specialized patronage."
+  },
+  {
+    "id": 40746,
+    "lesson": 47,
+    "zh": "禁止露天晾晒衣服、禁止使用水点洗车、禁止邀请“我们的露营朋友”参加舞会或乘船游览的通知不仅用法语、意大利语或西班牙语印制，而且还用英语、德语和荷兰语印制。",
+    "en": "Notices forbidding the open-air drying of clothes,or the use of water points for car 30 washing,or those inviting ‘our camping friends'to a dance or a boat trip are printed not only in French or Italian or Spanish,but also in English,German and Dutch."
+  },
+  {
+    "id": 40747,
+    "lesson": 47,
+    "zh": "吃饭的时候，酸菜的气味和大蒜的气味相互竞争。",
+    "en": "At meal times the odour of sauerkraut vies with that of garlic."
+  },
+  {
+    "id": 40748,
+    "lesson": 47,
+    "zh": "法国人的早餐咖啡与英国人的培根和鸡蛋竞争。",
+    "en": "The Frenchman's breakfast coffee competes with the Englishman's bacón and eggs."
+  },
+  {
+    "id": 40749,
+    "lesson": 47,
+    "zh": "很难说有组织的露营活动的显着增长是否意味着更独立的露营活动的最终消亡。",
+    "en": "Whether the remarkable growth of organized camping means the eventual death of the more independent kind is hard to say."
+  },
+  {
+    "id": 40750,
+    "lesson": 47,
+    "zh": "市政当局自然希望确保露营者的场地费和其他习俗。",
+    "en": "Municipalities naturally want to secure the campers'site fees and other custom."
+  },
+  {
+    "id": 40751,
+    "lesson": 47,
+    "zh": "警察 35 对无法追踪到公认的营地边界或四堵墙的流动人员保持警惕。",
+    "en": "Police 35 are wary of itinerants who cannot be traced to a recognized camp boundary or to four walls."
+  },
+  {
+    "id": 40752,
+    "lesson": 47,
+    "zh": "但大多数第 6 单元第 47 课可能完全取决于露营者自己：他们引起了多少荒野火灾；他们留下了多少垃圾；简而言之，他们是否完全疏远了土地所有者和住在乡村的人们。",
+    "en": "But most Unit 6 Lesson 47 probably it will all depend upon campers themselves:how many heath fires they cause;how much litter they leave;in short,whether or not they wholly alienate landowners and those who live in the countryside."
+  },
+  {
+    "id": 40753,
+    "lesson": 47,
+    "zh": "只有良好的童子军才能维护永恒童子军心中所珍视的自由。",
+    "en": "Only good scouting is likely to preserve the freedoms so dear to the heart of the eternal Boy Scout."
+  },
+  {
+    "id": 40754,
+    "lesson": 47,
+    "zh": "奈杰尔·巴克斯顿 (NIGEL BuXTON) 周末大逃亡 电讯报 现代露营",
+    "en": "NIGEL BuXTON The Great Escape from The Weekend Telegraph Modern camping"
+  },
+  {
+    "id": 40755,
+    "lesson": 48,
+    "zh": "不乏提供“快速致富”机会的消息人士。",
+    "en": "There is no shortage of tipsters around offering ‘get-rich-quick’opportunities."
+  },
+  {
+    "id": 40756,
+    "lesson": 48,
+    "zh": "但如果您是一位认真的私人投资者，请将拉斯维加斯心态留给那些有钱可以挥霍的人。",
+    "en": "But if you are a serious private investor,leave the Las Vegas mentality to those with money to fritter."
+  },
+  {
+    "id": 40757,
+    "lesson": 48,
+    "zh": "认真的投资者需要一个合适的“投资组合”——精心策划的投资选择，具有明确的结构和明确的目标。",
+    "en": "The serious investor needs a proper ‘portfolio'—a well-planned selection of investments,with a definite structure and a clear aim."
+  },
+  {
+    "id": 40758,
+    "lesson": 48,
+    "zh": "但股市新手究竟如何实现这一目标呢？",
+    "en": "But exactly how does a newcomer to the stock market go about achieving that?"
+  },
+  {
+    "id": 40759,
+    "lesson": 48,
+    "zh": "好吧，如果你去找五位信誉良好的股票经纪人，问他们你应该用你的钱做什么，你很可能会得到五种不同的答案——即使你提供了有关你的年龄、家庭、财务状况以及你想从投资中得到什么的所有相关信息。",
+    "en": "Well,if you go to five reputable stock brokers and ask them what you should do with your money,you're likely to get five different answers,—even if you give all the relevant information about your age,family, finances and what you want from your investments."
+  },
+  {
+    "id": 40760,
+    "lesson": 48,
+    "zh": "道德？",
+    "en": "Moral?"
+  },
+  {
+    "id": 40761,
+    "lesson": 48,
+    "zh": "构建投资组合并不存在一种“正确”的方法。",
+    "en": "There is no one 'right'way to structure a portfolio."
+  },
+  {
+    "id": 40762,
+    "lesson": 48,
+    "zh": "然而，毫无疑问，存在一些错误的方法，并且您可以确定，我们的五位顾问中没有一个会建议将您的所有（或可能任何）资金投入 Periwigs*。",
+    "en": "However,there are undoubtedly some wrong ways,and you can be sure that none of our five advisers would have suggested sinking all(or perhaps any)of your money into Periwigs*."
+  },
+  {
+    "id": 40763,
+    "lesson": 48,
+    "zh": "那么你应该做什么呢？",
+    "en": "So what should you do?"
+  },
+  {
+    "id": 40764,
+    "lesson": 48,
+    "zh": "我们假设您已经解决了基本问题，例如抵押贷款、养老金、保险和获得足够的现金储备。",
+    "en": "We'll assume that you have sorted out the basics—like mortgages,pensions, insurance and access to sufficient cash reserves."
+  },
+  {
+    "id": 40765,
+    "lesson": 48,
+    "zh": "然后你应该建立自己的个人目标。",
+    "en": "You should then establish your own individual aims."
+  },
+  {
+    "id": 40766,
+    "lesson": 48,
+    "zh": "这些部分是个人情况的问题，部分是心理的问题。",
+    "en": "These are partly a matter of personal circumstances,partly a matter of psychology."
+  },
+  {
+    "id": 40767,
+    "lesson": 48,
+    "zh": "例如，如果您年龄较大，您从重大损失中恢复过来的时间就会减少，您可能希望增加养老金收入。",
+    "en": "For instance,if you are older you have less time to recover from any major losses,and you may well wish to boost your pension income."
+  },
+  {
+    "id": 40768,
+    "lesson": 48,
+    "zh": "因此，保存您的资本并创造额外收入是您的首要任务。",
+    "en": "So preserving your capital and generating extra income are your main priorities."
+  },
+  {
+    "id": 40769,
+    "lesson": 48,
+    "zh": "在这种情况下，您可能会构建一个包含一些股票（但不是高风险股票）的投资组合，以及英国国债、现金存款，也许还有可转换债券或分割资本投资信托的收入份额。",
+    "en": "In this case,you'd probably construct a portfolio with some shares(but not high risk ones),along with gilts,cash deposits,and perhaps convertibles or the income shares of split capital investment trusts."
+  },
+  {
+    "id": 40770,
+    "lesson": 48,
+    "zh": "如果你比较年轻，财务状况稳健，你可能会决定采取激进的做法——但前提是你有乐观的性格，不会因为股价而彻夜难眠。",
+    "en": "If you are younger,and in a solid financial position,you may decide to take an aggressive approach- but only if you're blessed with a sanguine disposition and won't suffer sleepless nights over share prices."
+  },
+  {
+    "id": 40771,
+    "lesson": 48,
+    "zh": "如果您在这个描述中认出了自己，那么您的投资组合中可能会包括一些令人兴奋的成长型股票，以及您的平淡投资。",
+    "en": "If you recognize yourself in this description,you might include a couple of heady growth stocks in your portfolio,alongside your more pedestrian investments."
+  },
+  {
+    "id": 40772,
+    "lesson": 48,
+    "zh": "一旦确定了投资目标，您就可以决定将资金投向何处。",
+    "en": "Once you have decided on your investment aims, you can then decide where to put your money."
+  },
+  {
+    "id": 40773,
+    "lesson": 48,
+    "zh": "这里的黄金法则是分散你的风险——如果你把所有的钱都投入 Periwigs International，那么你就让自己成为了财富的人质。 *“Periwigs”是一家虚构公司的名称。",
+    "en": "The golden rule here is spread your risk—if you put all of your money into Periwigs International,you're setting yourself up as a hostage to fortune. *‘Periwigs'is the name of a fictitious company."
+  },
+  {
+    "id": 40774,
+    "lesson": 48,
+    "zh": "投资者纪事，231990 年 3 月",
+    "en": "INVESTOR's CHRONICLE,March 231990"
+  }
+]

@@ -3,7 +3,7 @@ import WordInput from './WordInput'
 import DictionaryCard from './DictionaryCard'
 import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
-import { buildUpChunks } from '../utils/splitSentence'
+import { buildSplitChunksLevel } from '../utils/splitSentence'
 
 // Fuzzy match: score 0-1 based on content words
 function calcMatch(targetSentence, spokenText) {
@@ -40,10 +40,12 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
 
   const speakActive = gateEnabled && !speakUnlocked
 
-  const [showCard, setShowCard]     = useState(false)
-  const [showList, setShowList]     = useState(false)
-  const [chunkIndex, setChunkIndex] = useState(0)
-  const [splitMode, setSplitMode]   = useState(false)
+  const [showCard, setShowCard]         = useState(false)
+  const [showList, setShowList]         = useState(false)
+  const [chunkIndex, setChunkIndex]     = useState(0)
+  const [splitLevel, setSplitLevel]     = useState(0) // 0=off, 1=初级, 2=中级, 3=高级
+  const splitMode = splitLevel > 0
+  const [chunkTranslations, setChunkTranslations] = useState([])
   const { speak } = useTTS(settings)
   const { playError, playCorrect, playVictory, playKeypress, playBubble, playFireworks } = useSound(settings)
   const [currentWordIndex, setCurrentWordIndex] = useState({ idx: 0, total: 0 })
@@ -55,16 +57,37 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const chunks = useMemo(() => {
     const sentence = sentences[index]
     if (!sentence || !splitMode) return null
-    const parts = buildUpChunks(sentence.en)
-    return parts.length > 1 ? parts : null
-  }, [index, sentences, splitMode])
+    return buildSplitChunksLevel(sentence.en, splitLevel)
+  }, [index, sentences, splitMode, splitLevel])
+
+  // Fetch Chinese translation for each chunk when chunks change
+  useEffect(() => {
+    if (!chunks || chunks.length === 0) { setChunkTranslations([]); return }
+    setChunkTranslations(chunks.map(() => ''))
+    chunks.forEach((chunk, i) => {
+      fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(chunk)}&langpair=en|zh`, {
+        signal: AbortSignal.timeout(5000)
+      })
+        .then(r => r.json())
+        .then(json => {
+          const text = json?.responseData?.translatedText || ''
+          if (text && !/[a-zA-Z]{5,}/.test(text)) {
+            setChunkTranslations(prev => { const n = [...prev]; n[i] = text; return n })
+          }
+        })
+        .catch(() => {})
+    })
+  }, [chunks])
 
   const activeSentence = useMemo(() => {
     const s = sentences[index]
     if (!s) return s
-    if (chunks) return { ...s, en: chunks[chunkIndex] }
+    if (chunks) {
+      const zh = chunkTranslations[chunkIndex] || ''
+      return { ...s, en: chunks[chunkIndex], zh: zh || s.zh }
+    }
     return s
-  }, [sentences, index, chunks, chunkIndex])
+  }, [sentences, index, chunks, chunkIndex, chunkTranslations])
 
   // Reset speak gate on new sentence / retry / setting change
   useEffect(() => {
@@ -106,15 +129,17 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
       speak: () => speak(sentence?.en),
       toggleCard: () => setShowCard(v => !v),
       toggleList: () => setShowList(v => !v),
-      toggleSplit: () => { setSplitMode(v => !v); setChunkIndex(0); setKey(k => k + 1) },
+      toggleSplit: () => { setSplitLevel(v => v > 0 ? 0 : 2); setChunkIndex(0); setKey(k => k + 1) },
+      setSplitLevel: (level) => { setSplitLevel(v => v === level ? 0 : level); setChunkIndex(0); setKey(k => k + 1) },
       splitMode,
+      splitLevel,
       showList,
       attempts: progress[`sentence_${sentences[index]?.id}`]?.attempts || 0,
       status: progress[`sentence_${sentences[index]?.id}`]?.status || 'new',
       canPrev: index > 0,
       canNext: index < sentences.length - 1,
     })
-  }, [index, sentences.length, completed, progress, splitMode, showCard, showList])
+  }, [index, sentences.length, completed, progress, splitMode, splitLevel, showCard, showList])
 
   const sentence = sentences[index]
 
@@ -140,6 +165,12 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
       return
     }
 
+    // Cancel any playing TTS first — prevents speaker audio from being captured by mic
+    if (settings?.blockTTSDuringRec !== false) {
+      window.speechSynthesis?.cancel()
+      window.nativeTTS?.cancel()
+    }
+
     const rec = new SR()
     recognitionRef.current = rec
     rec.lang = 'en-US'
@@ -161,9 +192,10 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     }
     rec.onresult = (e) => {
       const alts = Array.from({ length: e.results[0].length }, (_, i) => e.results[0][i].transcript)
-      const scored = alts.map(t => ({ t, ...calcMatch(sentence.en, t) })).sort((a, b) => b.score - a.score)
+      const targetText = (splitMode && chunks) ? chunks[chunkIndex] : sentence.en
+      const scored = alts.map(t => ({ t, ...calcMatch(targetText, t) })).sort((a, b) => b.score - a.score)
       const best = scored[0]
-      if (best.score >= 0.6) {
+      if (best.score > 0.5) {
         setSpeakPhase('success')
         setRecResult('')
         setRecWords({ target: [], spoken: [], matched: [] })
@@ -177,7 +209,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
       }
     }
     rec.start()
-  }, [isRecording, speakPhase, sentence, playCorrect])
+  }, [isRecording, speakPhase, sentence, playCorrect, splitMode, chunks, chunkIndex])
 
   // Spacebar → toggle recording (only when gate is blocking)
   useEffect(() => {
@@ -246,9 +278,8 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   }, [completed, goNext, isLastSentence])
 
   const speakWord = useCallback((word) => {
-    if (splitMode) return
     if (settings.wordSpeak !== false) speak(word)
-  }, [speak, settings.wordSpeak, splitMode])
+  }, [speak, settings.wordSpeak])
 
   useEffect(() => {
     function handleKey(e) {
@@ -392,8 +423,10 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
         {/* Chinese sentence + TTS button */}
         <div className="flex items-start justify-center gap-3 mt-1">
           <button
-            onClick={() => speak(sentence.en)}
-            className="shrink-0 w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white border border-gray-700 transition-colors flex items-center justify-center mt-1"
+            onClick={() => speak(chunks && splitMode ? chunks[chunkIndex] : sentence.en)}
+            disabled={isRecording && settings?.blockTTSDuringRec !== false}
+            className={`shrink-0 w-10 h-10 rounded-lg border transition-colors flex items-center justify-center mt-1
+              ${isRecording && settings?.blockTTSDuringRec !== false ? 'bg-gray-900 border-gray-800 text-gray-700 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white border-gray-700'}`}
             title="朗读整句 (Ctrl+A)"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -406,7 +439,9 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           {/* Chinese text */}
           <div className="text-center">
             <div className="text-white leading-relaxed" style={{ fontFamily: '"Kaiti SC", "STKaiti", "KaiTi", serif', fontSize: '34px', letterSpacing: '0.18em', fontWeight: 'normal' }}>
-              {sentence.zh}
+              {chunks && chunkTranslations[chunkIndex]
+                ? chunkTranslations[chunkIndex]
+                : sentence.zh}
             </div>
             {chunks && (
               <div className="flex gap-1.5 justify-center mt-2">
@@ -471,19 +506,21 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
               {speakPhase === 'fail' && recResult && <span className="text-yellow-400/80 text-xs">{recResult}</span>}
             </div>
 
-            <button
-              onClick={() => setSpeakUnlocked(true)}
-              className={`text-xs underline transition-colors ${speakAttempts >= 2 ? 'text-gray-400 hover:text-white' : 'text-gray-700 hover:text-gray-500'}`}
-            >
-              {speakAttempts >= 2 ? '跳过（已多次尝试）' : '跳过'}
-            </button>
+            {(!splitMode || settings?.hideSplitSkip === false) && (
+              <button
+                onClick={() => setSpeakUnlocked(true)}
+                className={`text-xs underline transition-colors ${speakAttempts >= 2 ? 'text-gray-400 hover:text-white' : 'text-gray-700 hover:text-gray-500'}`}
+              >
+                {speakAttempts >= 2 ? '跳过（已多次尝试）' : '跳过'}
+              </button>
+            )}
           </div>
         )}
 
         {/* Word input — hidden while gate is blocking */}
         <div className="w-full min-h-20" style={{ display: speakActive ? 'none' : undefined }}>
           <WordInput
-            key={`${sentence.id}-${key}`}
+            key={`${sentence.id}-${key}-${speakActive}`}
             sentence={activeSentence}
             onComplete={handleComplete}
             speakWord={speakWord}

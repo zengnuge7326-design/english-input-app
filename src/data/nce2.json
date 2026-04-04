@@ -1,0 +1,6680 @@
+[
+  {
+    "id": 20001,
+    "lesson": 1,
+    "zh": "听录音，然后回答问题。",
+    "en": "First listen and then answer the question."
+  },
+  {
+    "id": 20002,
+    "lesson": 1,
+    "zh": "上星期我去剧院看戏了。",
+    "en": "Last week I went to the theatre."
+  },
+  {
+    "id": 20003,
+    "lesson": 1,
+    "zh": "我的座位很好。",
+    "en": "I had a very good seat."
+  },
+  {
+    "id": 20004,
+    "lesson": 1,
+    "zh": "这出戏很有意思。",
+    "en": "The play was very interesting."
+  },
+  {
+    "id": 20005,
+    "lesson": 1,
+    "zh": "可我却无法欣赏。",
+    "en": "I did not enjoy it."
+  },
+  {
+    "id": 20006,
+    "lesson": 1,
+    "zh": "一对青年男女坐在我的身后。",
+    "en": "A young man and a young woman were sitting behind me."
+  },
+  {
+    "id": 20007,
+    "lesson": 1,
+    "zh": "他们大声地说着话。",
+    "en": "They were talking loudly."
+  },
+  {
+    "id": 20008,
+    "lesson": 1,
+    "zh": "我非常生气。",
+    "en": "I got very angry."
+  },
+  {
+    "id": 20009,
+    "lesson": 1,
+    "zh": "我听不见演员在说什么。",
+    "en": "I could not hear the actors."
+  },
+  {
+    "id": 20010,
+    "lesson": 1,
+    "zh": "我回过头去。",
+    "en": "I turned round."
+  },
+  {
+    "id": 20011,
+    "lesson": 1,
+    "zh": "我气恼地盯着那一男一女。",
+    "en": "I looked at the man and the woman angrily."
+  },
+  {
+    "id": 20012,
+    "lesson": 1,
+    "zh": "他们却毫不在意。",
+    "en": "They did not pay any attention."
+  },
+  {
+    "id": 20013,
+    "lesson": 1,
+    "zh": "最后，我忍无可忍。",
+    "en": "In the end, I could not bear it."
+  },
+  {
+    "id": 20014,
+    "lesson": 1,
+    "zh": "我又回过头去。",
+    "en": "I turned round again."
+  },
+  {
+    "id": 20015,
+    "lesson": 1,
+    "zh": "“我一个字也听不见！”",
+    "en": "'I can't hear a word!"
+  },
+  {
+    "id": 20016,
+    "lesson": 1,
+    "zh": "我生气地说。",
+    "en": "'I said angrily."
+  },
+  {
+    "id": 20017,
+    "lesson": 1,
+    "zh": "“不关你的事，”那位青年男子粗暴地说。",
+    "en": "'It's none of your business,'the young man said rudely."
+  },
+  {
+    "id": 20018,
+    "lesson": 1,
+    "zh": "“这是私人间的谈话！”",
+    "en": "'This is a private conversation!"
+  },
+  {
+    "id": 20019,
+    "lesson": 2,
+    "zh": "那是个星期天。",
+    "en": "It was Sunday."
+  },
+  {
+    "id": 20020,
+    "lesson": 2,
+    "zh": "每逢星期天我总是很晚才起床。",
+    "en": "I never get up early on Sundays."
+  },
+  {
+    "id": 20021,
+    "lesson": 2,
+    "zh": "有时我一直躺到吃午饭的时候。",
+    "en": "I sometimes stay in bed until lunchtime."
+  },
+  {
+    "id": 20022,
+    "lesson": 2,
+    "zh": "上星期天我起得很晚。",
+    "en": "Last Sunday I got up very late."
+  },
+  {
+    "id": 20023,
+    "lesson": 2,
+    "zh": "我朝窗外望去。",
+    "en": "I looked out of the window."
+  },
+  {
+    "id": 20024,
+    "lesson": 2,
+    "zh": "外面一片昏暗。",
+    "en": "It was dark outside."
+  },
+  {
+    "id": 20025,
+    "lesson": 2,
+    "zh": "“鬼天气！”",
+    "en": "'What a day!"
+  },
+  {
+    "id": 20026,
+    "lesson": 2,
+    "zh": "我想。",
+    "en": "'I thought."
+  },
+  {
+    "id": 20027,
+    "lesson": 2,
+    "zh": "“又下雨了。”",
+    "en": "'It's raining again."
+  },
+  {
+    "id": 20028,
+    "lesson": 2,
+    "zh": "正在这时，电话铃响了。",
+    "en": "'Just then, the telephone rang."
+  },
+  {
+    "id": 20029,
+    "lesson": 2,
+    "zh": "是姑母露西打来的。",
+    "en": "It was my aunt Lucy."
+  },
+  {
+    "id": 20030,
+    "lesson": 2,
+    "zh": "“我刚乘火车到这里，”她说。",
+    "en": "'I've just arrived by train,'she said."
+  },
+  {
+    "id": 20031,
+    "lesson": 2,
+    "zh": "“我这就来看你。”",
+    "en": "'I’m coming to see ' you."
+  },
+  {
+    "id": 20032,
+    "lesson": 2,
+    "zh": "“可我还在吃早饭呢。”我说。",
+    "en": "'But I'm still having breakfast,'I said."
+  },
+  {
+    "id": 20033,
+    "lesson": 2,
+    "zh": "“你在干什么？”",
+    "en": "'What are you doing?"
+  },
+  {
+    "id": 20034,
+    "lesson": 2,
+    "zh": "她问道。",
+    "en": "'she asked."
+  },
+  {
+    "id": 20035,
+    "lesson": 2,
+    "zh": "“我在吃早饭。”我又说了一遍。",
+    "en": "'I’m having breakfast,'I repeated."
+  },
+  {
+    "id": 20036,
+    "lesson": 2,
+    "zh": "“天啊，”她说。",
+    "en": "'Dear me,'she said."
+  },
+  {
+    "id": 20037,
+    "lesson": 2,
+    "zh": "“你总是起得这么晚吗？”",
+    "en": "'Do you always get up so late?"
+  },
+  {
+    "id": 20038,
+    "lesson": 2,
+    "zh": "“已经一点钟啦！”",
+    "en": "It's one o'clock!"
+  },
+  {
+    "id": 20039,
+    "lesson": 3,
+    "zh": "听录音，然后回答问题。",
+    "en": "First listen and then answer the question."
+  },
+  {
+    "id": 20040,
+    "lesson": 3,
+    "zh": "明信片总搅得我心神不宁。",
+    "en": "Postcards always spoil my holidays."
+  },
+  {
+    "id": 20041,
+    "lesson": 3,
+    "zh": "去年夏天，我去了意大利。",
+    "en": "Last summer, I went to Italy."
+  },
+  {
+    "id": 20042,
+    "lesson": 3,
+    "zh": "我参观了博物馆，还去了公园。",
+    "en": "I visited museums and sat in public gardens."
+  },
+  {
+    "id": 20043,
+    "lesson": 3,
+    "zh": "一位好客的服务员教了我几句意大利语。",
+    "en": "A friendly waiter taught me a few words of Italian."
+  },
+  {
+    "id": 20044,
+    "lesson": 3,
+    "zh": "之后他借给我一本书。",
+    "en": "Then he lent me a book."
+  },
+  {
+    "id": 20045,
+    "lesson": 3,
+    "zh": "我读了几行，可一个字也不懂。",
+    "en": "I read a few lines, but I did not understand a word."
+  },
+  {
+    "id": 20046,
+    "lesson": 3,
+    "zh": "我每天都想着明信片的事。",
+    "en": "Every day I thought about postcards."
+  },
+  {
+    "id": 20047,
+    "lesson": 3,
+    "zh": "假期过得很快，可我一张明信片也没给朋友寄。",
+    "en": "My holidays passed quickly, but I did not send cards to my friends."
+  },
+  {
+    "id": 20048,
+    "lesson": 3,
+    "zh": "到了最后一天，我做了一个重大的决定。",
+    "en": "On the last day I made a big decision."
+  },
+  {
+    "id": 20049,
+    "lesson": 3,
+    "zh": "我早早起了床，买来了三十七张明信片。",
+    "en": "I got up early and bought thirty-seven cards."
+  },
+  {
+    "id": 20050,
+    "lesson": 3,
+    "zh": "我在房间里关了整整一天。然而，我连一张明信片也没有写成！",
+    "en": "I spent the whole day in my room, but I did not write a single card!"
+  },
+  {
+    "id": 20051,
+    "lesson": 4,
+    "zh": "我刚刚收到我哥哥蒂姆的来信。",
+    "en": "I have just received a letter from my brother, Tim."
+  },
+  {
+    "id": 20052,
+    "lesson": 4,
+    "zh": "他在澳大利亚 他已经在那里呆了六个月了。",
+    "en": "He is in Australia He has been there for six months."
+  },
+  {
+    "id": 20053,
+    "lesson": 4,
+    "zh": "蒂姆是一名工程师。",
+    "en": "Tim is an engineer."
+  },
+  {
+    "id": 20054,
+    "lesson": 4,
+    "zh": "他在一家大公司工作，并且已经去过澳大利亚很多不同的地方。",
+    "en": "He is working for a big firm and he has already visited a great number of different places in Australia."
+  },
+  {
+    "id": 20055,
+    "lesson": 4,
+    "zh": "他刚刚买了一辆澳大利亚汽车，去了澳大利亚中部的一个小镇爱丽丝泉。",
+    "en": "He has just bought an Australian car and has gone to Alice Springs, a small town in the centre of Australia."
+  },
+  {
+    "id": 20056,
+    "lesson": 4,
+    "zh": "他很快将访问达尔文。",
+    "en": "He will soon visit Darwin."
+  },
+  {
+    "id": 20057,
+    "lesson": 4,
+    "zh": "从那里，他将飞往珀斯。",
+    "en": "From there, he will fly to Perth."
+  },
+  {
+    "id": 20058,
+    "lesson": 4,
+    "zh": "我哥哥以前从未出过国，所以他觉得这次旅行非常令人兴奋。",
+    "en": "My brother has never been abroad before, so he is finding this trip very exciting."
+  },
+  {
+    "id": 20059,
+    "lesson": 5,
+    "zh": "詹姆斯·斯科特在锡尔伯里有一个车库，现在他刚刚在平赫斯特买了另一个车库。",
+    "en": "James Scott has a garage in Silbury and now he has just bought another garage in Pinhurst."
+  },
+  {
+    "id": 20060,
+    "lesson": 5,
+    "zh": "平赫斯特距离锡尔伯里仅五英里，但先生。",
+    "en": "Pinhurst is only five miles from Silbury, but Mr."
+  },
+  {
+    "id": 20061,
+    "lesson": 5,
+    "zh": "斯科特的新车库找不到电话，所以他刚买了十二只鸽子。",
+    "en": "Scott cannot get a telephone for his new garage, so he has just bought twelve pigeons."
+  },
+  {
+    "id": 20062,
+    "lesson": 5,
+    "zh": "昨天，一只鸽子将第一条信息从平赫斯特带到了锡尔伯里。",
+    "en": "Yesterday, a.pigeon carried the first message from Pinhurst to Silbury."
+  },
+  {
+    "id": 20063,
+    "lesson": 5,
+    "zh": "这只鸟在三分钟内飞完了这段距离。",
+    "en": "The bird covered the distance in three minutes."
+  },
+  {
+    "id": 20064,
+    "lesson": 5,
+    "zh": "到目前为止，先生。",
+    "en": "Up to now, Mr."
+  },
+  {
+    "id": 20065,
+    "lesson": 5,
+    "zh": "斯科特已从一个车库向另一个车库发送了大量备件请求和其他紧急消息。",
+    "en": "Scott has sent a great many requests for spare parts and other urgent messages from one garage to the other."
+  },
+  {
+    "id": 20066,
+    "lesson": 5,
+    "zh": "就这样，他开始了自己的私人“电话”服务。",
+    "en": "In this way, he has begun his own private 'telephone’ service."
+  },
+  {
+    "id": 20067,
+    "lesson": 6,
+    "zh": "我刚刚搬到桥街的一所房子。",
+    "en": "I have just moved to a house in Bridge Street."
+  },
+  {
+    "id": 20068,
+    "lesson": 6,
+    "zh": "昨天，一个乞丐敲我的门。",
+    "en": "Yesterday a beggar knocked at my door."
+  },
+  {
+    "id": 20069,
+    "lesson": 6,
+    "zh": "他向我要一顿饭和一杯啤酒。",
+    "en": "He asked me for a meal and a glass of beer."
+  },
+  {
+    "id": 20070,
+    "lesson": 6,
+    "zh": "作为回报，乞丐倒立并唱歌。",
+    "en": "In return for this, the beggar stood on his head and sang songs."
+  },
+  {
+    "id": 20071,
+    "lesson": 6,
+    "zh": "我给了他一顿饭。",
+    "en": "I gave him a meal."
+  },
+  {
+    "id": 20072,
+    "lesson": 6,
+    "zh": "他吃了食物，喝了啤酒。",
+    "en": "He ate the food and drank the beer."
+  },
+  {
+    "id": 20073,
+    "lesson": 6,
+    "zh": "然后他把一块奶酪放进口袋里就走了。",
+    "en": "Then he put a piece of cheese in his pocket and went away."
+  },
+  {
+    "id": 20074,
+    "lesson": 6,
+    "zh": "后来一位邻居告诉我他的事。",
+    "en": "Later a neighbour told me about him."
+  },
+  {
+    "id": 20075,
+    "lesson": 6,
+    "zh": "每个人都认识他。",
+    "en": "Everybody knows him."
+  },
+  {
+    "id": 20076,
+    "lesson": 6,
+    "zh": "他的名字叫珀西·巴顿斯。",
+    "en": "His name is Percy Buttons."
+  },
+  {
+    "id": 20077,
+    "lesson": 6,
+    "zh": "他每月一次拜访街上的每户人家，总是要一顿饭和一杯啤酒。",
+    "en": "He calls at every house in the street once a month and always asks for a meal and a glass of beer."
+  },
+  {
+    "id": 20078,
+    "lesson": 7,
+    "zh": "飞机晚点了，侦探们整个上午都在机场等待。",
+    "en": "The plane was late and detectives were waiting at the airport all morning."
+  },
+  {
+    "id": 20079,
+    "lesson": 7,
+    "zh": "他们期待着来自南非的一包价值不菲的钻石。",
+    "en": "They were expecting a valuable parcel of diamonds from South Africa."
+  },
+  {
+    "id": 20080,
+    "lesson": 7,
+    "zh": "几个小时前，有人告诉警方，小偷会试图偷走这些钻石。",
+    "en": "A few hours earlier, someone had told the police that thieves would try to steal the diamonds."
+  },
+  {
+    "id": 20081,
+    "lesson": 7,
+    "zh": "飞机抵达时，一些侦探正在主楼内等候，其他侦探则在机场等候。",
+    "en": "When the plane arrived, some of the detectives were waiting inside the main building while others were waiting on the airfield."
+  },
+  {
+    "id": 20082,
+    "lesson": 7,
+    "zh": "两名男子将包裹从飞机上取下并带入海关大楼。",
+    "en": "Two men took the parcel off the plane and carried it into the Customs House."
+  },
+  {
+    "id": 20083,
+    "lesson": 7,
+    "zh": "当两名侦探守在门口时，另外两名侦探打开了包裹。",
+    "en": "While two detectives were keeping guard at the door, two others opened the parcel."
+  },
+  {
+    "id": 20084,
+    "lesson": 7,
+    "zh": "让他们惊讶的是，这个珍贵的包裹里装满了石头和沙子！",
+    "en": "To their surprise, the precious parcel was full of stones and sand!"
+  },
+  {
+    "id": 20085,
+    "lesson": 8,
+    "zh": "乔·桑德斯拥有我们镇上最美丽的花园。",
+    "en": "Joe Sanders has the most beautiful garden in our town."
+  },
+  {
+    "id": 20086,
+    "lesson": 8,
+    "zh": "几乎每个人每年都会参加“最好的花园比赛”，但乔每次都获胜。",
+    "en": "Nearly everybody enters for 'The Nicest Garden Competition'each year, but Joe wins every time."
+  },
+  {
+    "id": 20087,
+    "lesson": 8,
+    "zh": "比尔·弗里斯的花园比乔的大。",
+    "en": "Bill Frith's garden is larger than Joe's."
+  },
+  {
+    "id": 20088,
+    "lesson": 8,
+    "zh": "比尔比乔更努力工作，种了更多的花和蔬菜，但乔的花园更有趣。",
+    "en": "Bill works harder than Joe and grows more flowers and vegetables, but 5 Joe's garden is more interesting."
+  },
+  {
+    "id": 20089,
+    "lesson": 8,
+    "zh": "他修出了整齐的小路，并在水池上建了一座木桥。",
+    "en": "He has made neat paths and has built a wooden bridge over a pool."
+  },
+  {
+    "id": 20090,
+    "lesson": 8,
+    "zh": "我也喜欢花园，但我不喜欢辛苦的工作。",
+    "en": "I like gardens too, but I do not like hard work."
+  },
+  {
+    "id": 20091,
+    "lesson": 8,
+    "zh": "每年我也参加花园比赛，而且我总是因为镇上最差的花园而赢得一个小奖！",
+    "en": "Every year I enter for the garden competition too, and I always win a little prize for the worst garden in the town!"
+  },
+  {
+    "id": 20092,
+    "lesson": 9,
+    "zh": "周三晚上，我们去了市政厅。",
+    "en": "On Wednesday evening, we went to the Town Hall."
+  },
+  {
+    "id": 20093,
+    "lesson": 9,
+    "zh": "这是一年的最后一天，一大群人聚集在市政厅的钟下。",
+    "en": "It was the last day of the year and a large crowd of people had gathered under the Town Hall clock."
+  },
+  {
+    "id": 20094,
+    "lesson": 9,
+    "zh": "再过二十分钟，十二点钟就敲响了。",
+    "en": "It would strike twelve in twenty minutes'time."
+  },
+  {
+    "id": 20095,
+    "lesson": 9,
+    "zh": "十五分钟过去了，五点差十二点，钟停了。",
+    "en": "Fifteen minutes passed and then, at five to twelve, the clock stopped."
+  },
+  {
+    "id": 20096,
+    "lesson": 9,
+    "zh": "大分针没有动。",
+    "en": "The big minute hand did not move."
+  },
+  {
+    "id": 20097,
+    "lesson": 9,
+    "zh": "我们等了又等，但什么也没发生。",
+    "en": "We waited and waited, but nothing happened."
+  },
+  {
+    "id": 20098,
+    "lesson": 9,
+    "zh": "突然有人喊道：“现在十二点二分了！”",
+    "en": "Suddenly someone shouted,'It's two minutes past twelve!"
+  },
+  {
+    "id": 20099,
+    "lesson": 9,
+    "zh": "时钟停了！",
+    "en": "The clock has stopped!"
+  },
+  {
+    "id": 20100,
+    "lesson": 9,
+    "zh": "'我看了看手表。",
+    "en": "'I looked at my watch."
+  },
+  {
+    "id": 20101,
+    "lesson": 9,
+    "zh": "这是真的。",
+    "en": "It was true."
+  },
+  {
+    "id": 20102,
+    "lesson": 9,
+    "zh": "大钟拒绝迎接新年。",
+    "en": "The big clock refused to welcome the New Year."
+  },
+  {
+    "id": 20103,
+    "lesson": 9,
+    "zh": "那一刻，每个人都开始大笑、唱歌。",
+    "en": "At that moment, everybody began to laugh and sing."
+  },
+  {
+    "id": 20104,
+    "lesson": 10,
+    "zh": "我们有一种古老的乐器。",
+    "en": "We have an old musical instrument."
+  },
+  {
+    "id": 20105,
+    "lesson": 10,
+    "zh": "它被称为击弦古钢琴。",
+    "en": "It is called a clavichord."
+  },
+  {
+    "id": 20106,
+    "lesson": 10,
+    "zh": "它于 1681 年在德国制造。",
+    "en": "It was made in Germany in 1681."
+  },
+  {
+    "id": 20107,
+    "lesson": 10,
+    "zh": "我们的击弦古钢琴放在客厅里。",
+    "en": "Our clavichord is kept in the living room."
+  },
+  {
+    "id": 20108,
+    "lesson": 10,
+    "zh": "它长期以来一直属于我们家族。",
+    "en": "It has belonged to our family for a long time."
+  },
+  {
+    "id": 20109,
+    "lesson": 10,
+    "zh": "这台乐器是我祖父多年前买的。",
+    "en": "The instrument was bought by my grandfather many years ago."
+  },
+  {
+    "id": 20110,
+    "lesson": 10,
+    "zh": "最近，它被一位访客损坏了。",
+    "en": "Recently it was damaged by a visitor."
+  },
+  {
+    "id": 20111,
+    "lesson": 10,
+    "zh": "她尝试用它演奏爵士乐！",
+    "en": "She tried to play jazz on it!"
+  },
+  {
+    "id": 20112,
+    "lesson": 10,
+    "zh": "她敲琴键太用力，有两根琴弦断了。",
+    "en": "She struck the keys too hard and two of the strings were broken."
+  },
+  {
+    "id": 20113,
+    "lesson": 10,
+    "zh": "我父亲很震惊。",
+    "en": "My father was shocked."
+  },
+  {
+    "id": 20114,
+    "lesson": 10,
+    "zh": "现在我们不准碰它。",
+    "en": "Now we are not allowed to touch it."
+  },
+  {
+    "id": 20115,
+    "lesson": 10,
+    "zh": "我父亲的一个朋友正在修理它。",
+    "en": "It is being repaired by a friend of my father's."
+  },
+  {
+    "id": 20116,
+    "lesson": 11,
+    "zh": "当托尼·斯蒂尔进来时，我正在一家餐馆吃晚饭。",
+    "en": "I was having dinner at a restaurant when Tony Steele came in."
+  },
+  {
+    "id": 20117,
+    "lesson": 11,
+    "zh": "托尼几年前在律师事务所工作，但他现在在银行工作。",
+    "en": "Tony worked in a lawyer's office years ago, but he is now working at a bank."
+  },
+  {
+    "id": 20118,
+    "lesson": 11,
+    "zh": "他的薪水不错，但他总是向朋友借钱，从不还。",
+    "en": "He gets a good salary, but he always borrows money from his friends and never pays it back."
+  },
+  {
+    "id": 20119,
+    "lesson": 11,
+    "zh": "托尼看到了我，走过来坐在同一张桌子上。",
+    "en": "Tony saw me and came and sat at the same table."
+  },
+  {
+    "id": 20120,
+    "lesson": 11,
+    "zh": "他从来没有向我借过钱。",
+    "en": "He has never borrowed money from me."
+  },
+  {
+    "id": 20121,
+    "lesson": 11,
+    "zh": "当他吃饭的时候，我向他借了二十英镑。",
+    "en": "While he was eating, I asked him to lend me twenty pounds."
+  },
+  {
+    "id": 20122,
+    "lesson": 11,
+    "zh": "令我惊讶的是，他立即给了我钱。",
+    "en": "To my surprise, he gave me the money immediately."
+  },
+  {
+    "id": 20123,
+    "lesson": 11,
+    "zh": "“我从来没有向你借过任何钱，”托尼说，“所以现在你可以付我的晚餐了！”",
+    "en": "'Ihave never borrowed any money from you,'Tony said,'so now you can pay for my dinner!"
+  },
+  {
+    "id": 20124,
+    "lesson": 12,
+    "zh": "我们的邻居查尔斯·艾利森船长明天将从朴茨茅斯启航。",
+    "en": "Our neighbour, Captain Charles Alison, will sail from Portsmouth tomorrow."
+  },
+  {
+    "id": 20125,
+    "lesson": 12,
+    "zh": "我们一早就在港口等他。",
+    "en": "We'll meet him at the harbour early in the morning."
+  },
+  {
+    "id": 20126,
+    "lesson": 12,
+    "zh": "他将乘坐他的小船 Topsail。",
+    "en": "He will be in his small boat, Topsail."
+  },
+  {
+    "id": 20127,
+    "lesson": 12,
+    "zh": "Topsail是一艘著名的小船。",
+    "en": "Topsail is a famous little boat."
+  },
+  {
+    "id": 20128,
+    "lesson": 12,
+    "zh": "它曾多次横渡大西洋。",
+    "en": "It has sailed across the Atlantic many times."
+  },
+  {
+    "id": 20129,
+    "lesson": 12,
+    "zh": "艾莉森船长八点钟出发，所以我们有充足的时间。",
+    "en": "Captain Alison will set out at eight o'clock, so we'llhave plenty of time."
+  },
+  {
+    "id": 20130,
+    "lesson": 12,
+    "zh": "我们会看到他的船，然后向他告别。",
+    "en": "We'll see his boat and then we'll say goodbye to him."
+  },
+  {
+    "id": 20131,
+    "lesson": 12,
+    "zh": "他将离开两个月。",
+    "en": "He will be away for two months."
+  },
+  {
+    "id": 20132,
+    "lesson": 12,
+    "zh": "我们为他感到非常自豪。",
+    "en": "We are very proud of him."
+  },
+  {
+    "id": 20133,
+    "lesson": 12,
+    "zh": "他将参加一场横跨大西洋的重要比赛。",
+    "en": "He will take part in an important race across the Atlantic."
+  },
+  {
+    "id": 20134,
+    "lesson": 13,
+    "zh": "格林伍德男孩是一群流行歌手。",
+    "en": "The Greenwood Boys are a group of pop singers."
+  },
+  {
+    "id": 20135,
+    "lesson": 13,
+    "zh": "目前，他们正在全国各地进行访问。",
+    "en": "At present, they are visiting all parts of the country."
+  },
+  {
+    "id": 20136,
+    "lesson": 13,
+    "zh": "他们明天就会到达这里。",
+    "en": "They will be arriving here tomorrow."
+  },
+  {
+    "id": 20137,
+    "lesson": 13,
+    "zh": "他们将乘火车前来，镇上的大多数年轻人将在车站迎接他们。",
+    "en": "They will be coming by train and most of.the young people in the town will be meeting them at the station."
+  },
+  {
+    "id": 20138,
+    "lesson": 13,
+    "zh": "明天晚上他们将在工人俱乐部唱歌。",
+    "en": "Tomorrow evening they willbe singing at the Workers'Club."
+  },
+  {
+    "id": 20139,
+    "lesson": 13,
+    "zh": "格林伍德男孩将在这里待五天。",
+    "en": "The Greenwood Boys will be staying for five days."
+  },
+  {
+    "id": 20140,
+    "lesson": 13,
+    "zh": "在此期间，他们将进行五场演出。",
+    "en": "During this time, they willgive five performances."
+  },
+  {
+    "id": 20141,
+    "lesson": 13,
+    "zh": "像往常一样，警察会遇到困难。",
+    "en": "As usual, the police will have a difficult time."
+  },
+  {
+    "id": 20142,
+    "lesson": 13,
+    "zh": "他们将尽力维持秩序。",
+    "en": "They will be trying to keep order."
+  },
+  {
+    "id": 20143,
+    "lesson": 13,
+    "zh": "在这些场合总是一样的。",
+    "en": "It is always the same on these occasions."
+  },
+  {
+    "id": 20144,
+    "lesson": 14,
+    "zh": "去年我有一次有趣的经历。",
+    "en": "I had an amusing experience last year."
+  },
+  {
+    "id": 20145,
+    "lesson": 14,
+    "zh": "离开法国南部的一个小村庄后，我开车前往下一个城镇。",
+    "en": "After I had left a small village in the south of France, I drove on to the next town."
+  },
+  {
+    "id": 20146,
+    "lesson": 14,
+    "zh": "路上，一个年轻人向我招手。",
+    "en": "On the way, a young man waved to me."
+  },
+  {
+    "id": 20147,
+    "lesson": 14,
+    "zh": "我停下来，他请我搭车。",
+    "en": "I stopped and he asked me for a lift."
+  },
+  {
+    "id": 20148,
+    "lesson": 14,
+    "zh": "他一上车，我就用法语对他说早上好，他也用同样的语言回答。",
+    "en": "As soon as he had got into the car, I said good morning to him 5 in French and he replied in the same language."
+  },
+  {
+    "id": 20149,
+    "lesson": 14,
+    "zh": "除了几句话外，我根本不懂法语。",
+    "en": "Apart from a few words, I do not know any French at all."
+  },
+  {
+    "id": 20150,
+    "lesson": 14,
+    "zh": "旅途中我们谁也没说话。",
+    "en": "Neither of us spoke during the journey."
+  },
+  {
+    "id": 20151,
+    "lesson": 14,
+    "zh": "我快要到达城镇时，年轻人突然非常缓慢地说道：“你会说英语吗？”我很快就了解到，他本人就是英国人！",
+    "en": "I had nearly reached the town, when the young man suddenly said, very slowly,'Do you speak English?’As I soon learnt, he was English himself!"
+  },
+  {
+    "id": 20152,
+    "lesson": 15,
+    "zh": "秘书告诉我，先生。",
+    "en": "The secretary told me that Mr."
+  },
+  {
+    "id": 20153,
+    "lesson": 15,
+    "zh": "哈姆斯沃斯会见我。",
+    "en": "Harmsworth would see me."
+  },
+  {
+    "id": 20154,
+    "lesson": 15,
+    "zh": "当我走进他的办公室时，我感到非常紧张。",
+    "en": "I felt very nervous when I went into his office."
+  },
+  {
+    "id": 20155,
+    "lesson": 15,
+    "zh": "当我进来时，他没有从办公桌上抬起头来。",
+    "en": "He did not look up from his desk when I entered."
+  },
+  {
+    "id": 20156,
+    "lesson": 15,
+    "zh": "我坐下后，他说生意很不好。",
+    "en": "After I had sat down, he said that business was very bad."
+  },
+  {
+    "id": 20157,
+    "lesson": 15,
+    "zh": "他告诉我，公司付不起这么高的工资。",
+    "en": "He told me that the firm could not afford to pay such large salaries."
+  },
+  {
+    "id": 20158,
+    "lesson": 15,
+    "zh": "已经有二十人离开了。",
+    "en": "Twenty people had already left."
+  },
+  {
+    "id": 20159,
+    "lesson": 15,
+    "zh": "我知道轮到我了。",
+    "en": "I knew that my turn had come."
+  },
+  {
+    "id": 20160,
+    "lesson": 15,
+    "zh": "哈姆斯沃斯，”我用微弱的声音说道。",
+    "en": "Harmsworth,'I said in a weak voice."
+  },
+  {
+    "id": 20161,
+    "lesson": 15,
+    "zh": "“别打扰，”他说。",
+    "en": "'Don't interrupt,'he said."
+  },
+  {
+    "id": 20162,
+    "lesson": 15,
+    "zh": "第一单元第 15 课 8 他给了你什么？",
+    "en": "Unit 1 Lesson 15 8 What did he offer you?"
+  },
+  {
+    "id": 20163,
+    "lesson": 15,
+    "zh": "仔细研究这些句子。",
+    "en": "Study these sentences carefully."
+  },
+  {
+    "id": 20164,
+    "lesson": 15,
+    "zh": "练习 练习 A 这些问题是关于文章的。",
+    "en": "Exercises 练习 A These questions are about the passage."
+  },
+  {
+    "id": 20165,
+    "lesson": 15,
+    "zh": "写一个完整的句子来回答每个问题。 1 a 秘书告诉我什么了？ b 秘书的原话是什么？",
+    "en": "Write a complete sentence in answer to each question. 1 a What did the secretary tell me? b What were the secretary's exact words?"
+  },
+  {
+    "id": 20166,
+    "lesson": 15,
+    "zh": "第一单元 第 15 课 2 a 先生做了什么？",
+    "en": "Unit 1 Lesson 15 2 a What did Mr."
+  },
+  {
+    "id": 20167,
+    "lesson": 15,
+    "zh": "哈姆斯沃斯在我坐下后说？ b 先生是什么？",
+    "en": "Harmsworth say after I had sat down? b What were Mr."
+  },
+  {
+    "id": 20168,
+    "lesson": 15,
+    "zh": "哈姆斯沃斯的原话是什么？ 3 先生做了什么？",
+    "en": "Harmsworth's exact words? 3 What did Mr."
+  },
+  {
+    "id": 20169,
+    "lesson": 15,
+    "zh": "Harmsworth 能告诉我有关该公司的信息吗？ b 先生是什么？",
+    "en": "Harmsworth tell me about the firm? b What were Mr."
+  },
+  {
+    "id": 20170,
+    "lesson": 15,
+    "zh": "哈姆斯沃斯的原话是什么？",
+    "en": "Harmsworth's exact words?"
+  },
+  {
+    "id": 20171,
+    "lesson": 15,
+    "zh": "B 供应在以下句子中所说或告知。",
+    "en": "B Supply said or told in the following sentences."
+  },
+  {
+    "id": 20172,
+    "lesson": 15,
+    "zh": "请给出括号内动词的正确形式。 1 他告诉我她明天（来）。 2 园丁昨天砍倒了那棵树。 3 我你我以前从未打过网球。 4 什么。他他（做）？当他你那个他。 （买）这辆车？ 6 他他（不能）理解我。 7 他。他昨天（工作）了一整天。 8 他从不给任何人写信。 9 为什么你觉得你很忙？他说他（会等）我。",
+    "en": "Give the correct form of the verbs in parentheses. 1 He me that she (come)tomorrow. 2 The gardener that he (cut)that tree down yesterday. 3 I you I (have)never played tennis before. 4 What. he that he (do)? 5 When he you that he. (buy)this car? 6 He he (cannot)understand me. 7 He. that he (work)all day yesterday. 8 He me he never (write)letters to anybody. 9 Why you that you (be)busy? 10 He that he (will wait)for me."
+  },
+  {
+    "id": 20173,
+    "lesson": 15,
+    "zh": "特殊困难 难点 b 办公室(1.2)、书房、书桌(1.3)。",
+    "en": "Special difficulties 难点 b Office(1.2), Study, Desk(1.3)."
+  },
+  {
+    "id": 20174,
+    "lesson": 15,
+    "zh": "研究这些例子：c Afford(1.4)。",
+    "en": "Study these examples: c Afford(1.4)."
+  },
+  {
+    "id": 20175,
+    "lesson": 15,
+    "zh": "研究这些例子：在下面的句子中提供上述任何单词。 1 我们将把新房子里的空余房间用作 2 史密斯在律师事务所工作的地方。 3 她感觉非常好。 _飞机起飞前。",
+    "en": "Study these examples: Supply any of the above words in the sentences below. 1 We shall use the spare room in our new house as a 2 Smith works in alawyer's. 3 She felt very. _before the plane took off."
+  },
+  {
+    "id": 20176,
+    "lesson": 15,
+    "zh": "Unit 1 Lesson 15 4 我每周只能支付 100 英镑的租金。自从生病以来，他一直很不舒服。",
+    "en": "Unit 1 Lesson 15 4 I can only to pay £100 a week rent. 5 Since his illness he has been very ."
+  },
+  {
+    "id": 20177,
+    "lesson": 15,
+    "zh": "他总是发脾气。 1 作者感到紧张，因为 (a)Mr.",
+    "en": "He is always losing his temper. 1 The writer felt nervous because (a)Mr."
+  },
+  {
+    "id": 20178,
+    "lesson": 15,
+    "zh": "哈姆斯沃思想见他 (b) 秘书告诉他，先生。",
+    "en": "Harmsworth wanted to see him (b)the secretary told him that Mr."
+  },
+  {
+    "id": 20179,
+    "lesson": 15,
+    "zh": "Harmsworth 想见他 (c) 生意很糟糕 (d) 他以为他会丢掉工作 2 作者 (a) 预计会收到一些额外的钱 (b) 收到一些额外的钱感到惊讶 (c) 想要收到一些额外的钱 (d) 要求一些额外的钱 句型 3 '先生。",
+    "en": "Harmsworth wanted to see him (c)business was very bad (d)he thought he would lose his job 2 The writer (a)expected to receive some extra money (b)was surprised to receive some extra money (c)wanted to receive some extra money (d)asked for some extra money Structure 句型 3 'Mr."
+  },
+  {
+    "id": 20180,
+    "lesson": 15,
+    "zh": "哈姆斯沃思见，”秘书说。 (a) 会 (b) 会 (c) 会 (d) 会吗 4 他有感觉吗？",
+    "en": "Harmsworth see you,'the secretary said. (a)would (b)shall (c)will (d)could 4 did he feel?"
+  },
+  {
+    "id": 20181,
+    "lesson": 15,
+    "zh": "非常紧张。 (a)什么 (b)如何 (c)多少 (d)公司无法支付。高薪。 (a)这样 (b)这样 (c)这样 (d)这样 6 转是吗？",
+    "en": "Very nervous. (a)What (b)How (c)How much (d)Which 5 The firm couldn't pay. large salaries. (a)so (b)such a (c)such (d)a such 6 turn is it?"
+  },
+  {
+    "id": 20182,
+    "lesson": 15,
+    "zh": "轮到你了。 (a)哪个 (b)给谁 (c)谁 (d)谁的 7'先生。",
+    "en": "It's your turn. (a)Which (b)To whom (c)Whom (d)Whose 7'Mr."
+  },
+  {
+    "id": 20183,
+    "lesson": 15,
+    "zh": "哈姆斯沃斯，”我用微弱的声音说道。词汇 8 Mr. 下的(a)(b)与(c)(d)",
+    "en": "Harmsworth,'I said a weak voice. (a)in (b)with (c)on (d)under Vocabulary 词 汇 8 Mr."
+  },
+  {
+    "id": 20184,
+    "lesson": 15,
+    "zh": "哈姆斯沃斯想见我。",
+    "en": "Harmsworth wanted to see me."
+  },
+  {
+    "id": 20185,
+    "lesson": 15,
+    "zh": "他想要我。 (a)看 (b)看 (c)寻找 (d)与 9 我感到紧张，因为我感到 (a)生气 (b)生气 (c)焦虑 (d)生病 轮到你了。 (a) 这是你的队伍 (b) 这是你的队伍 (c) 下一个是你 (d) 这是你的机会 11 不要打扰！",
+    "en": "He wanted to me. (a)watch (b)look at (c)look for (d)speak to 9 I felt nervous because I felt (a)angry (b)cross (c)anxious (d)ill 10 It's your turn. (a)It's your line (b)It's your row (c)You're next (d)It's your chance 11 Don't interrupt!"
+  },
+  {
+    "id": 20186,
+    "lesson": 15,
+    "zh": "不。 (a) 说话 (b) 说话 (c) 一边说话一边说话 (d) 切断 12 作者每年将额外获得 1,000 英镑。",
+    "en": "Don't. (a)speak (b)talk (c)talk while I'm talking (d)cut off 12 The writer would receive an extra f£1,000 a year."
+  },
+  {
+    "id": 20187,
+    "lesson": 15,
+    "zh": "他每年将获得 f1,000 (a) 减去 (b) 更多 (c) 超过 (d) 重写这句话，然后根据文本检查你的答案。",
+    "en": "He would get f1,000 a year (a)less (b)more (c)over (d)up Rewrite this sentence, then check your answer against the text."
+  },
+  {
+    "id": 20188,
+    "lesson": 15,
+    "zh": "公司没有钱支付这么高的工资。",
+    "en": "The firm hadn't the money to pay such large salaries."
+  },
+  {
+    "id": 20189,
+    "lesson": 15,
+    "zh": "公司不能",
+    "en": "The firm couldn't"
+  },
+  {
+    "id": 20190,
+    "lesson": 16,
+    "zh": "如果你把车停错地方，交警很快就会发现。",
+    "en": "If you park your car in the wrong place, a traffic policeman will soon find it."
+  },
+  {
+    "id": 20191,
+    "lesson": 16,
+    "zh": "如果他不带票就放你走，那你就很幸运了。",
+    "en": "You will be very lucky if he lets you go without a ticket."
+  },
+  {
+    "id": 20192,
+    "lesson": 16,
+    "zh": "然而，这种情况并不总是发生。",
+    "en": "However, this does not always happen."
+  },
+  {
+    "id": 20193,
+    "lesson": 16,
+    "zh": "交警有时很有礼貌。",
+    "en": "Traffic police are sometimes very polite."
+  },
+  {
+    "id": 20194,
+    "lesson": 16,
+    "zh": "在瑞典度假期间，我发现了这个。我的车上写着：‘先生，我们欢迎您来到我们的城市。",
+    "en": "During a holiday in Sweden, I found this. note on my car:'Sir, we welcome you to our city."
+  },
+  {
+    "id": 20195,
+    "lesson": 16,
+    "zh": "这是“禁止停车”区域。",
+    "en": "This is a \"No Parking\"area."
+  },
+  {
+    "id": 20196,
+    "lesson": 16,
+    "zh": "如果您留意我们的街道标志，您将会在这里享受愉快的住宿体验。",
+    "en": "You will enjoy your stay here if you pay attention to our street signs."
+  },
+  {
+    "id": 20197,
+    "lesson": 16,
+    "zh": "这条注释只是一个提醒。",
+    "en": "This note is only a reminder."
+  },
+  {
+    "id": 20198,
+    "lesson": 16,
+    "zh": "‘如果你收到这样的请求，你就不能不遵守！",
+    "en": "'If you receive a request like this, you cannot fail to obey it!"
+  },
+  {
+    "id": 20199,
+    "lesson": 17,
+    "zh": "我的阿姨詹妮弗是一名演员。",
+    "en": "My aunt Jennifer is an actress."
+  },
+  {
+    "id": 20200,
+    "lesson": 17,
+    "zh": "她必须至少三十五岁。",
+    "en": "She must be at least thirty-five years old."
+  },
+  {
+    "id": 20201,
+    "lesson": 17,
+    "zh": "尽管如此，她还是经常以年轻女孩的身份出现在舞台上。",
+    "en": "In spite of this, she often appears on the stage as a young girl."
+  },
+  {
+    "id": 20202,
+    "lesson": 17,
+    "zh": "詹妮弗很快就要参加一部新剧了。",
+    "en": "Jennifer will have to take part in a new play soon."
+  },
+  {
+    "id": 20203,
+    "lesson": 17,
+    "zh": "这一次，她将是一个十七岁的女孩。",
+    "en": "This time, she willbe a girl of seventeen."
+  },
+  {
+    "id": 20204,
+    "lesson": 17,
+    "zh": "在剧中，她必须穿着鲜红色的连衣裙和长长的黑色丝袜出现。",
+    "en": "In the play, she must appear in a bright red dress and long black stockings."
+  },
+  {
+    "id": 20205,
+    "lesson": 17,
+    "zh": "去年在另一部戏中，她必须穿短袜和鲜艳的橙色连衣裙。",
+    "en": "Last year in another play, she had to wear short socks and abright, orange-coloured dress."
+  },
+  {
+    "id": 20206,
+    "lesson": 17,
+    "zh": "如果有人问她多大了，她总是回答：“亲爱的，长大一定很可怕！”",
+    "en": "If anyone ever asks her how old she is, she always answers,'Darling, it must be terrible to be grown up!"
+  },
+  {
+    "id": 20207,
+    "lesson": 18,
+    "zh": "在乡村酒吧吃完午饭后，我寻找我的包。",
+    "en": "After I had had lunch at a village pub, I looked for my bag."
+  },
+  {
+    "id": 20208,
+    "lesson": 18,
+    "zh": "我把它放在门边的椅子上，但现在它不在那儿了！",
+    "en": "I had left it on a chair beside the door and now it wasn't there!"
+  },
+  {
+    "id": 20209,
+    "lesson": 18,
+    "zh": "正当我寻找的时候，房东进来了。",
+    "en": "As I was looking for it, the landlord came in."
+  },
+  {
+    "id": 20210,
+    "lesson": 18,
+    "zh": "‘你吃得好吗？",
+    "en": "'Did you have a good meal?"
+  },
+  {
+    "id": 20211,
+    "lesson": 18,
+    "zh": "”他问道。",
+    "en": "'he asked."
+  },
+  {
+    "id": 20212,
+    "lesson": 18,
+    "zh": "“是的，谢谢你，”我回答道，“但我付不起账单。”",
+    "en": "'Yes, thank you,'I answered,'but I can't pay the bill."
+  },
+  {
+    "id": 20213,
+    "lesson": 18,
+    "zh": "我还没拿到我的包。",
+    "en": "I haven't got my bag."
+  },
+  {
+    "id": 20214,
+    "lesson": 18,
+    "zh": "” 房东笑了笑，立刻出去了。",
+    "en": "' The landlord smiled and immediately went out."
+  },
+  {
+    "id": 20215,
+    "lesson": 18,
+    "zh": "几分钟后，他带着我的包回来了，并把它还给了我。",
+    "en": "In a few min- utes he returned with my bag and gave it back to me."
+  },
+  {
+    "id": 20216,
+    "lesson": 18,
+    "zh": "“我很抱歉，”他说。",
+    "en": "'I'm very sorry,'he said."
+  },
+  {
+    "id": 20217,
+    "lesson": 18,
+    "zh": "“我的狗把它带到了花园里。",
+    "en": "'My dog had taken it into the garden."
+  },
+  {
+    "id": 20218,
+    "lesson": 18,
+    "zh": "他经常这样做！",
+    "en": "He often does this!"
+  },
+  {
+    "id": 20219,
+    "lesson": 19,
+    "zh": "“比赛随时可能开始，”我说。",
+    "en": "'The play may begin at any moment,'I said."
+  },
+  {
+    "id": 20220,
+    "lesson": 19,
+    "zh": "“可能已经开始了，”苏珊回答道。",
+    "en": "'It may have begun already,'Susan answered."
+  },
+  {
+    "id": 20221,
+    "lesson": 19,
+    "zh": "我赶紧跑到售票处。",
+    "en": "I hurried to the ticket office."
+  },
+  {
+    "id": 20222,
+    "lesson": 19,
+    "zh": "“能给我两张票吗？”我问道。",
+    "en": "'May I have two tickets please?’I asked."
+  },
+  {
+    "id": 20223,
+    "lesson": 19,
+    "zh": "“对不起，我们已经卖完了，”女孩说。",
+    "en": "'I’m sorry, we've sold out,'the girl said."
+  },
+  {
+    "id": 20224,
+    "lesson": 19,
+    "zh": "'真可惜！",
+    "en": "'What a pity!"
+  },
+  {
+    "id": 20225,
+    "lesson": 19,
+    "zh": "”苏珊惊呼道。",
+    "en": "'Susan exclaimed."
+  },
+  {
+    "id": 20226,
+    "lesson": 19,
+    "zh": "就在这时，一名男子急匆匆地来到售票处。",
+    "en": "Just then, a man hurried to the ticket office."
+  },
+  {
+    "id": 20227,
+    "lesson": 19,
+    "zh": "“我可以退这两张票吗？",
+    "en": "'Can I return these two tickets?"
+  },
+  {
+    "id": 20228,
+    "lesson": 19,
+    "zh": "”他问道。",
+    "en": "'he asked."
+  },
+  {
+    "id": 20229,
+    "lesson": 19,
+    "zh": "“当然，”女孩说。",
+    "en": "'Certainly,'the girl said."
+  },
+  {
+    "id": 20230,
+    "lesson": 19,
+    "zh": "我立即回到售票处。",
+    "en": "I went back to the ticket office at once."
+  },
+  {
+    "id": 20231,
+    "lesson": 19,
+    "zh": "“能给我那两张票吗？”我问。",
+    "en": "'Could I have those two tickets please?’I asked."
+  },
+  {
+    "id": 20232,
+    "lesson": 19,
+    "zh": "“当然可以，”女孩说，“但它们是为了下周三的表演准备的。”",
+    "en": "'Certainly,'the girl said,'but they're for next Wednesday's performance."
+  },
+  {
+    "id": 20233,
+    "lesson": 19,
+    "zh": "你还想要它们吗？",
+    "en": "Do you still want them?"
+  },
+  {
+    "id": 20234,
+    "lesson": 19,
+    "zh": "” “我还不如拥有它们，”我悲伤地说。",
+    "en": "' 'I might as well have them,'I said sadly."
+  },
+  {
+    "id": 20235,
+    "lesson": 20,
+    "zh": "钓鱼是我最喜欢的运动。",
+    "en": "Fishing is my favourite sport."
+  },
+  {
+    "id": 20236,
+    "lesson": 20,
+    "zh": "我经常钓鱼几个小时却什么也没钓到。",
+    "en": "I often fish for hours without catching anything."
+  },
+  {
+    "id": 20237,
+    "lesson": 20,
+    "zh": "但这并不让我担心。",
+    "en": "But this does not worry me."
+  },
+  {
+    "id": 20238,
+    "lesson": 20,
+    "zh": "有些渔民就很不幸。",
+    "en": "Some fishermen are unlucky."
+  },
+  {
+    "id": 20239,
+    "lesson": 20,
+    "zh": "他们不是抓鱼，而是抓旧靴子和垃圾。",
+    "en": "Instead of catching fish, they catch old boots and rubbish."
+  },
+  {
+    "id": 20240,
+    "lesson": 20,
+    "zh": "我就更不幸运了。",
+    "en": "I am even less lucky."
+  },
+  {
+    "id": 20241,
+    "lesson": 20,
+    "zh": "我从来没有抓到过任何东西——甚至是旧靴子。",
+    "en": "I never catch anything—not even old boots."
+  },
+  {
+    "id": 20242,
+    "lesson": 20,
+    "zh": "在河上度过整个早上后，我总是空着袋子回家。",
+    "en": "After having spent whole mornings on the river, I always go home with an empty bag."
+  },
+  {
+    "id": 20243,
+    "lesson": 20,
+    "zh": "“你必须放弃钓鱼！",
+    "en": "'You must give up fishing!"
+  },
+  {
+    "id": 20244,
+    "lesson": 20,
+    "zh": "'我的朋友们说。",
+    "en": "'my friends say."
+  },
+  {
+    "id": 20245,
+    "lesson": 20,
+    "zh": "'这是浪费时间。",
+    "en": "'It's a waste of time."
+  },
+  {
+    "id": 20246,
+    "lesson": 20,
+    "zh": "“但他们没有意识到一件重要的事情。",
+    "en": "'But they don't realize one important thing."
+  },
+  {
+    "id": 20247,
+    "lesson": 20,
+    "zh": "我对钓鱼不太感兴趣。",
+    "en": "I'm not really interested in fishing."
+  },
+  {
+    "id": 20248,
+    "lesson": 20,
+    "zh": "我只对坐在船上什么都不做感兴趣！",
+    "en": "I am only interested in sitting in a boat and doing nothing at all!"
+  },
+  {
+    "id": 20249,
+    "lesson": 21,
+    "zh": "飞机慢慢地让我发疯。",
+    "en": "Aeroplanes are slowly driving me mad."
+  },
+  {
+    "id": 20250,
+    "lesson": 21,
+    "zh": "我住在机场附近，白天和黑夜都能听到飞机飞过的声音。",
+    "en": "I live near an airport and passing planes can be heard night and day."
+  },
+  {
+    "id": 20251,
+    "lesson": 21,
+    "zh": "该机场是几年前建成的，但由于某种原因当时无法使用。",
+    "en": "The airport was built years ago, but for some reason it could not be used then."
+  },
+  {
+    "id": 20252,
+    "lesson": 21,
+    "zh": "然而，去年它开始使用。",
+    "en": "Last year, however, it came into use."
+  },
+  {
+    "id": 20253,
+    "lesson": 21,
+    "zh": "肯定有一百多人被噪音赶出了家门。",
+    "en": "Over a hundred people must have been driven away from their homes by the noise."
+  },
+  {
+    "id": 20254,
+    "lesson": 21,
+    "zh": "我是剩下的少数人之一。",
+    "en": "I am one of the few people left."
+  },
+  {
+    "id": 20255,
+    "lesson": 21,
+    "zh": "有时我想这房子会被飞过的飞机撞倒。",
+    "en": "Sometimes I think this house will be knocked down by a passing plane."
+  },
+  {
+    "id": 20256,
+    "lesson": 21,
+    "zh": "有人向我提供一大笔钱让我离开，但我决心留在这里。",
+    "en": "I have been offered a large sum of money to go away, but I am determined to stay here."
+  },
+  {
+    "id": 20257,
+    "lesson": 21,
+    "zh": "每个人都说我一定生气了，他们可能是对的。",
+    "en": "Everybody says I must be mad and they are probably right."
+  },
+  {
+    "id": 20258,
+    "lesson": 22,
+    "zh": "我的女儿简做梦也没想到会收到一封来自荷兰同龄女孩的来信。",
+    "en": "My daughter, Jane, never dreamed of receiving a letter from a girl of her own age in Holland."
+  },
+  {
+    "id": 20259,
+    "lesson": 22,
+    "zh": "去年，我们横渡英吉利海峡时，简将一张写有她的名字和地址的纸放入瓶子中。",
+    "en": "Last year, we were travelling across the Channel and Jane put a piece of paper with her name and address on it into a bottle."
+  },
+  {
+    "id": 20260,
+    "lesson": 22,
+    "zh": "她把瓶子扔进了海里。",
+    "en": "She threw the bottle into the sea."
+  },
+  {
+    "id": 20261,
+    "lesson": 22,
+    "zh": "她再也没有想到，十个月后，她收到一封来自荷兰女孩的来信。",
+    "en": "She never thought of it again, but ten months later, she received a letter from a girl in Holland."
+  },
+  {
+    "id": 20262,
+    "lesson": 22,
+    "zh": "两个女孩现在定期给对方写信。",
+    "en": "Both girls write to each other regularly now."
+  },
+  {
+    "id": 20263,
+    "lesson": 22,
+    "zh": "然而，他们决定使用邮局。",
+    "en": "However, they have decided to use the post office."
+  },
+  {
+    "id": 20264,
+    "lesson": 22,
+    "zh": "信件会花费更多一些，但它们肯定会传送得更快。",
+    "en": "Letters will cost a little more, but they will certainly travel faster."
+  },
+  {
+    "id": 20265,
+    "lesson": 23,
+    "zh": "昨天我收到了姐姐的来信。",
+    "en": "I had a letter from my sister yesterday."
+  },
+  {
+    "id": 20266,
+    "lesson": 23,
+    "zh": "她住在尼日利亚。",
+    "en": "She lives in Nigeria."
+  },
+  {
+    "id": 20267,
+    "lesson": 23,
+    "zh": "她在信中说她明年要来英国。",
+    "en": "In her letter, she said that she would come to England next year."
+  },
+  {
+    "id": 20268,
+    "lesson": 23,
+    "zh": "如果她来的话，她会得到一个惊喜。",
+    "en": "If she comes, she will get a surprise."
+  },
+  {
+    "id": 20269,
+    "lesson": 23,
+    "zh": "我们现在住在乡下一栋漂亮的新房子里。",
+    "en": "We are now living in a beautiful new house in the country."
+  },
+  {
+    "id": 20270,
+    "lesson": 23,
+    "zh": "在我姐姐离开之前，这项工作就已经开始了。",
+    "en": "Work on it had begun before my sister left."
+  },
+  {
+    "id": 20271,
+    "lesson": 23,
+    "zh": "房子是五个月前竣工的。",
+    "en": "The house was completed five months ago."
+  },
+  {
+    "id": 20272,
+    "lesson": 23,
+    "zh": "在我的信中，我告诉她她可以和我们住在一起。",
+    "en": "In my letter, I told her that she could stay with us."
+  },
+  {
+    "id": 20273,
+    "lesson": 23,
+    "zh": "房子有许多大房间，还有一个美丽的花园。",
+    "en": "The house has many large rooms and there is a lovely garden."
+  },
+  {
+    "id": 20274,
+    "lesson": 23,
+    "zh": "这是一座非常现代的房子，所以对一些人来说看起来很奇怪。",
+    "en": "It is a very modern house, so it looks strange to some people."
+  },
+  {
+    "id": 20275,
+    "lesson": 23,
+    "zh": "它肯定是该地区唯一的现代住宅。",
+    "en": "It must be the only modern house in the district."
+  },
+  {
+    "id": 20276,
+    "lesson": 24,
+    "zh": "我走进酒店经理办公室坐下。",
+    "en": "I entered the hotel manager's office and sat down."
+  },
+  {
+    "id": 20277,
+    "lesson": 24,
+    "zh": "我刚刚失去了 f50，我感到非常沮丧。",
+    "en": "I had just lost f50 and Ifelt very upset."
+  },
+  {
+    "id": 20278,
+    "lesson": 24,
+    "zh": "“我把钱留在房间里了，”我说，“但现在它不在那儿了。”",
+    "en": "'Ileft the money in my room,'I said,'and it's not there now."
+  },
+  {
+    "id": 20279,
+    "lesson": 24,
+    "zh": "“经理很同情，但他无能为力。",
+    "en": "'The manager was sympathetic, but he could do nothing."
+  },
+  {
+    "id": 20280,
+    "lesson": 24,
+    "zh": "“现在每个人都在赔钱，”他说。",
+    "en": "'Everyone's losing money these days,'he said."
+  },
+  {
+    "id": 20281,
+    "lesson": 24,
+    "zh": "他开始抱怨这个邪恶的世界，却被敲门声打断了。",
+    "en": "He started 5 to complain about this wicked world but was interrupted by a knock at the door."
+  },
+  {
+    "id": 20282,
+    "lesson": 24,
+    "zh": "一个女孩进来，把一个信封放在他的桌子上。",
+    "en": "A girl came in and put an envelope on his desk."
+  },
+  {
+    "id": 20283,
+    "lesson": 24,
+    "zh": "它含有f50。",
+    "en": "It contained f50."
+  },
+  {
+    "id": 20284,
+    "lesson": 24,
+    "zh": "“我在这位先生的房间外面发现了这个，”她说。",
+    "en": "'I found this outside this gentleman's room,'she said."
+  },
+  {
+    "id": 20285,
+    "lesson": 24,
+    "zh": "“好吧，”我对经理说，“这个世界上还是有一些诚实的！”",
+    "en": "'Well,'I said to the manager,'there is still some honesty in this world!"
+  },
+  {
+    "id": 20286,
+    "lesson": 25,
+    "zh": "我终于到达伦敦了。",
+    "en": "I arrived in London at last."
+  },
+  {
+    "id": 20287,
+    "lesson": 25,
+    "zh": "火车站又大又黑。",
+    "en": "The railway station was big, black and dark."
+  },
+  {
+    "id": 20288,
+    "lesson": 25,
+    "zh": "我不知道去酒店的路，所以我问了一个搬运工。",
+    "en": "I did not know the way to my hotel, so I asked a porter."
+  },
+  {
+    "id": 20289,
+    "lesson": 25,
+    "zh": "我不仅英语说得很仔细，而且说得也很清楚。",
+    "en": "I not only spoke English very carefully, but very clearly as well."
+  },
+  {
+    "id": 20290,
+    "lesson": 25,
+    "zh": "然而，搬运工无法理解我的意思。",
+    "en": "The porter, however, could not understand me."
+  },
+  {
+    "id": 20291,
+    "lesson": 25,
+    "zh": "我重复了好几次我的问题，最后他明白了。",
+    "en": "I repeated my question 5 several times and at last he understood."
+  },
+  {
+    "id": 20292,
+    "lesson": 25,
+    "zh": "他回答了我，但语速既不慢也不清晰。",
+    "en": "He answered me, but he spoke neither slowly nor clearly."
+  },
+  {
+    "id": 20293,
+    "lesson": 25,
+    "zh": "“我是外国人，”我说。",
+    "en": "'Iam a foreigner,'I said."
+  },
+  {
+    "id": 20294,
+    "lesson": 25,
+    "zh": "然后他说话很慢，但我听不懂。",
+    "en": "Then he spoke slowly, but I could not understand him."
+  },
+  {
+    "id": 20295,
+    "lesson": 25,
+    "zh": "我的老师从来没有这样说过英语！",
+    "en": "My teacher never spoke English like that!"
+  },
+  {
+    "id": 20296,
+    "lesson": 25,
+    "zh": "我和搬运工相视一笑。",
+    "en": "The porter and I looked at each other and smiled."
+  },
+  {
+    "id": 20297,
+    "lesson": 25,
+    "zh": "然后他说了一些话，我就明白了。",
+    "en": "Then he said something and Iunderstood it."
+  },
+  {
+    "id": 20298,
+    "lesson": 25,
+    "zh": "“你很快就能学会英语了！",
+    "en": "'You'll soon learn English!"
+  },
+  {
+    "id": 20299,
+    "lesson": 25,
+    "zh": "”他说。",
+    "en": "'he said."
+  },
+  {
+    "id": 20300,
+    "lesson": 25,
+    "zh": "我想知道。",
+    "en": "I wonder."
+  },
+  {
+    "id": 20301,
+    "lesson": 25,
+    "zh": "在英格兰，每个人都说不同的语言。",
+    "en": "In England, 10 each person speaks a different language."
+  },
+  {
+    "id": 20302,
+    "lesson": 25,
+    "zh": "英国人互相听得懂，但我听不懂他们！",
+    "en": "The English understand each other, but I don't understand them!"
+  },
+  {
+    "id": 20303,
+    "lesson": 25,
+    "zh": "他们会说英语吗？",
+    "en": "Do they speak English?"
+  },
+  {
+    "id": 20304,
+    "lesson": 26,
+    "zh": "我是一名艺术学生，我画了很多画。",
+    "en": "I am an art student and I paint a lot of pictures."
+  },
+  {
+    "id": 20305,
+    "lesson": 26,
+    "zh": "许多人假装他们了解现代艺术。",
+    "en": "Many people pretend that they understand modern art."
+  },
+  {
+    "id": 20306,
+    "lesson": 26,
+    "zh": "他们总是告诉你照片是“关于”什么的。",
+    "en": "They always tell you what apicture is 'about'."
+  },
+  {
+    "id": 20307,
+    "lesson": 26,
+    "zh": "当然，许多图片并不是“关于”任何事情。",
+    "en": "Of course, many pictures are not 'about'anything."
+  },
+  {
+    "id": 20308,
+    "lesson": 26,
+    "zh": "它们只是漂亮的图案。",
+    "en": "They are just pretty patterns."
+  },
+  {
+    "id": 20309,
+    "lesson": 26,
+    "zh": "我们喜欢它们就像喜欢漂亮的窗帘材料一样。",
+    "en": "We like them in the same way that we like pretty curtain material."
+  },
+  {
+    "id": 20310,
+    "lesson": 26,
+    "zh": "我认为小孩子往往比其他人更欣赏现代图画。",
+    "en": "I think that young children often appreciate modern pictures better than anyone else."
+  },
+  {
+    "id": 20311,
+    "lesson": 26,
+    "zh": "他们注意到更多。",
+    "en": "They notice more."
+  },
+  {
+    "id": 20312,
+    "lesson": 26,
+    "zh": "我姐姐只有七岁，但她总是告诉我我的照片好不好。",
+    "en": "My sister is only seven, but she always tells me whether my pictures are good or not."
+  },
+  {
+    "id": 20313,
+    "lesson": 26,
+    "zh": "她昨天进了我的房间。",
+    "en": "She came into my room yesterday."
+  },
+  {
+    "id": 20314,
+    "lesson": 26,
+    "zh": "“你在干什么？”",
+    "en": "'What are you doing?"
+  },
+  {
+    "id": 20315,
+    "lesson": 26,
+    "zh": "她问道。",
+    "en": "'she asked."
+  },
+  {
+    "id": 20316,
+    "lesson": 26,
+    "zh": "“我把这幅画挂在墙上，”我回答道。",
+    "en": "'I’m hanging this picture on the wall,'I answered."
+  },
+  {
+    "id": 20317,
+    "lesson": 26,
+    "zh": "'这是一件新的。",
+    "en": "'It's a new one."
+  },
+  {
+    "id": 20318,
+    "lesson": 26,
+    "zh": "你喜欢它？",
+    "en": "Do you like it?"
+  },
+  {
+    "id": 20319,
+    "lesson": 26,
+    "zh": "’她批判地看了一会儿。",
+    "en": "' She looked at it critically for a moment."
+  },
+  {
+    "id": 20320,
+    "lesson": 26,
+    "zh": "“没关系，”她说，“但是不是颠倒了吗？”",
+    "en": "'It's all right,'she said,'but isn't it upside down?"
+  },
+  {
+    "id": 20321,
+    "lesson": 26,
+    "zh": "’我又看了一遍。",
+    "en": "' I looked at it again."
+  },
+  {
+    "id": 20322,
+    "lesson": 26,
+    "zh": "她是对的！",
+    "en": "She was right!"
+  },
+  {
+    "id": 20323,
+    "lesson": 26,
+    "zh": "是的！",
+    "en": "It was!"
+  },
+  {
+    "id": 20324,
+    "lesson": 27,
+    "zh": "下午晚些时候，孩子们在田野中央搭起了帐篷。",
+    "en": "Late in the afternoon, the boys put up their tent in the middle of a field."
+  },
+  {
+    "id": 20325,
+    "lesson": 27,
+    "zh": "这一切一完成，他们就在明火上做饭。",
+    "en": "As soon as this was done, they cooked a meal over an open fire."
+  },
+  {
+    "id": 20326,
+    "lesson": 27,
+    "zh": "他们都很饿，食物的味道也很香。",
+    "en": "They were all hungry and the food smelled good."
+  },
+  {
+    "id": 20327,
+    "lesson": 27,
+    "zh": "一顿美餐后，他们在篝火旁讲故事、唱歌。但过了一段时间，开始下雨了。",
+    "en": "After a wonderful meal, they told stories and sang songs by the campfire. 5 But some time later it began to rain."
+  },
+  {
+    "id": 20328,
+    "lesson": 27,
+    "zh": "男孩们感到累了，所以他们扑灭了火，爬进了帐篷。",
+    "en": "The boys felt tired so they put out the fire and crept into their tent."
+  },
+  {
+    "id": 20329,
+    "lesson": 27,
+    "zh": "他们的睡袋又暖和又舒服，所以他们都睡得很香。",
+    "en": "Their sleeping bags were warm and comfortable, so they all slept soundly."
+  },
+  {
+    "id": 20330,
+    "lesson": 27,
+    "zh": "半夜，两个男孩醒来并开始大喊大叫。",
+    "en": "In the middle of the night, two boys woke up and began shouting."
+  },
+  {
+    "id": 20331,
+    "lesson": 27,
+    "zh": "帐篷里全是水！",
+    "en": "The tent was full of water!"
+  },
+  {
+    "id": 20332,
+    "lesson": 27,
+    "zh": "他们都从睡袋里跳出来，急忙往外走。",
+    "en": "They all leapt out of their sleeping bags and hurried outside."
+  },
+  {
+    "id": 20333,
+    "lesson": 27,
+    "zh": "雨下得很大，他们发现田野里形成了一条小溪。",
+    "en": "It was raining heavily and they found that a 10 stream had formed in the field."
+  },
+  {
+    "id": 20334,
+    "lesson": 27,
+    "zh": "小溪蜿蜒穿过田野，然后就流到了他们的帐篷下面！",
+    "en": "The stream wound its way across the field and then flowed right under their tent!"
+  },
+  {
+    "id": 20335,
+    "lesson": 28,
+    "zh": "听录音，然后回答问题。",
+    "en": "First listen and then answer the question."
+  },
+  {
+    "id": 20336,
+    "lesson": 28,
+    "zh": "贾斯珀·怀特是少数相信古代神话的人之一。",
+    "en": "Jasper White is one of those rare people who believes in ancient myths."
+  },
+  {
+    "id": 20337,
+    "lesson": 28,
+    "zh": "他刚刚在城里买了一套新房子，但自从搬进去后，他就与汽车和车主发生了麻烦。",
+    "en": "He has just bought a new house in the city, but ever since he moved in, he has had trouble with cars and their owners."
+  },
+  {
+    "id": 20338,
+    "lesson": 28,
+    "zh": "晚上回到家，他总是发现有人把车停在自家门外。",
+    "en": "When he returns home at night, he always finds that someone has parked a car outside his gate."
+  },
+  {
+    "id": 20339,
+    "lesson": 28,
+    "zh": "因此，他一次也无法将自己的车开进车库。",
+    "en": "Because of this.he has not been able to get his own car into his garage even once."
+  },
+  {
+    "id": 20340,
+    "lesson": 28,
+    "zh": "贾斯珀在他的门外张贴了“禁止停车”的标志，但这些并没有产生任何效果。",
+    "en": "Jasper has put up 'No Parking' signs outside his gate, but these have not had any effect."
+  },
+  {
+    "id": 20341,
+    "lesson": 28,
+    "zh": "现在他在门上放了一个丑陋的石头头。",
+    "en": "Now he has put an ugly stone head over the gate."
+  },
+  {
+    "id": 20342,
+    "lesson": 28,
+    "zh": "这是我见过的最丑陋的面孔之一。",
+    "en": "It is one of the ugliest faces I have ever seen."
+  },
+  {
+    "id": 20343,
+    "lesson": 28,
+    "zh": "我问他那是什么，他告诉我那是蛇发女妖美杜莎。",
+    "en": "I asked him what it was and he told me that it was Medusa, the Gorgon."
+  },
+  {
+    "id": 20344,
+    "lesson": 28,
+    "zh": "贾斯珀希望她能把汽车和车主变成石头。",
+    "en": "Jasper hopes 10 that she will turn cars and their owners to stone."
+  },
+  {
+    "id": 20345,
+    "lesson": 28,
+    "zh": "但他们还没有变成石头！",
+    "en": "But none of them has been turned to stone yet!"
+  },
+  {
+    "id": 20346,
+    "lesson": 29,
+    "zh": "福西特船长是否认为任何旅行都太危险？",
+    "en": "Does Captain Fawcett think any trip is too dangerous?"
+  },
+  {
+    "id": 20347,
+    "lesson": 29,
+    "zh": "本·福塞特船长购买了一辆不寻常的出租车，并开始提供新服务。",
+    "en": "Captain Ben Fawcett has bought an unusual taxi and has begun a new service."
+  },
+  {
+    "id": 20348,
+    "lesson": 29,
+    "zh": "“出租车”是一架名为“皮拉图斯波特”的瑞士小型飞机。",
+    "en": "The 'taxi'is a small Swiss aeroplane called a ‘Pilatus Porter'."
+  },
+  {
+    "id": 20349,
+    "lesson": 29,
+    "zh": "这架美妙的飞机可以搭载七名乘客。",
+    "en": "This wonderful plane can carry seven passengers."
+  },
+  {
+    "id": 20350,
+    "lesson": 29,
+    "zh": "然而，最令人惊讶的是它可以降落在任何地方：雪上、水面上，甚至是耕过的田野上。",
+    "en": "The most surprising thing about it, however, is that it can land anywhere: on snow, water, or even on a ploughed field."
+  },
+  {
+    "id": 20351,
+    "lesson": 29,
+    "zh": "福塞特机长的第一位乘客是一位医生，他从伯明翰飞往威尔士山区的一个偏僻村庄。",
+    "en": "Captain Fawcett's first passenger was a doctor who flew from Birmingham to a lonely village in the Welsh mountains."
+  },
+  {
+    "id": 20352,
+    "lesson": 29,
+    "zh": "从那时起，福塞特机长已经将乘客带到了许多不寻常的地方。",
+    "en": "Since then, Captain Fawcett has flown passengers to many unusual places."
+  },
+  {
+    "id": 20353,
+    "lesson": 29,
+    "zh": "有一次他降落在一栋公寓楼的屋顶上，还有一次，他降落在一个废弃的停车场。",
+    "en": "Once he landed on the roof of a block of flats and on another occasion, he landed in a deserted car park."
+  },
+  {
+    "id": 20354,
+    "lesson": 29,
+    "zh": "福塞特船长刚刚拒绝了一位商人的奇怪要求。",
+    "en": "Captain Fawcett has just refused a strange request from a businessman."
+  },
+  {
+    "id": 20355,
+    "lesson": 29,
+    "zh": "该男子想飞往大西洋上的一座孤岛罗科尔，但福西特船长没有带他去，因为这次旅行太危险了。",
+    "en": "The man wanted to fly to Rockall, a lonely island in the Atlantic Ocean, but Captain Fawcett did not take him because the trip was too dangerous."
+  },
+  {
+    "id": 20356,
+    "lesson": 30,
+    "zh": "韦尔河是一条小河，穿过我家附近的公园。",
+    "en": "The Wayle is a small river that cuts across the park near my home."
+  },
+  {
+    "id": 20357,
+    "lesson": 30,
+    "zh": "我喜欢在晴朗的下午坐在韦尔河畔。",
+    "en": "I like sitting by the Wayle on fine afternoons."
+  },
+  {
+    "id": 20358,
+    "lesson": 30,
+    "zh": "上周日天气很暖和，所以我像往常一样去河边坐了下来。",
+    "en": "It was warm last Sunday, soI went and sat on the river bank as usual."
+  },
+  {
+    "id": 20359,
+    "lesson": 30,
+    "zh": "有的孩子在岸边玩耍，有的人在河里划船。",
+    "en": "Some children were playing games on the bank and there were some people rowing 5 on the river."
+  },
+  {
+    "id": 20360,
+    "lesson": 30,
+    "zh": "突然，一个孩子用力踢了一个球，球飞向了一艘路过的小船。",
+    "en": "Suddenly, one of the children kicked a ball very hard and it went towards a passing boat."
+  },
+  {
+    "id": 20361,
+    "lesson": 30,
+    "zh": "岸上有人向船上的人喊叫，但他没有听见。",
+    "en": "Some people on the bank called out to the man in the boat, but he did not hear them."
+  },
+  {
+    "id": 20362,
+    "lesson": 30,
+    "zh": "球击中他的力道太大，他差点掉进水里。",
+    "en": "The ball struck him so hard that he nearly fell into the water."
+  },
+  {
+    "id": 20363,
+    "lesson": 30,
+    "zh": "我扭头看孩子们，却不见任何人影：他们都跑掉了！",
+    "en": "I turned to look at the children, but there weren't any in sight: they had all run away!"
+  },
+  {
+    "id": 20364,
+    "lesson": 30,
+    "zh": "男人意识到发生了什么事后笑了起来。",
+    "en": "The man laughed when he realized what had 10 happened."
+  },
+  {
+    "id": 20365,
+    "lesson": 30,
+    "zh": "他大声喊着孩子们，然后把球扔回岸边。",
+    "en": "He called out to the children and threw the ball back to the bank."
+  },
+  {
+    "id": 20366,
+    "lesson": 31,
+    "zh": "昨天下午，弗兰克·霍金斯向我讲述了他年轻时的经历。",
+    "en": "Yesterday afternoon Frank Hawkins was telling me about his expe- riences as a young man."
+  },
+  {
+    "id": 20367,
+    "lesson": 31,
+    "zh": "退休前，弗兰克是一家大型商业公司的负责人，但小时候他曾在一家小商店工作。",
+    "en": "Before he retired, Frank was the head of a very large business company, but as a boy he used to work in a small shop."
+  },
+  {
+    "id": 20368,
+    "lesson": 31,
+    "zh": "他的工作是修理自行车，当时他每天工作十四个小时。",
+    "en": "It was his job to repair bicycles and at that time he used 5 to work fourteen hours a day."
+  },
+  {
+    "id": 20369,
+    "lesson": 31,
+    "zh": "他积攒了多年的钱，于1958年买下了自己的一个小作坊。",
+    "en": "He saved money for years and in 1958 he bought a small workshop of his own."
+  },
+  {
+    "id": 20370,
+    "lesson": 31,
+    "zh": "弗兰克二十多岁时曾制造飞机零部件。",
+    "en": "In his twenties Frank used to make spare parts for aeroplanes."
+  },
+  {
+    "id": 20371,
+    "lesson": 31,
+    "zh": "当时他有两个帮手。",
+    "en": "At that time he had two helpers."
+  },
+  {
+    "id": 20372,
+    "lesson": 31,
+    "zh": "几年之内，这个小作坊就变成了一个拥有七百二十八名员工的大工厂。",
+    "en": "In a few years the small workshop had become a large factory which employed seven hundred and twenty-eight people."
+  },
+  {
+    "id": 20373,
+    "lesson": 31,
+    "zh": "当弗兰克回忆起早年的艰辛和漫长的成功之路时，他笑了。",
+    "en": "Frank smiled when he remembered his hard early years 10 and the long road to success."
+  },
+  {
+    "id": 20374,
+    "lesson": 31,
+    "zh": "当门打开，他的妻子进来时，他还在微笑。",
+    "en": "He was still smiling when the door opened and his wife came in."
+  },
+  {
+    "id": 20375,
+    "lesson": 31,
+    "zh": "她要他修理孙子的自行车！",
+    "en": "She wanted him to repair their grandson's bicycle!"
+  },
+  {
+    "id": 20376,
+    "lesson": 32,
+    "zh": "人们不再像以前那样诚实。",
+    "en": "People are not so honest as they once were."
+  },
+  {
+    "id": 20377,
+    "lesson": 32,
+    "zh": "偷窃的诱惑比以往任何时候都更大——尤其是在大商店里。",
+    "en": "The temptation to steal is greater than ever before—especially in large shops."
+  },
+  {
+    "id": 20378,
+    "lesson": 32,
+    "zh": "一名侦探最近观察到一位衣着考究的女士，她总是在周一早上走进一家大商店。",
+    "en": "A detective recently watched a well-dressed woman who always went into a large store on Monday mornings."
+  },
+  {
+    "id": 20379,
+    "lesson": 32,
+    "zh": "一个星期一，当那个女人进来时，店里的人比平时少了，所以侦探更容易监视她。",
+    "en": "One Monday, there were fewer 5 people in the shop than usual when the woman came in, so it was easier for the detective to watch her."
+  },
+  {
+    "id": 20380,
+    "lesson": 32,
+    "zh": "女人先买了一些小物品。",
+    "en": "The woman first bought a few small articles."
+  },
+  {
+    "id": 20381,
+    "lesson": 32,
+    "zh": "过了一会儿，她选了店里最贵的一件衣服，交给了助理，助理以最快的速度帮她包裹起来。",
+    "en": "After a little time, she chose one of the most expensive dresses in the shop and handed it to an assistant who wrapped it up for her as quickly as possible."
+  },
+  {
+    "id": 20382,
+    "lesson": 32,
+    "zh": "随后女子索性拿着包裹，没有付款就走出了商店。",
+    "en": "Then the woman simply took the 10 parcel and walked out of the shop without paying."
+  },
+  {
+    "id": 20383,
+    "lesson": 32,
+    "zh": "当她被捕时，侦探发现店员是她的女儿。",
+    "en": "When she was arrested, the detective found out that the shop assistant was her daughter."
+  },
+  {
+    "id": 20384,
+    "lesson": 32,
+    "zh": "这个女孩每周“送给”她妈妈一件免费衣服！",
+    "en": "The girl ‘gave'her mother a free dress once a week!"
+  },
+  {
+    "id": 20385,
+    "lesson": 33,
+    "zh": "将近一周过去了，女孩才能够解释发生在她身上的事情。",
+    "en": "Nearly a week passed before the girl was able to explain what had happened to her."
+  },
+  {
+    "id": 20386,
+    "lesson": 33,
+    "zh": "一天下午，她乘一艘小船从海岸出发，遭遇了暴风雨。",
+    "en": "One afternoon she set out from the coast in a small boat and was caught in a storm."
+  },
+  {
+    "id": 20387,
+    "lesson": 33,
+    "zh": "傍晚时分，船触礁，女孩跳入海中。",
+    "en": "Towards evening, the boat struck a rock and the girl jumped into the sea."
+  },
+  {
+    "id": 20388,
+    "lesson": 33,
+    "zh": "然后她在水里泡了一夜，游到了岸边。",
+    "en": "Then she swam to the shore after spending the whole night in the water."
+  },
+  {
+    "id": 20389,
+    "lesson": 33,
+    "zh": "在那段时间里，她走了八英里的距离。",
+    "en": "During that time she covered a distance of eight miles."
+  },
+  {
+    "id": 20390,
+    "lesson": 33,
+    "zh": "第二天一早，她看到前面有光。",
+    "en": "Early next morning, she saw a light ahead."
+  },
+  {
+    "id": 20391,
+    "lesson": 33,
+    "zh": "她知道自己已经靠近海岸了，因为悬崖上的灯光高高地照在她身上。",
+    "en": "She knew she was near the shore because the light was high up on the cliffs."
+  },
+  {
+    "id": 20392,
+    "lesson": 33,
+    "zh": "到达岸边后，女孩挣扎着爬上悬崖，朝着她所看到的光亮走去。",
+    "en": "On arriving at the shore, the girl struggled up the cliff towards the light she had seen."
+  },
+  {
+    "id": 20393,
+    "lesson": 33,
+    "zh": "她只记得这些。",
+    "en": "That was all she remembered."
+  },
+  {
+    "id": 20394,
+    "lesson": 33,
+    "zh": "一天后，当她醒来时，发现自己躺在医院里。",
+    "en": "When she woke up a day later, she found herself in hospital."
+  },
+  {
+    "id": 20395,
+    "lesson": 34,
+    "zh": "丹·罗宾逊整个星期都在担心。",
+    "en": "Dan Robinson has been worried all week."
+  },
+  {
+    "id": 20396,
+    "lesson": 34,
+    "zh": "上周二他收到了当地警方的一封信。",
+    "en": "Last Tuesday he received a letter from the local police."
+  },
+  {
+    "id": 20397,
+    "lesson": 34,
+    "zh": "信中要求他去车站打电话。",
+    "en": "In the letter he was asked to call at the station."
+  },
+  {
+    "id": 20398,
+    "lesson": 34,
+    "zh": "丹想知道为什么他会被警察通缉，但他昨天去了派出所，现在他不再担心了。在车站，一名微笑的警察告诉他，他的自行车被发现了。",
+    "en": "Dan wondered why he was wanted by the police, but he went to the station yesterday and now he is not worried anymore. 5 At the station, he was told by a smiling policeman that his bicycle had been found."
+  },
+  {
+    "id": 20399,
+    "lesson": 34,
+    "zh": "五天前，警察告诉他，这辆自行车是在四百英里外的一个小村庄里捡到的。",
+    "en": "Five days ago, the policeman told him, the bicycle was picked up in a small village four hundred miles away."
+  },
+  {
+    "id": 20400,
+    "lesson": 34,
+    "zh": "现在正通过火车运往他家。",
+    "en": "It is now being sent to his home by train."
+  },
+  {
+    "id": 20401,
+    "lesson": 34,
+    "zh": "丹听到这个消息时感到非常惊讶。",
+    "en": "Dan was most surprised when he heard the news."
+  },
+  {
+    "id": 20402,
+    "lesson": 34,
+    "zh": "他也觉得好笑，因为他没想到自行车会被发现。",
+    "en": "He was amused too, because he never expected the bicycle to be found."
+  },
+  {
+    "id": 20403,
+    "lesson": 34,
+    "zh": "二十年前，当丹还是个十五岁的男孩时，它被偷了！",
+    "en": "It was stolen twenty 10 years ago when Dan was a boy of fifteen!"
+  },
+  {
+    "id": 20404,
+    "lesson": 35,
+    "zh": "罗伊·特伦顿曾经开过出租车。",
+    "en": "Roy Trenton used to drive a taxi."
+  },
+  {
+    "id": 20405,
+    "lesson": 35,
+    "zh": "然而不久前，他成为了一名公交车司机，他并不后悔。",
+    "en": "A short while ago, however, he became a bus driver and he has not regretted it."
+  },
+  {
+    "id": 20406,
+    "lesson": 35,
+    "zh": "他发现他的新工作更加令人兴奋。",
+    "en": "He is finding his new work far more exciting."
+  },
+  {
+    "id": 20407,
+    "lesson": 35,
+    "zh": "最近，当他沿着卡特福德街行驶时，他看到两个小偷从一家商店冲出，跑向一辆等候的汽车。",
+    "en": "When he was driving along Catford Street recently, he saw two thieves rush out of a shop andrun towards 5 a waiting car."
+  },
+  {
+    "id": 20408,
+    "lesson": 35,
+    "zh": "其中一人拎着一个装满钱的袋子。",
+    "en": "One of them was carrying a bag full of money."
+  },
+  {
+    "id": 20409,
+    "lesson": 35,
+    "zh": "罗伊行动迅速，开着公交车径直向盗贼冲去。",
+    "en": "Roy acted quickly and drove the bus straight at the thieves."
+  },
+  {
+    "id": 20410,
+    "lesson": 35,
+    "zh": "拿钱的人吓得把包掉在地上。",
+    "en": "The one with the money got such a fright that he dropped the bag."
+  },
+  {
+    "id": 20411,
+    "lesson": 35,
+    "zh": "当窃贼试图开车逃跑时，罗伊开着他的公共汽车撞到了车的后面。",
+    "en": "As the thieves were trying to get away in their car, Roy drove his bus into the back of it."
+  },
+  {
+    "id": 20412,
+    "lesson": 35,
+    "zh": "当那辆被撞坏的汽车开走时，罗伊停下了他的公共汽车并打电话给警察。",
+    "en": "While the battered car was moving away, Roy stopped his bus and telephoned the police."
+  },
+  {
+    "id": 20413,
+    "lesson": 35,
+    "zh": "窃贼的车损毁严重，很容易辨认。",
+    "en": "The thieves' 10 car was badly damaged and easy to recognize."
+  },
+  {
+    "id": 20414,
+    "lesson": 35,
+    "zh": "不久之后，警察拦下了汽车，两人被捕。",
+    "en": "Shortly afterwards, the police stopped the car and both men were arrested."
+  },
+  {
+    "id": 20415,
+    "lesson": 36,
+    "zh": "黛比·哈特明天将游过英吉利海峡。",
+    "en": "Debbie Hart is going to swim across the English Channel tomorrow."
+  },
+  {
+    "id": 20416,
+    "lesson": 36,
+    "zh": "她将于早上五点从法国海岸出发。",
+    "en": "She is going to set out from the French coast at five o'clock in the morning."
+  },
+  {
+    "id": 20417,
+    "lesson": 36,
+    "zh": "黛比只有十一岁，她希望创造一项新的世界纪录。",
+    "en": "Debbie is only eleven years old and she hopes to set up a new world record."
+  },
+  {
+    "id": 20418,
+    "lesson": 36,
+    "zh": "她是一名游泳健将，很多人都认为她一定会成功。",
+    "en": "She is a strong swimmer and many people feel 5 that she is sure to succeed."
+  },
+  {
+    "id": 20419,
+    "lesson": 36,
+    "zh": "黛比的父亲将和她一起乘坐小船出发。",
+    "en": "Debbie's father will set out with her in a small boat."
+  },
+  {
+    "id": 20420,
+    "lesson": 36,
+    "zh": "哈特多年来一直训练他的女儿。",
+    "en": "Hart has trained his daughter for years."
+  },
+  {
+    "id": 20421,
+    "lesson": 36,
+    "zh": "明天，他将焦急地看着她长途跋涉前往英国。",
+    "en": "Tomorrow he will be watching her anxiously as she swims the long distance to England."
+  },
+  {
+    "id": 20422,
+    "lesson": 36,
+    "zh": "黛比打算每两个小时休息一次。",
+    "en": "Debbie intends to take short rests every two hours."
+  },
+  {
+    "id": 20423,
+    "lesson": 36,
+    "zh": "她会喝点东西，但不会吃任何固体食物。",
+    "en": "She willhave something to drink but she will not eat any solid food."
+  },
+  {
+    "id": 20424,
+    "lesson": 36,
+    "zh": "黛比的大多数学校朋友都会在英国海岸等待她。",
+    "en": "Most of Debbie's school friends will bee 10 waiting for her on the English coast."
+  },
+  {
+    "id": 20425,
+    "lesson": 36,
+    "zh": "其中包括黛比的母亲，她小时候就曾游过英吉利海峡。",
+    "en": "Among them will be Debbie's mother, who swam the Channel herself when she was a girl."
+  },
+  {
+    "id": 20426,
+    "lesson": 37,
+    "zh": "四年后，奥运会将在我国举行。",
+    "en": "The Olympic Games will be held in our country in four years'time."
+  },
+  {
+    "id": 20427,
+    "lesson": 37,
+    "zh": "由于大量的人将访问该国，政府将建造新的酒店、一座巨大的体育场和一个新的奥林匹克标准游泳池。",
+    "en": "As a great many people willbe visiting the country, the government will be building new hotels, an immense stadium, and a new Olympic-standard swimming pool."
+  },
+  {
+    "id": 20428,
+    "lesson": 37,
+    "zh": "他们还将修建新的道路和一条铁路专用线。",
+    "en": "They will also be building new 5 roads and a special railway line."
+  },
+  {
+    "id": 20429,
+    "lesson": 37,
+    "zh": "奥运会将在首都郊外举行，整个地区将被称为“奥林匹克城”。",
+    "en": "The Games will be held just outside the capital and the whole area willbe called 'Olympic City'."
+  },
+  {
+    "id": 20430,
+    "lesson": 37,
+    "zh": "工人们将于今年年底完成新道路的建设。",
+    "en": "Workers will have completed the new roads by the end of this year."
+  },
+  {
+    "id": 20431,
+    "lesson": 37,
+    "zh": "到明年年底，他们将完成新体育场的建设。",
+    "en": "By the end of next year, they will have finished work on the new stadium."
+  },
+  {
+    "id": 20432,
+    "lesson": 37,
+    "zh": "奇妙的现代建筑是由库尔特·冈特设计的。",
+    "en": "The fantastic modern buildings have been designed by Kurt Gunter."
+  },
+  {
+    "id": 20433,
+    "lesson": 37,
+    "zh": "随着新建筑的拔地而起，每个人都会焦急地注视着。",
+    "en": "Everybody will be watching anxiously as the new buildings go up."
+  },
+  {
+    "id": 20434,
+    "lesson": 37,
+    "zh": "我们都非常兴奋并期待奥运会，因为奥运会以前从未在这个国家举办过。",
+    "en": "We are all very 10 excited and are looking forward to the Olympic Games because they have never been held before in this country."
+  },
+  {
+    "id": 20435,
+    "lesson": 38,
+    "zh": "我的老朋友哈里森在回到英国之前已经在地中海生活了很多年。",
+    "en": "My old friend, Harrison, had lived in the Mediterranean for many years before he returned to England."
+  },
+  {
+    "id": 20436,
+    "lesson": 38,
+    "zh": "他经常梦想在英国退休，并计划在该国定居。",
+    "en": "He had often dreamed of retiring in England and had planned to settle down in the country."
+  },
+  {
+    "id": 20437,
+    "lesson": 38,
+    "zh": "他一回来就买了房子住在那里。",
+    "en": "He had no sooner returned than he bought a house and went to live there."
+  },
+  {
+    "id": 20438,
+    "lesson": 38,
+    "zh": "几乎立刻他就开始抱怨天气，因为虽然还是夏季，但雨却一直下个不停，而且天气常常很冷。",
+    "en": "Almost 5 immediately he began to complain about the weather, for even though it was still ummer, it rained continually and it was often bitterly cold."
+  },
+  {
+    "id": 20439,
+    "lesson": 38,
+    "zh": "经过这么多年的阳光照射，哈里森感到震惊。",
+    "en": "After so many years of sunshine, Harrison got a shock."
+  },
+  {
+    "id": 20440,
+    "lesson": 38,
+    "zh": "他表现得好像他以前从未在英国生活过一样。",
+    "en": "He acted as if he had never lived in England before."
+  },
+  {
+    "id": 20441,
+    "lesson": 38,
+    "zh": "最终，这超出了他的承受能力。",
+    "en": "In the end, it was more than he could bear."
+  },
+  {
+    "id": 20442,
+    "lesson": 38,
+    "zh": "他还没来得及安顿下来，就卖掉了房子，离开了这个国家。他这么多年的梦想到此结束。",
+    "en": "He had hardly had time to settle down when he sold the house and left the country. 10 The dream he had had for so many years ended there."
+  },
+  {
+    "id": 20443,
+    "lesson": 38,
+    "zh": "哈里森考虑到了一切，除了天气。",
+    "en": "Harrison had thought of everything except the weather."
+  },
+  {
+    "id": 20444,
+    "lesson": 39,
+    "zh": "约翰·吉尔伯特住院期间，他要求医生告诉他手术是否成功，但医生拒绝这样做。",
+    "en": "While John Gilbert was in hospital, he asked his doctor to tell him whether his operation had been successful, but the doctor refused to do so."
+  },
+  {
+    "id": 20445,
+    "lesson": 39,
+    "zh": "第二天，病人要求要一部床头电话。",
+    "en": "The following day, the patient asked for a bedside telephone."
+  },
+  {
+    "id": 20446,
+    "lesson": 39,
+    "zh": "当他独自一人时，他打电话给医院总机，要求见米灵顿医生。",
+    "en": "When he was alone, he telephoned the hospital exchange and asked for Doctor Millington."
+  },
+  {
+    "id": 20447,
+    "lesson": 39,
+    "zh": "当医生接电话时，吉尔伯特先生说他正在询问某位病人的情况，一位名叫吉尔伯特先生的病人。",
+    "en": "When the doctor answered the phone, Mr Gilbert said he was inquiring about a certain patient, a Mr."
+  },
+  {
+    "id": 20448,
+    "lesson": 39,
+    "zh": "约翰·吉尔伯特.",
+    "en": "John Gilbert."
+  },
+  {
+    "id": 20449,
+    "lesson": 39,
+    "zh": "他问先生是否",
+    "en": "He asked if Mr."
+  },
+  {
+    "id": 20450,
+    "lesson": 39,
+    "zh": "吉尔伯特的手术很成功，医生也告诉他手术很成功。",
+    "en": "Gilbert's operation had been successful and the doctor told him that it had been."
+  },
+  {
+    "id": 20451,
+    "lesson": 39,
+    "zh": "然后他问先生什么时候",
+    "en": "He then asked when Mr."
+  },
+  {
+    "id": 20452,
+    "lesson": 39,
+    "zh": "吉尔伯特将被允许回家，医生告诉他他还必须在医院住院两周。",
+    "en": "Gilbert would be allowed to go home and the doctor told him that he would have to stay in hosptial for another two weeks."
+  },
+  {
+    "id": 20453,
+    "lesson": 39,
+    "zh": "然后博士。",
+    "en": "Then Dr."
+  },
+  {
+    "id": 20454,
+    "lesson": 39,
+    "zh": "米林顿询问打电话的人是否是患者的亲戚。",
+    "en": "Millington asked the caller if he was a relative of the patient."
+  },
+  {
+    "id": 20455,
+    "lesson": 39,
+    "zh": "“不，”病人回答，我是先生。",
+    "en": "'No,'the patient answered, I am Mr."
+  },
+  {
+    "id": 20456,
+    "lesson": 39,
+    "zh": "约翰·吉尔伯特.",
+    "en": "John Gilbert."
+  },
+  {
+    "id": 20457,
+    "lesson": 40,
+    "zh": "是夫人。",
+    "en": "Was Mrs."
+  },
+  {
+    "id": 20458,
+    "lesson": 40,
+    "zh": "晚餐时的好伙伴？",
+    "en": "Rumbold a good companion at dinner?"
+  },
+  {
+    "id": 20459,
+    "lesson": 40,
+    "zh": "上周在一次晚宴上，女主人让我坐在夫人旁边。",
+    "en": "Last week at a dinner party, the hostess asked me to sit next to Mrs."
+  },
+  {
+    "id": 20460,
+    "lesson": 40,
+    "zh": "轰隆隆。",
+    "en": "Rumbold."
+  },
+  {
+    "id": 20461,
+    "lesson": 40,
+    "zh": "朗博尔德是一位身穿黑色紧身连衣裙、身材高大、面无笑容的女士。",
+    "en": "Rumbold was a large, unsmiling lady in atight black dress."
+  },
+  {
+    "id": 20462,
+    "lesson": 40,
+    "zh": "当我坐在她旁边时，她甚至没有抬头。",
+    "en": "She did not even look up when I took my seat beside her."
+  },
+  {
+    "id": 20463,
+    "lesson": 40,
+    "zh": "她的眼睛盯着盘子，不一会儿，就忙着吃饭了。",
+    "en": "Her eyes were fixed on her plate and in a short time, she was busy 5 eating."
+  },
+  {
+    "id": 20464,
+    "lesson": 40,
+    "zh": "我试着交谈。",
+    "en": "I tried to make conversation."
+  },
+  {
+    "id": 20465,
+    "lesson": 40,
+    "zh": "“《环球报》即将上演一部新剧，”我说。",
+    "en": "'A new play is coming to \"The Globe”soon,'I said."
+  },
+  {
+    "id": 20466,
+    "lesson": 40,
+    "zh": "'你会看到吗？",
+    "en": "'Will you be seeing it?"
+  },
+  {
+    "id": 20467,
+    "lesson": 40,
+    "zh": "” “不，”她回答道。",
+    "en": "' 'No,'she answered."
+  },
+  {
+    "id": 20468,
+    "lesson": 40,
+    "zh": "“今年你会去国外度假吗？”我问。",
+    "en": "'Will you be spending your holidays abroad this year?’I asked."
+  },
+  {
+    "id": 20469,
+    "lesson": 40,
+    "zh": "“不，”她回答道。",
+    "en": "'No,'she answered."
+  },
+  {
+    "id": 20470,
+    "lesson": 40,
+    "zh": "“你会留在英国吗？",
+    "en": "'Will you be staying in England?"
+  },
+  {
+    "id": 20471,
+    "lesson": 40,
+    "zh": "”我问道。",
+    "en": "'I asked."
+  },
+  {
+    "id": 20472,
+    "lesson": 40,
+    "zh": "“不，”她回答道。",
+    "en": "'No,'she answered."
+  },
+  {
+    "id": 20473,
+    "lesson": 40,
+    "zh": "我绝望地问她晚餐吃得是否愉快。一位身材高大、面无笑容的女士“年轻人，”她回答道，“如果你吃得更多，说得更少，我们都会享受我们的晚餐！”",
+    "en": "In despair, I asked her whether she was enjoying her dinner. a large, unsmiling lady 'Young man,'she answered,'if you ate more and talked less, we would both enjoy our dinner!"
+  },
+  {
+    "id": 20474,
+    "lesson": 41,
+    "zh": "“你管那叫帽子吗？”我对妻子说。",
+    "en": "'Do you call that a hat?’I said to my wife."
+  },
+  {
+    "id": 20475,
+    "lesson": 41,
+    "zh": "“你不必这么粗鲁，”我妻子看着镜子里的自己回答道。",
+    "en": "'You needn't be so rude about it,'my wife answered as she looked at herself in the mirror."
+  },
+  {
+    "id": 20476,
+    "lesson": 41,
+    "zh": "我坐在一张有洞的现代椅子上等待着。",
+    "en": "I sat down on one of those modern chairs with holes in it and 5 waited."
+  },
+  {
+    "id": 20477,
+    "lesson": 41,
+    "zh": "我们在帽子店待了半个小时，我的妻子仍然站在镜子前。",
+    "en": "We had been in the hat shop for half an hour and my wife was still in front of the mirror."
+  },
+  {
+    "id": 20478,
+    "lesson": 41,
+    "zh": "“我们不能买不需要的东西，”我突然说道。",
+    "en": "'We musn't buy things we don't need,'I remarked suddenly."
+  },
+  {
+    "id": 20479,
+    "lesson": 41,
+    "zh": "我几乎立刻就后悔说了这句话。",
+    "en": "I regretted saying it almost at once."
+  },
+  {
+    "id": 20480,
+    "lesson": 41,
+    "zh": "“你不必这么说，”我妻子回答道。",
+    "en": "'You needn't have said that,'my wife answered."
+  },
+  {
+    "id": 20481,
+    "lesson": 41,
+    "zh": "“我不需要提醒你昨天买的那条糟糕的领带。",
+    "en": "'I needn't remind you of that terrible tie you bought 10 yesterday."
+  },
+  {
+    "id": 20482,
+    "lesson": 41,
+    "zh": "” “我觉得它很漂亮，”我说。",
+    "en": "' 'I find it beautiful,'I said."
+  },
+  {
+    "id": 20483,
+    "lesson": 41,
+    "zh": "“一个人的关系永远不会太多。",
+    "en": "'A man can never have too many ties."
+  },
+  {
+    "id": 20484,
+    "lesson": 41,
+    "zh": "” “女人不能有太多帽子，”她回答道。",
+    "en": "' ‘And a woman can't have too many hats,'she answered."
+  },
+  {
+    "id": 20485,
+    "lesson": 41,
+    "zh": "十分钟后，我们一起走出商店。",
+    "en": "Ten minutes later we walked out of the shop together."
+  },
+  {
+    "id": 20486,
+    "lesson": 41,
+    "zh": "我妻子戴着一顶看起来像灯塔的帽子！",
+    "en": "My wife was wearing a hat that looked like a lighthouse!"
+  },
+  {
+    "id": 20487,
+    "lesson": 42,
+    "zh": "由于我们在旧德里的一个市场走了很长一段路，所以我们在一个广场停下来休息。",
+    "en": "As we had had a long walk through one of the markets of Old Delhi, we stopped at a square to have a rest."
+  },
+  {
+    "id": 20488,
+    "lesson": 42,
+    "zh": "过了一会儿，我们注意到广场另一边有一个耍蛇人，提着两个大篮子，于是我们就去看他。",
+    "en": "After a time, we noticed a snake charmer with two large baskets at the other side of the square, so we went to have a look at him."
+  },
+  {
+    "id": 20489,
+    "lesson": 42,
+    "zh": "他一看到我们，就拿起一根装满硬币的长管子，打开了其中一个篮子。",
+    "en": "As soon as he saw us, he picked 5 up a long pipe which was covered with coins and opened one of the baskets."
+  },
+  {
+    "id": 20490,
+    "lesson": 42,
+    "zh": "当他开始演奏一首曲子时，我们第一次看到了蛇。",
+    "en": "When he began to play a tune, we had our first glimpse of the snake."
+  },
+  {
+    "id": 20491,
+    "lesson": 42,
+    "zh": "它从篮子里升起，开始跟随管道的运动。",
+    "en": "It rose out of the basket and began to follow the movements of the pipe."
+  },
+  {
+    "id": 20492,
+    "lesson": 42,
+    "zh": "当耍蛇人突然开始演奏爵士乐和现代流行歌曲时，我们感到非常惊讶。",
+    "en": "We were very much surprised when the snake charmer suddenly began to play jazz and modern pop songs."
+  },
+  {
+    "id": 20493,
+    "lesson": 42,
+    "zh": "然而，蛇继续缓慢地“跳舞”。",
+    "en": "The snake, however, continued to 'dance'slowly."
+  },
+  {
+    "id": 20494,
+    "lesson": 42,
+    "zh": "它显然无法区分印度音乐和爵士乐！",
+    "en": "It 10 obviously could not tell the difference between Indian music and jazz!"
+  },
+  {
+    "id": 20495,
+    "lesson": 43,
+    "zh": "1929 年，美国探险家 R. 飞越北极三年后。",
+    "en": "In 1929, three years after his flight over the North Pole, the American explorer, R."
+  },
+  {
+    "id": 20496,
+    "lesson": 43,
+    "zh": "伯德首次飞越南极成功。",
+    "en": "Byrd, successfully flew over the South Pole for the first time."
+  },
+  {
+    "id": 20497,
+    "lesson": 43,
+    "zh": "尽管起初，伯德和他的手下能够拍摄大量下面山脉的照片，但他们很快就遇到了严重的麻烦。",
+    "en": "Though, at first, Byrd and his men were able to take a great many photographs of the mountains that lay below, they soon 5 ran into serious trouble."
+  },
+  {
+    "id": 20498,
+    "lesson": 43,
+    "zh": "有一次，他们的飞机似乎肯定会坠毁。",
+    "en": "At one point; it seemed certain that their plane would crash."
+  },
+  {
+    "id": 20499,
+    "lesson": 43,
+    "zh": "只有上升到一万英尺才能翻山越岭。",
+    "en": "It could only get over the mountains if it rose to 10,000 feet."
+  },
+  {
+    "id": 20500,
+    "lesson": 43,
+    "zh": "伯德立即命令手下扔掉两个沉重的食品袋。",
+    "en": "Byrd at once ordered his men to throw out two heavy food sacks."
+  },
+  {
+    "id": 20501,
+    "lesson": 43,
+    "zh": "随后飞机能够升空并飞离山脉 400 英尺。",
+    "en": "The plane was then able to rise and it cleared the mountains by 400 feet."
+  },
+  {
+    "id": 20502,
+    "lesson": 43,
+    "zh": "伯德现在知道他将能够到达 300 英里外的南极，因为视野中不再有山脉。",
+    "en": "Byrd now knew that he would be able to reach the South Pole which was 300 miles 10 away, for there were no more mountains in sight."
+  },
+  {
+    "id": 20503,
+    "lesson": 43,
+    "zh": "飞机能够毫无困难地飞越一望无际的白色平原。",
+    "en": "The aircraft was able to fly over the endless white plains without difficulty."
+  },
+  {
+    "id": 20504,
+    "lesson": 44,
+    "zh": "当安妮·斯特林追赶两个男人穿过森林时，她没有想到自己所冒的风险。",
+    "en": "Anne Sterling did not think of the risk she was taking when she ran through a forest after two men."
+  },
+  {
+    "id": 20505,
+    "lesson": 44,
+    "zh": "当她和孩子们在森林边缘野餐时，他们冲向她，试图偷她的手提包。",
+    "en": "They had rushed up to her while she was having a picnic at the edge of a forest with her children and tried to steal her handbag."
+  },
+  {
+    "id": 20506,
+    "lesson": 44,
+    "zh": "在争斗中，带子断裂了，两人带着袋子开始在树林里奔跑。",
+    "en": "In the struggle, the strap broke and, with the bag in their possession, both men started running through the trees."
+  },
+  {
+    "id": 20507,
+    "lesson": 44,
+    "zh": "斯特林非常生气，追了上去。",
+    "en": "Sterling got so angry that she ran after them."
+  },
+  {
+    "id": 20508,
+    "lesson": 44,
+    "zh": "她很快就气喘吁吁了，但她还是继续跑。",
+    "en": "She was soon out of breath, but she continued to run."
+  },
+  {
+    "id": 20509,
+    "lesson": 44,
+    "zh": "当她追上他们时，看到他们已经坐下来翻看袋子里的东西，于是她径直向他们跑去。",
+    "en": "When she caught up with them, she saw that they had sat down and were going through the contents of the bag, so she ran straight at them."
+  },
+  {
+    "id": 20510,
+    "lesson": 44,
+    "zh": "男人们吓得丢下包逃跑了。",
+    "en": "The men got such a fright that they dropped the bag and ran away."
+  },
+  {
+    "id": 20511,
+    "lesson": 44,
+    "zh": "“带子需要修理，”夫人说。",
+    "en": "'The strap needs mending,'said Mrs."
+  },
+  {
+    "id": 20512,
+    "lesson": 44,
+    "zh": "斯特林后来，“但他们没有偷任何东西。",
+    "en": "Sterling later,'but they did not steal anything."
+  },
+  {
+    "id": 20513,
+    "lesson": 45,
+    "zh": "很快全村人都知道损失了一大笔钱。",
+    "en": "The whole village soon learnt that a large sum of money had been lost."
+  },
+  {
+    "id": 20514,
+    "lesson": 45,
+    "zh": "当地屠夫萨姆·本顿（Sam Benton）在将积蓄带到邮局时丢失了钱包。",
+    "en": "Sam Benton, the local butcher, had lost his wallet while taking his savings to the post office."
+  },
+  {
+    "id": 20515,
+    "lesson": 45,
+    "zh": "萨姆确信钱包一定是其中一位村民发现的，但没有归还给他。",
+    "en": "Sam was sure that the wallet must have been found by one of the villagers, but it was not returned to 5 him."
+  },
+  {
+    "id": 20516,
+    "lesson": 45,
+    "zh": "三个月过去了，有一天早上，萨姆在前门外发现了他的钱包。",
+    "en": "Three months passed, and then one morning, Sam found his wallet outside his front door."
+  },
+  {
+    "id": 20517,
+    "lesson": 45,
+    "zh": "它是用报纸包裹起来的，里面装着他损失的一半钱，还有一张纸条，上面写着：‘是的，是小偷，但只有百分之五十是小偷！",
+    "en": "It had been wrapped up in newspaper and it contained half the money he had lost, together with a note which said:‘A thief, yes, but only 50 per cent a thief!"
+  },
+  {
+    "id": 20518,
+    "lesson": 45,
+    "zh": "“两个月后，又给萨姆寄了一些钱，并附上一张纸条：‘现在只有 25% 是小偷了！",
+    "en": "'Two months later, some more money was sent to Sam with another note:‘Only 25 per cent a thief now!"
+  },
+  {
+    "id": 20519,
+    "lesson": 45,
+    "zh": "“随着时间的推移，萨姆的所有钱都以这种方式还清了。",
+    "en": "'In time, all Sam's 10 money was paid back in this way."
+  },
+  {
+    "id": 20520,
+    "lesson": 45,
+    "zh": "最后一张纸条上写着：“我现在百分百诚实了！”",
+    "en": "The last note said:'Iam 100 per cent honest now!"
+  },
+  {
+    "id": 20521,
+    "lesson": 46,
+    "zh": "盒子。",
+    "en": "5 box."
+  },
+  {
+    "id": 20522,
+    "lesson": 46,
+    "zh": "他对自己的发现感到惊讶。",
+    "en": "He was astonished at what he found."
+  },
+  {
+    "id": 20523,
+    "lesson": 46,
+    "zh": "箱子里躺着一个男人，上面放着一堆羊毛制品。",
+    "en": "A man was lying in the box on top of a pile of woollen goods."
+  },
+  {
+    "id": 20524,
+    "lesson": 46,
+    "zh": "他对被发现感到非常惊讶，甚至没有试图逃跑。",
+    "en": "He was so surprised at being discovered that he did not even try to run away."
+  },
+  {
+    "id": 20525,
+    "lesson": 46,
+    "zh": "被捕后，该男子承认在飞机离开伦敦之前藏在箱子里。",
+    "en": "After he was arrested, the man admitted hiding in the box before the plane leftLondon."
+  },
+  {
+    "id": 20526,
+    "lesson": 46,
+    "zh": "他经历了一次漫长而不舒服的旅行，因为他被限制在十八个多小时内没有尝试在木箱里跑动。该男子被勒令支付 3,500 英镑的旅行费用。",
+    "en": "He had had a long and uncomfortable trip, for he had been confined to he did not try to run amay the wooden box for over eighteen hours. 10 The man was ordered to pay £3,500 for the cost of the trip."
+  },
+  {
+    "id": 20527,
+    "lesson": 46,
+    "zh": "门票的正常价格是 2,000 英镑！",
+    "en": "The normal price of a ticket is f£2,000!"
+  },
+  {
+    "id": 20528,
+    "lesson": 47,
+    "zh": "先生最近购买的一间酒店。",
+    "en": "A public house which was recently bought by Mr."
+  },
+  {
+    "id": 20529,
+    "lesson": 47,
+    "zh": "伊恩·汤普森正在出售。",
+    "en": "Ian Thompson is up for sale."
+  },
+  {
+    "id": 20530,
+    "lesson": 47,
+    "zh": "汤普森打算卖掉它，因为它闹鬼。",
+    "en": "Thompson is going to sell it because it is haunted."
+  },
+  {
+    "id": 20531,
+    "lesson": 47,
+    "zh": "他告诉我，有一天晚上他无法入睡，因为他听到酒吧里传来奇怪的声音。",
+    "en": "He told me that he could not go to sleep one night because he heard a strange noise coming from the bar."
+  },
+  {
+    "id": 20532,
+    "lesson": 47,
+    "zh": "第二天早上，他发现门被椅子挡住了，家具也被搬走了。",
+    "en": "The next morning, he found 5 that the doors had been blocked by chairs and the furniture had been moved."
+  },
+  {
+    "id": 20533,
+    "lesson": 47,
+    "zh": "虽然先生。",
+    "en": "Though Mr."
+  },
+  {
+    "id": 20534,
+    "lesson": 47,
+    "zh": "汤普森睡觉前关了灯，早上灯又亮了。",
+    "en": "Thompson had turned the lights off before he went to bed, they were on in the morning."
+  },
+  {
+    "id": 20535,
+    "lesson": 47,
+    "zh": "他还说他发现了五个空威士忌酒瓶，鬼魂一定是在前一天晚上喝了这些酒。",
+    "en": "He also said that he had found five empty whisky bottles which the ghost must have drunk the night before."
+  },
+  {
+    "id": 20536,
+    "lesson": 47,
+    "zh": "当我建议一些村民一定进来喝一杯免费饮料时，先生说。汤普森摇摇头。",
+    "en": "When I suggested that some villagers must have come in for a free drink, Mr. 10 Thompson shook his head."
+  },
+  {
+    "id": 20537,
+    "lesson": 47,
+    "zh": "村民告诉他，即使他把酒吧送人，他们也不会接受。",
+    "en": "The villagers have told him that they willnot accept the pub even if he gives it away."
+  },
+  {
+    "id": 20538,
+    "lesson": 48,
+    "zh": "当您无法回答时，牙医总是会提出问题。",
+    "en": "Dentists always ask questions when it is impossible for you to answer."
+  },
+  {
+    "id": 20539,
+    "lesson": 48,
+    "zh": "我的牙医刚刚拔掉了我的一颗牙齿，并让我休息一会儿。",
+    "en": "My dentist had just pulled out one of my teeth and had told me to rest for a while."
+  },
+  {
+    "id": 20540,
+    "lesson": 48,
+    "zh": "我想说什么，但嘴里塞满了棉絮。",
+    "en": "I tried to say something, but my mouth was full of cotton wool."
+  },
+  {
+    "id": 20541,
+    "lesson": 48,
+    "zh": "他知道我收集火柴盒，并问我的收藏是否在增加。",
+    "en": "He knew I collected match boxes and asked me whether 5 my collection was growing."
+  },
+  {
+    "id": 20542,
+    "lesson": 48,
+    "zh": "然后他问我我哥哥怎么样以及我是否喜欢我在伦敦的新工作。",
+    "en": "He then asked me how my brother was and whether I liked my new job in London."
+  },
+  {
+    "id": 20543,
+    "lesson": 48,
+    "zh": "为了回答这些问题，我要么点点头，要么发出奇怪的声音。",
+    "en": "In answer to these questions I either nodded or made strange noises."
+  },
+  {
+    "id": 20544,
+    "lesson": 48,
+    "zh": "与此同时，我的舌头正忙着寻找牙齿原来所在的洞。",
+    "en": "Meanwhile, my tongue was busy searching out the hole where the tooth had been."
+  },
+  {
+    "id": 20545,
+    "lesson": 48,
+    "zh": "我突然感到很担心，却又说不出话来。",
+    "en": "I suddenly felt very worried, but could not say anything."
+  },
+  {
+    "id": 20546,
+    "lesson": 48,
+    "zh": "当牙医最终从我嘴里取出药棉时，我可以告诉他他拔错了牙齿。",
+    "en": "When the dentist at last removed the cotton wool from my mouth, I was able to tell him that he 10 had pulled out the wrong tooth."
+  },
+  {
+    "id": 20547,
+    "lesson": 49,
+    "zh": "德黑兰的一名年轻人厌倦了睡在地板上，多年来攒钱买了一张真正的床。",
+    "en": "Tired of sleeping on the floor, a young man in Teheran saved up for years to buy a real bed."
+  },
+  {
+    "id": 20548,
+    "lesson": 49,
+    "zh": "他有生以来第一次自豪地拥有一张带弹簧和床垫的床。",
+    "en": "For the first time in his life, he became the proud owner ofa bed which had springs and a matress."
+  },
+  {
+    "id": 20549,
+    "lesson": 49,
+    "zh": "由于天气很热，他把床搬到了自家的屋顶上。头两个晚上他睡得很好，但第三天晚上，暴风雨刮起来了。",
+    "en": "Because the weather was very hot, he carried the bed on to the roof of his house. 5 He slept very well for the first two nights, but on the third night, a storm blew up."
+  },
+  {
+    "id": 20550,
+    "lesson": 49,
+    "zh": "一阵风把床从屋顶上吹下来，摔到下面的院子里。",
+    "en": "A gust of wind swept the bed off the roof and sent it crashing into the courtyard below."
+  },
+  {
+    "id": 20551,
+    "lesson": 49,
+    "zh": "直到床铺落地，年轻人才醒过来。",
+    "en": "The young man did not wake up until the bed had struck the ground."
+  },
+  {
+    "id": 20552,
+    "lesson": 49,
+    "zh": "虽然床被砸成了碎片，但男子却奇迹般地毫发无伤。",
+    "en": "Although the bed was smashed to pieces, the man was miraculously unhurt."
+  },
+  {
+    "id": 20553,
+    "lesson": 49,
+    "zh": "当他醒来时，他还在床垫上。",
+    "en": "When he woke up, he was still on the mattress."
+  },
+  {
+    "id": 20554,
+    "lesson": 49,
+    "zh": "看了一眼周围的木头和金属碎片，男人悲伤地拿起床垫，搬进了自己的房子。",
+    "en": "Glancing at the 10 bits of wood and metal that lay around him, the man sadly picked up the mattress and carried it into his house."
+  },
+  {
+    "id": 20555,
+    "lesson": 49,
+    "zh": "他把它放在地板上后，很快又睡着了。",
+    "en": "After he had put it on the floor, he promptly went to sleep again."
+  },
+  {
+    "id": 20556,
+    "lesson": 50,
+    "zh": "我喜欢在乡下旅行，但我不喜欢迷路。",
+    "en": "I love travelling in the country, but I don't like losing my way."
+  },
+  {
+    "id": 20557,
+    "lesson": 50,
+    "zh": "我最近去旅行了，但是我的旅行花费的时间比我预期的要长。",
+    "en": "I went on an excursion recently, but my trip took me longer than I expected."
+  },
+  {
+    "id": 20558,
+    "lesson": 50,
+    "zh": "“我要去伍德福德格林，”我上车时对售票员说，“但我不知道它在哪里。”",
+    "en": "I'm going to Woodford Green,'I said to the conductor as I got on 5 the bus,'but I don't know where it is."
+  },
+  {
+    "id": 20559,
+    "lesson": 50,
+    "zh": "” “我会告诉你在哪里下车，”售票员回答道。",
+    "en": "' 'I'll tell you where to get off,'answered the conductor."
+  },
+  {
+    "id": 20560,
+    "lesson": 50,
+    "zh": "我坐在公共汽车的前排，可以欣赏到乡村的美景。",
+    "en": "I sat in the front of the bus to get a good view of the countryside."
+  },
+  {
+    "id": 20561,
+    "lesson": 50,
+    "zh": "过了一会儿，公共汽车停了下来。",
+    "en": "After some time, the bus stopped."
+  },
+  {
+    "id": 20562,
+    "lesson": 50,
+    "zh": "环顾四周，我震惊地发现车上只剩下我一个乘客了。 “你必须在这里下车，”售票员说。",
+    "en": "Looking round, I realized with a shock that I was the only passenger left on the bus. 10 'You'll have to get off here,'the conductor said."
+  },
+  {
+    "id": 20563,
+    "lesson": 50,
+    "zh": "“我们就到此为止了。",
+    "en": "\"This is as far as we go."
+  },
+  {
+    "id": 20564,
+    "lesson": 50,
+    "zh": "” “这是伍德福德·格林吗？",
+    "en": "' 'Is this Woodford Green?"
+  },
+  {
+    "id": 20565,
+    "lesson": 50,
+    "zh": "”我问道。",
+    "en": "'I asked."
+  },
+  {
+    "id": 20566,
+    "lesson": 50,
+    "zh": "哦天啊，售票员突然说道。",
+    "en": "Oh dear,'said the conductor suddenly."
+  },
+  {
+    "id": 20567,
+    "lesson": 50,
+    "zh": "“我忘了打扰你了。",
+    "en": "'I forgot to put you off."
+  },
+  {
+    "id": 20568,
+    "lesson": 50,
+    "zh": "” “没关系，”我说。",
+    "en": "' 'It doesn't matter,'I said."
+  },
+  {
+    "id": 20569,
+    "lesson": 50,
+    "zh": "‘我就在这里下车。",
+    "en": "'I'll get off here."
+  },
+  {
+    "id": 20570,
+    "lesson": 50,
+    "zh": "” “我们现在要回去了，”售票员说。 15 “好吧，既然如此，我宁愿呆在公共汽车上，”我回答道。",
+    "en": "' 'We're going back now,'said the conductor. 15 'Well, in that case, I prefer to stay on the bus,'I answered."
+  },
+  {
+    "id": 20571,
+    "lesson": 51,
+    "zh": "我的朋友休一直很胖，但最近情况变得很糟糕，他决定节食。",
+    "en": "My friend, Hugh, has always been fat, but things got so bad recently that he decided to go on a diet."
+  },
+  {
+    "id": 20572,
+    "lesson": 51,
+    "zh": "他一周前开始节食。",
+    "en": "He began his diet a week ago."
+  },
+  {
+    "id": 20573,
+    "lesson": 51,
+    "zh": "首先，他写下了一份长长的清单，上面列出了所有禁止食用的食物。",
+    "en": "First of all, he wrote out a long list of all the foods which were forbidden."
+  },
+  {
+    "id": 20574,
+    "lesson": 51,
+    "zh": "这份清单包括休喜欢的大部分东西：黄油、土豆、大米、啤酒、牛奶、巧克力和糖果。",
+    "en": "The list included most of the things Hugh loves: butter, potatoes, 5 rice, beer, milk, chocolate, and sweets."
+  },
+  {
+    "id": 20575,
+    "lesson": 51,
+    "zh": "昨天我拜访了他。",
+    "en": "Yesterday I paid him a visit."
+  },
+  {
+    "id": 20576,
+    "lesson": 51,
+    "zh": "我按响了门铃，看到休仍然像以前一样胖，我并不感到惊讶。",
+    "en": "I rang the bell and was not surprised to see that Hugh was stillas fat as ever."
+  },
+  {
+    "id": 20577,
+    "lesson": 51,
+    "zh": "他领着我进了他的房间，赶紧把一个大包裹藏在了他的桌子底下。",
+    "en": "He led me into his room and hurriedly hid a large parcel under his desk."
+  },
+  {
+    "id": 20578,
+    "lesson": 51,
+    "zh": "看得出来，他非常尴尬。",
+    "en": "It was obvious that he was very embarrassed."
+  },
+  {
+    "id": 20579,
+    "lesson": 51,
+    "zh": "当我问他在做什么时，他愧疚地笑了笑，然后把包裹放在桌子上。",
+    "en": "When I asked him what he was doing, he smiled guiltily and then put the parcel on the desk."
+  },
+  {
+    "id": 20580,
+    "lesson": 51,
+    "zh": "他解释说，他的饮食非常严格，所以他不得不偶尔奖励自己。",
+    "en": "He explained that his 10 diet was so strict that he had to reward himself occasionally."
+  },
+  {
+    "id": 20581,
+    "lesson": 51,
+    "zh": "然后他给我看了包裹里的东西。",
+    "en": "Then he showed me the contents of the parcel."
+  },
+  {
+    "id": 20582,
+    "lesson": 51,
+    "zh": "里面有五块大巧克力和三袋糖果！",
+    "en": "It contained five large bars of chocolate and three bags of sweets!"
+  },
+  {
+    "id": 20583,
+    "lesson": 52,
+    "zh": "我们刚刚搬进新房子，我整个早上都在努力工作。",
+    "en": "We have just moved into a new house and I have been working hard all morning."
+  },
+  {
+    "id": 20584,
+    "lesson": 52,
+    "zh": "我一直在努力把我的新房间收拾整齐。",
+    "en": "I have been trying to get my new room in order."
+  },
+  {
+    "id": 20585,
+    "lesson": 52,
+    "zh": "这并不容易，因为我拥有一千多本书。",
+    "en": "This has not been easy because I own over a thousand books."
+  },
+  {
+    "id": 20586,
+    "lesson": 52,
+    "zh": "更糟糕的是，房间很小，所以我把书暂时放在地板上。",
+    "en": "To make matters worse, the room is rather small, so I have tempo- 5 rarily put my books on the floor."
+  },
+  {
+    "id": 20587,
+    "lesson": 52,
+    "zh": "目前，它们覆盖了每一寸地板空间，我实际上必须在它们上行走才能进出房间。",
+    "en": "At the moment, they cover every inch of floor space and I actually have to walk on them to get in or out of the room."
+  },
+  {
+    "id": 20588,
+    "lesson": 52,
+    "zh": "不久前，姐姐帮我把一个旧书柜搬上楼梯。",
+    "en": "A short while ago, my sister helped me to carry one of my old bookcases up the stairs."
+  },
+  {
+    "id": 20589,
+    "lesson": 52,
+    "zh": "她走进我的房间，当她看到地板上所有的书时，她大吃一惊。",
+    "en": "She went into my room and got a big surprise when she saw allthose books on the floor."
+  },
+  {
+    "id": 20590,
+    "lesson": 52,
+    "zh": "“这是我见过的最漂亮的地毯，”她说。",
+    "en": "'This is the prettiest carpet I have ever seen,' 10 she said."
+  },
+  {
+    "id": 20591,
+    "lesson": 52,
+    "zh": "她盯着它看了一会儿，然后补充道：“你根本不需要书架。”",
+    "en": "She gazed at it for some time then added, You don't need bookcases at all."
+  },
+  {
+    "id": 20592,
+    "lesson": 52,
+    "zh": "闲暇的时候你可以坐在这里看地毯！",
+    "en": "You can sit here in your spare time and read the carpet!"
+  },
+  {
+    "id": 20593,
+    "lesson": 53,
+    "zh": "听录音，然后回答问题。",
+    "en": "First listen and then answer the question."
+  },
+  {
+    "id": 20594,
+    "lesson": 53,
+    "zh": "消防员终于扑灭了加利福尼亚州的一场大火。",
+    "en": "At last firemen have put out a big forest fire in California."
+  },
+  {
+    "id": 20595,
+    "lesson": 53,
+    "zh": "从那时起，他们一直试图找出火灾是如何开始的。",
+    "en": "Since then, they have been trying to find out how the fire began."
+  },
+  {
+    "id": 20596,
+    "lesson": 53,
+    "zh": "森林火灾通常是由碎玻璃或人们不小心扔掉的烟头引起的。",
+    "en": "Forest fires are often caused by broken glass or by cigarette ends which people carelessly throw away."
+  },
+  {
+    "id": 20597,
+    "lesson": 53,
+    "zh": "昨天，消防队员仔细检查了地面，但没有发现任何碎玻璃。",
+    "en": "Yesterday the firemen examined the ground carefully, but were not able to find any broken glass."
+  },
+  {
+    "id": 20598,
+    "lesson": 53,
+    "zh": "他们还非常确定火灾不是烟头引起的。",
+    "en": "They were also quite sure that a cigarette end did not start the fire."
+  },
+  {
+    "id": 20599,
+    "lesson": 53,
+    "zh": "然而今天早上，一名消防员意外发现了原因。",
+    "en": "This morning, however, a firemen accidentally discovered the cause."
+  },
+  {
+    "id": 20600,
+    "lesson": 53,
+    "zh": "他注意到一条蛇的残骸缠绕在 16,000 伏的电线上。",
+    "en": "He noticed the remains of a snake which was wound round the electric wires of a 16,000-volt power line."
+  },
+  {
+    "id": 20601,
+    "lesson": 53,
+    "zh": "就这样，他终于解开了这个谜团。",
+    "en": "In this way.he was able to solve the mystery."
+  },
+  {
+    "id": 20602,
+    "lesson": 53,
+    "zh": "解释很简单，但很不寻常。",
+    "en": "The explanation was simple but very unusual."
+  },
+  {
+    "id": 20603,
+    "lesson": 53,
+    "zh": "一只鸟从地上抓起蛇，然后把它扔到电线上。",
+    "en": "A bird had snatched up the snake from the ground and then dropped it on to the wires."
+  },
+  {
+    "id": 20604,
+    "lesson": 53,
+    "zh": "然后蛇将自己缠绕在电线上。",
+    "en": "The snake then wound itself round the wires."
+  },
+  {
+    "id": 20605,
+    "lesson": 53,
+    "zh": "当它这样做时，它会向地面发出火花，这些火花立即引发火灾。",
+    "en": "When it did so, it sent sparks down to the ground and these immediately started a fire."
+  },
+  {
+    "id": 20606,
+    "lesson": 54,
+    "zh": "早餐后，我送孩子们去学校，然后我去了商店。",
+    "en": "After breakfast, I sent the children to school and then I went to the shops."
+  },
+  {
+    "id": 20607,
+    "lesson": 54,
+    "zh": "回到家的时候时间还早。",
+    "en": "It was still early when I returned home."
+  },
+  {
+    "id": 20608,
+    "lesson": 54,
+    "zh": "孩子们在学校，我丈夫在工作，家里很安静。",
+    "en": "The children were at school, my husband was at work and the house was quiet."
+  },
+  {
+    "id": 20609,
+    "lesson": 54,
+    "zh": "所以我决定做一些肉馅饼。",
+    "en": "So I decided to make some meat pies."
+  },
+  {
+    "id": 20610,
+    "lesson": 54,
+    "zh": "不一会儿，我就忙着搅拌黄油和面粉，手上很快就沾满了粘糊糊的糕点。",
+    "en": "In a short time I was busy mixing 5 butter and flour and my hands were soon covered with sticky pastry."
+  },
+  {
+    "id": 20611,
+    "lesson": 54,
+    "zh": "就在这时，电话响了。",
+    "en": "At exactly that moment, the telephone rang."
+  },
+  {
+    "id": 20612,
+    "lesson": 54,
+    "zh": "没有什么比这更烦人的了。",
+    "en": "Nothing could have been more annoying."
+  },
+  {
+    "id": 20613,
+    "lesson": 54,
+    "zh": "我用两根粘糊糊的手指拿起听筒，当我认出海伦·贝茨的声音时，我感到很沮丧。",
+    "en": "I picked up the receiver between two sticky fingers and was dismayed when I recognized the voice of Helen Bates."
+  },
+  {
+    "id": 20614,
+    "lesson": 54,
+    "zh": "我花了十分钟才说服她稍后再打电话。",
+    "en": "It took me ten minutes to persuade her to ring back later."
+  },
+  {
+    "id": 20615,
+    "lesson": 54,
+    "zh": "最后我挂断了听筒。",
+    "en": "At last I hung up the receiver."
+  },
+  {
+    "id": 20616,
+    "lesson": 54,
+    "zh": "真是一团糟！我的手指上、电话上、门把手上都有糕点。",
+    "en": "What a mess! 10 There was pastry on my fingers, on the telephone, and on the doorknobs."
+  },
+  {
+    "id": 20617,
+    "lesson": 54,
+    "zh": "我刚回到厨房，门铃就响得足以吵醒死人。",
+    "en": "I had no sooner got back to the kitchen than the doorbell rang loud enough to wake the dead."
+  },
+  {
+    "id": 20618,
+    "lesson": 54,
+    "zh": "这次是邮递员，他要我签收挂号信！",
+    "en": "This time it was the postman and he wanted me to sign for a registered letter!"
+  },
+  {
+    "id": 20619,
+    "lesson": 55,
+    "zh": "寻找失落宝藏的梦想最近几乎实现了。",
+    "en": "Dreams of finding lost treasure almost came true recently."
+  },
+  {
+    "id": 20620,
+    "lesson": 55,
+    "zh": "一种名为“揭示者”的新机器已经发明，它已被用来探测埋在地下的黄金。",
+    "en": "A new machine called 'The Revealer'has been invented and it has been used to detect gold which has been buried in the ground."
+  },
+  {
+    "id": 20621,
+    "lesson": 55,
+    "zh": "这台机器在海边附近的一个洞穴中使用，据说海盗过去常常在那里藏匿黄金。",
+    "en": "The machine was used in a cave near the seashore where —it is said—pirates 5 used to hide gold."
+  },
+  {
+    "id": 20622,
+    "lesson": 55,
+    "zh": "海盗们常常将黄金埋在山洞里，却无法取走。",
+    "en": "The pirates would often bury gold in the cave and then fail to collect it."
+  },
+  {
+    "id": 20623,
+    "lesson": 55,
+    "zh": "带着这台新机器，一支搜索队进入洞穴，希望找到埋藏的宝藏。",
+    "en": "Armed with the new machine, a search party went into the cave hoping to find buried treasure."
+  },
+  {
+    "id": 20624,
+    "lesson": 55,
+    "zh": "队伍的领导者正在检查洞穴入口附近的土壤，这时机器显示地下有金子。",
+    "en": "The leader of the party was examining the soil near the entrance to the cave when the machine showed that there was gold under the ground."
+  },
+  {
+    "id": 20625,
+    "lesson": 55,
+    "zh": "一行人非常兴奋，挖了一个两英尺深的洞。",
+    "en": "Very excited, the party dug a hole two feet deep."
+  },
+  {
+    "id": 20626,
+    "lesson": 55,
+    "zh": "他们终于找到了一枚几乎不值钱的小金币。",
+    "en": "They 10 finally found a small gold coin which was almost worthless."
+  },
+  {
+    "id": 20627,
+    "lesson": 55,
+    "zh": "随后一行人彻底搜查了整个山洞，但除了一个空锡箱外什么也没找到。",
+    "en": "The party then searched the whole cave thoroughly but did not find anything except an empty tin trunk."
+  },
+  {
+    "id": 20628,
+    "lesson": 55,
+    "zh": "尽管如此，许多人仍然相信“揭露者”可能很快就会揭露一些有价值的东西。",
+    "en": "In spite of this, many people are confident that \"The Revealer'may reveal something of value fairly soon."
+  },
+  {
+    "id": 20629,
+    "lesson": 56,
+    "zh": "每年一次，举办旧车比赛。",
+    "en": "Once a year, a race is held for old cars."
+  },
+  {
+    "id": 20630,
+    "lesson": 56,
+    "zh": "去年有很多赛车参加了这场比赛，比赛开始前大家都非常兴奋。",
+    "en": "A lot of cars entered for this race last year and there was a great deal of excitement just before it began."
+  },
+  {
+    "id": 20631,
+    "lesson": 56,
+    "zh": "最漂亮的汽车之一是劳斯莱斯银幽灵。",
+    "en": "One of the most handsome cars was a Rolls-Royce Silver Ghost."
+  },
+  {
+    "id": 20632,
+    "lesson": 56,
+    "zh": "最不寻常的汽车是一辆只有三个轮子的奔驰。",
+    "en": "The most unusual car was a Benz which had only three wheels."
+  },
+  {
+    "id": 20633,
+    "lesson": 56,
+    "zh": "它建于 1885 年，是参赛的最古老的汽车。",
+    "en": "Built in 1885, it was the oldest car taking part."
+  },
+  {
+    "id": 20634,
+    "lesson": 56,
+    "zh": "在一阵巨大的爆炸声之后，比赛开始了。",
+    "en": "After a great many loud explosions, the race began."
+  },
+  {
+    "id": 20635,
+    "lesson": 56,
+    "zh": "许多赛车在赛道上抛锚，有些车手在车底下待的时间比在车内的时间还多！",
+    "en": "Many of the cars broke down on the course and some drivers spent more time under their cars than in them!"
+  },
+  {
+    "id": 20636,
+    "lesson": 56,
+    "zh": "然而，有几辆车完成了比赛。",
+    "en": "A few cars, however, completed the race."
+  },
+  {
+    "id": 20637,
+    "lesson": 56,
+    "zh": "获胜的汽车达到了每小时四十英里的速度——比任何竞争对手都快得多。",
+    "en": "The win- ning car reached a speed of forty miles an hour —much faster than any ofits rivals."
+  },
+  {
+    "id": 20638,
+    "lesson": 56,
+    "zh": "比赛结束时，它加速下坡，车手费了好大劲才阻止它。",
+    "en": "It sped downhill at the 10 end of the race and its driver had a lot of trouble trying to stop it."
+  },
+  {
+    "id": 20639,
+    "lesson": 56,
+    "zh": "比赛给大家带来了极大的乐趣。",
+    "en": "The race gave everyone a great deal of pleasure."
+  },
+  {
+    "id": 20640,
+    "lesson": 56,
+    "zh": "这与现代汽车比赛有很大不同，但同样令人兴奋。",
+    "en": "It was very different from modern car races but no less exciting."
+  },
+  {
+    "id": 20641,
+    "lesson": 57,
+    "zh": "女人得到了她想要的吗？",
+    "en": "Did the woman get what she wanted?"
+  },
+  {
+    "id": 20642,
+    "lesson": 57,
+    "zh": "一个穿着牛仔裤的女人站在一家昂贵商店的橱窗前。",
+    "en": "A woman in jeans stood at the window of an expensive shop."
+  },
+  {
+    "id": 20643,
+    "lesson": 57,
+    "zh": "尽管犹豫了一会儿，她还是进去了，要求看看橱窗里的一件衣服。",
+    "en": "Though she hesitated for a moment, she finally went in and asked to see a dress that was in the window."
+  },
+  {
+    "id": 20644,
+    "lesson": 57,
+    "zh": "为她服务的助理不喜欢她的穿着。",
+    "en": "The assistant who served her did not like the way she was dressed."
+  },
+  {
+    "id": 20645,
+    "lesson": 57,
+    "zh": "他轻蔑地看了她一眼，告诉她这件衣服已经卖了。",
+    "en": "Glancing at her scornfully, he told her that the dress was sold."
+  },
+  {
+    "id": 20646,
+    "lesson": 57,
+    "zh": "女子愤怒地走出店门，决定第二天惩罚店员。",
+    "en": "The woman walked out of the shop angrily and decided to punish the assistant next day."
+  },
+  {
+    "id": 20647,
+    "lesson": 57,
+    "zh": "第二天早上，她穿着一件皮大衣回到店里，一手拎着一个手提包，一手撑着一把长伞。",
+    "en": "She returned to the shop the following morning dressed in a fur coat, with a handbag in one hand and a long umbrella in the other."
+  },
+  {
+    "id": 20648,
+    "lesson": 57,
+    "zh": "在找到粗鲁的助理后，她要了同样的衣服。",
+    "en": "After seek- ing out the rude assistant, she asked for the same dress."
+  },
+  {
+    "id": 20649,
+    "lesson": 57,
+    "zh": "助理不知道她是谁，这次很热情地为她服务。",
+    "en": "Not realizing who she was, the assistant was eager to serve her this time."
+  },
+  {
+    "id": 20650,
+    "lesson": 57,
+    "zh": "他好不容易才爬进商店橱窗去拿那件衣服。",
+    "en": "With great difficulty, he climbed into the shop window to get the dress."
+  },
+  {
+    "id": 20651,
+    "lesson": 57,
+    "zh": "那个女人一看到它就说她不喜欢它。",
+    "en": "As soon as she saw it, the woman said she did not like it."
+  },
+  {
+    "id": 20652,
+    "lesson": 57,
+    "zh": "她很高兴让助理把橱窗里的几乎所有东西都搬过来，然后才买下了她最初想要的衣服。",
+    "en": "She enjoyed herself making the assistant bring almost everything in the window before finally buying the dress she had first asked for."
+  },
+  {
+    "id": 20653,
+    "lesson": 58,
+    "zh": "据说弗林利小村庄有一棵“被诅咒的树”。",
+    "en": "The tiny village of Frinley is said to possess a ‘cursed tree’."
+  },
+  {
+    "id": 20654,
+    "lesson": 58,
+    "zh": "由于trec在报纸上被提及，现在弗林利的游客数量有所增加。",
+    "en": "Because the trec was mentioned in a newspaper, the number of visitors to Frinley has now increased."
+  },
+  {
+    "id": 20655,
+    "lesson": 58,
+    "zh": "这棵树是五十年前种在教堂附近的，但直到最近几年，它才获得了恶名。",
+    "en": "The tree was planted near the church fifty years ago, but it is only in recent years that it 5 has gained an evil reputation."
+  },
+  {
+    "id": 20656,
+    "lesson": 58,
+    "zh": "据说，谁要是碰了这棵树，就会倒霉；如果摘了一片叶子，就会死。",
+    "en": "It is said that if anyone touches the tree, he will have bad luck; if he picks a leaf, he will die."
+  },
+  {
+    "id": 20657,
+    "lesson": 58,
+    "zh": "许多村民认为，这棵树已经造成了一些受害者。",
+    "en": "Many villagers believe that the tree has already claimed a number of victims."
+  },
+  {
+    "id": 20658,
+    "lesson": 58,
+    "zh": "有人要求牧师砍掉这棵树，但到目前为止他拒绝了。",
+    "en": "The vicar has been asked to have the tree cut down, but so far he has refused."
+  },
+  {
+    "id": 20659,
+    "lesson": 58,
+    "zh": "他指出，这棵树是一个有用的收入来源，因为来自全国各地的游客都来看它。",
+    "en": "He has pointed out that the tree is a useful source of income, as tourists have been 10 coming from all parts of the country to see it."
+  },
+  {
+    "id": 20660,
+    "lesson": 58,
+    "zh": "尽管说了这么多，游客们还是在摘树叶，在树干上刻下自己的名字。",
+    "en": "In spite of all that has been said, the tourists have been picking leaves and cutting their names on the tree-trunk."
+  },
+  {
+    "id": 20661,
+    "lesson": 58,
+    "zh": "到目前为止，还没有一个人被猝死！",
+    "en": "So far, not one of them has been struck down by sudden death!"
+  },
+  {
+    "id": 20662,
+    "lesson": 59,
+    "zh": "我们的狗，雷克斯，曾经坐在我们的前门外吠叫。",
+    "en": "Our dog, Rex, used to sit outside our front gate and bark."
+  },
+  {
+    "id": 20663,
+    "lesson": 59,
+    "zh": "每次他想进花园时，他都会吠叫，直到有人打开门。",
+    "en": "Every time he wanted to come into the garden he would bark until someone opened the gate."
+  },
+  {
+    "id": 20664,
+    "lesson": 59,
+    "zh": "当邻居抱怨噪音时，我丈夫花了几周的时间训练他用爪子按门闩以让自己进去。",
+    "en": "As the neighbours complained of the noise, my husband spent weeks training him to press his paw on the latch to 5 let himself in."
+  },
+  {
+    "id": 20665,
+    "lesson": 59,
+    "zh": "雷克斯很快就成为开门专家。",
+    "en": "Rex soon became an expert at opening the gate."
+  },
+  {
+    "id": 20666,
+    "lesson": 59,
+    "zh": "然而，上周我出去购物时，我注意到他在门口附近的花园里。",
+    "en": "However, when I was going out shopping last week, I noticed him in the garden near the gate."
+  },
+  {
+    "id": 20667,
+    "lesson": 59,
+    "zh": "这次他大叫是为了有人放他出去！",
+    "en": "This time he was barking so that someone would let him out!"
+  },
+  {
+    "id": 20668,
+    "lesson": 59,
+    "zh": "从那时起，他又养成了一个坏习惯。",
+    "en": "Since then, he has developed another bad habit."
+  },
+  {
+    "id": 20669,
+    "lesson": 59,
+    "zh": "他一从外面打开门，就走进花园，等到门关上。",
+    "en": "As soon as he opens the gate from the outside, he comes into the garden and waits until the gate 10 shuts."
+  },
+  {
+    "id": 20670,
+    "lesson": 59,
+    "zh": "然后他坐下来吠叫，直到有人放他出去。",
+    "en": "Then he sits and barks until someone lets him out."
+  },
+  {
+    "id": 20671,
+    "lesson": 59,
+    "zh": "在此之后，他立即让自己进去并再次开始吠叫。",
+    "en": "After this he immediately lets himself in and begins barking again."
+  },
+  {
+    "id": 20672,
+    "lesson": 59,
+    "zh": "昨天，我丈夫把门拆掉了，雷克斯很生气，从那以后我们就再也没有见过他。",
+    "en": "Yesterday my husband removed the gate and Rex got so annoyed we have not seen him since."
+  },
+  {
+    "id": 20673,
+    "lesson": 60,
+    "zh": "贝林斯基女士的话是否属实呢？",
+    "en": "Does what Madam Bellinsky said come true?"
+  },
+  {
+    "id": 20674,
+    "lesson": 60,
+    "zh": "在一次乡村集市上，我决定去拜访一位名叫贝林斯基女士的算命师。",
+    "en": "At a village fair, I decided to visit a fortune-teller called Madam Bellinsky."
+  },
+  {
+    "id": 20675,
+    "lesson": 60,
+    "zh": "我走进她的帐篷，她叫我坐下。",
+    "en": "I went into her tent and she told me to sit down."
+  },
+  {
+    "id": 20676,
+    "lesson": 60,
+    "zh": "我给了她一些钱后，她看着水晶球说：‘你的一个亲戚要来看你。",
+    "en": "After I had given her some money, she looked into a crystal balland said: 'A relation of yours is coming to see you."
+  },
+  {
+    "id": 20677,
+    "lesson": 60,
+    "zh": "她将于今晚抵达并打算停留几天。",
+    "en": "She willbe arriving this 5 evening and intends to stay for a few days."
+  },
+  {
+    "id": 20678,
+    "lesson": 60,
+    "zh": "当你离开这个帐篷的那一刻，你会得到一个很大的惊喜。",
+    "en": "The moment you leave this tent, you will get a big surprise."
+  },
+  {
+    "id": 20679,
+    "lesson": 60,
+    "zh": "一个你熟悉的女人会向你冲过来。",
+    "en": "A woman you know well will rush towards you."
+  },
+  {
+    "id": 20680,
+    "lesson": 60,
+    "zh": "她会和你说话，然后她会带你离开这个地方。",
+    "en": "She will speak to you and then she will lead you away from this place."
+  },
+  {
+    "id": 20681,
+    "lesson": 60,
+    "zh": "仅此而已。",
+    "en": "That is all."
+  },
+  {
+    "id": 20682,
+    "lesson": 60,
+    "zh": "’我一出门，就忘记了贝林斯基夫人，因为我的妻子朝我急匆匆地跑来。",
+    "en": "' As soon as I went outside, I forgot all about Madam Bellinsky because my wife hurried towards 10 me."
+  },
+  {
+    "id": 20683,
+    "lesson": 60,
+    "zh": "‘你躲到哪儿去了？",
+    "en": "'Where have you been hiding?"
+  },
+  {
+    "id": 20684,
+    "lesson": 60,
+    "zh": "“她不耐烦地问道。",
+    "en": "'she asked impatiently."
+  },
+  {
+    "id": 20685,
+    "lesson": 60,
+    "zh": "你姐姐不到一个小时就到了，我们必须去车站接她。",
+    "en": "Your sister will be here in less than an hour and we must be at the station to meet her."
+  },
+  {
+    "id": 20686,
+    "lesson": 60,
+    "zh": "我们已经迟到了。",
+    "en": "We are late already."
+  },
+  {
+    "id": 20687,
+    "lesson": 60,
+    "zh": "“当她走开时，我跟着她走出了集市。",
+    "en": "'As she walked away, I followed her out of the fair."
+  },
+  {
+    "id": 20688,
+    "lesson": 61,
+    "zh": "哈勃望远镜于 1990 年 4 月 20 日由 NASA 耗资超过 10 亿美元发射升空。",
+    "en": "The Hubble telescope was launched into space by NASA on April 20,1990 at a cost of over a billion dollars."
+  },
+  {
+    "id": 20689,
+    "lesson": 61,
+    "zh": "哈勃望远镜从一开始就遇到了麻烦。",
+    "en": "Right from the start there was trouble with the Hubble."
+  },
+  {
+    "id": 20690,
+    "lesson": 61,
+    "zh": "它发给我们的照片非常令人失望，因为它的主镜有问题！",
+    "en": "The pictures it sent us were very disappointing because its main mirror was faulty!"
+  },
+  {
+    "id": 20691,
+    "lesson": 61,
+    "zh": "美国宇航局现在正准备修复望远镜，因此很快就会派出四名宇航员来修理它。",
+    "en": "NASA is now 5 going to put the telescope right, so it willsoon be sending up four astronauts to repair it."
+  },
+  {
+    "id": 20692,
+    "lesson": 61,
+    "zh": "奋进号航天飞机将把宇航员送往哈勃望远镜。",
+    "en": "The shuttle Endeavour will be taking the astronauts to the Hubble."
+  },
+  {
+    "id": 20693,
+    "lesson": 61,
+    "zh": "当宇航员进行必要的维修时，奋进号的机械臂将抓住望远镜并固定住它。",
+    "en": "A robot-arm from the Endeavour will grab the telescope and hold it while the astronauts make the necessary repairs."
+  },
+  {
+    "id": 20694,
+    "lesson": 61,
+    "zh": "当然，哈勃望远镜位于地球大气层之上，因此它很快就会向我们发送我们所见过的最清晰的恒星和遥远星系的照片。",
+    "en": "Of course, the Hubble is above the earth's atmosphere, so it will soon be sending us the clearest 10 pictures of the stars and distant galaxies that we have ever seen."
+  },
+  {
+    "id": 20695,
+    "lesson": 61,
+    "zh": "哈勃望远镜将告诉我们很多关于宇宙的年龄和大小的信息。",
+    "en": "The Hubble will tell us a great deal about the age and size of the universe."
+  },
+  {
+    "id": 20696,
+    "lesson": 61,
+    "zh": "当你读到这篇文章时，哈勃的鹰眼已经向我们发送了成千上万张精彩的照片。",
+    "en": "By the time you read this, the Hubble's eagle eye will have sent us thousands and thousands of wonderful pictures."
+  },
+  {
+    "id": 20697,
+    "lesson": 62,
+    "zh": "消防员与森林大火进行了近三周的扑救，才将火势控制住。",
+    "en": "Firemen had been fighting the forest fire for nearly three weeks before they could get it under control."
+  },
+  {
+    "id": 20698,
+    "lesson": 62,
+    "zh": "不久之前，大树覆盖了方圆数英里的乡村。",
+    "en": "A short time before, great trees had covered the countryside for miles around."
+  },
+  {
+    "id": 20699,
+    "lesson": 62,
+    "zh": "现在，荒凉的山丘上空温暖的地面仍然升起炊烟。",
+    "en": "Now, smoke still rose up from the warm ground over the desolate hills."
+  },
+  {
+    "id": 20700,
+    "lesson": 62,
+    "zh": "冬天即将来临，山丘威胁着周围的村庄，因为大雨不仅会冲走土壤，还会引发严重的洪水。",
+    "en": "Winter was coming 5 on and the hills threatened the surrounding villages with destruction, for heavy rain would not only wash away the soil but would cause serious floods as well."
+  },
+  {
+    "id": 20701,
+    "lesson": 62,
+    "zh": "当大火最终被扑灭后，森林当局订购了数吨特殊的草籽，这种草籽可以快速生长。",
+    "en": "When the fire had at last been put out, the forest authorities ordered several tons of a special type of grass- seed which would grow quickly."
+  },
+  {
+    "id": 20702,
+    "lesson": 62,
+    "zh": "飞机将大量种子喷洒在地面上。",
+    "en": "The seed was sprayed over the ground in huge quantities by aeroplanes."
+  },
+  {
+    "id": 20703,
+    "lesson": 62,
+    "zh": "当飞机开始下雨时，飞机已经播种了近一个月。",
+    "en": "The 10 planes had been planting seed for nearly a month when it began to rain."
+  },
+  {
+    "id": 20704,
+    "lesson": 62,
+    "zh": "然而，那时，很多地方的草已经生根了。",
+    "en": "By then, however, in many places the grass had already taken root."
+  },
+  {
+    "id": 20705,
+    "lesson": 62,
+    "zh": "那里生长了几个世纪的大树不见了，黑色的土壤里开始出现了一片片绿色。",
+    "en": "In place of the great trees which had been growing there for centuries, patches of green had begun to appear in the blackened soil."
+  },
+  {
+    "id": 20706,
+    "lesson": 63,
+    "zh": "杰里米·汉普登 (Jeremy Hampden) 的朋友圈子很大，在聚会上很受欢迎。",
+    "en": "Jeremy Hampden has a large circle of friends and is very popular at parties."
+  },
+  {
+    "id": 20707,
+    "lesson": 63,
+    "zh": "每个人都钦佩他的幽默感——每个人，除了他六岁的女儿珍妮。",
+    "en": "Everybody admires him for his great sensc of humour— everybody.that is, except his six-year-old daughter, Jenny."
+  },
+  {
+    "id": 20708,
+    "lesson": 63,
+    "zh": "最近，杰里米最亲密的朋友之一邀请他在一场婚宴上发表演讲。",
+    "en": "Recently, one of Jeremy's closest friends asked him to make a speech at a 5 wedding reception."
+  },
+  {
+    "id": 20709,
+    "lesson": 63,
+    "zh": "这就是杰里米喜欢的事情。",
+    "en": "This is the sort of thing that Jeremy loves."
+  },
+  {
+    "id": 20710,
+    "lesson": 63,
+    "zh": "他精心准备了演讲稿，然后和珍妮一起去参加婚礼。",
+    "en": "He prepared the speech carefully and went to the wedding with Jenny."
+  },
+  {
+    "id": 20711,
+    "lesson": 63,
+    "zh": "他在演讲中加入了大量有趣的故事，当然，这是一个巨大的成功。",
+    "en": "He had included a large number of funny stories in the speech and, of course.it was a great success."
+  },
+  {
+    "id": 20712,
+    "lesson": 63,
+    "zh": "他一说完，珍妮就告诉他她想回家。",
+    "en": "As soon as he had finished, Jenny told him she wanted to go home."
+  },
+  {
+    "id": 20713,
+    "lesson": 63,
+    "zh": "杰里米对此有些失望，但他还是按照女儿的要求做了。",
+    "en": "Jeremy was a little disappointed by this but he did as his daughter asked."
+  },
+  {
+    "id": 20714,
+    "lesson": 63,
+    "zh": "在回家的路上，他问珍妮是否喜欢这次演讲。",
+    "en": "On 10 the way home, he asked Jenny if she had enjoyed the speech."
+  },
+  {
+    "id": 20715,
+    "lesson": 63,
+    "zh": "令他惊讶的是，她说她没有。",
+    "en": "To his surprise, she said she hadn’t."
+  },
+  {
+    "id": 20716,
+    "lesson": 63,
+    "zh": "杰里米问她为什么会这样，她告诉他，她不喜欢看到这么多人嘲笑他！",
+    "en": "Jeremy asked her why this was so and she told him that she did not like to see so many people laughing at him!"
+  },
+  {
+    "id": 20717,
+    "lesson": 64,
+    "zh": "1858 年，法国工程师艾梅·托梅·德·加蒙 (Aimé Thomé de Gamond) 抵达英国，计划在英吉利海峡下修建一条 21 英里长的隧道。",
+    "en": "In 1858, a French engineer, Aimé Thomé de Gamond, arrived in England with a plan for a twenty-one-mile tunnel under the English Channel."
+  },
+  {
+    "id": 20718,
+    "lesson": 64,
+    "zh": "他说，有可能在海峡中心建立一个平台。",
+    "en": "He said that it would be possible to build a platform in the centre of the Channel."
+  },
+  {
+    "id": 20719,
+    "lesson": 64,
+    "zh": "该平台将用作港口和火车站。",
+    "en": "This platform would serve as a port and a 5 railway station."
+  },
+  {
+    "id": 20720,
+    "lesson": 64,
+    "zh": "如果高烟囱建在海平面以上，隧道就会通风良好。",
+    "en": "The tunnel would be well-ventilated if tall chimneys were built above sea level."
+  },
+  {
+    "id": 20721,
+    "lesson": 64,
+    "zh": "1860年，英国人威廉·洛（William Low）提出了一个更好的计划。",
+    "en": "In 1860, a better plan was put forward by an Englishman, William Low."
+  },
+  {
+    "id": 20722,
+    "lesson": 64,
+    "zh": "他建议修建一条双线铁路隧道。",
+    "en": "He suggested that a double railway- tunnel should be built."
+  },
+  {
+    "id": 20723,
+    "lesson": 64,
+    "zh": "这将解决通风问题，因为如果火车驶入这条隧道，就会吸入后面的新鲜空气。",
+    "en": "This would solve the problem of ventilation, for if a train cntered this tunnel, it would draw in fresh air behind it."
+  },
+  {
+    "id": 20724,
+    "lesson": 64,
+    "zh": "四十二年后，一条隧道真正动工了。",
+    "en": "Forty-two years later a tunnel was actually 10 begun."
+  },
+  {
+    "id": 20725,
+    "lesson": 64,
+    "zh": "如果当时英国人不担心入侵的话，它就已经完成了。",
+    "en": "If, at the time, the British had not feared invasion, it would have been completed."
+  },
+  {
+    "id": 20726,
+    "lesson": 64,
+    "zh": "世界不得不再等近 100 年才能看到英吉利海峡隧道的建成。",
+    "en": "The world had to wait almost another 100 years for the Channel Tunnel."
+  },
+  {
+    "id": 20727,
+    "lesson": 64,
+    "zh": "1994年3月7日正式开通，最终将英国与欧洲大陆连接起来。",
+    "en": "It was officially opened on March 7,1994, finally connecting Britain to the European continent."
+  },
+  {
+    "id": 20728,
+    "lesson": 65,
+    "zh": "去年圣诞节，马戏团老板吉米·盖茨决定带一些礼物去儿童医院。",
+    "en": "Last Christmas, the circus owner, Jimmy Gates, decided to take some presents to a children's hospital."
+  },
+  {
+    "id": 20729,
+    "lesson": 65,
+    "zh": "他打扮成圣诞老人的样子，在六名漂亮女孩组成的“仪仗队”的陪伴下，骑着一头名叫 Jumbo 的小象沿着城市的主要街道出发。",
+    "en": "Dressed up as Father Christmas and accompanied by a ‘guard of honour'of six pretty girls, he set off down the main street of the city riding a baby 5 elephant called Jumbo."
+  },
+  {
+    "id": 20730,
+    "lesson": 65,
+    "zh": "他早该知道，警察是绝对不会允许这种事情发生的。",
+    "en": "He should have known that the police would never allow this sort of thing."
+  },
+  {
+    "id": 20731,
+    "lesson": 65,
+    "zh": "一名警察走近吉米，告诉他应该沿着小巷走，因为珍宝阻碍了交通。",
+    "en": "A policeman approached Jimmy and told him he ought to have gone along a side street as Jumbo was holding up the traffic."
+  },
+  {
+    "id": 20732,
+    "lesson": 65,
+    "zh": "尽管吉米同意立即前往，但珍宝却拒绝搬走。",
+    "en": "Though Jimmy agreed to go at once, Jumbo refused to move."
+  },
+  {
+    "id": 20733,
+    "lesson": 65,
+    "zh": "十五名警察用力推他才离开大街。",
+    "en": "Fifteen policemen had to push very hard to get him off the main street."
+  },
+  {
+    "id": 20734,
+    "lesson": 65,
+    "zh": "警察们过得很艰难，但他们也觉得好笑。",
+    "en": "The police had a 10 difficurlt time, but they were most amused."
+  },
+  {
+    "id": 20735,
+    "lesson": 65,
+    "zh": "一名警察事后说道，“这个大块头肯定有几吨重，所以幸运的是我们不用背着他。”",
+    "en": "'Jumbo must weigh a few tons,'said a policeman afterwards,'so it was fortunate that we didn't have to carry him."
+  },
+  {
+    "id": 20736,
+    "lesson": 65,
+    "zh": "当然，我们应该逮捕他，但由于他有良好的记录，这次我们就放了他。",
+    "en": "Of course, we should arrest him, but as he has a good record, we shall let him off this time."
+  },
+  {
+    "id": 20737,
+    "lesson": 66,
+    "zh": "1963年，一架兰卡斯特轰炸机在南太平洋偏远地区瓦利斯岛坠毁，距萨摩亚以西很远。",
+    "en": "In 1963 a Lancaster bomber crashed on Wallis Island, a remote place in the South Pacific, a long way west of Samoa."
+  },
+  {
+    "id": 20738,
+    "lesson": 66,
+    "zh": "这架飞机并没有受到太严重的损坏，但多年来，坠机事件被人们遗忘了，残骸也没有受到干扰。",
+    "en": "The plane wasn't too badly damaged, but over the years, the crash was forgotten and the wreck remained undisturbed."
+  },
+  {
+    "id": 20739,
+    "lesson": 66,
+    "zh": "1989 年，也就是坠机事件 26 年后，这架飞机在对该岛进行航测时意外被重新发现。",
+    "en": "Then in 1989, twenty-six years 5 after the crash, the plane was accidentally rediscovered in an aerial survey of the island."
+  },
+  {
+    "id": 20740,
+    "lesson": 66,
+    "zh": "此时，状况良好的兰开斯特轰炸机已是罕见且值得抢救。",
+    "en": "By this time, a Lancaster bomber in reasonable condition was rare and worth rescuing."
+  },
+  {
+    "id": 20741,
+    "lesson": 66,
+    "zh": "法国当局将这架飞机打包并分批运回法国。",
+    "en": "The French authorities had the plane packaged and moved in parts back to France."
+  },
+  {
+    "id": 20742,
+    "lesson": 66,
+    "zh": "现在，一群爱好者正准备修复这架飞机。",
+    "en": "Now a group of enthusiasts are going to have the plane restored."
+  },
+  {
+    "id": 20743,
+    "lesson": 66,
+    "zh": "它有四台劳斯莱斯 Merlin 发动机，但该集团只需要重建其中的三台。",
+    "en": "It has four Rolls-Royce Merlin engines, but the group will 10 need to have only three of them rebuilt."
+  },
+  {
+    "id": 20744,
+    "lesson": 66,
+    "zh": "想象一下，当他们打开包装箱并发现第四台发动机像蜂蜜一样甜——仍然处于完美状态时，他们的惊讶和喜悦。",
+    "en": "Imagine their surprise and delight when they broke open the packing cases and found that the fourth engine was sweet as honey—stillin perfect condition."
+  },
+  {
+    "id": 20745,
+    "lesson": 66,
+    "zh": "一群蜜蜂将发动机变成了蜂巢，并将其完全保存在蜂蜡中！",
+    "en": "A colony of bees had turned the engine into a hive and it was totally preserved in beeswax!"
+  },
+  {
+    "id": 20746,
+    "lesson": 67,
+    "zh": "波兰科学家哈龙·塔齐耶夫 (Haroun Tazieff) 一生都在研究世界各地的活火山和深洞。",
+    "en": "Haroun Tazieff, the Polish scientist, has spent his lifetime studying active volcanoes and deep caves in all parts of the world."
+  },
+  {
+    "id": 20747,
+    "lesson": 67,
+    "zh": "1948年，他前往刚果的基伍湖观察一座新火山，后来将其命名为基图罗。",
+    "en": "In 1948, he went to Lake Kivu in the Congo to observe a new volcano which he later named Kituro."
+  },
+  {
+    "id": 20748,
+    "lesson": 67,
+    "zh": "当火山猛烈喷发时，塔齐耶夫得以在距离火山很近的地方建立了营地。",
+    "en": "Tazieff was able to set up his camp very 5 close to the volcano while it was erupting violently."
+  },
+  {
+    "id": 20749,
+    "lesson": 67,
+    "zh": "尽管他拍摄了许多精彩的照片，但他无法在火山附近停留很长时间。",
+    "en": "Though he managed to take a number of brilliant photographs, he could not stay near the volcano for very long."
+  },
+  {
+    "id": 20750,
+    "lesson": 67,
+    "zh": "他注意到一条液态岩石河正向他涌来。",
+    "en": "He noticed that a river of liquid rock was coming towards him."
+  },
+  {
+    "id": 20751,
+    "lesson": 67,
+    "zh": "它威胁要完全包围他，但塔齐耶夫及时逃脱了。",
+    "en": "It threatened to surround him completely, but Tazieff managed to escape just in time."
+  },
+  {
+    "id": 20752,
+    "lesson": 67,
+    "zh": "等到火山安静下来，两天后他才回来。",
+    "en": "He waited until the volcano became quiet and he was 10 able to return two days later."
+  },
+  {
+    "id": 20753,
+    "lesson": 67,
+    "zh": "这次，他成功地爬进了Kituro的嘴里，以便拍照和测量温度。",
+    "en": "This time, he managed to climb into the mouth of Kituro so that he could take photographs and measure temperatures."
+  },
+  {
+    "id": 20754,
+    "lesson": 67,
+    "zh": "塔齐耶夫经常以这种方式冒着生命危险。",
+    "en": "Tazieff has often risked his life in this way."
+  },
+  {
+    "id": 20755,
+    "lesson": 67,
+    "zh": "他比任何活着的人都能够告诉我们更多有关活火山的信息。",
+    "en": "He has been able to tell us more about active volcanoes than any man alive."
+  },
+  {
+    "id": 20756,
+    "lesson": 68,
+    "zh": "我穿过马路以避免遇见他，但他看到了我并向我跑来。",
+    "en": "I crossed the street to avoid meeting him, but he saw me and came running towards me."
+  },
+  {
+    "id": 20757,
+    "lesson": 68,
+    "zh": "假装没看见他也没有用，我只好向他挥手。",
+    "en": "It was no use pretending that I had not seen him, so I waved to him."
+  },
+  {
+    "id": 20758,
+    "lesson": 68,
+    "zh": "我从来不喜欢见到奈杰尔·戴克斯。",
+    "en": "I never enjoy meeting Nigel Dykes."
+  },
+  {
+    "id": 20759,
+    "lesson": 68,
+    "zh": "他从来没有什么事可做。",
+    "en": "He never has anything to do."
+  },
+  {
+    "id": 20760,
+    "lesson": 68,
+    "zh": "不管你多忙，他总是坚持陪你。",
+    "en": "No matter how busy you are, he always 5 insists on coming with you."
+  },
+  {
+    "id": 20761,
+    "lesson": 68,
+    "zh": "我必须想办法阻止他整个上午都跟着我。",
+    "en": "I had to think of a way of preventing him from following me around all morning."
+  },
+  {
+    "id": 20762,
+    "lesson": 68,
+    "zh": "“你好，奈杰尔，”我说。",
+    "en": "'Hello, Nigel,'I said."
+  },
+  {
+    "id": 20763,
+    "lesson": 68,
+    "zh": "'很高兴在这里见到你！",
+    "en": "'Fancy meeting you here!"
+  },
+  {
+    "id": 20764,
+    "lesson": 68,
+    "zh": "” “嗨，伊丽莎白，”奈杰尔回答道。",
+    "en": "' 'Hi, Elizabeth,'Nigel answered."
+  },
+  {
+    "id": 20765,
+    "lesson": 68,
+    "zh": "“我只是想知道如何度过这个早上——直到我见到你。",
+    "en": "'I was just wondering how to spend the morning—untilI saw you."
+  },
+  {
+    "id": 20766,
+    "lesson": 68,
+    "zh": "你没有忙着做任何事情，是吗？",
+    "en": "You're not busy doing anything, are you?"
+  },
+  {
+    "id": 20767,
+    "lesson": 68,
+    "zh": "” “不，一点也不，”我回答道。",
+    "en": "' 10 'No, not at all,'I answered."
+  },
+  {
+    "id": 20768,
+    "lesson": 68,
+    "zh": "'我要...",
+    "en": "'I’m going to..."
+  },
+  {
+    "id": 20769,
+    "lesson": 68,
+    "zh": "” “你介意我和你一起去吗？",
+    "en": "' 'Would you mind my coming with you?"
+  },
+  {
+    "id": 20770,
+    "lesson": 68,
+    "zh": "”我还没说完，他就问道。",
+    "en": "'he asked, before I had finished speaking."
+  },
+  {
+    "id": 20771,
+    "lesson": 68,
+    "zh": "“一点也不，”我撒了谎，“但我要去看牙医。”",
+    "en": "'Not at all,'I lied,'but I’m going to the dentist."
+  },
+  {
+    "id": 20772,
+    "lesson": 68,
+    "zh": "“那我就跟你一起去，”他回答道。",
+    "en": "' Then I'll come with you,'he answered."
+  },
+  {
+    "id": 20773,
+    "lesson": 68,
+    "zh": "“候诊室里总是有很多书可以读！",
+    "en": "'There's always plenty to read in the waiting room!"
+  },
+  {
+    "id": 20774,
+    "lesson": 69,
+    "zh": "你认为作者通过了驾驶考试吗？",
+    "en": "Do you think that the writer passed his driving test?"
+  },
+  {
+    "id": 20775,
+    "lesson": 69,
+    "zh": "我正在第三次参加驾驶执照考试。",
+    "en": "I was being tested for a driving licence for the third time."
+  },
+  {
+    "id": 20776,
+    "lesson": 69,
+    "zh": "我被要求在交通拥堵的情况下开车，并且成功地做到了。",
+    "en": "I had been asked to drive in heavy traffic and had done so successfully."
+  },
+  {
+    "id": 20777,
+    "lesson": 69,
+    "zh": "接到指示后开车出城。",
+    "en": "After having been instructed to drive out of town."
+  },
+  {
+    "id": 20778,
+    "lesson": 69,
+    "zh": "我开始获得信心。",
+    "en": "I began to acquire confidence."
+  },
+  {
+    "id": 20779,
+    "lesson": 69,
+    "zh": "确信我已经通过了，我几乎开始享受我的考试了。",
+    "en": "Sure that I had passed, I was almost beginning to enjoy 5 my test."
+  },
+  {
+    "id": 20780,
+    "lesson": 69,
+    "zh": "考官一定对我的表现很满意，因为他微笑着说：“还有一件事，先生。”",
+    "en": "The examiner must have been pleased with my performance, for he smiled and said,'Just one more thing, Mr."
+  },
+  {
+    "id": 20781,
+    "lesson": 69,
+    "zh": "埃姆斯。",
+    "en": "Eames."
+  },
+  {
+    "id": 20782,
+    "lesson": 69,
+    "zh": "让我们假设一个孩子突然在你面前过马路。",
+    "en": "Let us suppose that a child suddenly crosses the road in front of you."
+  },
+  {
+    "id": 20783,
+    "lesson": 69,
+    "zh": "我一敲窗户，你就必须停在五英尺之内。",
+    "en": "As soon as I tap on the window, you must stop within five feet."
+  },
+  {
+    "id": 20784,
+    "lesson": 69,
+    "zh": "“我继续开车，过了一会儿，考官大声敲击。",
+    "en": "'I continued driving and after some time, the examiner tapped loudly."
+  },
+  {
+    "id": 20785,
+    "lesson": 69,
+    "zh": "虽然声音听得很清楚，但我却过了好久才反应过来。",
+    "en": "Though the sound could be heard clearly, 10 it took me a long time to react."
+  },
+  {
+    "id": 20786,
+    "lesson": 69,
+    "zh": "我突然用力踩下刹车踏板，我们都被向前抛了出去。",
+    "en": "I suddenly pressed the brake pedal hard and we were both thrown forward."
+  },
+  {
+    "id": 20787,
+    "lesson": 69,
+    "zh": "考官悲伤地看着我。",
+    "en": "The examiner looked at me sadly."
+  },
+  {
+    "id": 20788,
+    "lesson": 69,
+    "zh": "伊姆斯，”他用悲伤的声音说道，“你刚刚杀了那个孩子！",
+    "en": "Eames,'he said, in a mournful voice,‘you have just killed that child!"
+  },
+  {
+    "id": 20789,
+    "lesson": 70,
+    "zh": "在一次斗牛中，一个醉汉突然溜进斗牛场中央。",
+    "en": "During a bullfight, a drunk suddenly wandered into the middle of the ring."
+  },
+  {
+    "id": 20790,
+    "lesson": 70,
+    "zh": "人群开始叫喊，但醉汉并没有意识到危险。",
+    "en": "The crowd began to shout, but the drunk was unaware of the danger."
+  },
+  {
+    "id": 20791,
+    "lesson": 70,
+    "zh": "当时公牛正忙着对付斗牛士，突然看到了那个挥舞着红帽、喊着粗话的醉汉。",
+    "en": "The bull was busy with the matador at the time, but it suddenly caught sight of the drunk who was shouting rude remarks 5 and waving a red cap."
+  },
+  {
+    "id": 20792,
+    "lesson": 70,
+    "zh": "显然，公牛对批评很敏感，它完全忘记了斗牛士，并向醉汉冲去。",
+    "en": "Apparently sensitive to criticism, the bull forgot all about the matador and charged at the drunk."
+  },
+  {
+    "id": 20793,
+    "lesson": 70,
+    "zh": "人群顿时安静了下来。",
+    "en": "The crowd suddenly grew quiet."
+  },
+  {
+    "id": 20794,
+    "lesson": 70,
+    "zh": "然而，醉汉似乎对自己很有信心。",
+    "en": "The drunk, however, seemed quite sure of himself."
+  },
+  {
+    "id": 20795,
+    "lesson": 70,
+    "zh": "当公牛靠近他时，他笨拙地退到一边让它过去。",
+    "en": "When the bull got close to him, he clumsily stepped aside to let it pass."
+  },
+  {
+    "id": 20796,
+    "lesson": 70,
+    "zh": "人群爆发出欢呼声，醉汉鞠躬。",
+    "en": "The crowd broke into cheers and the drunk bowed."
+  },
+  {
+    "id": 20797,
+    "lesson": 70,
+    "zh": "然而此时，三名男子已经进入了擂台，他们很快将醉汉拖到了安全的地方。",
+    "en": "By this time, however, three men had comee 10 into the ring and they quickly dragged the drunk to safety."
+  },
+  {
+    "id": 20798,
+    "lesson": 70,
+    "zh": "就连公牛似乎也为他感到难过，因为它同情地看着醉汉，直到他走开，才再次把注意力转向你这个斗牛士。",
+    "en": "Even the bull seemed to feel sorry for him, for it looked on sympathetically until the drunk was out of the way before once more turning its attention to thee matador."
+  },
+  {
+    "id": 20799,
+    "lesson": 71,
+    "zh": "大本钟曾经出过差错吗？它的名字来源于本杰明霍尔爵士，他在新议会大厦建造时负责制作时钟。",
+    "en": "Has Big Ben ever gone wrong? 5 its name from Sir Benjamin Hall who was responsible for the making of the clock when the new Houses of Parliament were being built."
+  },
+  {
+    "id": 20800,
+    "lesson": 71,
+    "zh": "它不仅尺寸巨大，而且极其精确。",
+    "en": "It is not only of immense size, but is extremely accurate as well."
+  },
+  {
+    "id": 20801,
+    "lesson": 71,
+    "zh": "格林威治天文台的官员每天检查时钟两次。",
+    "en": "Officials from Greenwich Observatory have the clock checked twice a day."
+  },
+  {
+    "id": 20802,
+    "lesson": 71,
+    "zh": "在 B 上。",
+    "en": "On the B."
+  },
+  {
+    "id": 20803,
+    "lesson": 71,
+    "zh": "C.当时钟真正敲响时，你可以听到时钟的声音，因为麦克风连接到钟楼。",
+    "en": "C.you can hear the clock when it is actually striking because microphones are connected to 10 the clock tower."
+  },
+  {
+    "id": 20804,
+    "lesson": 71,
+    "zh": "大本钟很少出错。",
+    "en": "Big Ben has rarely gone wrong."
+  },
+  {
+    "id": 20805,
+    "lesson": 71,
+    "zh": "然而，有一次它未能给出正确的时间。",
+    "en": "Once, however, it failed to give the correct time."
+  },
+  {
+    "id": 20806,
+    "lesson": 71,
+    "zh": "一位一直在修塔的油漆工，在其中一只手上挂了一盆油漆，放慢了速度！",
+    "en": "A painter who had been working on the tower hung a pot of paint on one of the hands and slowed it down!"
+  },
+  {
+    "id": 20807,
+    "lesson": 72,
+    "zh": "伟大的赛车手马尔科姆·坎贝尔爵士是第一个驾驶速度超过每小时 300 英里的人。",
+    "en": "The great racing driver, Sir Malcolm Campbell, was the first man to drive at over 300 miles per hour."
+  },
+  {
+    "id": 20808,
+    "lesson": 72,
+    "zh": "1935 年 9 月，他在犹他州博纳维尔盐滩创造了新的世界纪录。",
+    "en": "He set up a new world record in September 1935 at Bonneville Salt Flats, Utah."
+  },
+  {
+    "id": 20809,
+    "lesson": 72,
+    "zh": "他驾驶的蓝鸟汽车是专门为他打造的。",
+    "en": "Bluebird, the car he was driving, had been specially built for him."
+  },
+  {
+    "id": 20810,
+    "lesson": 72,
+    "zh": "它长超过 30 英尺，配有 2,500 马力的发动机。",
+    "en": "It was over 30 feet in 5 length and had a 2,500-horsepower engine."
+  },
+  {
+    "id": 20811,
+    "lesson": 72,
+    "zh": "尽管坎贝尔的速度达到了每小时 304 英里以上，但他在控制赛车方面遇到了很大困难，因为在第一次行驶时轮胎爆了。",
+    "en": "Although Campbell reached a speed of over 304 miles per hour, he had great difficulty in controlling the car because a tyre burst during the first run."
+  },
+  {
+    "id": 20812,
+    "lesson": 72,
+    "zh": "尝试后，坎贝尔失望地发现他的平均速度为每小时 299 英里。",
+    "en": "After his attempt, Campbell was disappointed to learn that his average speed had been 299 miles per hour."
+  },
+  {
+    "id": 20813,
+    "lesson": 72,
+    "zh": "然而，几天后，他被告知犯了一个错误。",
+    "en": "However, a few days later, he was told that a mistake had been made."
+  },
+  {
+    "id": 20814,
+    "lesson": 72,
+    "zh": "他的平均速度为每小时 301 英里。",
+    "en": "His 10 average speed had been 301 miles per hour."
+  },
+  {
+    "id": 20815,
+    "lesson": 72,
+    "zh": "从那时起，赛车手的时速已超过 600 英里。",
+    "en": "Since that time, racing drivers have reached speeds over 600 miles an hour."
+  },
+  {
+    "id": 20816,
+    "lesson": 72,
+    "zh": "多年后，马尔科姆爵士的儿子唐纳德追随父亲的脚步，也创造了世界纪录。",
+    "en": "Following in his father's footsteps many years later, Sir Malcolm's son, Donald, also set upa world record."
+  },
+  {
+    "id": 20817,
+    "lesson": 72,
+    "zh": "像他的父亲一样，他驾驶着一辆名为蓝鸟的汽车。",
+    "en": "Like his father, he was driving a car called Bluebird."
+  },
+  {
+    "id": 20818,
+    "lesson": 73,
+    "zh": "男孩去他想去的地方了吗？",
+    "en": "Did the boy go where he wanted to?"
+  },
+  {
+    "id": 20819,
+    "lesson": 73,
+    "zh": "逃学的孩子缺乏想象力。",
+    "en": "Children who play truant from school are unimaginative."
+  },
+  {
+    "id": 20820,
+    "lesson": 73,
+    "zh": "安静地钓鱼一天，或者在电影院里一遍又一遍地看同一部电影八个小时，通常是他们所能做到的。",
+    "en": "A quiet day's fishing, or eight hours in a cinema seeing the same film over and over again, is usually as far as they get."
+  },
+  {
+    "id": 20821,
+    "lesson": 73,
+    "zh": "他们都被一个逃学1600英里的男孩羞辱了。他搭便车到多佛，傍晚时分，上船寻找睡觉的地方。",
+    "en": "They have all been put to shame by a boy who, while playing truant, travelled 1,600 miles. 5 He hitchhiked to Dover and, towards evening, went into a boat to find somewhere to sleep."
+  },
+  {
+    "id": 20822,
+    "lesson": 73,
+    "zh": "第二天早上，当他醒来时，他发现船此时已驶往加莱。",
+    "en": "When he woke up next morning, he discovered that the boat had, in the meantime, travelled to Calais."
+  },
+  {
+    "id": 20823,
+    "lesson": 73,
+    "zh": "当男孩悄悄离开时，没有人注意到他。",
+    "en": "No one noticed the boy as he crept off."
+  },
+  {
+    "id": 20824,
+    "lesson": 73,
+    "zh": "从那里，他搭卡车前往巴黎。",
+    "en": "From there, he hitchhiked to Paris in a lorry."
+  },
+  {
+    "id": 20825,
+    "lesson": 73,
+    "zh": "司机给了他几块饼干和一杯咖啡，然后把他留在了城外。",
+    "en": "The driver gave him a few biscuits and a cup of coffee and left him just outside the city."
+  },
+  {
+    "id": 20826,
+    "lesson": 73,
+    "zh": "男孩拦下的下一辆车并没有像他希望的那样把他带到巴黎市中心，而是到了法国和西班牙边境的佩皮尼昂。",
+    "en": "The 10 next car the boy stopped did not take him into the centre of Paris as he hoped it would, but to Perpignan on the French-Spanish border."
+  },
+  {
+    "id": 20827,
+    "lesson": 73,
+    "zh": "在那里，他被一名警察接走，并被地方当局送回英国。",
+    "en": "There he was picked upby a policeman and sent back to England by the local authorities."
+  },
+  {
+    "id": 20828,
+    "lesson": 73,
+    "zh": "他无疑为成千上万梦想逃学的孩子创造了一项记录。",
+    "en": "He has surely set up a record for the thousands of children who dream of evading school."
+  },
+  {
+    "id": 20829,
+    "lesson": 74,
+    "zh": "一辆古老的公共汽车停在干涸的河床边，一群著名的男女演员下了车。",
+    "en": "An ancient bus stopped by a dry river bed and a party of famous actors and actresses got off."
+  },
+  {
+    "id": 20830,
+    "lesson": 74,
+    "zh": "他们戴着墨镜，穿着旧衣服，采取了特殊的预防措施，以免被人认出。",
+    "en": "Dressed in dark glasses and old clothes, they had taken special precautions so that no one should recognize them."
+  },
+  {
+    "id": 20831,
+    "lesson": 74,
+    "zh": "但他们很快发现，伪装有时可能过于完美。",
+    "en": "But as they soon discovered, disguises can sometimes be too perfect."
+  },
+  {
+    "id": 20832,
+    "lesson": 74,
+    "zh": "“这是野餐的好地方，”格洛丽亚·格莱姆说。",
+    "en": "'This is a wonderful place for a picnic,'said Gloria Gleam."
+  },
+  {
+    "id": 20833,
+    "lesson": 74,
+    "zh": "“这再好不过了，格洛丽亚，”布林克斯利·米尔斯表示同意。",
+    "en": "'It couldn't be better, Gloria,'Brinksley Meers agreed."
+  },
+  {
+    "id": 20834,
+    "lesson": 74,
+    "zh": "“没有报纸人，没有电影迷！",
+    "en": "'No newspaper men, no film fans!"
+  },
+  {
+    "id": 20835,
+    "lesson": 74,
+    "zh": "我们为什么不经常来呢？",
+    "en": "Why don't we come more often?"
+  },
+  {
+    "id": 20836,
+    "lesson": 74,
+    "zh": "与此同时，另外两名演员罗克沃尔·斯林格和梅林·格里夫斯提着两个大食物篮到树下的阴凉处。",
+    "en": "\" Meanwhile, two other actors, Rockwall Slinger and Merlin Greeves, had carried two large food baskets to a shady spot under some trees."
+  },
+  {
+    "id": 20837,
+    "lesson": 74,
+    "zh": "当他们都舒服了之后，一个陌生人出现了。",
+    "en": "When they had allmade themselves comfortable, a stranger appeared."
+  },
+  {
+    "id": 20838,
+    "lesson": 74,
+    "zh": "他看起来很生气。",
+    "en": "He looked very angry."
+  },
+  {
+    "id": 20839,
+    "lesson": 74,
+    "zh": "“现在你们都离开这里！",
+    "en": "'Now you get out of here, all of you!"
+  },
+  {
+    "id": 20840,
+    "lesson": 74,
+    "zh": "“他喊道。",
+    "en": "'he shouted."
+  },
+  {
+    "id": 20841,
+    "lesson": 74,
+    "zh": "“我是这里的警长。",
+    "en": "'I'm sheriff here."
+  },
+  {
+    "id": 20842,
+    "lesson": 74,
+    "zh": "你看到那个通知了吗？",
+    "en": "Do you see that notice?"
+  },
+  {
+    "id": 20843,
+    "lesson": 74,
+    "zh": "上面写着“禁止露营”——以防你看不懂！",
+    "en": "It says “No Camping”—in case you can't read!"
+  },
+  {
+    "id": 20844,
+    "lesson": 74,
+    "zh": "” “听着，警长，”罗克沃尔说，“别对我们太严厉。",
+    "en": "' 'Look, sheriff,'said Rockwall,'don't be too hard on us."
+  },
+  {
+    "id": 20845,
+    "lesson": 74,
+    "zh": "我是罗克沃尔·投石手，这是梅林·格里夫斯。",
+    "en": "I'm Rockwall Slinger and this is Merlin Greeves."
+  },
+  {
+    "id": 20846,
+    "lesson": 74,
+    "zh": "” “噢，是吗？",
+    "en": "' 'Oh, is it?"
+  },
+  {
+    "id": 20847,
+    "lesson": 74,
+    "zh": "”治安官冷笑着说道。",
+    "en": "'said the sheriff with a sneer."
+  },
+  {
+    "id": 20848,
+    "lesson": 74,
+    "zh": "“好吧，我是布林克斯利·米尔斯，我的另一个名字是格洛丽亚·格莱姆。",
+    "en": "'Well, I’m Brinksley Meers, and my other name is Gloria Gleam."
+  },
+  {
+    "id": 20849,
+    "lesson": 74,
+    "zh": "现在你赶紧离开这里吧！",
+    "en": "Now you get out of here fast!"
+  },
+  {
+    "id": 20850,
+    "lesson": 75,
+    "zh": "这位女士知道最近的村庄在数英里之外。",
+    "en": "5 woman knew that the nearest village was miles away."
+  },
+  {
+    "id": 20851,
+    "lesson": 75,
+    "zh": "天黑了，她把一个手提箱变成了一张床，把孩子们放进了里面，并用她能找到的所有衣服盖住了他们。",
+    "en": "When it grew dark, she turned a suitcase into a bed and put the children inside it, covering them with all the clothes she could find."
+  },
+  {
+    "id": 20852,
+    "lesson": 75,
+    "zh": "到了晚上，天气变得非常冷。",
+    "en": "During the night, it got terribly cold."
+  },
+  {
+    "id": 20853,
+    "lesson": 75,
+    "zh": "这位女士尽可能靠近孩子们，甚至试图自己钻进箱子里，但箱子太小了。",
+    "en": "The woman kept as near as she could to the children and even tried to get into the case herself, but it was too small."
+  },
+  {
+    "id": 20854,
+    "lesson": 75,
+    "zh": "第二天一早，她听到飞机从头顶飞过，想知道如何发送信号。",
+    "en": "Early next morning, she heard planes 10 passing overhead and wondered how she could send a signal."
+  },
+  {
+    "id": 20855,
+    "lesson": 75,
+    "zh": "然后她有了一个主意。",
+    "en": "Then she had an idea."
+  },
+  {
+    "id": 20856,
+    "lesson": 75,
+    "zh": "她在雪地里印下了“SOS”三个字母。",
+    "en": "She stamped out thee letters 'SOS'in the snow."
+  },
+  {
+    "id": 20857,
+    "lesson": 75,
+    "zh": "幸运的是，一名飞行员看到了信号，并通过无线电向最近的城镇发送了一条消息。",
+    "en": "Fortunately, a pilot saw the signal and sent a message by radio to the nearest town."
+  },
+  {
+    "id": 20858,
+    "lesson": 75,
+    "zh": "不久，一架直升机抵达现场营救空难的幸存者。",
+    "en": "It was not long before a helicopter arrived on the scene to rescue the survivors of the plane crash."
+  },
+  {
+    "id": 20859,
+    "lesson": 76,
+    "zh": "“为了结束我们的特别新闻简报，”电视播音员的声音说道，“我们要去卡拉布里亚的通心粉田。”",
+    "en": "'To end our special news bulletin,'said the voice of the television announcer,'we're going over to the macaroni fields of Calabria."
+  },
+  {
+    "id": 20860,
+    "lesson": 76,
+    "zh": "该地区种植通心粉已有六百多年的历史。",
+    "en": "Macaroni has been grown in this area for over six hundred years."
+  },
+  {
+    "id": 20861,
+    "lesson": 76,
+    "zh": "两位主要种植者朱塞佩·摩尔多瓦和里卡多·布拉班特告诉我，他们一直期待今年的丰收，而且收获工作比往常更早开始。",
+    "en": "Two of the leading growers, Giuseppe Moldova and Riccardo Brabante, tell me that they have been expecting a splendid crop this year and harvesting has begun earlier than usual."
+  },
+  {
+    "id": 20862,
+    "lesson": 76,
+    "zh": "在这里，您可以看到两名工人，他们刚刚完成了三车金黄色通心粉茎的切割。",
+    "en": "Here you can see two workers who, between them, have just finished cutting three cartloads of golden brown macaroni stalks."
+  },
+  {
+    "id": 20863,
+    "lesson": 76,
+    "zh": "在九月下雨之前，全村人都在夜以继日地收割今年的庄稼。",
+    "en": "The whole village has been working day and night gathering and threshing this year's crop before the September rains."
+  },
+  {
+    "id": 20864,
+    "lesson": 76,
+    "zh": "在右边，你可以看到夫人。",
+    "en": "On the right, you can see Mrs."
+  },
+  {
+    "id": 20865,
+    "lesson": 76,
+    "zh": "布拉班特本人。",
+    "en": "Brabante herself."
+  },
+  {
+    "id": 20866,
+    "lesson": 76,
+    "zh": "三十年来，她一直在帮助她的丈夫。",
+    "en": "She has been helping her husband for thirty years now."
+  },
+  {
+    "id": 20867,
+    "lesson": 76,
+    "zh": "布拉班特正在与当地加工农作物的工厂的经理交谈。",
+    "en": "Brabante is talking to the manager of the local factory where the crop is processed."
+  },
+  {
+    "id": 20868,
+    "lesson": 76,
+    "zh": "最后一个场景向您展示了收获结束时会发生什么：著名的卡拉布里亚通心粉吃比赛！",
+    "en": "This last scene shows you what will happen at the end of the harvest: the famous Calabrian macaroni-eating competition!"
+  },
+  {
+    "id": 20869,
+    "lesson": 76,
+    "zh": "现任冠军弗拉泰利先生自 1991 年以来每年都获得冠军。",
+    "en": "Signor Fratelli, the present champion, has won it every year since 1991."
+  },
+  {
+    "id": 20870,
+    "lesson": 76,
+    "zh": "我们今天 4 月 1 日星期四的特别公告到此结束。",
+    "en": "And that ends our special bulletin for today, Thursday, April 1st."
+  },
+  {
+    "id": 20871,
+    "lesson": 76,
+    "zh": "我们现在要回工作室了。",
+    "en": "We're now going back to the studio."
+  },
+  {
+    "id": 20872,
+    "lesson": 77,
+    "zh": "医生查明这名女子是怎么死的吗？",
+    "en": "Did the doctors find out how the woman died?"
+  },
+  {
+    "id": 20873,
+    "lesson": 77,
+    "zh": "一位死于公元前 800 年的埃及妇女的木乃伊。",
+    "en": "The mummy of an Egyptian woman who died in 800 B."
+  },
+  {
+    "id": 20874,
+    "lesson": 77,
+    "zh": "C.刚刚做过手术。",
+    "en": "C.has just had an operation."
+  },
+  {
+    "id": 20875,
+    "lesson": 77,
+    "zh": "这具木乃伊是谢彭穆特的木乃伊，他曾经是底比斯神庙的歌手。",
+    "en": "The mummy is that of Shepenmut who was once a singer in the Temple of Thebes."
+  },
+  {
+    "id": 20876,
+    "lesson": 77,
+    "zh": "由于木乃伊的X光片上有奇怪的痕迹，医生一直试图查明该妇女是否死于一种罕见的疾病。",
+    "en": "As there were strange marks on the X-ray plates taken of the mummy, doctors have been trying to 5 find out whether the woman died of a rare disease."
+  },
+  {
+    "id": 20877,
+    "lesson": 77,
+    "zh": "做到这一点的唯一方法就是操作。",
+    "en": "The only way to do this was to operate."
+  },
+  {
+    "id": 20878,
+    "lesson": 77,
+    "zh": "手术持续了四个多小时，由于皮肤上覆盖着坚硬的树脂，手术非常困难。",
+    "en": "The operation, which lasted for over four hours, proved to be very difficult because of the hard resin which covered the skin."
+  },
+  {
+    "id": 20879,
+    "lesson": 77,
+    "zh": "医生取出木乃伊的一部分并将其送往实验室。",
+    "en": "The doctors removed a section of the mummy and sent it to a laboratory."
+  },
+  {
+    "id": 20880,
+    "lesson": 77,
+    "zh": "他们还发现了X光片没有显示的东西：杜阿穆特夫神的小蜡像。",
+    "en": "They also found something which the X-ray plates did not show: a small wax figure of 10 the god Duamutef."
+  },
+  {
+    "id": 20881,
+    "lesson": 77,
+    "zh": "这个长着牛头的神通常被放置在木乃伊体内。",
+    "en": "This god which has the head of a cow was normally placed inside a mummy."
+  },
+  {
+    "id": 20882,
+    "lesson": 77,
+    "zh": "医生尚未确定该女子是如何死亡的。",
+    "en": "The doctors have not yet decided how the woman died."
+  },
+  {
+    "id": 20883,
+    "lesson": 77,
+    "zh": "他们担心切开木乃伊时会碎成碎片，但幸运的是这并没有发生。",
+    "en": "They feared that the mummy would fall to pieces when they cut it open, but fortunately this has not happened."
+  },
+  {
+    "id": 20884,
+    "lesson": 77,
+    "zh": "木乃伊在手术中顺利存活。",
+    "en": "The mummy successfully survived the operation."
+  },
+  {
+    "id": 20885,
+    "lesson": 78,
+    "zh": "作者戒烟多久了？",
+    "en": "For how long did the writer give up smoking?"
+  },
+  {
+    "id": 20886,
+    "lesson": 78,
+    "zh": "读完一篇题为“吸烟与健康”的文章后，我点了一支烟来平静自己的神经。",
+    "en": "After reading an article entitled 'Cigarette Smoking and Your Health’ I lit a cigarette to calm my nerves."
+  },
+  {
+    "id": 20887,
+    "lesson": 78,
+    "zh": "我专注而愉快地抽烟，因为我确信这将是我的最后一支烟。",
+    "en": "I smoked with concentration and pleasure as I was sure that this would be my last cigarette."
+  },
+  {
+    "id": 20888,
+    "lesson": 78,
+    "zh": "整整一个星期我根本没有抽烟，在这段时间里，我的妻子遭受了极大的痛苦。",
+    "en": "For a whole week I did not smoke at all and during this time, my wife 5 suffered terribly."
+  },
+  {
+    "id": 20889,
+    "lesson": 78,
+    "zh": "我具有戒烟者的所有常见症状：脾气暴躁和食欲旺盛。",
+    "en": "I had all the usual symptoms of someone giving up smoking: a bad temper and an enormous appetite."
+  },
+  {
+    "id": 20890,
+    "lesson": 78,
+    "zh": "我的朋友们不断地给我香烟和雪茄。",
+    "en": "My friends kept on offering me cigarettes and cigars."
+  },
+  {
+    "id": 20891,
+    "lesson": 78,
+    "zh": "每当我从口袋里掏出一包糖果时，他们都毫不掩饰他们的乐趣。",
+    "en": "They made no effort to hide their amusement whenever I produced a packet of sweets from my pocket."
+  },
+  {
+    "id": 20892,
+    "lesson": 78,
+    "zh": "七天后，我去参加一个聚会。",
+    "en": "After seven days of this I went to a party."
+  },
+  {
+    "id": 20893,
+    "lesson": 78,
+    "zh": "我周围的每个人都在吸烟，我感到非常不舒服。",
+    "en": "Everybody around me was smoking and Ifelt extremely 10 uncomfortable."
+  },
+  {
+    "id": 20894,
+    "lesson": 78,
+    "zh": "当我的老朋友布莱恩劝我接受一支香烟时，我实在无法忍受。",
+    "en": "When my old friend Brian urged me to accept a cigarette, it was more than I could bear."
+  },
+  {
+    "id": 20895,
+    "lesson": 78,
+    "zh": "我愧疚地接过一根，点燃它，心满意足地抽着烟。",
+    "en": "I took one guiltily, lit it and smoked with satisfaction."
+  },
+  {
+    "id": 20896,
+    "lesson": 78,
+    "zh": "我的妻子很高兴事情再次恢复正常。",
+    "en": "My wife was delighted that things had returned to normal once more."
+  },
+  {
+    "id": 20897,
+    "lesson": 78,
+    "zh": "不管怎样，正如布莱恩指出的，戒烟是世界上最容易的事情。",
+    "en": "Anyway, as Brian pointed out, it is the easiest thing in the world to give up smoking."
+  },
+  {
+    "id": 20898,
+    "lesson": 78,
+    "zh": "他自己已经做过很多次了！",
+    "en": "He himself has done it lots of times!"
+  },
+  {
+    "id": 20899,
+    "lesson": 79,
+    "zh": "当我还是个孩子的时候，我经常乘飞机旅行。",
+    "en": "I used to travel by air a great deal when I was a boy."
+  },
+  {
+    "id": 20900,
+    "lesson": 79,
+    "zh": "我的父母曾经住在南美洲，我经常在假期从欧洲飞往那里。",
+    "en": "My parents used to live in South America and I used to fly there from Europe in the holidays."
+  },
+  {
+    "id": 20901,
+    "lesson": 79,
+    "zh": "空乘人员会照顾我，我从未有过不愉快的经历。",
+    "en": "A flight attendant would take charge of me and I never had an unpleasant experience."
+  },
+  {
+    "id": 20902,
+    "lesson": 79,
+    "zh": "我习惯了乘飞机旅行，只有一次我感到害怕。",
+    "en": "I am used to travelling by air 5 and only on one occasion have I ever felt frightened."
+  },
+  {
+    "id": 20903,
+    "lesson": 79,
+    "zh": "起飞后，我们在城市上空低空飞行并慢慢升高高度，这时飞机突然掉头飞回机场。",
+    "en": "After taking off, we were flying low over the city and slowly gaining height, when the plane suddenly turned round and flew back to the airport."
+  },
+  {
+    "id": 20904,
+    "lesson": 79,
+    "zh": "当我们等待降落时，空姐告诉我们要保持冷静，飞机一落地就安静地下机。",
+    "en": "While we were waiting to land, a flight attendant told us to keep calm and to get off the plane quietly as soon as it had touched down."
+  },
+  {
+    "id": 20905,
+    "lesson": 79,
+    "zh": "船上的每个人都很担心，我们很好奇到底发生了什么事。",
+    "en": "Everybody on board was worried and 10 we were curious to find out what had happened."
+  },
+  {
+    "id": 20906,
+    "lesson": 79,
+    "zh": "后来我们得知，船上有一个非常重要的人。",
+    "en": "Later we learnt that there was a very important person on board."
+  },
+  {
+    "id": 20907,
+    "lesson": 79,
+    "zh": "警方被告知飞机上安放了一枚炸弹。",
+    "en": "The police had been told that a bomb had been planted on the plane."
+  },
+  {
+    "id": 20908,
+    "lesson": 79,
+    "zh": "我们着陆后，飞机被彻底搜查。",
+    "en": "After we had landed, the plane was searched thoroughly."
+  },
+  {
+    "id": 20909,
+    "lesson": 79,
+    "zh": "幸运的是，什么也没找到，五个小时后我们又能够起飞了。",
+    "en": "Fortunately, nothing was found and five hours later we were able to take off again."
+  },
+  {
+    "id": 20910,
+    "lesson": 80,
+    "zh": "也许十九世纪最非凡的建筑是水晶宫，它是为 1851 年万国博览会而建在海德公园的。",
+    "en": "Perhaps the most extraordinary building of the nineteenth century was the Crystal Palace, which was built in Hyde Park for the Great Exhibition of 1851."
+  },
+  {
+    "id": 20911,
+    "lesson": 80,
+    "zh": "水晶宫与世界上所有其他建筑不同，它是由铁和玻璃制成的。",
+    "en": "The Crystal Palace was different from all other buildings in the world, for it was made of iron and glass."
+  },
+  {
+    "id": 20912,
+    "lesson": 80,
+    "zh": "它是有史以来最大的建筑之一，许多国家的人们前来参观。",
+    "en": "It was one 5 of the biggest buildings of all time and a lot of people from many countries came to see it."
+  },
+  {
+    "id": 20913,
+    "lesson": 80,
+    "zh": "展会上有来自世界各地的大量货物。",
+    "en": "A great many goods were sent to the exhibition from various parts of the world."
+  },
+  {
+    "id": 20914,
+    "lesson": 80,
+    "zh": "现场还展出了大量机械设备。",
+    "en": "There was also a great deal of machinery on display."
+  },
+  {
+    "id": 20915,
+    "lesson": 80,
+    "zh": "展出的最精彩的机械是纳斯米斯的蒸汽锤。",
+    "en": "The most wonderful piece of machinery on show was Nasmyth's steam hammer."
+  },
+  {
+    "id": 20916,
+    "lesson": 80,
+    "zh": "尽管在当时，旅行并不像今天那么容易，但蒸汽船载着成千上万的游客从欧洲穿越英吉利海峡。",
+    "en": "Though in those days, travelling was not as easy as it is 10 today, steam boats carried thousands of visitors across the Channel from Europe."
+  },
+  {
+    "id": 20917,
+    "lesson": 80,
+    "zh": "抵达英国后，他们乘火车前往水晶宫。",
+    "en": "On arriving in England, they were taken to the Crystal Palace by train."
+  },
+  {
+    "id": 20918,
+    "lesson": 80,
+    "zh": "总共有六百万参观者，展览的利润被用来建造博物馆和大学。",
+    "en": "There were six million visitors in all, and the profits from the exhibition were used to build museums and colleges."
+  },
+  {
+    "id": 20919,
+    "lesson": 80,
+    "zh": "后来，水晶宫迁至伦敦南部。",
+    "en": "Later, the Crystal Palace was moved to South London."
+  },
+  {
+    "id": 20920,
+    "lesson": 80,
+    "zh": "它一直是世界上最著名的建筑之一，直到 1936 年被烧毁。",
+    "en": "It remained one of the most famous buildings in the world until it was burnt down in 1936."
+  },
+  {
+    "id": 20921,
+    "lesson": 81,
+    "zh": "营前上下。",
+    "en": "5 and down in front of the camp."
+  },
+  {
+    "id": 20922,
+    "lesson": 81,
+    "zh": "他能听到营地里的喊叫声。",
+    "en": "He could hear shouting in the camp itself."
+  },
+  {
+    "id": 20923,
+    "lesson": 81,
+    "zh": "灯火通明，人们四处奔走：他们刚刚发现一名囚犯越狱了。",
+    "en": "Lights were blazing and men were running here and there: they had just discovered that a prisoner had escaped."
+  },
+  {
+    "id": 20924,
+    "lesson": 81,
+    "zh": "这时，一辆黑色大车停在营地门口，车上载着四名军官。",
+    "en": "At that moment, a large black car with four officers inside it, stopped at the camp gates."
+  },
+  {
+    "id": 20925,
+    "lesson": 81,
+    "zh": "军官们下了车，囚犯在他们经过时立正敬礼。",
+    "en": "The officers got out and the prisoner stood to attention and saluted as they passed."
+  },
+  {
+    "id": 20926,
+    "lesson": 81,
+    "zh": "等他们走后，汽车司机朝他走了过来。",
+    "en": "When they had gone, 10 the driver of the car came towards him."
+  },
+  {
+    "id": 20927,
+    "lesson": 81,
+    "zh": "男人显然是想说话。",
+    "en": "The man obviously wanted to talk."
+  },
+  {
+    "id": 20928,
+    "lesson": 81,
+    "zh": "他年纪相当大了，头发花白，蓝眼睛清澈。",
+    "en": "He was rather elderly with grey hair and clear blue eyes."
+  },
+  {
+    "id": 20929,
+    "lesson": 81,
+    "zh": "囚犯为他感到难过，但他也无能为力。",
+    "en": "The prisoner felt sorry for him, but there was nothing else he could do."
+  },
+  {
+    "id": 20930,
+    "lesson": 81,
+    "zh": "当那人走近时，囚犯猛烈一击，把他打倒在地。",
+    "en": "As the man came near, the prisoner knocked him to the ground with a sharp blow."
+  },
+  {
+    "id": 20931,
+    "lesson": 81,
+    "zh": "然后，他跳上车，以最快的速度开走了。",
+    "en": "Then, jumping into the car, he drove off as quickly as he could."
+  },
+  {
+    "id": 20932,
+    "lesson": 82,
+    "zh": "渔民和水手有时声称在海中看到了怪物。",
+    "en": "Fishermen and sailors sometimes claim to have seen monsters in the sea."
+  },
+  {
+    "id": 20933,
+    "lesson": 82,
+    "zh": "尽管人们经常嘲笑海员讲述的故事，但现在人们知道，这些有时会被看到的“怪物”中的许多只是奇怪的鱼。",
+    "en": "Though people have often laughed at stories told by sea- men, it is now known that many of these‘monsters'which have at times been sighted are simply strange fish."
+  },
+  {
+    "id": 20934,
+    "lesson": 82,
+    "zh": "偶尔，不寻常的生物会被冲到岸边，但很少在海上被捕获。",
+    "en": "Occasionally, unusual 5 creatures are washed to the shore, but they are rarely caught out at sea."
+  },
+  {
+    "id": 20935,
+    "lesson": 82,
+    "zh": "然而，不久前，在马达加斯加附近捕获了一种奇特的鱼。",
+    "en": "Some time ago, however, a peculiar fish was caught near Mada- gascar."
+  },
+  {
+    "id": 20936,
+    "lesson": 82,
+    "zh": "一条小渔船被这条强大的鱼拉着钓线拖到了数英里之外。",
+    "en": "A small fishing boat was carried miles out to sea by the powerful fish as it pulled on the line."
+  },
+  {
+    "id": 20937,
+    "lesson": 82,
+    "zh": "意识到这不是一条普通的鱼，渔夫尽一切努力不让它受到任何伤害。",
+    "en": "Realizing that this was no ordinary fish, the fisherman made every effort not to damage it in any way."
+  },
+  {
+    "id": 20938,
+    "lesson": 82,
+    "zh": "当它最终被打捞上岸时，人们发现它有超过十三英尺长。",
+    "en": "When it was eventually brought 10 to shore, it was found to be over thirteen feet long."
+  },
+  {
+    "id": 20939,
+    "lesson": 82,
+    "zh": "它有一个像马一样的头，蓝色的大眼睛，闪亮的银色皮肤，还有一条鲜红色的尾巴。",
+    "en": "It had a head like a horse, big blue eyes, shining silver skin, and a bright red tail."
+  },
+  {
+    "id": 20940,
+    "lesson": 82,
+    "zh": "这条鱼被称为皇带鱼，现已被送往博物馆，由科学家对其进行检查。",
+    "en": "The fish, which has since been sent to a museum where it is being examined by a scientist, is called an oarfish."
+  },
+  {
+    "id": 20941,
+    "lesson": 82,
+    "zh": "人类很少见到活着的此类生物，因为它们生活在六百英尺的深处。",
+    "en": "Such creatures have rarely been seen alive by man as they live at a depth of six hundred feet."
+  },
+  {
+    "id": 20942,
+    "lesson": 83,
+    "zh": "前首相，先生。",
+    "en": "The former Prime Minister, Mr."
+  },
+  {
+    "id": 20943,
+    "lesson": 83,
+    "zh": "温特沃斯巷 (Wentworth Lane) 在最近的选举中落败。",
+    "en": "Wentworth Lane, was defeated in the recent elections."
+  },
+  {
+    "id": 20944,
+    "lesson": 83,
+    "zh": "他现在退出政治生活并出国了。",
+    "en": "He is now retiring from political life and has gone abroad."
+  },
+  {
+    "id": 20945,
+    "lesson": 83,
+    "zh": "我的朋友帕特里克一直是帕特里克先生的狂热反对者。",
+    "en": "My friend, Patrick, has always been a fanatical oppo- nent of Mr."
+  },
+  {
+    "id": 20946,
+    "lesson": 83,
+    "zh": "莱恩的激进进步党。",
+    "en": "Lane's Radical Progressive Party."
+  },
+  {
+    "id": 20947,
+    "lesson": 83,
+    "zh": "选举结束后，帕特里克前往前总理官邸。",
+    "en": "After the elections, 5 Patrick went to the former Prime Minister's house."
+  },
+  {
+    "id": 20948,
+    "lesson": 83,
+    "zh": "当他问先生是否",
+    "en": "When he asked if Mr."
+  },
+  {
+    "id": 20949,
+    "lesson": 83,
+    "zh": "莱恩就住在那里，值班警察告诉他，自从他落选后，前首相就出国了。",
+    "en": "Lane lived there, the policeman on duty told him that since his defeat, the ex-Prime Minister had gone abroad."
+  },
+  {
+    "id": 20950,
+    "lesson": 83,
+    "zh": "第二天，帕特里克又去了那所房子。",
+    "en": "On the follow- ing day, Patrick went to the house again."
+  },
+  {
+    "id": 20951,
+    "lesson": 83,
+    "zh": "当帕特里克问同样的问题时，同一个警察正慢慢地走过入口。",
+    "en": "The same policeman was just walking slowly past the entrance, when Patrick asked the same question."
+  },
+  {
+    "id": 20952,
+    "lesson": 83,
+    "zh": "虽然这次警察有点怀疑，但还是给了他同样的答案。",
+    "en": "Though a little suspicious this 10 time, the policeman gave him the same answer."
+  },
+  {
+    "id": 20953,
+    "lesson": 83,
+    "zh": "第二天，帕特里克再次来到这所房子，问了完全相同的问题。",
+    "en": "The day after, Patrick went to the house once more and asked exactly the same question."
+  },
+  {
+    "id": 20954,
+    "lesson": 83,
+    "zh": "这一次，警察发脾气了。",
+    "en": "This time, the policeman lost his temper."
+  },
+  {
+    "id": 20955,
+    "lesson": 83,
+    "zh": "“我昨天和前天都告诉过你了，”他喊道，“先生。”",
+    "en": "'I told you yesterday and the day before yesterday,'he shouted,'Mr."
+  },
+  {
+    "id": 20956,
+    "lesson": 83,
+    "zh": "莱恩在选举中落败。",
+    "en": "Lane was defeated in the elections."
+  },
+  {
+    "id": 20957,
+    "lesson": 83,
+    "zh": "他已经退出政坛，去国外生活了！",
+    "en": "He has retired from political life and gone to live abroad!"
+  },
+  {
+    "id": 20958,
+    "lesson": 83,
+    "zh": "” “我知道，”帕特里克回答，“但我喜欢听你这么说！",
+    "en": "' 'I know,'answered Patrick,'but I love to hear you say it!"
+  },
+  {
+    "id": 20959,
+    "lesson": 84,
+    "zh": "巴士司机决定下周举行罢工。",
+    "en": "Busmen have decided to go on strike next week."
+  },
+  {
+    "id": 20960,
+    "lesson": 84,
+    "zh": "罢工定于周二开始。",
+    "en": "The strike is due to begin on Tuesday."
+  },
+  {
+    "id": 20961,
+    "lesson": 84,
+    "zh": "没有人知道它会持续多久。",
+    "en": "No one knows how long it will last."
+  },
+  {
+    "id": 20962,
+    "lesson": 84,
+    "zh": "公交车司机表示，罢工将继续下去，直到就工资和工作条件达成普遍协议为止。",
+    "en": "The busmen have stated that the strike willcontinue until general agree- ment is reached about pay and working conditions."
+  },
+  {
+    "id": 20963,
+    "lesson": 84,
+    "zh": "大多数人认为罢工将持续至少一周。",
+    "en": "Most people 5 believe that the strike will last for at least a week."
+  },
+  {
+    "id": 20964,
+    "lesson": 84,
+    "zh": "许多私家车车主将在上班途中为人们提供“免费乘车”服务。",
+    "en": "Many owners of private cars are going to offer 'free rides'to people on their way to work."
+  },
+  {
+    "id": 20965,
+    "lesson": 84,
+    "zh": "这将在一定程度上缓解列车的压力。",
+    "en": "This will relieve pressure on the trains to some extent."
+  },
+  {
+    "id": 20966,
+    "lesson": 84,
+    "zh": "与此同时，一些大学生自愿在罢工持续期间驾驶公共汽车。",
+    "en": "Mean- while, a number of university students have volunteered to drive buses while the strike lasts."
+  },
+  {
+    "id": 20967,
+    "lesson": 84,
+    "zh": "所有的学生都是专业司机，但在驾驶任何公共汽车之前，他们必须通过特殊测试。",
+    "en": "All the students are expert drivers, but before they drive any of the buses, they 10 will have to pass a special test."
+  },
+  {
+    "id": 20968,
+    "lesson": 84,
+    "zh": "两天后学生们就要参加考试了。",
+    "en": "The students are going to take the test in two days'time."
+  },
+  {
+    "id": 20969,
+    "lesson": 84,
+    "zh": "即便如此，人们还是会发现上班很困难。",
+    "en": "Even so, people are going to find it difficult to get to work."
+  },
+  {
+    "id": 20970,
+    "lesson": 84,
+    "zh": "但到目前为止，公众已经通过给新闻界的信函表达了对学生们的感谢。",
+    "en": "But so far, the public has expressed its gratitude to the students in letters to the Press."
+  },
+  {
+    "id": 20971,
+    "lesson": 84,
+    "zh": "只有一两个人反对，认为学生开得太快了！",
+    "en": "Only one or two people have objected that the students will drive too fast!"
+  },
+  {
+    "id": 20972,
+    "lesson": 85,
+    "zh": "我刚刚收到一封来自我母校的信，通知我我的前任校长 Mr.",
+    "en": "I have just received a letter from my old school, informing me that my former headmaster, Mr."
+  },
+  {
+    "id": 20973,
+    "lesson": 85,
+    "zh": "斯图尔特·佩奇将于下周退休。",
+    "en": "Stuart Page, will be retiring next week."
+  },
+  {
+    "id": 20974,
+    "lesson": 85,
+    "zh": "学校的新老学生都会送他一份礼物以示纪念。",
+    "en": "Pupils of the school, old and new, will be sending him a present to mark the occasion."
+  },
+  {
+    "id": 20975,
+    "lesson": 85,
+    "zh": "所有为这份礼物做出贡献的人都将在一本大相册上签名，然后将其寄到校长家中。",
+    "en": "All those who have contributed towards the gift 5 will sign their names in a large album which will be sent to the headmaster's home."
+  },
+  {
+    "id": 20976,
+    "lesson": 85,
+    "zh": "我们都会记住先生。",
+    "en": "We shall all remember Mr."
+  },
+  {
+    "id": 20977,
+    "lesson": 85,
+    "zh": "感谢佩奇的耐心和理解，感谢他在我们不情愿上学时给予我们的善意鼓励。",
+    "en": "Page for his patience and understanding and for the kindly encouragement he gave us when we went so unwillingly to school."
+  },
+  {
+    "id": 20978,
+    "lesson": 85,
+    "zh": "下周四，许多以前的学生将参加为他举行的告别晚宴。",
+    "en": "A great many former pupils will be attending a farewell dinner in his honour next Thursday."
+  },
+  {
+    "id": 20979,
+    "lesson": 85,
+    "zh": "一个奇怪的巧合是，在他退休的前一天，先生。",
+    "en": "It is a curious coincidence that the day before 10 his retirement, Mr."
+  },
+  {
+    "id": 20980,
+    "lesson": 85,
+    "zh": "佩奇已经教书四十年了。",
+    "en": "Page will have been teaching for a total of forty years."
+  },
+  {
+    "id": 20981,
+    "lesson": 85,
+    "zh": "退休后，他将致力于园艺。",
+    "en": "After he has retired, he willdevote himself to gardening."
+  },
+  {
+    "id": 20982,
+    "lesson": 85,
+    "zh": "对他来说，这将是一个全新的爱好。",
+    "en": "For him, this will be an entirely new hobby."
+  },
+  {
+    "id": 20983,
+    "lesson": 85,
+    "zh": "但这并不重要，因为正如他经常说的那样，学习永远不嫌老。",
+    "en": "But this does not matter, for, as he has often remarked, one is never too old to learn."
+  },
+  {
+    "id": 20984,
+    "lesson": 86,
+    "zh": "当该男子试图转动快艇时，他手中的方向盘脱落了。",
+    "en": "As the man tried to swing the speedboat round, the steering wheel came away in his hands."
+  },
+  {
+    "id": 20985,
+    "lesson": 86,
+    "zh": "他绝望地向他的同伴挥手，他的同伴在过去的十五分钟里一直在滑水。",
+    "en": "He waved desperately to his companion, who had been water skiing for the last fifteen minutes."
+  },
+  {
+    "id": 20986,
+    "lesson": 86,
+    "zh": "两人还没来得及意识到发生了什么，就被猛烈地扔进了海里。",
+    "en": "Both men had hardly had time to realize what was happening when they were 5 thrown violently into the sea."
+  },
+  {
+    "id": 20987,
+    "lesson": 86,
+    "zh": "快艇撞上了浮标，但它继续在水面上快速移动。",
+    "en": "The speedboat had struck a buoy, but it continued to move very quickly across the water."
+  },
+  {
+    "id": 20988,
+    "lesson": 86,
+    "zh": "两人刚开始向岸边游去，就惊愕地发现快艇正在转圈。",
+    "en": "Both men had just begun to swim towards the shore, when they noticed with dismay that the speedboat was moving in a circle."
+  },
+  {
+    "id": 20989,
+    "lesson": 86,
+    "zh": "现在它以极快的速度直冲着他们而来。",
+    "en": "It now came straight towards them at tremendous speed."
+  },
+  {
+    "id": 20990,
+    "lesson": 86,
+    "zh": "不到一分钟，它就在距离他们只有几英尺的地方呼啸而过。",
+    "en": "In less than a minute, it roared past them only a few feet away."
+  },
+  {
+    "id": 20991,
+    "lesson": 86,
+    "zh": "船过去后，他们以最快的速度继续游，因为他们知道船很快就会回来。",
+    "en": "After it had 10 passed, they swam on as quickly as they could because they knew that the boat would soon return."
+  },
+  {
+    "id": 20992,
+    "lesson": 86,
+    "zh": "他们刚有足够的时间游出危险，船又绕了一圈。",
+    "en": "They had just had enough time to swim out of danger when the boat again completed a circle."
+  },
+  {
+    "id": 20993,
+    "lesson": 86,
+    "zh": "然而，这一次，它的速度明显减慢了。",
+    "en": "On this occasion, however, it had slowed down considerably."
+  },
+  {
+    "id": 20994,
+    "lesson": 86,
+    "zh": "汽油几乎都用完了。",
+    "en": "The petrol had nearly all been used up."
+  },
+  {
+    "id": 20995,
+    "lesson": 86,
+    "zh": "不久，噪音完全消失，小船开始轻轻地在水面上漂流。",
+    "en": "Before long, the noise dropped completely and the boat began to drift gently across the water."
+  },
+  {
+    "id": 20996,
+    "lesson": 87,
+    "zh": "“谋杀案发生时，我正在八点钟的火车上前往伦敦，”该男子说。",
+    "en": "'At the time the murder was committed, I was travelling on the 8o'clock train to London,'said the man."
+  },
+  {
+    "id": 20997,
+    "lesson": 87,
+    "zh": "“你总是赶这么早的火车吗？",
+    "en": "'Do you always catch such an early train?"
+  },
+  {
+    "id": 20998,
+    "lesson": 87,
+    "zh": "“检查员问道。",
+    "en": "'asked the inspector."
+  },
+  {
+    "id": 20999,
+    "lesson": 87,
+    "zh": "“我当然知道，”那人回答道。",
+    "en": "'Of course I do,'answered the man."
+  },
+  {
+    "id": 21000,
+    "lesson": 87,
+    "zh": "“五点十分我必须上班。",
+    "en": "'I must be at work at 10 5 o'clock."
+  },
+  {
+    "id": 21001,
+    "lesson": 87,
+    "zh": "我的雇主将确认我准时到达。",
+    "en": "My employer will confirm that I was there on time."
+  },
+  {
+    "id": 21002,
+    "lesson": 87,
+    "zh": "” “晚一点的火车能让你准时上班吗？",
+    "en": "' 'Would a later train get you to work on time?"
+  },
+  {
+    "id": 21003,
+    "lesson": 87,
+    "zh": "“检查员问道。",
+    "en": "'asked the inspec- tor."
+  },
+  {
+    "id": 21004,
+    "lesson": 87,
+    "zh": "“我想会的，但我从来没有赶上晚一点的火车。",
+    "en": "'I suppose it would, but I never catch a later train."
+  },
+  {
+    "id": 21005,
+    "lesson": 87,
+    "zh": "” “你什么时候到车站的？",
+    "en": "' 'At what time did you arrive at the station?"
+  },
+  {
+    "id": 21006,
+    "lesson": 87,
+    "zh": "” “十点到八点。",
+    "en": "' 10 'At ten to eight."
+  },
+  {
+    "id": 21007,
+    "lesson": 87,
+    "zh": "我买了一份报纸，等火车。",
+    "en": "I bought a paper and waited for the train."
+  },
+  {
+    "id": 21008,
+    "lesson": 87,
+    "zh": "” “你没发现有什么异常吗？",
+    "en": "' ‘And you didn't notice anything unusual?"
+  },
+  {
+    "id": 21009,
+    "lesson": 87,
+    "zh": "” “当然不是。",
+    "en": "' ‘Of course not."
+  },
+  {
+    "id": 21010,
+    "lesson": 87,
+    "zh": "“我建议，”检查员说，“你没有说实话。”",
+    "en": "' I suggest,'said the inspector,'that you are not telling the truth."
+  },
+  {
+    "id": 21011,
+    "lesson": 87,
+    "zh": "我建议你不要赶8点钟的火车，但你可以赶8.25的火车，这样你仍然可以准时上班。",
+    "en": "I suggest that you did not catch the 8 o'clock train, but that you caught the 8.25 which would still get you to work on time."
+  },
+  {
+    "id": 21012,
+    "lesson": 87,
+    "zh": "你看，案发15日早上，8点钟的火车根本没有运行。",
+    "en": "You see, on the 15 morning of the murder, the 8 o'clock train did not run at all."
+  },
+  {
+    "id": 21013,
+    "lesson": 87,
+    "zh": "它在 Ferngreen 车站发生故障并被停运。",
+    "en": "It broke down at Ferngreen station and was taken off the line."
+  },
+  {
+    "id": 21014,
+    "lesson": 88,
+    "zh": "六名男子被困在矿井中十七个小时。",
+    "en": "Six men have been trapped in a mine for seventeen hours."
+  },
+  {
+    "id": 21015,
+    "lesson": 88,
+    "zh": "如果不尽快将他们救出水面，他们可能会丧生。然而，救援行动却很困难。",
+    "en": "If they are not brought to the surface soon they may lose their lives However, rescue operations are proving difficult."
+  },
+  {
+    "id": 21016,
+    "lesson": 88,
+    "zh": "如果使用炸药，振动会导致矿井顶板倒塌。",
+    "en": "If explosives are used, vibrations will cause the roof of the mine to collapse."
+  },
+  {
+    "id": 21017,
+    "lesson": 88,
+    "zh": "因此，救援人员正在矿井北侧钻一个洞。",
+    "en": "Rescue 5 workers are therefore drilling a hole on the north side of the mine."
+  },
+  {
+    "id": 21018,
+    "lesson": 88,
+    "zh": "他们打算将这些人带入一个特殊的太空舱中。",
+    "en": "They intend to bring the men up in a special capsule."
+  },
+  {
+    "id": 21019,
+    "lesson": 88,
+    "zh": "如果土壤下面没有坚硬的岩石层，他们几个小时内就能完成这项工作。",
+    "en": "If there had not been a hard layer of rock beneath the soil, they would have completed the job in a few hours."
+  },
+  {
+    "id": 21020,
+    "lesson": 88,
+    "zh": "事实上，他们已经钻了十六个小时，还有很长的路要走。",
+    "en": "As it is, they have been drilling for sixteen hours and they still have a long way to go."
+  },
+  {
+    "id": 21021,
+    "lesson": 88,
+    "zh": "与此同时，两个小时前被放入矿井的麦克风使这些人能够与他们最亲近的亲属保持联系。",
+    "en": "Meanwhile, a microphone, which was lowered into the mine two hours ago, has enabled the men 10 to keep in touch with their closest relatives."
+  },
+  {
+    "id": 21022,
+    "lesson": 88,
+    "zh": "尽管他们的食物和饮料已经耗尽，但人们都很高兴，并相信他们很快就会出去。",
+    "en": "Though they are running out of food and drink, the men are cheerful and confident that they will get out soon."
+  },
+  {
+    "id": 21023,
+    "lesson": 88,
+    "zh": "他们被告知救援行动进展顺利。",
+    "en": "They have been told that rescue operations are progressing smoothly."
+  },
+  {
+    "id": 21024,
+    "lesson": 88,
+    "zh": "如果他们知道钻穿坚硬的岩石有多么困难，他们就会灰心丧气。",
+    "en": "If they knew how difficult it was to drillthrough the hard rock, they would lose heart."
+  },
+  {
+    "id": 21025,
+    "lesson": 89,
+    "zh": "人们会不惜一切代价观看免费演出——即使是一场糟糕的演出。",
+    "en": "People willdo anything to see a free show—even if it is a bad one."
+  },
+  {
+    "id": 21026,
+    "lesson": 89,
+    "zh": "当 P.and U 剧院将在我们当地的电影院上演喜剧节目的消息传开后。",
+    "en": "When the news got round that a comedy show would be presented at our local cinema by the P.and U."
+  },
+  {
+    "id": 21027,
+    "lesson": 89,
+    "zh": "鸟种公司，我们都赶紧去看。",
+    "en": "Bird Seed Company, we all rushed to see it."
+  },
+  {
+    "id": 21028,
+    "lesson": 89,
+    "zh": "我们不得不排队几个小时才能入场，在演出开始前肯定有数百人在场，不幸的是，这场演出是我们见过的最乏味的演出之一。",
+    "en": "We had to queue for hours to get in and there must 5 have been several hundred people present just before the show began Unfortunately, the show was one of the dullest we have ever seen."
+  },
+  {
+    "id": 21029,
+    "lesson": 89,
+    "zh": "没能进来的人也不必感到失望，因为很多应该出现的艺人都没有来。",
+    "en": "Those who failed to get in need not have felt disappointed, as many of the artistes who should have appeared did not come."
+  },
+  {
+    "id": 21030,
+    "lesson": 89,
+    "zh": "那天晚上我们听到的唯一有趣的事情来自节目开始时的广告商。",
+    "en": "The only funny things we heard that evening came from the advertiser at the beginning of the programme."
+  },
+  {
+    "id": 21031,
+    "lesson": 89,
+    "zh": "他显然非常紧张，在麦克风前尴尬地站了几分钟。",
+    "en": "He was 10 obviously very nervous and for some minutes stood awkwardly before the microphone."
+  },
+  {
+    "id": 21032,
+    "lesson": 89,
+    "zh": "他一开口，大家都哈哈大笑起来。",
+    "en": "As soon as he opened his mouth, everyone burst out laughing."
+  },
+  {
+    "id": 21033,
+    "lesson": 89,
+    "zh": "我们都知道这个穷人应该说什么，但他实际上说的是：这是Poo and Ee Seed Bird Company。",
+    "en": "We all know what the poor man should have said, but what he actually said was: This is the Poo and Ee Seed Bird Company."
+  },
+  {
+    "id": 21034,
+    "lesson": 89,
+    "zh": "女士们、晚上好、先生们！",
+    "en": "Good ladies, evening and gentlemen!"
+  },
+  {
+    "id": 21035,
+    "lesson": 90,
+    "zh": "炸鱼薯条一直是英国人喜爱的菜肴，但随着海洋过度捕捞，鱼变得越来越贵。",
+    "en": "Fish and chips has always been a favourite dish in Britain, but as the oceans have been overfished, fish has become more and more expensive."
+  },
+  {
+    "id": 21036,
+    "lesson": 90,
+    "zh": "因此，当得知巨型鱼类让北海石油钻井平台上的潜水员感到恐惧时，我们感到很惊讶。",
+    "en": "So it comes as a surprise to learn that giant fish are terrifying the divers on North Sea oil rigs."
+  },
+  {
+    "id": 21037,
+    "lesson": 90,
+    "zh": "石油钻井平台需要经常维修，潜水员经常在水下一百英尺的黑暗中工作，工作时被巨鱼撞上，吓得魂飞魄散。",
+    "en": "Oil rigs have to be repaired 5 frequently and divers, who often have to work in darkness a hundred feet under water, have been frightened out of their wits by giant fish bumping into them as they work."
+  },
+  {
+    "id": 21038,
+    "lesson": 90,
+    "zh": "现在他们已经制作了特殊的笼子来保护他们免受这些怪物的伤害。",
+    "en": "Now they have had special cages made to protect them from these monsters."
+  },
+  {
+    "id": 21039,
+    "lesson": 90,
+    "zh": "这些鱼不是鲨鱼或虎鲸，而是人们喜爱的鱼类，例如鳕鱼和鳐鱼，它们的体型会长到不自然的大小，有时长达十二英尺。",
+    "en": "The fish are not sharks or killer whales, but favourite eating varieties like cod and skate which grow to unnatural sizes, sometimes as 10 much as twelve feet in length."
+  },
+  {
+    "id": 21040,
+    "lesson": 90,
+    "zh": "三个因素导致这些鱼长得这么大：海底热油管周围的温暖海水；钻井平台上的船员扔到船上的大量食物；石油钻井平台周围完全没有渔船。",
+    "en": "Three factors have caused these fish to grow so large: the warm water round thee hot oil pipes under the sea; the plentiful supply of food thrown overboard by the crews on the rigs; the total absence of fishing boats around the oil rigs."
+  },
+  {
+    "id": 21041,
+    "lesson": 90,
+    "zh": "结果，鱼儿就在可爱的温暖水中吃啊吃啊，生长啊生长。",
+    "en": "As a result, the fish just eat and eat and grow and grow in the lovely warm water."
+  },
+  {
+    "id": 21042,
+    "lesson": 90,
+    "zh": "谁猫谁？",
+    "en": "Who cats who?"
+  },
+  {
+    "id": 21043,
+    "lesson": 91,
+    "zh": "一名飞行员注意到一个气球似乎正飞往附近的皇家空军基地。",
+    "en": "A pilot noticed a balloon which seemed to be making for a Royal Air Force Station nearby."
+  },
+  {
+    "id": 21044,
+    "lesson": 91,
+    "zh": "他立即通知了电视台，但没有人能够解释这个谜团。",
+    "en": "He informed the station at once, but no one there was able to explain the mystery."
+  },
+  {
+    "id": 21045,
+    "lesson": 91,
+    "zh": "控制塔的官员听到这个消息后非常生气，因为气球对飞机来说是一个很大的危险。",
+    "en": "The officer in the con- trol tower was very angry when he heard the news, because bal- 5 loons can be a great danger to aircraft."
+  },
+  {
+    "id": 21046,
+    "lesson": 91,
+    "zh": "他说，可能有人在监视空间站，飞行员被命令跟踪这个奇怪的物体。",
+    "en": "He said that someone might be spying on the station and the pilot was ordered to keep track of the strange object."
+  },
+  {
+    "id": 21047,
+    "lesson": 91,
+    "zh": "飞行员设法绕气球飞行了一段时间。",
+    "en": "The pilot managed to circle the balloon for some time."
+  },
+  {
+    "id": 21048,
+    "lesson": 91,
+    "zh": "他可以看到下面的一个篮子里有三个人，其中一个拿着一副双筒望远镜。",
+    "en": "He could make out three men in a basket under it and one of them was holding a pair of binoculars."
+  },
+  {
+    "id": 21049,
+    "lesson": 91,
+    "zh": "当气球飞过空间站时，飞行员看到其中一名男子正在拍照。",
+    "en": "When the balloon was over the station, the pilot saw one of the men 10 taking photographs."
+  },
+  {
+    "id": 21050,
+    "lesson": 91,
+    "zh": "不久之后，气球开始下降并降落在机场附近。",
+    "en": "Soon afterwards, the balloon began to descend and it landed near an airfield."
+  },
+  {
+    "id": 21051,
+    "lesson": 91,
+    "zh": "警察被叫来了，但他们无法逮捕任何人，因为篮子里装着两名国会议员和车站指挥官！",
+    "en": "The police were called in, but they could not arrest anyone, for the basket contained two Members of Parliament and the Commanding Officer of the station!"
+  },
+  {
+    "id": 21052,
+    "lesson": 91,
+    "zh": "正如指挥官后来解释的那样，车站的一半人不知道另一半人在做什么！",
+    "en": "As the Commanding Officer explained later, one half of the station did not know what the other half was doing!"
+  },
+  {
+    "id": 21053,
+    "lesson": 92,
+    "zh": "当我回到家的时候，应该已经是凌晨两点了。",
+    "en": "It must have been about two in the morning when I returned home."
+  },
+  {
+    "id": 21054,
+    "lesson": 92,
+    "zh": "我试图按门铃叫醒我的妻子，但她睡得很熟，所以我从花园的棚子里拿了一个梯子，把它靠在墙上，开始爬向卧室的窗户。",
+    "en": "I tried to wake up my wife by ringing the doorbell, but she was fast asleep, soI got a ladder from the shed in the garden, put it against the wall, and began climbing towards the bedroom window."
+  },
+  {
+    "id": 21055,
+    "lesson": 92,
+    "zh": "我快要到那里时，下面一个讽刺的声音说：“我认为晚上这个时候窗户不需要清洁。”",
+    "en": "I was almost there when a sarcastic voice below said,'I don't think the windows need cleaning at this time of the night."
+  },
+  {
+    "id": 21056,
+    "lesson": 92,
+    "zh": "“当我看到一名警察时，我低头一看，差点从梯子上摔下来。",
+    "en": "'I looked down and nearly fell off the ladder when I saw a policeman."
+  },
+  {
+    "id": 21057,
+    "lesson": 92,
+    "zh": "我立即后悔自己的回答方式，但我说：“我喜欢晚上擦窗户。”",
+    "en": "I immedi- ately regretted answering in the way I did, but I said,'I enjoy clean- ing windows at night."
+  },
+  {
+    "id": 21058,
+    "lesson": 92,
+    "zh": "“我也是，”警察用同样的语气回答。",
+    "en": "' So do I,'answered the policeman in the same tone."
+  },
+  {
+    "id": 21059,
+    "lesson": 92,
+    "zh": "'请原谅我打扰你了。",
+    "en": "'Excuse my interrupting you."
+  },
+  {
+    "id": 21060,
+    "lesson": 92,
+    "zh": "我讨厌在别人忙着工作的时候打断他，但是你介意跟我一起去车站吗？",
+    "en": "I hate to interrupt a man when he's busy working, but would you mind coming with me to the station?"
+  },
+  {
+    "id": 21061,
+    "lesson": 92,
+    "zh": "” “好吧，我宁愿留在这里，”我说。",
+    "en": "' 'Well, I'd prefer to stay here,'I said."
+  },
+  {
+    "id": 21062,
+    "lesson": 92,
+    "zh": "“你看，我忘记带钥匙了。",
+    "en": "'You see, I've forgotten my key."
+  },
+  {
+    "id": 21063,
+    "lesson": 92,
+    "zh": "” “你的什么？",
+    "en": "' ‘Your what?"
+  },
+  {
+    "id": 21064,
+    "lesson": 92,
+    "zh": "”他喊道。",
+    "en": "'he called."
+  },
+  {
+    "id": 21065,
+    "lesson": 92,
+    "zh": "我的钥匙，”我喊道。",
+    "en": "My key,'I shouted."
+  },
+  {
+    "id": 21066,
+    "lesson": 92,
+    "zh": "幸运的是，喊叫声惊醒了我的妻子，她打开了窗户，这时警察正向我爬来。",
+    "en": "Fortunately, the shouting woke up my wife who opened the window just as the policeman had started to climb towards me."
+  },
+  {
+    "id": 21067,
+    "lesson": 93,
+    "zh": "世界上最著名的纪念碑之一自由女神像是法国人民在十九世纪赠送给美利坚合众国的。",
+    "en": "One of the most famous monuments in the world, the Statue of Liberty, was presented to the United States of America in the nineteenth century by the people of France."
+  },
+  {
+    "id": 21068,
+    "lesson": 93,
+    "zh": "这座伟大的雕像由雕塑家奥古斯特·巴托尔迪设计，历时十年才完成。",
+    "en": "The great statue, which was designed by the sculptor Auguste Bartholdi, took ten years to complete."
+  },
+  {
+    "id": 21069,
+    "lesson": 93,
+    "zh": "实际的人物是由铜制成的，由埃菲尔专门建造的金属框架支撑。",
+    "en": "The actual figure was made of copper supported by a metal framework which had been especially constructed by Eiffel."
+  },
+  {
+    "id": 21070,
+    "lesson": 93,
+    "zh": "在它被运到美国之前，必须为其找到一个地点并建造一个基座。",
+    "en": "Before it could be transported to the United States, a site had to be found for it and a pedestal had to be built."
+  },
+  {
+    "id": 21071,
+    "lesson": 93,
+    "zh": "选定的地点是纽约港入口处的一个岛屿。",
+    "en": "The site chosen was an island at the entrance of New York Harbour."
+  },
+  {
+    "id": 21072,
+    "lesson": 93,
+    "zh": "1884年，一座151英尺高的雕像在巴黎竖立起来。",
+    "en": "By 1884, a statue which was 151 feet tall had been erected in Paris."
+  },
+  {
+    "id": 21073,
+    "lesson": 93,
+    "zh": "第二年，它被拆散并送往美国。",
+    "en": "The following year, it was taken to pieces and sent to America."
+  },
+  {
+    "id": 21074,
+    "lesson": 93,
+    "zh": "1886年10月底，雕像再次组装完毕，由巴托尔迪正式赠送给美国人民。",
+    "en": "By the end of October 1886, the statuee had been put together again and it was officially presented to the American people by Bartholdi."
+  },
+  {
+    "id": 21075,
+    "lesson": 93,
+    "zh": "从那时起，这座伟大的纪念碑就成为了数百万通过纽约港在美国安家的人们的自由象征。",
+    "en": "Ever since then, the great monument has been a symbol of liberty for the millions of people who have passed through New York Harbour to make their homes in America."
+  },
+  {
+    "id": 21076,
+    "lesson": 94,
+    "zh": "实验证明，孩子很小的时候就可以接受游泳训练。",
+    "en": "Experiments have proved that children can be instructed in swim- ming at a very early age."
+  },
+  {
+    "id": 21077,
+    "lesson": 94,
+    "zh": "在洛杉矶的一个特殊游泳池里，孩子们甚至在学会走路之前就已经成为在水下屏住呼吸的专家。",
+    "en": "At a special swimming pool in Los Ange- les, children become expert at holding their breath under water even before they can walk."
+  },
+  {
+    "id": 21078,
+    "lesson": 94,
+    "zh": "两个月大的婴儿似乎并不不愿意下水。",
+    "en": "Babies of two months old do not appear to be 5 reluctant to enter the water."
+  },
+  {
+    "id": 21079,
+    "lesson": 94,
+    "zh": "没过多久，他们就习惯了游泳，可以从泳池的地板上拿起重物。",
+    "en": "It is not long before they are so accus- tomed to swimming that they can pick up weights from the floor of the pool."
+  },
+  {
+    "id": 21080,
+    "lesson": 94,
+    "zh": "水下三轮车比赛是非常受这些年轻游泳运动员欢迎的游戏。",
+    "en": "A game that is very popular with these young swimmers is the underwater tricycle race."
+  },
+  {
+    "id": 21081,
+    "lesson": 94,
+    "zh": "三轮车排列在水下七英尺的泳池地板上。",
+    "en": "Tricycles are lined up on the floor of the pool seven feet under water."
+  },
+  {
+    "id": 21082,
+    "lesson": 94,
+    "zh": "孩子们互相竞争，以到达泳池的另一端。",
+    "en": "The children compete against each other to reach the other end of the 10 pool."
+  },
+  {
+    "id": 21083,
+    "lesson": 94,
+    "zh": "许多人骑三轮车，但大多数人更喜欢推或拖三轮车。",
+    "en": "Many pedal their tricycles, but most of them prefer to push or drag them."
+  },
+  {
+    "id": 21084,
+    "lesson": 94,
+    "zh": "有些孩子甚至可以跑完整个泳池而一次都没有上来喘气。",
+    "en": "Some children can cover the whole length of the pool without coming up for breath even once."
+  },
+  {
+    "id": 21085,
+    "lesson": 94,
+    "zh": "他们是否会成为未来的奥运会冠军，只有时间才能证明。",
+    "en": "Whether they will ever become future Olympic champions, only time will tell."
+  },
+  {
+    "id": 21086,
+    "lesson": 94,
+    "zh": "同时，他们应该鼓励我们当中那些无法游出五码的人，然后他们就会喘不过气来。",
+    "en": "Meanwhile, they should encourage those among us who cannot swim five yards before they are gasping for air."
+  },
+  {
+    "id": 21087,
+    "lesson": 95,
+    "zh": "发生什么事了？",
+    "en": "'What has happened?"
+  },
+  {
+    "id": 21088,
+    "lesson": 95,
+    "zh": "她问道。",
+    "en": "'she asked."
+  },
+  {
+    "id": 21089,
+    "lesson": 95,
+    "zh": "“你的衣服怎么弄得这么乱？” “亲爱的，灭火器，”大使冷冷地回答，“今天早上，大学生放火烧了大使馆。”",
+    "en": "'How did your clothes get into such a mess?” ‘A fire extinguisher, my dear,'answered the Ambassador drily 'University students set the Embassy on fire this morning."
+  },
+  {
+    "id": 21090,
+    "lesson": 95,
+    "zh": "” “天哪！",
+    "en": "' 'Good heavens!"
+  },
+  {
+    "id": 21091,
+    "lesson": 95,
+    "zh": "“他的妻子惊呼道。",
+    "en": "'exclaimed his wife."
+  },
+  {
+    "id": 21092,
+    "lesson": 95,
+    "zh": "'当时你在哪里？",
+    "en": "'And where were you at the time?"
+  },
+  {
+    "id": 21093,
+    "lesson": 95,
+    "zh": "“我像往常一样在办公室，”大使回答道。",
+    "en": "' I was in my office as usual,'answered the Ambassador."
+  },
+  {
+    "id": 21094,
+    "lesson": 95,
+    "zh": "“火灾是在地下室发生的。",
+    "en": "'The fire broke out in the basement."
+  },
+  {
+    "id": 21095,
+    "lesson": 95,
+    "zh": "当然，我立即倒下了，那个傻瓜霍斯特用灭火器瞄准了我。",
+    "en": "I went down immediately, of course, and that fool, Horst, aimed a fire extinguisher at me."
+  },
+  {
+    "id": 21096,
+    "lesson": 95,
+    "zh": "他以为我着火了。",
+    "en": "He thought I was on fire."
+  },
+  {
+    "id": 21097,
+    "lesson": 95,
+    "zh": "我一定要把那个家伙派出去。",
+    "en": "I must definitely get that fellow posted."
+  },
+  {
+    "id": 21098,
+    "lesson": 95,
+    "zh": "” 大使夫人继续问问题，突然发现她丈夫的帽子上有一个大洞，“你怎么解释呢？",
+    "en": "' The Ambassador's wife went on asking questions, when she suddenly noticed a big hole in her husband's hat 'And how can you explain that?"
+  },
+  {
+    "id": 21099,
+    "lesson": 95,
+    "zh": "她问道。",
+    "en": "'she asked."
+  },
+  {
+    "id": 21100,
+    "lesson": 95,
+    "zh": "“哦，那个，”大使说。",
+    "en": "'Oh, that,'said the Ambassador."
+  },
+  {
+    "id": 21101,
+    "lesson": 95,
+    "zh": "“有人透过我办公室的窗户开了一枪。",
+    "en": "'Someone fired a shot through my office window."
+  },
+  {
+    "id": 21102,
+    "lesson": 95,
+    "zh": "准确，你不觉得吗？",
+    "en": "Accurate, don't you think?"
+  },
+  {
+    "id": 21103,
+    "lesson": 95,
+    "zh": "幸好我当时没戴。",
+    "en": "Fortunately, I wasn't wearing it at the time."
+  },
+  {
+    "id": 21104,
+    "lesson": 95,
+    "zh": "如果我是的话，我就无法回家吃午饭了。",
+    "en": "If Ihad been, I would not have been able to get home for lunch."
+  },
+  {
+    "id": 21105,
+    "lesson": 96,
+    "zh": "日本每年举办一次亡灵节。",
+    "en": "A Festival for the Dead is held once a year in Japan."
+  },
+  {
+    "id": 21106,
+    "lesson": 96,
+    "zh": "这个节日是一个欢乐的时刻，因为在这一天，据说死者将返回家园，并受到生者的欢迎。",
+    "en": "This festival is a cheerful occasion, for on this day, the dead are said to return to their homes and they are welcomed by the living."
+  },
+  {
+    "id": 21107,
+    "lesson": 96,
+    "zh": "由于长途跋涉后他们预计会感到饥饿，因此为他们准备了食物。",
+    "en": "As they are ex- pected to be hungry after their long journey, food is laid out for 5 them."
+  },
+  {
+    "id": 21108,
+    "lesson": 96,
+    "zh": "每间屋子外面都挂着特制的灯笼，帮助死者找到方向。",
+    "en": "Specially-made lanterns are hung outside each house to help the dead to find their way."
+  },
+  {
+    "id": 21109,
+    "lesson": 96,
+    "zh": "整个晚上，人们载歌载舞。",
+    "en": "All night long, people dance and sing."
+  },
+  {
+    "id": 21110,
+    "lesson": 96,
+    "zh": "清晨，为死者准备的食物被扔进河里或海里，因为活着的人吃这些食物被认为是不吉利的。",
+    "en": "In the early morning, the food that had been laid out for the dead is thrown into a river or into the sea as it is considered unlucky for anyone living to eat it."
+  },
+  {
+    "id": 21111,
+    "lesson": 96,
+    "zh": "在靠近海边的城镇里，前一天晚上挂在街上的小灯笼，在节日结束后就会被放入水中。",
+    "en": "In towns that are near the sea, the tiny lanterns which had been hung in the streets the 10 night before, are placed into the water when the festival is over."
+  },
+  {
+    "id": 21112,
+    "lesson": 96,
+    "zh": "数以千计的灯笼缓缓漂向大海，指引着死者返回另一个世界的旅程。",
+    "en": "Thousands of lanterns slowly drift out to sea guiding the dead on their return journey to the other world."
+  },
+  {
+    "id": 21113,
+    "lesson": 96,
+    "zh": "这是一个动人的景象，人们站在岸边，看着灯笼渐渐远去，直到再也看不见。",
+    "en": "This is a moving spectacle, for crowds of people stand on the shore watching the lanterns drifting away until they can be seen no more."
+  }
+]

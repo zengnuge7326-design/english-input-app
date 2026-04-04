@@ -1,0 +1,8528 @@
+[
+  {
+    "id": 10001,
+    "lesson": 1,
+    "zh": "打扰一下！",
+    "en": "Excuse me!"
+  },
+  {
+    "id": 10002,
+    "lesson": 1,
+    "zh": "什么事？",
+    "en": "Yes?"
+  },
+  {
+    "id": 10003,
+    "lesson": 1,
+    "zh": "这是你的手提包吗？",
+    "en": "Is this your handbag?"
+  },
+  {
+    "id": 10004,
+    "lesson": 1,
+    "zh": "什么？",
+    "en": "Pardon?"
+  },
+  {
+    "id": 10005,
+    "lesson": 1,
+    "zh": "这是你的手提包吗？",
+    "en": "Is this your handbag?"
+  },
+  {
+    "id": 10006,
+    "lesson": 1,
+    "zh": "是的，是我的。",
+    "en": "Yes, it is."
+  },
+  {
+    "id": 10007,
+    "lesson": 1,
+    "zh": "非常感谢。",
+    "en": "Thank you very much."
+  },
+  {
+    "id": 10008,
+    "lesson": 3,
+    "zh": "请拿我的大衣和伞。",
+    "en": "My coat and my umbrella please."
+  },
+  {
+    "id": 10009,
+    "lesson": 3,
+    "zh": "这是我的票。",
+    "en": "Here is my ticket."
+  },
+  {
+    "id": 10010,
+    "lesson": 3,
+    "zh": "谢谢您，先生。",
+    "en": "Thank you, sir."
+  },
+  {
+    "id": 10011,
+    "lesson": 3,
+    "zh": "五号。",
+    "en": "Number five."
+  },
+  {
+    "id": 10012,
+    "lesson": 3,
+    "zh": "这是你的雨伞和外套。",
+    "en": "Here's your umbrella and your coat."
+  },
+  {
+    "id": 10013,
+    "lesson": 3,
+    "zh": "这不是我的伞。",
+    "en": "This is not my umbrella."
+  },
+  {
+    "id": 10014,
+    "lesson": 3,
+    "zh": "对不起，先生。",
+    "en": "Sorry, sir."
+  },
+  {
+    "id": 10015,
+    "lesson": 3,
+    "zh": "这是你的伞吗？",
+    "en": "Is this your umbrella?"
+  },
+  {
+    "id": 10016,
+    "lesson": 3,
+    "zh": "不，不是。",
+    "en": "No, it isn't."
+  },
+  {
+    "id": 10017,
+    "lesson": 3,
+    "zh": "是这个吗？",
+    "en": "Is this it?"
+  },
+  {
+    "id": 10018,
+    "lesson": 3,
+    "zh": "是的，是我的。",
+    "en": "Yes, it is."
+  },
+  {
+    "id": 10019,
+    "lesson": 3,
+    "zh": "非常感谢。",
+    "en": "Thank you very much."
+  },
+  {
+    "id": 10020,
+    "lesson": 5,
+    "zh": "早上好。",
+    "en": "Good morning."
+  },
+  {
+    "id": 10021,
+    "lesson": 5,
+    "zh": "早上好， Mr.Blake。",
+    "en": "Good morning, Mr.Blake."
+  },
+  {
+    "id": 10022,
+    "lesson": 5,
+    "zh": "这是 Miss Sophie Dupont。",
+    "en": "This is Miss Sophie Dupont."
+  },
+  {
+    "id": 10023,
+    "lesson": 5,
+    "zh": "Sophie 是一名新学生。",
+    "en": "Sophie is a new student."
+  },
+  {
+    "id": 10024,
+    "lesson": 5,
+    "zh": "她是法国人。",
+    "en": "She is French."
+  },
+  {
+    "id": 10025,
+    "lesson": 5,
+    "zh": "Sophie，这是 Hans。",
+    "en": "Sophie, this is Hans."
+  },
+  {
+    "id": 10026,
+    "lesson": 5,
+    "zh": "他是德国人。",
+    "en": "He is German."
+  },
+  {
+    "id": 10027,
+    "lesson": 5,
+    "zh": "很高兴见到你。",
+    "en": "Nice to meet you."
+  },
+  {
+    "id": 10028,
+    "lesson": 5,
+    "zh": "这是 Naoko。",
+    "en": "And this is Naoko."
+  },
+  {
+    "id": 10029,
+    "lesson": 5,
+    "zh": "她是日本人。",
+    "en": "She's Japanese."
+  },
+  {
+    "id": 10030,
+    "lesson": 5,
+    "zh": "很高兴见到你。",
+    "en": "Nice to meet you."
+  },
+  {
+    "id": 10031,
+    "lesson": 5,
+    "zh": "这是 Chang-woo。",
+    "en": "And this is Chang-woo."
+  },
+  {
+    "id": 10032,
+    "lesson": 5,
+    "zh": "他是韩国人。",
+    "en": "He's Korean."
+  },
+  {
+    "id": 10033,
+    "lesson": 5,
+    "zh": "很高兴见到你。",
+    "en": "Nice to meet you."
+  },
+  {
+    "id": 10034,
+    "lesson": 5,
+    "zh": "这是 Luming。",
+    "en": "And this is Luming."
+  },
+  {
+    "id": 10035,
+    "lesson": 5,
+    "zh": "他是中国人。",
+    "en": "He's Chinese."
+  },
+  {
+    "id": 10036,
+    "lesson": 5,
+    "zh": "很高兴见到你。",
+    "en": "Nice to meet you."
+  },
+  {
+    "id": 10037,
+    "lesson": 5,
+    "zh": "这是 Xiaohui。",
+    "en": "And this is Xiaohui."
+  },
+  {
+    "id": 10038,
+    "lesson": 5,
+    "zh": "她也是中国人。",
+    "en": "She's Chinese, too."
+  },
+  {
+    "id": 10039,
+    "lesson": 5,
+    "zh": "很高兴见到你。",
+    "en": "Nice to meet you."
+  },
+  {
+    "id": 10040,
+    "lesson": 7,
+    "zh": "我是一名新学生。",
+    "en": "I am a new student."
+  },
+  {
+    "id": 10041,
+    "lesson": 7,
+    "zh": "我的名字是 Robert。",
+    "en": "My name's Robert."
+  },
+  {
+    "id": 10042,
+    "lesson": 7,
+    "zh": "很高兴见到你。",
+    "en": "Nice to meet you."
+  },
+  {
+    "id": 10043,
+    "lesson": 7,
+    "zh": "我的名字是 Sophie。",
+    "en": "My name's Sophie."
+  },
+  {
+    "id": 10044,
+    "lesson": 7,
+    "zh": "你是法国人吗？",
+    "en": "Are you French?"
+  },
+  {
+    "id": 10045,
+    "lesson": 7,
+    "zh": "我是。",
+    "en": "Yes, I am."
+  },
+  {
+    "id": 10046,
+    "lesson": 7,
+    "zh": "你也是法国人吗？",
+    "en": "Are you French, too?"
+  },
+  {
+    "id": 10047,
+    "lesson": 7,
+    "zh": "不，我不是。",
+    "en": "No, I am not."
+  },
+  {
+    "id": 10048,
+    "lesson": 7,
+    "zh": "你是什​​么国籍？",
+    "en": "What nationality are you?"
+  },
+  {
+    "id": 10049,
+    "lesson": 7,
+    "zh": "我是意大利人。",
+    "en": "I'm Italian."
+  },
+  {
+    "id": 10050,
+    "lesson": 7,
+    "zh": "你是老师吗？",
+    "en": "Are you a teacher?"
+  },
+  {
+    "id": 10051,
+    "lesson": 7,
+    "zh": "不，我不是。",
+    "en": "No, I'm not."
+  },
+  {
+    "id": 10052,
+    "lesson": 7,
+    "zh": "你做什么工作？",
+    "en": "What's your job?"
+  },
+  {
+    "id": 10053,
+    "lesson": 7,
+    "zh": "我是一名键盘操作员。",
+    "en": "I'm a keyboard operator."
+  },
+  {
+    "id": 10054,
+    "lesson": 7,
+    "zh": "你做什么工作？",
+    "en": "What's your job?"
+  },
+  {
+    "id": 10055,
+    "lesson": 7,
+    "zh": "我是一名工程师。",
+    "en": "I'm an engineer."
+  },
+  {
+    "id": 10056,
+    "lesson": 9,
+    "zh": "我是一名警察。",
+    "en": "I'm a policeman."
+  },
+  {
+    "id": 10057,
+    "lesson": 9,
+    "zh": "我是一名出租车司机。",
+    "en": "I'm a taxi driver."
+  },
+  {
+    "id": 10058,
+    "lesson": 9,
+    "zh": "我是一名邮递员。",
+    "en": "I’m a postman."
+  },
+  {
+    "id": 10059,
+    "lesson": 9,
+    "zh": "我是一名机械师。",
+    "en": "I'm a mechanic."
+  },
+  {
+    "id": 10060,
+    "lesson": 9,
+    "zh": "我是一名家庭主妇。",
+    "en": "I'm a housewife."
+  },
+  {
+    "id": 10061,
+    "lesson": 9,
+    "zh": "我是一名女警察。",
+    "en": "I'm a policewoman."
+  },
+  {
+    "id": 10062,
+    "lesson": 9,
+    "zh": "我是一名空姐。",
+    "en": "I'm an air hostess."
+  },
+  {
+    "id": 10063,
+    "lesson": 9,
+    "zh": "我是一名护士。",
+    "en": "I'm a nurse."
+  },
+  {
+    "id": 10064,
+    "lesson": 9,
+    "zh": "我是一名美发师。",
+    "en": "I'm a hairdresser."
+  },
+  {
+    "id": 10065,
+    "lesson": 9,
+    "zh": "我是一名送奶工。",
+    "en": "I’m a milkman."
+  },
+  {
+    "id": 10066,
+    "lesson": 11,
+    "zh": "那是谁的衬衫？",
+    "en": "Whose shirt is that?"
+  },
+  {
+    "id": 10067,
+    "lesson": 11,
+    "zh": "这是你的衬衫吗， Dave？",
+    "en": "Is this your shirt, Dave?"
+  },
+  {
+    "id": 10068,
+    "lesson": 11,
+    "zh": "不，先生。",
+    "en": "No, sir."
+  },
+  {
+    "id": 10069,
+    "lesson": 11,
+    "zh": "这不是我的衬衫。",
+    "en": "It's not my shirt."
+  },
+  {
+    "id": 10070,
+    "lesson": 11,
+    "zh": "这是我的衬衫。",
+    "en": "This is my shirt."
+  },
+  {
+    "id": 10071,
+    "lesson": 11,
+    "zh": "我的衬衫是蓝色的。",
+    "en": "My shirt's blue."
+  },
+  {
+    "id": 10072,
+    "lesson": 11,
+    "zh": "这件衬衫是 Tim 的吗？",
+    "en": "Is this shirt Tim's?"
+  },
+  {
+    "id": 10073,
+    "lesson": 11,
+    "zh": "也许是的，先生。",
+    "en": "Perhaps it is, sir."
+  },
+  {
+    "id": 10074,
+    "lesson": 11,
+    "zh": "Tim 的衬衫是白色的。",
+    "en": "Tim's shirt's white."
+  },
+  {
+    "id": 10075,
+    "lesson": 11,
+    "zh": "Tim！",
+    "en": "Tim!"
+  },
+  {
+    "id": 10076,
+    "lesson": 11,
+    "zh": "是吗，先生？",
+    "en": "Yes, sir?"
+  },
+  {
+    "id": 10077,
+    "lesson": 11,
+    "zh": "这是你的衬衫吗？",
+    "en": "Is this your shirt?"
+  },
+  {
+    "id": 10078,
+    "lesson": 11,
+    "zh": "是的，先生。",
+    "en": "Yes, sir."
+  },
+  {
+    "id": 10079,
+    "lesson": 11,
+    "zh": "给你。",
+    "en": "Here you are."
+  },
+  {
+    "id": 10080,
+    "lesson": 11,
+    "zh": "Catch！",
+    "en": "Catch!"
+  },
+  {
+    "id": 10081,
+    "lesson": 11,
+    "zh": "谢谢您，先生。",
+    "en": "Thank you, sir."
+  },
+  {
+    "id": 10082,
+    "lesson": 13,
+    "zh": "你的新衣服是什么颜色的？",
+    "en": "What colour's your new dress?"
+  },
+  {
+    "id": 10083,
+    "lesson": 13,
+    "zh": "它是绿色的。",
+    "en": "It's green."
+  },
+  {
+    "id": 10084,
+    "lesson": 13,
+    "zh": "上楼来看看吧。",
+    "en": "Come upstairs and see it."
+  },
+  {
+    "id": 10085,
+    "lesson": 13,
+    "zh": "谢谢。",
+    "en": "Thank you."
+  },
+  {
+    "id": 10086,
+    "lesson": 13,
+    "zh": "看！",
+    "en": "Look!"
+  },
+  {
+    "id": 10087,
+    "lesson": 13,
+    "zh": "这里是！",
+    "en": "Here it is!"
+  },
+  {
+    "id": 10088,
+    "lesson": 13,
+    "zh": "那是一件漂亮的衣服。",
+    "en": "That's a nice dress."
+  },
+  {
+    "id": 10089,
+    "lesson": 13,
+    "zh": "它非常聪明。",
+    "en": "It's very smart."
+  },
+  {
+    "id": 10090,
+    "lesson": 13,
+    "zh": "我的帽子也是新的。",
+    "en": "My hat's new, too."
+  },
+  {
+    "id": 10091,
+    "lesson": 13,
+    "zh": "它是什么颜色？",
+    "en": "What colour is it?"
+  },
+  {
+    "id": 10092,
+    "lesson": 13,
+    "zh": "这是相同的颜色。",
+    "en": "It's the same colour."
+  },
+  {
+    "id": 10093,
+    "lesson": 13,
+    "zh": "它也是绿色的。",
+    "en": "It's green, too."
+  },
+  {
+    "id": 10094,
+    "lesson": 13,
+    "zh": "那是一顶可爱的帽子！",
+    "en": "That is a lovely hat!"
+  },
+  {
+    "id": 10095,
+    "lesson": 15,
+    "zh": "海关人员有问题吗？",
+    "en": "Is there a problem with the Customs officer?"
+  },
+  {
+    "id": 10096,
+    "lesson": 15,
+    "zh": "你是瑞典人吗？",
+    "en": "Are you Swedish?"
+  },
+  {
+    "id": 10097,
+    "lesson": 15,
+    "zh": "不，我们不是。",
+    "en": "No, we are not."
+  },
+  {
+    "id": 10098,
+    "lesson": 15,
+    "zh": "我们是丹麦人。",
+    "en": "We are Danish."
+  },
+  {
+    "id": 10099,
+    "lesson": 15,
+    "zh": "你的朋友也是丹麦人吗？",
+    "en": "Are your friends Danish, too?"
+  },
+  {
+    "id": 10100,
+    "lesson": 15,
+    "zh": "不，他们不是。",
+    "en": "No, they aren't."
+  },
+  {
+    "id": 10101,
+    "lesson": 15,
+    "zh": "他们是挪威人。",
+    "en": "They are Norwegian."
+  },
+  {
+    "id": 10102,
+    "lesson": 15,
+    "zh": "请出示您的护照。",
+    "en": "Your passports, please."
+  },
+  {
+    "id": 10103,
+    "lesson": 15,
+    "zh": "他们在这里。",
+    "en": "Here they are."
+  },
+  {
+    "id": 10104,
+    "lesson": 15,
+    "zh": "这些是你的案例吗？",
+    "en": "Are these your cases?"
+  },
+  {
+    "id": 10105,
+    "lesson": 15,
+    "zh": "不，他们不是。",
+    "en": "No, they aren't."
+  },
+  {
+    "id": 10106,
+    "lesson": 15,
+    "zh": "我们的箱子是棕色的。",
+    "en": "Our cases are brown."
+  },
+  {
+    "id": 10107,
+    "lesson": 15,
+    "zh": "他们在这里。",
+    "en": "Here they are."
+  },
+  {
+    "id": 10108,
+    "lesson": 15,
+    "zh": "你们是游客吗？",
+    "en": "Are you tourists?"
+  },
+  {
+    "id": 10109,
+    "lesson": 15,
+    "zh": "是的，我们是。",
+    "en": "Yes, we are."
+  },
+  {
+    "id": 10110,
+    "lesson": 15,
+    "zh": "你的朋友也是游客吗？",
+    "en": "Are your friends tourists too?"
+  },
+  {
+    "id": 10111,
+    "lesson": 15,
+    "zh": "是的，他们是。",
+    "en": "Yes, they are."
+  },
+  {
+    "id": 10112,
+    "lesson": 15,
+    "zh": "没关系。",
+    "en": "That's fine."
+  },
+  {
+    "id": 10113,
+    "lesson": 15,
+    "zh": "非常感谢。",
+    "en": "Thank you very much."
+  },
+  {
+    "id": 10114,
+    "lesson": 17,
+    "zh": "孩子们为什么要感谢妈妈呢？",
+    "en": "Why do the children thank their mother?"
+  },
+  {
+    "id": 10115,
+    "lesson": 17,
+    "zh": "孩子们，怎么了？",
+    "en": "What's the matter, children?"
+  },
+  {
+    "id": 10116,
+    "lesson": 17,
+    "zh": "我们累了...",
+    "en": "We're tired..."
+  },
+  {
+    "id": 10117,
+    "lesson": 17,
+    "zh": "...而且口渴，妈妈。",
+    "en": "...and thirsty, Mum."
+  },
+  {
+    "id": 10118,
+    "lesson": 17,
+    "zh": "Sit 在这里。",
+    "en": "Sit down here."
+  },
+  {
+    "id": 10119,
+    "lesson": 17,
+    "zh": "你现在还好吗？",
+    "en": "Are you all right now?"
+  },
+  {
+    "id": 10120,
+    "lesson": 17,
+    "zh": "不，我们不是。",
+    "en": "No, we aren't."
+  },
+  {
+    "id": 10121,
+    "lesson": 17,
+    "zh": "看！",
+    "en": "Look!"
+  },
+  {
+    "id": 10122,
+    "lesson": 17,
+    "zh": "有一个卖冰淇淋的人。",
+    "en": "There's an ice cream man."
+  },
+  {
+    "id": 10123,
+    "lesson": 17,
+    "zh": "Two 请给我冰淇淋。",
+    "en": "Two ice creams please."
+  },
+  {
+    "id": 10124,
+    "lesson": 17,
+    "zh": "在这里，孩子们。",
+    "en": "Here you are, children."
+  },
+  {
+    "id": 10125,
+    "lesson": 17,
+    "zh": "谢谢，妈妈。",
+    "en": "Thanks, Mum."
+  },
+  {
+    "id": 10126,
+    "lesson": 17,
+    "zh": "这些冰淇淋很好吃。",
+    "en": "These ice creams are nice."
+  },
+  {
+    "id": 10127,
+    "lesson": 17,
+    "zh": "你现在还好吗？",
+    "en": "Are you all right now?"
+  },
+  {
+    "id": 10128,
+    "lesson": 17,
+    "zh": "是的，我们是，谢谢！",
+    "en": "Yes, we are, thank you!"
+  },
+  {
+    "id": 10129,
+    "lesson": 19,
+    "zh": "男人想要哪本书？",
+    "en": "Which book does the man want?"
+  },
+  {
+    "id": 10130,
+    "lesson": 19,
+    "zh": "请给我一本书， Jane。",
+    "en": "Give me a book please, Jane."
+  },
+  {
+    "id": 10131,
+    "lesson": 19,
+    "zh": "哪本书？",
+    "en": "Which book?"
+  },
+  {
+    "id": 10132,
+    "lesson": 19,
+    "zh": "这个？",
+    "en": "This one?"
+  },
+  {
+    "id": 10133,
+    "lesson": 19,
+    "zh": "不，不是那个。红色的。",
+    "en": "No, not that one.The red one."
+  },
+  {
+    "id": 10134,
+    "lesson": 19,
+    "zh": "这个？",
+    "en": "This one?"
+  },
+  {
+    "id": 10135,
+    "lesson": 19,
+    "zh": "是的，请。",
+    "en": "Yes, please."
+  },
+  {
+    "id": 10136,
+    "lesson": 19,
+    "zh": "给你。",
+    "en": "Here you are."
+  },
+  {
+    "id": 10137,
+    "lesson": 19,
+    "zh": "谢谢。",
+    "en": "Thank you."
+  },
+  {
+    "id": 10138,
+    "lesson": 21,
+    "zh": "男士想要哪副眼镜？",
+    "en": "Which glasses does the man want?"
+  },
+  {
+    "id": 10139,
+    "lesson": 21,
+    "zh": "请给我一副眼镜， Jane。",
+    "en": "Give me some glasses please, Jane."
+  },
+  {
+    "id": 10140,
+    "lesson": 21,
+    "zh": "哪种眼镜？",
+    "en": "Which glasses?"
+  },
+  {
+    "id": 10141,
+    "lesson": 21,
+    "zh": "这副眼镜？",
+    "en": "These glasses?"
+  },
+  {
+    "id": 10142,
+    "lesson": 21,
+    "zh": "不，不是那些。",
+    "en": "No, not those."
+  },
+  {
+    "id": 10143,
+    "lesson": 21,
+    "zh": "架子上的那些。",
+    "en": "The ones on the shelf."
+  },
+  {
+    "id": 10144,
+    "lesson": 21,
+    "zh": "这些？",
+    "en": "These?"
+  },
+  {
+    "id": 10145,
+    "lesson": 21,
+    "zh": "是的，请。",
+    "en": "Yes, please."
+  },
+  {
+    "id": 10146,
+    "lesson": 21,
+    "zh": "给你",
+    "en": "Here you are"
+  },
+  {
+    "id": 10147,
+    "lesson": 21,
+    "zh": "谢谢。",
+    "en": "Thanks."
+  },
+  {
+    "id": 10148,
+    "lesson": 23,
+    "zh": "Mrs.Smith 的厨房很小。",
+    "en": "Mrs.Smith's kitchen is small."
+  },
+  {
+    "id": 10149,
+    "lesson": 23,
+    "zh": "厨房里有一台冰箱。冰箱是白色的。",
+    "en": "There is a refrigerator in the kitchen. The refrigerator is white."
+  },
+  {
+    "id": 10150,
+    "lesson": 23,
+    "zh": "它在右边。",
+    "en": "It is on the right."
+  },
+  {
+    "id": 10151,
+    "lesson": 23,
+    "zh": "厨房里有一个电饭锅。炊具是蓝色的。",
+    "en": "There is an electric cooker in the kitchen. The cooker is blue."
+  },
+  {
+    "id": 10152,
+    "lesson": 23,
+    "zh": "它在左边。",
+    "en": "It is on the left."
+  },
+  {
+    "id": 10153,
+    "lesson": 23,
+    "zh": "房间中间有一张桌子。桌子上有一瓶。",
+    "en": "There is a table in the middle of the room. There is a bottle on the table."
+  },
+  {
+    "id": 10154,
+    "lesson": 23,
+    "zh": "瓶子是空的。",
+    "en": "The bottle is empty."
+  },
+  {
+    "id": 10155,
+    "lesson": 23,
+    "zh": "桌子上还有一个杯子。",
+    "en": "There is a cup on the table, too."
+  },
+  {
+    "id": 10156,
+    "lesson": 23,
+    "zh": "杯子很干净。",
+    "en": "The cup is clean."
+  },
+  {
+    "id": 10157,
+    "lesson": 25,
+    "zh": "Mrs.Smith 的客厅很大。",
+    "en": "Mrs.Smith's living room is large."
+  },
+  {
+    "id": 10158,
+    "lesson": 25,
+    "zh": "房间里有一台电视。",
+    "en": "There is a television in the room."
+  },
+  {
+    "id": 10159,
+    "lesson": 25,
+    "zh": "电视机靠近窗户。",
+    "en": "The television is near the window."
+  },
+  {
+    "id": 10160,
+    "lesson": 25,
+    "zh": "电视上有一些杂志。房间里有一张桌子。",
+    "en": "There are some magazines on the television. There is a table in the room."
+  },
+  {
+    "id": 10161,
+    "lesson": 25,
+    "zh": "桌子上有一些报纸。房间里有一些扶手椅。扶手椅靠近桌子。",
+    "en": "There are some newspapers on the table. There are some armchairs in the room. The armchairs are near the table."
+  },
+  {
+    "id": 10162,
+    "lesson": 25,
+    "zh": "房间里有音响。",
+    "en": "There is a stereo in the room."
+  },
+  {
+    "id": 10163,
+    "lesson": 25,
+    "zh": "音响就在门附近。",
+    "en": "The stereo is near the door."
+  },
+  {
+    "id": 10164,
+    "lesson": 25,
+    "zh": "有一些关于音响的书。",
+    "en": "There are some books on the stereo."
+  },
+  {
+    "id": 10165,
+    "lesson": 25,
+    "zh": "房间里有一些照片。",
+    "en": "There are some pictures in the room."
+  },
+  {
+    "id": 10166,
+    "lesson": 25,
+    "zh": "照片挂在墙上。",
+    "en": "The pictures are on the wall."
+  },
+  {
+    "id": 10167,
+    "lesson": 27,
+    "zh": "进来吧， Amy。",
+    "en": "Come in, Amy."
+  },
+  {
+    "id": 10168,
+    "lesson": 27,
+    "zh": "Shut 请开门。",
+    "en": "Shut the door, please."
+  },
+  {
+    "id": 10169,
+    "lesson": 27,
+    "zh": "这间卧室非常凌乱。",
+    "en": "This bedroom's very untidy."
+  },
+  {
+    "id": 10170,
+    "lesson": 27,
+    "zh": "我必须做什么， Mrs.Jones？",
+    "en": "What must I do, Mrs.Jones?"
+  },
+  {
+    "id": 10171,
+    "lesson": 27,
+    "zh": "打开窗户，让房间通风。",
+    "en": "Open the window and air the room."
+  },
+  {
+    "id": 10172,
+    "lesson": 27,
+    "zh": "然后把这些衣服放进衣柜里。",
+    "en": "Then put these clothes in the wardrobe."
+  },
+  {
+    "id": 10173,
+    "lesson": 27,
+    "zh": "然后整理床铺。",
+    "en": "Then make the bed."
+  },
+  {
+    "id": 10174,
+    "lesson": 27,
+    "zh": "Dust 梳妆台。",
+    "en": "Dust the dressing table."
+  },
+  {
+    "id": 10175,
+    "lesson": 27,
+    "zh": "然后扫地。",
+    "en": "Then sweep the floor."
+  },
+  {
+    "id": 10176,
+    "lesson": 29,
+    "zh": "Sally、 Jack 在哪里？",
+    "en": "Where's Sally, Jack?"
+  },
+  {
+    "id": 10177,
+    "lesson": 29,
+    "zh": "她在花园里， Jean。",
+    "en": "She's in the garden, Jean."
+  },
+  {
+    "id": 10178,
+    "lesson": 29,
+    "zh": "她在做什么？",
+    "en": "What's she doing?"
+  },
+  {
+    "id": 10179,
+    "lesson": 29,
+    "zh": "她坐在树下。 JEAN：Tim 也在花园里吗？",
+    "en": "She's sitting under the tree. JEAN: Is Tim in the garden, too?"
+  },
+  {
+    "id": 10180,
+    "lesson": 29,
+    "zh": "是的，他是。",
+    "en": "Yes, he is."
+  },
+  {
+    "id": 10181,
+    "lesson": 29,
+    "zh": "他正在爬树。",
+    "en": "He's climbing the tree."
+  },
+  {
+    "id": 10182,
+    "lesson": 29,
+    "zh": "请再说一遍？",
+    "en": "I beg your pardon?"
+  },
+  {
+    "id": 10183,
+    "lesson": 29,
+    "zh": "谁在爬树？ JACK : Tim 是。",
+    "en": "Who's climbing the tree? JACK: Tim is."
+  },
+  {
+    "id": 10184,
+    "lesson": 29,
+    "zh": "那狗呢？",
+    "en": "What about the dog?"
+  },
+  {
+    "id": 10185,
+    "lesson": 29,
+    "zh": "狗也在花园里。",
+    "en": "The dog's in the garden, too."
+  },
+  {
+    "id": 10186,
+    "lesson": 29,
+    "zh": "它正在草地上奔跑。它正在追赶一只猫。",
+    "en": "It's running across the grass. It's running after a cat."
+  },
+  {
+    "id": 10187,
+    "lesson": 31,
+    "zh": "今天天气很好。",
+    "en": "It is a fine day today."
+  },
+  {
+    "id": 10188,
+    "lesson": 31,
+    "zh": "天空中有一些云，但阳光灿烂。",
+    "en": "There are some clouds in the sky, but the sun is shining."
+  },
+  {
+    "id": 10189,
+    "lesson": 31,
+    "zh": "Mr.Jones 和他的家人在一起。",
+    "en": "Mr.Jones is with his family."
+  },
+  {
+    "id": 10190,
+    "lesson": 31,
+    "zh": "他们正在桥上行走。",
+    "en": "They are walking over the bridge."
+  },
+  {
+    "id": 10191,
+    "lesson": 31,
+    "zh": "河上有一些小船。",
+    "en": "There are some boats on the river."
+  },
+  {
+    "id": 10192,
+    "lesson": 31,
+    "zh": "Mr.Jones 和他的妻子正在看着他们。 Sally 正在看着一艘大船。",
+    "en": "Mr.Jones and his wife are looking at them. Sally is looking at a big ship."
+  },
+  {
+    "id": 10193,
+    "lesson": 31,
+    "zh": "船正在桥下行驶。",
+    "en": "The ship is going under the bridge."
+  },
+  {
+    "id": 10194,
+    "lesson": 31,
+    "zh": "Tim 正在看一架飞机。",
+    "en": "Tim is looking at an aeroplane."
+  },
+  {
+    "id": 10195,
+    "lesson": 31,
+    "zh": "飞机正在河上空飞行。",
+    "en": "The aeroplane is flying over the river."
+  },
+  {
+    "id": 10196,
+    "lesson": 33,
+    "zh": "孩子们是从公园出来还是走进去？",
+    "en": "Are the children coming out of the park or going into it?"
+  },
+  {
+    "id": 10197,
+    "lesson": 33,
+    "zh": "这是我们村的照片。",
+    "en": "This is a photograph of our village."
+  },
+  {
+    "id": 10198,
+    "lesson": 33,
+    "zh": "我们的村庄在一个山谷里。",
+    "en": "Our village is in a valley."
+  },
+  {
+    "id": 10199,
+    "lesson": 33,
+    "zh": "它位于两山之间。",
+    "en": "It is between two hills."
+  },
+  {
+    "id": 10200,
+    "lesson": 33,
+    "zh": "这个村庄在河边。",
+    "en": "The village is on a river."
+  },
+  {
+    "id": 10201,
+    "lesson": 33,
+    "zh": "这是该村的另一张照片。我和我的妻子正在散步",
+    "en": "Here is another photograph of the village. My wife and I are walking"
+  },
+  {
+    "id": 10202,
+    "lesson": 33,
+    "zh": "沿着河岸。",
+    "en": "along the banks of the river."
+  },
+  {
+    "id": 10203,
+    "lesson": 33,
+    "zh": "我们在左边。",
+    "en": "We are on the left."
+  },
+  {
+    "id": 10204,
+    "lesson": 33,
+    "zh": "水里有一个男孩。",
+    "en": "There is a boy in the water."
+  },
+  {
+    "id": 10205,
+    "lesson": 33,
+    "zh": "他正在游过河。",
+    "en": "He is swimming across the river."
+  },
+  {
+    "id": 10206,
+    "lesson": 33,
+    "zh": "这是另一张照片。",
+    "en": "Here is another photograph."
+  },
+  {
+    "id": 10207,
+    "lesson": 33,
+    "zh": "这是教学楼。",
+    "en": "This is the school building."
+  },
+  {
+    "id": 10208,
+    "lesson": 33,
+    "zh": "它位于一个公园旁边。",
+    "en": "It is beside a park."
+  },
+  {
+    "id": 10209,
+    "lesson": 33,
+    "zh": "公园就在右边。",
+    "en": "The park is on the right."
+  },
+  {
+    "id": 10210,
+    "lesson": 33,
+    "zh": "一些孩子正从大楼里走出来。他们中的一些人正要去公园。",
+    "en": "Some children are coming out of the building. Some of them are going into the park."
+  },
+  {
+    "id": 10211,
+    "lesson": 35,
+    "zh": "你正在努力工作， George。",
+    "en": "You're working hard, George."
+  },
+  {
+    "id": 10212,
+    "lesson": 35,
+    "zh": "你在干什么？",
+    "en": "What are you doing?"
+  },
+  {
+    "id": 10213,
+    "lesson": 35,
+    "zh": "我正在做一个书柜。",
+    "en": "I'm making a bookcase."
+  },
+  {
+    "id": 10214,
+    "lesson": 35,
+    "zh": "请给我那把锤子， Dan。",
+    "en": "Give me that hammer please, Dan."
+  },
+  {
+    "id": 10215,
+    "lesson": 35,
+    "zh": "哪个锤子？",
+    "en": "Which hammer?"
+  },
+  {
+    "id": 10216,
+    "lesson": 35,
+    "zh": "这个？",
+    "en": "This one?"
+  },
+  {
+    "id": 10217,
+    "lesson": 35,
+    "zh": "不，不是那个。",
+    "en": "No, not that one."
+  },
+  {
+    "id": 10218,
+    "lesson": 35,
+    "zh": "最大的一个。",
+    "en": "The big one."
+  },
+  {
+    "id": 10219,
+    "lesson": 35,
+    "zh": "给你。",
+    "en": "Here you are."
+  },
+  {
+    "id": 10220,
+    "lesson": 35,
+    "zh": "谢谢， Dan。",
+    "en": "Thanks, Dan."
+  },
+  {
+    "id": 10221,
+    "lesson": 35,
+    "zh": "你现在要做什么， George？",
+    "en": "What are you going to do now, George?"
+  },
+  {
+    "id": 10222,
+    "lesson": 35,
+    "zh": "我要画它。",
+    "en": "I'm going to paint it."
+  },
+  {
+    "id": 10223,
+    "lesson": 35,
+    "zh": "你要给它涂什么颜色？",
+    "en": "What colour are you going to paint it?"
+  },
+  {
+    "id": 10224,
+    "lesson": 35,
+    "zh": "我要把它漆成粉红色。",
+    "en": "I’m going to paint it pink."
+  },
+  {
+    "id": 10225,
+    "lesson": 35,
+    "zh": "粉色的！",
+    "en": "Pink!"
+  },
+  {
+    "id": 10226,
+    "lesson": 35,
+    "zh": "这个书柜不适合我。",
+    "en": "This bookcase isn't for me."
+  },
+  {
+    "id": 10227,
+    "lesson": 35,
+    "zh": "这是给我女儿的， Susan。",
+    "en": "It's for my daughter, Susan."
+  },
+  {
+    "id": 10228,
+    "lesson": 35,
+    "zh": "粉色是她最喜欢的颜色。",
+    "en": "Pink's her favourite colour."
+  },
+  {
+    "id": 10229,
+    "lesson": 37,
+    "zh": "Sam 最后把花瓶放在哪里了？",
+    "en": "Where does Sam put the vase in the end?"
+  },
+  {
+    "id": 10230,
+    "lesson": 37,
+    "zh": "你会怎样做",
+    "en": "What are you going to do"
+  },
+  {
+    "id": 10231,
+    "lesson": 37,
+    "zh": "佩妮，那个花瓶？",
+    "en": "with that vase, Penny?"
+  },
+  {
+    "id": 10232,
+    "lesson": 37,
+    "zh": "我要把它放在这张桌子上， Sam。",
+    "en": "I’m going to put it on this table, Sam."
+  },
+  {
+    "id": 10233,
+    "lesson": 37,
+    "zh": "Don 不要那样做。",
+    "en": "Don't do that."
+  },
+  {
+    "id": 10234,
+    "lesson": 37,
+    "zh": "把它给我。",
+    "en": "Give it to me."
+  },
+  {
+    "id": 10235,
+    "lesson": 37,
+    "zh": "你打算用它做什么？",
+    "en": "What are you going to do with it?"
+  },
+  {
+    "id": 10236,
+    "lesson": 37,
+    "zh": "我要把它放在这里，",
+    "en": "I'’m going to put it here,"
+  },
+  {
+    "id": 10237,
+    "lesson": 37,
+    "zh": "在窗前。",
+    "en": "in front of the window."
+  },
+  {
+    "id": 10238,
+    "lesson": 37,
+    "zh": "当心！",
+    "en": "Be careful!"
+  },
+  {
+    "id": 10239,
+    "lesson": 37,
+    "zh": "Don 别扔掉它！",
+    "en": "Don't drop it!"
+  },
+  {
+    "id": 10240,
+    "lesson": 37,
+    "zh": "Don 不要把它放在那里， Sam。",
+    "en": "Don't put it there, Sam."
+  },
+  {
+    "id": 10241,
+    "lesson": 37,
+    "zh": "放在这里，",
+    "en": "Put it here,"
+  },
+  {
+    "id": 10242,
+    "lesson": 37,
+    "zh": "在这个架子上。",
+    "en": "on this shelf."
+  },
+  {
+    "id": 10243,
+    "lesson": 37,
+    "zh": "我们到了！",
+    "en": "There we are!"
+  },
+  {
+    "id": 10244,
+    "lesson": 37,
+    "zh": "这是一个可爱的花瓶。",
+    "en": "It's a lovely vase."
+  },
+  {
+    "id": 10245,
+    "lesson": 37,
+    "zh": "那些花也很可爱。",
+    "en": "Those flowers are lovely, too."
+  },
+  {
+    "id": 10246,
+    "lesson": 39,
+    "zh": "佩妮，那个包重吗？",
+    "en": "Is that bag heavy, Penny?"
+  },
+  {
+    "id": 10247,
+    "lesson": 39,
+    "zh": "不太。",
+    "en": "Not very."
+  },
+  {
+    "id": 10248,
+    "lesson": 39,
+    "zh": "这里！",
+    "en": "Here!"
+  },
+  {
+    "id": 10249,
+    "lesson": 39,
+    "zh": "把它放在这把椅子上。",
+    "en": "Put it on this chair."
+  },
+  {
+    "id": 10250,
+    "lesson": 39,
+    "zh": "里面有什么？",
+    "en": "What's in it?"
+  },
+  {
+    "id": 10251,
+    "lesson": 39,
+    "zh": "一块奶酪。",
+    "en": "A piece of cheese."
+  },
+  {
+    "id": 10252,
+    "lesson": 39,
+    "zh": "一条面包。",
+    "en": "A loaf of bread."
+  },
+  {
+    "id": 10253,
+    "lesson": 39,
+    "zh": "一块肥皂。",
+    "en": "A bar of soap."
+  },
+  {
+    "id": 10254,
+    "lesson": 39,
+    "zh": "一块巧克力。",
+    "en": "A bar of chocolate."
+  },
+  {
+    "id": 10255,
+    "lesson": 39,
+    "zh": "一瓶牛奶。",
+    "en": "A bottle of milk."
+  },
+  {
+    "id": 10256,
+    "lesson": 39,
+    "zh": "还有一罐烟草。",
+    "en": "And a tin of tobacco."
+  },
+  {
+    "id": 10257,
+    "lesson": 39,
+    "zh": "那罐烟草是给我的吗？",
+    "en": "Is that tin of tobacco for me?"
+  },
+  {
+    "id": 10258,
+    "lesson": 39,
+    "zh": "嗯，这当然不适合我！ 81",
+    "en": "Well, it's certainly not for me! 81"
+  },
+  {
+    "id": 10259,
+    "lesson": 43,
+    "zh": "您能过来一下吗， Bob？",
+    "en": "Can you come here a minute please, Bob?"
+  },
+  {
+    "id": 10260,
+    "lesson": 43,
+    "zh": "是吗，先生？",
+    "en": "Yes, sir?"
+  },
+  {
+    "id": 10261,
+    "lesson": 43,
+    "zh": "Pamela 在哪里？",
+    "en": "Where's Pamela?"
+  },
+  {
+    "id": 10262,
+    "lesson": 43,
+    "zh": "她就在隔壁。",
+    "en": "She's next door."
+  },
+  {
+    "id": 10263,
+    "lesson": 43,
+    "zh": "她在办公室，先生。",
+    "en": "She's in her office, sir."
+  },
+  {
+    "id": 10264,
+    "lesson": 43,
+    "zh": "她可以打字吗",
+    "en": "Can she type"
+  },
+  {
+    "id": 10265,
+    "lesson": 43,
+    "zh": "这封信是给我的吗？",
+    "en": "this letter for me?"
+  },
+  {
+    "id": 10266,
+    "lesson": 43,
+    "zh": "请问她。",
+    "en": "Ask her please."
+  },
+  {
+    "id": 10267,
+    "lesson": 43,
+    "zh": "是的，先生。",
+    "en": "Yes, sir."
+  },
+  {
+    "id": 10268,
+    "lesson": 43,
+    "zh": "你能输入这封信吗",
+    "en": "Can you type this letter"
+  },
+  {
+    "id": 10269,
+    "lesson": 43,
+    "zh": "老板请 Pamela？ PAMELA：是的，我当然可以。",
+    "en": "for the boss please, Pamela? PAMELA: Yes, of course I can."
+  },
+  {
+    "id": 10270,
+    "lesson": 43,
+    "zh": "给你。",
+    "en": "Here you are."
+  },
+  {
+    "id": 10271,
+    "lesson": 43,
+    "zh": "谢谢你， Bob。",
+    "en": "Thank you, Bob."
+  },
+  {
+    "id": 10272,
+    "lesson": 43,
+    "zh": "Bob！",
+    "en": "Bob!"
+  },
+  {
+    "id": 10273,
+    "lesson": 43,
+    "zh": "什么事？",
+    "en": "Yes?"
+  },
+  {
+    "id": 10274,
+    "lesson": 43,
+    "zh": "怎么了？",
+    "en": "What's the matter?"
+  },
+  {
+    "id": 10275,
+    "lesson": 43,
+    "zh": "我打不出这封信。",
+    "en": "I can't type this letter."
+  },
+  {
+    "id": 10276,
+    "lesson": 43,
+    "zh": "我读不懂！",
+    "en": "I can't read it!"
+  },
+  {
+    "id": 10277,
+    "lesson": 43,
+    "zh": "老板的文笔太烂了！",
+    "en": "The boss's handwriting is terrible!"
+  },
+  {
+    "id": 10278,
+    "lesson": 45,
+    "zh": "你喜欢咖啡吗， Ann？",
+    "en": "Do you like coffee, Ann?"
+  },
+  {
+    "id": 10279,
+    "lesson": 45,
+    "zh": "是的，我愿意。",
+    "en": "Yes, I do."
+  },
+  {
+    "id": 10280,
+    "lesson": 45,
+    "zh": "你想要一杯吗？",
+    "en": "Do you want a cup?"
+  },
+  {
+    "id": 10281,
+    "lesson": 45,
+    "zh": "是的，请，克里斯汀克。",
+    "en": "Yes, please, Christinc."
+  },
+  {
+    "id": 10282,
+    "lesson": 45,
+    "zh": "你想要糖吗？",
+    "en": "Do you want any sugar?"
+  },
+  {
+    "id": 10283,
+    "lesson": 45,
+    "zh": "是的，请。",
+    "en": "Yes, please."
+  },
+  {
+    "id": 10284,
+    "lesson": 45,
+    "zh": "你想要牛奶吗？",
+    "en": "Do you want any milk?"
+  },
+  {
+    "id": 10285,
+    "lesson": 45,
+    "zh": "不，谢谢。",
+    "en": "No, thank you."
+  },
+  {
+    "id": 10286,
+    "lesson": 45,
+    "zh": "我不喜欢咖啡里加牛奶。",
+    "en": "I don't like milk in my coffee."
+  },
+  {
+    "id": 10287,
+    "lesson": 45,
+    "zh": "我喜欢黑咖啡。",
+    "en": "I like black coffee."
+  },
+  {
+    "id": 10288,
+    "lesson": 45,
+    "zh": "你喜欢饼干吗？",
+    "en": "Do you like biscuits?"
+  },
+  {
+    "id": 10289,
+    "lesson": 45,
+    "zh": "是的，我愿意。",
+    "en": "Yes, I do."
+  },
+  {
+    "id": 10290,
+    "lesson": 45,
+    "zh": "你想要一个吗？",
+    "en": "Do you want one?"
+  },
+  {
+    "id": 10291,
+    "lesson": 45,
+    "zh": "是的，请。",
+    "en": "Yes, please."
+  },
+  {
+    "id": 10292,
+    "lesson": 47,
+    "zh": "今天想吃肉吗",
+    "en": "Do you want any meat today,"
+  },
+  {
+    "id": 10293,
+    "lesson": 47,
+    "zh": "Mrs.Bird？",
+    "en": "Mrs.Bird?"
+  },
+  {
+    "id": 10294,
+    "lesson": 47,
+    "zh": "是的，请。",
+    "en": "Yes, please."
+  },
+  {
+    "id": 10295,
+    "lesson": 47,
+    "zh": "你想要牛肉还是羊肉？",
+    "en": "Do you want beef or lamb?"
+  },
+  {
+    "id": 10296,
+    "lesson": 47,
+    "zh": "Beef，请。",
+    "en": "Beef, please."
+  },
+  {
+    "id": 10297,
+    "lesson": 47,
+    "zh": "这羊肉真好。 MRS。 BIRD :我喜欢羊肉，",
+    "en": "This lamb's very good. MRS.BIRD: I like lamb,"
+  },
+  {
+    "id": 10298,
+    "lesson": 47,
+    "zh": "但我丈夫没有。",
+    "en": "but my husband doesn't."
+  },
+  {
+    "id": 10299,
+    "lesson": 47,
+    "zh": "来点牛排怎么样？",
+    "en": "What about some steak?"
+  },
+  {
+    "id": 10300,
+    "lesson": 47,
+    "zh": "这是一个不错的作品。",
+    "en": "This is a nice piece."
+  },
+  {
+    "id": 10301,
+    "lesson": 47,
+    "zh": "请把那块给我。",
+    "en": "Give me that piece, please."
+  },
+  {
+    "id": 10302,
+    "lesson": 47,
+    "zh": "还有一磅肉末。",
+    "en": "And a pound of mince, too."
+  },
+  {
+    "id": 10303,
+    "lesson": 47,
+    "zh": "你想要一只鸡吗， Mrs.Bird？",
+    "en": "Do you want a chicken, Mrs.Bird?"
+  },
+  {
+    "id": 10304,
+    "lesson": 47,
+    "zh": "他们非常好。",
+    "en": "They're very nice."
+  },
+  {
+    "id": 10305,
+    "lesson": 47,
+    "zh": "不，谢谢。",
+    "en": "No, thank you."
+  },
+  {
+    "id": 10306,
+    "lesson": 47,
+    "zh": "我老公喜欢吃牛排，",
+    "en": "My husband likes steak,"
+  },
+  {
+    "id": 10307,
+    "lesson": 47,
+    "zh": "但他不喜欢鸡肉。",
+    "en": "but he doesn't like chicken."
+  },
+  {
+    "id": 10308,
+    "lesson": 47,
+    "zh": "说实话， Mrs.Bird，",
+    "en": "To tell you the truth, Mrs.Bird,"
+  },
+  {
+    "id": 10309,
+    "lesson": 47,
+    "zh": "我也不喜欢吃鸡肉！",
+    "en": "I don't like chicken either!"
+  },
+  {
+    "id": 10310,
+    "lesson": 49,
+    "zh": "你从哪里来的？",
+    "en": "Where do you come from?"
+  },
+  {
+    "id": 10311,
+    "lesson": 49,
+    "zh": "我来自希腊。",
+    "en": "I come from Greece."
+  },
+  {
+    "id": 10312,
+    "lesson": 49,
+    "zh": "气候如何",
+    "en": "What's the climate like"
+  },
+  {
+    "id": 10313,
+    "lesson": 49,
+    "zh": "在你的国家吗？ DIMITRI：非常愉快。",
+    "en": "in your country? DIMITRI: It's very pleasant."
+  },
+  {
+    "id": 10314,
+    "lesson": 49,
+    "zh": "春天的天气怎么样？",
+    "en": "What's the weather like in spring?"
+  },
+  {
+    "id": 10315,
+    "lesson": 49,
+    "zh": "三月份经常有风。",
+    "en": "It's often windy in March."
+  },
+  {
+    "id": 10316,
+    "lesson": 49,
+    "zh": "四月和五月总是温暖的，但有时会下雨。",
+    "en": "It's always warm in April and May, but it rains sometimes."
+  },
+  {
+    "id": 10317,
+    "lesson": 49,
+    "zh": "夏天是什么样子？",
+    "en": "What's it like in summer?"
+  },
+  {
+    "id": 10318,
+    "lesson": 49,
+    "zh": "天气总是很热",
+    "en": "It's always hot"
+  },
+  {
+    "id": 10319,
+    "lesson": 49,
+    "zh": "六月、七月和八月。",
+    "en": "in June, July and August."
+  },
+  {
+    "id": 10320,
+    "lesson": 49,
+    "zh": "每天阳光明媚。",
+    "en": "The sun shines every day."
+  },
+  {
+    "id": 10321,
+    "lesson": 49,
+    "zh": "秋天是冷还是暖？",
+    "en": "Is it cold or warm in autumn?"
+  },
+  {
+    "id": 10322,
+    "lesson": 49,
+    "zh": "总是很温暖",
+    "en": "It's always warm"
+  },
+  {
+    "id": 10323,
+    "lesson": 49,
+    "zh": "九月和十月。十一月的天气常常很冷",
+    "en": "in September and October. It's often cold in November"
+  },
+  {
+    "id": 10324,
+    "lesson": 49,
+    "zh": "有时会下雨。",
+    "en": "and it rains sometimes."
+  },
+  {
+    "id": 10325,
+    "lesson": 49,
+    "zh": "冬天很冷吗？",
+    "en": "Is it very cold in winter?"
+  },
+  {
+    "id": 10326,
+    "lesson": 49,
+    "zh": "常常很冷",
+    "en": "It's often cold"
+  },
+  {
+    "id": 10327,
+    "lesson": 49,
+    "zh": "十二月、一月和二月。有时会下雪。",
+    "en": "in December, January and February. It snows sometimes."
+  },
+  {
+    "id": 10328,
+    "lesson": 49,
+    "zh": "1 你从哪里来？",
+    "en": "1 Where do you come from?"
+  },
+  {
+    "id": 10329,
+    "lesson": 49,
+    "zh": "2 你们国家的气候怎么样？",
+    "en": "2 What's the climate like in your country?"
+  },
+  {
+    "id": 10330,
+    "lesson": 49,
+    "zh": "20日",
+    "en": "20th"
+  },
+  {
+    "id": 10331,
+    "lesson": 49,
+    "zh": "我是美国人。",
+    "en": "I'm American."
+  },
+  {
+    "id": 10332,
+    "lesson": 49,
+    "zh": "我来自美国",
+    "en": "I come from the U.S."
+  },
+  {
+    "id": 10333,
+    "lesson": 49,
+    "zh": "23日",
+    "en": "23rd"
+  },
+  {
+    "id": 10334,
+    "lesson": 49,
+    "zh": "我们是英国人。",
+    "en": "We're English."
+  },
+  {
+    "id": 10335,
+    "lesson": 49,
+    "zh": "我们来自英国。",
+    "en": "We come from England."
+  },
+  {
+    "id": 10336,
+    "lesson": 49,
+    "zh": "26日",
+    "en": "26th"
+  },
+  {
+    "id": 10337,
+    "lesson": 49,
+    "zh": "他是希腊人。",
+    "en": "He's Greek."
+  },
+  {
+    "id": 10338,
+    "lesson": 49,
+    "zh": "他来自希腊。",
+    "en": "He comes from Greece."
+  },
+  {
+    "id": 10339,
+    "lesson": 49,
+    "zh": "29日",
+    "en": "29th"
+  },
+  {
+    "id": 10340,
+    "lesson": 49,
+    "zh": "他们是俄罗斯人。",
+    "en": "They're Russian."
+  },
+  {
+    "id": 10341,
+    "lesson": 49,
+    "zh": "他们来自俄罗斯。",
+    "en": "They come from Russia."
+  },
+  {
+    "id": 10342,
+    "lesson": 49,
+    "zh": "21日",
+    "en": "21st"
+  },
+  {
+    "id": 10343,
+    "lesson": 49,
+    "zh": "他是巴西人。",
+    "en": "He's Brazilian."
+  },
+  {
+    "id": 10344,
+    "lesson": 49,
+    "zh": "他来自巴西。",
+    "en": "He comes from Brazil."
+  },
+  {
+    "id": 10345,
+    "lesson": 49,
+    "zh": "24日",
+    "en": "24th"
+  },
+  {
+    "id": 10346,
+    "lesson": 49,
+    "zh": "他们是法国人。",
+    "en": "They're French."
+  },
+  {
+    "id": 10347,
+    "lesson": 49,
+    "zh": "他们来自法国。",
+    "en": "They come from France."
+  },
+  {
+    "id": 10348,
+    "lesson": 49,
+    "zh": "27日",
+    "en": "27th"
+  },
+  {
+    "id": 10349,
+    "lesson": 49,
+    "zh": "你是意大利人。",
+    "en": "You're Italian."
+  },
+  {
+    "id": 10350,
+    "lesson": 49,
+    "zh": "你来自意大利。",
+    "en": "You come from Italy."
+  },
+  {
+    "id": 10351,
+    "lesson": 49,
+    "zh": "30号",
+    "en": "30th"
+  },
+  {
+    "id": 10352,
+    "lesson": 49,
+    "zh": "她是西班牙人。",
+    "en": "She's Spanish."
+  },
+  {
+    "id": 10353,
+    "lesson": 49,
+    "zh": "她来自西班牙。",
+    "en": "She comes from Spain."
+  },
+  {
+    "id": 10354,
+    "lesson": 49,
+    "zh": "22日",
+    "en": "22nd"
+  },
+  {
+    "id": 10355,
+    "lesson": 49,
+    "zh": "她是荷兰人。",
+    "en": "She's Dutch."
+  },
+  {
+    "id": 10356,
+    "lesson": 49,
+    "zh": "她来自荷兰。",
+    "en": "She comes from Holland."
+  },
+  {
+    "id": 10357,
+    "lesson": 49,
+    "zh": "25日",
+    "en": "25th"
+  },
+  {
+    "id": 10358,
+    "lesson": 49,
+    "zh": "你是德国人。",
+    "en": "You're German."
+  },
+  {
+    "id": 10359,
+    "lesson": 49,
+    "zh": "你来自德国。",
+    "en": "You come from Germany."
+  },
+  {
+    "id": 10360,
+    "lesson": 49,
+    "zh": "28日",
+    "en": "28th"
+  },
+  {
+    "id": 10361,
+    "lesson": 49,
+    "zh": "我们是挪威人。",
+    "en": "We're Norwegian."
+  },
+  {
+    "id": 10362,
+    "lesson": 49,
+    "zh": "我们来自挪威。",
+    "en": "We come from Norway."
+  },
+  {
+    "id": 10363,
+    "lesson": 49,
+    "zh": "31号",
+    "en": "31st"
+  },
+  {
+    "id": 10364,
+    "lesson": 49,
+    "zh": "我是瑞典人。",
+    "en": "I'm Swedish."
+  },
+  {
+    "id": 10365,
+    "lesson": 49,
+    "zh": "我来自瑞典。",
+    "en": "I come from Sweden."
+  },
+  {
+    "id": 10366,
+    "lesson": 51,
+    "zh": "英国人最喜欢谈论的话题是什么？",
+    "en": "What is the favourite subject of conversation in England?"
+  },
+  {
+    "id": 10367,
+    "lesson": 51,
+    "zh": "你从哪里来的？",
+    "en": "Where do you come from?"
+  },
+  {
+    "id": 10368,
+    "lesson": 51,
+    "zh": "我来自英国。",
+    "en": "I come from England."
+  },
+  {
+    "id": 10369,
+    "lesson": 51,
+    "zh": "气候如何",
+    "en": "What's the climate like"
+  },
+  {
+    "id": 10370,
+    "lesson": 51,
+    "zh": "在你的国家吗？",
+    "en": "in your country?"
+  },
+  {
+    "id": 10371,
+    "lesson": 51,
+    "zh": "是温和的，",
+    "en": "It's mild,"
+  },
+  {
+    "id": 10372,
+    "lesson": 51,
+    "zh": "但这并不总是令人愉快的。",
+    "en": "but it's not always pleasant."
+  },
+  {
+    "id": 10373,
+    "lesson": 51,
+    "zh": "北方的天气经常很冷",
+    "en": "The weather's often cold in the North"
+  },
+  {
+    "id": 10374,
+    "lesson": 51,
+    "zh": "东部有风。",
+    "en": "and windy in the East."
+  },
+  {
+    "id": 10375,
+    "lesson": 51,
+    "zh": "西部地区经常潮湿",
+    "en": "It's often wet in the West"
+  },
+  {
+    "id": 10376,
+    "lesson": 51,
+    "zh": "南方有时温暖。",
+    "en": "and sometimes warm in the South."
+  },
+  {
+    "id": 10377,
+    "lesson": 51,
+    "zh": "你最喜欢哪个季节？",
+    "en": "Which seasons do you like best?"
+  },
+  {
+    "id": 10378,
+    "lesson": 51,
+    "zh": "我喜欢春天和夏天。",
+    "en": "I like spring and summer."
+  },
+  {
+    "id": 10379,
+    "lesson": 51,
+    "zh": "日子还很长",
+    "en": "The days are long"
+  },
+  {
+    "id": 10380,
+    "lesson": 51,
+    "zh": "夜晚很短。",
+    "en": "and the nights are short."
+  },
+  {
+    "id": 10381,
+    "lesson": 51,
+    "zh": "太阳升得很早",
+    "en": "The sun rises early"
+  },
+  {
+    "id": 10382,
+    "lesson": 51,
+    "zh": "并且设定得很晚。",
+    "en": "and sets late."
+  },
+  {
+    "id": 10383,
+    "lesson": 51,
+    "zh": "我不喜欢秋天和冬天。",
+    "en": "I don't like autumn and winter."
+  },
+  {
+    "id": 10384,
+    "lesson": 51,
+    "zh": "日子很短",
+    "en": "The days are short"
+  },
+  {
+    "id": 10385,
+    "lesson": 51,
+    "zh": "夜晚很长。",
+    "en": "and the nights are long."
+  },
+  {
+    "id": 10386,
+    "lesson": 51,
+    "zh": "太阳升得很晚",
+    "en": "The sun rises late"
+  },
+  {
+    "id": 10387,
+    "lesson": 51,
+    "zh": "并早起。",
+    "en": "and sets early."
+  },
+  {
+    "id": 10388,
+    "lesson": 51,
+    "zh": "我们的气候不是很好，但确实很有趣。",
+    "en": "Our climate is not very good, but it's certainly interesting."
+  },
+  {
+    "id": 10389,
+    "lesson": 51,
+    "zh": "这是我们最喜欢的科目",
+    "en": "It's our favourite subject"
+  },
+  {
+    "id": 10390,
+    "lesson": 51,
+    "zh": "的谈话。",
+    "en": "of conversation."
+  },
+  {
+    "id": 10391,
+    "lesson": 53,
+    "zh": "4 他们很早就到家了。",
+    "en": "4 They arrive home early."
+  },
+  {
+    "id": 10392,
+    "lesson": 53,
+    "zh": "第一名",
+    "en": "1st"
+  },
+  {
+    "id": 10393,
+    "lesson": 53,
+    "zh": "灰尘",
+    "en": "dusts"
+  },
+  {
+    "id": 10394,
+    "lesson": 53,
+    "zh": "21日",
+    "en": "21st"
+  },
+  {
+    "id": 10395,
+    "lesson": 53,
+    "zh": "清洁",
+    "en": "cleans"
+  },
+  {
+    "id": 10396,
+    "lesson": 53,
+    "zh": "31号",
+    "en": "31st"
+  },
+  {
+    "id": 10397,
+    "lesson": 53,
+    "zh": "饮料",
+    "en": "drinks"
+  },
+  {
+    "id": 10398,
+    "lesson": 53,
+    "zh": "第二名",
+    "en": "2nd"
+  },
+  {
+    "id": 10399,
+    "lesson": 53,
+    "zh": "使",
+    "en": "makes"
+  },
+  {
+    "id": 10400,
+    "lesson": 53,
+    "zh": "22日",
+    "en": "22nd"
+  },
+  {
+    "id": 10401,
+    "lesson": 53,
+    "zh": "32号",
+    "en": "32nd"
+  },
+  {
+    "id": 10402,
+    "lesson": 53,
+    "zh": "手表",
+    "en": "watch"
+  },
+  {
+    "id": 10403,
+    "lesson": 53,
+    "zh": "第三名",
+    "en": "3rd"
+  },
+  {
+    "id": 10404,
+    "lesson": 53,
+    "zh": "刮胡子",
+    "en": "shaves"
+  },
+  {
+    "id": 10405,
+    "lesson": 53,
+    "zh": "23日",
+    "en": "23rd"
+  },
+  {
+    "id": 10406,
+    "lesson": 53,
+    "zh": "洗",
+    "en": "washes"
+  },
+  {
+    "id": 10407,
+    "lesson": 53,
+    "zh": "33号",
+    "en": "33rd"
+  },
+  {
+    "id": 10408,
+    "lesson": 53,
+    "zh": "吃",
+    "en": "eats"
+  },
+  {
+    "id": 10409,
+    "lesson": 53,
+    "zh": "第四名",
+    "en": "4th"
+  },
+  {
+    "id": 10410,
+    "lesson": 53,
+    "zh": "听",
+    "en": "listen"
+  },
+  {
+    "id": 10411,
+    "lesson": 53,
+    "zh": "24日",
+    "en": "24th"
+  },
+  {
+    "id": 10412,
+    "lesson": 53,
+    "zh": "第34型",
+    "en": "type 34th"
+  },
+  {
+    "id": 10413,
+    "lesson": 53,
+    "zh": "读",
+    "en": "reads"
+  },
+  {
+    "id": 10414,
+    "lesson": 53,
+    "zh": "A Complete 这些句子使用-s 或-es。",
+    "en": "A Complete these sentences using-s or-es."
+  },
+  {
+    "id": 10415,
+    "lesson": 53,
+    "zh": "Example：",
+    "en": "Example:"
+  },
+  {
+    "id": 10416,
+    "lesson": 53,
+    "zh": "她每天洗碗。",
+    "en": "She wash the dishes every day."
+  },
+  {
+    "id": 10417,
+    "lesson": 53,
+    "zh": "她每天都洗碗。",
+    "en": "She washes the dishes eueny day."
+  },
+  {
+    "id": 10418,
+    "lesson": 53,
+    "zh": "1 孩子们走了。早上去学校。",
+    "en": "1 The children go. to school in the morning."
+  },
+  {
+    "id": 10419,
+    "lesson": 53,
+    "zh": "2 他们的父亲送他们去学校。",
+    "en": "2 Their father take them to school."
+  },
+  {
+    "id": 10420,
+    "lesson": 53,
+    "zh": "3 Mrs.Sawyer 呆在家里。",
+    "en": "3 Mrs.Sawyer stay at home."
+  },
+  {
+    "id": 10421,
+    "lesson": 53,
+    "zh": "4、她做家务。",
+    "en": "4 She do the housework."
+  },
+  {
+    "id": 10422,
+    "lesson": 53,
+    "zh": "5 她总是在中午吃午饭。",
+    "en": "5 She always eat her lunch at noon."
+  },
+  {
+    "id": 10423,
+    "lesson": 53,
+    "zh": "B Write 问题和答案。",
+    "en": "B Write questions and answers."
+  },
+  {
+    "id": 10424,
+    "lesson": 53,
+    "zh": "Example：",
+    "en": "Example:"
+  },
+  {
+    "id": 10425,
+    "lesson": 53,
+    "zh": "她/经常早上/除尘/橱柜 她在莫兹宁做什么？",
+    "en": "she/morning often/dust/the cupboard What does she do in the mozning?"
+  },
+  {
+    "id": 10426,
+    "lesson": 53,
+    "zh": "她经常在早上掸去外面的灰尘。",
+    "en": "She ofien dusts the ouplboand in the morning."
+  },
+  {
+    "id": 10427,
+    "lesson": 53,
+    "zh": "1 她/早上",
+    "en": "1 she/morning"
+  },
+  {
+    "id": 10428,
+    "lesson": 53,
+    "zh": "2 他/早上",
+    "en": "2 he/morning"
+  },
+  {
+    "id": 10429,
+    "lesson": 53,
+    "zh": "3 他们/晚上",
+    "en": "3 they/evening"
+  },
+  {
+    "id": 10430,
+    "lesson": 53,
+    "zh": "4 他/每天",
+    "en": "4 he/every day"
+  },
+  {
+    "id": 10431,
+    "lesson": 53,
+    "zh": "5 他们/晚",
+    "en": "5 they/night"
+  },
+  {
+    "id": 10432,
+    "lesson": 53,
+    "zh": "6 她/每天",
+    "en": "6 she/every day"
+  },
+  {
+    "id": 10433,
+    "lesson": 53,
+    "zh": "7 他们/下午",
+    "en": "7 they/afternoon"
+  },
+  {
+    "id": 10434,
+    "lesson": 53,
+    "zh": "8次/每天",
+    "en": "8 it/every day"
+  },
+  {
+    "id": 10435,
+    "lesson": 53,
+    "zh": "9 他们/晚上",
+    "en": "9 they/evening"
+  },
+  {
+    "id": 10436,
+    "lesson": 53,
+    "zh": "10 她/中午",
+    "en": "10 she/noon"
+  },
+  {
+    "id": 10437,
+    "lesson": 53,
+    "zh": "11 他/晚上",
+    "en": "11 he/evening"
+  },
+  {
+    "id": 10438,
+    "lesson": 53,
+    "zh": "总是/铺床/总是/刮胡子",
+    "en": "always/make/the bed always/shave"
+  },
+  {
+    "id": 10439,
+    "lesson": 53,
+    "zh": "有时/听/音响总是/干净/黑板总是/早点睡觉",
+    "en": "sometimes/listen to/the stereo always/clean/the blackboard always/go/to bed early"
+  },
+  {
+    "id": 10440,
+    "lesson": 53,
+    "zh": "通常/洗/洗碗",
+    "en": "usually/wash/the dishes"
+  },
+  {
+    "id": 10441,
+    "lesson": 53,
+    "zh": "通常/键入/一些字母",
+    "en": "usually/type/some letters"
+  },
+  {
+    "id": 10442,
+    "lesson": 53,
+    "zh": "通常/喝/一些牛奶",
+    "en": "usually/drink/some milk"
+  },
+  {
+    "id": 10443,
+    "lesson": 53,
+    "zh": "有时/看/电视总是/吃/她的午餐",
+    "en": "sometimes/watch/television always/eat/her lunch"
+  },
+  {
+    "id": 10444,
+    "lesson": 53,
+    "zh": "经常/读/他的报纸",
+    "en": "often/read/his newspaper"
+  },
+  {
+    "id": 10445,
+    "lesson": 55,
+    "zh": "Mr.Sawyer 今晚在做什么？",
+    "en": "What is Mr.Sawyer doing tonight?"
+  },
+  {
+    "id": 10446,
+    "lesson": 55,
+    "zh": "现在是八点钟。",
+    "en": "It is eight o'clock."
+  },
+  {
+    "id": 10447,
+    "lesson": 55,
+    "zh": "孩子们每天坐车上学，",
+    "en": "The children go to school by car every day,"
+  },
+  {
+    "id": 10448,
+    "lesson": 55,
+    "zh": "但今天，",
+    "en": "but today,"
+  },
+  {
+    "id": 10449,
+    "lesson": 55,
+    "zh": "他们步行去学校。",
+    "en": "they are going to school on foot."
+  },
+  {
+    "id": 10450,
+    "lesson": 55,
+    "zh": "现在是十点钟。",
+    "en": "It is ten o'clock."
+  },
+  {
+    "id": 10451,
+    "lesson": 55,
+    "zh": "Mrs.Sawyer 通常呆在家里",
+    "en": "Mrs.Sawyer usually stays at home"
+  },
+  {
+    "id": 10452,
+    "lesson": 55,
+    "zh": "在早晨，",
+    "en": "in the morning,"
+  },
+  {
+    "id": 10453,
+    "lesson": 55,
+    "zh": "但今天早上，",
+    "en": "but this morning,"
+  },
+  {
+    "id": 10454,
+    "lesson": 55,
+    "zh": "她要去商店。",
+    "en": "she is going to the shops."
+  },
+  {
+    "id": 10455,
+    "lesson": 55,
+    "zh": "现在是四点钟。下午，",
+    "en": "It is four o'clock. In the afternoon,"
+  },
+  {
+    "id": 10456,
+    "lesson": 55,
+    "zh": "Mrs.Sawyer 通常在客厅喝茶。",
+    "en": "Mrs.Sawyer usually drinks tea in the living room."
+  },
+  {
+    "id": 10457,
+    "lesson": 55,
+    "zh": "但今天下午，",
+    "en": "But this afternoon,"
+  },
+  {
+    "id": 10458,
+    "lesson": 55,
+    "zh": "她正在花园里喝茶。",
+    "en": "she is drinking tea in the garden."
+  },
+  {
+    "id": 10459,
+    "lesson": 55,
+    "zh": "现在是六点钟。晚上，",
+    "en": "It is six o'clock. In the evening,"
+  },
+  {
+    "id": 10460,
+    "lesson": 55,
+    "zh": "孩子们通常会做作业，但是今天晚上，",
+    "en": "the children usually do their homework, but this evening,"
+  },
+  {
+    "id": 10461,
+    "lesson": 55,
+    "zh": "他们没有做作业。眼下，",
+    "en": "they are not doing their homework. At the moment,"
+  },
+  {
+    "id": 10462,
+    "lesson": 55,
+    "zh": "他们正在花园里玩耍。",
+    "en": "they are playing in the garden."
+  },
+  {
+    "id": 10463,
+    "lesson": 55,
+    "zh": "现在是九点钟。",
+    "en": "It is nine o'clock."
+  },
+  {
+    "id": 10464,
+    "lesson": 55,
+    "zh": "Mr.Sawyer 通常在晚上看报纸。",
+    "en": "Mr.Sawyer usually reads his newspaper at night."
+  },
+  {
+    "id": 10465,
+    "lesson": 55,
+    "zh": "但他今晚不看报纸。眼下，",
+    "en": "But he's not reading his newspaper tonight. At the moment,"
+  },
+  {
+    "id": 10466,
+    "lesson": 55,
+    "zh": "他正在读一本有趣的书。",
+    "en": "he's reading an interesting book."
+  },
+  {
+    "id": 10467,
+    "lesson": 57,
+    "zh": "请给我一些信封。",
+    "en": "I want some envelopes, please."
+  },
+  {
+    "id": 10468,
+    "lesson": 57,
+    "zh": "你想要",
+    "en": "Do you want"
+  },
+  {
+    "id": 10469,
+    "lesson": 57,
+    "zh": "大尺寸还是小尺寸？",
+    "en": "the large size or the small size?"
+  },
+  {
+    "id": 10470,
+    "lesson": 57,
+    "zh": "请给大尺寸的。",
+    "en": "The large size, please."
+  },
+  {
+    "id": 10471,
+    "lesson": 57,
+    "zh": "你有书写纸吗？",
+    "en": "Do you have any writing paper?"
+  },
+  {
+    "id": 10472,
+    "lesson": 57,
+    "zh": "是的，我们愿意。",
+    "en": "Yes, we do."
+  },
+  {
+    "id": 10473,
+    "lesson": 57,
+    "zh": "我没有小垫子。",
+    "en": "I don't have any small pads."
+  },
+  {
+    "id": 10474,
+    "lesson": 57,
+    "zh": "我只有大的。",
+    "en": "I only have large ones."
+  },
+  {
+    "id": 10475,
+    "lesson": 57,
+    "zh": "你想要垫子吗？",
+    "en": "Do you want a pad?"
+  },
+  {
+    "id": 10476,
+    "lesson": 57,
+    "zh": "是的，请。",
+    "en": "Yes, please."
+  },
+  {
+    "id": 10477,
+    "lesson": 57,
+    "zh": "我想要一些胶水。",
+    "en": "And I want some glue."
+  },
+  {
+    "id": 10478,
+    "lesson": 57,
+    "zh": "一瓶胶水。",
+    "en": "A bottle of glue."
+  },
+  {
+    "id": 10479,
+    "lesson": 57,
+    "zh": "我想要",
+    "en": "And I want"
+  },
+  {
+    "id": 10480,
+    "lesson": 57,
+    "zh": "还有一大盒粉笔。",
+    "en": "a large box of chalk, too."
+  },
+  {
+    "id": 10481,
+    "lesson": 57,
+    "zh": "我只有小盒子。",
+    "en": "I only have small boxes."
+  },
+  {
+    "id": 10482,
+    "lesson": 57,
+    "zh": "你想要一个吗？",
+    "en": "Do you want one?"
+  },
+  {
+    "id": 10483,
+    "lesson": 57,
+    "zh": "不，谢谢。",
+    "en": "No, thank you."
+  },
+  {
+    "id": 10484,
+    "lesson": 57,
+    "zh": "这就是全部吗？",
+    "en": "Is that all?"
+  },
+  {
+    "id": 10485,
+    "lesson": 57,
+    "zh": "就这些了。谢谢。",
+    "en": "That's all.thank you."
+  },
+  {
+    "id": 10486,
+    "lesson": 57,
+    "zh": "你还想要什么？",
+    "en": "What else do you want?"
+  },
+  {
+    "id": 10487,
+    "lesson": 57,
+    "zh": "我想要我的零钱。",
+    "en": "I want my change."
+  },
+  {
+    "id": 10488,
+    "lesson": 59,
+    "zh": "Jimmy 在哪里？",
+    "en": "Where's Jimmy?"
+  },
+  {
+    "id": 10489,
+    "lesson": 59,
+    "zh": "他在床上。",
+    "en": "He's in bed."
+  },
+  {
+    "id": 10490,
+    "lesson": 59,
+    "zh": "他怎么了？",
+    "en": "What's the matter with him?"
+  },
+  {
+    "id": 10491,
+    "lesson": 59,
+    "zh": "他感觉不舒服。",
+    "en": "He feels ill."
+  },
+  {
+    "id": 10492,
+    "lesson": 59,
+    "zh": "他看起来病了。",
+    "en": "He looks ill."
+  },
+  {
+    "id": 10493,
+    "lesson": 59,
+    "zh": "我们必须打电话给医生。",
+    "en": "We must call the doctor."
+  },
+  {
+    "id": 10494,
+    "lesson": 59,
+    "zh": "是的，我们必须。",
+    "en": "Yes, we must."
+  },
+  {
+    "id": 10495,
+    "lesson": 59,
+    "zh": "你还记得吗",
+    "en": "Can you remember"
+  },
+  {
+    "id": 10496,
+    "lesson": 59,
+    "zh": "医生的电话号码？",
+    "en": "the doctor's telephone number?"
+  },
+  {
+    "id": 10497,
+    "lesson": 59,
+    "zh": "是的。",
+    "en": "Yes."
+  },
+  {
+    "id": 10498,
+    "lesson": 59,
+    "zh": "是09754。",
+    "en": "It's 09754."
+  },
+  {
+    "id": 10499,
+    "lesson": 59,
+    "zh": "张开嘴， Jimmy。",
+    "en": "Open your mouth, Jimmy."
+  },
+  {
+    "id": 10500,
+    "lesson": 59,
+    "zh": "Show 我你的舌头。",
+    "en": "Show me your tongue."
+  },
+  {
+    "id": 10501,
+    "lesson": 59,
+    "zh": "Say，‘啊’。",
+    "en": "Say,'Ah’."
+  },
+  {
+    "id": 10502,
+    "lesson": 59,
+    "zh": "他怎么了，",
+    "en": "What's the matter with him,"
+  },
+  {
+    "id": 10503,
+    "lesson": 59,
+    "zh": "医生？",
+    "en": "doctor?"
+  },
+  {
+    "id": 10504,
+    "lesson": 59,
+    "zh": "他得了重感冒，",
+    "en": "He has a bad cold,"
+  },
+  {
+    "id": 10505,
+    "lesson": 59,
+    "zh": "Mr.Williams ,",
+    "en": "Mr.Williams,"
+  },
+  {
+    "id": 10506,
+    "lesson": 59,
+    "zh": "所以他必须躺在床上",
+    "en": "so he must stay in bed"
+  },
+  {
+    "id": 10507,
+    "lesson": 59,
+    "zh": "一周。",
+    "en": "for a week."
+  },
+  {
+    "id": 10508,
+    "lesson": 59,
+    "zh": "这对于 Jimmy 来说是个好消息。 DOCTOR：好消息？",
+    "en": "That's good news for Jimmy. DOCTOR: Good news?"
+  },
+  {
+    "id": 10509,
+    "lesson": 59,
+    "zh": "为什么？",
+    "en": "Why?"
+  },
+  {
+    "id": 10510,
+    "lesson": 59,
+    "zh": "因为他不喜欢上学！",
+    "en": "Because he doesn't like school!"
+  },
+  {
+    "id": 10511,
+    "lesson": 61,
+    "zh": "今天 Jimmy 怎么样？",
+    "en": "How's Jimmy today?"
+  },
+  {
+    "id": 10512,
+    "lesson": 61,
+    "zh": "Better。谢谢你，医生。",
+    "en": "Better.Thank you, doctor."
+  },
+  {
+    "id": 10513,
+    "lesson": 61,
+    "zh": "我可以见他吗， Mrs.Williams？",
+    "en": "Can I see him please, Mrs.Williams?"
+  },
+  {
+    "id": 10514,
+    "lesson": 61,
+    "zh": "当然可以，医生。",
+    "en": "Certainly, doctor."
+  },
+  {
+    "id": 10515,
+    "lesson": 61,
+    "zh": "上楼来吧。",
+    "en": "Come upstairs."
+  },
+  {
+    "id": 10516,
+    "lesson": 61,
+    "zh": "你看起来很好， Jimmy。",
+    "en": "You look very well, Jimmy."
+  },
+  {
+    "id": 10517,
+    "lesson": 61,
+    "zh": "你现在好多了，",
+    "en": "You are better now,"
+  },
+  {
+    "id": 10518,
+    "lesson": 61,
+    "zh": "但你还不能起床。",
+    "en": "but you mustn't get up yet."
+  },
+  {
+    "id": 10519,
+    "lesson": 61,
+    "zh": "你必须留在床上",
+    "en": "You must stay in bed"
+  },
+  {
+    "id": 10520,
+    "lesson": 61,
+    "zh": "再过两天。",
+    "en": "for another two days."
+  },
+  {
+    "id": 10521,
+    "lesson": 61,
+    "zh": "男孩不应该",
+    "en": "The boy mustn't"
+  },
+  {
+    "id": 10522,
+    "lesson": 61,
+    "zh": "还没去上学吗， Mrs.Williams。",
+    "en": "go to school yet, Mrs.Williams."
+  },
+  {
+    "id": 10523,
+    "lesson": 61,
+    "zh": "而且他不能吃油腻的食物。",
+    "en": "And he mustn't eat rich food."
+  },
+  {
+    "id": 10524,
+    "lesson": 61,
+    "zh": "医生，他发烧了吗？ DOCTOR：不，他没有。",
+    "en": "Does he have a temperature, doctor? DOCTOR: No, he doesn't."
+  },
+  {
+    "id": 10525,
+    "lesson": 61,
+    "zh": "他必须留在床上吗？",
+    "en": "Must he stay in bed?"
+  },
+  {
+    "id": 10526,
+    "lesson": 61,
+    "zh": "是的。",
+    "en": "Yes."
+  },
+  {
+    "id": 10527,
+    "lesson": 61,
+    "zh": "他必须留在床上",
+    "en": "He must remain in bed"
+  },
+  {
+    "id": 10528,
+    "lesson": 61,
+    "zh": "再过两天。",
+    "en": "for another two days."
+  },
+  {
+    "id": 10529,
+    "lesson": 61,
+    "zh": "他可以起来",
+    "en": "He can get up"
+  },
+  {
+    "id": 10530,
+    "lesson": 61,
+    "zh": "每天约两小时，但必须保持",
+    "en": "for about two hours each day, but you must keep the"
+  },
+  {
+    "id": 10531,
+    "lesson": 61,
+    "zh": "房间温暖。",
+    "en": "room warm."
+  },
+  {
+    "id": 10532,
+    "lesson": 61,
+    "zh": "今晚 Mr.Williams 在哪里？",
+    "en": "Where's Mr.Williams this evening?"
+  },
+  {
+    "id": 10533,
+    "lesson": 61,
+    "zh": "他在床上，医生。",
+    "en": "He's in bed, doctor."
+  },
+  {
+    "id": 10534,
+    "lesson": 61,
+    "zh": "请问你能见见他吗？",
+    "en": "Can you see him please?"
+  },
+  {
+    "id": 10535,
+    "lesson": 61,
+    "zh": "他还得了重感冒！",
+    "en": "He has a bad cold, too!"
+  },
+  {
+    "id": 10536,
+    "lesson": 63,
+    "zh": "Jill 拿了前门的钥匙吗？",
+    "en": "Does Jill take the key to the front door?"
+  },
+  {
+    "id": 10537,
+    "lesson": 63,
+    "zh": "你会怎样做",
+    "en": "What are you going to do"
+  },
+  {
+    "id": 10538,
+    "lesson": 63,
+    "zh": "今天晚上， Jill？",
+    "en": "this evening, Jill?"
+  },
+  {
+    "id": 10539,
+    "lesson": 63,
+    "zh": "我要去见一些朋友，爸爸。",
+    "en": "I'’m going to meet some friends, Dad."
+  },
+  {
+    "id": 10540,
+    "lesson": 63,
+    "zh": "你一定不能太晚回家。",
+    "en": "You mustn't come home late."
+  },
+  {
+    "id": 10541,
+    "lesson": 63,
+    "zh": "你必须十点半到家。",
+    "en": "You must be home at half past ten."
+  },
+  {
+    "id": 10542,
+    "lesson": 63,
+    "zh": "我不能这么早回家，爸爸！",
+    "en": "I can't get home so early, Dad!"
+  },
+  {
+    "id": 10543,
+    "lesson": 63,
+    "zh": "我可以有钥匙吗",
+    "en": "Can I have the key"
+  },
+  {
+    "id": 10544,
+    "lesson": 63,
+    "zh": "请到前门吗？ FATHER：不，你不能。",
+    "en": "to the front door, please? FATHER: No, you can't."
+  },
+  {
+    "id": 10545,
+    "lesson": 63,
+    "zh": "Jill 十八岁， Tom。",
+    "en": "Jill's eighteen years old, Tom."
+  },
+  {
+    "id": 10546,
+    "lesson": 63,
+    "zh": "她不是婴儿。",
+    "en": "She's not a baby."
+  },
+  {
+    "id": 10547,
+    "lesson": 63,
+    "zh": "把钥匙给她。",
+    "en": "Give her the key."
+  },
+  {
+    "id": 10548,
+    "lesson": 63,
+    "zh": "她总是很早回家。",
+    "en": "She always comes home early."
+  },
+  {
+    "id": 10549,
+    "lesson": 63,
+    "zh": "哦，好吧！",
+    "en": "Oh, all right!"
+  },
+  {
+    "id": 10550,
+    "lesson": 63,
+    "zh": "给你。",
+    "en": "Here you are."
+  },
+  {
+    "id": 10551,
+    "lesson": 63,
+    "zh": "但你不许回家",
+    "en": "But you mustn't come home"
+  },
+  {
+    "id": 10552,
+    "lesson": 63,
+    "zh": "十一点一刻之后。",
+    "en": "after a quarter past eleven."
+  },
+  {
+    "id": 10553,
+    "lesson": 63,
+    "zh": "你听到了吗？ JILL：是的，爸爸。",
+    "en": "Do you hear? JILL: Yes, Dad."
+  },
+  {
+    "id": 10554,
+    "lesson": 63,
+    "zh": "谢谢，妈妈。",
+    "en": "Thanks, Mum."
+  },
+  {
+    "id": 10555,
+    "lesson": 63,
+    "zh": "没关系。",
+    "en": "That's all right."
+  },
+  {
+    "id": 10556,
+    "lesson": 63,
+    "zh": "Goodbye。",
+    "en": "Goodbye."
+  },
+  {
+    "id": 10557,
+    "lesson": 63,
+    "zh": "Enjoy 你自己！",
+    "en": "Enjoy yourself!"
+  },
+  {
+    "id": 10558,
+    "lesson": 63,
+    "zh": "我们总是很开心，妈妈。",
+    "en": "We always enjoy ourselves, Mum."
+  },
+  {
+    "id": 10559,
+    "lesson": 63,
+    "zh": "Bye-bye。",
+    "en": "Bye-bye."
+  },
+  {
+    "id": 10560,
+    "lesson": 65,
+    "zh": "哪辆车是 1995 年的冠军？",
+    "en": "Which car was the winner in 1995?"
+  },
+  {
+    "id": 10561,
+    "lesson": 65,
+    "zh": "有一场汽车比赛",
+    "en": "There is a car race"
+  },
+  {
+    "id": 10562,
+    "lesson": 65,
+    "zh": "每年我们镇附近。 1995年，",
+    "en": "near our town every year. In 1995,"
+  },
+  {
+    "id": 10563,
+    "lesson": 65,
+    "zh": "有一场非常盛大的比赛。",
+    "en": "there was a very big race."
+  },
+  {
+    "id": 10564,
+    "lesson": 65,
+    "zh": "那里有数百人。我和我的妻子参加了比赛。",
+    "en": "There were hundreds of people there. My wife and I were at the race."
+  },
+  {
+    "id": 10565,
+    "lesson": 65,
+    "zh": "我们的朋友 Julie 和 Jack 也在那里。",
+    "en": "Our friends Julie and Jack were there, too."
+  },
+  {
+    "id": 10566,
+    "lesson": 65,
+    "zh": "你可以在人群中看到我们。",
+    "en": "You can see us in the crowd."
+  },
+  {
+    "id": 10567,
+    "lesson": 65,
+    "zh": "我们站在左边。",
+    "en": "We are standing on the left."
+  },
+  {
+    "id": 10568,
+    "lesson": 65,
+    "zh": "有二十辆车参加比赛。",
+    "en": "There were twenty cars in the race."
+  },
+  {
+    "id": 10569,
+    "lesson": 65,
+    "zh": "有英国车、法国车、德国车、意大利车，",
+    "en": "There were English cars, French cars, German cars, Italian cars,"
+  },
+  {
+    "id": 10570,
+    "lesson": 65,
+    "zh": "美国车和日本车。",
+    "en": "American cars and Japanese cars."
+  },
+  {
+    "id": 10571,
+    "lesson": 65,
+    "zh": "这是一个令人兴奋的结局。",
+    "en": "It was an exciting finish."
+  },
+  {
+    "id": 10572,
+    "lesson": 65,
+    "zh": "获胜者是 Billy Stewart。",
+    "en": "The winner was Billy Stewart."
+  },
+  {
+    "id": 10573,
+    "lesson": 65,
+    "zh": "他坐在十五号车里。",
+    "en": "He was in car number fifteen."
+  },
+  {
+    "id": 10574,
+    "lesson": 65,
+    "zh": "Five 其他汽车就在他身后。",
+    "en": "Five other cars were just behind him."
+  },
+  {
+    "id": 10575,
+    "lesson": 65,
+    "zh": "回家路上，老婆对我说：",
+    "en": "On the way home, my wife said to me,"
+  },
+  {
+    "id": 10576,
+    "lesson": 65,
+    "zh": "' Don 别开这么快！你不是 Billy Stewart！'",
+    "en": "'Don't drive so quickly! You're not Billy Stewart!'"
+  },
+  {
+    "id": 10577,
+    "lesson": 67,
+    "zh": "九点钟 Pauline 怎么接电话？",
+    "en": "How did Pauline answer the telephone at nine o'clock?"
+  },
+  {
+    "id": 10578,
+    "lesson": 67,
+    "zh": "Ron Marston 是什么样的， Pauline？",
+    "en": "What's Ron Marston like, Pauline?"
+  },
+  {
+    "id": 10579,
+    "lesson": 67,
+    "zh": "他太糟糕了！",
+    "en": "He's awful!"
+  },
+  {
+    "id": 10580,
+    "lesson": 67,
+    "zh": "他给我打电话",
+    "en": "He telephoned me"
+  },
+  {
+    "id": 10581,
+    "lesson": 67,
+    "zh": "昨天四次，",
+    "en": "four times yesterday,"
+  },
+  {
+    "id": 10582,
+    "lesson": 67,
+    "zh": "和三次",
+    "en": "and three times"
+  },
+  {
+    "id": 10583,
+    "lesson": 67,
+    "zh": "前天。",
+    "en": "the day before yesterday."
+  },
+  {
+    "id": 10584,
+    "lesson": 67,
+    "zh": "他昨天早上给办公室打电话",
+    "en": "He telephoned the office yesterday morning"
+  },
+  {
+    "id": 10585,
+    "lesson": 67,
+    "zh": "和昨天下午。",
+    "en": "and yesterday afternoon."
+  },
+  {
+    "id": 10586,
+    "lesson": 67,
+    "zh": "我的老板接了电话。",
+    "en": "My boss answered the telephone."
+  },
+  {
+    "id": 10587,
+    "lesson": 67,
+    "zh": "你的老板对他说了什么？",
+    "en": "What did your boss say to him?"
+  },
+  {
+    "id": 10588,
+    "lesson": 67,
+    "zh": "他说，‘Pauline 正在打字。",
+    "en": "He said,'Pauline is typing letters."
+  },
+  {
+    "id": 10589,
+    "lesson": 67,
+    "zh": "她现在不能和你说话！",
+    "en": "She can't speak to you now!'"
+  },
+  {
+    "id": 10590,
+    "lesson": 67,
+    "zh": "然后我到家了",
+    "en": "Then I arrived home"
+  },
+  {
+    "id": 10591,
+    "lesson": 67,
+    "zh": "昨天晚上六点钟。他又打来电话。",
+    "en": "at six o'clock yesterday evening. He telephoned again."
+  },
+  {
+    "id": 10592,
+    "lesson": 67,
+    "zh": "但我没有接电话！",
+    "en": "But I didn't answer the phone!"
+  },
+  {
+    "id": 10593,
+    "lesson": 67,
+    "zh": "昨晚他又打电话了吗？",
+    "en": "Did he telephone again last night?"
+  },
+  {
+    "id": 10594,
+    "lesson": 67,
+    "zh": "是的，他做到了。",
+    "en": "Yes, he did."
+  },
+  {
+    "id": 10595,
+    "lesson": 67,
+    "zh": "他九点钟打来电话。",
+    "en": "He telephoned at nine o'clock."
+  },
+  {
+    "id": 10596,
+    "lesson": 67,
+    "zh": "你对他说什么了？",
+    "en": "What did you say to him?"
+  },
+  {
+    "id": 10597,
+    "lesson": 67,
+    "zh": "我说，‘这是 Pauline 的母亲。",
+    "en": "I said,'This is Pauline's mother."
+  },
+  {
+    "id": 10598,
+    "lesson": 67,
+    "zh": "请不要再给我女儿打电话！",
+    "en": "Please don't telephone my daughter again!'"
+  },
+  {
+    "id": 10599,
+    "lesson": 67,
+    "zh": "他又打电话了吗？",
+    "en": "Did he telephone again?"
+  },
+  {
+    "id": 10600,
+    "lesson": 67,
+    "zh": "不，他没有！",
+    "en": "No, he didn't!"
+  },
+  {
+    "id": 10601,
+    "lesson": 69,
+    "zh": "为什么这个人需要一本常用语手册？",
+    "en": "Why did the man need a phrasebook?"
+  },
+  {
+    "id": 10602,
+    "lesson": 69,
+    "zh": "上周 Mrs.Mills 去了伦敦。她对伦敦不太了解，所以迷失了方向。",
+    "en": "Last week Mrs.Mills went to London. She does not know London very well, and she lost her way."
+  },
+  {
+    "id": 10603,
+    "lesson": 69,
+    "zh": "突然，她在公交车站附近看到了一个男人。",
+    "en": "Suddenly, she saw a man near a bus stop."
+  },
+  {
+    "id": 10604,
+    "lesson": 69,
+    "zh": "“我可以向他问路，”她对自己说。",
+    "en": "'I can ask him the way,' she said to herself."
+  },
+  {
+    "id": 10605,
+    "lesson": 69,
+    "zh": "“对不起，”她说。",
+    "en": "'Excuse me,'she said."
+  },
+  {
+    "id": 10606,
+    "lesson": 69,
+    "zh": "“请问您能告诉我去 King 街的路吗？”",
+    "en": "'Can you tell me the way to King Street, please?'"
+  },
+  {
+    "id": 10607,
+    "lesson": 69,
+    "zh": "男人笑得很愉快。",
+    "en": "The man smiled pleasantly."
+  },
+  {
+    "id": 10608,
+    "lesson": 69,
+    "zh": "他听不懂英语！",
+    "en": "He did not understand English!"
+  },
+  {
+    "id": 10609,
+    "lesson": 69,
+    "zh": "他说德语。",
+    "en": "He spoke German."
+  },
+  {
+    "id": 10610,
+    "lesson": 69,
+    "zh": "他是一名游客。",
+    "en": "He was a tourist."
+  },
+  {
+    "id": 10611,
+    "lesson": 69,
+    "zh": "然后把手伸进口袋，",
+    "en": "Then he put his hand into his pocket,"
+  },
+  {
+    "id": 10612,
+    "lesson": 69,
+    "zh": "并拿出一本常用语手册。",
+    "en": "and took out a phrasebook."
+  },
+  {
+    "id": 10613,
+    "lesson": 69,
+    "zh": "他打开书​​，找到了一句话。",
+    "en": "He opened the book and found a phrase."
+  },
+  {
+    "id": 10614,
+    "lesson": 69,
+    "zh": "他慢慢地读着这句话。",
+    "en": "He read the phrase slowly."
+  },
+  {
+    "id": 10615,
+    "lesson": 69,
+    "zh": "“对不起，”他说。",
+    "en": "'I am sorry,'he said."
+  },
+  {
+    "id": 10616,
+    "lesson": 69,
+    "zh": "'我不会说英语。'",
+    "en": "'I do not speak English.'"
+  },
+  {
+    "id": 10617,
+    "lesson": 71,
+    "zh": "时髦的鞋子有什么问题吗？",
+    "en": "What's wrong with the fashionable shoes?"
+  },
+  {
+    "id": 10618,
+    "lesson": 71,
+    "zh": "你有这样的鞋子吗？",
+    "en": "Do you have any shoes like these?"
+  },
+  {
+    "id": 10619,
+    "lesson": 71,
+    "zh": "什么尺寸？",
+    "en": "What size?"
+  },
+  {
+    "id": 10620,
+    "lesson": 71,
+    "zh": "尺寸五。",
+    "en": "Size five."
+  },
+  {
+    "id": 10621,
+    "lesson": 71,
+    "zh": "什么颜色？",
+    "en": "What colour?"
+  },
+  {
+    "id": 10622,
+    "lesson": 71,
+    "zh": "黑色的。",
+    "en": "Black."
+  },
+  {
+    "id": 10623,
+    "lesson": 71,
+    "zh": "对不起。",
+    "en": "I'm sorry."
+  },
+  {
+    "id": 10624,
+    "lesson": 71,
+    "zh": "我们没有。",
+    "en": "We don't have any."
+  },
+  {
+    "id": 10625,
+    "lesson": 71,
+    "zh": "不过我姐姐买了这双",
+    "en": "But my sister bought this pair"
+  },
+  {
+    "id": 10626,
+    "lesson": 71,
+    "zh": "上个月。",
+    "en": "last month."
+  },
+  {
+    "id": 10627,
+    "lesson": 71,
+    "zh": "她是在这里买的吗？",
+    "en": "Did she buy them here?"
+  },
+  {
+    "id": 10628,
+    "lesson": 71,
+    "zh": "不，她买的",
+    "en": "No, she bought them"
+  },
+  {
+    "id": 10629,
+    "lesson": 71,
+    "zh": "在美国",
+    "en": "in the U.S."
+  },
+  {
+    "id": 10630,
+    "lesson": 71,
+    "zh": "一个月前我们有一些这样的鞋子，",
+    "en": "We had some shoes like those a month ago,"
+  },
+  {
+    "id": 10631,
+    "lesson": 71,
+    "zh": "但我们现在没有。",
+    "en": "but we don't have any now."
+  },
+  {
+    "id": 10632,
+    "lesson": 71,
+    "zh": "你能给我买一双吗？",
+    "en": "Can you get a pair for me, please?"
+  },
+  {
+    "id": 10633,
+    "lesson": 71,
+    "zh": "恐怕我不能。",
+    "en": "I'm afraid that I can't."
+  },
+  {
+    "id": 10634,
+    "lesson": 71,
+    "zh": "它们去年和前年都很流行。",
+    "en": "They were in fashion last year and the year before last."
+  },
+  {
+    "id": 10635,
+    "lesson": 71,
+    "zh": "但它们并不时尚",
+    "en": "But they're not in fashion"
+  },
+  {
+    "id": 10636,
+    "lesson": 71,
+    "zh": "今年。",
+    "en": "this year."
+  },
+  {
+    "id": 10637,
+    "lesson": 71,
+    "zh": "这双鞋现在很流行。 LADY：他们看起来很不舒服。 SHOP ASSISTANT：他们非常不舒服。",
+    "en": "These shoes are in fashion now. LADY: They look very uncomfortable. SHOP ASSISTANT: They are very uncomfortable."
+  },
+  {
+    "id": 10638,
+    "lesson": 71,
+    "zh": "但女人总是会穿",
+    "en": "But women always wear"
+  },
+  {
+    "id": 10639,
+    "lesson": 71,
+    "zh": "鞋子不舒服！",
+    "en": "uncomfortable shoes!"
+  },
+  {
+    "id": 10640,
+    "lesson": 73,
+    "zh": "你认为现在是一天中的什么时间？你怎么知道？",
+    "en": "What time of day is it, do you think?How do you know?"
+  },
+  {
+    "id": 10641,
+    "lesson": 73,
+    "zh": "早上好， Mr.Croft。",
+    "en": "Good morning, Mr.Croft."
+  },
+  {
+    "id": 10642,
+    "lesson": 73,
+    "zh": "早上好，护士。",
+    "en": "Good morning, nurse."
+  },
+  {
+    "id": 10643,
+    "lesson": 73,
+    "zh": "我想去看牙医，请。",
+    "en": "I want to see the dentist, please."
+  },
+  {
+    "id": 10644,
+    "lesson": 73,
+    "zh": "你有预约吗？",
+    "en": "Do you have an appointment?"
+  },
+  {
+    "id": 10645,
+    "lesson": 73,
+    "zh": "不，我不。",
+    "en": "No, I don't."
+  },
+  {
+    "id": 10646,
+    "lesson": 73,
+    "zh": "紧急吗？",
+    "en": "Is it urgent?"
+  },
+  {
+    "id": 10647,
+    "lesson": 73,
+    "zh": "是的，是我的。",
+    "en": "Yes, it is."
+  },
+  {
+    "id": 10648,
+    "lesson": 73,
+    "zh": "非常紧急。",
+    "en": "It's very urgent."
+  },
+  {
+    "id": 10649,
+    "lesson": 73,
+    "zh": "我感觉很糟糕。",
+    "en": "I feel awful."
+  },
+  {
+    "id": 10650,
+    "lesson": 73,
+    "zh": "我牙痛得厉害。",
+    "en": "I have a terrible toothache."
+  },
+  {
+    "id": 10651,
+    "lesson": 73,
+    "zh": "你能上午10点来吗",
+    "en": "Can you come at 10 a.m."
+  },
+  {
+    "id": 10652,
+    "lesson": 73,
+    "zh": "4 月 24 日星期一？",
+    "en": "on Monday, April 24th?"
+  },
+  {
+    "id": 10653,
+    "lesson": 73,
+    "zh": "我现在必须去看牙医，护士。 NURSE : 牙医很忙",
+    "en": "I must see the dentist now, nurse. NURSE: The dentist is very busy"
+  },
+  {
+    "id": 10654,
+    "lesson": 73,
+    "zh": "眼下。",
+    "en": "at the moment."
+  },
+  {
+    "id": 10655,
+    "lesson": 73,
+    "zh": "下午两点可以来吗？ MR。 CROFT：已经很晚了。",
+    "en": "Can you come at 2 p.m.? MR.CROFT: That's very late."
+  },
+  {
+    "id": 10656,
+    "lesson": 73,
+    "zh": "牙医现在可以见我吗？",
+    "en": "Can the dentist see me now?"
+  },
+  {
+    "id": 10657,
+    "lesson": 73,
+    "zh": "恐怕他不能， Mr.Croft。",
+    "en": "I'm afraid that he can't, Mr.Croft."
+  },
+  {
+    "id": 10658,
+    "lesson": 73,
+    "zh": "就不能等到今天下午吗？ MR。 CROFT：我可以等，但我的牙痛不能等！",
+    "en": "Can't you wait till this afternoon? MR.CROFT: I can wait, but my toothache can't!"
+  },
+  {
+    "id": 10659,
+    "lesson": 75,
+    "zh": "你在做什么， Carol？",
+    "en": "What are you doing, Carol?"
+  },
+  {
+    "id": 10660,
+    "lesson": 75,
+    "zh": "我正在列一份购物清单， Tom。",
+    "en": "I'm making a shopping list, Tom."
+  },
+  {
+    "id": 10661,
+    "lesson": 75,
+    "zh": "我们需要什么？",
+    "en": "What do we need?"
+  },
+  {
+    "id": 10662,
+    "lesson": 75,
+    "zh": "这周我们需要很多东西。",
+    "en": "We need a lot of things this week."
+  },
+  {
+    "id": 10663,
+    "lesson": 75,
+    "zh": "我必须去杂货店。",
+    "en": "I must go to the grocer's."
+  },
+  {
+    "id": 10664,
+    "lesson": 75,
+    "zh": "我们没有太多的茶或咖啡，也没有糖或果酱。",
+    "en": "We haven't got much tea or coffee, and we haven't got any sugar or jam."
+  },
+  {
+    "id": 10665,
+    "lesson": 75,
+    "zh": "蔬菜呢？",
+    "en": "What about vegetables?"
+  },
+  {
+    "id": 10666,
+    "lesson": 75,
+    "zh": "我必须去蔬菜水果店。",
+    "en": "I must go to the greengrocer's."
+  },
+  {
+    "id": 10667,
+    "lesson": 75,
+    "zh": "我们没有很多西红柿，但是我们有很多土豆。",
+    "en": "We haven't got many tomatoes, but we've got a lot of potatoes."
+  },
+  {
+    "id": 10668,
+    "lesson": 75,
+    "zh": "我也必须去肉店。",
+    "en": "I must go to the butcher's, too."
+  },
+  {
+    "id": 10669,
+    "lesson": 75,
+    "zh": "我们需要一些肉。",
+    "en": "We need some meat."
+  },
+  {
+    "id": 10670,
+    "lesson": 75,
+    "zh": "我们根本没有肉。",
+    "en": "We haven't got any meat at all."
+  },
+  {
+    "id": 10671,
+    "lesson": 75,
+    "zh": "我们有啤酒和葡萄酒吗？",
+    "en": "Have we got any beer and wine?"
+  },
+  {
+    "id": 10672,
+    "lesson": 75,
+    "zh": "不，我们没有。",
+    "en": "No, we haven't."
+  },
+  {
+    "id": 10673,
+    "lesson": 75,
+    "zh": "我不会得到任何！",
+    "en": "And I'm not going to get any!"
+  },
+  {
+    "id": 10674,
+    "lesson": 75,
+    "zh": "我希望你有一些钱。",
+    "en": "I hope that you've got some money."
+  },
+  {
+    "id": 10675,
+    "lesson": 75,
+    "zh": "我没有太多。",
+    "en": "I haven't got much."
+  },
+  {
+    "id": 10676,
+    "lesson": 75,
+    "zh": "嗯，我也没有多少！",
+    "en": "Well, I haven't got much either!"
+  },
+  {
+    "id": 10677,
+    "lesson": 77,
+    "zh": "嗨， Carol！",
+    "en": "Hi, Carol!"
+  },
+  {
+    "id": 10678,
+    "lesson": 77,
+    "zh": "Tom 在哪里？ CAROL：他在楼上。",
+    "en": "Where's Tom? CAROL: He's upstairs."
+  },
+  {
+    "id": 10679,
+    "lesson": 77,
+    "zh": "他正在洗澡。",
+    "en": "He's having a bath."
+  },
+  {
+    "id": 10680,
+    "lesson": 77,
+    "zh": "Tom！",
+    "en": "Tom!"
+  },
+  {
+    "id": 10681,
+    "lesson": 77,
+    "zh": "什么事？",
+    "en": "Yes?"
+  },
+  {
+    "id": 10682,
+    "lesson": 77,
+    "zh": "Sam 在这里。",
+    "en": "Sam's here."
+  },
+  {
+    "id": 10683,
+    "lesson": 77,
+    "zh": "我快准备好了。",
+    "en": "I'm nearly ready."
+  },
+  {
+    "id": 10684,
+    "lesson": 77,
+    "zh": "Hello、 Sam。",
+    "en": "Hello, Sam."
+  },
+  {
+    "id": 10685,
+    "lesson": 77,
+    "zh": "抽支烟吧。",
+    "en": "Have a cigarette."
+  },
+  {
+    "id": 10686,
+    "lesson": 77,
+    "zh": "不，谢谢， Tom。",
+    "en": "No, thanks, Tom."
+  },
+  {
+    "id": 10687,
+    "lesson": 77,
+    "zh": "那就来一杯威士忌吧。",
+    "en": "Have a glass of whisky then."
+  },
+  {
+    "id": 10688,
+    "lesson": 77,
+    "zh": "OK。谢谢。",
+    "en": "OK.Thanks."
+  },
+  {
+    "id": 10689,
+    "lesson": 77,
+    "zh": "晚餐准备好了吗， Carol？",
+    "en": "Is dinner ready, Carol?"
+  },
+  {
+    "id": 10690,
+    "lesson": 77,
+    "zh": "快准备好了。",
+    "en": "It's nearly ready."
+  },
+  {
+    "id": 10691,
+    "lesson": 77,
+    "zh": "我们可以在七点钟吃晚饭。",
+    "en": "We can have dinner at seven o'clock."
+  },
+  {
+    "id": 10692,
+    "lesson": 77,
+    "zh": "Sam 今天和我一起吃午饭。",
+    "en": "Sam and I had lunch together today."
+  },
+  {
+    "id": 10693,
+    "lesson": 77,
+    "zh": "我们去了一家餐馆。",
+    "en": "We went to a restaurant."
+  },
+  {
+    "id": 10694,
+    "lesson": 77,
+    "zh": "你有什么？",
+    "en": "What did you have?"
+  },
+  {
+    "id": 10695,
+    "lesson": 77,
+    "zh": "我们吃了烤肉",
+    "en": "We had roast"
+  },
+  {
+    "id": 10696,
+    "lesson": 77,
+    "zh": "牛肉和土豆。",
+    "en": "beef and potatoes."
+  },
+  {
+    "id": 10697,
+    "lesson": 77,
+    "zh": "哦！",
+    "en": "Oh!"
+  },
+  {
+    "id": 10698,
+    "lesson": 77,
+    "zh": "怎么了， Carol？",
+    "en": "What's the matter, Carol?"
+  },
+  {
+    "id": 10699,
+    "lesson": 77,
+    "zh": "好吧，你将会有",
+    "en": "Well, you're going to have"
+  },
+  {
+    "id": 10700,
+    "lesson": 77,
+    "zh": "今晚又烤牛肉和土豆了！",
+    "en": "roast beef and potatoes again tonight!"
+  },
+  {
+    "id": 10701,
+    "lesson": 79,
+    "zh": "Sam 今年去哪里度假了？",
+    "en": "Where did Sam go for his holiday this year?"
+  },
+  {
+    "id": 10702,
+    "lesson": 79,
+    "zh": "Hello、 Sam。",
+    "en": "Hello, Sam."
+  },
+  {
+    "id": 10703,
+    "lesson": 79,
+    "zh": "进来。",
+    "en": "Come in."
+  },
+  {
+    "id": 10704,
+    "lesson": 79,
+    "zh": "嗨， Sam。",
+    "en": "Hi, Sam."
+  },
+  {
+    "id": 10705,
+    "lesson": 79,
+    "zh": "我们正在吃午饭。",
+    "en": "We're having lunch."
+  },
+  {
+    "id": 10706,
+    "lesson": 79,
+    "zh": "你想和我们一起吃午饭吗？ SAM：不，谢谢你， Tom。",
+    "en": "Do you want to have lunch with us? SAM: No, thank you, Tom."
+  },
+  {
+    "id": 10707,
+    "lesson": 79,
+    "zh": "我已经吃过午饭了。",
+    "en": "I've already had lunch."
+  },
+  {
+    "id": 10708,
+    "lesson": 79,
+    "zh": "我十二点半吃午饭。",
+    "en": "I had lunch at half past twelve."
+  },
+  {
+    "id": 10709,
+    "lesson": 79,
+    "zh": "那么喝杯咖啡吧。",
+    "en": "Have a cup of coffee then."
+  },
+  {
+    "id": 10710,
+    "lesson": 79,
+    "zh": "我刚喝了一杯，谢谢。",
+    "en": "I've just had a cup, thank you."
+  },
+  {
+    "id": 10711,
+    "lesson": 79,
+    "zh": "午饭后我吃了一份。",
+    "en": "I had one after my lunch."
+  },
+  {
+    "id": 10712,
+    "lesson": 79,
+    "zh": "我们去客厅吧， Carol。",
+    "en": "Let's go into the living room, Carol."
+  },
+  {
+    "id": 10713,
+    "lesson": 79,
+    "zh": "我们可以在那里喝咖啡。",
+    "en": "We can have our coffee there."
+  },
+  {
+    "id": 10714,
+    "lesson": 79,
+    "zh": "请原谅混乱， Sam。",
+    "en": "Excuse the mess, Sam."
+  },
+  {
+    "id": 10715,
+    "lesson": 79,
+    "zh": "这房间很乱。",
+    "en": "This room's very untidy."
+  },
+  {
+    "id": 10716,
+    "lesson": 79,
+    "zh": "我们正在收拾行李。",
+    "en": "We're packing our suitcases."
+  },
+  {
+    "id": 10717,
+    "lesson": 79,
+    "zh": "我们明天就要离开。",
+    "en": "We're going to leave tomorrow."
+  },
+  {
+    "id": 10718,
+    "lesson": 79,
+    "zh": "Tom 和我要去度假。",
+    "en": "Tom and I are going to have a holiday."
+  },
+  {
+    "id": 10719,
+    "lesson": 79,
+    "zh": "Aren 你真幸运！",
+    "en": "Aren't you lucky!"
+  },
+  {
+    "id": 10720,
+    "lesson": 79,
+    "zh": "你什么时候去",
+    "en": "When are you going to"
+  },
+  {
+    "id": 10721,
+    "lesson": 79,
+    "zh": "放假了吗， Sam？ SAM：我不知道。",
+    "en": "have a holiday, Sam? SAM: I don't know."
+  },
+  {
+    "id": 10722,
+    "lesson": 79,
+    "zh": "我今年已经放假了。",
+    "en": "I've already had my holiday this year."
+  },
+  {
+    "id": 10723,
+    "lesson": 79,
+    "zh": "你去哪儿？",
+    "en": "Where did you go?"
+  },
+  {
+    "id": 10724,
+    "lesson": 79,
+    "zh": "我呆在家里！",
+    "en": "I stayed at home!"
+  },
+  {
+    "id": 10725,
+    "lesson": 81,
+    "zh": "Ken 一年中的什么时间访问巴黎？",
+    "en": "At what time of year did Ken visit Paris?"
+  },
+  {
+    "id": 10726,
+    "lesson": 81,
+    "zh": "Hello、 Ken。",
+    "en": "Hello, Ken."
+  },
+  {
+    "id": 10727,
+    "lesson": 81,
+    "zh": "嗨， George。",
+    "en": "Hi, George."
+  },
+  {
+    "id": 10728,
+    "lesson": 81,
+    "zh": "你刚去过电影院吗？",
+    "en": "Have you just been to the cinema?"
+  },
+  {
+    "id": 10729,
+    "lesson": 81,
+    "zh": "是的，我有。",
+    "en": "Yes, I have."
+  },
+  {
+    "id": 10730,
+    "lesson": 81,
+    "zh": "发生了什么？",
+    "en": "What's on?"
+  },
+  {
+    "id": 10731,
+    "lesson": 81,
+    "zh": "“巴黎在 Spring”。",
+    "en": "'Paris in the Spring'."
+  },
+  {
+    "id": 10732,
+    "lesson": 81,
+    "zh": "哦，我已经看过了。",
+    "en": "Oh, I've already seen it."
+  },
+  {
+    "id": 10733,
+    "lesson": 81,
+    "zh": "我看到了",
+    "en": "I saw it"
+  },
+  {
+    "id": 10734,
+    "lesson": 81,
+    "zh": "去年在电视上。",
+    "en": "on television last year."
+  },
+  {
+    "id": 10735,
+    "lesson": 81,
+    "zh": "这是一部老电影，但是非常好。",
+    "en": "It's an old film, but it's very good."
+  },
+  {
+    "id": 10736,
+    "lesson": 81,
+    "zh": "巴黎是一座美丽的城市。",
+    "en": "Paris is a beautiful city."
+  },
+  {
+    "id": 10737,
+    "lesson": 81,
+    "zh": "我从来没有去过那里。",
+    "en": "I've never been there."
+  },
+  {
+    "id": 10738,
+    "lesson": 81,
+    "zh": "你去过那里吗， Ken？ KEN：是的，我有。",
+    "en": "Have you ever been there, Ken? KEN: Yes, I have."
+  },
+  {
+    "id": 10739,
+    "lesson": 81,
+    "zh": "我四月份在那儿。",
+    "en": "I was there in April."
+  },
+  {
+    "id": 10740,
+    "lesson": 81,
+    "zh": "春天的巴黎，嗯？",
+    "en": "Paris in the spring, eh?"
+  },
+  {
+    "id": 10741,
+    "lesson": 81,
+    "zh": "那是春天，",
+    "en": "It was spring,"
+  },
+  {
+    "id": 10742,
+    "lesson": 81,
+    "zh": "但天气很糟糕。",
+    "en": "but the weather was awful."
+  },
+  {
+    "id": 10743,
+    "lesson": 81,
+    "zh": "一直下雨。",
+    "en": "It rained all thc time."
+  },
+  {
+    "id": 10744,
+    "lesson": 81,
+    "zh": "就像伦敦一样！",
+    "en": "Just like London!"
+  },
+  {
+    "id": 10745,
+    "lesson": 83,
+    "zh": "我的车准备好了吗？",
+    "en": "Is my car ready yet?"
+  },
+  {
+    "id": 10746,
+    "lesson": 83,
+    "zh": "我不知道，先生。",
+    "en": "I don't know, sir."
+  },
+  {
+    "id": 10747,
+    "lesson": 83,
+    "zh": "号码是多少",
+    "en": "What's the number"
+  },
+  {
+    "id": 10748,
+    "lesson": 83,
+    "zh": "你的车？",
+    "en": "of your car?"
+  },
+  {
+    "id": 10749,
+    "lesson": 83,
+    "zh": "这是 LFZ 312 G。",
+    "en": "It's LFZ 312 G."
+  },
+  {
+    "id": 10750,
+    "lesson": 83,
+    "zh": "你什么时候给我们带来的？",
+    "en": "When did you bring it to us?"
+  },
+  {
+    "id": 10751,
+    "lesson": 83,
+    "zh": "我三天前把它带到这里来的。 ATTENDANT：啊，是的，我现在想起来了。",
+    "en": "I brought it here three days ago. ATTENDANT: Ah yes, I remember now."
+  },
+  {
+    "id": 10752,
+    "lesson": 83,
+    "zh": "你的机械师完成了吗？",
+    "en": "Have your mechanics finished yet?"
+  },
+  {
+    "id": 10753,
+    "lesson": 83,
+    "zh": "不，他们仍在努力。",
+    "en": "No, they're still working on it."
+  },
+  {
+    "id": 10754,
+    "lesson": 83,
+    "zh": "我们去车库吧",
+    "en": "Let's go into the garage"
+  },
+  {
+    "id": 10755,
+    "lesson": 83,
+    "zh": "看看它。",
+    "en": "and have a look at it."
+  },
+  {
+    "id": 10756,
+    "lesson": 83,
+    "zh": "Isn 那不是你的车吗？",
+    "en": "Isn't that your car?"
+  },
+  {
+    "id": 10757,
+    "lesson": 83,
+    "zh": "嗯，那是我的车。",
+    "en": "Well, it was my car."
+  },
+  {
+    "id": 10758,
+    "lesson": 83,
+    "zh": "Didn 你没有出车祸吗？",
+    "en": "Didn't you have a crash?"
+  },
+  {
+    "id": 10759,
+    "lesson": 83,
+    "zh": "这是正确的。",
+    "en": "That's right."
+  },
+  {
+    "id": 10760,
+    "lesson": 83,
+    "zh": "我把它开到路灯柱上。",
+    "en": "I drove it into a lamp-post."
+  },
+  {
+    "id": 10761,
+    "lesson": 83,
+    "zh": "你们的机械师可以修理吗？ ATTENDANT：嗯，",
+    "en": "Can your mechanics repair it? ATTENDANT: Well,"
+  },
+  {
+    "id": 10762,
+    "lesson": 83,
+    "zh": "他们正在努力修复它，先生。",
+    "en": "they're trying to repair it, sir."
+  },
+  {
+    "id": 10763,
+    "lesson": 83,
+    "zh": "但说实话，",
+    "en": "But to tell you the truth,"
+  },
+  {
+    "id": 10764,
+    "lesson": 83,
+    "zh": "你需要一辆新车！",
+    "en": "you need a new car!"
+  },
+  {
+    "id": 10765,
+    "lesson": 85,
+    "zh": "下午好。",
+    "en": "Good afternoon."
+  },
+  {
+    "id": 10766,
+    "lesson": 85,
+    "zh": "我相信",
+    "en": "I believe that"
+  },
+  {
+    "id": 10767,
+    "lesson": 85,
+    "zh": "这房子正在出售。",
+    "en": "this house is for sale."
+  },
+  {
+    "id": 10768,
+    "lesson": 85,
+    "zh": "这是正确的。",
+    "en": "That's right."
+  },
+  {
+    "id": 10769,
+    "lesson": 85,
+    "zh": "我可以看一下吗？",
+    "en": "May I have a look at it, please?"
+  },
+  {
+    "id": 10770,
+    "lesson": 85,
+    "zh": "是的当然。",
+    "en": "Yes, of course."
+  },
+  {
+    "id": 10771,
+    "lesson": 85,
+    "zh": "进来。",
+    "en": "Come in."
+  },
+  {
+    "id": 10772,
+    "lesson": 85,
+    "zh": "你在这里住了多久了？ IAN : 我在这里住了二十年",
+    "en": "How long have you lived here? IAN: I've lived here for twenty years"
+  },
+  {
+    "id": 10773,
+    "lesson": 85,
+    "zh": "Twenty 年！",
+    "en": "Twenty years!"
+  },
+  {
+    "id": 10774,
+    "lesson": 85,
+    "zh": "那是很长一段时间了。",
+    "en": "That's a long time."
+  },
+  {
+    "id": 10775,
+    "lesson": 85,
+    "zh": "是的，我从 1976 年就一直在这里。",
+    "en": "Yes, I've been here since 1976."
+  },
+  {
+    "id": 10776,
+    "lesson": 85,
+    "zh": "那你为什么要卖呢？",
+    "en": "Then why do you want to sell it?"
+  },
+  {
+    "id": 10777,
+    "lesson": 85,
+    "zh": "因为我刚刚退休。",
+    "en": "Because I've just retired."
+  },
+  {
+    "id": 10778,
+    "lesson": 85,
+    "zh": "我想买",
+    "en": "I want to buy"
+  },
+  {
+    "id": 10779,
+    "lesson": 85,
+    "zh": "乡下的一栋小房子。",
+    "en": "a small house in the country."
+  },
+  {
+    "id": 10780,
+    "lesson": 85,
+    "zh": "这房子要多少钱？",
+    "en": "How much does this house cost?"
+  },
+  {
+    "id": 10781,
+    "lesson": 85,
+    "zh": "f68,500。",
+    "en": "f68,500."
+  },
+  {
+    "id": 10782,
+    "lesson": 85,
+    "zh": "那可是一大笔钱啊！",
+    "en": "That's a lot of money!"
+  },
+  {
+    "id": 10783,
+    "lesson": 85,
+    "zh": "每一分钱都是值得的。",
+    "en": "It's worth every penny of it."
+  },
+  {
+    "id": 10784,
+    "lesson": 85,
+    "zh": "嗯，我喜欢这个房子，但我还不能决定。",
+    "en": "Well, I like the house, but I can't decide yet."
+  },
+  {
+    "id": 10785,
+    "lesson": 85,
+    "zh": "我的妻子必须先看到它。",
+    "en": "My wife must see it first."
+  },
+  {
+    "id": 10786,
+    "lesson": 85,
+    "zh": "Women 总是有",
+    "en": "Women always have"
+  },
+  {
+    "id": 10787,
+    "lesson": 85,
+    "zh": "最后一句话。",
+    "en": "the last word."
+  },
+  {
+    "id": 10788,
+    "lesson": 87,
+    "zh": "lan 把他的房子卖掉了吗？",
+    "en": "Has lan sold his house yet?"
+  },
+  {
+    "id": 10789,
+    "lesson": 87,
+    "zh": "是的，他有。",
+    "en": "Yes, he has."
+  },
+  {
+    "id": 10790,
+    "lesson": 87,
+    "zh": "他上周把它卖掉了。",
+    "en": "He sold it last week."
+  },
+  {
+    "id": 10791,
+    "lesson": 87,
+    "zh": "他搬到新家了吗？",
+    "en": "Has: he moved to his new house yet?"
+  },
+  {
+    "id": 10792,
+    "lesson": 87,
+    "zh": "不，还没有。",
+    "en": "No, not yet."
+  },
+  {
+    "id": 10793,
+    "lesson": 87,
+    "zh": "他还在这里。",
+    "en": "He's still here."
+  },
+  {
+    "id": 10794,
+    "lesson": 87,
+    "zh": "他明天要搬家。",
+    "en": "He's going to move tomorrow."
+  },
+  {
+    "id": 10795,
+    "lesson": 87,
+    "zh": "什么时候？明天早上？",
+    "en": "When?Tomorrow morning?"
+  },
+  {
+    "id": 10796,
+    "lesson": 87,
+    "zh": "不，明天下午。",
+    "en": "No.Tomorrow afternoon."
+  },
+  {
+    "id": 10797,
+    "lesson": 87,
+    "zh": "我会想念他的。",
+    "en": "I'll miss him."
+  },
+  {
+    "id": 10798,
+    "lesson": 87,
+    "zh": "他一直是个好邻居。",
+    "en": "He has always been a good neighbour."
+  },
+  {
+    "id": 10799,
+    "lesson": 87,
+    "zh": "他是一个非常好的人。",
+    "en": "He's a very nice person."
+  },
+  {
+    "id": 10800,
+    "lesson": 87,
+    "zh": "我们都会想念他的。",
+    "en": "We'll all miss him."
+  },
+  {
+    "id": 10801,
+    "lesson": 87,
+    "zh": "新人什么时候搬进这所房子？",
+    "en": "When will the new people move into this house?"
+  },
+  {
+    "id": 10802,
+    "lesson": 87,
+    "zh": "我认为他们会搬进来",
+    "en": "I think that they'll move in"
+  },
+  {
+    "id": 10803,
+    "lesson": 87,
+    "zh": "后天。",
+    "en": "the day after tomorrow."
+  },
+  {
+    "id": 10804,
+    "lesson": 87,
+    "zh": "今天你会见 lan 吗， Jenny？",
+    "en": "Will you see lan today, Jenny?"
+  },
+  {
+    "id": 10805,
+    "lesson": 87,
+    "zh": "是的，我会。",
+    "en": "Yes.I will."
+  },
+  {
+    "id": 10806,
+    "lesson": 87,
+    "zh": "请代我向他问好。",
+    "en": "Please give him my regards."
+  },
+  {
+    "id": 10807,
+    "lesson": 87,
+    "zh": "可怜的兰！",
+    "en": "Poor lan!"
+  },
+  {
+    "id": 10808,
+    "lesson": 87,
+    "zh": "他不想离开这个家。",
+    "en": "He didn't want to leave this house."
+  },
+  {
+    "id": 10809,
+    "lesson": 87,
+    "zh": "不，他不想离开，",
+    "en": "No, he didn't want to leave,"
+  },
+  {
+    "id": 10810,
+    "lesson": 87,
+    "zh": "但他的妻子做到了！",
+    "en": "but his wife did!"
+  },
+  {
+    "id": 10811,
+    "lesson": 89,
+    "zh": "Nigel 是我们的新邻居。他是一名飞行员。",
+    "en": "Nigel is our new next-door neighbour. He's a pilot."
+  },
+  {
+    "id": 10812,
+    "lesson": 89,
+    "zh": "他曾在英国皇家空军服役。",
+    "en": "He was in the R.A.F."
+  },
+  {
+    "id": 10813,
+    "lesson": 89,
+    "zh": "他将于下个月飞往新 York。",
+    "en": "He will fly to New York next month."
+  },
+  {
+    "id": 10814,
+    "lesson": 89,
+    "zh": "下个月他将飞往 Tokyo。",
+    "en": "The month after next he'll fly to Tokyo."
+  },
+  {
+    "id": 10815,
+    "lesson": 89,
+    "zh": "目前，他在 Madrid。",
+    "en": "At the moment, he's in Madrid."
+  },
+  {
+    "id": 10816,
+    "lesson": 89,
+    "zh": "他一周前飞往西班牙。",
+    "en": "He flew to Spain a week ago."
+  },
+  {
+    "id": 10817,
+    "lesson": 89,
+    "zh": "他将在下周返回伦敦。",
+    "en": "He'll return to London the week after next."
+  },
+  {
+    "id": 10818,
+    "lesson": 89,
+    "zh": "他才四十一岁，就已经是",
+    "en": "He's only forty-one years old, and he has already been"
+  },
+  {
+    "id": 10819,
+    "lesson": 89,
+    "zh": "几乎世界上每个国家。",
+    "en": "to nearly every country in the world."
+  },
+  {
+    "id": 10820,
+    "lesson": 89,
+    "zh": "Nigel 是一个非常幸运的人。",
+    "en": "Nigel is a very lucky man."
+  },
+  {
+    "id": 10821,
+    "lesson": 89,
+    "zh": "但他的妻子就不太幸运了。",
+    "en": "But his wife isn't very lucky."
+  },
+  {
+    "id": 10822,
+    "lesson": 89,
+    "zh": "她平时都呆在家里！",
+    "en": "She usually stays at home!"
+  },
+  {
+    "id": 10823,
+    "lesson": 89,
+    "zh": "3 他才四十一岁，却...",
+    "en": "3 He is only forty-one years old, and he has..."
+  },
+  {
+    "id": 10824,
+    "lesson": 89,
+    "zh": "Athens",
+    "en": "Athens"
+  },
+  {
+    "id": 10825,
+    "lesson": 89,
+    "zh": "伦敦",
+    "en": "London"
+  },
+  {
+    "id": 10826,
+    "lesson": 89,
+    "zh": "Rome",
+    "en": "Rome"
+  },
+  {
+    "id": 10827,
+    "lesson": 89,
+    "zh": "Beijing",
+    "en": "Beijing"
+  },
+  {
+    "id": 10828,
+    "lesson": 89,
+    "zh": "Madrid",
+    "en": "Madrid"
+  },
+  {
+    "id": 10829,
+    "lesson": 89,
+    "zh": "Seoul",
+    "en": "Seoul"
+  },
+  {
+    "id": 10830,
+    "lesson": 89,
+    "zh": "Berlin",
+    "en": "Berlin"
+  },
+  {
+    "id": 10831,
+    "lesson": 89,
+    "zh": "Moscow",
+    "en": "Moscow"
+  },
+  {
+    "id": 10832,
+    "lesson": 89,
+    "zh": "Stockholm",
+    "en": "Stockholm"
+  },
+  {
+    "id": 10833,
+    "lesson": 89,
+    "zh": "Bombay",
+    "en": "Bombay"
+  },
+  {
+    "id": 10834,
+    "lesson": 89,
+    "zh": "新 York",
+    "en": "New York"
+  },
+  {
+    "id": 10835,
+    "lesson": 89,
+    "zh": "Sydney",
+    "en": "Sydney"
+  },
+  {
+    "id": 10836,
+    "lesson": 89,
+    "zh": "Geneva",
+    "en": "Geneva"
+  },
+  {
+    "id": 10837,
+    "lesson": 89,
+    "zh": "巴黎",
+    "en": "Paris"
+  },
+  {
+    "id": 10838,
+    "lesson": 89,
+    "zh": "Tokyo",
+    "en": "Tokyo"
+  },
+  {
+    "id": 10839,
+    "lesson": 91,
+    "zh": "为什么 George 和 Ken 错过了火车？",
+    "en": "Why did George and Ken miss the train?"
+  },
+  {
+    "id": 10840,
+    "lesson": 91,
+    "zh": "请 Two 提供返回伦敦的机票。",
+    "en": "Two return tickets to London, please."
+  },
+  {
+    "id": 10841,
+    "lesson": 91,
+    "zh": "下一趟火车几点出发？ ATTENDANT：八点十九分。",
+    "en": "What time will the next train leave? ATTENDANT: At nineteen minutes past eight."
+  },
+  {
+    "id": 10842,
+    "lesson": 91,
+    "zh": "哪个平台？",
+    "en": "Which platform?"
+  },
+  {
+    "id": 10843,
+    "lesson": 91,
+    "zh": "平台 Two。",
+    "en": "Platform Two."
+  },
+  {
+    "id": 10844,
+    "lesson": 91,
+    "zh": "Over 桥。",
+    "en": "Over the bridge."
+  },
+  {
+    "id": 10845,
+    "lesson": 91,
+    "zh": "下一趟火车几点出发？",
+    "en": "What time will the next train leave?"
+  },
+  {
+    "id": 10846,
+    "lesson": 91,
+    "zh": "八点十九分。",
+    "en": "At eight nineteen."
+  },
+  {
+    "id": 10847,
+    "lesson": 91,
+    "zh": "我们有充足的时间。",
+    "en": "We've got plenty of time."
+  },
+  {
+    "id": 10848,
+    "lesson": 91,
+    "zh": "离八点只有三分钟了。",
+    "en": "It's only three minutes to eight."
+  },
+  {
+    "id": 10849,
+    "lesson": 91,
+    "zh": "我们去喝一杯吧。",
+    "en": "Let's go and have a drink."
+  },
+  {
+    "id": 10850,
+    "lesson": 91,
+    "zh": "有一个酒吧",
+    "en": "There's a bar"
+  },
+  {
+    "id": 10851,
+    "lesson": 91,
+    "zh": "车站隔壁。",
+    "en": "next door to the station."
+  },
+  {
+    "id": 10852,
+    "lesson": 91,
+    "zh": "我们有更好的",
+    "en": "We had better"
+  },
+  {
+    "id": 10853,
+    "lesson": 91,
+    "zh": "现在回车站吧， Ken。",
+    "en": "go back to the station now, Ken."
+  },
+  {
+    "id": 10854,
+    "lesson": 91,
+    "zh": "Tickets，请。",
+    "en": "Tickets, please."
+  },
+  {
+    "id": 10855,
+    "lesson": 91,
+    "zh": "我们想要抓住",
+    "en": "We want to catch"
+  },
+  {
+    "id": 10856,
+    "lesson": 91,
+    "zh": "八点十九到伦敦。",
+    "en": "the eight nineteen to London."
+  },
+  {
+    "id": 10857,
+    "lesson": 91,
+    "zh": "你刚刚错过了！",
+    "en": "You've just missed it!"
+  },
+  {
+    "id": 10858,
+    "lesson": 91,
+    "zh": "什么！",
+    "en": "What!"
+  },
+  {
+    "id": 10859,
+    "lesson": 91,
+    "zh": "现在才八点十五分。",
+    "en": "It's only eight fifteen."
+  },
+  {
+    "id": 10860,
+    "lesson": 91,
+    "zh": "对不起，先生。",
+    "en": "I'm sorry, sir."
+  },
+  {
+    "id": 10861,
+    "lesson": 91,
+    "zh": "那个钟慢了十分钟。",
+    "en": "That clock's ten minutes slow."
+  },
+  {
+    "id": 10862,
+    "lesson": 91,
+    "zh": "下一班火车什么时候？",
+    "en": "When's the next train?"
+  },
+  {
+    "id": 10863,
+    "lesson": 91,
+    "zh": "五小时后！",
+    "en": "In five hours'time!"
+  },
+  {
+    "id": 10864,
+    "lesson": 93,
+    "zh": "我留下了一个行李箱",
+    "en": "I left a suitcase"
+  },
+  {
+    "id": 10865,
+    "lesson": 93,
+    "zh": "在去伦敦的火车上",
+    "en": "on the train to London"
+  },
+  {
+    "id": 10866,
+    "lesson": 93,
+    "zh": "日前。",
+    "en": "the other day."
+  },
+  {
+    "id": 10867,
+    "lesson": 93,
+    "zh": "先生，您能描述一下吗？",
+    "en": "Can you describe it, sir?"
+  },
+  {
+    "id": 10868,
+    "lesson": 93,
+    "zh": "这是一个蓝色的小盒子",
+    "en": "It's a small blue case"
+  },
+  {
+    "id": 10869,
+    "lesson": 93,
+    "zh": "而且它有拉链。",
+    "en": "and it's got a zip."
+  },
+  {
+    "id": 10870,
+    "lesson": 93,
+    "zh": "手柄上有一个标签",
+    "en": "There's a label on the handle"
+  },
+  {
+    "id": 10871,
+    "lesson": 93,
+    "zh": "上面有我的名字和地址。",
+    "en": "with my name and address on it."
+  },
+  {
+    "id": 10872,
+    "lesson": 93,
+    "zh": "这个案子是你的吗？",
+    "en": "Is this case yours?"
+  },
+  {
+    "id": 10873,
+    "lesson": 93,
+    "zh": "不，那不是我的。",
+    "en": "No, that's not mine."
+  },
+  {
+    "id": 10874,
+    "lesson": 93,
+    "zh": "这个呢？",
+    "en": "What about this one?"
+  },
+  {
+    "id": 10875,
+    "lesson": 93,
+    "zh": "这个有标签。",
+    "en": "This one's got a label."
+  },
+  {
+    "id": 10876,
+    "lesson": 93,
+    "zh": "让我看看。",
+    "en": "Let me see it."
+  },
+  {
+    "id": 10877,
+    "lesson": 93,
+    "zh": "你的名字和地址是什么？ MR。 HALL : David Hall ,",
+    "en": "What's your name and address? MR.HALL: David Hall,"
+  },
+  {
+    "id": 10878,
+    "lesson": 93,
+    "zh": "桥街83号。",
+    "en": "83, Bridge Street."
+  },
+  {
+    "id": 10879,
+    "lesson": 93,
+    "zh": "这是正确的。",
+    "en": "That's right."
+  },
+  {
+    "id": 10880,
+    "lesson": 93,
+    "zh": "DN Hall，",
+    "en": "D.N.Hall,"
+  },
+  {
+    "id": 10881,
+    "lesson": 93,
+    "zh": "桥街83号。",
+    "en": "83, Bridge Street."
+  },
+  {
+    "id": 10882,
+    "lesson": 93,
+    "zh": "Three 英镑五十便士，请。 MR。 HALL：给你。",
+    "en": "Three pounds fifty pence, please. MR.HALL: Here you are."
+  },
+  {
+    "id": 10883,
+    "lesson": 93,
+    "zh": "谢谢。",
+    "en": "Thank you."
+  },
+  {
+    "id": 10884,
+    "lesson": 93,
+    "zh": "Hey！",
+    "en": "Hey!"
+  },
+  {
+    "id": 10885,
+    "lesson": 93,
+    "zh": "怎么了？",
+    "en": "What's the matter?"
+  },
+  {
+    "id": 10886,
+    "lesson": 93,
+    "zh": "这个案子不属于我！",
+    "en": "This case doesn't belong to me!"
+  },
+  {
+    "id": 10887,
+    "lesson": 93,
+    "zh": "你给了我错误的案例！",
+    "en": "You've given me the wrong case!"
+  },
+  {
+    "id": 10888,
+    "lesson": 95,
+    "zh": "噢！",
+    "en": "Ow!"
+  },
+  {
+    "id": 10889,
+    "lesson": 95,
+    "zh": "怎么了， Andy？",
+    "en": "What's the matter, Andy?"
+  },
+  {
+    "id": 10890,
+    "lesson": 95,
+    "zh": "我滑倒了，摔下了楼。",
+    "en": "I slipped and fell downstairs."
+  },
+  {
+    "id": 10891,
+    "lesson": 95,
+    "zh": "你伤害过自己吗？",
+    "en": "Have you hurt yourself?"
+  },
+  {
+    "id": 10892,
+    "lesson": 95,
+    "zh": "是的，我有。",
+    "en": "Yes, I have."
+  },
+  {
+    "id": 10893,
+    "lesson": 95,
+    "zh": "我认为",
+    "en": "I think that"
+  },
+  {
+    "id": 10894,
+    "lesson": 95,
+    "zh": "我的背受伤了。",
+    "en": "I've hurt my back."
+  },
+  {
+    "id": 10895,
+    "lesson": 95,
+    "zh": "Try 站起来。",
+    "en": "Try and stand up."
+  },
+  {
+    "id": 10896,
+    "lesson": 95,
+    "zh": "你能站起来吗？",
+    "en": "Can you stand up?"
+  },
+  {
+    "id": 10897,
+    "lesson": 95,
+    "zh": "这里。",
+    "en": "Here."
+  },
+  {
+    "id": 10898,
+    "lesson": 95,
+    "zh": "让我来帮助你。",
+    "en": "Let me help you."
+  },
+  {
+    "id": 10899,
+    "lesson": 95,
+    "zh": "对不起， Lucy。",
+    "en": "I’m sorry, Lucy."
+  },
+  {
+    "id": 10900,
+    "lesson": 95,
+    "zh": "恐怕",
+    "en": "I'm afraid that"
+  },
+  {
+    "id": 10901,
+    "lesson": 95,
+    "zh": "我起不来。",
+    "en": "I can't get up."
+  },
+  {
+    "id": 10902,
+    "lesson": 95,
+    "zh": "我认为",
+    "en": "I think that"
+  },
+  {
+    "id": 10903,
+    "lesson": 95,
+    "zh": "医生最好去看你。我会打电话给 Carter 博士。",
+    "en": "the doctor had better see you. I'll phone Dr.Carter."
+  },
+  {
+    "id": 10904,
+    "lesson": 95,
+    "zh": "医生说他马上就来。我确信",
+    "en": "The doctor says that he will come at once. I'm sure that"
+  },
+  {
+    "id": 10905,
+    "lesson": 95,
+    "zh": "你需要一张 X 光片， Andy。",
+    "en": "you need an X-ray, Andy."
+  },
+  {
+    "id": 10906,
+    "lesson": 97,
+    "zh": "请给我 Read Jimmy 的卡片，佩妮。",
+    "en": "Read Jimmy's card to me please, Penny."
+  },
+  {
+    "id": 10907,
+    "lesson": 97,
+    "zh": "“我刚到苏格兰",
+    "en": "'I have just arrived in Scotland"
+  },
+  {
+    "id": 10908,
+    "lesson": 97,
+    "zh": "我住在 Youth Hostel。",
+    "en": "and I'm staying at a Youth Hostel.'"
+  },
+  {
+    "id": 10909,
+    "lesson": 97,
+    "zh": "呃？",
+    "en": "Eh?"
+  },
+  {
+    "id": 10910,
+    "lesson": 97,
+    "zh": "他说他刚到苏格兰。",
+    "en": "He says he's just arrived in Scotland."
+  },
+  {
+    "id": 10911,
+    "lesson": 97,
+    "zh": "他说他住在 Youth Hostel。你知道他是 Y.H.A. 的成员。",
+    "en": "He says he's staying at a Youth Hostel. You know he's a member of the Y.H.A."
+  },
+  {
+    "id": 10912,
+    "lesson": 97,
+    "zh": "什么？",
+    "en": "The what?"
+  },
+  {
+    "id": 10913,
+    "lesson": 97,
+    "zh": "Y.H.A.，妈妈。",
+    "en": "The Y.H.A., Mum."
+  },
+  {
+    "id": 10914,
+    "lesson": 97,
+    "zh": "Youth Hostels Association。",
+    "en": "The Youth Hostels Association."
+  },
+  {
+    "id": 10915,
+    "lesson": 97,
+    "zh": "他还说什么？",
+    "en": "What else does he say?"
+  },
+  {
+    "id": 10916,
+    "lesson": 97,
+    "zh": "“我很快就会写信。",
+    "en": "'I'll write a letter soon."
+  },
+  {
+    "id": 10917,
+    "lesson": 97,
+    "zh": "我希望你们一切都好。",
+    "en": "I hope you are all well.'"
+  },
+  {
+    "id": 10918,
+    "lesson": 97,
+    "zh": "什么？",
+    "en": "What?"
+  },
+  {
+    "id": 10919,
+    "lesson": 97,
+    "zh": "Speak 向上，佩妮。",
+    "en": "Speak up, Penny."
+  },
+  {
+    "id": 10920,
+    "lesson": 97,
+    "zh": "恐怕我听不到你说话。",
+    "en": "I'm afraid I can't hear you."
+  },
+  {
+    "id": 10921,
+    "lesson": 97,
+    "zh": "他说他很快就会写信。",
+    "en": "He says he'll write a letter soon."
+  },
+  {
+    "id": 10922,
+    "lesson": 97,
+    "zh": "他希望我们一切都好。",
+    "en": "He hopes we are all well."
+  },
+  {
+    "id": 10923,
+    "lesson": 97,
+    "zh": "“爱， Jimmy。”",
+    "en": "'Love, Jimmy.'"
+  },
+  {
+    "id": 10924,
+    "lesson": 97,
+    "zh": "这就是全部吗？",
+    "en": "Is that all?"
+  },
+  {
+    "id": 10925,
+    "lesson": 97,
+    "zh": "他话不多，是吗？",
+    "en": "He doesn't say very much, does he?"
+  },
+  {
+    "id": 10926,
+    "lesson": 97,
+    "zh": "他不能写太多",
+    "en": "He can't write very much"
+  },
+  {
+    "id": 10927,
+    "lesson": 97,
+    "zh": "在卡片上，妈妈。",
+    "en": "on a card, Mum."
+  },
+  {
+    "id": 10928,
+    "lesson": 97,
+    "zh": "1 “我刚刚抵达苏格兰...a Youth Hostel。”",
+    "en": "1 \"I have just arrived in Scotland...a Youth Hostel.\""
+  },
+  {
+    "id": 10929,
+    "lesson": 97,
+    "zh": "2 Y.H.A.=Youth Hostels Association",
+    "en": "2 the Y.H.A.=the Youth Hostels Association"
+  },
+  {
+    "id": 10930,
+    "lesson": 97,
+    "zh": "5 他话不多，是吗？",
+    "en": "5 He doesn't say very much, does he?"
+  },
+  {
+    "id": 10931,
+    "lesson": 97,
+    "zh": "是感觉",
+    "en": "is/are feel(s)"
+  },
+  {
+    "id": 10932,
+    "lesson": 97,
+    "zh": "有/有（得到）",
+    "en": "has/have (got)"
+  },
+  {
+    "id": 10933,
+    "lesson": 97,
+    "zh": "需要 想要",
+    "en": "need(s) want(s)"
+  },
+  {
+    "id": 10934,
+    "lesson": 97,
+    "zh": "能",
+    "en": "can"
+  },
+  {
+    "id": 10935,
+    "lesson": 97,
+    "zh": "必须",
+    "en": "must"
+  },
+  {
+    "id": 10936,
+    "lesson": 97,
+    "zh": "将要",
+    "en": "will"
+  },
+  {
+    "id": 10937,
+    "lesson": 97,
+    "zh": "疲劳的",
+    "en": "tired"
+  },
+  {
+    "id": 10938,
+    "lesson": 97,
+    "zh": "感冒",
+    "en": "a cold"
+  },
+  {
+    "id": 10939,
+    "lesson": 97,
+    "zh": "理发",
+    "en": "a haircut"
+  },
+  {
+    "id": 10940,
+    "lesson": 97,
+    "zh": "等待",
+    "en": "wait"
+  },
+  {
+    "id": 10941,
+    "lesson": 97,
+    "zh": "渴",
+    "en": "thirsty"
+  },
+  {
+    "id": 10942,
+    "lesson": 97,
+    "zh": "头痛",
+    "en": "a headache"
+  },
+  {
+    "id": 10943,
+    "lesson": 97,
+    "zh": "许可证",
+    "en": "a licence"
+  },
+  {
+    "id": 10944,
+    "lesson": 97,
+    "zh": "抓住",
+    "en": "catch"
+  },
+  {
+    "id": 10945,
+    "lesson": 97,
+    "zh": "寒冷的",
+    "en": "cold"
+  },
+  {
+    "id": 10946,
+    "lesson": 97,
+    "zh": "耳痛",
+    "en": "an earache"
+  },
+  {
+    "id": 10947,
+    "lesson": 97,
+    "zh": "X 光检查",
+    "en": "an X-ray"
+  },
+  {
+    "id": 10948,
+    "lesson": 97,
+    "zh": "维修",
+    "en": "repair"
+  },
+  {
+    "id": 10949,
+    "lesson": 97,
+    "zh": "患病的",
+    "en": "ill"
+  },
+  {
+    "id": 10950,
+    "lesson": 97,
+    "zh": "牙痛",
+    "en": "a toothache"
+  },
+  {
+    "id": 10951,
+    "lesson": 97,
+    "zh": "一些钱",
+    "en": "some money"
+  },
+  {
+    "id": 10952,
+    "lesson": 97,
+    "zh": "卖",
+    "en": "sell"
+  },
+  {
+    "id": 10953,
+    "lesson": 97,
+    "zh": "Example：",
+    "en": "Example:"
+  },
+  {
+    "id": 10954,
+    "lesson": 97,
+    "zh": "他正在喝他的牛奶。",
+    "en": "He is drinking his milk."
+  },
+  {
+    "id": 10955,
+    "lesson": 97,
+    "zh": "何阿一和已经泡牛奶了。",
+    "en": "He ayihe has dunk his milk."
+  },
+  {
+    "id": 10956,
+    "lesson": 97,
+    "zh": "1 她正在关门。",
+    "en": "1 She is shutting the door."
+  },
+  {
+    "id": 10957,
+    "lesson": 97,
+    "zh": "2 他正在穿上外套。",
+    "en": "2 He is putting on his coat."
+  },
+  {
+    "id": 10958,
+    "lesson": 97,
+    "zh": "3 他正在读这本杂志。",
+    "en": "3 He is reading this magazine."
+  },
+  {
+    "id": 10959,
+    "lesson": 97,
+    "zh": "4 他们正在和老板说话。",
+    "en": "4 They are speaking to the boss."
+  },
+  {
+    "id": 10960,
+    "lesson": 97,
+    "zh": "5 太阳正在升起。",
+    "en": "5 The sun is rising."
+  },
+  {
+    "id": 10961,
+    "lesson": 97,
+    "zh": "B 看看这张表。",
+    "en": "B Look at this table."
+  },
+  {
+    "id": 10962,
+    "lesson": 97,
+    "zh": "现在写九个句子。",
+    "en": "Now write nine sentences."
+  },
+  {
+    "id": 10963,
+    "lesson": 97,
+    "zh": "Example：",
+    "en": "Example:"
+  },
+  {
+    "id": 10964,
+    "lesson": 97,
+    "zh": "他表示他感觉不舒服",
+    "en": "He rays he feeliill"
+  },
+  {
+    "id": 10965,
+    "lesson": 99,
+    "zh": "考试怎么样， Richard？",
+    "en": "How was the exam, Richard?"
+  },
+  {
+    "id": 10966,
+    "lesson": 99,
+    "zh": "还不错。",
+    "en": "Not too bad."
+  },
+  {
+    "id": 10967,
+    "lesson": 99,
+    "zh": "我想我通过了",
+    "en": "I think I passed in"
+  },
+  {
+    "id": 10968,
+    "lesson": 99,
+    "zh": "英语和 Mathematics。",
+    "en": "English and Mathematics."
+  },
+  {
+    "id": 10969,
+    "lesson": 99,
+    "zh": "问题很简单。",
+    "en": "The questions were very easy."
+  },
+  {
+    "id": 10970,
+    "lesson": 99,
+    "zh": "你呢， Gary？",
+    "en": "How about you, Gary?"
+  },
+  {
+    "id": 10971,
+    "lesson": 99,
+    "zh": "英语和 Maths 论文",
+    "en": "The English and Maths papers"
+  },
+  {
+    "id": 10972,
+    "lesson": 99,
+    "zh": "对我来说还不够容易。",
+    "en": "weren't easy enough for me."
+  },
+  {
+    "id": 10973,
+    "lesson": 99,
+    "zh": "我希望我没有失败。",
+    "en": "I hope I haven't failed."
+  },
+  {
+    "id": 10974,
+    "lesson": 99,
+    "zh": "我想我的法国报纸没通过。",
+    "en": "I think I failed the French paper."
+  },
+  {
+    "id": 10975,
+    "lesson": 99,
+    "zh": "我可以回答其中十六个问题。他们很容易。",
+    "en": "I could answer sixteen of the questions. They were very easy."
+  },
+  {
+    "id": 10976,
+    "lesson": 99,
+    "zh": "但其余的我无法回答。",
+    "en": "But I couldn't answer the rest."
+  },
+  {
+    "id": 10977,
+    "lesson": 99,
+    "zh": "它们对我来说太难了。",
+    "en": "They were too difficult for me."
+  },
+  {
+    "id": 10978,
+    "lesson": 99,
+    "zh": "法语考试很糟糕，不是吗？",
+    "en": "French tests are awful, aren't they?"
+  },
+  {
+    "id": 10979,
+    "lesson": 99,
+    "zh": "我讨厌他们。",
+    "en": "I hate them."
+  },
+  {
+    "id": 10980,
+    "lesson": 99,
+    "zh": "我确信我的分数很低。",
+    "en": "I'm sure I've got a low mark."
+  },
+  {
+    "id": 10981,
+    "lesson": 99,
+    "zh": "噢，加油！",
+    "en": "Oh, cheer up!"
+  },
+  {
+    "id": 10982,
+    "lesson": 99,
+    "zh": "也许我们做得还不错。",
+    "en": "Perhaps we didn't do too badly."
+  },
+  {
+    "id": 10983,
+    "lesson": 99,
+    "zh": "我旁边的那个人",
+    "en": "The guy next to me"
+  },
+  {
+    "id": 10984,
+    "lesson": 99,
+    "zh": "写下了他的名字",
+    "en": "wrote his name"
+  },
+  {
+    "id": 10985,
+    "lesson": 99,
+    "zh": "在纸张的顶部。",
+    "en": "at the top of the paper."
+  },
+  {
+    "id": 10986,
+    "lesson": 99,
+    "zh": "什么事？",
+    "en": "Yes?"
+  },
+  {
+    "id": 10987,
+    "lesson": 99,
+    "zh": "然后他坐在那里",
+    "en": "Then he sat there"
+  },
+  {
+    "id": 10988,
+    "lesson": 99,
+    "zh": "并看了三个小时！",
+    "en": "and looked at it for three hours!"
+  },
+  {
+    "id": 10989,
+    "lesson": 99,
+    "zh": "他一个字都没写！",
+    "en": "He didn't write a word!"
+  },
+  {
+    "id": 10990,
+    "lesson": 101,
+    "zh": "Sandra、 Bob 在哪里？",
+    "en": "Where's Sandra, Bob?"
+  },
+  {
+    "id": 10991,
+    "lesson": 101,
+    "zh": "我想要她。",
+    "en": "I want her."
+  },
+  {
+    "id": 10992,
+    "lesson": 101,
+    "zh": "你想和她说话吗？",
+    "en": "Do you want to speak to her?"
+  },
+  {
+    "id": 10993,
+    "lesson": 101,
+    "zh": "是的，我愿意。",
+    "en": "Yes, I do."
+  },
+  {
+    "id": 10994,
+    "lesson": 101,
+    "zh": "我想让她来我的办公室。",
+    "en": "I want her to come to my office."
+  },
+  {
+    "id": 10995,
+    "lesson": 101,
+    "zh": "告诉她马上来。",
+    "en": "Tell her to come at once."
+  },
+  {
+    "id": 10996,
+    "lesson": 101,
+    "zh": "你想见我吗？",
+    "en": "Did you want to see me?"
+  },
+  {
+    "id": 10997,
+    "lesson": 101,
+    "zh": "啊，是的， Sandra。",
+    "en": "Ah, yes, Sandra."
+  },
+  {
+    "id": 10998,
+    "lesson": 101,
+    "zh": "“聪明”这个词怎么拼？",
+    "en": "How do you spell 'intelligent'?"
+  },
+  {
+    "id": 10999,
+    "lesson": 101,
+    "zh": "你能告诉我吗？",
+    "en": "Can you tell me?"
+  },
+  {
+    "id": 11000,
+    "lesson": 101,
+    "zh": "聪明的。",
+    "en": "I-N-T-E-L-L-I-G-E-N-T."
+  },
+  {
+    "id": 11001,
+    "lesson": 101,
+    "zh": "这是正确的。",
+    "en": "That's right."
+  },
+  {
+    "id": 11002,
+    "lesson": 101,
+    "zh": "你只输入了一个“L”。这封信充满了错误。",
+    "en": "You've typed it with only one 'L’. This letter's full of mistakes."
+  },
+  {
+    "id": 11003,
+    "lesson": 101,
+    "zh": "我要你再输入一次。",
+    "en": "I want you to type it again."
+  },
+  {
+    "id": 11004,
+    "lesson": 101,
+    "zh": "是的，我会这么做。",
+    "en": "Yes, I'll do that."
+  },
+  {
+    "id": 11005,
+    "lesson": 101,
+    "zh": "对此我很抱歉。",
+    "en": "I'm sorry about that."
+  },
+  {
+    "id": 11006,
+    "lesson": 101,
+    "zh": "这是给你的小礼物。",
+    "en": "And here's a little present for you."
+  },
+  {
+    "id": 11007,
+    "lesson": 101,
+    "zh": "它是什么？",
+    "en": "What is it?"
+  },
+  {
+    "id": 11008,
+    "lesson": 101,
+    "zh": "这是一本字典。",
+    "en": "It's a dictionary."
+  },
+  {
+    "id": 11009,
+    "lesson": 101,
+    "zh": "我希望它能帮助你。",
+    "en": "I hope it'll help you."
+  },
+  {
+    "id": 11010,
+    "lesson": 103,
+    "zh": "这位女士想要什么样的衣服？",
+    "en": "What kind of dress does the lady want?"
+  },
+  {
+    "id": 11011,
+    "lesson": 103,
+    "zh": "女士，您喜欢这件衣服吗？",
+    "en": "Do you like this dress, madam?"
+  },
+  {
+    "id": 11012,
+    "lesson": 103,
+    "zh": "我非常喜欢这个颜色。",
+    "en": "I like the colour very much."
+  },
+  {
+    "id": 11013,
+    "lesson": 103,
+    "zh": "这是一件可爱的衣服，",
+    "en": "It's a lovely dress,"
+  },
+  {
+    "id": 11014,
+    "lesson": 103,
+    "zh": "但对我来说太小了。",
+    "en": "but it's too small for me."
+  },
+  {
+    "id": 11015,
+    "lesson": 103,
+    "zh": "这个呢？",
+    "en": "What about this one?"
+  },
+  {
+    "id": 11016,
+    "lesson": 103,
+    "zh": "这是一件很漂亮的衣服。",
+    "en": "It's a lovely dress."
+  },
+  {
+    "id": 11017,
+    "lesson": 103,
+    "zh": "它非常聪明。",
+    "en": "It's very smart."
+  },
+  {
+    "id": 11018,
+    "lesson": 103,
+    "zh": "现在流行短裙。",
+    "en": "Short skirts are in fashion now."
+  },
+  {
+    "id": 11019,
+    "lesson": 103,
+    "zh": "你想尝试一下吗？ LADY：好的。",
+    "en": "Would you like to try it? LADY: All right."
+  },
+  {
+    "id": 11020,
+    "lesson": 103,
+    "zh": "我担心这件绿裙子",
+    "en": "I'm afraid this green dress"
+  },
+  {
+    "id": 11021,
+    "lesson": 103,
+    "zh": "对我来说也太小了。",
+    "en": "is too small for me as well."
+  },
+  {
+    "id": 11022,
+    "lesson": 103,
+    "zh": "比蓝色的小一点。",
+    "en": "It's smaller than the blue one."
+  },
+  {
+    "id": 11023,
+    "lesson": 103,
+    "zh": "我也不喜欢这个颜色。",
+    "en": "I don't like the colour either."
+  },
+  {
+    "id": 11024,
+    "lesson": 103,
+    "zh": "它根本不适合我。",
+    "en": "It doesn't suit me at all."
+  },
+  {
+    "id": 11025,
+    "lesson": 103,
+    "zh": "我觉得蓝色的裙子更漂亮",
+    "en": "I think the blue dress is prettier."
+  },
+  {
+    "id": 11026,
+    "lesson": 103,
+    "zh": "你能告诉我吗",
+    "en": "Could you show me"
+  },
+  {
+    "id": 11027,
+    "lesson": 103,
+    "zh": "另一条蓝色连衣裙？",
+    "en": "another blue dress?"
+  },
+  {
+    "id": 11028,
+    "lesson": 103,
+    "zh": "我想要一件这样的衣服",
+    "en": "I want a dress like that one,"
+  },
+  {
+    "id": 11029,
+    "lesson": 103,
+    "zh": "但它必须是我的尺寸。",
+    "en": "but it must be my size."
+  },
+  {
+    "id": 11030,
+    "lesson": 103,
+    "zh": "恐怕我没有更大的衣服。",
+    "en": "I’m afraid I haven't got a larger dress."
+  },
+  {
+    "id": 11031,
+    "lesson": 103,
+    "zh": "这是店里最大的一件衣服。",
+    "en": "This is the largest dress in the shop."
+  },
+  {
+    "id": 11032,
+    "lesson": 105,
+    "zh": "我要煮点咖啡吗， Jane？ JANE：这是个好主意， Charlotte。",
+    "en": "Shall I make some coffee, Jane? JANE: That's a good idea, Charlotte."
+  },
+  {
+    "id": 11033,
+    "lesson": 105,
+    "zh": "准备好了。",
+    "en": "It's ready."
+  },
+  {
+    "id": 11034,
+    "lesson": 105,
+    "zh": "你想要牛奶吗？ JANE：请一点点。",
+    "en": "Do you want any milk? JANE: Just a little, please."
+  },
+  {
+    "id": 11035,
+    "lesson": 105,
+    "zh": "来点糖怎么样？",
+    "en": "What about some sugar?"
+  },
+  {
+    "id": 11036,
+    "lesson": 105,
+    "zh": "Two 茶匙？ JANE：不，比这个少。",
+    "en": "Two teaspoonfuls? JANE: No, less than that."
+  },
+  {
+    "id": 11037,
+    "lesson": 105,
+    "zh": "One 半茶匙，请。这对我来说就足够了。",
+    "en": "One and a half teaspoonfuls, please. That's enough for me."
+  },
+  {
+    "id": 11038,
+    "lesson": 105,
+    "zh": "那太好了。",
+    "en": "That was very nice."
+  },
+  {
+    "id": 11039,
+    "lesson": 105,
+    "zh": "您还想要更多吗？",
+    "en": "Would you like some more?"
+  },
+  {
+    "id": 11040,
+    "lesson": 105,
+    "zh": "是的，请。",
+    "en": "Yes, please."
+  },
+  {
+    "id": 11041,
+    "lesson": 105,
+    "zh": "我也想要一支烟。",
+    "en": "I'd like a cigarette, too."
+  },
+  {
+    "id": 11042,
+    "lesson": 105,
+    "zh": "我可以要一份吗？ CHARLOTTE：当然。",
+    "en": "May I have one? CHARLOTTE: Of course."
+  },
+  {
+    "id": 11043,
+    "lesson": 105,
+    "zh": "我想那个盒子里有一些。",
+    "en": "I think there are a few in that box."
+  },
+  {
+    "id": 11044,
+    "lesson": 105,
+    "zh": "恐怕是空的。",
+    "en": "I'm afraid it's empty."
+  },
+  {
+    "id": 11045,
+    "lesson": 105,
+    "zh": "真可惜！",
+    "en": "What a pity!"
+  },
+  {
+    "id": 11046,
+    "lesson": 105,
+    "zh": "没关系。",
+    "en": "It doesn't matter."
+  },
+  {
+    "id": 11047,
+    "lesson": 105,
+    "zh": "换一块饼干吧。",
+    "en": "Have a biscuit instead."
+  },
+  {
+    "id": 11048,
+    "lesson": 105,
+    "zh": "Eat 多抽烟，少抽烟！ JANE：这是非常好的建议！",
+    "en": "Eat more and smoke less! JANE: That's very good advice!"
+  },
+  {
+    "id": 11049,
+    "lesson": 107,
+    "zh": "Mr.Frith 可以分期购买电视吗？如何操作？",
+    "en": "Can Mr.Frith buy the television on instalments?How does it work?"
+  },
+  {
+    "id": 11050,
+    "lesson": 107,
+    "zh": "我非常喜欢这台电视。",
+    "en": "I like this television very much."
+  },
+  {
+    "id": 11051,
+    "lesson": 107,
+    "zh": "它要多少钱？",
+    "en": "How much does it cost?"
+  },
+  {
+    "id": 11052,
+    "lesson": 107,
+    "zh": "这是最贵的型号",
+    "en": "It's the most expensive model"
+  },
+  {
+    "id": 11053,
+    "lesson": 107,
+    "zh": "在商店里。",
+    "en": "in the shop."
+  },
+  {
+    "id": 11054,
+    "lesson": 107,
+    "zh": "它的价格是五百英镑。",
+    "en": "It costs five hundred pounds."
+  },
+  {
+    "id": 11055,
+    "lesson": 107,
+    "zh": "这对我们来说太贵了。",
+    "en": "That's too expensive for us."
+  },
+  {
+    "id": 11056,
+    "lesson": 107,
+    "zh": "我们付不起那么多钱。",
+    "en": "We can't afford all that money."
+  },
+  {
+    "id": 11057,
+    "lesson": 107,
+    "zh": "这个型号比较便宜",
+    "en": "This model's less expensive"
+  },
+  {
+    "id": 11058,
+    "lesson": 107,
+    "zh": "比那个。",
+    "en": "than that one."
+  },
+  {
+    "id": 11059,
+    "lesson": 107,
+    "zh": "它只有三百磅。",
+    "en": "It's only three hundred pounds."
+  },
+  {
+    "id": 11060,
+    "lesson": 107,
+    "zh": "但是，当然，",
+    "en": "But, of course,"
+  },
+  {
+    "id": 11061,
+    "lesson": 107,
+    "zh": "它不如昂贵的那么好。",
+    "en": "it's not as good as the expensive one."
+  },
+  {
+    "id": 11062,
+    "lesson": 107,
+    "zh": "我不喜欢这个模型。",
+    "en": "I don't like this model."
+  },
+  {
+    "id": 11063,
+    "lesson": 107,
+    "zh": "另一个型号更贵，但物有所值。",
+    "en": "The other model's more expensive, but it's worth the money."
+  },
+  {
+    "id": 11064,
+    "lesson": 107,
+    "zh": "我们可以分期购买吗？",
+    "en": "Can we buy it on instalments?"
+  },
+  {
+    "id": 11065,
+    "lesson": 107,
+    "zh": "当然。",
+    "en": "Of course."
+  },
+  {
+    "id": 11066,
+    "lesson": 107,
+    "zh": "您可以支付三十英镑的押金，然后每月支付十四英镑",
+    "en": "You can pay a deposit of thirty pounds, and then fourteen pounds a month"
+  },
+  {
+    "id": 11067,
+    "lesson": 107,
+    "zh": "三年了。",
+    "en": "for three years."
+  },
+  {
+    "id": 11068,
+    "lesson": 107,
+    "zh": "亲爱的，你喜欢吗？ MRS。 FRITH：我当然愿意，",
+    "en": "Do you like it, dear? MRS.FRITH: I certainly do,"
+  },
+  {
+    "id": 11069,
+    "lesson": 107,
+    "zh": "但我不喜欢这个价格。",
+    "en": "but I don't like the price."
+  },
+  {
+    "id": 11070,
+    "lesson": 107,
+    "zh": "你总是想要最好的，",
+    "en": "You always want the best,"
+  },
+  {
+    "id": 11071,
+    "lesson": 107,
+    "zh": "但我们买不起",
+    "en": "but we can't afford it"
+  },
+  {
+    "id": 11072,
+    "lesson": 107,
+    "zh": "有时您认为自己是百万富翁！",
+    "en": "Sometimes you think you're a millionaire!"
+  },
+  {
+    "id": 11073,
+    "lesson": 107,
+    "zh": "Millionaires 不要买东西",
+    "en": "Millionaires don't buy things"
+  },
+  {
+    "id": 11074,
+    "lesson": 107,
+    "zh": "分期付款！",
+    "en": "on instalments!"
+  },
+  {
+    "id": 11075,
+    "lesson": 109,
+    "zh": "Fares，拜托！",
+    "en": "Fares, please!"
+  },
+  {
+    "id": 11076,
+    "lesson": 109,
+    "zh": "Trafalgar 正方形，请。",
+    "en": "Trafalgar Square, please."
+  },
+  {
+    "id": 11077,
+    "lesson": 109,
+    "zh": "对不起，先生。",
+    "en": "I'm sorry, sir."
+  },
+  {
+    "id": 11078,
+    "lesson": 109,
+    "zh": "我不能兑换十英镑的钞票。 Haven 你没有吗",
+    "en": "I can't change a ten-pound note. Haven't you got"
+  },
+  {
+    "id": 11079,
+    "lesson": 109,
+    "zh": "有什么小变化吗？",
+    "en": "any small change?"
+  },
+  {
+    "id": 11080,
+    "lesson": 109,
+    "zh": "我身上有不小的零钱",
+    "en": "I've got no small change,"
+  },
+  {
+    "id": 11081,
+    "lesson": 109,
+    "zh": "我耽心。",
+    "en": "I'm afraid."
+  },
+  {
+    "id": 11082,
+    "lesson": 109,
+    "zh": "我会询问一些乘客。",
+    "en": "I'll ask some of the passengers."
+  },
+  {
+    "id": 11083,
+    "lesson": 109,
+    "zh": "先生，您有零钱吗？",
+    "en": "Have you any small change, sir?"
+  },
+  {
+    "id": 11084,
+    "lesson": 109,
+    "zh": "第一 PASSENGER：对不起。",
+    "en": "1st PASSENGER: I'm sorry."
+  },
+  {
+    "id": 11085,
+    "lesson": 109,
+    "zh": "我没有。",
+    "en": "I've got none."
+  },
+  {
+    "id": 11086,
+    "lesson": 109,
+    "zh": "第二个 PASSENGER：我也没有",
+    "en": "2nd PASSENGER: I haven't got any either"
+  },
+  {
+    "id": 11087,
+    "lesson": 109,
+    "zh": "你能改变吗",
+    "en": "Can you change"
+  },
+  {
+    "id": 11088,
+    "lesson": 109,
+    "zh": "女士，这张十英镑的钞票？",
+    "en": "this ten-pound note, madam?"
+  },
+  {
+    "id": 11089,
+    "lesson": 109,
+    "zh": "第三个 PASSENGER：恐怕我不能。",
+    "en": "3rd PASSENGER: I'm afraid I can't."
+  },
+  {
+    "id": 11090,
+    "lesson": 109,
+    "zh": "第四 PASSENGER：我也不能。",
+    "en": "4th PASSENGER: Neither can I."
+  },
+  {
+    "id": 11091,
+    "lesson": 109,
+    "zh": "非常抱歉，先生。",
+    "en": "I'm very sorry, sir."
+  },
+  {
+    "id": 11092,
+    "lesson": 109,
+    "zh": "你必须下车。",
+    "en": "You must get off the bus."
+  },
+  {
+    "id": 11093,
+    "lesson": 109,
+    "zh": "我们的乘客都没有",
+    "en": "None of our passengers"
+  },
+  {
+    "id": 11094,
+    "lesson": 109,
+    "zh": "可以更改此注释。",
+    "en": "can change this note."
+  },
+  {
+    "id": 11095,
+    "lesson": 109,
+    "zh": "他们都是百万富翁！",
+    "en": "They're all millionaires!"
+  },
+  {
+    "id": 11096,
+    "lesson": 109,
+    "zh": "Except 我们。",
+    "en": "Except us."
+  },
+  {
+    "id": 11097,
+    "lesson": 109,
+    "zh": "1st TRAMP：我有一些零钱。",
+    "en": "1st TRAMP: I've got some small change."
+  },
+  {
+    "id": 11098,
+    "lesson": 109,
+    "zh": "第二个 TRAMP：我也是。",
+    "en": "2nd TRAMP: So have I."
+  },
+  {
+    "id": 11099,
+    "lesson": 111,
+    "zh": "Isn 家里没人吗？",
+    "en": "Isn't there anyone at home?"
+  },
+  {
+    "id": 11100,
+    "lesson": 111,
+    "zh": "我会再敲一次， Helen。",
+    "en": "I'llknock again, Helen."
+  },
+  {
+    "id": 11101,
+    "lesson": 111,
+    "zh": "一切都很安静。",
+    "en": "Everything's very quiet."
+  },
+  {
+    "id": 11102,
+    "lesson": 111,
+    "zh": "我确信家里没人。",
+    "en": "I'm sure there's no one at home."
+  },
+  {
+    "id": 11103,
+    "lesson": 111,
+    "zh": "但这是不可能的。",
+    "en": "But that's impossible."
+  },
+  {
+    "id": 11104,
+    "lesson": 111,
+    "zh": "Carol 和 Tom 邀请我们共进午餐。透过窗户看看。",
+    "en": "Carol and Tom invited us to lunch. Look through the window."
+  },
+  {
+    "id": 11105,
+    "lesson": 111,
+    "zh": "你能看到什么吗？",
+    "en": "Can you see anything?"
+  },
+  {
+    "id": 11106,
+    "lesson": 111,
+    "zh": "什么都没有。",
+    "en": "Nothing at all."
+  },
+  {
+    "id": 11107,
+    "lesson": 111,
+    "zh": "我们试试走后门吧。",
+    "en": "Let's try the back door."
+  },
+  {
+    "id": 11108,
+    "lesson": 111,
+    "zh": "看！大家都在花园里。",
+    "en": "Look!Everyone's in the garden."
+  },
+  {
+    "id": 11109,
+    "lesson": 111,
+    "zh": "Hello、 Helen。 Hello、 Jim。",
+    "en": "Hello, Helen.Hello, Jim."
+  },
+  {
+    "id": 11110,
+    "lesson": 111,
+    "zh": "每个人都想吃午饭",
+    "en": "Everybody wants to have lunch"
+  },
+  {
+    "id": 11111,
+    "lesson": 111,
+    "zh": "在花园里。",
+    "en": "in the garden."
+  },
+  {
+    "id": 11112,
+    "lesson": 111,
+    "zh": "这里又好又温暖。",
+    "en": "It's nice and warm out here."
+  },
+  {
+    "id": 11113,
+    "lesson": 111,
+    "zh": "过来喝点东西吧。",
+    "en": "Come and have something to drink."
+  },
+  {
+    "id": 11114,
+    "lesson": 111,
+    "zh": "谢谢， Carol。",
+    "en": "Thanks, Carol."
+  },
+  {
+    "id": 11115,
+    "lesson": 111,
+    "zh": "请给我一杯啤酒好吗？ CAROL：啤酒？",
+    "en": "May I have a glass of beer please? CAROL: Beer?"
+  },
+  {
+    "id": 11116,
+    "lesson": 111,
+    "zh": "没有了。",
+    "en": "There's none left."
+  },
+  {
+    "id": 11117,
+    "lesson": 111,
+    "zh": "你可以喝点柠檬水。",
+    "en": "You can have some lemonade."
+  },
+  {
+    "id": 11118,
+    "lesson": 111,
+    "zh": "Lemonade！",
+    "en": "Lemonade!"
+  },
+  {
+    "id": 11119,
+    "lesson": 111,
+    "zh": "Don 不要相信她， Jim。",
+    "en": "Don't believe her, Jim."
+  },
+  {
+    "id": 11120,
+    "lesson": 111,
+    "zh": "她只是在开玩笑。",
+    "en": "She's only joking."
+  },
+  {
+    "id": 11121,
+    "lesson": 111,
+    "zh": "喝点啤酒吧！",
+    "en": "Have some beer!"
+  },
+  {
+    "id": 11122,
+    "lesson": 113,
+    "zh": "她最后一句的‘改变’是什么意思？",
+    "en": "What does she mean by'change'in the last sentence?"
+  },
+  {
+    "id": 11123,
+    "lesson": 113,
+    "zh": "当我丈夫去的时候",
+    "en": "When my husband was going"
+  },
+  {
+    "id": 11124,
+    "lesson": 113,
+    "zh": "今天早上走进餐厅时，他把一些硬币掉在了地板上。",
+    "en": "into the dining room this morning, he dropped some coins on the floor."
+  },
+  {
+    "id": 11125,
+    "lesson": 113,
+    "zh": "到处都是硬币。我们寻找他们，",
+    "en": "There were coins everywhere. We looked for them,"
+  },
+  {
+    "id": 11126,
+    "lesson": 113,
+    "zh": "但我们无法全部找到。",
+    "en": "but we could not find them all."
+  },
+  {
+    "id": 11127,
+    "lesson": 113,
+    "zh": "当我们吃早餐时，我们的小男孩， Tommy，",
+    "en": "While we were having breakfast, our little boy, Tommy,"
+  },
+  {
+    "id": 11128,
+    "lesson": 113,
+    "zh": "在地板上发现了两枚小硬币。",
+    "en": "found two small coins on the floor."
+  },
+  {
+    "id": 11129,
+    "lesson": 113,
+    "zh": "他把它们都放进嘴里。我们都试图拿到硬币，",
+    "en": "He put them both into his mouth. We both tried to get the coins,"
+  },
+  {
+    "id": 11130,
+    "lesson": 113,
+    "zh": "但已经太晚了。",
+    "en": "but it was too late."
+  },
+  {
+    "id": 11131,
+    "lesson": 113,
+    "zh": "Tommy 已经把它们吞掉了！",
+    "en": "Tommy had already swallowed them!"
+  },
+  {
+    "id": 11132,
+    "lesson": 113,
+    "zh": "Later 那天早上，",
+    "en": "Later that morning,"
+  },
+  {
+    "id": 11133,
+    "lesson": 113,
+    "zh": "当我做家务时，我丈夫给我打电话",
+    "en": "when I was doing the housework, my husband phoned me"
+  },
+  {
+    "id": 11134,
+    "lesson": 113,
+    "zh": "从办公室。",
+    "en": "from the office."
+  },
+  {
+    "id": 11135,
+    "lesson": 113,
+    "zh": "Tommy 怎么样？”他问道。“我不知道，”我回答道，“Tommy 今天早上去了厕所三次，",
+    "en": "How's Tommy?'he asked. 'I don't know,'I answered, 'Tommy's been to the toilet three times this morning,"
+  },
+  {
+    "id": 11136,
+    "lesson": 113,
+    "zh": "但我还没有任何改变！",
+    "en": "but I haven't had any change yet!'"
+  },
+  {
+    "id": 11137,
+    "lesson": 115,
+    "zh": "是谁在黑暗中向盗贼喊话？",
+    "en": "Who called out to the thieves in the dark?"
+  },
+  {
+    "id": 11138,
+    "lesson": 115,
+    "zh": "你喜欢故事吗？",
+    "en": "Do you like stories?"
+  },
+  {
+    "id": 11139,
+    "lesson": 115,
+    "zh": "我想告诉你一个真实的故事。",
+    "en": "I want to tell you a true story."
+  },
+  {
+    "id": 11140,
+    "lesson": 115,
+    "zh": "一年前，这件事发生在我的一个朋友身上。",
+    "en": "It happened to a friend of mine a year ago."
+  },
+  {
+    "id": 11141,
+    "lesson": 115,
+    "zh": "当我的朋友 George 正在床上看书时，两个小偷爬进了他的厨房。",
+    "en": "While my friend, George, was reading in bed, two thieves climbed into his kitchen."
+  },
+  {
+    "id": 11142,
+    "lesson": 115,
+    "zh": "进了屋子之后，他们就进了餐厅。天很黑，",
+    "en": "After they had entered the house, they went into the dining room. It was very dark,"
+  },
+  {
+    "id": 11143,
+    "lesson": 115,
+    "zh": "于是他们打开了手电筒。",
+    "en": "so they turned on a torch."
+  },
+  {
+    "id": 11144,
+    "lesson": 115,
+    "zh": "突然，他们听到背后有声音。 “怎么了？怎么了？”有人喊道。窃贼丢下了火把",
+    "en": "Suddenly, they heard a voice behind them. 'What's up?What's up?'someone called. The thieves dropped the torch"
+  },
+  {
+    "id": 11145,
+    "lesson": 115,
+    "zh": "并以最快的速度逃跑。",
+    "en": "and ran away as quickly as they could."
+  },
+  {
+    "id": 11146,
+    "lesson": 115,
+    "zh": "George 听到噪音",
+    "en": "George heard the noise"
+  },
+  {
+    "id": 11147,
+    "lesson": 115,
+    "zh": "然后很快就下了楼。",
+    "en": "and came downstairs quickly."
+  },
+  {
+    "id": 11148,
+    "lesson": 115,
+    "zh": "他打开灯，",
+    "en": "He turned on the light,"
+  },
+  {
+    "id": 11149,
+    "lesson": 115,
+    "zh": "但他看不到任何人。",
+    "en": "but he couldn't see anyone."
+  },
+  {
+    "id": 11150,
+    "lesson": 115,
+    "zh": "盗贼已经走了。",
+    "en": "The thieves had already gone."
+  },
+  {
+    "id": 11151,
+    "lesson": 115,
+    "zh": "但 George 的鹦鹉 Henry 还在那里。“怎么了， George？”他喊道。",
+    "en": "But George's parrot, Henry, was still there. 'What's up, George?'he called."
+  },
+  {
+    "id": 11152,
+    "lesson": 115,
+    "zh": "“没什么， Henry，”George 微笑着说道。“回去睡觉吧。”",
+    "en": "'Nothing, Henry,'George said and smiled. 'Go back to sleep.'"
+  },
+  {
+    "id": 11153,
+    "lesson": 117,
+    "zh": "为什么 Caroline 没有立即认出这位顾客？",
+    "en": "Why didn't Caroline recognize the customer straight away?"
+  },
+  {
+    "id": 11154,
+    "lesson": 117,
+    "zh": "我买了",
+    "en": "I bought"
+  },
+  {
+    "id": 11155,
+    "lesson": 117,
+    "zh": "半小时前这里有两本昂贵的词典，",
+    "en": "two expensive dictionaries here half an hour ago,"
+  },
+  {
+    "id": 11156,
+    "lesson": 117,
+    "zh": "但我忘了",
+    "en": "but I forgot"
+  },
+  {
+    "id": 11157,
+    "lesson": 117,
+    "zh": "带着他们走。",
+    "en": "to take them with me."
+  },
+  {
+    "id": 11158,
+    "lesson": 117,
+    "zh": "先生，谁为您服务？",
+    "en": "Who served you, sir?"
+  },
+  {
+    "id": 11159,
+    "lesson": 117,
+    "zh": "站在柜台后面的那位女士。",
+    "en": "The lady who is standing behind the counter."
+  },
+  {
+    "id": 11160,
+    "lesson": 117,
+    "zh": "你买了哪些书？",
+    "en": "Which books did you buy?"
+  },
+  {
+    "id": 11161,
+    "lesson": 117,
+    "zh": "书籍",
+    "en": "The books"
+  },
+  {
+    "id": 11162,
+    "lesson": 117,
+    "zh": "柜台上有哪些。",
+    "en": "which are on the counter."
+  },
+  {
+    "id": 11163,
+    "lesson": 117,
+    "zh": "Caroline，半小时前您为这位先生服务过吗？他说他就是那个男人",
+    "en": "Did you serve this gentleman half an hour ago, Caroline? He says he's the man"
+  },
+  {
+    "id": 11164,
+    "lesson": 117,
+    "zh": "谁买了这些书。",
+    "en": "who bought these books."
+  },
+  {
+    "id": 11165,
+    "lesson": 117,
+    "zh": "我不记得了。",
+    "en": "I can't remember."
+  },
+  {
+    "id": 11166,
+    "lesson": 117,
+    "zh": "我所服务的那个人",
+    "en": "The man who I served"
+  },
+  {
+    "id": 11167,
+    "lesson": 117,
+    "zh": "戴着帽子。",
+    "en": "was wearing a hat."
+  },
+  {
+    "id": 11168,
+    "lesson": 117,
+    "zh": "先生，你有帽子吗？",
+    "en": "Have you got a hat, sir?"
+  },
+  {
+    "id": 11169,
+    "lesson": 117,
+    "zh": "是的，我有。",
+    "en": "Yes, I have."
+  },
+  {
+    "id": 11170,
+    "lesson": 117,
+    "zh": "请你穿上它好吗？",
+    "en": "Would you put it on, please?"
+  },
+  {
+    "id": 11171,
+    "lesson": 117,
+    "zh": "好的。",
+    "en": "All right."
+  },
+  {
+    "id": 11172,
+    "lesson": 117,
+    "zh": "这是这个男人吗",
+    "en": "Is this the man"
+  },
+  {
+    "id": 11173,
+    "lesson": 117,
+    "zh": "你服务过的， Caroline？ CAROLINE：是的。",
+    "en": "that you served, Caroline? CAROLINE: Yes."
+  },
+  {
+    "id": 11174,
+    "lesson": 117,
+    "zh": "我现在认出了他。",
+    "en": "I recognize him now."
+  },
+  {
+    "id": 11175,
+    "lesson": 119,
+    "zh": "那个留胡子的男人是谁？",
+    "en": "Who is the man with the beard?"
+  },
+  {
+    "id": 11176,
+    "lesson": 119,
+    "zh": "看， Scott。",
+    "en": "Look, Scott."
+  },
+  {
+    "id": 11177,
+    "lesson": 119,
+    "zh": "这是我去澳大利亚旅行时拍的照片。",
+    "en": "This is a photograph I took during my trip to Australia."
+  },
+  {
+    "id": 11178,
+    "lesson": 119,
+    "zh": "让我看看， Mike。",
+    "en": "Let me see it, Mike."
+  },
+  {
+    "id": 11179,
+    "lesson": 119,
+    "zh": "这是一张好照片。",
+    "en": "This is a good photograph."
+  },
+  {
+    "id": 11180,
+    "lesson": 119,
+    "zh": "这些人是谁？",
+    "en": "Who are these people?"
+  },
+  {
+    "id": 11181,
+    "lesson": 119,
+    "zh": "他们是我在旅途中遇到的人。",
+    "en": "They're people I met during the trip."
+  },
+  {
+    "id": 11182,
+    "lesson": 119,
+    "zh": "这就是那艘船",
+    "en": "That's the ship"
+  },
+  {
+    "id": 11183,
+    "lesson": 119,
+    "zh": "我们继续前行。",
+    "en": "we travelled on."
+  },
+  {
+    "id": 11184,
+    "lesson": 119,
+    "zh": "多么美丽的船啊！",
+    "en": "What a beautiful ship!"
+  },
+  {
+    "id": 11185,
+    "lesson": 119,
+    "zh": "这是谁？",
+    "en": "Who's this?"
+  },
+  {
+    "id": 11186,
+    "lesson": 119,
+    "zh": "这就是我跟你说过的那个人。",
+    "en": "That's the man I told you about."
+  },
+  {
+    "id": 11187,
+    "lesson": 119,
+    "zh": "Remember？ SCOTT：啊是的。",
+    "en": "Remember? SCOTT: Ah yes."
+  },
+  {
+    "id": 11188,
+    "lesson": 119,
+    "zh": "那个给你提供的人",
+    "en": "The one who offered you"
+  },
+  {
+    "id": 11189,
+    "lesson": 119,
+    "zh": "在澳大利亚找到一份工作。",
+    "en": "a job in Australia."
+  },
+  {
+    "id": 11190,
+    "lesson": 119,
+    "zh": "这是正确的。",
+    "en": "That's right."
+  },
+  {
+    "id": 11191,
+    "lesson": 119,
+    "zh": "这是谁？",
+    "en": "Who's this?"
+  },
+  {
+    "id": 11192,
+    "lesson": 119,
+    "zh": "Guess！",
+    "en": "Guess!"
+  },
+  {
+    "id": 11193,
+    "lesson": 119,
+    "zh": "不是你吧？",
+    "en": "It's not you, is it?"
+  },
+  {
+    "id": 11194,
+    "lesson": 119,
+    "zh": "这是正确的。",
+    "en": "That's right."
+  },
+  {
+    "id": 11195,
+    "lesson": 119,
+    "zh": "旅途中我留起了胡子，",
+    "en": "I grew a beard during the trip,"
+  },
+  {
+    "id": 11196,
+    "lesson": 119,
+    "zh": "但我把它剃掉了",
+    "en": "but I shaved it off"
+  },
+  {
+    "id": 11197,
+    "lesson": 119,
+    "zh": "当我回家时。",
+    "en": "when I came home."
+  },
+  {
+    "id": 11198,
+    "lesson": 119,
+    "zh": "你为什么把它剃掉？",
+    "en": "Why did you shave it off?"
+  },
+  {
+    "id": 11199,
+    "lesson": 119,
+    "zh": "我的妻子不喜欢它！",
+    "en": "My wife didn't like it!"
+  },
+  {
+    "id": 11200,
+    "lesson": 121,
+    "zh": "你不能进来吗",
+    "en": "Can't you come in"
+  },
+  {
+    "id": 11201,
+    "lesson": 121,
+    "zh": "现在喝茶吧， Peter？ PETER：还没有。",
+    "en": "and have tea now, Peter? PETER: Not yet."
+  },
+  {
+    "id": 11202,
+    "lesson": 121,
+    "zh": "我必须先给花园浇水。",
+    "en": "I must water the garden first."
+  },
+  {
+    "id": 11203,
+    "lesson": 121,
+    "zh": "现在还需要浇水吗？",
+    "en": "Do you have to water it now?"
+  },
+  {
+    "id": 11204,
+    "lesson": 121,
+    "zh": "恐怕我必须这样做。",
+    "en": "I’m afraid I must."
+  },
+  {
+    "id": 11205,
+    "lesson": 121,
+    "zh": "看看它！",
+    "en": "Look at it!"
+  },
+  {
+    "id": 11206,
+    "lesson": 121,
+    "zh": "天气非常干燥。",
+    "en": "It's terribly dry."
+  },
+  {
+    "id": 11207,
+    "lesson": 121,
+    "zh": "真麻烦啊！",
+    "en": "What a nuisance!"
+  },
+  {
+    "id": 11208,
+    "lesson": 121,
+    "zh": "去年夏天也很干燥。",
+    "en": "Last summer it was very dry, too."
+  },
+  {
+    "id": 11209,
+    "lesson": 121,
+    "zh": "Don 你不记得了吗？",
+    "en": "Don't you remember?"
+  },
+  {
+    "id": 11210,
+    "lesson": 121,
+    "zh": "我必须每天给它浇水。",
+    "en": "I had to water it every day."
+  },
+  {
+    "id": 11211,
+    "lesson": 121,
+    "zh": "嗯，我自己去喝茶吧。",
+    "en": "Well, I'll have tea by myself."
+  },
+  {
+    "id": 11212,
+    "lesson": 121,
+    "zh": "太快了！",
+    "en": "That was quick!"
+  },
+  {
+    "id": 11213,
+    "lesson": 121,
+    "zh": "你已经完成了吗？ PETER：是的。",
+    "en": "Have you finished already? PETER: Yes."
+  },
+  {
+    "id": 11214,
+    "lesson": 121,
+    "zh": "看看窗外。",
+    "en": "Look out of the window."
+  },
+  {
+    "id": 11215,
+    "lesson": 121,
+    "zh": "下雨了！",
+    "en": "It's raining!"
+  },
+  {
+    "id": 11216,
+    "lesson": 121,
+    "zh": "这意味着",
+    "en": "That means"
+  },
+  {
+    "id": 11217,
+    "lesson": 121,
+    "zh": "你不需要给花园浇水。",
+    "en": "you don't need to water the garden."
+  },
+  {
+    "id": 11218,
+    "lesson": 121,
+    "zh": "这真是一个惊喜。",
+    "en": "That was a pleasant surprise."
+  },
+  {
+    "id": 11219,
+    "lesson": 121,
+    "zh": "这意味着我可以喝茶了。",
+    "en": "It means I can have tea, instead."
+  },
+  {
+    "id": 11220,
+    "lesson": 123,
+    "zh": "才二十九岁，为何不明？",
+    "en": "is only twenty nine, and why is it unclear?"
+  },
+  {
+    "id": 11221,
+    "lesson": 123,
+    "zh": "你能认出那个女人吗， Liz？",
+    "en": "Can you recognize that woman, Liz?"
+  },
+  {
+    "id": 11222,
+    "lesson": 123,
+    "zh": "我想我可以。 Kate。",
+    "en": "I think I can.Kate."
+  },
+  {
+    "id": 11223,
+    "lesson": 123,
+    "zh": "一定是 Karen Marsh，女演员。",
+    "en": "It must be Karen Marsh, the actress."
+  },
+  {
+    "id": 11224,
+    "lesson": 123,
+    "zh": "我是这么想的。",
+    "en": "I thought so."
+  },
+  {
+    "id": 11225,
+    "lesson": 123,
+    "zh": "她旁边那个人是谁？",
+    "en": "Who's that beside her?"
+  },
+  {
+    "id": 11226,
+    "lesson": 123,
+    "zh": "那一定是 Conrad Reeves。",
+    "en": "That must be Conrad Reeves."
+  },
+  {
+    "id": 11227,
+    "lesson": 123,
+    "zh": "Conrad Reeves，演员？",
+    "en": "Conrad Reeves, the actor?"
+  },
+  {
+    "id": 11228,
+    "lesson": 123,
+    "zh": "不可能。",
+    "en": "It can't be."
+  },
+  {
+    "id": 11229,
+    "lesson": 123,
+    "zh": "让我再看一下。",
+    "en": "Let me have another look."
+  },
+  {
+    "id": 11230,
+    "lesson": 123,
+    "zh": "我认为你是对的！",
+    "en": "I think you're right!"
+  },
+  {
+    "id": 11231,
+    "lesson": 123,
+    "zh": "Isn 他不是她的第三任丈夫吗？",
+    "en": "Isn't he her third husband?"
+  },
+  {
+    "id": 11232,
+    "lesson": 123,
+    "zh": "不，他一定是她的第四个或第五个。",
+    "en": "No.He must be her fourth or fifth."
+  },
+  {
+    "id": 11233,
+    "lesson": 123,
+    "zh": "Doesn 不是 Karen Marsh 看起来老了！",
+    "en": "Doesn't Karen Marsh look old!"
+  },
+  {
+    "id": 11234,
+    "lesson": 123,
+    "zh": "她确实是这样，不是吗！",
+    "en": "She does, doesn't she!"
+  },
+  {
+    "id": 11235,
+    "lesson": 123,
+    "zh": "我读到她二十九岁了",
+    "en": "I read she's twenty-nine,"
+  },
+  {
+    "id": 11236,
+    "lesson": 123,
+    "zh": "但她至少得有四十岁了。",
+    "en": "but she must be at least forty."
+  },
+  {
+    "id": 11237,
+    "lesson": 123,
+    "zh": "我确信她是。",
+    "en": "I'm sure she is."
+  },
+  {
+    "id": 11238,
+    "lesson": 123,
+    "zh": "她是一位著名女演员",
+    "en": "She was a famous actress"
+  },
+  {
+    "id": 11239,
+    "lesson": 123,
+    "zh": "当我还在学校的时候。",
+    "en": "when I was still at school."
+  },
+  {
+    "id": 11240,
+    "lesson": 123,
+    "zh": "那是很久以前的事了，不是吗？",
+    "en": "That was a long time ago, wasn't it?"
+  },
+  {
+    "id": 11241,
+    "lesson": 123,
+    "zh": "不久前！",
+    "en": "Not that long ago!"
+  },
+  {
+    "id": 11242,
+    "lesson": 123,
+    "zh": "我自己还不到二十九岁。",
+    "en": "I'm not more than twenty-nine myself."
+  },
+  {
+    "id": 11243,
+    "lesson": 125,
+    "zh": "看， Gary！",
+    "en": "Look, Gary!"
+  },
+  {
+    "id": 11244,
+    "lesson": 125,
+    "zh": "那个警察正在向你招手。他要你停下来。",
+    "en": "That policeman's waving to you. He wants you to stop."
+  },
+  {
+    "id": 11245,
+    "lesson": 125,
+    "zh": "你认为你在哪里？",
+    "en": "Where do you think you are?"
+  },
+  {
+    "id": 11246,
+    "lesson": 125,
+    "zh": "在赛道上？",
+    "en": "On a race track?"
+  },
+  {
+    "id": 11247,
+    "lesson": 125,
+    "zh": "你一定是以每小时七十英里的速度开车的。",
+    "en": "You must have been driving at seventy miles an hour."
+  },
+  {
+    "id": 11248,
+    "lesson": 125,
+    "zh": "我不可能是这样。",
+    "en": "I can't have been."
+  },
+  {
+    "id": 11249,
+    "lesson": 125,
+    "zh": "我当时做了八十",
+    "en": "I was doing eighty"
+  },
+  {
+    "id": 11250,
+    "lesson": 125,
+    "zh": "当我超越你的时候。",
+    "en": "when I overtook you."
+  },
+  {
+    "id": 11251,
+    "lesson": 125,
+    "zh": "Didn 你没看到速度限制吗？ GARY：恐怕我没有，警官。",
+    "en": "Didn't you see the speed limit? GARY: I’m afraid I didn't, officer."
+  },
+  {
+    "id": 11252,
+    "lesson": 125,
+    "zh": "我一定是在做梦。",
+    "en": "I must have been dreaming."
+  },
+  {
+    "id": 11253,
+    "lesson": 125,
+    "zh": "他不是在做梦，警官。",
+    "en": "He wasn't dreaming, officer."
+  },
+  {
+    "id": 11254,
+    "lesson": 125,
+    "zh": "我告诉他开慢点。",
+    "en": "I was telling him to drive slowly."
+  },
+  {
+    "id": 11255,
+    "lesson": 125,
+    "zh": "这就是为什么我没有看到这个标志。",
+    "en": "That's why I didn't see the sign."
+  },
+  {
+    "id": 11256,
+    "lesson": 125,
+    "zh": "让我看看你的驾驶执照。",
+    "en": "Let me see your driving licence."
+  },
+  {
+    "id": 11257,
+    "lesson": 125,
+    "zh": "这次我不会向你收费。",
+    "en": "I won't charge you this time."
+  },
+  {
+    "id": 11258,
+    "lesson": 125,
+    "zh": "但你最好不要再这样做了！ GARY：谢谢。",
+    "en": "But you'd better not do it again! GARY: Thank you."
+  },
+  {
+    "id": 11259,
+    "lesson": 125,
+    "zh": "我当然会更加小心。",
+    "en": "I'll certainly be more careful."
+  },
+  {
+    "id": 11260,
+    "lesson": 125,
+    "zh": "我告诉过你开慢点， Gary。",
+    "en": "I told you to drive slowly, Gary."
+  },
+  {
+    "id": 11261,
+    "lesson": 125,
+    "zh": "你总是告诉我",
+    "en": "You always tell me"
+  },
+  {
+    "id": 11262,
+    "lesson": 125,
+    "zh": "慢慢开车，亲爱的。",
+    "en": "to drive slowly, darling."
+  },
+  {
+    "id": 11263,
+    "lesson": 125,
+    "zh": "嗯，下次",
+    "en": "Well, next time"
+  },
+  {
+    "id": 11264,
+    "lesson": 125,
+    "zh": "你最好听听我的建议！",
+    "en": "you'd better take my advice!"
+  },
+  {
+    "id": 11265,
+    "lesson": 127,
+    "zh": "决定休假有什么问题？",
+    "en": "What's the problem about deciding on a holiday?"
+  },
+  {
+    "id": 11266,
+    "lesson": 127,
+    "zh": "你要去哪里",
+    "en": "Where are you going to"
+  },
+  {
+    "id": 11267,
+    "lesson": 127,
+    "zh": "今年度假， Gary？ GARY : 我们可能会出国。",
+    "en": "spend your holidays this year, Gary? GARY: We may go abroad."
+  },
+  {
+    "id": 11268,
+    "lesson": 127,
+    "zh": "我不知道。",
+    "en": "I'm not sure."
+  },
+  {
+    "id": 11269,
+    "lesson": 127,
+    "zh": "我妻子想去埃及。",
+    "en": "My wife wants to go to Egypt."
+  },
+  {
+    "id": 11270,
+    "lesson": 127,
+    "zh": "我也想去那里",
+    "en": "I'd like to go there, too."
+  },
+  {
+    "id": 11271,
+    "lesson": 127,
+    "zh": "我们拿不定主意。",
+    "en": "We can't make up our minds."
+  },
+  {
+    "id": 11272,
+    "lesson": 127,
+    "zh": "您会乘船还是乘飞机旅行？",
+    "en": "Will you travel by sea or by air?"
+  },
+  {
+    "id": 11273,
+    "lesson": 127,
+    "zh": "我们可以乘海路旅行。",
+    "en": "We may travel by sea."
+  },
+  {
+    "id": 11274,
+    "lesson": 127,
+    "zh": "它更便宜，不是吗？",
+    "en": "It's cheaper, isn't it?"
+  },
+  {
+    "id": 11275,
+    "lesson": 127,
+    "zh": "可能会更便宜，",
+    "en": "It may be cheaper,"
+  },
+  {
+    "id": 11276,
+    "lesson": 127,
+    "zh": "但这需要很长时间。",
+    "en": "but it takes a long time."
+  },
+  {
+    "id": 11277,
+    "lesson": 127,
+    "zh": "我相信你会玩得很开心。",
+    "en": "I’m sure you'll enjoy yourselves."
+  },
+  {
+    "id": 11278,
+    "lesson": 127,
+    "zh": "Don 不太确定。",
+    "en": "Don't be so sure."
+  },
+  {
+    "id": 11279,
+    "lesson": 127,
+    "zh": "我们可能哪儿也不去。",
+    "en": "We might not go anywhere."
+  },
+  {
+    "id": 11280,
+    "lesson": 127,
+    "zh": "我的妻子总是担心太多。谁来照顾狗？",
+    "en": "My wife always worries too much. Who's going to look after the dog?"
+  },
+  {
+    "id": 11281,
+    "lesson": 127,
+    "zh": "谁来看管房子？",
+    "en": "Who's going to look after the house?"
+  },
+  {
+    "id": 11282,
+    "lesson": 127,
+    "zh": "谁来照看花园？我们每年都会遇到这个问题。",
+    "en": "Who's going to look after the garden? We have this problem every year."
+  },
+  {
+    "id": 11283,
+    "lesson": 127,
+    "zh": "最后，我们呆在家里",
+    "en": "In the end, we stay at home"
+  },
+  {
+    "id": 11284,
+    "lesson": 127,
+    "zh": "并照顾一切！",
+    "en": "and look after everything!"
+  },
+  {
+    "id": 11285,
+    "lesson": 129,
+    "zh": "你刚刚做了吗",
+    "en": "Have you just made"
+  },
+  {
+    "id": 11286,
+    "lesson": 129,
+    "zh": "一部新电影， Marsh 小姐？ MISS MARSH：是的，我有。",
+    "en": "a new film, Miss Marsh? MISS MARSH: Yes, I have."
+  },
+  {
+    "id": 11287,
+    "lesson": 129,
+    "zh": "你打算再做一个吗？",
+    "en": "Are you going to make another?"
+  },
+  {
+    "id": 11288,
+    "lesson": 129,
+    "zh": "不，我不是。",
+    "en": "No, I'm not."
+  },
+  {
+    "id": 11289,
+    "lesson": 129,
+    "zh": "我要退休了。",
+    "en": "I'm going to retire."
+  },
+  {
+    "id": 11290,
+    "lesson": 129,
+    "zh": "我感觉很累。",
+    "en": "I feel very tired."
+  },
+  {
+    "id": 11291,
+    "lesson": 129,
+    "zh": "我很长一段时间都不想再拍一部电影了。",
+    "en": "I don't want to make another film for a long time."
+  },
+  {
+    "id": 11292,
+    "lesson": 129,
+    "zh": "我们去买份报纸吧， Liz。",
+    "en": "Let's buy a newspaper, Liz."
+  },
+  {
+    "id": 11293,
+    "lesson": 129,
+    "zh": "听听这个！",
+    "en": "Listen to this!"
+  },
+  {
+    "id": 11294,
+    "lesson": 129,
+    "zh": "' Karen Marsh： Sensational 新闻！由我们的记者 Alan Jones 报道。",
+    "en": "'Karen Marsh: Sensational News! By our reporter, Alan Jones."
+  },
+  {
+    "id": 11295,
+    "lesson": 129,
+    "zh": "Karen Marsh 到达",
+    "en": "Karen Marsh arrived"
+  },
+  {
+    "id": 11296,
+    "lesson": 129,
+    "zh": "今天在伦敦机场。",
+    "en": "at London Airport today."
+  },
+  {
+    "id": 11297,
+    "lesson": 129,
+    "zh": "她穿着蓝色连衣裙和貂皮大衣。",
+    "en": "She was wearing a blue dress and a mink coat."
+  },
+  {
+    "id": 11298,
+    "lesson": 129,
+    "zh": "她告诉我",
+    "en": "She told me"
+  },
+  {
+    "id": 11299,
+    "lesson": 129,
+    "zh": "她刚刚拍了一部新电影。她说",
+    "en": "she had just made a new film. She said"
+  },
+  {
+    "id": 11300,
+    "lesson": 129,
+    "zh": "她不会再做第二次。她说她要退休了。",
+    "en": "she was not going to make another. She said she was going to retire."
+  },
+  {
+    "id": 11301,
+    "lesson": 129,
+    "zh": "她告诉记者，她感觉很累，不想做。",
+    "en": "She told reporters she felt very tired and didn't want to make"
+  },
+  {
+    "id": 11302,
+    "lesson": 129,
+    "zh": "另一部电影很长一段时间了。我想知道为什么！",
+    "en": "another film for a long time.' I wonder why!"
+  },
+  {
+    "id": 11303,
+    "lesson": 131,
+    "zh": "您认为 Karen Marsh 会退休吗？",
+    "en": "Is Karen Marsh going to retire, do you think?"
+  },
+  {
+    "id": 11304,
+    "lesson": 131,
+    "zh": "你真的吗",
+    "en": "Are you really"
+  },
+  {
+    "id": 11305,
+    "lesson": 131,
+    "zh": "Marsh 小姐，要退休了吗？ MISS MARSH：我可以。",
+    "en": "going to retire, Miss Marsh? MISS MARSH: I may."
+  },
+  {
+    "id": 11306,
+    "lesson": 131,
+    "zh": "我拿不定主意。",
+    "en": "I can't make up my mind."
+  },
+  {
+    "id": 11307,
+    "lesson": 131,
+    "zh": "我得问一下",
+    "en": "I will have to ask"
+  },
+  {
+    "id": 11308,
+    "lesson": 131,
+    "zh": "我未来的丈夫。",
+    "en": "my future husband."
+  },
+  {
+    "id": 11309,
+    "lesson": 131,
+    "zh": "他不会让我再拍一部电影。",
+    "en": "He won't let me make another film."
+  },
+  {
+    "id": 11310,
+    "lesson": 131,
+    "zh": "你未来的丈夫， Marsh 小姐？",
+    "en": "Your future husband, Miss Marsh?"
+  },
+  {
+    "id": 11311,
+    "lesson": 131,
+    "zh": "是的，让我把他介绍给你。",
+    "en": "Yes.Let me introduce him to you."
+  },
+  {
+    "id": 11312,
+    "lesson": 131,
+    "zh": "他的名字是 Carlos。",
+    "en": "His name is Carlos."
+  },
+  {
+    "id": 11313,
+    "lesson": 131,
+    "zh": "我们下周就要结婚了。",
+    "en": "We're going to get married next week."
+  },
+  {
+    "id": 11314,
+    "lesson": 131,
+    "zh": "看， Liz！",
+    "en": "Look, Liz!"
+  },
+  {
+    "id": 11315,
+    "lesson": 131,
+    "zh": "这是另一篇关于",
+    "en": "Here's another report about"
+  },
+  {
+    "id": 11316,
+    "lesson": 131,
+    "zh": "Karen Marsh。",
+    "en": "Karen Marsh."
+  },
+  {
+    "id": 11317,
+    "lesson": 131,
+    "zh": "听：' Karen Marsh：最新的。",
+    "en": "Listen:'Karen Marsh: The latest."
+  },
+  {
+    "id": 11318,
+    "lesson": 131,
+    "zh": "今天在她的伦敦酒店",
+    "en": "At her London Hotel today"
+  },
+  {
+    "id": 11319,
+    "lesson": 131,
+    "zh": "Marsh 小姐告诉记者",
+    "en": "Miss Marsh told reporters"
+  },
+  {
+    "id": 11320,
+    "lesson": 131,
+    "zh": "她可能会退休。",
+    "en": "she might retire."
+  },
+  {
+    "id": 11321,
+    "lesson": 131,
+    "zh": "她说她不能",
+    "en": "She said she couldn't"
+  },
+  {
+    "id": 11322,
+    "lesson": 131,
+    "zh": "下定决心。",
+    "en": "make up her mind."
+  },
+  {
+    "id": 11323,
+    "lesson": 131,
+    "zh": "她说她必须",
+    "en": "She said she would have to"
+  },
+  {
+    "id": 11324,
+    "lesson": 131,
+    "zh": "问她未来的丈夫。",
+    "en": "ask her future husband."
+  },
+  {
+    "id": 11325,
+    "lesson": 131,
+    "zh": "她说她未来的丈夫",
+    "en": "She said her future husband"
+  },
+  {
+    "id": 11326,
+    "lesson": 131,
+    "zh": "不会让她",
+    "en": "would not let her"
+  },
+  {
+    "id": 11327,
+    "lesson": 131,
+    "zh": "制作另一部电影。",
+    "en": "make another film."
+  },
+  {
+    "id": 11328,
+    "lesson": 131,
+    "zh": "然后她向我们介绍了 Carlos 并告诉我们",
+    "en": "Then she introduced us to Carlos and told us"
+  },
+  {
+    "id": 11329,
+    "lesson": 131,
+    "zh": "他们将于下周结婚。",
+    "en": "they would get married next week.'"
+  },
+  {
+    "id": 11330,
+    "lesson": 131,
+    "zh": "这是一个轰动的消息，不是吗？",
+    "en": "That's sensational news, isn't it,"
+  },
+  {
+    "id": 11331,
+    "lesson": 131,
+    "zh": "Kate？",
+    "en": "Kate?"
+  },
+  {
+    "id": 11332,
+    "lesson": 131,
+    "zh": "确实如此。",
+    "en": "It certainly is."
+  },
+  {
+    "id": 11333,
+    "lesson": 131,
+    "zh": "他将成为她的第六任丈夫！",
+    "en": "He'll be her sixth husband!"
+  },
+  {
+    "id": 11334,
+    "lesson": 133,
+    "zh": "如果 Julie 有钱，她想做什么？",
+    "en": "What would Julie like to do, if she had the money?"
+  },
+  {
+    "id": 11335,
+    "lesson": 133,
+    "zh": "你在做足球池吗， Brian？",
+    "en": "Are you doing the football pools, Brian?"
+  },
+  {
+    "id": 11336,
+    "lesson": 133,
+    "zh": "是的，我快完成了， Julie。",
+    "en": "Yes, I've nearly finished, Julie."
+  },
+  {
+    "id": 11337,
+    "lesson": 133,
+    "zh": "我确信这周我们会赢得一些东西。",
+    "en": "I’m sure we'll win something this week."
+  },
+  {
+    "id": 11338,
+    "lesson": 133,
+    "zh": "你总是说，",
+    "en": "You always say that,"
+  },
+  {
+    "id": 11339,
+    "lesson": 133,
+    "zh": "但我们从来没有赢得任何东西！你会怎么做",
+    "en": "but we never win anything! What will you do"
+  },
+  {
+    "id": 11340,
+    "lesson": 133,
+    "zh": "如果你赢了很多钱？ BRIAN :如果我赢了很多钱",
+    "en": "if you win a lot of money? BRIAN: If I win a lot of money"
+  },
+  {
+    "id": 11341,
+    "lesson": 133,
+    "zh": "我给你买一件貂皮大衣。",
+    "en": "I'll buy you a mink coat."
+  },
+  {
+    "id": 11342,
+    "lesson": 133,
+    "zh": "我不要貂皮大衣！",
+    "en": "I don't want a mink coat!"
+  },
+  {
+    "id": 11343,
+    "lesson": 133,
+    "zh": "我想去看看这个世界。",
+    "en": "I want to see the world."
+  },
+  {
+    "id": 11344,
+    "lesson": 133,
+    "zh": "好的。",
+    "en": "All right."
+  },
+  {
+    "id": 11345,
+    "lesson": 133,
+    "zh": "如果我们赢了很多钱",
+    "en": "If we win a lot of money"
+  },
+  {
+    "id": 11346,
+    "lesson": 133,
+    "zh": "我们将环游世界",
+    "en": "we'll travel round the world"
+  },
+  {
+    "id": 11347,
+    "lesson": 133,
+    "zh": "我们会住在最好的酒店。",
+    "en": "and we'll stay at the best hotels."
+  },
+  {
+    "id": 11348,
+    "lesson": 133,
+    "zh": "然后我们就回家",
+    "en": "Then we'll return home"
+  },
+  {
+    "id": 11349,
+    "lesson": 133,
+    "zh": "并在乡下买一栋大房子。",
+    "en": "and buy a big house in the country."
+  },
+  {
+    "id": 11350,
+    "lesson": 133,
+    "zh": "我们将会有一个美丽的花园......",
+    "en": "We'll have a beautiful garden and..."
+  },
+  {
+    "id": 11351,
+    "lesson": 133,
+    "zh": "但如果我们花掉所有的钱",
+    "en": "But if we spend allthat money"
+  },
+  {
+    "id": 11352,
+    "lesson": 133,
+    "zh": "我们又会变穷了。",
+    "en": "we'll be poor again."
+  },
+  {
+    "id": 11353,
+    "lesson": 133,
+    "zh": "那我们怎么办？",
+    "en": "What'll we do then?"
+  },
+  {
+    "id": 11354,
+    "lesson": 133,
+    "zh": "如果我们花掉所有的钱",
+    "en": "If we spend all the money"
+  },
+  {
+    "id": 11355,
+    "lesson": 133,
+    "zh": "我们会努力再次赢得足球赛冠军。",
+    "en": "we'lltry and win the football pools again."
+  },
+  {
+    "id": 11356,
+    "lesson": 133,
+    "zh": "这是一个愉快的梦",
+    "en": "It's a pleasant dream"
+  },
+  {
+    "id": 11357,
+    "lesson": 133,
+    "zh": "但一切都取决于“如果！”",
+    "en": "but everything depends on ‘if!"
+  },
+  {
+    "id": 11358,
+    "lesson": 135,
+    "zh": "说话？",
+    "en": "talking to?"
+  },
+  {
+    "id": 11359,
+    "lesson": 135,
+    "zh": "是你吗， John？",
+    "en": "Is that you, John?"
+  },
+  {
+    "id": 11360,
+    "lesson": 135,
+    "zh": "是的，说话。",
+    "en": "Yes, speaking."
+  },
+  {
+    "id": 11361,
+    "lesson": 135,
+    "zh": "告诉 Mary 我们会迟到",
+    "en": "Tell Mary we'll be late"
+  },
+  {
+    "id": 11362,
+    "lesson": 135,
+    "zh": "今晚吃晚饭。",
+    "en": "for dinner this evening."
+  },
+  {
+    "id": 11363,
+    "lesson": 135,
+    "zh": "恐怕我听不懂。",
+    "en": "I'm afraid I don't understand."
+  },
+  {
+    "id": 11364,
+    "lesson": 135,
+    "zh": "Hasn Mary 没有告诉过你吗？",
+    "en": "Hasn't Mary told you?"
+  },
+  {
+    "id": 11365,
+    "lesson": 135,
+    "zh": "她今晚邀请 Charlotte 和我共进晚餐。",
+    "en": "She invited Charlotte and me to dinner this evening."
+  },
+  {
+    "id": 11366,
+    "lesson": 135,
+    "zh": "我说我会的",
+    "en": "I said I would be"
+  },
+  {
+    "id": 11367,
+    "lesson": 135,
+    "zh": "六点钟到你家",
+    "en": "at your house at six o'clock,"
+  },
+  {
+    "id": 11368,
+    "lesson": 135,
+    "zh": "但老板想要我",
+    "en": "but the boss wants me"
+  },
+  {
+    "id": 11369,
+    "lesson": 135,
+    "zh": "做一些额外的工作。",
+    "en": "to do some extra work."
+  },
+  {
+    "id": 11370,
+    "lesson": 135,
+    "zh": "我得留在办公室。",
+    "en": "I'll have to stay at the office."
+  },
+  {
+    "id": 11371,
+    "lesson": 135,
+    "zh": "我不知道什么时候能完成。",
+    "en": "I don't know when I'll finish."
+  },
+  {
+    "id": 11372,
+    "lesson": 135,
+    "zh": "哦，顺便说一下，",
+    "en": "Oh, and by the way,"
+  },
+  {
+    "id": 11373,
+    "lesson": 135,
+    "zh": "我妻子想知道",
+    "en": "my wife wants to know"
+  },
+  {
+    "id": 11374,
+    "lesson": 135,
+    "zh": "如果 Mary 需要任何帮助。",
+    "en": "if Mary needs any help."
+  },
+  {
+    "id": 11375,
+    "lesson": 135,
+    "zh": "我不知道你在说什么。",
+    "en": "I don't know what you're talking about."
+  },
+  {
+    "id": 11376,
+    "lesson": 135,
+    "zh": "那是 John Smith，不是吗？",
+    "en": "That is John Smith, isn't it?"
+  },
+  {
+    "id": 11377,
+    "lesson": 135,
+    "zh": "是的，我是 John Smith。",
+    "en": "Yes, I'm John Smith."
+  },
+  {
+    "id": 11378,
+    "lesson": 135,
+    "zh": "你是 John Smith，工程师，不是吗？",
+    "en": "You are John Smith, the engineer, aren't you?"
+  },
+  {
+    "id": 11379,
+    "lesson": 135,
+    "zh": "这是正确的。",
+    "en": "That's right."
+  },
+  {
+    "id": 11380,
+    "lesson": 135,
+    "zh": "你工作",
+    "en": "You work"
+  },
+  {
+    "id": 11381,
+    "lesson": 135,
+    "zh": "对于 Overseas Engineering 公司，不是吗？",
+    "en": "for the Overseas Engineering Company, don't you?"
+  },
+  {
+    "id": 11382,
+    "lesson": 135,
+    "zh": "不，我不。",
+    "en": "No, I don't."
+  },
+  {
+    "id": 11383,
+    "lesson": 135,
+    "zh": "我是 John Smith 电话工程师",
+    "en": "I'm John Smith the telephone engineer"
+  },
+  {
+    "id": 11384,
+    "lesson": 135,
+    "zh": "我正在修理你的电话线。",
+    "en": "and I'm repairing your telephone line."
+  },
+  {
+    "id": 11385,
+    "lesson": 137,
+    "zh": "上周，我四岁的女儿 Sally 受邀参加一个儿童聚会。",
+    "en": "Last week, my four-year-old daughter, Sally, was invited to a children's party."
+  },
+  {
+    "id": 11386,
+    "lesson": 137,
+    "zh": "我决定带她坐火车。",
+    "en": "I decided to take her by train."
+  },
+  {
+    "id": 11387,
+    "lesson": 137,
+    "zh": "Sally 非常兴奋",
+    "en": "Sally was very excited"
+  },
+  {
+    "id": 11388,
+    "lesson": 137,
+    "zh": "因为她以前从未坐过火车。",
+    "en": "because she had never travelled on a train before."
+  },
+  {
+    "id": 11389,
+    "lesson": 137,
+    "zh": "她坐在靠窗的位置",
+    "en": "She sat near the window"
+  },
+  {
+    "id": 11390,
+    "lesson": 137,
+    "zh": "并提出问题",
+    "en": "and asked questions"
+  },
+  {
+    "id": 11391,
+    "lesson": 137,
+    "zh": "关于她所看到的一切。",
+    "en": "about everything she saw."
+  },
+  {
+    "id": 11392,
+    "lesson": 137,
+    "zh": "突然，一位中年女士上了火车",
+    "en": "Suddenly, a middle-aged lady got on the train"
+  },
+  {
+    "id": 11393,
+    "lesson": 137,
+    "zh": "坐在 Sally 对面。",
+    "en": "and sat opposite Sally."
+  },
+  {
+    "id": 11394,
+    "lesson": 137,
+    "zh": "“Hello，小女孩，”她说。",
+    "en": "'Hello, little girl,'she said."
+  },
+  {
+    "id": 11395,
+    "lesson": 137,
+    "zh": "Sally 没有回答，",
+    "en": "Sally did not answer,"
+  },
+  {
+    "id": 11396,
+    "lesson": 137,
+    "zh": "却好奇地看着她。",
+    "en": "but looked at her curiously."
+  },
+  {
+    "id": 11397,
+    "lesson": 137,
+    "zh": "这位女士穿着一件蓝色外套，戴着一顶滑稽的大帽子。",
+    "en": "The lady was dressed in a blue coat and a large, funny hat."
+  },
+  {
+    "id": 11398,
+    "lesson": 137,
+    "zh": "火车离开车站后，",
+    "en": "After the train had left the station,"
+  },
+  {
+    "id": 11399,
+    "lesson": 137,
+    "zh": "这位女士打开手提包，拿出粉饼。然后她开始化妆。",
+    "en": "the lady opened her handbag and took out her powder compact. She then began to make up her face."
+  },
+  {
+    "id": 11400,
+    "lesson": 137,
+    "zh": "“你为什么要这么做？” Sally 问道。",
+    "en": "'Why are you doing that?'Sally asked."
+  },
+  {
+    "id": 11401,
+    "lesson": 137,
+    "zh": "“为了让自己变得美丽，”女士回答道。她收起粉盒，露出友善的微笑。",
+    "en": "'To make myself beautiful,'the lady answered. She put away her compact and smiled kindly."
+  },
+  {
+    "id": 11402,
+    "lesson": 137,
+    "zh": "“但你还是丑，”Sally 说。",
+    "en": "'But you are still ugly,'Sally said."
+  },
+  {
+    "id": 11403,
+    "lesson": 137,
+    "zh": "Sally 很有趣，",
+    "en": "Sally was amused,"
+  },
+  {
+    "id": 11404,
+    "lesson": 137,
+    "zh": "但我很尴尬！",
+    "en": "but I was very embarrassed!"
+  },
+  {
+    "id": 11405,
+    "lesson": 139,
+    "zh": "标牌上的字有什么好笑的？",
+    "en": "What was so funny about the words on the sign?"
+  },
+  {
+    "id": 11406,
+    "lesson": 139,
+    "zh": "我住在一个非常古老的城镇",
+    "en": "I live in a very old town"
+  },
+  {
+    "id": 11407,
+    "lesson": 139,
+    "zh": "周围环绕着美丽的树林。是著名的风景区。",
+    "en": "which is surrounded by beautiful woods. It is a famous beauty spot."
+  },
+  {
+    "id": 11408,
+    "lesson": 139,
+    "zh": "Sundays 上，数百人",
+    "en": "On Sundays, hundreds of people"
+  },
+  {
+    "id": 11409,
+    "lesson": 139,
+    "zh": "从城里来看看我们的小镇",
+    "en": "come from the city to see our town"
+  },
+  {
+    "id": 11410,
+    "lesson": 139,
+    "zh": "并步行穿过树林。 Visitors 已被询问",
+    "en": "and to walk through the woods. Visitors have been asked"
+  },
+  {
+    "id": 11411,
+    "lesson": 139,
+    "zh": "保持树林干净整洁。",
+    "en": "to keep the woods clean and tidy."
+  },
+  {
+    "id": 11412,
+    "lesson": 139,
+    "zh": "Litter 篮子已经放在树下，但人们仍然把垃圾扔得到处都是。上周三，我去树林里散步。我看到了什么",
+    "en": "Litter baskets have been placed under the trees, but people still throw their rubbish everywhere. Last Wednesday, I went for a walk in the woods. What I saw"
+  },
+  {
+    "id": 11413,
+    "lesson": 139,
+    "zh": "让我很伤心。",
+    "en": "made me very sad."
+  },
+  {
+    "id": 11414,
+    "lesson": 139,
+    "zh": "我数了七辆旧车",
+    "en": "I counted seven old cars"
+  },
+  {
+    "id": 11415,
+    "lesson": 139,
+    "zh": "和三台旧冰箱。",
+    "en": "and three old refrigerators."
+  },
+  {
+    "id": 11416,
+    "lesson": 139,
+    "zh": "垃圾篮是空的",
+    "en": "The litter baskets were empty"
+  },
+  {
+    "id": 11417,
+    "lesson": 139,
+    "zh": "地面上覆盖着",
+    "en": "and the ground was covered with"
+  },
+  {
+    "id": 11418,
+    "lesson": 139,
+    "zh": "纸片、烟头、旧轮胎、空瓶子和生锈的罐头。",
+    "en": "pieces of paper, cigarette ends, old tyres, empty bottles and rusty tins."
+  },
+  {
+    "id": 11419,
+    "lesson": 139,
+    "zh": "Among 垃圾，",
+    "en": "Among the rubbish,"
+  },
+  {
+    "id": 11420,
+    "lesson": 139,
+    "zh": "我发现了一个牌子，上面写着：",
+    "en": "I found a sign which said,"
+  },
+  {
+    "id": 11421,
+    "lesson": 139,
+    "zh": "“任何在树林里乱扔垃圾的人都会受到起诉！”",
+    "en": "'Anyone who leaves litter in these woods will be prosecuted!'"
+  }
+]
