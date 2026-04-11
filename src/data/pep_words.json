@@ -1,0 +1,4754 @@
+[
+  {
+    "grade": 3,
+    "sem": "up",
+    "bookName": "三年级上册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "",
+        "words": [
+          {
+            "word": "nice",
+            "ipa": "/naɪs/",
+            "zh": "令人愉快的；友好的"
+          },
+          {
+            "word": "ear",
+            "ipa": "/ɪər/",
+            "zh": "耳朵"
+          },
+          {
+            "word": "hand",
+            "ipa": "/hænd/",
+            "zh": "手"
+          },
+          {
+            "word": "eye",
+            "ipa": "/aɪ/",
+            "zh": "眼睛"
+          },
+          {
+            "word": "mouth",
+            "ipa": "/maʊθ/",
+            "zh": "嘴"
+          },
+          {
+            "word": "arm",
+            "ipa": "/ɑːm/",
+            "zh": "胳膊"
+          },
+          {
+            "word": "can",
+            "ipa": "/kæn/",
+            "zh": "可以"
+          },
+          {
+            "word": "share",
+            "ipa": "/ʃeə(r)/",
+            "zh": "分享"
+          },
+          {
+            "word": "smile",
+            "ipa": "/smaɪl/",
+            "zh": "微笑；笑"
+          },
+          {
+            "word": "listen",
+            "ipa": "/ˈlɪsn/",
+            "zh": "听；倾听"
+          },
+          {
+            "word": "help",
+            "ipa": "/help/",
+            "zh": "帮助"
+          },
+          {
+            "word": "say",
+            "ipa": "/seɪ/",
+            "zh": "说；讲"
+          },
+          {
+            "word": "and",
+            "ipa": "/ænd/",
+            "zh": "和；与"
+          },
+          {
+            "word": "goodbye",
+            "ipa": "/ˌɡʊdˈbaɪ/",
+            "zh": "再见"
+          },
+          {
+            "word": "toy",
+            "ipa": "/tɔɪ/",
+            "zh": "玩具"
+          },
+          {
+            "word": "friend",
+            "ipa": "/frend/",
+            "zh": "朋友"
+          },
+          {
+            "word": "good",
+            "ipa": "/ɡʊd/",
+            "zh": "好的"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "",
+        "words": [
+          {
+            "word": "dad",
+            "ipa": "/dæd/",
+            "zh": "（口语）爸爸"
+          },
+          {
+            "word": "grandma",
+            "ipa": "/ˈɡrænmɑː/",
+            "zh": "奶奶；姥姥"
+          },
+          {
+            "word": "grandpa",
+            "ipa": "/ˈɡrænpɑː/",
+            "zh": "爷爷；姥爷"
+          },
+          {
+            "word": "grandfather",
+            "ipa": "/ˈɡrænfɑːðə(r)/",
+            "zh": "（外）祖父"
+          },
+          {
+            "word": "grandmother",
+            "ipa": "/ˈɡrænmʌðə(r)/",
+            "zh": "（外）祖母"
+          },
+          {
+            "word": "mother",
+            "ipa": "/ˈmʌðə(r)/",
+            "zh": "母亲；妈妈"
+          },
+          {
+            "word": "father",
+            "ipa": "/ˈfɑːðə(r)/",
+            "zh": "父亲；爸爸"
+          },
+          {
+            "word": "me",
+            "ipa": "/miː/",
+            "zh": "我"
+          },
+          {
+            "word": "sister",
+            "ipa": "/ˈsɪstə(r)/",
+            "zh": "姐；妹"
+          },
+          {
+            "word": "family",
+            "ipa": "/ˈfæməli/",
+            "zh": "家；家庭"
+          },
+          {
+            "word": "have",
+            "ipa": "/hæv/",
+            "zh": "有"
+          },
+          {
+            "word": "big",
+            "ipa": "/bɪɡ/",
+            "zh": "大的"
+          },
+          {
+            "word": "cousin",
+            "ipa": "/ˈkʌzn/",
+            "zh": "堂（表）兄弟姐妹"
+          },
+          {
+            "word": "brother",
+            "ipa": "/ˈbrʌðə(r)/",
+            "zh": "哥；弟"
+          },
+          {
+            "word": "baby",
+            "ipa": "/ˈbeɪbi/",
+            "zh": "婴儿"
+          },
+          {
+            "word": "uncle",
+            "ipa": "/ˈʌŋkl/",
+            "zh": "伯父；叔父；舅父等"
+          },
+          {
+            "word": "aunt",
+            "ipa": "/ɑːnt/",
+            "zh": "伯母；婶母；舅母等"
+          },
+          {
+            "word": "some",
+            "ipa": "/sʌm/",
+            "zh": "一些"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "",
+        "words": [
+          {
+            "word": "pencil",
+            "ipa": "/ˈpensl/",
+            "zh": "铅笔"
+          },
+          {
+            "word": "eraser",
+            "ipa": "/ɪˈreɪzə(r)/",
+            "zh": "橡皮"
+          },
+          {
+            "word": "crayon",
+            "ipa": "/ˈkreɪən/",
+            "zh": "蜡笔"
+          },
+          {
+            "word": "bag",
+            "ipa": "/bæɡ/",
+            "zh": "包"
+          },
+          {
+            "word": "pen",
+            "ipa": "/pen/",
+            "zh": "钢笔"
+          },
+          {
+            "word": "pencil box",
+            "ipa": "/ˈpensl bɒks/",
+            "zh": "铅笔盒"
+          },
+          {
+            "word": "book",
+            "ipa": "/bʊk/",
+            "zh": "书"
+          },
+          {
+            "word": "no",
+            "ipa": "/nəʊ/",
+            "zh": "不"
+          },
+          {
+            "word": "your",
+            "ipa": "/jɔː(r)/",
+            "zh": "你的；你们的"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "",
+        "words": [
+          {
+            "word": "pig",
+            "ipa": "/pɪɡ/",
+            "zh": "猪"
+          },
+          {
+            "word": "cat",
+            "ipa": "/kæt/",
+            "zh": "猫"
+          },
+          {
+            "word": "bear",
+            "ipa": "/beə(r)/",
+            "zh": "熊"
+          },
+          {
+            "word": "dog",
+            "ipa": "/dɒɡ/",
+            "zh": "狗"
+          },
+          {
+            "word": "elephant",
+            "ipa": "/ˈelɪfənt/",
+            "zh": "大象"
+          },
+          {
+            "word": "monkey",
+            "ipa": "/ˈmʌŋki/",
+            "zh": "猴子"
+          },
+          {
+            "word": "bird",
+            "ipa": "/bɜːd/",
+            "zh": "鸟"
+          },
+          {
+            "word": "tiger",
+            "ipa": "/ˈtaɪɡə(r)/",
+            "zh": "老虎"
+          },
+          {
+            "word": "panda",
+            "ipa": "/ˈpændə/",
+            "zh": "大熊猫"
+          },
+          {
+            "word": "zoo",
+            "ipa": "/zuː/",
+            "zh": "动物园"
+          },
+          {
+            "word": "funny",
+            "ipa": "/ˈfʌni/",
+            "zh": "滑稽的；好笑的"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "",
+        "words": [
+          {
+            "word": "juice",
+            "ipa": "/dʒuːs/",
+            "zh": "果汁"
+          },
+          {
+            "word": "egg",
+            "ipa": "/eɡ/",
+            "zh": "蛋"
+          },
+          {
+            "word": "milk",
+            "ipa": "/mɪlk/",
+            "zh": "牛奶"
+          },
+          {
+            "word": "water",
+            "ipa": "/ˈwɔːtə(r)/",
+            "zh": "水"
+          },
+          {
+            "word": "cake",
+            "ipa": "/keɪk/",
+            "zh": "蛋糕"
+          },
+          {
+            "word": "fish",
+            "ipa": "/fɪʃ/",
+            "zh": "鱼"
+          },
+          {
+            "word": "rice",
+            "ipa": "/raɪs/",
+            "zh": "米饭"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "",
+        "words": [
+          {
+            "word": "two",
+            "ipa": "/tuː/",
+            "zh": "二"
+          },
+          {
+            "word": "three",
+            "ipa": "/θriː/",
+            "zh": "三"
+          },
+          {
+            "word": "four",
+            "ipa": "/fɔː/",
+            "zh": "四"
+          },
+          {
+            "word": "five",
+            "ipa": "/faɪv/",
+            "zh": "五"
+          },
+          {
+            "word": "six",
+            "ipa": "/sɪks/",
+            "zh": "六"
+          },
+          {
+            "word": "seven",
+            "ipa": "/ˈsevn/",
+            "zh": "七"
+          },
+          {
+            "word": "eight",
+            "ipa": "/eɪt/",
+            "zh": "八"
+          },
+          {
+            "word": "nine",
+            "ipa": "/naɪn/",
+            "zh": "九"
+          },
+          {
+            "word": "ten",
+            "ipa": "/ten/",
+            "zh": "十"
+          },
+          {
+            "word": "brother",
+            "ipa": "/ˈbrʌðə(r)/",
+            "zh": "兄；弟"
+          },
+          {
+            "word": "plate",
+            "ipa": "/pleɪt/",
+            "zh": "盘子"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "sem": "down",
+    "bookName": "三年级下册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "Where are you from?",
+        "words": [
+          {
+            "word": "where",
+            "ipa": "/weə(r)/",
+            "zh": "在哪里；到哪里"
+          },
+          {
+            "word": "from",
+            "ipa": "/frəm/",
+            "zh": "来自，从……来"
+          },
+          {
+            "word": "about",
+            "ipa": "/əˈbaʊt/",
+            "zh": "大约；左右"
+          },
+          {
+            "word": "today",
+            "ipa": "/təˈdeɪ/",
+            "zh": "今天"
+          },
+          {
+            "word": "teacher",
+            "ipa": "/ˈtiːtʃə(r)/",
+            "zh": "教师"
+          },
+          {
+            "word": "student",
+            "ipa": "/ˈstjuːdnt/",
+            "zh": "学生"
+          },
+          {
+            "word": "after",
+            "ipa": "/ˈɑːftə(r)/",
+            "zh": "在……后面"
+          },
+          {
+            "word": "who",
+            "ipa": "/huː/",
+            "zh": "谁；什么人"
+          },
+          {
+            "word": "girl",
+            "ipa": "/ɡɜːl/",
+            "zh": "女孩"
+          },
+          {
+            "word": "neighbour",
+            "ipa": "/ˈneɪbə(r)/",
+            "zh": "邻居"
+          },
+          {
+            "word": "boy",
+            "ipa": "/bɔɪ/",
+            "zh": "男孩"
+          },
+          {
+            "word": "woman",
+            "ipa": "/ˈwʊmən/",
+            "zh": "成年女子；妇女"
+          },
+          {
+            "word": "man",
+            "ipa": "/mæn/",
+            "zh": "成年男子；男人"
+          },
+          {
+            "word": "Mr",
+            "ipa": "/ˈmɪstə(r)/",
+            "zh": "先生"
+          },
+          {
+            "word": "classmate",
+            "ipa": "/ˈklɑːsmeɪt/",
+            "zh": "同班同学"
+          },
+          {
+            "word": "he",
+            "ipa": "/hiː/",
+            "zh": "他"
+          },
+          {
+            "word": "English",
+            "ipa": "/ˈɪŋɡlɪʃ/",
+            "zh": "英语的；英语"
+          },
+          {
+            "word": "she",
+            "ipa": "/ʃiː/",
+            "zh": "她"
+          },
+          {
+            "word": "very",
+            "ipa": "/ˈveri/",
+            "zh": "很；非常；十分"
+          },
+          {
+            "word": "UK",
+            "ipa": "/ˌjuːˈkeɪ/",
+            "zh": "英国"
+          },
+          {
+            "word": "China",
+            "ipa": "/ˈtʃaɪnə/",
+            "zh": "中国"
+          },
+          {
+            "word": "Canada",
+            "ipa": "/ˈkænədə/",
+            "zh": "加拿大"
+          },
+          {
+            "word": "USA",
+            "ipa": "/ˌjuːˈesˈeɪ/",
+            "zh": "美国"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "Look at me",
+        "words": [
+          {
+            "word": "has",
+            "ipa": "/hæz/",
+            "zh": "具有"
+          },
+          {
+            "word": "long",
+            "ipa": "/lɒŋ/",
+            "zh": "长的"
+          },
+          {
+            "word": "body",
+            "ipa": "/ˈbɒdi/",
+            "zh": "身体"
+          },
+          {
+            "word": "short",
+            "ipa": "/ʃɔːt/",
+            "zh": "短的；矮的"
+          },
+          {
+            "word": "leg",
+            "ipa": "/leg/",
+            "zh": "腿"
+          },
+          {
+            "word": "right",
+            "ipa": "/raɪt/",
+            "zh": "正确的"
+          },
+          {
+            "word": "fat",
+            "ipa": "/fæt/",
+            "zh": "肥的；肥胖的"
+          },
+          {
+            "word": "thin",
+            "ipa": "/θɪn/",
+            "zh": "瘦的"
+          },
+          {
+            "word": "slow",
+            "ipa": "/sləʊ/",
+            "zh": "缓慢的"
+          },
+          {
+            "word": "love",
+            "ipa": "/lʌv/",
+            "zh": "喜爱；爱"
+          },
+          {
+            "word": "tail",
+            "ipa": "/teɪl/",
+            "zh": "尾巴"
+          },
+          {
+            "word": "bye",
+            "ipa": "/baɪ/",
+            "zh": "再见"
+          },
+          {
+            "word": "her",
+            "ipa": "/hɜː(r)/",
+            "zh": "她；她的"
+          },
+          {
+            "word": "gift",
+            "ipa": "/ɡɪft/",
+            "zh": "礼物"
+          },
+          {
+            "word": "picture",
+            "ipa": "/ˈpɪktʃə(r)/",
+            "zh": "图画"
+          },
+          {
+            "word": "card",
+            "ipa": "/kɑːd/",
+            "zh": "卡片"
+          },
+          {
+            "word": "sing",
+            "ipa": "/sɪŋ/",
+            "zh": "唱"
+          },
+          {
+            "word": "dance",
+            "ipa": "/dɑːns/",
+            "zh": "跳舞"
+          },
+          {
+            "word": "face",
+            "ipa": "/feɪs/",
+            "zh": "脸"
+          },
+          {
+            "word": "all",
+            "ipa": "/ɔːl/",
+            "zh": "所有；全部"
+          },
+          {
+            "word": "so",
+            "ipa": "/səʊ/",
+            "zh": "这么；那么"
+          },
+          {
+            "word": "talk",
+            "ipa": "/tɔːk/",
+            "zh": "说话"
+          },
+          {
+            "word": "song",
+            "ipa": "/sɒŋ/",
+            "zh": "歌；歌曲"
+          },
+          {
+            "word": "or",
+            "ipa": "/ɔː(r)/",
+            "zh": "或；或者"
+          },
+          {
+            "word": "much",
+            "ipa": "/mʌtʃ/",
+            "zh": "许多；大量"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "What's in the bag?",
+        "words": [
+          {
+            "word": "eraser",
+            "ipa": "/ɪˈreɪzə(r)/",
+            "zh": "橡皮"
+          },
+          {
+            "word": "find",
+            "ipa": "/faɪnd/",
+            "zh": "找到；找回"
+          },
+          {
+            "word": "ruler",
+            "ipa": "/ˈruːlə(r)/",
+            "zh": "直尺"
+          },
+          {
+            "word": "pen",
+            "ipa": "/pen/",
+            "zh": "钢笔"
+          },
+          {
+            "word": "pencil",
+            "ipa": "/ˈpensl/",
+            "zh": "铅笔"
+          },
+          {
+            "word": "book",
+            "ipa": "/bʊk/",
+            "zh": "书"
+          },
+          {
+            "word": "bag",
+            "ipa": "/bæɡ/",
+            "zh": "包"
+          },
+          {
+            "word": "paper",
+            "ipa": "/ˈpeɪpə(r)/",
+            "zh": "纸"
+          },
+          {
+            "word": "these",
+            "ipa": "/ðiːz/",
+            "zh": "这些"
+          },
+          {
+            "word": "see",
+            "ipa": "/siː/",
+            "zh": "看见"
+          },
+          {
+            "word": "smell",
+            "ipa": "/smel/",
+            "zh": "闻"
+          },
+          {
+            "word": "taste",
+            "ipa": "/teɪst/",
+            "zh": "尝"
+          },
+          {
+            "word": "hear",
+            "ipa": "/hɪə(r)/",
+            "zh": "听见"
+          },
+          {
+            "word": "touch",
+            "ipa": "/tʌtʃ/",
+            "zh": "触摸"
+          },
+          {
+            "word": "sense",
+            "ipa": "/sens/",
+            "zh": "感觉"
+          },
+          {
+            "word": "learn",
+            "ipa": "/lɜːn/",
+            "zh": "学习"
+          },
+          {
+            "word": "nose",
+            "ipa": "/nəʊz/",
+            "zh": "鼻子"
+          },
+          {
+            "word": "tongue",
+            "ipa": "/tʌŋ/",
+            "zh": "舌头"
+          },
+          {
+            "word": "class",
+            "ipa": "/klɑːs/",
+            "zh": "课；班级"
+          },
+          {
+            "word": "computer",
+            "ipa": "/kəmˈpjuːtə(r)/",
+            "zh": "电脑"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "It's time for breakfast",
+        "words": [
+          {
+            "word": "breakfast",
+            "ipa": "/ˈbrekfəst/",
+            "zh": "早餐"
+          },
+          {
+            "word": "time",
+            "ipa": "/taɪm/",
+            "zh": "时间"
+          },
+          {
+            "word": "bread",
+            "ipa": "/bred/",
+            "zh": "面包"
+          },
+          {
+            "word": "egg",
+            "ipa": "/eɡ/",
+            "zh": "蛋；鸡蛋"
+          },
+          {
+            "word": "milk",
+            "ipa": "/mɪlk/",
+            "zh": "奶"
+          },
+          {
+            "word": "noodle",
+            "ipa": "/ˈnuːdl/",
+            "zh": "面条"
+          },
+          {
+            "word": "juice",
+            "ipa": "/dʒuːs/",
+            "zh": "果汁"
+          },
+          {
+            "word": "rice",
+            "ipa": "/raɪs/",
+            "zh": "大米"
+          },
+          {
+            "word": "meat",
+            "ipa": "/miːt/",
+            "zh": "肉"
+          },
+          {
+            "word": "vegetable",
+            "ipa": "/ˈvedʒtəbl/",
+            "zh": "蔬菜"
+          },
+          {
+            "word": "healthy",
+            "ipa": "/ˈhelθi/",
+            "zh": "健康的"
+          },
+          {
+            "word": "plate",
+            "ipa": "/pleɪt/",
+            "zh": "盘子"
+          },
+          {
+            "word": "soup",
+            "ipa": "/suːp/",
+            "zh": "汤"
+          },
+          {
+            "word": "fruit",
+            "ipa": "/fruːt/",
+            "zh": "水果"
+          },
+          {
+            "word": "colourful",
+            "ipa": "/ˈkʌləfl/",
+            "zh": "五彩缤纷的"
+          },
+          {
+            "word": "candy",
+            "ipa": "/ˈkændi/",
+            "zh": "糖果"
+          },
+          {
+            "word": "yummy",
+            "ipa": "/ˈjʌmi/",
+            "zh": "很好吃的"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "Where is my toy?",
+        "words": [
+          {
+            "word": "at",
+            "ipa": "/æt/",
+            "zh": "在"
+          },
+          {
+            "word": "home",
+            "ipa": "/həʊm/",
+            "zh": "家"
+          },
+          {
+            "word": "boat",
+            "ipa": "/bəʊt/",
+            "zh": "小船"
+          },
+          {
+            "word": "cool",
+            "ipa": "/kuːl/",
+            "zh": "酷的"
+          },
+          {
+            "word": "keep",
+            "ipa": "/kiːp/",
+            "zh": "保有"
+          },
+          {
+            "word": "ball",
+            "ipa": "/bɔːl/",
+            "zh": "球"
+          },
+          {
+            "word": "doll",
+            "ipa": "/dɒl/",
+            "zh": "玩偶"
+          },
+          {
+            "word": "car",
+            "ipa": "/kɑː(r)/",
+            "zh": "小汽车"
+          },
+          {
+            "word": "on",
+            "ipa": "/ɒn/",
+            "zh": "在……上"
+          },
+          {
+            "word": "shelf",
+            "ipa": "/ʃelf/",
+            "zh": "架子"
+          },
+          {
+            "word": "in",
+            "ipa": "/ɪn/",
+            "zh": "在……内"
+          },
+          {
+            "word": "box",
+            "ipa": "/bɒks/",
+            "zh": "盒子"
+          },
+          {
+            "word": "now",
+            "ipa": "/naʊ/",
+            "zh": "现在"
+          },
+          {
+            "word": "cap",
+            "ipa": "/kæp/",
+            "zh": "帽子"
+          },
+          {
+            "word": "map",
+            "ipa": "/mæp/",
+            "zh": "地图"
+          },
+          {
+            "word": "under",
+            "ipa": "/ˈʌndə(r)/",
+            "zh": "在……下面"
+          },
+          {
+            "word": "still",
+            "ipa": "/stɪl/",
+            "zh": "仍然"
+          },
+          {
+            "word": "put",
+            "ipa": "/pʊt/",
+            "zh": "放；安置"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "How many?",
+        "words": [
+          {
+            "word": "fifteen",
+            "ipa": "/ˌfɪfˈtiːn/",
+            "zh": "十五"
+          },
+          {
+            "word": "twelve",
+            "ipa": "/twelv/",
+            "zh": "十二"
+          },
+          {
+            "word": "fourteen",
+            "ipa": "/ˌfɔːˈtiːn/",
+            "zh": "十四"
+          },
+          {
+            "word": "thirteen",
+            "ipa": "/ˌθɜːˈtiːn/",
+            "zh": "十三"
+          },
+          {
+            "word": "eleven",
+            "ipa": "/ɪˈlevn/",
+            "zh": "十一"
+          },
+          {
+            "word": "choose",
+            "ipa": "/tʃuːz/",
+            "zh": "选择"
+          },
+          {
+            "word": "twenty",
+            "ipa": "/ˈtwenti/",
+            "zh": "二十"
+          },
+          {
+            "word": "seventeen",
+            "ipa": "/ˌsevnˈtiːn/",
+            "zh": "十七"
+          },
+          {
+            "word": "sixteen",
+            "ipa": "/ˌsɪksˈtiːn/",
+            "zh": "十六"
+          },
+          {
+            "word": "eighteen",
+            "ipa": "/ˌeɪˈtiːn/",
+            "zh": "十八"
+          },
+          {
+            "word": "nineteen",
+            "ipa": "/ˌnaɪnˈtiːn/",
+            "zh": "十九"
+          },
+          {
+            "word": "save",
+            "ipa": "/seɪv/",
+            "zh": "储蓄"
+          },
+          {
+            "word": "spend",
+            "ipa": "/spend/",
+            "zh": "花费"
+          },
+          {
+            "word": "piggy bank",
+            "ipa": "/ˈpɪɡi bæŋk/",
+            "zh": "储钱罐"
+          },
+          {
+            "word": "pay",
+            "ipa": "/peɪ/",
+            "zh": "付费"
+          },
+          {
+            "word": "back",
+            "ipa": "/bæk/",
+            "zh": "回到原处"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "sem": "up",
+    "bookName": "四年级上册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "",
+        "words": [
+          {
+            "word": "classroom",
+            "ipa": "/ˈ klɑ ː sruː m/",
+            "zh": "教室"
+          },
+          {
+            "word": "window",
+            "ipa": "/ˈ wɪ ndə ʊ /",
+            "zh": "窗户"
+          },
+          {
+            "word": "blackboard",
+            "ipa": "/ˈ blækbɔ ː d/",
+            "zh": "黑板"
+          },
+          {
+            "word": "light",
+            "ipa": "/laɪ t/",
+            "zh": "电灯"
+          },
+          {
+            "word": "picture",
+            "ipa": "/ˈ pɪ ktʃ ə (r)/",
+            "zh": "图画"
+          },
+          {
+            "word": "door",
+            "ipa": "/dɔ ː (r)/",
+            "zh": "门"
+          },
+          {
+            "word": "computer",
+            "ipa": "/kə mˈ pjuː tə (r)/",
+            "zh": "计算机"
+          },
+          {
+            "word": "fan",
+            "ipa": "/fæn/",
+            "zh": "风扇"
+          },
+          {
+            "word": "wall",
+            "ipa": "/wɔ ː l/",
+            "zh": "墙壁"
+          },
+          {
+            "word": "floor",
+            "ipa": "/flɔ ː (r)/",
+            "zh": "地板"
+          },
+          {
+            "word": "near",
+            "ipa": "/nɪ ə (r)/",
+            "zh": "距离近"
+          },
+          {
+            "word": "TV",
+            "ipa": "/ˌ tiː ˈ viː /",
+            "zh": "电视"
+          },
+          {
+            "word": "clean",
+            "ipa": "/kliː n/",
+            "zh": "打扫"
+          },
+          {
+            "word": "help",
+            "ipa": "/help/",
+            "zh": "帮助"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "",
+        "words": [
+          {
+            "word": "schoolbag",
+            "ipa": "/ˈ skuː lbæɡ /",
+            "zh": "书包"
+          },
+          {
+            "word": "maths book",
+            "ipa": "/mæθ s bʊ k/",
+            "zh": "数学书"
+          },
+          {
+            "word": "English book",
+            "ipa": "/ˈ ɪ ŋ ɡ lɪ ʃ bʊ k/",
+            "zh": "英语书"
+          },
+          {
+            "word": "Chinese book",
+            "ipa": "/ˌ tʃ aɪ ˈ niː z bʊ k/",
+            "zh": "语文书"
+          },
+          {
+            "word": "storybook",
+            "ipa": "/ˈ stɔ ː ribʊ k/",
+            "zh": "故事书"
+          },
+          {
+            "word": "candy",
+            "ipa": "/ˈ kændi/",
+            "zh": "糖果"
+          },
+          {
+            "word": "notebook",
+            "ipa": "/ˈ nə ʊ tbʊ k/",
+            "zh": "笔记本"
+          },
+          {
+            "word": "toy",
+            "ipa": "/tɔ ɪ /",
+            "zh": "玩具"
+          },
+          {
+            "word": "key",
+            "ipa": "/kiː /",
+            "zh": "钥匙"
+          },
+          {
+            "word": "wow",
+            "ipa": "/waʊ /",
+            "zh": "哇；呀"
+          },
+          {
+            "word": "lost",
+            "ipa": "/lɒ st/",
+            "zh": "丢失"
+          },
+          {
+            "word": "so much",
+            "ipa": "/sə ʊ mʌ tʃ /",
+            "zh": "非常地"
+          },
+          {
+            "word": "cute",
+            "ipa": "/kjuː t/",
+            "zh": "可爱的"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "",
+        "words": [
+          {
+            "word": "strong",
+            "ipa": "/strɒ ŋ /",
+            "zh": "强壮的"
+          },
+          {
+            "word": "friendly",
+            "ipa": "/ˈ frendli/",
+            "zh": "友好的"
+          },
+          {
+            "word": "quiet",
+            "ipa": "/ˈ kwaɪ ə t/",
+            "zh": "安静的"
+          },
+          {
+            "word": "hair",
+            "ipa": "/heə (r)/",
+            "zh": "头发"
+          },
+          {
+            "word": "shoe",
+            "ipa": "/ʃ uː /",
+            "zh": "鞋"
+          },
+          {
+            "word": "glasses",
+            "ipa": "/ˈ ɡ lɑ ː sɪ z/",
+            "zh": "眼镜"
+          },
+          {
+            "word": "his",
+            "ipa": "/hɪ z/",
+            "zh": "他的"
+          },
+          {
+            "word": "or",
+            "ipa": "/ɔ ː (r)/",
+            "zh": "或者"
+          },
+          {
+            "word": "right",
+            "ipa": "/raɪ t/",
+            "zh": "正确的；对的"
+          },
+          {
+            "word": "her",
+            "ipa": "/hɜ ː (r)/",
+            "zh": "她的"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "",
+        "words": [
+          {
+            "word": "bedroom",
+            "ipa": "/ˈ bedruː m/",
+            "zh": "卧室"
+          },
+          {
+            "word": "living room",
+            "ipa": "/ˈ lɪ vɪ ŋ ruː m/",
+            "zh": "客厅；起居室"
+          },
+          {
+            "word": "study",
+            "ipa": "/ˈ stʌ di/",
+            "zh": "书房"
+          },
+          {
+            "word": "kitchen",
+            "ipa": "/ˈ kɪ tʃ ɪ n/",
+            "zh": "厨房"
+          },
+          {
+            "word": "bathroom",
+            "ipa": "/ˈ bɑ ː θ ruː m/",
+            "zh": "浴室；洗手间"
+          },
+          {
+            "word": "bed",
+            "ipa": "/bed/",
+            "zh": "床"
+          },
+          {
+            "word": "phone",
+            "ipa": "/fə ʊ n/",
+            "zh": "电话"
+          },
+          {
+            "word": "table",
+            "ipa": "/ˈ teɪ bl/",
+            "zh": "桌子"
+          },
+          {
+            "word": "sofa",
+            "ipa": "/ˈ sə ʊ fə /",
+            "zh": "长沙发"
+          },
+          {
+            "word": "fridge",
+            "ipa": "/frɪ dʒ /",
+            "zh": "冰箱"
+          },
+          {
+            "word": "find",
+            "ipa": "/faɪ nd/",
+            "zh": "找到"
+          },
+          {
+            "word": "them",
+            "ipa": "/ðem/",
+            "zh": "他（她、它）们"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "",
+        "words": [
+          {
+            "word": "beef",
+            "ipa": "/biː f/",
+            "zh": "牛肉"
+          },
+          {
+            "word": "chicken",
+            "ipa": "/ˈ tʃ ɪ kɪ n/",
+            "zh": "鸡肉"
+          },
+          {
+            "word": "noodles",
+            "ipa": "/ˈ nuː dlz/",
+            "zh": "面条"
+          },
+          {
+            "word": "soup",
+            "ipa": "/suː p/",
+            "zh": "汤"
+          },
+          {
+            "word": "vegetable",
+            "ipa": "/ˈ vedʒ tə bl/",
+            "zh": "蔬菜"
+          },
+          {
+            "word": "chopsticks",
+            "ipa": "/ˈ tʃ ɒ pstɪ ks/",
+            "zh": "筷子"
+          },
+          {
+            "word": "bowl",
+            "ipa": "/bə ʊ l/",
+            "zh": "碗"
+          },
+          {
+            "word": "fork",
+            "ipa": "/fɔ ː k/",
+            "zh": "叉子"
+          },
+          {
+            "word": "knife",
+            "ipa": "/naɪ f/",
+            "zh": "刀"
+          },
+          {
+            "word": "spoon",
+            "ipa": "/spuː n/",
+            "zh": "勺子"
+          },
+          {
+            "word": "dinner",
+            "ipa": "/ˈ dɪ nə (r)/",
+            "zh": "晚餐；正餐"
+          },
+          {
+            "word": "ready",
+            "ipa": "/ˈ redi/",
+            "zh": "准备好了"
+          },
+          {
+            "word": "help yourself",
+            "ipa": "/help jɔ ː ˈ self/",
+            "zh": "请自便"
+          },
+          {
+            "word": "pass",
+            "ipa": "/pɑ ː s/",
+            "zh": "给；递"
+          },
+          {
+            "word": "try",
+            "ipa": "/traɪ /",
+            "zh": "试；尝试"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "",
+        "words": [
+          {
+            "word": "parents",
+            "ipa": "/ˈ peə rə nts/",
+            "zh": "父母"
+          },
+          {
+            "word": "cousin",
+            "ipa": "/ˈ kʌ zn/",
+            "zh": "同辈表亲（或堂亲）"
+          },
+          {
+            "word": "uncle",
+            "ipa": "/ˈ ʌ ŋ kl/",
+            "zh": "舅父；叔父；伯父；姑父；姨父"
+          },
+          {
+            "word": "aunt",
+            "ipa": "/ɑ ː nt/",
+            "zh": "姑母；姨母"
+          },
+          {
+            "word": "baby brother",
+            "ipa": "/ˈ beɪ bi brʌ ðə (r)/",
+            "zh": "婴儿小弟弟"
+          },
+          {
+            "word": "doctor",
+            "ipa": "/ˈ dɒ ktə (r)/",
+            "zh": "医生"
+          },
+          {
+            "word": "cook",
+            "ipa": "/kʊ k/",
+            "zh": "厨师"
+          },
+          {
+            "word": "driver",
+            "ipa": "/ˈ draɪ və (r)/",
+            "zh": "司机"
+          },
+          {
+            "word": "farmer",
+            "ipa": "/ˈ fɑ ː mə (r)/",
+            "zh": "农民"
+          },
+          {
+            "word": "nurse",
+            "ipa": "/nɜ ː s/",
+            "zh": "护士"
+          },
+          {
+            "word": "people",
+            "ipa": "/ˈ piː pl/",
+            "zh": "人们"
+          },
+          {
+            "word": "but",
+            "ipa": "/bʌ t/",
+            "zh": "但是"
+          },
+          {
+            "word": "little",
+            "ipa": "/ˈ lɪ tl/",
+            "zh": "小的"
+          },
+          {
+            "word": "puppy",
+            "ipa": "/ˈ pʌ pi/",
+            "zh": "小狗"
+          },
+          {
+            "word": "football player",
+            "ipa": "/ˈ fʊ tbɔ ː l pleɪ ə (r)/",
+            "zh": "足球运动员"
+          },
+          {
+            "word": "job",
+            "ipa": "/dʒ ɒ b/",
+            "zh": "工作"
+          },
+          {
+            "word": "basketball",
+            "ipa": "/ˈ bɑ ː skɪ tbɔ ː l/",
+            "zh": "篮球"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "sem": "down",
+    "bookName": "四年级下册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "",
+        "words": [
+          {
+            "word": "sorry",
+            "ipa": "/ˈsɒri/",
+            "zh": "对不起"
+          },
+          {
+            "word": "hurry",
+            "ipa": "/ˈhʌri/",
+            "zh": "快点；赶快"
+          },
+          {
+            "word": "late",
+            "ipa": "/leɪt/",
+            "zh": "迟到"
+          },
+          {
+            "word": "class",
+            "ipa": "/klɑːs/",
+            "zh": "课"
+          },
+          {
+            "word": "ready",
+            "ipa": "/ˈredi/",
+            "zh": "准备好"
+          },
+          {
+            "word": "rule",
+            "ipa": "/ruːl/",
+            "zh": "规则"
+          },
+          {
+            "word": "classroom",
+            "ipa": "/ˈklɑːsruːm/",
+            "zh": "教室"
+          },
+          {
+            "word": "turn",
+            "ipa": "/tɜːn/",
+            "zh": "关掉"
+          },
+          {
+            "word": "light",
+            "ipa": "/laɪt/",
+            "zh": "灯"
+          },
+          {
+            "word": "blackboard",
+            "ipa": "/ˈblækbɔːd/",
+            "zh": "黑板"
+          },
+          {
+            "word": "desk",
+            "ipa": "/desk/",
+            "zh": "书桌"
+          },
+          {
+            "word": "chair",
+            "ipa": "/tʃeə(r)/",
+            "zh": "椅子"
+          },
+          {
+            "word": "tidy",
+            "ipa": "/ˈtaɪdi/",
+            "zh": "整洁的"
+          },
+          {
+            "word": "music",
+            "ipa": "/ˈmjuːzɪk/",
+            "zh": "音乐"
+          },
+          {
+            "word": "door",
+            "ipa": "/dɔː(r)/",
+            "zh": "门"
+          },
+          {
+            "word": "window",
+            "ipa": "/ˈwɪndəʊ/",
+            "zh": "窗"
+          },
+          {
+            "word": "fan",
+            "ipa": "/fæn/",
+            "zh": "风扇"
+          },
+          {
+            "word": "when",
+            "ipa": "/wen/",
+            "zh": "当时"
+          },
+          {
+            "word": "understand",
+            "ipa": "/ˌʌndəˈstænd/",
+            "zh": "懂"
+          },
+          {
+            "word": "wall",
+            "ipa": "/wɔːl/",
+            "zh": "墙"
+          },
+          {
+            "word": "newspaper",
+            "ipa": "/ˈnjuːzpeɪpə(r)/",
+            "zh": "报纸"
+          },
+          {
+            "word": "hand out",
+            "ipa": "/aʊt/",
+            "zh": "分发"
+          },
+          {
+            "word": "workbook",
+            "ipa": "/ˈwɜːkbʊk/",
+            "zh": "练习册"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "",
+        "words": [
+          {
+            "word": "watch",
+            "ipa": "/wɒtʃ/",
+            "zh": "看"
+          },
+          {
+            "word": "TV",
+            "ipa": "/ˌtiːˈviː/",
+            "zh": "电视"
+          },
+          {
+            "word": "homework",
+            "ipa": "/ˈhəʊmwɜːk/",
+            "zh": "家庭作业"
+          },
+          {
+            "word": "first",
+            "ipa": "/fɜːst/",
+            "zh": "首先"
+          },
+          {
+            "word": "wet",
+            "ipa": "/wet/",
+            "zh": "湿的"
+          },
+          {
+            "word": "run",
+            "ipa": "/rʌn/",
+            "zh": "跑"
+          },
+          {
+            "word": "living",
+            "ipa": "/ˈlɪvɪŋ/",
+            "zh": "客厅"
+          },
+          {
+            "word": "safe",
+            "ipa": "/seɪf/",
+            "zh": "安全的"
+          },
+          {
+            "word": "word",
+            "ipa": "/wɜːd/",
+            "zh": "言语"
+          },
+          {
+            "word": "wash",
+            "ipa": "/wɒʃ/",
+            "zh": "洗"
+          },
+          {
+            "word": "helpful",
+            "ipa": "/ˈhelpfl/",
+            "zh": "有帮助的"
+          },
+          {
+            "word": "loud",
+            "ipa": "/laʊd/",
+            "zh": "吵闹的"
+          },
+          {
+            "word": "sleep",
+            "ipa": "/sliːp/",
+            "zh": "睡觉"
+          },
+          {
+            "word": "bedroom",
+            "ipa": "/ˈbedruːm/",
+            "zh": "卧室"
+          },
+          {
+            "word": "kitchen",
+            "ipa": "/ˈkɪtʃɪn/",
+            "zh": "厨房"
+          },
+          {
+            "word": "study",
+            "ipa": "/ˈstʌdi/",
+            "zh": "书房"
+          },
+          {
+            "word": "bathroom",
+            "ipa": "/ˈbɑːθruːm/",
+            "zh": "浴室"
+          },
+          {
+            "word": "think",
+            "ipa": "/θɪŋk/",
+            "zh": "想"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "",
+        "words": [
+          {
+            "word": "work",
+            "ipa": "/wɜːk/",
+            "zh": "工作"
+          },
+          {
+            "word": "hard",
+            "ipa": "/hɑːd/",
+            "zh": "努力地"
+          },
+          {
+            "word": "follow",
+            "ipa": "/ˈfɒləʊ/",
+            "zh": "遵循"
+          },
+          {
+            "word": "feel",
+            "ipa": "/fiːl/",
+            "zh": "觉得"
+          },
+          {
+            "word": "over",
+            "ipa": "/ˈəʊvə(r)/",
+            "zh": "结束"
+          },
+          {
+            "word": "kid",
+            "ipa": "/kɪd/",
+            "zh": "小孩"
+          },
+          {
+            "word": "dinner",
+            "ipa": "/ˈdɪnə(r)/",
+            "zh": "正餐"
+          },
+          {
+            "word": "art",
+            "ipa": "/ɑːt/",
+            "zh": "美术"
+          },
+          {
+            "word": "lunch",
+            "ipa": "/lʌntʃ/",
+            "zh": "午餐"
+          },
+          {
+            "word": "maths",
+            "ipa": "/mæθs/",
+            "zh": "数学"
+          },
+          {
+            "word": "get up",
+            "ipa": "",
+            "zh": "起床"
+          },
+          {
+            "word": "go home",
+            "ipa": "",
+            "zh": "回家"
+          },
+          {
+            "word": "want",
+            "ipa": "/wɒnt/",
+            "zh": "想要"
+          },
+          {
+            "word": "clock",
+            "ipa": "/klɒk/",
+            "zh": "时钟"
+          },
+          {
+            "word": "just",
+            "ipa": "/dʒʌst/",
+            "zh": "只是"
+          },
+          {
+            "word": "minute",
+            "ipa": "/ˈmɪnɪt/",
+            "zh": "分钟"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "",
+        "words": [
+          {
+            "word": "trousers",
+            "ipa": "/ˈtraʊzəz/",
+            "zh": "裤子"
+          },
+          {
+            "word": "pair",
+            "ipa": "/peə(r)/",
+            "zh": "一条"
+          },
+          {
+            "word": "clothes",
+            "ipa": "/kləʊðz/",
+            "zh": "衣服"
+          },
+          {
+            "word": "those",
+            "ipa": "/ðəʊz/",
+            "zh": "那些"
+          },
+          {
+            "word": "shorts",
+            "ipa": "/ʃɔːts/",
+            "zh": "短裤"
+          },
+          {
+            "word": "jacket",
+            "ipa": "/ˈdʒækɪt/",
+            "zh": "夹克衫"
+          },
+          {
+            "word": "skirt",
+            "ipa": "/skɜːt/",
+            "zh": "裙子"
+          },
+          {
+            "word": "dear",
+            "ipa": "/dɪə(r)/",
+            "zh": "亲爱的"
+          },
+          {
+            "word": "expensive",
+            "ipa": "/ɪkˈspensɪv/",
+            "zh": "昂贵的"
+          },
+          {
+            "word": "take",
+            "ipa": "/teɪk/",
+            "zh": "买下"
+          },
+          {
+            "word": "cheap",
+            "ipa": "/tʃiːp/",
+            "zh": "便宜的"
+          },
+          {
+            "word": "shoe",
+            "ipa": "/ʃuː/",
+            "zh": "鞋"
+          },
+          {
+            "word": "beautiful",
+            "ipa": "/ˈbjuːtɪfl/",
+            "zh": "美丽的"
+          },
+          {
+            "word": "hat",
+            "ipa": "/hæt/",
+            "zh": "帽子"
+          },
+          {
+            "word": "sunglasses",
+            "ipa": "/ˈsʌnglɑːsɪz/",
+            "zh": "太阳镜"
+          },
+          {
+            "word": "free",
+            "ipa": "/friː/",
+            "zh": "免费的"
+          },
+          {
+            "word": "large",
+            "ipa": "/lɑːdʒ/",
+            "zh": "大型号的"
+          },
+          {
+            "word": "size",
+            "ipa": "/saɪz/",
+            "zh": "尺码"
+          },
+          {
+            "word": "list",
+            "ipa": "/lɪst/",
+            "zh": "清单"
+          },
+          {
+            "word": "try",
+            "ipa": "/traɪ/",
+            "zh": "试"
+          },
+          {
+            "word": "any",
+            "ipa": "/ˈeni/",
+            "zh": "任何的"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "",
+        "words": [
+          {
+            "word": "cow",
+            "ipa": "/kaʊ/",
+            "zh": "奶牛"
+          },
+          {
+            "word": "horse",
+            "ipa": "/hɔːs/",
+            "zh": "马"
+          },
+          {
+            "word": "sheep",
+            "ipa": "/ʃiːp/",
+            "zh": "羊"
+          },
+          {
+            "word": "pig",
+            "ipa": "/pɪɡ/",
+            "zh": "猪"
+          },
+          {
+            "word": "chicken",
+            "ipa": "/ˈtʃɪkɪn/",
+            "zh": "鸡"
+          },
+          {
+            "word": "tomato",
+            "ipa": "/təˈmɑːtəʊ/",
+            "zh": "西红柿"
+          },
+          {
+            "word": "bee",
+            "ipa": "/biː/",
+            "zh": "蜜蜂"
+          },
+          {
+            "word": "mouse",
+            "ipa": "/maʊs/",
+            "zh": "老鼠"
+          },
+          {
+            "word": "carrot",
+            "ipa": "/ˈkærət/",
+            "zh": "胡萝卜"
+          },
+          {
+            "word": "potato",
+            "ipa": "/pəˈteɪtəʊ/",
+            "zh": "土豆"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "",
+        "words": [
+          {
+            "word": "green bean",
+            "ipa": "/biːn/",
+            "zh": "青刀豆"
+          },
+          {
+            "word": "can",
+            "ipa": "/kæn/",
+            "zh": "金属罐"
+          },
+          {
+            "word": "feed",
+            "ipa": "/fiːd/",
+            "zh": "喂养"
+          },
+          {
+            "word": "pass",
+            "ipa": "/pɑːs/",
+            "zh": "递"
+          },
+          {
+            "word": "pick",
+            "ipa": "/pɪk/",
+            "zh": "采"
+          },
+          {
+            "word": "milk",
+            "ipa": "/mɪlk/",
+            "zh": "挤奶"
+          },
+          {
+            "word": "knife",
+            "ipa": "/naɪf/",
+            "zh": "刀"
+          },
+          {
+            "word": "fork",
+            "ipa": "/fɔːk/",
+            "zh": "餐叉"
+          },
+          {
+            "word": "chopstick",
+            "ipa": "/ˈtʃɒpstɪk/",
+            "zh": "筷子"
+          },
+          {
+            "word": "waste",
+            "ipa": "/weɪst/",
+            "zh": "浪费"
+          },
+          {
+            "word": "food",
+            "ipa": "/fuːd/",
+            "zh": "食物"
+          },
+          {
+            "word": "delicious",
+            "ipa": "/dɪˈlɪʃəs/",
+            "zh": "美味的"
+          },
+          {
+            "word": "set",
+            "ipa": "/set/",
+            "zh": "摆放餐具"
+          },
+          {
+            "word": "bowl",
+            "ipa": "/bəʊl/",
+            "zh": "碗"
+          },
+          {
+            "word": "spoon",
+            "ipa": "/spuːn/",
+            "zh": "勺"
+          },
+          {
+            "word": "supermarket",
+            "ipa": "/ˈsuːpəmɑːkɪt/",
+            "zh": "超市"
+          },
+          {
+            "word": "herself",
+            "ipa": "/hɜːˈself/",
+            "zh": "她自己"
+          },
+          {
+            "word": "week",
+            "ipa": "/wiːk/",
+            "zh": "周"
+          },
+          {
+            "word": "salad",
+            "ipa": "/ˈsæləd/",
+            "zh": "蔬菜沙拉"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "sem": "up",
+    "bookName": "五年级上册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "",
+        "words": [
+          {
+            "word": "old",
+            "ipa": "/əʊld/",
+            "zh": "老的；年纪大的"
+          },
+          {
+            "word": "young",
+            "ipa": "/jʌŋ/",
+            "zh": "年轻的；岁数不大的"
+          },
+          {
+            "word": "funny",
+            "ipa": "/ˈfʌni/",
+            "zh": "滑稽的；可笑的"
+          },
+          {
+            "word": "kind",
+            "ipa": "/kaɪnd/",
+            "zh": "体贴的；慈祥的；宽容的"
+          },
+          {
+            "word": "strict",
+            "ipa": "/strɪkt/",
+            "zh": "要求严格的；严厉的"
+          },
+          {
+            "word": "polite",
+            "ipa": "/pəˈlaɪt/",
+            "zh": "有礼貌的；客气的"
+          },
+          {
+            "word": "hard-working",
+            "ipa": "/ˌhɑːd ˈwɜːkɪŋ/",
+            "zh": "工作努力的；辛勤的"
+          },
+          {
+            "word": "helpful",
+            "ipa": "/ˈhelpfl/",
+            "zh": "有用的；愿意帮忙的"
+          },
+          {
+            "word": "clever",
+            "ipa": "/ˈklevə(r)/",
+            "zh": "聪明的；聪颖的"
+          },
+          {
+            "word": "shy",
+            "ipa": "/ʃaɪ/",
+            "zh": "羞怯的；腼腆的；怕生的"
+          },
+          {
+            "word": "know",
+            "ipa": "/nəʊ/",
+            "zh": "知道；了解"
+          },
+          {
+            "word": "our",
+            "ipa": "/ˈaʊə(r)/",
+            "zh": "我们的"
+          },
+          {
+            "word": "Ms",
+            "ipa": "/mɪz/",
+            "zh": "女士"
+          },
+          {
+            "word": "will",
+            "ipa": "/wɪl/",
+            "zh": "将要"
+          },
+          {
+            "word": "sometimes",
+            "ipa": "/ˈsʌmtaɪmz/",
+            "zh": "有时；间或"
+          },
+          {
+            "word": "robot",
+            "ipa": "/ˈrəʊbɒt/",
+            "zh": "机器人"
+          },
+          {
+            "word": "him",
+            "ipa": "/hɪm/",
+            "zh": "他"
+          },
+          {
+            "word": "speak",
+            "ipa": "/spiːk/",
+            "zh": "会说；会讲（某种语言）"
+          },
+          {
+            "word": "finish",
+            "ipa": "/ˈfɪnɪʃ/",
+            "zh": "完成；做好"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "",
+        "words": [
+          {
+            "word": "Monday",
+            "ipa": "/ˈmʌndeɪ/",
+            "zh": "星期一"
+          },
+          {
+            "word": "Tuesday",
+            "ipa": "/ˈtjuːzdeɪ/",
+            "zh": "星期二"
+          },
+          {
+            "word": "Wednesday",
+            "ipa": "/ˈwenzdeɪ/",
+            "zh": "星期三"
+          },
+          {
+            "word": "Thursday",
+            "ipa": "/ˈθɜːzdeɪ/",
+            "zh": "星期四"
+          },
+          {
+            "word": "Friday",
+            "ipa": "/ˈfraɪdeɪ/",
+            "zh": "星期五"
+          },
+          {
+            "word": "Saturday",
+            "ipa": "/ˈsætədeɪ/",
+            "zh": "星期六"
+          },
+          {
+            "word": "Sunday",
+            "ipa": "/ˈsʌndeɪ/",
+            "zh": "星期日"
+          },
+          {
+            "word": "weekend",
+            "ipa": "/ˌwiːkˈend/",
+            "zh": "周末"
+          },
+          {
+            "word": "wash",
+            "ipa": "/wɒʃ/",
+            "zh": "洗"
+          },
+          {
+            "word": "watch",
+            "ipa": "/wɒtʃ/",
+            "zh": "看"
+          },
+          {
+            "word": "watch TV",
+            "ipa": "",
+            "zh": "看电视"
+          },
+          {
+            "word": "do",
+            "ipa": "/duː/",
+            "zh": "做；干"
+          },
+          {
+            "word": "do homework",
+            "ipa": "",
+            "zh": "做作业"
+          },
+          {
+            "word": "read",
+            "ipa": "/riːd/",
+            "zh": "看；读"
+          },
+          {
+            "word": "read books",
+            "ipa": "",
+            "zh": "看书"
+          },
+          {
+            "word": "play",
+            "ipa": "/pleɪ/",
+            "zh": "踢；玩；参加"
+          },
+          {
+            "word": "play football",
+            "ipa": "",
+            "zh": "踢足球"
+          },
+          {
+            "word": "cooking",
+            "ipa": "/ˈkʊkɪŋ/",
+            "zh": "烹饪；烹调"
+          },
+          {
+            "word": "often",
+            "ipa": "/ˈɒfn/",
+            "zh": "时常；常常"
+          },
+          {
+            "word": "park",
+            "ipa": "/pɑːk/",
+            "zh": "公园"
+          },
+          {
+            "word": "tired",
+            "ipa": "/ˈtaɪəd/",
+            "zh": "疲倦的"
+          },
+          {
+            "word": "sport",
+            "ipa": "/spɔːt/",
+            "zh": "体育运动"
+          },
+          {
+            "word": "play sports",
+            "ipa": "",
+            "zh": "做体育运动"
+          },
+          {
+            "word": "should",
+            "ipa": "/ʃʊd/",
+            "zh": "应该；应当"
+          },
+          {
+            "word": "every",
+            "ipa": "/ˈevri/",
+            "zh": "每一个"
+          },
+          {
+            "word": "day",
+            "ipa": "/deɪ/",
+            "zh": "一天"
+          },
+          {
+            "word": "schedule",
+            "ipa": "/ˈʃedjuːl/",
+            "zh": "工作计划；日程安排"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "",
+        "words": [
+          {
+            "word": "sandwich",
+            "ipa": "/ˈsænwɪtʃ/",
+            "zh": "三明治"
+          },
+          {
+            "word": "salad",
+            "ipa": "/ˈsæləd/",
+            "zh": "蔬菜沙拉"
+          },
+          {
+            "word": "hamburger",
+            "ipa": "/ˈhæmbɜːɡə(r)/",
+            "zh": "汉堡包"
+          },
+          {
+            "word": "ice cream",
+            "ipa": "/ˌaɪs ˈkriːm/",
+            "zh": "冰激凌"
+          },
+          {
+            "word": "tea",
+            "ipa": "/tiː/",
+            "zh": "茶；茶水"
+          },
+          {
+            "word": "fresh",
+            "ipa": "/freʃ/",
+            "zh": "新鲜的"
+          },
+          {
+            "word": "healthy",
+            "ipa": "/ˈhelθi/",
+            "zh": "健康的"
+          },
+          {
+            "word": "delicious",
+            "ipa": "/dɪˈlɪʃəs/",
+            "zh": "美味的"
+          },
+          {
+            "word": "hot",
+            "ipa": "/hɒt/",
+            "zh": "辣的；辛辣的"
+          },
+          {
+            "word": "sweet",
+            "ipa": "/swiːt/",
+            "zh": "含糖的；甜的"
+          },
+          {
+            "word": "drink",
+            "ipa": "/drɪŋk/",
+            "zh": "喝；饮"
+          },
+          {
+            "word": "thirsty",
+            "ipa": "/ˈθɜːsti/",
+            "zh": "渴的"
+          },
+          {
+            "word": "favourite",
+            "ipa": "/ˈfeɪvərɪt/",
+            "zh": "特别喜爱的"
+          },
+          {
+            "word": "food",
+            "ipa": "/fuːd/",
+            "zh": "食物"
+          },
+          {
+            "word": "dear",
+            "ipa": "/dɪə(r)/",
+            "zh": "亲爱的"
+          },
+          {
+            "word": "onion",
+            "ipa": "/ˈʌnjən/",
+            "zh": "洋葱"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "",
+        "words": [
+          {
+            "word": "sing",
+            "ipa": "/sɪŋ/",
+            "zh": "唱；唱歌"
+          },
+          {
+            "word": "song",
+            "ipa": "/sɒŋ/",
+            "zh": "歌曲"
+          },
+          {
+            "word": "kung fu",
+            "ipa": "/ˌkʌŋ ˈfuː/",
+            "zh": "功夫；武术"
+          },
+          {
+            "word": "dance",
+            "ipa": "/dɑːns/",
+            "zh": "跳舞"
+          },
+          {
+            "word": "draw",
+            "ipa": "/drɔː/",
+            "zh": "画"
+          },
+          {
+            "word": "cartoon",
+            "ipa": "/kɑːˈtuːn/",
+            "zh": "漫画"
+          },
+          {
+            "word": "draw cartoons",
+            "ipa": "",
+            "zh": "画漫画"
+          },
+          {
+            "word": "cook",
+            "ipa": "/kʊk/",
+            "zh": "烹调；烹饪"
+          },
+          {
+            "word": "swim",
+            "ipa": "/swɪm/",
+            "zh": "游泳"
+          },
+          {
+            "word": "play basketball",
+            "ipa": "",
+            "zh": "打篮球"
+          },
+          {
+            "word": "ping-pong",
+            "ipa": "/ˈpɪŋpɒŋ/",
+            "zh": "乒乓球"
+          },
+          {
+            "word": "speak English",
+            "ipa": "",
+            "zh": "说英语"
+          },
+          {
+            "word": "we'll",
+            "ipa": "/wil/",
+            "zh": "我们将要"
+          },
+          {
+            "word": "party",
+            "ipa": "/ˈpɑːti/",
+            "zh": "聚会"
+          },
+          {
+            "word": "next",
+            "ipa": "/nekst/",
+            "zh": "下一个的"
+          },
+          {
+            "word": "wonderful",
+            "ipa": "/ˈwʌndəfl/",
+            "zh": "极好的"
+          },
+          {
+            "word": "learn",
+            "ipa": "/lɜːn/",
+            "zh": "学习"
+          },
+          {
+            "word": "any",
+            "ipa": "/ˈeni/",
+            "zh": "任何的"
+          },
+          {
+            "word": "problem",
+            "ipa": "/ˈprɒbləm/",
+            "zh": "问题"
+          },
+          {
+            "word": "no problem",
+            "ipa": "",
+            "zh": "没问题"
+          },
+          {
+            "word": "want",
+            "ipa": "/wɒnt/",
+            "zh": "想要"
+          },
+          {
+            "word": "send",
+            "ipa": "/send/",
+            "zh": "邮寄；发送"
+          },
+          {
+            "word": "email",
+            "ipa": "/ˈiːmeɪl/",
+            "zh": "电子邮件"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "",
+        "words": [
+          {
+            "word": "clock",
+            "ipa": "/klɒk/",
+            "zh": "时钟"
+          },
+          {
+            "word": "plant",
+            "ipa": "/plɑːnt/",
+            "zh": "植物"
+          },
+          {
+            "word": "bottle",
+            "ipa": "/ˈbɒtl/",
+            "zh": "瓶子"
+          },
+          {
+            "word": "water bottle",
+            "ipa": "",
+            "zh": "水瓶"
+          },
+          {
+            "word": "bike",
+            "ipa": "/baɪk/",
+            "zh": "自行车"
+          },
+          {
+            "word": "photo",
+            "ipa": "/ˈfəʊtəʊ/",
+            "zh": "照片"
+          },
+          {
+            "word": "front",
+            "ipa": "/frʌnt/",
+            "zh": "正面"
+          },
+          {
+            "word": "between",
+            "ipa": "/bɪˈtwiːn/",
+            "zh": "在中间"
+          },
+          {
+            "word": "above",
+            "ipa": "/əˈbʌv/",
+            "zh": "在上面"
+          },
+          {
+            "word": "beside",
+            "ipa": "/bɪˈsaɪd/",
+            "zh": "在旁边"
+          },
+          {
+            "word": "behind",
+            "ipa": "/bɪˈhaɪnd/",
+            "zh": "在后面"
+          },
+          {
+            "word": "there",
+            "ipa": "/ðeə(r)/",
+            "zh": "（表示存在或发生）"
+          },
+          {
+            "word": "grandparent",
+            "ipa": "/ˈɡrænpeərənt/",
+            "zh": "祖父；祖母；外祖父；外祖母"
+          },
+          {
+            "word": "their",
+            "ipa": "/ðeə(r)/",
+            "zh": "他们的"
+          },
+          {
+            "word": "house",
+            "ipa": "/haʊs/",
+            "zh": "房屋；房子"
+          },
+          {
+            "word": "lot",
+            "ipa": "/lɒt/",
+            "zh": "大量"
+          },
+          {
+            "word": "lots of",
+            "ipa": "",
+            "zh": "大量"
+          },
+          {
+            "word": "flower",
+            "ipa": "/ˈflaʊə(r)/",
+            "zh": "花"
+          },
+          {
+            "word": "move",
+            "ipa": "/muːv/",
+            "zh": "搬家"
+          },
+          {
+            "word": "dirty",
+            "ipa": "/ˈdɜːti/",
+            "zh": "肮脏的"
+          },
+          {
+            "word": "everywhere",
+            "ipa": "/ˈevriweə(r)/",
+            "zh": "处处"
+          },
+          {
+            "word": "mouse",
+            "ipa": "/maʊs/",
+            "zh": "老鼠"
+          },
+          {
+            "word": "live",
+            "ipa": "/lɪv/",
+            "zh": "居住"
+          },
+          {
+            "word": "nature",
+            "ipa": "/ˈneɪtʃə(r)/",
+            "zh": "自然界"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "",
+        "words": [
+          {
+            "word": "forest",
+            "ipa": "/ˈfɒrɪst/",
+            "zh": "森林"
+          },
+          {
+            "word": "river",
+            "ipa": "/ˈrɪvə(r)/",
+            "zh": "河流"
+          },
+          {
+            "word": "lake",
+            "ipa": "/leɪk/",
+            "zh": "湖泊"
+          },
+          {
+            "word": "mountain",
+            "ipa": "/ˈmaʊntən/",
+            "zh": "高山"
+          },
+          {
+            "word": "hill",
+            "ipa": "/hɪl/",
+            "zh": "山丘"
+          },
+          {
+            "word": "tree",
+            "ipa": "/triː/",
+            "zh": "树"
+          },
+          {
+            "word": "bridge",
+            "ipa": "/brɪdʒ/",
+            "zh": "桥"
+          },
+          {
+            "word": "building",
+            "ipa": "/ˈbɪldɪŋ/",
+            "zh": "建筑物"
+          },
+          {
+            "word": "village",
+            "ipa": "/ˈvɪlɪdʒ/",
+            "zh": "村庄"
+          },
+          {
+            "word": "house",
+            "ipa": "/haʊs/",
+            "zh": "房子"
+          },
+          {
+            "word": "boating",
+            "ipa": "/ˈbəʊtɪŋ/",
+            "zh": "划船"
+          },
+          {
+            "word": "go boating",
+            "ipa": "",
+            "zh": "去划船"
+          },
+          {
+            "word": "aren't",
+            "ipa": "/ɑːnt/",
+            "zh": "不是"
+          },
+          {
+            "word": "rabbit",
+            "ipa": "/ˈræbɪt/",
+            "zh": "兔子"
+          },
+          {
+            "word": "high",
+            "ipa": "/haɪ/",
+            "zh": "高的"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "sem": "down",
+    "bookName": "五年级下册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "",
+        "words": [
+          {
+            "word": "eat breakfast",
+            "ipa": "/iːt ˈbrekfəst/",
+            "zh": "吃早饭"
+          },
+          {
+            "word": "have ... class",
+            "ipa": "/hæv ... klɑːs/",
+            "zh": "上课"
+          },
+          {
+            "word": "play sports",
+            "ipa": "/pleɪ spɔːts/",
+            "zh": "进行体育运动"
+          },
+          {
+            "word": "exercise",
+            "ipa": "/ˈeksəsaɪz/",
+            "zh": "活动；运动"
+          },
+          {
+            "word": "do morning exercises",
+            "ipa": "/duː ˈmɔːnɪŋ ˈeksəsaɪzɪz/",
+            "zh": "做早操"
+          },
+          {
+            "word": "eat dinner",
+            "ipa": "/iːt ˈdɪnə(r)/",
+            "zh": "吃晚饭"
+          },
+          {
+            "word": "clean my room",
+            "ipa": "/kliːn maɪ ruːm/",
+            "zh": "打扫我的房间"
+          },
+          {
+            "word": "go for a walk",
+            "ipa": "/ɡəʊ fɔːr ə wɔːk/",
+            "zh": "去散步"
+          },
+          {
+            "word": "go shopping",
+            "ipa": "/ɡəʊ ˈʃɒpɪŋ/",
+            "zh": "去买东西；购物"
+          },
+          {
+            "word": "take",
+            "ipa": "/teɪk/",
+            "zh": "学习；上（课）"
+          },
+          {
+            "word": "dancing",
+            "ipa": "/ˈdɑːnsɪŋ/",
+            "zh": "跳舞；舞蹈"
+          },
+          {
+            "word": "take a dancing class",
+            "ipa": "/teɪk ə ˈdɑːnsɪŋ klɑːs/",
+            "zh": "上舞蹈课"
+          },
+          {
+            "word": "when",
+            "ipa": "/wen/",
+            "zh": "什么时候"
+          },
+          {
+            "word": "after",
+            "ipa": "/ˈɑːftə(r)/",
+            "zh": "在（时间）后"
+          },
+          {
+            "word": "start",
+            "ipa": "/stɑːt/",
+            "zh": "开始"
+          },
+          {
+            "word": "usually",
+            "ipa": "/ˈjuːʒuəli/",
+            "zh": "通常地"
+          },
+          {
+            "word": "Spain",
+            "ipa": "/speɪn/",
+            "zh": "西班牙"
+          },
+          {
+            "word": "late",
+            "ipa": "/leɪt/",
+            "zh": "晚；迟"
+          },
+          {
+            "word": "a.m.",
+            "ipa": "/ˌeɪ ˈem/",
+            "zh": "上午"
+          },
+          {
+            "word": "p.m.",
+            "ipa": "/ˌpiː ˈem/",
+            "zh": "下午"
+          },
+          {
+            "word": "why",
+            "ipa": "/waɪ/",
+            "zh": "为什么"
+          },
+          {
+            "word": "shop",
+            "ipa": "/ʃɒp/",
+            "zh": "去买东西；购物"
+          },
+          {
+            "word": "work",
+            "ipa": "/wɜːk/",
+            "zh": "工作"
+          },
+          {
+            "word": "last",
+            "ipa": "/lɑːst/",
+            "zh": "上一个的；刚过去的"
+          },
+          {
+            "word": "sound",
+            "ipa": "/saʊnd/",
+            "zh": "听起来好像"
+          },
+          {
+            "word": "also",
+            "ipa": "/ˈɔːlsəʊ/",
+            "zh": "还；也"
+          },
+          {
+            "word": "busy",
+            "ipa": "/ˈbɪzi/",
+            "zh": "忙的"
+          },
+          {
+            "word": "need",
+            "ipa": "/niːd/",
+            "zh": "需要"
+          },
+          {
+            "word": "play",
+            "ipa": "/pleɪ/",
+            "zh": "戏剧；剧本"
+          },
+          {
+            "word": "letter",
+            "ipa": "/ˈletə(r)/",
+            "zh": "信"
+          },
+          {
+            "word": "live",
+            "ipa": "/lɪv/",
+            "zh": "居住"
+          },
+          {
+            "word": "island",
+            "ipa": "/ˈaɪlənd/",
+            "zh": "岛"
+          },
+          {
+            "word": "always",
+            "ipa": "/ˈɔːlweɪz/",
+            "zh": "总是；一直"
+          },
+          {
+            "word": "cave",
+            "ipa": "/keɪv/",
+            "zh": "山洞；洞穴"
+          },
+          {
+            "word": "go swimming",
+            "ipa": "/ɡəʊ ˈswɪmɪŋ/",
+            "zh": "去游泳"
+          },
+          {
+            "word": "win",
+            "ipa": "/wɪn/",
+            "zh": "获胜"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "",
+        "words": [
+          {
+            "word": "spring",
+            "ipa": "/sprɪŋ/",
+            "zh": "春天"
+          },
+          {
+            "word": "summer",
+            "ipa": "/ˈsʌmə(r)/",
+            "zh": "夏天"
+          },
+          {
+            "word": "autumn",
+            "ipa": "/ˈɔːtəm/",
+            "zh": "秋天"
+          },
+          {
+            "word": "winter",
+            "ipa": "/ˈwɪntə(r)/",
+            "zh": "冬天"
+          },
+          {
+            "word": "season",
+            "ipa": "/ˈsiːzn/",
+            "zh": "季节"
+          },
+          {
+            "word": "picnic",
+            "ipa": "/ˈpɪknɪk/",
+            "zh": "野餐"
+          },
+          {
+            "word": "go on a picnic",
+            "ipa": "/ɡəʊ ɒn ə ˈpɪknɪk/",
+            "zh": "去野餐"
+          },
+          {
+            "word": "pick",
+            "ipa": "/pɪk/",
+            "zh": "摘"
+          },
+          {
+            "word": "pick apples",
+            "ipa": "/pɪk ˈæplz/",
+            "zh": "摘苹果"
+          },
+          {
+            "word": "snowman",
+            "ipa": "/ˈsnəʊmæn/",
+            "zh": "雪人"
+          },
+          {
+            "word": "make a snowman",
+            "ipa": "/meɪk ə ˈsnəʊmæn/",
+            "zh": "堆雪人"
+          },
+          {
+            "word": "go swimming",
+            "ipa": "/ɡəʊ ˈswɪmɪŋ/",
+            "zh": "去游泳"
+          },
+          {
+            "word": "which",
+            "ipa": "/wɪtʃ/",
+            "zh": "哪一个"
+          },
+          {
+            "word": "best",
+            "ipa": "/best/",
+            "zh": "最；极"
+          },
+          {
+            "word": "snow",
+            "ipa": "/snəʊ/",
+            "zh": "雪"
+          },
+          {
+            "word": "good job",
+            "ipa": "/ɡʊd dʒɒb/",
+            "zh": "做得好"
+          },
+          {
+            "word": "because",
+            "ipa": "/bɪˈkɒz/",
+            "zh": "因为"
+          },
+          {
+            "word": "vacation",
+            "ipa": "/vəˈkeɪʃn/",
+            "zh": "假期"
+          },
+          {
+            "word": "all",
+            "ipa": "/ɔːl/",
+            "zh": "全；完全"
+          },
+          {
+            "word": "pink",
+            "ipa": "/pɪŋk/",
+            "zh": "粉色；粉色的"
+          },
+          {
+            "word": "lovely",
+            "ipa": "/ˈlʌvli/",
+            "zh": "可爱的；美丽的"
+          },
+          {
+            "word": "leaf",
+            "ipa": "/liːf/",
+            "zh": "叶子"
+          },
+          {
+            "word": "fall",
+            "ipa": "/fɔːl/",
+            "zh": "落下"
+          },
+          {
+            "word": "paint",
+            "ipa": "/peɪnt/",
+            "zh": "用颜料绘画"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "",
+        "words": [
+          {
+            "word": "January",
+            "ipa": "/ˈdʒænjuəri/",
+            "zh": "一月"
+          },
+          {
+            "word": "February",
+            "ipa": "/ˈfebruəri/",
+            "zh": "二月"
+          },
+          {
+            "word": "March",
+            "ipa": "/mɑːtʃ/",
+            "zh": "三月"
+          },
+          {
+            "word": "April",
+            "ipa": "/ˈeɪprəl/",
+            "zh": "四月"
+          },
+          {
+            "word": "May",
+            "ipa": "/meɪ/",
+            "zh": "五月"
+          },
+          {
+            "word": "June",
+            "ipa": "/dʒuːn/",
+            "zh": "六月"
+          },
+          {
+            "word": "July",
+            "ipa": "/dʒuˈlaɪ/",
+            "zh": "七月"
+          },
+          {
+            "word": "August",
+            "ipa": "/ˈɔːɡəst/",
+            "zh": "八月"
+          },
+          {
+            "word": "September",
+            "ipa": "/sepˈtembə(r)/",
+            "zh": "九月"
+          },
+          {
+            "word": "October",
+            "ipa": "/ɒkˈtəʊbə(r)/",
+            "zh": "十月"
+          },
+          {
+            "word": "November",
+            "ipa": "/nəʊˈvembə(r)/",
+            "zh": "十一月"
+          },
+          {
+            "word": "December",
+            "ipa": "/dɪˈsembə(r)/",
+            "zh": "十二月"
+          },
+          {
+            "word": "few",
+            "ipa": "/fjuː/",
+            "zh": "不多；很少"
+          },
+          {
+            "word": "a few",
+            "ipa": "/ə fjuː/",
+            "zh": "一些"
+          },
+          {
+            "word": "thing",
+            "ipa": "/θɪŋ/",
+            "zh": "事情"
+          },
+          {
+            "word": "meet",
+            "ipa": "/miːt/",
+            "zh": "集会；开会"
+          },
+          {
+            "word": "sports meet",
+            "ipa": "/spɔːts miːt/",
+            "zh": "运动会"
+          },
+          {
+            "word": "Easter",
+            "ipa": "/ˈiːstə(r)/",
+            "zh": "复活节"
+          },
+          {
+            "word": "trip",
+            "ipa": "/trɪp/",
+            "zh": "旅行"
+          },
+          {
+            "word": "year",
+            "ipa": "/jɪə(r)/",
+            "zh": "年"
+          },
+          {
+            "word": "plant",
+            "ipa": "/plɑːnt/",
+            "zh": "种植"
+          },
+          {
+            "word": "contest",
+            "ipa": "/ˈkɒntest/",
+            "zh": "比赛；竞赛"
+          },
+          {
+            "word": "the Great Wall",
+            "ipa": "/ðə ɡreɪt wɔːl/",
+            "zh": "长城"
+          },
+          {
+            "word": "national",
+            "ipa": "/ˈnæʃnəl/",
+            "zh": "国家的"
+          },
+          {
+            "word": "National Day",
+            "ipa": "/ˈnæʃnəl deɪ/",
+            "zh": "国庆日"
+          },
+          {
+            "word": "American",
+            "ipa": "/əˈmerɪkən/",
+            "zh": "美国的"
+          },
+          {
+            "word": "Thanksgiving",
+            "ipa": "/ˌθæŋksˈɡɪvɪŋ/",
+            "zh": "感恩节"
+          },
+          {
+            "word": "Christmas",
+            "ipa": "/ˈkrɪsməs/",
+            "zh": "圣诞节"
+          },
+          {
+            "word": "holiday",
+            "ipa": "/ˈhɒlədeɪ/",
+            "zh": "假日；节日"
+          },
+          {
+            "word": "game",
+            "ipa": "/ɡeɪm/",
+            "zh": "游戏"
+          },
+          {
+            "word": "roll",
+            "ipa": "/rəʊl/",
+            "zh": "滚动"
+          },
+          {
+            "word": "look for",
+            "ipa": "/lʊk fɔːr/",
+            "zh": "寻找"
+          },
+          {
+            "word": "chocolate",
+            "ipa": "/ˈtʃɒklət/",
+            "zh": "巧克力"
+          },
+          {
+            "word": "bunny",
+            "ipa": "/ˈbʌni/",
+            "zh": "兔子"
+          },
+          {
+            "word": "RSVP",
+            "ipa": "/ˌɑːr es viː ˈpiː/",
+            "zh": "请赐复"
+          },
+          {
+            "word": "by",
+            "ipa": "/baɪ/",
+            "zh": "在前"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "",
+        "words": [
+          {
+            "word": "first",
+            "ipa": "/fɜːst/",
+            "zh": "第一（的）"
+          },
+          {
+            "word": "second",
+            "ipa": "/ˈsekənd/",
+            "zh": "第二（的）"
+          },
+          {
+            "word": "third",
+            "ipa": "/θɜːd/",
+            "zh": "第三（的）"
+          },
+          {
+            "word": "fourth",
+            "ipa": "/fɔːθ/",
+            "zh": "第四（的）"
+          },
+          {
+            "word": "fifth",
+            "ipa": "/fɪfθ/",
+            "zh": "第五（的）"
+          },
+          {
+            "word": "twelfth",
+            "ipa": "/twelfθ/",
+            "zh": "第十二（的）"
+          },
+          {
+            "word": "twentieth",
+            "ipa": "/ˈtwentiəθ/",
+            "zh": "第二十（的）"
+          },
+          {
+            "word": "twenty-third",
+            "ipa": "/ˈtwenti θɜːd/",
+            "zh": "第二十三（的）"
+          },
+          {
+            "word": "thirtieth",
+            "ipa": "/ˈθɜːtiəθ/",
+            "zh": "第三十（的）"
+          },
+          {
+            "word": "special",
+            "ipa": "/ˈspeʃl/",
+            "zh": "特殊的；特别的"
+          },
+          {
+            "word": "fool",
+            "ipa": "/fuːl/",
+            "zh": "蠢人；傻瓜"
+          },
+          {
+            "word": "kitten",
+            "ipa": "/ˈkɪtn/",
+            "zh": "小猫"
+          },
+          {
+            "word": "diary",
+            "ipa": "/ˈdaɪəri/",
+            "zh": "日记"
+          },
+          {
+            "word": "still",
+            "ipa": "/stɪl/",
+            "zh": "仍然；依旧；还是"
+          },
+          {
+            "word": "noise",
+            "ipa": "/nɔɪz/",
+            "zh": "声音；响声"
+          },
+          {
+            "word": "fur",
+            "ipa": "/fɜː(r)/",
+            "zh": "浓密的软毛"
+          },
+          {
+            "word": "open",
+            "ipa": "/ˈəʊpən/",
+            "zh": "开着的"
+          },
+          {
+            "word": "walk",
+            "ipa": "/wɔːk/",
+            "zh": "行走"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "",
+        "words": [
+          {
+            "word": "mine",
+            "ipa": "/maɪn/",
+            "zh": "我的"
+          },
+          {
+            "word": "yours",
+            "ipa": "/jɔːz/",
+            "zh": "你（们）的"
+          },
+          {
+            "word": "his",
+            "ipa": "/hɪz/",
+            "zh": "他的"
+          },
+          {
+            "word": "hers",
+            "ipa": "/hɜːz/",
+            "zh": "她的"
+          },
+          {
+            "word": "theirs",
+            "ipa": "/ðeəz/",
+            "zh": "他们的"
+          },
+          {
+            "word": "ours",
+            "ipa": "/ˈaʊəz/",
+            "zh": "我们的"
+          },
+          {
+            "word": "climbing",
+            "ipa": "/ˈklaɪmɪŋ/",
+            "zh": "（正在）攀登；攀爬"
+          },
+          {
+            "word": "eating",
+            "ipa": "/ˈiːtɪŋ/",
+            "zh": "（正在）吃"
+          },
+          {
+            "word": "playing",
+            "ipa": "/ˈpleɪɪŋ/",
+            "zh": "（正在）玩"
+          },
+          {
+            "word": "jumping",
+            "ipa": "/ˈdʒʌmpɪŋ/",
+            "zh": "（正在）跳"
+          },
+          {
+            "word": "drinking",
+            "ipa": "/ˈdrɪŋkɪŋ/",
+            "zh": "（正在）喝"
+          },
+          {
+            "word": "sleeping",
+            "ipa": "/ˈsliːpɪŋ/",
+            "zh": "（正在）睡觉"
+          },
+          {
+            "word": "each",
+            "ipa": "/iːtʃ/",
+            "zh": "每个"
+          },
+          {
+            "word": "other",
+            "ipa": "/ˈʌðə(r)/",
+            "zh": "其他的"
+          },
+          {
+            "word": "each other",
+            "ipa": "/iːtʃ ˈʌðə(r)/",
+            "zh": "相互"
+          },
+          {
+            "word": "excited",
+            "ipa": "/ɪkˈsaɪtɪd/",
+            "zh": "兴奋的"
+          },
+          {
+            "word": "like",
+            "ipa": "/laɪk/",
+            "zh": "像那样"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "",
+        "words": [
+          {
+            "word": "doing morning exercises",
+            "ipa": "/ˈduːɪŋ ˈmɔːnɪŋ ˈeksəsaɪzɪz/",
+            "zh": "（正在）做早操"
+          },
+          {
+            "word": "having ... class",
+            "ipa": "/ˈhævɪŋ ... klɑːs/",
+            "zh": "（正在）上课"
+          },
+          {
+            "word": "eating lunch",
+            "ipa": "/ˈiːtɪŋ lʌntʃ/",
+            "zh": "（正在）吃午饭"
+          },
+          {
+            "word": "reading a book",
+            "ipa": "/ˈriːdɪŋ ə bʊk/",
+            "zh": "（正在）看书"
+          },
+          {
+            "word": "listening to music",
+            "ipa": "/ˈlɪsnɪŋ tə ˈmjuːzɪk/",
+            "zh": "（正在）听音乐"
+          },
+          {
+            "word": "keep",
+            "ipa": "/kiːp/",
+            "zh": "保持某种状态"
+          },
+          {
+            "word": "keep to the right",
+            "ipa": "/kiːp tə ðə raɪt/",
+            "zh": "靠右"
+          },
+          {
+            "word": "keep your desk clean",
+            "ipa": "/kiːp jɔːr desk kliːn/",
+            "zh": "保持你的课桌干净"
+          },
+          {
+            "word": "talk quietly",
+            "ipa": "/tɔːk ˈkwaɪətli/",
+            "zh": "小声讲话"
+          },
+          {
+            "word": "turn",
+            "ipa": "/tɜːn/",
+            "zh": "顺序"
+          },
+          {
+            "word": "take turns",
+            "ipa": "/teɪk tɜːnz/",
+            "zh": "按顺序来"
+          },
+          {
+            "word": "bamboo",
+            "ipa": "/ˌbæmˈbuː/",
+            "zh": "竹子"
+          },
+          {
+            "word": "its",
+            "ipa": "/ɪts/",
+            "zh": "它的"
+          },
+          {
+            "word": "show",
+            "ipa": "/ʃəʊ/",
+            "zh": "指引；展示"
+          },
+          {
+            "word": "anything",
+            "ipa": "/ˈeniθɪŋ/",
+            "zh": "任何事物"
+          },
+          {
+            "word": "else",
+            "ipa": "/els/",
+            "zh": "另外；其他"
+          },
+          {
+            "word": "exhibition",
+            "ipa": "/ˌeksɪˈbɪʃn/",
+            "zh": "展览"
+          },
+          {
+            "word": "say",
+            "ipa": "/seɪ/",
+            "zh": "说；讲"
+          },
+          {
+            "word": "have a look",
+            "ipa": "/hæv ə lʊk/",
+            "zh": "看一看"
+          },
+          {
+            "word": "sushi",
+            "ipa": "/ˈsuːʃi/",
+            "zh": "寿司"
+          },
+          {
+            "word": "teach",
+            "ipa": "/tiːtʃ/",
+            "zh": "教"
+          },
+          {
+            "word": "sure",
+            "ipa": "/ʃʊə(r)/",
+            "zh": "当然"
+          },
+          {
+            "word": "Canadian",
+            "ipa": "/kəˈneɪdiən/",
+            "zh": "加拿大的"
+          },
+          {
+            "word": "Spanish",
+            "ipa": "/ˈspænɪʃ/",
+            "zh": "西班牙的"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "sem": "up",
+    "bookName": "六年级上册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "",
+        "words": [
+          {
+            "word": "science",
+            "ipa": "/ˈ saɪ ə ns/",
+            "zh": "科学"
+          },
+          {
+            "word": "museum",
+            "ipa": "/mjuˈ ziː ə m/",
+            "zh": "博物馆"
+          },
+          {
+            "word": "post office",
+            "ipa": "/pə ʊ st ˈ ɒ fɪ s/",
+            "zh": "邮局"
+          },
+          {
+            "word": "bookstore",
+            "ipa": "/ˈ bʊ kstɔ ː (r)/",
+            "zh": "书店"
+          },
+          {
+            "word": "cinema",
+            "ipa": "/ˈ sɪ nə mə /",
+            "zh": "电影院"
+          },
+          {
+            "word": "hospital",
+            "ipa": "/ˈ hɒ spɪ tl/",
+            "zh": "医院"
+          },
+          {
+            "word": "crossing",
+            "ipa": "/ˈ krɒ sɪ ŋ /",
+            "zh": "十字路口"
+          },
+          {
+            "word": "turn",
+            "ipa": "/tɜ ː n/",
+            "zh": "转弯"
+          },
+          {
+            "word": "left",
+            "ipa": "/left/",
+            "zh": "左"
+          },
+          {
+            "word": "straight",
+            "ipa": "/streɪ t/",
+            "zh": "笔直地"
+          },
+          {
+            "word": "right",
+            "ipa": "/raɪ t/",
+            "zh": "右"
+          },
+          {
+            "word": "ask",
+            "ipa": "/ɑ ː sk/",
+            "zh": "问"
+          },
+          {
+            "word": "interesting",
+            "ipa": "/ˈ ɪ ntrə stɪ ŋ /",
+            "zh": "有趣的"
+          },
+          {
+            "word": "Italian",
+            "ipa": "/ɪ ˈ tæliə n/",
+            "zh": "意大利的"
+          },
+          {
+            "word": "restaurant",
+            "ipa": "/ˈ restrɒ nt/",
+            "zh": "餐馆"
+          },
+          {
+            "word": "pizza",
+            "ipa": "/ˈ piː tsə /",
+            "zh": "比萨饼"
+          },
+          {
+            "word": "street",
+            "ipa": "/striː t/",
+            "zh": "大街；街道"
+          },
+          {
+            "word": "get",
+            "ipa": "/ɡ et/",
+            "zh": "到达"
+          },
+          {
+            "word": "GPS",
+            "ipa": "/ˌ dʒ iː piː ˈ es/",
+            "zh": "全球（卫星）定位系统"
+          },
+          {
+            "word": "feature",
+            "ipa": "/ˈ fiː tʃ ə (r)/",
+            "zh": "特点"
+          },
+          {
+            "word": "follow",
+            "ipa": "/ˈ fɒ lə ʊ /",
+            "zh": "跟着"
+          },
+          {
+            "word": "far",
+            "ipa": "/fɑ ː (r)/",
+            "zh": "较远的"
+          },
+          {
+            "word": "tell",
+            "ipa": "/tel/",
+            "zh": "告诉"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "",
+        "words": [
+          {
+            "word": "on foot",
+            "ipa": "/ɒ n fʊ t/",
+            "zh": "步行"
+          },
+          {
+            "word": "bus",
+            "ipa": "/bʌ s/",
+            "zh": "公共汽车"
+          },
+          {
+            "word": "plane",
+            "ipa": "/pleɪ n/",
+            "zh": "飞机"
+          },
+          {
+            "word": "taxi",
+            "ipa": "/ˈ tæksi/",
+            "zh": "出租汽车"
+          },
+          {
+            "word": "subway",
+            "ipa": "/ˈ sʌ bweɪ /",
+            "zh": "地铁"
+          },
+          {
+            "word": "train",
+            "ipa": "/treɪ n/",
+            "zh": "火车"
+          },
+          {
+            "word": "slow",
+            "ipa": "/slə ʊ /",
+            "zh": "慢的"
+          },
+          {
+            "word": "down",
+            "ipa": "/daʊ n/",
+            "zh": "减少；降低"
+          },
+          {
+            "word": "slow down",
+            "ipa": "/slə ʊ daʊ n/",
+            "zh": "慢下来"
+          },
+          {
+            "word": "stop",
+            "ipa": "/stɒ p/",
+            "zh": "停下"
+          },
+          {
+            "word": "Mrs",
+            "ipa": "/ˈ mɪ sɪ z/",
+            "zh": "夫人"
+          },
+          {
+            "word": "early",
+            "ipa": "/ˈ ɜ ː li/",
+            "zh": "早到的"
+          },
+          {
+            "word": "helmet",
+            "ipa": "/ˈ helmɪ t/",
+            "zh": "头盔"
+          },
+          {
+            "word": "must",
+            "ipa": "/mʌ st/",
+            "zh": "必须"
+          },
+          {
+            "word": "wear",
+            "ipa": "/weə (r)/",
+            "zh": "戴"
+          },
+          {
+            "word": "attention",
+            "ipa": "/ə ˈ tenʃ n/",
+            "zh": "注意"
+          },
+          {
+            "word": "pay attention to",
+            "ipa": "/peɪ ə ˈ tenʃ n tə /",
+            "zh": "注意"
+          },
+          {
+            "word": "traffic",
+            "ipa": "/ˈ træfɪ k/",
+            "zh": "交通"
+          },
+          {
+            "word": "traffic lights",
+            "ipa": "/ˈ træfɪ k laɪ ts/",
+            "zh": "交通信号灯"
+          },
+          {
+            "word": "Munich",
+            "ipa": "/ˈ mjuː nɪ k/",
+            "zh": "慕尼黑（德国城市）"
+          },
+          {
+            "word": "Alaska",
+            "ipa": "/ə ˈ læskə /",
+            "zh": "阿拉斯加州（美国州名）"
+          },
+          {
+            "word": "sled",
+            "ipa": "/sled/",
+            "zh": "雪橇"
+          },
+          {
+            "word": "fast",
+            "ipa": "/fɑ ː st/",
+            "zh": "快的"
+          },
+          {
+            "word": "ferry",
+            "ipa": "/ˈ feri/",
+            "zh": "轮渡"
+          },
+          {
+            "word": "Papa Westray",
+            "ipa": "/ˈ pɑ ː pə westreɪ /",
+            "zh": "帕帕韦斯特雷岛"
+          },
+          {
+            "word": "Scotland",
+            "ipa": "/ˈ skɒ tlə nd/",
+            "zh": "苏格兰"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "",
+        "words": [
+          {
+            "word": "visit",
+            "ipa": "/ˈ vɪ zɪ t/",
+            "zh": "拜访"
+          },
+          {
+            "word": "film",
+            "ipa": "/fɪ lm/",
+            "zh": "电影"
+          },
+          {
+            "word": "see a film",
+            "ipa": "/siː ə fɪ lm/",
+            "zh": "看电影"
+          },
+          {
+            "word": "trip",
+            "ipa": "/trɪ p/",
+            "zh": "旅行"
+          },
+          {
+            "word": "take a trip",
+            "ipa": "/teɪ k ə trɪ p/",
+            "zh": "去旅行"
+          },
+          {
+            "word": "supermarket",
+            "ipa": "/ˈ suː pə mɑ ː kɪ t/",
+            "zh": "超市"
+          },
+          {
+            "word": "evening",
+            "ipa": "/ˈ iː vnɪ ŋ /",
+            "zh": "晚上；傍晚"
+          },
+          {
+            "word": "tonight",
+            "ipa": "/tə ˈ naɪ t/",
+            "zh": "在今晚"
+          },
+          {
+            "word": "tomorrow",
+            "ipa": "/tə ˈ mɒ rə ʊ /",
+            "zh": "明天"
+          },
+          {
+            "word": "next week",
+            "ipa": "/nekst wiː k/",
+            "zh": "下周"
+          },
+          {
+            "word": "dictionary",
+            "ipa": "/ˈ dɪ kʃ ə nri/",
+            "zh": "词典"
+          },
+          {
+            "word": "comic",
+            "ipa": "/ˈ kɒ mɪ k/",
+            "zh": "滑稽的"
+          },
+          {
+            "word": "word",
+            "ipa": "/wɜ ː d/",
+            "zh": "单词"
+          },
+          {
+            "word": "word book",
+            "ipa": "/wɜ ː d bʊ k/",
+            "zh": "单词书"
+          },
+          {
+            "word": "postcard",
+            "ipa": "/ˈ pə ʊ stkɑ ː d/",
+            "zh": "明信片"
+          },
+          {
+            "word": "lesson",
+            "ipa": "/ˈ lesn/",
+            "zh": "课"
+          },
+          {
+            "word": "space",
+            "ipa": "/speɪ s/",
+            "zh": "太空"
+          },
+          {
+            "word": "half",
+            "ipa": "/hɑ ː f/",
+            "zh": "一半"
+          },
+          {
+            "word": "price",
+            "ipa": "/praɪ s/",
+            "zh": "价格"
+          },
+          {
+            "word": "Mid-Autumn Festival",
+            "ipa": "/mɪ d ˈ ɔ ː tə m ˈ festɪ vl/",
+            "zh": "中秋节"
+          },
+          {
+            "word": "mid",
+            "ipa": "/mɪ d/",
+            "zh": "中央的；中间的"
+          },
+          {
+            "word": "autumn",
+            "ipa": "/ˈ ɔ ː tə m/",
+            "zh": "秋天"
+          },
+          {
+            "word": "festival",
+            "ipa": "/ˈ festɪ vl/",
+            "zh": "节日"
+          },
+          {
+            "word": "together",
+            "ipa": "/tə ˈ ɡ eðə (r)/",
+            "zh": "一起"
+          },
+          {
+            "word": "get together",
+            "ipa": "/ɡ et tə ˈ ɡ eðə (r)/",
+            "zh": "聚会"
+          },
+          {
+            "word": "mooncake",
+            "ipa": "/ˈ muː nkeɪ k/",
+            "zh": "月饼"
+          },
+          {
+            "word": "poem",
+            "ipa": "/ˈ pə ʊ ɪ m/",
+            "zh": "诗"
+          },
+          {
+            "word": "moon",
+            "ipa": "/muː n/",
+            "zh": "月亮"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "",
+        "words": [
+          {
+            "word": "studies",
+            "ipa": "/ˈ stʌ diz/",
+            "zh": "学习（的第三人称单数形式）"
+          },
+          {
+            "word": "puzzle",
+            "ipa": "/ˈ pʌ zl/",
+            "zh": "谜"
+          },
+          {
+            "word": "hiking",
+            "ipa": "/ˈ haɪ kɪ ŋ /",
+            "zh": "远足"
+          },
+          {
+            "word": "pen pal",
+            "ipa": "/pen pæl/",
+            "zh": "笔友"
+          },
+          {
+            "word": "pal",
+            "ipa": "/pæl/",
+            "zh": "朋友；同志；伙伴"
+          },
+          {
+            "word": "hobby",
+            "ipa": "/ˈ hɒ bi/",
+            "zh": "业余爱好"
+          },
+          {
+            "word": "jasmine",
+            "ipa": "/ˈ dʒ æzmɪ n/",
+            "zh": "茉莉"
+          },
+          {
+            "word": "idea",
+            "ipa": "/aɪ ˈ dɪ ə /",
+            "zh": "想法；主意"
+          },
+          {
+            "word": "Canberra",
+            "ipa": "/ˈ kænbə rə /",
+            "zh": "堪培拉（澳大利亚首都）"
+          },
+          {
+            "word": "amazing",
+            "ipa": "/ə ˈ meɪ zɪ ŋ /",
+            "zh": "令人惊奇的"
+          },
+          {
+            "word": "shall",
+            "ipa": "/ʃ æl/",
+            "zh": "表示征求意见"
+          },
+          {
+            "word": "goal",
+            "ipa": "/ɡ ə ʊ l/",
+            "zh": "射门"
+          },
+          {
+            "word": "join",
+            "ipa": "/dʒ ɔ ɪ n/",
+            "zh": "加入"
+          },
+          {
+            "word": "club",
+            "ipa": "/klʌ b/",
+            "zh": "俱乐部"
+          },
+          {
+            "word": "share",
+            "ipa": "/ʃ eə (r)/",
+            "zh": "分享"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "",
+        "words": [
+          {
+            "word": "factory",
+            "ipa": "/ˈ fæktri/",
+            "zh": "工厂"
+          },
+          {
+            "word": "worker",
+            "ipa": "/ˈ wɜ ː kə (r)/",
+            "zh": "工人"
+          },
+          {
+            "word": "postman",
+            "ipa": "/ˈ pə ʊ stmə n/",
+            "zh": "邮递员"
+          },
+          {
+            "word": "businessman",
+            "ipa": "/ˈ bɪ znə smæn/",
+            "zh": "商人；企业家"
+          },
+          {
+            "word": "police officer",
+            "ipa": "/pə ˈ liː s ˈ ɒ fɪ sə (r)/",
+            "zh": "警察"
+          },
+          {
+            "word": "fisherman",
+            "ipa": "/ˈ fɪ ʃ ə mə n/",
+            "zh": "渔民"
+          },
+          {
+            "word": "scientist",
+            "ipa": "/ˈ saɪ ə ntɪ st/",
+            "zh": "科学家"
+          },
+          {
+            "word": "pilot",
+            "ipa": "/ˈ paɪ lə t/",
+            "zh": "飞行员"
+          },
+          {
+            "word": "coach",
+            "ipa": "/kə ʊ tʃ /",
+            "zh": "教练"
+          },
+          {
+            "word": "country",
+            "ipa": "/ˈ kʌ ntri/",
+            "zh": "国家"
+          },
+          {
+            "word": "head teacher",
+            "ipa": "/hed ˈ tiː tʃ ə (r)/",
+            "zh": "校长"
+          },
+          {
+            "word": "sea",
+            "ipa": "/siː /",
+            "zh": "大海"
+          },
+          {
+            "word": "stay",
+            "ipa": "/steɪ /",
+            "zh": "保持"
+          },
+          {
+            "word": "if",
+            "ipa": "/ɪ f/",
+            "zh": "如果"
+          },
+          {
+            "word": "gym",
+            "ipa": "/dʒ ɪ m/",
+            "zh": "体育馆"
+          },
+          {
+            "word": "use",
+            "ipa": "/juː z/",
+            "zh": "使用"
+          },
+          {
+            "word": "quickly",
+            "ipa": "/ˈ kwɪ kli/",
+            "zh": "迅速地"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "",
+        "words": [
+          {
+            "word": "angry",
+            "ipa": "/ˈ æŋ ɡ ri/",
+            "zh": "生气的"
+          },
+          {
+            "word": "afraid",
+            "ipa": "/ə ˈ freɪ d/",
+            "zh": "害怕"
+          },
+          {
+            "word": "sad",
+            "ipa": "/sæd/",
+            "zh": "难过的"
+          },
+          {
+            "word": "worried",
+            "ipa": "/ˈ wʌ rid/",
+            "zh": "担心的；发愁的"
+          },
+          {
+            "word": "happy",
+            "ipa": "/ˈ hæpi/",
+            "zh": "高兴的"
+          },
+          {
+            "word": "wear",
+            "ipa": "/weə (r)/",
+            "zh": "穿"
+          },
+          {
+            "word": "more",
+            "ipa": "/mɔ ː (r)/",
+            "zh": "更多的"
+          },
+          {
+            "word": "deep",
+            "ipa": "/diː p/",
+            "zh": "深的"
+          },
+          {
+            "word": "breath",
+            "ipa": "/breθ /",
+            "zh": "呼吸"
+          },
+          {
+            "word": "count",
+            "ipa": "/kaʊ nt/",
+            "zh": "数数"
+          },
+          {
+            "word": "chase",
+            "ipa": "/tʃ eɪ s/",
+            "zh": "追赶"
+          },
+          {
+            "word": "bad",
+            "ipa": "/bæd/",
+            "zh": "邪恶的；坏的"
+          },
+          {
+            "word": "ill",
+            "ipa": "/ɪ l/",
+            "zh": "有病；不舒服"
+          },
+          {
+            "word": "wrong",
+            "ipa": "/rɒ ŋ /",
+            "zh": "有毛病"
+          },
+          {
+            "word": "should",
+            "ipa": "/ʃ ʊ d/",
+            "zh": "应该"
+          },
+          {
+            "word": "feel",
+            "ipa": "/fiː l/",
+            "zh": "觉得；感到"
+          },
+          {
+            "word": "well",
+            "ipa": "/wel/",
+            "zh": "健康；身体好"
+          },
+          {
+            "word": "sit",
+            "ipa": "/sɪ t/",
+            "zh": "坐"
+          },
+          {
+            "word": "grass",
+            "ipa": "/ɡ rɑ ː s/",
+            "zh": "草坪"
+          },
+          {
+            "word": "hear",
+            "ipa": "/hɪ ə (r)/",
+            "zh": "听见"
+          },
+          {
+            "word": "ant",
+            "ipa": "/ænt/",
+            "zh": "蚂蚁"
+          },
+          {
+            "word": "worry",
+            "ipa": "/ˈ wʌ ri/",
+            "zh": "担心；担忧"
+          },
+          {
+            "word": "stuck",
+            "ipa": "/stʌ k/",
+            "zh": "陷住；无法移动"
+          },
+          {
+            "word": "mud",
+            "ipa": "/mʌ d/",
+            "zh": "泥"
+          },
+          {
+            "word": "pull",
+            "ipa": "/pʊ l/",
+            "zh": "拉；拽"
+          },
+          {
+            "word": "everyone",
+            "ipa": "/ˈ evriwʌ n/",
+            "zh": "每人"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "sem": "down",
+    "bookName": "六年级下册",
+    "units": [
+      {
+        "unit": 1,
+        "title": "",
+        "words": [
+          {
+            "word": "taller",
+            "ipa": "/ˈtɔːlə(r)/",
+            "zh": "更高的"
+          },
+          {
+            "word": "shorter",
+            "ipa": "/ˈʃɔːtə(r)/",
+            "zh": "更矮的；更短的"
+          },
+          {
+            "word": "longer",
+            "ipa": "/ˈlɒŋɡə(r)/",
+            "zh": "更长的"
+          },
+          {
+            "word": "thinner",
+            "ipa": "/ˈθɪnə(r)/",
+            "zh": "更瘦的"
+          },
+          {
+            "word": "heavier",
+            "ipa": "/ˈheviə(r)/",
+            "zh": "更重的"
+          },
+          {
+            "word": "bigger",
+            "ipa": "/ˈbɪɡə(r)/",
+            "zh": "更大的"
+          },
+          {
+            "word": "smaller",
+            "ipa": "/ˈsmɔːlə(r)/",
+            "zh": "更小的"
+          },
+          {
+            "word": "stronger",
+            "ipa": "/ˈstrɒŋɡə(r)/",
+            "zh": "更强壮的"
+          },
+          {
+            "word": "older",
+            "ipa": "/ˈəʊldə(r)/",
+            "zh": "更年长的"
+          },
+          {
+            "word": "younger",
+            "ipa": "/ˈjʌŋɡə(r)/",
+            "zh": "更年轻的"
+          },
+          {
+            "word": "metre",
+            "ipa": "/ˈmiːtə(r)/",
+            "zh": "米"
+          },
+          {
+            "word": "kilogram",
+            "ipa": "/ˈkɪləɡræm/",
+            "zh": "千克；公斤"
+          },
+          {
+            "word": "than",
+            "ipa": "/ðæn/",
+            "zh": "比"
+          },
+          {
+            "word": "both",
+            "ipa": "/bəʊθ/",
+            "zh": "两个都"
+          },
+          {
+            "word": "dinosaur",
+            "ipa": "/ˈdaɪnəsɔː(r)/",
+            "zh": "恐龙"
+          },
+          {
+            "word": "hall",
+            "ipa": "/hɔːl/",
+            "zh": "大厅"
+          },
+          {
+            "word": "countryside",
+            "ipa": "/ˈkʌntrisaɪd/",
+            "zh": "乡村"
+          },
+          {
+            "word": "shadow",
+            "ipa": "/ˈʃædəʊ/",
+            "zh": "影子"
+          },
+          {
+            "word": "become",
+            "ipa": "/bɪˈkʌm/",
+            "zh": "开始变得；变成"
+          },
+          {
+            "word": "lower",
+            "ipa": "/ˈləʊə(r)/",
+            "zh": "更低地"
+          },
+          {
+            "word": "smarter",
+            "ipa": "/ˈsmɑːtə(r)/",
+            "zh": "更聪明的"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "",
+        "words": [
+          {
+            "word": "cleaned",
+            "ipa": "/kliːnd/",
+            "zh": "打扫"
+          },
+          {
+            "word": "stayed",
+            "ipa": "/steɪd/",
+            "zh": "停留；待"
+          },
+          {
+            "word": "washed",
+            "ipa": "/wɒʃt/",
+            "zh": "洗"
+          },
+          {
+            "word": "watched",
+            "ipa": "/wɒtʃt/",
+            "zh": "看"
+          },
+          {
+            "word": "had",
+            "ipa": "/hæd/",
+            "zh": "患病"
+          },
+          {
+            "word": "had a cold",
+            "ipa": "/hæd ə kəʊld/",
+            "zh": "感冒"
+          },
+          {
+            "word": "slept",
+            "ipa": "/slept/",
+            "zh": "睡觉"
+          },
+          {
+            "word": "read",
+            "ipa": "/red/",
+            "zh": "读"
+          },
+          {
+            "word": "saw",
+            "ipa": "/sɔː/",
+            "zh": "看见"
+          },
+          {
+            "word": "last",
+            "ipa": "/lɑːst/",
+            "zh": "最近的；上一个的"
+          },
+          {
+            "word": "yesterday",
+            "ipa": "/ˈjestədeɪ/",
+            "zh": "昨天"
+          },
+          {
+            "word": "before",
+            "ipa": "/bɪˈfɔː(r)/",
+            "zh": "在之前"
+          },
+          {
+            "word": "drank",
+            "ipa": "/dræŋk/",
+            "zh": "喝"
+          },
+          {
+            "word": "show",
+            "ipa": "/ʃəʊ/",
+            "zh": "演出"
+          },
+          {
+            "word": "magazine",
+            "ipa": "/ˌmæɡəˈziːn/",
+            "zh": "杂志"
+          },
+          {
+            "word": "better",
+            "ipa": "/ˈbetə(r)/",
+            "zh": "更好的"
+          },
+          {
+            "word": "faster",
+            "ipa": "/ˈfɑːstə(r)/",
+            "zh": "更快的"
+          },
+          {
+            "word": "hotel",
+            "ipa": "/həʊˈtel/",
+            "zh": "旅馆"
+          },
+          {
+            "word": "fixed",
+            "ipa": "/fɪkst/",
+            "zh": "修理"
+          },
+          {
+            "word": "broken",
+            "ipa": "/ˈbrəʊkən/",
+            "zh": "破损的"
+          },
+          {
+            "word": "lamp",
+            "ipa": "/læmp/",
+            "zh": "台灯"
+          },
+          {
+            "word": "loud",
+            "ipa": "/laʊd/",
+            "zh": "喧闹的"
+          },
+          {
+            "word": "enjoy",
+            "ipa": "/ɪnˈdʒɔɪ/",
+            "zh": "享受乐趣"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "",
+        "words": [
+          {
+            "word": "went",
+            "ipa": "/went/",
+            "zh": "去"
+          },
+          {
+            "word": "camp",
+            "ipa": "/kæmp/",
+            "zh": "野营"
+          },
+          {
+            "word": "went camping",
+            "ipa": "/went ˈkæmpɪŋ/",
+            "zh": "去野营"
+          },
+          {
+            "word": "fish",
+            "ipa": "/fɪʃ/",
+            "zh": "钓鱼"
+          },
+          {
+            "word": "went fishing",
+            "ipa": "/went ˈfɪʃɪŋ/",
+            "zh": "去钓鱼"
+          },
+          {
+            "word": "rode",
+            "ipa": "/rəʊd/",
+            "zh": "骑"
+          },
+          {
+            "word": "hurt",
+            "ipa": "/hɜːt/",
+            "zh": "受伤"
+          },
+          {
+            "word": "ate",
+            "ipa": "/et/",
+            "zh": "吃"
+          },
+          {
+            "word": "took",
+            "ipa": "/tʊk/",
+            "zh": "拍照"
+          },
+          {
+            "word": "took pictures",
+            "ipa": "/tʊk ˈpɪktʃəz/",
+            "zh": "照相"
+          },
+          {
+            "word": "bought",
+            "ipa": "/bɔːt/",
+            "zh": "买"
+          },
+          {
+            "word": "gift",
+            "ipa": "/ɡɪft/",
+            "zh": "礼物"
+          },
+          {
+            "word": "fell",
+            "ipa": "/fel/",
+            "zh": "摔倒"
+          },
+          {
+            "word": "off",
+            "ipa": "/ɒf/",
+            "zh": "从落下"
+          },
+          {
+            "word": "Labour Day",
+            "ipa": "/ˈleɪbə deɪ/",
+            "zh": "劳动节"
+          },
+          {
+            "word": "mule",
+            "ipa": "/mjuːl/",
+            "zh": "骡子"
+          },
+          {
+            "word": "Turpan",
+            "ipa": "/tʊəˈpɑːn/",
+            "zh": "吐鲁番"
+          },
+          {
+            "word": "could",
+            "ipa": "/kʊd/",
+            "zh": "能"
+          },
+          {
+            "word": "till",
+            "ipa": "/tɪl/",
+            "zh": "直到"
+          },
+          {
+            "word": "beach",
+            "ipa": "/biːtʃ/",
+            "zh": "沙滩"
+          },
+          {
+            "word": "basket",
+            "ipa": "/ˈbɑːskɪt/",
+            "zh": "篮子"
+          },
+          {
+            "word": "part",
+            "ipa": "/pɑːt/",
+            "zh": "角色"
+          },
+          {
+            "word": "licked",
+            "ipa": "/lɪkt/",
+            "zh": "舔"
+          },
+          {
+            "word": "laughed",
+            "ipa": "/lɑːft/",
+            "zh": "笑"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "",
+        "words": [
+          {
+            "word": "dining hall",
+            "ipa": "/ˈdaɪnɪŋ hɔːl/",
+            "zh": "饭厅"
+          },
+          {
+            "word": "grass",
+            "ipa": "/ɡrɑːs/",
+            "zh": "草坪"
+          },
+          {
+            "word": "gym",
+            "ipa": "/dʒɪm/",
+            "zh": "体育馆"
+          },
+          {
+            "word": "ago",
+            "ipa": "/əˈɡəʊ/",
+            "zh": "以前"
+          },
+          {
+            "word": "cycling",
+            "ipa": "/ˈsaɪklɪŋ/",
+            "zh": "骑自行车运动"
+          },
+          {
+            "word": "go cycling",
+            "ipa": "/ɡəʊ ˈsaɪklɪŋ/",
+            "zh": "去骑自行车"
+          },
+          {
+            "word": "ice-skate",
+            "ipa": "/ˈaɪs skeɪt/",
+            "zh": "滑冰"
+          },
+          {
+            "word": "badminton",
+            "ipa": "/ˈbædmɪntən/",
+            "zh": "羽毛球运动"
+          },
+          {
+            "word": "star",
+            "ipa": "/stɑː(r)/",
+            "zh": "星"
+          },
+          {
+            "word": "easy",
+            "ipa": "/ˈiːzi/",
+            "zh": "容易的"
+          },
+          {
+            "word": "look up",
+            "ipa": "/lʊk ʌp/",
+            "zh": "查阅"
+          },
+          {
+            "word": "Internet",
+            "ipa": "/ˈɪntənet/",
+            "zh": "互联网"
+          },
+          {
+            "word": "different",
+            "ipa": "/ˈdɪfrənt/",
+            "zh": "不同的"
+          },
+          {
+            "word": "active",
+            "ipa": "/ˈæktɪv/",
+            "zh": "积极的；活跃的"
+          },
+          {
+            "word": "race",
+            "ipa": "/reɪs/",
+            "zh": "赛跑"
+          },
+          {
+            "word": "nothing",
+            "ipa": "/ˈnʌθɪŋ/",
+            "zh": "没有什么"
+          },
+          {
+            "word": "thought",
+            "ipa": "/θɔːt/",
+            "zh": "想"
+          },
+          {
+            "word": "felt",
+            "ipa": "/felt/",
+            "zh": "感觉"
+          },
+          {
+            "word": "cheetah",
+            "ipa": "/ˈtʃiːtə/",
+            "zh": "猎豹"
+          },
+          {
+            "word": "trip",
+            "ipa": "/trɪp/",
+            "zh": "绊倒"
+          },
+          {
+            "word": "woke",
+            "ipa": "/wəʊk/",
+            "zh": "醒"
+          },
+          {
+            "word": "dream",
+            "ipa": "/driːm/",
+            "zh": "梦"
+          }
+        ]
+      }
+    ]
+  }
+]

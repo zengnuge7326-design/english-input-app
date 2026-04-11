@@ -176,7 +176,7 @@ function ComingSoon({ name, onClose }) {
 }
 
 // ── 教材详情页（单元列表）────────────────────────────────────────────────────
-function TextbookDetail({ book, onBack, onSetBack, requireSpeak }) {
+function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext }) {
   const [popup, setPopup] = useState(null)
   const [activeUnit, setActiveUnit] = useState(null)  // { label, index }
   const [quiz, setQuiz] = useState(null)              // { title, questions }（ExerciseQuiz用）
@@ -220,7 +220,7 @@ function TextbookDetail({ book, onBack, onSetBack, requireSpeak }) {
   if (activeUnit) {
     const currentFlowKey = activeUnit.label;
     const currentBookId = activeUnit.bookId;
-    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} onClose={() => {setActiveUnit(null)}} />
+    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onClose={() => {setActiveUnit(null)}} />
   }
 
   return (
@@ -311,7 +311,7 @@ function DuoDetail({ unit, onBack }) {
 }
 
 // ── 主页面 ────────────────────────────────────────────────────────────────────
-export default function SyncPractice({ onSetBack, requireSpeak }) {
+export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext }) {
   const [detail, setDetail] = useState(null)
   const [expandedCats, setExpandedCats] = useState({ grade3_up: true })
 
@@ -324,7 +324,7 @@ export default function SyncPractice({ onSetBack, requireSpeak }) {
 
   if (detail?.type === 'textbook') {
     const book = TEXTBOOK_CATALOG.find(b => b.id === detail.id)
-    return <TextbookDetail book={book} onBack={() => handleSetDetail(null)} onSetBack={onSetBack} requireSpeak={requireSpeak} />
+    return <TextbookDetail book={book} onBack={() => handleSetDetail(null)} onSetBack={onSetBack} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} />
   }
 
   if (detail?.type === 'duo') {

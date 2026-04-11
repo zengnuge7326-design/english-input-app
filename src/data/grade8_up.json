@@ -1,0 +1,717 @@
+[
+  {
+    "id": 1,
+    "zh": "同学们，欢迎你们开始八年级英语学习！",
+    "en": "Students, lets welcome you into your English studies for grade eight!"
+  },
+  {
+    "id": 2,
+    "zh": "这本教材专为你们的心理特征、认知能力和兴趣而设计。",
+    "en": "This textbook is designed with your psychological characteristics, cognitive abilities, and interests in mind."
+  },
+  {
+    "id": 3,
+    "zh": "这本教材的主要目标是帮助你们不仅学习英语语言知识，而且发展语言技能。",
+    "en": "The textbooks main goal is to help you not only learn English language knowledge but also develop your language skills."
+  },
+  {
+    "id": 4,
+    "zh": "它考虑了你们的实际生活和学习需求，将内容和活动与你们的生活和兴趣联系起来。",
+    "en": "It considers your actual life and learning needs, connecting the content and activities to your life and interests."
+  },
+  {
+    "id": 5,
+    "zh": "这本教材非常重视培养你们的语言学习策略和技能。",
+    "en": "The textbook places a strong emphasis on developing your language learning strategies and skills."
+  },
+  {
+    "id": 6,
+    "zh": "它包含了沟通任务和活动，以鼓励你在英语课堂上的积极参与和互动。",
+    "en": "It incorporates communicative tasks and activities to encourage active participation and interaction in the English classroom."
+  },
+  {
+    "id": 7,
+    "zh": "提高英语水平需要持续的努力、练习和与老师和同学的互动。",
+    "en": "Improving your English level requires continuous effort, practice, and interaction with teachers and classmates."
+  },
+  {
+    "id": 8,
+    "zh": "拓展你对文化内容的知识，包括你自己的国家文化、英语国家文化和来自其他国家的文化，将拓宽你的视野。",
+    "en": "Expanding your knowledge of cultural content, including your own nations culture, Englishspeaking cultures, and cultures from other countries, will broaden your horizons."
+  },
+  {
+    "id": 9,
+    "zh": "为了在英语学习中取得成功，你必须不断地接触各种英语学习资源。",
+    "en": "To succeed in learning English, you must consistently expose yourself to diverse English learning resources."
+  },
+  {
+    "id": 10,
+    "zh": "有效的学习依赖于在听、说、读、写、记忆和应用方面的一致练习。",
+    "en": "Effective learning relies on consistent practice in listening, speaking, reading, writing, memorization, and application."
+  },
+  {
+    "id": 11,
+    "zh": "继续努力取得你在英语学习中的更大进步，让我们一起取得令人振奋的成果！",
+    "en": "Continue striving for greater progress in your English studies, and lets achieve fantastic results together!"
+  },
+  {
+    "id": 12,
+    "zh": "重要的是利用各种资源和机会来丰富你的英语学习体验。",
+    "en": "It is important to utilize various resources and opportunities to enhance your English learning experience."
+  },
+  {
+    "id": 13,
+    "zh": "你多久看电视？",
+    "en": "How often do you watch TV?"
+  },
+  {
+    "id": 14,
+    "zh": "我每天看电视。",
+    "en": "I watch TV every day."
+  },
+  {
+    "id": 15,
+    "zh": "你多久去看电影？",
+    "en": "How often do you go to the movies?"
+  },
+  {
+    "id": 16,
+    "zh": "我一周去两次电影院。",
+    "en": "I go to the movies twice a week."
+  },
+  {
+    "id": 17,
+    "zh": "你多久锻炼？",
+    "en": "How often do you exercise?"
+  },
+  {
+    "id": 18,
+    "zh": "他几乎从不锻炼。",
+    "en": "He hardly ever exercises."
+  },
+  {
+    "id": 19,
+    "zh": "你多久读英语书？",
+    "en": "How often do you read English books?"
+  },
+  {
+    "id": 20,
+    "zh": "我一周大约读两次英语书。",
+    "en": "I read English books about twice a week."
+  },
+  {
+    "id": 21,
+    "zh": "你多久购物？",
+    "en": "How often do you shop?"
+  },
+  {
+    "id": 22,
+    "zh": "你多久喝牛奶？",
+    "en": "How often do you drink milk?"
+  },
+  {
+    "id": 23,
+    "zh": "我每天喝牛奶。",
+    "en": "I drink milk every day."
+  },
+  {
+    "id": 24,
+    "zh": "你多久吃水果？",
+    "en": "How often do you eat fruit?"
+  },
+  {
+    "id": 25,
+    "zh": "我一周大约吃两次水果。",
+    "en": "I eat fruit about twice a week."
+  },
+  {
+    "id": 26,
+    "zh": "你多久睡觉？",
+    "en": "How often do you sleep?"
+  },
+  {
+    "id": 27,
+    "zh": "我可能一个月一次睡觉。",
+    "en": "I sleep maybe once a month."
+  },
+  {
+    "id": 28,
+    "zh": "汤姆比萨姆更聪明吗？",
+    "en": "Is Tom smarter than Sam?"
+  },
+  {
+    "id": 29,
+    "zh": "萨姆比汤姆更聪明。",
+    "en": "No, he isnt. Sam is smarter than Tom."
+  },
+  {
+    "id": 30,
+    "zh": "塔拉比蒂娜更外向吗？",
+    "en": "Is Tara more outgoing than Tina?"
+  },
+  {
+    "id": 31,
+    "zh": "蒂娜比塔拉更外向。",
+    "en": "No, she isnt. Tina is more outgoing than Tara."
+  },
+  {
+    "id": 32,
+    "zh": "你和你的姐姐一样友善吗？",
+    "en": "Are you as friendly as your sister?"
+  },
+  {
+    "id": 33,
+    "zh": "不，我不是。我比她更友善。",
+    "en": "No, Im not. Im friendlier."
+  },
+  {
+    "id": 34,
+    "zh": "塔拉和蒂娜一样努力工作吗？",
+    "en": "Does Tara work as hard as Tina?"
+  },
+  {
+    "id": 35,
+    "zh": "上学谁更努力工作？",
+    "en": "Whos more hardworking at school?"
+  },
+  {
+    "id": 36,
+    "zh": "蒂娜认为她比我更努力。",
+    "en": "Tina thinks she works harder than me."
+  },
+  {
+    "id": 37,
+    "zh": "朱莉比你高吗？",
+    "en": "Is Julie as tall as you?"
+  },
+  {
+    "id": 38,
+    "zh": "不，她不是。她比我高。",
+    "en": "No, she isnt. Shes taller than me."
+  },
+  {
+    "id": 39,
+    "zh": "你更努力学习英语吗？",
+    "en": "Do you study English harder?"
+  },
+  {
+    "id": 40,
+    "zh": "不，我不。我更经常学习它。",
+    "en": "No, I dont. I study it more often."
+  },
+  {
+    "id": 41,
+    "zh": "你现在比两年前更搞笑吗？",
+    "en": "Are you funnier now than you were two years ago?"
+  },
+  {
+    "id": 42,
+    "zh": "是的，我。我现在比两年前更搞笑。",
+    "en": "Yes, I am. Im funnier now than I was two years ago."
+  },
+  {
+    "id": 43,
+    "zh": "你唱得更好吗？",
+    "en": "Do you sing better?"
+  },
+  {
+    "id": 44,
+    "zh": "不，我不。我还在学习。",
+    "en": "No, I dont. Im still learning."
+  },
+  {
+    "id": 45,
+    "zh": "我比我的姐姐更外向。",
+    "en": "Im more outgoing than my sister."
+  },
+  {
+    "id": 46,
+    "zh": "哪家服装店最好？",
+    "en": "Which is the best clothes store?"
+  },
+  {
+    "id": 47,
+    "zh": "这是最贵的。",
+    "en": "Its the most expensive."
+  },
+  {
+    "id": 48,
+    "zh": "它有最好的衣服。",
+    "en": "It has the best clothes."
+  },
+  {
+    "id": 49,
+    "zh": "这是最糟糕的商店。",
+    "en": "Its the worst store."
+  },
+  {
+    "id": 50,
+    "zh": "你可以在那里买到最便宜的衣服。",
+    "en": "You can buy clothes the most cheaply there."
+  },
+  {
+    "id": 51,
+    "zh": "它有最糟糕的音乐。",
+    "en": "It has the worst music."
+  },
+  {
+    "id": 52,
+    "zh": "DJ们最仔细地选择歌曲。",
+    "en": "The DJs choose songs the most carefully."
+  },
+  {
+    "id": 53,
+    "zh": "这是最受欢迎的。",
+    "en": "Its the most popular."
+  },
+  {
+    "id": 54,
+    "zh": "你好，我是格雷格。我刚来镇上。",
+    "en": "Hi, Im Greg. Im new in town."
+  },
+  {
+    "id": 55,
+    "zh": "是的，阳光影院是最新的一家。",
+    "en": "Yes, Sun Cinema is the newest one."
+  },
+  {
+    "id": 56,
+    "zh": "你可以最舒适地坐下，因为他们有最大的座位。",
+    "en": "You can sit the most comfortably because they have the biggest seats."
+  },
+  {
+    "id": 57,
+    "zh": "镇上影院的最好的电影院是什么？",
+    "en": "Whats the best movie theater to Town Cinema."
+  },
+  {
+    "id": 58,
+    "zh": "萨莉喜欢看情景喜剧和肥皂剧。",
+    "en": "Sally likes to watch sitcoms and soap operas."
+  },
+  {
+    "id": 59,
+    "zh": "林惠认为她可以从情景喜剧中学习。",
+    "en": "Lin Hui thinks she can learn from sitcoms."
+  },
+  {
+    "id": 60,
+    "zh": "萨莉认为新闻节目比情景喜剧更有教育意义。",
+    "en": "Sally thinks news programs are more educational than sitcoms."
+  },
+  {
+    "id": 61,
+    "zh": "萨莉喜欢看访谈节目。她计划看《我们的一天》。",
+    "en": "Sally loves talk shows. She plans to watch Days of Our Past."
+  },
+  {
+    "id": 62,
+    "zh": "格蕾丝无法忍受综艺节目和体育节目。",
+    "en": "Grace cant stand game shows and sports shows."
+  },
+  {
+    "id": 63,
+    "zh": "格蕾丝喜欢肥皂剧并且喜欢追随剧情。",
+    "en": "Grace loves soap operas and likes to follow the story."
+  },
+  {
+    "id": 64,
+    "zh": "莎拉对肥皂剧没有意见，但更喜欢新闻和访谈节目。",
+    "en": "Sarah doesnt mind soap operas but prefers the news and talk shows."
+  },
+  {
+    "id": 65,
+    "zh": "格蕾丝觉得访谈节目很无聊。",
+    "en": "Grace finds talk shows boring."
+  },
+  {
+    "id": 66,
+    "zh": "莎拉希望有一天成为一名电视记者。",
+    "en": "Sarah hopes to be a TV reporter one day."
+  },
+  {
+    "id": 67,
+    "zh": "格蕾丝问莎拉是否想看一场综艺节目。",
+    "en": "Grace asks Sarah if she wants to watch a game show."
+  },
+  {
+    "id": 68,
+    "zh": "约翰想看访谈节目，因为它们很有趣。",
+    "en": "John wants to watch talk shows because theyre enjoyable."
+  },
+  {
+    "id": 69,
+    "zh": "我喜欢看动作片，因为它们很刺激。",
+    "en": "I like to watch action movies because theyre exciting."
+  },
+  {
+    "id": 70,
+    "zh": "你想要长大后当什么人？",
+    "en": "What do you want to be when you grow up?"
+  },
+  {
+    "id": 71,
+    "zh": "我想要当一名工程师。",
+    "en": "I want to be an engineer."
+  },
+  {
+    "id": 72,
+    "zh": "你打算怎么做？",
+    "en": "How are you going to do that?"
+  },
+  {
+    "id": 73,
+    "zh": "我要好好学习数学。",
+    "en": "Im going to study math really hard."
+  },
+  {
+    "id": 74,
+    "zh": "你要在哪里工作？",
+    "en": "Where are you going to work?"
+  },
+  {
+    "id": 75,
+    "zh": "我要去上海。",
+    "en": "Im going to move to Shanghai."
+  },
+  {
+    "id": 76,
+    "zh": "我要在高中和大学毕业后开始。",
+    "en": "Im going to start when I finish high school and college."
+  },
+  {
+    "id": 77,
+    "zh": "我的朋友想要当一名工程师。",
+    "en": "My friend wants to be an engineer."
+  },
+  {
+    "id": 78,
+    "zh": "我的哥哥想要当一名演员。",
+    "en": "My brother wants to be an actor."
+  },
+  {
+    "id": 79,
+    "zh": "我想要当一名科学家。",
+    "en": "I want to be a scientist."
+  },
+  {
+    "id": 80,
+    "zh": "我的姐姐想要当一名老师。",
+    "en": "My sister wants to be a school teacher."
+  },
+  {
+    "id": 81,
+    "zh": "那些男孩想要当一名足球运动员。",
+    "en": "Those boys want to be soccer players."
+  },
+  {
+    "id": 82,
+    "zh": "我和我的朋友想要当一名歌手。",
+    "en": "My friend and I want to be singers."
+  },
+  {
+    "id": 83,
+    "zh": "我的表兄弟想要当一名厨师。",
+    "en": "My cousin wants to be a cook."
+  },
+  {
+    "id": 84,
+    "zh": "我想要当一名赛车手。",
+    "en": "I want to be a race car driver."
+  },
+  {
+    "id": 85,
+    "zh": "凯利想要当一名医生。",
+    "en": "Kelly wants to be a doctor."
+  },
+  {
+    "id": 86,
+    "zh": "她要去大学学习医学。",
+    "en": "Shes going to study medicine at a university."
+  },
+  {
+    "id": 87,
+    "zh": "你打算这么做吗？",
+    "en": "You are going to do that?"
+  },
+  {
+    "id": 88,
+    "zh": "我要在大学学习医学。",
+    "en": "Im going to study medicine at a university."
+  },
+  {
+    "id": 89,
+    "zh": "这听起来很难。你也要学习吗？",
+    "en": "Sounds difficult. Are you going to study?"
+  },
+  {
+    "id": 90,
+    "zh": "我要去伦敦学习。",
+    "en": "Im going to study in London."
+  },
+  {
+    "id": 91,
+    "zh": "你打算开始吗？",
+    "en": "Are you going to start?"
+  },
+  {
+    "id": 92,
+    "zh": "我要下个九月开始。",
+    "en": "Im going to start next September."
+  },
+  {
+    "id": 93,
+    "zh": "我想要当一名记者。",
+    "en": "I want to be a reporter."
+  },
+  {
+    "id": 94,
+    "zh": "我要写文章并寄给杂志和报纸。",
+    "en": "Im going to write articles and send them to magazines and newspapers."
+  },
+  {
+    "id": 95,
+    "zh": "我想要当一名老师。",
+    "en": "I want to be a teacher."
+  },
+  {
+    "id": 96,
+    "zh": "我要努力学习并取得好成绩。",
+    "en": "Im going to study hard and get good grades."
+  },
+  {
+    "id": 97,
+    "zh": "未来会有更多的人。",
+    "en": "There will be more people in the future."
+  },
+  {
+    "id": 98,
+    "zh": "未来会减少每个人的自由时间。",
+    "en": "There will be less free time for everyone."
+  },
+  {
+    "id": 99,
+    "zh": "人们将更少地使用地铁。",
+    "en": "People will use the subways less frequently."
+  },
+  {
+    "id": 100,
+    "zh": "城市会产生更多的污染。",
+    "en": "There will be more pollution in the cities."
+  },
+  {
+    "id": 101,
+    "zh": "城市会非常大而且拥挤。",
+    "en": "Cities will be very big and crowded."
+  },
+  {
+    "id": 102,
+    "zh": "我们可以使用更少的水，多植树。",
+    "en": "We can use less water and plant more trees."
+  },
+  {
+    "id": 103,
+    "zh": "每个人都应该在拯救地球方面发挥作用。",
+    "en": "Everyone should play a part in saving the earth."
+  },
+  {
+    "id": 104,
+    "zh": "人们在未来会拥有机器人吗？",
+    "en": "Will people have robots in the future?"
+  },
+  {
+    "id": 105,
+    "zh": "尼克认为会有更多的污染。",
+    "en": "Nick thinks there will be more pollution."
+  },
+  {
+    "id": 106,
+    "zh": "吉尔相信城市会更加拥挤和污染。",
+    "en": "Jill believes cities will be more crowded and polluted."
+  },
+  {
+    "id": 107,
+    "zh": "未来会有更少的树木。",
+    "en": "There will be fewer trees in the future."
+  },
+  {
+    "id": 108,
+    "zh": "如果我们不采取行动，环境将会面临巨大危险。",
+    "en": "The environment will be in great danger if we don't act."
+  },
+  {
+    "id": 109,
+    "zh": "我们需要多少香蕉？",
+    "en": "How many bananas do we need?"
+  },
+  {
+    "id": 110,
+    "zh": "我们需要三根香蕉。",
+    "en": "We need three bananas."
+  },
+  {
+    "id": 111,
+    "zh": "我们需要多少酸奶？",
+    "en": "How much yogurt do we need?"
+  },
+  {
+    "id": 112,
+    "zh": "我们需要一杯酸奶。",
+    "en": "We need one cup of yogurt."
+  },
+  {
+    "id": 113,
+    "zh": "我们来做水果沙拉吧。",
+    "en": "Lets make fruit salad."
+  },
+  {
+    "id": 114,
+    "zh": "我们需要多少苹果？",
+    "en": "How many apples do we need?"
+  },
+  {
+    "id": 115,
+    "zh": "我们需要两只苹果。",
+    "en": "We need two apples."
+  },
+  {
+    "id": 116,
+    "zh": "首先，去皮香蕉。",
+    "en": "First, peel the bananas."
+  },
+  {
+    "id": 117,
+    "zh": "然后，把香蕉放入搅拌机。",
+    "en": "Next, put the bananas in the blender."
+  },
+  {
+    "id": 118,
+    "zh": "接着，把牛奶倒入搅拌机。",
+    "en": "Then, pour the milk into the blender."
+  },
+  {
+    "id": 119,
+    "zh": "最后，打开搅拌机。",
+    "en": "Finally, turn on the blender."
+  },
+  {
+    "id": 120,
+    "zh": "杰夫不能去派对。",
+    "en": "Jeff cant go to the party."
+  },
+  {
+    "id": 121,
+    "zh": "玛丽不能去派对。",
+    "en": "Mary cant go to the party."
+  },
+  {
+    "id": 122,
+    "zh": "梅不能去派对。",
+    "en": "May cant go to the party."
+  },
+  {
+    "id": 123,
+    "zh": "美玲不能去派对。",
+    "en": "Mei Ling cant go to the party."
+  },
+  {
+    "id": 124,
+    "zh": "保罗不能去派对。",
+    "en": "Paul cant go to the party."
+  },
+  {
+    "id": 125,
+    "zh": "我很抱歉，我不能参加。",
+    "en": "Im sorry, Im not available."
+  },
+  {
+    "id": 126,
+    "zh": "我这个周末作业太多了。",
+    "en": "I have too much homework this weekend."
+  },
+  {
+    "id": 127,
+    "zh": "真糟糕，也许下次再见。",
+    "en": "Thats too bad, maybe another time."
+  },
+  {
+    "id": 128,
+    "zh": "好的，乔，谢谢邀请。",
+    "en": "Sure, Joe, thanks for asking."
+  },
+  {
+    "id": 129,
+    "zh": "我很想来，但我不能。",
+    "en": "Id love to come, but I cant."
+  },
+  {
+    "id": 130,
+    "zh": "我周一有考试，所以必须准备。",
+    "en": "I have an exam on Monday so I must prepare for it."
+  },
+  {
+    "id": 131,
+    "zh": "你能来我的派对吗？",
+    "en": "Can you come to my party?"
+  },
+  {
+    "id": 132,
+    "zh": "这些天学生常常有很多烦恼。",
+    "en": "The students these days often have a lot of worries."
+  },
+  {
+    "id": 133,
+    "zh": "有时他们有学业上的问题，有时有朋友之间的关系问题。",
+    "en": "Sometimes they have problems with their schoolwork, and sometimes with their friends."
+  },
+  {
+    "id": 134,
+    "zh": "他们能怎么办呢？",
+    "en": "What can they do about this?"
+  },
+  {
+    "id": 135,
+    "zh": "如果你去参加派对，你一定会玩得很开心！",
+    "en": "If you go to the party, youll have a great time!"
+  },
+  {
+    "id": 136,
+    "zh": "如果你加入狮子俱乐部，你就会出名了。",
+    "en": "If you join the Lions, youll be famous."
+  },
+  {
+    "id": 137,
+    "zh": "如果你成为狮子，我永远不会这样做。",
+    "en": "If you become a Lion, Ill never do it."
+  },
+  {
+    "id": 138,
+    "zh": "如果你努力工作，你就会成为一名优秀的足球运动员。",
+    "en": "If you work really hard, youll become a great soccer player."
+  },
+  {
+    "id": 139,
+    "zh": "如果你成为足球运动员，你将永远不上大学。",
+    "en": "If you become a soccer player, youll never go to college."
+  },
+  {
+    "id": 140,
+    "zh": "如果我现在不做这件事，你就会环游世界。",
+    "en": "If I dont do this now, youll travel around the world."
+  },
+  {
+    "id": 141,
+    "zh": "如果你上大学，你将永远不会成为一名优秀的足球运动员。",
+    "en": "If you go to college, youll never become a great soccer player."
+  },
+  {
+    "id": 142,
+    "zh": "如果你应该向专家寻求建议。",
+    "en": "If you should get advice from an expert."
+  },
+  {
+    "id": 143,
+    "zh": "如果人们有麻烦，他们应该和别人谈谈。",
+    "en": "If people have problems, they should talk to other people."
+  }
+]

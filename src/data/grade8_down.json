@@ -1,0 +1,692 @@
+[
+  {
+    "id": 1,
+    "zh": "谈论健康和事故。",
+    "en": "Talk about health and accidents."
+  },
+  {
+    "id": 2,
+    "zh": "有用于讨论健康问题。",
+    "en": "Have for talking about health problems."
+  },
+  {
+    "id": 3,
+    "zh": "情态动词 should shouldn’t 用于给出建议。",
+    "en": "Modal verbs shouldshouldnt for suggestions."
+  },
+  {
+    "id": 4,
+    "zh": "她扭伤了膝盖。",
+    "en": "She hurt her knee."
+  },
+  {
+    "id": 5,
+    "zh": "医生给他开了止牙痛药。",
+    "en": "The doctor gave him a toothache."
+  },
+  {
+    "id": 6,
+    "zh": "她应该测量体温。",
+    "en": "She should take her temperature."
+  },
+  {
+    "id": 7,
+    "zh": "我们需要为城市公园清理日制定一个计划。",
+    "en": "We need to come up with a plan for the City Park CleanUp Day."
+  },
+  {
+    "id": 8,
+    "zh": "让我们先吃午饭吧。",
+    "en": "Lets have lunch first."
+  },
+  {
+    "id": 9,
+    "zh": "不，我们现在就该开始了。清理日还有两周。",
+    "en": "No, we need to start now. CleanUp Day is only two weeks from now."
+  },
+  {
+    "id": 10,
+    "zh": "嗨，汤姆，我正在计划今年夏天在养老院工作。",
+    "en": "Hi, Tom, Im making some plans to work in an old peoples home this summer."
+  },
+  {
+    "id": 11,
+    "zh": "真的吗？我上去年就做过这件事！",
+    "en": "Really? I did that last summer!"
+  },
+  {
+    "id": 12,
+    "zh": "哦，他们让你在做什么帮助？",
+    "en": "Oh, what did they ask you to help out with?"
+  },
+  {
+    "id": 13,
+    "zh": "很多老年人感到孤独。",
+    "en": "A lot of old people are lonely."
+  },
+  {
+    "id": 14,
+    "zh": "你说得对。我意思是说，我们终有一天也会变老。",
+    "en": "You're right. I mean, we're all going to be old one day, too."
+  },
+  {
+    "id": 15,
+    "zh": "我想帮助无家可归者。",
+    "en": "I'd like to help homeless people."
+  },
+  {
+    "id": 16,
+    "zh": "马里奥喜欢动物，想成为一名兽医。",
+    "en": "Mario loves animals and wants to be an animal doctor."
+  },
+  {
+    "id": 17,
+    "zh": "马里奥相信这能帮助他实现自己的梦想工作。",
+    "en": "Mario believes it can help him to get his future dream job."
+  },
+  {
+    "id": 18,
+    "zh": "玛丽是一个书虫。",
+    "en": "Mary is a book lover."
+  },
+  {
+    "id": 19,
+    "zh": "在这里做志愿者是实现我梦想的机会。",
+    "en": "Volunteering here is a dream come true for me."
+  },
+  {
+    "id": 20,
+    "zh": "我们决定在学校周围张贴一些指示牌。",
+    "en": "We decided to put up some signs around the school."
+  },
+  {
+    "id": 21,
+    "zh": "我们将把销售所得的钱分给无家可归者。",
+    "en": "We will give out the money from the sale to homeless people."
+  },
+  {
+    "id": 22,
+    "zh": "大多数人今天只关心获得好工作和很多钱。",
+    "en": "Most people today are only worried about getting good jobs and lots of money."
+  },
+  {
+    "id": 23,
+    "zh": "很少有人考虑自己能为别人做些什么。",
+    "en": "Few people think about what they can do for others."
+  },
+  {
+    "id": 24,
+    "zh": "请帮我处理几件事？",
+    "en": "Could you please help out with a few things?"
+  },
+  {
+    "id": 25,
+    "zh": "他们帮助我们清理了。",
+    "en": "They helped us out with the cleanup."
+  },
+  {
+    "id": 26,
+    "zh": "她惊异地问：“发生了什么？”",
+    "en": "She asked in surprise, What happened?"
+  },
+  {
+    "id": 27,
+    "zh": "我们现在预计他们马上就会来。",
+    "en": "We're expecting them any moment now."
+  },
+  {
+    "id": 28,
+    "zh": "父母的责任是为家里提供一个干净舒适的环境。",
+    "en": "It is the parents job to provide a clean and comfortable environment at home."
+  },
+  {
+    "id": 29,
+    "zh": "很多人认为，一个人读得越多，就越聪明。",
+    "en": "Many people believe that the more a person reads, the wiser he will become."
+  },
+  {
+    "id": 30,
+    "zh": "我们也要发一些通知。",
+    "en": "Lets make some notices, too."
+  },
+  {
+    "id": 31,
+    "zh": "彼得今晚可以和他的朋友们一起去吃晚饭。",
+    "en": "Peter could go out for dinner with his friends tonight."
+  },
+  {
+    "id": 32,
+    "zh": "如果你只是感冒，仍然应该去看医生。",
+    "en": "You should still see the doctor if its just a cold."
+  },
+  {
+    "id": 33,
+    "zh": "孩子们越早学会独立，对他们的未来越好。",
+    "en": "The earlier kids learn to be independent, the better it is for their future."
+  },
+  {
+    "id": 34,
+    "zh": "虽然她错了，但没什么大不了的。",
+    "en": "Although shes wrong, its not a big deal."
+  },
+  {
+    "id": 35,
+    "zh": "没什么大不了。",
+    "en": "Its no big deal."
+  },
+  {
+    "id": 36,
+    "zh": "今晚电视上有一场足球赛，但我不用看。",
+    "en": "There's a soccer game on TV this evening but I dont have to watch it."
+  },
+  {
+    "id": 37,
+    "zh": "这很重要，大卫，比你想象的更重要。",
+    "en": "Its a big deal, David, bigger than you know."
+  },
+  {
+    "id": 38,
+    "zh": "到底怎么了？",
+    "en": "Whats the big deal?"
+  },
+  {
+    "id": 39,
+    "zh": "这只是生日，不是世界末日。",
+    "en": "Its only a birthday, not the end of the world."
+  },
+  {
+    "id": 40,
+    "zh": "希望一切顺利。",
+    "en": "Hope things work out."
+  },
+  {
+    "id": 41,
+    "zh": "不用担心。一切都会顺利的。",
+    "en": "Dont worry. Things will work out."
+  },
+  {
+    "id": 42,
+    "zh": "你想留下来陪我们看看事情如何发展吗？",
+    "en": "Do you want to stay with us to see how things work out?"
+  },
+  {
+    "id": 43,
+    "zh": "他们经常吵架，我真的不喜欢。",
+    "en": "They fight a lot, and I really dont like it."
+  },
+  {
+    "id": 44,
+    "zh": "虽然他们刚结婚，但几乎每天都在吵架。",
+    "en": "Although they just got married, they're fighting almost every day."
+  },
+  {
+    "id": 45,
+    "zh": "我的弟弟总是吵架。",
+    "en": "My little brothers are always fighting."
+  },
+  {
+    "id": 46,
+    "zh": "小时候，我们总是为幼儿园里的玩具吵架，但现在我们已经很好了。",
+    "en": "As kids, we always fought for toys in the kindergarten, but now we're pretty good friends."
+  },
+  {
+    "id": 47,
+    "zh": "也许我可以减少他们的活动，但是……",
+    "en": "Maybe I could cut out a few of their activities, but..."
+  },
+  {
+    "id": 48,
+    "zh": "不要把你的父母排除在你的生活之外。",
+    "en": "Dont cut your parents out of your lives."
+  },
+  {
+    "id": 49,
+    "zh": "如果你戒掉喝酒，你会感觉更健康。",
+    "en": "If you cut out the drinking, youd feel much healthier."
+  },
+  {
+    "id": 50,
+    "zh": "人们不应该把孩子逼得太紧。",
+    "en": "People shouldnt push their kids so hard."
+  },
+  {
+    "id": 51,
+    "zh": "别推这个门，你需要拉开它。",
+    "en": "Don't push this door you have to pull it open."
+  },
+  {
+    "id": 52,
+    "zh": "数学老师真的很逼学生。",
+    "en": "The math teacher really pushes his students."
+  },
+  {
+    "id": 53,
+    "zh": "露西应该更努力地锻炼一下。",
+    "en": "Lucy should push herself a little harder."
+  },
+  {
+    "id": 54,
+    "zh": "没有外光，感觉像午夜一样。",
+    "en": "With no light outside, it felt like midnight."
+  },
+  {
+    "id": 55,
+    "zh": "我父母不在家，我是家里的国王。",
+    "en": "With my parents away, Im the king of the house."
+  },
+  {
+    "id": 56,
+    "zh": "你能确认一下他几点到吗？",
+    "en": "Could you make sure what time hes arriving?"
+  },
+  {
+    "id": 57,
+    "zh": "请确保你离开房子前关掉电视。",
+    "en": "Make sure you turn off the TV before you leave the house."
+  },
+  {
+    "id": 58,
+    "zh": "我的手表防水，这意味着即使在水中，它也能正常工作。",
+    "en": "My watch is waterproof that means it would work fine even if its in water."
+  },
+  {
+    "id": 59,
+    "zh": "我现在的大脑运转不畅。",
+    "en": "My brain isnt working well now."
+  },
+  {
+    "id": 60,
+    "zh": "在这一天，马丁·路德·金博士遇刺身亡。",
+    "en": "On this day, Dr. Martin Luther King was killed."
+  },
+  {
+    "id": 61,
+    "zh": "它被恐怖分子摧毁了。",
+    "en": "It was taken down by terrorists."
+  },
+  {
+    "id": 62,
+    "zh": "大多数美国人记得他们在世界贸易中心被恐怖分子摧毁时所做的事情。",
+    "en": "Most Americans remember what they were doing when the World Trade Center in New York was taken down by terrorists."
+  },
+  {
+    "id": 63,
+    "zh": "她记得在两座塔楼附近她的办公室工作。",
+    "en": "She remembers working in her office near the two towers."
+  },
+  {
+    "id": 64,
+    "zh": "塔楼被摧毁了。",
+    "en": "Towers were taken down."
+  },
+  {
+    "id": 65,
+    "zh": "我不太记得我曾在任何地方见到他。",
+    "en": "I dont remember seeing him anywhere."
+  },
+  {
+    "id": 66,
+    "zh": "他记得在她的一次聚会上见过她。",
+    "en": "He remembered meeting her at a party once."
+  },
+  {
+    "id": 67,
+    "zh": "我记得我父亲把一棵大型圣诞树带回家。",
+    "en": "I remember my father bringing home a large Christmas tree."
+  },
+  {
+    "id": 68,
+    "zh": "现在去镇上吗？",
+    "en": "Ride to town now?"
+  },
+  {
+    "id": 69,
+    "zh": "但愚公能做些什么代替搬山？",
+    "en": "But what could Yu Gong do instead of moving the mountains?"
+  },
+  {
+    "id": 70,
+    "zh": "与其恼火，他看起来倒是很满意。",
+    "en": "Instead of being annoyed, he seemed quite pleased."
+  },
+  {
+    "id": 71,
+    "zh": "很久以前，有一位非常老的老人。",
+    "en": "Once upon a time, there was a very old man."
+  },
+  {
+    "id": 72,
+    "zh": "除非他能隐藏他的尾巴，否则他不能变成人。",
+    "en": "Unless he can hide his tail, he cannot turn himself into a man."
+  },
+  {
+    "id": 73,
+    "zh": "所以……这样……我们应该跟随它。",
+    "en": "So... that... we should follow it."
+  },
+  {
+    "id": 74,
+    "zh": "我们以为你永远不会回来了。",
+    "en": "We thought you were never coming back."
+  },
+  {
+    "id": 75,
+    "zh": "一旦你醒来，就必须和你的父亲一起去森林。",
+    "en": "As soon as you wake up, you must go to the forest with your father."
+  },
+  {
+    "id": 76,
+    "zh": "它正引领我们走向那栋用面包、蛋糕和糖果建造的 maravillosa 的房子。",
+    "en": "Its leading us to that wonderful house made of bread, cake and candy."
+  },
+  {
+    "id": 77,
+    "zh": "一切都太快了，我没有时间去思考。",
+    "en": "Everything happened so quickly I didnt have time to think."
+  },
+  {
+    "id": 78,
+    "zh": "你永远不知道有什么可能，除非你尝试去实现它。",
+    "en": "You can never know what's possible unless you try to make it happen."
+  },
+  {
+    "id": 79,
+    "zh": "亚马逊河是世界上最大的河流之一。",
+    "en": "The Amazon River is one of the largest rivers in the world."
+  },
+  {
+    "id": 80,
+    "zh": "长江比它小得多。",
+    "en": "It's much smaller than the Yangtze River."
+  },
+  {
+    "id": 81,
+    "zh": "珠穆朗玛峰海拔8844.43米。",
+    "en": "Qomolangma is 8,844.43 meters high."
+  },
+  {
+    "id": 82,
+    "zh": "它是对严肃登山者来说最壮观的地方之一。",
+    "en": "Its one of the most spectacular places for serious mountain climbers."
+  },
+  {
+    "id": 83,
+    "zh": "太平洋年龄与大西洋相同。",
+    "en": "The Pacific Ocean is as old as the Atlantic Ocean."
+  },
+  {
+    "id": 84,
+    "zh": "日本比加拿大小，但它是一个美丽国家。",
+    "en": "Japan is smaller than Canada, but it is a beautiful country."
+  },
+  {
+    "id": 85,
+    "zh": "这只大象比这只熊猫重很多倍。",
+    "en": "This elephant weighs many times more than this panda."
+  },
+  {
+    "id": 86,
+    "zh": "一只成年熊猫比一只幼熊猫重很多倍。",
+    "en": "An adult panda weighs many times more than a baby panda."
+  },
+  {
+    "id": 87,
+    "zh": "出生时，一只幼熊猫长约100到150公斤。",
+    "en": "At birth, a baby panda is about 100 to 150 kilos long."
+  },
+  {
+    "id": 88,
+    "zh": "幼熊猫不是黑色的。它是白色的，没有斑点。",
+    "en": "A baby panda is not black. It is white and it has no spots."
+  },
+  {
+    "id": 89,
+    "zh": "熊猫可以活到20到30岁。",
+    "en": "A panda can live up to 20 to 30 years."
+  },
+  {
+    "id": 90,
+    "zh": "这只熊猫比这只熊猫重很多倍。",
+    "en": "This panda weighs many times more than this panda."
+  },
+  {
+    "id": 91,
+    "zh": "成都研究基地是观赏熊猫的热门地点。",
+    "en": "The Chengdu Research Base is a popular place to see pandas."
+  },
+  {
+    "id": 92,
+    "zh": "科学家们正在进行研究，以更好地了解熊猫的生活习性。",
+    "en": "Scientists are doing research to better understand the habits of pandas."
+  },
+  {
+    "id": 93,
+    "zh": "林伟的工作是照顾幼熊猫。",
+    "en": "Lin Weis job is to care for the baby pandas."
+  },
+  {
+    "id": 94,
+    "zh": "成都的教育项目向孩子们传授有关保存这些动物的重要性。",
+    "en": "The education program in Chengdu teaches children about the importance of saving these animals."
+  },
+  {
+    "id": 95,
+    "zh": "至少读过书的背面看看它的内容吗？",
+    "en": "Have you at least read the back of the book to see what its about?"
+  },
+  {
+    "id": 96,
+    "zh": "书评需要在两周内提交。",
+    "en": "The book report is due in two weeks."
+  },
+  {
+    "id": 97,
+    "zh": "我们的飞机将于上海虹桥国际机场12:30到达。",
+    "en": "Our plane is due at Shanghai Hongqiao International Airport at 1230."
+  },
+  {
+    "id": 98,
+    "zh": "罗斯将于一月开始上学。",
+    "en": "Rose is due to start school in January."
+  },
+  {
+    "id": 99,
+    "zh": "你下个月需要进行一次体检。",
+    "en": "You are due for a medical examination next month."
+  },
+  {
+    "id": 100,
+    "zh": "托姆一家一定很受欢迎。",
+    "en": "The Toms must be popular."
+  },
+  {
+    "id": 101,
+    "zh": "他们现在应该已经到了。",
+    "en": "They must be there by now."
+  },
+  {
+    "id": 102,
+    "zh": "我希望我的奶奶能停止谈论过去的美好时光。",
+    "en": "I wish my grandma would stop talking about the good old days."
+  },
+  {
+    "id": 103,
+    "zh": "在过去的美好时光里，去看电影只需要几分钱。",
+    "en": "In the good old days, going to a movie only cost a few cents."
+  },
+  {
+    "id": 104,
+    "zh": "希望有一天能看到他现场演唱！",
+    "en": "Hope to see him sing live one day!"
+  },
+  {
+    "id": 105,
+    "zh": "你有没有去过博物馆？",
+    "en": "Have you ever been to a museum?"
+  },
+  {
+    "id": 106,
+    "zh": "我从未去过露营。",
+    "en": "I've never been camping."
+  },
+  {
+    "id": 107,
+    "zh": "他今天下午一直在看电视。",
+    "en": "He's been watching TV all afternoon."
+  },
+  {
+    "id": 108,
+    "zh": "我们自我弟弟出生后就一直过着这样生活。",
+    "en": "We've been living like this ever since the birth of my little brother."
+  },
+  {
+    "id": 109,
+    "zh": "我很好奇未来电脑还能做多少事情。",
+    "en": "I wonder how much more computers will be able to do in the future."
+  },
+  {
+    "id": 110,
+    "zh": "我很好奇他们怎么样了。",
+    "en": "I wonder how they're getting on."
+  },
+  {
+    "id": 111,
+    "zh": "我只是很好奇他们是否安全到达。",
+    "en": "I just wonder if they've arrived safely."
+  },
+  {
+    "id": 112,
+    "zh": "他将来会做更多的事情。",
+    "en": "He will be able to do much more in the future."
+  },
+  {
+    "id": 113,
+    "zh": "国际厕所博物馆是一个非常有趣的地方。",
+    "en": "The International Museum of Toilets is a very interesting place."
+  },
+  {
+    "id": 114,
+    "zh": "观看茶的准备过程和品尝茶本身一样令人愉快。",
+    "en": "Watching the tea preparation is just as enjoyable as drinking the tea itself."
+  },
+  {
+    "id": 115,
+    "zh": "新加坡有夜间野生动物园。",
+    "en": "Singapore has a Night Safari."
+  },
+  {
+    "id": 116,
+    "zh": "那你们这个学期在学什么？",
+    "en": "So what are you studying this term?"
+  },
+  {
+    "id": 117,
+    "zh": "是的，我去过。去年我去了国家科学博物馆。",
+    "en": "Yes, I have. I went to the National Science Museum last year."
+  },
+  {
+    "id": 118,
+    "zh": "我也没去过。我们明天去一个吧。",
+    "en": "Me neither. Let's go to one tomorrow."
+  },
+  {
+    "id": 119,
+    "zh": "好吧，听起来不错，但我对历史不感兴趣。",
+    "en": "Well, that sounds good, but Im not interested in history."
+  },
+  {
+    "id": 120,
+    "zh": "真的吗？我不知道。那美术馆怎么样？",
+    "en": "Really? I didn't know that. Well, how about the art museum?"
+  },
+  {
+    "id": 121,
+    "zh": "我很多次去过美术馆。",
+    "en": "Ive been to the art museum many times."
+  },
+  {
+    "id": 122,
+    "zh": "我也去过太空博物馆。",
+    "en": "I've been to the space museum."
+  },
+  {
+    "id": 123,
+    "zh": "嘿，蒂娜，你有没有去过太空博物馆？",
+    "en": "Hey, have you ever visited the space museum, Tina?"
+  },
+  {
+    "id": 124,
+    "zh": "是的，我去年去了那里。",
+    "en": "Yes, I went there last year."
+  },
+  {
+    "id": 125,
+    "zh": "我喜欢它，但是人太多了。",
+    "en": "I loved it, but there were too many people."
+  },
+  {
+    "id": 126,
+    "zh": "艾米，我们可以把这些毛绒玩具捐掉吗？",
+    "en": "Amy, can we give away these soft toys?"
+  },
+  {
+    "id": 127,
+    "zh": "妈妈，我想留着这只熊。",
+    "en": "Mom, I want to keep the bear."
+  },
+  {
+    "id": 128,
+    "zh": "因为我从我还是个婴儿的时候就有了它。",
+    "en": "Because I've had it since I was a baby."
+  },
+  {
+    "id": 129,
+    "zh": "太棒了！这里有很多孩子喜欢阅读。",
+    "en": "Great! Many children here love reading."
+  },
+  {
+    "id": 130,
+    "zh": "而且看看这些毛绒玩具和棋盘游戏，它们是为年纪较小的孩子们准备的。",
+    "en": "And check out these soft toys and board games for younger kids."
+  },
+  {
+    "id": 131,
+    "zh": "还有毛衣和连衣裙。",
+    "en": "There's also a sweater and a dress."
+  },
+  {
+    "id": 132,
+    "zh": "太好了！我们总是需要玩具和衣服。",
+    "en": "Perfect! We always need toys and clothes."
+  },
+  {
+    "id": 133,
+    "zh": "我这个自行车有三年了。",
+    "en": "I've had this bike for three years."
+  },
+  {
+    "id": 134,
+    "zh": "他从第四个生日就开始拥有它了。",
+    "en": "Hes owned it since his fourth birthday."
+  },
+  {
+    "id": 135,
+    "zh": "孩子们一天天长大。",
+    "en": "The children are growing up fast."
+  },
+  {
+    "id": 136,
+    "zh": "我们想在跳蚤市场出售一些东西。",
+    "en": "We want to sell some of our things in a yard sale."
+  },
+  {
+    "id": 137,
+    "zh": "我的女儿十六岁，我的儿子已经上初中了。",
+    "en": "My daughter is 16 and my boy is already in junior high school."
+  },
+  {
+    "id": 138,
+    "zh": "随着他们长大，我们的房子似乎越来越小了。",
+    "en": "As they get bigger, our house seems to get smaller."
+  }
+]

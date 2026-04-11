@@ -6,11 +6,13 @@ import SentenceList from './components/SentenceList'
 import Settings from './components/Settings'
 import Dashboard from './components/Dashboard'
 import Courses from './components/Courses'
+import CoreSentences from './components/CoreSentences'
 import Textbook from './components/Textbook'
 import Grammar from './components/Grammar'
 import Quiz from './components/Quiz'
 import FillBlank from './components/FillBlank'
 import SyncPractice from './components/SyncPractice'
+import VocabStudy from './components/VocabStudy'
 import { useProgress, getRecentErrors } from './hooks/useProgress'
 import sampleData from './data/sample.json'
 import changyongData from './data/changyong.json'
@@ -391,7 +393,7 @@ export default function App() {
             className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'exercise' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
             <span className={tab === 'exercise' ? 'text-blue-400' : ''}><IconPencil size={14} /></span>
-            <span>练习</span>
+            <span>正在学习</span>
           </button>
         </div>
 
@@ -407,8 +409,14 @@ export default function App() {
           ) : null}
         </div>
 
-        {/* Right group: 课程 + 教材 + 语法 + 返回 */}
+        {/* Right group: 核心句群 + 课程 + 教材 + 语法 + 返回 */}
         <div className="flex items-center gap-0.5 shrink-0 whitespace-nowrap ml-auto pr-4">
+          <button onClick={() => navigateTo('core')}
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
+              ${tab === 'core' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
+            <span className={tab === 'core' ? 'text-emerald-400' : ''}>✨</span>
+            <span>核心句群</span>
+          </button>
           <button onClick={() => navigateTo('courses')}
             className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'courses' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
@@ -427,6 +435,12 @@ export default function App() {
             <span className={tab === 'grammar' ? 'text-blue-400' : ''}><IconGraduationCap size={14} /></span>
             <span>语法</span>
           </button>
+          <button onClick={() => navigateTo('vocab')}
+            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
+              ${tab === 'vocab' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
+            <span className={tab === 'vocab' ? 'text-blue-400' : ''}><IconBookmark size={14} /></span>
+            <span>单词</span>
+          </button>
           <button
             onClick={handleBack}
             disabled={!canGoBack}
@@ -443,7 +457,7 @@ export default function App() {
         {/* Main content */}
         <main
           className={`flex-1 flex flex-col items-center justify-start px-4 pb-4 transition-all duration-200${tab === 'exercise' ? ' ocean-main' : ''}`}
-          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice') ? '0.75rem' : '8vh' }}
+          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice' || tab === 'vocab') ? '0.75rem' : '8vh' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
             <Dashboard
@@ -453,6 +467,14 @@ export default function App() {
               onImport={handleImport}
               changyongData={changyongData}
               sampleData={sampleData}
+            />
+          </div>
+          <div style={{ display: tab === 'core' ? 'contents' : 'none' }}>
+            <CoreSentences
+              onImport={handleImport}
+              changyongData={changyongData}
+              onSetBack={setBackFn}
+              progress={progress}
             />
           </div>
           <div style={{ display: tab === 'courses' ? 'contents' : 'none' }}>
@@ -473,6 +495,7 @@ export default function App() {
               progress={progress}
               onNavigate={navigateTo}
               requireSpeak={settings?.requireSpeak}
+              hideSkipNext={settings?.hideSplitSkip !== false}
             />
           </div>
           <div style={{ display: tab === 'grammar' ? 'contents' : 'none' }}>
@@ -514,8 +537,11 @@ export default function App() {
             <FillBlank onClose={() => setTab('home')} />
           )}
           {tab === 'syncpractice' && (
-            <SyncPractice onClose={() => setTab('home')} />
+            <SyncPractice onClose={() => setTab('home')} requireSpeak={settings?.requireSpeak} hideSkipNext={settings?.hideSplitSkip !== false} />
           )}
+          <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
+            <VocabStudy onSetBack={setBackFn} />
+          </div>
         </main>
       </div>
 

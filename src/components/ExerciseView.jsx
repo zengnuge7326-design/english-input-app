@@ -100,6 +100,11 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     if (recognitionRef.current) { recognitionRef.current.stop(); recognitionRef.current = null }
   }, [index, key, settings?.requireSpeak])
 
+  // Auto-accept after 5 failed speak attempts
+  useEffect(() => {
+    if (speakAttempts >= 5 && speakActive) setSpeakUnlocked(true)
+  }, [speakAttempts])
+
   // Auto-play on new sentence (no gate)
   useEffect(() => {
     const sentence = sentences[index]
@@ -506,7 +511,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
               {speakPhase === 'fail' && recResult && <span className="text-yellow-400/80 text-xs">{recResult}</span>}
             </div>
 
-            {(!splitMode || settings?.hideSplitSkip === false) && (
+            {!gateEnabled && (
               <button
                 onClick={() => setSpeakUnlocked(true)}
                 className={`text-xs underline transition-colors ${speakAttempts >= 2 ? 'text-gray-400 hover:text-white' : 'text-gray-700 hover:text-gray-500'}`}

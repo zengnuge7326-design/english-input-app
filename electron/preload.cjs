@@ -6,6 +6,11 @@ contextBridge.exposeInMainWorld('nativeTTS', {
 })
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  // Methods for app level IPC can go here
-  isElectron: true
+  isElectron: true,
+  // ASR methods
+  sendAudio: (buffer) => ipcRenderer.send('asr-send-audio', buffer),
+  stopASR: () => ipcRenderer.send('asr-stop'),
+  onPartialResult: (callback) => ipcRenderer.on('asr-partial', (_event, data) => callback(data)),
+  onResult: (callback) => ipcRenderer.on('asr-result', (_event, data) => callback(data)),
+  onFinalResult: (callback) => ipcRenderer.on('asr-final', (_event, data) => callback(data)),
 })

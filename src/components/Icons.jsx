@@ -25,7 +25,30 @@ export const IconArrowRight = ({ size = 16 }) => <svg {...p(size)}><line x1="5" 
 export const IconRotateCcw = ({ size = 16 }) => <svg {...p(size)}><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
 export const IconCheck = ({ size = 16 }) => <svg {...p(size)}><polyline points="20 6 9 17 4 12"/></svg>
 export const IconBookmark = ({ size = 16 }) => <svg {...p(size)}><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-export const IconVolume2 = ({ size = 16 }) => <svg {...p(size)}><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+export const IconSpeaker = ({ size = 24, className = '' }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+  </svg>
+)
+
+export const IconVolume2 = ({ size = 16 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+  </svg>
+)
 export const IconInfo = ({ size = 16 }) => <svg {...p(size)}><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 export const IconSplit = ({ size = 16 }) => <svg {...p(size)}><path d="M16 3h5v5M4 20L21 3"/><path d="M21 16v5h-5M15 15l6 6"/><path d="M4 4l5 5"/></svg>
 export const IconCheckSquare = ({ size = 18 }) => <svg {...p(size)}><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>

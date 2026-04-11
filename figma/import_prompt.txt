@@ -1,0 +1,10 @@
+短版（中文）
+请将此 React web app 的渲染页面（Dashboard、Exercise/Quiz、Courses、ListeningPractice、Settings）转换为可编辑的 Figma 文件，提取并建立组件库（Buttons, Inputs, Card, QuizCard 等），建立文本样式与颜色样式，导入 `src/assets` 中的 SVG/图片，创建按钮与输入的状态变体，输出为可复用组件和页面 Frames。
+
+Short version (English)
+Convert the rendered pages of this React web app (Dashboard, Exercise/Quiz, Courses, ListeningPractice, Settings) into editable Figma files. Extract a component library (Buttons, Inputs, Cards, QuizCard), create text & color styles, import SVGs from src/assets, build button/input state variants, and deliver reusable components and page frames.
+短版（中文）
+请将此 React web app 的渲染页面（Dashboard、Exercise/Quiz、Courses、ListeningPractice、Settings）转换为可编辑的 Figma 文件，提取并建立组件库（Buttons, Inputs, Card, QuizCard 等），建立文本样式与颜色样式，导入 `src/assets` 中的 SVG/图片，创建按钮与输入的状态变体，输出为可复用组件和页面 Frames。
+
+Short version (English)
+Convert the rendered pages of this React web app (Dashboard, Exercise/Quiz, Courses, ListeningPractice, Settings) into editable Figma files. Extract a component library (Buttons, Inputs, Cards, QuizCard), create text & color styles, import SVGs from src/assets, build button/input state variants, and deliver reusable components and page frames.

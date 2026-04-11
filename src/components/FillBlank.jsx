@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { IconSpeaker } from './Icons'
 import { fillblankBank } from '../data/fillblankData'
 
 export default function FillBlank({ onClose }) {
@@ -139,7 +140,9 @@ export default function FillBlank({ onClose }) {
         <div className="mb-6">
           <div className="flex items-center gap-3 mb-2">
             <div className="text-white text-xl" style={{ fontFamily: 'AI Nile, monospace' }}>{q.sentence}</div>
-            <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300">🔊</button>
+            <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300">
+              <IconSpeaker size={22} />
+            </button>
           </div>
           <div className="text-gray-400 text-sm" style={{ fontFamily: 'KaiTi-Simplified', fontSize: '20px' }}>{q.chinese}</div>
         </div>

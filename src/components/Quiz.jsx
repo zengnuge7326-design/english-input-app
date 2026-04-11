@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { IconSpeaker } from './Icons'
 import { quizBank } from '../data/quizData'
 
 export default function Quiz({ onImport, onClose }) {
@@ -153,7 +154,7 @@ export default function Quiz({ onImport, onClose }) {
                         className="text-blue-400 hover:text-blue-300 text-xl"
                         title="朗读题目"
                       >
-                        🔊
+                        <IconSpeaker size={22} />
                       </button>
                     </div>
                     <div className="space-y-2">
@@ -181,7 +182,7 @@ export default function Quiz({ onImport, onClose }) {
                             className="text-blue-400 hover:text-blue-300 px-2"
                             title="朗读选项"
                           >
-                            🔊
+                            <IconSpeaker size={22} />
                           </button>
                         </div>
                       ))}

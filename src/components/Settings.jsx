@@ -3,7 +3,26 @@ import { useState } from 'react'
 export default function Settings({ settings, onChange, onReset, onClose }) {
   const s = settings
   const set = (patch) => onChange({ ...s, ...patch })
-  const [activeTab, setActiveTab] = useState('voice')
+
+  // 记住上次打开的 tab
+  const [activeTab, setActiveTab] = useState(() => {
+    try { return localStorage.getItem('settings_tab') || 'voice' } catch { return 'voice' }
+  })
+  const handleTabChange = (id) => {
+    setActiveTab(id)
+    try { localStorage.setItem('settings_tab', id) } catch {}
+  }
+
+  // 一键设置：保存 / 还原默认配置
+  const [savedPreset, setSavedPreset] = useState(() => {
+    try { const p = localStorage.getItem('settings_preset'); return p ? JSON.parse(p) : null } catch { return null }
+  })
+  function savePreset() {
+    try { localStorage.setItem('settings_preset', JSON.stringify(s)); setSavedPreset({ ...s }) } catch {}
+  }
+  function restorePreset() {
+    if (savedPreset) onChange({ ...savedPreset })
+  }
 
   const Seg = ({ label, options, value, onSelect }) => (
     <div className="flex flex-col gap-2">
@@ -52,14 +71,26 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
     <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 px-4 pt-20 overflow-y-auto" onClick={onClose}>
       <div className="w-full max-w-3xl mx-auto" onClick={e => e.stopPropagation()}>
         <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-4">
             <h3 className="text-white font-bold text-2xl">设置</h3>
-            <button onClick={onClose} className="text-gray-400 hover:text-white text-2xl transition-colors">✕</button>
+            <div className="flex items-center gap-2">
+              {savedPreset && (
+                <button onClick={restorePreset}
+                  className="text-xs px-3 py-1.5 bg-blue-900/50 hover:bg-blue-800/60 text-blue-400 rounded-lg border border-blue-800/50 transition-colors">
+                  ⚡ 一键还原
+                </button>
+              )}
+              <button onClick={savePreset}
+                className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-400 rounded-lg border border-gray-700 transition-colors">
+                📌 {savedPreset ? '更新默认' : '一键设置'}
+              </button>
+              <button onClick={onClose} className="text-gray-400 hover:text-white text-2xl transition-colors ml-1">✕</button>
+            </div>
           </div>
 
           <div className="flex gap-2 mb-8 border-b border-gray-800">
             {[['voice', '发音'],['sound', '音效'],['hint', '提示']].map(([id, label]) => (
-              <button key={id} onClick={() => setActiveTab(id)}
+              <button key={id} onClick={() => handleTabChange(id)}
                 className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
                   activeTab === id ? 'text-blue-400 border-blue-400' : 'text-gray-400 border-transparent hover:text-gray-300'
                 }`}>
@@ -134,9 +165,9 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
             {activeTab === 'hint' && (
               <>
                 <div className="border-b border-gray-800 pb-4">
-                  <Toggle label="🎤 强制跟读（输入前需先朗读句子）" checked={!!s.requireSpeak}
+                  <Toggle label="🎤 强制跟读（隐藏跳过按钮）" checked={!!s.requireSpeak}
                     onChange={v => set({ requireSpeak: v })} />
-                  <div className="text-xs text-gray-500 mt-1">开启后，每句练习必须先朗读句子，语音匹配后才能打字作答</div>
+                  <div className="text-xs text-gray-500 mt-1">开启后，朗读环节的跳过按钮被隐藏；连续失败 5 次自动通过</div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="text-gray-400 text-sm">学习模式等级</div>
@@ -179,10 +210,9 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                 </div>
 
                 <div className="border-t border-gray-800 pt-4">
-                  <div className="text-gray-500 text-xs mb-2 uppercase tracking-wider">拆句模式</div>
-                  <Toggle label="拆句模式隐藏跳过按钮" checked={s.hideSplitSkip !== false}
+                  <Toggle label="🚫 隐藏跳过和下一个按钮" checked={s.hideSplitSkip !== false}
                     onChange={v => set({ hideSplitSkip: v })} />
-                  <div className="text-xs text-gray-600 mb-2">关闭后，拆句时孩子也能看到跳过按钮</div>
+                  <div className="text-xs text-gray-600 mb-2">全局生效：隐藏所有跳过/下一题按钮（键盘快捷键仍可用）</div>
                 </div>
 
                 <div className="border-t border-gray-800 pt-4">

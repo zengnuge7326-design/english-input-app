@@ -17,7 +17,16 @@
     "productName": "英语输入学习",
     "mac": {
       "target": "dmg",
-      "category": "public.app-category.education"
+      "category": "public.app-category.education",
+      "entitlements": "electron/entitlements.mac.plist",
+      "entitlementsInherit": "electron/entitlements.mac.plist",
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "此应用需要访问麦克风以进行英语强制跟读练习。"
+      }
+    },
+    "win": {
+      "target": "portable",
+      "icon": "public/logo.png"
     },
     "files": [
       "dist/**/*",

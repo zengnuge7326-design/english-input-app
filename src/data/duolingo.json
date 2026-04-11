@@ -1,463 +1,4602 @@
 [
-  {"id":1,"zh":"我喜欢英语。","en":"I like English."},
-  {"id":2,"zh":"你喜欢中文。","en":"You like Chinese."},
-  {"id":3,"zh":"我喜欢我的英语老师。","en":"I like my English teacher."},
-  {"id":4,"zh":"我喜欢你的书。","en":"I like your book."},
-  {"id":5,"zh":"我喜欢红色。","en":"I like red."},
-  {"id":6,"zh":"我喜欢你的手机。","en":"I like your phone."},
-  {"id":7,"zh":"我们喜欢他们的大房子。","en":"We like their big house."},
-  {"id":8,"zh":"他们喜欢你的狗。","en":"They like your dog."},
-  {"id":9,"zh":"茶还是咖啡？","en":"Tea or coffee?"},
-  {"id":10,"zh":"我喝果汁。","en":"I drink juice."},
-  {"id":11,"zh":"你喝水。","en":"You drink water."},
-  {"id":12,"zh":"再来点热咖啡？","en":"More hot coffee?"},
-  {"id":13,"zh":"你好！","en":"Hello!"},
-  {"id":14,"zh":"你好，早上好。","en":"Hello, good morning."},
-  {"id":15,"zh":"我是一名学生。","en":"I am a student."},
-  {"id":16,"zh":"她是一位老师。","en":"She is a teacher."},
-  {"id":17,"zh":"这是你的电脑吗？","en":"Is this your computer?"},
-  {"id":18,"zh":"是的，这是我的电脑，谢谢！","en":"Yes, this is my computer, thanks!"},
-  {"id":19,"zh":"打扰一下，这是你的钱包吗？","en":"Excuse me, is this your wallet?"},
-  {"id":20,"zh":"不，这不是我的钱包。","en":"No, this is not my wallet."},
-  {"id":21,"zh":"你好，你是安娜吗？","en":"Hello, are you Anna?"},
-  {"id":22,"zh":"是的，我是安娜。","en":"Yes, I am Anna."},
-  {"id":23,"zh":"你来自中国吗？","en":"Are you from China?"},
-  {"id":24,"zh":"是的，我来自北京。","en":"Yes, I am from Beijing."},
-  {"id":25,"zh":"我会说一点英语。","en":"I speak a little English."},
-  {"id":26,"zh":"你的英语很好！","en":"Your English is good!"},
-  {"id":27,"zh":"嗨，早上好！","en":"Hi, good morning!"},
-  {"id":28,"zh":"嗨，请来一杯咖啡。","en":"Hi, a coffee, please."},
-  {"id":29,"zh":"你想要一份三明治吗？","en":"Would you like a sandwich?"},
-  {"id":30,"zh":"是的，我想要一份奶酪三明治，谢谢。","en":"Yes, I'd like a cheese sandwich, please."},
-  {"id":31,"zh":"祝你有美好的一天！","en":"Have a nice day!"},
-  {"id":32,"zh":"你是教师吗？","en":"Are you a teacher?"},
-  {"id":33,"zh":"是的，我是教师。","en":"Yes, I'm a teacher."},
-  {"id":34,"zh":"你的朋友是出租车司机吗？","en":"Is your friend a taxi driver?"},
-  {"id":35,"zh":"不，她是医生。","en":"No, she is a doctor."},
-  {"id":36,"zh":"这件外套多少钱？","en":"How much is this coat?"},
-  {"id":37,"zh":"十美元。","en":"It is ten dollars."},
-  {"id":38,"zh":"我需要两顶黑色帽子。","en":"I need two black hats."},
-  {"id":39,"zh":"这件夹克很贵！","en":"This jacket is expensive!"},
-  {"id":40,"zh":"我喜欢这件衬衫。","en":"I like this shirt."},
-  {"id":41,"zh":"你妈妈是美国人吗？","en":"Is your mother American?"},
-  {"id":42,"zh":"是的，她是美国人。","en":"Yes, she is American."},
-  {"id":43,"zh":"你儿子多大了？","en":"How old is your son?"},
-  {"id":44,"zh":"我的儿子四岁了。","en":"My son is four years old."},
-  {"id":45,"zh":"这是一家很好的餐厅。","en":"This is a nice restaurant."},
-  {"id":46,"zh":"一个人的桌子，请。","en":"A table for one, please."},
-  {"id":47,"zh":"我想要更多的咖啡。","en":"I would like more coffee."},
-  {"id":48,"zh":"要加糖吗？","en":"With sugar?"},
-  {"id":49,"zh":"我们想要一个披萨，谢谢。","en":"We would like a pizza, please."},
-  {"id":50,"zh":"账单，请！","en":"Check, please!"},
-  {"id":51,"zh":"我会说英语和中文。","en":"I speak English and Chinese."},
-  {"id":52,"zh":"我们需要一位新的中文老师。","en":"We need a new Chinese teacher."},
-  {"id":53,"zh":"他们今天有英语考试。","en":"They have an English exam today."},
-  {"id":54,"zh":"这是一个重要的问题。","en":"That is an important question."},
-  {"id":55,"zh":"我喜欢我的学校。","en":"I like my school."},
-  {"id":56,"zh":"打扰一下，这是你的钥匙吗？","en":"Excuse me, is this your key?"},
-  {"id":57,"zh":"不，那不是我的钥匙。","en":"No, that's not my key."},
-  {"id":58,"zh":"她的裙子非常漂亮。","en":"Her dress is very beautiful."},
-  {"id":59,"zh":"这是我们的相机吗？","en":"Is this our camera?"},
-  {"id":60,"zh":"是的，那是我们的相机。","en":"Yes, that's our camera."},
-  {"id":61,"zh":"他们是你的朋友吗？","en":"Are they your friends?"},
-  {"id":62,"zh":"是的，我们是最好的朋友。","en":"Yes, we are best friends."},
-  {"id":63,"zh":"你的朋友们很有趣。","en":"Your friends are funny."},
-  {"id":64,"zh":"你的父母在这里吗？","en":"Are your parents here?"},
-  {"id":65,"zh":"是的，我爱我的父母。","en":"Yes, I love my parents."},
-  {"id":66,"zh":"我住在伦敦，但我不会说英语。","en":"I live in London, but I don't speak English."},
-  {"id":67,"zh":"他们会说法语吗？","en":"Do they speak French?"},
-  {"id":68,"zh":"他们会说一点法语。","en":"They speak a little French."},
-  {"id":69,"zh":"他们有新的电话号码吗？","en":"Do they have a new phone number?"},
-  {"id":70,"zh":"对不起，我不知道。","en":"Sorry, I don't know."},
-  {"id":71,"zh":"很高兴认识你。","en":"Nice to meet you."},
-  {"id":72,"zh":"你做什么工作，本？","en":"What do you do, Ben?"},
-  {"id":73,"zh":"我在医院工作。","en":"I work at a hospital."},
-  {"id":74,"zh":"你和安娜一起工作吗？","en":"Do you work with Anna?"},
-  {"id":75,"zh":"是的，安娜和我在医院一起工作。","en":"Yes, Anna and I work together at a hospital."},
-  {"id":76,"zh":"热咖啡？","en":"Hot coffee?"},
-  {"id":77,"zh":"我从不喝咖啡。","en":"I never drink coffee."},
-  {"id":78,"zh":"她每天吃早餐。","en":"She eats breakfast every day."},
-  {"id":79,"zh":"他每天吃一个鸡蛋。","en":"He eats an egg every day."},
-  {"id":80,"zh":"她喜欢咖啡，但我喜欢茶。","en":"She likes coffee, but I like tea."},
-  {"id":81,"zh":"他喜欢打篮球吗？","en":"Does he like to play basketball?"},
-  {"id":82,"zh":"他有时和本一起打篮球。","en":"He sometimes plays basketball with Ben."},
-  {"id":83,"zh":"他喜欢打网球。","en":"He likes to play tennis."},
-  {"id":84,"zh":"她不喜欢画画。","en":"She doesn't like to draw."},
-  {"id":85,"zh":"她喜欢看电影，但我喜欢读书。","en":"She likes to watch movies, but I like to read books."},
-  {"id":86,"zh":"我需要一辆出租车。","en":"I need a taxi."},
-  {"id":87,"zh":"到火车站，谢谢。","en":"To the train station. Please."},
-  {"id":88,"zh":"售票处在哪里？","en":"Where is the ticket office?"},
-  {"id":89,"zh":"售票处就在那边。","en":"The ticket office is over there?"},
-  {"id":90,"zh":"火车晚了。","en":"The train is late."},
-  {"id":91,"zh":"我们今天想去购物。","en":"We want to go shopping today."},
-  {"id":92,"zh":"你想买一些衣服吗？","en":"Do you want to buy some clothes?"},
-  {"id":93,"zh":"我想买两条连衣裙。","en":"I want to buy two dresses."},
-  {"id":94,"zh":"这本书多少钱？","en":"How much is this book?"},
-  {"id":95,"zh":"那本书十六美元。","en":"That book is sixteen dollars."},
-  {"id":96,"zh":"我爷爷和他的狗住在一起。","en":"My grandpa lives with his dog."},
-  {"id":97,"zh":"你爷爷经常看电视吗？","en":"Does your grandpa often watch TV?"},
-  {"id":98,"zh":"他通常和朋友一起看电影。","en":"He usually watches movies with his friends."},
-  {"id":99,"zh":"他的头发是蓝色的吗？","en":"Is his hair blue?"},
-  {"id":100,"zh":"是的，他的头发是蓝色的。","en":"Yes, his hair is blue."},
-  {"id":101,"zh":"你午餐想吃什么？","en":"What would you like to have for lunch."},
-  {"id":102,"zh":"我想今天做一种不同的三明治。","en":"I would like to make a different kind of sandwich today."},
-  {"id":103,"zh":"这是牛肉吗？","en":"Is that beef?"},
-  {"id":104,"zh":"我丈夫不吃牛肉。","en":"My husband doesn't eat beef."},
-  {"id":105,"zh":"这是猪肉，不是牛肉。","en":"This is pork, not beef."},
-  {"id":106,"zh":"房子里有六个房间。","en":"There are six rooms in the house."},
-  {"id":107,"zh":"你的厨房里有桌子吗？","en":"Is there a table in your kitchen?"},
-  {"id":108,"zh":"是的，我们通常在厨房吃早餐。","en":"Yes, we usually eat breakfast in the kitchen."},
-  {"id":109,"zh":"我办公室里有一张小床。","en":"There is a small bed in my office."},
-  {"id":110,"zh":"我们需要一个新的厕所。","en":"We need a new toilet."},
-  {"id":111,"zh":"今天很热。","en":"It is hot today."},
-  {"id":112,"zh":"北京很冷。","en":"It is cold in Beijing."},
-  {"id":113,"zh":"你喜欢北京的天气吗？","en":"Do you like the weather in Beijing?"},
-  {"id":114,"zh":"不，冬天下雪很多。","en":"No, it snows a lot in the winter."},
-  {"id":115,"zh":"这里夏天天气很好。","en":"The weather is nice here in the summer."},
-  {"id":116,"zh":"这是阿玛的农场。","en":"This is Amma's farm."},
-  {"id":117,"zh":"树下有鸡吗？","en":"Is there a chicken under the tree?"},
-  {"id":118,"zh":"那只狗有大耳朵。","en":"That dog has big ears."},
-  {"id":119,"zh":"鸟的腿很短。","en":"Birds have very short legs."},
-  {"id":120,"zh":"那条鱼很漂亮。","en":"That fish is beautiful."},
-  {"id":121,"zh":"艾玛，现在几点了？","en":"Emma, what time is it?"},
-  {"id":122,"zh":"早上五点钟。","en":"It is five o'clock in the morning."},
-  {"id":123,"zh":"你什么时候去上学？","en":"What time do you go to school?"},
-  {"id":124,"zh":"我通常八点去上学。","en":"I usually go to school at eight o'clock."},
-  {"id":125,"zh":"篮球比赛在星期四吗？","en":"Is the basketball game to Thursday?"},
-  {"id":126,"zh":"看！我们的老师来了！","en":"Look! Our teacher is here!"},
-  {"id":127,"zh":"请打开你的书。","en":"Please open your book."},
-  {"id":128,"zh":"不要用我的红笔。","en":"Don't use my red pen."},
-  {"id":129,"zh":"再见，王先生。","en":"See you tomorrow, Mr. Wang."},
-  {"id":130,"zh":"再见。","en":"See you tomorrow."},
-  {"id":131,"zh":"房子后面有公交车站吗？","en":"Is there a bus stop behind the house?"},
-  {"id":132,"zh":"她的房子在地铁站旁边。","en":"Her house is next to the subway station."},
-  {"id":133,"zh":"机场附近有酒店吗？","en":"Is there a hotel near the airport?"},
-  {"id":134,"zh":"这个地方总是很忙。","en":"This place is always busy."},
-  {"id":135,"zh":"那是著名的博物馆吗？","en":"Is that a famous museums?"},
-  {"id":136,"zh":"巴黎有很多著名的博物馆。","en":"There are many famous museums in Paris."},
-  {"id":137,"zh":"她会说四种语言。","en":"She can speak four languages."},
-  {"id":138,"zh":"你弹吉他还是钢琴？","en":"Do you play the guitar or the piano?"},
-  {"id":139,"zh":"我不太会弹吉他。","en":"I don't play the guitar very well."},
-  {"id":140,"zh":"安娜做饭不太好。","en":"Anna doesn't cook very well."},
-  {"id":141,"zh":"他想跳舞，但他不能。","en":"He wants to dance, but he can't."},
-  {"id":142,"zh":"我可以喝杯茶吗？","en":"Can I have a cop of tea?"},
-  {"id":143,"zh":"这是猪肉还是牛肉？","en":"Is it pork or beef?"},
-  {"id":144,"zh":"我可以坐在窗边吗？","en":"Can I sit next to the window?"},
-  {"id":145,"zh":"我可以给你拿饮料吗，安娜？","en":"Can I get you a drink, Anna?"},
-  {"id":146,"zh":"好的，谢谢。我想要一杯茶。","en":"Yes, please. I'd like a cup of tea."},
-  {"id":147,"zh":"你可以在这里付饮料费。","en":"You can pay for your drinks here."},
-  {"id":148,"zh":"生日快乐，安娜！","en":"Happy birthday, Anna!"},
-  {"id":149,"zh":"这些花是给你的！","en":"These flowers are for you!"},
-  {"id":150,"zh":"我爱你！","en":"I love you!"},
-  {"id":151,"zh":"这是给你的生日蛋糕！","en":"There is a birthday cake for you!"},
-  {"id":152,"zh":"我喜欢蛋糕！","en":"I love cake!"},
-  {"id":153,"zh":"你现在在清理厨房吗？","en":"Are you cleaning the kitchen right now?"},
-  {"id":154,"zh":"我们现在在做晚餐。","en":"We're cooking dinner now."},
-  {"id":155,"zh":"他们在谈论法国食物。","en":"They are talking about French food."},
-  {"id":156,"zh":"多奥现在在读一本书。","en":"Duo is reading a book now."},
-  {"id":157,"zh":"他在读一本关于中国食物的书。","en":"He is reading a book about Chinese food."},
-  {"id":158,"zh":"是星期六还是星期天？","en":"Is it Saturday or Sunday?"},
-  {"id":159,"zh":"是星期六，不是星期天。","en":"It's Saturday, not Sunday."},
-  {"id":160,"zh":"本通常在早上九点起床。","en":"Ben usually gets up at nine o'clock in the morning."},
-  {"id":161,"zh":"他总是在晚上看电影。","en":"He always watches movies at night."},
-  {"id":162,"zh":"我们通常在晚上十一点睡觉。","en":"We usually go to the bed at eleven."},
-  {"id":163,"zh":"那个女孩是谁？","en":"Who is that girl?"},
-  {"id":164,"zh":"你能看到她吗？","en":"Can you see her?"},
-  {"id":165,"zh":"她有一顶昂贵的灰色帽子。","en":"She has an expensive gray hat."},
-  {"id":166,"zh":"你认识她吗？","en":"Do you know her?"},
-  {"id":167,"zh":"我不喜欢她。","en":"I don't like her."},
-  {"id":168,"zh":"你喜欢做运动吗？","en":"Do you like to play sports?"},
-  {"id":169,"zh":"篮球是我最喜欢的运动。","en":"Basketball is my favorite sport."},
-  {"id":170,"zh":"我们出去吧！","en":"Let's go outside!"},
-  {"id":171,"zh":"妈妈，我可以出去踢足球吗？","en":"Mom, can I play soccer outside?"},
-  {"id":172,"zh":"你需要留在这里。","en":"You need to stay here."},
-  {"id":173,"zh":"我们为他的生日开个派对吧！","en":"Let's have a party for his birthday!"},
-  {"id":174,"zh":"欢迎，本和安娜，怎么了？","en":"Welcome, Ben and Anna, what's up?"},
-  {"id":175,"zh":"你喜欢这首歌吗？","en":"Do you like this song?"},
-  {"id":176,"zh":"这是我最喜欢的歌。","en":"This is my favorite song."},
-  {"id":177,"zh":"我可以给你拿点冰淇淋吗？","en":"Can I get you some ice cream?"},
-  {"id":178,"zh":"当然，我喜欢冰淇淋！","en":"Sure, I love ice cream!"},
-  {"id":179,"zh":"我喜欢暑假！","en":"I love summer holidays!"},
-  {"id":180,"zh":"天气真美！","en":"The weather is beautiful!"},
-  {"id":181,"zh":"我们去野餐吧！","en":"Let's have a picnic!"},
-  {"id":182,"zh":"我们可以一起在海滩游泳！","en":"We can swim together at the beach!"},
-  {"id":183,"zh":"我们玩得很开心！","en":"We are having a good time!"},
-  {"id":184,"zh":"我需要买新的冬靴。","en":"I need to buy new winter boots."},
-  {"id":185,"zh":"那双棕色靴子更便宜吗？","en":"Are those brown boots cheaper?"},
-  {"id":186,"zh":"这双靴子五十美元。","en":"The boots are fifty dollars."},
-  {"id":187,"zh":"哪件女式上衣更漂亮？","en":"Which blouse is more beautiful?"},
-  {"id":188,"zh":"这件新上衣更漂亮。","en":"This new blouse is more beautiful."},
-  {"id":189,"zh":"你今天需要参加考试吗？","en":"Do you need to take a test today?"},
-  {"id":190,"zh":"是的，学生们今天需要参加考试。","en":"Yes, the students need to take a test today."},
-  {"id":191,"zh":"这次考试更难。","en":"This test is more difficult."},
-  {"id":192,"zh":"哪个包更小？","en":"Which bag is smaller?"},
-  {"id":193,"zh":"我的包比安娜的包小。","en":"My bag is smaller than Anna's bag."},
-  {"id":194,"zh":"我们明天打算做什么？","en":"What are we going to do tomorrow?"},
-  {"id":195,"zh":"我们明天在咖啡馆见面吧。","en":"Let's meet at a cafe tomorrow."},
-  {"id":196,"zh":"你想几点见面？","en":"What time do you want to meet?"},
-  {"id":197,"zh":"我们可以上午11点见面吗？","en":"Can we meet at 11 a.m.?"},
-  {"id":198,"zh":"今晚请给我打电话。","en":"Please call me tonight."},
-  {"id":199,"zh":"我们夏天去旅行吧！","en":"Let's take a trip in the summer!"},
-  {"id":200,"zh":"好的！我想参观英国。","en":"Yes! I want to visit the UK."},
-  {"id":201,"zh":"伦敦是英国最冷的城市吗？","en":"Is London the coldest city in the UK?"},
-  {"id":202,"zh":"这是英国最贵的餐厅吗？","en":"Is this the most expensive restaurant in the UK?"},
-  {"id":203,"zh":"那是那座城市最有趣的博物馆。","en":"That is the most interesting museum in that city."},
-  {"id":204,"zh":"这是你在这里的第一周吗？","en":"Is this your first week here?"},
-  {"id":205,"zh":"这是我在这里的第二周！","en":"This is my second week here!"},
-  {"id":206,"zh":"你们公司在这栋楼里吗？","en":"Is your company in this building?"},
-  {"id":207,"zh":"是的，这是我们的办公楼。","en":"Yes, this is our office building."},
-  {"id":208,"zh":"你通常在家工作吗？","en":"Do you usually work from home?"},
-  {"id":209,"zh":"是的，我们每天在家工作。","en":"Yes, we work from home every day."},
-  {"id":210,"zh":"孩子们今天感觉怎么样？","en":"How do the kids feel today?"},
-  {"id":211,"zh":"他们累了吗？","en":"Are they tired?"},
-  {"id":212,"zh":"本非常疲惫。","en":"Ben is very tired."},
-  {"id":213,"zh":"你感到饿了还是累了？","en":"Do you feel hungry or tired?"},
-  {"id":214,"zh":"我感到非常饿！","en":"I feel very hungry!"},
-  {"id":215,"zh":"安娜喜欢这个小镇。","en":"Anna likes this small town."},
-  {"id":216,"zh":"这里有很多不错的咖啡馆。","en":"It has many good coffee shops."},
-  {"id":217,"zh":"安娜的房子是这条街上最漂亮的。","en":"Anna has the most beautiful house on this street."},
-  {"id":218,"zh":"这条街上也有一家咖啡馆。","en":"There's also a coffee shop on this street."},
-  {"id":219,"zh":"它是世界上最好的咖啡馆。","en":"It is the best coffee shop in the world."},
-  {"id":220,"zh":"你们什么时候结婚？","en":"When will you get married?"},
-  {"id":221,"zh":"我们明年八月结婚。","en":"We will get married next August."},
-  {"id":222,"zh":"你明年住在哪里？","en":"Where will you live next year?"},
-  {"id":223,"zh":"我丈夫和我明年将搬到法国。","en":"My husband and I will move to France next year."},
-  {"id":224,"zh":"我们来开个舞会吧！","en":"Let's have a dance party!"},
-  {"id":225,"zh":"你能邀请安娜来参加派对吗？","en":"Can you invite Anna to the party?"},
-  {"id":226,"zh":"我的朋友也会和我一起来。","en":"My friend will come with me as well."},
-  {"id":227,"zh":"我下午六点到那里。","en":"I'll get there at 6 p.m."},
-  {"id":228,"zh":"你可以和我们坐在一起！","en":"You can sit with us!"},
-  {"id":229,"zh":"这是我们的新家。","en":"This is our new home."},
-  {"id":230,"zh":"她客厅里有一架钢琴。","en":"There is a piano in her living room."},
-  {"id":231,"zh":"这是一个漂亮的书柜！","en":"This is a beautiful bookcase!"},
-  {"id":232,"zh":"每个卧室里都有电视吗？","en":"Is there a television in each bedroom?"},
-  {"id":233,"zh":"客厅和厨房哪个更大？","en":"Which room is bigger, the living room or the kitchen?"},
-  {"id":234,"zh":"客厅比厨房大。","en":"The living room is bigger than the kitchen."},
-  {"id":235,"zh":"今天是几号？","en":"What's the date?"},
-  {"id":236,"zh":"九月六日。","en":"It's September sixth."},
-  {"id":237,"zh":"秋天在九月开始。","en":"Fall begins in September."},
-  {"id":238,"zh":"你今晚几点下班？","en":"What time will you finish work tonight?"},
-  {"id":239,"zh":"我通常下午六点下班。","en":"I usually finish work at 6 p.m."},
-  {"id":240,"zh":"艾玛想带我们参观她的新房子。","en":"Emma wants to show us her new house."},
-  {"id":241,"zh":"哪栋房子离农场更近？","en":"Which house is closer to the farm?"},
-  {"id":242,"zh":"他们的新房子离他们的农场更近。","en":"Their new house is closer to their farm."},
-  {"id":243,"zh":"我想带你去看农场上的动物！","en":"I want to show you the animals on the farm!"},
-  {"id":244,"zh":"他们的农场里有很多动物。","en":"There are many animals on their farm."},
-  {"id":245,"zh":"昨天上海多云吗？","en":"Was it cloudy in Shanghai yesterday?"},
-  {"id":246,"zh":"昨天多云，但很热。","en":"It was cloudy yesterday, but it was hot."},
-  {"id":247,"zh":"这里春天总是阴天。","en":"It's always cloudy here in spring."},
-  {"id":248,"zh":"昨天纽约更暖和吗？","en":"Was it warmer in New York yesterday?"},
-  {"id":249,"zh":"昨天更暖和。","en":"It was warmer yesterday."},
-  {"id":250,"zh":"我们去年开车游览了美国。","en":"We traveled in the US by car last year."},
-  {"id":251,"zh":"去年夏天我们在迈阿密和波士顿住过。","en":"We stayed in Miami and Boston last summer."},
-  {"id":252,"zh":"你享受迈阿密之旅吗？","en":"Did you enjoy your trip to Miami?"},
-  {"id":253,"zh":"是的，迈阿密有美丽的海滩！","en":"Yes, Miami has beautiful beaches!"},
-  {"id":254,"zh":"你去年去纽约旅行了吗？","en":"Did you travel to New York last year?"},
-  {"id":255,"zh":"是的，我们去年冬天游览了纽约。","en":"Yes, we traveled in New York last winter."},
-  {"id":256,"zh":"我真的很享受英国之旅！","en":"I really enjoyed my trip to England!"},
-  {"id":257,"zh":"我可以问你一些关于你生活的问题吗？","en":"Can I ask you some questions about your life?"},
-  {"id":258,"zh":"你的父母在一个著名的乐队吗？","en":"Were your parents in a famous band?"},
-  {"id":259,"zh":"不，我们的爸爸从事音乐行业。","en":"No, our dad was in the music business."},
-  {"id":260,"zh":"他的工作非常有趣。","en":"His job was very interesting."},
-  {"id":261,"zh":"我爷爷是一位非常出色的吉他手。","en":"My grandpa was a very good guitar player."},
-  {"id":262,"zh":"艾玛，怎么了？","en":"What's wrong, Emma?"},
-  {"id":263,"zh":"我昨天没去学校，因为我生病了。","en":"I wasn't at school yesterday because I was sick."},
-  {"id":264,"zh":"你昨天去看医生了吗？","en":"Did you see a doctor yesterday?"},
-  {"id":265,"zh":"是的，我需要吃这种药一周。","en":"Yes, I have to take this medicine for one week."},
-  {"id":266,"zh":"现在吃这种药，明天你会好起来的。","en":"Take this medicine now, and you will feel better tomorrow."},
-  {"id":267,"zh":"你上周在伦敦吗？","en":"Were you in London last week?"},
-  {"id":268,"zh":"是的，我们上周末到达伦敦。","en":"Yes, we arrived in London last weekend."},
-  {"id":269,"zh":"我们在大本钟前拍了照片。","en":"We took photos in front of Big Ben."},
-  {"id":270,"zh":"我们在一家昂贵的咖啡馆喝了下午茶。","en":"We had afternoon tea at an expensive cafe."},
-  {"id":271,"zh":"我记得这个地方。","en":"I remember this place."},
-  {"id":272,"zh":"我学校旁边有一个图书馆。","en":"There was a library next to my school."},
-  {"id":273,"zh":"你什么时候毕业的？","en":"When did you finish school?"},
-  {"id":274,"zh":"1990年，我那时十四岁。","en":"In 1990, I was fourteen years old."},
-  {"id":275,"zh":"我们1995年搬到了日本。","en":"We moved to Japan in 1995."},
-  {"id":276,"zh":"你是韩国人吗？","en":"Are you Korean?"},
-  {"id":277,"zh":"是的，我奶奶是韩国人，我爷爷是中国人。","en":"Yes, my grandma is Korean, and my grandpa is Chinese."},
-  {"id":278,"zh":"我们从未去过美国。","en":"We have never been to the US."},
-  {"id":279,"zh":"我们在这座城市已经住了十年了。","en":"We have lived in this city for ten years."},
-  {"id":280,"zh":"我去过亚洲很多国家。","en":"I have been to many countries in Asia."},
-  {"id":281,"zh":"我们看到了这家服装店的广告。","en":"We saw an ad for this clothes store."},
-  {"id":282,"zh":"那家店里有各种各样的衣服。","en":"There are different kinds of clothes in that store."},
-  {"id":283,"zh":"你想用信用卡付款吗？","en":"Would you like to pay with a credit card?"},
-  {"id":284,"zh":"我通常用信用卡付款。","en":"I usually pay with a credit card."},
-  {"id":285,"zh":"我们昨天参加了汉语听力考试。","en":"We took a Chinese listening test yesterday."},
-  {"id":286,"zh":"你考得怎么样？","en":"How did you do on the test?"},
-  {"id":287,"zh":"有很多难题。","en":"There were many difficult questions."},
-  {"id":288,"zh":"我们需要练习听力和口语。","en":"We need to practice listening and speaking."},
-  {"id":289,"zh":"听力比口语难。","en":"Listening is harder than speaking."},
-  {"id":290,"zh":"爸爸昨晚做了我最喜欢的食物！","en":"Dad cooked my favorite food last night!"},
-  {"id":291,"zh":"你可以把鸡肉放在这个盘子里。","en":"You can put the chicken on this dish."},
-  {"id":292,"zh":"你能在超市买一袋米吗？","en":"Can you get a bag of rice at the supermarket?"},
-  {"id":293,"zh":"每个星期六，他做晚饭，我洗碗。","en":"Every Saturday, he cooks dinner and I wash the dishes."},
-  {"id":294,"zh":"他昨晚煮了米饭，我现在正在做猪肉。","en":"He cooked rice last night, and I am cooking pork now."},
-  {"id":295,"zh":"晚饭好了！","en":"Dinner is ready!"},
-  {"id":296,"zh":"我们老板今天不在办公室。","en":"Our boss is not in the office today."},
-  {"id":297,"zh":"你收到他的邮件了吗？","en":"Did you get an email from him?"},
-  {"id":298,"zh":"我们收到了关于会议的通知。","en":"We got the message about the meeting."},
-  {"id":299,"zh":"我们明天开会，到时见！","en":"We'll have a meeting tomorrow, see you then!"},
-  {"id":300,"zh":"到时见。","en":"See you then."},
-  {"id":301,"zh":"我找不到我的钱包。","en":"I can't find my wallet anywhere."},
-  {"id":302,"zh":"这是你的钱包吗？","en":"Is this wallet yours?"},
-  {"id":303,"zh":"这不是我的钱包，那个黑色的钱包是我的。","en":"This is not my wallet, that black wallet is mine."},
-  {"id":304,"zh":"这个塑料玩具是她的吗？","en":"Is this plastic toy hers?"},
-  {"id":305,"zh":"不，那个抽屉里的玩具是她的。","en":"No, the toys in that drawer are hers."},
-  {"id":306,"zh":"厨房里没有披萨。","en":"There is no pizza in the kitchen."},
-  {"id":307,"zh":"我们没有咖啡，我们把它加到购物清单上吧！","en":"We have no coffee, let's add it to the list!"},
-  {"id":308,"zh":"这家杂货店没有很多麦片。","en":"This grocery store doesn't have much cereal."},
-  {"id":309,"zh":"那面包看起来不新鲜。","en":"That bread looks bad."},
-  {"id":310,"zh":"这些胡萝卜看起来很新鲜。","en":"These carrots look fresh."},
-  {"id":311,"zh":"她是演员吗？","en":"Is she an actor?"},
-  {"id":312,"zh":"那个女人是一位著名的加拿大演员！","en":"That woman is a famous Canadian actor!"},
-  {"id":313,"zh":"她漂亮得像一朵花！","en":"She is as pretty as a flower!"},
-  {"id":314,"zh":"她的头发不像你的那么长。","en":"Her hair is not as long as yours."},
-  {"id":315,"zh":"她是一个非常友善的人。","en":"She's a very kind person."},
-  {"id":316,"zh":"你十年前住在这里吗？","en":"Did you live here ten years ago?"},
-  {"id":317,"zh":"是的，我们房子旁边有一个湖。","en":"Yes, there was a lake next to our house."},
-  {"id":318,"zh":"我真的很想念那个湖。","en":"I really miss that lake."},
-  {"id":319,"zh":"那时我只会一点点英语。","en":"I only knew a little English then."},
-  {"id":320,"zh":"我的邻居教我英语和西班牙语。","en":"My neighbor taught me English and Spanish."},
-  {"id":321,"zh":"你想中午一起吃午餐吗？","en":"Do you want to have lunch together at noon?"},
-  {"id":322,"zh":"当然，我很乐意。","en":"Sure, I'd love to."},
-  {"id":323,"zh":"我想要一些甜的。","en":"I'd like something sweet."},
-  {"id":324,"zh":"这里的甜点总是很优秀。","en":"The dessert here is always excellent."},
-  {"id":325,"zh":"谢谢你的花，它们太漂亮了！","en":"Thank you for the flowers, they are so beautiful!"},
-  {"id":326,"zh":"昨天真是疯狂的一天！","en":"It was a crazy day yesterday!"},
-  {"id":327,"zh":"哦不，发生了什么？","en":"Oh no, what happened?"},
-  {"id":328,"zh":"昨天我邻居房子附近发生了火灾。","en":"There was a fire near my neighbor's house yesterday."},
-  {"id":329,"zh":"我首先看到了火，然后我打了电话给警察。","en":"I saw the fire first, and then I called the police."},
-  {"id":330,"zh":"警察终于来了。","en":"The police finally arrived."},
-  {"id":331,"zh":"你多久去露营一次？","en":"How often do you go camping?"},
-  {"id":332,"zh":"我们每年夏天都在这里露营。","en":"We camp here every summer."},
-  {"id":333,"zh":"孩子们讨厌打扫房子。","en":"The children hate cleaning the house."},
-  {"id":334,"zh":"他明天有唱歌比赛。","en":"He has a singing competition tomorrow."},
-  {"id":335,"zh":"吃太多冰淇淋对她不好。","en":"Eating too much ice cream is bad for her."},
-  {"id":336,"zh":"你能告诉我去机场的路吗？","en":"Can you show me the directions to the airport?"},
-  {"id":337,"zh":"这是这个城市的地图。","en":"Here is a map of this city."},
-  {"id":338,"zh":"机场距离这里两英里。","en":"The airport is two miles away from here."},
-  {"id":339,"zh":"你不需要在这里右转，继续直走。","en":"You don't need to take a right here, go straight."},
-  {"id":340,"zh":"继续直走到这条街的尽头。","en":"Go straight to the end of this street."},
-  {"id":341,"zh":"我秋天会上大学。","en":"I'll go to college in the fall."},
-  {"id":342,"zh":"你对哪些科目感兴趣？","en":"What subjects are you interested in?"},
-  {"id":343,"zh":"我对物理和生物很感兴趣。","en":"I'm very interested in physics and biology."},
-  {"id":344,"zh":"生物很难吗？","en":"Is biology difficult?"},
-  {"id":345,"zh":"生物很难，但很有趣。","en":"Biology is difficult, but it's interesting."},
-  {"id":346,"zh":"下一班去北京的飞机什么时候？","en":"When is the next flight to Beijing?"},
-  {"id":347,"zh":"这班飞机两小时后起飞。","en":"This flight is leaving in two hours."},
-  {"id":348,"zh":"我需要订下一班飞机的票。","en":"I need a ticket for the next flight."},
-  {"id":349,"zh":"火车即将开出。","en":"The train is leaving soon."},
-  {"id":350,"zh":"我们要在火车上呆多久？","en":"How long will we be on the train?"},
-  {"id":351,"zh":"我们将在火车上两个小时。","en":"We'll be on the train for two hours."},
-  {"id":352,"zh":"我感冒了。","en":"I have a cold."},
-  {"id":353,"zh":"我应该打电话给医生吗？","en":"Should I call the doctor?"},
-  {"id":354,"zh":"我预约了十点。","en":"I made an appointment for ten."},
-  {"id":355,"zh":"每餐后请吃这种药。","en":"Please take this medicine after every meal."},
-  {"id":356,"zh":"你应该吃这种药，然后好好休息。","en":"You should take this medicine, and then get some rest."},
-  {"id":357,"zh":"我的电脑不工作了。","en":"My computer isn't working."},
-  {"id":358,"zh":"我应该寻求帮助吗？","en":"Should I ask for help?"},
-  {"id":359,"zh":"请问，先生，我的电脑不工作了。","en":"Excuse me, sir, my computer isn't working."},
-  {"id":360,"zh":"机器现在工作了，干得好！","en":"The machine is working now, good job!"},
-  {"id":361,"zh":"谢谢你的帮助。","en":"Thank you for your help."},
-  {"id":362,"zh":"明天是元旦。","en":"Tomorrow is New Year's Day."},
-  {"id":363,"zh":"元旦你打算做什么？","en":"What are you going to do on New Year's Day?"},
-  {"id":364,"zh":"我想在明年开始时庆祝。","en":"I want to celebrate to begin next year."},
-  {"id":365,"zh":"我的朋友和我会看电影。","en":"My friend and I will go see a movie."},
-  {"id":366,"zh":"听起来很有趣。","en":"That sounds fun."},
-  {"id":367,"zh":"我是你最好的朋友。","en":"I am your best friend."},
-  {"id":368,"zh":"今晚我们能去散步吗？","en":"Can we go for a walk tonight?"},
-  {"id":369,"zh":"是的，让我们去外面散步吧。","en":"Yes, let's go walk outside."},
-  {"id":370,"zh":"多么美好的一天！","en":"What a beautiful day!"},
-  {"id":371,"zh":"今天天气很好。","en":"The weather is beautiful today."},
-  {"id":372,"zh":"我喜欢独自思考。","en":"I like thinking by myself."},
-  {"id":373,"zh":"我们可以有一个更深刻的友谊。","en":"We can have a deeper friendship."},
-  {"id":374,"zh":"你是一个很好的朋友。","en":"You are a very good friend."},
-  {"id":375,"zh":"我很感激你。","en":"I'm thankful for you."},
-  {"id":376,"zh":"我想要建造一个城堡。","en":"I want to build a castle."},
-  {"id":377,"zh":"我知道一个可以建造城堡的地方。","en":"I know a place where I can build a castle."},
-  {"id":378,"zh":"这将很有趣。","en":"This will be fun."},
-  {"id":379,"zh":"我们可以一起建造一个城堡！","en":"We can build a castle together!"},
-  {"id":380,"zh":"城堡会很高。","en":"The castle will be tall."},
-  {"id":381,"zh":"我喜欢你的想法。","en":"I like your idea."},
-  {"id":382,"zh":"告诉我一个故事。","en":"Tell me a story."},
-  {"id":383,"zh":"从前有一个王国。","en":"Once there was a kingdom."},
-  {"id":384,"zh":"国王很有智慧。","en":"The king was very wise."},
-  {"id":385,"zh":"在这个王国里有一个塔。","en":"In this kingdom there was a tower."},
-  {"id":386,"zh":"这个塔很高。","en":"This tower was very tall."},
-  {"id":387,"zh":"我会给你讲更多的故事。","en":"I will tell you more stories."},
-  {"id":388,"zh":"我们去野餐吧！","en":"Let's go on a picnic!"},
-  {"id":389,"zh":"野餐听起来很棒。","en":"A picnic sounds great!"},
-  {"id":390,"zh":"我们可以在公园吃东西。","en":"We can eat in the park."},
-  {"id":391,"zh":"这将是一次很好的冒险。","en":"This will be a good adventure."},
-  {"id":392,"zh":"我们可以邀请其他朋友。","en":"We can invite other friends."},
-  {"id":393,"zh":"他们也会喜欢的。","en":"They will like it too."},
-  {"id":394,"zh":"你能看书吗？","en":"Can you read books?"},
-  {"id":395,"zh":"是的，我非常喜欢读书。","en":"Yes, I really like to read books."},
-  {"id":396,"zh":"你最喜欢哪本书？","en":"What is your favorite book?"},
-  {"id":397,"zh":"我最喜欢冒险故事。","en":"My favorite is adventure stories."},
-  {"id":398,"zh":"冒险听起来很令人兴奋。","en":"Adventures sound exciting."},
-  {"id":399,"zh":"我们可以写一个故事。","en":"We can write a story."},
-  {"id":400,"zh":"这个房子是我们一起建造的。","en":"This house was built by us together."},
-  {"id":401,"zh":"这是我们最喜欢的地方。","en":"This is our favorite place."},
-  {"id":402,"zh":"我们应该给房子的主人打电话。","en":"We should call the owner of this house."},
-  {"id":403,"zh":"这座房子建于1950年。","en":"This house was built in nineteen fifty."},
-  {"id":404,"zh":"所有的地板都是木制的。","en":"All of the floors are made of wood."},
-  {"id":405,"zh":"他在踢足球时受了伤。","en":"He hurt himself while he was playing soccer."},
-  {"id":406,"zh":"我会带他去看医生做X光检查。","en":"I'll take him to the doctor so he can get an X-ray."},
-  {"id":407,"zh":"我的左腿疼得很厉害。","en":"My left leg hurts badly."},
-  {"id":408,"zh":"你的腿可能断了。","en":"Your leg is probably broken."},
-  {"id":409,"zh":"他在离开医院前做了X光检查。","en":"He got an X-ray before he left the hospital."},
-  {"id":410,"zh":"你为什么今天这么早就回家了？","en":"Why are you home so early today?"},
-  {"id":411,"zh":"我们打算去航海，但下雨了。","en":"We were going to go sailing, but it started to rain."},
-  {"id":412,"zh":"我们应该做什么呢？","en":"What should we do instead?"},
-  {"id":413,"zh":"我们做拼图吧。","en":"Let's do a puzzle instead."},
-  {"id":414,"zh":"我可以打开收音机吗？","en":"Could I put the radio on?"},
-  {"id":415,"zh":"我现在不想放任何音乐。","en":"I don't want to put any music on right now."},
-  {"id":416,"zh":"嘿，艾玛，我想你的电话在响。","en":"Hey Emma, I think your phone is ringing."},
-  {"id":417,"zh":"你好，谁在打电话？","en":"Hello, who's calling?"},
-  {"id":418,"zh":"嘿，艾玛，是我，汤姆。","en":"Hey, Emma, it's me, Tom."},
-  {"id":419,"zh":"你想明天出去玩吗？","en":"Do you want to hang out tomorrow?"},
-  {"id":420,"zh":"很酷，我很乐意。","en":"Cool, I'd love to."},
-  {"id":421,"zh":"现在问你几个问题是个好时机吗？","en":"Is it a good time to ask you a few questions?"},
-  {"id":422,"zh":"对不起，现在真的不是谈话的好时机。","en":"I'm sorry, it's really not a good time to talk."},
-  {"id":423,"zh":"这个项目有一个小问题。","en":"There's a small problem with this project."},
-  {"id":424,"zh":"不可能按时完成这个项目。","en":"It's not possible to complete this project on time."},
-  {"id":425,"zh":"我可能今晚会给你回电话。","en":"I can possibly call you back tonight."},
-  {"id":426,"zh":"你今天早上看新闻了吗？","en":"Did you see the news this morning?"},
-  {"id":427,"zh":"珠宝店昨晚被抢劫了。","en":"The jewelry store was robbed last night."},
-  {"id":428,"zh":"抢劫犯逃走了，警察找不到他。","en":"The robber ran away, and the police can't find him."},
-  {"id":429,"zh":"我确信他们很快就会抓到那个抢劫犯！","en":"I'm sure they'll catch that robber soon!"},
-  {"id":430,"zh":"他们抓住了抢劫犯！","en":"They caught the robber!"},
-  {"id":431,"zh":"所有的珠宝都被警察找到了。","en":"All the jewelry was found by the police."},
-  {"id":432,"zh":"你昨晚睡得怎么样，安娜？","en":"How did you sleep last night, Anna?"},
-  {"id":433,"zh":"你梦到去海滩了吗？","en":"Did you dream about going to the beach?"},
-  {"id":434,"zh":"不，我做了一个关于小丑的噩梦！","en":"No, I had a bad dream about clowns!"},
-  {"id":435,"zh":"小丑很可怕！","en":"Clowns are scary!"},
-  {"id":436,"zh":"我知道那是一个可怕的梦，但它不是真的。","en":"I know that was a scary dream, but it wasn't real."},
-  {"id":437,"zh":"今天有返校销售。","en":"There's a back - to - school sale today."},
-  {"id":438,"zh":"我们需要购买一些学用品。","en":"We need to buy some school supplies."},
-  {"id":439,"zh":"我想买这盒蜡笔。","en":"I want to buy this box of crayons."},
-  {"id":440,"zh":"这是我数学课需要的尺子。","en":"This is the ruler which I need for math class."},
-  {"id":441,"zh":"艾玛只为这些笔记本支付了半价。","en":"Emma only paid half price for these notebooks."},
-  {"id":442,"zh":"夏天是我最喜欢的季节！","en":"Summer is my favorite season!"},
-  {"id":443,"zh":"我计划今年夏天住在一个岛上。","en":"I plan on living on an island this summer."},
-  {"id":444,"zh":"记得带防晒霜和太阳镜。","en":"Remember to bring sunscreen and sunglasses."},
-  {"id":445,"zh":"如果波浪不太大，我们会去游泳。","en":"If the waves aren't too big, we'll go swimming."},
-  {"id":446,"zh":"教孩子们如何游泳很有趣。","en":"It's fun to teach the kids how to swim."},
-  {"id":447,"zh":"你是新来的，不是吗？","en":"You're new here, aren't you?"},
-  {"id":448,"zh":"我会把你介绍给你的同事。","en":"I'll introduce you to your colleagues."},
-  {"id":449,"zh":"如果你有问题，他们会主动帮助你。","en":"If you have questions, they will offer to help you."},
-  {"id":450,"zh":"隔壁房间是我们开会的地方。","en":"The next room is the place where we have meetings."},
-  {"id":451,"zh":"在正常的日子里，我们在12点半吃午饭。","en":"On a normal day, we eat lunch at half past twelve."},
-  {"id":452,"zh":"那个男人是明星吗？","en":"Is that man a celebrity?"},
-  {"id":453,"zh":"哇，他太帅了！","en":"Wow, he's so handsome!"},
-  {"id":454,"zh":"我认识他的未婚妻，她是一名伟大的演员。","en":"I know his fiancée, who is a great actor."},
-  {"id":455,"zh":"她是一个友善诚实的女人。","en":"She's a kind and honest woman."},
-  {"id":456,"zh":"他们已经在一起五年了。","en":"They've been together for five years."},
-  {"id":457,"zh":"我们是城镇的新人。","en":"We're new in town."},
-  {"id":458,"zh":"我们怎样到达市中心？","en":"How do we get to the city center?"},
-  {"id":459,"zh":"开过那座桥。","en":"Drive across that bridge."},
-  {"id":460,"zh":"这条街有很多咖啡馆，经常很拥挤。","en":"This street, which has a lot of cafes, is often busy."},
-  {"id":461,"zh":"这家博物馆已经存在六十年了。","en":"This museum has been here for sixty years."}
+  {
+    "id": 1,
+    "zh": "我喜欢英语。",
+    "en": "I like English."
+  },
+  {
+    "id": 2,
+    "zh": "你喜欢中文。",
+    "en": "You like Chinese."
+  },
+  {
+    "id": 3,
+    "zh": "我喜欢我的英语老师。",
+    "en": "I like my English teacher."
+  },
+  {
+    "id": 4,
+    "zh": "我喜欢你的书。",
+    "en": "I like your book."
+  },
+  {
+    "id": 5,
+    "zh": "我喜欢红色。",
+    "en": "I like red."
+  },
+  {
+    "id": 6,
+    "zh": "我喜欢你的手机。",
+    "en": "I like your phone."
+  },
+  {
+    "id": 7,
+    "zh": "我们喜欢他们的大房子。",
+    "en": "We like their big house."
+  },
+  {
+    "id": 8,
+    "zh": "他们喜欢你的狗。",
+    "en": "They like your dog."
+  },
+  {
+    "id": 9,
+    "zh": "茶还是咖啡？",
+    "en": "Tea or coffee?"
+  },
+  {
+    "id": 10,
+    "zh": "我喝果汁。",
+    "en": "I drink juice."
+  },
+  {
+    "id": 11,
+    "zh": "你喝水。",
+    "en": "You drink water."
+  },
+  {
+    "id": 12,
+    "zh": "再来点热咖啡？",
+    "en": "More hot coffee?"
+  },
+  {
+    "id": 13,
+    "zh": "你好！",
+    "en": "Hello!"
+  },
+  {
+    "id": 14,
+    "zh": "你好，早上好。",
+    "en": "Hello, good morning."
+  },
+  {
+    "id": 15,
+    "zh": "我是一名学生。",
+    "en": "I am a student."
+  },
+  {
+    "id": 16,
+    "zh": "她是一位老师。",
+    "en": "She is a teacher."
+  },
+  {
+    "id": 17,
+    "zh": "这是你的电脑吗？",
+    "en": "Is this your computer?"
+  },
+  {
+    "id": 18,
+    "zh": "是的，这是我的电脑，谢谢！",
+    "en": "Yes, this is my computer, thanks!"
+  },
+  {
+    "id": 19,
+    "zh": "打扰一下，这是你的钱包吗？",
+    "en": "Excuse me, is this your wallet?"
+  },
+  {
+    "id": 20,
+    "zh": "不，这不是我的钱包。",
+    "en": "No, this is not my wallet."
+  },
+  {
+    "id": 21,
+    "zh": "你好，你是安娜吗？",
+    "en": "Hello, are you Anna?"
+  },
+  {
+    "id": 22,
+    "zh": "是的，我是安娜。",
+    "en": "Yes, I am Anna."
+  },
+  {
+    "id": 23,
+    "zh": "你来自中国吗？",
+    "en": "Are you from China?"
+  },
+  {
+    "id": 24,
+    "zh": "是的，我来自北京。",
+    "en": "Yes, I am from Beijing."
+  },
+  {
+    "id": 25,
+    "zh": "我会说一点英语。",
+    "en": "I speak a little English."
+  },
+  {
+    "id": 26,
+    "zh": "你的英语很好！",
+    "en": "Your English is good!"
+  },
+  {
+    "id": 27,
+    "zh": "嗨，早上好！",
+    "en": "Hi, good morning!"
+  },
+  {
+    "id": 28,
+    "zh": "嗨，请来一杯咖啡。",
+    "en": "Hi, a coffee, please."
+  },
+  {
+    "id": 29,
+    "zh": "你想要一份三明治吗？",
+    "en": "Would you like a sandwich?"
+  },
+  {
+    "id": 30,
+    "zh": "是的，我想要一份奶酪三明治，谢谢。",
+    "en": "Yes, I'd like a cheese sandwich, please."
+  },
+  {
+    "id": 31,
+    "zh": "祝你有美好的一天！",
+    "en": "Have a nice day!"
+  },
+  {
+    "id": 32,
+    "zh": "你是教师吗？",
+    "en": "Are you a teacher?"
+  },
+  {
+    "id": 33,
+    "zh": "是的，我是教师。",
+    "en": "Yes, I'm a teacher."
+  },
+  {
+    "id": 34,
+    "zh": "你的朋友是出租车司机吗？",
+    "en": "Is your friend a taxi driver?"
+  },
+  {
+    "id": 35,
+    "zh": "不，她是医生。",
+    "en": "No, she is a doctor."
+  },
+  {
+    "id": 36,
+    "zh": "这件外套多少钱？",
+    "en": "How much is this coat?"
+  },
+  {
+    "id": 37,
+    "zh": "十美元。",
+    "en": "It is ten dollars."
+  },
+  {
+    "id": 38,
+    "zh": "我需要两顶黑色帽子。",
+    "en": "I need two black hats."
+  },
+  {
+    "id": 39,
+    "zh": "这件夹克很贵！",
+    "en": "This jacket is expensive!"
+  },
+  {
+    "id": 40,
+    "zh": "我喜欢这件衬衫。",
+    "en": "I like this shirt."
+  },
+  {
+    "id": 41,
+    "zh": "你妈妈是美国人吗？",
+    "en": "Is your mother American?"
+  },
+  {
+    "id": 42,
+    "zh": "是的，她是美国人。",
+    "en": "Yes, she is American."
+  },
+  {
+    "id": 43,
+    "zh": "你儿子多大了？",
+    "en": "How old is your son?"
+  },
+  {
+    "id": 44,
+    "zh": "我的儿子四岁了。",
+    "en": "My son is four years old."
+  },
+  {
+    "id": 45,
+    "zh": "这是一家很好的餐厅。",
+    "en": "This is a nice restaurant."
+  },
+  {
+    "id": 46,
+    "zh": "一个人的桌子，请。",
+    "en": "A table for one, please."
+  },
+  {
+    "id": 47,
+    "zh": "我想要更多的咖啡。",
+    "en": "I would like more coffee."
+  },
+  {
+    "id": 48,
+    "zh": "要加糖吗？",
+    "en": "With sugar?"
+  },
+  {
+    "id": 49,
+    "zh": "我们想要一个披萨，谢谢。",
+    "en": "We would like a pizza, please."
+  },
+  {
+    "id": 50,
+    "zh": "账单，请！",
+    "en": "Check, please!"
+  },
+  {
+    "id": 51,
+    "zh": "我会说英语和中文。",
+    "en": "I speak English and Chinese."
+  },
+  {
+    "id": 52,
+    "zh": "我们需要一位新的中文老师。",
+    "en": "We need a new Chinese teacher."
+  },
+  {
+    "id": 53,
+    "zh": "他们今天有英语考试。",
+    "en": "They have an English exam today."
+  },
+  {
+    "id": 54,
+    "zh": "这是一个重要的问题。",
+    "en": "That is an important question."
+  },
+  {
+    "id": 55,
+    "zh": "我喜欢我的学校。",
+    "en": "I like my school."
+  },
+  {
+    "id": 56,
+    "zh": "打扰一下，这是你的钥匙吗？",
+    "en": "Excuse me, is this your key?"
+  },
+  {
+    "id": 57,
+    "zh": "不，那不是我的钥匙。",
+    "en": "No, that's not my key."
+  },
+  {
+    "id": 58,
+    "zh": "她的裙子非常漂亮。",
+    "en": "Her dress is very beautiful."
+  },
+  {
+    "id": 59,
+    "zh": "这是我们的相机吗？",
+    "en": "Is this our camera?"
+  },
+  {
+    "id": 60,
+    "zh": "是的，那是我们的相机。",
+    "en": "Yes, that's our camera."
+  },
+  {
+    "id": 61,
+    "zh": "他们是你的朋友吗？",
+    "en": "Are they your friends?"
+  },
+  {
+    "id": 62,
+    "zh": "是的，我们是最好的朋友。",
+    "en": "Yes, we are best friends."
+  },
+  {
+    "id": 63,
+    "zh": "你的朋友们很有趣。",
+    "en": "Your friends are funny."
+  },
+  {
+    "id": 64,
+    "zh": "你的父母在这里吗？",
+    "en": "Are your parents here?"
+  },
+  {
+    "id": 65,
+    "zh": "是的，我爱我的父母。",
+    "en": "Yes, I love my parents."
+  },
+  {
+    "id": 66,
+    "zh": "我住在伦敦，但我不会说英语。",
+    "en": "I live in London, but I don't speak English."
+  },
+  {
+    "id": 67,
+    "zh": "他们会说法语吗？",
+    "en": "Do they speak French?"
+  },
+  {
+    "id": 68,
+    "zh": "他们会说一点法语。",
+    "en": "They speak a little French."
+  },
+  {
+    "id": 69,
+    "zh": "他们有新的电话号码吗？",
+    "en": "Do they have a new phone number?"
+  },
+  {
+    "id": 70,
+    "zh": "对不起，我不知道。",
+    "en": "Sorry, I don't know."
+  },
+  {
+    "id": 71,
+    "zh": "很高兴认识你。",
+    "en": "Nice to meet you."
+  },
+  {
+    "id": 72,
+    "zh": "你做什么工作，本？",
+    "en": "What do you do, Ben?"
+  },
+  {
+    "id": 73,
+    "zh": "我在医院工作。",
+    "en": "I work at a hospital."
+  },
+  {
+    "id": 74,
+    "zh": "你和安娜一起工作吗？",
+    "en": "Do you work with Anna?"
+  },
+  {
+    "id": 75,
+    "zh": "是的，安娜和我在医院一起工作。",
+    "en": "Yes, Anna and I work together at a hospital."
+  },
+  {
+    "id": 76,
+    "zh": "热咖啡？",
+    "en": "Hot coffee?"
+  },
+  {
+    "id": 77,
+    "zh": "我从不喝咖啡。",
+    "en": "I never drink coffee."
+  },
+  {
+    "id": 78,
+    "zh": "她每天吃早餐。",
+    "en": "She eats breakfast every day."
+  },
+  {
+    "id": 79,
+    "zh": "他每天吃一个鸡蛋。",
+    "en": "He eats an egg every day."
+  },
+  {
+    "id": 80,
+    "zh": "她喜欢咖啡，但我喜欢茶。",
+    "en": "She likes coffee, but I like tea."
+  },
+  {
+    "id": 81,
+    "zh": "他喜欢打篮球吗？",
+    "en": "Does he like to play basketball?"
+  },
+  {
+    "id": 82,
+    "zh": "他有时和本一起打篮球。",
+    "en": "He sometimes plays basketball with Ben."
+  },
+  {
+    "id": 83,
+    "zh": "他喜欢打网球。",
+    "en": "He likes to play tennis."
+  },
+  {
+    "id": 84,
+    "zh": "她不喜欢画画。",
+    "en": "She doesn't like to draw."
+  },
+  {
+    "id": 85,
+    "zh": "她喜欢看电影，但我喜欢读书。",
+    "en": "She likes to watch movies, but I like to read books."
+  },
+  {
+    "id": 86,
+    "zh": "我需要一辆出租车。",
+    "en": "I need a taxi."
+  },
+  {
+    "id": 87,
+    "zh": "到火车站，谢谢。",
+    "en": "To the train station. Please."
+  },
+  {
+    "id": 88,
+    "zh": "售票处在哪里？",
+    "en": "Where is the ticket office?"
+  },
+  {
+    "id": 89,
+    "zh": "售票处就在那边。",
+    "en": "The ticket office is over there?"
+  },
+  {
+    "id": 90,
+    "zh": "火车晚了。",
+    "en": "The train is late."
+  },
+  {
+    "id": 91,
+    "zh": "我们今天想去购物。",
+    "en": "We want to go shopping today."
+  },
+  {
+    "id": 92,
+    "zh": "你想买一些衣服吗？",
+    "en": "Do you want to buy some clothes?"
+  },
+  {
+    "id": 93,
+    "zh": "我想买两条连衣裙。",
+    "en": "I want to buy two dresses."
+  },
+  {
+    "id": 94,
+    "zh": "这本书多少钱？",
+    "en": "How much is this book?"
+  },
+  {
+    "id": 95,
+    "zh": "那本书十六美元。",
+    "en": "That book is sixteen dollars."
+  },
+  {
+    "id": 96,
+    "zh": "我爷爷和他的狗住在一起。",
+    "en": "My grandpa lives with his dog."
+  },
+  {
+    "id": 97,
+    "zh": "你爷爷经常看电视吗？",
+    "en": "Does your grandpa often watch TV?"
+  },
+  {
+    "id": 98,
+    "zh": "他通常和朋友一起看电影。",
+    "en": "He usually watches movies with his friends."
+  },
+  {
+    "id": 99,
+    "zh": "他的头发是蓝色的吗？",
+    "en": "Is his hair blue?"
+  },
+  {
+    "id": 100,
+    "zh": "是的，他的头发是蓝色的。",
+    "en": "Yes, his hair is blue."
+  },
+  {
+    "id": 101,
+    "zh": "你午餐想吃什么？",
+    "en": "What would you like to have for lunch."
+  },
+  {
+    "id": 102,
+    "zh": "我想今天做一种不同的三明治。",
+    "en": "I would like to make a different kind of sandwich today."
+  },
+  {
+    "id": 103,
+    "zh": "这是牛肉吗？",
+    "en": "Is that beef?"
+  },
+  {
+    "id": 104,
+    "zh": "我丈夫不吃牛肉。",
+    "en": "My husband doesn't eat beef."
+  },
+  {
+    "id": 105,
+    "zh": "这是猪肉，不是牛肉。",
+    "en": "This is pork, not beef."
+  },
+  {
+    "id": 106,
+    "zh": "房子里有六个房间。",
+    "en": "There are six rooms in the house."
+  },
+  {
+    "id": 107,
+    "zh": "你的厨房里有桌子吗？",
+    "en": "Is there a table in your kitchen?"
+  },
+  {
+    "id": 108,
+    "zh": "是的，我们通常在厨房吃早餐。",
+    "en": "Yes, we usually eat breakfast in the kitchen."
+  },
+  {
+    "id": 109,
+    "zh": "我办公室里有一张小床。",
+    "en": "There is a small bed in my office."
+  },
+  {
+    "id": 110,
+    "zh": "我们需要一个新的厕所。",
+    "en": "We need a new toilet."
+  },
+  {
+    "id": 111,
+    "zh": "今天很热。",
+    "en": "It is hot today."
+  },
+  {
+    "id": 112,
+    "zh": "北京很冷。",
+    "en": "It is cold in Beijing."
+  },
+  {
+    "id": 113,
+    "zh": "你喜欢北京的天气吗？",
+    "en": "Do you like the weather in Beijing?"
+  },
+  {
+    "id": 114,
+    "zh": "不，冬天下雪很多。",
+    "en": "No, it snows a lot in the winter."
+  },
+  {
+    "id": 115,
+    "zh": "这里夏天天气很好。",
+    "en": "The weather is nice here in the summer."
+  },
+  {
+    "id": 116,
+    "zh": "这是阿玛的农场。",
+    "en": "This is Amma's farm."
+  },
+  {
+    "id": 117,
+    "zh": "树下有鸡吗？",
+    "en": "Is there a chicken under the tree?"
+  },
+  {
+    "id": 118,
+    "zh": "那只狗有大耳朵。",
+    "en": "That dog has big ears."
+  },
+  {
+    "id": 119,
+    "zh": "鸟的腿很短。",
+    "en": "Birds have very short legs."
+  },
+  {
+    "id": 120,
+    "zh": "那条鱼很漂亮。",
+    "en": "That fish is beautiful."
+  },
+  {
+    "id": 121,
+    "zh": "艾玛，现在几点了？",
+    "en": "Emma, what time is it?"
+  },
+  {
+    "id": 122,
+    "zh": "早上五点钟。",
+    "en": "It is five o'clock in the morning."
+  },
+  {
+    "id": 123,
+    "zh": "你什么时候去上学？",
+    "en": "What time do you go to school?"
+  },
+  {
+    "id": 124,
+    "zh": "我通常八点去上学。",
+    "en": "I usually go to school at eight o'clock."
+  },
+  {
+    "id": 125,
+    "zh": "篮球比赛在星期四吗？",
+    "en": "Is the basketball game to Thursday?"
+  },
+  {
+    "id": 126,
+    "zh": "看！我们的老师来了！",
+    "en": "Look! Our teacher is here!"
+  },
+  {
+    "id": 127,
+    "zh": "请打开你的书。",
+    "en": "Please open your book."
+  },
+  {
+    "id": 128,
+    "zh": "不要用我的红笔。",
+    "en": "Don't use my red pen."
+  },
+  {
+    "id": 129,
+    "zh": "再见，王先生。",
+    "en": "See you tomorrow, Mr. Wang."
+  },
+  {
+    "id": 130,
+    "zh": "再见。",
+    "en": "See you tomorrow."
+  },
+  {
+    "id": 131,
+    "zh": "房子后面有公交车站吗？",
+    "en": "Is there a bus stop behind the house?"
+  },
+  {
+    "id": 132,
+    "zh": "她的房子在地铁站旁边。",
+    "en": "Her house is next to the subway station."
+  },
+  {
+    "id": 133,
+    "zh": "机场附近有酒店吗？",
+    "en": "Is there a hotel near the airport?"
+  },
+  {
+    "id": 134,
+    "zh": "这个地方总是很忙。",
+    "en": "This place is always busy."
+  },
+  {
+    "id": 135,
+    "zh": "那是著名的博物馆吗？",
+    "en": "Is that a famous museums?"
+  },
+  {
+    "id": 136,
+    "zh": "巴黎有很多著名的博物馆。",
+    "en": "There are many famous museums in Paris."
+  },
+  {
+    "id": 137,
+    "zh": "她会说四种语言。",
+    "en": "She can speak four languages."
+  },
+  {
+    "id": 138,
+    "zh": "你弹吉他还是钢琴？",
+    "en": "Do you play the guitar or the piano?"
+  },
+  {
+    "id": 139,
+    "zh": "我不太会弹吉他。",
+    "en": "I don't play the guitar very well."
+  },
+  {
+    "id": 140,
+    "zh": "安娜做饭不太好。",
+    "en": "Anna doesn't cook very well."
+  },
+  {
+    "id": 141,
+    "zh": "他想跳舞，但他不能。",
+    "en": "He wants to dance, but he can't."
+  },
+  {
+    "id": 142,
+    "zh": "我可以喝杯茶吗？",
+    "en": "Can I have a cop of tea?"
+  },
+  {
+    "id": 143,
+    "zh": "这是猪肉还是牛肉？",
+    "en": "Is it pork or beef?"
+  },
+  {
+    "id": 144,
+    "zh": "我可以坐在窗边吗？",
+    "en": "Can I sit next to the window?"
+  },
+  {
+    "id": 145,
+    "zh": "我可以给你拿饮料吗，安娜？",
+    "en": "Can I get you a drink, Anna?"
+  },
+  {
+    "id": 146,
+    "zh": "好的，谢谢。我想要一杯茶。",
+    "en": "Yes, please. I'd like a cup of tea."
+  },
+  {
+    "id": 147,
+    "zh": "你可以在这里付饮料费。",
+    "en": "You can pay for your drinks here."
+  },
+  {
+    "id": 148,
+    "zh": "生日快乐，安娜！",
+    "en": "Happy birthday, Anna!"
+  },
+  {
+    "id": 149,
+    "zh": "这些花是给你的！",
+    "en": "These flowers are for you!"
+  },
+  {
+    "id": 150,
+    "zh": "我爱你！",
+    "en": "I love you!"
+  },
+  {
+    "id": 151,
+    "zh": "这是给你的生日蛋糕！",
+    "en": "There is a birthday cake for you!"
+  },
+  {
+    "id": 152,
+    "zh": "我喜欢蛋糕！",
+    "en": "I love cake!"
+  },
+  {
+    "id": 153,
+    "zh": "你现在在清理厨房吗？",
+    "en": "Are you cleaning the kitchen right now?"
+  },
+  {
+    "id": 154,
+    "zh": "我们现在在做晚餐。",
+    "en": "We're cooking dinner now."
+  },
+  {
+    "id": 155,
+    "zh": "他们在谈论法国食物。",
+    "en": "They are talking about French food."
+  },
+  {
+    "id": 156,
+    "zh": "多奥现在在读一本书。",
+    "en": "Duo is reading a book now."
+  },
+  {
+    "id": 157,
+    "zh": "他在读一本关于中国食物的书。",
+    "en": "He is reading a book about Chinese food."
+  },
+  {
+    "id": 158,
+    "zh": "是星期六还是星期天？",
+    "en": "Is it Saturday or Sunday?"
+  },
+  {
+    "id": 159,
+    "zh": "是星期六，不是星期天。",
+    "en": "It's Saturday, not Sunday."
+  },
+  {
+    "id": 160,
+    "zh": "本通常在早上九点起床。",
+    "en": "Ben usually gets up at nine o'clock in the morning."
+  },
+  {
+    "id": 161,
+    "zh": "他总是在晚上看电影。",
+    "en": "He always watches movies at night."
+  },
+  {
+    "id": 162,
+    "zh": "我们通常在晚上十一点睡觉。",
+    "en": "We usually go to the bed at eleven."
+  },
+  {
+    "id": 163,
+    "zh": "那个女孩是谁？",
+    "en": "Who is that girl?"
+  },
+  {
+    "id": 164,
+    "zh": "你能看到她吗？",
+    "en": "Can you see her?"
+  },
+  {
+    "id": 165,
+    "zh": "她有一顶昂贵的灰色帽子。",
+    "en": "She has an expensive gray hat."
+  },
+  {
+    "id": 166,
+    "zh": "你认识她吗？",
+    "en": "Do you know her?"
+  },
+  {
+    "id": 167,
+    "zh": "我不喜欢她。",
+    "en": "I don't like her."
+  },
+  {
+    "id": 168,
+    "zh": "你喜欢做运动吗？",
+    "en": "Do you like to play sports?"
+  },
+  {
+    "id": 169,
+    "zh": "篮球是我最喜欢的运动。",
+    "en": "Basketball is my favorite sport."
+  },
+  {
+    "id": 170,
+    "zh": "我们出去吧！",
+    "en": "Let's go outside!"
+  },
+  {
+    "id": 171,
+    "zh": "妈妈，我可以出去踢足球吗？",
+    "en": "Mom, can I play soccer outside?"
+  },
+  {
+    "id": 172,
+    "zh": "你需要留在这里。",
+    "en": "You need to stay here."
+  },
+  {
+    "id": 173,
+    "zh": "我们为他的生日开个派对吧！",
+    "en": "Let's have a party for his birthday!"
+  },
+  {
+    "id": 174,
+    "zh": "欢迎，本和安娜，怎么了？",
+    "en": "Welcome, Ben and Anna, what's up?"
+  },
+  {
+    "id": 175,
+    "zh": "你喜欢这首歌吗？",
+    "en": "Do you like this song?"
+  },
+  {
+    "id": 176,
+    "zh": "这是我最喜欢的歌。",
+    "en": "This is my favorite song."
+  },
+  {
+    "id": 177,
+    "zh": "我可以给你拿点冰淇淋吗？",
+    "en": "Can I get you some ice cream?"
+  },
+  {
+    "id": 178,
+    "zh": "当然，我喜欢冰淇淋！",
+    "en": "Sure, I love ice cream!"
+  },
+  {
+    "id": 179,
+    "zh": "我喜欢暑假！",
+    "en": "I love summer holidays!"
+  },
+  {
+    "id": 180,
+    "zh": "天气真美！",
+    "en": "The weather is beautiful!"
+  },
+  {
+    "id": 181,
+    "zh": "我们去野餐吧！",
+    "en": "Let's have a picnic!"
+  },
+  {
+    "id": 182,
+    "zh": "我们可以一起在海滩游泳！",
+    "en": "We can swim together at the beach!"
+  },
+  {
+    "id": 183,
+    "zh": "我们玩得很开心！",
+    "en": "We are having a good time!"
+  },
+  {
+    "id": 184,
+    "zh": "我需要买新的冬靴。",
+    "en": "I need to buy new winter boots."
+  },
+  {
+    "id": 185,
+    "zh": "那双棕色靴子更便宜吗？",
+    "en": "Are those brown boots cheaper?"
+  },
+  {
+    "id": 186,
+    "zh": "这双靴子五十美元。",
+    "en": "The boots are fifty dollars."
+  },
+  {
+    "id": 187,
+    "zh": "哪件女式上衣更漂亮？",
+    "en": "Which blouse is more beautiful?"
+  },
+  {
+    "id": 188,
+    "zh": "这件新上衣更漂亮。",
+    "en": "This new blouse is more beautiful."
+  },
+  {
+    "id": 189,
+    "zh": "你今天需要参加考试吗？",
+    "en": "Do you need to take a test today?"
+  },
+  {
+    "id": 190,
+    "zh": "是的，学生们今天需要参加考试。",
+    "en": "Yes, the students need to take a test today."
+  },
+  {
+    "id": 191,
+    "zh": "这次考试更难。",
+    "en": "This test is more difficult."
+  },
+  {
+    "id": 192,
+    "zh": "哪个包更小？",
+    "en": "Which bag is smaller?"
+  },
+  {
+    "id": 193,
+    "zh": "我的包比安娜的包小。",
+    "en": "My bag is smaller than Anna's bag."
+  },
+  {
+    "id": 194,
+    "zh": "我们明天打算做什么？",
+    "en": "What are we going to do tomorrow?"
+  },
+  {
+    "id": 195,
+    "zh": "我们明天在咖啡馆见面吧。",
+    "en": "Let's meet at a cafe tomorrow."
+  },
+  {
+    "id": 196,
+    "zh": "你想几点见面？",
+    "en": "What time do you want to meet?"
+  },
+  {
+    "id": 197,
+    "zh": "我们可以上午11点见面吗？",
+    "en": "Can we meet at 11 a.m.?"
+  },
+  {
+    "id": 198,
+    "zh": "今晚请给我打电话。",
+    "en": "Please call me tonight."
+  },
+  {
+    "id": 199,
+    "zh": "我们夏天去旅行吧！",
+    "en": "Let's take a trip in the summer!"
+  },
+  {
+    "id": 200,
+    "zh": "好的！我想参观英国。",
+    "en": "Yes! I want to visit the UK."
+  },
+  {
+    "id": 201,
+    "zh": "伦敦是英国最冷的城市吗？",
+    "en": "Is London the coldest city in the UK?"
+  },
+  {
+    "id": 202,
+    "zh": "这是英国最贵的餐厅吗？",
+    "en": "Is this the most expensive restaurant in the UK?"
+  },
+  {
+    "id": 203,
+    "zh": "那是那座城市最有趣的博物馆。",
+    "en": "That is the most interesting museum in that city."
+  },
+  {
+    "id": 204,
+    "zh": "这是你在这里的第一周吗？",
+    "en": "Is this your first week here?"
+  },
+  {
+    "id": 205,
+    "zh": "这是我在这里的第二周！",
+    "en": "This is my second week here!"
+  },
+  {
+    "id": 206,
+    "zh": "你们公司在这栋楼里吗？",
+    "en": "Is your company in this building?"
+  },
+  {
+    "id": 207,
+    "zh": "是的，这是我们的办公楼。",
+    "en": "Yes, this is our office building."
+  },
+  {
+    "id": 208,
+    "zh": "你通常在家工作吗？",
+    "en": "Do you usually work from home?"
+  },
+  {
+    "id": 209,
+    "zh": "是的，我们每天在家工作。",
+    "en": "Yes, we work from home every day."
+  },
+  {
+    "id": 210,
+    "zh": "孩子们今天感觉怎么样？",
+    "en": "How do the kids feel today?"
+  },
+  {
+    "id": 211,
+    "zh": "他们累了吗？",
+    "en": "Are they tired?"
+  },
+  {
+    "id": 212,
+    "zh": "本非常疲惫。",
+    "en": "Ben is very tired."
+  },
+  {
+    "id": 213,
+    "zh": "你感到饿了还是累了？",
+    "en": "Do you feel hungry or tired?"
+  },
+  {
+    "id": 214,
+    "zh": "我感到非常饿！",
+    "en": "I feel very hungry!"
+  },
+  {
+    "id": 215,
+    "zh": "安娜喜欢这个小镇。",
+    "en": "Anna likes this small town."
+  },
+  {
+    "id": 216,
+    "zh": "这里有很多不错的咖啡馆。",
+    "en": "It has many good coffee shops."
+  },
+  {
+    "id": 217,
+    "zh": "安娜的房子是这条街上最漂亮的。",
+    "en": "Anna has the most beautiful house on this street."
+  },
+  {
+    "id": 218,
+    "zh": "这条街上也有一家咖啡馆。",
+    "en": "There's also a coffee shop on this street."
+  },
+  {
+    "id": 219,
+    "zh": "它是世界上最好的咖啡馆。",
+    "en": "It is the best coffee shop in the world."
+  },
+  {
+    "id": 220,
+    "zh": "你们什么时候结婚？",
+    "en": "When will you get married?"
+  },
+  {
+    "id": 221,
+    "zh": "我们明年八月结婚。",
+    "en": "We will get married next August."
+  },
+  {
+    "id": 222,
+    "zh": "你明年住在哪里？",
+    "en": "Where will you live next year?"
+  },
+  {
+    "id": 223,
+    "zh": "我丈夫和我明年将搬到法国。",
+    "en": "My husband and I will move to France next year."
+  },
+  {
+    "id": 224,
+    "zh": "我们来开个舞会吧！",
+    "en": "Let's have a dance party!"
+  },
+  {
+    "id": 225,
+    "zh": "你能邀请安娜来参加派对吗？",
+    "en": "Can you invite Anna to the party?"
+  },
+  {
+    "id": 226,
+    "zh": "我的朋友也会和我一起来。",
+    "en": "My friend will come with me as well."
+  },
+  {
+    "id": 227,
+    "zh": "我下午六点到那里。",
+    "en": "I'll get there at 6 p.m."
+  },
+  {
+    "id": 228,
+    "zh": "你可以和我们坐在一起！",
+    "en": "You can sit with us!"
+  },
+  {
+    "id": 229,
+    "zh": "这是我们的新家。",
+    "en": "This is our new home."
+  },
+  {
+    "id": 230,
+    "zh": "她客厅里有一架钢琴。",
+    "en": "There is a piano in her living room."
+  },
+  {
+    "id": 231,
+    "zh": "这是一个漂亮的书柜！",
+    "en": "This is a beautiful bookcase!"
+  },
+  {
+    "id": 232,
+    "zh": "每个卧室里都有电视吗？",
+    "en": "Is there a television in each bedroom?"
+  },
+  {
+    "id": 233,
+    "zh": "客厅和厨房哪个更大？",
+    "en": "Which room is bigger, the living room or the kitchen?"
+  },
+  {
+    "id": 234,
+    "zh": "客厅比厨房大。",
+    "en": "The living room is bigger than the kitchen."
+  },
+  {
+    "id": 235,
+    "zh": "今天是几号？",
+    "en": "What's the date?"
+  },
+  {
+    "id": 236,
+    "zh": "九月六日。",
+    "en": "It's September sixth."
+  },
+  {
+    "id": 237,
+    "zh": "秋天在九月开始。",
+    "en": "Fall begins in September."
+  },
+  {
+    "id": 238,
+    "zh": "你今晚几点下班？",
+    "en": "What time will you finish work tonight?"
+  },
+  {
+    "id": 239,
+    "zh": "我通常下午六点下班。",
+    "en": "I usually finish work at 6 p.m."
+  },
+  {
+    "id": 240,
+    "zh": "艾玛想带我们参观她的新房子。",
+    "en": "Emma wants to show us her new house."
+  },
+  {
+    "id": 241,
+    "zh": "哪栋房子离农场更近？",
+    "en": "Which house is closer to the farm?"
+  },
+  {
+    "id": 242,
+    "zh": "他们的新房子离他们的农场更近。",
+    "en": "Their new house is closer to their farm."
+  },
+  {
+    "id": 243,
+    "zh": "我想带你去看农场上的动物！",
+    "en": "I want to show you the animals on the farm!"
+  },
+  {
+    "id": 244,
+    "zh": "他们的农场里有很多动物。",
+    "en": "There are many animals on their farm."
+  },
+  {
+    "id": 245,
+    "zh": "昨天上海多云吗？",
+    "en": "Was it cloudy in Shanghai yesterday?"
+  },
+  {
+    "id": 246,
+    "zh": "昨天多云，但很热。",
+    "en": "It was cloudy yesterday, but it was hot."
+  },
+  {
+    "id": 247,
+    "zh": "这里春天总是阴天。",
+    "en": "It's always cloudy here in spring."
+  },
+  {
+    "id": 248,
+    "zh": "昨天纽约更暖和吗？",
+    "en": "Was it warmer in New York yesterday?"
+  },
+  {
+    "id": 249,
+    "zh": "昨天更暖和。",
+    "en": "It was warmer yesterday."
+  },
+  {
+    "id": 250,
+    "zh": "我们去年开车游览了美国。",
+    "en": "We traveled in the US by car last year."
+  },
+  {
+    "id": 251,
+    "zh": "去年夏天我们在迈阿密和波士顿住过。",
+    "en": "We stayed in Miami and Boston last summer."
+  },
+  {
+    "id": 252,
+    "zh": "你享受迈阿密之旅吗？",
+    "en": "Did you enjoy your trip to Miami?"
+  },
+  {
+    "id": 253,
+    "zh": "是的，迈阿密有美丽的海滩！",
+    "en": "Yes, Miami has beautiful beaches!"
+  },
+  {
+    "id": 254,
+    "zh": "你去年去纽约旅行了吗？",
+    "en": "Did you travel to New York last year?"
+  },
+  {
+    "id": 255,
+    "zh": "是的，我们去年冬天游览了纽约。",
+    "en": "Yes, we traveled in New York last winter."
+  },
+  {
+    "id": 256,
+    "zh": "我真的很享受英国之旅！",
+    "en": "I really enjoyed my trip to England!"
+  },
+  {
+    "id": 257,
+    "zh": "我可以问你一些关于你生活的问题吗？",
+    "en": "Can I ask you some questions about your life?"
+  },
+  {
+    "id": 258,
+    "zh": "你的父母在一个著名的乐队吗？",
+    "en": "Were your parents in a famous band?"
+  },
+  {
+    "id": 259,
+    "zh": "不，我们的爸爸从事音乐行业。",
+    "en": "No, our dad was in the music business."
+  },
+  {
+    "id": 260,
+    "zh": "他的工作非常有趣。",
+    "en": "His job was very interesting."
+  },
+  {
+    "id": 261,
+    "zh": "我爷爷是一位非常出色的吉他手。",
+    "en": "My grandpa was a very good guitar player."
+  },
+  {
+    "id": 262,
+    "zh": "艾玛，怎么了？",
+    "en": "What's wrong, Emma?"
+  },
+  {
+    "id": 263,
+    "zh": "我昨天没去学校，因为我生病了。",
+    "en": "I wasn't at school yesterday because I was sick."
+  },
+  {
+    "id": 264,
+    "zh": "你昨天去看医生了吗？",
+    "en": "Did you see a doctor yesterday?"
+  },
+  {
+    "id": 265,
+    "zh": "是的，我需要吃这种药一周。",
+    "en": "Yes, I have to take this medicine for one week."
+  },
+  {
+    "id": 266,
+    "zh": "现在吃这种药，明天你会好起来的。",
+    "en": "Take this medicine now, and you will feel better tomorrow."
+  },
+  {
+    "id": 267,
+    "zh": "你上周在伦敦吗？",
+    "en": "Were you in London last week?"
+  },
+  {
+    "id": 268,
+    "zh": "是的，我们上周末到达伦敦。",
+    "en": "Yes, we arrived in London last weekend."
+  },
+  {
+    "id": 269,
+    "zh": "我们在大本钟前拍了照片。",
+    "en": "We took photos in front of Big Ben."
+  },
+  {
+    "id": 270,
+    "zh": "我们在一家昂贵的咖啡馆喝了下午茶。",
+    "en": "We had afternoon tea at an expensive cafe."
+  },
+  {
+    "id": 271,
+    "zh": "我记得这个地方。",
+    "en": "I remember this place."
+  },
+  {
+    "id": 272,
+    "zh": "我学校旁边有一个图书馆。",
+    "en": "There was a library next to my school."
+  },
+  {
+    "id": 273,
+    "zh": "你什么时候毕业的？",
+    "en": "When did you finish school?"
+  },
+  {
+    "id": 274,
+    "zh": "1990年，我那时十四岁。",
+    "en": "In 1990, I was fourteen years old."
+  },
+  {
+    "id": 275,
+    "zh": "我们1995年搬到了日本。",
+    "en": "We moved to Japan in 1995."
+  },
+  {
+    "id": 276,
+    "zh": "你是韩国人吗？",
+    "en": "Are you Korean?"
+  },
+  {
+    "id": 277,
+    "zh": "是的，我奶奶是韩国人，我爷爷是中国人。",
+    "en": "Yes, my grandma is Korean, and my grandpa is Chinese."
+  },
+  {
+    "id": 278,
+    "zh": "我们从未去过美国。",
+    "en": "We have never been to the US."
+  },
+  {
+    "id": 279,
+    "zh": "我们在这座城市已经住了十年了。",
+    "en": "We have lived in this city for ten years."
+  },
+  {
+    "id": 280,
+    "zh": "我去过亚洲很多国家。",
+    "en": "I have been to many countries in Asia."
+  },
+  {
+    "id": 281,
+    "zh": "我们看到了这家服装店的广告。",
+    "en": "We saw an ad for this clothes store."
+  },
+  {
+    "id": 282,
+    "zh": "那家店里有各种各样的衣服。",
+    "en": "There are different kinds of clothes in that store."
+  },
+  {
+    "id": 283,
+    "zh": "你想用信用卡付款吗？",
+    "en": "Would you like to pay with a credit card?"
+  },
+  {
+    "id": 284,
+    "zh": "我通常用信用卡付款。",
+    "en": "I usually pay with a credit card."
+  },
+  {
+    "id": 285,
+    "zh": "我们昨天参加了汉语听力考试。",
+    "en": "We took a Chinese listening test yesterday."
+  },
+  {
+    "id": 286,
+    "zh": "你考得怎么样？",
+    "en": "How did you do on the test?"
+  },
+  {
+    "id": 287,
+    "zh": "有很多难题。",
+    "en": "There were many difficult questions."
+  },
+  {
+    "id": 288,
+    "zh": "我们需要练习听力和口语。",
+    "en": "We need to practice listening and speaking."
+  },
+  {
+    "id": 289,
+    "zh": "听力比口语难。",
+    "en": "Listening is harder than speaking."
+  },
+  {
+    "id": 290,
+    "zh": "爸爸昨晚做了我最喜欢的食物！",
+    "en": "Dad cooked my favorite food last night!"
+  },
+  {
+    "id": 291,
+    "zh": "你可以把鸡肉放在这个盘子里。",
+    "en": "You can put the chicken on this dish."
+  },
+  {
+    "id": 292,
+    "zh": "你能在超市买一袋米吗？",
+    "en": "Can you get a bag of rice at the supermarket?"
+  },
+  {
+    "id": 293,
+    "zh": "每个星期六，他做晚饭，我洗碗。",
+    "en": "Every Saturday, he cooks dinner and I wash the dishes."
+  },
+  {
+    "id": 294,
+    "zh": "他昨晚煮了米饭，我现在正在做猪肉。",
+    "en": "He cooked rice last night, and I am cooking pork now."
+  },
+  {
+    "id": 295,
+    "zh": "晚饭好了！",
+    "en": "Dinner is ready!"
+  },
+  {
+    "id": 296,
+    "zh": "我们老板今天不在办公室。",
+    "en": "Our boss is not in the office today."
+  },
+  {
+    "id": 297,
+    "zh": "你收到他的邮件了吗？",
+    "en": "Did you get an email from him?"
+  },
+  {
+    "id": 298,
+    "zh": "我们收到了关于会议的通知。",
+    "en": "We got the message about the meeting."
+  },
+  {
+    "id": 299,
+    "zh": "我们明天开会，到时见！",
+    "en": "We'll have a meeting tomorrow, see you then!"
+  },
+  {
+    "id": 300,
+    "zh": "到时见。",
+    "en": "See you then."
+  },
+  {
+    "id": 301,
+    "zh": "我找不到我的钱包。",
+    "en": "I can't find my wallet anywhere."
+  },
+  {
+    "id": 302,
+    "zh": "这是你的钱包吗？",
+    "en": "Is this wallet yours?"
+  },
+  {
+    "id": 303,
+    "zh": "这不是我的钱包，那个黑色的钱包是我的。",
+    "en": "This is not my wallet, that black wallet is mine."
+  },
+  {
+    "id": 304,
+    "zh": "这个塑料玩具是她的吗？",
+    "en": "Is this plastic toy hers?"
+  },
+  {
+    "id": 305,
+    "zh": "不，那个抽屉里的玩具是她的。",
+    "en": "No, the toys in that drawer are hers."
+  },
+  {
+    "id": 306,
+    "zh": "厨房里没有披萨。",
+    "en": "There is no pizza in the kitchen."
+  },
+  {
+    "id": 307,
+    "zh": "我们没有咖啡，我们把它加到购物清单上吧！",
+    "en": "We have no coffee, let's add it to the list!"
+  },
+  {
+    "id": 308,
+    "zh": "这家杂货店没有很多麦片。",
+    "en": "This grocery store doesn't have much cereal."
+  },
+  {
+    "id": 309,
+    "zh": "那面包看起来不新鲜。",
+    "en": "That bread looks bad."
+  },
+  {
+    "id": 310,
+    "zh": "这些胡萝卜看起来很新鲜。",
+    "en": "These carrots look fresh."
+  },
+  {
+    "id": 311,
+    "zh": "她是演员吗？",
+    "en": "Is she an actor?"
+  },
+  {
+    "id": 312,
+    "zh": "那个女人是一位著名的加拿大演员！",
+    "en": "That woman is a famous Canadian actor!"
+  },
+  {
+    "id": 313,
+    "zh": "她漂亮得像一朵花！",
+    "en": "She is as pretty as a flower!"
+  },
+  {
+    "id": 314,
+    "zh": "她的头发不像你的那么长。",
+    "en": "Her hair is not as long as yours."
+  },
+  {
+    "id": 315,
+    "zh": "她是一个非常友善的人。",
+    "en": "She's a very kind person."
+  },
+  {
+    "id": 316,
+    "zh": "你十年前住在这里吗？",
+    "en": "Did you live here ten years ago?"
+  },
+  {
+    "id": 317,
+    "zh": "是的，我们房子旁边有一个湖。",
+    "en": "Yes, there was a lake next to our house."
+  },
+  {
+    "id": 318,
+    "zh": "我真的很想念那个湖。",
+    "en": "I really miss that lake."
+  },
+  {
+    "id": 319,
+    "zh": "那时我只会一点点英语。",
+    "en": "I only knew a little English then."
+  },
+  {
+    "id": 320,
+    "zh": "我的邻居教我英语和西班牙语。",
+    "en": "My neighbor taught me English and Spanish."
+  },
+  {
+    "id": 321,
+    "zh": "你想中午一起吃午餐吗？",
+    "en": "Do you want to have lunch together at noon?"
+  },
+  {
+    "id": 322,
+    "zh": "当然，我很乐意。",
+    "en": "Sure, I'd love to."
+  },
+  {
+    "id": 323,
+    "zh": "我想要一些甜的。",
+    "en": "I'd like something sweet."
+  },
+  {
+    "id": 324,
+    "zh": "这里的甜点总是很优秀。",
+    "en": "The dessert here is always excellent."
+  },
+  {
+    "id": 325,
+    "zh": "谢谢你的花，它们太漂亮了！",
+    "en": "Thank you for the flowers, they are so beautiful!"
+  },
+  {
+    "id": 326,
+    "zh": "昨天真是疯狂的一天！",
+    "en": "It was a crazy day yesterday!"
+  },
+  {
+    "id": 327,
+    "zh": "哦不，发生了什么？",
+    "en": "Oh no, what happened?"
+  },
+  {
+    "id": 328,
+    "zh": "昨天我邻居房子附近发生了火灾。",
+    "en": "There was a fire near my neighbor's house yesterday."
+  },
+  {
+    "id": 329,
+    "zh": "我首先看到了火，然后我打了电话给警察。",
+    "en": "I saw the fire first, and then I called the police."
+  },
+  {
+    "id": 330,
+    "zh": "警察终于来了。",
+    "en": "The police finally arrived."
+  },
+  {
+    "id": 331,
+    "zh": "你多久去露营一次？",
+    "en": "How often do you go camping?"
+  },
+  {
+    "id": 332,
+    "zh": "我们每年夏天都在这里露营。",
+    "en": "We camp here every summer."
+  },
+  {
+    "id": 333,
+    "zh": "孩子们讨厌打扫房子。",
+    "en": "The children hate cleaning the house."
+  },
+  {
+    "id": 334,
+    "zh": "他明天有唱歌比赛。",
+    "en": "He has a singing competition tomorrow."
+  },
+  {
+    "id": 335,
+    "zh": "吃太多冰淇淋对她不好。",
+    "en": "Eating too much ice cream is bad for her."
+  },
+  {
+    "id": 336,
+    "zh": "你能告诉我去机场的路吗？",
+    "en": "Can you show me the directions to the airport?"
+  },
+  {
+    "id": 337,
+    "zh": "这是这个城市的地图。",
+    "en": "Here is a map of this city."
+  },
+  {
+    "id": 338,
+    "zh": "机场距离这里两英里。",
+    "en": "The airport is two miles away from here."
+  },
+  {
+    "id": 339,
+    "zh": "你不需要在这里右转，继续直走。",
+    "en": "You don't need to take a right here, go straight."
+  },
+  {
+    "id": 340,
+    "zh": "继续直走到这条街的尽头。",
+    "en": "Go straight to the end of this street."
+  },
+  {
+    "id": 341,
+    "zh": "我秋天会上大学。",
+    "en": "I'll go to college in the fall."
+  },
+  {
+    "id": 342,
+    "zh": "你对哪些科目感兴趣？",
+    "en": "What subjects are you interested in?"
+  },
+  {
+    "id": 343,
+    "zh": "我对物理和生物很感兴趣。",
+    "en": "I'm very interested in physics and biology."
+  },
+  {
+    "id": 344,
+    "zh": "生物很难吗？",
+    "en": "Is biology difficult?"
+  },
+  {
+    "id": 345,
+    "zh": "生物很难，但很有趣。",
+    "en": "Biology is difficult, but it's interesting."
+  },
+  {
+    "id": 346,
+    "zh": "下一班去北京的飞机什么时候？",
+    "en": "When is the next flight to Beijing?"
+  },
+  {
+    "id": 347,
+    "zh": "这班飞机两小时后起飞。",
+    "en": "This flight is leaving in two hours."
+  },
+  {
+    "id": 348,
+    "zh": "我需要订下一班飞机的票。",
+    "en": "I need a ticket for the next flight."
+  },
+  {
+    "id": 349,
+    "zh": "火车即将开出。",
+    "en": "The train is leaving soon."
+  },
+  {
+    "id": 350,
+    "zh": "我们要在火车上呆多久？",
+    "en": "How long will we be on the train?"
+  },
+  {
+    "id": 351,
+    "zh": "我们将在火车上两个小时。",
+    "en": "We'll be on the train for two hours."
+  },
+  {
+    "id": 352,
+    "zh": "我感冒了。",
+    "en": "I have a cold."
+  },
+  {
+    "id": 353,
+    "zh": "我应该打电话给医生吗？",
+    "en": "Should I call the doctor?"
+  },
+  {
+    "id": 354,
+    "zh": "我预约了十点。",
+    "en": "I made an appointment for ten."
+  },
+  {
+    "id": 355,
+    "zh": "每餐后请吃这种药。",
+    "en": "Please take this medicine after every meal."
+  },
+  {
+    "id": 356,
+    "zh": "你应该吃这种药，然后好好休息。",
+    "en": "You should take this medicine, and then get some rest."
+  },
+  {
+    "id": 357,
+    "zh": "我的电脑不工作了。",
+    "en": "My computer isn't working."
+  },
+  {
+    "id": 358,
+    "zh": "我应该寻求帮助吗？",
+    "en": "Should I ask for help?"
+  },
+  {
+    "id": 359,
+    "zh": "请问，先生，我的电脑不工作了。",
+    "en": "Excuse me, sir, my computer isn't working."
+  },
+  {
+    "id": 360,
+    "zh": "机器现在工作了，干得好！",
+    "en": "The machine is working now, good job!"
+  },
+  {
+    "id": 361,
+    "zh": "谢谢你的帮助。",
+    "en": "Thank you for your help."
+  },
+  {
+    "id": 362,
+    "zh": "明天是元旦。",
+    "en": "Tomorrow is New Year's Day."
+  },
+  {
+    "id": 363,
+    "zh": "元旦你打算做什么？",
+    "en": "What are you going to do on New Year's Day?"
+  },
+  {
+    "id": 364,
+    "zh": "我想在明年开始时庆祝。",
+    "en": "I want to celebrate to begin next year."
+  },
+  {
+    "id": 365,
+    "zh": "我的朋友和我会看电影。",
+    "en": "My friend and I will go see a movie."
+  },
+  {
+    "id": 366,
+    "zh": "听起来很有趣。",
+    "en": "That sounds fun."
+  },
+  {
+    "id": 367,
+    "zh": "我是你最好的朋友。",
+    "en": "I am your best friend."
+  },
+  {
+    "id": 368,
+    "zh": "今晚我们能去散步吗？",
+    "en": "Can we go for a walk tonight?"
+  },
+  {
+    "id": 369,
+    "zh": "是的，让我们去外面散步吧。",
+    "en": "Yes, let's go walk outside."
+  },
+  {
+    "id": 370,
+    "zh": "多么美好的一天！",
+    "en": "What a beautiful day!"
+  },
+  {
+    "id": 371,
+    "zh": "今天天气很好。",
+    "en": "The weather is beautiful today."
+  },
+  {
+    "id": 372,
+    "zh": "我喜欢独自思考。",
+    "en": "I like thinking by myself."
+  },
+  {
+    "id": 373,
+    "zh": "我们可以有一个更深刻的友谊。",
+    "en": "We can have a deeper friendship."
+  },
+  {
+    "id": 374,
+    "zh": "你是一个很好的朋友。",
+    "en": "You are a very good friend."
+  },
+  {
+    "id": 375,
+    "zh": "我很感激你。",
+    "en": "I'm thankful for you."
+  },
+  {
+    "id": 376,
+    "zh": "我想要建造一个城堡。",
+    "en": "I want to build a castle."
+  },
+  {
+    "id": 377,
+    "zh": "我知道一个可以建造城堡的地方。",
+    "en": "I know a place where I can build a castle."
+  },
+  {
+    "id": 378,
+    "zh": "这将很有趣。",
+    "en": "This will be fun."
+  },
+  {
+    "id": 379,
+    "zh": "我们可以一起建造一个城堡！",
+    "en": "We can build a castle together!"
+  },
+  {
+    "id": 380,
+    "zh": "城堡会很高。",
+    "en": "The castle will be tall."
+  },
+  {
+    "id": 381,
+    "zh": "我喜欢你的想法。",
+    "en": "I like your idea."
+  },
+  {
+    "id": 382,
+    "zh": "告诉我一个故事。",
+    "en": "Tell me a story."
+  },
+  {
+    "id": 383,
+    "zh": "从前有一个王国。",
+    "en": "Once there was a kingdom."
+  },
+  {
+    "id": 384,
+    "zh": "国王很有智慧。",
+    "en": "The king was very wise."
+  },
+  {
+    "id": 385,
+    "zh": "在这个王国里有一个塔。",
+    "en": "In this kingdom there was a tower."
+  },
+  {
+    "id": 386,
+    "zh": "这个塔很高。",
+    "en": "This tower was very tall."
+  },
+  {
+    "id": 387,
+    "zh": "我会给你讲更多的故事。",
+    "en": "I will tell you more stories."
+  },
+  {
+    "id": 388,
+    "zh": "我们去野餐吧！",
+    "en": "Let's go on a picnic!"
+  },
+  {
+    "id": 389,
+    "zh": "野餐听起来很棒。",
+    "en": "A picnic sounds great!"
+  },
+  {
+    "id": 390,
+    "zh": "我们可以在公园吃东西。",
+    "en": "We can eat in the park."
+  },
+  {
+    "id": 391,
+    "zh": "这将是一次很好的冒险。",
+    "en": "This will be a good adventure."
+  },
+  {
+    "id": 392,
+    "zh": "我们可以邀请其他朋友。",
+    "en": "We can invite other friends."
+  },
+  {
+    "id": 393,
+    "zh": "他们也会喜欢的。",
+    "en": "They will like it too."
+  },
+  {
+    "id": 394,
+    "zh": "你能看书吗？",
+    "en": "Can you read books?"
+  },
+  {
+    "id": 395,
+    "zh": "是的，我非常喜欢读书。",
+    "en": "Yes, I really like to read books."
+  },
+  {
+    "id": 396,
+    "zh": "你最喜欢哪本书？",
+    "en": "What is your favorite book?"
+  },
+  {
+    "id": 397,
+    "zh": "我最喜欢冒险故事。",
+    "en": "My favorite is adventure stories."
+  },
+  {
+    "id": 398,
+    "zh": "冒险听起来很令人兴奋。",
+    "en": "Adventures sound exciting."
+  },
+  {
+    "id": 399,
+    "zh": "我们可以写一个故事。",
+    "en": "We can write a story."
+  },
+  {
+    "id": 400,
+    "zh": "这个房子是我们一起建造的。",
+    "en": "This house was built by us together."
+  },
+  {
+    "id": 401,
+    "zh": "这是我们最喜欢的地方。",
+    "en": "This is our favorite place."
+  },
+  {
+    "id": 402,
+    "zh": "我们应该给房子的主人打电话。",
+    "en": "We should call the owner of this house."
+  },
+  {
+    "id": 403,
+    "zh": "这座房子建于1950年。",
+    "en": "This house was built in nineteen fifty."
+  },
+  {
+    "id": 404,
+    "zh": "所有的地板都是木制的。",
+    "en": "All of the floors are made of wood."
+  },
+  {
+    "id": 405,
+    "zh": "他在踢足球时受了伤。",
+    "en": "He hurt himself while he was playing soccer."
+  },
+  {
+    "id": 406,
+    "zh": "我会带他去看医生做X光检查。",
+    "en": "I'll take him to the doctor so he can get an X-ray."
+  },
+  {
+    "id": 407,
+    "zh": "我的左腿疼得很厉害。",
+    "en": "My left leg hurts badly."
+  },
+  {
+    "id": 408,
+    "zh": "你的腿可能断了。",
+    "en": "Your leg is probably broken."
+  },
+  {
+    "id": 409,
+    "zh": "他在离开医院前做了X光检查。",
+    "en": "He got an X-ray before he left the hospital."
+  },
+  {
+    "id": 410,
+    "zh": "你为什么今天这么早就回家了？",
+    "en": "Why are you home so early today?"
+  },
+  {
+    "id": 411,
+    "zh": "我们打算去航海，但下雨了。",
+    "en": "We were going to go sailing, but it started to rain."
+  },
+  {
+    "id": 412,
+    "zh": "我们应该做什么呢？",
+    "en": "What should we do instead?"
+  },
+  {
+    "id": 413,
+    "zh": "我们做拼图吧。",
+    "en": "Let's do a puzzle instead."
+  },
+  {
+    "id": 414,
+    "zh": "我可以打开收音机吗？",
+    "en": "Could I put the radio on?"
+  },
+  {
+    "id": 415,
+    "zh": "我现在不想放任何音乐。",
+    "en": "I don't want to put any music on right now."
+  },
+  {
+    "id": 416,
+    "zh": "嘿，艾玛，我想你的电话在响。",
+    "en": "Hey Emma, I think your phone is ringing."
+  },
+  {
+    "id": 417,
+    "zh": "你好，谁在打电话？",
+    "en": "Hello, who's calling?"
+  },
+  {
+    "id": 418,
+    "zh": "嘿，艾玛，是我，汤姆。",
+    "en": "Hey, Emma, it's me, Tom."
+  },
+  {
+    "id": 419,
+    "zh": "你想明天出去玩吗？",
+    "en": "Do you want to hang out tomorrow?"
+  },
+  {
+    "id": 420,
+    "zh": "很酷，我很乐意。",
+    "en": "Cool, I'd love to."
+  },
+  {
+    "id": 421,
+    "zh": "现在问你几个问题是个好时机吗？",
+    "en": "Is it a good time to ask you a few questions?"
+  },
+  {
+    "id": 422,
+    "zh": "对不起，现在真的不是谈话的好时机。",
+    "en": "I'm sorry, it's really not a good time to talk."
+  },
+  {
+    "id": 423,
+    "zh": "这个项目有一个小问题。",
+    "en": "There's a small problem with this project."
+  },
+  {
+    "id": 424,
+    "zh": "不可能按时完成这个项目。",
+    "en": "It's not possible to complete this project on time."
+  },
+  {
+    "id": 425,
+    "zh": "我可能今晚会给你回电话。",
+    "en": "I can possibly call you back tonight."
+  },
+  {
+    "id": 426,
+    "zh": "你今天早上看新闻了吗？",
+    "en": "Did you see the news this morning?"
+  },
+  {
+    "id": 427,
+    "zh": "珠宝店昨晚被抢劫了。",
+    "en": "The jewelry store was robbed last night."
+  },
+  {
+    "id": 428,
+    "zh": "抢劫犯逃走了，警察找不到他。",
+    "en": "The robber ran away, and the police can't find him."
+  },
+  {
+    "id": 429,
+    "zh": "我确信他们很快就会抓到那个抢劫犯！",
+    "en": "I'm sure they'll catch that robber soon!"
+  },
+  {
+    "id": 430,
+    "zh": "他们抓住了抢劫犯！",
+    "en": "They caught the robber!"
+  },
+  {
+    "id": 431,
+    "zh": "所有的珠宝都被警察找到了。",
+    "en": "All the jewelry was found by the police."
+  },
+  {
+    "id": 432,
+    "zh": "你昨晚睡得怎么样，安娜？",
+    "en": "How did you sleep last night, Anna?"
+  },
+  {
+    "id": 433,
+    "zh": "你梦到去海滩了吗？",
+    "en": "Did you dream about going to the beach?"
+  },
+  {
+    "id": 434,
+    "zh": "不，我做了一个关于小丑的噩梦！",
+    "en": "No, I had a bad dream about clowns!"
+  },
+  {
+    "id": 435,
+    "zh": "小丑很可怕！",
+    "en": "Clowns are scary!"
+  },
+  {
+    "id": 436,
+    "zh": "我知道那是一个可怕的梦，但它不是真的。",
+    "en": "I know that was a scary dream, but it wasn't real."
+  },
+  {
+    "id": 437,
+    "zh": "今天有返校销售。",
+    "en": "There's a back - to - school sale today."
+  },
+  {
+    "id": 438,
+    "zh": "我们需要购买一些学用品。",
+    "en": "We need to buy some school supplies."
+  },
+  {
+    "id": 439,
+    "zh": "我想买这盒蜡笔。",
+    "en": "I want to buy this box of crayons."
+  },
+  {
+    "id": 440,
+    "zh": "这是我数学课需要的尺子。",
+    "en": "This is the ruler which I need for math class."
+  },
+  {
+    "id": 441,
+    "zh": "艾玛只为这些笔记本支付了半价。",
+    "en": "Emma only paid half price for these notebooks."
+  },
+  {
+    "id": 442,
+    "zh": "夏天是我最喜欢的季节！",
+    "en": "Summer is my favorite season!"
+  },
+  {
+    "id": 443,
+    "zh": "我计划今年夏天住在一个岛上。",
+    "en": "I plan on living on an island this summer."
+  },
+  {
+    "id": 444,
+    "zh": "记得带防晒霜和太阳镜。",
+    "en": "Remember to bring sunscreen and sunglasses."
+  },
+  {
+    "id": 445,
+    "zh": "如果波浪不太大，我们会去游泳。",
+    "en": "If the waves aren't too big, we'll go swimming."
+  },
+  {
+    "id": 446,
+    "zh": "教孩子们如何游泳很有趣。",
+    "en": "It's fun to teach the kids how to swim."
+  },
+  {
+    "id": 447,
+    "zh": "你是新来的，不是吗？",
+    "en": "You're new here, aren't you?"
+  },
+  {
+    "id": 448,
+    "zh": "我会把你介绍给你的同事。",
+    "en": "I'll introduce you to your colleagues."
+  },
+  {
+    "id": 449,
+    "zh": "如果你有问题，他们会主动帮助你。",
+    "en": "If you have questions, they will offer to help you."
+  },
+  {
+    "id": 450,
+    "zh": "隔壁房间是我们开会的地方。",
+    "en": "The next room is the place where we have meetings."
+  },
+  {
+    "id": 451,
+    "zh": "在正常的日子里，我们在12点半吃午饭。",
+    "en": "On a normal day, we eat lunch at half past twelve."
+  },
+  {
+    "id": 452,
+    "zh": "那个男人是明星吗？",
+    "en": "Is that man a celebrity?"
+  },
+  {
+    "id": 453,
+    "zh": "哇，他太帅了！",
+    "en": "Wow, he's so handsome!"
+  },
+  {
+    "id": 454,
+    "zh": "我认识他的未婚妻，她是一名伟大的演员。",
+    "en": "I know his fiancée, who is a great actor."
+  },
+  {
+    "id": 455,
+    "zh": "她是一个友善诚实的女人。",
+    "en": "She's a kind and honest woman."
+  },
+  {
+    "id": 456,
+    "zh": "他们已经在一起五年了。",
+    "en": "They've been together for five years."
+  },
+  {
+    "id": 457,
+    "zh": "我们是城镇的新人。",
+    "en": "We're new in town."
+  },
+  {
+    "id": 458,
+    "zh": "我们怎样到达市中心？",
+    "en": "How do we get to the city center?"
+  },
+  {
+    "id": 459,
+    "zh": "开过那座桥。",
+    "en": "Drive across that bridge."
+  },
+  {
+    "id": 460,
+    "zh": "这条街有很多咖啡馆，经常很拥挤。",
+    "en": "This street, which has a lot of cafes, is often busy."
+  },
+  {
+    "id": 461,
+    "zh": "这家博物馆已经存在六十年了。",
+    "en": "This museum has been here for sixty years."
+  },
+  {
+    "id": 462,
+    "zh": "我从未独自旅行过，所以我有点担心。",
+    "en": "I haven't traveled solo before, so I'm a little worried."
+  },
+  {
+    "id": 463,
+    "zh": "他们会在过关时查验我的签证吗？",
+    "en": "Will they check my visa at passport control?"
+  },
+  {
+    "id": 464,
+    "zh": "是的，请把护照出示给过关的工作人员。",
+    "en": "Yes, please show your passport to the person at passport control."
+  },
+  {
+    "id": 465,
+    "zh": "这是我离家最远的一次旅行。",
+    "en": "This is the farthest away from home I've ever traveled."
+  },
+  {
+    "id": 466,
+    "zh": "酒店昨天让我换了房间。",
+    "en": "The hotel let me change my room yesterday."
+  },
+  {
+    "id": 467,
+    "zh": "第一周很令人兴奋，但后来我开始想家了。",
+    "en": "The first week was exciting, but then I felt homesick."
+  },
+  {
+    "id": 468,
+    "zh": "那个塑料容器里面装的是什么？",
+    "en": "What's inside that plastic container?"
+  },
+  {
+    "id": 469,
+    "zh": "里面是草莓，但光吃水果不够当晚饭！",
+    "en": "There are strawberries, but fruit isn't enough for dinner!"
+  },
+  {
+    "id": 470,
+    "zh": "我不想做饭，我们叫外卖吧。",
+    "en": "I don't want to cook, so let's order delivery."
+  },
+  {
+    "id": 471,
+    "zh": "这个应用程序是订披萨最快的方式。",
+    "en": "This app is the fastest way to order pizza."
+  },
+  {
+    "id": 472,
+    "zh": "这个菜单让我好饿！",
+    "en": "This menu is making me hungry!"
+  },
+  {
+    "id": 473,
+    "zh": "是的，那个意面看起来不错，但味道会好吗？",
+    "en": "Yes, the pasta looks great, but will it taste great?"
+  },
+  {
+    "id": 474,
+    "zh": "快点，我们要迟到了！",
+    "en": "Hurry up, we're going to be late!"
+  },
+  {
+    "id": 475,
+    "zh": "我们还有几分钟可以复习考试！",
+    "en": "We have a few minutes to review for the test!"
+  },
+  {
+    "id": 476,
+    "zh": "哦不，我把笔记本落在宿舍里了！",
+    "en": "Oh no, I've left my notebook in the dorm!"
+  },
+  {
+    "id": 477,
+    "zh": "你怎么把这个单词翻译成德语？",
+    "en": "How do you translate this word into German?"
+  },
+  {
+    "id": 478,
+    "zh": "李老师告诉我们，如果有什么不明白的地方就告诉她。",
+    "en": "Ms. Lee told us to tell her if anything was confusing."
+  },
+  {
+    "id": 479,
+    "zh": "你可以在网上查看考试成绩。",
+    "en": "You can see your test results online."
+  },
+  {
+    "id": 480,
+    "zh": "我两点钟有一个工作面试。",
+    "en": "I have a job interview at two o'clock."
+  },
+  {
+    "id": 481,
+    "zh": "你在哪里接受的教育，学的是什么专业？",
+    "en": "Where did you get your education, and what did you study?"
+  },
+  {
+    "id": 482,
+    "zh": "我在大学学习的是工程学。",
+    "en": "I studied engineering at the university."
+  },
+  {
+    "id": 483,
+    "zh": "你以前做过类似的工作吗？",
+    "en": "Have you done a similar job before?"
+  },
+  {
+    "id": 484,
+    "zh": "是的，自2010年以来我在六家不同的航空公司工作过。",
+    "en": "Yes, I've worked for six different airlines since 2010."
+  },
+  {
+    "id": 485,
+    "zh": "我们下周会联系你。",
+    "en": "We'll contact you next week."
+  },
+  {
+    "id": 486,
+    "zh": "我们应该打扫厨房，因为它看起来很乱。",
+    "en": "We should clean the kitchen because it looks messy."
+  },
+  {
+    "id": 487,
+    "zh": "好吧，上次是我用吸尘器打扫地板的！",
+    "en": "Well, I vacuumed the floors last time!"
+  },
+  {
+    "id": 488,
+    "zh": "听音乐让我打扫得更快！",
+    "en": "Listening to music makes me clean faster!"
+  },
+  {
+    "id": 489,
+    "zh": "我喜欢有洗碗机，因为它替你干活。",
+    "en": "I like having a dishwasher because it does the work for you."
+  },
+  {
+    "id": 490,
+    "zh": "是啊，当我还是孩子的时候，我必须用手洗碗！",
+    "en": "Yeah, when I was a kid, I had to wash the dishes by hand!"
+  },
+  {
+    "id": 491,
+    "zh": "有客人的时候，父母会让我帮忙做厨房的事。",
+    "en": "When we had guests, my parents made me help in the kitchen."
+  },
+  {
+    "id": 492,
+    "zh": "你不是每周一都在办公室吗？",
+    "en": "Aren't you always in the office on Mondays?"
+  },
+  {
+    "id": 493,
+    "zh": "不，我每周有两天在家工作。",
+    "en": "No, I work from home two days a week."
+  },
+  {
+    "id": 494,
+    "zh": "艾玛，你穿了新衣服吗？",
+    "en": "Are you wearing a new outfit, Emma?"
+  },
+  {
+    "id": 495,
+    "zh": "本，我们听不到你说话，因为你把麦克风静音了。",
+    "en": "We can't hear you, Ben, because you're on mute."
+  },
+  {
+    "id": 496,
+    "zh": "大家都收到今天会议的议程了吗？",
+    "en": "Did everyone get the agenda for today's meeting?"
+  },
+  {
+    "id": 497,
+    "zh": "是的，我有几个想法要和大家分享。",
+    "en": "Yes, I have a couple of ideas to share with the group."
+  },
+  {
+    "id": 498,
+    "zh": "见到你真高兴，玛利亚，最近怎么样？",
+    "en": "Good to see you, Maria, what's up?"
+  },
+  {
+    "id": 499,
+    "zh": "嘿！我们自高中毕业后就没有聚过了！",
+    "en": "Hey! We haven't hung out since high school!"
+  },
+  {
+    "id": 500,
+    "zh": "你有没有放弃吃肉成为素食主义者？",
+    "en": "Did you ever give up meat and become a vegetarian?"
+  },
+  {
+    "id": 501,
+    "zh": "是的，我在农场工作后成为了素食主义者。",
+    "en": "Yes, I became a vegetarian after I worked on a farm."
+  },
+  {
+    "id": 502,
+    "zh": "为日城高中最优秀的班级干杯！",
+    "en": "Cheers to the best class of Sun City High School!"
+  },
+  {
+    "id": 503,
+    "zh": "我们让DJ播放我们最喜欢的歌吧。",
+    "en": "Let's ask the DJ to play our favorite song."
+  },
+  {
+    "id": 504,
+    "zh": "你感觉很热，我们来量一下体温。",
+    "en": "You feel hot, so let's check your temperature."
+  },
+  {
+    "id": 505,
+    "zh": "别担心，九十八度是正常的！",
+    "en": "Don't worry, ninety-eight degrees is normal!"
+  },
+  {
+    "id": 506,
+    "zh": "我昨天头不疼，但今天疼了。",
+    "en": "My head didn't hurt yesterday, but today it does."
+  },
+  {
+    "id": 507,
+    "zh": "你需要阿司匹林来缓解头痛吗？",
+    "en": "Do you need some aspirin for your headache?"
+  },
+  {
+    "id": 508,
+    "zh": "我生病时总去看医生，但我爸爸不去。",
+    "en": "I always see a doctor when I'm sick, but my dad doesn't."
+  },
+  {
+    "id": 509,
+    "zh": "请遵循医生的指示。",
+    "en": "Please follow your doctor's instructions."
+  },
+  {
+    "id": 510,
+    "zh": "科技改变了我们的沟通方式。",
+    "en": "Technology has changed the way we communicate."
+  },
+  {
+    "id": 511,
+    "zh": "是的，很多人使用社交媒体与朋友聊天。",
+    "en": "Yes, many people use social media to chat with friends."
+  },
+  {
+    "id": 512,
+    "zh": "不要在网上分享任何私人信息。",
+    "en": "Don't share any private information online."
+  },
+  {
+    "id": 513,
+    "zh": "当人们读完你的博客后会喜欢你的！",
+    "en": "People will love you after they read your blog!"
+  },
+  {
+    "id": 514,
+    "zh": "本认为网上所有的新闻都是假的。",
+    "en": "Ben thinks none of the news online is true."
+  },
+  {
+    "id": 515,
+    "zh": "我很担心社交媒体对我们生活的影响。",
+    "en": "I'm worried about the effects of social media on our lives."
+  },
+  {
+    "id": 516,
+    "zh": "本醒着还是还在睡觉？",
+    "en": "Is Ben awake, or is he still sleeping?"
+  },
+  {
+    "id": 517,
+    "zh": "他正在镜子前梳头发。",
+    "en": "He's combing his hair in front of the mirror."
+  },
+  {
+    "id": 518,
+    "zh": "我丈夫每天早餐前都要刮胡子。",
+    "en": "My husband shaves every morning before breakfast."
+  },
+  {
+    "id": 519,
+    "zh": "这款牙膏让我的牙齿变白了！",
+    "en": "This toothpaste makes my teeth white!"
+  },
+  {
+    "id": 520,
+    "zh": "请帮你妹妹准备好去上学。",
+    "en": "Please help your sister get ready for school."
+  },
+  {
+    "id": 521,
+    "zh": "我爸爸每天早上上学前都会亲吻我。",
+    "en": "My dad kisses me each morning before I go to school."
+  },
+  {
+    "id": 522,
+    "zh": "女王住在一座古老的宫殿里。",
+    "en": "The queen lived in an old palace."
+  },
+  {
+    "id": 523,
+    "zh": "公主打败了坏女王并获胜！",
+    "en": "The princess fought the bad queen and won!"
+  },
+  {
+    "id": 524,
+    "zh": "她的玻璃鞋在她掉落时被偷走了。",
+    "en": "Her glass shoe got stolen when she dropped it."
+  },
+  {
+    "id": 525,
+    "zh": "王子迅速骑马向宫殿奔去。",
+    "en": "The prince rode quickly towards the palace."
+  },
+  {
+    "id": 526,
+    "zh": "国王举起手向人民挥手致意。",
+    "en": "The king put his hand up and waved at the people."
+  },
+  {
+    "id": 527,
+    "zh": "他们获胜后，宫殿里举行了庆典。",
+    "en": "After they won, there was a celebration at the palace."
+  },
+  {
+    "id": 528,
+    "zh": "今天是本和丽莎的婚礼！",
+    "en": "Today is Ben and Lisa's wedding!"
+  },
+  {
+    "id": 529,
+    "zh": "婚礼什么时候开始？",
+    "en": "What time will the ceremony start?"
+  },
+  {
+    "id": 530,
+    "zh": "新郎和新娘通常会交换戒指。",
+    "en": "The bride and groom usually exchange rings."
+  },
+  {
+    "id": 531,
+    "zh": "乐手们要等我们准备好才开始演奏。",
+    "en": "The musicians won't start playing until we're ready."
+  },
+  {
+    "id": 532,
+    "zh": "我想留到乐队演奏完这首歌。",
+    "en": "I'd like to stay till the band finishes this song."
+  },
+  {
+    "id": 533,
+    "zh": "他站在大厅里向宾客们道别。",
+    "en": "He stood in the hall and said goodbye to the guests."
+  },
+  {
+    "id": 534,
+    "zh": "我想我被同事传染感冒了。",
+    "en": "I think I caught a cold from someone at work."
+  },
+  {
+    "id": 535,
+    "zh": "我能在药店买到这种药吗？",
+    "en": "Can I buy this drug at a pharmacy?"
+  },
+  {
+    "id": 536,
+    "zh": "可以，但这种药服用时间不能超过一周。",
+    "en": "Yes, but you can't take that drug for more than a week."
+  },
+  {
+    "id": 537,
+    "zh": "早晨服一粒，晚上服一粒。",
+    "en": "Take one pill in the morning and another at night."
+  },
+  {
+    "id": 538,
+    "zh": "你受伤严重吗？",
+    "en": "Are you seriously hurt?"
+  },
+  {
+    "id": 539,
+    "zh": "我有几处划伤，但没有严重受伤。",
+    "en": "I had a few cuts, but I wasn't seriously hurt."
+  },
+  {
+    "id": 540,
+    "zh": "我写完了论文，但还没有交上去。",
+    "en": "I've written the essay, but I haven't handed it in yet."
+  },
+  {
+    "id": 541,
+    "zh": "别担心，我们今天有充足的时间。",
+    "en": "Don't worry, we've got plenty of time today."
+  },
+  {
+    "id": 542,
+    "zh": "我们必须在周五之前交作业。",
+    "en": "We have to hand in the assignment before Friday."
+  },
+  {
+    "id": 543,
+    "zh": "我有一个成绩不好，但我的平均分还不错。",
+    "en": "I have one bad grade, but my average is good."
+  },
+  {
+    "id": 544,
+    "zh": "参加每次讲座是必要的。",
+    "en": "It's necessary to attend every lecture."
+  },
+  {
+    "id": 545,
+    "zh": "在我的大学，许多学生在日本实习。",
+    "en": "At my college, many students do internships in Japan."
+  },
+  {
+    "id": 546,
+    "zh": "我必须为了新工作搬到伦敦。",
+    "en": "I have to move to London for my new job."
+  },
+  {
+    "id": 547,
+    "zh": "鲜花能让任何房间更漂亮！",
+    "en": "Flowers make any room nicer!"
+  },
+  {
+    "id": 548,
+    "zh": "把玩具放到后院去。",
+    "en": "Put the toys in the backyard."
+  },
+  {
+    "id": 549,
+    "zh": "我们给浴室换一个新浴缸吧。",
+    "en": "Let's get a new bathtub for the bathroom."
+  },
+  {
+    "id": 550,
+    "zh": "可回收垃圾是周一收的。",
+    "en": "The recycling is picked up on Mondays."
+  },
+  {
+    "id": 551,
+    "zh": "克拉拉用滑板在城市里四处行动。",
+    "en": "Clara uses her skateboard to get around the city."
+  },
+  {
+    "id": 552,
+    "zh": "我通常在上班途中顺路接玛利亚。",
+    "en": "I usually pick up Maria on the way to work."
+  },
+  {
+    "id": 553,
+    "zh": "地铁在高峰期总是非常拥挤。",
+    "en": "The subway is always so crowded during rush hour."
+  },
+  {
+    "id": 554,
+    "zh": "在城市里出行最好的方式是什么？",
+    "en": "What's the best way to get around the city?"
+  },
+  {
+    "id": 555,
+    "zh": "骑自行车是避免交通堵塞的好方法。",
+    "en": "Riding a bike is a good way to avoid traffic jams."
+  },
+  {
+    "id": 556,
+    "zh": "不会吧，你真的忘了开会这件事？",
+    "en": "No way, did you really forget about the meeting?"
+  },
+  {
+    "id": 557,
+    "zh": "说真的，你在骗我吗？",
+    "en": "Seriously, are you lying to me?"
+  },
+  {
+    "id": 558,
+    "zh": "哦，我无法想象还有什么更糟糕的事！",
+    "en": "Oh, I can't imagine anything worse!"
+  },
+  {
+    "id": 559,
+    "zh": "等等，那是真实故事吗？",
+    "en": "Hold on, is that a true story?"
+  },
+  {
+    "id": 560,
+    "zh": "我已经更新了应用程序，但它仍然无法正常工作。",
+    "en": "I've updated the app, but it's still not working."
+  },
+  {
+    "id": 561,
+    "zh": "我在哪里可以插电？",
+    "en": "Where can I plug this in?"
+  },
+  {
+    "id": 562,
+    "zh": "你可以稍后在咖啡馆给手机充电。",
+    "en": "You can plug in your phone at the café later."
+  },
+  {
+    "id": 563,
+    "zh": "你知道有什么方法可以提高我的网速吗？",
+    "en": "Do you know any way to improve my internet speed?"
+  },
+  {
+    "id": 564,
+    "zh": "买新手机之前先备份你的联系人！",
+    "en": "Back up your contacts before you buy a new phone!"
+  },
+  {
+    "id": 565,
+    "zh": "妈妈，你能帮我安装这台打印机吗？",
+    "en": "Mom, can you help me set this printer up?"
+  },
+  {
+    "id": 566,
+    "zh": "这个国家在战后成为了民主国家。",
+    "en": "The country became a democracy after the war."
+  },
+  {
+    "id": 567,
+    "zh": "在选举之前可能会有一些意外。",
+    "en": "There may be some surprises before the election."
+  },
+  {
+    "id": 568,
+    "zh": "我们原本打算投票给他，直到听了他的演讲。",
+    "en": "We were going to vote for him until we heard his speech."
+  },
+  {
+    "id": 569,
+    "zh": "一个国家拥有强大的经济很重要。",
+    "en": "It's important for a country to have a strong economy."
+  },
+  {
+    "id": 570,
+    "zh": "选举结果完全令人震惊。",
+    "en": "The election results were completely shocking."
+  },
+  {
+    "id": 571,
+    "zh": "工作面试让布鲁诺非常焦虑。",
+    "en": "Job interviews make Bruno really anxious."
+  },
+  {
+    "id": 572,
+    "zh": "我从小就对蛇有恐惧感。",
+    "en": "I've had a fear of snakes since I was little."
+  },
+  {
+    "id": 573,
+    "zh": "我的狗非常害怕雷暴。",
+    "en": "My dog is really scared of thunderstorms."
+  },
+  {
+    "id": 574,
+    "zh": "我从未在湖里游泳，因为我有恐水症。",
+    "en": "I've never swum in the lake because I have a fear of water."
+  },
+  {
+    "id": 575,
+    "zh": "我已经习惯了这里的天气，但我讨厌虫子！",
+    "en": "I'm used to the weather here, but I hate the bugs!"
+  },
+  {
+    "id": 576,
+    "zh": "这部电影是动画片，但不仅仅是给孩子看的。",
+    "en": "The movie is animated, but it's not just for kids."
+  },
+  {
+    "id": 577,
+    "zh": "我们一起去看一部独立电影吧。",
+    "en": "Let's see an independent film together."
+  },
+  {
+    "id": 578,
+    "zh": "那部电影的评价真的很差，不是吗？",
+    "en": "The reviews of that film were really bad, weren't they?"
+  },
+  {
+    "id": 579,
+    "zh": "看起来像纪录片，但其实是虚构的。",
+    "en": "It seems like a documentary, but it's fiction."
+  },
+  {
+    "id": 580,
+    "zh": "为什么这么多电影以洛杉矶为背景？",
+    "en": "Why are so many movies set in Los Angeles?"
+  },
+  {
+    "id": 581,
+    "zh": "每个人都知道那部电影的结局。",
+    "en": "Everybody knows how that movie ends."
+  },
+  {
+    "id": 582,
+    "zh": "你要为世界杯中哪支球队加油？",
+    "en": "Who are you going to root for in the World Cup?"
+  },
+  {
+    "id": 583,
+    "zh": "我来自墨西哥，所以我在这场比赛中为他们加油！",
+    "en": "I'm from Mexico, so I'm rooting for them in this game!"
+  },
+  {
+    "id": 584,
+    "zh": "爸爸看直播比赛时压力很大！",
+    "en": "Dad gets so stressed when he watches live matches!"
+  },
+  {
+    "id": 585,
+    "zh": "我们向一位警察询问了球场在哪里。",
+    "en": "We asked a police officer where the stadium was."
+  },
+  {
+    "id": 586,
+    "zh": "凯文，你为什么为对方球队加油？",
+    "en": "Kevin, why are you cheering for the other team?"
+  },
+  {
+    "id": 587,
+    "zh": "我们在最后一分钟进球，赢得了比赛！",
+    "en": "We scored in the final minute, and we beat them!"
+  },
+  {
+    "id": 588,
+    "zh": "这是办理存款的正确柜台吗？",
+    "en": "Is this the right counter to make a deposit?"
+  },
+  {
+    "id": 589,
+    "zh": "您可以在自动提款机上进行这类交易。",
+    "en": "You can make that type of transaction at the ATM."
+  },
+  {
+    "id": 590,
+    "zh": "对不起，您的信用卡已经达到了限额。",
+    "en": "Sorry, you've reached the limit on your credit card."
+  },
+  {
+    "id": 591,
+    "zh": "要进行手机存款，请拍一张支票的照片。",
+    "en": "To make a mobile deposit, take a photo of the check."
+  },
+  {
+    "id": 592,
+    "zh": "告诉我你的账号，我会把钱转给你。",
+    "en": "Tell me your account number and I'll transfer the money."
+  },
+  {
+    "id": 593,
+    "zh": "您需要护照来开立支票账户。",
+    "en": "You'll need your passport to open a checking account."
+  },
+  {
+    "id": 594,
+    "zh": "我迫不及待地想认识大家！",
+    "en": "I can't wait to get to know everybody!"
+  },
+  {
+    "id": 595,
+    "zh": "如果你愿意，我可以介绍你认识我的老板。",
+    "en": "I can introduce you to my boss if you like."
+  },
+  {
+    "id": 596,
+    "zh": "让我介绍你认识汤姆，我们的新设计师。",
+    "en": "Let me introduce you to Tom, our new designer."
+  },
+  {
+    "id": 597,
+    "zh": "你愿意让我给你看看我的网站吗？",
+    "en": "Would you like me to show you my website?"
+  },
+  {
+    "id": 598,
+    "zh": "在你离开之前，我想让你见见史密斯先生。",
+    "en": "Before you leave, I'd like you to meet Mr. Smith."
+  },
+  {
+    "id": 599,
+    "zh": "期待很快收到您的消息！",
+    "en": "I look forward to hearing from you soon!"
+  },
+  {
+    "id": 600,
+    "zh": "哇，这些花通常不在这个地区生长！",
+    "en": "Wow, those flowers don't usually grow in this region!"
+  },
+  {
+    "id": 601,
+    "zh": "城市北边有一片山脉。",
+    "en": "There's a mountain range to the north of the city."
+  },
+  {
+    "id": 602,
+    "zh": "东北部是这个国家最干旱的地区。",
+    "en": "The northeast is the driest part of the country."
+  },
+  {
+    "id": 603,
+    "zh": "这是一个极度寒冷的地区，什么都不能生长。",
+    "en": "It's an extremely cold region, so nothing grows there."
+  },
+  {
+    "id": 604,
+    "zh": "这个州的西南部只是一片大沙漠。",
+    "en": "The southwest of the state is just a big desert."
+  },
+  {
+    "id": 605,
+    "zh": "那道带花生酱的鸡肉菜怎么样？",
+    "en": "What about that chicken dish with the peanut sauce?"
+  },
+  {
+    "id": 606,
+    "zh": "我们的金枪鱼卖完了，但我们有其他鱼类菜肴。",
+    "en": "We're out of tuna, but we have other fish dishes."
+  },
+  {
+    "id": 607,
+    "zh": "我从午饭后就没吃东西，我快饿死了！",
+    "en": "I haven't eaten since lunch, so I'm starving!"
+  },
+  {
+    "id": 608,
+    "zh": "在您等候的时候，我能为您提供一杯饮料吗？",
+    "en": "Can I offer you a drink while you're waiting?"
+  },
+  {
+    "id": 609,
+    "zh": "嗯，对不起，我点的牛排是全熟的。",
+    "en": "Um, sorry, I asked for this steak well done."
+  },
+  {
+    "id": 610,
+    "zh": "我们退回了那份煎蛋，但账单上还是把它算进去了。",
+    "en": "We sent back the omelet, but it's included on the check."
+  },
+  {
+    "id": 611,
+    "zh": "她很安静，但她是重金属的忠实粉丝！",
+    "en": "She's very quiet, but she's a big fan of hard rock!"
+  },
+  {
+    "id": 612,
+    "zh": "专辑发行了，但评价很差！",
+    "en": "The album is out, but the reviews are terrible!"
+  },
+  {
+    "id": 613,
+    "zh": "自从吉他手离开后，乐队就不如以前了。",
+    "en": "The band hasn't been as good since the guitarist left."
+  },
+  {
+    "id": 614,
+    "zh": "他的声音听起来太棒了，不是吗？",
+    "en": "His voice sounded amazing, didn't it?"
+  },
+  {
+    "id": 615,
+    "zh": "这场音乐会将令人难忘。",
+    "en": "This concert is going to be unforgettable."
+  },
+  {
+    "id": 616,
+    "zh": "紧急情况下请拨打911！",
+    "en": "In case of emergency, call nine-one-one!"
+  },
+  {
+    "id": 617,
+    "zh": "昨晚不是又发生了一起抢劫案吗？",
+    "en": "Wasn't there another robbery last night?"
+  },
+  {
+    "id": 618,
+    "zh": "商店有摄像头，但窃贼戴着口罩。",
+    "en": "The store has a camera, but the thieves were wearing masks."
+  },
+  {
+    "id": 619,
+    "zh": "那位演员被捕后登上了所有头版。",
+    "en": "The actor was on all the front pages after he was arrested."
+  },
+  {
+    "id": 620,
+    "zh": "在法庭上，他一直声称自己是无辜的。",
+    "en": "In court, he kept saying that he was innocent."
+  },
+  {
+    "id": 621,
+    "zh": "每周日，我们有每月一次的读书俱乐部聚会。",
+    "en": "On Sunday, we have our monthly book club meeting."
+  },
+  {
+    "id": 622,
+    "zh": "我的朋友们想一起看锦标赛比赛。",
+    "en": "My friends want to watch the championship game together."
+  },
+  {
+    "id": 623,
+    "zh": "我周末在学吉他。",
+    "en": "I'm learning to play the guitar on the weekends."
+  },
+  {
+    "id": 624,
+    "zh": "我们都喜欢锻炼，所以我们通常在健身房见面。",
+    "en": "We all like to exercise, so we usually meet up at the gym."
+  },
+  {
+    "id": 625,
+    "zh": "进入商店时，鞋子在左边。",
+    "en": "When you go into the store, the shoes are on the left."
+  },
+  {
+    "id": 626,
+    "zh": "男士更衣室的队伍更短。",
+    "en": "The line is shorter for the men's fitting rooms."
+  },
+  {
+    "id": 627,
+    "zh": "这些商品本周都在打折。",
+    "en": "All of these items are on sale this week."
+  },
+  {
+    "id": 628,
+    "zh": "他购物车里只有大约四件商品。",
+    "en": "He only had about four items in his shopping cart."
+  },
+  {
+    "id": 629,
+    "zh": "买那条裙子吧，克拉拉，活在当下！",
+    "en": "Buy the dress, Clara, you only live once!"
+  },
+  {
+    "id": 630,
+    "zh": "我今天不想花太多钱。",
+    "en": "I don't want to spend much money today."
+  },
+  {
+    "id": 631,
+    "zh": "他在六十年代搬到了纽约。",
+    "en": "He moved to New York in the nineteen sixties."
+  },
+  {
+    "id": 632,
+    "zh": "第一辆汽车是在二十世纪建造的。",
+    "en": "The first cars were built in the twentieth century."
+  },
+  {
+    "id": 633,
+    "zh": "八十年代大家都是这么跳舞的！",
+    "en": "Everybody used to dance like that in the eighties!"
+  },
+  {
+    "id": 634,
+    "zh": "战争在1992年开始。",
+    "en": "The war started in 1992."
+  },
+  {
+    "id": 635,
+    "zh": "这个国家在九十年代的总统是谁？",
+    "en": "Who was the country's president in the nineteen nineties?"
+  },
+  {
+    "id": 636,
+    "zh": "我休息了一年，背包游历亚洲。",
+    "en": "I took a year off to go backpacking through Asia."
+  },
+  {
+    "id": 637,
+    "zh": "他买的是往返票，但他再也没有回来！",
+    "en": "His ticket was round-trip, but he never came back!"
+  },
+  {
+    "id": 638,
+    "zh": "没有直飞航班，所以这次旅行花了我们两天时间！",
+    "en": "There were no direct flights, so the trip took us two days!"
+  },
+  {
+    "id": 639,
+    "zh": "我把钱包落在货币兑换处的柜台上了！",
+    "en": "I left my purse on the counter at the currency exchange!"
+  },
+  {
+    "id": 640,
+    "zh": "我们试着搭便车，但没有人让我们上车。",
+    "en": "We tried to hitchhike, but nobody gave us a ride."
+  },
+  {
+    "id": 641,
+    "zh": "感谢你在家里的帮助。",
+    "en": "I appreciate your help around the house."
+  },
+  {
+    "id": 642,
+    "zh": "谢谢你在我度假时帮我照看狗。",
+    "en": "Thanks for watching my dog while I was on vacation."
+  },
+  {
+    "id": 643,
+    "zh": "你主动提出帮忙，真是太好了。",
+    "en": "It was nice of you to offer your help."
+  },
+  {
+    "id": 644,
+    "zh": "我非常感激这次美好的机会。",
+    "en": "I'm so grateful for this wonderful opportunity."
+  },
+  {
+    "id": 645,
+    "zh": "你的礼物让我一天都很开心！",
+    "en": "Your gift made my day!"
+  },
+  {
+    "id": 646,
+    "zh": "你以前不是住在那个社区吗？",
+    "en": "Didn't you use to live in that neighborhood?"
+  },
+  {
+    "id": 647,
+    "zh": "我邻居的房子比我的小。",
+    "en": "My neighbor's property is smaller than mine."
+  },
+  {
+    "id": 648,
+    "zh": "住在隔壁的人有一只狗。",
+    "en": "The people who live next door have a dog."
+  },
+  {
+    "id": 649,
+    "zh": "洗碗机平时不会发出那种声音！",
+    "en": "The dishwasher doesn't normally sound like that!"
+  },
+  {
+    "id": 650,
+    "zh": "客房有自己的浴室。",
+    "en": "The guest room has its own bathroom."
+  },
+  {
+    "id": 651,
+    "zh": "我住在咖啡馆旁边，所以我家总是飘着咖啡香！",
+    "en": "I live next door to a café, so my house smells like coffee!"
+  },
+  {
+    "id": 652,
+    "zh": "彼得一直在跟我说你们的橄榄球俱乐部。",
+    "en": "Peter has been telling me about your rugby club."
+  },
+  {
+    "id": 653,
+    "zh": "你最近在哪里打网球？",
+    "en": "Where have you been playing tennis these days?"
+  },
+  {
+    "id": 654,
+    "zh": "当我看到她的漫画收藏时，我觉得我爱上了！",
+    "en": "When I saw her comic collection, I think I fell in love!"
+  },
+  {
+    "id": 655,
+    "zh": "你想和我一起做瑜伽吗？",
+    "en": "Do you want to do yoga with me?"
+  },
+  {
+    "id": 656,
+    "zh": "是的，练瑜伽是减压的好方法。",
+    "en": "Yes, practicing yoga is a great way to feel less stressed."
+  },
+  {
+    "id": 657,
+    "zh": "我们有很多休闲活动，比如徒步旅行和绘画。",
+    "en": "We do lots of leisure activities, like hiking and painting."
+  },
+  {
+    "id": 658,
+    "zh": "有些人我想让你认识一下。",
+    "en": "There are some people I'd like you to meet."
+  },
+  {
+    "id": 659,
+    "zh": "抱歉打扰一下，你们在谈论烹饪节目吗？",
+    "en": "Sorry to interrupt, but are you talking about cooking shows?"
+  },
+  {
+    "id": 660,
+    "zh": "还有其他你想讨论的话题吗？",
+    "en": "Are there any other topics you would like to discuss?"
+  },
+  {
+    "id": 661,
+    "zh": "就像我说的，我的孩子也在那所学校。",
+    "en": "As I was saying, my kids also go to that school."
+  },
+  {
+    "id": 662,
+    "zh": "等一下，你能再说一遍吗？",
+    "en": "Hang on, could you say that again?"
+  },
+  {
+    "id": 663,
+    "zh": "你还记得那年冬天河流冰封的事吗？",
+    "en": "Do you remember the winter when the river froze?"
+  },
+  {
+    "id": 664,
+    "zh": "是的，我们选择了放松度日而不是出去探索。",
+    "en": "Yes, we chose to spend the day relaxing instead of exploring."
+  },
+  {
+    "id": 665,
+    "zh": "莫妮卡因为身体不舒服提前回家了。",
+    "en": "Monica went home because she wasn't feeling well."
+  },
+  {
+    "id": 666,
+    "zh": "我听说你在比赛中看到了我的表哥！",
+    "en": "I heard that you saw my cousin at the game!"
+  },
+  {
+    "id": 667,
+    "zh": "李先生这个冬天已经感冒三次了！",
+    "en": "Mr. Lee has caught a cold three times this winter!"
+  },
+  {
+    "id": 668,
+    "zh": "你妈妈对那家酒店发表了一个奇怪的评论。",
+    "en": "Your mom made a strange comment about the hotel."
+  },
+  {
+    "id": 669,
+    "zh": "开车开了很久，但我们安全到达了。",
+    "en": "It had been a long drive, but we got there safely."
+  },
+  {
+    "id": 670,
+    "zh": "酒店的早餐只有一根香蕉，所以我投诉了！",
+    "en": "The hotel breakfast was just a banana, so I complained!"
+  },
+  {
+    "id": 671,
+    "zh": "瞧，我们显然不是故意错过航班的。",
+    "en": "Look, we clearly didn't intend to miss the flight."
+  },
+  {
+    "id": 672,
+    "zh": "海关的那位女士让我打开我的行李箱。",
+    "en": "The lady in customs made me open my suitcase."
+  },
+  {
+    "id": 673,
+    "zh": "我想知道报纸上那篇报道是否属实。",
+    "en": "I wonder if that story in the newspaper is true."
+  },
+  {
+    "id": 674,
+    "zh": "总统会在下次选举中落败吗？",
+    "en": "Will the president be defeated in the next election?"
+  },
+  {
+    "id": 675,
+    "zh": "市长打算开放新图书馆。",
+    "en": "The mayor is going to open the new library."
+  },
+  {
+    "id": 676,
+    "zh": "你听说那个被从丛林中救出的男孩的消息了吗？",
+    "en": "Did you hear about the boy who was rescued from the jungle?"
+  },
+  {
+    "id": 677,
+    "zh": "日本的地震是一场可怕的灾难。",
+    "en": "The earthquake in Japan was a terrible disaster."
+  },
+  {
+    "id": 678,
+    "zh": "当我看到新闻时，我想知道每个人是否都安全。",
+    "en": "When I saw the news, I wondered if everyone was ok."
+  },
+  {
+    "id": 679,
+    "zh": "这部卡通片是根据一部受欢迎的儿童电影改编的。",
+    "en": "This cartoon is based on a popular children's movie."
+  },
+  {
+    "id": 680,
+    "zh": "我们目前只看了三集。",
+    "en": "We've only seen three episodes so far."
+  },
+  {
+    "id": 681,
+    "zh": "我不敢相信这是最后一季！",
+    "en": "I can't believe this is the final season!"
+  },
+  {
+    "id": 682,
+    "zh": "这是他们制作过的最棒的烹饪节目！",
+    "en": "This is the greatest cooking show they've ever made!"
+  },
+  {
+    "id": 683,
+    "zh": "这位主演是不是我们在那部喜剧中看过的同一个人？",
+    "en": "Is this lead actor the same one we saw in that comedy?"
+  },
+  {
+    "id": 684,
+    "zh": "结局是一个大惊喜。",
+    "en": "The ending was a huge surprise."
+  },
+  {
+    "id": 685,
+    "zh": "她出生的时候飞机还没被发明。",
+    "en": "She was born before planes were invented."
+  },
+  {
+    "id": 686,
+    "zh": "七十年代，很多人迁移到首都。",
+    "en": "In the seventies, many people moved to the capital city."
+  },
+  {
+    "id": 687,
+    "zh": "这座城市最新的高中建于1984年。",
+    "en": "The city's newest high school was built in 1984."
+  },
+  {
+    "id": 688,
+    "zh": "2020年生活发生了什么变化？",
+    "en": "How did life change in 2020?"
+  },
+  {
+    "id": 689,
+    "zh": "许多人开始在家工作。",
+    "en": "Many people started to work from home."
+  },
+  {
+    "id": 690,
+    "zh": "你为什么不加入我们呢？",
+    "en": "Why don't you join us?"
+  },
+  {
+    "id": 691,
+    "zh": "下次我们烧烤的时候你一定要来。",
+    "en": "You've got to come over the next time we have a barbecue."
+  },
+  {
+    "id": 692,
+    "zh": "我想去一个有户外桌子的地方。",
+    "en": "I'd like to go someplace with outdoor tables."
+  },
+  {
+    "id": 693,
+    "zh": "我们这些天得聚一聚。",
+    "en": "We'll have to get together one of these days."
+  },
+  {
+    "id": 694,
+    "zh": "我过些天会打电话给你，我们好好计划一下。",
+    "en": "I'll call you sometime soon and we'll make plans."
+  },
+  {
+    "id": 695,
+    "zh": "我得走了，我能稍后再给你打电话吗？",
+    "en": "I've got to run, can I call you later?"
+  },
+  {
+    "id": 696,
+    "zh": "你女儿和女婿真是一对可爱的夫妇！",
+    "en": "Your daughter and son-in-law are such a cute couple!"
+  },
+  {
+    "id": 697,
+    "zh": "我的岳父母很棒，特别是我的岳母。",
+    "en": "My in-laws are great, especially my mother-in-law."
+  },
+  {
+    "id": 698,
+    "zh": "你们自婚礼后就没见过他们了，对吗？",
+    "en": "You hadn't seen them since the wedding, had you?"
+  },
+  {
+    "id": 699,
+    "zh": "他是一位著名艺术家的曾孙。",
+    "en": "He's the great-grandson of a famous artist."
+  },
+  {
+    "id": 700,
+    "zh": "你曾祖父在这张照片里看起来像你！",
+    "en": "Your great-grandfather looks like you in this photo!"
+  },
+  {
+    "id": 701,
+    "zh": "我们搬到利马是因为我继母来自那里。",
+    "en": "We moved to Lima because my stepmother is from there."
+  },
+  {
+    "id": 702,
+    "zh": "我们每年感恩节都会与大家庭聚会。",
+    "en": "We meet up with our extended family every Thanksgiving."
+  },
+  {
+    "id": 703,
+    "zh": "真乱！",
+    "en": "What a mess!"
+  },
+  {
+    "id": 704,
+    "zh": "我让你收好那些鞋子多少次了？",
+    "en": "How many times have I asked you to put away those shoes?"
+  },
+  {
+    "id": 705,
+    "zh": "凯文，别再挂掉我们客户的电话了！",
+    "en": "Stop hanging up on our customers, Kevin!"
+  },
+  {
+    "id": 706,
+    "zh": "我很失望，他们从来没有我尺码的鞋子。",
+    "en": "I'm disappointed that they never have any shoes in my size."
+  },
+  {
+    "id": 707,
+    "zh": "请把我的汤端回去，它已经凉了。",
+    "en": "Please take my soup back, it's cold."
+  },
+  {
+    "id": 708,
+    "zh": "我在尝试预订，但网站太过时了！",
+    "en": "I'm trying to book it, but the website is so out-of-date!"
+  },
+  {
+    "id": 709,
+    "zh": "那对夫妇询问如何申请贷款购买新房。",
+    "en": "The couple asked how to get a loan to buy a new house."
+  },
+  {
+    "id": 710,
+    "zh": "我们询问了房子值多少钱。",
+    "en": "We asked how much the house was worth."
+  },
+  {
+    "id": 711,
+    "zh": "他们询问我们什么时候打算搬家。",
+    "en": "They asked when we planned to move."
+  },
+  {
+    "id": 712,
+    "zh": "你有没有问销售员是否可以确认价格？",
+    "en": "Did you ask if the salesperson could confirm the price?"
+  },
+  {
+    "id": 713,
+    "zh": "他询问我们贷款需要多少钱。",
+    "en": "He asked how much money we needed for the loan."
+  },
+  {
+    "id": 714,
+    "zh": "他们要求我出示驾照以确认我的身份。",
+    "en": "They asked for my driver's license to confirm who I was."
+  },
+  {
+    "id": 715,
+    "zh": "我爷爷是穆斯林，他每天祈祷五次。",
+    "en": "My grandpa is Muslim, and he prays five times a day."
+  },
+  {
+    "id": 716,
+    "zh": "你以前研究过犹太传统吗？",
+    "en": "Had you ever studied Jewish traditions before?"
+  },
+  {
+    "id": 717,
+    "zh": "是的，我在犹太社区长大。",
+    "en": "Yes, I grew up in a Jewish neighborhood."
+  },
+  {
+    "id": 718,
+    "zh": "我进寺庙之前需要蒙头吗？",
+    "en": "Should I cover my head before I go into the temple?"
+  },
+  {
+    "id": 719,
+    "zh": "在我的宗教里，我们信仰不止一个神。",
+    "en": "In my religion, we believe in more than one god."
+  },
+  {
+    "id": 720,
+    "zh": "当我还是孩子的时候，这是一个非常信奉天主教的国家。",
+    "en": "When I was a child, this was a very Catholic country."
+  },
+  {
+    "id": 721,
+    "zh": "我建议你早点到达。",
+    "en": "I would advise you to get there early."
+  },
+  {
+    "id": 722,
+    "zh": "我们建议您如果不能来上课，可以发邮件给我们。",
+    "en": "We'd suggest you email us if you can't come to class."
+  },
+  {
+    "id": 723,
+    "zh": "我们现在可以解包，这样之后就不用再做了。",
+    "en": "We could unpack now so we don't need to do it later."
+  },
+  {
+    "id": 724,
+    "zh": "我们早点到那里，这样在晚饭前可以放松一下。",
+    "en": "Let's get there early so we can relax a bit before dinner."
+  },
+  {
+    "id": 725,
+    "zh": "我推荐烤羊肉配米饭。",
+    "en": "I'd recommend the roasted lamb with rice."
+  },
+  {
+    "id": 726,
+    "zh": "房地产经纪人说现在是卖房的最佳时机。",
+    "en": "The real estate agent said now is the best time to sell."
+  },
+  {
+    "id": 727,
+    "zh": "我们只是搬到城市的另一边，不是搬到另一个国家！",
+    "en": "We're just moving across town, not to another country!"
+  },
+  {
+    "id": 728,
+    "zh": "我必须在12月15日之前搬出我的公寓。",
+    "en": "I have to move out of my apartment before December 15th."
+  },
+  {
+    "id": 729,
+    "zh": "她不喜欢这栋房子，但她喜欢这个位置。",
+    "en": "She doesn't like the house, but she does like the location."
+  },
+  {
+    "id": 730,
+    "zh": "明天，我将签署新公寓的租约。",
+    "en": "Tomorrow, I'll sign the lease for my new apartment."
+  },
+  {
+    "id": 731,
+    "zh": "租约是六个月还是十二个月？",
+    "en": "Is the lease for six months or twelve?"
+  },
+  {
+    "id": 732,
+    "zh": "抱歉打电话这么晚，但我有些消息。",
+    "en": "Sorry for calling so late, but I have some news."
+  },
+  {
+    "id": 733,
+    "zh": "我所做的事情没有任何借口，所以我想道歉。",
+    "en": "There's no excuse for what I did, so I want to apologize."
+  },
+  {
+    "id": 734,
+    "zh": "我很抱歉告诉了所有人，但我不能保守秘密！",
+    "en": "I'm sorry for telling everyone, but I can't keep secrets!"
+  },
+  {
+    "id": 735,
+    "zh": "听着，我犯了个错误，我很抱歉。",
+    "en": "Look, I messed up, and I'm sorry."
+  },
+  {
+    "id": 736,
+    "zh": "劳拉，我没有任何借口，我该说什么呢？",
+    "en": "I have no excuses, Laura, what can I say?"
+  },
+  {
+    "id": 737,
+    "zh": "毕业后我会在教育行业找工作。",
+    "en": "I'll find a job in the education industry after I graduate."
+  },
+  {
+    "id": 738,
+    "zh": "安东尼奥的梦想是成为世界上最伟大的运动员。",
+    "en": "Antonio's dream is to be the world's greatest athlete."
+  },
+  {
+    "id": 739,
+    "zh": "我目前的目标是今年赚一百万美元。",
+    "en": "My current goal is to earn a million dollars this year."
+  },
+  {
+    "id": 740,
+    "zh": "一拿到证书，我就会开自己的生意。",
+    "en": "As soon as I get my certificate, I'll open my own business."
+  },
+  {
+    "id": 741,
+    "zh": "自去年以来换过机油吗？",
+    "en": "Has the oil been changed since last year?"
+  },
+  {
+    "id": 742,
+    "zh": "您的保险会赔付挡风玻璃的问题吗？",
+    "en": "Will your insurance cover the problem with the windshield?"
+  },
+  {
+    "id": 743,
+    "zh": "请帮我加满油箱好吗？",
+    "en": "Can you fill up the tank, please?"
+  },
+  {
+    "id": 744,
+    "zh": "但我昨晚已经加满油了！",
+    "en": "But I filled up the tank yesterday evening!"
+  },
+  {
+    "id": 745,
+    "zh": "车窗还没修好，所以你不能开车。",
+    "en": "The windows haven't been fixed yet, so you can't drive it."
+  },
+  {
+    "id": 746,
+    "zh": "修前大灯我需要付多少钱？",
+    "en": "How much do I owe you for the headlight repairs?"
+  },
+  {
+    "id": 747,
+    "zh": "哇，那个巧克力蛋糕上有桃子片吗？",
+    "en": "Yum, are those slices of peach on the chocolate cake?"
+  },
+  {
+    "id": 748,
+    "zh": "你早餐想要炒鸡蛋吗？",
+    "en": "Would you like scrambled eggs for breakfast?"
+  },
+  {
+    "id": 749,
+    "zh": "不，我宁愿点一些更辣的东西。",
+    "en": "No, I would rather order something spicier."
+  },
+  {
+    "id": 750,
+    "zh": "没有什么比新鲜青柠的香气更好的了。",
+    "en": "There's nothing better than the smell of fresh lime."
+  },
+  {
+    "id": 751,
+    "zh": "我不建议你点金枪鱼沙拉。",
+    "en": "I wouldn't advise you to order the tuna salad."
+  },
+  {
+    "id": 752,
+    "zh": "怀孕期间有些疼痛是正常的。",
+    "en": "It's normal to have a few aches when you're pregnant."
+  },
+  {
+    "id": 753,
+    "zh": "你还有其他症状吗？",
+    "en": "What other symptoms do you have?"
+  },
+  {
+    "id": 754,
+    "zh": "我游泳后耳朵会痛。",
+    "en": "I feel pain in my ear after I swim."
+  },
+  {
+    "id": 755,
+    "zh": "我们需要您的健康保险信息，谢谢。",
+    "en": "We'll need your health insurance information, please."
+  },
+  {
+    "id": 756,
+    "zh": "现在开始治疗还太早。",
+    "en": "It's too early to start the treatment."
+  },
+  {
+    "id": 757,
+    "zh": "您的检查结果明天将上传到网站上。",
+    "en": "Your results will be uploaded to the website tomorrow."
+  },
+  {
+    "id": 758,
+    "zh": "我期中考试不及格，所以我必须通过期末考试！",
+    "en": "I failed the midterm, so I have to pass the final exam!"
+  },
+  {
+    "id": 759,
+    "zh": "我对自己的成绩单不是很满意。",
+    "en": "I wasn't very happy with my report card."
+  },
+  {
+    "id": 760,
+    "zh": "我的字迹太差了，以至于我自己都看不懂！",
+    "en": "My handwriting is so bad that I can't read my own sentences!"
+  },
+  {
+    "id": 761,
+    "zh": "老师说我需要重写作业。",
+    "en": "My teacher said that I needed to rewrite my assignment."
+  },
+  {
+    "id": 762,
+    "zh": "我喜欢大声朗读来练习发音。",
+    "en": "I like to read aloud to practice my pronunciation."
+  },
+  {
+    "id": 763,
+    "zh": "大学弄丢了我的表格，所以我需要重新申请。",
+    "en": "The university lost my forms, so I'll need to reapply."
+  },
+  {
+    "id": 764,
+    "zh": "我不必独自布置派对，对吧？",
+    "en": "I won't have to set up the party by myself, will I?"
+  },
+  {
+    "id": 765,
+    "zh": "在知道所有人什么时候有空之前，我无法安排派对。",
+    "en": "I can't set up the party until I know when everyone's free."
+  },
+  {
+    "id": 766,
+    "zh": "这是他们的周年纪念日，所以我们应该盛装打扮。",
+    "en": "It's their anniversary, so we're supposed to dress up."
+  },
+  {
+    "id": 767,
+    "zh": "我们应该带礼物，不是吗？",
+    "en": "We should bring a gift, shouldn't we?"
+  },
+  {
+    "id": 768,
+    "zh": "天然气价格出现了上涨。",
+    "en": "There has been an increase in the price of gas."
+  },
+  {
+    "id": 769,
+    "zh": "抗议活动中的每个人都反对市长的决定。",
+    "en": "Everyone at the protest is against the mayor's decision."
+  },
+  {
+    "id": 770,
+    "zh": "今晚的新闻报道了洪水警告。",
+    "en": "There was a flood warning on the news this evening."
+  },
+  {
+    "id": 771,
+    "zh": "警方认为涉案人员不止一人。",
+    "en": "Police think that more than one person was involved."
+  },
+  {
+    "id": 772,
+    "zh": "这栋建筑的大部分被摧毁了。",
+    "en": "Most of the building was destroyed."
+  },
+  {
+    "id": 773,
+    "zh": "别看手机了，专心开车！",
+    "en": "Stop looking at your phone, and concentrate on the road!"
+  },
+  {
+    "id": 774,
+    "zh": "这座城市不允许汽车进入公园或其他绿色地带。",
+    "en": "The city doesn't allow cars in parks or other green zones."
+  },
+  {
+    "id": 775,
+    "zh": "他们为什么不系安全带？",
+    "en": "Why aren't they wearing their seatbelts?"
+  },
+  {
+    "id": 776,
+    "zh": "前面那辆车最好加速！",
+    "en": "That car in front of us had better speed up!"
+  },
+  {
+    "id": 777,
+    "zh": "在学区内时速超过25英里是违法的。",
+    "en": "It's illegal to go over 25 miles per hour in a school zone."
+  },
+  {
+    "id": 778,
+    "zh": "打扰了，您不可以在这里停车。",
+    "en": "Excuse me, you're not allowed to park here."
+  },
+  {
+    "id": 779,
+    "zh": "山丘南侧的草完全是棕色的。",
+    "en": "The grass is totally brown on the southern side of the hill."
+  },
+  {
+    "id": 780,
+    "zh": "这个国家的南部地区有野马。",
+    "en": "There are wild horses in the southern part of the country."
+  },
+  {
+    "id": 781,
+    "zh": "这个地区有令人惊叹的森林和许多沙滩。",
+    "en": "The region has an amazing forest and lots of sandy beaches."
+  },
+  {
+    "id": 782,
+    "zh": "这些花只在该州东部地区生长。",
+    "en": "These flowers only grow in the eastern part of the state."
+  },
+  {
+    "id": 783,
+    "zh": "我从未见过如此美丽的风景。",
+    "en": "I've never seen a more beautiful landscape."
+  },
+  {
+    "id": 784,
+    "zh": "如果我是他，我不会在考试前一晚外出。",
+    "en": "If I were him, I wouldn't go out the night before a test."
+  },
+  {
+    "id": 785,
+    "zh": "理科部门今年使用新的课程。",
+    "en": "The science department is using a new curriculum this year."
+  },
+  {
+    "id": 786,
+    "zh": "如果你负责课程，你会做什么改变？",
+    "en": "If you were in charge of curriculum, what would you change?"
+  },
+  {
+    "id": 787,
+    "zh": "如果我是你，我不会穿太华丽的东西。",
+    "en": "If I were you, I wouldn't wear anything too fancy."
+  },
+  {
+    "id": 788,
+    "zh": "如果你是我，你会去哪里度假？",
+    "en": "If you were me, where would you go on vacation?"
+  },
+  {
+    "id": 789,
+    "zh": "在我的新职位上，我将负责员工培训。",
+    "en": "In my new role, I'll be responsible for staff training."
+  },
+  {
+    "id": 790,
+    "zh": "如果我有更多经验，我会赚更多钱。",
+    "en": "If I had more experience, I would make more money."
+  },
+  {
+    "id": 791,
+    "zh": "会议是在线上还是面对面？",
+    "en": "Is the meeting online or face-to-face?"
+  },
+  {
+    "id": 792,
+    "zh": "在我的第一份工作中，我的时薪很低。",
+    "en": "At my first job, I earned a low hourly wage."
+  },
+  {
+    "id": 793,
+    "zh": "做兽医压力太大了，所以我转行了。",
+    "en": "Working as a vet was stressful, so I changed careers."
+  },
+  {
+    "id": 794,
+    "zh": "我上周在科技会议上看到了你的演示！",
+    "en": "I saw your presentation at the tech conference last week!"
+  },
+  {
+    "id": 795,
+    "zh": "这个度假村的高尔夫球场很美。",
+    "en": "The golf course at this resort is beautiful."
+  },
+  {
+    "id": 796,
+    "zh": "我们的酒店有水疗中心、游泳池和网球场。",
+    "en": "Our hotel has a spa, a pool, and tennis courts."
+  },
+  {
+    "id": 797,
+    "zh": "他们的房间阳台上有热水浴缸！",
+    "en": "Their room has a hot tub on the balcony!"
+  },
+  {
+    "id": 798,
+    "zh": "那个地区有巨大的悬崖和壮观的洞穴。",
+    "en": "That region has huge cliffs and spectacular caves."
+  },
+  {
+    "id": 799,
+    "zh": "过去五年里这里的旅游业有所增长。",
+    "en": "There's been more tourism here in the past five years."
+  },
+  {
+    "id": 800,
+    "zh": "这里的氛围非常令人放松。",
+    "en": "The atmosphere here is so relaxing."
+  },
+  {
+    "id": 801,
+    "zh": "他以有史以来最好的导演闻名。",
+    "en": "He is well-known as the best director of all time."
+  },
+  {
+    "id": 802,
+    "zh": "这位演员从未在美国电影中主演过。",
+    "en": "The actor had never starred in an American film before."
+  },
+  {
+    "id": 803,
+    "zh": "直到我读了他的传记，我才了解他的童年。",
+    "en": "I never knew about his childhood until I read his biography."
+  },
+  {
+    "id": 804,
+    "zh": "在那个节目的所有演员中，她的粉丝最多。",
+    "en": "Of all the actors on that show, she has the most fans."
+  },
+  {
+    "id": 805,
+    "zh": "你最近听到什么好的名人八卦了吗？",
+    "en": "Have you heard any good celebrity gossip lately?"
+  },
+  {
+    "id": 806,
+    "zh": "我的朋友认为索菲亚要离开这个节目了。",
+    "en": "My friend thinks Sofia is going to leave the show."
+  },
+  {
+    "id": 807,
+    "zh": "如果你在烤鸡肉，一定要把它煮熟。",
+    "en": "If you're grilling chicken, make sure to cook it well."
+  },
+  {
+    "id": 808,
+    "zh": "这些面条是用米粉做的吗？",
+    "en": "Are these noodles made with rice flour?"
+  },
+  {
+    "id": 809,
+    "zh": "它没有完全生，但中间还是有点粉红。",
+    "en": "It wasn't completely raw, but it was still a little pink."
+  },
+  {
+    "id": 810,
+    "zh": "您想在苏打水里加一片青柠吗？",
+    "en": "Would you like some lime in your sparkling water?"
+  },
+  {
+    "id": 811,
+    "zh": "有机西红柿味道更好，不是吗？",
+    "en": "Organic tomatoes are much tastier, aren't they?"
+  },
+  {
+    "id": 812,
+    "zh": "我需要一打鸡蛋，但我只有七个。",
+    "en": "I need a dozen eggs, but I only have seven."
+  },
+  {
+    "id": 813,
+    "zh": "在我忘记之前，让我告诉你关于安娜的派对。",
+    "en": "Before I forget, let me tell you about Anna's party."
+  },
+  {
+    "id": 814,
+    "zh": "我只是想问你几个问题。",
+    "en": "I just wanted to ask you a few questions."
+  },
+  {
+    "id": 815,
+    "zh": "等一下，有人在敲门。",
+    "en": "Wait just a moment, someone is knocking at the door."
+  },
+  {
+    "id": 816,
+    "zh": "你在哪里学会怎么做的？",
+    "en": "Where did you learn how to do that?"
+  },
+  {
+    "id": 817,
+    "zh": "那么，你表弟弗雷德最近在和谁约会吗？",
+    "en": "So, is your cousin Fred dating anyone at the moment?"
+  },
+  {
+    "id": 818,
+    "zh": "顺便问一下，你哥哥最近怎么样？",
+    "en": "Anyway, how's your brother doing?"
+  },
+  {
+    "id": 819,
+    "zh": "这是退货的队伍吗？",
+    "en": "Is this the line for making returns?"
+  },
+  {
+    "id": 820,
+    "zh": "30天后损坏的商品不能退货。",
+    "en": "You can't return any damaged items after 30 days."
+  },
+  {
+    "id": 821,
+    "zh": "我的帐篷坏了，我想换一个。",
+    "en": "My tent is damaged, so I would like to exchange it, please."
+  },
+  {
+    "id": 822,
+    "zh": "您可以换货，或者我们给您商店积分。",
+    "en": "You can exchange it, or we can give you store credit."
+  },
+  {
+    "id": 823,
+    "zh": "女士们先生们，非常高兴你们都能来。",
+    "en": "Ladies and gentlemen, I'm so glad you all could come."
+  },
+  {
+    "id": 824,
+    "zh": "让我们为这对美丽的夫妇干杯。",
+    "en": "Let's make a toast to the beautiful couple."
+  },
+  {
+    "id": 825,
+    "zh": "我很荣幸欢迎我们的下一位嘉宾上台。",
+    "en": "It's my pleasure to welcome our next guest to the stage."
+  },
+  {
+    "id": 826,
+    "zh": "请注意，我有一个重要通知。",
+    "en": "Please listen, I have an important announcement."
+  },
+  {
+    "id": 827,
+    "zh": "现在，我们将休息十五分钟。",
+    "en": "Now, we'll take a fifteen-minute break."
+  },
+  {
+    "id": 828,
+    "zh": "哇，什么都能放进这个大车库里！",
+    "en": "Wow, anything would fit in this huge garage!"
+  },
+  {
+    "id": 829,
+    "zh": "每个卧室宽十二英尺。",
+    "en": "Each of the bedrooms is twelve feet wide."
+  },
+  {
+    "id": 830,
+    "zh": "这栋房子的管道已经超过一百年了。",
+    "en": "The pipes in this house are more than a hundred years old."
+  },
+  {
+    "id": 831,
+    "zh": "这些橱柜有足够的空间放我们所有的碗碟。",
+    "en": "These cupboards have plenty of space for all our dishes."
+  },
+  {
+    "id": 832,
+    "zh": "这面墙长三米，所以沙发应该能放下。",
+    "en": "This wall is three meters long, so the sofa should fit here."
+  },
+  {
+    "id": 833,
+    "zh": "他本来想换掉整个屋顶，但价格太高了。",
+    "en": "He would have replaced the whole roof, but it cost too much."
+  },
+  {
+    "id": 834,
+    "zh": "如果我早点上床睡觉，我就会准时醒来了。",
+    "en": "If I had gone to bed earlier, I would have woken up on time."
+  },
+  {
+    "id": 835,
+    "zh": "我可能搞错了，但我认为我们错过了出口。",
+    "en": "I might be mistaken, but I think we missed the exit."
+  },
+  {
+    "id": 836,
+    "zh": "我有一个重要考试，但我忘了带幸运铅笔！",
+    "en": "I have an important test, but I forgot my lucky pencil!"
+  },
+  {
+    "id": 837,
+    "zh": "我对忘记你的生日感到非常愧疚！",
+    "en": "I feel so guilty for forgetting your birthday!"
+  },
+  {
+    "id": 838,
+    "zh": "我以前晚上从不会害怕，但现在会了。",
+    "en": "I never used to get scared at night, but now I do."
+  },
+  {
+    "id": 839,
+    "zh": "从事如此危险的工作一定很可怕。",
+    "en": "It must be frightening to have such a risky job."
+  },
+  {
+    "id": 840,
+    "zh": "我吓得几乎无法呼吸！",
+    "en": "I got so scared that I could hardly breathe!"
+  },
+  {
+    "id": 841,
+    "zh": "我们讲了鬼故事，所有的孩子都被吓到了。",
+    "en": "We told ghost stories and all the kids were frightened."
+  },
+  {
+    "id": 842,
+    "zh": "为了面对我的恐惧，我自愿在工作中发表演讲。",
+    "en": "To face my fears, I volunteered to make a speech at work."
+  },
+  {
+    "id": 843,
+    "zh": "你为什么不删掉应用程序重新安装呢？",
+    "en": "Why don't you delete the app and install it again?"
+  },
+  {
+    "id": 844,
+    "zh": "我还不习惯这个新软件。",
+    "en": "I'm not used to the new software yet."
+  },
+  {
+    "id": 845,
+    "zh": "当我按键时，屏幕上什么都不出现。",
+    "en": "When I press the keys, nothing appears on the screen."
+  },
+  {
+    "id": 846,
+    "zh": "耐心点，别一直按所有按钮！",
+    "en": "Be patient and stop pressing all the buttons!"
+  },
+  {
+    "id": 847,
+    "zh": "点击这里与其他用户共享您的文档。",
+    "en": "Click here to share your document with other users."
+  },
+  {
+    "id": 848,
+    "zh": "哦，我的摄像头有点问题。",
+    "en": "Oh, there's something wrong with my webcam."
+  },
+  {
+    "id": 849,
+    "zh": "你听说过第四街的小艺术博物馆吗？",
+    "en": "Have you heard of the small art museum on Fourth Street?"
+  },
+  {
+    "id": 850,
+    "zh": "我从未去过那里，但据说很棒。",
+    "en": "I've never been there, but it's supposed to be amazing."
+  },
+  {
+    "id": 851,
+    "zh": "他打算带我们去看他最著名的艺术作品。",
+    "en": "He was going to show us his most famous works of art."
+  },
+  {
+    "id": 852,
+    "zh": "我能给你读一首诗吗？",
+    "en": "Can I read you this poem?"
+  },
+  {
+    "id": 853,
+    "zh": "我以为你会喜欢这本短篇故事集。",
+    "en": "I thought you'd enjoy this book of short stories."
+  },
+  {
+    "id": 854,
+    "zh": "春天时我们在学校里会画复活节彩蛋。",
+    "en": "We used to paint Easter eggs at school in the springtime."
+  },
+  {
+    "id": 855,
+    "zh": "我们总是在前院放圣诞装饰品。",
+    "en": "We always put Christmas decorations in the front yard."
+  },
+  {
+    "id": 856,
+    "zh": "秋天超市里总是摆满了南瓜。",
+    "en": "The supermarket is always full of pumpkins in the fall."
+  },
+  {
+    "id": 857,
+    "zh": "我们来雕刻一个南瓜做杰克灯！",
+    "en": "Let's carve a pumpkin to make a jack-o-lantern!"
+  },
+  {
+    "id": 858,
+    "zh": "白酱里有乳制品吗？",
+    "en": "Does the white sauce have any dairy?"
+  },
+  {
+    "id": 859,
+    "zh": "它和牛奶很像，但实际上没有乳制品。",
+    "en": "It's like milk, but it doesn't actually have any dairy."
+  },
+  {
+    "id": 860,
+    "zh": "您今晚有兴趣点一些开胃菜吗？",
+    "en": "Would you be interested in any appetizers tonight?"
+  },
+  {
+    "id": 861,
+    "zh": "我可以要一份培根作为开胃菜吗？",
+    "en": "Could I get a side of bacon as an appetizer?"
+  },
+  {
+    "id": 862,
+    "zh": "我们肯定还需要更多餐巾！",
+    "en": "We're definitely going to need more napkins!"
+  },
+  {
+    "id": 863,
+    "zh": "打扰一下，我们的鸡翅还没有送来。",
+    "en": "Excuse me, we haven't been brought our chicken wings yet."
+  },
+  {
+    "id": 864,
+    "zh": "森林正在被破坏，这太糟糕了！",
+    "en": "The forests are being destroyed, which is terrible!"
+  },
+  {
+    "id": 865,
+    "zh": "正在采取什么措施来保护这一自然栖息地？",
+    "en": "What is being done to protect this natural habitat?"
+  },
+  {
+    "id": 866,
+    "zh": "今年这里将种植超过一万棵树。",
+    "en": "Over ten thousand trees will be planted here this year."
+  },
+  {
+    "id": 867,
+    "zh": "全球变暖是当今最大的问题之一。",
+    "en": "Global warming is one of today's biggest problems."
+  },
+  {
+    "id": 868,
+    "zh": "我们的土地正被工厂污染。",
+    "en": "Our land is being polluted by the factory."
+  },
+  {
+    "id": 869,
+    "zh": "爸爸本来更想看一部剧情片。",
+    "en": "Dad would have preferred to watch a drama."
+  },
+  {
+    "id": 870,
+    "zh": "我本来会选一个不同的女演员来扮演女王。",
+    "en": "I would have chosen a different actress to play the queen."
+  },
+  {
+    "id": 871,
+    "zh": "音乐会怎么样？",
+    "en": "How was the concert?"
+  },
+  {
+    "id": 872,
+    "zh": "我喜欢，但我本来更想听不同的音乐。",
+    "en": "I liked it, but I would have preferred different music."
+  },
+  {
+    "id": 873,
+    "zh": "我通常不喜欢马戏团，但这个真的很棒！",
+    "en": "I generally dislike the circus, but this one is amazing!"
+  },
+  {
+    "id": 874,
+    "zh": "这一带有没有你推荐的美发沙龙？",
+    "en": "Is there a salon in the area that you'd recommend?"
+  },
+  {
+    "id": 875,
+    "zh": "没有，我自己剪头发，因为沙龙太贵了。",
+    "en": "No, I cut my own hair because the salon is too expensive."
+  },
+  {
+    "id": 876,
+    "zh": "我在绿街的一家店做指甲。",
+    "en": "I get my nails done at a place on Green Street."
+  },
+  {
+    "id": 877,
+    "zh": "我通过看网上视频学会了自己化妆。",
+    "en": "I learned how to do my own makeup by watching online videos."
+  },
+  {
+    "id": 878,
+    "zh": "婚礼上，我请专业人士帮我化了妆。",
+    "en": "For the wedding, I got my makeup done by a professional."
+  },
+  {
+    "id": 879,
+    "zh": "我在为圣诞节后的大减价攒钱。",
+    "en": "I'm saving my money for the sales after Christmas."
+  },
+  {
+    "id": 880,
+    "zh": "那超出了我们现在能负担的范围。",
+    "en": "That's more than what we can afford to spend right now."
+  },
+  {
+    "id": 881,
+    "zh": "你需要支付运费吗？",
+    "en": "Do you have to pay for shipping?"
+  },
+  {
+    "id": 882,
+    "zh": "广告没有提到任何关于运费的信息。",
+    "en": "The ad didn't mention anything about shipping fees."
+  },
+  {
+    "id": 883,
+    "zh": "使用折扣码后，价格非常合理。",
+    "en": "With the discount code, the price is very reasonable."
+  },
+  {
+    "id": 884,
+    "zh": "我负担不起在这些昂贵的商店购物！",
+    "en": "I can't afford to go shopping at these expensive stores!"
+  },
+  {
+    "id": 885,
+    "zh": "体操是一项很难的运动！",
+    "en": "Gymnastics is a difficult sport!"
+  },
+  {
+    "id": 886,
+    "zh": "跳水区不应该有游泳者。",
+    "en": "There should not be any swimmers in the diving area."
+  },
+  {
+    "id": 887,
+    "zh": "他们拥有联赛中最好的进攻。",
+    "en": "They have the best offense in the league."
+  },
+  {
+    "id": 888,
+    "zh": "他们的防守比进攻更好！",
+    "en": "And their defense is better than their offense!"
+  },
+  {
+    "id": 889,
+    "zh": "你认为有人能打破他的记录吗？",
+    "en": "Do you think anyone can beat his record?"
+  },
+  {
+    "id": 890,
+    "zh": "没有人能打破那个记录！",
+    "en": "No one will ever beat that record!"
+  },
+  {
+    "id": 891,
+    "zh": "你需要请病假吗？",
+    "en": "Do you need to take a sick day?"
+  },
+  {
+    "id": 892,
+    "zh": "我的健身计划是每周锻炼三次。",
+    "en": "My fitness plan is to do three workouts a week."
+  },
+  {
+    "id": 893,
+    "zh": "你喜欢什么爱好？",
+    "en": "What hobbies are you into?"
+  },
+  {
+    "id": 894,
+    "zh": "我非常喜欢体育和健身。",
+    "en": "I'm really into sports and fitness."
+  },
+  {
+    "id": 895,
+    "zh": "我妻子告诉我不要吃太多盐。",
+    "en": "My wife tells me not to have too much salt."
+  },
+  {
+    "id": 896,
+    "zh": "请签署合同并将其发回给我们。",
+    "en": "Can you sign the contract and send it back to us?"
+  },
+  {
+    "id": 897,
+    "zh": "嗯，你在合同上写错了我的名字。",
+    "en": "Um, you got my name wrong on the contract."
+  },
+  {
+    "id": 898,
+    "zh": "你说的是那个专门处理投诉的人吗？",
+    "en": "Did you say you're the person who deals with complaints?"
+  },
+  {
+    "id": 899,
+    "zh": "你能给我一些关于如何写这份报告的建议吗？",
+    "en": "Could you give me some tips about how to write this report?"
+  },
+  {
+    "id": 900,
+    "zh": "我看看我能否回答那个问题。",
+    "en": "Let me see whether I can answer that question."
+  },
+  {
+    "id": 901,
+    "zh": "稍等一下，我一会儿回拨给你！",
+    "en": "Just a minute, I'll call you back!"
+  },
+  {
+    "id": 902,
+    "zh": "你能请空乘人员帮忙吗？",
+    "en": "Can you ask the flight attendant for help?"
+  },
+  {
+    "id": 903,
+    "zh": "他们没有带齐所有的证件，是吗？",
+    "en": "They hadn't brought all their documents, had they?"
+  },
+  {
+    "id": 904,
+    "zh": "因暴风雨，所有来自中美洲的航班均已取消。",
+    "en": "All flights from Central America are canceled due to storms."
+  },
+  {
+    "id": 905,
+    "zh": "你的航班怎么样？",
+    "en": "How did your flight go?"
+  },
+  {
+    "id": 906,
+    "zh": "自助系统不允许我们托运行李。",
+    "en": "The self-service system wouldn't let us check our bags."
+  },
+  {
+    "id": 907,
+    "zh": "她很可能会坐至少六个月的牢。",
+    "en": "She'll likely go to jail for a minimum of six months."
+  },
+  {
+    "id": 908,
+    "zh": "罪犯的要求是什么？",
+    "en": "What were the criminal's demands?"
+  },
+  {
+    "id": 909,
+    "zh": "他的要求包括一架直升机和一百万美元！",
+    "en": "His demands included a helicopter and a million dollars!"
+  },
+  {
+    "id": 910,
+    "zh": "陪审团无法达成一致，这让我非常惊讶。",
+    "en": "The jury couldn't agree, which was a big surprise to me."
+  },
+  {
+    "id": 911,
+    "zh": "为什么对抗议活动的支持不更多？",
+    "en": "Why isn't there more support for the protest?"
+  },
+  {
+    "id": 912,
+    "zh": "人类学会了控制火并烹饪食物。",
+    "en": "Humans learned how to control fire and cook their food."
+  },
+  {
+    "id": 913,
+    "zh": "到公元4世纪，他们的古代社会已经消失。",
+    "en": "By the 4th century, their ancient society had disappeared."
+  },
+  {
+    "id": 914,
+    "zh": "尽管战争持续，两国之间的贸易仍在进行。",
+    "en": "Despite the war, trade continued between the two countries."
+  },
+  {
+    "id": 915,
+    "zh": "他们赢得了战争，尽管他们的军队更小。",
+    "en": "They won the war, even though they had a smaller army."
+  },
+  {
+    "id": 916,
+    "zh": "我希望现在没有下雨。",
+    "en": "I wish it weren't raining right now."
+  },
+  {
+    "id": 917,
+    "zh": "我希望你能停止唱那首无聊的歌！",
+    "en": "I wish you would stop singing that silly song!"
+  },
+  {
+    "id": 918,
+    "zh": "你对自己的行为有遗憾吗？",
+    "en": "Do you have any regrets about how you acted?"
+  },
+  {
+    "id": 919,
+    "zh": "我希望我记得给你打电话。",
+    "en": "I wish I had remembered to call you."
+  },
+  {
+    "id": 920,
+    "zh": "我希望明年会更好。",
+    "en": "I'm hopeful that next year will be better."
+  }
 ]

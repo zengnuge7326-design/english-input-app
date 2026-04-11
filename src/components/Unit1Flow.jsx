@@ -747,6 +747,8 @@ import {
   quizBankG5D6c, fillblankBankG5D6c, listenWordBankG5D6c, listenSentenceBankG5D6c, listenOrderBankG5D6c, listenResponseBankG5D6c, listenTranslateBankG5D6c,
 } from '../data/g5d_unit6cData'
 
+import { IconSpeaker } from './Icons'
+
 // ── 工具：生成随机字母供填词干扰 ────────────────────────────────────────────────
 function speak(text) {
   const u = new SpeechSynthesisUtterance(text)
@@ -1235,7 +1237,9 @@ function QuizCard({ q, onResult }) {
     <div>
       <div className="flex items-start gap-3 mb-2">
         <p className="text-white text-xl font-medium leading-relaxed flex-1">{q.question}</p>
-        <button onClick={() => speak(q.question)} className="text-blue-400 hover:text-blue-300 text-xl mt-0.5 shrink-0">🔊</button>
+        <button onClick={() => speak(q.question)} className="text-blue-400 hover:text-blue-300 text-xl mt-0.5 shrink-0">
+          <IconSpeaker size={22} />
+        </button>
       </div>
       <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
       <div className="space-y-2">
@@ -1255,7 +1259,9 @@ function QuizCard({ q, onResult }) {
             <span className="font-mono text-sm opacity-60 shrink-0">{String.fromCharCode(65 + i)}</span>
             <span>{opt}</span>
             <button onClick={e => { e.stopPropagation(); speak(opt) }}
-              className="ml-auto text-blue-400/60 hover:text-blue-300 text-sm shrink-0">🔊</button>
+              className="ml-auto text-blue-400/60 hover:text-blue-300 text-sm shrink-0">
+              <IconSpeaker size={22} />
+            </button>
           </button>
         ))}
       </div>
@@ -1269,7 +1275,7 @@ function QuizCard({ q, onResult }) {
 }
 
 // ── 填空题 ────────────────────────────────────────────────────────────────────
-function FillBlankCard({ q, onResult, requireSpeak }) {
+function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
   const [input, setInput] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [correct, setCorrect] = useState(null)
@@ -1395,7 +1401,9 @@ function FillBlankCard({ q, onResult, requireSpeak }) {
         <p className="text-white text-xl font-medium leading-relaxed flex-1"
           style={{ fontFamily: 'monospace' }}>{q.sentence}</p>
         <button onClick={() => speak(q.sentence.replace('___', q.answer))}
-          className="text-blue-400 hover:text-blue-300 text-xl shrink-0">🔊</button>
+          className="text-blue-400 hover:text-blue-300 text-xl shrink-0">
+          <IconSpeaker size={22} />
+        </button>
       </div>
       <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
 
@@ -1415,12 +1423,14 @@ function FillBlankCard({ q, onResult, requireSpeak }) {
           <div className={`text-center font-medium px-4 ${recognizingResult?.startsWith('❌') ? 'text-red-400' : 'text-blue-400 opacity-80'}`}>
             {recognizingResult || '点击麦克风或按空格录音'}
             <div className="mt-4">
-              <button
-                onClick={(e) => { e.stopPropagation(); setUnlocked(true); setRecognizingResult('已切换到手动模式'); }}
-                className="px-4 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs rounded-xl border border-gray-700 transition-all active:scale-95 shadow-lg"
-              >
-                点此跳过录音，直接输入答案
-              </button>
+              {!hideSkipNext && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); setUnlocked(true); setRecognizingResult('已切换到手动模式'); }}
+                  className="px-4 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs rounded-xl border border-gray-700 transition-all active:scale-95 shadow-lg"
+                >
+                  点此跳过录音，直接输入答案
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -1494,7 +1504,9 @@ function WordOrderCard({ q, onResult }) {
     <div>
       <div className="flex items-center gap-3 mb-2">
         <p className="text-gray-300 text-base">{q.zh}</p>
-        <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300 text-xl shrink-0">🔊</button>
+        <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300 text-xl shrink-0">
+          <IconSpeaker size={22} />
+        </button>
       </div>
       <div className="min-h-14 bg-gray-800 border-2 border-gray-700 rounded-2xl px-4 py-3 flex flex-wrap gap-2 mb-4 mt-4">
         {arranged.length === 0 && <span className="text-gray-600 text-base">点击下方单词排列</span>}
@@ -1550,7 +1562,7 @@ function ListenChoiceCard({ q, type, onResult }) {
       <div className="flex justify-center mb-4">
         <button onClick={() => speak(textToSpeak)}
           className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-500 active:scale-95 flex items-center justify-center text-xl transition-all shadow-lg shadow-blue-900/40">
-          🔊
+          <IconSpeaker size={28} />
         </button>
       </div>
       {type === 'listen_response' && (
@@ -1695,7 +1707,7 @@ const BANKS_G5_DOWN = {
 }
 
 // ── 主流程 ────────────────────────────────────────────────────────────────────
-export default function Unit1Flow({ unitLabel, bookId, requireSpeak, onClose }) {
+export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNext, onClose }) {
   const questions = useMemo(() => {
     const label = unitLabel?.toLowerCase() ?? ''
     
@@ -1829,7 +1841,7 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, onClose }) 
       <div className="flex-1 overflow-y-auto px-4 py-3">
         <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5 max-w-lg mx-auto">
           {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} />}
-          {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} onResult={handleResult} />}
+          {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} />}
           {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} />}
           {(q.type === 'listen_word' || q.type === 'listen_sentence' || q.type === 'listen_response' || q.type === 'listen_translate') &&
             <ListenChoiceCard key={current} q={q.data} type={q.type} onResult={handleResult} />}
@@ -1846,7 +1858,7 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, onClose }) 
             {pendingResult ? '✓ 正确！' : '✗ 回答错误'}
           </div>
         )}
-        {pendingResult !== null && (
+        {pendingResult !== null && !hideSkipNext && (
           <button onClick={handleNext}
             className="w-full py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl shadow-lg transition-transform active:scale-95 text-xl">
             {current < total - 1 ? '下一题 (Enter) →' : '查看结果 (Enter)'}

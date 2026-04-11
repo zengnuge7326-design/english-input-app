@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "zh": "你能弹吉他吗？",
+    "en": "Can you play guitar?"
+  },
+  {
+    "id": 2,
+    "zh": "你有什么问题？",
+    "en": "What questions do you have?"
+  },
+  {
+    "id": 3,
+    "zh": "你几点去上学？",
+    "en": "What time do you go to school?"
+  },
+  {
+    "id": 4,
+    "zh": "我通常早上六点半起床。",
+    "en": "I usually get up at six thirty."
+  },
+  {
+    "id": 5,
+    "zh": "里克几点吃早餐？",
+    "en": "What time does Rick eat breakfast?"
+  },
+  {
+    "id": 6,
+    "zh": "我们想加入国际象棋俱乐部。",
+    "en": "We want to join the chess club."
+  },
+  {
+    "id": 7,
+    "zh": "不要在教室里跑。",
+    "en": "Dont run in the classroom."
+  },
+  {
+    "id": 8,
+    "zh": "那真是早餐的糟糕时机！",
+    "en": "Thats a funny time for breakfast!"
+  },
+  {
+    "id": 9,
+    "zh": "他们通常在晚上七点四十五吃晚饭。",
+    "en": "They usually eat dinner at a quarter to seven in the evening."
+  },
+  {
+    "id": 10,
+    "zh": "孩子们，该吃饭了。",
+    "en": "Time for dinner, children."
+  },
+  {
+    "id": 11,
+    "zh": "早睡早起对我们的健康有益。",
+    "en": "Its good for our health to go to bed early and get up early."
+  },
+  {
+    "id": 12,
+    "zh": "要么你现在离开，要么我报警！",
+    "en": "Either you leave now or I'll call the police!"
+  },
+  {
+    "id": 13,
+    "zh": "她知道这对她不好，但味道很好。",
+    "en": "She knows its not good for her, but it tastes good."
+  },
+  {
+    "id": 14,
+    "zh": "你可以今天或者明天来。",
+    "en": "You can come either today or tomorrow."
+  },
+  {
+    "id": 15,
+    "zh": "里克通常早上六点半起床。",
+    "en": "Rick usually gets up at six thirty."
+  },
+  {
+    "id": 16,
+    "zh": "我早上六点四十分刷牙洗澡。",
+    "en": "Ibrush my teeth and take a shower at six forty."
+  },
+  {
+    "id": 17,
+    "zh": "花他大约五分钟时间从他家走到地铁站。",
+    "en": "It takes him about five minutes to walk to the subway station from his home."
+  },
+  {
+    "id": 18,
+    "zh": "多久到学校？",
+    "en": "How long does it take you to get to school?"
+  },
+  {
+    "id": 19,
+    "zh": "地铁列车填满了地铁站。",
+    "en": "The subway train fills the subway station."
+  },
+  {
+    "id": 20,
+    "zh": "通常我乘坐公交车大约十分钟才能到达那里。",
+    "en": "It usually takes me about ten minutes to get there by bus."
+  },
+  {
+    "id": 21,
+    "zh": "你可以乘坐地铁列车。",
+    "en": "You can take the subway train by subway."
+  },
+  {
+    "id": 22,
+    "zh": "那个小山村里没有电脑。",
+    "en": "There are no computers in that small mountain village."
+  },
+  {
+    "id": 23,
+    "zh": "河流流入大海。",
+    "en": "The river runs into the sea."
+  },
+  {
+    "id": 24,
+    "zh": "汤姆首先在五点半洗澡。",
+    "en": "Tom takes a shower first at five thirty."
+  },
+  {
+    "id": 25,
+    "zh": "他去学校走路。",
+    "en": "He walks to school."
+  },
+  {
+    "id": 26,
+    "zh": "你明天必须来。",
+    "en": "You must come tomorrow."
+  },
+  {
+    "id": 27,
+    "zh": "她一定有这本书。",
+    "en": "She must have this book."
+  },
+  {
+    "id": 28,
+    "zh": "我们必须准时上学。",
+    "en": "We must get to school on time."
+  },
+  {
+    "id": 29,
+    "zh": "飞机和火车不总是准时到达。",
+    "en": "Planes and trains dont always arrive on time."
+  },
+  {
+    "id": 30,
+    "zh": "孩子们，你不能吵闹。",
+    "en": "You mustn't be noisy, children."
+  },
+  {
+    "id": 31,
+    "zh": "在这个时间，孩子们在学校。",
+    "en": "At this time of the day, children are at school."
+  },
+  {
+    "id": 32,
+    "zh": "请把书放在你的桌子上。",
+    "en": "Please leave the book on your desk."
+  },
+  {
+    "id": 33,
+    "zh": "我晚餐后也无法放松。",
+    "en": "After dinner, I cant relax either."
+  },
+  {
+    "id": 34,
+    "zh": "我的父亲说不了英语。",
+    "en": "My father cant speak English."
+  },
+  {
+    "id": 35,
+    "zh": "你喜欢英语。我也喜欢。",
+    "en": "You like English. I like it, too."
+  },
+  {
+    "id": 36,
+    "zh": "我的母亲也说不了，也不行。",
+    "en": "My mother cant speak it, either."
+  },
+  {
+    "id": 37,
+    "zh": "我正在和家人一起看电视。",
+    "en": "Im watching TV with my family."
+  },
+  {
+    "id": 38,
+    "zh": "很高兴能和大家一起度过时光。",
+    "en": "Its nice to spend time together."
+  },
+  {
+    "id": 39,
+    "zh": "你想和我一起喝杯咖啡吗？",
+    "en": "Do you want to join me for a cup of coffee?"
+  },
+  {
+    "id": 40,
+    "zh": "我很想和你一起去看演出。",
+    "en": "Id love to go to the show with you."
+  },
+  {
+    "id": 41,
+    "zh": "今天任何一天都可以。",
+    "en": "Any day from today would be great."
+  },
+  {
+    "id": 42,
+    "zh": "我要去镇上，你想和我一起去吗？",
+    "en": "Im going to town, would you like to join me?"
+  },
+  {
+    "id": 43,
+    "zh": "很抱歉，恐怕我不能，因为我还有很多作业要做。",
+    "en": "Sorry, Im afraid I cant because I still have lots of homework."
+  },
+  {
+    "id": 44,
+    "zh": "他是比赛中年纪最小的游泳运动员。",
+    "en": "Hes the youngest swimmer in the race."
+  },
+  {
+    "id": 45,
+    "zh": "不要太骄傲，这里还有其他的小男孩也能玩这个游戏。",
+    "en": "Dont be so proud, any other boy here can play this game."
+  },
+  {
+    "id": 46,
+    "zh": "任何其他家庭作为寄宿家庭的夜晚都是一次美好的经历。",
+    "en": "Any other night for a host family is a wonderful experience."
+  },
+  {
+    "id": 47,
+    "zh": "对于朱辉和他的寄宿家庭来说，这就像任何其他夜晚一样。",
+    "en": "Its like any other night for Zhu Hui and his host family."
+  },
+  {
+    "id": 48,
+    "zh": "他现在看起来没事了。",
+    "en": "It sounds like hes all right now."
+  },
+  {
+    "id": 49,
+    "zh": "听起来你旅行很愉快。",
+    "en": "It sounds like you had a good time on your trip."
+  },
+  {
+    "id": 50,
+    "zh": "我可以替他接留言吗？",
+    "en": "Can I take a message for him?"
+  },
+  {
+    "id": 51,
+    "zh": "你能请他回电吗？",
+    "en": "Could you just tell him to call me back?"
+  },
+  {
+    "id": 52,
+    "zh": "现在钟坏了。",
+    "en": "The clock isnt working now."
+  },
+  {
+    "id": 53,
+    "zh": "我的朋友汤姆经常给我写信。",
+    "en": "My friend, Tom, often writes to me."
+  },
+  {
+    "id": 54,
+    "zh": "你所在国家现在很热吧？",
+    "en": "Its hot in your country now, isnt it?"
+  },
+  {
+    "id": 55,
+    "zh": "那里现在非常冷吧？",
+    "en": "It is very cold there, isnt it?"
+  },
+  {
+    "id": 56,
+    "zh": "我能帮你什么吗？",
+    "en": "How can I help you?"
+  },
+  {
+    "id": 57,
+    "zh": "我刚到镇上。",
+    "en": "Im new in town."
+  },
+  {
+    "id": 58,
+    "zh": "要到达那里，我通常走出去然后在桥路右转。",
+    "en": "To get there, I usually walk out and turn right on Bridge Road."
+  },
+  {
+    "id": 59,
+    "zh": "我能为你做些什么？",
+    "en": "What can I do for you?"
+  },
+  {
+    "id": 60,
+    "zh": "这里非常安静，我喜欢在那里看书。",
+    "en": "It is very quiet and I enjoy reading there."
+  },
+  {
+    "id": 61,
+    "zh": "你可以带这本书走，它是免费的！",
+    "en": "You can take this book with you its free!"
+  },
+  {
+    "id": 62,
+    "zh": "你明天有空吗？",
+    "en": "Are you free tomorrow?"
+  },
+  {
+    "id": 63,
+    "zh": "桥街上有什么餐厅吗？",
+    "en": "Is there a restaurant on Bridge Street?"
+  },
+  {
+    "id": 64,
+    "zh": "长街上有一家。",
+    "en": "There is one on Long Street."
+  },
+  {
+    "id": 65,
+    "zh": "他矮小，留着短发。",
+    "en": "Hes short and has short hair."
+  },
+  {
+    "id": 66,
+    "zh": "她非常高而且非常瘦。",
+    "en": "Shes really tall and really thin."
+  },
+  {
+    "id": 67,
+    "zh": "我们七点见面吧，对吗？",
+    "en": "Were meeting at seven, right?"
+  },
+  {
+    "id": 68,
+    "zh": "他真的很英俊。",
+    "en": "And hes really handsome."
+  },
+  {
+    "id": 69,
+    "zh": "谁是正在跟鲍勃说话的漂亮金发女郎？",
+    "en": "Whos the beautiful blonde talking to Bob?"
+  },
+  {
+    "id": 70,
+    "zh": "很多人不总是以同样的方式看待事物，所以他们可能会用不同的方式描述同一个人。",
+    "en": "Many people dont always see things the same way so they may describe the same person differently."
+  },
+  {
+    "id": 71,
+    "zh": "他是个非常好的人。",
+    "en": "He's a very nice person."
+  },
+  {
+    "id": 72,
+    "zh": "周末公园里有很多人在那里。",
+    "en": "There are a lot of people in the park on the weekend."
+  },
+  {
+    "id": 73,
+    "zh": "另外，他们也不总是记得清楚。",
+    "en": "Also, they dont always remember well."
+  },
+  {
+    "id": 74,
+    "zh": "冯先生的课很有意思。而且，他让大家很容易理解。",
+    "en": "Mr. Fengs class is interesting. Also, he makes it easy to understand."
+  },
+  {
+    "id": 75,
+    "zh": "简的哥哥十二岁。她的姐姐也十二岁。他们是双胞胎。",
+    "en": "Janes brother is twelve. Her sister is also twelve. They are twins."
+  },
+  {
+    "id": 76,
+    "zh": "我的父亲会说英语，他也会说法语。",
+    "en": "My father can speak English, He can also speak French."
+  },
+  {
+    "id": 77,
+    "zh": "你想要什么？",
+    "en": "What would you like?"
+  },
+  {
+    "id": 78,
+    "zh": "我想来一杯加奶的黑茶，请。",
+    "en": "Td like a cup of black tea with milk, please."
+  },
+  {
+    "id": 79,
+    "zh": "孩子们，你今天想吃什么？",
+    "en": "What do you want to eat today, children?"
+  },
+  {
+    "id": 80,
+    "zh": "如果他或她一次把所有的蜡烛都吹灭，愿望就会实现。",
+    "en": "If he or she blows out all the candles in one go, the wish will come true."
+  },
+  {
+    "id": 81,
+    "zh": "你不能一次把所有的工作都做完。",
+    "en": "You cant do the work all at one go."
+  },
+  {
+    "id": 82,
+    "zh": "许个愿，它真的可能实现。",
+    "en": "Make a wish, and it can really come true."
+  },
+  {
+    "id": 83,
+    "zh": "所有的生日食物可能都不一样，但它们都很好吃。",
+    "en": "All of these birthday foods may be different, but they are all delicious."
+  },
+  {
+    "id": 84,
+    "zh": "医生总是说吃油腻的食物是不健康的生活习惯。",
+    "en": "Doctors always say eating fatty foods is an unhealthy habit."
+  },
+  {
+    "id": 85,
+    "zh": "他可能会来，也可能不会来。",
+    "en": "He may come, or he may not."
+  },
+  {
+    "id": 86,
+    "zh": "我可能会迟到，所以不要等我。",
+    "en": "I may be late, so dont wait for me."
+  },
+  {
+    "id": 87,
+    "zh": "总而言之，那天很精彩。",
+    "en": "All in all, it was an exciting day."
+  },
+  {
+    "id": 88,
+    "zh": "我一点也不喜欢那次旅行。",
+    "en": "I didnt like the trip at all."
+  },
+  {
+    "id": 89,
+    "zh": "看看那只鸟。多漂亮！",
+    "en": "Look at that bird. How beautiful!"
+  },
+  {
+    "id": 90,
+    "zh": "大约五小时前，我们在火车上离开了北京，但现在我们已经到达上海了！真快！",
+    "en": "Some five hours ago we left Beijing on this train, but now we're arriving in Shanghai! How fast!"
+  }
+]

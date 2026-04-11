@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { IconSpeaker } from './Icons'
 import {
   listenWordBank,
   listenSentenceBank,
@@ -71,7 +72,9 @@ function WordOrderQuestion({ q, onResult }) {
     <div>
       <div className="flex items-center gap-2 mb-4">
         <div className="text-gray-300 text-sm">{q.zh}</div>
-        <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300 text-lg">🔊</button>
+        <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300 text-lg">
+          <IconSpeaker size={22} />
+        </button>
       </div>
 
       {/* 已排列区 */}
@@ -139,7 +142,7 @@ function ChoiceQuestion({ q, type, onResult }) {
       <div className="flex items-center justify-center mb-6">
         <button onClick={() => speak(textToSpeak)}
           className="w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center text-2xl transition-colors">
-          🔊
+          <IconSpeaker size={28} />
         </button>
       </div>
 

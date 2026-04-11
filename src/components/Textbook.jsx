@@ -5,6 +5,11 @@ import grade3UpData from '../data/grade3_up.json'
 import grade3DownData from '../data/grade3_down.json'
 import grade4UpData from '../data/grade4_up.json'
 import grade5UpData from '../data/grade5_up.json'
+import grade7UpData from '../data/grade7_up.json'
+import grade7DownData from '../data/grade7_down.json'
+import grade8UpData from '../data/grade8_up.json'
+import grade8DownData from '../data/grade8_down.json'
+import grade9AllData from '../data/grade9_all.json'
 
 const TEXTBOOK_SLOTS = [
   {
@@ -97,8 +102,97 @@ const TEXTBOOK_SLOTS = [
       { label: 'Unit 6', desc: 'There are also many rivers in the nature park.', slice: [30, 36] },
     ]
   },
-  ...Array.from({ length: 5 }, (_, i) => ({
-    id: `tb_slot_${i + 6}`,
+  {
+    id: 'grade7_up',
+    name: '初中七年级上册',
+    desc: '人教版初中英语七年级上册 Unit 1-9',
+    cover: './covers/grade7_up.jpg',
+    data: grade7UpData,
+    lessons: [
+      { label: 'Unit 1', desc: 'My name is Gina.', slice: [0, 11] },
+      { label: 'Unit 2', desc: 'Is this your pencil?', slice: [11, 22] },
+      { label: 'Unit 3', desc: 'This is my sister.', slice: [22, 33] },
+      { label: 'Unit 4', desc: 'Where\'s my backpack?', slice: [33, 44] },
+      { label: 'Unit 5', desc: 'Do you have a soccer ball?', slice: [44, 55] },
+      { label: 'Unit 6', desc: 'Do you like bananas?', slice: [55, 66] },
+      { label: 'Unit 7', desc: 'How much are these socks?', slice: [66, 77] },
+      { label: 'Unit 8', desc: 'When is your birthday?', slice: [77, 88] },
+      { label: 'Unit 9', desc: 'My favorite subject is science.', slice: [88, 94] },
+    ]
+  },
+  {
+    id: 'grade8_up',
+    name: '初中八年级上册',
+    desc: '人教版初中英语八年级上册 Unit 1-10',
+    cover: './covers/grade8_up.jpg',
+    data: grade8UpData,
+    lessons: [
+      { label: 'Unit 1', desc: 'Where did you go on vacation?', slice: [0, 10] },
+      { label: 'Unit 2', desc: 'How often do you exercise?', slice: [10, 20] },
+      { label: 'Unit 3', desc: 'I\'m more outgoing than my sister.', slice: [20, 30] },
+      { label: 'Unit 4', desc: 'What\'s the best movie theater?', slice: [30, 40] },
+      { label: 'Unit 5', desc: 'Do you want to watch a game show?', slice: [40, 50] },
+      { label: 'Unit 6', desc: 'I\'m going to study computer science.', slice: [50, 60] },
+      { label: 'Unit 7', desc: 'Will people have robots?', slice: [60, 70] },
+      { label: 'Unit 8', desc: 'How do you make a banana milk shake?', slice: [70, 80] },
+      { label: 'Unit 9', desc: 'Can you come to my party?', slice: [80, 90] },
+      { label: 'Unit 10', desc: 'If you go to the party, you\'ll have a great time.', slice: [90, 95] },
+    ]
+  },
+  {
+    id: 'grade7_down',
+    name: '初中七年级下册',
+    desc: '人教版初中英语七年级下册 Unit 1-9',
+    cover: './covers/grade7_up.jpg',
+    data: grade7DownData,
+    lessons: [
+      { label: 'Unit 1', desc: 'Can you play the guitar?', slice: [0, 10] },
+      { label: 'Unit 2', desc: 'What time do you go to school?', slice: [10, 20] },
+      { label: 'Unit 3', desc: 'How do you get to school?', slice: [20, 30] },
+      { label: 'Unit 4', desc: 'Don\'t eat in class.', slice: [30, 40] },
+      { label: 'Unit 5', desc: 'Why do you like pandas?', slice: [40, 50] },
+      { label: 'Unit 6', desc: 'I\'m watching TV.', slice: [50, 60] },
+      { label: 'Unit 7', desc: 'It\'s raining!', slice: [60, 70] },
+      { label: 'Unit 8', desc: 'Is there a post office near here?', slice: [70, 80] },
+      { label: 'Unit 9', desc: 'What does he look like?', slice: [80, 90] },
+    ]
+  },
+  {
+    id: 'grade8_down',
+    name: '初中八年级下册',
+    desc: '人教版初中英语八年级下册 Unit 1-10',
+    cover: './covers/grade8_up.jpg',
+    data: grade8DownData,
+    lessons: [
+      { label: 'Unit 1',  desc: 'What\'s the matter?', slice: [0, 13] },
+      { label: 'Unit 2',  desc: 'I\'ll help to clean up the city parks.', slice: [13, 26] },
+      { label: 'Unit 3',  desc: 'Could you please clean your room?', slice: [26, 39] },
+      { label: 'Unit 4',  desc: 'Why don\'t you talk to your parents?', slice: [39, 52] },
+      { label: 'Unit 5',  desc: 'What were you doing when the rainstorm came?', slice: [52, 65] },
+      { label: 'Unit 6',  desc: 'An old man tried to move the mountains.', slice: [65, 78] },
+      { label: 'Unit 7',  desc: 'What\'s the highest mountain in the world?', slice: [78, 91] },
+      { label: 'Unit 8',  desc: 'Have you read Treasure Island yet?', slice: [91, 104] },
+      { label: 'Unit 9',  desc: 'Have you ever been to a museum?', slice: [104, 117] },
+      { label: 'Unit 10', desc: 'I\'ve had this bike for three years.', slice: [117, 138] },
+    ]
+  },
+  {
+    id: 'grade9_all',
+    name: '初中九年级全册',
+    desc: '人教版初中英语九年级全一册 Unit 1-14',
+    cover: './covers/grade9_all.jpg',
+    data: grade9AllData,
+    lessons: [
+      { label: 'Unit 1-2',   desc: 'How can we become good learners?', slice: [0, 18] },
+      { label: 'Unit 3-4',   desc: 'Could you please tell me where...?', slice: [18, 36] },
+      { label: 'Unit 5-6',   desc: 'What are the shirts made of?', slice: [36, 54] },
+      { label: 'Unit 7-8',   desc: 'Teenagers should be allowed to...', slice: [54, 72] },
+      { label: 'Unit 9-10',  desc: 'I like music that I can dance to.', slice: [72, 90] },
+      { label: 'Unit 11-14', desc: 'Sad movies make me cry.', slice: [90, 120] },
+    ]
+  },
+  ...Array.from({ length: 2 }, (_, i) => ({
+    id: `tb_slot_${i + 8}`,
     name: null,
     desc: null,
     cover: null,
@@ -114,7 +208,7 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Textbook({ onImport, onClose, onSetBack, progress = {}, onNavigate, requireSpeak }) {
+export default function Textbook({ onImport, onClose, onSetBack, progress = {}, onNavigate, requireSpeak, hideSkipNext }) {
   const [detail, setDetail] = useState(null)
   const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
 
@@ -132,6 +226,7 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
         unitLabel={syncUnit.label}
         bookId={syncUnit.bookId}
         requireSpeak={requireSpeak}
+        hideSkipNext={hideSkipNext}
         onClose={() => setSyncUnit(null)}
       />
     )

@@ -1,0 +1,37 @@
+项目概览
+- 项目名：English Input App（React + Vite/Electron）
+- 目标：将现有前端 UI 重建为 Figma 文件，产出可复用组件库（Design System）和页面样稿，便于开发与设计同步。
+
+要重建的页面/屏幕（优先级顺序）
+1. Dashboard（首页）— 顶部导航、侧边栏/功能卡、最近学习记录与统计。
+2. Courses / Textbook — 课程/章节列表、卡片、筛选与搜索。
+3. Exercise / Quiz View — 题干、选项（多选/单选/输入）、音频播放、进度与分数反馈。
+4. ListeningPractice — 含音频控制、文本高亮与答题交互。
+5. Vocabulary / FillBlank / WordInput — 单词输入、填空题、校验提示（正确/错误）。
+6. Settings / ImportPanel / SyncPractice — 设置项（开关、选择）、数据导入界面、同步状态显示。
+
+组件与设计系统要求
+- 建立 Components：Button (Primary/Secondary/Tertiary), Input (text, search), Select, Card, Modal, Nav/Header, QuizCard, AudioControl, Badge/Tag。
+- Variants：Button (default/hover/active/disabled), Input (default/focus/error/disabled), Quiz Option (normal/selected/correct/incorrect)。
+- 文本样式：建立 H1/H2/H3, Body, Small/Caption，确保行高与字重与项目 CSS 大致一致（如果不明确则标注待确认）。
+- 颜色 Tokens：主色/辅助色/背景色/文本主色/成功/警示/中性，若项目 CSS 有变量请提取；否则从页面截图估算并标注。
+- 图标/图片：导入 `src/assets` 与 `public` 中的 SVG/PNG，优先保留 SVG 向量并转为可编辑图层。
+
+导入与校验建议流程
+1. 在本地启动项目 dev server（或用 demo 页面渲染关键组件）：
+   npm install
+   npm run dev
+   打开渲染好的页面（例如 Dashboard / Exercise 页面）。
+2. 使用 Figma 插件（推荐 html.to.design 或 React-to-Figma 类型插件）抓取页面：
+   - 在 Figma 中运行插件并粘入页面 URL，或把渲染后的 HTML/CSS 片段交给插件。
+   - 优先抓取 Dashboard、Exercise、以及一个组件集合页（若没有组件页，创建一个临时 demo 页面用于逐个渲染）。
+3. 导出静态资产：把 `src/assets` 中的 SVG 全部收集到 `figma/assets/`，并上传到 Figma 的资源库。
+4. 在 Figma 中：
+   - 按组件类型分组建立 Component Sets（Variants）。
+   - 建立 Color Styles 与 Text Styles（命名规范例如: Color/Primary, Text/H1）。
+   - 创建 Desktop (1440px) 与 Mobile (375px) 的主要页面 Frames。
+5. 手动校正并标注：修正布局细节、字体、边距与阴影；在关键组件上标注交互说明（hover/focus 状态、动效描述）。
+6. 交付：一个包含 Component Library 的 Figma 文件（或 Team Library），附带一个 assets 文件夹（SVG/PNG）与组件名 ↔ 源文件路径的 mapping 文档（例：`src/components/Quiz.jsx` -> `QuizCard`）。
+
+短粘贴文本（可直接放到插件描述栏）
+“Convert the rendered pages of this React web app (Dashboard, Exercise/Quiz, Courses, ListeningPractice, Settings) into editable Figma files. Extract a component library (Buttons, Inputs, Cards, QuizCard), create text & color styles, import SVGs from src/assets, build button/input state variants, and deliver reusable components and page frames.”

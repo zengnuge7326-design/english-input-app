@@ -1,0 +1,532 @@
+[
+  {
+    "id": 1,
+    "zh": "这是一个你学习英语的新阶段。",
+    "en": "This is a new English learning stage for you."
+  },
+  {
+    "id": 2,
+    "zh": "教科书旨在与你的心理特征和认知水平相匹配。",
+    "en": "The textbook is designed to match your psychological characteristics and cognitive level."
+  },
+  {
+    "id": 3,
+    "zh": "新教科书旨在帮助你发展语言技能并在英语中表达你的思想。",
+    "en": "The new textbook aims to help you develop language skills and express your thoughts in English."
+  },
+  {
+    "id": 4,
+    "zh": "积极参与英语课并与老师和同学交流非常重要。",
+    "en": "Its important to actively participate in English class and communicate with teachers and classmates."
+  },
+  {
+    "id": 5,
+    "zh": "学习语言和文化密切相关，因为语言承载着文化。",
+    "en": "Learning language and culture are closely related because language carries culture."
+  },
+  {
+    "id": 6,
+    "zh": "要有效地学习英语，你需要听、说、读、写，并经常使用它。",
+    "en": "To learn English effectively, you need to listen, speak, read, write, and use it frequently."
+  },
+  {
+    "id": 7,
+    "zh": "早上好，艾丽丝！我，你，很好，没问题，太好了，你好，嗨，怎么样，谢谢。",
+    "en": "Good morning, Alice! I, you, am, are, fine, OK, good, hello, hi, how, thanks."
+  },
+  {
+    "id": 8,
+    "zh": "这个是什么（用英语）？ 这是一个橙子。",
+    "en": "Whats this in English? Its an orange."
+  },
+  {
+    "id": 9,
+    "zh": "请拼写出来。 A、E、I、O 这些字母的读音。",
+    "en": "Spell it, please. Pronunciation of letters A, E, I, O."
+  },
+  {
+    "id": 10,
+    "zh": "加油！祝你在英语学习中取得成功。",
+    "en": "Go for it! Wishing you success in your English learning."
+  },
+  {
+    "id": 11,
+    "zh": "写出每对中缺失的大写或小写字母。",
+    "en": "2d Write the missing big letter or small letter for each pair."
+  },
+  {
+    "id": 12,
+    "zh": "是什么颜色？",
+    "en": "What color is it?"
+  },
+  {
+    "id": 13,
+    "zh": "它是吗？它是黑色。",
+    "en": "is it? Its black."
+  },
+  {
+    "id": 14,
+    "zh": "她是谁？她是辛迪。",
+    "en": "Whos she? Shes Cindy."
+  },
+  {
+    "id": 15,
+    "zh": "他是谁？他是她的父亲。",
+    "en": "Whos he? Hes her father."
+  },
+  {
+    "id": 16,
+    "zh": "你好。我叫吉娜。",
+    "en": "Hi. My names Gina."
+  },
+  {
+    "id": 17,
+    "zh": "很高兴认识你！",
+    "en": "Im Jenny. Nice to meet you!"
+  },
+  {
+    "id": 18,
+    "zh": "早上好！你好，辛迪！",
+    "en": "Good morning! Hello, Cindy!"
+  },
+  {
+    "id": 19,
+    "zh": "我是辛迪。我是戴尔。",
+    "en": "Im Cindy. Im Dale."
+  },
+  {
+    "id": 20,
+    "zh": "很高兴认识你，也一样。",
+    "en": "Nice to meet you, too."
+  },
+  {
+    "id": 21,
+    "zh": "你好，亚兰。我是布朗女士。",
+    "en": "Hello, Alan. Im Ms. Brown."
+  },
+  {
+    "id": 22,
+    "zh": "很高兴认识你！",
+    "en": "Nice to meet you!"
+  },
+  {
+    "id": 23,
+    "zh": "钥匙是黄色的。",
+    "en": "The key is yellow."
+  },
+  {
+    "id": 24,
+    "zh": "尺子是蓝色的。",
+    "en": "The ruler is blue."
+  },
+  {
+    "id": 25,
+    "zh": "杯子是红色的。",
+    "en": "The cup is red."
+  },
+  {
+    "id": 26,
+    "zh": "这是你的铅笔吗？",
+    "en": "Is this your pencil?"
+  },
+  {
+    "id": 27,
+    "zh": "那些是我的书。",
+    "en": "And those are my books."
+  },
+  {
+    "id": 28,
+    "zh": "这是你的铅笔盒吗？",
+    "en": "Is this your pencil box?"
+  },
+  {
+    "id": 29,
+    "zh": "不，不是的。那是她的。",
+    "en": "No, it isnt. Its hers."
+  },
+  {
+    "id": 30,
+    "zh": "好的，这些是我的橡皮。",
+    "en": "OK, and these are my erasers."
+  },
+  {
+    "id": 31,
+    "zh": "这是你的尺子，简。",
+    "en": "This is your ruler, Jane."
+  },
+  {
+    "id": 32,
+    "zh": "AA，EE，II，OO，UU，AA，EE，II，OO，UU，AA，EE，II，OO，UU，AA，EE，II，OO，UU。",
+    "en": "AA, EE, II, OO, UU, AA, EE, II, OO, UU, AA, EE, II, OO, UU, AA, EE, II, OO, UU."
+  },
+  {
+    "id": 33,
+    "zh": "AA，EE，II，OO，UU，AA，EE，II，OO，UU，AA，EE，II，OO，UU。",
+    "en": "AA, EE, II, OO, UU, AA, EE, II, OO, UU, AA, EE, II, OO, UU."
+  },
+  {
+    "id": 34,
+    "zh": "UU 在尺子上，UU 在蓝色。",
+    "en": "UU in ruler, UU in blue."
+  },
+  {
+    "id": 35,
+    "zh": "是钥匙在沙发上吗？",
+    "en": "Are the keys on the sofa?"
+  },
+  {
+    "id": 36,
+    "zh": "它在你的桌子上吗？",
+    "en": "Is it on your desk?"
+  },
+  {
+    "id": 37,
+    "zh": "它在沙发上。",
+    "en": "Its on the sofa."
+  },
+  {
+    "id": 38,
+    "zh": "它在你的祖父母的房间里。",
+    "en": "Its in your grandparents room."
+  },
+  {
+    "id": 39,
+    "zh": "它在你的头上！",
+    "en": "Its on your head!"
+  },
+  {
+    "id": 40,
+    "zh": "它们在桌子上。",
+    "en": "Theyre on the table."
+  },
+  {
+    "id": 41,
+    "zh": "它们在里面吗？",
+    "en": "Where are they in the ?"
+  },
+  {
+    "id": 42,
+    "zh": "不，那是他们在里面吗？",
+    "en": "No, its the they in the ?"
+  },
+  {
+    "id": 43,
+    "zh": "书包在哪里？它在桌子底下吗？",
+    "en": "Wheres the schoolbag? Is it under the table?"
+  },
+  {
+    "id": 44,
+    "zh": "不，它不在那里。它在桌子上。",
+    "en": "No, it isnt. Its on the table."
+  },
+  {
+    "id": 45,
+    "zh": "英语书在收音机下面。",
+    "en": "The English books are under the radio."
+  },
+  {
+    "id": 46,
+    "zh": "汤姆房间里的东西在哪里？",
+    "en": "Where are the things in Toms room?"
+  },
+  {
+    "id": 47,
+    "zh": "它们在收音机下面。",
+    "en": "Theyre under the radio."
+  },
+  {
+    "id": 48,
+    "zh": "我是凯特，我的妹妹是吉娜。",
+    "en": "Im Kate, and my sister is Gina."
+  },
+  {
+    "id": 49,
+    "zh": "凯特很整洁，但吉娜不是。",
+    "en": "Kate is tidy, but Gina is not."
+  },
+  {
+    "id": 50,
+    "zh": "凯特的书和录像带在哪里？",
+    "en": "Where are Kates books and tapes?"
+  },
+  {
+    "id": 51,
+    "zh": "它们在书架上。",
+    "en": "They are in the bookcase."
+  },
+  {
+    "id": 52,
+    "zh": "吉娜的书在哪里？",
+    "en": "Where are Ginas books?"
+  },
+  {
+    "id": 53,
+    "zh": "它们在床上、沙发上和椅子下面到处都是。",
+    "en": "They are everywhere on her bed, on the sofa, and under the chair."
+  },
+  {
+    "id": 54,
+    "zh": "凯特有什么东西？",
+    "en": "What things does Kate have?"
+  },
+  {
+    "id": 55,
+    "zh": "凯特有书和录像带。",
+    "en": "Kate has books and tapes."
+  },
+  {
+    "id": 56,
+    "zh": "吉娜有什么东西？",
+    "en": "What things does Gina have?"
+  },
+  {
+    "id": 57,
+    "zh": "吉娜有书和一个模型飞机。",
+    "en": "Gina has books and a model plane."
+  },
+  {
+    "id": 58,
+    "zh": "琳琳有羽毛球吗？",
+    "en": "Does Jane have a tennis ball?"
+  },
+  {
+    "id": 59,
+    "zh": "你有没有棒球？",
+    "en": "Do you have a baseball?"
+  },
+  {
+    "id": 60,
+    "zh": "是的，我有。 它在我的包里。",
+    "en": "Yes, I do. Its in my bag."
+  },
+  {
+    "id": 61,
+    "zh": "我们的棒球棒在哪儿？",
+    "en": "Wheres our baseball bat?"
+  },
+  {
+    "id": 62,
+    "zh": "你有没有外套？",
+    "en": "Do you have your jacket?"
+  },
+  {
+    "id": 63,
+    "zh": "哦，没有，它在椅子上。",
+    "en": "Oh, no, I dont. Its on the chair."
+  },
+  {
+    "id": 64,
+    "zh": "还有你的帽子！",
+    "en": "And your hat, too!"
+  },
+  {
+    "id": 65,
+    "zh": "你有没有足球？",
+    "en": "Do you have a soccer ball?"
+  },
+  {
+    "id": 66,
+    "zh": "嘿，海伦，我们走吧！",
+    "en": "Hey, Helen, lets go!"
+  },
+  {
+    "id": 67,
+    "zh": "你有没有棒球？",
+    "en": "Do you have the baseball?"
+  },
+  {
+    "id": 68,
+    "zh": "你的外套呢？",
+    "en": "What about your jacket?"
+  },
+  {
+    "id": 69,
+    "zh": "你有没有乒乓球拍？",
+    "en": "Do you have a pingpong bat?"
+  },
+  {
+    "id": 70,
+    "zh": "是的，我有。 我还有乒乓球。",
+    "en": "Yes, I do. I have a pingpong ball."
+  },
+  {
+    "id": 71,
+    "zh": "他有没有足球？",
+    "en": "Does he have a soccer ball?"
+  },
+  {
+    "id": 72,
+    "zh": "是的，他有。 他有两根乒乓球拍。",
+    "en": "Yes, he does. He has two pingpong bats."
+  },
+  {
+    "id": 73,
+    "zh": "鲍勃有没有足球？",
+    "en": "Does Bob have a soccer ball?"
+  },
+  {
+    "id": 74,
+    "zh": "你有没有篮球？",
+    "en": "Do you have a basketball?"
+  },
+  {
+    "id": 75,
+    "zh": "是的，他们有。 他们有一套排球。",
+    "en": "Yes, they do. They have a volleyball."
+  },
+  {
+    "id": 76,
+    "zh": "你有没有有趣的东西？",
+    "en": "Do you have interesting things?"
+  },
+  {
+    "id": 77,
+    "zh": "你喜欢橙子吗？",
+    "en": "Do you like oranges?"
+  },
+  {
+    "id": 78,
+    "zh": "我不喜欢蔬菜。",
+    "en": "No, I dont like vegetables."
+  },
+  {
+    "id": 79,
+    "zh": "水果怎么样？",
+    "en": "What about the fruit?"
+  },
+  {
+    "id": 80,
+    "zh": "你喜欢草莓和苹果吗？",
+    "en": "Do you like strawberries and apples?"
+  },
+  {
+    "id": 81,
+    "zh": "他们喜欢梨吗？",
+    "en": "Do they like pears?"
+  },
+  {
+    "id": 82,
+    "zh": "蓝色是我最喜欢的颜色。",
+    "en": "Blue is my favorite color."
+  },
+  {
+    "id": 83,
+    "zh": "多少钱？",
+    "en": "How much is it?"
+  },
+  {
+    "id": 84,
+    "zh": "这件毛衣九美元。",
+    "en": "Nine dollars is the price of this sweater."
+  },
+  {
+    "id": 85,
+    "zh": "这些袜子多少钱？",
+    "en": "How much are these socks?"
+  },
+  {
+    "id": 86,
+    "zh": "你的生日是什么时候？",
+    "en": "When is your birthday?"
+  },
+  {
+    "id": 87,
+    "zh": "我的生日是五月二日。",
+    "en": "My birthday is on May 2nd."
+  },
+  {
+    "id": 88,
+    "zh": "他的生日是一月十七日。",
+    "en": "His birthday is on January 17th."
+  },
+  {
+    "id": 89,
+    "zh": "她的生日是九月五日。",
+    "en": "Her birthday is on September 5th."
+  },
+  {
+    "id": 90,
+    "zh": "他的生日是四月二十一日。",
+    "en": "His birthday is on April 21st."
+  },
+  {
+    "id": 91,
+    "zh": "简妮的生日是什么时候？",
+    "en": "When is Jennys birthday?"
+  },
+  {
+    "id": 92,
+    "zh": "他们的生日在一月份。",
+    "en": "Their birthdays are in January."
+  },
+  {
+    "id": 93,
+    "zh": "不，是在六日。",
+    "en": "No, its on the 6th."
+  },
+  {
+    "id": 94,
+    "zh": "她的生日是五月二十四日。",
+    "en": "Her birthday is on May 24th."
+  },
+  {
+    "id": 95,
+    "zh": "我的最喜欢的科目是体育。",
+    "en": "My favorite subject is P.E."
+  },
+  {
+    "id": 96,
+    "zh": "和同学一起玩游戏很有趣。",
+    "en": "Its fun to play games with my classmates."
+  },
+  {
+    "id": 97,
+    "zh": "你为什么喜欢体育？",
+    "en": "Why do you like P.E.?"
+  },
+  {
+    "id": 98,
+    "zh": "科学也是一个有趣的科目。",
+    "en": "Science is an interesting subject, too."
+  },
+  {
+    "id": 99,
+    "zh": "你最喜欢的科目是什么？",
+    "en": "Whats your favorite subject?"
+  },
+  {
+    "id": 100,
+    "zh": "我认为历史很无聊，但很重要。",
+    "en": "I think history is boring, but its important."
+  },
+  {
+    "id": 101,
+    "zh": "星期五是我最喜欢的日子，因为星期六就在第二天。",
+    "en": "Friday is my favorite day because the next day is Saturday."
+  },
+  {
+    "id": 102,
+    "zh": "我的最喜欢的科目是科学。",
+    "en": "My favorite subject is science."
+  },
+  {
+    "id": 103,
+    "zh": "李老师是我的体育老师，他经常和我们一起玩游戏。",
+    "en": "Mr. Hu is my P.E. teacher, and he plays games with us."
+  },
+  {
+    "id": 104,
+    "zh": "你音乐老师的名字是什么？",
+    "en": "Whats your music teachers name?"
+  },
+  {
+    "id": 105,
+    "zh": "我的音乐老师是谢老师。",
+    "en": "My music teacher is Ms. Xie."
+  },
+  {
+    "id": 106,
+    "zh": "在地理中学习不同文化很有意思。",
+    "en": "Its interesting to learn about different cultures in geography."
+  }
+]
