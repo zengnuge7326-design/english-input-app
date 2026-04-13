@@ -151,10 +151,10 @@ export default function Quiz({ onImport, onClose }) {
                       </p>
                       <button
                         onClick={() => speak(quiz.question)}
-                        className="text-blue-400 hover:text-blue-300 text-xl"
+                        className="shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
                         title="朗读题目"
                       >
-                        <IconSpeaker size={22} />
+                        <IconSpeaker size={20} />
                       </button>
                     </div>
                     <div className="space-y-2">
@@ -179,10 +179,10 @@ export default function Quiz({ onImport, onClose }) {
                           </button>
                           <button
                             onClick={() => speak(option)}
-                            className="text-blue-400 hover:text-blue-300 px-2"
+                            className="shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
                             title="朗读选项"
                           >
-                            <IconSpeaker size={22} />
+                            <IconSpeaker size={20} />
                           </button>
                         </div>
                       ))}
