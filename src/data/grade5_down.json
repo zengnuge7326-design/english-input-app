@@ -1,0 +1,622 @@
+[
+  {
+    "en": "When is your birthday?",
+    "zh": "你什么时候生日？",
+    "id": 1
+  },
+  {
+    "en": "My birthday is on April 4th.",
+    "zh": "我的生日是4月4日。",
+    "id": 2
+  },
+  {
+    "en": "That’s my mother’s birthday, too!",
+    "zh": "这也是我妈妈的生日呢！",
+    "id": 3
+  },
+  {
+    "en": "Cool! What will you do for your mum?",
+    "zh": "真酷！你打算给妈妈做什么？",
+    "id": 4
+  },
+  {
+    "en": "I’ll cook noodles for her.",
+    "zh": "我会为她做面条。",
+    "id": 5
+  },
+  {
+    "en": "Chinese noodles are delicious!",
+    "zh": "中国面条很好吃！",
+    "id": 6
+  },
+  {
+    "en": "Please come then. We can have a birthday party for both of you!",
+    "zh": "请来参加吧。我们可以为你们两个人举办生日派对！",
+    "id": 7
+  },
+  {
+    "en": "When is Grandpa’s birthday?",
+    "zh": "爷爷的生日什么时候？",
+    "id": 8
+  },
+  {
+    "en": "It’s on October 12th.",
+    "zh": "是12月12日。",
+    "id": 9
+  },
+  {
+    "en": "That’s New Year’s Day!",
+    "zh": "这是新年！",
+    "id": 10
+  },
+  {
+    "en": "Yes! John’s birthday is on the 4th.",
+    "zh": "是的！约翰的生日是4号。",
+    "id": 11
+  },
+  {
+    "en": "When is Sarah’s birthday?",
+    "zh": "莎拉的生日什么时候？",
+    "id": 12
+  },
+  {
+    "en": "My birthday is on January 1st.",
+    "zh": "我的生日是1月1日。",
+    "id": 13
+  },
+  {
+    "en": "Sarah’s cat has two kittens.",
+    "zh": "莎拉的猫有两个小猫咪。",
+    "id": 14
+  },
+  {
+    "en": "Read Sarah’s diary.",
+    "zh": "读一下莎拉的日记。",
+    "id": 15
+  },
+  {
+    "en": "April 15th",
+    "zh": "4月15日",
+    "id": 16
+  },
+  {
+    "en": "My cat has two new kittens.",
+    "zh": "我的猫有两个新小猫咪。",
+    "id": 17
+  },
+  {
+    "en": "They are pink because they are very young.",
+    "zh": "因为它们很小，所以是粉色的。",
+    "id": 18
+  },
+  {
+    "en": "They still can’t see.",
+    "zh": "它们还看不见。",
+    "id": 19
+  },
+  {
+    "en": "They have white fur now.",
+    "zh": "它们现在有白色的毛。",
+    "id": 20
+  },
+  {
+    "en": "They are cute.",
+    "zh": "它们很可爱。",
+    "id": 21
+  },
+  {
+    "en": "The kittens can walk now.",
+    "zh": "小猫咪现在可以走路了。",
+    "id": 22
+  },
+  {
+    "en": "They can play with Robin!",
+    "zh": "它们可以和罗宾一起玩！",
+    "id": 23
+  },
+  {
+    "en": "Their eyes are open!",
+    "zh": "它们的眼睛睁开了！",
+    "id": 24
+  },
+  {
+    "en": "They are blue.",
+    "zh": "它们是蓝色的。",
+    "id": 25
+  },
+  {
+    "en": "Their eyes are open.",
+    "zh": "它们的眼睛睁开了。",
+    "id": 26
+  },
+  {
+    "en": "They have white fur.",
+    "zh": "它们有白色的毛。",
+    "id": 27
+  },
+  {
+    "en": "They can walk.",
+    "zh": "它们可以走路。",
+    "id": 28
+  },
+  {
+    "en": "Now write two sentences about the kittens.",
+    "zh": "现在写两个关于小猫咪的句子。",
+    "id": 29
+  },
+  {
+    "en": "1. Their eyes are open on April 26th.",
+    "zh": "1. 它们在4月26日睁开了眼睛。",
+    "id": 30
+  },
+  {
+    "en": "2. __________________________",
+    "zh": "2. __________________________",
+    "id": 31
+  },
+  {
+    "en": "3. __________________________",
+    "zh": "3. __________________________",
+    "id": 32
+  },
+  {
+    "en": "4. __________________________",
+    "zh": "4. __________________________",
+    "id": 33
+  },
+  {
+    "en": "Mother’s Day is on the _____ Sunday in May.",
+    "zh": "母亲节在五月份的 _____ 个星期日。",
+    "id": 34
+  },
+  {
+    "en": "It is _____ o’clock.",
+    "zh": "这是 _____ 点钟。",
+    "id": 35
+  },
+  {
+    "en": "There are ______ people in his family.",
+    "zh": "他的家里有 _____ 个人。",
+    "id": 36
+  },
+  {
+    "en": "The singing test will be on May 4th.",
+    "zh": "唱歌测试将在五月四日举行。",
+    "id": 37
+  },
+  {
+    "en": "I can’t sing well.",
+    "zh": "我唱歌唱得不太好。",
+    "id": 38
+  },
+  {
+    "en": "Don’t worry.",
+    "zh": "不用担心。",
+    "id": 39
+  },
+  {
+    "en": "Will you come to the party? Today is Rabbit’s birthday.",
+    "zh": "你来参加聚会吗？今天是兔子生日。",
+    "id": 40
+  },
+  {
+    "en": "Sorry, I can’t. I want to practise my song.",
+    "zh": "对不起，我不能。我想练习我的歌。",
+    "id": 41
+  },
+  {
+    "en": "Good job, Zoom.",
+    "zh": "做得好，Zoom。",
+    "id": 42
+  },
+  {
+    "en": "Thank you, Miss Bird.",
+    "zh": "谢谢你，鸟小姐。",
+    "id": 43
+  },
+  {
+    "en": "Will you go? Of course!",
+    "zh": "你要去吗？当然！",
+    "id": 44
+  },
+  {
+    "en": "Whose dog is this?",
+    "zh": "这是谁的狗？",
+    "id": 45
+  },
+  {
+    "en": "It’s mine. He’s very tired.",
+    "zh": "这是我的。他很累了。",
+    "id": 46
+  },
+  {
+    "en": "Wow! What a beautiful painting! Is it yours?",
+    "zh": "哇！这幅画真漂亮！是你的吗？",
+    "id": 47
+  },
+  {
+    "en": "No. It’s his.",
+    "zh": "不，是他的。",
+    "id": 48
+  },
+  {
+    "en": "Whose carrots are these?",
+    "zh": "这些胡萝卜是谁的？",
+    "id": 49
+  },
+  {
+    "en": "The carrots are theirs.",
+    "zh": "这些胡萝卜是他们的。",
+    "id": 50
+  },
+  {
+    "en": "Are these all ours?",
+    "zh": "这些都是我们的吗？",
+    "id": 51
+  },
+  {
+    "en": "Yes, they are.",
+    "zh": "是的，是我们的。",
+    "id": 52
+  },
+  {
+    "en": "Wow! That picture of Beijing is beautiful.",
+    "zh": "哇！这张北京的照片真漂亮。",
+    "id": 53
+  },
+  {
+    "en": "Whose is it?",
+    "zh": "这是谁的？",
+    "id": 54
+  },
+  {
+    "en": "It’s Zhang Peng’s.",
+    "zh": "是张鹏的。",
+    "id": 55
+  },
+  {
+    "en": "Look! There is a picture of Shanghai, too.",
+    "zh": "看！还有一张上海的照片。",
+    "id": 56
+  },
+  {
+    "en": "It’s Binbin’s.",
+    "zh": "是本本的。",
+    "id": 57
+  },
+  {
+    "en": "Oh, yes! It’s his.",
+    "zh": "哦，是的！是他的。",
+    "id": 58
+  },
+  {
+    "en": "Where is Fido now?",
+    "zh": "费多现在在哪里？",
+    "id": 59
+  },
+  {
+    "en": "He’s in the kitchen.",
+    "zh": "他在厨房。",
+    "id": 60
+  },
+  {
+    "en": "Is he drinking water?",
+    "zh": "他在喝水吗？",
+    "id": 61
+  },
+  {
+    "en": "No, he isn’t. He’s eating.",
+    "zh": "不，他没有。他在吃东西。",
+    "id": 62
+  },
+  {
+    "en": "Can I play with him now?",
+    "zh": "我现在可以和他玩了吗？",
+    "id": 63
+  },
+  {
+    "en": "Yes. Can you take him to the park?",
+    "zh": "可以。你能带他去公园吗？",
+    "id": 64
+  },
+  {
+    "en": "Of course! Fido, come here!",
+    "zh": "当然！费多，过来！",
+    "id": 65
+  },
+  {
+    "en": "Woof, woof!",
+    "zh": "汪汪！",
+    "id": 66
+  },
+  {
+    "en": "What are you doing here, Robin?",
+    "zh": "你在这里做什么，罗宾？",
+    "id": 67
+  },
+  {
+    "en": "I’m looking at a bear. I’m dancing like a bear.",
+    "zh": "我在看熊。我像熊一样跳舞。",
+    "id": 68
+  },
+  {
+    "en": "I’m looking at the rabbits. I’m eating like a rabbit.",
+    "zh": "我在看兔子。我像兔子一样吃东西。",
+    "id": 69
+  },
+  {
+    "en": "I’m looking at a rabbit. It’s playing with its friends.",
+    "zh": "我在看兔子。它在和朋友们玩。",
+    "id": 70
+  },
+  {
+    "en": "It’s playing with its friends.",
+    "zh": "它在和朋友们玩。",
+    "id": 71
+  },
+  {
+    "en": "I’m running like a tiger.",
+    "zh": "我像老虎一样跑。",
+    "id": 72
+  },
+  {
+    "en": "I’m walking like an elephant.",
+    "zh": "我像大象一样走。",
+    "id": 73
+  },
+  {
+    "en": "I’m looking at a monkey.",
+    "zh": "我在看猴子。",
+    "id": 74
+  },
+  {
+    "en": "I’m climbing like him.",
+    "zh": "我像他一样爬。",
+    "id": 75
+  },
+  {
+    "en": "I’m looking at a bird.",
+    "zh": "我在看鸟。",
+    "id": 76
+  },
+  {
+    "en": "I like flying. I want to be a bird!",
+    "zh": "我喜欢飞。我想变成一只鸟！",
+    "id": 77
+  },
+  {
+    "en": "Robin, do you want to swim like a fish?",
+    "zh": "罗宾，你想要像鱼一样游泳吗？",
+    "id": 78
+  },
+  {
+    "en": "No! No! I don’t want to be a fish!",
+    "zh": "不！不！我不想变成一条鱼！",
+    "id": 79
+  },
+  {
+    "en": "Answer the questions.",
+    "zh": "回答问题。",
+    "id": 80
+  },
+  {
+    "en": "Where are Sarah and Robin?",
+    "zh": "莎拉和罗宾在哪里？",
+    "id": 81
+  },
+  {
+    "en": "They are at the zoo.",
+    "zh": "他们在动物园。",
+    "id": 82
+  },
+  {
+    "en": "What are the animals doing in the story?",
+    "zh": "故事里动物在做什么？",
+    "id": 83
+  },
+  {
+    "en": "The bear is sleeping.",
+    "zh": "熊在睡觉。",
+    "id": 84
+  },
+  {
+    "en": "The rabbits are climbing.",
+    "zh": "兔子在爬。",
+    "id": 85
+  },
+  {
+    "en": "The tiger is running.",
+    "zh": "老虎在跑。",
+    "id": 86
+  },
+  {
+    "en": "The elephant is walking.",
+    "zh": "大象在走。",
+    "id": 87
+  },
+  {
+    "en": "Listen again and choose the right answers.",
+    "zh": "听一听，选择正确的答案。",
+    "id": 88
+  },
+  {
+    "en": "What is Amy doing?",
+    "zh": "艾米正在做什么？",
+    "id": 89
+  },
+  {
+    "en": "A. She is shopping.",
+    "zh": "A. 她在购物。",
+    "id": 90
+  },
+  {
+    "en": "B. She is eating lunch.",
+    "zh": "B. 她在吃午饭。",
+    "id": 91
+  },
+  {
+    "en": "Whose bike is it?",
+    "zh": "这是谁的自行车？",
+    "id": 92
+  },
+  {
+    "en": "It is his.",
+    "zh": "这是他的。",
+    "id": 93
+  },
+  {
+    "en": "What is the cat doing?",
+    "zh": "猫在做什么？",
+    "id": 94
+  },
+  {
+    "en": "A. It is climbing.",
+    "zh": "A. 它在爬。",
+    "id": 95
+  },
+  {
+    "en": "B. It is sleeping.",
+    "zh": "B. 它在睡觉。",
+    "id": 96
+  },
+  {
+    "en": "What is Wu Binbin doing now?",
+    "zh": "武斌斌现在在做什么？",
+    "id": 97
+  },
+  {
+    "en": "A. He is playing.",
+    "zh": "A. 他在玩。",
+    "id": 98
+  },
+  {
+    "en": "B. He is eating.",
+    "zh": "B. 他在吃东西。",
+    "id": 99
+  },
+  {
+    "en": "Complete the sentences.",
+    "zh": "完成句子。",
+    "id": 100
+  },
+  {
+    "en": "Whose English book is that?",
+    "zh": "那是什么英语书？",
+    "id": 101
+  },
+  {
+    "en": "It’s Miss White’s book.",
+    "zh": "那是白老师的书。",
+    "id": 102
+  },
+  {
+    "en": "It’s his.",
+    "zh": "这是他的。",
+    "id": 103
+  },
+  {
+    "en": "Amy: Whose storybook is this?",
+    "zh": "艾米：这是谁的故事书？",
+    "id": 104
+  },
+  {
+    "en": "John: It’s Mr Zhang’s. It’s his.",
+    "zh": "约翰：这是张老师的书。这是他的。",
+    "id": 105
+  },
+  {
+    "en": "Wu Binbin: Where is my pen?",
+    "zh": "武斌斌：我的笔在哪里？",
+    "id": 106
+  },
+  {
+    "en": "I can’t find it.",
+    "zh": "我找不到它。",
+    "id": 107
+  },
+  {
+    "en": "Sarah: Here’s one. Is this your pen?",
+    "zh": "莎拉：给你一支。这是你的笔吗？",
+    "id": 108
+  },
+  {
+    "en": "Wu Binbin: Yes, it’s my pen. Thank you.",
+    "zh": "武斌斌：是的，这是我的笔。谢谢。",
+    "id": 109
+  },
+  {
+    "en": "Grandpa: Whose rabbits are these?",
+    "zh": "爷爷：这些兔子是谁的？",
+    "id": 110
+  },
+  {
+    "en": "Robin: These are Binbin’s. Grandpa: Oh, these are my rabbits.",
+    "zh": "罗宾：这些是斌斌的。爷爷：哦，这些是我的兔子。",
+    "id": 111
+  },
+  {
+    "en": "Robin: Look! The rabbits are eating green carrots now.",
+    "zh": "罗宾：看！兔子现在正在吃绿色的胡萝卜。",
+    "id": 112
+  },
+  {
+    "en": "Zip: Here comes a tiger.",
+    "zh": "齐普：来了一个老虎。",
+    "id": 113
+  },
+  {
+    "en": "Zoom: Where is it?",
+    "zh": "zooms：它在哪里？",
+    "id": 114
+  },
+  {
+    "en": "Zip: Shh. Be quiet.",
+    "zh": "齐普：嘘。安静点。",
+    "id": 115
+  },
+  {
+    "en": "Zoom: A tiger!",
+    "zh": "zooms：老虎！",
+    "id": 116
+  },
+  {
+    "en": "I’ll show you.",
+    "zh": "我带你看看。",
+    "id": 117
+  },
+  {
+    "en": "The Canadian robot is ______ a picture.",
+    "zh": "加拿大机器人正在画一幅画。",
+    "id": 118
+  },
+  {
+    "en": "Asako is ______ sushi.",
+    "zh": "浅子正在做寿司。",
+    "id": 119
+  },
+  {
+    "en": "The Spanish robot is ______ music.",
+    "zh": "西班牙机器人正在听音乐。",
+    "id": 120
+  },
+  {
+    "en": "Robin is ______ kung fu.",
+    "zh": "罗宾正在学功夫。",
+    "id": 121
+  },
+  {
+    "en": "Sarah and Robin are ______ to the Spanish robot.",
+    "zh": "莎拉和罗宾在向西班牙机器人问好。",
+    "id": 122
+  },
+  {
+    "en": "What is Grandpa doing?",
+    "zh": "爷爷在做什么？",
+    "id": 123
+  },
+  {
+    "en": "What is Chen Jie doing?",
+    "zh": "陈洁在做什么？",
+    "id": 124
+  }
+]

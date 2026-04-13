@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { supabase } from './lib/supabase'
+import { unlockAudio, isAudioUnlocked } from './utils/audioUnlock'
 import ExerciseView from './components/ExerciseView'
 import ImportPanel from './components/ImportPanel'
 import SentenceList from './components/SentenceList'
@@ -13,6 +14,7 @@ import Quiz from './components/Quiz'
 import FillBlank from './components/FillBlank'
 import SyncPractice from './components/SyncPractice'
 import VocabStudy from './components/VocabStudy'
+import PhonicsLesson from './components/PhonicsLesson'
 import { useProgress, getRecentErrors } from './hooks/useProgress'
 import sampleData from './data/sample.json'
 import changyongData from './data/changyong.json'
@@ -21,6 +23,9 @@ import grade3UpData from './data/grade3_up.json'
 import grade3DownData from './data/grade3_down.json'
 import grade4UpData from './data/grade4_up.json'
 import grade5UpData from './data/grade5_up.json'
+import grade5DownData from './data/grade5_down.json'
+import grade6UpData from './data/grade6_up.json'
+import grade6DownData from './data/grade6_down.json'
 import {
   IconHome, IconPencil, IconList, IconBookOpen, IconBook,
   IconGraduationCap, IconDownload, IconSettings,
@@ -38,6 +43,9 @@ const ALL_UNITS = [
   ...[ { label: 'Unit 1A', slice: [0,9] }, { label: 'Unit 1B', slice: [9,18] }, { label: 'Unit 1C', slice: [18,26] }, { label: 'Unit 2A', slice: [26,36] }, { label: 'Unit 2B', slice: [36,47] }, { label: 'Unit 3', slice: [47,56] }, { label: 'Unit 4', slice: [56,67] }, { label: 'Unit 5', slice: [67,80] }, { label: 'Unit 6A', slice: [80,89] }, { label: 'Unit 6B', slice: [89,97] } ].map(u => ({ bookName: '四年级上册', bookId: 'grade4_up', data: grade4UpData, ...u, label: `四年级上册 · ${u.label}` })),
   ...[ { label: 'Unit 1A', slice: [0,10] }, { label: 'Unit 1B', slice: [10,20] }, { label: 'Unit 1C', slice: [20,30] }, { label: 'Unit 2A', slice: [30,41] }, { label: 'Unit 2B', slice: [41,51] }, { label: 'Unit 2C', slice: [51,62] }, { label: 'Unit 3A', slice: [62,72] }, { label: 'Unit 3B', slice: [72,81] }, { label: 'Unit 3C', slice: [81,90] }, { label: 'Unit 4A', slice: [90,99] }, { label: 'Unit 4B', slice: [99,108] }, { label: 'Unit 4C', slice: [108,116] }, { label: 'Unit 5A', slice: [116,126] }, { label: 'Unit 5B', slice: [126,135] }, { label: 'Unit 6A', slice: [135,145] }, { label: 'Unit 6B', slice: [145,155] }, { label: 'Unit 6C', slice: [155,164] } ].map(u => ({ bookName: '四年级下册', bookId: 'grade4_down', data: grade4DownData, ...u, label: `四年级下册 · ${u.label}` })),
   ...[ { label: 'Unit 1', slice: [0,8] }, { label: 'Unit 2', slice: [8,14] }, { label: 'Unit 3', slice: [14,20] }, { label: 'Unit 4', slice: [20,24] }, { label: 'Unit 5', slice: [24,30] }, { label: 'Unit 6', slice: [30,36] } ].map(u => ({ bookName: '五年级上册', bookId: 'grade5_up', data: grade5UpData, ...u, label: `五年级上册 · ${u.label}` })),
+  ...[ { label: 'Unit 1', slice: [0,20] }, { label: 'Unit 2', slice: [20,40] }, { label: 'Unit 3', slice: [40,60] }, { label: 'Unit 4', slice: [60,80] }, { label: 'Unit 5', slice: [80,100] }, { label: 'Unit 6', slice: [100,124] } ].map(u => ({ bookName: '五年级下册', bookId: 'grade5_down', data: grade5DownData, ...u, label: `五年级下册 · ${u.label}` })),
+  ...[ { label: 'Unit 1', slice: [0,37] }, { label: 'Unit 2', slice: [37,74] }, { label: 'Unit 3', slice: [74,111] }, { label: 'Unit 4', slice: [111,148] }, { label: 'Unit 5', slice: [148,185] }, { label: 'Unit 6', slice: [185,227] } ].map(u => ({ bookName: '六年级上册', bookId: 'grade6_up', data: grade6UpData, ...u, label: `六年级上册 · ${u.label}` })),
+  ...[ { label: 'Unit 1', slice: [0,61] }, { label: 'Unit 2', slice: [61,122] }, { label: 'Unit 3', slice: [122,183] }, { label: 'Unit 4', slice: [183,244] } ].map(u => ({ bookName: '六年级下册', bookId: 'grade6_down', data: grade6DownData, ...u, label: `六年级下册 · ${u.label}` })),
 ]
 
 const STUDY_TIME_KEY = 'english_study_time'
@@ -211,6 +219,7 @@ export default function App() {
   const [sentences, setSentences] = useState(sampleData)
   const [settings, setSettings] = useState(loadSettings)
   const [tab, setTab] = useState('home')
+  const [audioReady, setAudioReady] = useState(false)
   const [exerciseIndex, setExerciseIndex] = useState(0)
   const [lessonProgress, setLessonProgress] = useState({ index: 0, total: sampleData.length })
   const [nav, setNav] = useState(null)
@@ -351,8 +360,15 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleContinueKey, true)
   }, [tab, showContinue, nextUnit, handleImport])
 
+  function handleGlobalClick() {
+    if (!isAudioUnlocked()) {
+      unlockAudio()
+      setAudioReady(true)
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
 
       {/* Header */}
       <header className="border-b border-gray-800/60 bg-gray-950/80 backdrop-blur py-0 flex items-center z-30 relative flex-nowrap overflow-x-auto" style={{minHeight:'48px'}}>
@@ -367,8 +383,18 @@ export default function App() {
             <span className="text-blue-400/70 text-[9px] tracking-widest font-medium">ENGLISH</span>
           </div>
         </div>
+        {/* Audio unlock indicator — click to unlock, turns green when active */}
+        <button
+          onClick={e => { e.stopPropagation(); unlockAudio(); setAudioReady(true) }}
+          title={audioReady ? '声音已激活' : '点击激活声音'}
+          className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-colors ml-1
+            ${audioReady ? 'text-green-400' : 'text-gray-600 hover:text-yellow-400 animate-pulse'}`}
+        >
+          <IconVolume2 size={14} />
+        </button>
+
         {/* Left group: 返回 + 首页 + 设置 + 登录 + 练习 */}
-        <div className="flex items-center gap-0.5 shrink-0 pl-4">
+        <div className="flex items-center gap-0.5 shrink-0 pl-2">
           <button onClick={() => navigateTo('home')}
             className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
               ${tab === 'home' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-gray-800/60 hover:text-gray-200'}`}>
@@ -441,6 +467,7 @@ export default function App() {
             <span className={tab === 'vocab' ? 'text-blue-400' : ''}><IconBookmark size={14} /></span>
             <span>单词</span>
           </button>
+
           <button
             onClick={handleBack}
             disabled={!canGoBack}
@@ -457,7 +484,7 @@ export default function App() {
         {/* Main content */}
         <main
           className={`flex-1 flex flex-col items-center justify-start px-4 pb-4 transition-all duration-200${tab === 'exercise' ? ' ocean-main' : ''}`}
-          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice' || tab === 'vocab') ? '0.75rem' : '8vh' }}
+          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice' || tab === 'vocab' || tab === 'phonics') ? '0.75rem' : '8vh' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
             <Dashboard
@@ -542,6 +569,9 @@ export default function App() {
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
             <VocabStudy onSetBack={setBackFn} />
           </div>
+          {tab === 'phonics' && (
+            <PhonicsLesson onBack={() => navigateTo('home')} />
+          )}
         </main>
       </div>
 

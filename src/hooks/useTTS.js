@@ -43,15 +43,30 @@ export function useTTS(settings) {
     }
 
     // Web Speech API with best available voice
-    if (!window.speechSynthesis) return
-    window.speechSynthesis.cancel()
-    const utterance = new SpeechSynthesisUtterance(cleanText)
-    utterance.lang = settings.lang || 'en-US'
-    utterance.rate = rate
-    const bestVoice = getBestEnglishVoice()
-    if (bestVoice) utterance.voice = bestVoice
-    utteranceRef.current = utterance
-    window.speechSynthesis.speak(utterance)
+    const synth = window.speechSynthesis
+    if (!synth) return
+
+    // Chrome bug: speechSynthesis can get stuck in "speaking" state.
+    // Cancelling and re-speaking fixes it.
+    synth.cancel()
+
+    const doSpeak = () => {
+      const utterance = new SpeechSynthesisUtterance(cleanText)
+      utterance.lang = settings.lang || 'en-US'
+      utterance.rate = rate
+      const bestVoice = getBestEnglishVoice()
+      if (bestVoice) utterance.voice = bestVoice
+      utteranceRef.current = utterance
+      synth.speak(utterance)
+    }
+
+    // If paused (can happen after page regain focus), resume first
+    if (synth.paused) {
+      synth.resume()
+      setTimeout(doSpeak, 50)
+    } else {
+      doSpeak()
+    }
   }, [settings.lang, settings.rate, voicesReady])
 
   const cancel = useCallback(() => {

@@ -5,6 +5,9 @@ import grade3UpData from '../data/grade3_up.json'
 import grade3DownData from '../data/grade3_down.json'
 import grade4UpData from '../data/grade4_up.json'
 import grade5UpData from '../data/grade5_up.json'
+import grade5DownData from '../data/grade5_down.json'
+import grade6UpData from '../data/grade6_up.json'
+import grade6DownData from '../data/grade6_down.json'
 import grade7UpData from '../data/grade7_up.json'
 import grade7DownData from '../data/grade7_down.json'
 import grade8UpData from '../data/grade8_up.json'
@@ -100,6 +103,49 @@ const TEXTBOOK_SLOTS = [
       { label: 'Unit 4', desc: 'How can we all stay healthy?', slice: [20, 24] },
       { label: 'Unit 5', desc: 'What would you like to eat?', slice: [24, 30] },
       { label: 'Unit 6', desc: 'There are also many rivers in the nature park.', slice: [30, 36] },
+    ]
+  },
+  {
+    id: 'grade5_down',
+    name: '五年级下册',
+    desc: '人教版五年级下册 Unit 1-6',
+    cover: './covers/grade5_up.jpg',
+    data: grade5DownData,
+    lessons: [
+      { label: 'Unit 1', desc: 'When is your birthday?', slice: [0, 20] },
+      { label: 'Unit 2', desc: 'My favourite season', slice: [20, 40] },
+      { label: 'Unit 3', desc: 'My school calendar', slice: [40, 60] },
+      { label: 'Unit 4', desc: 'When is the art show?', slice: [60, 80] },
+      { label: 'Unit 5', desc: "Whose dog is it?", slice: [80, 100] },
+      { label: 'Unit 6', desc: 'Work quietly!', slice: [100, 124] },
+    ]
+  },
+  {
+    id: 'grade6_up',
+    name: '六年级上册',
+    desc: '人教版六年级上册 Unit 1-6',
+    cover: './covers/grade5_up.jpg',
+    data: grade6UpData,
+    lessons: [
+      { label: 'Unit 1', desc: "How can I get there?", slice: [0, 37] },
+      { label: 'Unit 2', desc: 'Ways to go to school', slice: [37, 74] },
+      { label: 'Unit 3', desc: 'My weekend plan', slice: [74, 111] },
+      { label: 'Unit 4', desc: "I have a pen pal", slice: [111, 148] },
+      { label: 'Unit 5', desc: 'What does he do?', slice: [148, 185] },
+      { label: 'Unit 6', desc: "How tall are you?", slice: [185, 227] },
+    ]
+  },
+  {
+    id: 'grade6_down',
+    name: '六年级下册',
+    desc: '人教版六年级下册 Unit 1-4',
+    cover: './covers/grade5_up.jpg',
+    data: grade6DownData,
+    lessons: [
+      { label: 'Unit 1', desc: 'How tall are you?', slice: [0, 61] },
+      { label: 'Unit 2', desc: 'Last weekend', slice: [61, 122] },
+      { label: 'Unit 3', desc: 'Where did you go?', slice: [122, 183] },
+      { label: 'Unit 4', desc: 'Then and now', slice: [183, 244] },
     ]
   },
   {

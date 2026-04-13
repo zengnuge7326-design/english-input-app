@@ -1,0 +1,1222 @@
+[
+  {
+    "en": "Zhang Peng: Look! That’s the tallest dinosaur in this hall.",
+    "zh": "张鹏：快看！那只恐龙在这一间教室里最高的。",
+    "id": 1
+  },
+  {
+    "en": "Mike: Yes, it is. How tall is it?",
+    "zh": "迈克：是的，它是。它有多高？",
+    "id": 2
+  },
+  {
+    "en": "Zhang Peng: Maybe 4 metres.",
+    "zh": "张鹏：大概四米。",
+    "id": 3
+  },
+  {
+    "en": "Mike: Wow! It’s taller than both of us together.",
+    "zh": "迈克：哇！它比我们两个人加起来还要高。",
+    "id": 4
+  },
+  {
+    "en": "Zhang Peng: Look! There are more dinosaurs over there!",
+    "zh": "张鹏：快看！那边还有更多的恐龙！",
+    "id": 5
+  },
+  {
+    "en": "Mike: They’re all so big and tall.",
+    "zh": "迈克：它们都很大很 tall。",
+    "id": 6
+  },
+  {
+    "en": "Zhang Peng: Hey, this dinosaur isn’t tall! I’m taller than this one.",
+    "zh": "张鹏：嘿，这只恐龙不高！我比这只恐龙高。",
+    "id": 7
+  },
+  {
+    "en": "Mike: Oh, yes. How tall are you?",
+    "zh": "迈克：哦，是的。你有多高？",
+    "id": 8
+  },
+  {
+    "en": "Zhang Peng: I’m 1.65 metres.",
+    "zh": "张鹏：我1.65米。",
+    "id": 9
+  },
+  {
+    "en": "How tall is Zhang Peng?",
+    "zh": "张鹏有多高？",
+    "id": 10
+  },
+  {
+    "en": "Who is taller, Zhang Peng or the small dinosaur?",
+    "zh": "张鹏还是小恐龙哪个更高？",
+    "id": 11
+  },
+  {
+    "en": "How tall are you? I’m                     metres.",
+    "zh": "你有多高？我                     米。",
+    "id": 12
+  },
+  {
+    "en": "Who is taller than you?                                               .",
+    "zh": "比你高的人是谁？                                               。",
+    "id": 13
+  },
+  {
+    "en": "How old are you? I’m                     .",
+    "zh": "你多大？我                     。",
+    "id": 14
+  },
+  {
+    "en": "Who is older than you?                                                .",
+    "zh": "比你大的人是谁？                                                。",
+    "id": 15
+  },
+  {
+    "en": "Mike: Those shoes in the window are nice! Let’s have a look.",
+    "zh": "迈克：窗户里的鞋子真漂亮！我们去看看吧。",
+    "id": 16
+  },
+  {
+    "en": "Wu Binbin: What size are your shoes, Mike?",
+    "zh": "吴彬彬：你的鞋子是什么码，迈克？",
+    "id": 17
+  },
+  {
+    "en": "Mike: Size 7.",
+    "zh": "迈克：7码。",
+    "id": 18
+  },
+  {
+    "en": "Wu Binbin: Size 7? That’s so small.",
+    "zh": "吴彬彬：7码？真小。",
+    "id": 19
+  },
+  {
+    "en": "Mike: In China I wear size 40 shoes.",
+    "zh": "迈克：在中国我穿40码的鞋。",
+    "id": 20
+  },
+  {
+    "en": "Wu Binbin: Oh! Your feet are bigger than mine. My shoes are size 37.",
+    "zh": "吴彬彬：哦！你的脚比我的大。我的鞋是37码。",
+    "id": 21
+  },
+  {
+    "en": "Mike: Really? You look taller than me.",
+    "zh": "迈克：真的吗？你看起来比我高。",
+    "id": 22
+  },
+  {
+    "en": "Wu Binbin: But I think you are heavier.",
+    "zh": "吴彬彬：但是我觉得你更重。",
+    "id": 23
+  },
+  {
+    "en": "How heavy are you?",
+    "zh": "你有多重？",
+    "id": 24
+  },
+  {
+    "en": "Mike: I’m 48 kilograms.",
+    "zh": "迈克：我48公斤。",
+    "id": 25
+  },
+  {
+    "en": "Wu Binbin: Yes, you’re heavier. I’m 46 kilograms.",
+    "zh": "吴彬彬：是的，你更重。我46公斤。",
+    "id": 26
+  },
+  {
+    "en": "What size are Wu Binbin’s shoes?",
+    "zh": "吴彬彬穿什么码的鞋？",
+    "id": 27
+  },
+  {
+    "en": "How heavy is Wu Binbin?",
+    "zh": "吴彬彬有多重？",
+    "id": 28
+  },
+  {
+    "en": "Who is heavier than you?                             .",
+    "zh": "比你重的人是谁？                             。",
+    "id": 29
+  },
+  {
+    "en": "What size are your shoes?",
+    "zh": "你穿什么码的鞋？",
+    "id": 30
+  },
+  {
+    "en": "Whose shoes are bigger?                              .",
+    "zh": "谁穿的鞋更大？                              。",
+    "id": 31
+  },
+  {
+    "en": "thinner   heavier",
+    "zh": "更薄  更重",
+    "id": 32
+  },
+  {
+    "en": "Spring is coming! The sky is clearer and the sun is brighter. Can you think of any other changes? Look and tick.",
+    "zh": "春天来了！天空更清晰，太阳更亮。你能想出其他的变化吗？ 看看并勾选。",
+    "id": 33
+  },
+  {
+    "en": "Wu Binbin and his family are going on a trip to the countryside. Wu Binbin has a story to tell Robin.",
+    "zh": "吴彬彬和他的家人要去乡下旅行。吴彬彬有一个故事要告诉罗宾。",
+    "id": 34
+  },
+  {
+    "en": "Old Tree says,",
+    "zh": "老树说，",
+    "id": 35
+  },
+  {
+    "en": "\"That’s easy, Little Duck. The sun goes down every day, and we grow older every day. Your shadow grows longer because you are growing taller. You are becoming a big beautiful bird!\"",
+    "zh": "“这很容易，小鸭子。太阳每天都落下，我们每天都变老。你的影子变长是因为你一天一天长大。你正变成了一只美丽的鸟！”",
+    "id": 36
+  },
+  {
+    "en": "Why is that?",
+    "zh": "为什么这样？",
+    "id": 37
+  },
+  {
+    "en": "Little Duck asks his friend Old Tree. \"You are older an\"",
+    "zh": "小鸭子问他的朋友老树：“你变老了。”",
+    "id": 38
+  },
+  {
+    "en": "Can you answer Little Duck’s question, Robin?",
+    "zh": "你能回答小鸭子的问题吗，罗宾？",
+    "id": 39
+  },
+  {
+    "en": "Choose a title for the story.",
+    "zh": "选择故事的标题。",
+    "id": 40
+  },
+  {
+    "en": "Little Duck: Old Tree, the sun gets _______, but my shadow gets _______. Why?",
+    "zh": "小鸭子说：老树，太阳变低了，但我的影子变长了。为什么？",
+    "id": 41
+  },
+  {
+    "en": "Old Tree: That’s easy. Your shadow gets longer because you are getting _______ and growing _______ every day.",
+    "zh": "老树说：那很简单。你的影子变长是因为你一天天长大，变得_______和_______。",
+    "id": 42
+  },
+  {
+    "en": "Little Duck: So what will happen to me?",
+    "zh": "小鸭子说：那对我来说会发生什么？",
+    "id": 43
+  },
+  {
+    "en": "Old Tree: Well, …",
+    "zh": "老树说：嗯…",
+    "id": 44
+  },
+  {
+    "en": "Zebra: They need a new goalkeeper.",
+    "zh": "斑马说：他们需要一个新守门员。",
+    "id": 45
+  },
+  {
+    "en": "Deer: I’d like to have a try.",
+    "zh": "鹿说：我想试试。",
+    "id": 46
+  },
+  {
+    "en": "Giraffe: Me too.",
+    "zh": "长颈鹿说：我也想。",
+    "id": 47
+  },
+  {
+    "en": "Zoom: How tall are you?",
+    "zh": "迅猛龙说：你有多高？",
+    "id": 48
+  },
+  {
+    "en": "Deer: I’m 1.8 metres.",
+    "zh": "鹿说：我1.8米高。",
+    "id": 49
+  },
+  {
+    "en": "Zip: How heavy are you?",
+    "zh": "小马说：你有多重？",
+    "id": 50
+  },
+  {
+    "en": "Deer: I’m 86 kilograms.",
+    "zh": "鹿说：我86公斤重。",
+    "id": 51
+  },
+  {
+    "en": "Dog: I can’t wait.",
+    "zh": "狗说：我迫不及待了。",
+    "id": 52
+  },
+  {
+    "en": "Zip: Mr Zebra is 10 centimetres taller than Mr Deer.",
+    "zh": "小马说：斑马先生比鹿先生高10厘米。",
+    "id": 53
+  },
+  {
+    "en": "Giraffe: I’m the tallest one.",
+    "zh": "长颈鹿说：我最高的。",
+    "id": 54
+  },
+  {
+    "en": "Zip: Sorry. Your neck is too long. The others can’t reach you.",
+    "zh": "小马说：对不起。你的脖子太长了。其他人够不着你。",
+    "id": 55
+  },
+  {
+    "en": "Zoom: Yes, and he’s stronger.",
+    "zh": "迅猛龙说：是的，而且他更强壮。",
+    "id": 56
+  },
+  {
+    "en": "But he can’t catch the ball!",
+    "zh": "但是他没能抓住球！",
+    "id": 57
+  },
+  {
+    "en": "Football needs teamwork.",
+    "zh": "足球需要团队合作。",
+    "id": 58
+  },
+  {
+    "en": "Hippo: What’s happening here?",
+    "zh": "河马说：这里发生了什么？",
+    "id": 59
+  },
+  {
+    "en": "Oh! Here’s the one we want!",
+    "zh": "哦！这就是我们想要的东西！",
+    "id": 60
+  },
+  {
+    "en": "Why? He’s too heavy!",
+    "zh": "为什么？他太重了！",
+    "id": 61
+  },
+  {
+    "en": "We need a big guy!",
+    "zh": "我们需要一个大个子！",
+    "id": 62
+  },
+  {
+    "en": "Hi, Grandpa. How are you? How was your weekend?",
+    "zh": "你好，爷爷。你怎么样？你周末过得怎么样？",
+    "id": 63
+  },
+  {
+    "en": "I’m fine, Mike. It was good, thank you.",
+    "zh": "我很好，Mike。谢谢你，我周末过得不错。",
+    "id": 64
+  },
+  {
+    "en": "What did you do?",
+    "zh": "你做了什么？",
+    "id": 65
+  },
+  {
+    "en": "Well, I stayed at home with your grandma. We drank tea in the afternoon and watched TV.",
+    "zh": "我跟奶奶在家休息，下午喝茶看电视。",
+    "id": 66
+  },
+  {
+    "en": "I watched TV, too.",
+    "zh": "我也看电视了。",
+    "id": 67
+  },
+  {
+    "en": "I watched some children’s shows on TV.",
+    "zh": "我看了很多儿童节目。",
+    "id": 68
+  },
+  {
+    "en": "That’s nice. Did you do anything else?",
+    "zh": "真好。你还做了什么别的？",
+    "id": 69
+  },
+  {
+    "en": "Yes, I cleaned my room and washed my clothes.",
+    "zh": "是的，我打扫了我的房间，洗了我的衣服。",
+    "id": 70
+  },
+  {
+    "en": "You are a good boy!",
+    "zh": "你真棒！",
+    "id": 71
+  },
+  {
+    "en": "What did Mike’s grandpa do last weekend?",
+    "zh": "Mike的爷爷上周末做了什么？",
+    "id": 72
+  },
+  {
+    "en": "How was your weekend?",
+    "zh": "你周末过得怎么样？",
+    "id": 73
+  },
+  {
+    "en": "What did you do last weekend?",
+    "zh": "你上周末做了什么？",
+    "id": 74
+  },
+  {
+    "en": "What are you going to do next weekend?",
+    "zh": "你下个周末打算做什么？",
+    "id": 75
+  },
+  {
+    "en": "Hey, Amy. Let’s go to the bookstore. I want to buy the new film magazine.",
+    "zh": "Amy，我们去书店吧。我想买最新的电影杂志。",
+    "id": 76
+  },
+  {
+    "en": "Oh, I read it last weekend.",
+    "zh": "哦，我上周末读了它。",
+    "id": 77
+  },
+  {
+    "en": "Was it interesting?",
+    "zh": "它很有趣吗？",
+    "id": 78
+  },
+  {
+    "en": "Yes, it talked about a lot of new films.",
+    "zh": "是的，它介绍了很多新电影。",
+    "id": 79
+  },
+  {
+    "en": "What did you do last weekend? Did you see a film?",
+    "zh": "你上周末做了什么？你看了电影吗？",
+    "id": 80
+  },
+  {
+    "en": "No, I had a cold. I stayed at home all weekend and slept.",
+    "zh": "不，我感冒了。我整个周末都在家睡觉。",
+    "id": 81
+  },
+  {
+    "en": "Oh, I’m sorry. I’m happy you feel better now.",
+    "zh": "哦，我很抱歉。很高兴你现在感觉好多了。",
+    "id": 82
+  },
+  {
+    "en": "Thanks. Let’s go by bus. It’s faster than walking.",
+    "zh": "谢谢。我们坐公交车去吧。比走路快。",
+    "id": 83
+  },
+  {
+    "en": "Did John see a film last weekend? What did he do?",
+    "zh": "John上周末看了电影吗？他做了什么？",
+    "id": 84
+  },
+  {
+    "en": "What did you do yesterday/last night …?",
+    "zh": "你昨天/上个晚上做了什么…？",
+    "id": 85
+  },
+  {
+    "en": "What do you usually do on weekends?",
+    "zh": "你周末通常做什么？",
+    "id": 86
+  },
+  {
+    "en": "This is Mrs Broom. She works in a hotel.",
+    "zh": "这是布鲁姆夫人。她住在酒店工作。",
+    "id": 87
+  },
+  {
+    "en": "She is a housekeeper.",
+    "zh": "她是酒店的管家。",
+    "id": 88
+  },
+  {
+    "en": "What do you think she did yesterday?",
+    "zh": "你觉得她昨天做了什么？",
+    "id": 89
+  },
+  {
+    "en": "made the beds",
+    "zh": "整理了床铺",
+    "id": 90
+  },
+  {
+    "en": "cooked the food",
+    "zh": "做饭了",
+    "id": 91
+  },
+  {
+    "en": "cleaned the rooms",
+    "zh": "打扫了房间",
+    "id": 92
+  },
+  {
+    "en": "Wu Binbin and his family stayed at the Holiday Hotel.",
+    "zh": "吴斌斌和他的家人住在假日酒店。",
+    "id": 93
+  },
+  {
+    "en": "It was not a happy time.",
+    "zh": "那段时间并不愉快。",
+    "id": 94
+  },
+  {
+    "en": "Dear Sir,\nOur weekend at your hotel was bad. Our room was big but everything was very old.",
+    "zh": "尊敬的先生,\n我们住你们的酒店的周末不愉快。我们的房间很大，但是东西都很旧。",
+    "id": 95
+  },
+  {
+    "en": "Our friend Robin cleaned our room and fixed a broken chair.",
+    "zh": "我们的朋友罗宾打扫了我们的房间，修理了一把坏椅子。",
+    "id": 96
+  },
+  {
+    "en": "My mother wanted to read a book but the lamp was too small.",
+    "zh": "我妈妈想看书，但是台灯太小了。",
+    "id": 97
+  },
+  {
+    "en": "My dad got some hamburgers from the hotel kitchen, but they were cold and tasted bad.",
+    "zh": "我爸爸从酒店厨房买了一些汉堡，但是它们是冷的，味道不好。",
+    "id": 98
+  },
+  {
+    "en": "I wanted to watch TV but the TV didn’t work. The people in Room 301 listened to loud music. I didn’t sleep all night.",
+    "zh": "我想要看电视，但是电视坏了。房间301的人们放着很大的音乐。我一夜都没睡。",
+    "id": 99
+  },
+  {
+    "en": "I’m sorry, but we didn’t enjoy our stay very much.",
+    "zh": "我很抱歉，我们住得很不愉快。",
+    "id": 100
+  },
+  {
+    "en": "Wu Binbin and family",
+    "zh": "吴斌斌和家人",
+    "id": 101
+  },
+  {
+    "en": "Now write about your bad but good day.",
+    "zh": "请写下你糟糕但又好的一天。",
+    "id": 102
+  },
+  {
+    "en": "Today was a bad but good day for me.",
+    "zh": "今天对我来说是糟糕但又好的一天。",
+    "id": 103
+  },
+  {
+    "en": "First, it was a bad day.",
+    "zh": "首先，那一天是糟糕的。",
+    "id": 104
+  },
+  {
+    "en": "But what did I do then?",
+    "zh": "但是那天我做了什么？",
+    "id": 105
+  },
+  {
+    "en": "So it was also a good day.",
+    "zh": "所以那一天也很好。",
+    "id": 106
+  },
+  {
+    "en": "As the saying goes, \"Bad luck often brings good luck.\"",
+    "zh": "正如谚语所说：“坏运往往带来好运。”",
+    "id": 107
+  },
+  {
+    "en": "Listen and write T (true) or F (false).",
+    "zh": "听写，写出 T (正确) 或 F (错误)。",
+    "id": 108
+  },
+  {
+    "en": "Listen again and answer the questions.",
+    "zh": "再次听录音并回答问题。",
+    "id": 109
+  },
+  {
+    "en": "What did Mike do last weekend?",
+    "zh": "迈克上周末做了什么？",
+    "id": 110
+  },
+  {
+    "en": "Why did Sarah think her weekend was great?",
+    "zh": "莎拉觉得她的周末很棒的原因是什么？",
+    "id": 111
+  },
+  {
+    "en": "Why did Amy go to school by car today?",
+    "zh": "艾米今天为什么开车去学校？",
+    "id": 112
+  },
+  {
+    "en": "What did Zhang Peng do in Harbin?",
+    "zh": "张鹏在哈尔滨做了什么？",
+    "id": 113
+  },
+  {
+    "en": "Let’s wrap it up",
+    "zh": "让我们收尾一下",
+    "id": 114
+  },
+  {
+    "en": "Look at the pictures. Choose words to ﬁll in the blanks.",
+    "zh": "观察图片，选择单词填空。",
+    "id": 115
+  },
+  {
+    "en": "There          lots of dinosaurs many years ago.",
+    "zh": "有……很多恐龙在很久以前。",
+    "id": 116
+  },
+  {
+    "en": "Some of them           plants.",
+    "zh": "一些它们……植物。",
+    "id": 117
+  },
+  {
+    "en": "Some of them ______ faster, so they could eat other smaller dinosaurs.",
+    "zh": "一些它们跑得更快，所以它们可以吃其他更小的恐龙。",
+    "id": 118
+  },
+  {
+    "en": "But we can only see dinosaurs in museums now.",
+    "zh": "但是现在我们只能在博物馆里看到恐龙了。",
+    "id": 119
+  },
+  {
+    "en": "Zoom: Am I now on the moon? I can’t believe it!",
+    "zh": "朱姆：我现在在月球吗？我不敢相信！",
+    "id": 120
+  },
+  {
+    "en": "She must be Chang’e.",
+    "zh": "她一定是嫦娥。",
+    "id": 121
+  },
+  {
+    "en": "Oh, there is the rabbit.",
+    "zh": "哦，那里有兔子。",
+    "id": 122
+  },
+  {
+    "en": "Zip: Where did you go?",
+    "zh": "齐普：你去了哪里？",
+    "id": 123
+  },
+  {
+    "en": "Zoom: I went to the moon.",
+    "zh": "朱姆：我去了月球。",
+    "id": 124
+  },
+  {
+    "en": "Zip: How was your holiday?",
+    "zh": "齐普：你的假期怎么样？",
+    "id": 125
+  },
+  {
+    "en": "Zoom: It was fun.",
+    "zh": "朱姆：很有趣。",
+    "id": 126
+  },
+  {
+    "en": "Zoom: By spaceship.",
+    "zh": "朱姆：坐飞船。",
+    "id": 127
+  },
+  {
+    "en": "Zip: What did you see?",
+    "zh": "齐普：你看到了什么？",
+    "id": 128
+  },
+  {
+    "en": "Zoom: I saw Chang’e, the rabbit and the tree.",
+    "zh": "朱姆：我看到了嫦娥、兔子和树。",
+    "id": 129
+  },
+  {
+    "en": "Zip: Did you take any pictures?",
+    "zh": "齐普：你拍了照片吗？",
+    "id": 130
+  },
+  {
+    "en": "Zoom: Yes, I did. Oops, where did I put the pictures?",
+    "zh": "朱姆：是的，我拍了。哦，我把照片放在哪里了？",
+    "id": 131
+  },
+  {
+    "en": "Zoom: Oh, it was a dream.",
+    "zh": "朱姆：哦，那真是一场梦。",
+    "id": 132
+  },
+  {
+    "en": "Today, there is a guest visiting the school.",
+    "zh": "今天有客人来学校了。",
+    "id": 133
+  },
+  {
+    "en": "The school changed a little.",
+    "zh": "学校变了一点。",
+    "id": 134
+  },
+  {
+    "en": "Grandpa: Wow, a library! There was no library in my old school.",
+    "zh": "爷爷：哇，有一座图书馆！我以前的学校没有图书馆。",
+    "id": 135
+  },
+  {
+    "en": "Sarah: Tell us about your school, please.",
+    "zh": "莎拉：请你告诉我你的学校怎么样。",
+    "id": 136
+  },
+  {
+    "en": "Grandpa: There was only one small building on a hill.",
+    "zh": "爷爷：只有一栋小楼在山上。",
+    "id": 137
+  },
+  {
+    "en": "Wu Binbin: Could you see stars at night?",
+    "zh": "吴彬彬：你晚上能看到星星吗？",
+    "id": 138
+  },
+  {
+    "en": "Grandpa: Yes, I liked the stars.",
+    "zh": "爷爷：是的，我喜欢星星。",
+    "id": 139
+  },
+  {
+    "en": "Sarah: Me too. One day I’m going to visit the moon.",
+    "zh": "莎拉：我也是。有一天我要去月球参观。",
+    "id": 140
+  },
+  {
+    "en": "Wu Binbin: The Americans took about five days to get there in 1969.",
+    "zh": "吴彬彬：美国人在1969年花了大约五天时间去那里。",
+    "id": 141
+  },
+  {
+    "en": "Sarah: How do you know that?",
+    "zh": "莎拉：你怎么知道的？",
+    "id": 142
+  },
+  {
+    "en": "Wu Binbin: Easy, I looked it up on the Internet.",
+    "zh": "吴彬彬：很简单，我在网上查到了。",
+    "id": 143
+  },
+  {
+    "en": "Grandpa: Ah! There were no computers or Internet in my time.",
+    "zh": "爷爷：啊！我那时候没有电脑和互联网。",
+    "id": 144
+  },
+  {
+    "en": "What was Grandpa’s school like?",
+    "zh": "爷爷的学校是什么样的？",
+    "id": 145
+  },
+  {
+    "en": "What was your school like five years ago? What is it like now? Draw and talk.",
+    "zh": "你五年前的学校是什么样的？现在是什么样的？画出来说一说。",
+    "id": 146
+  },
+  {
+    "en": "Chen Jie: John, come and look at Mike’s old photos!",
+    "zh": "陈洁：约翰，过来看看迈克的旧照片！",
+    "id": 147
+  },
+  {
+    "en": "John: That’s funny, Mike! You’re wearing a pink T-shirt.",
+    "zh": "约翰：真滑稽，迈克！你穿着一件粉色的T恤。",
+    "id": 148
+  },
+  {
+    "en": "Mike: Yes, but I don’t like pink now.",
+    "zh": "迈克：是的，但是我现在不喜欢粉色了。",
+    "id": 149
+  },
+  {
+    "en": "Chen Jie: We are all different now!",
+    "zh": "陈洁：我们现在都不同了！",
+    "id": 150
+  },
+  {
+    "en": "Mike: Right. Before, I was quiet. Now, I’m very active in class.",
+    "zh": "迈克：对。以前我比较安静，现在我上课很活跃。",
+    "id": 151
+  },
+  {
+    "en": "John: Well, I was short, so I couldn’t ride my bike well. Now, I go cycling every day. I like it very much.",
+    "zh": "约翰：我以前比较矮，所以骑自行车不好。现在我每天骑自行车，我非常喜欢。",
+    "id": 152
+  },
+  {
+    "en": "Chen Jie: That’s good exercise.",
+    "zh": "陈洁：这是一种很好的锻炼。",
+    "id": 153
+  },
+  {
+    "en": "How did Mike change?",
+    "zh": "迈克是怎么变化的？",
+    "id": 154
+  },
+  {
+    "en": "Talk about your friends or family members. How did they change?",
+    "zh": "谈谈你的朋友或家人。他们是怎么变化的？",
+    "id": 155
+  },
+  {
+    "en": "wasn’t tall/… didn’t like maths/… had long/… hair didn’t like cats/… didn’t wear glasses/… didn’t like eggs/…",
+    "zh": "他/她以前不高的/不喜欢数学的/有一头长头发的/不喜欢猫的/不戴眼镜的/不喜欢鸡蛋的…",
+    "id": 156
+  },
+  {
+    "en": "Tell your partner.",
+    "zh": "告诉你的伙伴。",
+    "id": 157
+  },
+  {
+    "en": "1. What animal can run very fast?",
+    "zh": "1. 哪种动物跑得很快？",
+    "id": 158
+  },
+  {
+    "en": "2. What makes you feel worried?",
+    "zh": "2. 让你感到担心的是什么？",
+    "id": 159
+  },
+  {
+    "en": "What a dream!",
+    "zh": "多么棒的一场梦！",
+    "id": 160
+  },
+  {
+    "en": "Wu Binbin had a race with his father and Max. There were many people there. His father ran very fast, but Wu Binbin could not.",
+    "zh": "吴彬彬和他的爸爸和麦克斯赛跑了。有很多人在那里。他的爸爸跑得很快，但是吴彬彬跑不过。",
+    "id": 161
+  },
+  {
+    "en": "There was nothing he could do. He was so worried. \"I could run fast at school,\" he thought. \"Why am I so slow now?\"",
+    "zh": "他什么也做不了。他非常担心。他想说：“我上学的时候跑得很快，为什么我现在这么慢呢？”",
+    "id": 162
+  },
+  {
+    "en": "Then Robin said, \"Drink this!\" and gave Wu Binbin some water. Wu Binbin drank it and suddenly he felt good. He could run fast again.",
+    "zh": "这时罗宾说：“喝这个！”并给吴彬彬一些水。吴彬彬喝了下去，突然他感觉好多了。他又能跑得很快了。",
+    "id": 163
+  },
+  {
+    "en": "There was a second race. There were many animals in that race.",
+    "zh": "又有一场比赛。比赛中有许多动物。",
+    "id": 164
+  },
+  {
+    "en": "Wu Binbin ran like a cheetah. He could win the race.",
+    "zh": "吴彬彬像猎豹一样跑。他能赢得比赛。",
+    "id": 165
+  },
+  {
+    "en": "But suddenly he tripped and fell.",
+    "zh": "但是他突然绊倒了，摔下来了。",
+    "id": 166
+  },
+  {
+    "en": "Then he woke up.",
+    "zh": "然后他醒了。",
+    "id": 167
+  },
+  {
+    "en": "He was in bed.",
+    "zh": "他在床上。",
+    "id": 168
+  },
+  {
+    "en": "It was all a dream!",
+    "zh": "这都是一个梦！",
+    "id": 169
+  },
+  {
+    "en": "Wu Binbin is telling his mother about the dream.",
+    "zh": "吴滨滨在告诉他的妈妈关于梦的事情。",
+    "id": 170
+  },
+  {
+    "en": "Wu Binbin: Mum, I had an interesting dream last night.",
+    "zh": "吴滨滨：妈妈，我昨晚做了一个有趣的梦。",
+    "id": 171
+  },
+  {
+    "en": "Mum: What did you dream about?",
+    "zh": "妈妈：你梦到了什么？",
+    "id": 172
+  },
+  {
+    "en": "Wu Binbin: I had a race with Dad and Max, but I lost.",
+    "zh": "吴滨滨：我和爸爸和马克赛跑，但是我输了。",
+    "id": 173
+  },
+  {
+    "en": "Mum: What happened then?",
+    "zh": "妈妈：然后呢？",
+    "id": 174
+  },
+  {
+    "en": "Wu Binbin: Robin gave me some water. I drank it and then could run very fast.",
+    "zh": "吴滨滨：罗宾给我递了水。我喝了它，然后才能跑得很快。",
+    "id": 175
+  },
+  {
+    "en": "Suddenly I tripped and fell. Then I woke up.",
+    "zh": "突然我绊倒了，摔下来了。然后我醒了。",
+    "id": 176
+  },
+  {
+    "en": "Mum: What a dream!",
+    "zh": "妈妈：多奇怪的梦啊！",
+    "id": 177
+  },
+  {
+    "en": "Did you have an interesting dream? Tell your dream to your partner. Then write several sentences about it.",
+    "zh": "你做了一个有趣的梦吗？把你的梦告诉你的伙伴。然后写几句话来描述它。",
+    "id": 178
+  },
+  {
+    "en": "I had a dream last night. In my dream, I …",
+    "zh": "我昨晚做了一个梦。在我的梦里，我……",
+    "id": 179
+  },
+  {
+    "en": "What a dream!",
+    "zh": "多奇怪的梦啊！",
+    "id": 180
+  },
+  {
+    "en": "Cross out the words you didn’t hear.",
+    "zh": "圈出你没有听到的单词。",
+    "id": 181
+  },
+  {
+    "en": "gym, dining hall, grass, cycling, ice-skating, badminton",
+    "zh": "体育馆、餐厅、草地、自行车、滑冰、羽毛球",
+    "id": 182
+  },
+  {
+    "en": "Let’s wrap it up",
+    "zh": "让我们总结一下",
+    "id": 183
+  },
+  {
+    "en": "Changes are all around us. Talk about the changes below.",
+    "zh": "变化无处不在。谈谈下面这些变化。",
+    "id": 184
+  },
+  {
+    "en": "In summer, the tree There was a building before.",
+    "zh": "夏天，树木这里曾经有一栋建筑物。",
+    "id": 185
+  },
+  {
+    "en": "Now …",
+    "zh": "现在……",
+    "id": 186
+  },
+  {
+    "en": "Chen Jie was short. It was an egg. Now she is 1.5 metres tall.",
+    "zh": "陈洁小时候很矮。她曾经是个鸡蛋。现在她长高了1.5米。",
+    "id": 187
+  },
+  {
+    "en": "The cat was on the chair. Now …",
+    "zh": "猫坐在椅子上。现在……",
+    "id": 188
+  },
+  {
+    "en": "C Story time",
+    "zh": "故事时间",
+    "id": 189
+  },
+  {
+    "en": "Cavemen often ate raw meat. They didn’t cook their food.",
+    "zh": "原始人经常吃生肉。他们不给食物做饭。",
+    "id": 190
+  },
+  {
+    "en": "Now there are many things to help you cook.",
+    "zh": "现在有很多东西可以帮助你做饭。",
+    "id": 191
+  },
+  {
+    "en": "In 2050, there will be house robots.",
+    "zh": "在2050年，会有家用机器人。",
+    "id": 192
+  },
+  {
+    "en": "They will cook, clean, and wash the dishes.",
+    "zh": "它们会做饭、打扫卫生和洗碗。",
+    "id": 193
+  },
+  {
+    "en": "Zip: Oh, cavemen didn’t cook their meat? Zoom: It’s OK. They didn’t do the dishes either!",
+    "zh": "齐普：哦，原始人没煮肉吗？ 卓姆：没关系。他们也不洗碗。",
+    "id": 194
+  },
+  {
+    "en": "There were many trees, and there were many clean rivers.",
+    "zh": "这里有很多树，还有很多干净的河流。",
+    "id": 195
+  },
+  {
+    "en": "The forests will be healthy and green again.",
+    "zh": "森林会变得健康和绿色再次。",
+    "id": 196
+  },
+  {
+    "en": "Zip: Look! How beautiful the world was! Oh! What will the birds do? Zoom: Don’t worry. People will help them.",
+    "zh": "齐普：快看！世界原来多美丽啊！哦！鸟儿会做什么？ 卓姆：不用担心。人们会帮助他们。",
+    "id": 197
+  },
+  {
+    "en": "Before humans lived on the earth, whales already lived in the sea.",
+    "zh": "在人类居住在地球之前，鲸鱼已经在海洋里生活。",
+    "id": 198
+  },
+  {
+    "en": "Zip: Heal the world!",
+    "zh": "齐普：拯救世界！",
+    "id": 199
+  },
+  {
+    "en": "Zoom: Make it a better place!",
+    "zh": "朱姆：让它变得更好！",
+    "id": 200
+  },
+  {
+    "en": "Mike visited a farm. What can you see on the farm?",
+    "zh": "迈克参观了农场。你能在农场里看到什么？",
+    "id": 201
+  },
+  {
+    "en": "a pear",
+    "zh": "一个梨",
+    "id": 202
+  },
+  {
+    "en": "a jacket",
+    "zh": "一件夹克",
+    "id": 203
+  },
+  {
+    "en": "an egg",
+    "zh": "一个鸡蛋",
+    "id": 204
+  },
+  {
+    "en": "an orange",
+    "zh": "一个橙子",
+    "id": 205
+  },
+  {
+    "en": "Fruit apple egg jacket horse tomato orange cake shoes",
+    "zh": "水果 苹果 鸡蛋 夹克 马 番茄 橙子 蛋糕 鞋",
+    "id": 206
+  },
+  {
+    "en": "Can you name the groups of words?",
+    "zh": "你能把这些词分组吗？",
+    "id": 207
+  },
+  {
+    "en": "Can you think of one more word group? Can you add more words to the groups?",
+    "zh": "你能想出另一个词组吗？你能把更多的词加入这些组里吗？",
+    "id": 208
+  },
+  {
+    "en": "Mike’s happy days",
+    "zh": "迈克的快乐时光",
+    "id": 209
+  },
+  {
+    "en": "Day 2 Farmers’ market",
+    "zh": "第二天的农贸市场",
+    "id": 210
+  },
+  {
+    "en": "Mrs Booth and Bill want to go shopping. Help them finish their mind map.",
+    "zh": "布斯夫人和比尔想去购物。 帮助他们完成他们的思维导图。",
+    "id": 211
+  },
+  {
+    "en": "Bill                     short         tall",
+    "zh": "比尔 短 高",
+    "id": 212
+  },
+  {
+    "en": "Mrs Booth thin young long hair a red bag white shoes",
+    "zh": "布斯夫人 瘦 年轻 长头发 一只红色的包 一双白色的鞋",
+    "id": 213
+  },
+  {
+    "en": "Bill is my new friend. He’s short and heavy.",
+    "zh": "比尔是我的新朋友。 他很矮很重。",
+    "id": 214
+  },
+  {
+    "en": "Day 3 Life on the farm",
+    "zh": "农场生活",
+    "id": 215
+  },
+  {
+    "en": "These are things people often do on the farm.",
+    "zh": "这是人们在农场里经常做的事情。",
+    "id": 216
+  },
+  {
+    "en": "Bill liked candy.",
+    "zh": "比尔喜欢糖果。",
+    "id": 217
+  },
+  {
+    "en": "Bill is taller than before.",
+    "zh": "比尔以前比现在高。",
+    "id": 218
+  },
+  {
+    "en": "Bill will wear a red hat to work.",
+    "zh": "比尔将戴一顶红帽子去工作。",
+    "id": 219
+  },
+  {
+    "en": "Bill likes to read storybooks.",
+    "zh": "比尔喜欢阅读故事书。",
+    "id": 220
+  },
+  {
+    "en": "Bill was smaller before.",
+    "zh": "比尔以前更小。",
+    "id": 221
+  },
+  {
+    "en": "Bill will be thinner than he is now.",
+    "zh": "比尔将比现在更瘦。",
+    "id": 222
+  },
+  {
+    "en": "Design your own poster.",
+    "zh": "设计你自己的海报。",
+    "id": 223
+  },
+  {
+    "en": "Day 7 Mike’s surprise",
+    "zh": "第七天 迈克的惊喜",
+    "id": 224
+  },
+  {
+    "en": "Mike’s school sent him an invitation.",
+    "zh": "迈克学校给他发了一份邀请函。",
+    "id": 225
+  },
+  {
+    "en": "Dear Friends, It is time to leave our school. We are all going to middle school soon, so we will say goodbye to each other. We are going to have a farewell party. You can bring your friends.",
+    "zh": "亲爱的朋友们，是时候离开我们的学校了。 我们很快就要进入中学了，所以我们将告别彼此。 我们将举行告别派对。 你可以带上你的朋友们。",
+    "id": 226
+  },
+  {
+    "en": "Place: Our music room Time: Friday 3 p.m.",
+    "zh": "地点：我们的音乐室 时间：星期五下午3点",
+    "id": 227
+  },
+  {
+    "en": "Activities: We will draw pictures and sing songs. We are going to give prizes for the best pictures. We are going to have cake, candy and juice, too. Yum!",
+    "zh": "活动：我们将会画画和唱歌。 我们将为最好的画作颁奖。 我们还将吃蛋糕、糖果和果汁。 好吃！",
+    "id": 228
+  },
+  {
+    "en": "We will also give many prizes to our good students. For example, who helped others the most? Who studied hard? Who wrote the best story?",
+    "zh": "我们还将奖励优秀的同学。 例如，谁帮助了别人最多？ 谁努力学习了？ 谁写了最好的故事？",
+    "id": 229
+  },
+  {
+    "en": "We will listen to music, play games and dance. It will be great fun. See you at the party!",
+    "zh": "我们会听音乐、玩游戏和跳舞。 这将会很有趣。 我们在派对上见！",
+    "id": 230
+  },
+  {
+    "en": "What are they going to do at the party?",
+    "zh": "他们将在派对上做什么？",
+    "id": 231
+  },
+  {
+    "en": "Who is go",
+    "zh": "谁去",
+    "id": 232
+  },
+  {
+    "en": "Going to the party?",
+    "zh": "去参加派对吗？",
+    "id": 233
+  },
+  {
+    "en": "Are you going to go to the party?",
+    "zh": "你要去参加派对吗？",
+    "id": 234
+  },
+  {
+    "en": "What will you do at the party?",
+    "zh": "你派对上会做什么？",
+    "id": 235
+  },
+  {
+    "en": "I am going to be on ,",
+    "zh": "我要去参加 ,",
+    "id": 236
+  },
+  {
+    "en": "I will",
+    "zh": "我会",
+    "id": 237
+  },
+  {
+    "en": "What can you see in the picture?",
+    "zh": "你能在图画里看到什么？",
+    "id": 238
+  },
+  {
+    "en": "I have some good news and some bad news.",
+    "zh": "我有一些好消息和一些坏消息。",
+    "id": 239
+  },
+  {
+    "en": "Where are you going?",
+    "zh": "你要去哪里？",
+    "id": 240
+  },
+  {
+    "en": "Are you going to a new school?",
+    "zh": "你要去新的学校吗？",
+    "id": 241
+  },
+  {
+    "en": "I’m going to a new middle school.",
+    "zh": "我要去新的中学。",
+    "id": 242
+  },
+  {
+    "en": "I’ll be in Grade 7.",
+    "zh": "我将上七年级。",
+    "id": 243
+  },
+  {
+    "en": "Take care.",
+    "zh": "保重。",
+    "id": 244
+  }
+]

@@ -2,6 +2,58 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import pepWords from '../data/pep_words.json'
 import { IconSpeaker } from './Icons'
 
+// ── IPA syllabification (MOP) — mirrors gen_syllable_audio.py ────────────────
+
+const IPA_VOWELS = new Set(['æ','e','ɪ','ɒ','ʌ','ʊ','ə','i','u',
+  'iː','uː','ɑː','ɔː','ɜː','eɪ','aɪ','ɔɪ','əʊ','aʊ','ɪə','eə','ʊə'])
+const IPA_PHONEMES = ['tʃ','dʒ','iː','uː','ɑː','ɔː','ɜː','eɪ','aɪ','ɔɪ',
+  'əʊ','aʊ','ɪə','eə','ʊə','ŋ','ʃ','ʒ','θ','ð','p','b','t','d','k','g','ɡ',
+  'f','v','s','z','h','m','n','l','r','w','j','y','æ','e','ɪ','ɒ','ʌ','ʊ','ə','i','u']
+const IPA_ONSETS = new Set(['pl','pr','tr','dr','kl','kr','gl','gr','fr','fl',
+  'br','bl','sl','sm','sn','sp','st','sk','sw','θr','ʃr','tʃ','dʒ','tw','dw',
+  'kw','gw','mj','bj','pj','fj','vj','kj','gj','nj','lj','tj','dj','sj','hj'])
+
+function tokenizeIPA(ipa) {
+  const s = ipa.replace(/[/\\ˈˌ·.()\s]/g, '')
+  const tokens = []
+  let i = 0
+  while (i < s.length) {
+    let matched = false
+    for (const ph of IPA_PHONEMES) {
+      if (s.startsWith(ph, i)) {
+        tokens.push({ ph, isV: IPA_VOWELS.has(ph) })
+        i += ph.length; matched = true; break
+      }
+    }
+    if (!matched) i++
+  }
+  return tokens
+}
+
+function syllabifyIPA(ipa) {
+  if (!ipa) return []
+  const tokens = tokenizeIPA(ipa)
+  const nuclei = tokens.map((t, i) => t.isV ? i : -1).filter(i => i >= 0)
+  if (!nuclei.length) return [tokens.map(t => t.ph).join('')]
+  const bounds = new Set([0])
+  for (let n = 0; n < nuclei.length - 1; n++) {
+    const a = nuclei[n], b = nuclei[n + 1]
+    const cons = tokens.slice(a + 1, b).map(t => t.ph)
+    if (!cons.length) continue
+    let split = a + 1
+    for (let k = cons.length; k >= 1; k--) {
+      const onset = cons.slice(-k).join('')
+      if (k === 1 || IPA_ONSETS.has(onset)) { split = b - k; break }
+    }
+    bounds.add(split)
+  }
+  const sorted = [...bounds].sort((a, b) => a - b)
+  return sorted.map((start, i) => {
+    const end = sorted[i + 1] ?? tokens.length
+    return tokens.slice(start, end).map(t => t.ph).join('')
+  }).filter(Boolean)
+}
+
 // ── Orthographic syllabification (visual only) ────────────────────────────────
 
 function syllabifyOne(word) {
@@ -114,7 +166,7 @@ async function fetchUrl(word) {
     const raw = data[0]?.phonetics?.find(p => p.audio)?.audio || null
     const url = raw ? (raw.startsWith('http') ? raw : 'https:' + raw) : null
     urlCache.set(key, url); return url
-  } catch { urlCache.set(key, null); return null }
+  } catch { return null }
 }
 
 async function fetchBuffer(url) {
@@ -156,9 +208,10 @@ function speak(text, rate = 0.82) {
 
 // ── useWordAudio hook ─────────────────────────────────────────────────────────
 
-function useWordAudio(word, speed = 1.0) {
-  const syllables = useMemo(() => syllabify(word), [word])
-  const realSyls  = useMemo(() => syllables.filter(s => !s.isSep), [syllables])
+function useWordAudio(word, ipa = '', speed = 1.0) {
+  const syllables    = useMemo(() => syllabify(word), [word])
+  const realSyls     = useMemo(() => syllables.filter(s => !s.isSep), [syllables])
+  const ipaSyllables = useMemo(() => syllabifyIPA(ipa), [ipa])
   const [activeSylIdx, setActiveSylIdx] = useState(-1)
   const [loading, setLoading]           = useState(false)
   const timersRef = useRef([])
@@ -209,8 +262,18 @@ function useWordAudio(word, speed = 1.0) {
     speak(word, 0.5 * speed)
   }
 
+  async function playIPASyl(i) {
+    reset()
+    setActiveSylIdx(i)
+    timersRef.current.push(setTimeout(() => setActiveSylIdx(-1), 1500))
+    const src = `${import.meta.env.BASE_URL}audio/syllables/${word.toLowerCase().replace(/\s+/g,'_')}/${i}.mp3`
+    const audio = new Audio(src)
+    const ok = await audio.play().then(() => true).catch(() => false)
+    if (!ok) speak(word, 0.5 * speed)
+  }
+
   useEffect(() => { reset(); return reset }, [word])
-  return { syllables, activeSylIdx, loading, playFull, playSyl }
+  return { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl }
 }
 
 // ── SyllableWord ──────────────────────────────────────────────────────────────
@@ -247,6 +310,46 @@ function SyllableWord({ syllables, activeSylIdx, onSylClick, size = 'text-4xl' }
         )
       })}
     </span>
+  )
+}
+
+// ── IPA Syllable Strip ────────────────────────────────────────────────────────
+
+const IPA_PAL = [
+  { idle:'text-teal-300 hover:text-teal-100',   active:'text-teal-100 scale-110' },
+  { idle:'text-violet-300 hover:text-violet-100',active:'text-violet-100 scale-110' },
+  { idle:'text-amber-300 hover:text-amber-100',  active:'text-amber-100 scale-110' },
+  { idle:'text-rose-300 hover:text-rose-100',    active:'text-rose-100 scale-110' },
+]
+
+// ɪ 和 ʊ 在普通字体下太像 i/u，加特殊样式区分
+function renderIPAText(text) {
+  const parts = text.split(/(ɪ|ʊ)/)
+  if (parts.length === 1) return text
+  return parts.map((p, i) => {
+    if (p === 'ɪ') return <span key={i} className="font-bold text-yellow-300">ɪ</span>
+    if (p === 'ʊ') return <span key={i} className="font-bold text-yellow-300">ʊ</span>
+    return p
+  })
+}
+
+function IPASyllableStrip({ ipaSyllables, activeSylIdx, onSylClick }) {
+  if (!ipaSyllables?.length) return null
+  return (
+    <div className="flex items-center gap-1.5 flex-wrap justify-center">
+      {ipaSyllables.map((syl, i) => {
+        const pal = IPA_PAL[i % IPA_PAL.length]
+        const active = activeSylIdx === i
+        return (
+          <button key={i}
+            onClick={e => { e.stopPropagation(); onSylClick(i) }}
+            className={`px-2.5 py-1 rounded-lg text-xl font-mono transition-all active:scale-95 select-none
+              ${active ? pal.active + ' underline underline-offset-4' : pal.idle}`}>
+            {renderIPAText(syl)}
+          </button>
+        )
+      })}
+    </div>
   )
 }
 
@@ -356,7 +459,7 @@ function UnitGrid({ book, progress, onSelect, onBack }) {
 
 function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onProgressChange }) {
   const [idx, setIdx]             = useState(0)
-  const [speed, setSpeed]         = useState(0.7)
+  const [speed, setSpeed]         = useState(1.0)
   const [localSeen, setLocalSeen] = useState({})
   const [moXie, setMoXie]         = useState(false)
   const [moXieDone, setMoXieDone] = useState({}) // idx → true, tracks correct dictations
@@ -366,7 +469,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   const { recState, startRec, stopRec, playRec, reset: resetRec } = useRecorder()
   const word = unit.words[idx]
   const pendingPlayRef = useRef(false)
-  const { syllables, activeSylIdx, loading, playFull, playSyl } = useWordAudio(word.word, speed)
+  const { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl } = useWordAudio(word.word, word.ipa || '', speed)
 
   const SPEEDS = [0.7, 1.0, 1.3]
   const cycleSpeed = () => setSpeed(s => SPEEDS[(SPEEDS.indexOf(s) + 1) % SPEEDS.length])
@@ -477,7 +580,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
             </button>
           </div>
 
-          <div className="text-gray-500 text-sm font-mono tracking-wide">{word.ipa}</div>
+          <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onSylClick={playIPASyl} />
           {loading && <div className="text-blue-400 text-xs animate-pulse">加载音频…</div>}
           {recState === 'recording' && <div className="text-red-400 text-xs animate-pulse">● 录音中</div>}
           {recState === 'recorded' && <div className="text-green-400 text-xs">已录音 · 点麦克风播放</div>}
@@ -510,7 +613,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
           />
           {/* 音标 + 中文提示 */}
           <div className="flex items-center gap-3 text-xs">
-            <span className="text-gray-500 font-mono">{word.ipa}</span>
+            <span className="text-gray-500 font-mono">{renderIPAText(word.ipa || '')}</span>
             <span className="text-gray-600">·</span>
             <span className="text-blue-400/70">{word.zh}</span>
           </div>
@@ -567,7 +670,7 @@ function QuizWord({ word, ipa }) {
   return (
     <div className="flex flex-col items-center gap-2">
       <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-4xl" />
-      <div className="text-gray-500 text-sm font-mono">{ipa}</div>
+      <div className="text-gray-500 text-sm font-mono">{renderIPAText(ipa || '')}</div>
       <button onClick={playFull} className="text-gray-500 hover:text-white text-sm inline-flex items-center gap-1.5">
         <IconSpeaker size={32} /> 发音
       </button>
