@@ -211,36 +211,62 @@ function speak(text, rate = 0.82) {
 function useWordAudio(word, ipa = '', speed = 1.0) {
   const syllables    = useMemo(() => syllabify(word), [word])
   const realSyls     = useMemo(() => syllables.filter(s => !s.isSep), [syllables])
-  const ipaSyllables = useMemo(() => syllabifyIPA(ipa), [ipa])
+  const rawIPASyls   = useMemo(() => syllabifyIPA(ipa), [ipa])
+  // Force IPA chunk count to match word chunk count
+  const ipaSyllables = useMemo(() => {
+    const n = realSyls.length
+    if (!rawIPASyls.length || n === 0) return rawIPASyls
+    if (rawIPASyls.length === n) return rawIPASyls
+    const full = rawIPASyls.join('')
+    if (n === 1) return [full]
+    const chars = [...full]
+    const chunkSize = chars.length / n
+    return Array.from({ length: n }, (_, i) => {
+      const start = Math.round(i * chunkSize)
+      const end   = Math.round((i + 1) * chunkSize)
+      return chars.slice(start, end).join('')
+    }).filter(Boolean)
+  }, [rawIPASyls, realSyls.length])
+
   const [activeSylIdx, setActiveSylIdx] = useState(-1)
   const [loading, setLoading]           = useState(false)
   const timersRef = useRef([])
+  const bufRef    = useRef(null)  // 预加载缓冲，playFull/playSyl 同步读取，消除延迟
 
   function clearTimers() { timersRef.current.forEach(clearTimeout); timersRef.current = [] }
   function reset() { clearTimers(); stopAudio(); setActiveSylIdx(-1) }
 
-  async function getBuffer() {
-    const url = await fetchUrl(word)
-    return url ? fetchBuffer(url) : null
-  }
+  // word 变化时预加载音频缓冲 → bufRef.current
+  useEffect(() => {
+    bufRef.current = null
+    let alive = true
+    setLoading(true)
+    fetchUrl(word)
+      .then(url => {
+        if (!url || !alive) { if (alive) setLoading(false); return }
+        return fetchBuffer(url).then(buf => {
+          if (alive) { bufRef.current = buf; setLoading(false) }
+        })
+      })
+      .catch(() => { if (alive) setLoading(false) })
+    return () => { alive = false }
+  }, [word])
 
   // 均等分配高亮，wallClockMs 已是实际播放时长
   function scheduleHighlight(wallClockMs) {
     const n = realSyls.length
     if (n === 0) return
     const perSyl = wallClockMs / n
-    realSyls.slice(0, n).forEach((s, i) => {
+    realSyls.forEach((s, i) => {
       timersRef.current.push(setTimeout(() => setActiveSylIdx(s.idx), i * perSyl))
     })
     timersRef.current.push(setTimeout(() => setActiveSylIdx(-1), wallClockMs + 400))
   }
 
-  // 播全词，顺序点亮音节
-  async function playFull() {
+  // 播全词，顺序点亮音节 — 同步读取 bufRef，无 await 延迟
+  function playFull() {
     reset()
-    setLoading(true)
-    const buf = await getBuffer()
-    setLoading(false)
+    const buf = bufRef.current
     if (buf) {
       const wallMs = (buf.duration / speed) * 1000
       scheduleHighlight(wallMs)
@@ -252,12 +278,12 @@ function useWordAudio(word, ipa = '', speed = 1.0) {
     }
   }
 
-  // 点音节也播全词，只高亮该音节
-  async function playSyl(sylIdx) {
+  // 点音节也播全词，只高亮该音节 — 同步
+  function playSyl(sylIdx) {
     reset()
     setActiveSylIdx(sylIdx)
     timersRef.current.push(setTimeout(() => setActiveSylIdx(-1), 1500))
-    const buf = await getBuffer()
+    const buf = bufRef.current
     if (buf) { playBuffer(buf, 0, null, speed); return }
     speak(word, 0.5 * speed)
   }
@@ -272,7 +298,7 @@ function useWordAudio(word, ipa = '', speed = 1.0) {
     if (!ok) speak(word, 0.5 * speed)
   }
 
-  useEffect(() => { reset(); return reset }, [word])
+  useEffect(() => { return reset }, [word])
   return { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl }
 }
 
@@ -333,23 +359,29 @@ function renderIPAText(text) {
   })
 }
 
-function IPASyllableStrip({ ipaSyllables, activeSylIdx, onSylClick }) {
+function IPASyllableStrip({ ipaSyllables, activeSylIdx, onPlayWord }) {
   if (!ipaSyllables?.length) return null
   return (
-    <div className="flex items-center gap-1.5 flex-wrap justify-center">
+    <button
+      onClick={e => { e.stopPropagation(); onPlayWord?.() }}
+      className="flex items-center gap-0 flex-wrap justify-center cursor-pointer select-none"
+    >
       {ipaSyllables.map((syl, i) => {
-        const pal = IPA_PAL[i % IPA_PAL.length]
+        const col = SYL_COLORS[i % SYL_COLORS.length]
         const active = activeSylIdx === i
         return (
-          <button key={i}
-            onClick={e => { e.stopPropagation(); onSylClick(i) }}
-            className={`px-2.5 py-1 rounded-lg text-xl font-mono transition-all active:scale-95 select-none
-              ${active ? pal.active + ' underline underline-offset-4' : pal.idle}`}>
-            {renderIPAText(syl)}
-          </button>
+          <span key={i} className="flex items-center">
+            {i > 0 && <span className="text-gray-500 select-none" style={{ fontSize: '0.4em', margin: '0 0.2em', lineHeight: 1 }}>·</span>}
+            <span className={`text-2xl font-mono transition-all duration-150
+              ${active
+                ? `${col.active} scale-110 underline underline-offset-4 drop-shadow-[0_0_10px_currentColor]`
+                : col.base}`}>
+              {renderIPAText(syl)}
+            </span>
+          </span>
         )
       })}
-    </div>
+    </button>
   )
 }
 
@@ -374,28 +406,57 @@ function makeBlank(w) {
 function useRecorder() {
   const [recState, setRecState] = useState('idle')
   const [recUrl, setRecUrl]     = useState(null)
+  const [recErr, setRecErr]     = useState(null)
   const mrRef = useRef(null); const chunksRef = useRef([]); const timerRef = useRef(null)
 
   function reset() {
-    setRecState('idle')
-    setRecUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null })
+    clearTimeout(timerRef.current)
+    try { mrRef.current?.stop() } catch {}
     mrRef.current?.stream?.getTracks().forEach(t => t.stop())
+    mrRef.current = null
+    setRecState('idle')
+    setRecErr(null)
+    setRecUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null })
   }
   async function startRec() {
+    // 先停掉其他音频，但不重置录音状态（避免闪烁）
+    stopAudio(); window.speechSynthesis?.cancel()
+    setRecErr(null)
+    // 显示"准备中"防止重复点击
+    setRecState('preparing')
+    let stream
     try {
-      reset(); stopAudio(); window.speechSynthesis?.cancel()
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-      const mr = new MediaRecorder(stream); mrRef.current = mr; chunksRef.current = []
-      mr.ondataavailable = e => { if (e.data.size > 0) chunksRef.current.push(e.data) }
-      mr.onstop = () => { setRecUrl(URL.createObjectURL(new Blob(chunksRef.current, { type: 'audio/webm' }))); setRecState('recorded'); stream.getTracks().forEach(t => t.stop()) }
-      mr.start(); setRecState('recording')
-      timerRef.current = setTimeout(() => mr.state === 'recording' && mr.stop(), 4000)
-    } catch { setRecState('idle'); alert('需要麦克风权限') }
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+    } catch {
+      setRecState('idle')
+      setRecErr('需要麦克风权限')
+      return
+    }
+    // 清理上一次录音
+    if (mrRef.current) {
+      try { mrRef.current.stop() } catch {}
+      mrRef.current?.stream?.getTracks().forEach(t => t.stop())
+    }
+    setRecUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null })
+    chunksRef.current = []
+    const mr = new MediaRecorder(stream); mrRef.current = mr
+    mr.ondataavailable = e => { if (e.data.size > 0) chunksRef.current.push(e.data) }
+    mr.onstop = () => {
+      stream.getTracks().forEach(t => t.stop())
+      if (chunksRef.current.length > 0) {
+        setRecUrl(URL.createObjectURL(new Blob(chunksRef.current, { type: 'audio/webm' })))
+        setRecState('recorded')
+      } else {
+        setRecState('idle')
+      }
+    }
+    mr.start(); setRecState('recording')
+    timerRef.current = setTimeout(() => { if (mr.state === 'recording') mr.stop() }, 4000)
   }
   function stopRec() { clearTimeout(timerRef.current); if (mrRef.current?.state === 'recording') mrRef.current.stop() }
   function playRec() { if (recUrl) { stopAudio(); window.speechSynthesis?.cancel(); new Audio(recUrl).play() } }
   useEffect(() => () => { clearTimeout(timerRef.current); reset() }, [])
-  return { recState, recUrl, startRec, stopRec, playRec, reset }
+  return { recState, recUrl, recErr, startRec, stopRec, playRec, reset }
 }
 
 // ── Book selector ─────────────────────────────────────────────────────────────
@@ -439,7 +500,7 @@ function UnitGrid({ book, progress, onSelect, onBack }) {
             const pct = total ? Math.round(known / total * 100) : 0
             return (
               <button key={`${ui}-${hi}`} onClick={() => onSelect({ ...unit, words: half.words }, ui, half.offset)}
-                className="rounded-xl bg-gray-900 border border-gray-800 hover:border-gray-600 p-5 text-left transition-all active:scale-95">
+                className="rounded-xl bg-slate-800 border border-slate-700 hover:border-gray-600 p-5 text-left transition-all active:scale-95">
                 <div className="text-xs text-gray-500 mb-1">{half.label}</div>
                 <div className="text-white font-semibold text-base mb-3">{unit.title}</div>
                 <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden mb-1.5">
@@ -466,10 +527,17 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   const [moInput, setMoInput]     = useState('')
   const [moResult, setMoResult]   = useState(null)
   const moInputRef                = useRef()
-  const { recState, startRec, stopRec, playRec, reset: resetRec } = useRecorder()
+  const { recState, recErr, startRec, stopRec, playRec, reset: resetRec } = useRecorder()
   const word = unit.words[idx]
   const pendingPlayRef = useRef(false)
   const { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl } = useWordAudio(word.word, word.ipa || '', speed)
+
+  // Preload current + next word audio buffers to eliminate click-to-play delay
+  useEffect(() => {
+    fetchUrl(word.word).then(url => { if (url) fetchBuffer(url) })
+    const next = unit.words[idx + 1]
+    if (next?.word) fetchUrl(next.word).then(url => { if (url) fetchBuffer(url) })
+  }, [idx])
 
   const SPEEDS = [0.7, 1.0, 1.3]
   const cycleSpeed = () => setSpeed(s => SPEEDS[(SPEEDS.indexOf(s) + 1) % SPEEDS.length])
@@ -511,6 +579,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   function handleRecord() {
     if (recState === 'recording') { stopRec(); return }
     if (recState === 'recorded')  { playRec(); return }
+    if (recState === 'preparing') return
     startRec()
   }
 
@@ -529,6 +598,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
 
   const recCls = recState === 'recording' ? 'bg-red-700 border-red-500 text-white animate-pulse'
                : recState === 'recorded'   ? 'bg-green-800 border-green-600 text-green-200'
+               : recState === 'preparing'  ? 'bg-gray-700 border-gray-600 text-gray-400 opacity-60'
                :                             'bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700'
 
   const seen = (progress[`vocab_${book.bookName}_${unitIdx}_${wordOffset + idx}`] || 0) >= 1
@@ -549,18 +619,21 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
       {/* 主卡 — 紧凑布局 */}
       {!moXie ? (
         <div
-          className="shrink-0 w-full bg-gray-900 border border-gray-700 rounded-xl flex flex-col items-center gap-1.5 py-3 px-4 transition-all">
+          className="shrink-0 w-full bg-slate-800 border border-gray-700 rounded-xl flex flex-col items-center gap-1.5 py-3 px-4 transition-all">
 
           {/* mic | word | speed× | 默写 */}
           <div className="flex justify-center items-center gap-2" onClick={e => e.stopPropagation()}>
             <button onClick={handleRecord}
-              className={`flex items-center justify-center w-8 h-8 rounded-lg border transition-all active:scale-95 shrink-0 ${recCls}`}>
+              disabled={recState === 'preparing'}
+              className={`flex items-center justify-center w-11 h-11 rounded-xl border transition-all active:scale-95 shrink-0 ${recCls}`}>
               {recState === 'recording' ? (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
               ) : recState === 'recorded' ? (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              ) : recState === 'preparing' ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="animate-spin opacity-60"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               ) : (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
                   <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
                   <line x1="12" y1="19" x2="12" y2="23"/>
@@ -570,25 +643,27 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
             </button>
             <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-5xl" />
             <button onClick={e => { e.stopPropagation(); cycleSpeed() }}
-              className="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-gray-700 border border-gray-700 text-yellow-400 rounded-lg text-xs font-mono font-bold transition-all active:scale-95 shrink-0">
+              className="w-11 h-11 flex items-center justify-center bg-gray-800 hover:bg-gray-700 border border-gray-700 text-yellow-400 rounded-xl text-sm font-mono font-bold transition-all active:scale-95 shrink-0">
               {speed}×
             </button>
             <button onClick={e => { e.stopPropagation(); toggleMoXie() }}
-              className={`w-8 h-8 flex items-center justify-center rounded-lg border text-xs font-bold transition-all active:scale-95 shrink-0
+              className={`w-11 h-11 flex items-center justify-center rounded-xl border text-sm font-bold transition-all active:scale-95 shrink-0
                 ${moXie ? 'bg-purple-700 border-purple-500 text-white' : 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700'}`}>
               写
             </button>
           </div>
 
-          <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onSylClick={playIPASyl} />
+          <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onPlayWord={playFull} />
           {loading && <div className="text-blue-400 text-xs animate-pulse">加载音频…</div>}
-          {recState === 'recording' && <div className="text-red-400 text-xs animate-pulse">● 录音中</div>}
+          {recState === 'preparing' && <div className="text-gray-400 text-xs animate-pulse">准备录音…</div>}
+          {recState === 'recording' && <div className="text-red-400 text-xs animate-pulse">● 录音中（最长4秒）</div>}
           {recState === 'recorded' && <div className="text-green-400 text-xs">已录音 · 点麦克风播放</div>}
+          {recErr && <div className="text-orange-400 text-xs">{recErr}</div>}
           <div className="text-xl text-blue-300 font-medium">{word.zh}</div>
         </div>
       ) : (
         /* 默写模式主卡 */
-        <div className="shrink-0 w-full bg-gray-900 border border-purple-800/60 rounded-xl flex flex-col items-center gap-2 py-3 px-4">
+        <div className="shrink-0 w-full bg-slate-800 border border-purple-800/60 rounded-xl flex flex-col items-center gap-2 py-3 px-4">
           {/* 顶行：标题 + 默写按钮 */}
           <div className="w-full flex items-center justify-between">
             <span className="text-purple-400 text-xs font-semibold tracking-wider">默写模式</span>
@@ -728,7 +803,7 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
         { id: 'spell', label: '拼写',    desc: '看中文输入英文', emoji: '✏️' }
       ].map(m => (
         <button key={m.id} onClick={() => setMode(m.id)}
-          className="flex items-center gap-5 bg-gray-900 border border-gray-800 hover:border-gray-600 rounded-xl p-5 text-left transition-all active:scale-95">
+          className="flex items-center gap-5 bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl p-5 text-left transition-all active:scale-95">
           <span className="text-4xl">{m.emoji}</span>
           <div><div className="text-white font-semibold text-lg">{m.label}</div><div className="text-gray-500 text-sm">{m.desc}</div></div>
         </button>
@@ -761,7 +836,7 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
         <div className="h-full bg-blue-500 rounded-full" style={{ width: `${(qIdx / order.length) * 100}%` }} />
       </div>
 
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col items-center gap-3 min-h-[180px] justify-center">
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 flex flex-col items-center gap-3 min-h-[180px] justify-center">
         {mode === 'en2zh' && <QuizWord word={current.word} ipa={current.ipa} />}
         {mode !== 'en2zh' && <div className="text-4xl font-bold text-blue-300">{current.zh}</div>}
         {mode === 'spell' && <div className="text-gray-500 font-mono text-xl tracking-widest">{makeBlank(current.word)}</div>}
@@ -772,7 +847,7 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
           {options.map((opt, i) => {
             const label = mode === 'en2zh' ? opt.zh : opt.word
             const isCorrect = mode === 'en2zh' ? opt.zh === current.zh : opt.word === current.word
-            let cls = 'bg-gray-900 border border-gray-800 text-gray-300 hover:border-gray-600'
+            let cls = 'bg-slate-800 border border-slate-700 text-gray-300 hover:border-gray-600'
             if (result && isCorrect) cls = 'bg-green-900/60 border border-green-500 text-green-200'
             else if (result && chosen === opt && !isCorrect) cls = 'bg-red-900/60 border border-red-500 text-red-300'
             return <button key={i} onClick={() => handleChoice(opt)} className={`rounded-xl p-5 text-left text-base font-medium transition-all active:scale-95 ${cls}`}>{label}</button>
@@ -783,7 +858,7 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
         <form onSubmit={handleSpell} className="flex flex-col gap-3">
           <input ref={inputRef} value={input} onChange={e => setInput(e.target.value)} disabled={!!result}
             placeholder="输入英文单词…"
-            className={`w-full bg-gray-900 border rounded-xl px-5 py-5 text-white text-center text-xl font-mono outline-none transition-colors
+            className={`w-full bg-slate-800 border rounded-xl px-5 py-5 text-white text-center text-xl font-mono outline-none transition-colors
               ${result === 'correct' ? 'border-green-500' : result === 'wrong' ? 'border-red-500' : 'border-gray-700 focus:border-blue-500'}`} />
           {result === 'wrong' && <div className="text-center text-red-400">正确答案：<span className="font-bold text-white text-lg">{current.word}</span></div>}
           {!result && <button type="submit" className="py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base">确认</button>}

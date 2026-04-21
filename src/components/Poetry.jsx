@@ -130,7 +130,7 @@ function ReadStage({ poem, theme, onNext }) {
 
       {/* Annotations */}
       {showAnnotations && (
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4 animate-fade-in">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4 animate-fade-in">
           <h3 className={`text-sm font-bold ${theme.accent} mb-3`}>📖 注释</h3>
           <div className="flex flex-wrap gap-2">
             {poem.annotations.map((a, i) => (
@@ -154,13 +154,13 @@ function ReadStage({ poem, theme, onNext }) {
       )}
 
       {/* Meaning */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4">
         <h3 className={`text-sm font-bold ${theme.accent} mb-2`}>💡 诗意</h3>
         <p className="text-gray-300 text-sm leading-relaxed">{poem.meaning}</p>
       </div>
 
       {/* Theme */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4">
         <h3 className={`text-sm font-bold ${theme.accent} mb-2`}>🎯 主题</h3>
         <p className="text-gray-300 text-sm leading-relaxed">{poem.theme}</p>
       </div>
@@ -233,7 +233,7 @@ function FillBlankStage({ poem, theme, onNext, onScore }) {
       </div>
 
       {/* Question card */}
-      <div className={`bg-gray-900 border-2 rounded-3xl p-6 text-center transition-all ${shake ? 'animate-shake border-red-500' : isCorrect === true ? `border-emerald-500` : 'border-gray-800'}`}>
+      <div className={`bg-slate-800 border-2 rounded-3xl p-6 text-center transition-all ${shake ? 'animate-shake border-red-500' : isCorrect === true ? `border-emerald-500` : 'border-slate-700'}`}>
         <p className="text-2xl font-serif tracking-widest text-white">
           {item.text.replace('___', selected !== null ? (isCorrect ? `【${item.answer}】` : `【${selected}→${item.answer}】`) : '＿＿')}
         </p>
@@ -246,7 +246,7 @@ function FillBlankStage({ poem, theme, onNext, onScore }) {
           if (selected !== null) {
             if (opt === item.answer) cls = 'bg-emerald-600 border-emerald-400 text-white scale-105'
             else if (opt === selected && !isCorrect) cls = 'bg-red-600/50 border-red-500 text-white'
-            else cls = 'bg-gray-800/50 border-gray-800 text-gray-600'
+            else cls = 'bg-gray-800/50 border-slate-700 text-gray-600'
           }
           return (
             <button
@@ -340,7 +340,7 @@ function QuizStage({ poem, theme, onComplete }) {
       </div>
 
       {/* Question card */}
-      <div className={`bg-gray-900 border-2 rounded-3xl p-6 transition-all ${shake ? 'animate-shake border-red-500' : 'border-gray-800'}`}>
+      <div className={`bg-slate-800 border-2 rounded-3xl p-6 transition-all ${shake ? 'animate-shake border-red-500' : 'border-slate-700'}`}>
         <p className="text-lg text-white font-medium leading-relaxed">{q.question}</p>
       </div>
 
@@ -352,7 +352,7 @@ function QuizStage({ poem, theme, onComplete }) {
           if (selected !== null) {
             if (i === q.answer) cls = 'bg-emerald-600 border-emerald-400 text-white'
             else if (i === selected && !isCorrect) cls = 'bg-red-600/50 border-red-500 text-white'
-            else cls = 'bg-gray-800/50 border-gray-800 text-gray-600'
+            else cls = 'bg-gray-800/50 border-slate-700 text-gray-600'
           }
           return (
             <button
@@ -542,8 +542,8 @@ export default function Poetry({ onClose, onSetBack }) {
               <button
                 onClick={() => { setSelectedPoem(p.id); setStage('read'); setFillScore(0); setQuizScore(0) }}
                 disabled={isLocked}
-                className={`w-full bg-gray-900 border-2 rounded-3xl p-5 transition-all hover:scale-[1.02] active:scale-[0.98]
-                  ${pg.stars > 0 ? `border-emerald-600/50 shadow-lg shadow-emerald-900/20` : 'border-gray-800 hover:border-gray-600'}`}
+                className={`w-full bg-slate-800 border-2 rounded-3xl p-5 transition-all hover:scale-[1.02] active:scale-[0.98]
+                  ${pg.stars > 0 ? `border-emerald-600/50 shadow-lg shadow-emerald-900/20` : 'border-slate-700 hover:border-gray-600'}`}
               >
                 <div className="flex items-center gap-4">
                   {/* Level icon */}

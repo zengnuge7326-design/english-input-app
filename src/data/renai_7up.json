@@ -1,0 +1,3260 @@
+[
+  {
+    "id": 1,
+    "unit": "Unit 1",
+    "zh": "你好，露露！这是小雅。小雅，这是露露。",
+    "en": "Hi, Lulu! This is Xiao Ya. Xiao Ya, this is Lulu."
+  },
+  {
+    "id": 2,
+    "unit": "Unit 1",
+    "zh": "很高兴认识你，小雅。",
+    "en": "Nice to meet you, Xiao Ya."
+  },
+  {
+    "id": 3,
+    "unit": "Unit 1",
+    "zh": "我也很高兴认识你。你来自哪里？",
+    "en": "Nice to meet you, too. Where are you from?"
+  },
+  {
+    "id": 4,
+    "unit": "Unit 1",
+    "zh": "我来自北京。你呢？",
+    "en": "I’m from Beijing. And you?"
+  },
+  {
+    "id": 5,
+    "unit": "Unit 1",
+    "zh": "我在七年级六班。你在哪个班？",
+    "en": "I’m in Class 6, Grade 7. Which class are you in?"
+  },
+  {
+    "id": 6,
+    "unit": "Unit 1",
+    "zh": "我也在七年级六班。我们是同学。",
+    "en": "I’m in Class 6, Grade 7, too. We are classmates."
+  },
+  {
+    "id": 7,
+    "unit": "Unit 1",
+    "zh": "我十二岁。你多大了？",
+    "en": "I’m twelve. How old are you?"
+  },
+  {
+    "id": 8,
+    "unit": "Unit 1",
+    "zh": "我十三岁。再见。",
+    "en": "I’m thirteen years old. See you."
+  },
+  {
+    "id": 9,
+    "unit": "Unit 1",
+    "zh": "我很友好，我喜欢科学。",
+    "en": "I’m friendly and I like science."
+  },
+  {
+    "id": 10,
+    "unit": "Unit 1",
+    "zh": "我十三岁了。",
+    "en": "I am thirteen years old."
+  },
+  {
+    "id": 11,
+    "unit": "Unit 1",
+    "zh": "我在七年级三班。",
+    "en": "I’m in Class Three, Grade Seven."
+  },
+  {
+    "id": 12,
+    "unit": "Unit 1",
+    "zh": "朋友们一起玩耍并互相帮助。",
+    "en": "Friends play together and help each other."
+  },
+  {
+    "id": 13,
+    "unit": "Unit 1",
+    "zh": "这是我的朋友，吉姆·怀特。",
+    "en": "This is my friend, Jim White."
+  },
+  {
+    "id": 14,
+    "unit": "Unit 1",
+    "zh": "他13岁了。",
+    "en": "He is 13 years old."
+  },
+  {
+    "id": 15,
+    "unit": "Unit 1",
+    "zh": "他又高又壮。",
+    "en": "He is tall and strong."
+  },
+  {
+    "id": 16,
+    "unit": "Unit 1",
+    "zh": "我们经常一起踢足球。",
+    "en": "We often play football together."
+  },
+  {
+    "id": 17,
+    "unit": "Unit 1",
+    "zh": "在英语中，第一个名字是名，最后一个名字是姓。",
+    "en": "In English, the first name is given name, and the last name is family name."
+  },
+  {
+    "id": 18,
+    "unit": "Unit 1",
+    "zh": "但在中文中，姓在前。",
+    "en": "But in Chinese, family name comes first."
+  },
+  {
+    "id": 19,
+    "unit": "Unit 1",
+    "zh": "嗨，我是康康。我来自北京。我在七年级六班。我十二岁。我喜欢科学。这是我的朋友们。",
+    "en": "Hi, I’m Kangkang. I’m from Beijing. I’m in Class Six, Grade Seven. I’m twelve. I like science. Here are my friends."
+  },
+  {
+    "id": 20,
+    "unit": "Unit 1",
+    "zh": "小雅来自天津。她也在六班。她善良又可爱。她喜欢唱歌和弹吉他。",
+    "en": "Xiao Ya is from Tianjin. She’s in Class Six, too. She is kind and cute. She likes singing and playing the guitar."
+  },
+  {
+    "id": 21,
+    "unit": "Unit 1",
+    "zh": "李响也来自北京。他在七年级三班。他又高又壮。他喜欢徒步旅行。",
+    "en": "Li Xiang is from Beijing, too. He is in Class Three, Grade Seven. He is tall and strong. He likes hiking."
+  },
+  {
+    "id": 22,
+    "unit": "Unit 1",
+    "zh": "玲玲是我的同学。她友好又安静。她喜欢阅读。",
+    "en": "Lingling is my classmate. She’s friendly and quiet. She likes reading."
+  },
+  {
+    "id": 23,
+    "unit": "Unit 1",
+    "zh": "我们都是新来的，我们很高兴在新学校相遇！",
+    "en": "We are all new here, and we are very happy to meet each other at the new school!"
+  },
+  {
+    "id": 24,
+    "unit": "Unit 1",
+    "zh": "你在6班。",
+    "en": "You are in Class 6."
+  },
+  {
+    "id": 25,
+    "unit": "Unit 1",
+    "zh": "它是一只可爱的狗，有两只大耳朵。",
+    "en": "It is a cute dog and has two big ears."
+  },
+  {
+    "id": 26,
+    "unit": "Unit 1",
+    "zh": "他12岁。",
+    "en": "He is 12 years old."
+  },
+  {
+    "id": 27,
+    "unit": "Unit 1",
+    "zh": "这是我的朋友，莎拉·希尔。",
+    "en": "This is my friend, Sarah Hill."
+  },
+  {
+    "id": 28,
+    "unit": "Unit 1",
+    "zh": "莎拉有一个兄弟，汤姆·希尔。",
+    "en": "Sarah has a brother, Tom Hill."
+  },
+  {
+    "id": 29,
+    "unit": "Unit 1",
+    "zh": "他喜欢唱歌和跳舞。",
+    "en": "He likes singing and dancing."
+  },
+  {
+    "id": 30,
+    "unit": "Unit 1",
+    "zh": "你好！我的名字是李梅。你叫什么名字？",
+    "en": "Hello! My name is Li Mei. What’s your name?"
+  },
+  {
+    "id": 31,
+    "unit": "Unit 1",
+    "zh": "嗨！我是李响。你在三班吗？",
+    "en": "Hi! I am Li Xiang. Are you in Class Three?"
+  },
+  {
+    "id": 32,
+    "unit": "Unit 1",
+    "zh": "是的，我是。我们是同学。",
+    "en": "Yes, I am. We are classmates."
+  },
+  {
+    "id": 33,
+    "unit": "Unit 1",
+    "zh": "那个男孩也是我们的同学吗？",
+    "en": "Is that boy our classmate, too?"
+  },
+  {
+    "id": 34,
+    "unit": "Unit 1",
+    "zh": "不，他不是。他在一班。",
+    "en": "No, he isn’t. He is in Class One."
+  },
+  {
+    "id": 35,
+    "unit": "Unit 1",
+    "zh": "大家好！我叫玲玲。",
+    "en": "Hi, everyone! My name is Lingling."
+  },
+  {
+    "id": 36,
+    "unit": "Unit 1",
+    "zh": "我有一个好朋友。",
+    "en": "I have a good friend."
+  },
+  {
+    "id": 37,
+    "unit": "Unit 1",
+    "zh": "她的名字是小雅。",
+    "en": "Her name is Xiao Ya."
+  },
+  {
+    "id": 38,
+    "unit": "Unit 1",
+    "zh": "我在七年级六班。",
+    "en": "I’m in Class Six, Grade Seven."
+  },
+  {
+    "id": 39,
+    "unit": "Unit 1",
+    "zh": "小雅来自天津。",
+    "en": "Xiao Ya is from Tianjin."
+  },
+  {
+    "id": 40,
+    "unit": "Unit 1",
+    "zh": "她是一个漂亮又可爱的女孩。",
+    "en": "She is a beautiful and lovely girl."
+  },
+  {
+    "id": 41,
+    "unit": "Unit 1",
+    "zh": "我喜欢画画和看书。",
+    "en": "I like drawing pictures and reading books."
+  },
+  {
+    "id": 42,
+    "unit": "Unit 1",
+    "zh": "小雅喜欢唱歌和听音乐。",
+    "en": "Xiao Ya likes singing and listening to music."
+  },
+  {
+    "id": 43,
+    "unit": "Unit 1",
+    "zh": "我们还一起做很多事情，比如游泳和跑步。",
+    "en": "We also do many things together, such as swimming and running."
+  },
+  {
+    "id": 44,
+    "unit": "Unit 1",
+    "zh": "小雅是一个很棒的朋友！",
+    "en": "Xiao Ya is a great friend!"
+  },
+  {
+    "id": 45,
+    "unit": "Unit 1",
+    "zh": "我很享受和她在一起的时光。",
+    "en": "I enjoy the time with her."
+  },
+  {
+    "id": 46,
+    "unit": "Unit 1",
+    "zh": "我叫阳阳。我来自石家庄。",
+    "en": "My name is Yangyang. I’m from Shijiazhuang."
+  },
+  {
+    "id": 47,
+    "unit": "Unit 1",
+    "zh": "玲玲是我在学校最好的朋友。",
+    "en": "Lingling is my best friend at school."
+  },
+  {
+    "id": 48,
+    "unit": "Unit 1",
+    "zh": "玲玲是个安静的女孩。",
+    "en": "Lingling is a quiet girl."
+  },
+  {
+    "id": 49,
+    "unit": "Unit 1",
+    "zh": "她话不多，但她喜欢帮助别人。",
+    "en": "She doesn’t talk much, but she likes to help others."
+  },
+  {
+    "id": 50,
+    "unit": "Unit 1",
+    "zh": "她真的很友善和善良。",
+    "en": "She is really friendly and kind."
+  },
+  {
+    "id": 51,
+    "unit": "Unit 2",
+    "zh": "我很高兴能和她做朋友，并且我很享受和她在一起的时光。",
+    "en": "I’m happy to be friends with her and I enjoy the time with her."
+  },
+  {
+    "id": 52,
+    "unit": "Unit 2",
+    "zh": "我的名字是康康。我是一名学生。我在七年级六班。",
+    "en": "My name is Kangkang. I’m a student. I am in Class 6, Grade 7."
+  },
+  {
+    "id": 53,
+    "unit": "Unit 2",
+    "zh": "这个男人是我的父亲。他总是打领带。他是一名医生。",
+    "en": "This man is my father. He always wears a tie. He is a doctor."
+  },
+  {
+    "id": 54,
+    "unit": "Unit 2",
+    "zh": "我的母亲是一名教师。她喜欢穿旗袍。",
+    "en": "My mother is a teacher. She likes wearing qipao."
+  },
+  {
+    "id": 55,
+    "unit": "Unit 2",
+    "zh": "我的叔叔穿着白衬衫。他是一名工人。",
+    "en": "My uncle is in a white shirt. He is a worker."
+  },
+  {
+    "id": 56,
+    "unit": "Unit 2",
+    "zh": "那个穿蓝色连衣裙的女人是我的阿姨。她是一名护士。",
+    "en": "That woman in a blue dress is my aunt. She is a nurse."
+  },
+  {
+    "id": 57,
+    "unit": "Unit 2",
+    "zh": "穿黄色衣服的高个女孩是我的表妹。她是我叔叔的孩子。",
+    "en": "The tall girl in yellow is my cousin. She’s my uncle’s child."
+  },
+  {
+    "id": 58,
+    "unit": "Unit 2",
+    "zh": "萱萱是我的小妹妹。她有一个粉色的玩具兔子。",
+    "en": "Xuanxuan is my little sister. She has a pink toy rabbit."
+  },
+  {
+    "id": 59,
+    "unit": "Unit 2",
+    "zh": "不，她不是。她是我的表妹。",
+    "en": "No, she isn’t. She is my cousin."
+  },
+  {
+    "id": 60,
+    "unit": "Unit 2",
+    "zh": "这个高个女孩是你的姐姐吗？",
+    "en": "Is this tall girl your sister?"
+  },
+  {
+    "id": 61,
+    "unit": "Unit 2",
+    "zh": "这是你家的照片吗？",
+    "en": "Is this a photo of your family?"
+  },
+  {
+    "id": 62,
+    "unit": "Unit 2",
+    "zh": "你父亲是做什么的？",
+    "en": "What does your father do?"
+  },
+  {
+    "id": 63,
+    "unit": "Unit 2",
+    "zh": "他在我们学校工作。",
+    "en": "He works in our school."
+  },
+  {
+    "id": 64,
+    "unit": "Unit 2",
+    "zh": "你母亲是做什么的？",
+    "en": "What does your mother do?"
+  },
+  {
+    "id": 65,
+    "unit": "Unit 2",
+    "zh": "她是一家大工厂的工人。",
+    "en": "She is a worker in a big factory."
+  },
+  {
+    "id": 66,
+    "unit": "Unit 2",
+    "zh": "你的小妹妹真可爱漂亮。",
+    "en": "Your little sister is so cute and pretty."
+  },
+  {
+    "id": 67,
+    "unit": "Unit 2",
+    "zh": "她只有四岁。",
+    "en": "She is only four years old."
+  },
+  {
+    "id": 68,
+    "unit": "Unit 2",
+    "zh": "作家需要先思考一些想法，然后用好的方式组织它们。",
+    "en": "A writer needs to think of some ideas first, and then organize them in a good way."
+  },
+  {
+    "id": 69,
+    "unit": "Unit 2",
+    "zh": "玛丽亚来自一个大家庭。",
+    "en": "Maria is from a big family."
+  },
+  {
+    "id": 70,
+    "unit": "Unit 2",
+    "zh": "她和她的祖父母、父母、叔叔、阿姨、兄弟、姐妹和堂兄弟姐妹住在一起。",
+    "en": "She lives with her grandparents, parents, uncles, aunts, brothers, sisters and cousins."
+  },
+  {
+    "id": 71,
+    "unit": "Unit 2",
+    "zh": "李响的家庭很小。",
+    "en": "Li Xiang’s family is small."
+  },
+  {
+    "id": 72,
+    "unit": "Unit 2",
+    "zh": "他家有三口人：他的父母和他。",
+    "en": "There are three people in his family: his parents and him."
+  },
+  {
+    "id": 73,
+    "unit": "Unit 2",
+    "zh": "祖父母、父母和孩子住在一起。",
+    "en": "Grandparents, parents and children live together."
+  },
+  {
+    "id": 74,
+    "unit": "Unit 2",
+    "zh": "父母和他们的孩子住在一起。",
+    "en": "The parents live with their children."
+  },
+  {
+    "id": 75,
+    "unit": "Unit 2",
+    "zh": "我的妈妈是一名老师，我的爸爸是一名医生。",
+    "en": "My mother is a teacher, and my father is a doctor."
+  },
+  {
+    "id": 76,
+    "unit": "Unit 2",
+    "zh": "他们大部分时间都很忙。",
+    "en": "They are very busy most of the time."
+  },
+  {
+    "id": 77,
+    "unit": "Unit 2",
+    "zh": "但是下班后，我们一起做很多事情。",
+    "en": "But after work, we do many things together."
+  },
+  {
+    "id": 78,
+    "unit": "Unit 2",
+    "zh": "我的（外）祖父母不和我们住在一起。",
+    "en": "My grandparents don’t live with us."
+  },
+  {
+    "id": 79,
+    "unit": "Unit 2",
+    "zh": "我们经常在周末去看望他们，并一起吃晚饭。",
+    "en": "We often visit them on weekends and have dinner together."
+  },
+  {
+    "id": 80,
+    "unit": "Unit 2",
+    "zh": "我们都会为晚餐做些什么。",
+    "en": "We all do something for dinner."
+  },
+  {
+    "id": 81,
+    "unit": "Unit 2",
+    "zh": "我的父母做饭。",
+    "en": "My parents cook the food."
+  },
+  {
+    "id": 82,
+    "unit": "Unit 2",
+    "zh": "我的姐姐/妹妹帮助我们的（外）祖父母摆桌子，我在饭后和我的爸爸一起打扫。",
+    "en": "My sister helps our grandparents set the table and I clean up with my father after dinner."
+  },
+  {
+    "id": 83,
+    "unit": "Unit 2",
+    "zh": "我爱我的家人，并且我享受我的家庭时光。",
+    "en": "I love my family, and I enjoy my family time."
+  },
+  {
+    "id": 84,
+    "unit": "Unit 2",
+    "zh": "你好，我叫李响。",
+    "en": "Hello, my name is Li Xiang."
+  },
+  {
+    "id": 85,
+    "unit": "Unit 2",
+    "zh": "让我告诉你关于我的家庭。",
+    "en": "Let me tell you about my family."
+  },
+  {
+    "id": 86,
+    "unit": "Unit 2",
+    "zh": "我家有三口人。",
+    "en": "There are three people in my family."
+  },
+  {
+    "id": 87,
+    "unit": "Unit 2",
+    "zh": "他们是我的父亲、母亲和我。",
+    "en": "They are my father, my mother and I."
+  },
+  {
+    "id": 88,
+    "unit": "Unit 2",
+    "zh": "我的父亲是一名医生。",
+    "en": "My father is a doctor."
+  },
+  {
+    "id": 89,
+    "unit": "Unit 2",
+    "zh": "我的母亲是一名护士。",
+    "en": "My mother is a nurse."
+  },
+  {
+    "id": 90,
+    "unit": "Unit 2",
+    "zh": "我的家人一起做很多事情。",
+    "en": "My family do many things together."
+  },
+  {
+    "id": 91,
+    "unit": "Unit 2",
+    "zh": "我们经常在下午做运动，比如跑步和游泳。",
+    "en": "We often do sports in the afternoon, such as running and swimming."
+  },
+  {
+    "id": 92,
+    "unit": "Unit 2",
+    "zh": "有时，我们在家看电影。",
+    "en": "Sometimes, we watch films at home."
+  },
+  {
+    "id": 93,
+    "unit": "Unit 2",
+    "zh": "在周末，我们经常拜访我的祖父母。",
+    "en": "On weekends, we often visit my grandparents."
+  },
+  {
+    "id": 94,
+    "unit": "Unit 2",
+    "zh": "我的名字是林华。",
+    "en": "My name is Lin Hua."
+  },
+  {
+    "id": 95,
+    "unit": "Unit 2",
+    "zh": "我十二岁。",
+    "en": "I am twelve years old."
+  },
+  {
+    "id": 96,
+    "unit": "Unit 2",
+    "zh": "我是一名七年级的学生。",
+    "en": "I’m a student in Grade Seven."
+  },
+  {
+    "id": 97,
+    "unit": "Unit 2",
+    "zh": "我的父亲是一名医生。",
+    "en": "My father is a doctor."
+  },
+  {
+    "id": 98,
+    "unit": "Unit 2",
+    "zh": "他在一家医院工作。",
+    "en": "He works in a hospital."
+  },
+  {
+    "id": 99,
+    "unit": "Unit 2",
+    "zh": "我的母亲是一名教师。",
+    "en": "My mother is a teacher."
+  },
+  {
+    "id": 100,
+    "unit": "Unit 2",
+    "zh": "她在一所高中教书。",
+    "en": "She teaches in a high school."
+  },
+  {
+    "id": 101,
+    "unit": "Unit 3",
+    "zh": "我有一个妹妹，叫瑶瑶。",
+    "en": "I have a sister, Yaoyao."
+  },
+  {
+    "id": 102,
+    "unit": "Unit 3",
+    "zh": "她六岁。",
+    "en": "She is six years old."
+  },
+  {
+    "id": 103,
+    "unit": "Unit 3",
+    "zh": "她喜欢和Kitty玩耍。",
+    "en": "She likes playing with Kitty."
+  },
+  {
+    "id": 104,
+    "unit": "Unit 3",
+    "zh": "Kitty是一只可爱的猫。",
+    "en": "Kitty is a cute cat."
+  },
+  {
+    "id": 105,
+    "unit": "Unit 3",
+    "zh": "我的祖父母和我们住在一起。",
+    "en": "My grandparents live with us."
+  },
+  {
+    "id": 106,
+    "unit": "Unit 3",
+    "zh": "他们在照顾家庭方面提供了很多帮助。",
+    "en": "They help a lot in looking after the family."
+  },
+  {
+    "id": 107,
+    "unit": "Unit 3",
+    "zh": "小雅：嗨，康康。你通常怎么来学校？",
+    "en": "Xiao Ya: Hi, Kangkang. How do you usually come to school?"
+  },
+  {
+    "id": 108,
+    "unit": "Unit 3",
+    "zh": "康康：我家不是很远，所以我通常步行来学校，有时骑自行车。",
+    "en": "Kangkang: My home is not very far, so I usually come here on foot, sometimes by bike."
+  },
+  {
+    "id": 109,
+    "unit": "Unit 3",
+    "zh": "你呢，小雅？",
+    "en": "How about you, Xiao Ya?"
+  },
+  {
+    "id": 110,
+    "unit": "Unit 3",
+    "zh": "小雅：我住得离学校很远。",
+    "en": "Xiao Ya: I live far from school."
+  },
+  {
+    "id": 111,
+    "unit": "Unit 3",
+    "zh": "我从不步行来学校。",
+    "en": "I never come to school on foot."
+  },
+  {
+    "id": 112,
+    "unit": "Unit 3",
+    "zh": "我经常乘地铁。",
+    "en": "I often take the underground."
+  },
+  {
+    "id": 113,
+    "unit": "Unit 3",
+    "zh": "露露：我很少乘地铁。",
+    "en": "Lulu: I seldom take the underground."
+  },
+  {
+    "id": 114,
+    "unit": "Unit 3",
+    "zh": "我家附近没有地铁站。",
+    "en": "There are no underground stops near my home."
+  },
+  {
+    "id": 115,
+    "unit": "Unit 3",
+    "zh": "我总是乘公共汽车来学校。",
+    "en": "I always come to school by bus."
+  },
+  {
+    "id": 116,
+    "unit": "Unit 3",
+    "zh": "康康：现在几点了？",
+    "en": "Kangkang: What’s the time now?"
+  },
+  {
+    "id": 117,
+    "unit": "Unit 3",
+    "zh": "我们有一个很大的学校图书馆。",
+    "en": "We have a big school library."
+  },
+  {
+    "id": 118,
+    "unit": "Unit 3",
+    "zh": "它是一栋有两层楼的新建筑。",
+    "en": "It is a new building with two floors."
+  },
+  {
+    "id": 119,
+    "unit": "Unit 3",
+    "zh": "里面有很多书。",
+    "en": "There are a lot of books in it."
+  },
+  {
+    "id": 120,
+    "unit": "Unit 3",
+    "zh": "我的学校非常漂亮。",
+    "en": "My school is very beautiful."
+  },
+  {
+    "id": 121,
+    "unit": "Unit 3",
+    "zh": "有一座漂亮的教学楼。",
+    "en": "There is a beautiful teaching building."
+  },
+  {
+    "id": 122,
+    "unit": "Unit 3",
+    "zh": "操场非常大。",
+    "en": "The playground is very big."
+  },
+  {
+    "id": 123,
+    "unit": "Unit 3",
+    "zh": "操场旁边有一个小花园。",
+    "en": "Next to the playground, there is a small garden."
+  },
+  {
+    "id": 124,
+    "unit": "Unit 3",
+    "zh": "里面有许多美丽的花。",
+    "en": "There are many beautiful flowers in it."
+  },
+  {
+    "id": 125,
+    "unit": "Unit 3",
+    "zh": "主要思想是文本的全部内容。",
+    "en": "The main idea is what the text is all about."
+  },
+  {
+    "id": 126,
+    "unit": "Unit 3",
+    "zh": "细节用于支持或进一步说明主要思想。",
+    "en": "Details are used to support or tell more about the main idea."
+  },
+  {
+    "id": 127,
+    "unit": "Unit 3",
+    "zh": "他每周二下午4:30去游泳俱乐部。",
+    "en": "He goes to the swimming club at 4:30 every Tuesday afternoon."
+  },
+  {
+    "id": 128,
+    "unit": "Unit 3",
+    "zh": "他在俱乐部和朋友们玩水上游戏。",
+    "en": "He plays water games with his friends at the club."
+  },
+  {
+    "id": 129,
+    "unit": "Unit 3",
+    "zh": "每周五，她去艺术俱乐部在那里画画。",
+    "en": "Every Friday, she goes to the art club to draw pictures there."
+  },
+  {
+    "id": 130,
+    "unit": "Unit 3",
+    "zh": "当你阅读时，你可以快速浏览文本，只搜索你需要的信息。",
+    "en": "When you are reading, you can go through the text quickly and only search for the information you need."
+  },
+  {
+    "id": 131,
+    "unit": "Unit 3",
+    "zh": "我是康康，我在北京的一所中学学习。",
+    "en": "I’m Kangkang and I study at a middle school in Beijing."
+  },
+  {
+    "id": 132,
+    "unit": "Unit 3",
+    "zh": "我们的学校生活有趣且丰富多彩。",
+    "en": "Our school life is fun and colorful."
+  },
+  {
+    "id": 133,
+    "unit": "Unit 3",
+    "zh": "每周一的早晨，我们升国旗。",
+    "en": "On the morning of every Monday, we raise the national flag."
+  },
+  {
+    "id": 134,
+    "unit": "Unit 3",
+    "zh": "我们每天早上8点开始第一节课。",
+    "en": "We start the first class at 8:00 a.m. every day."
+  },
+  {
+    "id": 135,
+    "unit": "Unit 3",
+    "zh": "我们学习语文、英语、数学、科学和许多其他科目。",
+    "en": "We study Chinese, English, math, science and many other subjects."
+  },
+  {
+    "id": 136,
+    "unit": "Unit 3",
+    "zh": "我最喜欢的课是体育课。",
+    "en": "My favorite class is PE."
+  },
+  {
+    "id": 137,
+    "unit": "Unit 3",
+    "zh": "每天下午，我们在操场上有一节体育课。",
+    "en": "Every afternoon, we have one PE class on the playground."
+  },
+  {
+    "id": 138,
+    "unit": "Unit 3",
+    "zh": "我们学校有很多学生俱乐部。",
+    "en": "There are many student clubs in our school."
+  },
+  {
+    "id": 139,
+    "unit": "Unit 3",
+    "zh": "我们可以在那里和其他学生交朋友。",
+    "en": "We can make friends with other students there."
+  },
+  {
+    "id": 140,
+    "unit": "Unit 3",
+    "zh": "放学后，我们在俱乐部里有不同的活动。",
+    "en": "We have different activities in the clubs after school."
+  },
+  {
+    "id": 141,
+    "unit": "Unit 3",
+    "zh": "我喜欢在音乐俱乐部里唱歌和弹吉他。",
+    "en": "I enjoy singing and playing the guitar in the music club."
+  },
+  {
+    "id": 142,
+    "unit": "Unit 3",
+    "zh": "我真的很喜欢上学。",
+    "en": "I really love going to school."
+  },
+  {
+    "id": 143,
+    "unit": "Unit 3",
+    "zh": "我是一名中学生，我的学校生活丰富多彩。",
+    "en": "I am a middle school student, and my school life is colorful."
+  },
+  {
+    "id": 144,
+    "unit": "Unit 3",
+    "zh": "我们通常在早上8点开始一天的学习，下午4点下课。",
+    "en": "We usually start our day at 8:00 a.m., and our classes end at 4:00 p.m."
+  },
+  {
+    "id": 145,
+    "unit": "Unit 3",
+    "zh": "我们学习许多不同的科目，如语文、数学、科学、历史和英语。",
+    "en": "We learn many different subjects like Chinese, math, science, history and English."
+  },
+  {
+    "id": 146,
+    "unit": "Unit 3",
+    "zh": "放学后，我们玩游戏。",
+    "en": "After school, we play games."
+  },
+  {
+    "id": 147,
+    "unit": "Unit 3",
+    "zh": "还有许多有趣的课后活动。",
+    "en": "There are also many interesting after-school activities."
+  },
+  {
+    "id": 148,
+    "unit": "Unit 3",
+    "zh": "我们可以参加社团、做运动或去图书馆。",
+    "en": "We can join the clubs, play sports or go to the library."
+  },
+  {
+    "id": 149,
+    "unit": "Unit 3",
+    "zh": "我真的很喜欢我的学校生活！",
+    "en": "I really love my school life!"
+  },
+  {
+    "id": 150,
+    "unit": "Unit 3",
+    "zh": "我们的学校位于格林兰市。",
+    "en": "Our school is in Greenland city."
+  },
+  {
+    "id": 151,
+    "unit": "Unit 4",
+    "zh": "它有32年的历史。",
+    "en": "It has a history of 32 years."
+  },
+  {
+    "id": 152,
+    "unit": "Unit 4",
+    "zh": "我们学校现在有3个年级，18个班级，和大约40名教师。",
+    "en": "There are 3 grades, 18 classes, and about 40 teachers in our school now."
+  },
+  {
+    "id": 153,
+    "unit": "Unit 4",
+    "zh": "学生们学习英语、数学、语文、科学、体育和其他一些科目。",
+    "en": "Students learn English, math, Chinese, science, PE and some other subjects."
+  },
+  {
+    "id": 154,
+    "unit": "Unit 4",
+    "zh": "而且我们学校有很多俱乐部，比如艺术俱乐部、体育俱乐部和音乐俱乐部！",
+    "en": "And there are lots of clubs in our school, such as art club, sports club and music club!"
+  },
+  {
+    "id": 155,
+    "unit": "Unit 4",
+    "zh": "学生们可以在这里学到很多东西并且玩得很开心。",
+    "en": "Students can learn a lot and have great fun here."
+  },
+  {
+    "id": 156,
+    "unit": "Unit 4",
+    "zh": "欢迎了解更多关于我们学校的信息！",
+    "en": "Welcome to find out more about our school!"
+  },
+  {
+    "id": 157,
+    "unit": "Unit 4",
+    "zh": "你想制作电影吗？",
+    "en": "Do You Want to Make a Film?"
+  },
+  {
+    "id": 158,
+    "unit": "Unit 4",
+    "zh": "在科学俱乐部见张先生。",
+    "en": "Meet Mr. Zhang at the Science Club."
+  },
+  {
+    "id": 159,
+    "unit": "Unit 4",
+    "zh": "时间：每周五下午1:00至3:00",
+    "en": "Time: 1:00 p.m. -- 3:00 p.m. every Friday"
+  },
+  {
+    "id": 160,
+    "unit": "Unit 4",
+    "zh": "来见见作家们！",
+    "en": "Come and Meet the Writers!"
+  },
+  {
+    "id": 161,
+    "unit": "Unit 4",
+    "zh": "时间：星期三下午1:00",
+    "en": "Time: 1:00 p.m. on Wednesday"
+  },
+  {
+    "id": 162,
+    "unit": "Unit 4",
+    "zh": "嗨，我是王俊峰。",
+    "en": "Hi, this is Wang Junfeng."
+  },
+  {
+    "id": 163,
+    "unit": "Unit 4",
+    "zh": "嗨，王俊峰。你在做什么？",
+    "en": "Hi, Wang Junfeng. What are you doing?"
+  },
+  {
+    "id": 164,
+    "unit": "Unit 4",
+    "zh": "我正在穿我的足球鞋。我想踢足球。",
+    "en": "I’m putting on my football shoes. I want to play football."
+  },
+  {
+    "id": 165,
+    "unit": "Unit 4",
+    "zh": "你想来和我一起玩吗？",
+    "en": "Do you want to come and play with me?"
+  },
+  {
+    "id": 166,
+    "unit": "Unit 4",
+    "zh": "抱歉，我正在做作业。而且我踢足球真的不太擅长。",
+    "en": "Sorry, I’m working on my homework. And I’m not really good at playing football."
+  },
+  {
+    "id": 167,
+    "unit": "Unit 4",
+    "zh": "为什么不加入足球俱乐部呢？你可以学习踢足球。",
+    "en": "Why not join the football club? You can learn to play it."
+  },
+  {
+    "id": 168,
+    "unit": "Unit 4",
+    "zh": "太好了！你在俱乐部吗？",
+    "en": "Great! Are you in the club?"
+  },
+  {
+    "id": 169,
+    "unit": "Unit 4",
+    "zh": "是的。我热爱足球，而且我踢得很好。",
+    "en": "Yes. I love football and I can play it very well."
+  },
+  {
+    "id": 170,
+    "unit": "Unit 4",
+    "zh": "真为你高兴。我希望我能像你一样踢好足球。",
+    "en": "Good for you. I hope I can play football well like you."
+  },
+  {
+    "id": 171,
+    "unit": "Unit 4",
+    "zh": "许多美国人喜欢打棒球。",
+    "en": "Many Americans love playing baseball."
+  },
+  {
+    "id": 172,
+    "unit": "Unit 4",
+    "zh": "他们全年都打棒球。",
+    "en": "They play it all year long."
+  },
+  {
+    "id": 173,
+    "unit": "Unit 4",
+    "zh": "在晴天或阴天，他们在户外打棒球。",
+    "en": "On sunny or cloudy days, they play it outdoors."
+  },
+  {
+    "id": 174,
+    "unit": "Unit 4",
+    "zh": "在雨天，他们在室内打棒球。",
+    "en": "On rainy days, they play it indoors."
+  },
+  {
+    "id": 175,
+    "unit": "Unit 4",
+    "zh": "背景是故事或事件发生的时间和地点。",
+    "en": "The setting is when and where a story or an event takes place."
+  },
+  {
+    "id": 176,
+    "unit": "Unit 4",
+    "zh": "它通常包括时间、地点、天气等。",
+    "en": "It usually includes time, place, weather, etc."
+  },
+  {
+    "id": 177,
+    "unit": "Unit 4",
+    "zh": "早上天气晴朗。",
+    "en": "It’s sunny in the morning."
+  },
+  {
+    "id": 178,
+    "unit": "Unit 4",
+    "zh": "女孩正在公园里玩空竹。",
+    "en": "The girl is playing Chinese yo-yo in the park."
+  },
+  {
+    "id": 179,
+    "unit": "Unit 4",
+    "zh": "锻炼对你的健康有益，但你该如何进行呢？",
+    "en": "Exercise is good for your health, but how do you do it?"
+  },
+  {
+    "id": 180,
+    "unit": "Unit 4",
+    "zh": "总是穿合适的鞋子和运动服。",
+    "en": "Always wear the right shoes and sports clothes."
+  },
+  {
+    "id": 181,
+    "unit": "Unit 4",
+    "zh": "有时，你需要随身带一些水。",
+    "en": "Sometimes, you need to take some water with you."
+  },
+  {
+    "id": 182,
+    "unit": "Unit 4",
+    "zh": "对于大多数运动来说，在锻炼前热身是很重要的。",
+    "en": "For most sports, it’s important to warm up before exercise."
+  },
+  {
+    "id": 183,
+    "unit": "Unit 4",
+    "zh": "不要在非常炎热或寒冷的天气里做太多运动。",
+    "en": "Don’t do sports too much in very hot or cold weather."
+  },
+  {
+    "id": 184,
+    "unit": "Unit 4",
+    "zh": "他经常在周五下课后和同学们一起踢足球。",
+    "en": "He often plays football with his classmates after class on Friday."
+  },
+  {
+    "id": 185,
+    "unit": "Unit 4",
+    "zh": "现在外面阳光明媚。",
+    "en": "Now it’s sunny out there."
+  },
+  {
+    "id": 186,
+    "unit": "Unit 4",
+    "zh": "所有的男孩都在操场上玩得很开心。",
+    "en": "All the boys are having fun on the playground."
+  },
+  {
+    "id": 187,
+    "unit": "Unit 4",
+    "zh": "王俊峰的队伍一开始踢得不是很好。",
+    "en": "Wang Junfeng’s team is not playing very well at the start."
+  },
+  {
+    "id": 188,
+    "unit": "Unit 4",
+    "zh": "但王俊峰没有放弃。",
+    "en": "But Wang Junfeng doesn’t give up."
+  },
+  {
+    "id": 189,
+    "unit": "Unit 4",
+    "zh": "他不停地奔跑和传球。",
+    "en": "He keeps running and passing the ball."
+  },
+  {
+    "id": 190,
+    "unit": "Unit 4",
+    "zh": "最后，他们以二比一赢得了比赛。",
+    "en": "In the end, they win the game two to one."
+  },
+  {
+    "id": 191,
+    "unit": "Unit 4",
+    "zh": "他的体育老师李先生正在观看比赛。",
+    "en": "His PE teacher, Mr. Li, is watching the game."
+  },
+  {
+    "id": 192,
+    "unit": "Unit 4",
+    "zh": "他希望王俊峰能为校足球队效力，这也是王俊峰的愿望。",
+    "en": "He hopes Wang Junfeng can play for the school football team, and that is Wang Junfeng’s wish, too."
+  },
+  {
+    "id": 193,
+    "unit": "Unit 4",
+    "zh": "现在他感觉自己像个大足球明星！",
+    "en": "Now he is feeling like a big football star!"
+  },
+  {
+    "id": 194,
+    "unit": "Unit 4",
+    "zh": "她正在骑自行车。",
+    "en": "She is riding a bike."
+  },
+  {
+    "id": 195,
+    "unit": "Unit 4",
+    "zh": "她没有乘公共汽车。",
+    "en": "She isn't taking a bus."
+  },
+  {
+    "id": 196,
+    "unit": "Unit 4",
+    "zh": "公园里有很多人。",
+    "en": "There are many people in the park."
+  },
+  {
+    "id": 197,
+    "unit": "Unit 4",
+    "zh": "穿粉色衣服的女人正在和她的朋友野餐。",
+    "en": "The woman in pink is having a picnic with her friend."
+  },
+  {
+    "id": 198,
+    "unit": "Unit 4",
+    "zh": "看那个穿红色衣服的女人。",
+    "en": "Look at the woman in red."
+  },
+  {
+    "id": 199,
+    "unit": "Unit 4",
+    "zh": "她正在喂鸟。",
+    "en": "She is feeding a bird."
+  },
+  {
+    "id": 200,
+    "unit": "Unit 4",
+    "zh": "我的姑姑和姑父在那边。",
+    "en": "My aunt and uncle are over there."
+  },
+  {
+    "id": 201,
+    "unit": "Unit 5",
+    "zh": "怀特先生正在湖边遛狗。",
+    "en": "Mr. White is walking the dog by the lake."
+  },
+  {
+    "id": 202,
+    "unit": "Unit 5",
+    "zh": "穿黄色衣服的女孩是他的妹妹。",
+    "en": "The girl in yellow is his sister."
+  },
+  {
+    "id": 203,
+    "unit": "Unit 5",
+    "zh": "我正在骑自行车。",
+    "en": "I am riding a bike."
+  },
+  {
+    "id": 204,
+    "unit": "Unit 5",
+    "zh": "你正在雨中跳舞。",
+    "en": "You are dancing in the rain."
+  },
+  {
+    "id": 205,
+    "unit": "Unit 5",
+    "zh": "我最喜欢的运动是滑雪。",
+    "en": "My favorite sport is skiing."
+  },
+  {
+    "id": 206,
+    "unit": "Unit 5",
+    "zh": "滑雪在我的家乡阿勒泰有着悠久的历史。",
+    "en": "Skiing has a long history in my hometown, Altay."
+  },
+  {
+    "id": 207,
+    "unit": "Unit 5",
+    "zh": "人们冬天来这里滑雪。",
+    "en": "People travel here to ski in winter."
+  },
+  {
+    "id": 208,
+    "unit": "Unit 5",
+    "zh": "我经常在美丽的雪季和朋友们一起滑雪。",
+    "en": "I often ski with my friends in the beautiful snow season."
+  },
+  {
+    "id": 209,
+    "unit": "Unit 5",
+    "zh": "我和朋友们正在山上滑雪。",
+    "en": "My friends and I are skiing in the mountains."
+  },
+  {
+    "id": 210,
+    "unit": "Unit 5",
+    "zh": "我擅长转弯。",
+    "en": "I’m good at making turns."
+  },
+  {
+    "id": 211,
+    "unit": "Unit 5",
+    "zh": "我的朋友们移动得很快。",
+    "en": "And my friends move very fast."
+  },
+  {
+    "id": 212,
+    "unit": "Unit 5",
+    "zh": "我也喜欢在电视上看滑雪比赛。",
+    "en": "I also enjoy watching skiing games on TV."
+  },
+  {
+    "id": 213,
+    "unit": "Unit 5",
+    "zh": "我可以从中学到很多。",
+    "en": "I can learn a lot from it."
+  },
+  {
+    "id": 214,
+    "unit": "Unit 5",
+    "zh": "在我的学校，我们每年春天和秋天都有一个运动日。",
+    "en": "In my school, we have a sports day every spring and autumn."
+  },
+  {
+    "id": 215,
+    "unit": "Unit 5",
+    "zh": "今天是我们的秋季运动日。",
+    "en": "Today is our autumn sports day."
+  },
+  {
+    "id": 216,
+    "unit": "Unit 5",
+    "zh": "我们正在操场上进行不同的运动。",
+    "en": "We are playing different sports on the playground."
+  },
+  {
+    "id": 217,
+    "unit": "Unit 5",
+    "zh": "看，一些学生正在打篮球和乒乓球。",
+    "en": "Look, some students are playing basketball and ping-pong."
+  },
+  {
+    "id": 218,
+    "unit": "Unit 5",
+    "zh": "一些人在像风一样奔跑。",
+    "en": "Some are running like wind."
+  },
+  {
+    "id": 219,
+    "unit": "Unit 5",
+    "zh": "还有一些人正在以团队形式进行两人三足比赛。",
+    "en": "Some others are having three-legged races as a team."
+  },
+  {
+    "id": 220,
+    "unit": "Unit 5",
+    "zh": "我们的父母也在这里。",
+    "en": "Our parents are also here."
+  },
+  {
+    "id": 221,
+    "unit": "Unit 5",
+    "zh": "他们中的一些人在操场边观看。",
+    "en": "Some of them are watching on the sides of the playground."
+  },
+  {
+    "id": 222,
+    "unit": "Unit 5",
+    "zh": "有些人甚至和我们一起做运动！",
+    "en": "Some are even doing sports with us!"
+  },
+  {
+    "id": 223,
+    "unit": "Unit 5",
+    "zh": "我爱我们的运动日！",
+    "en": "I love our sports day!"
+  },
+  {
+    "id": 224,
+    "unit": "Unit 5",
+    "zh": "沙漠非常干燥，因为很少下雨。",
+    "en": "Deserts are very dry because it rains little."
+  },
+  {
+    "id": 225,
+    "unit": "Unit 5",
+    "zh": "但沙漠并不总是热的。",
+    "en": "But it is not always hot in deserts."
+  },
+  {
+    "id": 226,
+    "unit": "Unit 5",
+    "zh": "在一些沙漠中，夏天很热但冬天很冷。",
+    "en": "In some deserts, it is hot in summer but very cold in winter."
+  },
+  {
+    "id": 227,
+    "unit": "Unit 5",
+    "zh": "一些动物可以生活在沙漠中，人们也可以住在那里。",
+    "en": "Some animals can live in deserts and people can live there, too."
+  },
+  {
+    "id": 228,
+    "unit": "Unit 5",
+    "zh": "房屋通常有小窗户。",
+    "en": "The houses often have small windows."
+  },
+  {
+    "id": 229,
+    "unit": "Unit 5",
+    "zh": "人们通常住在沙漠中的湖泊附近。",
+    "en": "People usually live near the lakes in deserts."
+  },
+  {
+    "id": 230,
+    "unit": "Unit 5",
+    "zh": "今天，我们要谈论沙漠。",
+    "en": "Today, we are talking about deserts."
+  },
+  {
+    "id": 231,
+    "unit": "Unit 5",
+    "zh": "你们对沙漠有什么问题吗？",
+    "en": "Do you have any questions about deserts?"
+  },
+  {
+    "id": 232,
+    "unit": "Unit 5",
+    "zh": "沙漠的气候是什么样的？",
+    "en": "What’s the climate like in deserts?"
+  },
+  {
+    "id": 233,
+    "unit": "Unit 5",
+    "zh": "通常很干燥，因为很少下雨。",
+    "en": "It is usually dry, because there is little rain."
+  },
+  {
+    "id": 234,
+    "unit": "Unit 5",
+    "zh": "沙漠里热吗？",
+    "en": "Is it hot in deserts?"
+  },
+  {
+    "id": 235,
+    "unit": "Unit 5",
+    "zh": "夏天很热但冬天很冷。",
+    "en": "It is hot in summer but very cold in winter."
+  },
+  {
+    "id": 236,
+    "unit": "Unit 5",
+    "zh": "动物和植物能生活在沙漠中吗？",
+    "en": "Can animals and plants live in deserts?"
+  },
+  {
+    "id": 237,
+    "unit": "Unit 5",
+    "zh": "沙漠是一些动植物的家园。",
+    "en": "Deserts are home to some animals and plants."
+  },
+  {
+    "id": 238,
+    "unit": "Unit 5",
+    "zh": "人们也能住在沙漠里吗？",
+    "en": "Can people live in deserts, too?"
+  },
+  {
+    "id": 239,
+    "unit": "Unit 5",
+    "zh": "在沙漠中，大多数房屋都有小窗户以遮挡阳光和风。",
+    "en": "In deserts, most houses have small windows to keep out the sun and the wind."
+  },
+  {
+    "id": 240,
+    "unit": "Unit 5",
+    "zh": "人们在沙漠中如何获取水？",
+    "en": "How do people get water in deserts?"
+  },
+  {
+    "id": 241,
+    "unit": "Unit 5",
+    "zh": "在一些沙漠中有湖泊。",
+    "en": "There are lakes in some deserts."
+  },
+  {
+    "id": 242,
+    "unit": "Unit 5",
+    "zh": "人们通常住在湖泊附近。",
+    "en": "People usually live near the lakes."
+  },
+  {
+    "id": 243,
+    "unit": "Unit 5",
+    "zh": "王老师和她的学生们在谈论什么？",
+    "en": "What are Miss Wang and her students talking about?"
+  },
+  {
+    "id": 244,
+    "unit": "Unit 5",
+    "zh": "熊猫生活在中国山区。",
+    "en": "Pandas live in the mountains of China."
+  },
+  {
+    "id": 245,
+    "unit": "Unit 5",
+    "zh": "熊猫有四条腿和一条短尾巴。",
+    "en": "A panda has four legs and a short tail."
+  },
+  {
+    "id": 246,
+    "unit": "Unit 5",
+    "zh": "它们大多数是黑白相间的。",
+    "en": "Most of them are black and white."
+  },
+  {
+    "id": 247,
+    "unit": "Unit 5",
+    "zh": "它们最喜欢的食物是竹子。",
+    "en": "Their favorite food is bamboo."
+  },
+  {
+    "id": 248,
+    "unit": "Unit 5",
+    "zh": "棕熊生活在北美的森林里。",
+    "en": "Brown bears live in the forests of North America."
+  },
+  {
+    "id": 249,
+    "unit": "Unit 5",
+    "zh": "它们是棕色的。",
+    "en": "They are brown in color."
+  },
+  {
+    "id": 250,
+    "unit": "Unit 5",
+    "zh": "它们有四条强壮的腿。",
+    "en": "They have four strong legs."
+  },
+  {
+    "id": 251,
+    "unit": "Unit 6",
+    "zh": "它们吃草、鱼和许多其他东西。",
+    "en": "They eat grass, fish and many other things."
+  },
+  {
+    "id": 252,
+    "unit": "Unit 6",
+    "zh": "蝙蝠和鸟会飞。",
+    "en": "Bats and birds can fly."
+  },
+  {
+    "id": 253,
+    "unit": "Unit 6",
+    "zh": "大多数蝙蝠在夜间活动，大多数鸟在白天活动。",
+    "en": "Most bats are active at night and most birds are active in the day."
+  },
+  {
+    "id": 254,
+    "unit": "Unit 6",
+    "zh": "比较，就是说出相似之处。",
+    "en": "To compare, tell what is similar here."
+  },
+  {
+    "id": 255,
+    "unit": "Unit 6",
+    "zh": "对比，就是说出不同之处。",
+    "en": "To contrast, tell what is different here."
+  },
+  {
+    "id": 256,
+    "unit": "Unit 6",
+    "zh": "比较，就是说出事物的相似之处。",
+    "en": "To compare, we tell how things are similar."
+  },
+  {
+    "id": 257,
+    "unit": "Unit 6",
+    "zh": "对比，就是说出事物的不同之处。",
+    "en": "To contrast, we tell how things are different."
+  },
+  {
+    "id": 258,
+    "unit": "Unit 6",
+    "zh": "蜀南竹海位于四川宜宾。",
+    "en": "Shunan Bamboo Forest is in Yibin, Sichuan."
+  },
+  {
+    "id": 259,
+    "unit": "Unit 6",
+    "zh": "它是竹子的海洋。",
+    "en": "It is a sea of bamboos."
+  },
+  {
+    "id": 260,
+    "unit": "Unit 6",
+    "zh": "那里有大约400种不同的竹子。",
+    "en": "There are about 400 different kinds of bamboos."
+  },
+  {
+    "id": 261,
+    "unit": "Unit 6",
+    "zh": "夏天，竹子生长茂密，森林一片翠绿。",
+    "en": "In summer, the bamboos grow thickly, and the forest is all green."
+  },
+  {
+    "id": 262,
+    "unit": "Unit 6",
+    "zh": "人们可以乘坐缆车，好好欣赏美丽的森林。",
+    "en": "People can take the cable cars and have a good look at the beautiful forest."
+  },
+  {
+    "id": 263,
+    "unit": "Unit 6",
+    "zh": "大兴安岭有许多松树。",
+    "en": "There are lots of pine trees in Daxing’anling."
+  },
+  {
+    "id": 264,
+    "unit": "Unit 6",
+    "zh": "它们可以长得很高。",
+    "en": "They can grow very tall."
+  },
+  {
+    "id": 265,
+    "unit": "Unit 6",
+    "zh": "它们在五月和六月开花，花是红色的。",
+    "en": "They bloom in May and June and the flowers are red."
+  },
+  {
+    "id": 266,
+    "unit": "Unit 6",
+    "zh": "雨林和沙漠是自然界中两种截然不同的生存场所。",
+    "en": "Rainforests and deserts are two very different living places in nature."
+  },
+  {
+    "id": 267,
+    "unit": "Unit 6",
+    "zh": "在雨林中，气候温暖潮湿，降雨量很大。",
+    "en": "In a rainforest, it is warm and wet, and it rains a lot."
+  },
+  {
+    "id": 268,
+    "unit": "Unit 6",
+    "zh": "在那里你可以找到许多种类的植物和动物。",
+    "en": "You can find many kinds of plants and animals there."
+  },
+  {
+    "id": 269,
+    "unit": "Unit 6",
+    "zh": "植物可以长得很高，动物有充足的食物可吃。",
+    "en": "Plants can grow very tall, and animals have plenty of food to eat."
+  },
+  {
+    "id": 270,
+    "unit": "Unit 6",
+    "zh": "沙漠炎热干燥。",
+    "en": "The desert is hot and dry."
+  },
+  {
+    "id": 271,
+    "unit": "Unit 6",
+    "zh": "那里降雨很少。",
+    "en": "It rains very little there."
+  },
+  {
+    "id": 272,
+    "unit": "Unit 6",
+    "zh": "沙漠中也有一些种类的植物，比如仙人掌。",
+    "en": "There are also some kinds of plants in the desert, like cactuses."
+  },
+  {
+    "id": 273,
+    "unit": "Unit 6",
+    "zh": "这些植物能够储存水分并生长。",
+    "en": "The plants can keep water and grow."
+  },
+  {
+    "id": 274,
+    "unit": "Unit 6",
+    "zh": "只有少数动物能在沙漠中生存。",
+    "en": "Only a few animals can live in the desert."
+  },
+  {
+    "id": 275,
+    "unit": "Unit 6",
+    "zh": "它们没有太多食物可吃，其中许多以其他小动物为生。",
+    "en": "They don’t have much to eat and many of them live on other small animals."
+  },
+  {
+    "id": 276,
+    "unit": "Unit 6",
+    "zh": "雨林和沙漠是自然界的奇观。",
+    "en": "Rainforests and deserts are wonders of nature."
+  },
+  {
+    "id": 277,
+    "unit": "Unit 6",
+    "zh": "它们是许多动植物的家园。",
+    "en": "They are home to many animals and plants."
+  },
+  {
+    "id": 278,
+    "unit": "Unit 6",
+    "zh": "有一个鸡蛋和一个球。",
+    "en": "There is an egg and a ball."
+  },
+  {
+    "id": 279,
+    "unit": "Unit 6",
+    "zh": "鸡蛋很小，但球很大。",
+    "en": "The egg is small, but the ball is big."
+  },
+  {
+    "id": 280,
+    "unit": "Unit 6",
+    "zh": "一个男人正在看关于自然的图片。",
+    "en": "A man is looking at the pictures about nature."
+  },
+  {
+    "id": 281,
+    "unit": "Unit 6",
+    "zh": "植物需要三样东西来生长：阳光、土壤和水。",
+    "en": "A plant needs three things to grow: sun, earth and water."
+  },
+  {
+    "id": 282,
+    "unit": "Unit 6",
+    "zh": "一年有四个季节。",
+    "en": "There are four seasons in a year."
+  },
+  {
+    "id": 283,
+    "unit": "Unit 6",
+    "zh": "春天，天气很暖和。",
+    "en": "In spring, the weather is warm."
+  },
+  {
+    "id": 284,
+    "unit": "Unit 6",
+    "zh": "有时会刮风，所以我可以去公园放风筝。",
+    "en": "Sometimes it is windy, so I can go to the park and fly a kite there."
+  },
+  {
+    "id": 285,
+    "unit": "Unit 6",
+    "zh": "我最喜欢的季节是夏天，因为我可以穿漂亮的裙子。",
+    "en": "My favorite season is summer because I can wear nice dresses."
+  },
+  {
+    "id": 286,
+    "unit": "Unit 6",
+    "zh": "我有一条橙色的裙子，我所有的朋友都喜欢它。",
+    "en": "I have an orange dress and all my friends like it."
+  },
+  {
+    "id": 287,
+    "unit": "Unit 6",
+    "zh": "在秋天，我每天吃一个苹果。",
+    "en": "In autumn, I eat an apple every day."
+  },
+  {
+    "id": 288,
+    "unit": "Unit 6",
+    "zh": "在冬天，下雪后我可以堆雪人。",
+    "en": "And in winter, I can make a snowman after it snows."
+  },
+  {
+    "id": 289,
+    "unit": "Unit 6",
+    "zh": "松树能长得很高吗？",
+    "en": "Can pine trees grow very tall?"
+  },
+  {
+    "id": 290,
+    "unit": "Unit 6",
+    "zh": "但它能飞得很高。",
+    "en": "But it can fly very high."
+  },
+  {
+    "id": 291,
+    "unit": "Unit 6",
+    "zh": "植物和动物可以在自然界中共同生活。",
+    "en": "Plants and animals can live together in nature."
+  },
+  {
+    "id": 292,
+    "unit": "Unit 6",
+    "zh": "蜜蜂能在花丛中飞舞。",
+    "en": "A bee can fly in flowers."
+  },
+  {
+    "id": 293,
+    "unit": "Unit 6",
+    "zh": "它不能在水里游泳。",
+    "en": "It can’t swim in the water."
+  },
+  {
+    "id": 294,
+    "unit": "Unit 6",
+    "zh": "鲨鱼能在水里游泳。",
+    "en": "Sharks can swim in the water."
+  },
+  {
+    "id": 295,
+    "unit": "Unit 6",
+    "zh": "它们不会在天空中飞。",
+    "en": "They can’t fly in the sky."
+  },
+  {
+    "id": 296,
+    "unit": "Unit 6",
+    "zh": "梦兰是动物园里的一只熊猫。",
+    "en": "Menglan is a panda in a zoo."
+  },
+  {
+    "id": 297,
+    "unit": "Unit 6",
+    "zh": "他能爬到高高的树上。",
+    "en": "He can climb high in a tree."
+  },
+  {
+    "id": 298,
+    "unit": "Unit 6",
+    "zh": "他可以玩他的玩具。",
+    "en": "He can play with his toys."
+  },
+  {
+    "id": 299,
+    "unit": "Unit 6",
+    "zh": "他不会说话，但当人们叫他的名字时，他能理解。",
+    "en": "He can’t talk, but when people call his name, he can understand it."
+  },
+  {
+    "id": 300,
+    "unit": "Unit 6",
+    "zh": "在动物园里观看他非常有趣。",
+    "en": "It is great fun to watch him in the zoo."
+  },
+  {
+    "id": 301,
+    "unit": "Unit 7",
+    "zh": "我和表妹露露来自云南的两个不同地方，云南是我们的家乡。",
+    "en": "My cousin Lulu and I come from two different places in Yunnan, and Yunnan is our hometown."
+  },
+  {
+    "id": 302,
+    "unit": "Unit 7",
+    "zh": "它位于云南的南部。",
+    "en": "It is in the south of Yunnan."
+  },
+  {
+    "id": 303,
+    "unit": "Unit 7",
+    "zh": "这里气候炎热，有一片大热带雨林。",
+    "en": "The climate is hot and there is a big rainforest here."
+  },
+  {
+    "id": 304,
+    "unit": "Unit 7",
+    "zh": "许多野生动物，如大象和猴子，生活在森林里。",
+    "en": "Many wild animals like elephants and monkeys live in the forest."
+  },
+  {
+    "id": 305,
+    "unit": "Unit 7",
+    "zh": "我经常参加照顾野生动物的活动。",
+    "en": "I often join in the activities to look after the wild animals."
+  },
+  {
+    "id": 306,
+    "unit": "Unit 7",
+    "zh": "它位于云南的中部。",
+    "en": "It is in the middle of Yunnan."
+  },
+  {
+    "id": 307,
+    "unit": "Unit 7",
+    "zh": "昆明的气候温暖。",
+    "en": "The climate in Kunming is warm."
+  },
+  {
+    "id": 308,
+    "unit": "Unit 7",
+    "zh": "每个季节都有不同种类的植物，人们都喜欢在家里种植美丽的花朵。",
+    "en": "There are different kinds of plants in every season, and people all like to grow beautiful flowers at home."
+  },
+  {
+    "id": 309,
+    "unit": "Unit 7",
+    "zh": "欢迎来参观我们美丽的家乡！",
+    "en": "Welcome to visit our beautiful hometown!"
+  },
+  {
+    "id": 310,
+    "unit": "Unit 7",
+    "zh": "一年中的任何时候你都会在这里玩得很开心！",
+    "en": "You will have a good time here any time in the year!"
+  },
+  {
+    "id": 311,
+    "unit": "Unit 7",
+    "zh": "中国是一个大国。",
+    "en": "China is a big country."
+  },
+  {
+    "id": 312,
+    "unit": "Unit 7",
+    "zh": "中国的北方和南方非常不同。",
+    "en": "The north and the south of China are very different."
+  },
+  {
+    "id": 313,
+    "unit": "Unit 7",
+    "zh": "在北方，冬天非常寒冷。",
+    "en": "In the north, it is very cold in winter."
+  },
+  {
+    "id": 314,
+    "unit": "Unit 7",
+    "zh": "人们可以进行像滑雪这样的冬季运动。",
+    "en": "People can play winter sports like skiing."
+  },
+  {
+    "id": 315,
+    "unit": "Unit 7",
+    "zh": "北方有一些山，但大多数山都不是很高。",
+    "en": "There are some mountains in the north, but most of them are not very high."
+  },
+  {
+    "id": 316,
+    "unit": "Unit 7",
+    "zh": "那里的人们喜欢吃面条和饺子。",
+    "en": "People there like to eat noodles and dumplings."
+  },
+  {
+    "id": 317,
+    "unit": "Unit 7",
+    "zh": "在南方，冬天很暖和。",
+    "en": "In the south, it is warm in winter."
+  },
+  {
+    "id": 318,
+    "unit": "Unit 7",
+    "zh": "有许多大河，而且经常下雨。",
+    "en": "There are many big rivers and it rains a lot."
+  },
+  {
+    "id": 319,
+    "unit": "Unit 7",
+    "zh": "南方的山非常高。",
+    "en": "The mountains in the south are very high."
+  },
+  {
+    "id": 320,
+    "unit": "Unit 7",
+    "zh": "人们全年都种植蔬菜，他们的主食是米饭。",
+    "en": "People grow vegetables all year long, and their main food is rice."
+  },
+  {
+    "id": 321,
+    "unit": "Unit 7",
+    "zh": "山脉构成了自然界的很大一部分。",
+    "en": "Mountains make up a big part of nature."
+  },
+  {
+    "id": 322,
+    "unit": "Unit 7",
+    "zh": "我们可以在世界各地看到山脉。",
+    "en": "We can see mountains all over the world."
+  },
+  {
+    "id": 323,
+    "unit": "Unit 7",
+    "zh": "许多人喜欢爬山，因为爬山可以保持健康。",
+    "en": "Many people like to climb mountains because mountain-climbing can keep them healthy."
+  },
+  {
+    "id": 324,
+    "unit": "Unit 7",
+    "zh": "我们还可以在山里做许多有趣的事情，比如徒步旅行和野餐。",
+    "en": "We can also do many fun things in mountains, like hiking and picnicking."
+  },
+  {
+    "id": 325,
+    "unit": "Unit 7",
+    "zh": "但我们不能在山上生火。",
+    "en": "But we cannot make any fire in mountains."
+  },
+  {
+    "id": 326,
+    "unit": "Unit 7",
+    "zh": "海底也有很多山脉，但我们看不到它们。",
+    "en": "There are also many mountains under the sea, but we cannot see them."
+  },
+  {
+    "id": 327,
+    "unit": "Unit 7",
+    "zh": "简：你好，露露。你能和我一起去游泳吗？",
+    "en": "Jane: Hello, Lulu. Can you go swimming with me?"
+  },
+  {
+    "id": 328,
+    "unit": "Unit 7",
+    "zh": "露露：对不起，我不能。我现在很忙。",
+    "en": "Lulu: I’m sorry, I can’t. I’m busy now."
+  },
+  {
+    "id": 329,
+    "unit": "Unit 7",
+    "zh": "简：你在做什么？",
+    "en": "Jane: What are you doing?"
+  },
+  {
+    "id": 330,
+    "unit": "Unit 7",
+    "zh": "露露：我正在为清明节买一些花。",
+    "en": "Lulu: I’m buying some flowers for Tomb-sweeping Day."
+  },
+  {
+    "id": 331,
+    "unit": "Unit 7",
+    "zh": "简：清明节？它是一个节日吗？",
+    "en": "Jane: Tomb-sweeping Day? Is it a festival?"
+  },
+  {
+    "id": 332,
+    "unit": "Unit 7",
+    "zh": "露露：是的，它是中国一个重要的节日。",
+    "en": "Lulu: Yes, it is an important festival in China."
+  },
+  {
+    "id": 333,
+    "unit": "Unit 7",
+    "zh": "每年四月，我们会去祭拜已故家人的坟墓。",
+    "en": "Every year, in April, we visit the tombs of our late family members."
+  },
+  {
+    "id": 334,
+    "unit": "Unit 7",
+    "zh": "简：你们在那里做什么？",
+    "en": "Jane: What do you do there?"
+  },
+  {
+    "id": 335,
+    "unit": "Unit 7",
+    "zh": "露露：我们整理坟墓并在那里放一些花。",
+    "en": "Lulu: We tidy up the tombs and put some flowers there."
+  },
+  {
+    "id": 336,
+    "unit": "Unit 7",
+    "zh": "简：我明白了。这是一个纪念你们已故家人的节日。",
+    "en": "Jane: I see. It is a festival to remember your late family members."
+  },
+  {
+    "id": 337,
+    "unit": "Unit 7",
+    "zh": "露露：是的。我们也称它为清明节。",
+    "en": "Lulu: Yes. We also call it the Qingming Festival."
+  },
+  {
+    "id": 338,
+    "unit": "Unit 7",
+    "zh": "在这个节日期间，我们还会进行家庭远足，一起享受大自然。",
+    "en": "During this festival, we also go on family hiking and enjoy nature together."
+  },
+  {
+    "id": 339,
+    "unit": "Unit 7",
+    "zh": "简：谢谢你告诉我这么多关于这个节日的事情。",
+    "en": "Jane: Thank you for telling me so much about this festival."
+  },
+  {
+    "id": 340,
+    "unit": "Unit 7",
+    "zh": "圣诞节是美国的一个盛大节日。",
+    "en": "Christmas is a big festival in America."
+  },
+  {
+    "id": 341,
+    "unit": "Unit 7",
+    "zh": "每年，迈克尔的父母都会买一棵圣诞树。",
+    "en": "Every year, Michael’s parents buy a Christmas tree."
+  },
+  {
+    "id": 342,
+    "unit": "Unit 7",
+    "zh": "他们首先把彩灯和彩纸挂在树上，让它变得非常漂亮。",
+    "en": "They first put colorful lights and paper on the tree and make it very pretty."
+  },
+  {
+    "id": 343,
+    "unit": "Unit 7",
+    "zh": "然后，他们把礼物放在树下。",
+    "en": "And then, they put the presents under the tree."
+  },
+  {
+    "id": 344,
+    "unit": "Unit 7",
+    "zh": "在圣诞节，他们会吃一顿丰盛的晚餐并互赠礼物。",
+    "en": "At Christmas, they have a big dinner and give presents to each other."
+  },
+  {
+    "id": 345,
+    "unit": "Unit 7",
+    "zh": "学生们正在学习一些关于元旦的知识。",
+    "en": "The students are learning something about New Year’s Day."
+  },
+  {
+    "id": 346,
+    "unit": "Unit 7",
+    "zh": "玲玲和简正在为她们的朋友制作卡片。",
+    "en": "Lingling and Jane are making cards for their friends."
+  },
+  {
+    "id": 347,
+    "unit": "Unit 7",
+    "zh": "她们在元旦那天把卡片送给她们的朋友。",
+    "en": "They give the cards to their friends on New Year’s Day."
+  },
+  {
+    "id": 348,
+    "unit": "Unit 7",
+    "zh": "情节是故事发展的顺序。",
+    "en": "Plot is the order of a story."
+  },
+  {
+    "id": 349,
+    "unit": "Unit 7",
+    "zh": "它讲述了故事的开端、发展和结局。",
+    "en": "It tells the beginning, the middle and the end of the story."
+  },
+  {
+    "id": 350,
+    "unit": "Unit 7",
+    "zh": "孔子是中国历史上一位伟大的思想家和教师。",
+    "en": "Confucius is a great thinker and teacher in Chinese history."
+  },
+  {
+    "id": 351,
+    "unit": "Unit 8",
+    "zh": "作为思想家，他的言论教导人们如何看待世界。",
+    "en": "As a thinker, his words teach people how to look at the world."
+  },
+  {
+    "id": 352,
+    "unit": "Unit 8",
+    "zh": "作为教师，他教导学生如何思考以及成为什么样的人。",
+    "en": "As a teacher, he teaches his students how to think and what to be."
+  },
+  {
+    "id": 353,
+    "unit": "Unit 8",
+    "zh": "他的许多学生也是伟大的思想家和教师。",
+    "en": "Many of his students are great thinkers and teachers, too."
+  },
+  {
+    "id": 354,
+    "unit": "Unit 8",
+    "zh": "将阅读内容与你已知的事物联系起来，可以帮助你更好地理解文本并牢固记忆。",
+    "en": "Connections between what you read and what you know can help you understand the text better and remember it well."
+  },
+  {
+    "id": 355,
+    "unit": "Unit 8",
+    "zh": "9月10日是中国的教师节。",
+    "en": "September 10th is Teachers’ Day in China."
+  },
+  {
+    "id": 356,
+    "unit": "Unit 8",
+    "zh": "在这一天，学生们以多种方式感谢他们的老师。",
+    "en": "On this day, students thank their teachers in many ways."
+  },
+  {
+    "id": 357,
+    "unit": "Unit 8",
+    "zh": "他们在黑板上写下“谢谢您，老师！”或者为老师制作一张感谢卡。",
+    "en": "They write “Thank you, teacher!” on the blackboard or make a thank-you card for their teachers."
+  },
+  {
+    "id": 358,
+    "unit": "Unit 8",
+    "zh": "有时他们为老师唱歌，并向他们致以最美好的祝愿。",
+    "en": "Sometimes they sing songs for their teachers and give best wishes to them."
+  },
+  {
+    "id": 359,
+    "unit": "Unit 8",
+    "zh": "我们的老师爱我们所有人，所以我们每个人都应该感谢他们。",
+    "en": "Our teachers love us all, so each of us should thank them."
+  },
+  {
+    "id": 360,
+    "unit": "Unit 8",
+    "zh": "这是中国农历年的最后一天，我们正在举行庆祝活动来迎接春节。",
+    "en": "It’s the last day of the Chinese lunar year, and we are having celebrations to welcome the Spring Festival."
+  },
+  {
+    "id": 361,
+    "unit": "Unit 8",
+    "zh": "看，我父亲正在贴春联。",
+    "en": "Look, my father is putting up the Spring Festival couplets."
+  },
+  {
+    "id": 362,
+    "unit": "Unit 8",
+    "zh": "在厨房里，我母亲正和我的阿姨们一起制作一些美味的菜肴。",
+    "en": "And here in the kitchen, my mother is making some delicious dishes with my aunts."
+  },
+  {
+    "id": 363,
+    "unit": "Unit 8",
+    "zh": "现在，是晚餐时间了。",
+    "en": "Now, it’s time for dinner."
+  },
+  {
+    "id": 364,
+    "unit": "Unit 8",
+    "zh": "我们正在享用一顿大餐。",
+    "en": "We are having a big meal."
+  },
+  {
+    "id": 365,
+    "unit": "Unit 8",
+    "zh": "每个人都在愉快地吃喝。",
+    "en": "Everybody is eating and drinking happily."
+  },
+  {
+    "id": 366,
+    "unit": "Unit 8",
+    "zh": "在餐桌旁，我的祖父母给我和我年幼的表兄弟姐妹们一些压岁钱。",
+    "en": "And at the table, my grandparents give some lucky money to my young cousins and me."
+  },
+  {
+    "id": 367,
+    "unit": "Unit 8",
+    "zh": "最后，春节电视节目开始了！",
+    "en": "Finally, here comes the TV show for the Spring Festival!"
+  },
+  {
+    "id": 368,
+    "unit": "Unit 8",
+    "zh": "全世界所有的中国人一起观看这个节目，迎接中国新年。",
+    "en": "All the Chinese around the world watch the show and welcome the Chinese New Year together."
+  },
+  {
+    "id": 369,
+    "unit": "Unit 8",
+    "zh": "我们都享受家庭时光，并为能一起度过春节假期而感到兴奋。",
+    "en": "We all enjoy the family time and are excited to spend the Spring Festival holiday together."
+  },
+  {
+    "id": 370,
+    "unit": "Unit 8",
+    "zh": "教师节在9月10日。",
+    "en": "Teachers’ Day is on September 10th."
+  },
+  {
+    "id": 371,
+    "unit": "Unit 8",
+    "zh": "大约一百人正在参加龙舟比赛。",
+    "en": "About one hundred people are taking part in the dragon boat race."
+  },
+  {
+    "id": 372,
+    "unit": "Unit 8",
+    "zh": "这是我的第十三个生日。",
+    "en": "This is my thirteenth birthday."
+  },
+  {
+    "id": 373,
+    "unit": "Unit 8",
+    "zh": "你喜欢吃饺子吗？",
+    "en": "Do you like eating dumplings?"
+  },
+  {
+    "id": 374,
+    "unit": "Unit 8",
+    "zh": "是的，我喜欢。而且这些天我正在学习如何包饺子。",
+    "en": "Yes, I do. And I am learning how to make dumplings these days."
+  },
+  {
+    "id": 375,
+    "unit": "Unit 8",
+    "zh": "你的家人在春节做什么？",
+    "en": "What do your family do at the Spring Festival?"
+  },
+  {
+    "id": 376,
+    "unit": "Unit 8",
+    "zh": "我们总是包饺子和看电视节目。",
+    "en": "We always make dumplings and watch TV shows."
+  },
+  {
+    "id": 377,
+    "unit": "Unit 8",
+    "zh": "在中秋节，我的家人吃月饼来庆祝。",
+    "en": "At the Mid-Autumn Festival, my family eat mooncakes to celebrate it."
+  },
+  {
+    "id": 378,
+    "unit": "Unit 8",
+    "zh": "晚上，我们还会一起吃一顿丰盛的晚餐。",
+    "en": "At night, we also have a big dinner together."
+  },
+  {
+    "id": 379,
+    "unit": "Unit 8",
+    "zh": "我们吃美味的食物，喝一些饮料。",
+    "en": "We eat delicious food and have some drinks."
+  },
+  {
+    "id": 380,
+    "unit": "Unit 8",
+    "zh": "然后我们赏月，互相聊天。",
+    "en": "And then we enjoy the moon and talk with each other."
+  },
+  {
+    "id": 381,
+    "unit": "Unit 8",
+    "zh": "我的父亲点亮灯笼并把它们挂在树上。",
+    "en": "My father lights the lanterns and hangs them in trees."
+  },
+  {
+    "id": 382,
+    "unit": "Unit 8",
+    "zh": "我们非常享受这个美丽的夜晚。",
+    "en": "We enjoy the beautiful night very much."
+  },
+  {
+    "id": 383,
+    "unit": "Unit 8",
+    "zh": "元宵节在中国新年的最后一天。",
+    "en": "The Lantern Festival falls on the last day of the Chinese New Year."
+  },
+  {
+    "id": 384,
+    "unit": "Unit 8",
+    "zh": "对中国人来说这是一个重要的日子。",
+    "en": "It is an important day for Chinese."
+  },
+  {
+    "id": 385,
+    "unit": "Unit 8",
+    "zh": "家人通常在那天聚在一起。",
+    "en": "Family members often get together on that day."
+  },
+  {
+    "id": 386,
+    "unit": "Unit 8",
+    "zh": "每年，我们都在那天玩得很开心。",
+    "en": "Every year, we all have great fun on that day."
+  },
+  {
+    "id": 387,
+    "unit": "Unit 8",
+    "zh": "首先，在早上，我们为庆祝活动做准备。",
+    "en": "First, in the morning, we prepare for the celebrations."
+  },
+  {
+    "id": 388,
+    "unit": "Unit 8",
+    "zh": "我父亲挂红灯笼。",
+    "en": "My father hangs red lanterns."
+  },
+  {
+    "id": 389,
+    "unit": "Unit 8",
+    "zh": "我们都喜欢红色，因为它是一个幸运的颜色。",
+    "en": "We all like red because it is a lucky color."
+  },
+  {
+    "id": 390,
+    "unit": "Unit 8",
+    "zh": "然后，我们吃一顿大餐，我妈妈会煮一些非常美味的汤圆。",
+    "en": "And then, we have a big meal and my mother cooks some really delicious tangyuan."
+  },
+  {
+    "id": 391,
+    "unit": "Unit 8",
+    "zh": "晚上，我和姐姐与我们的祖父母一起猜灯谜。",
+    "en": "At night, my sister and I guess the lantern riddles with our grandparents."
+  },
+  {
+    "id": 392,
+    "unit": "Unit 8",
+    "zh": "我喜爱中国元宵节。",
+    "en": "I love the Chinese Lantern Festival."
+  },
+  {
+    "id": 393,
+    "unit": "Unit 8",
+    "zh": "它非常有趣！",
+    "en": "It is so much fun!"
+  },
+  {
+    "id": 394,
+    "unit": "Unit 8",
+    "zh": "在西班牙马德里，人们在12月31日晚上开始庆祝新年。",
+    "en": "In Madrid, Spain, people begin New Year’s Day celebrations on the night of December 31st."
+  },
+  {
+    "id": 395,
+    "unit": "Unit 8",
+    "zh": "他们参加许多活动来迎接新年。",
+    "en": "They take part in many activities to welcome the new year."
+  },
+  {
+    "id": 396,
+    "unit": "Unit 8",
+    "zh": "人们通常在那天与家人共进丰盛的晚餐。",
+    "en": "People usually have a big dinner with their family on that day."
+  },
+  {
+    "id": 397,
+    "unit": "Unit 8",
+    "zh": "晚餐后，许多人走上街头，进行各种庆祝活动。",
+    "en": "After dinner, lots of people go to the street and have different celebrations."
+  },
+  {
+    "id": 398,
+    "unit": "Unit 8",
+    "zh": "午夜时分，太阳门的钟声一起敲响十二次，人们吃下十二颗葡萄，然后互相说“新年快乐”。",
+    "en": "At midnight, the bells of Puerta del Sol ring together twelve times and people eat twelve grapes and then say “happy new year” to each other."
+  },
+  {
+    "id": 399,
+    "unit": "Unit 8",
+    "zh": "通过这样做，人们希望他们在即将到来的新年的每个月都有好运。",
+    "en": "In doing so, people hope they will have good luck in every month of the coming new year."
+  },
+  {
+    "id": 400,
+    "unit": "Unit 8",
+    "zh": "玲玲：妈妈，你在做重阳糕。真好啊！",
+    "en": "Lingling: Mom, you are making Chongyang cakes. How nice!"
+  },
+  {
+    "id": 401,
+    "unit": "Unit 9",
+    "zh": "妈妈：是的。今天是重阳节。",
+    "en": "Mom: Yes. Today is the Double Ninth Festival."
+  },
+  {
+    "id": 402,
+    "unit": "Unit 9",
+    "zh": "我们要带着这些糕去徒步。",
+    "en": "We’re going for hiking with the cakes."
+  },
+  {
+    "id": 403,
+    "unit": "Unit 9",
+    "zh": "玲玲：我知道这个节日是在农历九月初九。",
+    "en": "Lingling: I know the festival falls on the ninth day of the ninth month in the lunar calendar."
+  },
+  {
+    "id": 404,
+    "unit": "Unit 9",
+    "zh": "它是一个为老人设立的节日。",
+    "en": "It is a festival for old people."
+  },
+  {
+    "id": 405,
+    "unit": "Unit 9",
+    "zh": "爷爷和奶奶会非常高兴。",
+    "en": "Grandfather and grandmother are so happy."
+  },
+  {
+    "id": 406,
+    "unit": "Unit 9",
+    "zh": "妈妈：我也很高兴。",
+    "en": "Mom: I am also very happy."
+  },
+  {
+    "id": 407,
+    "unit": "Unit 9",
+    "zh": "你爸爸今天不用工作。",
+    "en": "Your father does not have to work today."
+  },
+  {
+    "id": 408,
+    "unit": "Unit 9",
+    "zh": "他也可以和我们一起去徒步。",
+    "en": "He can go hiking with us too."
+  },
+  {
+    "id": 409,
+    "unit": "Unit 9",
+    "zh": "他在一所高中工作。",
+    "en": "He works in a high school."
+  },
+  {
+    "id": 410,
+    "unit": "Unit 9",
+    "zh": "他家有三口人，他父母和他。",
+    "en": "There are three people in his family: his parents and him."
+  },
+  {
+    "id": 411,
+    "unit": "Unit 9",
+    "zh": "父母和他们的孩子住在一起。",
+    "en": "The parents live with their children."
+  },
+  {
+    "id": 412,
+    "unit": "Unit 9",
+    "zh": "我们通常周末去看他们并一起吃饭。",
+    "en": "We often visit them on weekends and have dinner together."
+  },
+  {
+    "id": 413,
+    "unit": "Unit 9",
+    "zh": "你还知道关于林华家人的其他事吗？",
+    "en": "What other things do you know about Lin Hua’s family?"
+  },
+  {
+    "id": 414,
+    "unit": "Unit 9",
+    "zh": "我喜欢篮球，但我打得不好。",
+    "en": "I like basketball, but I can’t play it well."
+  },
+  {
+    "id": 415,
+    "unit": "Unit 9",
+    "zh": "我是康康，我来自北京。",
+    "en": "I am Kangkang and I’m from Beijing."
+  },
+  {
+    "id": 416,
+    "unit": "Unit 9",
+    "zh": "陈雯经常乘飞机/火车去北京。",
+    "en": "Chen Wen often goes to Beijing by plane/train."
+  },
+  {
+    "id": 417,
+    "unit": "Unit 9",
+    "zh": "你呢，肖雅？",
+    "en": "How about you, Xiao Ya?"
+  },
+  {
+    "id": 418,
+    "unit": "Unit 9",
+    "zh": "我喜欢汉语。你呢？",
+    "en": "I like Chinese. How/What about you?"
+  },
+  {
+    "id": 419,
+    "unit": "Unit 9",
+    "zh": "我家附近没有地铁站。",
+    "en": "There are no underground stops near my home."
+  },
+  {
+    "id": 420,
+    "unit": "Unit 9",
+    "zh": "肖明是新来的。他在学校里没有朋友。",
+    "en": "Xiao Ming is new here. He has no friends at school."
+  },
+  {
+    "id": 421,
+    "unit": "Unit 9",
+    "zh": "每天下午，我们在操场上一节体育课。",
+    "en": "Every afternoon, we have one PE class on the playground."
+  },
+  {
+    "id": 422,
+    "unit": "Unit 9",
+    "zh": "我们可以加入俱乐部、做运动，或者去图书馆。",
+    "en": "We can join the clubs, play sports or go to the library."
+  },
+  {
+    "id": 423,
+    "unit": "Unit 9",
+    "zh": "她三个月前进了这家公司。",
+    "en": "She joined the company three months ago."
+  },
+  {
+    "id": 424,
+    "unit": "Unit 9",
+    "zh": "秋天的天气怎么样？",
+    "en": "—What’s the weather like in autumn?"
+  },
+  {
+    "id": 425,
+    "unit": "Unit 9",
+    "zh": "北京春天的天气怎么样？",
+    "en": "—What’s the weather like in spring in Beijing?"
+  },
+  {
+    "id": 426,
+    "unit": "Unit 9",
+    "zh": "而且我不是很擅长踢足球。",
+    "en": "And I’m not really good at playing football."
+  },
+  {
+    "id": 427,
+    "unit": "Unit 9",
+    "zh": "嗨，我是康康。你叫什么名字？",
+    "en": "Hi, I’m Kangkang. What’s your name?"
+  },
+  {
+    "id": 428,
+    "unit": "Unit 9",
+    "zh": "我的名字是赵林。",
+    "en": "My name is Zhao Lin."
+  },
+  {
+    "id": 429,
+    "unit": "Unit 9",
+    "zh": "你好，我是李明。我来自北京。我在七年级六班。你在哪个班？",
+    "en": "Hello, I’m Li Ming. I’m from Beijing. I’m in Class 6, Grade 7. Which class are you in?"
+  },
+  {
+    "id": 430,
+    "unit": "Unit 9",
+    "zh": "你好，我是梅梅，我在七班。我来自天津。",
+    "en": "Hello, I’m Meimei, and I’m in Class 7. I’m from Tianjin."
+  },
+  {
+    "id": 431,
+    "unit": "Unit 9",
+    "zh": "我13岁。你呢，梅梅？",
+    "en": "I’m 13 years old. What about you, Meimei?"
+  },
+  {
+    "id": 432,
+    "unit": "Unit 9",
+    "zh": "我12岁。我喜欢烹饪。你喜欢什么？",
+    "en": "I’m 12 years old. I like cooking. What do you like?"
+  },
+  {
+    "id": 433,
+    "unit": "Unit 9",
+    "zh": "我喜欢游泳。梅梅，那边的男孩是谁？",
+    "en": "I like swimming. Meimei, who is the boy over there?"
+  },
+  {
+    "id": 434,
+    "unit": "Unit 9",
+    "zh": "他是我的朋友，林华。他13岁。他来自武汉。",
+    "en": "He is my friend, Lin Hua. He is 13 years old. He’s from Wuhan."
+  },
+  {
+    "id": 435,
+    "unit": "Unit 9",
+    "zh": "他在哪个班？",
+    "en": "Which class is he in?"
+  },
+  {
+    "id": 436,
+    "unit": "Unit 9",
+    "zh": "他在三班。",
+    "en": "He is in Class 3."
+  },
+  {
+    "id": 437,
+    "unit": "Unit 9",
+    "zh": "这是我和我的新朋友们的照片。",
+    "en": "Here is a photo of my new friends and me."
+  },
+  {
+    "id": 438,
+    "unit": "Unit 9",
+    "zh": "这个男孩是杨光。他来自北京。他喜欢阅读。",
+    "en": "This boy is Yang Guang. He is from Beijing. He likes reading."
+  },
+  {
+    "id": 439,
+    "unit": "Unit 9",
+    "zh": "这个女孩是陈丽丽。她来自上海。她喜欢徒步旅行。",
+    "en": "This girl is Chen Lili. She is from Shanghai. She likes hiking."
+  },
+  {
+    "id": 440,
+    "unit": "Unit 9",
+    "zh": "这个男孩是小明。他来自天津。他喜欢踢足球。",
+    "en": "This boy is Xiao Ming. He is from Tianjin. He likes playing football."
+  },
+  {
+    "id": 441,
+    "unit": "Unit 9",
+    "zh": "这个女孩是我。我的名字是笑笑。我来自北京。我喜欢画画。",
+    "en": "This girl is me. My name is Xiaoxiao. I’m from Beijing. I like drawing."
+  },
+  {
+    "id": 442,
+    "unit": "Unit 9",
+    "zh": "康康：王俊峰，这是你的全家福吗？",
+    "en": "Kangkang: Wang Junfeng, is this a photo of your family?"
+  },
+  {
+    "id": 443,
+    "unit": "Unit 9",
+    "zh": "王俊峰：是的，它是。",
+    "en": "Wang Junfeng: Yes, it is."
+  },
+  {
+    "id": 444,
+    "unit": "Unit 9",
+    "zh": "康康：你的妈妈是护士吗？",
+    "en": "Kangkang: Is your mother a nurse?"
+  },
+  {
+    "id": 445,
+    "unit": "Unit 9",
+    "zh": "王俊峰：不，她不是。她是一名医生，但我的姑姑是一名护士。",
+    "en": "Wang Junfeng: No, she isn’t. She is a doctor, but my aunt is a nurse."
+  },
+  {
+    "id": 446,
+    "unit": "Unit 9",
+    "zh": "康康：太好了。你的爸爸是做什么的？",
+    "en": "Kangkang: Great. What does your father do?"
+  },
+  {
+    "id": 447,
+    "unit": "Unit 9",
+    "zh": "王俊峰：他是一名工厂的工人。",
+    "en": "Wang Junfeng: He is a worker in a factory."
+  },
+  {
+    "id": 448,
+    "unit": "Unit 9",
+    "zh": "康康：那个男人是谁？",
+    "en": "Kangkang: Who is that man?"
+  },
+  {
+    "id": 449,
+    "unit": "Unit 9",
+    "zh": "王俊峰：他是我的叔叔。他是一名教师。",
+    "en": "Wang Junfeng: He is my uncle. He is a teacher."
+  },
+  {
+    "id": 450,
+    "unit": "Unit 9",
+    "zh": "玲玲：李响，这是我的全家福。",
+    "en": "Lingling: Li Xiang, this is my family photo."
+  },
+  {
+    "id": 451,
+    "unit": "Unit 10",
+    "zh": "李响：你的爸爸是做什么的，玲玲？",
+    "en": "Li Xiang: What does your father do, Lingling?"
+  },
+  {
+    "id": 452,
+    "unit": "Unit 10",
+    "zh": "玲玲：他是一名司机。",
+    "en": "Lingling: He is a driver."
+  },
+  {
+    "id": 453,
+    "unit": "Unit 10",
+    "zh": "李响：你的妈妈呢？",
+    "en": "Li Xiang: How about your mother?"
+  },
+  {
+    "id": 454,
+    "unit": "Unit 10",
+    "zh": "玲玲：她是一名女警察。",
+    "en": "Lingling: She is a policewoman."
+  },
+  {
+    "id": 455,
+    "unit": "Unit 10",
+    "zh": "李响：你经常帮你的父母做家务吗？",
+    "en": "Li Xiang: Do you often help your parents do chores?"
+  },
+  {
+    "id": 456,
+    "unit": "Unit 10",
+    "zh": "玲玲：是的，我们做。我经常帮我爸爸做饭。我哥哥通常帮我妈妈打扫卫生。",
+    "en": "Lingling: Yes, we do. I often help my father do the cooking. My brother usually helps my mother clean up."
+  },
+  {
+    "id": 457,
+    "unit": "Unit 10",
+    "zh": "李响：你们周末做什么？",
+    "en": "Li Xiang: What do you do on weekends?"
+  },
+  {
+    "id": 458,
+    "unit": "Unit 10",
+    "zh": "玲玲：我们去探望我们的祖父母。我们一起吃饭和聊天。",
+    "en": "Lingling: We visit our grandparents. We eat and talk together."
+  },
+  {
+    "id": 459,
+    "unit": "Unit 10",
+    "zh": "我有四个堂兄弟姐妹。他们在不同的城市工作。李军在北京当厨师。王静在福州工作，她是一名医生。张涛在深圳开公交车。王林林在南京的一所高中教英语。她是一位非常好的老师。",
+    "en": "I have four cousins. They work in different cities. Li Jun works in Beijing as a cook. Wang Jing works in Fuzhou, and she is a doctor. Zhang Tao drives a bus in Shenzhen. Wang Linlin teaches English in a high school in Nanjing. She is a very good teacher."
+  },
+  {
+    "id": 460,
+    "unit": "Unit 10",
+    "zh": "康康：小雅，现在几点了？",
+    "en": "Kangkang: Xiao Ya, what time is it now?"
+  },
+  {
+    "id": 461,
+    "unit": "Unit 10",
+    "zh": "小雅：十点二十了。我十点半有生物课。这是我最喜欢的科目。你呢？",
+    "en": "Xiao Ya: It’s ten twenty. I have a biology class at ten thirty. It’s my favorite subject. What about you?"
+  },
+  {
+    "id": 462,
+    "unit": "Unit 10",
+    "zh": "康康：我最喜欢历史。",
+    "en": "Kangkang: I like history best."
+  },
+  {
+    "id": 463,
+    "unit": "Unit 10",
+    "zh": "你什么时候上历史课？",
+    "en": "When do you have the history class?"
+  },
+  {
+    "id": 464,
+    "unit": "Unit 10",
+    "zh": "星期四下午两点半。",
+    "en": "It’s at half past two on Thursday afternoon."
+  },
+  {
+    "id": 465,
+    "unit": "Unit 10",
+    "zh": "我找不到我的书包了。它是黄色的。",
+    "en": "I can’t find my schoolbag. It’s yellow."
+  },
+  {
+    "id": 466,
+    "unit": "Unit 10",
+    "zh": "我明白了。请问你叫什么名字？",
+    "en": "I see. What’s your name, please?"
+  },
+  {
+    "id": 467,
+    "unit": "Unit 10",
+    "zh": "我叫周华。我的名片在书包里。你可以在上面看到我的名字。",
+    "en": "My name is Zhou Hua. My name card is in the schoolbag. You can see my name on it."
+  },
+  {
+    "id": 468,
+    "unit": "Unit 10",
+    "zh": "你的书包里还有什么其他东西？",
+    "en": "What other things are there in your schoolbag?"
+  },
+  {
+    "id": 469,
+    "unit": "Unit 10",
+    "zh": "里面有一个乒乓球。嗯……还有两本书，一本数学书和一本科学书。",
+    "en": "There is a ping-pong ball in it. Mmm ... There are also two books, a math book and a science book."
+  },
+  {
+    "id": 470,
+    "unit": "Unit 10",
+    "zh": "让我在我的办公室看看。",
+    "en": "Let me have a look in my office."
+  },
+  {
+    "id": 471,
+    "unit": "Unit 10",
+    "zh": "这是你的书包。我在电脑旁边找到的。",
+    "en": "This is your schoolbag. I find it next to the computer."
+  },
+  {
+    "id": 472,
+    "unit": "Unit 10",
+    "zh": "嗨，玲玲，你在哪个俱乐部？",
+    "en": "Hi, Lingling, what club are you in?"
+  },
+  {
+    "id": 473,
+    "unit": "Unit 10",
+    "zh": "我在艺术俱乐部。",
+    "en": "I’m in the Art Club."
+  },
+  {
+    "id": 474,
+    "unit": "Unit 10",
+    "zh": "你多久去一次俱乐部？",
+    "en": "How often do you go to the club?"
+  },
+  {
+    "id": 475,
+    "unit": "Unit 10",
+    "zh": "每个星期五，下午三点三十五分。",
+    "en": "Every Friday, at three thirty-five in the afternoon."
+  },
+  {
+    "id": 476,
+    "unit": "Unit 10",
+    "zh": "没关系。我在体育俱乐部。",
+    "en": "It’s OK. I’m in the PE Club."
+  },
+  {
+    "id": 477,
+    "unit": "Unit 10",
+    "zh": "你多久去那里一次？",
+    "en": "How often do you go there?"
+  },
+  {
+    "id": 478,
+    "unit": "Unit 10",
+    "zh": "每个星期二下午四点。",
+    "en": "At four o’clock every Tuesday afternoon."
+  },
+  {
+    "id": 479,
+    "unit": "Unit 10",
+    "zh": "你在俱乐部最喜欢的运动是什么？",
+    "en": "What’s your favorite sport in your club?"
+  },
+  {
+    "id": 480,
+    "unit": "Unit 10",
+    "zh": "篮球。玲玲，你最喜欢什么？",
+    "en": "Basketball. What’s your favorite, Lingling?"
+  },
+  {
+    "id": 481,
+    "unit": "Unit 10",
+    "zh": "王老师，你最喜欢哪个季节？",
+    "en": "Which season do you like best, Miss Wang?"
+  },
+  {
+    "id": 482,
+    "unit": "Unit 10",
+    "zh": "因为夏天我可以去游泳。",
+    "en": "Because I can go swimming in summer."
+  },
+  {
+    "id": 483,
+    "unit": "Unit 10",
+    "zh": "加拿大夏天的天气怎么样？",
+    "en": "What’s the weather like in summer in Canada?"
+  },
+  {
+    "id": 484,
+    "unit": "Unit 10",
+    "zh": "天气很热。有时会下雨。",
+    "en": "It is hot. Sometimes it rains."
+  },
+  {
+    "id": 485,
+    "unit": "Unit 10",
+    "zh": "看！公园里有很多老人在打太极。",
+    "en": "Look! There are many old people doing Tai Chi in the park."
+  },
+  {
+    "id": 486,
+    "unit": "Unit 10",
+    "zh": "这是一项非常好的运动。",
+    "en": "It’s a very good exercise."
+  },
+  {
+    "id": 487,
+    "unit": "Unit 10",
+    "zh": "你擅长打太极拳吗？",
+    "en": "Are you good at playing Tai Chi?"
+  },
+  {
+    "id": 488,
+    "unit": "Unit 10",
+    "zh": "但我爷爷打得很好。",
+    "en": "But my grandfather does it well."
+  },
+  {
+    "id": 489,
+    "unit": "Unit 10",
+    "zh": "他每天都打太极拳吗？",
+    "en": "Does he do Tai Chi every day?"
+  },
+  {
+    "id": 490,
+    "unit": "Unit 10",
+    "zh": "他每天早上都和朋友们一起打太极拳。",
+    "en": "He does Tai Chi with his friends every morning."
+  },
+  {
+    "id": 491,
+    "unit": "Unit 10",
+    "zh": "冬天很冷，但他们却在户外打拳。",
+    "en": "It’s so cold in winter, but they are doing it outdoors."
+  },
+  {
+    "id": 492,
+    "unit": "Unit 10",
+    "zh": "他们一年四季都打。",
+    "en": "They do it in all seasons."
+  },
+  {
+    "id": 493,
+    "unit": "Unit 10",
+    "zh": "这有助于他们保持健康。",
+    "en": "It helps them keep healthy."
+  },
+  {
+    "id": 494,
+    "unit": "Unit 10",
+    "zh": "我们到处都能看到树。",
+    "en": "We can see trees everywhere."
+  },
+  {
+    "id": 495,
+    "unit": "Unit 10",
+    "zh": "它们对人和动物都很重要。",
+    "en": "And they are important for people and animals."
+  },
+  {
+    "id": 496,
+    "unit": "Unit 10",
+    "zh": "康康，你觉得树怎么样？",
+    "en": "What do you think of trees, Kangkang?"
+  },
+  {
+    "id": 497,
+    "unit": "Unit 10",
+    "zh": "树木能给我们带来清洁的空气。",
+    "en": "Trees can bring us clean air."
+  },
+  {
+    "id": 498,
+    "unit": "Unit 10",
+    "zh": "没有空气，人和动物就无法生存。",
+    "en": "With no air, people and animals can’t live."
+  },
+  {
+    "id": 499,
+    "unit": "Unit 10",
+    "zh": "树木能为许多野生动物提供家园。",
+    "en": "Trees can give home to many wild animals."
+  },
+  {
+    "id": 500,
+    "unit": "Unit 10",
+    "zh": "一些野生动物可以住在树上，吃树的果实。",
+    "en": "Some wild animals can live in the trees and eat the fruit of the trees."
+  },
+  {
+    "id": 501,
+    "unit": "Unit 11",
+    "zh": "嗯……人们在生活中也需要树木来做很多事情。",
+    "en": "Em ... People also need trees for many things in their life."
+  },
+  {
+    "id": 502,
+    "unit": "Unit 11",
+    "zh": "人们可以用树木来制作桌子、椅子和纸张。",
+    "en": "People can use trees to make tables, chairs and paper."
+  },
+  {
+    "id": 503,
+    "unit": "Unit 11",
+    "zh": "树木对我们所有人都很有用。",
+    "en": "Trees are useful to all of us."
+  },
+  {
+    "id": 504,
+    "unit": "Unit 11",
+    "zh": "别忘了，夏天我们还可以在树下好好休息。",
+    "en": "And don’t forget we can also have a good rest under a tree in summer."
+  },
+  {
+    "id": 505,
+    "unit": "Unit 11",
+    "zh": "所以这里非常寒冷且多风。",
+    "en": "so it’s very cold and windy here."
+  },
+  {
+    "id": 506,
+    "unit": "Unit 11",
+    "zh": "第二张图片也是关于一种高地。",
+    "en": "The second picture is also about a kind of highland."
+  },
+  {
+    "id": 507,
+    "unit": "Unit 11",
+    "zh": "我们可以在其中看到一片石林。",
+    "en": "We can see a forest of stones in it."
+  },
+  {
+    "id": 508,
+    "unit": "Unit 11",
+    "zh": "石林也矗立在一片高地上。",
+    "en": "The stone forest also stands on a highland."
+  },
+  {
+    "id": 509,
+    "unit": "Unit 11",
+    "zh": "哦，第三张图片里是一片草原。",
+    "en": "Oh, here in the third picture is a grassland."
+  },
+  {
+    "id": 510,
+    "unit": "Unit 11",
+    "zh": "它也在高地上。",
+    "en": "It’s also on a highland."
+  },
+  {
+    "id": 511,
+    "unit": "Unit 11",
+    "zh": "这里有许多牛和羊。",
+    "en": "There are many cows and sheep here."
+  },
+  {
+    "id": 512,
+    "unit": "Unit 11",
+    "zh": "最后一张图片中的高地有点不同。",
+    "en": "The highland in the last picture is a little different."
+  },
+  {
+    "id": 513,
+    "unit": "Unit 11",
+    "zh": "土地是黄色的，并且非常干燥。",
+    "en": "The earth is yellow, and it is very dry."
+  },
+  {
+    "id": 514,
+    "unit": "Unit 11",
+    "zh": "风每年都会从高地上带走许多土壤。",
+    "en": "The wind takes away much earth from the highland every year."
+  },
+  {
+    "id": 515,
+    "unit": "Unit 11",
+    "zh": "五月一日是劳动节。",
+    "en": "May 1st is Labor Day."
+  },
+  {
+    "id": 516,
+    "unit": "Unit 11",
+    "zh": "它是全世界劳动者的一个假日。",
+    "en": "It is a holiday for workers in the world."
+  },
+  {
+    "id": 517,
+    "unit": "Unit 11",
+    "zh": "在这一天，大多数人喜欢与家人和朋友一起去旅行，而有些人则喜欢待在家里享受空闲时光。",
+    "en": "On this day, most people like to go traveling with their family and friends, and some people just like to stay at home and enjoy the free time."
+  },
+  {
+    "id": 518,
+    "unit": "Unit 11",
+    "zh": "康康，为什么街上有这么多国旗？",
+    "en": "Kangkang, why are there so many national flags on the streets?"
+  },
+  {
+    "id": 519,
+    "unit": "Unit 11",
+    "zh": "你知道，今天是十月一日。",
+    "en": "You know, today is October 1st."
+  },
+  {
+    "id": 520,
+    "unit": "Unit 11",
+    "zh": "你们把国旗挂在街上来庆祝这个重要的日子。",
+    "en": "You put the flags on the streets to celebrate the big day."
+  },
+  {
+    "id": 521,
+    "unit": "Unit 11",
+    "zh": "人们也会在天安门广场升起国旗。",
+    "en": "People also raise the national flag at Tian’anmen Square."
+  },
+  {
+    "id": 522,
+    "unit": "Unit 11",
+    "zh": "我肯定很多人都喜欢在天安门观看这个。",
+    "en": "I’m sure a lot of people like to watch this at Tian’anmen."
+  },
+  {
+    "id": 523,
+    "unit": "Unit 11",
+    "zh": "全国各地的人们也会在电视上观看这个。",
+    "en": "People also watch this on TV all over the country."
+  },
+  {
+    "id": 524,
+    "unit": "Unit 11",
+    "zh": "有些人正在街道两旁摆放鲜花。",
+    "en": "Some people are putting flowers on the sides of streets."
+  },
+  {
+    "id": 525,
+    "unit": "Unit 11",
+    "zh": "鲜花让街道变得如此美丽！",
+    "en": "The flowers make the streets so beautiful!"
+  },
+  {
+    "id": 526,
+    "unit": "Unit 11",
+    "zh": "每个人在国庆节看到鲜花都很高兴。",
+    "en": "Everybody is happy to see the flowers on National Day."
+  },
+  {
+    "id": 527,
+    "unit": "Unit 11",
+    "zh": "让我们谈谈世界上的一些节日。",
+    "en": "Let’s talk about some festivals in the world."
+  },
+  {
+    "id": 528,
+    "unit": "Unit 11",
+    "zh": "在二月，新西兰人有一个重要的节日，他们的国庆节。",
+    "en": "In February, people in New Zealand have an important festival, their National Day."
+  },
+  {
+    "id": 529,
+    "unit": "Unit 11",
+    "zh": "有许多活动，例如划船比赛和音乐表演。",
+    "en": "There are many activities, such as boat games and music shows."
+  },
+  {
+    "id": 530,
+    "unit": "Unit 11",
+    "zh": "在三月，俄罗斯有一个有趣的节日。",
+    "en": "In March, Russia has an interesting festival."
+  },
+  {
+    "id": 531,
+    "unit": "Unit 11",
+    "zh": "那里的人们在家里做许多薄煎饼，然后在街上庆祝这个节日。",
+    "en": "People there make many pancakes at home and then celebrate the festival on the streets."
+  },
+  {
+    "id": 532,
+    "unit": "Unit 11",
+    "zh": "在五月一日，法国人会送给他们的朋友一种白色的小花。",
+    "en": "On May 1st, people in France give their friends a kind of small and white flowers."
+  },
+  {
+    "id": 533,
+    "unit": "Unit 11",
+    "zh": "人们相信这些花能给他们带来好运和爱情。",
+    "en": "People believe the flowers can bring them luck and love."
+  },
+  {
+    "id": 534,
+    "unit": "Unit 11",
+    "zh": "音素是最小的语音单位。",
+    "en": "A phoneme is the smallest unit of sound."
+  },
+  {
+    "id": 535,
+    "unit": "Unit 11",
+    "zh": "英语音素有元音和辅音两种，共有48个音素，其中元音20个，辅音28个。",
+    "en": "There are two types of phonemes in English: vowels and consonants, with a total of 48 phonemes, including 20 vowels and 28 consonants."
+  },
+  {
+    "id": 536,
+    "unit": "Unit 11",
+    "zh": "音节由音素组成。",
+    "en": "A syllable is composed of phonemes."
+  },
+  {
+    "id": 537,
+    "unit": "Unit 11",
+    "zh": "元音是构成音节的主体。",
+    "en": "Vowels are the main components of syllables."
+  },
+  {
+    "id": 538,
+    "unit": "Unit 11",
+    "zh": "英语中一个音节可以只由一个元音构成，如 /aI/；也可以由一个元音和若干个辅音构成，如/mi:/、/æm/ 和/teIk/ 等。",
+    "en": "In English, a syllable can consist of only one vowel, such as /aI/; or it can consist of one vowel and several consonants, such as /mi:/, /æm/, and /teIk/."
+  },
+  {
+    "id": 539,
+    "unit": "Unit 11",
+    "zh": "一般来说，一个元音可以构成一个音节，但较响亮的辅音/l/、/m/、/n/ 在后面没有元音时，与它前面的辅音也可以构成一个音节，称为成节音，如apple 中的/pl/ 和lesson 中的/sn/。",
+    "en": "Generally, one vowel can form a syllable, but the more sonorous consonants /l/, /m/, /n/ can form a syllable with the preceding consonant when there is no vowel following, known as a syllabic consonant, such as /pl/ in apple and /sn/ in lesson."
+  },
+  {
+    "id": 540,
+    "unit": "Unit 11",
+    "zh": "音节有开音节和闭音节之分。",
+    "en": "Syllables can be divided into open syllables and closed syllables."
+  },
+  {
+    "id": 541,
+    "unit": "Unit 11",
+    "zh": "开音节是以发音的元音字母结尾的重读音节，如no、she；或是以“元音字母 + 辅音字母（r 除外） + 不发音的ｅ”结尾的重读音节，如name、like。",
+    "en": "An open syllable is a stressed syllable ending with a pronounced vowel letter, such as no and she; or a stressed syllable ending with 'a vowel letter + a consonant letter (except r) + a silent e', such as name and like."
+  },
+  {
+    "id": 542,
+    "unit": "Unit 11",
+    "zh": "闭音节指的是以辅音字母结尾的重读音节（r 除外）。",
+    "en": "A closed syllable refers to a stressed syllable ending with a consonant letter (except r)."
+  },
+  {
+    "id": 543,
+    "unit": "Unit 11",
+    "zh": "五个元音字母在开音节和闭音节中的发音如下表所示：",
+    "en": "The pronunciation of the five vowel letters in open and closed syllables is shown in the table below:"
+  }
+]

@@ -1,0 +1,4928 @@
+[
+  {
+    "id": 1,
+    "unit": "Unit 1",
+    "zh": "王俊峰：嗨，玲玲。你今天怎么样？",
+    "en": "Wang Junfeng: Hi, Lingling. How are you doing today?"
+  },
+  {
+    "id": 2,
+    "unit": "Unit 1",
+    "zh": "玲玲：还不错。我刚从宠物医院回来。",
+    "en": "Lingling: Not bad. I just got back from the pet hospital."
+  },
+  {
+    "id": 3,
+    "unit": "Unit 1",
+    "zh": "王伟：你的狗怎么了，玲玲？",
+    "en": "Wang Wei: What happened to your dog, Lingling?"
+  },
+  {
+    "id": 4,
+    "unit": "Unit 1",
+    "zh": "玲玲：它昨天生病了。但多亏了兽医们，它现在好多了。",
+    "en": "Lingling: It got sick yesterday. But thanks to the vets, it’s doing better now."
+  },
+  {
+    "id": 5,
+    "unit": "Unit 1",
+    "zh": "王伟：兽医们很善良而且乐于助人。我会成为像他们一样的兽医，因为我喜欢宠物。",
+    "en": "Wang Wei: The vets are kind and helpful. I will be a vet like them because I love pets."
+  },
+  {
+    "id": 6,
+    "unit": "Unit 1",
+    "zh": "王俊峰：那太棒了！我相信你会成为一名优秀的兽医。你打算做什么，玲玲？",
+    "en": "Wang Junfeng: That’s great! I’m sure you will be an excellent vet. What are you going to be, Lingling?"
+  },
+  {
+    "id": 7,
+    "unit": "Unit 1",
+    "zh": "玲玲：我打算成为一名舞蹈演员。我觉得我很活泼，而且我非常喜欢跳舞。",
+    "en": "Lingling: I am going to be a dancer. I think I’m lively, and I love dancing very much."
+  },
+  {
+    "id": 8,
+    "unit": "Unit 1",
+    "zh": "王伟：你呢，俊峰？",
+    "en": "Wang Wei: How about you, Junfeng?"
+  },
+  {
+    "id": 9,
+    "unit": "Unit 1",
+    "zh": "王俊峰：我打算成为一名新闻记者。你知道，我很活跃，而且喜欢关注新闻。",
+    "en": "Wang Junfeng: I am going to be a news reporter. You know, I’m active and love following the news."
+  },
+  {
+    "id": 10,
+    "unit": "Unit 1",
+    "zh": "王伟：听起来很棒！也许有一天你会写一篇关于玲玲的新闻报道。",
+    "en": "Wang Wei: That sounds wonderful! Maybe one day you will write a news report about Lingling."
+  },
+  {
+    "id": 11,
+    "unit": "Unit 1",
+    "zh": "我想成为一名新闻记者。",
+    "en": "I want to be a news reporter."
+  },
+  {
+    "id": 12,
+    "unit": "Unit 1",
+    "zh": "有许多后备团队成员。",
+    "en": "There are many backup team members."
+  },
+  {
+    "id": 13,
+    "unit": "Unit 1",
+    "zh": "导盲犬老师训练导盲犬来帮助盲人。",
+    "en": "Guide dog teachers train guide dogs to help blind people."
+  },
+  {
+    "id": 14,
+    "unit": "Unit 1",
+    "zh": "她很好地照顾了孩子们。",
+    "en": "She took good care of the children."
+  },
+  {
+    "id": 15,
+    "unit": "Unit 1",
+    "zh": "今天我们正在学习不同的职业。",
+    "en": "We are learning about different jobs today."
+  },
+  {
+    "id": 16,
+    "unit": "Unit 1",
+    "zh": "和你的朋友们大声说出来，并按照我说的做。",
+    "en": "Speak out with your friends and do as I say."
+  },
+  {
+    "id": 17,
+    "unit": "Unit 1",
+    "zh": "你是一个快乐的面包师，正在烤一个美味的蛋糕。",
+    "en": "You’re a happy baker, baking a delicious cake."
+  },
+  {
+    "id": 18,
+    "unit": "Unit 1",
+    "zh": "你是一名飞行员，有许多航班要执飞。",
+    "en": "You’re a pilot with many flights to take."
+  },
+  {
+    "id": 19,
+    "unit": "Unit 1",
+    "zh": "你是一名时尚模特，有着优雅的风格。",
+    "en": "You’re a fashion model with fine style."
+  },
+  {
+    "id": 20,
+    "unit": "Unit 1",
+    "zh": "你是一位面带灿烂笑容的摇滚歌星。",
+    "en": "You’re a singing rock star with a big smile."
+  },
+  {
+    "id": 21,
+    "unit": "Unit 1",
+    "zh": "站起来，小心点，戴上一顶高高的王冠。",
+    "en": "Stand up, be careful, and wear a tall crown."
+  },
+  {
+    "id": 22,
+    "unit": "Unit 1",
+    "zh": "太棒了！你得到了这份工作。现在，请坐下。",
+    "en": "That’s great! You’ve got the job. Now, please sit down."
+  },
+  {
+    "id": 23,
+    "unit": "Unit 1",
+    "zh": "我们晚上睡觉，但有些人晚上工作。",
+    "en": "We sleep at night, but some people do their jobs at night."
+  },
+  {
+    "id": 24,
+    "unit": "Unit 1",
+    "zh": "例如，许多医生和护士晚上工作，因为病人需要帮助。",
+    "en": "For example, many doctors and nurses work at night because patients need help."
+  },
+  {
+    "id": 25,
+    "unit": "Unit 1",
+    "zh": "一些铁路工人也在晚上工作，因为少数火车在夜间运行。",
+    "en": "Some railway workers also work at night because a few trains run during night time."
+  },
+  {
+    "id": 26,
+    "unit": "Unit 1",
+    "zh": "很多人和动物一起工作。",
+    "en": "A lot of people work with animals."
+  },
+  {
+    "id": 27,
+    "unit": "Unit 1",
+    "zh": "有些人帮助生病的动物。",
+    "en": "Some people help sick animals."
+  },
+  {
+    "id": 28,
+    "unit": "Unit 1",
+    "zh": "例如，兽医经常在农场、动物园或动物公园帮助生病的动物。",
+    "en": "For example, vets often help sick animals on the farm, in the zoo or in the animal park."
+  },
+  {
+    "id": 29,
+    "unit": "Unit 1",
+    "zh": "有些人训练动物为人类工作。",
+    "en": "Some people train animals to do jobs for people."
+  },
+  {
+    "id": 30,
+    "unit": "Unit 1",
+    "zh": "例如，导盲犬老师训练导盲犬帮助盲人。",
+    "en": "For example, guide dog teachers train guide dogs to help blind people."
+  },
+  {
+    "id": 31,
+    "unit": "Unit 1",
+    "zh": "主题通常是文本的总体主题。",
+    "en": "The topic is often the general subject of a text."
+  },
+  {
+    "id": 32,
+    "unit": "Unit 1",
+    "zh": "它通常是标题。",
+    "en": "It is usually the title."
+  },
+  {
+    "id": 33,
+    "unit": "Unit 1",
+    "zh": "主旨是关于主题的。",
+    "en": "The main idea is about the topic."
+  },
+  {
+    "id": 34,
+    "unit": "Unit 1",
+    "zh": "它通常是主题句。",
+    "en": "It is often the topic sentence."
+  },
+  {
+    "id": 35,
+    "unit": "Unit 1",
+    "zh": "我想在未来成为一名现代农民。",
+    "en": "I want to be a modern farmer in the future."
+  },
+  {
+    "id": 36,
+    "unit": "Unit 1",
+    "zh": "现代农民种植更多绿色食品，更关心人们的健康。",
+    "en": "Modern farmers grow more green food and care more about people’s health."
+  },
+  {
+    "id": 37,
+    "unit": "Unit 1",
+    "zh": "他们努力保护环境，让世界变得更美好。",
+    "en": "They try to protect the environment and make the world a better place."
+  },
+  {
+    "id": 38,
+    "unit": "Unit 1",
+    "zh": "今天我们在消防站有一个职业体验日。",
+    "en": "We had a job experience day at the fire station today."
+  },
+  {
+    "id": 39,
+    "unit": "Unit 1",
+    "zh": "我们听到警报并接到一个火警电话。",
+    "en": "We heard the alarm and received a fire call."
+  },
+  {
+    "id": 40,
+    "unit": "Unit 1",
+    "zh": "一栋房子着火了，一个孩子在卧室的沙发上。",
+    "en": "A house was on fire and a child was on the sofa in the bedroom."
+  },
+  {
+    "id": 41,
+    "unit": "Unit 1",
+    "zh": "我们穿上消防员制服，冲向房子，救出孩子并扑灭了大火。",
+    "en": "We put on the fireman uniforms, rushed to the house, saved the child and put out the fire."
+  },
+  {
+    "id": 42,
+    "unit": "Unit 1",
+    "zh": "从这次经历中，我们学会了如何灭火和从火中救人。",
+    "en": "From this experience, we learned how to put out fire and save people from fire."
+  },
+  {
+    "id": 43,
+    "unit": "Unit 1",
+    "zh": "灭火非常危险，消防员很勇敢。",
+    "en": "Fighting fires is very dangerous, and firemen are brave."
+  },
+  {
+    "id": 44,
+    "unit": "Unit 1",
+    "zh": "邓清明是一位怀揣伟大梦想的航天员。",
+    "en": "Deng Qingming is a taikonaut with a great dream."
+  },
+  {
+    "id": 45,
+    "unit": "Unit 1",
+    "zh": "1998年，他作为年轻先驱加入了中国航天团队。",
+    "en": "In 1998, he joined China’s space team as a young pioneer."
+  },
+  {
+    "id": 46,
+    "unit": "Unit 1",
+    "zh": "从第一天起，他就对自己许下了一个承诺——总有一天要飞上太空。",
+    "en": "From the very first day, he made a promise to himself — to fly into space one day."
+  },
+  {
+    "id": 47,
+    "unit": "Unit 1",
+    "zh": "为了准备那一天，他和队友们开始了漫长而艰苦的训练之旅。",
+    "en": "To prepare for that day, he started a long and hard journey of training with his teammates."
+  },
+  {
+    "id": 48,
+    "unit": "Unit 1",
+    "zh": "例如，他们训练在狭小空间里生活、吃特殊的太空食品、在强光下工作以及不洗澡。",
+    "en": "They trained, for example, to live in a small space, eat special space food, work under strong lights and go without showers."
+  },
+  {
+    "id": 49,
+    "unit": "Unit 1",
+    "zh": "他们知道，他们必须始终在身心上为在太空飞行和工作做好准备。",
+    "en": "They knew that they must always be ready, both in mind and body, for flying and working in space."
+  },
+  {
+    "id": 50,
+    "unit": "Unit 1",
+    "zh": "近25年来，邓清明没有机会飞上太空。",
+    "en": "For nearly 25 years, Deng had no chance to fly into space."
+  },
+  {
+    "id": 51,
+    "unit": "Unit 2",
+    "zh": "但他没有放弃。",
+    "en": "But he did not give up."
+  },
+  {
+    "id": 52,
+    "unit": "Unit 2",
+    "zh": "他坚持训练，始终相信自己的梦想。",
+    "en": "He kept training and always believed in his dream."
+  },
+  {
+    "id": 53,
+    "unit": "Unit 2",
+    "zh": "最终，他的努力得到了回报。",
+    "en": "Finally, his hard work paid off."
+  },
+  {
+    "id": 54,
+    "unit": "Unit 2",
+    "zh": "2022年11月29日，邓清明乘坐神舟十五号飞船飞入太空。",
+    "en": "On November 29, 2022, Deng flew into space on the Shenzhou-15 spaceship."
+  },
+  {
+    "id": 55,
+    "unit": "Unit 2",
+    "zh": "邓清明通过坚持梦想并为之努力而获得了成功。",
+    "en": "Deng succeeded by holding on to his dream and working hard for it."
+  },
+  {
+    "id": 56,
+    "unit": "Unit 2",
+    "zh": "他为我们所有人树立了一个极好的榜样。",
+    "en": "He sets an excellent example to us all."
+  },
+  {
+    "id": 57,
+    "unit": "Unit 2",
+    "zh": "他的故事告诉我们，只要我们坚持不懈，我们的梦想终有一天会实现。",
+    "en": "His story teaches us that our dreams will one day come true as long as we keep going."
+  },
+  {
+    "id": 58,
+    "unit": "Unit 2",
+    "zh": "我哥哥喜欢表演。他想成为一名演员。",
+    "en": "My brother likes acting. He wants to be an actor."
+  },
+  {
+    "id": 59,
+    "unit": "Unit 2",
+    "zh": "我姐姐非常喜欢弹钢琴。她想成为一名钢琴家。",
+    "en": "My sister really likes playing the piano. She wants to be a pianist."
+  },
+  {
+    "id": 60,
+    "unit": "Unit 2",
+    "zh": "我阿姨在图书馆工作很仔细。她是一名图书管理员。",
+    "en": "My aunt works carefully in the library. She is a librarian."
+  },
+  {
+    "id": 61,
+    "unit": "Unit 2",
+    "zh": "我爷爷在农场工作。他是一名农民。",
+    "en": "My grandpa works on a farm. He is a farmer."
+  },
+  {
+    "id": 62,
+    "unit": "Unit 2",
+    "zh": "我想成为一名教师或医生。",
+    "en": "I want to be a teacher or a doctor."
+  },
+  {
+    "id": 63,
+    "unit": "Unit 2",
+    "zh": "我喜欢教孩子们，也喜欢和他们交朋友。",
+    "en": "I enjoy teaching children, and I love making friends with them."
+  },
+  {
+    "id": 64,
+    "unit": "Unit 2",
+    "zh": "我也希望帮助人们治疗疾病，所以将来能成为一名医生我会非常高兴。",
+    "en": "I also hope to help people with their illnesses, so I would be very happy to be a doctor in the future."
+  },
+  {
+    "id": 65,
+    "unit": "Unit 2",
+    "zh": "我哥哥对他的梦想工作有不同的想法。",
+    "en": "My brother has a different idea about his dream job."
+  },
+  {
+    "id": 66,
+    "unit": "Unit 2",
+    "zh": "他想成为一名探险家。",
+    "en": "He wants to be an explorer."
+  },
+  {
+    "id": 67,
+    "unit": "Unit 2",
+    "zh": "他对地球上的山脉、河流和森林以及太空中的星星感兴趣。",
+    "en": "He is interested in mountains, rivers and forests on Earth, as well as stars in space."
+  },
+  {
+    "id": 68,
+    "unit": "Unit 2",
+    "zh": "他对自然的秘密非常好奇。",
+    "en": "He is very curious about the secrets of nature."
+  },
+  {
+    "id": 69,
+    "unit": "Unit 2",
+    "zh": "我的表妹子涵13岁。",
+    "en": "My cousin Zihan is 13 years old."
+  },
+  {
+    "id": 70,
+    "unit": "Unit 2",
+    "zh": "她喜欢烹饪，将来她会成为一名厨师。",
+    "en": "She enjoys cooking and she will be a cook in the future."
+  },
+  {
+    "id": 71,
+    "unit": "Unit 2",
+    "zh": "下周，子涵将参加年度十大青年厨师大赛。",
+    "en": "Next week, Zihan is going to take part in the Top Ten Young Cooks of the Year Competition."
+  },
+  {
+    "id": 72,
+    "unit": "Unit 2",
+    "zh": "之后，她将为一本有趣的儿童烹饪书。",
+    "en": "After that, she is going to write an interesting cook book for kids."
+  },
+  {
+    "id": 73,
+    "unit": "Unit 2",
+    "zh": "她希望鼓励孩子们学习烹饪。",
+    "en": "She hopes to encourage kids to learn cooking."
+  },
+  {
+    "id": 74,
+    "unit": "Unit 2",
+    "zh": "她的朋友和家人为她感到非常自豪。",
+    "en": "Her friends and family are very proud of her."
+  },
+  {
+    "id": 75,
+    "unit": "Unit 2",
+    "zh": "他们认为子涵的书将会取得巨大成功。",
+    "en": "They think Zihan’s book will be a big success."
+  },
+  {
+    "id": 76,
+    "unit": "Unit 2",
+    "zh": "嗨，康康。明天我们将开班会。",
+    "en": "Hi, Kangkang. We will have a class meeting tomorrow."
+  },
+  {
+    "id": 77,
+    "unit": "Unit 2",
+    "zh": "是的。我们将讨论梦想职业。",
+    "en": "Yes. We are going to talk about dream jobs."
+  },
+  {
+    "id": 78,
+    "unit": "Unit 2",
+    "zh": "你会分享你的意见吗？",
+    "en": "Will you share your opinion?"
+  },
+  {
+    "id": 79,
+    "unit": "Unit 2",
+    "zh": "太棒了！看那些云。",
+    "en": "Great! Look at the clouds."
+  },
+  {
+    "id": 80,
+    "unit": "Unit 2",
+    "zh": "要下雨了。",
+    "en": "It is going to rain."
+  },
+  {
+    "id": 81,
+    "unit": "Unit 2",
+    "zh": "雨不会持续很久。",
+    "en": "The rain won’t last long."
+  },
+  {
+    "id": 82,
+    "unit": "Unit 2",
+    "zh": "我的梦想职业是飞机工程师。",
+    "en": "My dream job is a plane engineer."
+  },
+  {
+    "id": 83,
+    "unit": "Unit 2",
+    "zh": "在我十二岁的时候，我父亲给我买了一架玩具飞机。",
+    "en": "When I was twelve, my father bought me a toy plane."
+  },
+  {
+    "id": 84,
+    "unit": "Unit 2",
+    "zh": "我非常喜欢它，并对飞机产生了兴趣。",
+    "en": "I liked it a lot and became interested in planes."
+  },
+  {
+    "id": 85,
+    "unit": "Unit 2",
+    "zh": "现在我的梦想是为我们的国家设计伟大的飞机。",
+    "en": "Now my dream is to design great planes for our country."
+  },
+  {
+    "id": 86,
+    "unit": "Unit 2",
+    "zh": "为了实现这个梦想，我将在学校努力学习。",
+    "en": "To make it happen, I will study hard at school."
+  },
+  {
+    "id": 87,
+    "unit": "Unit 2",
+    "zh": "同时，我打算加入学校的模型飞机俱乐部。",
+    "en": "At the same time, I’m going to join the model plane club in my school."
+  },
+  {
+    "id": 88,
+    "unit": "Unit 2",
+    "zh": "我将在那里交一些朋友，我们可以一起学习关于飞机的科学知识。",
+    "en": "I will make some friends there and we can learn scientific knowledge about planes together."
+  },
+  {
+    "id": 89,
+    "unit": "Unit 2",
+    "zh": "我知道成为一名飞机工程师并不容易，我将会遇到很多挑战。",
+    "en": "I know it is not easy to become a plane engineer, and I will meet a lot of challenges."
+  },
+  {
+    "id": 90,
+    "unit": "Unit 2",
+    "zh": "然而，我会尽我最大的努力让我的梦想成真。",
+    "en": "However, I will try my best to make my dream come true."
+  },
+  {
+    "id": 91,
+    "unit": "Unit 2",
+    "zh": "我的第一份工作是服务员。",
+    "en": "I first worked as a waitress."
+  },
+  {
+    "id": 92,
+    "unit": "Unit 2",
+    "zh": "每天，我都用温暖的微笑迎接客人，并引领他们入座。",
+    "en": "Every day, I greeted guests with a warm smile and led them to their tables."
+  },
+  {
+    "id": 93,
+    "unit": "Unit 2",
+    "zh": "我还把饭菜和饮料从厨房端到他们的桌子上。",
+    "en": "I also carried meals and drinks from the kitchen to their tables."
+  },
+  {
+    "id": 94,
+    "unit": "Unit 2",
+    "zh": "这份工作很无聊，而且我不得不长时间工作。",
+    "en": "The work was boring, and I had to work for long hours."
+  },
+  {
+    "id": 95,
+    "unit": "Unit 2",
+    "zh": "不久之后，我在一家书店找到了一份新工作。",
+    "en": "Soon after, I found a new job at a bookstore."
+  },
+  {
+    "id": 96,
+    "unit": "Unit 2",
+    "zh": "周围都是书架，我真的很喜欢我的工作。",
+    "en": "With shelves of books all around me, I really enjoyed my work."
+  },
+  {
+    "id": 97,
+    "unit": "Unit 2",
+    "zh": "在书店开门前或关门后，我经常从书架上拿书来读。",
+    "en": "Before the bookstore opened or after it closed, I often took books from the shelves to read."
+  },
+  {
+    "id": 98,
+    "unit": "Unit 2",
+    "zh": "我总是与我的顾客分享我的阅读经历，并与他们进行有趣的交谈。",
+    "en": "I always shared my reading experiences with my customers and had interesting conversations with them."
+  },
+  {
+    "id": 99,
+    "unit": "Unit 2",
+    "zh": "去年，我成为了新的经理。",
+    "en": "Last year, I became the new manager."
+  },
+  {
+    "id": 100,
+    "unit": "Unit 2",
+    "zh": "从嘈杂的餐厅搬到安静的书店，从服务员变成经理，这不仅仅是一个简单的工作变动，更是我人生中的一次重大改变。",
+    "en": "Moving from the noisy restaurant to the quiet bookstore, and from a waitress to a manager, is not just a simple job change but a big change in my life."
+  },
+  {
+    "id": 101,
+    "unit": "Unit 3",
+    "zh": "你最喜欢的艺术形式是什么？",
+    "en": "What’s your favorite form of art?"
+  },
+  {
+    "id": 102,
+    "unit": "Unit 3",
+    "zh": "你最喜欢的书法作品是什么？",
+    "en": "What’s your favorite calligraphy work?"
+  },
+  {
+    "id": 103,
+    "unit": "Unit 3",
+    "zh": "《兰亭序》。它是王羲之的著名作品之一。",
+    "en": "Lanting Xu. It is one of Wang Xizhi’s famous works."
+  },
+  {
+    "id": 104,
+    "unit": "Unit 3",
+    "zh": "萱萱：嗨，玲玲。这个周末你打算做什么？",
+    "en": "Xuanxuan: Hi, Lingling. What are you going to do this weekend?"
+  },
+  {
+    "id": 105,
+    "unit": "Unit 3",
+    "zh": "玲玲：嗨，萱萱。我计划和我阿姨去城市公园。",
+    "en": "Lingling: Hi, Xuanxuan. I plan to go to the City Park with my aunt."
+  },
+  {
+    "id": 106,
+    "unit": "Unit 3",
+    "zh": "萱萱：太令人兴奋了！你要去看园艺展吗？",
+    "en": "Xuanxuan: How exciting! Are you going to watch the gardening show?"
+  },
+  {
+    "id": 107,
+    "unit": "Unit 3",
+    "zh": "玲玲：没错。你是怎么知道的？",
+    "en": "Lingling: That’s correct. How do you know about it?"
+  },
+  {
+    "id": 108,
+    "unit": "Unit 3",
+    "zh": "萱萱：我妈妈告诉我的。她很喜欢园艺。",
+    "en": "Xuanxuan: My mom told me. She loves gardening."
+  },
+  {
+    "id": 109,
+    "unit": "Unit 3",
+    "zh": "玲玲：太棒了！我也很喜欢园艺。我经常在我们社区附近的公园里帮助工作人员。这是我手机上的一些照片。",
+    "en": "Lingling: Wonderful! I enjoy gardening, too. I often help the workers in the park near our community. Here are some photos on my phone."
+  },
+  {
+    "id": 110,
+    "unit": "Unit 3",
+    "zh": "萱萱：哇，这个公园真漂亮啊！",
+    "en": "Xuanxuan: Wow, how beautiful the park is!"
+  },
+  {
+    "id": 111,
+    "unit": "Unit 3",
+    "zh": "玲玲：加入我们吧，我们可以在那里欣赏到更多的绿色作品。",
+    "en": "Lingling: Join us, and we can enjoy more green works there."
+  },
+  {
+    "id": 112,
+    "unit": "Unit 3",
+    "zh": "萱萱：我很想去，但我必须为下周的棒球比赛做准备。",
+    "en": "Xuanxuan: I’d love to, but I have to practice for the baseball match next week."
+  },
+  {
+    "id": 113,
+    "unit": "Unit 3",
+    "zh": "今天我想做一些艺术，",
+    "en": "Today I want to do some art,"
+  },
+  {
+    "id": 114,
+    "unit": "Unit 3",
+    "zh": "用一支画笔、纸和黑墨水。",
+    "en": "with a paint brush, paper and black ink."
+  },
+  {
+    "id": 115,
+    "unit": "Unit 3",
+    "zh": "我想知道该做什么来开始。",
+    "en": "I wonder what to do to start."
+  },
+  {
+    "id": 116,
+    "unit": "Unit 3",
+    "zh": "我需要花些时间来思考。",
+    "en": "I need to take some time to think."
+  },
+  {
+    "id": 117,
+    "unit": "Unit 3",
+    "zh": "当你唱歌、跳舞，做你该做的事时，",
+    "en": "While you sing, dance, and do your part,"
+  },
+  {
+    "id": 118,
+    "unit": "Unit 3",
+    "zh": "我会用蓝色和粉色画画。",
+    "en": "I’ll paint pictures in blue and pink."
+  },
+  {
+    "id": 119,
+    "unit": "Unit 3",
+    "zh": "音乐是什么？音乐是一种语言。",
+    "en": "What is music? Music is a language."
+  },
+  {
+    "id": 120,
+    "unit": "Unit 3",
+    "zh": "它能帮助我们表达思想，让我们能够心与心地交流。",
+    "en": "It can help us speak our minds and allow us to communicate heart to heart."
+  },
+  {
+    "id": 121,
+    "unit": "Unit 3",
+    "zh": "音乐是展示感情的工具。",
+    "en": "Music is a tool of showing feelings."
+  },
+  {
+    "id": 122,
+    "unit": "Unit 3",
+    "zh": "它能让我们放松，让我们感到快乐、害怕或悲伤。",
+    "en": "It can relax us and make us feel happy, afraid or sad."
+  },
+  {
+    "id": 123,
+    "unit": "Unit 3",
+    "zh": "它能带我们进入艺术的世界，并将全世界的人们聚集在一起。",
+    "en": "It can take us to a world of art and bring together people all over the world."
+  },
+  {
+    "id": 124,
+    "unit": "Unit 3",
+    "zh": "根据乐器的类型，有四个家族：弦乐器、打击乐器、键盘乐器和管乐器。",
+    "en": "According to the types of musical instruments, there are four families: string instruments, beat instruments, keyboard instruments and wind instruments."
+  },
+  {
+    "id": 125,
+    "unit": "Unit 3",
+    "zh": "小提琴和二胡属于弦乐器，鼓属于打击乐器。",
+    "en": "The violin and erhu belong to the string instruments and the drum belongs to the beat instruments."
+  },
+  {
+    "id": 126,
+    "unit": "Unit 3",
+    "zh": "钢琴是键盘乐器的一个例子，而小号是一种管乐器。",
+    "en": "The piano is an example of the keyboard instruments, and the trumpet is a wind instrument."
+  },
+  {
+    "id": 127,
+    "unit": "Unit 3",
+    "zh": "优秀的演员知道如何用眼睛表达他们的思想。",
+    "en": "Good actors know how to use their eyes to express their minds."
+  },
+  {
+    "id": 128,
+    "unit": "Unit 3",
+    "zh": "为了训练他的眼睛，梅兰芳经常观看鸽子在天空中飞远。",
+    "en": "To train his eyes, Mei Lanfang often watched the pigeons flying far away in the sky."
+  },
+  {
+    "id": 129,
+    "unit": "Unit 3",
+    "zh": "当梅年轻时，他在记住京剧台词方面有很大困难。",
+    "en": "When Mei was young, he had great difficulty in remembering the lines of Beijing opera."
+  },
+  {
+    "id": 130,
+    "unit": "Unit 3",
+    "zh": "但他非常努力，对自己要求非常严格。",
+    "en": "But he worked very hard and was very strict with himself."
+  },
+  {
+    "id": 131,
+    "unit": "Unit 3",
+    "zh": "他每天很早就起床，一遍又一遍地练习台词。",
+    "en": "He got up very early every day and practiced the lines again and again."
+  },
+  {
+    "id": 132,
+    "unit": "Unit 3",
+    "zh": "齐白石最初完全是自学绘画。",
+    "en": "Qi Baishi first learned painting all by himself."
+  },
+  {
+    "id": 133,
+    "unit": "Unit 3",
+    "zh": "然后在他二十多岁时，他开始周游中国，拜访著名画家并研究他们的画作。",
+    "en": "Then in his twenties, he began to travel around China to visit famous painters and study their paintings."
+  },
+  {
+    "id": 134,
+    "unit": "Unit 3",
+    "zh": "最终，在他五十多岁的时候，他的画作变得流行起来，他闻名全中国。",
+    "en": "Finally, in his mid-fifties, his paintings became popular, and he became famous all over China."
+  },
+  {
+    "id": 135,
+    "unit": "Unit 3",
+    "zh": "大家好！这是一幅令人惊叹的中国画，《清明上河图》。",
+    "en": "Hi, everyone! This is an amazing Chinese painting, Along the River During the Qingming Festival."
+  },
+  {
+    "id": 136,
+    "unit": "Unit 3",
+    "zh": "通过这幅画，我们可以穿越回北宋。",
+    "en": "With the painting, we can travel back to the Northern Song Dynasty."
+  },
+  {
+    "id": 137,
+    "unit": "Unit 3",
+    "zh": "这幅画长528.7厘米，宽24.8厘米。",
+    "en": "The painting is 528.7 centimeters long and 24.8 centimeters wide."
+  },
+  {
+    "id": 138,
+    "unit": "Unit 3",
+    "zh": "它展示了不同人们丰富多彩的工作和娱乐日常生活。",
+    "en": "It shows the colorful daily life of different people at work and play."
+  },
+  {
+    "id": 139,
+    "unit": "Unit 3",
+    "zh": "现在，让我们穿越回开封城的清明节。",
+    "en": "Now, let’s travel back to Tomb-sweeping Day in the city of Kaifeng."
+  },
+  {
+    "id": 140,
+    "unit": "Unit 3",
+    "zh": "看那边！河上有一座宏伟的桥。",
+    "en": "Look over there! There is a great bridge over the river."
+  },
+  {
+    "id": 141,
+    "unit": "Unit 3",
+    "zh": "一队工人正在桥下拉船，并一路沿着河岸喊着他们的劳动号子。",
+    "en": "A line of workers are pulling a boat under the bridge and shouting out their work song all the way along the riverside."
+  },
+  {
+    "id": 142,
+    "unit": "Unit 3",
+    "zh": "在河上，我们可以看到满载游客的船只。",
+    "en": "On the river, we can see ships full of tourists."
+  },
+  {
+    "id": 143,
+    "unit": "Unit 3",
+    "zh": "他们正在聊天和饮酒。",
+    "en": "They are chatting and drinking."
+  },
+  {
+    "id": 144,
+    "unit": "Unit 3",
+    "zh": "在河岸上，商店正在出售各种商品，比如玩具和衣服。",
+    "en": "On the riverbanks, shops are selling all kinds of goods, such as toys and clothes."
+  },
+  {
+    "id": 145,
+    "unit": "Unit 3",
+    "zh": "在右侧，一座巨大的门楼标志着城市的入口。",
+    "en": "On the right side, a huge gate tower marks the door to the city."
+  },
+  {
+    "id": 146,
+    "unit": "Unit 3",
+    "zh": "许多商人和游客正通过这个门进出。",
+    "en": "Many businessmen and tourists are going in or out through the gate."
+  },
+  {
+    "id": 147,
+    "unit": "Unit 3",
+    "zh": "多么伟大的一件艺术品啊！",
+    "en": "What a great piece of art it is!"
+  },
+  {
+    "id": 148,
+    "unit": "Unit 3",
+    "zh": "现在跟我来探索北宋的其他一些艺术品。",
+    "en": "Now follow me to explore some other works of art of the Northern Song Dynasty."
+  },
+  {
+    "id": 149,
+    "unit": "Unit 3",
+    "zh": "电影可以讲述关于某些事物的故事。",
+    "en": "Movies can tell stories about something."
+  },
+  {
+    "id": 150,
+    "unit": "Unit 3",
+    "zh": "它们可以带我们去世界任何地方，也可以随时带我们回到历史或进入未来。",
+    "en": "They can take us anywhere in the world, and they can bring us back to history or into the future anytime."
+  },
+  {
+    "id": 151,
+    "unit": "Unit 4",
+    "zh": "通过制作电影，我们可以创造一个充满魔法的世界。",
+    "en": "By making movies, we can create a magic world of something."
+  },
+  {
+    "id": 152,
+    "unit": "Unit 4",
+    "zh": "在电影的魔法世界里，没有什么是不可能的。",
+    "en": "In the magic world of movies, there is nothing impossible."
+  },
+  {
+    "id": 153,
+    "unit": "Unit 4",
+    "zh": "电影总是为某些人提供一些东西，所以我们大家都喜欢看电影。",
+    "en": "Movies always have something for someone, so we all love watching movies."
+  },
+  {
+    "id": 154,
+    "unit": "Unit 4",
+    "zh": "每个人都应该了解传统建筑的重要性。",
+    "en": "Everyone should know the importance of traditional buildings."
+  },
+  {
+    "id": 155,
+    "unit": "Unit 4",
+    "zh": "没有人应该伤害它们。",
+    "en": "No one should harm them."
+  },
+  {
+    "id": 156,
+    "unit": "Unit 4",
+    "zh": "她想读点什么，但现在她没有什么新东西可读。",
+    "en": "She would like to read something, but right now she has nothing new to read."
+  },
+  {
+    "id": 157,
+    "unit": "Unit 4",
+    "zh": "我到处找我的笔记本。",
+    "en": "I looked for my notebook everywhere."
+  },
+  {
+    "id": 158,
+    "unit": "Unit 4",
+    "zh": "我以为它在房间的某个地方。",
+    "en": "I thought it was somewhere in the room."
+  },
+  {
+    "id": 159,
+    "unit": "Unit 4",
+    "zh": "墙上的画很美。",
+    "en": "The painting on the wall is beautiful."
+  },
+  {
+    "id": 160,
+    "unit": "Unit 4",
+    "zh": "但没有人知道关于画家的任何信息。",
+    "en": "But nobody knows anything about the painter."
+  },
+  {
+    "id": 161,
+    "unit": "Unit 4",
+    "zh": "我要去听音乐会。",
+    "en": "I’m going to a concert."
+  },
+  {
+    "id": 162,
+    "unit": "Unit 4",
+    "zh": "你知道，我真的很喜欢音乐。",
+    "en": "You know, I’m really into music."
+  },
+  {
+    "id": 163,
+    "unit": "Unit 4",
+    "zh": "我可以享受我最喜欢的歌曲。",
+    "en": "I can enjoy my favorite songs."
+  },
+  {
+    "id": 164,
+    "unit": "Unit 4",
+    "zh": "为什么不和我一起来呢？",
+    "en": "Why not come with me?"
+  },
+  {
+    "id": 165,
+    "unit": "Unit 4",
+    "zh": "我很想去，但我必须和俊峰一起练习篮球。",
+    "en": "I’d like to, but I have to practice basketball with Junfeng."
+  },
+  {
+    "id": 166,
+    "unit": "Unit 4",
+    "zh": "我六岁时，爷爷向我介绍了京剧，我立刻就爱上了它。",
+    "en": "When I was six, my grandfather introduced Beijing opera to me, and I fell in love with it immediately."
+  },
+  {
+    "id": 167,
+    "unit": "Unit 4",
+    "zh": "我喜欢京剧有很多原因。",
+    "en": "I like Beijing opera for many reasons."
+  },
+  {
+    "id": 168,
+    "unit": "Unit 4",
+    "zh": "首先，演员们戴着色彩斑斓的面具。",
+    "en": "First, the actors wear colorful masks."
+  },
+  {
+    "id": 169,
+    "unit": "Unit 4",
+    "zh": "每种颜色代表不同类型的角色。",
+    "en": "Each color stands for a different type of character."
+  },
+  {
+    "id": 170,
+    "unit": "Unit 4",
+    "zh": "例如，红色面具代表好人，白色面具代表坏人。",
+    "en": "For example, a red mask means a good person, and a white mask means a bad person."
+  },
+  {
+    "id": 171,
+    "unit": "Unit 4",
+    "zh": "第二，我认为不同角色的表演非常精彩。",
+    "en": "Second, I think the acting of the different roles is really amazing."
+  },
+  {
+    "id": 172,
+    "unit": "Unit 4",
+    "zh": "京剧有四个主要角色——生、旦、净、丑。",
+    "en": "There are four main roles in Beijing opera—Sheng, Dan, Jing and Chou."
+  },
+  {
+    "id": 173,
+    "unit": "Unit 4",
+    "zh": "每个角色都以自己的方式扮演其角色。",
+    "en": "Each plays its part in its own way."
+  },
+  {
+    "id": 174,
+    "unit": "Unit 4",
+    "zh": "第三，我喜欢它的唱腔和音乐。",
+    "en": "Third, I like the singing style and the music."
+  },
+  {
+    "id": 175,
+    "unit": "Unit 4",
+    "zh": "京剧的唱腔在其戏迷中非常受欢迎，而像二胡和三弦这样的中国传统乐器使音乐悦耳动听。",
+    "en": "The singing style of Beijing opera is very popular among its fans, and the traditional Chinese instruments like erhu and sanxian make the music so pleasant to the ear."
+  },
+  {
+    "id": 176,
+    "unit": "Unit 4",
+    "zh": "我希望世界上有更多的人能欣赏这门伟大的艺术。",
+    "en": "I hope more people around the world can enjoy this great art."
+  },
+  {
+    "id": 177,
+    "unit": "Unit 4",
+    "zh": "9月8日，阳光山中学在体育场举办了一场艺术节。",
+    "en": "On September 8th, the Sunny Hill Middle School held an art festival in the stadium."
+  },
+  {
+    "id": 178,
+    "unit": "Unit 4",
+    "zh": "艺术节于下午3点开始，6点结束。",
+    "en": "The art festival started at 3:00 p.m. and ended at 6:00 p.m."
+  },
+  {
+    "id": 179,
+    "unit": "Unit 4",
+    "zh": "有许多不同种类的班级表演，例如唱歌、跳舞和戏剧。",
+    "en": "There were many different kinds of class shows, such as singing, dancing and plays."
+  },
+  {
+    "id": 180,
+    "unit": "Unit 4",
+    "zh": "表演非常精彩，每个人都非常享受这个节日！",
+    "en": "The shows were great and everyone enjoyed the festival very much!"
+  },
+  {
+    "id": 181,
+    "unit": "Unit 4",
+    "zh": "我刚量了体温。我发烧了。",
+    "en": "I just took my temperature. I have a fever."
+  },
+  {
+    "id": 182,
+    "unit": "Unit 4",
+    "zh": "听到这个我很难过。你需要去看医生。",
+    "en": "I’m sorry to hear that. You need to see a doctor."
+  },
+  {
+    "id": 183,
+    "unit": "Unit 4",
+    "zh": "医生：你怎么了？",
+    "en": "Doctor: What’s wrong with you?"
+  },
+  {
+    "id": 184,
+    "unit": "Unit 4",
+    "zh": "李响：我感觉很不舒服，胃痛。",
+    "en": "Li Xiang: I feel very sick and have a stomachache."
+  },
+  {
+    "id": 185,
+    "unit": "Unit 4",
+    "zh": "医生：什么时候开始痛的？",
+    "en": "Doctor: When did you feel the ache?"
+  },
+  {
+    "id": 186,
+    "unit": "Unit 4",
+    "zh": "李响：大约一小时前，刚吃完午饭。",
+    "en": "Li Xiang: About one hour ago. Just after lunch."
+  },
+  {
+    "id": 187,
+    "unit": "Unit 4",
+    "zh": "医生：让我给你检查一下。",
+    "en": "Doctor: Let me examine you."
+  },
+  {
+    "id": 188,
+    "unit": "Unit 4",
+    "zh": "医生：好的。你午餐吃了什么？",
+    "en": "Doctor: OK. What did you have for lunch?"
+  },
+  {
+    "id": 189,
+    "unit": "Unit 4",
+    "zh": "李响：我吃了一些汉堡、薯条、炸猪肉，还有辣椒和一杯冷饮。",
+    "en": "Li Xiang: I had some hamburgers, chips, fried pork together with some pepper and a cold drink."
+  },
+  {
+    "id": 190,
+    "unit": "Unit 4",
+    "zh": "医生：明白了。你吃了太多垃圾食品，特别是辣椒和冰可乐。这一点都不健康。",
+    "en": "Doctor: I see. You ate too much junk food, especially hot pepper and iced Coke. It is not healthy at all."
+  },
+  {
+    "id": 191,
+    "unit": "Unit 4",
+    "zh": "李响：谢谢医生。我会记住的。",
+    "en": "Li Xiang: Thanks, doctor. I will remember that."
+  },
+  {
+    "id": 192,
+    "unit": "Unit 4",
+    "zh": "医生：你需要休息一下，并服用一些药片。",
+    "en": "Doctor: You need to take a rest and take some pills."
+  },
+  {
+    "id": 193,
+    "unit": "Unit 4",
+    "zh": "李响：好的。谢谢您。",
+    "en": "Li Xiang: OK. Thank you."
+  },
+  {
+    "id": 194,
+    "unit": "Unit 4",
+    "zh": "你脸色苍白。你应该去看医生。",
+    "en": "You look pale. You should see a doctor."
+  },
+  {
+    "id": 195,
+    "unit": "Unit 4",
+    "zh": "在我看来，油炸食品不健康。",
+    "en": "In my opinion, fried food is not healthy."
+  },
+  {
+    "id": 196,
+    "unit": "Unit 4",
+    "zh": "晚饭后我们为什么不出去散步呢？",
+    "en": "Why don’t we go out for a walk after dinner?"
+  },
+  {
+    "id": 197,
+    "unit": "Unit 4",
+    "zh": "为了保持健康，我们最好每天锻炼。",
+    "en": "To keep healthy, we’d better do exercise every day."
+  },
+  {
+    "id": 198,
+    "unit": "Unit 4",
+    "zh": "今天是星期一，所以我像以前很多次一样再次开始我的节食。",
+    "en": "Today is Monday, so I start once more with my diet like many times before."
+  },
+  {
+    "id": 199,
+    "unit": "Unit 4",
+    "zh": "这次我会成功的。我知道我也能行。",
+    "en": "This time I’ll make it. I know I can, too."
+  },
+  {
+    "id": 200,
+    "unit": "Unit 4",
+    "zh": "因为星期天我吃掉了所有我能嚼的东西。",
+    "en": "Because on Sunday I ate all I could chew."
+  },
+  {
+    "id": 201,
+    "unit": "Unit 5",
+    "zh": "星期一早上我从床上起来。",
+    "en": "Monday morning I got up out of bed."
+  },
+  {
+    "id": 202,
+    "unit": "Unit 5",
+    "zh": "早餐，我只吃了一片面包。",
+    "en": "For breakfast, I had just one piece of bread."
+  },
+  {
+    "id": 203,
+    "unit": "Unit 5",
+    "zh": "后来，午餐时，我出去到商店买了西红柿、香蕉等更多东西。",
+    "en": "Later, for lunch, I went out to the store to buy tomatoes, bananas and more."
+  },
+  {
+    "id": 204,
+    "unit": "Unit 5",
+    "zh": "我的肚子当时很痛。我想尖叫。",
+    "en": "My tummy then hurt. I wanted to scream."
+  },
+  {
+    "id": 205,
+    "unit": "Unit 5",
+    "zh": "我看到一些填满甜奶油的大甜甜圈。",
+    "en": "I saw some big donuts filled with sweet cream."
+  },
+  {
+    "id": 206,
+    "unit": "Unit 5",
+    "zh": "你好，我是雯雯。我喜欢水果和蔬菜。我每天都在家吃饭，吃的饭菜盐和糖很少。我最喜欢的零食是巧克力。",
+    "en": "Hello, I’m Wenwen. I love fruit and vegetables. I eat at home every day, and I have meals with little salt and sugar. My favorite snack is chocolate."
+  },
+  {
+    "id": 207,
+    "unit": "Unit 5",
+    "zh": "我的朋友小璐也喜欢水果和蔬菜。但她经常吃汉堡包和饼干。她最喜欢的零食是冰淇淋。",
+    "en": "My friend Xiaolu also likes fruit and vegetables. But she often eats hamburgers and cookies. Her favorite snack is ice cream."
+  },
+  {
+    "id": 208,
+    "unit": "Unit 5",
+    "zh": "萍萍和怡宁都非常热爱运动。",
+    "en": "Pingping and Yining both love sports a lot."
+  },
+  {
+    "id": 209,
+    "unit": "Unit 5",
+    "zh": "萍萍性格外向，她总是和朋友们一起踢足球。",
+    "en": "Pingping is outgoing and she always plays football with her friends."
+  },
+  {
+    "id": 210,
+    "unit": "Unit 5",
+    "zh": "与她不同，怡宁很害羞。",
+    "en": "Unlike her, Yining is shy."
+  },
+  {
+    "id": 211,
+    "unit": "Unit 5",
+    "zh": "做运动时，她们都需要注意自身安全。",
+    "en": "When doing sports, they both need to take care of their safety."
+  },
+  {
+    "id": 212,
+    "unit": "Unit 5",
+    "zh": "当你进行比较和对比时，你是在思考两件事物有哪些相同之处和不同之处。",
+    "en": "When you compare and contrast, you think about how two things are alike and how they are different."
+  },
+  {
+    "id": 213,
+    "unit": "Unit 5",
+    "zh": "运动在许多方面对我们有益。",
+    "en": "Exercise is good for us in many ways."
+  },
+  {
+    "id": 214,
+    "unit": "Unit 5",
+    "zh": "首先，它有助于强健体魄。",
+    "en": "For one thing, it can help build a strong body."
+  },
+  {
+    "id": 215,
+    "unit": "Unit 5",
+    "zh": "例如，慢跑对腿部和心脏有益。",
+    "en": "For example, jogging is good for our legs and hearts."
+  },
+  {
+    "id": 216,
+    "unit": "Unit 5",
+    "zh": "其次，它是休息和放松大脑的好方法。",
+    "en": "For another, it is a good way to rest and relax our minds."
+  },
+  {
+    "id": 217,
+    "unit": "Unit 5",
+    "zh": "这就是为什么我们应该在工作或学习数小时后进行一些运动。",
+    "en": "That’s why we should do some exercise after hours of work or study."
+  },
+  {
+    "id": 218,
+    "unit": "Unit 5",
+    "zh": "当你计划运动时，这里有一些建议给你。",
+    "en": "When you plan to do exercise, here are some tips for you."
+  },
+  {
+    "id": 219,
+    "unit": "Unit 5",
+    "zh": "他/她可以根据你的情况给你一些建议。",
+    "en": "He/She can give you some advice according to your condition."
+  },
+  {
+    "id": 220,
+    "unit": "Unit 5",
+    "zh": "你需要从热身开始慢慢进行，然后逐步推进。",
+    "en": "You need to start slowly with a warm-up, and then move on step by step."
+  },
+  {
+    "id": 221,
+    "unit": "Unit 5",
+    "zh": "你的身体需要大量水分，尤其在炎热天气。",
+    "en": "Your body needs a lot of water, especially on hot days."
+  },
+  {
+    "id": 222,
+    "unit": "Unit 5",
+    "zh": "当你感到不适时，立即休息或停止。",
+    "en": "Take a break or stop right away when you feel uncomfortable."
+  },
+  {
+    "id": 223,
+    "unit": "Unit 5",
+    "zh": "在我看来，保持积极态度有惊人的好处。",
+    "en": "In my opinion, staying positive has amazing benefits."
+  },
+  {
+    "id": 224,
+    "unit": "Unit 5",
+    "zh": "在好心情下我能更好地学习和工作。",
+    "en": "I can study and work better in a good mood."
+  },
+  {
+    "id": 225,
+    "unit": "Unit 5",
+    "zh": "这里有一些建议可以帮助你。",
+    "en": "Here are a few tips to help you."
+  },
+  {
+    "id": 226,
+    "unit": "Unit 5",
+    "zh": "首先，你应该多锻炼。",
+    "en": "First, you should exercise more."
+  },
+  {
+    "id": 227,
+    "unit": "Unit 5",
+    "zh": "你可以尝试球类运动，比如排球和足球。",
+    "en": "You can try ball games, such as volleyball and football."
+  },
+  {
+    "id": 228,
+    "unit": "Unit 5",
+    "zh": "它们会让你感觉良好。",
+    "en": "They will make you feel good."
+  },
+  {
+    "id": 229,
+    "unit": "Unit 5",
+    "zh": "其次，你可以与更多人交流，不需要独自面对不良情绪。",
+    "en": "Second, you can communicate with more people and you don’t need to face bad feelings alone."
+  },
+  {
+    "id": 230,
+    "unit": "Unit 5",
+    "zh": "最后，确保获得足够的睡眠。",
+    "en": "Last, make sure to get enough sleep."
+  },
+  {
+    "id": 231,
+    "unit": "Unit 5",
+    "zh": "睡个好觉后，你会充满能量。",
+    "en": "After a good sleep, you will be full of energy."
+  },
+  {
+    "id": 232,
+    "unit": "Unit 5",
+    "zh": "它会让你对开始新的一天感到兴奋。",
+    "en": "It will make you feel excited to start a new day."
+  },
+  {
+    "id": 233,
+    "unit": "Unit 5",
+    "zh": "嗨，梅梅。我很高兴偶然看到你的帖子。",
+    "en": "Hi, Meimei. I am glad to come across your post."
+  },
+  {
+    "id": 234,
+    "unit": "Unit 5",
+    "zh": "我认为保持积极能给我们带来很多好处。",
+    "en": "I think being positive can bring us a lot of benefits."
+  },
+  {
+    "id": 235,
+    "unit": "Unit 5",
+    "zh": "我们可以变得更加自信，并有更好的成功机会。",
+    "en": "We can become more confident and have better chances for success."
+  },
+  {
+    "id": 236,
+    "unit": "Unit 5",
+    "zh": "我们如何才能保持积极？",
+    "en": "How can we stay positive?"
+  },
+  {
+    "id": 237,
+    "unit": "Unit 5",
+    "zh": "首先，我认为做运动是方法之一。",
+    "en": "To start with, I think playing sports is one of the ways."
+  },
+  {
+    "id": 238,
+    "unit": "Unit 5",
+    "zh": "我从未缺席过学校的足球比赛。",
+    "en": "I am never absent from the football matches in my school."
+  },
+  {
+    "id": 239,
+    "unit": "Unit 5",
+    "zh": "当我踢足球时，我总是对自己充满信心。",
+    "en": "When I am playing football, I am always confident in myself."
+  },
+  {
+    "id": 240,
+    "unit": "Unit 5",
+    "zh": "此外，我们需要发现自身的优点。",
+    "en": "Besides, we need to find the good points in ourselves."
+  },
+  {
+    "id": 241,
+    "unit": "Unit 5",
+    "zh": "为了过上幸福的生活，我们必须首先爱自己。",
+    "en": "To live a happy life, we must first love ourselves."
+  },
+  {
+    "id": 242,
+    "unit": "Unit 5",
+    "zh": "最后，如果我们确实有不好的情绪，我们可以把它们写下来。",
+    "en": "Finally, if we do have bad feelings, we can write them down."
+  },
+  {
+    "id": 243,
+    "unit": "Unit 5",
+    "zh": "与自己交谈是度过困难时刻的一个有用方法。",
+    "en": "Talking to ourselves is a useful way to get through difficult moments."
+  },
+  {
+    "id": 244,
+    "unit": "Unit 5",
+    "zh": "你可以第二天在线观看比赛。",
+    "en": "You can watch the games online next day."
+  },
+  {
+    "id": 245,
+    "unit": "Unit 5",
+    "zh": "你需要照顾好自己。",
+    "en": "You need to take care of yourself."
+  },
+  {
+    "id": 246,
+    "unit": "Unit 5",
+    "zh": "我昨晚熬夜看了足球比赛。",
+    "en": "I stayed up to watch the soccer game last night."
+  },
+  {
+    "id": 247,
+    "unit": "Unit 5",
+    "zh": "我现在需要睡一会儿。",
+    "en": "I need to get some sleep now."
+  },
+  {
+    "id": 248,
+    "unit": "Unit 5",
+    "zh": "谢谢你的建议。",
+    "en": "Thank you for your advice."
+  },
+  {
+    "id": 249,
+    "unit": "Unit 5",
+    "zh": "我是小林。我有一个姐姐，她的名字是小雅。",
+    "en": "I’m Xiao Lin. I have a sister, and her name is Xiao Ya."
+  },
+  {
+    "id": 250,
+    "unit": "Unit 5",
+    "zh": "我们都过着健康的生活方式。",
+    "en": "We both live healthy lifestyles."
+  },
+  {
+    "id": 251,
+    "unit": "Unit 6",
+    "zh": "我们喜欢做运动和吃好的食物。",
+    "en": "We like to play sports and eat good food."
+  },
+  {
+    "id": 252,
+    "unit": "Unit 6",
+    "zh": "我喜欢跑步和踢足球。",
+    "en": "I enjoy running and playing soccer."
+  },
+  {
+    "id": 253,
+    "unit": "Unit 6",
+    "zh": "我也喜欢水果，比如苹果和香蕉。",
+    "en": "I also love fruit, such as apples and bananas."
+  },
+  {
+    "id": 254,
+    "unit": "Unit 6",
+    "zh": "而我姐姐则更喜欢游泳和篮球。",
+    "en": "My sister, on the other hand, prefers swimming and basketball."
+  },
+  {
+    "id": 255,
+    "unit": "Unit 6",
+    "zh": "她喜欢吃蔬菜。",
+    "en": "She likes to eat vegetables."
+  },
+  {
+    "id": 256,
+    "unit": "Unit 6",
+    "zh": "胡萝卜、豆类和黄瓜都是她的最爱。",
+    "en": "Carrots, beans and cucumbers are all her favorites."
+  },
+  {
+    "id": 257,
+    "unit": "Unit 6",
+    "zh": "我们俩都从保持活力和吃得好中获得乐趣。",
+    "en": "We both have fun staying active and eating well."
+  },
+  {
+    "id": 258,
+    "unit": "Unit 6",
+    "zh": "虽然我们选择不同的运动和食物，但我们都关心健康。",
+    "en": "Though we choose different sports and food, we both care about being healthy."
+  },
+  {
+    "id": 259,
+    "unit": "Unit 6",
+    "zh": "我们的生活方式帮助我们保持强壮和感到快乐。",
+    "en": "Our lifestyles help us stay strong and feel happy."
+  },
+  {
+    "id": 260,
+    "unit": "Unit 6",
+    "zh": "不同的食物需要不同的烹饪方法和配料。",
+    "en": "Different food needs different cooking methods and ingredients."
+  },
+  {
+    "id": 261,
+    "unit": "Unit 6",
+    "zh": "中国烹饪注重色、香、味。",
+    "en": "Chinese cooking focuses on color, smell and taste."
+  },
+  {
+    "id": 262,
+    "unit": "Unit 6",
+    "zh": "在北方，面条很受欢迎。",
+    "en": "In the north, noodles are popular."
+  },
+  {
+    "id": 263,
+    "unit": "Unit 6",
+    "zh": "在南方，米饭是主食。",
+    "en": "In the south, rice is the main food."
+  },
+  {
+    "id": 264,
+    "unit": "Unit 6",
+    "zh": "英国烹饪大多简单且容易。",
+    "en": "British cooking is mostly simple and easy."
+  },
+  {
+    "id": 265,
+    "unit": "Unit 6",
+    "zh": "人们喜欢简单的餐点，如三明治、水果和饮料。",
+    "en": "People love easy meals like sandwiches, fruit and drinks."
+  },
+  {
+    "id": 266,
+    "unit": "Unit 6",
+    "zh": "他们也喜欢有大量肉类和蔬菜的菜肴。",
+    "en": "They also enjoy dishes with plenty of meat and vegetables."
+  },
+  {
+    "id": 267,
+    "unit": "Unit 6",
+    "zh": "他们使用酱汁让食物味道更好，土豆常被作为主食。",
+    "en": "They use sauces to make food taste better, and potatoes are often served as the main food."
+  },
+  {
+    "id": 268,
+    "unit": "Unit 6",
+    "zh": "你如何保持积极？",
+    "en": "How can you stay positive?"
+  },
+  {
+    "id": 269,
+    "unit": "Unit 6",
+    "zh": "首先，总是尝试微笑。",
+    "en": "First, always try to smile."
+  },
+  {
+    "id": 270,
+    "unit": "Unit 6",
+    "zh": "微笑能让你感到快乐。",
+    "en": "Smiling can make you feel happy."
+  },
+  {
+    "id": 271,
+    "unit": "Unit 6",
+    "zh": "所以，尝试对自己和你周围的人微笑。",
+    "en": "So, try to smile at yourself and the people around you."
+  },
+  {
+    "id": 272,
+    "unit": "Unit 6",
+    "zh": "第二，保持健康的生活方式。",
+    "en": "Second, keep a healthy lifestyle."
+  },
+  {
+    "id": 273,
+    "unit": "Unit 6",
+    "zh": "远离不健康的食物，并每天积极参与锻炼。",
+    "en": "Keep away from unhealthy food and take an active part in exercise every day."
+  },
+  {
+    "id": 274,
+    "unit": "Unit 6",
+    "zh": "第三，制定一个清晰的计划并享受你的课程。",
+    "en": "Third, make a clear plan and enjoy your classes."
+  },
+  {
+    "id": 275,
+    "unit": "Unit 6",
+    "zh": "作为一名学生，你有很多课程。",
+    "en": "As a student, you have many classes."
+  },
+  {
+    "id": 276,
+    "unit": "Unit 6",
+    "zh": "热爱你的课程，你就能做得很好。",
+    "en": "Love your classes, and you can do a great job."
+  },
+  {
+    "id": 277,
+    "unit": "Unit 6",
+    "zh": "第四，培养一个爱好。",
+    "en": "Fourth, take up a hobby."
+  },
+  {
+    "id": 278,
+    "unit": "Unit 6",
+    "zh": "你可以做一些活动来放松，比如阅读、学习一项新运动和与你的宠物共度时光。",
+    "en": "You can do an activity to relax, such as reading, learning a new sport and spending time with your pet."
+  },
+  {
+    "id": 279,
+    "unit": "Unit 6",
+    "zh": "第五，对每件事都要有耐心。",
+    "en": "Fifth, be patient with everything."
+  },
+  {
+    "id": 280,
+    "unit": "Unit 6",
+    "zh": "匆忙行事会让你容易生气。",
+    "en": "To be in a hurry can make you mad easily."
+  },
+  {
+    "id": 281,
+    "unit": "Unit 6",
+    "zh": "你为什么看起来不高兴？",
+    "en": "Why do you look upset?"
+  },
+  {
+    "id": 282,
+    "unit": "Unit 6",
+    "zh": "为什么不深呼吸，闻点好东西？",
+    "en": "Why not take a deep breath and smell something good?"
+  },
+  {
+    "id": 283,
+    "unit": "Unit 6",
+    "zh": "然后你会感到放松。",
+    "en": "And then you will feel relaxed."
+  },
+  {
+    "id": 284,
+    "unit": "Unit 6",
+    "zh": "我对明天的演讲感到紧张。",
+    "en": "I’m feeling nervous about tomorrow’s speech."
+  },
+  {
+    "id": 285,
+    "unit": "Unit 6",
+    "zh": "王老师：嗨，李红！你看起来很难过。有什么问题吗？",
+    "en": "Miss Wang: Hi, Li Hong! You look sad. What’s the problem?"
+  },
+  {
+    "id": 286,
+    "unit": "Unit 6",
+    "zh": "李红：嗨，王老师。我英语考试没及格。",
+    "en": "Li Hong: Hi, Miss Wang. I failed the English exam."
+  },
+  {
+    "id": 287,
+    "unit": "Unit 6",
+    "zh": "王老师：别担心。下次你可以做得更好。",
+    "en": "Miss Wang: Don’t worry. You can do better next time."
+  },
+  {
+    "id": 288,
+    "unit": "Unit 6",
+    "zh": "李红：谢谢。但我该怎么做？你能给我一些建议吗？",
+    "en": "Li Hong: Thanks. But what should I do? Can you give me some suggestions?"
+  },
+  {
+    "id": 289,
+    "unit": "Unit 6",
+    "zh": "王老师：如果你有任何问题，你随时可以来找我。",
+    "en": "Miss Wang: If you have any problem, you can always come to me."
+  },
+  {
+    "id": 290,
+    "unit": "Unit 6",
+    "zh": "李红：非常感谢你，王老师。而且你知道，我一个月前搬到这里。我想念我家乡的朋友们。他们经常帮助我学习英语。",
+    "en": "Li Hong: Thank you very much, Miss Wang. And you know, I moved here a month ago. I miss my friends in my hometown. They often helped me with my English."
+  },
+  {
+    "id": 291,
+    "unit": "Unit 6",
+    "zh": "王老师：没关系。你可以和他们保持联系，并在这里交新朋友。",
+    "en": "Miss Wang: That’s all right. You can keep in touch with them and make new friends here."
+  },
+  {
+    "id": 292,
+    "unit": "Unit 6",
+    "zh": "李红：我想是的。但我不知道如何开始。",
+    "en": "Li Hong: I guess so. But I don’t know how to start."
+  },
+  {
+    "id": 293,
+    "unit": "Unit 6",
+    "zh": "王老师：嗯，玲玲人很好，她的英语也很好。我可以把她推荐给你。我相信她会愿意成为你的朋友。",
+    "en": "Miss Wang: Well, Lingling is nice, and her English is very good. I can recommend her to you. I’m sure she would like to be your friend."
+  },
+  {
+    "id": 294,
+    "unit": "Unit 6",
+    "zh": "李红：谢谢你的帮助，王老师。",
+    "en": "Li Hong: Thanks for your help, Miss Wang."
+  },
+  {
+    "id": 295,
+    "unit": "Unit 6",
+    "zh": "我们将迎来雪。",
+    "en": "And we shall have snow."
+  },
+  {
+    "id": 296,
+    "unit": "Unit 6",
+    "zh": "那可怜的知更鸟会做什么呢？",
+    "en": "And what will the poor Robin do then?"
+  },
+  {
+    "id": 297,
+    "unit": "Unit 6",
+    "zh": "他会坐在谷仓里。",
+    "en": "He’ll sit in a barn."
+  },
+  {
+    "id": 298,
+    "unit": "Unit 6",
+    "zh": "并把头藏在翅膀下。",
+    "en": "And hide his head under his wing."
+  },
+  {
+    "id": 299,
+    "unit": "Unit 6",
+    "zh": "岁月不待人。",
+    "en": "Time and tide wait for no man."
+  },
+  {
+    "id": 300,
+    "unit": "Unit 6",
+    "zh": "他心中所想全是战斗或逃跑。",
+    "en": "All in his mind is fight or flight."
+  },
+  {
+    "id": 301,
+    "unit": "Unit 7",
+    "zh": "我不会再犯同样的错误。",
+    "en": "I will not make the same mistake again."
+  },
+  {
+    "id": 302,
+    "unit": "Unit 7",
+    "zh": "一天一苹果，医生远离我。",
+    "en": "An apple a day keeps the doctor away."
+  },
+  {
+    "id": 303,
+    "unit": "Unit 7",
+    "zh": "李红一个月前成为了我们的新同学。",
+    "en": "Li Hong became our new classmate a month ago."
+  },
+  {
+    "id": 304,
+    "unit": "Unit 7",
+    "zh": "起初，她总是很孤独，因为她没有任何朋友。",
+    "en": "In the beginning, she was always lonely because she didn't have any friends."
+  },
+  {
+    "id": 305,
+    "unit": "Unit 7",
+    "zh": "我们的英语老师王老师随后把她介绍给了玲玲。",
+    "en": "Miss Wang, our English teacher, then introduced her to Lingling."
+  },
+  {
+    "id": 306,
+    "unit": "Unit 7",
+    "zh": "玲玲很擅长英语，并且帮助了李红很多。",
+    "en": "Lingling was very good at English and helped Li Hong a lot."
+  },
+  {
+    "id": 307,
+    "unit": "Unit 7",
+    "zh": "她们很快就成了非常亲密的朋友。",
+    "en": "They soon became very close friends."
+  },
+  {
+    "id": 308,
+    "unit": "Unit 7",
+    "zh": "现在，李红在学校有很多朋友，并且和我们相处得很好。",
+    "en": "Now, Li Hong has many friends at school and gets along well with us."
+  },
+  {
+    "id": 309,
+    "unit": "Unit 7",
+    "zh": "她非常享受她的学校生活。",
+    "en": "She enjoys her school life very much."
+  },
+  {
+    "id": 310,
+    "unit": "Unit 7",
+    "zh": "角色在故事中成长和变化。",
+    "en": "Characters grow and change in the story."
+  },
+  {
+    "id": 311,
+    "unit": "Unit 7",
+    "zh": "你可以通过分析一个角色如何以及为何改变来理解角色的发展。",
+    "en": "You can understand character development by analyzing how and why a character changes."
+  },
+  {
+    "id": 312,
+    "unit": "Unit 7",
+    "zh": "优秀的读者会设定阅读目的。",
+    "en": "Good readers set a purpose for reading."
+  },
+  {
+    "id": 313,
+    "unit": "Unit 7",
+    "zh": "在阅读时，他们能够判断哪些信息对阅读目的是重要的，哪些是不重要的。",
+    "en": "While reading, they can decide what is important and what is not for the reading purpose."
+  },
+  {
+    "id": 314,
+    "unit": "Unit 7",
+    "zh": "从13岁到19岁这段时间是人类生命中一个非常重要的阶段。",
+    "en": "The period of time from age 13 to 19 is a very important stage of human life."
+  },
+  {
+    "id": 315,
+    "unit": "Unit 7",
+    "zh": "许多重要的人生变化发生在这个青少年阶段。",
+    "en": "Many important life changes take place during this teenage stage."
+  },
+  {
+    "id": 316,
+    "unit": "Unit 7",
+    "zh": "作为一个青少年，你也会有成长的烦恼。",
+    "en": "As a teenager, you also have growing pains."
+  },
+  {
+    "id": 317,
+    "unit": "Unit 7",
+    "zh": "你面临着诸如学业压力、来自他人的压力等问题。",
+    "en": "You face problems like schoolwork stress, pressure from other people and so on."
+  },
+  {
+    "id": 318,
+    "unit": "Unit 7",
+    "zh": "那么，你该如何应对这些成长的烦恼呢？",
+    "en": "Then, how can you deal with the growing pains?"
+  },
+  {
+    "id": 319,
+    "unit": "Unit 7",
+    "zh": "首先，学会倾听和理解。",
+    "en": "Firstly, learn to listen and understand."
+  },
+  {
+    "id": 320,
+    "unit": "Unit 7",
+    "zh": "这可以帮助你更多地了解生活和周围的人。",
+    "en": "This can help you learn more about life and people around you."
+  },
+  {
+    "id": 321,
+    "unit": "Unit 7",
+    "zh": "其次，与你的同学交朋友。",
+    "en": "Secondly, make friends with your classmates."
+  },
+  {
+    "id": 322,
+    "unit": "Unit 7",
+    "zh": "你的朋友可能和你有同样的问题，所以你们总能互相理解和帮助。",
+    "en": "Your friends may have the same problem as yours, so you can always understand and help each other."
+  },
+  {
+    "id": 323,
+    "unit": "Unit 7",
+    "zh": "最后，不要拿自己和别人比较。",
+    "en": "Lastly, don’t compare yourself with others."
+  },
+  {
+    "id": 324,
+    "unit": "Unit 7",
+    "zh": "每个人都有自己的闪光点。",
+    "en": "Everyone shines in their own ways."
+  },
+  {
+    "id": 325,
+    "unit": "Unit 7",
+    "zh": "你应该发现并发展自己的优点。",
+    "en": "You should discover and develop your own strong points."
+  },
+  {
+    "id": 326,
+    "unit": "Unit 7",
+    "zh": "随着青少年年龄的增长，他们的身体达到了成人的完全身高。",
+    "en": "As teenagers grow in age, their bodies reach their full adult height."
+  },
+  {
+    "id": 327,
+    "unit": "Unit 7",
+    "zh": "这是最明显的变化。",
+    "en": "This is the clearest change."
+  },
+  {
+    "id": 328,
+    "unit": "Unit 7",
+    "zh": "此外，他们身体的某些部位会长出毛发，声音也会发生变化。",
+    "en": "Also, hair grows on certain areas of their bodies, and their voices change too."
+  },
+  {
+    "id": 329,
+    "unit": "Unit 7",
+    "zh": "时间过得真快！恭喜您搬进新家！伦敦的一切都好吗？在过去的一个学年里，发生了很多事情。",
+    "en": "How time flies! Congratulations on moving to your new house! How’s everything going in London? So many things took place in my past school year."
+  },
+  {
+    "id": 330,
+    "unit": "Unit 7",
+    "zh": "去年十月，我报名参加了一个音乐俱乐部。",
+    "en": "Last October, I signed up for a music club."
+  },
+  {
+    "id": 331,
+    "unit": "Unit 7",
+    "zh": "我感到很幸运，在那里交到了一些好朋友。",
+    "en": "I felt so lucky to make some good friends there."
+  },
+  {
+    "id": 332,
+    "unit": "Unit 7",
+    "zh": "音乐老师张老师帮助我提高了歌唱技巧。",
+    "en": "The music teacher, Mrs. Zhang, helped me improve my singing skills."
+  },
+  {
+    "id": 333,
+    "unit": "Unit 7",
+    "zh": "但我的父母不允许我学唱歌。",
+    "en": "But my parents didn’t allow me to learn singing."
+  },
+  {
+    "id": 334,
+    "unit": "Unit 7",
+    "zh": "他们说：“这是浪费时间。”",
+    "en": "They said, “It is a waste of time.”"
+  },
+  {
+    "id": 335,
+    "unit": "Unit 7",
+    "zh": "我很失望，不知道该怎么办。",
+    "en": "I was disappointed and didn’t know what to do."
+  },
+  {
+    "id": 336,
+    "unit": "Unit 7",
+    "zh": "当张老师了解到这个情况后，她建议我和我的父母进行一次开诚布公的谈话。",
+    "en": "When Mrs. Zhang learnt about this, she advised me to have an open and honest talk with my parents."
+  },
+  {
+    "id": 337,
+    "unit": "Unit 7",
+    "zh": "我鼓起勇气和他们谈了谈。",
+    "en": "I gathered my courage to talk to them."
+  },
+  {
+    "id": 338,
+    "unit": "Unit 7",
+    "zh": "之后，我的父母开始理解我对音乐的热爱。",
+    "en": "After that, my parents started to understand my love for music."
+  },
+  {
+    "id": 339,
+    "unit": "Unit 7",
+    "zh": "两周前，他们甚至来为我加油。",
+    "en": "Two weeks ago, they even came to cheer me on."
+  },
+  {
+    "id": 340,
+    "unit": "Unit 7",
+    "zh": "我很高兴能得到他们的支持。",
+    "en": "I was very glad to have their support."
+  },
+  {
+    "id": 341,
+    "unit": "Unit 7",
+    "zh": "但问题是。",
+    "en": "But here is the problem."
+  },
+  {
+    "id": 342,
+    "unit": "Unit 7",
+    "zh": "因为歌唱活动，我无法抽出太多时间学习。",
+    "en": "I can’t spare much time for my study because of the singing activities."
+  },
+  {
+    "id": 343,
+    "unit": "Unit 7",
+    "zh": "我该怎么办？有什么建议吗？",
+    "en": "What should I do? Any advice?"
+  },
+  {
+    "id": 344,
+    "unit": "Unit 7",
+    "zh": "我昨晚7点正在帮助小雅解决她的情绪问题。",
+    "en": "I was helping Xiao Ya with her mood problem at 7:00 p.m. yesterday."
+  },
+  {
+    "id": 345,
+    "unit": "Unit 7",
+    "zh": "他昨晚7点没有在帮助小雅解决她的情绪问题。",
+    "en": "He wasn't helping Xiao Ya with her mood problem at 7:00 p.m. yesterday."
+  },
+  {
+    "id": 346,
+    "unit": "Unit 7",
+    "zh": "她昨天上午10点正在帮助小雅解决她的情绪问题吗？",
+    "en": "Was she helping Xiao Ya with her mood problem at 10:00 a.m. yesterday?"
+  },
+  {
+    "id": 347,
+    "unit": "Unit 7",
+    "zh": "是的，她是。/不，她不是。",
+    "en": "Yes, she was./No, she wasn't."
+  },
+  {
+    "id": 348,
+    "unit": "Unit 7",
+    "zh": "他们昨天上午10点正在帮助小雅解决她的情绪问题吗？",
+    "en": "Were they helping Xiao Ya with her mood problem at 10:00 a.m. yesterday?"
+  },
+  {
+    "id": 349,
+    "unit": "Unit 7",
+    "zh": "是的，他们是。/不，他们不是。",
+    "en": "Yes, they were./No, they weren't."
+  },
+  {
+    "id": 350,
+    "unit": "Unit 7",
+    "zh": "昨天这个时候你在做什么？",
+    "en": "What were you doing at this time yesterday?"
+  },
+  {
+    "id": 351,
+    "unit": "Unit 8",
+    "zh": "他/她当时在做什么？/他们当时在做什么？",
+    "en": "What was he/she doing?/What were they doing?"
+  },
+  {
+    "id": 352,
+    "unit": "Unit 8",
+    "zh": "他/她当时在…/他们当时在…",
+    "en": "He/She was …/They were …"
+  },
+  {
+    "id": 353,
+    "unit": "Unit 8",
+    "zh": "我当时正在和我的父母一起看电影。",
+    "en": "I was watching a movie with my parents."
+  },
+  {
+    "id": 354,
+    "unit": "Unit 8",
+    "zh": "你们在看什么电影？是《我和我的祖国》吗？",
+    "en": "What movie were you watching? Is it My Country and My People?"
+  },
+  {
+    "id": 355,
+    "unit": "Unit 8",
+    "zh": "是的。我们看的时候很感动。",
+    "en": "Yes. We felt moved when we were watching it."
+  },
+  {
+    "id": 356,
+    "unit": "Unit 8",
+    "zh": "在我八年级期间，我经历了许多变化。",
+    "en": "During my 8th grade, I went through many changes."
+  },
+  {
+    "id": 357,
+    "unit": "Unit 8",
+    "zh": "随着我长高，我的体重也在快速增加。",
+    "en": "As I was growing taller, I was gaining weight quickly."
+  },
+  {
+    "id": 358,
+    "unit": "Unit 8",
+    "zh": "这让我对自己感觉不好，我经常无缘无故地和父母争吵。",
+    "en": "This made me feel bad about myself, and I often argued with my parents for nothing."
+  },
+  {
+    "id": 359,
+    "unit": "Unit 8",
+    "zh": "有时，我真的感到孤独和不快乐。",
+    "en": "At times, I was really feeling lonely and unhappy."
+  },
+  {
+    "id": 360,
+    "unit": "Unit 8",
+    "zh": "幸运的是，我的姐姐珍珍注意到了我的感受。",
+    "en": "Luckily, my elder sister, Zhenzhen, noticed how I was feeling."
+  },
+  {
+    "id": 361,
+    "unit": "Unit 8",
+    "zh": "她总是在那里倾听。",
+    "en": "She was always there to listen."
+  },
+  {
+    "id": 362,
+    "unit": "Unit 8",
+    "zh": "在她的支持下，我开始谈论我的感受。",
+    "en": "With her support, I started to talk about my feelings."
+  },
+  {
+    "id": 363,
+    "unit": "Unit 8",
+    "zh": "渐渐地，我变得更加自信，与父母的关系也改善了。",
+    "en": "Little by little, I became more confident, and my relationship with my parents also improved."
+  },
+  {
+    "id": 364,
+    "unit": "Unit 8",
+    "zh": "作为一个青少年并不容易，但我学会了接受自己并分享我的感受。",
+    "en": "Being a teenager is not easy, but I learned to accept myself and share my feelings."
+  },
+  {
+    "id": 365,
+    "unit": "Unit 8",
+    "zh": "现在，我不再担心我的体重了。",
+    "en": "Now, I don’t worry about my weight anymore."
+  },
+  {
+    "id": 366,
+    "unit": "Unit 8",
+    "zh": "相反，我每天都感到快乐！",
+    "en": "Instead, I feel happy every day!"
+  },
+  {
+    "id": 367,
+    "unit": "Unit 8",
+    "zh": "做你自己，每个人都会认为你很美。",
+    "en": "Be yourself and everyone will think you are beautiful."
+  },
+  {
+    "id": 368,
+    "unit": "Unit 8",
+    "zh": "你擅长数学，而且是个优秀的跑步者。",
+    "en": "You’re good at math and you are a good runner."
+  },
+  {
+    "id": 369,
+    "unit": "Unit 8",
+    "zh": "我很高兴收到你的来信。",
+    "en": "I am glad to hear from you."
+  },
+  {
+    "id": 370,
+    "unit": "Unit 8",
+    "zh": "我理解你在规划学校生活方面遇到的问题。",
+    "en": "I understand your problem of planning school life."
+  },
+  {
+    "id": 371,
+    "unit": "Unit 8",
+    "zh": "当我像你这么大时，我也经历过类似的挑战。",
+    "en": "When I was your age, I was experiencing similar challenges."
+  },
+  {
+    "id": 372,
+    "unit": "Unit 8",
+    "zh": "以下是我给你的建议。",
+    "en": "Here are my suggestions for you."
+  },
+  {
+    "id": 373,
+    "unit": "Unit 8",
+    "zh": "首先，制定一个学习计划。",
+    "en": "First, make a study plan."
+  },
+  {
+    "id": 374,
+    "unit": "Unit 8",
+    "zh": "写下你每天需要做的事情，并尽量遵循它。",
+    "en": "Write down what you need to do each day and try to follow it."
+  },
+  {
+    "id": 375,
+    "unit": "Unit 8",
+    "zh": "这将帮助你管理时间，避免落后。",
+    "en": "This will help you manage your time and avoid falling behind."
+  },
+  {
+    "id": 376,
+    "unit": "Unit 8",
+    "zh": "其次，找时间娱乐。",
+    "en": "Next, find time for fun."
+  },
+  {
+    "id": 377,
+    "unit": "Unit 8",
+    "zh": "学习与娱乐的良好平衡将使学校生活更加精彩和丰富多彩。",
+    "en": "A good balance of studying and fun will make school life more exciting and colorful."
+  },
+  {
+    "id": 378,
+    "unit": "Unit 8",
+    "zh": "最后，不要害怕寻求帮助。",
+    "en": "Lastly, don’t be afraid to ask for help."
+  },
+  {
+    "id": 379,
+    "unit": "Unit 8",
+    "zh": "如果你有任何问题，和你的老师或同学谈谈。",
+    "en": "If you have any problems, talk to your teachers or classmates."
+  },
+  {
+    "id": 380,
+    "unit": "Unit 8",
+    "zh": "他们总是乐于帮助你。",
+    "en": "They are always ready to help you."
+  },
+  {
+    "id": 381,
+    "unit": "Unit 8",
+    "zh": "我希望这些建议对你有帮助。",
+    "en": "I hope these suggestions are helpful."
+  },
+  {
+    "id": 382,
+    "unit": "Unit 8",
+    "zh": "如果你需要更多建议，请告诉我！",
+    "en": "Let me know if you need more advice!"
+  },
+  {
+    "id": 383,
+    "unit": "Unit 8",
+    "zh": "它位于安徽省南部。",
+    "en": "It lies in the south of Anhui Province."
+  },
+  {
+    "id": 384,
+    "unit": "Unit 8",
+    "zh": "日本位于亚洲东部。",
+    "en": "Japan lies in the east of Asia."
+  },
+  {
+    "id": 385,
+    "unit": "Unit 8",
+    "zh": "它从山海关开始，到嘉峪关结束。",
+    "en": "It starts from Shanhaiguan and ends at Jiayuguan."
+  },
+  {
+    "id": 386,
+    "unit": "Unit 8",
+    "zh": "每天早晨有成千上万的人来这里观看升国旗仪式。",
+    "en": "Tens of thousands of people come here to see the national flag-raising ceremony every morning."
+  },
+  {
+    "id": 387,
+    "unit": "Unit 8",
+    "zh": "人们为2008年北京奥运会建造了它。",
+    "en": "People built it for the 2008 Beijing Olympics."
+  },
+  {
+    "id": 388,
+    "unit": "Unit 8",
+    "zh": "它位于北京奥林匹克公园中心区的南部。",
+    "en": "It is in the south of the central area of Beijing Olympic Park."
+  },
+  {
+    "id": 389,
+    "unit": "Unit 8",
+    "zh": "伦敦位于英格兰东南部。",
+    "en": "London is in the south-east of England."
+  },
+  {
+    "id": 390,
+    "unit": "Unit 8",
+    "zh": "世界著名的大本钟就在那里。",
+    "en": "The world-famous Big Ben is there."
+  },
+  {
+    "id": 391,
+    "unit": "Unit 8",
+    "zh": "尼亚加拉大瀑布位于尼亚加拉河上。",
+    "en": "Niagara Falls is on the Niagara River."
+  },
+  {
+    "id": 392,
+    "unit": "Unit 8",
+    "zh": "它位于北美东北部。",
+    "en": "It is in the north-east of North America."
+  },
+  {
+    "id": 393,
+    "unit": "Unit 8",
+    "zh": "你计划在假期参观哪个地方？",
+    "en": "Which place do you plan to visit during your holiday?"
+  },
+  {
+    "id": 394,
+    "unit": "Unit 8",
+    "zh": "我计划参观黄山。",
+    "en": "I plan to visit Mount Huangshan."
+  },
+  {
+    "id": 395,
+    "unit": "Unit 8",
+    "zh": "李响：康康，你在看什么？",
+    "en": "Li Xiang: Kangkang, what are you looking at?"
+  },
+  {
+    "id": 396,
+    "unit": "Unit 8",
+    "zh": "康康：哦，一些故宫的照片。",
+    "en": "Kangkang: Oh, some photos of the Palace Museum."
+  },
+  {
+    "id": 397,
+    "unit": "Unit 8",
+    "zh": "李响：我能看看吗？",
+    "en": "Li Xiang: Can I have a look, please?"
+  },
+  {
+    "id": 398,
+    "unit": "Unit 8",
+    "zh": "康康：当然。给你。",
+    "en": "Kangkang: Sure. Here you are."
+  },
+  {
+    "id": 399,
+    "unit": "Unit 8",
+    "zh": "李响：哇，它们真漂亮。",
+    "en": "Li Xiang: Wow, they are so beautiful."
+  },
+  {
+    "id": 400,
+    "unit": "Unit 8",
+    "zh": "康康：是的，有70多座大小不一的宫殿，它们都是木制建筑。",
+    "en": "Kangkang: Yes, there are more than 70 palaces in different sizes, and they are all buildings made of wood."
+  },
+  {
+    "id": 401,
+    "unit": "Unit 9",
+    "zh": "李响：太神奇了！据说有大约9000个房间。是真的吗？",
+    "en": "Li Xiang: How amazing! It’s said that there are about 9,000 rooms. Is that true?"
+  },
+  {
+    "id": 402,
+    "unit": "Unit 9",
+    "zh": "康康：是的。故宫占地面积非常大，超过72万平方米。它从北到南长961米，从东到西宽753米。",
+    "en": "Kangkang: Yes. The Palace Museum covers a very large area, more than 720,000 square meters. It is 961 meters long from the north to the south, and 753 meters wide from the east to the west."
+  },
+  {
+    "id": 403,
+    "unit": "Unit 9",
+    "zh": "李响：我真想有一天去参观故宫。",
+    "en": "Li Xiang: I really want to visit the Palace Museum some day."
+  },
+  {
+    "id": 404,
+    "unit": "Unit 9",
+    "zh": "康康：这个国庆假期怎么样？那里会有一些有趣的活动。",
+    "en": "Kangkang: What about this National Day holiday? There will be some interesting activities there."
+  },
+  {
+    "id": 405,
+    "unit": "Unit 9",
+    "zh": "李响：好主意！我们骑自行车去吧。",
+    "en": "Li Xiang: Good idea! Let’s ride our bikes there."
+  },
+  {
+    "id": 406,
+    "unit": "Unit 9",
+    "zh": "康康：好的。它在北京市中心，离这儿不太远。",
+    "en": "Kangkang: OK. It is in the center of Beijing, not very far from here."
+  },
+  {
+    "id": 407,
+    "unit": "Unit 9",
+    "zh": "白洋淀以其美丽的荷花而闻名。",
+    "en": "Baiyang Lake is famous for its beautiful lotus flowers."
+  },
+  {
+    "id": 408,
+    "unit": "Unit 9",
+    "zh": "在花季，这个湖就像一个巨大的荷花花园。",
+    "en": "During the flower season, the lake is like a huge lotus garden."
+  },
+  {
+    "id": 409,
+    "unit": "Unit 9",
+    "zh": "人们可以乘船欣赏花朵。",
+    "en": "People can take boats to enjoy the flowers."
+  },
+  {
+    "id": 410,
+    "unit": "Unit 9",
+    "zh": "白洋淀的文化也很丰富。",
+    "en": "Baiyang Lake is also rich in culture."
+  },
+  {
+    "id": 411,
+    "unit": "Unit 9",
+    "zh": "有许多文化名胜供游客观看。",
+    "en": "There are many places of cultural interest for tourists to see."
+  },
+  {
+    "id": 412,
+    "unit": "Unit 9",
+    "zh": "西湖位于浙江省杭州市。",
+    "en": "The West Lake lies in Hangzhou City, Zhejiang Province."
+  },
+  {
+    "id": 413,
+    "unit": "Unit 9",
+    "zh": "它长3.3公里，宽2.8公里，平均深度2.5米。",
+    "en": "It is 3.3 kilometers long, 2.8 kilometers wide and 2.5 meters deep on average."
+  },
+  {
+    "id": 414,
+    "unit": "Unit 9",
+    "zh": "正如中国的一句俗语所说：“上有天堂，下有苏杭”。",
+    "en": "As a Chinese saying goes, “Heaven above, Suzhou and Hangzhou below”."
+  },
+  {
+    "id": 415,
+    "unit": "Unit 9",
+    "zh": "总有东西可看，而且全年都很美。",
+    "en": "There is always something to see and it is beautiful all year round."
+  },
+  {
+    "id": 416,
+    "unit": "Unit 9",
+    "zh": "至于美丽的风景，断桥是必看的。",
+    "en": "As for the beautiful landscapes, the Broken Bridge is a must-see."
+  },
+  {
+    "id": 417,
+    "unit": "Unit 9",
+    "zh": "要探索这个湖，旅行者可以乘船、骑自行车或只是绕着它散步。",
+    "en": "To explore the lake, travelers can take boats, ride bicycles or just walk around it."
+  },
+  {
+    "id": 418,
+    "unit": "Unit 9",
+    "zh": "事实是你可以检查真假的东西。",
+    "en": "A fact is something you can check true or false."
+  },
+  {
+    "id": 419,
+    "unit": "Unit 9",
+    "zh": "观点是某人的想法或感受。",
+    "en": "An opinion is what someone thinks or feels."
+  },
+  {
+    "id": 420,
+    "unit": "Unit 9",
+    "zh": "在一个句子中，代词替代名词。",
+    "en": "In a sentence, pronouns replace nouns."
+  },
+  {
+    "id": 421,
+    "unit": "Unit 9",
+    "zh": "为了完全理解句子，你需要推断代词所指代的内容。",
+    "en": "To fully understand the sentence, you need to make inferences about what the pronouns refer to."
+  },
+  {
+    "id": 422,
+    "unit": "Unit 9",
+    "zh": "北京国家体育场是北京的一个地标。",
+    "en": "Beijing National Stadium is a landmark of Beijing."
+  },
+  {
+    "id": 423,
+    "unit": "Unit 9",
+    "zh": "人们也称之为鸟巢，因为它的形状就像一个巢。",
+    "en": "People also call it Bird’s Nest, because its shape is just like a nest."
+  },
+  {
+    "id": 424,
+    "unit": "Unit 9",
+    "zh": "体育场从北到南长333米，从东到西宽296米。",
+    "en": "The stadium is 333 meters long from the north to the south and 296 meters wide from the east to the west."
+  },
+  {
+    "id": 425,
+    "unit": "Unit 9",
+    "zh": "像这样的大型体育场很难建造。",
+    "en": "A large stadium like this is very difficult to build."
+  },
+  {
+    "id": 426,
+    "unit": "Unit 9",
+    "zh": "为了使它既坚固又轻便，我们用一种坚固的新材料建造了整个体育场。",
+    "en": "To make it strong and light as well, we built the whole stadium with a strong new material."
+  },
+  {
+    "id": 427,
+    "unit": "Unit 9",
+    "zh": "世界上以前没有其他建筑使用过如此多的这种新材料。",
+    "en": "No other structure in the world was built with so much of this new material before."
+  },
+  {
+    "id": 428,
+    "unit": "Unit 9",
+    "zh": "悉尼歌剧院无疑是观赏表演艺术的最佳场所。",
+    "en": "The Sydney Opera House is surely the best place to see the performing arts."
+  },
+  {
+    "id": 429,
+    "unit": "Unit 9",
+    "zh": "它也以其建筑的美丽设计而闻名。",
+    "en": "It is also known for the beautiful design of its buildings."
+  },
+  {
+    "id": 430,
+    "unit": "Unit 9",
+    "zh": "这些建筑看起来像在海面上航行的船只。",
+    "en": "The buildings look like boats sailing on the sea."
+  },
+  {
+    "id": 431,
+    "unit": "Unit 9",
+    "zh": "人们可以在音乐厅和歌剧院欣赏美妙的音乐。",
+    "en": "People can enjoy wonderful music in the Concert Hall and the Opera Theater."
+  },
+  {
+    "id": 432,
+    "unit": "Unit 9",
+    "zh": "他们在Bennelong餐厅用餐后也能获得难忘的体验。",
+    "en": "They can also have an unforgettable experience after dining in Bennelong Restaurant."
+  },
+  {
+    "id": 433,
+    "unit": "Unit 9",
+    "zh": "你正在寻找一个可爱的地方度假吗？",
+    "en": "Are you looking for a lovely place to spend your vacation?"
+  },
+  {
+    "id": 434,
+    "unit": "Unit 9",
+    "zh": "云南的红河哈尼梯田可能是一个不错的选择。",
+    "en": "The Honghe Hani Rice Terraces in Yunnan may be a good choice."
+  },
+  {
+    "id": 435,
+    "unit": "Unit 9",
+    "zh": "有山有云，这特殊的景观看起来像一幅美丽的中国画。",
+    "en": "With mountains and clouds, this special landscape looks like a beautiful Chinese painting."
+  },
+  {
+    "id": 436,
+    "unit": "Unit 9",
+    "zh": "梯田的颜色在一年中的不同时间从绿色变为黄色。",
+    "en": "The color of the terraces changes from green to yellow at different times of the year."
+  },
+  {
+    "id": 437,
+    "unit": "Unit 9",
+    "zh": "在古代，哈尼族人开发了一个灌溉工程。",
+    "en": "In ancient times, the Hani people developed a watering project."
+  },
+  {
+    "id": 438,
+    "unit": "Unit 9",
+    "zh": "今天，它仍然帮助他们把水从森林引到田里。",
+    "en": "Today, it still helps them bring water from the forests to fields."
+  },
+  {
+    "id": 439,
+    "unit": "Unit 9",
+    "zh": "为了更好地利用这些充满水的稻田，农民们在里面养鱼和鸭子。",
+    "en": "To make better use of these water-filled rice fields, farmers raise fish and ducks in them."
+  },
+  {
+    "id": 440,
+    "unit": "Unit 9",
+    "zh": "梯田附近，村子里有许多三层楼的房子。",
+    "en": "Near the terraces, there are many houses with three floors in the villages."
+  },
+  {
+    "id": 441,
+    "unit": "Unit 9",
+    "zh": "一楼是猪和其他动物住的，二楼是生活区，顶楼是用来储存大米的。",
+    "en": "The first floor is for pigs and other animals, the second is a living area and the top floor is for storing rice."
+  },
+  {
+    "id": 442,
+    "unit": "Unit 9",
+    "zh": "这生动的景观真的很美。",
+    "en": "The lively landscape is really beautiful."
+  },
+  {
+    "id": 443,
+    "unit": "Unit 9",
+    "zh": "你觉得它怎么样？",
+    "en": "How do you like it?"
+  },
+  {
+    "id": 444,
+    "unit": "Unit 9",
+    "zh": "请在下面随意给我们留言！",
+    "en": "Feel free to leave us any message below!"
+  },
+  {
+    "id": 445,
+    "unit": "Unit 9",
+    "zh": "我今天得到了一份新工作。",
+    "en": "I got a new job today."
+  },
+  {
+    "id": 446,
+    "unit": "Unit 9",
+    "zh": "那是一个晴朗的日子。",
+    "en": "It was a sunny day."
+  },
+  {
+    "id": 447,
+    "unit": "Unit 9",
+    "zh": "我们参观了西湖。",
+    "en": "We visited the West Lake."
+  },
+  {
+    "id": 448,
+    "unit": "Unit 9",
+    "zh": "健康的饮食有助于你保持健康。",
+    "en": "A healthy diet is helpful for you to keep fit."
+  },
+  {
+    "id": 449,
+    "unit": "Unit 9",
+    "zh": "因为下雨，交通很拥堵。",
+    "en": "The traffic is heavy because it is rainy."
+  },
+  {
+    "id": 450,
+    "unit": "Unit 9",
+    "zh": "你计划去哪里度假？",
+    "en": "Where do you plan to spend your holiday?"
+  },
+  {
+    "id": 451,
+    "unit": "Unit 10",
+    "zh": "你能帮我（去）拍一些山的照片吗？",
+    "en": "Can you help me (to) take some photos of the mountain?"
+  },
+  {
+    "id": 452,
+    "unit": "Unit 10",
+    "zh": "我有一些好消息要告诉你。",
+    "en": "I have some great news to tell you."
+  },
+  {
+    "id": 453,
+    "unit": "Unit 10",
+    "zh": "下个月，我打算去参观黄山。",
+    "en": "Next month, I’m going to visit Mount Huangshan."
+  },
+  {
+    "id": 454,
+    "unit": "Unit 10",
+    "zh": "我计划乘火车，并在网上预订火车票和酒店房间。",
+    "en": "I plan to take the train and to book a train ticket and a hotel room online."
+  },
+  {
+    "id": 455,
+    "unit": "Unit 10",
+    "zh": "但现在我没有足够的钱。",
+    "en": "But now I don’t have enough money."
+  },
+  {
+    "id": 456,
+    "unit": "Unit 10",
+    "zh": "为了不缺钱，我会听小雅的建议，通过卖花来赚钱。",
+    "en": "In order not to be short of money, I’ll take Xiao Ya’s advice to make money by selling flowers."
+  },
+  {
+    "id": 457,
+    "unit": "Unit 10",
+    "zh": "你将如何度过你的假期？",
+    "en": "How will you spend your holiday?"
+  },
+  {
+    "id": 458,
+    "unit": "Unit 10",
+    "zh": "我期待着你的回信。",
+    "en": "I’m looking forward to hearing from you."
+  },
+  {
+    "id": 459,
+    "unit": "Unit 10",
+    "zh": "我将去海滩和我的祖父母一起度假。",
+    "en": "I’ll go to the beach to spend my holiday with my grandparents."
+  },
+  {
+    "id": 460,
+    "unit": "Unit 10",
+    "zh": "当你打开中国地图时，你一定会看到一条横贯中国北方的线。",
+    "en": "When you open a map of China, you are sure to see a line across the northern China."
+  },
+  {
+    "id": 461,
+    "unit": "Unit 10",
+    "zh": "它是世界上最令人惊叹的奇迹之一。",
+    "en": "It’s one of the most amazing wonders of the world."
+  },
+  {
+    "id": 462,
+    "unit": "Unit 10",
+    "zh": "人们称它为中国长城。",
+    "en": "People call it the Great Wall of China."
+  },
+  {
+    "id": 463,
+    "unit": "Unit 10",
+    "zh": "几千年来，长城屹立在那里，抵御来自北方的“敌人”。",
+    "en": "For thousands of years, the Great Wall stood there to keep out “enemies” from the north."
+  },
+  {
+    "id": 464,
+    "unit": "Unit 10",
+    "zh": "古代的工人们用泥土和石头建造了这堵墙。",
+    "en": "Workers in ancient times used earth and stones to build the wall."
+  },
+  {
+    "id": 465,
+    "unit": "Unit 10",
+    "zh": "为了帮助士兵快速传递信息，古人在城墙上设计了一些瞭望塔。",
+    "en": "To help soldiers quickly send messages, the ancient people designed some watchtowers on the wall."
+  },
+  {
+    "id": 466,
+    "unit": "Unit 10",
+    "zh": "这展示了中国人民的智慧和辛勤劳动。",
+    "en": "This shows the wisdom and hard work of the Chinese people."
+  },
+  {
+    "id": 467,
+    "unit": "Unit 10",
+    "zh": "此外，长城对贸易也很重要。",
+    "en": "What’s more, the wall is also important for trade."
+  },
+  {
+    "id": 468,
+    "unit": "Unit 10",
+    "zh": "它保护了诸如丝绸之路之类的贸易路线。",
+    "en": "It protected trading routes such as the Silk Road."
+  },
+  {
+    "id": 469,
+    "unit": "Unit 10",
+    "zh": "如今，你可以在电影、书籍甚至人们的T恤上看到中国长城。",
+    "en": "Today, you can see the Great Wall of China in movies, books and even on people’s T-shirts."
+  },
+  {
+    "id": 470,
+    "unit": "Unit 10",
+    "zh": "它不仅是一个名胜，也是国家的象征。",
+    "en": "It is not only a place of interest but also a symbol of the nation."
+  },
+  {
+    "id": 471,
+    "unit": "Unit 10",
+    "zh": "泰姬陵是印度最著名的景点之一。",
+    "en": "The Taj Mahal is one of the most famous sites in India."
+  },
+  {
+    "id": 472,
+    "unit": "Unit 10",
+    "zh": "沙贾汗皇帝建造它是为了纪念他的妻子穆塔兹·玛哈尔皇后。",
+    "en": "Emperor Shah Jahan built it to remember his wife, Empress Mumtaz Mahal."
+  },
+  {
+    "id": 473,
+    "unit": "Unit 10",
+    "zh": "它花费了皇帝数百万美元。",
+    "en": "It cost the emperor millions of dollars."
+  },
+  {
+    "id": 474,
+    "unit": "Unit 10",
+    "zh": "超过20,000名工人花了20多年的时间建造它，并使用了来自世界不同地区的多种昂贵石材。",
+    "en": "Over 20,000 workers spent more than 20 years building it and used many kinds of expensive stones from different parts of the world."
+  },
+  {
+    "id": 475,
+    "unit": "Unit 10",
+    "zh": "每年有来自世界各地的数万名游客到那里参观。",
+    "en": "Tens of thousands of visitors from all over the world visit there every year."
+  },
+  {
+    "id": 476,
+    "unit": "Unit 10",
+    "zh": "我上周度过了一个美好的假期。",
+    "en": "I had a wonderful holiday last week."
+  },
+  {
+    "id": 477,
+    "unit": "Unit 10",
+    "zh": "我和我的家人一起去了美国旅行。",
+    "en": "I traveled to America with my family."
+  },
+  {
+    "id": 478,
+    "unit": "Unit 10",
+    "zh": "我们参观了黄石国家公园。",
+    "en": "We visited the Yellowstone National Park."
+  },
+  {
+    "id": 479,
+    "unit": "Unit 10",
+    "zh": "它是美国的第一个国家公园，位于该国的西南部。",
+    "en": "It’s America’s first national park, and it sits in the south-west part of the country."
+  },
+  {
+    "id": 480,
+    "unit": "Unit 10",
+    "zh": "这个公园以其美丽的景色而闻名。",
+    "en": "The park is famous for its beautiful views."
+  },
+  {
+    "id": 481,
+    "unit": "Unit 10",
+    "zh": "它占地约9065平方公里。",
+    "en": "It covers about 9,065 square kilometers."
+  },
+  {
+    "id": 482,
+    "unit": "Unit 10",
+    "zh": "公园里有高山、大河、温泉、茂密的森林、平坦的草原和许多野生动物。",
+    "en": "There are high mountains, big rivers, hot springs, thick forests, flat grassland, and lots of wild animals in the park."
+  },
+  {
+    "id": 483,
+    "unit": "Unit 10",
+    "zh": "我非常喜欢这里的自然景观。",
+    "en": "I like the natural landscape so much."
+  },
+  {
+    "id": 484,
+    "unit": "Unit 10",
+    "zh": "它也是一个放松的好地方。",
+    "en": "It’s also a great place to relax."
+  },
+  {
+    "id": 485,
+    "unit": "Unit 10",
+    "zh": "我享受了这个美妙的假期。",
+    "en": "I enjoyed this amazing holiday."
+  },
+  {
+    "id": 486,
+    "unit": "Unit 10",
+    "zh": "我希望有一天能参观一些其他地方。",
+    "en": "I hope I will visit some other places one day."
+  },
+  {
+    "id": 487,
+    "unit": "Unit 10",
+    "zh": "在这个暑假期间，我和妈妈一起去了英国旅行。",
+    "en": "During this summer holiday, I traveled to Britain with my mom."
+  },
+  {
+    "id": 488,
+    "unit": "Unit 10",
+    "zh": "我一直想参观哈德良长城，我爸爸帮我们在网上订了票。",
+    "en": "I always wanted to visit Hadrian’s Wall, and my dad helped us book tickets online."
+  },
+  {
+    "id": 489,
+    "unit": "Unit 10",
+    "zh": "这堵墙在世界各地都很有名，很像中国的长城。",
+    "en": "The wall is famous around the world, much like the Great Wall of China."
+  },
+  {
+    "id": 490,
+    "unit": "Unit 10",
+    "zh": "今天我们只能看到它的一部分，但它仍然是一个神奇的地方。",
+    "en": "Today we can only see parts of it, but it is still an amazing place."
+  },
+  {
+    "id": 491,
+    "unit": "Unit 10",
+    "zh": "罗马人建造了哈德良长城以抵御西北的敌人。",
+    "en": "The Romans built Hadrian’s Wall to protect against the enemy in the northwest."
+  },
+  {
+    "id": 492,
+    "unit": "Unit 10",
+    "zh": "它大约有117公里长。",
+    "en": "It is about 117 kilometers long."
+  },
+  {
+    "id": 493,
+    "unit": "Unit 10",
+    "zh": "大约15000名罗马士兵在哈德良皇帝的命令下开始修建这堵墙。",
+    "en": "Around 15,000 Roman soldiers began building the wall under the orders of Emperor Hadrian."
+  },
+  {
+    "id": 494,
+    "unit": "Unit 10",
+    "zh": "他们用石头和泥土建造了这堵墙，花了大约六年的时间才完成了整堵墙。",
+    "en": "They used stones and earth to make the wall, and it took them about six years to finish the whole wall."
+  },
+  {
+    "id": 495,
+    "unit": "Unit 10",
+    "zh": "现在我们回到了中国，但一想到哈德良长城，我就想再次访问英国。",
+    "en": "Now we are back in China, but the thought of Hadrian’s Wall makes me want to visit Britain again."
+  },
+  {
+    "id": 496,
+    "unit": "Unit 10",
+    "zh": "康康：伙计们，快来看星星！它们看起来真清晰。",
+    "en": "Kangkang: Guys, come and watch the stars! They look so clear."
+  },
+  {
+    "id": 497,
+    "unit": "Unit 10",
+    "zh": "梅梅：哇，有这么多星星！而且有些星星比其他的更亮。",
+    "en": "Meimei: Wow, there are so many stars! And some of them shine brighter than others."
+  },
+  {
+    "id": 498,
+    "unit": "Unit 10",
+    "zh": "小雅：看那些最亮的。它们是北斗七星和北极星吗？",
+    "en": "Xiao Ya: Look at the brightest ones. Are they the Big Dipper and the North Star?"
+  },
+  {
+    "id": 499,
+    "unit": "Unit 10",
+    "zh": "康康：是的。北斗七星看起来像一把勺子。沿着右边的两颗星，你就能找到北极星。",
+    "en": "Kangkang: Yes, they are. The Big Dipper looks like a spoon. Follow the two stars on the right, and you can find the North Star."
+  },
+  {
+    "id": 500,
+    "unit": "Unit 10",
+    "zh": "玲玲：许多星星非常非常遥远。让我用望远镜看得更清楚些。",
+    "en": "Lingling: Many stars are far, far away. Let me see more through the telescope."
+  },
+  {
+    "id": 501,
+    "unit": "Unit 11",
+    "zh": "梅梅：你看到了什么，玲玲？",
+    "en": "Meimei: What can you see, Lingling?"
+  },
+  {
+    "id": 502,
+    "unit": "Unit 11",
+    "zh": "玲玲：有些星星是白色的，有些是蓝色的，有些是黄色的……",
+    "en": "Lingling: Some stars are white, some are blue and some are yellow ..."
+  },
+  {
+    "id": 503,
+    "unit": "Unit 11",
+    "zh": "小雅：让我看看……我看到了红色的星星。太神奇了！",
+    "en": "Xiao Ya: Let me have a look ... I see red stars. How amazing!"
+  },
+  {
+    "id": 504,
+    "unit": "Unit 11",
+    "zh": "梅梅：有一颗星星从不在夜晚出现。你知道它是什么吗？",
+    "en": "Meimei: One star never appears at night. Do you know what it is?"
+  },
+  {
+    "id": 505,
+    "unit": "Unit 11",
+    "zh": "康康：哈！我知道。是太阳。它是我们的白昼之星。",
+    "en": "Kangkang: Ha! I know. It’s the sun. It’s our daytime star."
+  },
+  {
+    "id": 506,
+    "unit": "Unit 11",
+    "zh": "地球的大部分看起来是蓝色的，因为海洋的缘故。",
+    "en": "Most parts of the earth look blue because of the oceans."
+  },
+  {
+    "id": 507,
+    "unit": "Unit 11",
+    "zh": "“它比地球大一点，”他们猜测道。",
+    "en": "\"It is a little bigger than the earth,\" they guessed."
+  },
+  {
+    "id": 508,
+    "unit": "Unit 11",
+    "zh": "水星是离太阳最近的行星，而海王星是最远的。",
+    "en": "Mercury is the nearest planet to the Sun and Neptune is the farthest."
+  },
+  {
+    "id": 509,
+    "unit": "Unit 11",
+    "zh": "我们可以借助卫星的帮助看电视和打电话。",
+    "en": "We can watch TV and make phone calls with the help of the satellites."
+  },
+  {
+    "id": 510,
+    "unit": "Unit 11",
+    "zh": "地球比火星离太阳更近，但比金星离太阳更远。",
+    "en": "Earth is closer to the Sun than Mars, but farther from the Sun than Venus."
+  },
+  {
+    "id": 511,
+    "unit": "Unit 11",
+    "zh": "你对太空有所了解吗？",
+    "en": "Do you know anything about space?"
+  },
+  {
+    "id": 512,
+    "unit": "Unit 11",
+    "zh": "我们都生活在一个行星上，这个行星就是地球。",
+    "en": "We all live on a planet, and the planet is Earth."
+  },
+  {
+    "id": 513,
+    "unit": "Unit 11",
+    "zh": "当你在夜晚仰望天空时，你可以看到许多其他行星和恒星。",
+    "en": "When you look up at the sky at night, you can see many other planets and stars."
+  },
+  {
+    "id": 514,
+    "unit": "Unit 11",
+    "zh": "太阳也是一颗恒星。",
+    "en": "The Sun is a star, too."
+  },
+  {
+    "id": 515,
+    "unit": "Unit 11",
+    "zh": "有八颗行星围绕着它运行。",
+    "en": "There are eight planets going around it."
+  },
+  {
+    "id": 516,
+    "unit": "Unit 11",
+    "zh": "太阳是一颗恒星。",
+    "en": "The Sun is a star."
+  },
+  {
+    "id": 517,
+    "unit": "Unit 11",
+    "zh": "它的直径约为1,391,400公里。",
+    "en": "It has a diameter of about 1,391,400 kilometers."
+  },
+  {
+    "id": 518,
+    "unit": "Unit 11",
+    "zh": "它可能看起来是黄色、橙色甚至红色，但它真实的颜色是白色。",
+    "en": "It may look yellow, orange, or even red, but its real color is white."
+  },
+  {
+    "id": 519,
+    "unit": "Unit 11",
+    "zh": "太阳上没有生物。",
+    "en": "There are no living things on the Sun."
+  },
+  {
+    "id": 520,
+    "unit": "Unit 11",
+    "zh": "地球是太阳系中的八大行星之一。",
+    "en": "Earth is one of the eight planets of the solar system."
+  },
+  {
+    "id": 521,
+    "unit": "Unit 11",
+    "zh": "地球的直径约为13,000公里。",
+    "en": "The diameter of Earth is around 13,000 kilometers."
+  },
+  {
+    "id": 522,
+    "unit": "Unit 11",
+    "zh": "它看起来是蓝色和绿色的，并且是太阳系中唯一有生命的行星。",
+    "en": "It looks blue and green, and it is the only planet with life in the solar system."
+  },
+  {
+    "id": 523,
+    "unit": "Unit 11",
+    "zh": "在太阳系中，太阳位于中心，八大行星围绕它运行。",
+    "en": "In the solar system, the Sun is in the center, and eight planets go around it."
+  },
+  {
+    "id": 524,
+    "unit": "Unit 11",
+    "zh": "小行星带将行星分为两组——内行星和外行星。",
+    "en": "Asteroid Belt separates the planets into two groups—the inner planets and the outer planets."
+  },
+  {
+    "id": 525,
+    "unit": "Unit 11",
+    "zh": "内行星是水星、金星、地球和火星。",
+    "en": "The inner planets are Mercury, Venus, Earth and Mars."
+  },
+  {
+    "id": 526,
+    "unit": "Unit 11",
+    "zh": "它们离太阳更近。",
+    "en": "They are closer to the Sun."
+  },
+  {
+    "id": 527,
+    "unit": "Unit 11",
+    "zh": "外行星包括木星、土星、天王星和海王星。",
+    "en": "The outer planets include Jupiter, Saturn, Uranus and Neptune."
+  },
+  {
+    "id": 528,
+    "unit": "Unit 11",
+    "zh": "内行星较小，由岩石和土壤构成，而外行星较大，由气体构成，内部有岩石。",
+    "en": "The inner planets are smaller and made of rocks and soil, while the outer planets are larger and made of gas with rocks inside."
+  },
+  {
+    "id": 529,
+    "unit": "Unit 11",
+    "zh": "为什么太阳如此重要？至少有两个原因：",
+    "en": "Why is the sun so important? There are at least two reasons:"
+  },
+  {
+    "id": 530,
+    "unit": "Unit 11",
+    "zh": "它维持着太阳系中的行星。",
+    "en": "It keeps the planets in the solar system."
+  },
+  {
+    "id": 531,
+    "unit": "Unit 11",
+    "zh": "太阳是太阳系中最大的天体。",
+    "en": "The sun is the biggest object in the system."
+  },
+  {
+    "id": 532,
+    "unit": "Unit 11",
+    "zh": "它有力量让所有行星围绕它运行。",
+    "en": "It has the power to keep all the planets moving around it."
+  },
+  {
+    "id": 533,
+    "unit": "Unit 11",
+    "zh": "它给地球提供热和光。",
+    "en": "It gives heat and light to the earth."
+  },
+  {
+    "id": 534,
+    "unit": "Unit 11",
+    "zh": "热量为地球上的生物提供了适宜的温度。",
+    "en": "The heat gives the just right temperature to the living things on the earth."
+  },
+  {
+    "id": 535,
+    "unit": "Unit 11",
+    "zh": "光对人和动物获取能量很重要，植物也需要光来生长。",
+    "en": "The light is important for people and animals to get energy, and plants need the light to grow."
+  },
+  {
+    "id": 536,
+    "unit": "Unit 11",
+    "zh": "地球是我们唯一的家园行星。",
+    "en": "The earth is our only home planet."
+  },
+  {
+    "id": 537,
+    "unit": "Unit 11",
+    "zh": "它离太阳既不太近也不太远。",
+    "en": "It is neither too close nor too far from the sun."
+  },
+  {
+    "id": 538,
+    "unit": "Unit 11",
+    "zh": "这有助于地球从太阳获得足够的光和热。",
+    "en": "This helps the earth get enough light and heat from the sun."
+  },
+  {
+    "id": 539,
+    "unit": "Unit 11",
+    "zh": "地球很大，它能在其周围保持合适类型的空气。",
+    "en": "The earth is large, and it can hold the right type of air around it."
+  },
+  {
+    "id": 540,
+    "unit": "Unit 11",
+    "zh": "此外，地球表面有大量的水以及一些干燥的陆地。",
+    "en": "Besides, there is plenty of water as well as some dry land on the surface of the earth."
+  },
+  {
+    "id": 541,
+    "unit": "Unit 11",
+    "zh": "有了水和陆地，人们就可以在地球上生活并种植食物。",
+    "en": "With water and land, people can live and grow food on the earth."
+  },
+  {
+    "id": 542,
+    "unit": "Unit 11",
+    "zh": "当你夜晚仰望天空时，你能看到许多星星。",
+    "en": "When you look up at the sky at night, you can see many stars."
+  },
+  {
+    "id": 543,
+    "unit": "Unit 11",
+    "zh": "但你知道太阳也是一颗恒星吗？",
+    "en": "But do you know the Sun is a star too?"
+  },
+  {
+    "id": 544,
+    "unit": "Unit 11",
+    "zh": "是的，它是太阳系中唯一的一颗恒星。",
+    "en": "Yes, it is the only one in the solar system."
+  },
+  {
+    "id": 545,
+    "unit": "Unit 11",
+    "zh": "作为一颗恒星，太阳有八颗行星围绕它运行，地球是其中之一。",
+    "en": "As a star, the Sun has eight planets around it, and Earth is one of them."
+  },
+  {
+    "id": 546,
+    "unit": "Unit 11",
+    "zh": "在这八颗行星中，地球是一颗中等大小的行星，直径约为13,000公里。",
+    "en": "Among the eight planets, Earth is a middle-sized one, with a diameter of around 13,000 kilometers."
+  },
+  {
+    "id": 547,
+    "unit": "Unit 11",
+    "zh": "其中三颗行星比地球小。",
+    "en": "Three of the planets are smaller than Earth."
+  },
+  {
+    "id": 548,
+    "unit": "Unit 11",
+    "zh": "它们是水星、金星和火星。",
+    "en": "They are Mercury, Venus and Mars."
+  },
+  {
+    "id": 549,
+    "unit": "Unit 11",
+    "zh": "另外四颗行星更大。",
+    "en": "The other four planets are larger."
+  },
+  {
+    "id": 550,
+    "unit": "Unit 11",
+    "zh": "它们是木星、土星、天王星和海王星。",
+    "en": "They are Jupiter, Saturn, Uranus and Neptune."
+  },
+  {
+    "id": 551,
+    "unit": "Unit 12",
+    "zh": "在太阳系中，木星是最大的行星，直径约为140,000公里。",
+    "en": "In the solar system, Jupiter is the largest planet, with a diameter of about 140,000 kilometers."
+  },
+  {
+    "id": 552,
+    "unit": "Unit 12",
+    "zh": "水星是离太阳最近的行星，距离约为5800万公里，而海王星是最远的，距离约为45亿公里。",
+    "en": "Mercury is the closest planet to the Sun, at a distance of about 58 million kilometers, while Neptune is the farthest, at a distance of about 4.5 billion kilometers."
+  },
+  {
+    "id": 553,
+    "unit": "Unit 12",
+    "zh": "至于地球，它是第三近的，比火星近但比金星远。",
+    "en": "As for Earth, it is the third closest, closer than Mars but farther than Venus."
+  },
+  {
+    "id": 554,
+    "unit": "Unit 12",
+    "zh": "水星和金星比地球热得多，而木星、天王星和海王星则冷得多。",
+    "en": "Mercury and Venus are much hotter than Earth, while Jupiter, Uranus and Neptune are much colder."
+  },
+  {
+    "id": 555,
+    "unit": "Unit 12",
+    "zh": "例如，海王星上的温度约为零下200℃。",
+    "en": "For example, the temperature on Neptune is around minus 200℃."
+  },
+  {
+    "id": 556,
+    "unit": "Unit 12",
+    "zh": "没有生物能在这些行星上生存。",
+    "en": "No living things can survive on these planets."
+  },
+  {
+    "id": 557,
+    "unit": "Unit 12",
+    "zh": "作为我们的家园，地球充满生机，因为它既不太热也不太冷。",
+    "en": "As our home, Earth is alive with life because it is neither too hot nor too cold."
+  },
+  {
+    "id": 558,
+    "unit": "Unit 12",
+    "zh": "火星在大小和温度上与地球更相似。",
+    "en": "Mars is more similar to Earth in size and temperature."
+  },
+  {
+    "id": 559,
+    "unit": "Unit 12",
+    "zh": "而且那里还有冰！",
+    "en": "And there’s also ice there!"
+  },
+  {
+    "id": 560,
+    "unit": "Unit 12",
+    "zh": "因此科学家们正在火星上寻找生命。",
+    "en": "So scientists are looking for life on Mars."
+  },
+  {
+    "id": 561,
+    "unit": "Unit 12",
+    "zh": "除了这八颗行星，还有许多其他较小的行星。",
+    "en": "Besides the eight planets, there are many other smaller ones."
+  },
+  {
+    "id": 562,
+    "unit": "Unit 12",
+    "zh": "它们共同构成了奇妙的太阳系。",
+    "en": "Together, they make up the amazing solar system."
+  },
+  {
+    "id": 563,
+    "unit": "Unit 12",
+    "zh": "金星和水星是离太阳最近的两颗行星。",
+    "en": "Venus and Mercury are two of the closest planets to the Sun."
+  },
+  {
+    "id": 564,
+    "unit": "Unit 12",
+    "zh": "由于它离太阳近且体积小，水星在地球上很难被我们看到。",
+    "en": "Because of its closeness to the Sun and its smallness in size, Mercury is difficult for us to see on Earth."
+  },
+  {
+    "id": 565,
+    "unit": "Unit 12",
+    "zh": "另一方面，金星以其明亮和美丽而闻名。",
+    "en": "Venus, on the other hand, is known for its brightness and it’s beautiful."
+  },
+  {
+    "id": 566,
+    "unit": "Unit 12",
+    "zh": "人们可以在夜晚的地球上看到它。",
+    "en": "People can see it at night on Earth."
+  },
+  {
+    "id": 567,
+    "unit": "Unit 12",
+    "zh": "金星是最热的行星，而水星的表面温度在夜间可降至-173℃。",
+    "en": "Venus is the hottest planet while the surface temperature on Mercury can drop down to -173 ℃ at night."
+  },
+  {
+    "id": 568,
+    "unit": "Unit 12",
+    "zh": "它的寒冷是由于其稀薄的空气。",
+    "en": "Its coldness is due to its thin air."
+  },
+  {
+    "id": 569,
+    "unit": "Unit 12",
+    "zh": "细心和责任心在科学探索中扮演重要角色。",
+    "en": "Carefulness and responsibility play an important role in scientific exploration."
+  },
+  {
+    "id": 570,
+    "unit": "Unit 12",
+    "zh": "身心的健康对于科学家在太空生活和工作至关重要。",
+    "en": "Fitness of the body and mind is of key importance for scientists to live and work in space."
+  },
+  {
+    "id": 571,
+    "unit": "Unit 12",
+    "zh": "恒星的亮度与其大小有关。",
+    "en": "The brightness of a star is related to its size."
+  },
+  {
+    "id": 572,
+    "unit": "Unit 12",
+    "zh": "水星比地球小，而且它比地球离太阳更近。",
+    "en": "Mercury is smaller than Earth and it is closer to the Sun than Earth."
+  },
+  {
+    "id": 573,
+    "unit": "Unit 12",
+    "zh": "是的，所以它也比地球热得多。",
+    "en": "Yes, so it’s also much hotter than Earth."
+  },
+  {
+    "id": 574,
+    "unit": "Unit 12",
+    "zh": "是的，我知道！它是离太阳最近的行星。",
+    "en": "Yes, I know that! It is the closest planet to the Sun."
+  },
+  {
+    "id": 575,
+    "unit": "Unit 12",
+    "zh": "水星和地球有什么不同？",
+    "en": "What are the differences between Mercury and Earth?"
+  },
+  {
+    "id": 576,
+    "unit": "Unit 12",
+    "zh": "火星比地球小。",
+    "en": "Mars is smaller than Earth."
+  },
+  {
+    "id": 577,
+    "unit": "Unit 12",
+    "zh": "它的直径约为6800公里，而地球的直径约为13000公里。",
+    "en": "It has a diameter of around 6,800 kilometers and Earth’s diameter is around 13,000 kilometers."
+  },
+  {
+    "id": 578,
+    "unit": "Unit 12",
+    "zh": "火星因其红色的土壤而看起来是红色的，而地球的大部分地区因其海洋而看起来是蓝色的。",
+    "en": "Mars looks red because of its red soil, while most parts of Earth look blue because of its oceans."
+  },
+  {
+    "id": 579,
+    "unit": "Unit 12",
+    "zh": "作为邻近的行星，火星比地球离太阳更远。",
+    "en": "As a neighbor planet, Mars is farther from the Sun than Earth."
+  },
+  {
+    "id": 580,
+    "unit": "Unit 12",
+    "zh": "火星距离太阳约2.28亿公里，而地球距离太阳约1.5亿公里。",
+    "en": "Mars is about 228 million kilometers away from the Sun, while Earth is about 150 million kilometers away."
+  },
+  {
+    "id": 581,
+    "unit": "Unit 12",
+    "zh": "这就是火星比地球冷的原因。",
+    "en": "That is why Mars is colder than Earth."
+  },
+  {
+    "id": 582,
+    "unit": "Unit 12",
+    "zh": "火星上的温度约为零下63摄氏度；而在地球上，平均温度约为14摄氏度。",
+    "en": "The temperature on Mars is about minus 63℃; here on Earth, the temperature is about 14℃ on average."
+  },
+  {
+    "id": 583,
+    "unit": "Unit 12",
+    "zh": "尽管这两颗行星有许多不同之处，但它们有一个共同点——水。",
+    "en": "Although the two planets have many differences, they have something in common—water."
+  },
+  {
+    "id": 584,
+    "unit": "Unit 12",
+    "zh": "在火星上，地下有大量的冰；在地球上，我们在地表和地下都有水。",
+    "en": "On Mars, there’s a lot of ice under the ground; On Earth, we have water both on and under the ground."
+  },
+  {
+    "id": 585,
+    "unit": "Unit 12",
+    "zh": "火星等待着我们去探索，宇宙也是如此。",
+    "en": "Mars is waiting for us to explore, and so is the universe."
+  },
+  {
+    "id": 586,
+    "unit": "Unit 12",
+    "zh": "黑洞位于银河系的中心。",
+    "en": "A black hole is at the center of the Milky Way."
+  },
+  {
+    "id": 587,
+    "unit": "Unit 12",
+    "zh": "它是宇宙中最奇怪和最令人惊奇的事物之一。",
+    "en": "It is one of the strangest and most amazing things in the universe."
+  },
+  {
+    "id": 588,
+    "unit": "Unit 12",
+    "zh": "黑洞周围的任何东西都无法逃脱，甚至连光也不行。",
+    "en": "Nothing around a black hole can run away, not even light."
+  },
+  {
+    "id": 589,
+    "unit": "Unit 12",
+    "zh": "彗星是太阳系的成员。",
+    "en": "Comets are members of the solar system."
+  },
+  {
+    "id": 590,
+    "unit": "Unit 12",
+    "zh": "它们看起来像围绕太阳运行的雪球。",
+    "en": "They look like snowballs traveling around the sun."
+  },
+  {
+    "id": 591,
+    "unit": "Unit 12",
+    "zh": "当彗星靠近太阳时，它们会变得热得多，并在身后留下冰和岩石的碎片。",
+    "en": "When comets are getting close to the sun, they will become much hotter and leave pieces of ice and rocks behind them."
+  },
+  {
+    "id": 592,
+    "unit": "Unit 12",
+    "zh": "这被称为彗星的尾巴。",
+    "en": "It is called a comet’s tail."
+  },
+  {
+    "id": 593,
+    "unit": "Unit 12",
+    "zh": "冥王星是一颗特殊的行星。",
+    "en": "Pluto is a special planet."
+  },
+  {
+    "id": 594,
+    "unit": "Unit 12",
+    "zh": "它围绕太阳运行。",
+    "en": "It travels around the Sun."
+  },
+  {
+    "id": 595,
+    "unit": "Unit 12",
+    "zh": "冥王星绕太阳一周大约需要248个地球年。",
+    "en": "It takes Pluto about 248 Earth years to go around the Sun."
+  },
+  {
+    "id": 596,
+    "unit": "Unit 12",
+    "zh": "克莱德·汤博于1930年发现了冥王星。",
+    "en": "Clyde Tombaugh discovered Pluto in 1930."
+  },
+  {
+    "id": 597,
+    "unit": "Unit 12",
+    "zh": "冥王星与太阳的距离大约是地球的40倍。",
+    "en": "Pluto is about 40 times farther from the Sun than Earth."
+  },
+  {
+    "id": 598,
+    "unit": "Unit 12",
+    "zh": "它有五颗小卫星。",
+    "en": "It has five small satellites (moons)."
+  },
+  {
+    "id": 599,
+    "unit": "Unit 12",
+    "zh": "为了更好地观察这颗行星及其卫星，科学家们派遣了一艘宇宙飞船近距离飞越它。",
+    "en": "To have a better look at the planet and its satellites, scientists sent a spaceship to fly close to it."
+  },
+  {
+    "id": 600,
+    "unit": "Unit 12",
+    "zh": "飞船拍摄了许多照片。",
+    "en": "The spaceship took many pictures."
+  },
+  {
+    "id": 601,
+    "unit": "Unit 13",
+    "zh": "科学家们将这些照片拼接在一起，对冥王星有了更多了解。",
+    "en": "Scientists put the pictures together and learned more about Pluto."
+  },
+  {
+    "id": 602,
+    "unit": "Unit 13",
+    "zh": "这颗行星上没有空气。",
+    "en": "There is no air on the planet."
+  },
+  {
+    "id": 603,
+    "unit": "Unit 13",
+    "zh": "行星上非常寒冷，空气会冻结成类似雪的东西。",
+    "en": "It is so cold on the planet that air would freeze into something like snow."
+  },
+  {
+    "id": 604,
+    "unit": "Unit 13",
+    "zh": "没有空气，人类无法在这颗行星上生存。",
+    "en": "Without air, human beings can’t live on the planet."
+  },
+  {
+    "id": 605,
+    "unit": "Unit 13",
+    "zh": "昨天你不能来，真遗憾！",
+    "en": "What a pity that you couldn’t come here yesterday!"
+  },
+  {
+    "id": 606,
+    "unit": "Unit 13",
+    "zh": "真遗憾，她没有早点告诉我。",
+    "en": "What a pity that she didn’t tell me earlier."
+  },
+  {
+    "id": 607,
+    "unit": "Unit 13",
+    "zh": "你不能再多待些时间，真是遗憾。",
+    "en": "It’s a pity that you can’t stay longer."
+  },
+  {
+    "id": 608,
+    "unit": "Unit 13",
+    "zh": "小提琴和二胡属于弦乐器，鼓属于打击乐器。",
+    "en": "The violin and erhu belong to the string instruments and the drum belongs to the beat instruments."
+  },
+  {
+    "id": 609,
+    "unit": "Unit 13",
+    "zh": "这本书是我哥哥的。",
+    "en": "This book belongs to my brother."
+  },
+  {
+    "id": 610,
+    "unit": "Unit 13",
+    "zh": "狮子属于猫科。",
+    "en": "Lions belong to the cat family."
+  },
+  {
+    "id": 611,
+    "unit": "Unit 13",
+    "zh": "它（音乐）可以帮助我们说出心里话，并且让我们心灵相通。",
+    "en": "It can help us speak our minds and allow us to communicate heart to heart."
+  },
+  {
+    "id": 612,
+    "unit": "Unit 13",
+    "zh": "他的父母不会允许他在外待到很晚。",
+    "en": "His parents won’t allow him to stay out late."
+  },
+  {
+    "id": 613,
+    "unit": "Unit 13",
+    "zh": "梅（兰芳）年轻的时候很难记住京剧的台词。",
+    "en": "When Mei was young, he had great difficulty in remembering the lines of Beijing opera."
+  },
+  {
+    "id": 614,
+    "unit": "Unit 13",
+    "zh": "当我学习英语有困难时，我就会向我的老师求助。",
+    "en": "When I have difficulty (in) learning English, I will ask my teacher for help."
+  },
+  {
+    "id": 615,
+    "unit": "Unit 13",
+    "zh": "河上有一座大桥。",
+    "en": "There is a great bridge over the river."
+  },
+  {
+    "id": 616,
+    "unit": "Unit 13",
+    "zh": "有一盏灯吊在桌子上方。",
+    "en": "There is a lamp hanging over the table."
+  },
+  {
+    "id": 617,
+    "unit": "Unit 13",
+    "zh": "他们给她撑起一把大伞。",
+    "en": "They held a large umbrella over her."
+  },
+  {
+    "id": 618,
+    "unit": "Unit 13",
+    "zh": "每种颜色代表一种不同的角色。",
+    "en": "Each color stands for a different type of character."
+  },
+  {
+    "id": 619,
+    "unit": "Unit 13",
+    "zh": "EU 代表什么？",
+    "en": "What does EU stand for?"
+  },
+  {
+    "id": 620,
+    "unit": "Unit 13",
+    "zh": "它代表欧盟。",
+    "en": "It stands for the European Union."
+  },
+  {
+    "id": 621,
+    "unit": "Unit 13",
+    "zh": "每种角色都以自己的方式扮演。",
+    "en": "Each plays its part in its own way."
+  },
+  {
+    "id": 622,
+    "unit": "Unit 13",
+    "zh": "我量了一下体温，我发烧了。",
+    "en": "I just took my temperature. I have a fever."
+  },
+  {
+    "id": 623,
+    "unit": "Unit 13",
+    "zh": "听到这个消息我很难过。",
+    "en": "I’m sorry to hear that."
+  },
+  {
+    "id": 624,
+    "unit": "Unit 13",
+    "zh": "你需要休息并服些药。",
+    "en": "You need to take a rest and take some pills."
+  },
+  {
+    "id": 625,
+    "unit": "Unit 13",
+    "zh": "我通常吃一个三明治，喝一杯牛奶。",
+    "en": "I usually have a sandwich and a glass of milk."
+  },
+  {
+    "id": 626,
+    "unit": "Unit 13",
+    "zh": "服太多药对你身体不好。",
+    "en": "It’s bad for you to take too much medicine."
+  },
+  {
+    "id": 627,
+    "unit": "Unit 13",
+    "zh": "在做运动时，她们都需要注意自己的安全。",
+    "en": "When doing sports, they both need to take care of their safety."
+  },
+  {
+    "id": 628,
+    "unit": "Unit 13",
+    "zh": "首先（一方面），它有助于强身健体。",
+    "en": "For one thing, it can help build a strong body."
+  },
+  {
+    "id": 629,
+    "unit": "Unit 13",
+    "zh": "在我看来，保持积极的态度有令人惊奇的好处。",
+    "en": "In my opinion, staying positive has amazing benefits."
+  },
+  {
+    "id": 630,
+    "unit": "Unit 13",
+    "zh": "嗨，梅梅。我很高兴能看到你的帖子。",
+    "en": "Hi, Meimei. I am glad to come across your post."
+  },
+  {
+    "id": 631,
+    "unit": "Unit 13",
+    "zh": "最后，如果我们确实心情不佳，我们可以把这些坏心情写下来。",
+    "en": "Finally, if we do have bad feelings, we can write them down."
+  },
+  {
+    "id": 632,
+    "unit": "Unit 13",
+    "zh": "跟我们自己交谈是一种度过艰难时光的有效方法。",
+    "en": "Talking to ourselves is a useful way to get through difficult moments."
+  },
+  {
+    "id": 633,
+    "unit": "Unit 13",
+    "zh": "你为什么看起来很沮丧？",
+    "en": "Why do you look upset?"
+  },
+  {
+    "id": 634,
+    "unit": "Unit 13",
+    "zh": "我对明天的演讲感到紧张。",
+    "en": "I’m feeling nervous about tomorrow’s speech."
+  },
+  {
+    "id": 635,
+    "unit": "Unit 13",
+    "zh": "月有阴晴圆缺。",
+    "en": "The moon can’t always be full."
+  },
+  {
+    "id": 636,
+    "unit": "Unit 13",
+    "zh": "可能是李红吗？",
+    "en": "Could it be Li Hong?"
+  },
+  {
+    "id": 637,
+    "unit": "Unit 13",
+    "zh": "他可能会及时赶到那里。",
+    "en": "He might get there in time."
+  },
+  {
+    "id": 638,
+    "unit": "Unit 13",
+    "zh": "你可以用我的笔。",
+    "en": "You may use my pen."
+  },
+  {
+    "id": 639,
+    "unit": "Unit 13",
+    "zh": "我可以用你的电话吗？",
+    "en": "Might I use your phone?"
+  },
+  {
+    "id": 640,
+    "unit": "Unit 13",
+    "zh": "我可以坐在你旁边吗？",
+    "en": "Can I sit beside you?"
+  },
+  {
+    "id": 641,
+    "unit": "Unit 13",
+    "zh": "我可以借用一下你的笔吗？",
+    "en": "May I use your pen?"
+  },
+  {
+    "id": 642,
+    "unit": "Unit 13",
+    "zh": "你能帮我一个忙吗？",
+    "en": "Could you give me a hand?"
+  },
+  {
+    "id": 643,
+    "unit": "Unit 13",
+    "zh": "我可以要你的电子邮箱地址吗？",
+    "en": "Might I have your email address?"
+  },
+  {
+    "id": 644,
+    "unit": "Unit 13",
+    "zh": "你必须照顾你的父母。",
+    "en": "You must take care of your parents."
+  },
+  {
+    "id": 645,
+    "unit": "Unit 13",
+    "zh": "这封信一定是她笔友寄来的。",
+    "en": "The letter must be from her pen pal."
+  },
+  {
+    "id": 646,
+    "unit": "Unit 13",
+    "zh": "你应该多锻炼。",
+    "en": "You must do more exercise."
+  },
+  {
+    "id": 647,
+    "unit": "Unit 13",
+    "zh": "不许在路上玩耍。",
+    "en": "You must not play on the road."
+  },
+  {
+    "id": 648,
+    "unit": "Unit 13",
+    "zh": "我们得一直让窗户开着吗？",
+    "en": "Must we keep the windows open all the time?"
+  },
+  {
+    "id": 649,
+    "unit": "Unit 13",
+    "zh": "她没赶上公共汽车，只好步行回家。",
+    "en": "She missed the bus and had to walk home."
+  },
+  {
+    "id": 650,
+    "unit": "Unit 13",
+    "zh": "那时我只好借些钱。",
+    "en": "I had to borrow some money at that time."
+  },
+  {
+    "id": 651,
+    "unit": "Unit 14",
+    "zh": "你能告诉我去哪儿买围巾吗？",
+    "en": "Could you tell me where to buy a scarf?"
+  },
+  {
+    "id": 652,
+    "unit": "Unit 14",
+    "zh": "我不知道如何消除这些坏情绪。",
+    "en": "I don’t know how to remove these bad feelings."
+  },
+  {
+    "id": 653,
+    "unit": "Unit 14",
+    "zh": "这个房间比那个大。",
+    "en": "This room is bigger than that one."
+  },
+  {
+    "id": 654,
+    "unit": "Unit 14",
+    "zh": "兔子是它们中最小的。",
+    "en": "The rabbit is the smallest of them."
+  },
+  {
+    "id": 655,
+    "unit": "Unit 14",
+    "zh": "猫比其他动物更可爱。",
+    "en": "Cats are more lovely than other animals."
+  },
+  {
+    "id": 656,
+    "unit": "Unit 14",
+    "zh": "这篇文章不如那篇文章难。",
+    "en": "This article is less difficult than that one."
+  },
+  {
+    "id": 657,
+    "unit": "Unit 14",
+    "zh": "中国长城是世界上最伟大的奇观之一。",
+    "en": "The Great Wall of China is one of the greatest wonders in the world."
+  },
+  {
+    "id": 658,
+    "unit": "Unit 14",
+    "zh": "我认为玫瑰花在所有的花中是最漂亮的。",
+    "en": "I think roses are the most beautiful of all the flowers."
+  },
+  {
+    "id": 659,
+    "unit": "Unit 14",
+    "zh": "她是她们当中年纪最大的。",
+    "en": "She was the eldest among them."
+  },
+  {
+    "id": 660,
+    "unit": "Unit 14",
+    "zh": "他是班上年龄最小的（学生）。",
+    "en": "He is the youngest in the class."
+  },
+  {
+    "id": 661,
+    "unit": "Unit 14",
+    "zh": "在中国，长江比其他河流都长。",
+    "en": "The Changjiang River is longer than the other rivers in China."
+  },
+  {
+    "id": 662,
+    "unit": "Unit 14",
+    "zh": "长江是中国最长的河流。",
+    "en": "The Changjiang River is the longest river in China."
+  },
+  {
+    "id": 663,
+    "unit": "Unit 14",
+    "zh": "他比班上其他学生都高。",
+    "en": "He is taller than any other student in his class."
+  },
+  {
+    "id": 664,
+    "unit": "Unit 14",
+    "zh": "上海比湖北任何一个城市都大。",
+    "en": "Shanghai is larger than any city in Hubei."
+  },
+  {
+    "id": 665,
+    "unit": "Unit 14",
+    "zh": "铅笔、画笔、纸和橡皮是我的工具。",
+    "en": "Pencils, brushes, paper and erasers are my tools."
+  },
+  {
+    "id": 666,
+    "unit": "Unit 14",
+    "zh": "我在公园、河边或其他地方画画。",
+    "en": "I draw or paint in the park, by the river or at other places."
+  },
+  {
+    "id": 667,
+    "unit": "Unit 14",
+    "zh": "哦，你是一位艺术家。",
+    "en": "Oh, you are an artist."
+  },
+  {
+    "id": 668,
+    "unit": "Unit 14",
+    "zh": "我和演员、女演员以及其他艺术家一起工作。",
+    "en": "I work with actors, actresses and other artists."
+  },
+  {
+    "id": 669,
+    "unit": "Unit 14",
+    "zh": "我给他们指导。",
+    "en": "I give directions to them."
+  },
+  {
+    "id": 670,
+    "unit": "Unit 14",
+    "zh": "我和他们一起制作电影。",
+    "en": "Together with them, I produce films."
+  },
+  {
+    "id": 671,
+    "unit": "Unit 14",
+    "zh": "我相信你是一位导演。",
+    "en": "I believe you are a director."
+  },
+  {
+    "id": 672,
+    "unit": "Unit 14",
+    "zh": "我梦想的工作是成为一名飞行员。",
+    "en": "My dream job is to be a pilot."
+  },
+  {
+    "id": 673,
+    "unit": "Unit 14",
+    "zh": "我可以去很多地方，也许是世界上的任何地方。",
+    "en": "I can go to so many places, maybe anywhere in the world."
+  },
+  {
+    "id": 674,
+    "unit": "Unit 14",
+    "zh": "但是，我知道，这并不容易。",
+    "en": "But, I know, it is not easy."
+  },
+  {
+    "id": 675,
+    "unit": "Unit 14",
+    "zh": "我要努力学习并且每天锻炼。",
+    "en": "I’m going to study hard and exercise every day."
+  },
+  {
+    "id": 676,
+    "unit": "Unit 14",
+    "zh": "我想成为一名动物园管理员，因为我喜欢动物。",
+    "en": "I want to be a zookeeper because I love animals."
+  },
+  {
+    "id": 677,
+    "unit": "Unit 14",
+    "zh": "我将学习照顾它们，并努力成为它们最好的朋友。",
+    "en": "I’ll learn to take care of them and try to be their best friend."
+  },
+  {
+    "id": 678,
+    "unit": "Unit 14",
+    "zh": "几年前我想成为一名宇航员，因为我梦想有一天能在太空旅行。",
+    "en": "I wanted to be a taikonaut a few years ago because I dreamed of traveling in space one day."
+  },
+  {
+    "id": 679,
+    "unit": "Unit 14",
+    "zh": "但现在我想成为一名医生。",
+    "en": "But now I want to be a doctor."
+  },
+  {
+    "id": 680,
+    "unit": "Unit 14",
+    "zh": "医生可以帮助生病的人。",
+    "en": "Doctors can help sick people."
+  },
+  {
+    "id": 681,
+    "unit": "Unit 14",
+    "zh": "我将去医学院学习，并努力实现我的梦想。",
+    "en": "I will go to a medical school and try to achieve my dream."
+  },
+  {
+    "id": 682,
+    "unit": "Unit 14",
+    "zh": "欢迎来到《我的工作》访谈节目。",
+    "en": "Welcome to My Job talk show."
+  },
+  {
+    "id": 683,
+    "unit": "Unit 14",
+    "zh": "谢谢你的邀请。",
+    "en": "Thank you for inviting me."
+  },
+  {
+    "id": 684,
+    "unit": "Unit 14",
+    "zh": "你为什么想成为一名牙医？",
+    "en": "Why do you want to be a dentist?"
+  },
+  {
+    "id": 685,
+    "unit": "Unit 14",
+    "zh": "嗯，我想帮助人们解决牙齿问题。",
+    "en": "Well, I want to help people with their teeth."
+  },
+  {
+    "id": 686,
+    "unit": "Unit 14",
+    "zh": "那么，你是怎么得到这份工作的？",
+    "en": "Then, how did you get your job?"
+  },
+  {
+    "id": 687,
+    "unit": "Unit 14",
+    "zh": "我上了一所医学院。",
+    "en": "I went to a medical school."
+  },
+  {
+    "id": 688,
+    "unit": "Unit 14",
+    "zh": "我非常努力地学习，并且在所有考试中都取得了好成绩。",
+    "en": "I worked very hard and did well in all my exams."
+  },
+  {
+    "id": 689,
+    "unit": "Unit 14",
+    "zh": "太棒了。你对你的工作有什么计划吗？",
+    "en": "That’s great. Do you have any plans for your job?"
+  },
+  {
+    "id": 690,
+    "unit": "Unit 14",
+    "zh": "嗯，我需要获得更多经验，所以我会多练习。另外，我还想多学习。",
+    "en": "Well, I need to get more experience, so I will practice more. Also, I want to study more."
+  },
+  {
+    "id": 691,
+    "unit": "Unit 14",
+    "zh": "希望你在工作中表现出色，帮助更多的人。谢谢你今天来到这里。",
+    "en": "Hope you do well in your job and help more people. Thank you for being here today."
+  },
+  {
+    "id": 692,
+    "unit": "Unit 14",
+    "zh": "欢迎来到北京艺术博物馆！你喜欢中国建筑吗？",
+    "en": "Welcome to Beijing Art Museum! Do you like Chinese buildings?"
+  },
+  {
+    "id": 693,
+    "unit": "Unit 14",
+    "zh": "看看这座博物馆。它是一座古老的中国建筑。",
+    "en": "Look at this museum. It is an ancient Chinese building."
+  },
+  {
+    "id": 694,
+    "unit": "Unit 14",
+    "zh": "这座建筑本身就是一件伟大的艺术品。",
+    "en": "This building itself is a great artwork."
+  },
+  {
+    "id": 695,
+    "unit": "Unit 14",
+    "zh": "我们在这里可以看到书法作品、摄影作品、绘画以及许多其他东西。",
+    "en": "We can see calligraphy works, photography works, paintings and many others here."
+  },
+  {
+    "id": 696,
+    "unit": "Unit 14",
+    "zh": "今天还有一个关于古钱的展览。",
+    "en": "There is also a show on ancient money today."
+  },
+  {
+    "id": 697,
+    "unit": "Unit 14",
+    "zh": "请跟我来。我带你们四处看看。",
+    "en": "Follow me, please. I will show you around."
+  },
+  {
+    "id": 698,
+    "unit": "Unit 14",
+    "zh": "嘿，康康。你对中国剪纸了解吗？",
+    "en": "Hey, Kangkang. Do you know anything about Chinese paper-cut?"
+  },
+  {
+    "id": 699,
+    "unit": "Unit 14",
+    "zh": "是的，它是一种非常受欢迎的中国民间艺术。它已有1500多年的历史了。",
+    "en": "Yes, it’s a very popular Chinese folk art. It has a history of over 1500 years."
+  },
+  {
+    "id": 700,
+    "unit": "Unit 14",
+    "zh": "哇！你知道怎么做剪纸吗？",
+    "en": "Wow! Do you know how to make a paper-cut?"
+  },
+  {
+    "id": 701,
+    "unit": "Unit 15",
+    "zh": "知道，我们折一张纸，然后用剪刀剪出不同的形状。",
+    "en": "Yes, we fold a piece of paper and then use a pair of scissors to cut out different shapes."
+  },
+  {
+    "id": 702,
+    "unit": "Unit 15",
+    "zh": "听起来很有趣！你喜欢做什么样的剪纸？",
+    "en": "That sounds interesting! What kind of paper-cuts do you like to make?"
+  },
+  {
+    "id": 703,
+    "unit": "Unit 15",
+    "zh": "我喜欢做动物。但我奶奶喜欢剪花。",
+    "en": "I like to make animals. But my grandma likes cutting flowers."
+  },
+  {
+    "id": 704,
+    "unit": "Unit 15",
+    "zh": "你们为什么做剪纸呢？",
+    "en": "Why do you make paper-cuts?"
+  },
+  {
+    "id": 705,
+    "unit": "Unit 15",
+    "zh": "嗯，剪纸表达了我们的愿望和希望。",
+    "en": "Well, paper-cuts express our wishes and hopes."
+  },
+  {
+    "id": 706,
+    "unit": "Unit 15",
+    "zh": "我们还会剪汉字“福”，并把它倒着贴在门上。",
+    "en": "We also make the Chinese character “Fu” and put it upside down on the door."
+  },
+  {
+    "id": 707,
+    "unit": "Unit 15",
+    "zh": "它是好运的象征。",
+    "en": "It is a symbol of good luck."
+  },
+  {
+    "id": 708,
+    "unit": "Unit 15",
+    "zh": "太棒了！你能教我怎么做剪纸吗？",
+    "en": "How wonderful! Can you teach me how to do paper-cuts?"
+  },
+  {
+    "id": 709,
+    "unit": "Unit 15",
+    "zh": "嗨，李响。你觉得艺术怎么样？",
+    "en": "Hi, Li Xiang. What do you think of art?"
+  },
+  {
+    "id": 710,
+    "unit": "Unit 15",
+    "zh": "我认为艺术是我们生活中非常重要的一部分。",
+    "en": "I think art is a very important part of our life."
+  },
+  {
+    "id": 711,
+    "unit": "Unit 15",
+    "zh": "我也这么认为。艺术与我们日常生活中的任何其他事物并无不同。每个人都是艺术家。",
+    "en": "I think so, too. Art isn’t different from any other things in our daily life. Everyone is an artist."
+  },
+  {
+    "id": 712,
+    "unit": "Unit 15",
+    "zh": "是的，我们可以像艺术家一样画画、拍照、制作视频。",
+    "en": "Yes, we can draw pictures, take photos, and make videos like an artist."
+  },
+  {
+    "id": 713,
+    "unit": "Unit 15",
+    "zh": "你说得对。而且，艺术是一种心灵的语言。",
+    "en": "You’re right. Also, art is a kind of language of the heart."
+  },
+  {
+    "id": 714,
+    "unit": "Unit 15",
+    "zh": "有时，艺术比言语更能打动人。",
+    "en": "Sometimes, art can speak better than words."
+  },
+  {
+    "id": 715,
+    "unit": "Unit 15",
+    "zh": "这是正确的。艺术可以讲述故事，记录人类历史，并传承文化。",
+    "en": "That’s correct. Art can tell a story, record human history, and pass on cultures."
+  },
+  {
+    "id": 716,
+    "unit": "Unit 15",
+    "zh": "是的。艺术是一种创造性活动。它可以让我们的大脑保持活跃。",
+    "en": "Yes. Art is a creative activity. It can keep our minds active."
+  },
+  {
+    "id": 717,
+    "unit": "Unit 15",
+    "zh": "我是王俊峰。我玩手机游戏太多了。我总是感觉很累。但我无法控制自己。我该怎么办？",
+    "en": "I’m Wang Junfeng. I play phone games too much. I always feel tired. But I can’t stop myself. What should I do?"
+  },
+  {
+    "id": 718,
+    "unit": "Unit 15",
+    "zh": "你需要远离手机游戏。此外，你需要早点睡觉，多做运动。",
+    "en": "You need to stay away from phone games. Also you need to go to bed early and do more sports."
+  },
+  {
+    "id": 719,
+    "unit": "Unit 15",
+    "zh": "我是小雅。我想变苗条，所以我只吃蔬菜。现在我总是感到饥饿。而且我经常头痛。我该怎么办？",
+    "en": "I’m Xiao Ya. I want to be slim, so I only eat vegetables. Now I always feel hungry. And I often have a headache. What should I do?"
+  },
+  {
+    "id": 720,
+    "unit": "Unit 15",
+    "zh": "你需要一个健康的饮食，并且你应该做一些运动。你不需要为了看起来漂亮而变苗条。",
+    "en": "You need a healthy diet, and you should do some exercise. You don’t need to be slim to look pretty."
+  },
+  {
+    "id": 721,
+    "unit": "Unit 15",
+    "zh": "早上好，同学们。让我们欢迎李博士。今天他将告诉我们一些关于健康食品的事情。",
+    "en": "Good morning, class. Let’s welcome Dr. Li. Today he’s going to tell us something about healthy food."
+  },
+  {
+    "id": 722,
+    "unit": "Unit 15",
+    "zh": "我很高兴和你们在一起。请随时问我关于食物和健康饮食的问题。",
+    "en": "I’m very happy to be with you. Please feel free to ask me about food and healthy diet."
+  },
+  {
+    "id": 723,
+    "unit": "Unit 15",
+    "zh": "李博士，什么食物是健康的？",
+    "en": "Dr. Li, what food is healthy?"
+  },
+  {
+    "id": 724,
+    "unit": "Unit 15",
+    "zh": "水果和蔬菜是健康的。我们需要每天吃它们。",
+    "en": "Fruit and vegetables are healthy. We need to eat them every day."
+  },
+  {
+    "id": 725,
+    "unit": "Unit 15",
+    "zh": "土豆是好蔬菜，但薯片是垃圾食品。",
+    "en": "Potatoes are good vegetables, but potato chips are junk food."
+  },
+  {
+    "id": 726,
+    "unit": "Unit 15",
+    "zh": "我喜欢吃巧克力和糖果。它们是不健康的食物吗？",
+    "en": "I like eating chocolate and candies. Are they unhealthy food?"
+  },
+  {
+    "id": 727,
+    "unit": "Unit 15",
+    "zh": "是的。它们对你的牙齿有害。你应该少吃它们。",
+    "en": "Yes. They are bad for your teeth. You should eat less of them."
+  },
+  {
+    "id": 728,
+    "unit": "Unit 15",
+    "zh": "我早餐通常喝一杯牛奶，吃一些鸡蛋和面包。这样可以吗？",
+    "en": "I usually have a glass of milk, some eggs and bread for breakfast. Is that okay?"
+  },
+  {
+    "id": 729,
+    "unit": "Unit 15",
+    "zh": "那太好了。我们需要多吃这些食物。",
+    "en": "That’s great. We need to eat more of these foods."
+  },
+  {
+    "id": 730,
+    "unit": "Unit 15",
+    "zh": "非常感谢您，李博士。",
+    "en": "Thank you so much, Dr. Li."
+  },
+  {
+    "id": 731,
+    "unit": "Unit 15",
+    "zh": "你好！我是来自中国的珊珊。中国烹饪是一门艺术。不同的食物需要不同的烹饪方法和工具。大多数中国食品是健康的。同时，中国烹饪注重",
+    "en": "Hey there! I’m Shanshan from China. Chinese cooking is an art. Different food needs different cooking methods and tools. Most Chinese foods are healthy. At the same time, Chinese cooking focuses on"
+  },
+  {
+    "id": 732,
+    "unit": "Unit 15",
+    "zh": "在北方，面条很受欢迎，而米饭是南方的主食。",
+    "en": "In the north, noodles are popular while rice is the main food in the south."
+  },
+  {
+    "id": 733,
+    "unit": "Unit 15",
+    "zh": "大家好！我是来自英国的杰夫。",
+    "en": "Hi everyone! Jeff here from the UK."
+  },
+  {
+    "id": 734,
+    "unit": "Unit 15",
+    "zh": "英国烹饪大多简单易做。",
+    "en": "British cooking is mostly simple and easy."
+  },
+  {
+    "id": 735,
+    "unit": "Unit 15",
+    "zh": "我们喜欢简单的餐点，比如三明治、水果和饮料。",
+    "en": "We love easy meals like sandwiches, fruit, and drinks."
+  },
+  {
+    "id": 736,
+    "unit": "Unit 15",
+    "zh": "我们也喜欢有很多肉和蔬菜的菜肴。",
+    "en": "We also enjoy dishes with plenty of meat and vegetables."
+  },
+  {
+    "id": 737,
+    "unit": "Unit 15",
+    "zh": "我们用酱汁让食物味道更好，土豆通常作为主食。",
+    "en": "We use sauces to make foods taste better, and potatoes are often served as the main food."
+  },
+  {
+    "id": 738,
+    "unit": "Unit 15",
+    "zh": "我不能去看望我的祖父母，也不能见我的朋友。",
+    "en": "I can’t visit my grandparents and I can’t see my friends."
+  },
+  {
+    "id": 739,
+    "unit": "Unit 15",
+    "zh": "我读读书、画些画来让自己感觉好一些。",
+    "en": "I do some reading and drawing to help me feel better."
+  },
+  {
+    "id": 740,
+    "unit": "Unit 15",
+    "zh": "你可以试试！",
+    "en": "You can have a try!"
+  },
+  {
+    "id": 741,
+    "unit": "Unit 15",
+    "zh": "今天是唐人街的春节。",
+    "en": "It’s the Spring Festival in Chinatown today."
+  },
+  {
+    "id": 742,
+    "unit": "Unit 15",
+    "zh": "我欣赏了烟花，还从一位店主那里得到了一个红包。",
+    "en": "I enjoyed the fireworks and I got a red packet from a shop keeper."
+  },
+  {
+    "id": 743,
+    "unit": "Unit 15",
+    "zh": "你得到了多少压岁钱？",
+    "en": "How much lucky money did you get?"
+  },
+  {
+    "id": 744,
+    "unit": "Unit 15",
+    "zh": "爸爸，我最喜欢的摇滚乐队下周末将在我们镇上举办一场音乐会。",
+    "en": "Dad, my favorite rock band will hold a concert in our town next weekend."
+  },
+  {
+    "id": 745,
+    "unit": "Unit 15",
+    "zh": "你买到票了吗？",
+    "en": "Did you get the ticket?"
+  },
+  {
+    "id": 746,
+    "unit": "Unit 15",
+    "zh": "没有，但我的朋友詹姆森可以帮我弄一张。",
+    "en": "No, but my friend Jameson can help me to get one."
+  },
+  {
+    "id": 747,
+    "unit": "Unit 15",
+    "zh": "是的，詹姆森在体育场卖热狗。",
+    "en": "Yes, Jameson sells hot dogs at the stadium."
+  },
+  {
+    "id": 748,
+    "unit": "Unit 15",
+    "zh": "我很高兴有他这样的朋友。",
+    "en": "I’m happy to have him as a friend."
+  },
+  {
+    "id": 749,
+    "unit": "Unit 15",
+    "zh": "你今天下午在做什么？",
+    "en": "What were you doing this afternoon?"
+  },
+  {
+    "id": 750,
+    "unit": "Unit 15",
+    "zh": "我只是坐在这里，爸爸。",
+    "en": "I was just sitting here, Dad."
+  },
+  {
+    "id": 751,
+    "unit": "Unit 16",
+    "zh": "詹姆森没有弄到票。",
+    "en": "Jameson didn’t get the tickets."
+  },
+  {
+    "id": 752,
+    "unit": "Unit 16",
+    "zh": "哦……你感到难过吗？",
+    "en": "Oh … Are you feeling upset?"
+  },
+  {
+    "id": 753,
+    "unit": "Unit 16",
+    "zh": "事实上，我十年前看过这个乐队的演出。",
+    "en": "In fact, I saw the band’s show ten years ago."
+  },
+  {
+    "id": 754,
+    "unit": "Unit 16",
+    "zh": "我几乎为之疯狂。",
+    "en": "I was almost crazy about it."
+  },
+  {
+    "id": 755,
+    "unit": "Unit 16",
+    "zh": "是的。我请朋友们帮我买了两张票。詹姆森和你可以去音乐会。",
+    "en": "Yes. I asked my friends to help me buy two tickets. Jameson and you can go to the concert."
+  },
+  {
+    "id": 756,
+    "unit": "Unit 16",
+    "zh": "哇！你是最棒的，爸爸！但是……我想和你一起去。",
+    "en": "Wow! You’re the best, Dad! But … I want to go with you."
+  },
+  {
+    "id": 757,
+    "unit": "Unit 16",
+    "zh": "是的，我大多数朋友的父母甚至不知道这个乐队。我真的很想和你一起拥有这次特别的经历。",
+    "en": "Yes, most parents of my friends don’t even know this band. I really want to have this special experience with you."
+  },
+  {
+    "id": 758,
+    "unit": "Unit 16",
+    "zh": "听到你这么说我很高兴。",
+    "en": "I’m so glad to hear that."
+  },
+  {
+    "id": 759,
+    "unit": "Unit 16",
+    "zh": "妈妈，我穿这条新裙子显胖吗？我打算穿它去小小的生日派对。",
+    "en": "Mom, do I look fat in my new dress? I’m going to wear it to Xiaoxiao’s birthday party."
+  },
+  {
+    "id": 760,
+    "unit": "Unit 16",
+    "zh": "真的吗？我的朋友李红有如此漂亮的长腿。",
+    "en": "Really? My friend Li Hong has such beautiful long legs."
+  },
+  {
+    "id": 761,
+    "unit": "Unit 16",
+    "zh": "美不在于腿或脸。它关乎自信。每个人都是特别的！做你自己，大家都会认为你很美。",
+    "en": "Beauty isn’t about legs or faces. It’s about confidence. Everyone is special! Be yourself and everyone will think you are beautiful."
+  },
+  {
+    "id": 762,
+    "unit": "Unit 16",
+    "zh": "但我不认为我……",
+    "en": "But I don’t think I am …"
+  },
+  {
+    "id": 763,
+    "unit": "Unit 16",
+    "zh": "听着，你数学很好，跑步也很棒。你有自己独特的美。",
+    "en": "Look, you’re good at math and you are a good runner. You are beautiful in your own way."
+  },
+  {
+    "id": 764,
+    "unit": "Unit 16",
+    "zh": "我明白了，妈妈。我会在小小的生日派对上穿这条裙子。",
+    "en": "I get it, mom. I will wear this dress at Xiaoxiao’s birthday party."
+  },
+  {
+    "id": 765,
+    "unit": "Unit 16",
+    "zh": "现在是早上5点。我们正走在北京天安门广场上。它非常大。它南北长880米，东西宽500米。外面又冷又黑，但已经很拥挤了。我们越来越兴奋。升旗仪式将在20分钟后开始。我们迫不及待地想看到国旗升起。",
+    "en": "It’s 5 o’clock in the morning now. We are walking on Tian’anmen Square. It’s so large. It’s 880 meters long from the north to the south and 500 meters wide from the east to the west. It’s cold and dark out here, yet it’s quite crowded already. We are getting excited. The flag raising ceremony is going to begin in 20 minutes. We can’t wait to see the national flag going up."
+  },
+  {
+    "id": 766,
+    "unit": "Unit 16",
+    "zh": "康康，这些年你参观了很多地方。你最喜欢哪个？",
+    "en": "Kangkang, you visited many places these years. What’s your favorite?"
+  },
+  {
+    "id": 767,
+    "unit": "Unit 16",
+    "zh": "那应该是希利尔湖。",
+    "en": "That should be Lake Hillier."
+  },
+  {
+    "id": 768,
+    "unit": "Unit 16",
+    "zh": "它是澳大利亚西部的一个小湖，毗邻印度洋。它因其颜色而闻名。",
+    "en": "It’s a small lake in the west of Australia, next to the Indian Ocean. It’s famous for its color."
+  },
+  {
+    "id": 769,
+    "unit": "Unit 16",
+    "zh": "它是粉红色的。从飞机上看到蓝色的海洋旁边有一个粉红色的湖，我很惊讶。",
+    "en": "It’s pink. I was surprised to see a pink lake next to the blue ocean from the plane."
+  },
+  {
+    "id": 770,
+    "unit": "Unit 16",
+    "zh": "太棒了！你在中国最喜欢的地方是哪里？",
+    "en": "That’s wonderful! What’s your favorite place in China?"
+  },
+  {
+    "id": 771,
+    "unit": "Unit 16",
+    "zh": "阳朔！它位于广西的东北部。",
+    "en": "Yangshuo! It’s in the north-east of Guangxi."
+  },
+  {
+    "id": 772,
+    "unit": "Unit 16",
+    "zh": "特殊的地理环境使它变得美丽。",
+    "en": "The special geography makes it beautiful."
+  },
+  {
+    "id": 773,
+    "unit": "Unit 16",
+    "zh": "我们沿着漓江乘船游览。",
+    "en": "We took boat trips along Lijiang River."
+  },
+  {
+    "id": 774,
+    "unit": "Unit 16",
+    "zh": "我们看到河流两岸有许多形状像动物的山丘。",
+    "en": "We saw many hills in shapes of animals on both sides of the river."
+  },
+  {
+    "id": 775,
+    "unit": "Unit 16",
+    "zh": "哦，那真的很有趣。",
+    "en": "Oh, that’s really a lot of fun."
+  },
+  {
+    "id": 776,
+    "unit": "Unit 16",
+    "zh": "是的，而且那里的食物非常美味。",
+    "en": "Yes, and the food there is very delicious."
+  },
+  {
+    "id": 777,
+    "unit": "Unit 16",
+    "zh": "我已经想去那里参观了。",
+    "en": "I want to visit there already."
+  },
+  {
+    "id": 778,
+    "unit": "Unit 16",
+    "zh": "大家好！我是梅梅。我来自中国。",
+    "en": "Hello, everyone! I’m Meimei. I’m from China."
+  },
+  {
+    "id": 779,
+    "unit": "Unit 16",
+    "zh": "让我告诉你一些关于我们茶文化的事情。",
+    "en": "Let me tell you something about our tea culture."
+  },
+  {
+    "id": 780,
+    "unit": "Unit 16",
+    "zh": "中国是世界上最早种植茶叶的国家之一，中国茶有着几千年的历史。",
+    "en": "China is one of the first countries in the world to plant tea, and Chinese tea has a history of many thousand years."
+  },
+  {
+    "id": 781,
+    "unit": "Unit 16",
+    "zh": "人们主要在南方种植茶叶。",
+    "en": "People mostly plant tea in the south."
+  },
+  {
+    "id": 782,
+    "unit": "Unit 16",
+    "zh": "而且我们可以在一天中的任何时间喝茶，并且有很多选择。",
+    "en": "And we can drink tea at any time of the day and we have many choices to choose from."
+  },
+  {
+    "id": 783,
+    "unit": "Unit 16",
+    "zh": "嗨！我是史蒂夫。我来自英国。",
+    "en": "Hi! I’m Steve. I’m from Britain."
+  },
+  {
+    "id": 784,
+    "unit": "Unit 16",
+    "zh": "让我告诉你关于我们国家的茶。",
+    "en": "Let me tell you about tea in my country."
+  },
+  {
+    "id": 785,
+    "unit": "Unit 16",
+    "zh": "英国的茶文化大约始于1660年。",
+    "en": "The tea culture began around 1660 in the UK."
+  },
+  {
+    "id": 786,
+    "unit": "Unit 16",
+    "zh": "红茶是我们的最爱。",
+    "en": "Black tea is our favorite."
+  },
+  {
+    "id": 787,
+    "unit": "Unit 16",
+    "zh": "我们没有很多茶园。",
+    "en": "We don’t have many tea gardens."
+  },
+  {
+    "id": 788,
+    "unit": "Unit 16",
+    "zh": "我们必须从其他国家购买茶叶。",
+    "en": "We have to buy tea from other countries."
+  },
+  {
+    "id": 789,
+    "unit": "Unit 16",
+    "zh": "我们在下午喝茶并吃一些点心。",
+    "en": "We drink tea with some snacks in the afternoon."
+  },
+  {
+    "id": 790,
+    "unit": "Unit 16",
+    "zh": "它在我们的日常生活中非常重要。",
+    "en": "It’s very important in our daily life."
+  },
+  {
+    "id": 791,
+    "unit": "Unit 16",
+    "zh": "大多数人更喜欢加一些牛奶喝茶。",
+    "en": "Most people prefer to drink tea with some milk."
+  },
+  {
+    "id": 792,
+    "unit": "Unit 16",
+    "zh": "太阳位于太阳系的中心。",
+    "en": "The sun is at the center of the solar system."
+  },
+  {
+    "id": 793,
+    "unit": "Unit 16",
+    "zh": "它大约有45亿年的历史，距离地球1.5亿公里。",
+    "en": "It is about 4.5 billion years old and 150 million kilometers away from the earth."
+  },
+  {
+    "id": 794,
+    "unit": "Unit 16",
+    "zh": "太阳表面的温度约为5526.85摄氏度。",
+    "en": "The temperature at the sun’s surface is about 5526.85 ℃."
+  },
+  {
+    "id": 795,
+    "unit": "Unit 16",
+    "zh": "太阳为地球提供能量、光和热。",
+    "en": "The sun provides energy, light and heat for the earth."
+  },
+  {
+    "id": 796,
+    "unit": "Unit 16",
+    "zh": "根据科学家的说法，大约35亿年后，太阳将比现在亮40%，并且会变得越来越大。",
+    "en": "According to scientists, in about 3.5 billion years from now, the sun will be 40% brighter than it is today, and it will get bigger and bigger."
+  },
+  {
+    "id": 797,
+    "unit": "Unit 16",
+    "zh": "大约45亿年后，太阳将变成一个巨大的红色球体，然后碎裂成小块而消亡。",
+    "en": "In about 4.5 billion years, the sun will turn into a huge red ball and then die by breaking into small pieces."
+  },
+  {
+    "id": 798,
+    "unit": "Unit 16",
+    "zh": "你在木星上过得怎么样？",
+    "en": "How are you doing on Jupiter?"
+  },
+  {
+    "id": 799,
+    "unit": "Unit 16",
+    "zh": "上周我和父母到达了火星。",
+    "en": "I arrived on Mars with my parents last week."
+  },
+  {
+    "id": 800,
+    "unit": "Unit 16",
+    "zh": "这里没有空气，所以我们必须自己制造一些。",
+    "en": "There is no air here, so we have to produce some by ourselves."
+  },
+  {
+    "id": 801,
+    "unit": "Unit 17",
+    "zh": "火星比地球更冷，太阳从东方升起。",
+    "en": "Mars is colder than Earth and the Sun rises from the east."
+  },
+  {
+    "id": 802,
+    "unit": "Unit 17",
+    "zh": "夜空中可以看到两个小月球的奇妙景象。",
+    "en": "There is a wonderful view of two small moons in the sky at night."
+  },
+  {
+    "id": 803,
+    "unit": "Unit 17",
+    "zh": "火星上一天有25个小时。",
+    "en": "There are 25 hours a day on Mars."
+  },
+  {
+    "id": 804,
+    "unit": "Unit 17",
+    "zh": "昨天，我和同学们去了奥林匹斯蒙斯的国家公园。",
+    "en": "Yesterday, I went to the National Park in Olympus Mons with my classmates."
+  },
+  {
+    "id": 805,
+    "unit": "Unit 17",
+    "zh": "它是太阳系中最大的山脉之一。",
+    "en": "It’s one of the largest mountains in the solar system."
+  },
+  {
+    "id": 806,
+    "unit": "Unit 17",
+    "zh": "在火星上，每个人都有一艘小型航天器来出行。",
+    "en": "Everyone has a small spacecraft to get around on Mars."
+  },
+  {
+    "id": 807,
+    "unit": "Unit 17",
+    "zh": "昨晚，我正在设计我自己的航天器。",
+    "en": "Last night, I was designing my own spacecraft."
+  },
+  {
+    "id": 808,
+    "unit": "Unit 17",
+    "zh": "我希望有一天我能探索整个宇宙。",
+    "en": "I hope I can explore the whole universe one day."
+  },
+  {
+    "id": 809,
+    "unit": "Unit 17",
+    "zh": "告诉我一些关于你在木星上的有趣经历。",
+    "en": "Tell me something interesting about your experiences on Jupiter."
+  },
+  {
+    "id": 810,
+    "unit": "Unit 17",
+    "zh": "我期待着尽快收到你的回信。",
+    "en": "I’m looking forward to hearing from you soon."
+  },
+  {
+    "id": 811,
+    "unit": "Unit 17",
+    "zh": "尼古拉·哥白尼于1473年2月19日出生在波兰。",
+    "en": "Nicolaus Copernicus was born in Poland, on February 19th, 1473."
+  },
+  {
+    "id": 812,
+    "unit": "Unit 17",
+    "zh": "哥白尼在波兰学习，后来又在意大利学习。",
+    "en": "Copernicus studied in Poland and later in Italy."
+  },
+  {
+    "id": 813,
+    "unit": "Unit 17",
+    "zh": "他学习了一些科目，然后成为了一名罗马教堂的官员。",
+    "en": "He studied some subjects and then became an officer in a Roman church."
+  },
+  {
+    "id": 814,
+    "unit": "Unit 17",
+    "zh": "在业余时间，哥白尼喜欢观察天空。",
+    "en": "In his spare time, Copernicus liked to watch the sky."
+  },
+  {
+    "id": 815,
+    "unit": "Unit 17",
+    "zh": "他提出了许多关于太阳系的观点。",
+    "en": "He put forward many ideas about the solar system."
+  },
+  {
+    "id": 816,
+    "unit": "Unit 17",
+    "zh": "例如，地球和其他行星围绕太阳运行。",
+    "en": "For example, the earth and other planets travel around the sun."
+  },
+  {
+    "id": 817,
+    "unit": "Unit 17",
+    "zh": "而且地球不是宇宙的中心。",
+    "en": "And the earth is not the center of the universe."
+  },
+  {
+    "id": 818,
+    "unit": "Unit 17",
+    "zh": "当时，人们不相信他。",
+    "en": "At that time, people didn’t believe him."
+  },
+  {
+    "id": 819,
+    "unit": "Unit 17",
+    "zh": "他们认为哥白尼疯了。",
+    "en": "They thought Copernicus was crazy."
+  },
+  {
+    "id": 820,
+    "unit": "Unit 17",
+    "zh": "哥白尼在1543年将他的观点出版在一本书中，但他的书并没有改变人们对宇宙的看法。",
+    "en": "Copernicus published his ideas in a book in 1543, but his book didn’t change people’s view about the universe."
+  },
+  {
+    "id": 821,
+    "unit": "Unit 17",
+    "zh": "然而，直到大约六十年后，科学家们证明了他的观点是正确的。",
+    "en": "However, until about sixty years later, scientists proved his ideas right."
+  }
+]

@@ -1,4 +1,32 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+
+// Play a single word using the dictionaryapi.dev audio first, then TTS fallback
+async function speakWord(word) {
+  if (!word) return
+  try {
+    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    if (res.ok) {
+      const data = await res.json()
+      const audioUrl = data[0]?.phonetics?.find(p => p.audio)?.audio
+      if (audioUrl) {
+        const url = audioUrl.startsWith('http') ? audioUrl : 'https:' + audioUrl
+        const a = new Audio(url)
+        a.play().catch(() => ttsFallback(word))
+        return
+      }
+    }
+  } catch { /* fall through */ }
+  ttsFallback(word)
+}
+
+function ttsFallback(word) {
+  if (!window.speechSynthesis) return
+  window.speechSynthesis.cancel()
+  const u = new SpeechSynthesisUtterance(word)
+  u.lang = 'en-US'
+  u.rate = 0.85
+  window.speechSynthesis.speak(u)
+}
 
 const COLORS = [
   'border-blue-400 text-blue-300',
@@ -100,7 +128,7 @@ function MorphPanel({ sentence, onClose }) {
   return (
     <div className="fixed inset-x-0 bottom-20 z-50 flex justify-center px-4 pb-2" onClick={onClose}>
       <div
-        className="bg-gray-900 border border-gray-700 rounded-2xl p-5 w-full max-w-2xl shadow-2xl"
+        className="bg-slate-800 border border-gray-700 rounded-2xl p-5 w-full max-w-2xl shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
         <div className="text-xs text-gray-500 mb-2 text-center">点击单词查看词法</div>
@@ -173,7 +201,7 @@ export default function DictionaryCard({ sentence, onClose }) {
   return (
     <div className="fixed inset-x-0 bottom-20 z-50 flex justify-center px-4 pb-2" onClick={onClose}>
       <div
-        className="bg-gray-900 border border-gray-700 rounded-2xl p-5 w-full max-w-2xl shadow-2xl"
+        className="bg-slate-800 border border-gray-700 rounded-2xl p-5 w-full max-w-2xl shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
         {/* Words row */}
@@ -184,7 +212,7 @@ export default function DictionaryCard({ sentence, onClose }) {
         </div>
 
         {/* Bottom action row */}
-        <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-800">
+        <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-700">
           <button
             onClick={() => setShowMorph(true)}
             className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"

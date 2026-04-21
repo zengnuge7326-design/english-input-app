@@ -213,7 +213,7 @@ export default function ListeningPractice({ type, onClose }) {
     const pct = Math.round((correct / total) * 100)
     return (
       <div className="w-full max-w-lg mx-auto px-4 py-8">
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 text-center">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 text-center">
           <div className="text-4xl mb-3">{pct >= 80 ? '🎉' : pct >= 60 ? '👍' : '💪'}</div>
           <div className="text-2xl font-bold text-white mb-1">练习完成</div>
           <div className="text-gray-400 text-sm mb-4">{TYPE_LABEL[type]}</div>
@@ -250,7 +250,7 @@ export default function ListeningPractice({ type, onClose }) {
       </div>
 
       {/* 题目 */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-4">
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-4">
         {isOrder
           ? <WordOrderQuestion key={current} q={q} onResult={handleResult} />
           : <ChoiceQuestion key={current} q={q} type={type} onResult={handleResult} />

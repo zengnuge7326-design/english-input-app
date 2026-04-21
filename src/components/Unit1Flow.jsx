@@ -1408,7 +1408,7 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
       <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
 
      { !unlocked ? (
-      <div className="flex flex-col items-center gap-4 py-12 max-w-sm mx-auto bg-gray-900 rounded-3xl border border-gray-800 shadow-xl px-4">
+      <div className="flex flex-col items-center gap-4 py-12 max-w-sm mx-auto bg-slate-800 rounded-3xl border border-slate-700 shadow-xl px-4">
         <div className="text-2xl md:text-3xl font-medium text-white text-center leading-relaxed mb-1" style={{ fontFamily: 'AI Nile, monospace' }}>
           {q.answer}
         </div>
@@ -1713,7 +1713,9 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
     
     // Choose the active bank based on the passed in bookId
     let activeBanks = BANKS_G4_DOWN
-    if (bookId === 'grade4_up') activeBanks = BANKS_G4_UP
+    // 北师大教材：正文数据已接入，同步练习题库尚未单独配置
+    if (typeof bookId === 'string' && bookId.startsWith('bsda_')) activeBanks = {}
+    else if (bookId === 'grade4_up') activeBanks = BANKS_G4_UP
     else if (bookId === 'grade3_up') activeBanks = BANKS_G3_UP
     else if (bookId === 'grade3_down') activeBanks = BANKS_G3_DOWN
     else if (bookId === 'grade5_up') activeBanks = BANKS_G5_UP
@@ -1839,7 +1841,7 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
 
       {/* 题目卡片区（可内部滚动）*/}
       <div className="flex-1 overflow-y-auto px-4 py-3">
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5 max-w-lg mx-auto">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 max-w-lg mx-auto">
           {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} />}
           {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} />}
           {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} />}
@@ -1849,7 +1851,7 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
       </div>
 
       {/* 底部区：结果反馈 + 下一题按钮 */}
-      <div className="shrink-0 px-4 pb-6 pt-2 border-t border-gray-800/60 max-w-lg mx-auto w-full">
+      <div className="shrink-0 px-4 pb-6 pt-2 border-t border-slate-700/60 max-w-lg mx-auto w-full">
         {pendingResult !== null && (
           <div className={`rounded-xl px-4 py-2.5 mb-2.5 text-sm font-medium
             ${pendingResult

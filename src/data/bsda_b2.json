@@ -1,0 +1,5750 @@
+[
+  {
+    "id": 1,
+    "unit": "Unit 1",
+    "zh": "第一次工业革命利用水和蒸汽动力实现了生产机械化。",
+    "en": "The First Industrial Revolution used water and steam power to mechanise production."
+  },
+  {
+    "id": 2,
+    "unit": "Unit 1",
+    "zh": "第二次利用电力创造了大规模生产。",
+    "en": "The Second used electric power to create mass production."
+  },
+  {
+    "id": 3,
+    "unit": "Unit 1",
+    "zh": "第三次利用电子和信息技术实现了生产自动化。",
+    "en": "The Third used electronics and information technology to automate production."
+  },
+  {
+    "id": 4,
+    "unit": "Unit 1",
+    "zh": "互联网正成为明日地球村的城镇广场。",
+    "en": "The Internet is becoming the town square for the global village of tomorrow."
+  },
+  {
+    "id": 5,
+    "unit": "Unit 1",
+    "zh": "我们现在都通过互联网相连，就像巨大大脑中的神经元。",
+    "en": "We are all now connected by the Internet, like neurons in a giant brain."
+  },
+  {
+    "id": 6,
+    "unit": "Unit 1",
+    "zh": "科技就是在你出生时还不存在的任何事物。",
+    "en": "Technology is anything that wasn't around when you were born."
+  },
+  {
+    "id": 7,
+    "unit": "Unit 1",
+    "zh": "当你在线上时，你可以成为任何人或任何事物。",
+    "en": "When you are online, you can be anyone or anything."
+  },
+  {
+    "id": 8,
+    "unit": "Unit 1",
+    "zh": "你可以创建自己的形象和一个新的个性。",
+    "en": "You can create your own image and a new personality."
+  },
+  {
+    "id": 9,
+    "unit": "Unit 1",
+    "zh": "这些数字身份，被称为头像，是人们使用互联网进行交流和自我表达的关键部分。",
+    "en": "These digital identities, known as avatars, are a key part of how people use the Internet to communicate and express themselves."
+  },
+  {
+    "id": 10,
+    "unit": "Unit 1",
+    "zh": "第一批简单的2D头像出现在20世纪80年代的角色扮演电脑游戏中。",
+    "en": "The first simple 2D avatars appeared in role-playing computer games in the 1980s."
+  },
+  {
+    "id": 11,
+    "unit": "Unit 1",
+    "zh": "然而，很少有人知道未来的虚拟化身会有如此多样的形式和用途。",
+    "en": "Yet, very few people knew that future avatars would have such a wide variety of forms and uses."
+  },
+  {
+    "id": 12,
+    "unit": "Unit 1",
+    "zh": "到20世纪90年代末，它们已被用于网络聊天。",
+    "en": "By the late 1990s, they had been used in web chats."
+  },
+  {
+    "id": 13,
+    "unit": "Unit 1",
+    "zh": "当人们开始创建自己的虚拟化身时，他们发现自己将有能力创造与真实自我完全不像或行为完全不同的新身份。",
+    "en": "When people started creating their own avatars, they discovered that they were going to have the power to create new identities that did not look or act like their real selves at all."
+  },
+  {
+    "id": 14,
+    "unit": "Unit 1",
+    "zh": "他们可以给虚拟化身穿上花哨的衣服，或者尝试成为异性，称自己为“安迪”而不是“安娜”！",
+    "en": "They could dress their avatars in fancy clothes, or they could try being someone of the opposite sex, and call themselves “Andy” instead of “Anna”!"
+  },
+  {
+    "id": 15,
+    "unit": "Unit 1",
+    "zh": "当互联网用户意识到他们的虚拟化身会被很多人看到，而不仅仅是他们的朋友时，他们开始拥有不止一个虚拟化身：一个用于工作的理智化身；一个用于结识他人的友好、好看的化身；以及一个用于娱乐的愚蠢化身。",
+    "en": "When Internet users realised that their avatars would be seen by many people, not just their friends, they started having more than one avatar: a sensible one for work; a friendly, good-looking one for meeting people; and a silly one for having fun."
+  },
+  {
+    "id": 16,
+    "unit": "Unit 1",
+    "zh": "虚拟化身让你表达自己，并给你很大的创造空间。",
+    "en": "Avatars let you express yourself and they give you lots of room for creativity."
+  },
+  {
+    "id": 17,
+    "unit": "Unit 1",
+    "zh": "当然，你选择的虚拟化身很大程度上反映了你的个性。",
+    "en": "Of course, the avatar you choose says a lot about your personality."
+  },
+  {
+    "id": 18,
+    "unit": "Unit 1",
+    "zh": "如果你的博客头像是一只可爱猫的图片，你的信息就是“我喜欢放松和玩乐”。",
+    "en": "If your blog avatar is a picture of a cute cat, your message is “I like relaxing and having fun”."
+  },
+  {
+    "id": 19,
+    "unit": "Unit 1",
+    "zh": "著名的卡通人物或大笑的猴子则表示“我是一个非常有趣的人”。",
+    "en": "Well-known cartoon characters or laughing monkeys say “I'm a really funny person”."
+  },
+  {
+    "id": 20,
+    "unit": "Unit 1",
+    "zh": "大多数人创建的虚拟化身具有与其个性相似的特征，并且看起来或多或少像他们，行为也像他们。",
+    "en": "Most people create avatars that have similar features to their personalities and that look more or less like them and act like them."
+  },
+  {
+    "id": 21,
+    "unit": "Unit 1",
+    "zh": "然而，几乎所有的虚拟化身都是高大、年轻和好看的，所以人们显然让他们的虚拟化身看起来比现实生活中的自己更好。",
+    "en": "However, nearly all avatars are tall, young and nice-looking, so people obviously make their avatars look better than they do in real life."
+  },
+  {
+    "id": 22,
+    "unit": "Unit 1",
+    "zh": "他们还尝试不同的发型等——这也许很大程度上说明了他们想要看起来是什么样子。",
+    "en": "They also experiment with things like different hairstyles — which says a lot, perhaps, about what they want to look like."
+  },
+  {
+    "id": 23,
+    "unit": "Unit 1",
+    "zh": "在大多数网络聊天中，人们从一系列现成的图像中选择一个虚拟化身，或者创建自己的图像。",
+    "en": "In most web chats, people choose an avatar from a selection of ready-made images, or create their own images."
+  },
+  {
+    "id": 24,
+    "unit": "Unit 1",
+    "zh": "你也可以使用当你输入信息时会移动和说话的虚拟化身。",
+    "en": "You can also use avatars that move around and talk when you type in your message."
+  },
+  {
+    "id": 25,
+    "unit": "Unit 1",
+    "zh": "在线世界中的虚拟化身可以说话、行走和飞行，与人会面，购物和上课。",
+    "en": "The avatars in online worlds can talk, walk and fly around, meet people, go shopping and attend classes."
+  },
+  {
+    "id": 26,
+    "unit": "Unit 1",
+    "zh": "虚拟化身的使用也引起了一些担忧。",
+    "en": "The use of avatars has also caused a few concerns."
+  },
+  {
+    "id": 27,
+    "unit": "Unit 1",
+    "zh": "一些用户担心他们在虚拟世界中花费了太多时间，以至于变得害怕在现实世界中与人见面。",
+    "en": "Some users worry that they are spending so much time in virtual worlds that they are becoming afraid of meeting people in the real world."
+  },
+  {
+    "id": 28,
+    "unit": "Unit 1",
+    "zh": "使用多个虚拟化身也可能是一种风险，因为人们可以使用虚拟化身在网上欺骗他人。",
+    "en": "The use of several avatars can also be a risk, as people can use avatars to cheat others online."
+  },
+  {
+    "id": 29,
+    "unit": "Unit 1",
+    "zh": "然而，其他用户以更积极的眼光看待虚拟化身。",
+    "en": "However, other users view avatars in a more positive light."
+  },
+  {
+    "id": 30,
+    "unit": "Unit 1",
+    "zh": "他们期待有一天他们的虚拟化身能像真人一样行动，并在更大、更刺激的虚拟世界中旅行。",
+    "en": "They look forward to a time when their avatar will act like a real person and travel around bigger, more exciting virtual worlds."
+  },
+  {
+    "id": 31,
+    "unit": "Unit 1",
+    "zh": "虽然互联网可以让人们更紧密地联系在一起，但它也可能损害友谊。",
+    "en": "While the Internet can bring people closer together, it can also harm friendships."
+  },
+  {
+    "id": 32,
+    "unit": "Unit 1",
+    "zh": "首先，在线交谈不能替代面对面接触——图像确实无法替代真实的微笑或拥抱。",
+    "en": "Firstly, talking online is no replacement for face-to-face contact — images really cannot replace a real-life smile or hug."
+  },
+  {
+    "id": 33,
+    "unit": "Unit 1",
+    "zh": "根据育儿专家丹尼斯·丹尼尔斯（Denise Daniels）的说法，通过屏幕交流使儿童更难集中注意力或向他人表达善意。",
+    "en": "According to a parenting expert, Denise Daniels, communicating through a screen makes it more difficult for children to concentrate or show kindness to others."
+  },
+  {
+    "id": 34,
+    "unit": "Unit 1",
+    "zh": "正如我们所知，重要的社交技能是通过与他人的直接接触发展起来的。",
+    "en": "As we know, important social skills are developed through direct contact with other people."
+  },
+  {
+    "id": 35,
+    "unit": "Unit 1",
+    "zh": "正是这些技能使我们能够发展终生的友谊。",
+    "en": "It is these skills that enable us to develop lifelong friendships."
+  },
+  {
+    "id": 36,
+    "unit": "Unit 1",
+    "zh": "其次，互联网会让人变得以自我为中心——除了自己，不考虑任何人或任何事。",
+    "en": "Secondly, the Internet can make people self-centred — not thinking of anyone or anything but themselves."
+  },
+  {
+    "id": 37,
+    "unit": "Unit 1",
+    "zh": "例如，有些人不是与朋友进行适当的交谈，而只关心他们在网上的受欢迎程度——我得到了多少个‘赞’？我有多少个粉丝？——尽管我们知道‘赞’或粉丝的数量无法与拥有长期且有价值的友谊相提并论。",
+    "en": "For example, instead of having proper conversations with their friends, some people are only concerned with their online popularity — How many “likes” did I get? How many followers do I have? — though we know that the number of “likes” or followers cannot compare to having long-term and rewarding friendships."
+  },
+  {
+    "id": 38,
+    "unit": "Unit 1",
+    "zh": "此外，社交媒体上发布的很多内容都是肤浅或琐碎的。",
+    "en": "In addition, a lot of the content posted on social media is shallow or trivial."
+  },
+  {
+    "id": 39,
+    "unit": "Unit 1",
+    "zh": "关于搞笑猫咪图片的帖子不一定有助于建立有意义的关系。",
+    "en": "Posts about funny cat images do not necessarily help form meaningful relationships."
+  },
+  {
+    "id": 40,
+    "unit": "Unit 1",
+    "zh": "第三，在线关系可能并非它们看起来的那样。",
+    "en": "Thirdly, online relationships may not be what they appear to be."
+  },
+  {
+    "id": 41,
+    "unit": "Unit 1",
+    "zh": "友谊建立在信任的基础上，而在在线交流中，你永远不能百分之百确定你正在聊天的人对他们是谁是诚实的。",
+    "en": "Friendships are built on the basis of trust, and with online communication you can never be 100 percent sure that the people you are chatting to are being honest about who they are."
+  },
+  {
+    "id": 42,
+    "unit": "Unit 1",
+    "zh": "因此，上网对于容易受影响或过于轻信的人来说可能特别危险。",
+    "en": "Because of this, going online can be particularly dangerous for people who are easily influenced or too trusting."
+  },
+  {
+    "id": 43,
+    "unit": "Unit 1",
+    "zh": "在我看来，朋友应该更多地关注面对面的交流，而不是在线交流。",
+    "en": "In my opinion, friends should focus more on face-to-face communication, and less on online communication."
+  },
+  {
+    "id": 44,
+    "unit": "Unit 1",
+    "zh": "这是维持健康关系的最佳方式。",
+    "en": "This is the best way to maintain healthy relationships."
+  },
+  {
+    "id": 45,
+    "unit": "Unit 1",
+    "zh": "互联网可以通过多种方式帮助发展友谊。",
+    "en": "The Internet can help develop friendships in many ways."
+  },
+  {
+    "id": 46,
+    "unit": "Unit 1",
+    "zh": "首先，互联网使沟通更加方便。",
+    "en": "Firstly, the Internet makes communication much more convenient."
+  },
+  {
+    "id": 47,
+    "unit": "Unit 1",
+    "zh": "无论你在哪里或你在做什么，你都可以和朋友保持联系。",
+    "en": "You can stay in touch with friends no matter where you are or what you are doing."
+  },
+  {
+    "id": 48,
+    "unit": "Unit 1",
+    "zh": "使用智能手机、平板电脑或计算机，你可以在家里联系，也可以在移动时联系。",
+    "en": "Using a smartphone, a tablet or a computer, you can be in contact at home and also when you are on the move."
+  },
+  {
+    "id": 49,
+    "unit": "Unit 1",
+    "zh": "其次，互联网也使沟通变得更有趣。",
+    "en": "Secondly, the Internet has also made communication more fun."
+  },
+  {
+    "id": 50,
+    "unit": "Unit 1",
+    "zh": "传统的沟通方式，如信件和电话，可能有限制且耗时。",
+    "en": "Traditional ways of communicating, like letters and phone calls, can be limiting and take time."
+  },
+  {
+    "id": 51,
+    "unit": "Unit 1",
+    "zh": "然而，你可以在网上与朋友分享照片、视频、新闻故事和网站。",
+    "en": "However, you can share photos, videos, news stories and websites with your friends online."
+  },
+  {
+    "id": 52,
+    "unit": "Unit 1",
+    "zh": "你可以用一个表情符号或图片来简短地回复一条信息。",
+    "en": "You can give a brief response to a message with an emoji or a picture."
+  },
+  {
+    "id": 53,
+    "unit": "Unit 1",
+    "zh": "有如此多的在线工具可以用来发挥创意！",
+    "en": "There are so many online tools you can use to be creative!"
+  },
+  {
+    "id": 54,
+    "unit": "Unit 1",
+    "zh": "第三，在线沟通实际上可以让人们彼此更亲近。",
+    "en": "Thirdly, online communication can actually bring people closer to each other."
+  },
+  {
+    "id": 55,
+    "unit": "Unit 1",
+    "zh": "如今，你的朋友只需点击一下即可联系到。",
+    "en": "Nowadays, your friends are just a click away."
+  },
+  {
+    "id": 56,
+    "unit": "Unit 1",
+    "zh": "每当有人需要帮助时，来自世界各地的朋友可以立即提供有用的建议或信息。",
+    "en": "Whenever someone needs help, friends from all over the world can immediately provide useful suggestions or information."
+  },
+  {
+    "id": 57,
+    "unit": "Unit 1",
+    "zh": "这会让朋友们感到被爱和被关心。",
+    "en": "This makes friends feel loved and cared for."
+  },
+  {
+    "id": 58,
+    "unit": "Unit 1",
+    "zh": "对我来说，这是一个非常发人深省的论点，因为它指出了在线友谊的好处。",
+    "en": "To me, this is a very thought-provoking argument, as it points out the benefits of online friendships."
+  },
+  {
+    "id": 59,
+    "unit": "Unit 1",
+    "zh": "正如该领域的权威艾琳·肯尼迪-摩尔指出的那样，在线朋友“填补了现实生活中的朋友无法填补的空白”。",
+    "en": "As Eileen Kennedy-Moore, an authority on the subject, points out, online friends “fill holes real-life friends can't”."
+  },
+  {
+    "id": 60,
+    "unit": "Unit 1",
+    "zh": "最后，我相信互联网让人们更紧密地联系在一起，并使与朋友的沟通更加方便和有趣。",
+    "en": "Finally, I believe the Internet brings people closer together and makes communication with friends more convenient and interesting."
+  },
+  {
+    "id": 61,
+    "unit": "Unit 1",
+    "zh": "在网上与人交谈或与只在互联网上交谈的人建立友谊并不能替代现实生活中的交流。",
+    "en": "Talking to people online or having a friendship with someone you only talk to on the Internet isn't a replacement for real-life communication."
+  },
+  {
+    "id": 62,
+    "unit": "Unit 1",
+    "zh": "虽然它可以让你与其他使用网站的人建立联系，但与他人的面对面接触对于帮助你维持健康的关系很重要。",
+    "en": "While it can connect you with other people who use a website, face-to-face contact with others is important to help you maintain healthy relationships."
+  },
+  {
+    "id": 63,
+    "unit": "Unit 1",
+    "zh": "这个论点发人深省，因为它表明如今人们仍然需要与他人进行面对面的交流。",
+    "en": "This argument is thought-provoking because it shows that people still need face-to-face communication with others today."
+  },
+  {
+    "id": 64,
+    "unit": "Unit 1",
+    "zh": "此外，在互联网上花费太多时间会让你变得以自我为中心，因为你可能会沉迷于受欢迎和获得追随者。",
+    "en": "In addition, spending too much time on the Internet can make you self-centred because you can become obsessed with popularity and gaining followers."
+  },
+  {
+    "id": 65,
+    "unit": "Unit 1",
+    "zh": "最后，你需要小心各种事情，因为你永远不能百分之百确定你在网上读到的任何东西都是真实的。",
+    "en": "Finally, you need to be careful with various things because you can never be 100 percent sure that anything you read online is true."
+  },
+  {
+    "id": 66,
+    "unit": "Unit 1",
+    "zh": "你想和其他喜欢阅读的青少年建立联系吗？",
+    "en": "Do you want to connect with other teenagers who like to read?"
+  },
+  {
+    "id": 67,
+    "unit": "Unit 1",
+    "zh": "加入我们的在线讨论怎么样？",
+    "en": "How about joining our online discussion?"
+  },
+  {
+    "id": 68,
+    "unit": "Unit 1",
+    "zh": "从完善你的个人资料开始。",
+    "en": "Start by completing your profile."
+  },
+  {
+    "id": 69,
+    "unit": "Unit 1",
+    "zh": "关于我：我是一名高中学生，我最喜欢的科目是英语。",
+    "en": "About me: I'm a senior secondary school student and my favourite subject is English."
+  },
+  {
+    "id": 70,
+    "unit": "Unit 1",
+    "zh": "我也喜欢历史和地理，并且我喜欢和家人一起探索新地方。",
+    "en": "I also enjoy history and geography, and I love exploring new places with my family."
+  },
+  {
+    "id": 71,
+    "unit": "Unit 1",
+    "zh": "在我的空闲时间，我通常带着一本好书在图书馆或公园里。",
+    "en": "In my free time, I'm usually in the library or at the park with a good book."
+  },
+  {
+    "id": 72,
+    "unit": "Unit 1",
+    "zh": "我一直都喜欢阅读！",
+    "en": "I've always loved to read!"
+  },
+  {
+    "id": 73,
+    "unit": "Unit 1",
+    "zh": "我认为阅读只是探索未知世界的另一种方式。",
+    "en": "I think reading is just another way of exploring the unknown world."
+  },
+  {
+    "id": 74,
+    "unit": "Unit 1",
+    "zh": "这对我来说是一次令人兴奋的经历。",
+    "en": "It's an exciting experience for me."
+  },
+  {
+    "id": 75,
+    "unit": "Unit 1",
+    "zh": "这就是为什么我相信关于外国文化或想象世界的书籍是最好的！",
+    "en": "That's why I believe that books about foreign cultures or imaginary worlds are the best!"
+  },
+  {
+    "id": 76,
+    "unit": "Unit 1",
+    "zh": "最喜欢的类型：奇幻和旅行",
+    "en": "Favourite types: Fantasy and travel"
+  },
+  {
+    "id": 77,
+    "unit": "Unit 1",
+    "zh": "最喜欢的书籍：我喜欢《哈利·波特》系列中的所有书籍。",
+    "en": "Favourite books: I like all the books in the Harry Potter series."
+  },
+  {
+    "id": 78,
+    "unit": "Unit 1",
+    "zh": "然而，我相信第一本是最好的。",
+    "en": "However, I believe the first one is the best."
+  },
+  {
+    "id": 79,
+    "unit": "Unit 1",
+    "zh": "在我看来，作者通过这本书创造了一个全新的世界，做得非常出色。",
+    "en": "In my opinion, the author did an amazing job of creating a whole new world through this book."
+  },
+  {
+    "id": 80,
+    "unit": "Unit 1",
+    "zh": "读完它后，我想知道每个角色发生了什么。",
+    "en": "After reading it, I wanted to find out what happened to each of the characters."
+  },
+  {
+    "id": 81,
+    "unit": "Unit 1",
+    "zh": "我最喜欢赫敏，因为我们有很多共同点。",
+    "en": "I like Hermione most, because we have a lot in common."
+  },
+  {
+    "id": 82,
+    "unit": "Unit 1",
+    "zh": "还有其他也喜欢她的读者吗？",
+    "en": "Are there other readers who also like her?"
+  },
+  {
+    "id": 83,
+    "unit": "Unit 1",
+    "zh": "加入原因：我认为听别人喜欢的新书很有趣。",
+    "en": "Reason for joining: I think it's fun to hear about new books that other people enjoy."
+  },
+  {
+    "id": 84,
+    "unit": "Unit 1",
+    "zh": "有没有一本你真正喜欢的奇幻书？",
+    "en": "Is there a fantasy book that you really like?"
+  },
+  {
+    "id": 85,
+    "unit": "Unit 1",
+    "zh": "为了您的安全和保护，请点击此处查看我们的隐私政策。",
+    "en": "For your safety and protection, please click here for our privacy policy."
+  },
+  {
+    "id": 86,
+    "unit": "Unit 1",
+    "zh": "古代艺术不一定是无聊的。",
+    "en": "Ancient art doesn't have to be boring."
+  },
+  {
+    "id": 87,
+    "unit": "Unit 1",
+    "zh": "21世纪的技术可以通过结合新旧精华来帮助它焕发生机。",
+    "en": "Technology in the 21st century can help to bring it to life by combining the best of the old and the new."
+  },
+  {
+    "id": 88,
+    "unit": "Unit 1",
+    "zh": "走进上海2010年世博会的中国馆，人们被一幅巨大的数字绘画所震撼。",
+    "en": "Walking into the China Pavilion at Expo 2010 in Shanghai, people were amazed by the sight of a huge digital painting."
+  },
+  {
+    "id": 89,
+    "unit": "Unit 1",
+    "zh": "这是中国艺术家张择端的名画《清明上河图》的数字化版本。",
+    "en": "It was a digitisation of the famous painting Along the River During the Qingming Festival by Chinese artist Zhang Zeduan."
+  },
+  {
+    "id": 90,
+    "unit": "Unit 1",
+    "zh": "原画展现了北宋时期的生活，包含了许多中国古代习俗、生活方式和技术的细节。",
+    "en": "The original painting shows life during the Northern Song period and it includes many details of ancient Chinese customs, lifestyles and technology."
+  },
+  {
+    "id": 91,
+    "unit": "Unit 1",
+    "zh": "在数字绘画中，许多这些细节被动画化了。",
+    "en": "In the digital painting, a lot of these details are animated."
+  },
+  {
+    "id": 92,
+    "unit": "Unit 1",
+    "zh": "农民在田里劳作；水手在船上走动，人们在餐馆里吃饭和做生意。",
+    "en": "Farmers work in their fields; sailors move around on their boats and people eat and conduct business in restaurants."
+  },
+  {
+    "id": 93,
+    "unit": "Unit 1",
+    "zh": "背景的部分也被动画化了。",
+    "en": "Parts of the background are also animated."
+  },
+  {
+    "id": 94,
+    "unit": "Unit 1",
+    "zh": "你可以看到风吹过树木和水面。",
+    "en": "You can see the wind blowing through the trees and across the water."
+  },
+  {
+    "id": 95,
+    "unit": "Unit 1",
+    "zh": "这些动画完美地结合了现代技术和古代艺术。",
+    "en": "These animations perfectly combine modern technology and ancient art."
+  },
+  {
+    "id": 96,
+    "unit": "Unit 1",
+    "zh": "数字技术让今天的艺术家能够以古代艺术家认为不可能的方式表达他们的想法。",
+    "en": "Digital technology allows today's artists to express their ideas in ways that ancient artists would not believe possible."
+  },
+  {
+    "id": 97,
+    "unit": "Unit 1",
+    "zh": "诸如动画和3D投影等技术使艺术变得生动。",
+    "en": "Techniques such as animation and 3D projection make art come alive."
+  },
+  {
+    "id": 98,
+    "unit": "Unit 1",
+    "zh": "敦煌石窟是中国西北偏远地区戈壁沙漠中受保护的古代宝藏，里面充满了无价的绘画和雕塑。",
+    "en": "Dunhuang Caves, which are protected ancient treasures in the Gobi desert in a remote part of Northwest China, are filled with invaluable paintings and Sculptures."
+  },
+  {
+    "id": 99,
+    "unit": "Unit 1",
+    "zh": "这件佛教艺术品是在大约1000年的时间里创作出来的。",
+    "en": "This Buddhist artwork was created over a period of around 1,000 years."
+  },
+  {
+    "id": 100,
+    "unit": "Unit 1",
+    "zh": "对于无法旅行的艺术爱好者以及石窟本身来说，好消息是科学家们已经创建了一个360度、3D数字投影的石窟。",
+    "en": "The good news for art lovers who cannot travel, and for the caves themselves is that scientists have created a 360-degree, 3D digital projection of the caves."
+  },
+  {
+    "id": 101,
+    "unit": "Unit 1",
+    "zh": "投影具有互动功能，使艺术品变得生动。",
+    "en": "The projection has interactive features that make the artwork come alive."
+  },
+  {
+    "id": 102,
+    "unit": "Unit 1",
+    "zh": "还有一个功能可以让观众放大并更详细地查看绘画和雕塑。",
+    "en": "There is also a function that lets viewers zoom in and see the paintings and sculptures in greater detail."
+  },
+  {
+    "id": 103,
+    "unit": "Unit 1",
+    "zh": "数字化古代艺术使我们能够探索很久以前的实践。",
+    "en": "Digitising ancient art allows us to explore the practices of long ago."
+  },
+  {
+    "id": 104,
+    "unit": "Unit 1",
+    "zh": "它也使艺术能够被世界所接触，同时为未来保护原始艺术品。",
+    "en": "It also makes the art accessible to the world while protecting the original artworks for the future."
+  },
+  {
+    "id": 105,
+    "unit": "Unit 1",
+    "zh": "你知道可穿戴技术将成为下一个大的技术趋势吗？",
+    "en": "Do you know that wearable technology is going to be the next big technology trend?"
+  },
+  {
+    "id": 106,
+    "unit": "Unit 1",
+    "zh": "它将帮助你的生活变得更加轻松和方便。",
+    "en": "It will help make your life much easier and more convenient."
+  },
+  {
+    "id": 107,
+    "unit": "Unit 1",
+    "zh": "你需要帮助你的锻炼计划吗？",
+    "en": "Do you need help with your exercise routine?"
+  },
+  {
+    "id": 108,
+    "unit": "Unit 1",
+    "zh": "你想记录你的饮食吗？",
+    "en": "Do you want to keep track of your diet?"
+  },
+  {
+    "id": 109,
+    "unit": "Unit 1",
+    "zh": "你想快速便捷地获取有关健康和健身的信息吗？",
+    "en": "Do you want quick and easy access to information about health and fitness?"
+  },
+  {
+    "id": 110,
+    "unit": "Unit 1",
+    "zh": "如果你对其中任何一个问题回答“是”，那么智能手表健身追踪器就适合你。",
+    "en": "If you answered “yes” to any of these questions, the Smartwatch Fitness Tracker is right for you."
+  },
+  {
+    "id": 111,
+    "unit": "Unit 1",
+    "zh": "最棒的是什么？它现在已经在商店里可以买到了！",
+    "en": "And the best thing? It's available in shops now!"
+  },
+  {
+    "id": 112,
+    "unit": "Unit 1",
+    "zh": "一个日历，帮助你跟踪进度并规划锻炼计划。",
+    "en": "A calendar to help you keep track of your progress and plan your exercise routine."
+  },
+  {
+    "id": 113,
+    "unit": "Unit 1",
+    "zh": "一个包含健康饮食有用信息的数据库，包括实现目标的每日膳食计划。",
+    "en": "A database with helpful information on healthy eating, including daily meal plans to achieve your goals."
+  },
+  {
+    "id": 114,
+    "unit": "Unit 1",
+    "zh": "各种锻炼的描述、照片和视频。",
+    "en": "Descriptions, photos and videos of a wide range of exercises."
+  },
+  {
+    "id": 115,
+    "unit": "Unit 1",
+    "zh": "这个应用程序包含可以适应你需求的锻炼计划。",
+    "en": "This app includes workout routines that you can adapt to suit your needs."
+  },
+  {
+    "id": 116,
+    "unit": "Unit 1",
+    "zh": "一个在你锻炼时跟踪并显示脉搏率的工具。",
+    "en": "A tool that tracks and shows your pulse rate while you exercise."
+  },
+  {
+    "id": 117,
+    "unit": "Unit 1",
+    "zh": "一个精确且易于使用的秒表和计时器。",
+    "en": "An accurate and easy-to-use stopwatch and timer."
+  },
+  {
+    "id": 118,
+    "unit": "Unit 1",
+    "zh": "一个绘制路线并记录时间和距离的GPS应用程序。",
+    "en": "A GPS app that maps your routes and records your times and distances."
+  },
+  {
+    "id": 119,
+    "unit": "Unit 1",
+    "zh": "非常适合慢跑或骑自行车。",
+    "en": "Perfect for jogging or cycling."
+  },
+  {
+    "id": 120,
+    "unit": "Unit 1",
+    "zh": "信息技术以人们从未想象过的方式发展。",
+    "en": "Information technology has developed in ways that people would never have imagined."
+  },
+  {
+    "id": 121,
+    "unit": "Unit 1",
+    "zh": "在20世纪80年代，电话开始在日常生活中的普及。",
+    "en": "In the 1980s, telephones started to become popular in daily life."
+  },
+  {
+    "id": 122,
+    "unit": "Unit 1",
+    "zh": "当时没有人想象到，20年后人们会把手机放在口袋里，并且除了打电话之外，还会用它们来实现许多功能。",
+    "en": "Nobody at that time imagined that 20 years later people would have phones in their pockets and would use them for many functions other than just making calls."
+  },
+  {
+    "id": 123,
+    "unit": "Unit 1",
+    "zh": "1983年，只有200台计算机连接到互联网。",
+    "en": "In 1983, there were only 200 computers connected to the Internet."
+  },
+  {
+    "id": 124,
+    "unit": "Unit 1",
+    "zh": "当时，甚至科学家们也没有意识到，有一天人们能够通过视频聊天与任何地方的家人和朋友联系。",
+    "en": "At that time, even scientists didn't realise that one day people would be able to connect with family and friends anywhere through video chats."
+  },
+  {
+    "id": 125,
+    "unit": "Unit 1",
+    "zh": "而且可以肯定的是，20世纪80年代的人们不会理解，只需使用手机上的一个应用程序，衣服和美味的食物就会被送到他们的家中。",
+    "en": "And most certainly, people back in the 1980s would not have understood that clothing and delicious food would be sent to their homes by simply using an app on the phone."
+  },
+  {
+    "id": 126,
+    "unit": "Unit 1",
+    "zh": "在我们班上，每个学生都有两个以上的头像，这些头像是用作在线数字身份的图像。",
+    "en": "In our class, every student has more than two avatars, which are images used as digital identity online."
+  },
+  {
+    "id": 127,
+    "unit": "Unit 1",
+    "zh": "我们的同学中，头像的形式和用途多种多样。",
+    "en": "There are a wide variety of forms and uses of avatars among our classmates."
+  },
+  {
+    "id": 128,
+    "unit": "Unit 1",
+    "zh": "大多数学生从一系列现成的图像中选择头像，但有些学生根据自己的形象设计头像。",
+    "en": "Most students choose avatars from a selection of ready-made images, but some students design avatars in their own image."
+  },
+  {
+    "id": 129,
+    "unit": "Unit 1",
+    "zh": "超过一半的学生希望通过他们的头像展示他们个性的不同方面。",
+    "en": "More than half of the students want to show different aspects of their personality through their avatars."
+  },
+  {
+    "id": 130,
+    "unit": "Unit 1",
+    "zh": "我们的同学主要将头像用于网络聊天和虚拟游戏中。",
+    "en": "Our classmates mainly use avatars for web chat and in virtual games."
+  },
+  {
+    "id": 131,
+    "unit": "Unit 1",
+    "zh": "但一些同学对使用头像时的在线安全表示担忧。",
+    "en": "But some classmates expressed concern about online safety when using avatars."
+  },
+  {
+    "id": 132,
+    "unit": "Unit 1",
+    "zh": "这个问题是我们未来需要关注的。",
+    "en": "This issue is something that we need to pay attention to in the future."
+  },
+  {
+    "id": 133,
+    "unit": "Unit 1",
+    "zh": "他们通常在智能手机或移动设备上使用应用程序。",
+    "en": "They typically use apps on smartphones or mobile devices."
+  },
+  {
+    "id": 134,
+    "unit": "Unit 1",
+    "zh": "学生们同意应用程序可以帮助他们参与各种各样的活动。",
+    "en": "Students agree that apps can help them take part in a whole range of activities."
+  },
+  {
+    "id": 135,
+    "unit": "Unit 1",
+    "zh": "他们通常使用应用程序来搜索学习资源、寻找热门餐厅、叫出租车、查找去特定地点的路线以及点餐。",
+    "en": "They usually use apps to search for learning resources, find popular restaurants, call for taxis, find directions to certain places, and order food."
+  },
+  {
+    "id": 136,
+    "unit": "Unit 1",
+    "zh": "教育类应用程序是我们同学中最常使用的应用程序类型。",
+    "en": "Educational apps are the type of apps most frequently used among our classmates."
+  },
+  {
+    "id": 137,
+    "unit": "Unit 1",
+    "zh": "它们允许他们在任何地方按照自己的节奏学习。",
+    "en": "They allow them to learn at their own pace anywhere."
+  },
+  {
+    "id": 138,
+    "unit": "Unit 1",
+    "zh": "他们可以根据自己的个人兴趣和需求选择在线教师和科目。",
+    "en": "They can choose online teachers and subjects according to their personal interests and needs."
+  },
+  {
+    "id": 139,
+    "unit": "Unit 1",
+    "zh": "此外，他们可以与同一应用程序的其他用户共享学习材料。",
+    "en": "Also, they can share learning materials with other users of the same app."
+  },
+  {
+    "id": 140,
+    "unit": "Unit 1",
+    "zh": "近三分之一的学生尝试过使用最新技术的应用程序，如VR、AR和MR。",
+    "en": "Nearly one third of the students have tried apps with the latest technologies, like VR, AR and MR."
+  },
+  {
+    "id": 141,
+    "unit": "Unit 1",
+    "zh": "他们相信新技术可以用来帮助人们解决现实世界的问题。",
+    "en": "They believe that new technologies can be used to help people solve real-world problems."
+  },
+  {
+    "id": 142,
+    "unit": "Unit 1",
+    "zh": "学生们不喜欢的是，如今为了使用应用程序，他们经常需要设置账户并输入个人信息。",
+    "en": "What students dislike is that in order to use apps these days, they are often required to set up an account and put in personal information."
+  },
+  {
+    "id": 143,
+    "unit": "Unit 1",
+    "zh": "他们担心这方面的安全性。",
+    "en": "They worry about the safety of this."
+  },
+  {
+    "id": 144,
+    "unit": "Unit 1",
+    "zh": "媛媛是一名高中学生。",
+    "en": "Yuanyuan is a senior secondary school student."
+  },
+  {
+    "id": 145,
+    "unit": "Unit 1",
+    "zh": "她从来不喜欢在网上与人聊天。",
+    "en": "She never liked chatting with people online."
+  },
+  {
+    "id": 146,
+    "unit": "Unit 1",
+    "zh": "她认为在线沟通不值得花时间，而且它让人们更加以自我为中心。",
+    "en": "She thought online communication wasn't worth spending time on and it made people more self-centred."
+  },
+  {
+    "id": 147,
+    "unit": "Unit 1",
+    "zh": "她所有的朋友似乎花了大约90%的时间在互联网上与朋友交谈，只有大约10%的时间在现实生活中与他们交谈。",
+    "en": "All her friends seemed to spend about 90 percent of their time talking to friends on the Internet and only about 10 percent talking to them in real life."
+  },
+  {
+    "id": 148,
+    "unit": "Unit 1",
+    "zh": "媛媛完全无法理解这一点。",
+    "en": "Yuanyuan couldn't understand it at all."
+  },
+  {
+    "id": 149,
+    "unit": "Unit 1",
+    "zh": "她最好的朋友婷婷同意她的观点，并认为现实生活中的沟通很重要。",
+    "en": "Her best friend Tingting agreed with her and felt that real-life communication is important."
+  },
+  {
+    "id": 150,
+    "unit": "Unit 1",
+    "zh": "大地与天空、树林与田野、湖泊与河流、高山与大海，都是卓越的教师，它们教会我们的一些东西，是书本永远无法企及的。",
+    "en": "The Earth and sky, woods and fields, lakes and rivers, the mountain and the sea, are excellent schoolmasters and teach some of us more than we can ever learn from books."
+  },
+  {
+    "id": 151,
+    "unit": "Unit 2",
+    "zh": "除了服从自然，我们无法命令自然。",
+    "en": "We cannot command nature except by obeying her."
+  },
+  {
+    "id": 152,
+    "unit": "Unit 2",
+    "zh": "野生动物灭绝不是一个能给你时间改正错误的过程。",
+    "en": "Wildlife extinction is not a process that gives you time to fix your mistakes."
+  },
+  {
+    "id": 153,
+    "unit": "Unit 2",
+    "zh": "在科学面前，没有第二次机会。",
+    "en": "In the face of science, there are no second chances."
+  },
+  {
+    "id": 154,
+    "unit": "Unit 2",
+    "zh": "研究自然，热爱自然，亲近自然。它永远不会让你失望。",
+    "en": "Study nature, love nature, stay close to nature. It will never fail you."
+  },
+  {
+    "id": 155,
+    "unit": "Unit 2",
+    "zh": "大约三年前，一件可怕的事情发生在我身上。",
+    "en": "About three years ago, something terrible happened to me."
+  },
+  {
+    "id": 156,
+    "unit": "Unit 2",
+    "zh": "就是在那一天，仅仅六个小时就击垮了我的身体和灵魂。",
+    "en": "That was the day when it took only six hours to break my body and soul."
+  },
+  {
+    "id": 157,
+    "unit": "Unit 2",
+    "zh": "你以为我是一个很老的人——但我不是。",
+    "en": "You think I am a very old man — but I am not."
+  },
+  {
+    "id": 158,
+    "unit": "Unit 2",
+    "zh": "不到一天的时间，我的头发就从黑变白了。",
+    "en": "It took less than a single day to change my hair from black to white."
+  },
+  {
+    "id": 159,
+    "unit": "Unit 2",
+    "zh": "一天，我和我的两个兄弟从那些岛屿返回，我们常冒险去那里，并且比其他人捕到更多的鱼。",
+    "en": "One day, my two brothers and I were coming back from the islands where we often risked going and got more fish than others."
+  },
+  {
+    "id": 160,
+    "unit": "Unit 2",
+    "zh": "突然间，天空布满了乌云，我们发现自己置身于一个漩涡的风暴中。",
+    "en": "All at once, the sky was covered with dark clouds and we found ourselves in a storm of a whirlpool."
+  },
+  {
+    "id": 161,
+    "unit": "Unit 2",
+    "zh": "云层，不到一分钟我们就陷入了一场可怕的风暴中。",
+    "en": "clouds and in less than a minute we were in a terrible storm."
+  },
+  {
+    "id": 162,
+    "unit": "Unit 2",
+    "zh": "一个巨浪淹没了我们的船，我的弟弟掉进了海里。",
+    "en": "A huge wave covered our boat and my younger brother fell into the sea."
+  },
+  {
+    "id": 163,
+    "unit": "Unit 2",
+    "zh": "我的哥哥把嘴凑近我的耳朵，大声喊道“莫斯柯漩涡！”",
+    "en": "My elder brother put his mouth close to my ear and cried out “Moskoe-strom!”"
+  },
+  {
+    "id": 164,
+    "unit": "Unit 2",
+    "zh": "我一听到这个词就变得非常害怕。",
+    "en": "The moment I heard the word I became very frightened."
+  },
+  {
+    "id": 165,
+    "unit": "Unit 2",
+    "zh": "我很清楚他说的那个词是什么意思。",
+    "en": "I knew what he meant by that one word well enough."
+  },
+  {
+    "id": 166,
+    "unit": "Unit 2",
+    "zh": "在风浪中，我们正朝着漩涡的方向前进。",
+    "en": "With the wind and waves, we were going in the direction of the whirlpool."
+  },
+  {
+    "id": 167,
+    "unit": "Unit 2",
+    "zh": "我感到恶心，仿佛在梦中从山顶坠落。",
+    "en": "I felt sick, as if I was falling from a mountain top in a dream."
+  },
+  {
+    "id": 168,
+    "unit": "Unit 2",
+    "zh": "我们一圈一圈地转，越来越接近那可怕的漩涡边缘。",
+    "en": "We went round and round, nearer and nearer to the horrible edge of the whirlpool."
+  },
+  {
+    "id": 169,
+    "unit": "Unit 2",
+    "zh": "这看起来可能很奇怪，但在那一刻，当我们在漩涡边缘时，我感到比我们朝它移动时更平静。",
+    "en": "It may appear strange, but at that moment, when we were on the edge of the whirlpool, I felt calmer than when we were moving towards it."
+  },
+  {
+    "id": 170,
+    "unit": "Unit 2",
+    "zh": "我开始思考以这种方式死去是多么奇妙的事情，看到大自然的力量是多么美妙。",
+    "en": "I began to think how amazing a thing it was to die in such a way, and how wonderful it was to see the power of nature."
+  },
+  {
+    "id": 171,
+    "unit": "Unit 2",
+    "zh": "突然，我们越过了边缘。",
+    "en": "Suddenly, we went over the edge."
+  },
+  {
+    "id": 172,
+    "unit": "Unit 2",
+    "zh": "我以为我的生命结束了。",
+    "en": "I thought my life was over."
+  },
+  {
+    "id": 173,
+    "unit": "Unit 2",
+    "zh": "但一刻又一刻过去了，我仍然安全。",
+    "en": "But moment after moment passed, and I was still safe."
+  },
+  {
+    "id": 174,
+    "unit": "Unit 2",
+    "zh": "船在巨大的漩涡内部，我们正以极快的速度绕圈。",
+    "en": "The boat was on the inside of the huge whirlpool and we were going round in circles at great speed."
+  },
+  {
+    "id": 175,
+    "unit": "Unit 2",
+    "zh": "我清楚地看到漩涡中还有其他物体——树木和木桶。",
+    "en": "I saw clearly that there were other objects in the whirlpool — trees and barrels."
+  },
+  {
+    "id": 176,
+    "unit": "Unit 2",
+    "zh": "过了一会儿，我对漩涡本身产生了好奇。",
+    "en": "After a while, I became curious about the whirlpool itself."
+  },
+  {
+    "id": 177,
+    "unit": "Unit 2",
+    "zh": "然后我做了三个重要的观察。",
+    "en": "I then made three important observations."
+  },
+  {
+    "id": 178,
+    "unit": "Unit 2",
+    "zh": "第一，物体越大，下落得越快；",
+    "en": "The first, the larger the bodies were, the more rapidly they fell;"
+  },
+  {
+    "id": 179,
+    "unit": "Unit 2",
+    "zh": "第二，在两个大小相同的物体之间，圆形物体下落得更快；",
+    "en": "the second, between two objects of equal extent, round objects fell down more rapidly;"
+  },
+  {
+    "id": 180,
+    "unit": "Unit 2",
+    "zh": "第三，在两个大小相同的物体之间，管状物体下落得更慢。",
+    "en": "and the third, between two objects of the same size, objects shaped like a tube fell down more slowly."
+  },
+  {
+    "id": 181,
+    "unit": "Unit 2",
+    "zh": "所以我把自己绑在一个桶上以帮助我漂浮。",
+    "en": "So I tied myself to a barrel to help me float."
+  },
+  {
+    "id": 182,
+    "unit": "Unit 2",
+    "zh": "我试图让我的兄弟明白，但他太害怕了，留在了沉重的船里。",
+    "en": "I tried to make my brother understand, but he was too frightened and stayed in the heavy boat."
+  },
+  {
+    "id": 183,
+    "unit": "Unit 2",
+    "zh": "没有等待，我跳进海里试图逃跑。",
+    "en": "Without waiting, I jumped into the sea to try and escape."
+  },
+  {
+    "id": 184,
+    "unit": "Unit 2",
+    "zh": "正如你所看到的，我之所以能在这里讲述这个故事，是因为我做出了正确的决定。",
+    "en": "As you can see, the reason why I'm here to tell the story is that I made the right decision."
+  },
+  {
+    "id": 185,
+    "unit": "Unit 2",
+    "zh": "在我离开船后不久，船连同我的兄弟一起被拉入了漩涡底部。",
+    "en": "Some time after I left the boat, with my brother in it, it was pulled into the bottom of the whirlpool."
+  },
+  {
+    "id": 186,
+    "unit": "Unit 2",
+    "zh": "在那之后不久，漩涡变得不那么狂暴了。",
+    "en": "Soon after that, the whirlpool became less wild."
+  },
+  {
+    "id": 187,
+    "unit": "Unit 2",
+    "zh": "然后天空晴朗，风更平静；月亮照耀着。",
+    "en": "Then the sky was clear, the wind calmer; and the moon was shining."
+  },
+  {
+    "id": 188,
+    "unit": "Unit 2",
+    "zh": "我仍然绑在桶上，海浪很快把我带到了其他渔民所在的区域。",
+    "en": "I was still tied to the barrel and the waves soon carried me to an area where the other fishermen were."
+  },
+  {
+    "id": 189,
+    "unit": "Unit 2",
+    "zh": "最后，一艘船把我救了起来。",
+    "en": "In the end, a boat picked me up."
+  },
+  {
+    "id": 190,
+    "unit": "Unit 2",
+    "zh": "渔民们是我的老朋友，但他们认不出我了。",
+    "en": "The fishermen were my old friends, but they were unable to recognise me."
+  },
+  {
+    "id": 191,
+    "unit": "Unit 2",
+    "zh": "当我告诉他们我的故事时，他们不相信。",
+    "en": "When I told them my story, they did not believe it."
+  },
+  {
+    "id": 192,
+    "unit": "Unit 2",
+    "zh": "现在我已经告诉你了，我不能指望你比那些渔民更相信我。",
+    "en": "Now I have told you, and I cannot expect you to believe me any more than the fishermen did."
+  },
+  {
+    "id": 193,
+    "unit": "Unit 2",
+    "zh": "1910年6月1日，罗伯特·法尔肯·斯科特船长离开伦敦，开始了他的南极之旅。",
+    "en": "On 1 June, 1910, Captain Robert Falcon Scott left London to begin his journey to Antarctica."
+  },
+  {
+    "id": 194,
+    "unit": "Unit 2",
+    "zh": "在他前往南极的途中，他收到了挪威探险家罗尔德·阿蒙森的消息，说他也正要南下。",
+    "en": "While he was on the way to Antarctica, he received a message from the Norwegian explorer Roald Amundsen which said he was going south, too."
+  },
+  {
+    "id": 195,
+    "unit": "Unit 2",
+    "zh": "于是，通往南极点的竞赛开始了！",
+    "en": "Then the race to the South Pole began!"
+  },
+  {
+    "id": 196,
+    "unit": "Unit 2",
+    "zh": "在1910至1911年的极地夏季，两支队伍都组织了食物补给站，为来年的旅程做准备。",
+    "en": "During the polar summer of 1910 — 1911, both teams organised food bases in preparation for their journeys the next year."
+  },
+  {
+    "id": 197,
+    "unit": "Unit 2",
+    "zh": "接着，极地冬季的极夜降临了。",
+    "en": "Then came the total darkness of the polar winter."
+  },
+  {
+    "id": 198,
+    "unit": "Unit 2",
+    "zh": "斯科特和阿蒙森焦急地等待着春天。",
+    "en": "Scott and Amundsen waited anxiously for spring."
+  },
+  {
+    "id": 199,
+    "unit": "Unit 2",
+    "zh": "阿蒙森于1911年9月8日率先出发。",
+    "en": "Amundsen was the first to leave on 8 September, 1911."
+  },
+  {
+    "id": 200,
+    "unit": "Unit 2",
+    "zh": "他让几队狗拉雪橇，他所有的队员都穿着滑雪板。",
+    "en": "He had teams of dogs pulling the sledges and all his men were on skis."
+  },
+  {
+    "id": 201,
+    "unit": "Unit 2",
+    "zh": "正因为如此，他取得了快速的进展。",
+    "en": "Because of this, he made rapid progress."
+  },
+  {
+    "id": 202,
+    "unit": "Unit 2",
+    "zh": "斯科特于11月1日出发，但很快就遇到了问题。",
+    "en": "Scott left on 1 November and soon had problems."
+  },
+  {
+    "id": 203,
+    "unit": "Unit 2",
+    "zh": "首先，他的两个雪橇坏了，接着马匹开始因冰雪和严寒而遇到严重困难。",
+    "en": "First, his two sledges broke down and then the horses began to have serious difficulties with the snow and the cold."
+  },
+  {
+    "id": 204,
+    "unit": "Unit 2",
+    "zh": "过了一会儿，斯科特和他的队员们不得不自己推雪橇。",
+    "en": "After a while, Scott and his men had to push the sledges themselves."
+  },
+  {
+    "id": 205,
+    "unit": "Unit 2",
+    "zh": "阿蒙森于1911年12月14日到达了南极点，并在那里插上了一面挪威国旗。",
+    "en": "Amundsen reached the Pole on 14 December, 1911 and put a Norwegian flag there."
+  },
+  {
+    "id": 206,
+    "unit": "Unit 2",
+    "zh": "然后他为返程做准备。",
+    "en": "Then he prepared for the return journey."
+  },
+  {
+    "id": 207,
+    "unit": "Unit 2",
+    "zh": "阿蒙森和他的团队于1912年1月25日安全返回他们的出发基地，比原计划提前了十天。",
+    "en": "Amundsen and his team arrived safely back to their starting base on 25 January, 1912, ten days ahead of their planned schedule."
+  },
+  {
+    "id": 208,
+    "unit": "Unit 2",
+    "zh": "斯科特最终于1912年1月17日与四名队员抵达了南极点。",
+    "en": "Scott finally arrived at the Pole with four team members on 17 January, 1912."
+  },
+  {
+    "id": 209,
+    "unit": "Unit 2",
+    "zh": "当他们看到挪威国旗时，他们震惊了。",
+    "en": "They were shocked when they saw the Norwegian flag."
+  },
+  {
+    "id": 210,
+    "unit": "Unit 2",
+    "zh": "斯科特在他的日记中写道：“好吧，我们现在已经失去了我们雄心壮志的目标，必须面对800英里的艰难跋涉——并且告别我们的大多数梦想。”",
+    "en": "Scott wrote in his diary: \"Well, we have now lost the goal of our ambition and must face 800 miles of hard pushing — and goodbye to most of our dreams.\""
+  },
+  {
+    "id": 211,
+    "unit": "Unit 2",
+    "zh": "返程是探险史上最糟糕的旅程之一。",
+    "en": "The return journey was one of the worst in the history of exploration."
+  },
+  {
+    "id": 212,
+    "unit": "Unit 2",
+    "zh": "这些人很快就非常疲惫，并且食物也快耗尽了。",
+    "en": "The men were soon very tired and were running out of food."
+  },
+  {
+    "id": 213,
+    "unit": "Unit 2",
+    "zh": "天气条件非常恶劣。",
+    "en": "The weather conditions were terrible."
+  },
+  {
+    "id": 214,
+    "unit": "Unit 2",
+    "zh": "斯科特开始意识到他们绝望的处境：“我们非常乐观，但每个人内心的感受我只能猜测。",
+    "en": "Scott started to realise their hopeless situation: \"We are very cheerful, but what each man feels in his heart I can only guess."
+  },
+  {
+    "id": 215,
+    "unit": "Unit 2",
+    "zh": "早上穿鞋的速度越来越慢了。”",
+    "en": "Putting on our shoes in the morning is getting slower and slower.\""
+  },
+  {
+    "id": 216,
+    "unit": "Unit 2",
+    "zh": "然而，在返回的路上，他们抽时间寻找岩石。",
+    "en": "However, on their way back they found time to look for rocks."
+  },
+  {
+    "id": 217,
+    "unit": "Unit 2",
+    "zh": "他们一路携带着二十公斤的岩石。",
+    "en": "They carried twenty kilos of rocks all the way with them."
+  },
+  {
+    "id": 218,
+    "unit": "Unit 2",
+    "zh": "后来，这些岩石证明了在遥远的过去，南极洲大陆曾被植物覆盖。",
+    "en": "Later, these rocks proved that at one time in the distant past, the continent of Antarctica was covered by plants."
+  },
+  {
+    "id": 219,
+    "unit": "Unit 2",
+    "zh": "埃德加·埃文斯患了重病，并在一次严重摔倒后去世。",
+    "en": "Edgar Evans had a terrible disease and died after a bad fall."
+  },
+  {
+    "id": 220,
+    "unit": "Unit 2",
+    "zh": "下一个离开的是奥茨上尉，他行走非常困难。",
+    "en": "The next to go was Captain Oates, who was having great difficulty walking."
+  },
+  {
+    "id": 221,
+    "unit": "Unit 2",
+    "zh": "斯科特记录了他的死亡：“他说，‘我只是出去一下，可能要一段时间。’",
+    "en": "Scott recorded his death: \"He said, 'I am just going outside and may be some time.'"
+  },
+  {
+    "id": 222,
+    "unit": "Unit 2",
+    "zh": "我们知道可怜的奥茨正走向死亡，但尽管我们试图阻止他，我们知道这是一个勇敢的人和一个英国绅士的行为。",
+    "en": "We knew that poor Oates was walking to his death, but though we tried to stop him, we knew that it was the act of a brave man and an English gentleman."
+  },
+  {
+    "id": 223,
+    "unit": "Unit 2",
+    "zh": "我们都希望以类似的精神面对结局，而且结局肯定不远了。”",
+    "en": "We all hope to meet the end with a similar spirit, and certainly the end is not far.\""
+  },
+  {
+    "id": 224,
+    "unit": "Unit 2",
+    "zh": "斯科特和他的两名队员继续前进，到达了距离他们的一个食物补给点十一英里以内的地方。",
+    "en": "Scott and two of his team members carried on and got within eleven miles of one of their food bases."
+  },
+  {
+    "id": 225,
+    "unit": "Unit 2",
+    "zh": "但随后一场可怕的风暴开始了，他们无法离开帐篷。",
+    "en": "But then a terrible storm started and they could not leave their tent."
+  },
+  {
+    "id": 226,
+    "unit": "Unit 2",
+    "zh": "斯科特用他生命的最后几个小时进行写作。",
+    "en": "Scott spent some of his last hours writing."
+  },
+  {
+    "id": 227,
+    "unit": "Unit 2",
+    "zh": "他写了一封充满悲伤的信给他的妻子凯瑟琳：“关于这次旅程，我可以告诉你很多很多。",
+    "en": "He wrote a letter full of sadness to his wife Kathleen: \"I could tell you lots and lots about this journey."
+  },
+  {
+    "id": 228,
+    "unit": "Unit 2",
+    "zh": "你会给男孩讲多少故事啊……但这是多么大的代价。”",
+    "en": "What stories you would have for the boy ... but what a price to pay.\""
+  },
+  {
+    "id": 229,
+    "unit": "Unit 2",
+    "zh": "斯科特的日记也讲述了他们的结局：“我们变得越来越虚弱，结局不可能太远了。",
+    "en": "Scott's diary also told the story of their end: \"We are getting weaker and weaker and the end can't be far."
+  },
+  {
+    "id": 230,
+    "unit": "Unit 2",
+    "zh": "似乎很遗憾，但我想我不能再写了。”",
+    "en": "It seems a pity, but I do not think I can write more.\""
+  },
+  {
+    "id": 231,
+    "unit": "Unit 2",
+    "zh": "斯科特去世的消息震惊了世界。",
+    "en": "The news of Scott's death shocked the world."
+  },
+  {
+    "id": 232,
+    "unit": "Unit 2",
+    "zh": "甚至阿蒙森也被斯科特的死所感动，他说“斯科特船长留下了一个记录，关于诚实、真诚、勇敢，以及一切造就一个男人的品质”。",
+    "en": "Even Amundsen was moved by Scott's death saying \"Captain Scott left a record, for honesty, sincerity, for bravery, for everything that makes a man\"."
+  },
+  {
+    "id": 233,
+    "unit": "Unit 2",
+    "zh": "斯科特未能在前往极地的竞赛中获胜，但斯科特和他的队员们所表现出的巨大勇气使他们成为了英雄。",
+    "en": "Scott had failed to win the race to the Pole, but the great courage shown by Scott and his men made them heroes."
+  },
+  {
+    "id": 234,
+    "unit": "Unit 2",
+    "zh": "不要跑，但要保护好自己。",
+    "en": "Don't run, but protect yourself."
+  },
+  {
+    "id": 235,
+    "unit": "Unit 2",
+    "zh": "地震时不要试图跑出建筑物。",
+    "en": "Don't try to run out of the building during an earthquake."
+  },
+  {
+    "id": 236,
+    "unit": "Unit 2",
+    "zh": "最重要的是尽可能保护自己。",
+    "en": "The most important thing is to protect yourself as much as you can."
+  },
+  {
+    "id": 237,
+    "unit": "Unit 2",
+    "zh": "趴下、掩护、抓牢。",
+    "en": "Drop, cover and hold on."
+  },
+  {
+    "id": 238,
+    "unit": "Unit 2",
+    "zh": "趴下，用手和膝盖着地。",
+    "en": "DROP down onto your hands and knees."
+  },
+  {
+    "id": 239,
+    "unit": "Unit 2",
+    "zh": "用手、手臂或坚硬物体掩护你的头和脖子。",
+    "en": "COVER your head and neck with your hands, arms or hard objects."
+  },
+  {
+    "id": 240,
+    "unit": "Unit 2",
+    "zh": "如果可能，在附近找一个坚固的掩体，能覆盖你的全身。",
+    "en": "If possible, find a strong shelter nearby which will cover your whole body."
+  },
+  {
+    "id": 241,
+    "unit": "Unit 2",
+    "zh": "抓紧你的掩体，直到震动停止。",
+    "en": "HOLD ON to your shelter until the shaking stops."
+  },
+  {
+    "id": 242,
+    "unit": "Unit 2",
+    "zh": "远离任何可能掉落的东西。",
+    "en": "Move away from anything that can fall."
+  },
+  {
+    "id": 243,
+    "unit": "Unit 2",
+    "zh": "建筑物、树木、路灯和电线在地震中可能会倒塌。",
+    "en": "Buildings, trees, streetlights and power lines can fall down during an earthquake."
+  },
+  {
+    "id": 244,
+    "unit": "Unit 2",
+    "zh": "找一个你可以停留的掩体。",
+    "en": "Find a shelter where you can stay."
+  },
+  {
+    "id": 245,
+    "unit": "Unit 2",
+    "zh": "如果你在可能掉落的物体附近，找一个掩体来保护自己免受其伤害。",
+    "en": "If you are near objects that can fall, find a shelter to protect yourself from them."
+  },
+  {
+    "id": 246,
+    "unit": "Unit 2",
+    "zh": "在移动到另一个地方之前先等待。",
+    "en": "Wait before moving to another place."
+  },
+  {
+    "id": 247,
+    "unit": "Unit 2",
+    "zh": "地震后物体也可能掉落，并且总会有强烈的余震。",
+    "en": "Objects may also fall after an earthquake and there are always strong aftershocks."
+  },
+  {
+    "id": 248,
+    "unit": "Unit 2",
+    "zh": "在你离开之前仔细观察。",
+    "en": "Observe carefully before you move away."
+  },
+  {
+    "id": 249,
+    "unit": "Unit 2",
+    "zh": "尽快停下车，但避免停在建筑物附近或树下。",
+    "en": "Stop your car as soon as you can, but avoid stopping near a building or under a tree."
+  },
+  {
+    "id": 250,
+    "unit": "Unit 2",
+    "zh": "在你的车里保持冷静。",
+    "en": "Stay calm in your car."
+  },
+  {
+    "id": 251,
+    "unit": "Unit 2",
+    "zh": "汽车的金属车身可以保护你免受坠落物体的伤害。",
+    "en": "The car's metal body can protect you from falling objects."
+  },
+  {
+    "id": 252,
+    "unit": "Unit 2",
+    "zh": "地震停止后小心驾驶。",
+    "en": "Drive carefully when the quake stops."
+  },
+  {
+    "id": 253,
+    "unit": "Unit 2",
+    "zh": "避开已经受损或可能被余震损坏的桥梁。",
+    "en": "Avoid bridges that have been damaged or may be damaged by the aftershocks."
+  },
+  {
+    "id": 254,
+    "unit": "Unit 2",
+    "zh": "新西兰是近500万人、3100万只羊和1000万头牛的家园。",
+    "en": "New Zealand is home to nearly 5 million people, 31 million sheep and 10 million cows."
+  },
+  {
+    "id": 255,
+    "unit": "Unit 2",
+    "zh": "恐鸟原产于新西兰，但现已灭绝。",
+    "en": "Moa birds were native to New Zealand, but are now extinct."
+  },
+  {
+    "id": 256,
+    "unit": "Unit 2",
+    "zh": "它们有两米高，体重超过250公斤。",
+    "en": "They were two metres tall and weighed over 250 kilogrammes."
+  },
+  {
+    "id": 257,
+    "unit": "Unit 2",
+    "zh": "新西兰拥有的企鹅种类比任何其他国家都多。",
+    "en": "New Zealand is home to more species of penguins than any other country."
+  },
+  {
+    "id": 258,
+    "unit": "Unit 2",
+    "zh": "新西兰是世界上少数几个没有蛇的国家之一。",
+    "en": "New Zealand is one of the few countries in the world without snakes."
+  },
+  {
+    "id": 259,
+    "unit": "Unit 2",
+    "zh": "新西兰是南太平洋的一个国家。",
+    "en": "New Zealand is a country in the South Pacific."
+  },
+  {
+    "id": 260,
+    "unit": "Unit 2",
+    "zh": "它的总面积约为27万平方公里，有两个大岛（北岛和南岛）以及其他较小的岛屿。",
+    "en": "It has a total area of about 270,000 square kilometres and has two large islands (the North Island and the South Island), as well as other smaller islands."
+  },
+  {
+    "id": 261,
+    "unit": "Unit 2",
+    "zh": "世界上几乎每一种地理特征都可以在新西兰找到——森林、山脉、沙漠、海滩和火山。",
+    "en": "Almost every geographical feature in the world can be found in New Zealand—forests, mountains, deserts, beaches and volcanoes."
+  },
+  {
+    "id": 262,
+    "unit": "Unit 2",
+    "zh": "一条山脉纵贯南岛中部，其中包括该国最高的山：库克山（8724米）。",
+    "en": "A mountain range runs down the middle of the South Island, and includes the country's highest mountain: Mount Cook (8,724 metres)."
+  },
+  {
+    "id": 263,
+    "unit": "Unit 2",
+    "zh": "新西兰气候多变，各地差异很大。",
+    "en": "New Zealand has a varied climate that changes a lot from place to place."
+  },
+  {
+    "id": 264,
+    "unit": "Unit 2",
+    "zh": "事实上，俗话说在新西兰，你可以在一天内经历四个季节！",
+    "en": "In fact, it's a common saying that in New Zealand, you can get four seasons in one day!"
+  },
+  {
+    "id": 265,
+    "unit": "Unit 2",
+    "zh": "一般来说，越往南走，天气就越冷。",
+    "en": "Generally, the further south you go, the colder it will be."
+  },
+  {
+    "id": 266,
+    "unit": "Unit 2",
+    "zh": "新西兰有许多独特的本土动物，包括鱼类、昆虫、鸟类和植物。",
+    "en": "New Zealand has a lot of unique native animals, including fish, insects, birds and plants."
+  },
+  {
+    "id": 267,
+    "unit": "Unit 2",
+    "zh": "这个国家以其鸟类而闻名。",
+    "en": "The country is famous for its birds."
+  },
+  {
+    "id": 268,
+    "unit": "Unit 2",
+    "zh": "最著名的是几维鸟（新西兰的象征），它是一种不会飞的大鸟。",
+    "en": "The most famous is the kiwi (the symbol of New Zealand), which is a large bird that cannot fly."
+  },
+  {
+    "id": 269,
+    "unit": "Unit 2",
+    "zh": "新西兰也是世界上最大的昆虫——巨沙螽的家园。",
+    "en": "New Zealand is also home to the world's largest insect — the giant weta."
+  },
+  {
+    "id": 270,
+    "unit": "Unit 2",
+    "zh": "它看起来像一只又大又吓人的蚱蜢，但实际上它是无害的。",
+    "en": "It looks like a big, scary grasshopper, but it is actually harmless."
+  },
+  {
+    "id": 271,
+    "unit": "Unit 2",
+    "zh": "新西兰的森林和国家公园非常适合徒步旅行和露营。",
+    "en": "New Zealand's forests and national parks are perfect for hiking and camping."
+  },
+  {
+    "id": 272,
+    "unit": "Unit 2",
+    "zh": "事实上，该国三分之一是由国家公园组成的，到处都是徒步旅行路线和露营地。",
+    "en": "In fact, one third of the country is made up of national parks, full of hiking trails and camping sites."
+  },
+  {
+    "id": 273,
+    "unit": "Unit 2",
+    "zh": "如果你喜欢滑雪，南岛是最好的去处。",
+    "en": "If you love skiing, the South Island is the best place to go."
+  },
+  {
+    "id": 274,
+    "unit": "Unit 2",
+    "zh": "但北岛也有一些很棒的滑雪场。",
+    "en": "But there are some amazing ski fields on the North Island, too."
+  },
+  {
+    "id": 275,
+    "unit": "Unit 2",
+    "zh": "该国的湖泊和河流非常适合划船和钓鱼。",
+    "en": "The country's lakes and rivers are perfect for boating and fishing."
+  },
+  {
+    "id": 276,
+    "unit": "Unit 2",
+    "zh": "大家好！我刚刚看了电影《狼图腾》。",
+    "en": "Hey everyone! I just watched the film Wolf Totem."
+  },
+  {
+    "id": 277,
+    "unit": "Unit 2",
+    "zh": "它是由一位名叫让-雅克·阿诺的法国导演执导的——我希望我拼对了！",
+    "en": "It was directed by a French director called Jean-Jacques Annaud — I hope I've spelt that right!"
+  },
+  {
+    "id": 278,
+    "unit": "Unit 2",
+    "zh": "它讲述了一个在20世纪60年代去内蒙古的年轻学生的故事。",
+    "en": "It's about a young student who went to Inner Mongolia in the 1960s."
+  },
+  {
+    "id": 279,
+    "unit": "Unit 2",
+    "zh": "他对狼产生了兴趣。",
+    "en": "He became interested in wolves."
+  },
+  {
+    "id": 280,
+    "unit": "Unit 2",
+    "zh": "我很喜欢这部电影，我想知道其他人是否也喜欢它。",
+    "en": "I enjoyed the film and I wondered if other people liked it, too."
+  },
+  {
+    "id": 281,
+    "unit": "Unit 2",
+    "zh": "我喜欢的一些方面是：原创性",
+    "en": "Some things I liked were: originality"
+  },
+  {
+    "id": 282,
+    "unit": "Unit 2",
+    "zh": "激动人心的场景——尤其是马群被狼群攻击的那一幕",
+    "en": "exciting scenes — especially the one where the horses are attacked by a pack of wolves"
+  },
+  {
+    "id": 283,
+    "unit": "Unit 2",
+    "zh": "很棒的镜头——内蒙古的草原看起来非常美丽",
+    "en": "great shots — the grasslands of Inner Mongolia look really beautiful"
+  },
+  {
+    "id": 284,
+    "unit": "Unit 2",
+    "zh": "强烈的环保信息（主角很快发现人类是多么容易破坏环境的自然平衡。）",
+    "en": "strong environmental message (The main character quickly sees how easy it is for humans to upset the natural balance of the environment.)"
+  },
+  {
+    "id": 285,
+    "unit": "Unit 2",
+    "zh": "实际上，它不是一个原创故事——这部电影是根据一位名叫姜戎的中国作家写的书改编的。",
+    "en": "Actually, it’s not an original story — the film was based on a book by a Chinese writer called Jiang Rong."
+  },
+  {
+    "id": 286,
+    "unit": "Unit 2",
+    "zh": "他写这本书是关于他在内蒙古的经历。",
+    "en": "He wrote the book about his experiences in Inner Mongolia."
+  },
+  {
+    "id": 287,
+    "unit": "Unit 2",
+    "zh": "电影中的特效怎么样？",
+    "en": "What were the special effects like in the film?"
+  },
+  {
+    "id": 288,
+    "unit": "Unit 2",
+    "zh": "我的意思是，那些狼都是CGI制作的吗？",
+    "en": "I mean, were the wolves all created by CGI?"
+  },
+  {
+    "id": 289,
+    "unit": "Unit 2",
+    "zh": "不，《狼图腾》里没有很多CGI——几乎所有的镜头都是真狼！",
+    "en": "No, there's not a lot of CGI in Wolf Totem — almost all of the shots are of real wolves!"
+  },
+  {
+    "id": 290,
+    "unit": "Unit 2",
+    "zh": "我在一本杂志上读到，制片公司选择阿诺来执导这部电影，因为他曾多次与动物合作。",
+    "en": "I read in a magazine that the production company chose Annaud to direct the film because he had worked with animals many times."
+  },
+  {
+    "id": 291,
+    "unit": "Unit 2",
+    "zh": "阿诺实际上为这部电影专门训练了狼崽。",
+    "en": "Annaud actually had wolf cubs specially trained for the film."
+  },
+  {
+    "id": 292,
+    "unit": "Unit 2",
+    "zh": "训练它们花了好几年的时间——它们必须学会信任人类，并且不害怕摄像机。",
+    "en": "It took several years to train them — they had to learn to trust humans and not to be afraid of cameras."
+  },
+  {
+    "id": 293,
+    "unit": "Unit 2",
+    "zh": "我钦佩电影摄制组如此悉心照顾动物的方式。",
+    "en": "I admire the way the film crew took such good care of the animals."
+  },
+  {
+    "id": 294,
+    "unit": "Unit 2",
+    "zh": "对我来说，这进一步凸显了电影的环保信息。",
+    "en": "For me, this further highlights the environmental message of the film."
+  },
+  {
+    "id": 295,
+    "unit": "Unit 2",
+    "zh": "TomTom 你能解释一下关于环境信息的事情吗？你所说的“破坏自然平衡”是什么意思？",
+    "en": "TomTom Can you explain the thing about the environmental message? What do you mean by “upset the natural balance”?"
+  },
+  {
+    "id": 296,
+    "unit": "Unit 2",
+    "zh": "Josie55 也许我可以从电影中给你举个例子来解释……有一次，一些贪婪的人从狼群那里偷了很多肉。",
+    "en": "Josie55 Maybe I can give you an example from the film to help explain ... At one point, some greedy people steal a lot of meat from the wolf pack."
+  },
+  {
+    "id": 297,
+    "unit": "Unit 2",
+    "zh": "这让狼群没有东西吃，于是它们开始攻击农民的动物。",
+    "en": "That leaves the wolves with nothing to eat so they start attacking the farmers’ animals."
+  },
+  {
+    "id": 298,
+    "unit": "Unit 2",
+    "zh": "结果，人们决定杀死狼群，忽视了狼群保护草原免受野兔、老鼠和其他动物入侵的警告。",
+    "en": "As a result, a decision is made to kill the wolves, ignoring the warning that wolves protect the grassland from the invasion of hares, rats and other animals."
+  },
+  {
+    "id": 299,
+    "unit": "Unit 2",
+    "zh": "狼群的消失给草原带来了灾难，并对农民产生了不可避免的负面影响。",
+    "en": "The disappearance of the wolves brings disaster to the grassland and has inevitable negative effects on the farmers."
+  },
+  {
+    "id": 300,
+    "unit": "Unit 2",
+    "zh": "如果人们没有拿走肉，狼群就不会去打扰农民的羊。",
+    "en": "If people hadn't taken the meat, the wolves would have left the farmers’ sheep alone."
+  },
+  {
+    "id": 301,
+    "unit": "Unit 2",
+    "zh": "这表明人类的一个小行为如何可能给许多其他物种带来重大问题。",
+    "en": "This shows how one small human action can cause major problems for many other species."
+  },
+  {
+    "id": 302,
+    "unit": "Unit 2",
+    "zh": "是的，这本书和这部电影确实展示了人类保护环境的重要性。",
+    "en": "Yes, the book and the film really show how important it is for humans to protect the environment."
+  },
+  {
+    "id": 303,
+    "unit": "Unit 2",
+    "zh": "这里有一句书中的相关引述：“保护草原对我们来说很艰难。如果我们不杀狼，我们的人就会减少。但如果我们杀太多狼，我们的人会更少。”",
+    "en": "Here’s a relevant quote from the book, “Protecting the grassland is hard on us. If we don't kill wolves, there'll be fewer of us. But if we kill too many of them, there'll be even fewer.”"
+  },
+  {
+    "id": 304,
+    "unit": "Unit 2",
+    "zh": "我从小就开始冲浪，人们总是告诉我我很有天赋。",
+    "en": "I've surfed since I was a child, and people always told me I was talented."
+  },
+  {
+    "id": 305,
+    "unit": "Unit 2",
+    "zh": "我是一个游泳健将，非常习惯在海里游泳。",
+    "en": "I am a strong swimmer and very used to swimming in the sea."
+  },
+  {
+    "id": 306,
+    "unit": "Unit 2",
+    "zh": "然而，去年的一天，可怕的事情发生在我身上。",
+    "en": "One day last year, however, something terrible happened to me."
+  },
+  {
+    "id": 307,
+    "unit": "Unit 2",
+    "zh": "我像往常一样开始我的一天，并决定和我的朋友去一个海滩。",
+    "en": "I began my day as normal and decided to go with my friend to a beach."
+  },
+  {
+    "id": 308,
+    "unit": "Unit 2",
+    "zh": "海水是黑色的，海浪很大，但我们并不担心。",
+    "en": "The sea was dark and the waves were huge but we weren't concerned."
+  },
+  {
+    "id": 309,
+    "unit": "Unit 2",
+    "zh": "当我游到离岸边很远的地方时，危险变得清晰起来。",
+    "en": "I had swum far from the shore when the danger became clear."
+  },
+  {
+    "id": 310,
+    "unit": "Unit 2",
+    "zh": "一个漩涡出现了，我迅速被拖向它。",
+    "en": "A whirlpool appeared and I was dragged towards it quickly."
+  },
+  {
+    "id": 311,
+    "unit": "Unit 2",
+    "zh": "我拼命挣扎，但无济于事。",
+    "en": "I fought as hard as I could but it was useless."
+  },
+  {
+    "id": 312,
+    "unit": "Unit 2",
+    "zh": "我无助又害怕。",
+    "en": "I was helpless and so frightened."
+  },
+  {
+    "id": 313,
+    "unit": "Unit 2",
+    "zh": "突然，另一个冲浪者出现并抓住了我。",
+    "en": "All of a sudden, another surfer appeared and grabbed me."
+  },
+  {
+    "id": 314,
+    "unit": "Unit 2",
+    "zh": "他设法把我们俩从漩涡中拉出来，回到了海滩上。",
+    "en": "He managed to pull us both away from the whirlpool and back to the beach."
+  },
+  {
+    "id": 315,
+    "unit": "Unit 2",
+    "zh": "我非常感激和宽慰。",
+    "en": "I was so thankful and relieved."
+  },
+  {
+    "id": 316,
+    "unit": "Unit 2",
+    "zh": "他的勇敢和敏捷的思维是原因。",
+    "en": "His bravery and quick thinking was the reason."
+  },
+  {
+    "id": 317,
+    "unit": "Unit 2",
+    "zh": "王先生是一名搜救队的成员。",
+    "en": "Mr Wang is a member of a search and rescue team."
+  },
+  {
+    "id": 318,
+    "unit": "Unit 2",
+    "zh": "他的团队曾参与四川和尼泊尔的地震救援行动。",
+    "en": "His team has participated in the earthquake rescue operations in Sichuan and Nepal."
+  },
+  {
+    "id": 319,
+    "unit": "Unit 2",
+    "zh": "他们的职责是拯救生命，并为灾难中的人们提供医疗帮助。",
+    "en": "Their role is to save lives and provide medical help to people in disasters."
+  },
+  {
+    "id": 320,
+    "unit": "Unit 2",
+    "zh": "多亏了他们的工作，许多人得以在自然灾害中幸存下来。",
+    "en": "Thanks to their work, lots of people were able to survive natural disasters."
+  },
+  {
+    "id": 321,
+    "unit": "Unit 2",
+    "zh": "例如，在尼泊尔，他的团队拯救了两人的生命，并在近两周的时间内协助了2000多人。",
+    "en": "For instance, in Nepal, his team saved two people's lives and assisted more than 2,000 people over a period of nearly two weeks."
+  },
+  {
+    "id": 322,
+    "unit": "Unit 2",
+    "zh": "为了完成行动，王先生的团队使用许多资源，例如，训练有素的狗和搜救车辆。",
+    "en": "In order to complete operations, Mr Wang's team uses many resources, for example, trained dogs and search and rescue vehicles."
+  },
+  {
+    "id": 323,
+    "unit": "Unit 2",
+    "zh": "如果你遇到地震，王先生的建议是远离可能破裂或掉落的东西，无论你在室内还是室外。",
+    "en": "If you are ever in an earthquake, Mr Wang's advice is to move away from things that can break or fall, whether you are inside or outside."
+  },
+  {
+    "id": 324,
+    "unit": "Unit 2",
+    "zh": "如果你被困在建筑物里，你不应该焦虑。",
+    "en": "If you are trapped in a building, you should not be anxious."
+  },
+  {
+    "id": 325,
+    "unit": "Unit 2",
+    "zh": "相反，你应该保持冷静并敲打墙壁，这样救援人员就能找到你。",
+    "en": "Instead you should stay calm and knock on a wall so rescue people can find you."
+  },
+  {
+    "id": 326,
+    "unit": "Unit 2",
+    "zh": "最终，斯科特船长和他的队员们展现出的巨大勇气感动了世界。",
+    "en": "In the end, the world was moved by the great courage shown by Captain Scott and his men."
+  },
+  {
+    "id": 327,
+    "unit": "Unit 2",
+    "zh": "为了庆祝这一成就，他在南极插上了自己国家的国旗。",
+    "en": "To celebrate this, he planted his country's flag at the South Pole."
+  },
+  {
+    "id": 328,
+    "unit": "Unit 2",
+    "zh": "离开南极被证明对斯科特的团队是致命的：他们没能活着回到英国。",
+    "en": "Departing Antarctica proved to be deadly for Scott's team: they didn't make it back to the UK alive."
+  },
+  {
+    "id": 329,
+    "unit": "Unit 2",
+    "zh": "1910-1911年的极地夏天对至少两个人来说非常特别：来自挪威的罗尔德·阿蒙森和来自英国的斯科特船长。",
+    "en": "The polar summer of 1910-1911 was very special for at least two people: Roald Amundsen from Norway and Captain Scott from the UK."
+  },
+  {
+    "id": 330,
+    "unit": "Unit 2",
+    "zh": "尽管有这些损失，该团队确实收集了大量的岩石，这些岩石后来被证明对科学研究很有用。",
+    "en": "Despite these losses, the team did collect a heavy load of rocks, which proved to be useful for scientific research later."
+  },
+  {
+    "id": 331,
+    "unit": "Unit 2",
+    "zh": "斯科特和他的队员们后来才到达，当得知阿蒙森已经击败了他们时，他们感到非常难过。",
+    "en": "Scott and his men arrived later and were saddened when they learnt that Amundsen had beaten them."
+  },
+  {
+    "id": 332,
+    "unit": "Unit 2",
+    "zh": "阿蒙森更早开始了他的旅程，他的团队在近两个月的旅行后率先到达。",
+    "en": "Amundsen started his journey earlier and his team arrived first after nearly two months’ travelling."
+  },
+  {
+    "id": 333,
+    "unit": "Unit 2",
+    "zh": "他们两人都有一个雄心勃勃的目标，即成为第一个到达南极的人。",
+    "en": "Both of them had the ambitious goal of being the first to reach the South Pole."
+  },
+  {
+    "id": 334,
+    "unit": "Unit 2",
+    "zh": "经验赞扬那些为最多人带来幸福的人是最幸福的。",
+    "en": "Experience acclaims as happiest the man who has made the greatest number of people happy."
+  },
+  {
+    "id": 335,
+    "unit": "Unit 2",
+    "zh": "生活的目标是为他人创造更美好的生活。",
+    "en": "The aim of living is making better lives for others."
+  },
+  {
+    "id": 336,
+    "unit": "Unit 2",
+    "zh": "这是一个真正令人钦佩之人的标志：面对困难时的坚定不移。",
+    "en": "This is the mark of a really admirable man: steadfastness in the face of trouble."
+  },
+  {
+    "id": 337,
+    "unit": "Unit 2",
+    "zh": "每个人都有令人钦佩的潜力。",
+    "en": "There are admirable potentialities in every human being."
+  },
+  {
+    "id": 338,
+    "unit": "Unit 3",
+    "zh": "在2015年12月7日的诺贝尔奖讲座上，一位84岁的中国女性慢慢地走上了舞台。",
+    "en": "At the Nobel Prize Lecture on 7 December, 2015, an 84-year-old Chinese woman walked slowly on to the stage."
+  },
+  {
+    "id": 339,
+    "unit": "Unit 3",
+    "zh": "她开始谈论这种救命的药物——青蒿素，这是她在20世纪70年代在团队的帮助下发现的。",
+    "en": "She began to talk about the life-saving drug, artemisinin, which she had discovered with the help of her team in the 1970s."
+  },
+  {
+    "id": 340,
+    "unit": "Unit 3",
+    "zh": "这位女性就是屠呦呦，第一位获得诺贝尔奖的中国女性科学家。",
+    "en": "The woman was Tu Youyou, the first Chinese female scientist to be awarded a Nobel Prize."
+  },
+  {
+    "id": 341,
+    "unit": "Unit 3",
+    "zh": "诺贝尔奖委员会的一位名叫汉斯·福斯贝里的科学家解释说：“青蒿素的发现导致了新药的开发，这些新药拯救了数百万人的生命。”",
+    "en": "A scientist who was on the Nobel Prize Committee called Hans Forssberg explained that “the discovery of artemisinin has led to the development of new drugs which have saved the lives of millions’."
+  },
+  {
+    "id": 342,
+    "unit": "Unit 3",
+    "zh": "在感谢委员会给予的荣誉时，屠呦呦说：“这不仅是我个人的荣誉，也是对中国所有科学家的认可和鼓励。”",
+    "en": "When thanking the Committee for the honour, Tu Youyou said, “This is not only an honour for myself, but also recognition of and encouragement for all scientists in China.”"
+  },
+  {
+    "id": 343,
+    "unit": "Unit 3",
+    "zh": "屠呦呦于1930年12月30日出生在中国浙江省。",
+    "en": "Tu Youyou was born in Zhejiang Province, China, on 30 December, 1930."
+  },
+  {
+    "id": 344,
+    "unit": "Unit 3",
+    "zh": "她曾在北京大学健康科学中心学习医学。",
+    "en": "She studied medicine at Peking University Health Science Centre."
+  },
+  {
+    "id": 345,
+    "unit": "Unit 3",
+    "zh": "毕业后，她成为了中国中医科学院的一员。",
+    "en": "After graduation, she became a member of China Academy of Chinese Medical Sciences."
+  },
+  {
+    "id": 346,
+    "unit": "Unit 3",
+    "zh": "后来，她与该领域的专家一起学习了两年半的中医，从中获得了关于传统实践的深厚知识。",
+    "en": "Later, she studied Chinese medicine for two and a half years with experts in the field from whom she gained a deep knowledge about traditional practices."
+  },
+  {
+    "id": 347,
+    "unit": "Unit 3",
+    "zh": "1969年，屠呦呦被选中组建一个团队，寻找治疗疟疾的方法——这是一种每年导致数百万人死亡的疾病。",
+    "en": "In 1969, Tu Youyou was chosen to establish a team to find a cure for malaria — a disease that killed millions of people every year."
+  },
+  {
+    "id": 348,
+    "unit": "Unit 3",
+    "zh": "全世界的科学家一直在努力寻找治疗方法。",
+    "en": "Across the world, scientists had been trying to find a cure."
+  },
+  {
+    "id": 349,
+    "unit": "Unit 3",
+    "zh": "他们测试了超过24万种化学物质，但都没有成功。",
+    "en": "They tested more than 240,000 chemicals with no success."
+  },
+  {
+    "id": 350,
+    "unit": "Unit 3",
+    "zh": "然而，屠呦呦认为中草药可能蕴藏着这个秘密。",
+    "en": "However, Tu Youyou had an idea that Chinese herbs might hold the secret."
+  },
+  {
+    "id": 351,
+    "unit": "Unit 3",
+    "zh": "她研究了古代中国医学文献，并拜访了中医专家。",
+    "en": "She studied ancient Chinese medical literature and visited experts in traditional Chinese medicine."
+  },
+  {
+    "id": 352,
+    "unit": "Unit 3",
+    "zh": "她研究了数百种与抗疟治疗相关的传统配方。",
+    "en": "She researched hundreds of traditional recipes connected to anti-malarial cures."
+  },
+  {
+    "id": 353,
+    "unit": "Unit 3",
+    "zh": "然后，屠呦呦和她的团队开始使用现代研究方法逐一研究这些中草药。",
+    "en": "Then Tu Youyou and her team began using modern research methods to study these Chinese herbs one by one."
+  },
+  {
+    "id": 354,
+    "unit": "Unit 3",
+    "zh": "这不是一项容易的任务。",
+    "en": "This was not an easy task."
+  },
+  {
+    "id": 355,
+    "unit": "Unit 3",
+    "zh": "之所以困难，是因为团队的资源有限。",
+    "en": "The reason why this was difficult was that the team had limited resources."
+  },
+  {
+    "id": 356,
+    "unit": "Unit 3",
+    "zh": "他们没有足够的人员，而且他们工作的实验室空气质量很差。",
+    "en": "They did not have enough staff, and the laboratory in which they worked had poor air quality."
+  },
+  {
+    "id": 357,
+    "unit": "Unit 3",
+    "zh": "然而，在经历了数百次失败的实验后，他们最终发现了一种有前景的化学物质。",
+    "en": "However, after hundreds of failed experiments, they eventually came across a promising chemical."
+  },
+  {
+    "id": 358,
+    "unit": "Unit 3",
+    "zh": "它在动物实验中效果很好，但他们必须知道它对人类是否安全。",
+    "en": "It worked well in experiments on animals, but they had to know if it was safe for humans."
+  },
+  {
+    "id": 359,
+    "unit": "Unit 3",
+    "zh": "当他们准备好开始测试时，屠呦呦勇敢地自愿成为第一个人类受试者，团队的其他成员也跟随了她。",
+    "en": "Tu Youyou bravely volunteered to be the first human subject when they were ready to start testing and the rest of her team followed her."
+  },
+  {
+    "id": 360,
+    "unit": "Unit 3",
+    "zh": "测试取得了成功。",
+    "en": "The test was a success."
+  },
+  {
+    "id": 361,
+    "unit": "Unit 3",
+    "zh": "他们发现的药物——青蒿素，现已成为世界上对抗疟疾最有效的药物。",
+    "en": "The medicine they discovered, artemisinin, has now become the world’s most effective drug for fighting malaria."
+  },
+  {
+    "id": 362,
+    "unit": "Unit 3",
+    "zh": "尽管屠呦呦对名声不感兴趣，但她已经成为一位其工作在国际上享有盛誉的科学家。",
+    "en": "Even though Tu Youyou is not interested in fame, she has become a scientist whose work is internationally renowned."
+  },
+  {
+    "id": 363,
+    "unit": "Unit 3",
+    "zh": "2019年，她被英国广播公司（BBC）选为20世纪最具影响力的科学人物之一，与阿尔伯特·爱因斯坦和阿兰·麦席森·图灵并列。",
+    "en": "In 2019, she was selected by the BBC as one of the most influential figures of science in the 20th century along with Albert Einstein and Alan Mathison Turing."
+  },
+  {
+    "id": 364,
+    "unit": "Unit 3",
+    "zh": "屠呦呦因其在中国科学困难时期作为科学家的勇气、她运用古老智慧和新方法实现目标的能力，以及她的工作连接了东西方世界、拯救了数百万生命的事实而闻名。",
+    "en": "Tu Youyou was noted for her bravery in being a scientist during a difficult time for science in China, her ability to use old wisdom and new methods to achieve her goals and the fact that her work bridged the Eastern and Western worlds, saving millions of lives."
+  },
+  {
+    "id": 365,
+    "unit": "Unit 3",
+    "zh": "如今，屠呦呦尽管年事已高，仍继续进行研究。",
+    "en": "Today Tu Youyou continues to conduct research despite her age."
+  },
+  {
+    "id": 366,
+    "unit": "Unit 3",
+    "zh": "据屠呦呦说：“从我们发现青蒿素的研究经验中，我们学到了中西医背后的智慧。",
+    "en": "According to Tu Youyou, “From our research experience in discovering artemisinin, we learnt the wisdom behind both Chinese and Western medicine."
+  },
+  {
+    "id": 367,
+    "unit": "Unit 3",
+    "zh": "如果这两种智慧能够充分融合，未来的发展潜力巨大。”",
+    "en": "There is great potential for future advances if these two kinds of wisdom can be fully integrated”."
+  },
+  {
+    "id": 368,
+    "unit": "Unit 3",
+    "zh": "克里斯托弗·里夫的人生故事几乎令人无法想象——从极其成功的好莱坞生涯，到危及生命的重伤之恐怖；里夫都经历了。",
+    "en": "The story of Christopher Reeve's life is one that is almost impossible to imagine — from a wildly successful Hollywood career, to the horror of life-threatening injury; Reeve experienced both."
+  },
+  {
+    "id": 369,
+    "unit": "Unit 3",
+    "zh": "因此，他不仅因在超人电影中饰演超级英雄而闻名，在现实生活中也被许多人视为超级英雄。",
+    "en": "Thus, not only is he known as a superhero in the Superman films, but he is also regarded as a superhero to many in real life."
+  },
+  {
+    "id": 370,
+    "unit": "Unit 3",
+    "zh": "里夫于1952年9月25日出生于纽约——父亲富兰克林·里夫是一名教师和小说家，母亲芭芭拉·皮特尼是一名记者。",
+    "en": "Reeve was born on 25 September, 1952 in New York — the son of Franklin Reeve, a teacher and novelist, and Barbara Pitney, a journalist."
+  },
+  {
+    "id": 371,
+    "unit": "Unit 3",
+    "zh": "他在表演中找到了激情，并在八岁时出演了他的第一部校园剧。",
+    "en": "He found his passion in acting and starred in his first school play at the age of eight."
+  },
+  {
+    "id": 372,
+    "unit": "Unit 3",
+    "zh": "尽管他曾认为自己只会从事舞台表演，但里夫还是去试镜了，并最终获得了一部超人电影的主角。",
+    "en": "Although he believed he would only ever act on stage, Reeve tried out for, and was eventually given the lead role in a Superman film."
+  },
+  {
+    "id": 373,
+    "unit": "Unit 3",
+    "zh": "从1978年到1987年，里夫主演了四部超人电影。",
+    "en": "Reeve starred in four Superman films from 1978 to 1987."
+  },
+  {
+    "id": 374,
+    "unit": "Unit 3",
+    "zh": "可以说，他在这些电影中的角色给了他成为现实生活中的超人的机会，他很快就因提高对公益事业的认识而赢得了声誉。",
+    "en": "Come that his roles in these films had given him the opportunity to be a real-life superman, and he soon gained a reputation for raising awareness for good causes."
+  },
+  {
+    "id": 375,
+    "unit": "Unit 3",
+    "zh": "他去医院看望生病的儿童，并与拯救儿童等组织合作，就健康、教育和儿童保护问题发声，以帮助那些最需要帮助的人。",
+    "en": "He visited sick children in hospitals and worked with organisations such as Save the Children, speaking out about health, education and child protection to help those most in need."
+  },
+  {
+    "id": 376,
+    "unit": "Unit 3",
+    "zh": "不幸的是，1995年，灾难降临到了里夫身上。",
+    "en": "Unfortunately, in 1995 disaster struck Reeve."
+  },
+  {
+    "id": 377,
+    "unit": "Unit 3",
+    "zh": "在一次骑马时，他从马背上摔了下来，摔断了脖子。",
+    "en": "While horseback riding, he was thrown off his horse and broke his neck."
+  },
+  {
+    "id": 378,
+    "unit": "Unit 3",
+    "zh": "他的伤势非常严重，以至于他的身体完全失去了活动和感觉，甚至需要一台机器来帮助他呼吸。",
+    "en": "His injuries were so severe that he had no movement or feeling in his body at all and even needed a machine to help him breathe."
+  },
+  {
+    "id": 379,
+    "unit": "Unit 3",
+    "zh": "起初，他的医生们认为他活不下来。",
+    "en": "At first, his doctors did not believe that he would survive."
+  },
+  {
+    "id": 380,
+    "unit": "Unit 3",
+    "zh": "在这段时间里，里夫感到自己失去了所有希望。",
+    "en": "During this time, Reeve felt like he had lost all hope."
+  },
+  {
+    "id": 381,
+    "unit": "Unit 3",
+    "zh": "从一个曾经健康成功的年轻人，到一个被困在残破身体里的人，对他来说就像一场活生生的噩梦。",
+    "en": "Having once been a healthy and successful young man to being trapped in a broken body was like a living nightmare to him."
+  },
+  {
+    "id": 382,
+    "unit": "Unit 3",
+    "zh": "他承认，在受伤后生活的早期阶段，他希望自己死了，甚至想过结束自己的生命。",
+    "en": "He admitted that during the early stages of living with his injury, he wished that he was dead and even thought of ending his own life."
+  },
+  {
+    "id": 383,
+    "unit": "Unit 3",
+    "zh": "他陷入了持续数月的抑郁之中。",
+    "en": "He fell into a depression which lasted for many months."
+  },
+  {
+    "id": 384,
+    "unit": "Unit 3",
+    "zh": "正是由于他的妻子、父母和朋友持续的支持，他才最终重新找到了活下去的意志。",
+    "en": "It was only due to the ongoing support of his wife, parents and friends that he eventually found the will to live again."
+  },
+  {
+    "id": 385,
+    "unit": "Unit 3",
+    "zh": "在随后的几年里，他把注意力集中在了有朝一日能再次走路的目标上。",
+    "en": "For the years that followed he focused his attention on his goal of one day walking again."
+  },
+  {
+    "id": 386,
+    "unit": "Unit 3",
+    "zh": "带着新的精力和承诺，里夫开始了一项密集的锻炼计划，以帮助他实现这个目标。",
+    "en": "With a new sense of energy and commitment, Reeve undertook an intense exercise programme to help him achieve this goal."
+  },
+  {
+    "id": 387,
+    "unit": "Unit 3",
+    "zh": "他参与了各种旨在重建肌肉的锻炼，并取得了显著的进步。",
+    "en": "He engaged in a wide range of exercises designed to rebuild muscle, and made remarkable progress."
+  },
+  {
+    "id": 388,
+    "unit": "Unit 3",
+    "zh": "不久之后，他成功地重返电影事业，从事导演、制片甚至主演电影。",
+    "en": "Shortly after, he managed to return to his film career by directing, producing and even starring in films."
+  },
+  {
+    "id": 389,
+    "unit": "Unit 3",
+    "zh": "他还写了一本传记，并重新开始了他的慈善工作。",
+    "en": "He also wrote a biography and returned to his charity work."
+  },
+  {
+    "id": 390,
+    "unit": "Unit 3",
+    "zh": "里夫成为背伤和残疾人士的热情而充满活力的倡导者，筹集了数百万美元来支持医学研究。",
+    "en": "Reeve became a passionate and energetic advocate for people with back injuries and disabilities, raising millions of dollars in support of medical research."
+  },
+  {
+    "id": 391,
+    "unit": "Unit 3",
+    "zh": "“我所做的事情是基于我们内心都拥有的力量……而你不需要成为‘超人’也能做到。”",
+    "en": "“What I do is based on powers we all have inside us ... and you don't have to be a ‘superman’ to do it.”"
+  },
+  {
+    "id": 392,
+    "unit": "Unit 3",
+    "zh": "他的积极态度激励了许多深陷疾病之中的人。",
+    "en": "His positive attitude inspired many people who were stuck in illness."
+  },
+  {
+    "id": 393,
+    "unit": "Unit 3",
+    "zh": "“随着新医学研究的进展，我相信像我这样的人总有一天能够再次行走。",
+    "en": "“With the progress of new medical research, I'm confident that people like me would be able to walk again one day."
+  },
+  {
+    "id": 394,
+    "unit": "Unit 3",
+    "zh": "所以你看，我忙于生活，无暇考虑放弃！”",
+    "en": "So you can see, I’m too busy with living to think of giving up!”"
+  },
+  {
+    "id": 395,
+    "unit": "Unit 3",
+    "zh": "令人悲伤的是，2004年10月10日，克里斯托弗·里夫去世了。",
+    "en": "Sadly, on 10 October, 2004, Christopher Reeve passed away."
+  },
+  {
+    "id": 396,
+    "unit": "Unit 3",
+    "zh": "他将永远被人们铭记为一位超级英雄——在不止一个方面。",
+    "en": "He will always be remembered as a superhero — in more ways than one."
+  },
+  {
+    "id": 397,
+    "unit": "Unit 3",
+    "zh": "2015年12月7日，屠呦呦因发现青蒿素（一种拯救生命的疟疾药物）而被授予诺贝尔奖。",
+    "en": "On 7 December, 2015, Tu Youyou was awarded a Nobel Prize for her discovery of artemisinin, a life-saving drug for malaria."
+  },
+  {
+    "id": 398,
+    "unit": "Unit 3",
+    "zh": "屠呦呦在大学主修医学，后来与该领域的专家一起学习中医。",
+    "en": "Tu Youyou majored in medicine in university and later studied Chinese medicine with experts in the field."
+  },
+  {
+    "id": 399,
+    "unit": "Unit 3",
+    "zh": "1969年，屠呦呦被赋予使命，组建一个团队寻找治疗疟疾的方法。",
+    "en": "In 1969, Tu Youyou was given the mission to set up a team to find a cure for malaria."
+  },
+  {
+    "id": 400,
+    "unit": "Unit 3",
+    "zh": "当全球科学家未能使用现代化学物质找到治疗方法时，屠呦呦转向中草药寻求帮助。",
+    "en": "When worldwide scientists failed to find a cure using modern chemicals, Tu Youyou turned to Chinese herbs for help."
+  },
+  {
+    "id": 401,
+    "unit": "Unit 3",
+    "zh": "尽管资源有限且经历了数百次失败的实验，他们还是找到了一种可能的化学物质。",
+    "en": "Despite their limited resources and hundreds of failed experiments, they found a possible chemical."
+  },
+  {
+    "id": 402,
+    "unit": "Unit 3",
+    "zh": "为了测试药物，屠呦呦和她的团队在自己身上测试了药物。",
+    "en": "In order to test the medicine, Tu Youyou and her team tested the medicine on their own bodies."
+  },
+  {
+    "id": 403,
+    "unit": "Unit 3",
+    "zh": "他们最终发现了治疗这种疾病最有效的药物。",
+    "en": "They finally discovered the most effective drug to cure the disease."
+  },
+  {
+    "id": 404,
+    "unit": "Unit 3",
+    "zh": "尽管屠呦呦赢得了诺贝尔奖并变得众所周知，但她对名声不感兴趣，更愿意继续她的研究。",
+    "en": "Although Tu Youyou has won the Nobel Prize and become well-known, she is uninterested in fame and prefers to continue her research."
+  },
+  {
+    "id": 405,
+    "unit": "Unit 3",
+    "zh": "这段视频展示了著名演讲《我有一个梦想》的结尾部分，该演讲于1963年8月28日在美国华盛顿特区的民权游行中发表。",
+    "en": "This video shows the end part of the famous speech “I have a dream”, which was made during the Civil Rights March in Washington, D.C., USA on 28 August, 1963."
+  },
+  {
+    "id": 406,
+    "unit": "Unit 3",
+    "zh": "“我梦想有一天，在佐治亚的红山上，昔日奴隶的儿子和昔日奴隶主的儿子能够坐在一起，共叙兄弟情谊。”",
+    "en": "“I have a dream that one day, on the red hills of Georgia, the sons of former slaves and the sons of former slave-owners will be able to sit down together at the table of brotherhood.”"
+  },
+  {
+    "id": 407,
+    "unit": "Unit 3",
+    "zh": "“我梦想有一天，甚至密西西比州，一个笼罩着不公正的热浪、压迫的热浪的州，也将被改造成自由和公正的绿洲。”",
+    "en": "“I have a dream that one day, even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.”"
+  },
+  {
+    "id": 408,
+    "unit": "Unit 3",
+    "zh": "在太空探索的历史中，数百名宇航员完成了太空之旅。",
+    "en": "In the history of space exploration, hundreds of astronauts have made the journey into space."
+  },
+  {
+    "id": 409,
+    "unit": "Unit 3",
+    "zh": "来自世界各地的男女们学习、训练并努力工作，为了进入太空。",
+    "en": "Men and women from all over the world have studied, trained and worked hard in order to go into space."
+  },
+  {
+    "id": 410,
+    "unit": "Unit 3",
+    "zh": "这项工作需要技能、天赋和勇气的特殊结合，以及强大的身体和精神力量。",
+    "en": "It is a job that calls for a special blend of skill, talent and bravery, as well as great physical and mental strength."
+  },
+  {
+    "id": 411,
+    "unit": "Unit 3",
+    "zh": "存在许多风险和危险，但这项工作极其重要，我们从探索太空中获得的知识是无价的。",
+    "en": "There are many risks and dangers, but the work is extremely important, and the knowledge that we can gain from exploring space is invaluable."
+  },
+  {
+    "id": 412,
+    "unit": "Unit 3",
+    "zh": "有时，即使是计划最周密的太空任务也可能出现严重问题。",
+    "en": "Sometimes even the best-planned space missions can go terribly wrong."
+  },
+  {
+    "id": 413,
+    "unit": "Unit 3",
+    "zh": "挑战者号任务就是这样一个例子。",
+    "en": "The Challenger mission is an example of this."
+  },
+  {
+    "id": 414,
+    "unit": "Unit 3",
+    "zh": "1986年1月28日，美国航天飞机挑战者号在发射后不久爆炸，七名美国宇航员（五男两女）遇难。",
+    "en": "On 28 January, 1986, seven American astronauts (five men and two women) died when the US space shuttle Challenger exploded soon after it was launched."
+  },
+  {
+    "id": 415,
+    "unit": "Unit 3",
+    "zh": "其中包括中学教师莎伦·克里斯塔·麦考利夫，她本将成为第一位太空教师。",
+    "en": "Among them was Sharon Christa McAuliffe, a secondary school teacher, who was going to be the first teacher in space."
+  },
+  {
+    "id": 416,
+    "unit": "Unit 3",
+    "zh": "全世界数百万人，包括许多中小学的学生，通过电视直播观看了这场灾难的发生。",
+    "en": "Millions of people around the world, including many students in primary and secondary schools, watched the disaster happen live on TV."
+  },
+  {
+    "id": 417,
+    "unit": "Unit 3",
+    "zh": "以下是美国总统罗纳德·里根在1986年挑战者号灾难后演讲的一部分：",
+    "en": "Here is part of US President Ronald Reagan's speech after the 1986 Challenger disaster:"
+  },
+  {
+    "id": 418,
+    "unit": "Unit 3",
+    "zh": "“你们所爱的人是大胆而勇敢的，他们拥有那种特殊的优雅，那种特殊的精神，它说：‘给我一个挑战，我会欣然接受。’”",
+    "en": "“Your loved ones were daring and brave, and they had that special grace, that special spirit that says, ‘Give me a challenge and I'll meet it with joy.’”"
+  },
+  {
+    "id": 419,
+    "unit": "Unit 3",
+    "zh": "“他们渴望探索宇宙并发现其真理。”",
+    "en": "“They had a hunger to explore the universe and discover its truths.”"
+  },
+  {
+    "id": 420,
+    "unit": "Unit 3",
+    "zh": "“他们希望服务，而他们也做到了。”",
+    "en": "“They wished to serve, and they did.”"
+  },
+  {
+    "id": 421,
+    "unit": "Unit 3",
+    "zh": "“他们为我们所有人服务。”",
+    "en": "“They served all of us.”"
+  },
+  {
+    "id": 422,
+    "unit": "Unit 3",
+    "zh": "中国第一艘载人飞船于2003年10月15日发射升空。",
+    "en": "China's first manned spaceship lifted off on 15 October 2003."
+  },
+  {
+    "id": 423,
+    "unit": "Unit 3",
+    "zh": "这艘名为神舟五号的飞船搭载着中国首位宇航员杨利伟。",
+    "en": "The spaceship, called Shenzhou V, was carrying China's first astronaut Yang Liwei."
+  },
+  {
+    "id": 424,
+    "unit": "Unit 3",
+    "zh": "在21小时的太空飞行中，神舟五号绕地球飞行了14圈。",
+    "en": "During the 21-hour space flight, the Shenzhou V circled the Earth 14 times."
+  },
+  {
+    "id": 425,
+    "unit": "Unit 3",
+    "zh": "当飞船绕地球飞行时，杨利伟执行了许多科学任务，并有机会与家人通话。",
+    "en": "While the spaceship was circling the Earth Yang Liwei performed a number of scientific tasks and had a chance to speak to his family."
+  },
+  {
+    "id": 426,
+    "unit": "Unit 3",
+    "zh": "他还展示了中国和联合国的旗帜，象征着中国和平探索和利用太空的愿望。",
+    "en": "He also flew the flags of China and the United Nations symbolising China's wish to explore and use space peacefully."
+  },
+  {
+    "id": 427,
+    "unit": "Unit 3",
+    "zh": "10月16日，神舟五号在内蒙古安全着陆。",
+    "en": "On 16 October, the Shenzhou V landed safely in Inner Mongolia."
+  },
+  {
+    "id": 428,
+    "unit": "Unit 3",
+    "zh": "数百万人通过电视观看了着陆过程。",
+    "en": "Millions of people watched the landing on TV."
+  },
+  {
+    "id": 429,
+    "unit": "Unit 3",
+    "zh": "当杨利伟爬出飞船时，他微笑着向等待他的人群挥手致意。",
+    "en": "When Yang Liwei climbed out of the spaceship, he smiled and waved to the crowds waiting for him."
+  },
+  {
+    "id": 430,
+    "unit": "Unit 3",
+    "zh": "虽然他很高兴回家，但他说：“我觉得在太空待21个小时太短了。”",
+    "en": "Although he was happy to be home, he said, \"I thought 21 hours was too short to stay in space.\""
+  },
+  {
+    "id": 431,
+    "unit": "Unit 3",
+    "zh": "纵观历史，我们能找到许多鼓舞人心的年轻人，他们在极端困境中展现出勇气和希望。",
+    "en": "Throughout history, we can find examples of inspiring young people who showed courage and hope in times of extreme hardship."
+  },
+  {
+    "id": 432,
+    "unit": "Unit 3",
+    "zh": "安妮·弗兰克就是其中之一。",
+    "en": "Anne Frank is one of them."
+  },
+  {
+    "id": 433,
+    "unit": "Unit 3",
+    "zh": "她的日记是有史以来最重要的日记之一。",
+    "en": "Her diary is one of the most important diaries ever written."
+  },
+  {
+    "id": 434,
+    "unit": "Unit 3",
+    "zh": "安妮于1929年6月12日出生在德国法兰克福。",
+    "en": "Anne was born on 12 June, 1929, in Frankfurt, Germany."
+  },
+  {
+    "id": 435,
+    "unit": "Unit 3",
+    "zh": "第二次世界大战期间，他们不得不躲藏在一个秘密的藏身之处，以逃避纳粹的大屠杀。",
+    "en": "During World War II, they had to live in a secret hiding place to escape the Nazi Holocaust."
+  },
+  {
+    "id": 436,
+    "unit": "Unit 3",
+    "zh": "那是一个德国纳粹杀害犹太人的时期。",
+    "en": "This was a time when the German Nazis were killing Jews."
+  },
+  {
+    "id": 437,
+    "unit": "Unit 3",
+    "zh": "约有六百万犹太人在大屠杀中丧生。",
+    "en": "Around six million Jews died in the Holocaust."
+  },
+  {
+    "id": 438,
+    "unit": "Unit 3",
+    "zh": "安妮的父亲在德国是一位成功的商人。",
+    "en": "Anne's father was a successful businessman in Germany."
+  },
+  {
+    "id": 439,
+    "unit": "Unit 3",
+    "zh": "1933年纳粹控制德国后，弗兰克一家搬到了荷兰的阿姆斯特丹。",
+    "en": "When the Nazis took control of the country in 1933, the Frank family moved to Amsterdam in the Netherlands."
+  },
+  {
+    "id": 440,
+    "unit": "Unit 3",
+    "zh": "后来，这座城市也变得不安全，于是安妮的父亲在他办公室上方准备了一些秘密房间。",
+    "en": "Later, this city became unsafe, so Anne's father prepared some secret rooms above his offices."
+  },
+  {
+    "id": 441,
+    "unit": "Unit 3",
+    "zh": "1942年7月6日，安妮和她的父母、她的姐姐玛戈以及其他四位犹太人搬进了这个“秘密附属建筑”。",
+    "en": "On 6 July, 1942, Anne moved into this “secret annexe” with her parents, her older sister Margot, and four other Jewish people."
+  },
+  {
+    "id": 442,
+    "unit": "Unit 3",
+    "zh": "附属建筑很小而且拥挤。",
+    "en": "The annexe was small and crowded."
+  },
+  {
+    "id": 443,
+    "unit": "Unit 3",
+    "zh": "每个人都必须非常安静。",
+    "en": "Everyone had to be very quiet."
+  },
+  {
+    "id": 444,
+    "unit": "Unit 3",
+    "zh": "他们经常挨饿，并且总是害怕被抓到。",
+    "en": "They were often hungry and always afraid of being caught."
+  },
+  {
+    "id": 445,
+    "unit": "Unit 3",
+    "zh": "为了让自己忙碌起来，安妮在她的日记中写作。",
+    "en": "To keep busy, Anne wrote in her diary."
+  },
+  {
+    "id": 446,
+    "unit": "Unit 3",
+    "zh": "她描述了她的日常生活和挣扎，但也写下了她的希望和梦想。",
+    "en": "She described her daily life and her struggles, but also wrote about her hopes and dreams."
+  },
+  {
+    "id": 447,
+    "unit": "Unit 3",
+    "zh": "“我不去想所有的不幸，”她写道，“而是去想仍然存在的美好。”",
+    "en": "\"I don't think of all the misery,\" she wrote, \"but of the beauty that still remains.\""
+  },
+  {
+    "id": 448,
+    "unit": "Unit 3",
+    "zh": "这家人躲藏了两年。",
+    "en": "The family was in hiding for two years."
+  },
+  {
+    "id": 449,
+    "unit": "Unit 3",
+    "zh": "在那段时间里，安妮坚持写日记，几乎每天都写。",
+    "en": "During that time, Anne kept a diary and wrote in it almost every day."
+  },
+  {
+    "id": 450,
+    "unit": "Unit 3",
+    "zh": "1944年8月4日，附属建筑被发现，所有躲藏在那里的人都被送往劳动营。",
+    "en": "On 4 August, 1944, the annexe was discovered and everyone hiding there were sent to labour camps."
+  },
+  {
+    "id": 451,
+    "unit": "Unit 3",
+    "zh": "安妮和她的姐姐玛戈于1945年3月死在一个德国集中营。",
+    "en": "Anne and her sister Margot died in a German camp in March 1945."
+  },
+  {
+    "id": 452,
+    "unit": "Unit 3",
+    "zh": "在所有曾躲藏在附属建筑的人中，只有奥托·弗兰克，安妮的父亲，幸存了下来。",
+    "en": "Of all the people who had hidden in the annexe, only Otto Frank, Anne's father, survived."
+  },
+  {
+    "id": 453,
+    "unit": "Unit 3",
+    "zh": "安妮的日记被朋友们发现并归还给了她的父亲。",
+    "en": "Anne's diary was discovered by friends and returned to her father."
+  },
+  {
+    "id": 454,
+    "unit": "Unit 3",
+    "zh": "自1947年以来，《安妮·弗兰克日记》一直是对大屠杀经历最有力的记述之一，并帮助人们看到了其所涉及苦难的人性一面。",
+    "en": "Since 1947, The Diary of Anne Frank has been one of the most powerful accounts of the experience of the Holocaust and has helped to give a human face to the suffering it involved."
+  },
+  {
+    "id": 455,
+    "unit": "Unit 3",
+    "zh": "尽管它是由一个身处可怕境地的年轻女孩所写，但它传递了勇气和希望的信息。",
+    "en": "Although it was written by a young girl in a terrible situation, it conveys a message of courage and hope."
+  },
+  {
+    "id": 456,
+    "unit": "Unit 3",
+    "zh": "这本日记最初是用荷兰语写的。",
+    "en": "The diary was originally written in Dutch."
+  },
+  {
+    "id": 457,
+    "unit": "Unit 3",
+    "zh": "从那时起，它已被翻译成至少67种语言出版，并售出了3100万册。",
+    "en": "Since then, it has been published in at least 67 languages and 31 million copies have been sold."
+  },
+  {
+    "id": 458,
+    "unit": "Unit 3",
+    "zh": "英文版本名为《安妮日记》。",
+    "en": "The English version is called The Diary of a Young Girl."
+  },
+  {
+    "id": 459,
+    "unit": "Unit 3",
+    "zh": "如今，安妮和她的家人藏身的阿姆斯特丹辅楼已成为一座名为安妮·弗兰克之家的博物馆。",
+    "en": "Today, the annexe building in Amsterdam where Anne and her family hid is a museum called Anne Frank House."
+  },
+  {
+    "id": 460,
+    "unit": "Unit 3",
+    "zh": "尽管安妮的藏匿生活极其艰难，但她的日记展现了她积极的态度。",
+    "en": "Although Anne's life in hiding was extremely difficult, her diary reveals her positive attitude."
+  },
+  {
+    "id": 461,
+    "unit": "Unit 3",
+    "zh": "例如，在1944年，她写道：“尽管发生了这一切，我仍然相信人心本善。”",
+    "en": "For example, in 1944, she wrote, \"In spite of everything I still believe that people are really good at heart.\""
+  },
+  {
+    "id": 462,
+    "unit": "Unit 3",
+    "zh": "安妮·弗兰克的日记激励了世界各地的青少年。",
+    "en": "Anne Frank's diary has inspired teenagers everywhere."
+  },
+  {
+    "id": 463,
+    "unit": "Unit 3",
+    "zh": "“好消息是，”她写道，“你不知道自己可以变得多么伟大，可以付出多少爱，可以取得什么成就，以及你的潜力有多大！”",
+    "en": "\"The good news,\" she wrote, \"is that you don't know how great you can be, how much you can love, what you can accomplish, and what your potential is!\""
+  },
+  {
+    "id": 464,
+    "unit": "Unit 3",
+    "zh": "你认为那些令人钦佩的人最重要的特质是什么？",
+    "en": "What do you think are the most important characteristics of those admirable people?"
+  },
+  {
+    "id": 465,
+    "unit": "Unit 3",
+    "zh": "是的，我确信勇气是重要的。",
+    "en": "Yes, I'm certain that courage is important."
+  },
+  {
+    "id": 466,
+    "unit": "Unit 3",
+    "zh": "而且，这些人应该有非常强壮的身体。",
+    "en": "Also, these people should have very strong bodies."
+  },
+  {
+    "id": 467,
+    "unit": "Unit 3",
+    "zh": "有些人可能很虚弱。",
+    "en": "Some people may be weak."
+  },
+  {
+    "id": 468,
+    "unit": "Unit 3",
+    "zh": "一个虚弱的人值得钦佩吗？",
+    "en": "?Aweak person to be admired?"
+  },
+  {
+    "id": 469,
+    "unit": "Unit 3",
+    "zh": "听着，不是所有令人钦佩的人都像电影里的超人一样。",
+    "en": "Listen, not all admirable people are like supermen in films."
+  },
+  {
+    "id": 470,
+    "unit": "Unit 3",
+    "zh": "有些人实际上可能有虚弱的身体，但他们在困难的情况下拥有巨大的智慧或勇气。",
+    "en": "that some may actually have weak bodies, but they-have great intelligence or courage in difficult situations."
+  },
+  {
+    "id": 471,
+    "unit": "Unit 3",
+    "zh": "我们应该在网上搜索，找到拥有不同类型优点的令人钦佩的人。",
+    "en": "We should Search online and find admirable people who have different types of strengths."
+  },
+  {
+    "id": 472,
+    "unit": "Unit 3",
+    "zh": "我认为屠呦呦是我钦佩的人，她会是我的选择。",
+    "en": "I think Tu Youyou is someone that I admire and she would be my choice."
+  },
+  {
+    "id": 473,
+    "unit": "Unit 3",
+    "zh": "她是第一位获得诺贝尔奖的中国女性科学家。",
+    "en": "She is the first Chinese female scientist who was awarded the Nobel Prize."
+  },
+  {
+    "id": 474,
+    "unit": "Unit 3",
+    "zh": "大学毕业后，她成为了中国中医科学院的一员。",
+    "en": "After her graduation from university, she became a member of China Academy of Chinese Medical Sciences."
+  },
+  {
+    "id": 475,
+    "unit": "Unit 3",
+    "zh": "1969年，她被选中组建一个团队，寻找治疗疟疾的方法——一种每年导致数百万人死亡的疾病。",
+    "en": "In 1969, she was chosen to establish a team to find a cure for malaria-a disease that killed millions of people every year."
+  },
+  {
+    "id": 476,
+    "unit": "Unit 3",
+    "zh": "这不是一项容易的任务。",
+    "en": "It was not an easy task."
+  },
+  {
+    "id": 477,
+    "unit": "Unit 3",
+    "zh": "全世界的科学家已经测试了超过24万种化学物质，但没有成功。",
+    "en": "Scientists over the world had tested more than 240,000 chemicals with no success."
+  },
+  {
+    "id": 478,
+    "unit": "Unit 3",
+    "zh": "而且屠呦呦的团队资源有限，他们没有足够的人员。",
+    "en": "And Tu Youyou's team had limited resources and they did not have enough staff."
+  },
+  {
+    "id": 479,
+    "unit": "Unit 3",
+    "zh": "屠呦呦研究了中国古代医学文献，并拜访了中医专家。",
+    "en": "Tu Youyou studied ancient Chinese medical literature and visited experts in traditional Chinese medicine."
+  },
+  {
+    "id": 480,
+    "unit": "Unit 3",
+    "zh": "屠呦呦和她的团队使用现代研究方法，一种一种地研究中药草药。",
+    "en": "Tu Youyou and her team used modern research methods to investigate the Chinese herbs one by one."
+  },
+  {
+    "id": 481,
+    "unit": "Unit 3",
+    "zh": "经过数百次失败的实验，他们最终发现了一种有前途的化学物质。",
+    "en": "After hundreds of failed experiments, they eventually came across a promising chemical."
+  },
+  {
+    "id": 482,
+    "unit": "Unit 3",
+    "zh": "他们发现的药物是青蒿素，现已成为世界上对抗疟疾最有效的药物。",
+    "en": "The medicine they discovered was artemisinin, which has now become the world's most effective drug for fighting malaria."
+  },
+  {
+    "id": 483,
+    "unit": "Unit 3",
+    "zh": "陈阳：在我们的英语课上，我读了一个关于克里斯托弗·里夫的惊人故事。",
+    "en": "Chen Yang: In our English class, I read an amazing story about Christopher Reeve."
+  },
+  {
+    "id": 484,
+    "unit": "Unit 3",
+    "zh": "他出生于1952年，父亲是小说家，母亲是记者。",
+    "en": "He was born in 1952 to a novelist father and a journalist mother."
+  },
+  {
+    "id": 485,
+    "unit": "Unit 3",
+    "zh": "从1978年到1987年，他有机会主演了四部非常受欢迎和成功的《超人》电影。",
+    "en": "From 1978 to 1987, he was given the opportunity to star in four Superman films which were very popular and successful."
+  },
+  {
+    "id": 486,
+    "unit": "Unit 3",
+    "zh": "1995年的一场可怕事故永远改变了他的人生轨迹。",
+    "en": "A terrible accident in 1995 changed the course of his life forever."
+  },
+  {
+    "id": 487,
+    "unit": "Unit 3",
+    "zh": "在一次骑马时，他摔断了脖子。",
+    "en": "While horseback riding, he broke his neck."
+  },
+  {
+    "id": 488,
+    "unit": "Unit 3",
+    "zh": "结果，他全身瘫痪，甚至需要借助机器才能呼吸。",
+    "en": "As a result, he had no movement in his body and couldn't even breathe without the help of a machine."
+  },
+  {
+    "id": 489,
+    "unit": "Unit 3",
+    "zh": "他的伤势如此严重，以至于许多医生认为他无法存活。",
+    "en": "His injuries were so severe that many doctors believed he would not survive."
+  },
+  {
+    "id": 490,
+    "unit": "Unit 3",
+    "zh": "起初，里夫的残疾让他非常沮丧，但最终，他决定尽最大努力康复。",
+    "en": "At first, Reeve's disability made him very depressed but eventually, he decided to recover as best he could."
+  },
+  {
+    "id": 491,
+    "unit": "Unit 3",
+    "zh": "他进行了一项旨在帮助他重建肌肉的强化锻炼计划。",
+    "en": "He undertook an intense exercise programme designed to help him rebuild muscle."
+  },
+  {
+    "id": 492,
+    "unit": "Unit 3",
+    "zh": "与此同时，他成为了一个充满激情和活力的倡导者，为其他遭受类似伤害的人发声，并为医学研究筹集了数百万美元。",
+    "en": "Alongside this, he became a passionate and energetic advocate for others suffering similar injuries and raised millions for medical research."
+  },
+  {
+    "id": 493,
+    "unit": "Unit 3",
+    "zh": "他对康复的承诺和帮助他人的愿望激励了很多人。",
+    "en": "He inspired many people with his commitment to recovery and his desire to help others."
+  },
+  {
+    "id": 494,
+    "unit": "Unit 3",
+    "zh": "因此，他被许多人视为现实生活中的超级英雄，而不仅仅是在电影中。",
+    "en": "For that reason he is regarded by many as a superhero in real life, as well as on film."
+  },
+  {
+    "id": 495,
+    "unit": "Unit 3",
+    "zh": "克里斯蒂娜·罗塞蒂（1830-1894）出生于英格兰，父母是意大利人。",
+    "en": "Christina Rossetti (1830-1894) was born in England to Italian parents."
+  },
+  {
+    "id": 496,
+    "unit": "Unit 3",
+    "zh": "她的父亲是一位诗人，她的兄弟是一位诗人和画家。",
+    "en": "Her father was a poet and her brother was a poet and painter."
+  },
+  {
+    "id": 497,
+    "unit": "Unit 3",
+    "zh": "罗塞蒂的诗歌以强烈的情感和意象为特征。",
+    "en": "Rossetti's poems are characterised by intense feelings and images."
+  },
+  {
+    "id": 498,
+    "unit": "Unit 3",
+    "zh": "她曾做过保姆，照顾孩子，这激发了她创作儿童诗歌和故事。",
+    "en": "She worked as a nanny, taking care of children and this inspired her to write children's poems and stories."
+  },
+  {
+    "id": 499,
+    "unit": "Unit 3",
+    "zh": "她最著名的作品是《妖精市场与其他诗歌》，出版于1862年。",
+    "en": "Her most famous work was Goblin Market and Other Poems which was published in 1862."
+  },
+  {
+    "id": 500,
+    "unit": "Unit 3",
+    "zh": "不幸的是，她长期患病，不得不放弃工作。",
+    "en": "Unfortunately, she suffered from a long-term illness and had to give up her work."
+  },
+  {
+    "id": 501,
+    "unit": "Unit 3",
+    "zh": "她于1894年在伦敦去世。",
+    "en": "She died in London in 1894."
+  },
+  {
+    "id": 502,
+    "unit": "Unit 3",
+    "zh": "乔治亚·道格拉斯·约翰逊（1880-1966）是一位非裔美国诗人。",
+    "en": "Georgia Douglas Johnson (1880-1966) was an African-American poet."
+  },
+  {
+    "id": 503,
+    "unit": "Unit 3",
+    "zh": "她出生在美国佐治亚州的亚特兰大。",
+    "en": "She was born in Atlanta, Georgia in the United States."
+  },
+  {
+    "id": 504,
+    "unit": "Unit 3",
+    "zh": "她的父母有非裔美国人、美洲原住民和英国人的背景。",
+    "en": "Her parents had African American, Native American and English backgrounds."
+  },
+  {
+    "id": 505,
+    "unit": "Unit 3",
+    "zh": "在她职业生涯早期，她学习音乐，并在一所学校担任助理校长。",
+    "en": "Early in her career, she studied music and worked in a school as an Assistant Principal."
+  },
+  {
+    "id": 506,
+    "unit": "Unit 3",
+    "zh": "她的第一首诗发表于1905年，1918年，她的一部名为《女人心》的作品集获得了广泛的读者。",
+    "en": "Her first poem was published in 1905 and in 1918, a collection of her work entitled The Heart of a Woman reached a wide audience."
+  },
+  {
+    "id": 507,
+    "unit": "Unit 3",
+    "zh": "她的许多诗歌都涉及当时与女性生活相关的问题，包括她们面临的困难。",
+    "en": "Many of her poems deal with issues related to women's lives at the time, including the difficulties they faced."
+  },
+  {
+    "id": 508,
+    "unit": "Unit 3",
+    "zh": "她也是一位直言不讳的女权倡导者。",
+    "en": "She was also an outspoken advocate for women's rights."
+  },
+  {
+    "id": 509,
+    "unit": "Unit 3",
+    "zh": "她在许多作品中探索了这一主题，但她的作品至今仍备受赞誉。",
+    "en": "She explored the theme in much of her work but her work remains celebrated to this day."
+  },
+  {
+    "id": 510,
+    "unit": "Unit 3",
+    "zh": "谁曾见过风？",
+    "en": "Who has seen the wind?"
+  },
+  {
+    "id": 511,
+    "unit": "Unit 3",
+    "zh": "但当树叶悬挂颤抖时，",
+    "en": "But when the leaves hang trembling,"
+  },
+  {
+    "id": 512,
+    "unit": "Unit 3",
+    "zh": "风正从中穿过。",
+    "en": "The wind is passing through."
+  },
+  {
+    "id": 513,
+    "unit": "Unit 3",
+    "zh": "谁曾见过风？",
+    "en": "Who has seen the wind?"
+  },
+  {
+    "id": 514,
+    "unit": "Unit 3",
+    "zh": "但当树木低头时，",
+    "en": "But when the trees bow down their heads,"
+  },
+  {
+    "id": 515,
+    "unit": "Unit 3",
+    "zh": "风正从旁经过。",
+    "en": "The wind is passing by."
+  },
+  {
+    "id": 516,
+    "unit": "Unit 3",
+    "zh": "你的世界有多大，由你创造。",
+    "en": "Your world is as big as you make it."
+  },
+  {
+    "id": 517,
+    "unit": "Unit 3",
+    "zh": "我知道，因为我曾居住",
+    "en": "I know, for I used to abide"
+  },
+  {
+    "id": 518,
+    "unit": "Unit 3",
+    "zh": "在角落里最狭窄的巢中，",
+    "en": "In the narrowest nest in a corner,"
+  },
+  {
+    "id": 519,
+    "unit": "Unit 3",
+    "zh": "我的翅膀紧贴身旁。",
+    "en": "My wings pressing close to my side."
+  },
+  {
+    "id": 520,
+    "unit": "Unit 3",
+    "zh": "但我望见了遥远的地平线",
+    "en": "But I sighted the distant horizon"
+  },
+  {
+    "id": 521,
+    "unit": "Unit 3",
+    "zh": "那里天际线环绕着大海",
+    "en": "Where the skyline encircled the sea"
+  },
+  {
+    "id": 522,
+    "unit": "Unit 3",
+    "zh": "我怀着燃烧的渴望悸动",
+    "en": "And I throbbed with a burning desire"
+  },
+  {
+    "id": 523,
+    "unit": "Unit 3",
+    "zh": "我击破了周围的界限",
+    "en": "I battered the cordons around me"
+  },
+  {
+    "id": 524,
+    "unit": "Unit 3",
+    "zh": "并在微风中托起我的翅膀，",
+    "en": "And cradled my wings on the breeze,"
+  },
+  {
+    "id": 525,
+    "unit": "Unit 3",
+    "zh": "然后翱翔至最远的境地",
+    "en": "Then soared to the uttermost reaches"
+  },
+  {
+    "id": 526,
+    "unit": "Unit 3",
+    "zh": "带着狂喜，带着力量，带着轻松！",
+    "en": "With rapture, with power, with ease!"
+  },
+  {
+    "id": 527,
+    "unit": "Unit 3",
+    "zh": "生命就像折翼的鸟儿",
+    "en": "Life is a broken-winged bird"
+  },
+  {
+    "id": 528,
+    "unit": "Unit 3",
+    "zh": "生命就像贫瘠的田野",
+    "en": "Life is a barren field"
+  },
+  {
+    "id": 529,
+    "unit": "Unit 3",
+    "zh": "被芬芳的灌木丛环绕,",
+    "en": "Grown about by fragrant bushes,"
+  },
+  {
+    "id": 530,
+    "unit": "Unit 3",
+    "zh": "沉落于蜿蜒的山谷,",
+    "en": "Sunken in a winding valley,"
+  },
+  {
+    "id": 531,
+    "unit": "Unit 3",
+    "zh": "那里清风拂过",
+    "en": "Where the clear winds blow"
+  },
+  {
+    "id": 532,
+    "unit": "Unit 3",
+    "zh": "光影来去交错,",
+    "en": "And the shadows come and go,"
+  },
+  {
+    "id": 533,
+    "unit": "Unit 3",
+    "zh": "牛儿站立低鸣",
+    "en": "And the cattle stand and low"
+  },
+  {
+    "id": 534,
+    "unit": "Unit 3",
+    "zh": "羊铃与红雀",
+    "en": "And the sheep bells and the linnets"
+  },
+  {
+    "id": 535,
+    "unit": "Unit 3",
+    "zh": "在过去与未来之间,",
+    "en": "Between the past and the future,"
+  },
+  {
+    "id": 536,
+    "unit": "Unit 3",
+    "zh": "我们短暂的生命在其间",
+    "en": "Between which our brief life"
+  },
+  {
+    "id": 537,
+    "unit": "Unit 3",
+    "zh": "闪烁片刻便熄灭。",
+    "en": "Flashes a moment and goes out."
+  },
+  {
+    "id": 538,
+    "unit": "Unit 3",
+    "zh": "我昨天在网上读了一篇关于头像的文章。",
+    "en": "I read an article about avatars on a web page yesterday."
+  },
+  {
+    "id": 539,
+    "unit": "Unit 3",
+    "zh": "它信息量很大且很有趣。",
+    "en": "It was very informative and interesting."
+  },
+  {
+    "id": 540,
+    "unit": "Unit 3",
+    "zh": "我同意它所说的，你选择的头像很大程度上反映了你的个性。",
+    "en": "I agree with it saying that your choice of avatars says a lot about your personality."
+  },
+  {
+    "id": 541,
+    "unit": "Unit 3",
+    "zh": "我从一系列现成的图片中选择了我的头像。",
+    "en": "I chose my avatar from a selection of ready-made images."
+  },
+  {
+    "id": 542,
+    "unit": "Unit 3",
+    "zh": "她是我最喜欢的卡通人物之一。",
+    "en": "She is one of my favourite cartoon characters."
+  },
+  {
+    "id": 543,
+    "unit": "Unit 3",
+    "zh": "我喜欢她是因为她善良且乐于助人。",
+    "en": "I like her because she is kind and helpful."
+  },
+  {
+    "id": 544,
+    "unit": "Unit 3",
+    "zh": "我的表弟王明非常有创造力。",
+    "en": "My cousin Wang Ming is very creative."
+  },
+  {
+    "id": 545,
+    "unit": "Unit 3",
+    "zh": "他发现头像给了他很多发挥创造力的空间。",
+    "en": "He finds that avatars give him lots of room for creativity."
+  },
+  {
+    "id": 546,
+    "unit": "Unit 3",
+    "zh": "他为不同的场合创建了好几个头像。",
+    "en": "He has created several avatars for different occasions."
+  },
+  {
+    "id": 547,
+    "unit": "Unit 3",
+    "zh": "他给它们穿上了花哨的衣服，配上漂亮的发型，而且它们的行为或多或少都像他。",
+    "en": "He dressed them in fancy clothes with beautiful hairstyles and they all act more or less like him."
+  },
+  {
+    "id": 548,
+    "unit": "Unit 3",
+    "zh": "但文章警告说，使用多个头像可能是一个风险来源。",
+    "en": "But the article warns that the use of several avatars can be a source of risk."
+  },
+  {
+    "id": 549,
+    "unit": "Unit 3",
+    "zh": "我母亲在今年生日收到一部手机之前从未用过手机。",
+    "en": "My mother had never used a mobile phone until she received one for her birthday this year."
+  },
+  {
+    "id": 550,
+    "unit": "Unit 3",
+    "zh": "从那以后，她就迷上了互联网，在她的移动设备上使用各种软件应用。",
+    "en": "Since then, she has been addicted to the Internet, using different kinds of software applications on her mobile device."
+  },
+  {
+    "id": 551,
+    "unit": "Unit 3",
+    "zh": "她每天花很多时间浏览网站和在网上与他人聊天。",
+    "en": "She spends a lot of time each day exploring websites and chatting with other people online."
+  },
+  {
+    "id": 552,
+    "unit": "Unit 3",
+    "zh": "她建立了自己的电子邮件账户，并且大部分购物都是通过一个应用程序在线完成的。",
+    "en": "She has set up her own email account and she does most of the shopping online through an app."
+  },
+  {
+    "id": 553,
+    "unit": "Unit 3",
+    "zh": "如今，她不再去超市，而是只需按一下按钮，她的订单第二天就会送达。",
+    "en": "Instead of going to supermarkets, nowadays she just presses a button and then her orders are delivered the next day."
+  },
+  {
+    "id": 554,
+    "unit": "Unit 3",
+    "zh": "起初，我父亲有些担心她花太多时间在虚拟世界里，但现在他看到她有多快乐。",
+    "en": "At first, my father had some concerns that she was spending too much time in virtual worlds, but now he sees how happy she is."
+  },
+  {
+    "id": 555,
+    "unit": "Unit 3",
+    "zh": "她甚至下载了一些能帮助我父亲工作的材料，所以现在他也很高兴！",
+    "en": "She even downloads some materials that can help my father with his work, so now he's very happy, too!"
+  },
+  {
+    "id": 556,
+    "unit": "Unit 3",
+    "zh": "我们都为她感到非常自豪，因为她证明了学习一项新技能永远为时不晚。",
+    "en": "We are all very proud of her as she has proven that it's never too late to learn a new skill."
+  },
+  {
+    "id": 557,
+    "unit": "Unit 3",
+    "zh": "我觉得网络交流相当肤浅。",
+    "en": "I find online communication rather shallow."
+  },
+  {
+    "id": 558,
+    "unit": "Unit 3",
+    "zh": "面对面的交谈更有意义。",
+    "en": "Face-to-face conversations are more meaningful."
+  },
+  {
+    "id": 559,
+    "unit": "Unit 3",
+    "zh": "在我看来，玩电脑游戏是逃避现实的一种方式。",
+    "en": "In my opinion, playing computer games is one way to escape from reality."
+  },
+  {
+    "id": 560,
+    "unit": "Unit 3",
+    "zh": "有时用一个表情符号来回应更容易，而不是打出一长串答案。",
+    "en": "Sometimes it's easier to give a response with an emoji, rather than typing out a long answer."
+  },
+  {
+    "id": 561,
+    "unit": "Unit 3",
+    "zh": "他们通过网络交流来维持他们的友谊。",
+    "en": "They maintain their friendships through online communication."
+  },
+  {
+    "id": 562,
+    "unit": "Unit 3",
+    "zh": "手机上有游戏会让我难以专注于家庭作业。",
+    "en": "Having games on my mobile phone can make it difficult to focus on my homework."
+  },
+  {
+    "id": 563,
+    "unit": "Unit 3",
+    "zh": "在线阅读文章时，重要的是不要过多略读，这样你才能理解完整的上下文。",
+    "en": "When reading an article online, it's important not to skim too much, so that you can understand the full context."
+  },
+  {
+    "id": 564,
+    "unit": "Unit 3",
+    "zh": "从我遇见艾丽西亚·唐的那一刻起，我就知道她将成为科技界的下一个大人物。",
+    "en": "From the time I met Alicia Tang, I knew she was the next big thing in the technology world."
+  },
+  {
+    "id": 565,
+    "unit": "Unit 3",
+    "zh": "作为一名15岁的应用程序开发者，她自信她的第一个应用程序将成为世界上销量最大的应用程序之一。",
+    "en": "A fifteen-year-old app developer, she was confident that her first app would become one of the biggest selling in the world."
+  },
+  {
+    "id": 566,
+    "unit": "Unit 3",
+    "zh": "现在年仅18岁，她已经实现了她的目标，因为她的在线购物比价应用程序已有数百万次下载。",
+    "en": "Now at only eighteen, she has accomplished her goal as her online shopping comparison app has millions of downloads."
+  },
+  {
+    "id": 567,
+    "unit": "Unit 3",
+    "zh": "我觉得它会成功，因为我知道人们会感激他们不必花那么多时间搜索他们想要的产品。",
+    "en": "I felt it was going to be a success because I knew that people would appreciate the fact that they did not have to spend so much time searching for products they wanted."
+  },
+  {
+    "id": 568,
+    "unit": "Unit 3",
+    "zh": "当我准备推出这个应用程序时，我与许多专家和应用程序开发者进行了交谈，他们给了我很好的建议和指导。",
+    "en": "When I was going to launch the app, I spoke to lots of experts and app developers who gave me great advice and guidance."
+  },
+  {
+    "id": 569,
+    "unit": "Unit 3",
+    "zh": "因为有这么多人的支持，我知道我能够做出一个成功的应用程序。",
+    "en": "Because I had the support of so many people, I knew I would be able to make a successful app."
+  },
+  {
+    "id": 570,
+    "unit": "Unit 3",
+    "zh": "早上好先生，我能帮助您吗？",
+    "en": "Good morning Sir, can I help you?"
+  },
+  {
+    "id": 571,
+    "unit": "Unit 3",
+    "zh": "是的。我下载了你们的应用程序，但我似乎找不到如何更新我的支付信息。",
+    "en": "Yes. I downloaded your app but I can't seem to find out how to update my payment information."
+  },
+  {
+    "id": 572,
+    "unit": "Unit 3",
+    "zh": "让我看看我能做些什么来帮助，您能给我您的电子邮件地址吗？",
+    "en": "Let me see what I can do to help, can you give me your email address?"
+  },
+  {
+    "id": 573,
+    "unit": "Unit 3",
+    "zh": "我将检查您的账户。",
+    "en": "I will check your account."
+  },
+  {
+    "id": 574,
+    "unit": "Unit 3",
+    "zh": "你好，你需要帮助吗？",
+    "en": "Hello there, do you need help?"
+  },
+  {
+    "id": 575,
+    "unit": "Unit 3",
+    "zh": "你看起来有点迷路了！",
+    "en": "You seem a bit lost!"
+  },
+  {
+    "id": 576,
+    "unit": "Unit 3",
+    "zh": "哦，谢谢你。这是我第一次来这个城市，我找不到我的酒店了。",
+    "en": "Oh, thank you. It's my first time in this city and I cannot find my hotel."
+  },
+  {
+    "id": 577,
+    "unit": "Unit 3",
+    "zh": "它在火车站附近。",
+    "en": "It's near the train station."
+  },
+  {
+    "id": 578,
+    "unit": "Unit 3",
+    "zh": "嗯，我不知道它，但让我在网上查一下。",
+    "en": "Hmmm, I don't know it but let me check online."
+  },
+  {
+    "id": 579,
+    "unit": "Unit 3",
+    "zh": "哦，是的，它非常近。",
+    "en": "Oh yes, it's quite close."
+  },
+  {
+    "id": 580,
+    "unit": "Unit 3",
+    "zh": "大约十分钟的路程，往那个方向。",
+    "en": "About ten minutes that way."
+  },
+  {
+    "id": 581,
+    "unit": "Unit 3",
+    "zh": "非常感谢你的帮助。",
+    "en": "Thank you so much for your help."
+  },
+  {
+    "id": 582,
+    "unit": "Unit 3",
+    "zh": "二十年前，如此公开地与世界分享我们生活的想法是闻所未闻的。",
+    "en": "Twenty years ago, the idea of sharing our lives so openly with the world was unheard of."
+  },
+  {
+    "id": 583,
+    "unit": "Unit 3",
+    "zh": "然而，对今天的年轻人来说，每天分享他们的生活照片并在网上互动被认为是完全正常的。",
+    "en": "However, for young people today it is considered completely normal to share pictures of their lives and interact online every day."
+  },
+  {
+    "id": 584,
+    "unit": "Unit 3",
+    "zh": "社交媒体的粉丝指出，世界从未如此互联，因为它让人们能够交朋友、了解世界和庆祝生活。",
+    "en": "Fans of social media point out that the world has never been so connected as it has allowed people to make friends, learn about the world and celebrate life."
+  },
+  {
+    "id": 585,
+    "unit": "Unit 3",
+    "zh": "然而，许多人对这种新生活方式的影响感到担忧，尤其是对如此公开分享的信息的数量和类型。",
+    "en": "However, many people have concerns about the effects of this new way of living, particularly around the amount and type of information that is shared so openly."
+  },
+  {
+    "id": 586,
+    "unit": "Unit 3",
+    "zh": "现在研究人员发现，在社交媒体上花费太多时间确实可能有一些负面影响。",
+    "en": "Now researchers have found that too much time on social media may indeed have some negative effects."
+  },
+  {
+    "id": 587,
+    "unit": "Unit 3",
+    "zh": "他们测量了人们在浏览社交媒体网站前后的态度和感受。",
+    "en": "They measured people's attitudes and feelings before and after browsing social media sites."
+  },
+  {
+    "id": 588,
+    "unit": "Unit 3",
+    "zh": "他们发现，人们在社交媒体上花费的时间越多，他们就变得越不快乐。",
+    "en": "They found that the more time people spent on social media, the more unhappy they became."
+  },
+  {
+    "id": 589,
+    "unit": "Unit 3",
+    "zh": "这有很多原因。",
+    "en": "There are a number of reasons for this."
+  },
+  {
+    "id": 590,
+    "unit": "Unit 3",
+    "zh": "在浏览社交媒体时，人们经常看到展示美丽假期、有趣派对和时尚服装的照片和故事。",
+    "en": "When browsing social media, people often see photographs and stories showing beautiful holidays, fun parties and fashionable clothes."
+  },
+  {
+    "id": 591,
+    "unit": "Unit 3",
+    "zh": "人们很少发布负面的故事或不好的图片，所以这可能会产生误导。",
+    "en": "People rarely post negative stories or bad pictures, so it can be misleading."
+  },
+  {
+    "id": 592,
+    "unit": "Unit 3",
+    "zh": "对于那些看着这些图片并将其与自己生活进行比较的人来说，他们最终可能会感到悲伤和沮丧。",
+    "en": "For those looking at these pictures and comparing them to their own lives, they can end up feeling sad and depressed."
+  },
+  {
+    "id": 593,
+    "unit": "Unit 3",
+    "zh": "他们可能会认为相比之下自己的生活更糟。",
+    "en": "They might think their lives are worse in comparison."
+  },
+  {
+    "id": 594,
+    "unit": "Unit 3",
+    "zh": "即使是那些发布积极故事和图片的人，他们也可能感到压力和担忧。",
+    "en": "Even for those people who post positive stories and pictures, they too can feel stressed and worried."
+  },
+  {
+    "id": 595,
+    "unit": "Unit 3",
+    "zh": "他们帖子上的“点赞”和评论数量会让他们对自己的受欢迎程度感到焦虑。",
+    "en": "The number of “likes” and comments on their posts can make them anxious about their popularity."
+  },
+  {
+    "id": 596,
+    "unit": "Unit 3",
+    "zh": "当然，还有“网络欺凌”的问题，即当别人对他们发表负面或残酷的评论时，人们成为网上欺凌的受害者。",
+    "en": "Of course, there is also the problem of “cyber bullying” where people become victims of bullying online when others make negative or cruel comments about them."
+  },
+  {
+    "id": 597,
+    "unit": "Unit 3",
+    "zh": "现实是，社交媒体是现代生活的一部分，它不会消失。",
+    "en": "The reality is that social media is a part of modern life and it is not going to go away."
+  },
+  {
+    "id": 598,
+    "unit": "Unit 3",
+    "zh": "这项研究向我们表明，在我们的在线和离线生活之间找到平衡是很重要的。",
+    "en": "This research shows us that it is important to find a balance between our online and offline lives."
+  },
+  {
+    "id": 599,
+    "unit": "Unit 3",
+    "zh": "我们不必断开互联网连接来过上幸福的生活，但我们应该意识到，我们看到的图片和读到的故事只是一个更大图景的一部分。",
+    "en": "We don’t have to disconnect from the Internet to live a happy life, but we should realise that the pictures we see and stories we read are only part of a bigger picture."
+  },
+  {
+    "id": 600,
+    "unit": "Unit 3",
+    "zh": "如果我们能做到这一点，我们就能保护自己并享受我们的生活。",
+    "en": "If we can do that, we can protect ourselves and enjoy our lives."
+  },
+  {
+    "id": 601,
+    "unit": "Unit 3",
+    "zh": "该地区正遭受一波又一波的风暴袭击。",
+    "en": "The area was being hit by wave after wave of storms."
+  },
+  {
+    "id": 602,
+    "unit": "Unit 3",
+    "zh": "正因为如此，所有运动员都得到了关于如何在风暴期间在跑道上逃离危险的提示。",
+    "en": "Because of this, all the athletes were given tips on how to escape from danger on a track during a storm."
+  },
+  {
+    "id": 603,
+    "unit": "Unit 3",
+    "zh": "当你看到风暴临近时，找一个安全的庇护所。",
+    "en": "Find a safe shelter after you see a storm approaching."
+  },
+  {
+    "id": 604,
+    "unit": "Unit 3",
+    "zh": "即使在风暴平息后，也要远离高的柱子和树木。",
+    "en": "Stay away from tall posts and trees even after the storm calms down."
+  },
+  {
+    "id": 605,
+    "unit": "Unit 3",
+    "zh": "风暴过后，运动员们分享了他们为能挺过那一刻而感到多么高兴。",
+    "en": "After the storm, the athletes shared how happy they were to survive the moment."
+  },
+  {
+    "id": 606,
+    "unit": "Unit 3",
+    "zh": "问：你最近看了什么有趣的节目吗？",
+    "en": "Q: Have you watched any interesting programmes recently?"
+  },
+  {
+    "id": 607,
+    "unit": "Unit 3",
+    "zh": "答：是的，我刚刚看了一部关于自然灾害的纪录片。",
+    "en": "A: Yes, I have just watched a documentary about natural disasters."
+  },
+  {
+    "id": 608,
+    "unit": "Unit 3",
+    "zh": "问：它展示了哪些种类的灾害？",
+    "en": "Q: What kinds of disasters did it show?"
+  },
+  {
+    "id": 609,
+    "unit": "Unit 3",
+    "zh": "答：它展示了许多不同的种类，但主要是地震和山体滑坡。",
+    "en": "A: It showed many different kinds but the main ones were earthquakes and landslides."
+  },
+  {
+    "id": 610,
+    "unit": "Unit 3",
+    "zh": "问：它是什么样的？",
+    "en": "Q: What was it like?"
+  },
+  {
+    "id": 611,
+    "unit": "Unit 3",
+    "zh": "答：观看过程非常艰难，但看到专业团队在帮助拯救陷入困境的人们时是多么勇敢，这令人惊叹。",
+    "en": "A: It was very tough to watch but it was amazing to see how brave the professional teams are when they help to save people who are in trouble."
+  },
+  {
+    "id": 612,
+    "unit": "Unit 3",
+    "zh": "问：他们只在我们国家工作吗？",
+    "en": "Q: Do they only work in our country?"
+  },
+  {
+    "id": 613,
+    "unit": "Unit 3",
+    "zh": "答：他们在国内和海外都工作。",
+    "en": "A: They work here and overseas."
+  },
+  {
+    "id": 614,
+    "unit": "Unit 3",
+    "zh": "问：这些地点很难到达吗？",
+    "en": "Q: Aren't the sites difficult to reach?"
+  },
+  {
+    "id": 615,
+    "unit": "Unit 3",
+    "zh": "答：是的，但他们有能够到达大部分地区的特殊车辆。",
+    "en": "A: Yes, but they have special vehicles that are able to reach most of the areas."
+  },
+  {
+    "id": 616,
+    "unit": "Unit 3",
+    "zh": "问：他们在时间压力下工作一定很艰难。",
+    "en": "Q: It must be tough for them to work under time pressure."
+  },
+  {
+    "id": 617,
+    "unit": "Unit 3",
+    "zh": "答：是的，每一秒都很重要，这样才能拯救尽可能多的人。",
+    "en": "A: Yes, every second counts, so that as many people as possible can be saved."
+  },
+  {
+    "id": 618,
+    "unit": "Unit 3",
+    "zh": "问：他们团队的目标是什么？",
+    "en": "Q: What is the goal of their team?"
+  },
+  {
+    "id": 619,
+    "unit": "Unit 3",
+    "zh": "答：他们的目标是减少痛苦和损失，并拯救尽可能多的人。",
+    "en": "A: Their goal is to reduce suffering and loss and save as many people as possible."
+  },
+  {
+    "id": 620,
+    "unit": "Unit 3",
+    "zh": "数百万年来，人类一直参与着对世界的探索。",
+    "en": "For millions of years, humans have been involved in the exploration of the world."
+  },
+  {
+    "id": 621,
+    "unit": "Unit 3",
+    "zh": "我们探索了北极和南极，并走遍了全球。",
+    "en": "We've explored the North and South Poles and made our way all around the globe."
+  },
+  {
+    "id": 622,
+    "unit": "Unit 3",
+    "zh": "我们深厚的好奇心构成了许多最伟大历史发现的基础，比如恐龙的发现。",
+    "en": "Our deep curiosity has formed the base of many greatest historical discoveries such as the discovery of dinosaurs."
+  },
+  {
+    "id": 623,
+    "unit": "Unit 3",
+    "zh": "我们探索的雄心很快变成了征服自然的欲望。",
+    "en": "Our ambition to explore soon became a desire to conquer nature."
+  },
+  {
+    "id": 624,
+    "unit": "Unit 3",
+    "zh": "人类不断试图证明我们对自然的控制，这导致了我们与自然界根深蒂固的联系的破裂。",
+    "en": "Humans are constantly trying to prove our control over nature, and this has resulted in a breakdown of our deep-rooted connection to the natural world."
+  },
+  {
+    "id": 625,
+    "unit": "Unit 3",
+    "zh": "正因为如此，在不太遥远的未来，我们可能会经历大规模的自然灾害。",
+    "en": "Because of this, in the not too distant future, we may experience large-scale natural disasters."
+  },
+  {
+    "id": 626,
+    "unit": "Unit 3",
+    "zh": "一些人开始为世界末日做准备，届时大规模的自然灾害会发生并造成广泛的破坏。",
+    "en": "Some people are beginning to make plans in preparation for the end of the world, when massive natural disasters occur and cause extensive damage."
+  },
+  {
+    "id": 627,
+    "unit": "Unit 3",
+    "zh": "这当然不是一个令人愉快的想法，但重要的是，在为时已晚之前认识到我们对自然和世界的影响！",
+    "en": "It's certainly not a cheerful thought, but it's important to recognise our impact on nature and the world before it's too late!"
+  },
+  {
+    "id": 628,
+    "unit": "Unit 3",
+    "zh": "我非常担心我在印度尼西亚的阿姨和叔叔。",
+    "en": "I'm very worried about my aunt and uncle in Indonesia."
+  },
+  {
+    "id": 629,
+    "unit": "Unit 3",
+    "zh": "有新闻报道说他们居住的地方附近发生了严重的山体滑坡。",
+    "en": "There have been news reports of a bad landslide near the place they live."
+  },
+  {
+    "id": 630,
+    "unit": "Unit 3",
+    "zh": "哦不！听到这个消息我很难过。",
+    "en": "Oh no! I'm very sorry to hear that."
+  },
+  {
+    "id": 631,
+    "unit": "Unit 3",
+    "zh": "你试过给他们打电话或发邮件吗？",
+    "en": "Have you tried to call or email them?"
+  },
+  {
+    "id": 632,
+    "unit": "Unit 3",
+    "zh": "我打不通他们的电话，他们也不在线。",
+    "en": "I couldn't reach them by phone and they are not online."
+  },
+  {
+    "id": 633,
+    "unit": "Unit 3",
+    "zh": "他们住的地方相当偏远；这就是他们没有互联网接入的原因。",
+    "en": "The place they live is quite remote; which is the reason they have no Internet access."
+  },
+  {
+    "id": 634,
+    "unit": "Unit 3",
+    "zh": "当我试着打电话时，电话似乎打不通。",
+    "en": "When I tried to call, the phone didn't seem to connect."
+  },
+  {
+    "id": 635,
+    "unit": "Unit 3",
+    "zh": "嗯，我相信他们会尽快与你取得联系。",
+    "en": "Well, I'm sure they will get in touch with you as soon as they can."
+  },
+  {
+    "id": 636,
+    "unit": "Unit 3",
+    "zh": "恶劣的天气很可能是电话线路中断的原因。",
+    "en": "The bad weather is most likely the reason the phone lines are down."
+  },
+  {
+    "id": 637,
+    "unit": "Unit 3",
+    "zh": "如果我能做些什么来帮忙，请告诉我。",
+    "en": "If I can do anything to help, please let me know."
+  },
+  {
+    "id": 638,
+    "unit": "Unit 3",
+    "zh": "我记得我姐姐在地震期间在日本的时候。",
+    "en": "I remember the time my sister was in Japan during an earthquake."
+  },
+  {
+    "id": 639,
+    "unit": "Unit 3",
+    "zh": "在我收到她的消息之前，我非常焦虑。",
+    "en": "I was so anxious until I heard from her."
+  },
+  {
+    "id": 640,
+    "unit": "Unit 3",
+    "zh": "等等……是你的电话在响吗？",
+    "en": "Wait ... is that your phone ringing?"
+  },
+  {
+    "id": 641,
+    "unit": "Unit 3",
+    "zh": "哦，是的！是我阿姨打来的。",
+    "en": "Oh, yes! It's my aunt calling."
+  },
+  {
+    "id": 642,
+    "unit": "Unit 3",
+    "zh": "哦，是的。我想是的。如果发生这种情况，我的建议是呆在家里。",
+    "en": "Oh, yes. I think so. If that happens, my advice is to stay home."
+  },
+  {
+    "id": 643,
+    "unit": "Unit 3",
+    "zh": "对不起，我能打断一下吗？风暴预计几天内不会来。你现在可以去买些补给品。",
+    "en": "Excuse me, but can I interrupt you here? The storm isn't expected for days. You could get some supplies now."
+  },
+  {
+    "id": 644,
+    "unit": "Unit 3",
+    "zh": "是的，这周的预报是会有大雨。你认为我们可能会发生洪水吗？",
+    "en": "Yes, the forecast this week is for heavy rain. Do you think we could have floods?"
+  },
+  {
+    "id": 645,
+    "unit": "Unit 3",
+    "zh": "好的。有道理。我很想再聊一会儿，但我最好还是去购物！",
+    "en": "OK. That makes sense. I'd love to talk more but I’d better go shopping!"
+  },
+  {
+    "id": 646,
+    "unit": "Unit 3",
+    "zh": "早上好。这里是天气观察站。我能帮你吗？",
+    "en": "Good morning. This is Weather Watch. Can I help you?"
+  },
+  {
+    "id": 647,
+    "unit": "Unit 3",
+    "zh": "但我必须照顾我的家人。食物和水怎么办？如果……怎么办？",
+    "en": "But I have to take care of my family. What about food and water? What if ...?"
+  },
+  {
+    "id": 648,
+    "unit": "Unit 3",
+    "zh": "今天研究人员宣布，他们在世界各地的水样中发现了微小的塑料碎片。",
+    "en": "Today researchers announced that they have found tiny pieces of plastic in water samples from around the world."
+  },
+  {
+    "id": 649,
+    "unit": "Unit 3",
+    "zh": "这些碎片被称为微塑料，它们非常小，肉眼看不见，并且很难从水中去除。",
+    "en": "These pieces are called microplastics and are so small that they are invisible to the naked eye and are very difficult to remove from the water."
+  },
+  {
+    "id": 650,
+    "unit": "Unit 3",
+    "zh": "当它们在水里时，会被鱼和其他动物吞食，然后进入食物链。",
+    "en": "When in the water, they are swallowed by fish and other animals and then enter the food chain."
+  },
+  {
+    "id": 651,
+    "unit": "Unit 3",
+    "zh": "更令人担忧的是，在世界各地的饮用水中也发现了这种塑料。",
+    "en": "Even more concerning is the fact that the plastic has also been found in drinking water across the world."
+  },
+  {
+    "id": 652,
+    "unit": "Unit 3",
+    "zh": "这意味着我们每天都在饮用塑料。",
+    "en": "This means that we are drinking plastic every day."
+  },
+  {
+    "id": 653,
+    "unit": "Unit 3",
+    "zh": "科学家们不知道这将来会给我们造成多大程度的危害。",
+    "en": "Scientists do not know what level of harm this will cause us in the future."
+  },
+  {
+    "id": 654,
+    "unit": "Unit 3",
+    "zh": "微塑料来自许多不同的来源，特别是来自洗涤和烘干合成（非天然）衣物，以及来自化妆品和清洁产品，如牙膏和洗面奶。",
+    "en": "Microplastics come from a number of different sources, in particular from washing and drying synthetic (non-natural) clothing and from cosmetics and cleaning products, such as toothpaste and face washes."
+  },
+  {
+    "id": 655,
+    "unit": "Unit 3",
+    "zh": "甚至在我们户外的空气和家中也发现了微塑料。",
+    "en": "Microplastics are even found in the air outside and at our homes."
+  },
+  {
+    "id": 656,
+    "unit": "Unit 3",
+    "zh": "世界上几乎每个国家都同意，我们不能在生活中继续使用如此多的塑料。",
+    "en": "Almost every country across the world agrees that we cannot continue using so much plastic in our lives."
+  },
+  {
+    "id": 657,
+    "unit": "Unit 3",
+    "zh": "我们需要找到一个从我们的海洋中去除微塑料的解决方案。",
+    "en": "We need to find a solution to remove microplastics from our oceans."
+  },
+  {
+    "id": 658,
+    "unit": "Unit 3",
+    "zh": "我们还需要引入新的税收和其他手段，以鼓励公司为其产品选择环保成分和可回收包装。",
+    "en": "We also need to introduce new taxes and other means to encourage companies to choose environment-friendly ingredients and recyclable packaging for their products."
+  },
+  {
+    "id": 659,
+    "unit": "Unit 3",
+    "zh": "我们个人也需要承担责任。",
+    "en": "We need to take personal responsibility, too."
+  },
+  {
+    "id": 660,
+    "unit": "Unit 3",
+    "zh": "我们都有自由选择如何花钱，以及支持什么样的企业和产品。",
+    "en": "We all have the freedom to choose how we spend our money and what kinds of business and products we support."
+  },
+  {
+    "id": 661,
+    "unit": "Unit 3",
+    "zh": "让我们共同努力，保护我们的环境，无论是现在还是将来。",
+    "en": "Let's work together to protect our environment, both now and for the future."
+  },
+  {
+    "id": 662,
+    "unit": "Unit 3",
+    "zh": "记住：减少使用 — 重复利用 — 回收利用。",
+    "en": "Remember: Reduce — Reuse — Recycle."
+  },
+  {
+    "id": 663,
+    "unit": "Unit 3",
+    "zh": "里夫与那些帮助最需要帮助的人的组织合作。",
+    "en": "Reeve worked with organisations which help people most in need."
+  },
+  {
+    "id": 664,
+    "unit": "Unit 3",
+    "zh": "她记得她第一次见到玛吉的时候。",
+    "en": "She remembered the time when she first met Maggie."
+  },
+  {
+    "id": 665,
+    "unit": "Unit 3",
+    "zh": "我的祖父是一个他的一生一直激励着我的人。",
+    "en": "My grandfather is a man whose life has been an inspiration to me."
+  },
+  {
+    "id": 666,
+    "unit": "Unit 3",
+    "zh": "马丁·路德·金是一个在美国受到人们敬仰的伟大的人。",
+    "en": "Martin Luther King is a great man whom people in the US admire."
+  },
+  {
+    "id": 667,
+    "unit": "Unit 3",
+    "zh": "屠呦呦发现了用于治疗疟疾的药物。",
+    "en": "Tu Youyou discovered the drug which is used to treat malaria."
+  },
+  {
+    "id": 668,
+    "unit": "Unit 3",
+    "zh": "他是一个我非常害怕的人。",
+    "en": "He is a person of whom I am very afraid."
+  },
+  {
+    "id": 669,
+    "unit": "Unit 3",
+    "zh": "这就是我做这件事的地方。",
+    "en": "This is the place where I did this."
+  },
+  {
+    "id": 670,
+    "unit": "Unit 3",
+    "zh": "我不记得她居住的原因。",
+    "en": "I can't remember the reason why she lives."
+  },
+  {
+    "id": 671,
+    "unit": "Unit 3",
+    "zh": "看看我的沙发，我只为它付了100美元。",
+    "en": "Look at my sofa for which I only paid 100 dollars."
+  },
+  {
+    "id": 672,
+    "unit": "Unit 3",
+    "zh": "A: 我昨晚看了一部关于演员克里斯托弗·里夫的纪录片。",
+    "en": "A: I watched a documentary last night about the actor Christopher Reeve."
+  },
+  {
+    "id": 673,
+    "unit": "Unit 3",
+    "zh": "他是一个如此非凡的人。",
+    "en": "He was such a remarkable person."
+  },
+  {
+    "id": 674,
+    "unit": "Unit 3",
+    "zh": "B: 我知道他是一个伟大的演员。",
+    "en": "B: I know that he was a great actor."
+  },
+  {
+    "id": 675,
+    "unit": "Unit 3",
+    "zh": "我爱他在超人电影里的表演！",
+    "en": "I loved him in the Superman films!"
+  },
+  {
+    "id": 676,
+    "unit": "Unit 3",
+    "zh": "老实说，我对他的其他事情了解不多。",
+    "en": "I don't know much else about him to be honest."
+  },
+  {
+    "id": 677,
+    "unit": "Unit 3",
+    "zh": "A: 嗯，他是一个非常善良的人，他把时间和金钱都奉献给了慈善事业，但他遭遇了一场非常严重的事故，之后他表现出了惊人的勇气。",
+    "en": "A: Well, he was a very kind person who gave time and money to charity but he had a very bad accident and after that he showed amazing courage."
+  },
+  {
+    "id": 678,
+    "unit": "Unit 3",
+    "zh": "B: 他出事的时候多大年纪？",
+    "en": "B: How old was he when he had his accident?"
+  },
+  {
+    "id": 679,
+    "unit": "Unit 3",
+    "zh": "A: 我不太确定，但我认为是在20世纪90年代……我可以上网查一下。",
+    "en": "A: I'm not sure about that, but I think it was during the 1990s ... I can check online."
+  },
+  {
+    "id": 680,
+    "unit": "Unit 3",
+    "zh": "B: 好的，上面说他只有四十三岁……那真令人难过。",
+    "en": "B: OK, so it says he was only forty-three ... that's sad."
+  },
+  {
+    "id": 681,
+    "unit": "Unit 3",
+    "zh": "我想我曾经读到过他在那之后放弃了他的职业生涯。",
+    "en": "I think I read once that he gave up his career after that time."
+  },
+  {
+    "id": 682,
+    "unit": "Unit 3",
+    "zh": "A: 我不这么认为。",
+    "en": "A: I don't think so."
+  },
+  {
+    "id": 683,
+    "unit": "Unit 3",
+    "zh": "我相信他最终回到了他的职业生涯和慈善工作中。",
+    "en": "I believe he returned to both his career and his charity work eventually."
+  },
+  {
+    "id": 684,
+    "unit": "Unit 3",
+    "zh": "事故非常严重，他进行了许多锻炼，但他确实重新工作了，并为慈善事业筹集了大量资金。",
+    "en": "The accident was very severe and he engaged in many exercises but he did work again and raised lots of money for charity."
+  },
+  {
+    "id": 685,
+    "unit": "Unit 3",
+    "zh": "这是一部非常感人和美丽的电影。",
+    "en": "This is an incredibly moving and beautiful film."
+  },
+  {
+    "id": 686,
+    "unit": "Unit 3",
+    "zh": "它展现了一位父亲最极致的爱。",
+    "en": "It shows a father’s love at its very best."
+  },
+  {
+    "id": 687,
+    "unit": "Unit 3",
+    "zh": "这是一部催人泪下的电影，我必须承认我哭得心碎。",
+    "en": "It is a tear-jerker and I must admit to sobbing my heart out."
+  },
+  {
+    "id": 688,
+    "unit": "Unit 3",
+    "zh": "这是一个设定在1939年第二次世界大战开始时的故事。",
+    "en": "It is a story set in 1939 at the start of World War II."
+  },
+  {
+    "id": 689,
+    "unit": "Unit 3",
+    "zh": "圭多，一位充满活力和快乐的意大利犹太侍者，与不是犹太人的多拉结婚。",
+    "en": "Guido, an exuberant and cheerful Italian-Jewish waiter, gets married to Dora, who is not Jewish."
+  },
+  {
+    "id": 690,
+    "unit": "Unit 3",
+    "zh": "他们相爱并有一个名叫乔舒亚的儿子。",
+    "en": "They are in love and have a son named Giosué."
+  },
+  {
+    "id": 691,
+    "unit": "Unit 3",
+    "zh": "当他们正在为乔舒亚的五岁生日做准备时，圭多和乔舒亚被捕并被带到一个集中营。",
+    "en": "As they are preparing for Giosué’s fifth birthday, Guido and Giosué are arrested and taken to a concentration camp."
+  },
+  {
+    "id": 692,
+    "unit": "Unit 3",
+    "zh": "多拉恳求和他们一起去，尽管她不是犹太人。",
+    "en": "Dora begs to go with them even though she is not Jewish."
+  },
+  {
+    "id": 693,
+    "unit": "Unit 3",
+    "zh": "她被送到营地另一边的妇女区。",
+    "en": "She is sent to the women's section on the other side of the camp."
+  },
+  {
+    "id": 694,
+    "unit": "Unit 3",
+    "zh": "为了向儿子隐藏可怕的真相，圭多假装他们在一个假日营地并且正在玩游戏。",
+    "en": "To hide the awful truth from his son, Guido pretends they are at a holiday camp and are playing a game."
+  },
+  {
+    "id": 695,
+    "unit": "Unit 3",
+    "zh": "在游戏中，他们必须赢得积分。",
+    "en": "In the game, they have to win points."
+  },
+  {
+    "id": 696,
+    "unit": "Unit 3",
+    "zh": "他告诉儿子，目标是获得1000分——奖品是一辆真正的坦克，他们可以乘坐它离开。",
+    "en": "He tells his son that the objective is to get 1,000 points — and the prize is a real tank in which they can leave."
+  },
+  {
+    "id": 697,
+    "unit": "Unit 3",
+    "zh": "这里，他指的是属于盟军的坦克，他希望盟军最终能在赢得战争时来拯救他们离开集中营。",
+    "en": "Here, he is referring to the tanks belonging to the allies that he hopes will eventually come to save them from the concentration camp when they win the war."
+  },
+  {
+    "id": 698,
+    "unit": "Unit 3",
+    "zh": "他假装乔舒亚可以通过不哭、不说他饿了、不找妈妈等等事情来获得积分。",
+    "en": "He pretends Giosué can get points for things such as not crying, not saying he is hungry, not asking for his mother, and so on."
+  },
+  {
+    "id": 699,
+    "unit": "Unit 3",
+    "zh": "最终，圭多把乔舒亚藏起来，并一直假装这是一个游戏，他们在玩捉迷藏。",
+    "en": "Eventually, Guido hides Giosue, all the while pretending it is a game and they are playing hide-and-seek."
+  },
+  {
+    "id": 700,
+    "unit": "Unit 3",
+    "zh": "我不会告诉你电影是如何结束的。",
+    "en": "I won’t tell you how the film ends."
+  },
+  {
+    "id": 701,
+    "unit": "Unit 3",
+    "zh": "你必须自己去看。",
+    "en": "You will have to watch it for yourself."
+  },
+  {
+    "id": 702,
+    "unit": "Unit 3",
+    "zh": "许多评论家推荐了这部电影，并说这是一部必看之作。",
+    "en": "Many critics have recommended this film, and said that it is a must-see."
+  },
+  {
+    "id": 703,
+    "unit": "Unit 3",
+    "zh": "我完全同意，因为它是我看过的最美丽的电影之一——一部我永远不会忘记的电影。",
+    "en": "I completely agree, as it is one of the most beautiful films I have ever seen — one that I will never forget."
+  },
+  {
+    "id": 704,
+    "unit": "Unit 3",
+    "zh": "我们用过去将来时来谈论从过去某个时间点看将来会发生的事情。",
+    "en": "We use the past future to talk about what will happen in the future from the point of some time in the past."
+  },
+  {
+    "id": 705,
+    "unit": "Unit 3",
+    "zh": "Will 和 be going to 用来谈论一般将来时。",
+    "en": "Will and be going to are used to talk about the present future."
+  },
+  {
+    "id": 706,
+    "unit": "Unit 3",
+    "zh": "在过去将来时中，will 变为 would，be going to 变为 was / were going to。",
+    "en": "We turn will into would, be going to into was / were going to in the past future."
+  },
+  {
+    "id": 707,
+    "unit": "Unit 3",
+    "zh": "以下句子展示了过去将来时的构成：",
+    "en": "These sentences illustrate how the past future is formed:"
+  },
+  {
+    "id": 708,
+    "unit": "Unit 3",
+    "zh": "很少有人知道未来的虚拟化身会有如此广泛的形式和用途。",
+    "en": "Very few people knew that future avatars would have such a wide variety of forms and uses."
+  },
+  {
+    "id": 709,
+    "unit": "Unit 3",
+    "zh": "他们发现他们将拥有创造新身份的力量。",
+    "en": "They discovered that they were going to have the power to create new identities."
+  },
+  {
+    "id": 710,
+    "unit": "Unit 3",
+    "zh": "would 用于过去将来时和表示过去重复的动作时意义不同。",
+    "en": "The use of would in the past future is different to the use of would for repeated actions in the past."
+  },
+  {
+    "id": 711,
+    "unit": "Unit 3",
+    "zh": "他说他会在会议上提出这个问题。",
+    "en": "He said he would raise the question at the meeting."
+  },
+  {
+    "id": 712,
+    "unit": "Unit 3",
+    "zh": "当我小的时候，我妈妈晚上会给我读故事。",
+    "en": "When I was small my mum would read me stories at night."
+  },
+  {
+    "id": 713,
+    "unit": "Unit 3",
+    "zh": "我们将两个现有的词连接在一起形成一个复合词。",
+    "en": "We link two existing words together to form a compound word."
+  },
+  {
+    "id": 714,
+    "unit": "Unit 3",
+    "zh": "通常，第一个词表示第二个词的主要特征。",
+    "en": "Normally, the first word gives us a key feature of the second word."
+  },
+  {
+    "id": 715,
+    "unit": "Unit 3",
+    "zh": "第二个词体现复合词的词性。",
+    "en": "The second word then describes the part of speech of the compound word."
+  },
+  {
+    "id": 716,
+    "unit": "Unit 3",
+    "zh": "复合词有不同词性，如形容词 (online, self-centred, real-life), 名词 (friendship, percent, website) 和动词 (babysit, overdo)。",
+    "en": "The compound words appear in different word classes, such as adjectives (online, self-centred, real-life), nouns (friendship, percent, website) and verbs (babysit, overdo)."
+  },
+  {
+    "id": 717,
+    "unit": "Unit 3",
+    "zh": "关系副词 where 和 when 引导的定语从句提供地点和时间方面的信息。",
+    "en": "Relative adverbs where and when are used to give information about places and time."
+  },
+  {
+    "id": 718,
+    "unit": "Unit 3",
+    "zh": "这就是我丢失钱包的地方。",
+    "en": "This is the place where I lost my purse."
+  },
+  {
+    "id": 719,
+    "unit": "Unit 3",
+    "zh": "马可·波罗游历到中国，那里当时有许多发明和发展。",
+    "en": "Marco Polo travelled to China where there were inventions and developments at that time."
+  },
+  {
+    "id": 720,
+    "unit": "Unit 3",
+    "zh": "她仍然记得比尔第一次走进她办公室的那一天。",
+    "en": "She still remembers the day when Bill first walked into her office."
+  },
+  {
+    "id": 721,
+    "unit": "Unit 3",
+    "zh": "我永远不会忘记我第一次见到这位伟大发明家的那一天。",
+    "en": "I'll never forget the day when I first met this great inventor."
+  },
+  {
+    "id": 722,
+    "unit": "Unit 3",
+    "zh": "你知道他为什么对我这么生气吗？",
+    "en": "Do you know the reason why he’s so angry with me?"
+  },
+  {
+    "id": 723,
+    "unit": "Unit 3",
+    "zh": "你能告诉我为什么你在可以在网上办理银行业务的情况下还要浪费时间去银行吗？",
+    "en": "Could you tell me the reason why you waste time going to the bank when you can do your banking online?"
+  },
+  {
+    "id": 724,
+    "unit": "Unit 3",
+    "zh": "他咳嗽得这么厉害的原因是雾霾。",
+    "en": "The reason (that) he's coughing so badly is because of the smog."
+  },
+  {
+    "id": 725,
+    "unit": "Unit 3",
+    "zh": "这就是我买那本书的商店。",
+    "en": "This is the shop from which I bought the book."
+  },
+  {
+    "id": 726,
+    "unit": "Unit 3",
+    "zh": "他就是和我讨论我项目的老师。",
+    "en": "He is the teacher with whom I discussed my project."
+  },
+  {
+    "id": 727,
+    "unit": "Unit 3",
+    "zh": "我乘坐的这趟火车是开往上海的。",
+    "en": "The train on which I'm travelling is for Shanghai."
+  },
+  {
+    "id": 728,
+    "unit": "Unit 3",
+    "zh": "这就是那位我从他身上学到了很多东西的教授。",
+    "en": "This is the professor from whom I've learnt a lot."
+  },
+  {
+    "id": 729,
+    "unit": "Unit 3",
+    "zh": "她正在做一个我知之甚少的重要项目。",
+    "en": "She's doing an important project about which I know little."
+  },
+  {
+    "id": 730,
+    "unit": "Unit 3",
+    "zh": "你见过我用它来研究天空的那台望远镜吗？",
+    "en": "Have you seen the telescope with which I studied the sky?"
+  },
+  {
+    "id": 731,
+    "unit": "Unit 3",
+    "zh": "同义词是意义几乎相同的一组词语。",
+    "en": "Synonyms are words that have nearly the same meaning as other words in the same language."
+  },
+  {
+    "id": 732,
+    "unit": "Unit 3",
+    "zh": "它们词性相同。",
+    "en": "They possess the same part of speech."
+  },
+  {
+    "id": 733,
+    "unit": "Unit 3",
+    "zh": "反义词是意义相反的一组词语。",
+    "en": "Antonyms are words that carry opposite meanings."
+  },
+  {
+    "id": 734,
+    "unit": "Unit 3",
+    "zh": "和同义词一样，它们词性相同。",
+    "en": "Similar to synonyms, they carry the same part of speech."
+  },
+  {
+    "id": 735,
+    "unit": "Unit 3",
+    "zh": "反义词可以通过给词根添加前缀/后缀构成。",
+    "en": "Antonyms can be formed by adding prefixes / suffixes to the root words."
+  },
+  {
+    "id": 736,
+    "unit": "Unit 3",
+    "zh": "科技真的能使人们更好地相互交流。",
+    "en": "Technology really enables people to communicate better with each other."
+  },
+  {
+    "id": 737,
+    "unit": "Unit 3",
+    "zh": "他们期待着有朝一日，自己的虚拟形象会像真人一样去环游更广阅忆更精彩的虚拟世界。",
+    "en": "They look forward to a time when their avatar will act like a real person and travel around bigger, more exciting virtual worlds."
+  },
+  {
+    "id": 738,
+    "unit": "Unit 3",
+    "zh": "正是这些技能使我们能够发展终身的友谊。",
+    "en": "It is these skills that enable us to develop lifelong friendships."
+  },
+  {
+    "id": 739,
+    "unit": "Unit 3",
+    "zh": "一些人不再和朋友好好地交谈了，他们只关心自己网上的人气——我得了多少个“赞”？",
+    "en": "Instead of having proper conversations with their friends, some people are only concerned with their online popularity — How many “likes” did I get?"
+  },
+  {
+    "id": 740,
+    "unit": "Unit 3",
+    "zh": "野生动物的灭绝不给你时间改正错误，在科学面前，我们没有机会去改过。",
+    "en": "Wildlife extinction is not a process that gives you time to fix your mistakes. In the face of science, there are no second chances."
+  },
+  {
+    "id": 741,
+    "unit": "Unit 3",
+    "zh": "突然，天空乌云密布，不到一分钟，我们就陷入了一场可怕的风暴中。",
+    "en": "All at once, the sky was covered with dark clouds and in less than a minute we were in a terrible storm."
+  },
+  {
+    "id": 742,
+    "unit": "Unit 3",
+    "zh": "最后，一条船上的人把我救了起来。",
+    "en": "In the end, a boat picked me up."
+  },
+  {
+    "id": 743,
+    "unit": "Unit 3",
+    "zh": "首先，他的两个雪橇坏了，然后马匹开始因冰雪和严寒而遇到严重困难。",
+    "en": "First, his two sledges broke down and then the horses began to have serious difficulties with the snow and the cold."
+  },
+  {
+    "id": 744,
+    "unit": "Unit 3",
+    "zh": "然后他准备返回。",
+    "en": "Then he prepared for the return journey."
+  },
+  {
+    "id": 745,
+    "unit": "Unit 3",
+    "zh": "队员们很快就精疲力竭，食物也快吃完了。",
+    "en": "The men were soon very tired and were running out of food."
+  },
+  {
+    "id": 746,
+    "unit": "Unit 3",
+    "zh": "后来，这些岩石证明在遥远的过去，南极洲大陆曾被植物覆盖。",
+    "en": "Later, these rocks proved that at one time in the distant past, the continent of Antarctica was covered by plants."
+  },
+  {
+    "id": 747,
+    "unit": "Unit 3",
+    "zh": "曾经他与他的叔叔住在一起。",
+    "en": "At one time he lived with his uncle."
+  },
+  {
+    "id": 748,
+    "unit": "Unit 3",
+    "zh": "斯科特上校和两名队员继续向前，到达距离食品储备处不足11英里的地方。",
+    "en": "Scott and two of his team members carried on and got within eleven miles of one of their food bases."
+  },
+  {
+    "id": 749,
+    "unit": "Unit 3",
+    "zh": "她停下来往后看了看，又继续下楼。",
+    "en": "She stopped and looked back, then carried on down the stairs."
+  },
+  {
+    "id": 750,
+    "unit": "Unit 3",
+    "zh": "尽快停车，但是不要停靠在建筑物附近或者树下。",
+    "en": "Stop your car as soon as you can, but avoid stopping near a building or under a tree."
+  },
+  {
+    "id": 751,
+    "unit": "Unit 3",
+    "zh": "为什么不去做我们热衷的事情呢？",
+    "en": "Why do we avoid doing what we love to do?"
+  },
+  {
+    "id": 752,
+    "unit": "Unit 3",
+    "zh": "我觉得自己活着，就是为了使别人过得更美好。",
+    "en": "The aim of living is making better lives for others."
+  },
+  {
+    "id": 753,
+    "unit": "Unit 3",
+    "zh": "她开始谈论起救命药物青蒿素，这是她在20世纪70年代在团队的帮助下发现的。",
+    "en": "She began to talk about the life-saving drug, artemisinin, which she had discovered with the help of her team in the 1970s."
+  },
+  {
+    "id": 754,
+    "unit": "Unit 3",
+    "zh": "这位女士就是屠呦呦，是中国第一位获得诺贝尔奖的女科学家。",
+    "en": "The woman was Tu Youyou, the first Chinese female scientist to be awarded a Nobel Prize for her work."
+  },
+  {
+    "id": 755,
+    "unit": "Unit 3",
+    "zh": "诺贝尔奖，根据已故瑞典化学家阿尔弗雷德·诺贝尔的遗嘱而设立。",
+    "en": "Nobel Prize is established according to the will of the late Swedish chemist Alfred Nobel."
+  },
+  {
+    "id": 756,
+    "unit": "Unit 3",
+    "zh": "分设物理学、化学、生理学或医学、文学、和平五个奖项。",
+    "en": "It is divided into five awards: physics, chemistry, physiology or medicine, literature, and peace."
+  },
+  {
+    "id": 757,
+    "unit": "Unit 3",
+    "zh": "诺贝尔奖1901年开始颁发，每年一次。",
+    "en": "The Nobel Prize was first awarded in 1901 and is given annually."
+  },
+  {
+    "id": 758,
+    "unit": "Unit 3",
+    "zh": "1968年起增设经济学奖。",
+    "en": "The Economics Prize was added in 1968."
+  },
+  {
+    "id": 759,
+    "unit": "Unit 3",
+    "zh": "莫罕达斯·卡拉姆昌德·甘地（1869—1948），印度民族运动的领导人，在印度被尊称为“圣雄甘地”。",
+    "en": "Mahatma Gandhi (1869-1948) was a leader of the Indian national movement and is revered in India as 'Mahatma Gandhi'."
+  },
+  {
+    "id": 760,
+    "unit": "Unit 3",
+    "zh": "马丁·路德·金（1929—1968），美国黑人民权运动领袖。",
+    "en": "Martin Luther King (1929-1968) was a leader of the African-American civil rights movement in the United States."
+  },
+  {
+    "id": 761,
+    "unit": "Unit 3",
+    "zh": "1955—1956年间，他领导了阿拉巴马州蒙哥马利市的黑人罢乘公共汽车活动，获得成功，从而成为民权运动的领导者。",
+    "en": "From 1955 to 1956, he led the Montgomery bus boycott in Alabama, which was successful, making him a leader of the civil rights movement."
+  },
+  {
+    "id": 762,
+    "unit": "Unit 3",
+    "zh": "1963年8月，他组织集会，反对种族歧视，在林肯纪念堂前发表了题为“我有一个梦想”的著名演说。",
+    "en": "In August 1963, he organized a rally against racial discrimination and delivered his famous 'I Have a Dream' speech in front of the Lincoln Memorial."
+  },
+  {
+    "id": 763,
+    "unit": "Unit 3",
+    "zh": "马丁·路德·金主张非暴力主义，多次被捕入狱。",
+    "en": "Martin Luther King advocated nonviolence and was arrested and imprisoned multiple times."
+  },
+  {
+    "id": 764,
+    "unit": "Unit 3",
+    "zh": "1968年4月4日，他被种族主义分子杀害。",
+    "en": "On April 4, 1968, he was assassinated by a racist."
+  },
+  {
+    "id": 765,
+    "unit": "Unit 3",
+    "zh": "华盛顿哥伦比亚特区，全称“华盛顿哥伦比亚特区”，简称为华盛顿，美国首都。",
+    "en": "Washington, D.C., the full name is 'Washington, District of Columbia', abbreviated as Washington, is the capital of the United States."
+  },
+  {
+    "id": 766,
+    "unit": "Unit 3",
+    "zh": "位于美国马里兰州和弗吉尼亚州交界处。",
+    "en": "It is located at the junction of Maryland and Virginia."
+  },
+  {
+    "id": 767,
+    "unit": "Unit 3",
+    "zh": "华盛顿于1790年被定为首都，为纪念美国第一任总统乔治·华盛顿。",
+    "en": "Washington was designated the capital in 1790 in honor of the first President of the United States, George Washington."
+  },
+  {
+    "id": 768,
+    "unit": "Unit 3",
+    "zh": "“超人”是美国DC漫画公司出版的一本漫画小说中的虚构角色，该角色此后出现在多部电影中。",
+    "en": "Superman is a fictional character from a comic novel published by American DC Comics, and the character has since appeared in many films."
+  },
+  {
+    "id": 769,
+    "unit": "Unit 3",
+    "zh": "其最早一次亮相是在1951年的《超人与摩尔人》电影中。",
+    "en": "His earliest appearance was in the 1951 film 'Superman and the Mole Men'."
+  },
+  {
+    "id": 770,
+    "unit": "Unit 3",
+    "zh": "克里斯托弗·里夫饰演了四部《超人》电影，分别是《超人》（1978年）、《超人2》（1980年）、《超人3》（1983年）、《超人4》（1987年）。",
+    "en": "Christopher Reeve starred in four 'Superman' films: 'Superman' (1978), 'Superman II' (1980), 'Superman III' (1983), and 'Superman IV: The Quest for Peace' (1987)."
+  },
+  {
+    "id": 771,
+    "unit": "Unit 3",
+    "zh": "克里斯托弗·里夫（1952-2004），美国演员、导演和制片人。",
+    "en": "Christopher Reeve (1952-2004) was an American actor, director, and producer."
+  },
+  {
+    "id": 772,
+    "unit": "Unit 3",
+    "zh": "他初登银幕是在1976年，出演《重力事件》中的配角。",
+    "en": "He first appeared on screen in 1976, playing a supporting role in the film 'Gray Lady Down'."
+  },
+  {
+    "id": 773,
+    "unit": "Unit 3",
+    "zh": "1978—1987年间，克里斯托弗·里夫主演了四部《超人》，也由此赢得了英国电影学院最佳男主角新人奖。",
+    "en": "From 1978 to 1987, Christopher Reeve starred in four 'Superman' films, for which he won the BAFTA Award for Most Promising Newcomer."
+  },
+  {
+    "id": 774,
+    "unit": "Unit 3",
+    "zh": "2004年10月，克里斯托弗·里夫因心脏病逝世。",
+    "en": "In October 2004, Christopher Reeve died of heart failure."
+  },
+  {
+    "id": 775,
+    "unit": "Unit 3",
+    "zh": "我喜欢探索新技术，因为它们非常方便。",
+    "en": "I love exploring new technologies, because they are so convenient."
+  },
+  {
+    "id": 776,
+    "unit": "Unit 3",
+    "zh": "你知道，我用应用程序在网上买东西，而且我通常当天就能收到！",
+    "en": "You know, I use apps to buy things online and I usually receive them the same day!"
+  },
+  {
+    "id": 777,
+    "unit": "Unit 3",
+    "zh": "确实！我知道有一个甚至可以在两小时内帮你拿到你订购的东西！",
+    "en": "Indeed! I know one that can even help you get what you order within two hours!"
+  },
+  {
+    "id": 778,
+    "unit": "Unit 3",
+    "zh": "它是什么？我也想试试。",
+    "en": "What is it? I'd like to try that, too."
+  },
+  {
+    "id": 779,
+    "unit": "Unit 3",
+    "zh": "除了网上购物，我也喜欢网上聊天。",
+    "en": "Besides shopping online, I also like chatting online."
+  },
+  {
+    "id": 780,
+    "unit": "Unit 3",
+    "zh": "这让我感觉不那么孤单。",
+    "en": "It makes me feel less lonely."
+  },
+  {
+    "id": 781,
+    "unit": "Unit 3",
+    "zh": "科技确实能让人们更好地相互交流。",
+    "en": "Technology really enables people to communicate better with each other."
+  },
+  {
+    "id": 782,
+    "unit": "Unit 3",
+    "zh": "但是这些新技术有什么缺点吗？",
+    "en": "But are there any disadvantages about these new technologies?"
+  },
+  {
+    "id": 783,
+    "unit": "Unit 3",
+    "zh": "嗯，过多的网上聊天会花费很多时间。",
+    "en": "Well, too much chatting online takes a lot of time."
+  },
+  {
+    "id": 784,
+    "unit": "Unit 3",
+    "zh": "我们真的需要时间来专注于我们正在做的事情。",
+    "en": "We really need time to focus on what we are doing."
+  },
+  {
+    "id": 785,
+    "unit": "Unit 3",
+    "zh": "这部新手机是我父母送的生日礼物。",
+    "en": "This new phone is a birthday present from my parents."
+  },
+  {
+    "id": 786,
+    "unit": "Unit 3",
+    "zh": "我已经下载了很多有趣又有用的应用程序。",
+    "en": "I've downloaded lots of interesting and useful apps already."
+  },
+  {
+    "id": 787,
+    "unit": "Unit 3",
+    "zh": "我喜欢这个音乐应用程序——当我睡不着或感到紧张时，我可以听歌。",
+    "en": "I like this music app — I can listen to songs when I can't sleep or feel nervous."
+  },
+  {
+    "id": 788,
+    "unit": "Unit 3",
+    "zh": "它真的帮助我放松。",
+    "en": "It really helps me relax."
+  },
+  {
+    "id": 789,
+    "unit": "Unit 3",
+    "zh": "我喜欢在手机上读新闻。",
+    "en": "I like reading news on my phone."
+  },
+  {
+    "id": 790,
+    "unit": "Unit 3",
+    "zh": "你有什么推荐吗？",
+    "en": "Do you have any recommendation?"
+  },
+  {
+    "id": 791,
+    "unit": "Unit 3",
+    "zh": "哦，是的！你可以下载这个应用程序！",
+    "en": "Oh, yes! You can download this app!"
+  },
+  {
+    "id": 792,
+    "unit": "Unit 3",
+    "zh": "你会一整天都收到新闻更新。",
+    "en": "You'll get updated with the news all day long."
+  },
+  {
+    "id": 793,
+    "unit": "Unit 3",
+    "zh": "我已经下载了好几个不同游戏的应用程序。",
+    "en": "I have downloaded quite a few apps for different games."
+  },
+  {
+    "id": 794,
+    "unit": "Unit 3",
+    "zh": "我在不同的游戏中使用不同的头像，这真的很酷，因为它们让我探索不同的个性。",
+    "en": "I use different avatars in different games and this is really cool because they let me explore different personalities."
+  },
+  {
+    "id": 795,
+    "unit": "Unit 3",
+    "zh": "新游戏让我的生活变得有趣。",
+    "en": "New games make my life interesting."
+  },
+  {
+    "id": 796,
+    "unit": "Unit 3",
+    "zh": "但你需要小心在上面花费太多时间——你可能会上瘾。",
+    "en": "But you need to be careful about spending too much time on them — you could get addicted."
+  },
+  {
+    "id": 797,
+    "unit": "Unit 3",
+    "zh": "所以我下载了一个叫“闹钟”的应用程序。",
+    "en": "So I downloaded an app called “Alarm Clock”."
+  },
+  {
+    "id": 798,
+    "unit": "Unit 3",
+    "zh": "一旦我玩游戏超过一个小时，铃声就会响起，提醒我时间到了。",
+    "en": "Once I play games for more than an hour, a bell rings to remind me that my time is up."
+  },
+  {
+    "id": 799,
+    "unit": "Unit 3",
+    "zh": "欢迎来到7een科技访谈。",
+    "en": "Welcome to 7een Tech Talk."
+  },
+  {
+    "id": 800,
+    "unit": "Unit 3",
+    "zh": "如今，我们在移动设备上使用许多软件应用程序。",
+    "en": "Nowadays, we use many software applications on our mobile devices."
+  },
+  {
+    "id": 801,
+    "unit": "Unit 3",
+    "zh": "我们简称它们为应用程序。",
+    "en": "We call them apps for short."
+  },
+  {
+    "id": 802,
+    "unit": "Unit 3",
+    "zh": "今天，我的嘉宾是李兴，来自新科技公司的一名应用程序开发员。",
+    "en": "Today, my guest is Li Xing, an app developer from New-tech Company."
+  },
+  {
+    "id": 803,
+    "unit": "Unit 3",
+    "zh": "L: 你好！谢谢邀请我。",
+    "en": "L: Hello! Thanks for having me."
+  },
+  {
+    "id": 804,
+    "unit": "Unit 3",
+    "zh": "I: 那么，在你看来，为什么应用程序如此受欢迎？",
+    "en": "I: So, in your opinion, why are apps so popular?"
+  },
+  {
+    "id": 805,
+    "unit": "Unit 3",
+    "zh": "L: 嗯，应用程序非常有用。",
+    "en": "L: Well, apps are very useful."
+  },
+  {
+    "id": 806,
+    "unit": "Unit 3",
+    "zh": "它们帮助我们找到受欢迎的餐厅、叫出租车、找到去不同地方的路线等等。",
+    "en": "They help us find popular restaurants, call for taxis, find directions to different places, and so on."
+  },
+  {
+    "id": 807,
+    "unit": "Unit 3",
+    "zh": "它们让我们的生活方便多了，不是吗？",
+    "en": "They make our life much easier, don't they?"
+  },
+  {
+    "id": 808,
+    "unit": "Unit 3",
+    "zh": "由于我们的许多听众都是学生，你能告诉我们一些关于教育类应用程序的事情吗？",
+    "en": "As many of our listeners are students, could you tell us something about educational apps?"
+  },
+  {
+    "id": 809,
+    "unit": "Unit 3",
+    "zh": "教育类应用程序正变得越来越强大。",
+    "en": "Educational apps are becoming increasingly powerful."
+  },
+  {
+    "id": 810,
+    "unit": "Unit 3",
+    "zh": "例如，一些应用程序允许学生根据他们的个人兴趣和需求选择他们的在线老师和科目。",
+    "en": "For example, some apps allow students to choose their online teachers and subjects according to their personal interests and needs."
+  },
+  {
+    "id": 811,
+    "unit": "Unit 3",
+    "zh": "它们还确保所有学生都能享受到相同的学习材料，即使他们没有坐在同一个教室里！",
+    "en": "They also ensure that students can all enjoy the same learning materials, even when they're not sitting in the same classroom together!"
+  },
+  {
+    "id": 812,
+    "unit": "Unit 3",
+    "zh": "但是开发一个应用程序一定很困难，对吧？",
+    "en": "But developing an app must be difficult, right?"
+  },
+  {
+    "id": 813,
+    "unit": "Unit 3",
+    "zh": "最困难的事情是发现人们的需求并解决现实世界的问题。",
+    "en": "The most difficult thing is finding out what people need and solving real-world problems."
+  },
+  {
+    "id": 814,
+    "unit": "Unit 3",
+    "zh": "I: 解决现实世界的问题，这听起来确实很有挑战性。",
+    "en": "I: Solving real-world problems, that does sound challenging."
+  },
+  {
+    "id": 815,
+    "unit": "Unit 3",
+    "zh": "你们现在正在开发什么应用程序？",
+    "en": "What apps are you working on right now?"
+  },
+  {
+    "id": 816,
+    "unit": "Unit 3",
+    "zh": "L: 我们正在努力在我们的应用程序中使用最新技术，比如VR、AR和MR。",
+    "en": "L: We're working on using the latest technologies in our apps, like VR, AR and MR."
+  },
+  {
+    "id": 817,
+    "unit": "Unit 3",
+    "zh": "让我们在休息之后继续这个讨论。",
+    "en": "Let's continue this discussion after the break .="
+  },
+  {
+    "id": 818,
+    "unit": "Unit 3",
+    "zh": "D: 陈宇，你忙吗？你能帮我个忙吗？",
+    "en": "D: Chen Yu, are you busy? Can you help me out with something?"
+  },
+  {
+    "id": 819,
+    "unit": "Unit 3",
+    "zh": "D: 还记得你告诉我的那个购物应用程序吗？",
+    "en": "D: Remember that shopping app you told me about?"
+  },
+  {
+    "id": 820,
+    "unit": "Unit 3",
+    "zh": "你需要帮忙下载它吗？",
+    "en": "Do you need help downloading it?"
+  },
+  {
+    "id": 821,
+    "unit": "Unit 3",
+    "zh": "D: 不，我已经下载了，但我不知道如何设置账户。",
+    "en": "D: No, I've downloaded it, but | can't figure out how to set up an account."
+  },
+  {
+    "id": 822,
+    "unit": "Unit 3",
+    "zh": "我可以帮你。",
+    "en": "| can help you with that."
+  },
+  {
+    "id": 823,
+    "unit": "Unit 3",
+    "zh": "首先，按下“注册”按钮。",
+    "en": "First, press the “Sign Up” button."
+  },
+  {
+    "id": 824,
+    "unit": "Unit 3",
+    "zh": "那么现在我开始输入我的信息，对吗？",
+    "en": "So now | start putting in my information, right?"
+  },
+  {
+    "id": 825,
+    "unit": "Unit 3",
+    "zh": "C: 是的，输入你的姓名、性别、电话号码和电子邮件地址。",
+    "en": "C: Yes, put in your name, gender, telephone number and email address."
+  },
+  {
+    "id": 826,
+    "unit": "Unit 3",
+    "zh": "那么，都设置好了吗？",
+    "en": "Is it all set up, then?"
+  },
+  {
+    "id": 827,
+    "unit": "Unit 3",
+    "zh": "最后一步是按下“完成”按钮。",
+    "en": "The last step is to press the “Finish” button."
+  },
+  {
+    "id": 828,
+    "unit": "Unit 3",
+    "zh": "好了，你现在应该可以开始购物了！",
+    "en": "OK, you should now be ready to start shopping!"
+  },
+  {
+    "id": 829,
+    "unit": "Unit 3",
+    "zh": "实际上，请稍等一下。",
+    "en": "Actually, just hold on a second."
+  },
+  {
+    "id": 830,
+    "unit": "Unit 3",
+    "zh": "现在我不明白这是什么意思……",
+    "en": "Now | don't understand what this means..."
+  },
+  {
+    "id": 831,
+    "unit": "Unit 3",
+    "zh": "这里是ABC购物客服中心。",
+    "en": "This is ABC Shopping Customer Service."
+  },
+  {
+    "id": 832,
+    "unit": "Unit 3",
+    "zh": "我可以怎样帮助您？",
+    "en": "How may | help you?"
+  },
+  {
+    "id": 833,
+    "unit": "Unit 3",
+    "zh": "我两周前使用你们的应用程序下了一个订单，但我仍然没有",
+    "en": "| placed an order using your app two weeks ago, but | still haven't"
+  },
+  {
+    "id": 834,
+    "unit": "Unit 3",
+    "zh": "收到了货物。你能帮我个忙，查一下是怎么回事吗？",
+    "en": "received the goods. Can you do me a favour and find out what's going on?"
+  },
+  {
+    "id": 835,
+    "unit": "Unit 3",
+    "zh": "好的。让我为您查一下。您能告诉我您的订单号吗？",
+    "en": "Right. Let me check this for you. Could you give me your order number, please?"
+  },
+  {
+    "id": 836,
+    "unit": "Unit 3",
+    "zh": "订单号是二八四七五。",
+    "en": "The order number is two-eight-four-seven-five."
+  },
+  {
+    "id": 837,
+    "unit": "Unit 3",
+    "zh": "是的，没错。您需要我确认我的账户信息吗？",
+    "en": "Yes, that's correct. Would you like me to confirm my account details?"
+  },
+  {
+    "id": 838,
+    "unit": "Unit 3",
+    "zh": "不，不需要，谢谢。您能确认一下您的姓名吗？",
+    "en": "No, that's not necessary, thank you. If you could just confirm your name, please?"
+  },
+  {
+    "id": 839,
+    "unit": "Unit 3",
+    "zh": "好的……嗯，根据我的记录，史密斯女士，您的订单已于上周送达。您还没有收到包裹吗？",
+    "en": "OK... Well, according to my records, Ms Smith, your order was delivered last week. Have you not received the package?"
+  },
+  {
+    "id": 840,
+    "unit": "Unit 3",
+    "zh": "没有，恐怕我还没收到。您能再查一下吗？",
+    "en": "No, I am afraid I haven't. Would you be able to check again?"
+  },
+  {
+    "id": 841,
+    "unit": "Unit 3",
+    "zh": "当然。哦，这太奇怪了！一定是出了什么差错。对此我非常抱歉。让我向送货员询问一下这个订单的情况。一旦我和他谈过，我可以用这个号码给您回电话吗？",
+    "en": "Of course. Oh, that's strange! There must have been an error. I'm very sorry about this. Let me enquire about the order with the delivery man. Once I have spoken to him, would it be all right for me to call you back on this number?"
+  },
+  {
+    "id": 842,
+    "unit": "Unit 3",
+    "zh": "是的，可以，谢谢。",
+    "en": "Yes, that would be fine, thanks."
+  },
+  {
+    "id": 843,
+    "unit": "Unit 3",
+    "zh": "今天还有什么我能帮您的吗？",
+    "en": "Can I assist you with anything else today?"
+  },
+  {
+    "id": 844,
+    "unit": "Unit 3",
+    "zh": "没有了，就这些。谢谢您。",
+    "en": "No, that's all. Thank you."
+  },
+  {
+    "id": 845,
+    "unit": "Unit 3",
+    "zh": "您现在收听的是里士满电台。我们请到了来自西伦敦野生动物组织的莎拉·休斯。莎拉，您是在伦敦的这个地区教人们了解自然吗？",
+    "en": "And you are now on Radio Richmond. We've got Sarah Hughes from West London Wildlife. Sarah, do you teach people about nature in this part of London?"
+  },
+  {
+    "id": 846,
+    "unit": "Unit 3",
+    "zh": "是的，我们很幸运。实际上，整个城市都相当绿色。大约66%的城市被水或绿地覆盖。很神奇，不是吗？而且还有三百万个私人花园。",
+    "en": "Yes, we're lucky. Actually, the whole city is quite green. About 66 percent of the city is covered with water or green space. Amazing, isn't it? And there are three million private gardens."
+  },
+  {
+    "id": 847,
+    "unit": "Unit 3",
+    "zh": "是的。这对野生动物来说很棒。你可以看到不同种类的鸟——有超过350种。还有其他有趣的动物，比如鹿。我最喜欢的动物是鹿。我们在里士满公园就有它们。",
+    "en": "Yes. It's great for wildlife. You can see different kinds of birds — there are over 350. And there are other interesting animals too, like deer. My favourite animals are deer. We've got them here in Richmond Park."
+  },
+  {
+    "id": 848,
+    "unit": "Unit 3",
+    "zh": "谈到自然，泰晤士河呢？",
+    "en": "Talking about nature, what about River Thames?"
+  },
+  {
+    "id": 849,
+    "unit": "Unit 3",
+    "zh": "嗯，现在的水污染比五十年前少了。事实上，河里有大约120种不同的鱼。",
+    "en": "Well, there's less water pollution now than fifty years ago. In fact, there are about 120 different kinds of fish in the river."
+  },
+  {
+    "id": 850,
+    "unit": "Unit 3",
+    "zh": "我认为我们的气候肯定在变化。而且温室效应相当明显。例如，现在的冬天没那么冷了，我们也不常下雪了。",
+    "en": "I think our climate is definitely changing. And the greenhouse effect is quite obvious. For example, the winters aren't as cold these days and we don't get snow very often."
+  },
+  {
+    "id": 851,
+    "unit": "Unit 3",
+    "zh": "最大的环境问题是来自汽车和飞机的空气污染和噪音污染。",
+    "en": "The biggest environmental problems are air pollution and noise pollution from cars and airplanes."
+  },
+  {
+    "id": 852,
+    "unit": "Unit 3",
+    "zh": "伦敦每年有近四十天遭受危险水平的污染。",
+    "en": "Nearly forty days a year in London suffer from dangerous levels of pollution."
+  },
+  {
+    "id": 853,
+    "unit": "Unit 3",
+    "zh": "好的，非常感谢莎拉与我们分享。",
+    "en": "OK, thanks a lot, Sarah, for sharing with us."
+  },
+  {
+    "id": 854,
+    "unit": "Unit 3",
+    "zh": "哇。这个讲座太令人震惊了。",
+    "en": "Wow. The lecture was so shocking."
+  },
+  {
+    "id": 855,
+    "unit": "Unit 3",
+    "zh": "我不知道我们对自然的危害如此之大。",
+    "en": "I didn't know we were harming nature so much."
+  },
+  {
+    "id": 856,
+    "unit": "Unit 3",
+    "zh": "我们试图尽可能多地利用自然，但我们做过头了。",
+    "en": "We tried to make use of nature as much as we could, but we overdid it."
+  },
+  {
+    "id": 857,
+    "unit": "Unit 3",
+    "zh": "自然受到了伤害，感到了痛苦，最终背弃了我们。",
+    "en": "Nature got hurt, felt pain, and finally turned its back on us."
+  },
+  {
+    "id": 858,
+    "unit": "Unit 3",
+    "zh": "是的。自然是我们的家。",
+    "en": "Yes. Nature is our home."
+  },
+  {
+    "id": 859,
+    "unit": "Unit 3",
+    "zh": "人类、动物、植物和所有其他生物都生活在其中。",
+    "en": "Humans, animals, plants and all other living things live in it."
+  },
+  {
+    "id": 860,
+    "unit": "Unit 3",
+    "zh": "我们应该照顾好我们的“家”。",
+    "en": "We should take care of our \"home\"."
+  },
+  {
+    "id": 861,
+    "unit": "Unit 3",
+    "zh": "就像讲座的标题——与自然共生——我们应该保护自然。",
+    "en": "Just like the title of the lecture — Living with Nature—we should protect nature."
+  },
+  {
+    "id": 862,
+    "unit": "Unit 3",
+    "zh": "将来，我们应该……",
+    "en": "In the future, we should ..."
+  },
+  {
+    "id": 863,
+    "unit": "Unit 3",
+    "zh": "今天，我们谈论的是从事自然灾害救援的专业团队。",
+    "en": "Today, we're talking about professional teams who work in natural disaster rescue."
+  },
+  {
+    "id": 864,
+    "unit": "Unit 3",
+    "zh": "如你所知，地震、洪水和山体滑坡等自然灾害会造成死亡以及其他难以估量的损失和破坏。",
+    "en": "As you know, natural disasters like earthquakes, floods and landslides can cause death and other loss and damage that is hard to measure."
+  },
+  {
+    "id": 865,
+    "unit": "Unit 3",
+    "zh": "那么，当自然灾害发生时，专业救援团队会做什么？",
+    "en": "So what do professional rescue teams do when a natural disaster happens?"
+  },
+  {
+    "id": 866,
+    "unit": "Unit 3",
+    "zh": "今天，来自中国国际救援队的王先生将在这里告诉我们所有关于这方面的事情。",
+    "en": "Today, Mr Wang from China International Search and Rescue Team is here to tell us all about this."
+  },
+  {
+    "id": 867,
+    "unit": "Unit 3",
+    "zh": "王先生，我知道您参与过许多海外以及中国的救援行动，例如2008年的汶川地震。",
+    "en": "Mr Wang, I know you have been part of many rescue operations overseas, as well as in China, for example the Wenchuan earthquake in 2008."
+  },
+  {
+    "id": 868,
+    "unit": "Unit 3",
+    "zh": "那么你们的救援尝试中会发生什么？",
+    "en": "So what happens in your rescue attempts?"
+  },
+  {
+    "id": 869,
+    "unit": "Unit 3",
+    "zh": "嗯，在救援尝试中，我们首要和最重要的目标是拯救生命，例如在地震现场。",
+    "en": "Well, in the rescue attempts our first and most important goal is to save lives, for example at an earthquake site."
+  },
+  {
+    "id": 870,
+    "unit": "Unit 3",
+    "zh": "所以我们使用搜救车辆和训练有素的狗来寻找任何还活着的人，并尽力拯救他们。",
+    "en": "So we use search and rescue vehicles and trained dogs to look for anyone who is still alive and try our best to save them."
+  },
+  {
+    "id": 871,
+    "unit": "Unit 3",
+    "zh": "听起来是一个非常具有挑战性的过程。",
+    "en": "Sounds like a very challenging process."
+  },
+  {
+    "id": 872,
+    "unit": "Unit 3",
+    "zh": "一次救援尝试通常需要多长时间？",
+    "en": "How long does a rescue attempt usually take?"
+  },
+  {
+    "id": 873,
+    "unit": "Unit 3",
+    "zh": "给你举个例子，我最近的一次尝试是尼泊尔地震。",
+    "en": "To give you an example, one of my recent attempts was the Nepal earthquake."
+  },
+  {
+    "id": 874,
+    "unit": "Unit 3",
+    "zh": "超过六十名成员和六只狗参加了，我们在那里待了十二天。",
+    "en": "Over sixty members and six dogs took part, and we were there for twelve days."
+  },
+  {
+    "id": 875,
+    "unit": "Unit 3",
+    "zh": "我们救出了两个人，并为超过2000人提供了医疗帮助。",
+    "en": "We rescued two people and provided medical help to over 2,000 people."
+  },
+  {
+    "id": 876,
+    "unit": "Unit 3",
+    "zh": "十二天！你们救出了两个人，帮助了2000人！难以想象。",
+    "en": "Twelve days! You rescued two people and helped 2,000! Hard to imagine."
+  },
+  {
+    "id": 877,
+    "unit": "Unit 3",
+    "zh": "那一定非常艰难。",
+    "en": "It must have been really tough."
+  },
+  {
+    "id": 878,
+    "unit": "Unit 3",
+    "zh": "是的。这是一场与时间赛跑的战斗。",
+    "en": "Yes. It was a battle against time."
+  },
+  {
+    "id": 879,
+    "unit": "Unit 3",
+    "zh": "哇，我无法想象你们承受了多大的压力。",
+    "en": "Wow, I can't imagine how much pressure you are under."
+  },
+  {
+    "id": 880,
+    "unit": "Unit 3",
+    "zh": "但尽力减少痛苦和生命损失是我们的职责。",
+    "en": "But it's our duty to try our best to reduce suffering and the loss of life."
+  },
+  {
+    "id": 881,
+    "unit": "Unit 3",
+    "zh": "我们受过训练来做这件事。",
+    "en": "We're trained to do so."
+  },
+  {
+    "id": 882,
+    "unit": "Unit 3",
+    "zh": "王先生，打扰一下，我能在那里打断您吗？",
+    "en": "Excuse me, Mr Wang, but can I interrupt you there?"
+  },
+  {
+    "id": 883,
+    "unit": "Unit 3",
+    "zh": "您已经告诉了我们很多关于您如何进行救援尝试的事情，但您能告诉我们更多关于保护的事情吗？",
+    "en": "You've told us a lot about how you conduct rescue attempts, but could you please tell us more about protection?"
+  },
+  {
+    "id": 884,
+    "unit": "Unit 3",
+    "zh": "例如，在地震中我们应该做什么？",
+    "en": "For example, what should we do in an earthquake?"
+  },
+  {
+    "id": 885,
+    "unit": "Unit 3",
+    "zh": "如果你在户外，就呆在那里，远离任何建筑物或路灯。",
+    "en": "If you're outdoors, stay there and move away from any buildings or streetlights."
+  },
+  {
+    "id": 886,
+    "unit": "Unit 3",
+    "zh": "如果你在室内，远离任何可能破碎或掉落的东西，比如窗户或灯。",
+    "en": "If you're indoors, stay away from anything that can break or fall, like windows or lamps."
+  },
+  {
+    "id": 887,
+    "unit": "Unit 3",
+    "zh": "好的，如果我在户外，就远离任何建筑物或路灯。",
+    "en": "OK, if I'm outdoors, move away from any buildings or streetlights."
+  },
+  {
+    "id": 888,
+    "unit": "Unit 3",
+    "zh": "如果我在室内，远离任何可能破碎或掉落的东西。",
+    "en": "If I'm indoors, stay away from anything that can break or fall."
+  },
+  {
+    "id": 889,
+    "unit": "Unit 3",
+    "zh": "但如果我被困住了呢？",
+    "en": "But what if I'm trapped?"
+  },
+  {
+    "id": 890,
+    "unit": "Unit 3",
+    "zh": "我应该尽力大声喊叫，还是……",
+    "en": "Should I try to shout as loud as I can, or..."
+  },
+  {
+    "id": 891,
+    "unit": "Unit 3",
+    "zh": "抱歉，但我的建议是敲打墙壁以帮助人们找到你，并且只在附近有人时才喊叫。",
+    "en": "Sorry, but my advice is to knock on a wall to help people find you and only shout when someone is nearby."
+  },
+  {
+    "id": 892,
+    "unit": "Unit 3",
+    "zh": "这是因为喊叫会导致你吸入危险量的灰尘。",
+    "en": "This is because shouting can cause you to breathe in a dangerous amount of dust."
+  },
+  {
+    "id": 893,
+    "unit": "Unit 3",
+    "zh": "我不知道这个——好建议！",
+    "en": "I didn't know that — great advice!"
+  },
+  {
+    "id": 894,
+    "unit": "Unit 3",
+    "zh": "我们今天都学到了很多。",
+    "en": "We've all learnt a lot today."
+  },
+  {
+    "id": 895,
+    "unit": "Unit 3",
+    "zh": "嗯，我很想了解更多，但不幸的是，我们的时间用完了。",
+    "en": "Well, I'd love to know more, but, unfortunately, we've run out of time."
+  },
+  {
+    "id": 896,
+    "unit": "Unit 3",
+    "zh": "所以，非常抱歉，但我们不得不就此结束。",
+    "en": "So, I’m very sorry, but we'll have to finish there."
+  },
+  {
+    "id": 897,
+    "unit": "Unit 3",
+    "zh": "再次感谢您，王先生。",
+    "en": "Thank you again, Mr Wang."
+  },
+  {
+    "id": 898,
+    "unit": "Unit 3",
+    "zh": "你心里有钦佩的人吗？",
+    "en": "Do you have someone in mind that you admire?"
+  },
+  {
+    "id": 899,
+    "unit": "Unit 3",
+    "zh": "嗯，我认为我的叔叔是我钦佩的人。",
+    "en": "Well, I think my uncle is someone I admire."
+  },
+  {
+    "id": 900,
+    "unit": "Unit 3",
+    "zh": "消防员的工作非常重要。",
+    "en": "A firefighter's work is very important."
+  },
+  {
+    "id": 901,
+    "unit": "Unit 3",
+    "zh": "但你为什么认为消防员是令人钦佩的人？",
+    "en": "But why do you think firefighters are admirable people?"
+  },
+  {
+    "id": 902,
+    "unit": "Unit 3",
+    "zh": "我认为他们令人钦佩，因为他们扑灭火灾并拯救人们的生命。",
+    "en": "I think they are admirable because they put out fires and save people's lives."
+  },
+  {
+    "id": 903,
+    "unit": "Unit 3",
+    "zh": "他们还花很多时间帮助处于危险中的人。",
+    "en": "They also spend lots of time helping people who are in danger."
+  },
+  {
+    "id": 904,
+    "unit": "Unit 3",
+    "zh": "他们不仅扑灭火灾，还拯救处于危险中的人。",
+    "en": "They not only put out fires, but also save people who are in danger."
+  },
+  {
+    "id": 905,
+    "unit": "Unit 3",
+    "zh": "我同意，他们做如此重要的工作。",
+    "en": "They do such important jobs, I agree."
+  },
+  {
+    "id": 906,
+    "unit": "Unit 3",
+    "zh": "绝对地，我钦佩他们，因为他们如此勇敢，而且似乎不害怕危险。",
+    "en": "Absolutely, I admire them because they are so brave and they don't seem to be afraid of danger."
+  },
+  {
+    "id": 907,
+    "unit": "Unit 3",
+    "zh": "谈到我们钦佩的人，你认为他们应该具备什么品质？",
+    "en": "Talking about people we admire, what qualities do you think they should have?"
+  },
+  {
+    "id": 908,
+    "unit": "Unit 3",
+    "zh": "嗯，有很多。对我来说，我认为他们应该勇敢。",
+    "en": "Well, there are quite a lot. For me, I think they should be brave."
+  },
+  {
+    "id": 909,
+    "unit": "Unit 3",
+    "zh": "他们不害怕危险。",
+    "en": "They are not afraid of danger."
+  },
+  {
+    "id": 910,
+    "unit": "Unit 3",
+    "zh": "他们与邪恶斗争，拯救人们的生命。",
+    "en": "They fight against evil and save people's lives."
+  },
+  {
+    "id": 911,
+    "unit": "Unit 3",
+    "zh": "是的，勇敢很重要，但还有其他重要的事情。",
+    "en": "Yes, being brave is important, but there are also other important things."
+  },
+  {
+    "id": 912,
+    "unit": "Unit 3",
+    "zh": "成为一个令人钦佩的人并不仅仅意味着一直战斗。",
+    "en": "To be an admirable person doesn't only mean to fight all the time."
+  },
+  {
+    "id": 913,
+    "unit": "Unit 3",
+    "zh": "有些人非常努力和富有创造性地工作，让我们的生活更美好，比如科学家。",
+    "en": "Some people work very hard and creatively to make our lives better, like scientists."
+  },
+  {
+    "id": 914,
+    "unit": "Unit 3",
+    "zh": "而且我认为与自身弱点作斗争的人也是令人钦佩的人，比如海伦·凯勒和张海迪。",
+    "en": "And I think people who fight against their own weaknesses are also admirable people, like Helen Keller and Zhang Haidi."
+  },
+  {
+    "id": 915,
+    "unit": "Unit 3",
+    "zh": "你好。我相信每个人都知道马丁·路德·金——一位为美国黑人争取平等权利的伟人。",
+    "en": "Hello. I'm sure everyone knows about Martin Luther King — a great man who fought to win equal rights for black people in the US."
+  },
+  {
+    "id": 916,
+    "unit": "Unit 3",
+    "zh": "今天，我们请来了萨姆·罗伯茨博士来告诉我们更多关于他的事情。",
+    "en": "Today, we have Dr. Sam Roberts here to tell us more about him."
+  },
+  {
+    "id": 917,
+    "unit": "Unit 3",
+    "zh": "那么金小时候是什么样的？",
+    "en": "So what was King like as a child?"
+  },
+  {
+    "id": 918,
+    "unit": "Unit 3",
+    "zh": "嗯，他是个聪明的男孩，但他遭受了种族歧视。",
+    "en": "Well, he was a smart boy, but he suffered racial discrimination."
+  },
+  {
+    "id": 919,
+    "unit": "Unit 3",
+    "zh": "那就是人们因为肤色而受到不公平对待。",
+    "en": "That's when people were treated unfairly due to their skin-colour."
+  },
+  {
+    "id": 920,
+    "unit": "Unit 3",
+    "zh": "1943年，金和他的黑人老师一起乘坐公共汽车。",
+    "en": "In 1943, King took the bus with his black teacher."
+  },
+  {
+    "id": 921,
+    "unit": "Unit 3",
+    "zh": "白人司机告诉他们把座位让给两个白人。",
+    "en": "The white driver told them to give their seats to two white people."
+  },
+  {
+    "id": 922,
+    "unit": "Unit 3",
+    "zh": "什么？那他做了什么？",
+    "en": "What? What did he do then?"
+  },
+  {
+    "id": 923,
+    "unit": "Unit 3",
+    "zh": "金不想放弃他的座位。",
+    "en": "King didn't want to give up his seat."
+  },
+  {
+    "id": 924,
+    "unit": "Unit 3",
+    "zh": "他相信黑人应该受到和白人一样的待遇。",
+    "en": "He believed that black people should be treated the same as white people."
+  },
+  {
+    "id": 925,
+    "unit": "Unit 3",
+    "zh": "然而，最终，他们不得不这样做。",
+    "en": "However, in the end, they had to do it."
+  },
+  {
+    "id": 926,
+    "unit": "Unit 3",
+    "zh": "他后来对此做了什么吗？",
+    "en": "Did he do anything about this later?"
+  },
+  {
+    "id": 927,
+    "unit": "Unit 3",
+    "zh": "1955年，金组织了一次巴士抗议活动，并要求所有黑人停止乘坐巴士。",
+    "en": "In 1955, King organised a bus protest, and asked all black people to stop taking buses."
+  },
+  {
+    "id": 928,
+    "unit": "Unit 3",
+    "zh": "经过一些斗争，他们赢得了在公共汽车上坐在白人旁边的权利。",
+    "en": "After some struggles, they won the right to sit next to white people on buses."
+  },
+  {
+    "id": 929,
+    "unit": "Unit 3",
+    "zh": "这是金的第一次胜利。",
+    "en": "This was King's first victory."
+  },
+  {
+    "id": 930,
+    "unit": "Unit 3",
+    "zh": "金在20世纪60年代组织了进一步的抗议活动，对吗？",
+    "en": "And King organised further protests in the 1960s, right?"
+  },
+  {
+    "id": 931,
+    "unit": "Unit 3",
+    "zh": "他组织了许多和平抗议活动，但他因此多次被关进监狱。",
+    "en": "He organised many peaceful protests, but he was put behind bars many times for doing so."
+  },
+  {
+    "id": 932,
+    "unit": "Unit 3",
+    "zh": "1963年，他组织了一次前往华盛顿特区的游行，并发表了一篇题为“我有一个梦想”的演讲。",
+    "en": "In 1963, he organised a march to Washington, D.C. and made a speech with the words “I have a dream”."
+  },
+  {
+    "id": 933,
+    "unit": "Unit 3",
+    "zh": "是的，那真是一场著名且鼓舞人心的演讲！",
+    "en": "Yes, that's a really famous and inspiring speech!"
+  },
+  {
+    "id": 934,
+    "unit": "Unit 3",
+    "zh": "例如，“我有一个梦想，有一天……我们认为这些真理是不言而喻的：人人生而平等……我有一个梦想，我的四个孩子有一天将生活在一个不是以他们的肤色，而是以他们的品格内涵来评价他们的国度里……”",
+    "en": "For example, \"I have a dream that one day ... We hold these truths to be self-evident: that all men are created equal ... I have a dream that my four little children will one day live in a nation where they will not be judged by the colour of their skin but by the content of their character ...\""
+  },
+  {
+    "id": 935,
+    "unit": "Unit 3",
+    "zh": "第二年，金获得了诺贝尔和平奖。",
+    "en": "The next year, King received the Nobel Peace Prize."
+  },
+  {
+    "id": 936,
+    "unit": "Unit 3",
+    "zh": "但是，不幸的是，几年后的1968年，他被杀害了。",
+    "en": "But, unfortunately, he was killed a few years later in 1968."
+  },
+  {
+    "id": 937,
+    "unit": "Unit 3",
+    "zh": "这是一个巨大的损失。",
+    "en": "It was a great loss."
+  },
+  {
+    "id": 938,
+    "unit": "Unit 3",
+    "zh": "金将永远因他为帮助美国黑人所做的诸多贡献而被铭记。",
+    "en": "King will always be remembered for doing a lot to help black people in the US."
+  },
+  {
+    "id": 939,
+    "unit": "Unit 3",
+    "zh": "他也激励了世界各地的人们为平等权利和正义而斗争。",
+    "en": "He has also inspired people around the world to fight for equal rights and justice."
+  },
+  {
+    "id": 940,
+    "unit": "Unit 3",
+    "zh": "所以，对于我们的学校项目，也许我们可以谈谈圣雄甘地？",
+    "en": "So, for our school project, maybe we can talk about Mahatma Gandhi?"
+  },
+  {
+    "id": 941,
+    "unit": "Unit 3",
+    "zh": "我真的很钦佩和尊敬他，毫无疑问他是20世纪最重要的人物之一。",
+    "en": "I really admire and respect him, and there's no doubt that he was one of the most important figures of the 20th century."
+  },
+  {
+    "id": 942,
+    "unit": "Unit 3",
+    "zh": "让我记些笔记。",
+    "en": "Let me write down some notes."
+  },
+  {
+    "id": 943,
+    "unit": "Unit 3",
+    "zh": "那么，我们先谈谈他为什么如此重要。",
+    "en": "So, let's first talk about why he was so important."
+  },
+  {
+    "id": 944,
+    "unit": "Unit 3",
+    "zh": "嗯，甘地领导印度从英国统治下获得独立……嗯，我不确定具体日期。",
+    "en": "Well, Gandhi led India to independence from British rule ... mmm, I'm not sure about the exact date."
+  },
+  {
+    "id": 945,
+    "unit": "Unit 3",
+    "zh": "哦，我可以用手机查一下……印度在1947年成为一个独立国家。",
+    "en": "Oh, I can check this on my phone... India became an independent country in 1947."
+  },
+  {
+    "id": 946,
+    "unit": "Unit 3",
+    "zh": "甘地之所以重要，还因为他相信无人受伤的和平抗议的力量。",
+    "en": "Gandhi was important also because he believed in the power of peaceful protests where no one was hurt."
+  },
+  {
+    "id": 947,
+    "unit": "Unit 3",
+    "zh": "他激励了很多人，包括马丁·路德·金。",
+    "en": "He inspired many people, including Martin Luther King."
+  },
+  {
+    "id": 948,
+    "unit": "Unit 3",
+    "zh": "你确定吗？",
+    "en": "Are you sure about that?"
+  },
+  {
+    "id": 949,
+    "unit": "Unit 3",
+    "zh": "我前几天在一个广播节目中学到的。",
+    "en": "I learnt this on a radio programme the other day."
+  },
+  {
+    "id": 950,
+    "unit": "Unit 3",
+    "zh": "我不知道这个。",
+    "en": "I didn't know about that."
+  },
+  {
+    "id": 951,
+    "unit": "Unit 3",
+    "zh": "我想我们还应该提到甘地的诺贝尔和平奖。",
+    "en": "And I guess we should also mention Gandhi's Nobel Peace Prize."
+  },
+  {
+    "id": 952,
+    "unit": "Unit 3",
+    "zh": "实际上，我认为甘地从未获得过诺贝尔和平奖。",
+    "en": "Actually, I don't think Gandhi ever won a Nobel Peace Prize."
+  },
+  {
+    "id": 953,
+    "unit": "Unit 3",
+    "zh": "嗯……我不知道这是不是真的……",
+    "en": "Mmm...I don't know if that's true ..."
+  },
+  {
+    "id": 954,
+    "unit": "Unit 3",
+    "zh": "我很确定他没有。",
+    "en": "I'm pretty sure he didn't."
+  },
+  {
+    "id": 955,
+    "unit": "Unit 3",
+    "zh": "看，这里，读一下这个网页。",
+    "en": "Look, here, read this web page."
+  },
+  {
+    "id": 956,
+    "unit": "Unit 3",
+    "zh": "但也许我们应该再查几个网站。",
+    "en": "But perhaps we should check a few other websites."
+  },
+  {
+    "id": 957,
+    "unit": "Unit 3",
+    "zh": "有时网上的信息可能是错的。",
+    "en": "Sometimes the information on the Internet can be wrong."
+  },
+  {
+    "id": 958,
+    "unit": "Unit 3",
+    "zh": "让我再找一些来源……",
+    "en": "Let me find a few more sources ..."
+  }
+]

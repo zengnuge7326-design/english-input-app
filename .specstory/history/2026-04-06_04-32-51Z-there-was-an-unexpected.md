@@ -73,3 +73,2415 @@ _**Agent (claude-sonnet-4-6 2026-04-06 04:34:24Z)**_
 2. 被邀请人点邀请链接前先**退出所有相关账号**
 3. 用**无痕模式**打开邀请链接，全程不要刷新
 4. 如还不行，联系 Antigravity 客服（页面上有"Having trouble? Let us know"入口）
+
+---
+
+_**User (2026-04-21 02:15:45Z)**_
+
+我给我的obsidian安装里插件Smart Connections但是不能对话,如何解决
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:15:54Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user is asking about an Obsidian plugin called "Smart Connections" that they've installed but can't use for chat. Let me provide some troubleshooting advice.
+
+Smart Connections is an Obsidian plugin that uses AI to find connections between notes and has a chat feature. Common issues with the chat not working usually relate to API key configuration.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:15:59Z)**_
+
+Smart Connections 聊天功能不能用，最常见原因是**没有配置 API Key**。
+
+**排查步骤：**
+
+**1. 检查 API Key 设置**
+- Obsidian 设置 → Smart Connections → 找到 **API Key** 输入框
+- 填入你的 OpenAI 或其他支持的 API Key
+- Smart Connections 默认用 OpenAI，需要有效的 key
+
+**2. 确认插件版本**
+- 新版 Smart Connections 把聊天功能拆成了独立的 **Smart Chat** 模块
+- 检查设置里是否有 Smart Chat 选项，需要单独启用
+
+**3. 网络问题**
+- 如果在中国大陆，OpenAI API 需要代理才能访问
+- 检查 Obsidian 是否走了代理
+
+**4. 重启 Obsidian**
+- 安装后没重启有时聊天窗口不出现
+- 完全退出重新打开
+
+**5. 打开聊天窗口**
+- 左侧栏找 💬 图标，或
+- 命令面板（Cmd+P）搜索 "Smart Chat"
+
+---
+
+你现在具体是什么情况？是聊天窗口打不开，还是打开了但发消息没回应？
+
+---
+
+_**User (2026-04-21 02:17:42Z)**_
+
+有没有免费可用的ai插件给我推荐,然后替我安装
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:17:55Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants recommendations for free AI plugins for Obsidian and wants me to install them. Let me think about free AI plugins for Obsidian that don't require paid API keys.
+
+Free AI plugins for Obsidian:
+1. **Smart Connections** - already has this but needs API key
+2. **Copilot** - needs API key but supports local models (Ollama)
+3. **Text Generator** - needs API key
+4. **Ollama** related plugins - free if running locally
+
+Actually, truly free options (no API key needed):
+
+
+1. **Copilot for Obsidian** - supports Ollama (local, free)
+2. **BMO Chatbot** - supports Ollama (local, free)
+3. **Local GPT** - uses Ollama locally
+
+The challenge is that installing Obsidian plugins requires direct access to the app itself. I could try accessing the plugin directory through the filesystem since plugins live in the vault's `.obsidian/plugins/` folder, but I'd need to know where the user's vault is located. Since they're on macOS at /Users/hong, I should check if there's a standard Obsidian vault location there or ask them directly.
+
+I'm thinking through what I can realistically help with here. The best approach would be to recommend some free AI plugins that work with local setups like Ollama, then ask which one they prefer before attempting installation. Copilot and BMO Chatbot are both solid options that support Ollama without requiring paid API keys. There's also Groq as a cloud-based free alternative if they don't want to set up local infrastructure.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:17:59Z)**_
+
+先推荐几个，再帮你安装。
+
+**免费可用的 Obsidian AI 插件：**
+
+| 插件 | 免费方式 | 特点 |
+|------|----------|------|
+| **Copilot** | 支持 Ollama（本地免费）/ Groq 免费额度 | 功能最全，聊天+补全 |
+| **BMO Chatbot** | 支持 Ollama / Groq 免费 | 轻量，专注聊天 |
+| **Local GPT** | 纯本地 Ollama，完全免费 | 隐私好，无需联网 |
+
+**推荐方案：**
+- 如果不想装任何额外软件 → **Copilot + Groq**（Groq 注册免费，速度极快）
+- 如果想完全免费离线 → 需要先装 **Ollama**（本地跑模型）
+
+---
+
+**我来帮你安装，先找你的 Obsidian 库位置：**
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:18:05Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Find Obsidian vault location
+
+`find /Users/hong -name "*.obsidian" -maxdepth 4 -type d 2>/dev/null | head -5; ls /Users/hong/Documents/ 2>/dev/null | head -20`
+
+```text
+/Users/hong/Documents/Obsidian Vault/.obsidian
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/DevelopmentSkills/.obsidian
+123
+Cline
+Documents - zengmuge的MacBook Pro
+GitHub
+Library
+Megascans Library
+Obsidian Vault
+Untitled.xmind
+XMind文件
+my_game_project
+四年级单词库.library
+未命名.txt
+终端保存的输出.txt
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:18:09Z)**_
+
+找到了，你有两个库。你主要用哪个？
+
+- `/Users/hong/Documents/Obsidian Vault`
+- `/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault`
+
+另外，你倾向于哪个方案：
+1. **Copilot + Groq**（需注册 groq.com，免费，在线）
+2. **本地 Ollama**（完全免费离线，但需下载模型约4GB）
+
+---
+
+_**User (2026-04-21 02:18:35Z)**_
+
+1吧
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:18:44Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants to use Copilot + Groq. I need to:
+1. Install the Copilot plugin in their Obsidian vault
+2. Guide them to get a Groq API key
+
+Let me install the Copilot plugin. Obsidian plugins are installed in the `.obsidian/plugins/` folder. I need to:
+1. Create the plugin directory
+2. Download the plugin files (main.js, manifest.json, styles.css)
+
+The Copilot plugin is at: https://github.com/logancyang/obsidian-copilot
+
+I need to download the latest release. Let me check the releases.
+
+
+I'll use Bash to download the latest release directly since I can't defer to other tools. The plugin ID is "copilot" and the vault is located at `/Users/hong/Documents/Obsidian Vault`, so I'll fetch and extract the release files there.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:18:44Z)**_
+
+好，我来帮你安装 Copilot 插件，先下载最新版本：
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:18:48Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Create plugin folder and check latest release
+
+`mkdir -p "/Users/hong/Documents/Obsidian Vault/.obsidian/plugins/obsidian-copilot" && curl -s https://api.github.com/repos/logancyang/obsidian-copilot/releases/latest | grep -E '"tag_name"|"browser_download_url"' | head -10`
+
+```text
+  "tag_name": "3.2.7",
+      "browser_download_url": "https://github.com/logancyang/obsidian-copilot/releases/download/3.2.7/main.js"
+      "browser_download_url": "https://github.com/logancyang/obsidian-copilot/releases/download/3.2.7/manifest.json"
+      "browser_download_url": "https://github.com/logancyang/obsidian-copilot/releases/download/3.2.7/styles.css"
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:19:04Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Download Copilot plugin files
+
+`cd "/Users/hong/Documents/Obsidian Vault/.obsidian/plugins/obsidian-copilot" && curl -sL "https://github.com/logancyang/obsidian-copilot/releases/download/3.2.7/main.js" -o main.js && curl -sL "https://github.com/logancyang/obsidian-copilot/releases/download/3.2.7/manifest.json" -o manifest.json && curl -sL "https://github.com/logancyang/obsidian-copilot/releases/download/3.2.7/styles.css" -o styles.css && echo "done" && ls -lh`
+
+```text
+done
+total 10880
+-rw-r--r--@ 1 hong  staff   5.2M Apr 20 19:18 main.js
+-rw-r--r--@ 1 hong  staff   415B Apr 20 19:19 manifest.json
+-rw-r--r--@ 1 hong  staff    70K Apr 20 19:19 styles.css
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:19:11Z)**_
+
+安装完成。现在按以下步骤操作：
+
+**第一步：Obsidian 里启用插件**
+1. 重启 Obsidian（完全退出再打开）
+2. 设置 → 第三方插件 → 找到 **Copilot** → 开启
+
+**第二步：获取免费 Groq API Key**
+1. 打开 [groq.com](https://groq.com) → 注册账号（免费）
+2. 进入控制台 → **API Keys** → 创建新 Key
+3. 复制 Key
+
+**第三步：配置 Copilot**
+1. Obsidian 设置 → Copilot → **Model** 选项
+2. 点 **Add Custom Model**
+3. 填入：
+   - Provider：`Groq`
+   - API Key：粘贴你的 Key
+   - Model：`llama-3.3-70b-versatile`（免费且很强）
+
+配置好后左侧栏会出现 Copilot 图标，点击就能聊天了。
+
+去 groq.com 注册一下，有问题随时告诉我 👍
+
+---
+
+_**User (2026-04-21 02:56:56Z)**_
+
+可以查看我在obsidian里的note(ai记忆)吗?说说它的用法
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:01Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to look at their Obsidian notes related to "AI memory" and explain how to use it. Let me find relevant notes in their Obsidian vault.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:02Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+List Obsidian vault structure
+
+`find "/Users/hong/Documents/Obsidian Vault" -name "*.md" | head -30 && echo "---" && ls "/Users/hong/Documents/Obsidian Vault/"`
+
+```text
+/Users/hong/Documents/Obsidian Vault/Untitled.md
+/Users/hong/Documents/Obsidian Vault/Welcome.md
+/Users/hong/Documents/Obsidian Vault/2026-04-11.md
+/Users/hong/Documents/Obsidian Vault/aicoach.md
+---
+2026-04-11.md
+Untitled 1.canvas
+Untitled.canvas
+Untitled.md
+Welcome.md
+aicoach.md
+小学数学App项目总览.canvas
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:06Z)**_
+
+<tool-use data-tool-type="read" data-tool-name="Read"><details>
+<summary>Tool use: **Read**</summary>
+ `/Users/hong/Documents/Obsidian Vault/aicoach.md`
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:06Z)**_
+
+<tool-use data-tool-type="read" data-tool-name="Read"><details>
+<summary>Tool use: **Read**</summary>
+ `/Users/hong/Documents/Obsidian Vault/2026-04-11.md`
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:10Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read note contents
+
+`cat "/Users/hong/Documents/Obsidian Vault/aicoach.md" && echo "===" && cat "/Users/hong/Documents/Obsidian Vault/2026-04-11.md" && echo "===" && cat "/Users/hong/Documents/Obsidian Vault/Untitled.md"`
+
+```text
+===
+===
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:14Z)**_
+
+<think><details><summary>Thought Process</summary>
+All the notes seem to be empty. The user mentioned "AI记忆" (AI memory) notes. Let me check the Smart Connections plugin data, or maybe look at the other vault.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:15Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Check installed plugins and settings
+
+`find "/Users/hong/Documents/Obsidian Vault/.obsidian" -name "*.json" | grep -v workspace | head -20 && echo "===" && ls "/Users/hong/Documents/Obsidian Vault/.obsidian/plugins/"`
+
+```text
+/Users/hong/Documents/Obsidian Vault/.obsidian/app.json
+/Users/hong/Documents/Obsidian Vault/.obsidian/plugins/obsidian-copilot/manifest.json
+/Users/hong/Documents/Obsidian Vault/.obsidian/core-plugins.json
+/Users/hong/Documents/Obsidian Vault/.obsidian/bookmarks.json
+/Users/hong/Documents/Obsidian Vault/.obsidian/graph.json
+/Users/hong/Documents/Obsidian Vault/.obsidian/appearance.json
+===
+obsidian-copilot
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:20Z)**_
+
+<think><details><summary>Thought Process</summary>
+The vault only has the Copilot plugin I just installed. Smart Connections is not installed here. The user might be referring to the other vault. Let me check the DevelopmentSkills vault or the other Obsidian Vault.
+
+Wait, the user said they have Smart Connections installed but it doesn't work for chat. Let me check the other vault.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:21Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Check the other Obsidian vault
+
+`ls "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/" && echo "===" && ls "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian/plugins/" 2>/dev/null`
+
+```text
+Exit code 1
+Claude Guard 极简教程.md
+Skills
+Welcome.md
+人生外挂
+===
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:24Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Explore the main Obsidian vault structure
+
+`find "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault" -name "*.md" | head -30 && echo "===" && find "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian" -type d 2>/dev/null`
+
+```text
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/Welcome.md
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/Claude Guard 极简教程.md
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/人生外挂/认知思维模型总结.md
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/Skills/anki-card.md
+===
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:27Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Check plugins in main vault
+
+`find "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian" -name "*.json" | head -10 && echo "===" && ls "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian/" 2>/dev/null`
+
+```text
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian/workspace.json
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian/app.json
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian/core-plugins.json
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian/graph.json
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/.obsidian/appearance.json
+===
+app.json
+appearance.json
+core-plugins.json
+graph.json
+workspace.json
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:31Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read vault notes
+
+`cat "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/Claude Guard 极简教程.md" && echo "===" && cat "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/人生外挂/认知思维模型总结.md" | head -50`
+
+```text
+# Claude Guard 一页教程（极简）
+
+## 这是干嘛的
+
+- 用一个红绿灯告诉你当前使用风险
+- 绿灯：相对低风险；红灯：相对高风险
+- 目标是降低概率，不是绝对防封
+
+## 1 分钟上手
+
+```bash
+cd /Users/hong/claude-guard-app
+npm start
+```
+
+打开后只做三步：
+
+1. 点 `Settings`
+2. （可选）填 `Anthropic API Key` 和模型，点 `Save`
+3. 回主界面点 `Check Risk` 看灯
+
+## 如何读这个灯
+
+- **绿灯（LOW RISK）**：当前节奏还算稳，可以继续
+- **红灯（HIGH RISK）**：建议暂停，等一会再操作
+
+红灯常见触发：
+
+- 正在冷却（COOLING）
+- 达到小时上限（BLOCKED）
+- 小时用量太高（>= 80%）
+- 连续使用过密，接近冷却阈值
+- 队列积压过多
+
+## 没有 API Key 也能用吗
+
+可以。  
+没有 key 时，你仍可使用风险灯和节流机制做“使用节奏管理”。
+
+要连真实 Claude 时再补：
+
+- 打开 `Settings`
+- 填入 API Key
+- 保存
+
+## 常见报错速查
+
+- `Cannot find module '@anthropic-ai/sdk'`
+  - 说明没安装 SDK
+  - 执行：`npm install @anthropic-ai/sdk`
+- macOS `IMKCFRunLoopWakeUpReliable` 日志
+  - 常见系统输入法日志，通常可忽略
+
+## 建议策略（实用版）
+
+- 红灯就停，别硬发
+- 把请求分散到更长时间窗口
+- 连续使用到 8~9 次就主动休息
+- 把它当“风险提示器”，不是“免死金牌”
+
+===
+---
+name: 人生外挂：三大核心思维模型
+description: 为新项目储备的底层理论框架，包括第一性原理、奥卡姆剃刀定律以及《你的灯还亮着吗？》的核心思想。
+---
+
+# 🛠 人生外挂：三大核心思维模型总结
+
+这是为即将开发的“人生外挂”新项目准备的基础理论框架。这三个模型结合在一起，能让我们在面对复杂现实时，分别拥有 **“触达本质”**、**“极简剔除”** 和 **“精准定义”** 的极强应对能力。
+
+---
+
+## 1. 第一性原理 (First Principles)
+
+**核心思想**：  
+打破“类比思维”，剥离事物表象的层层包裹，一直向下追问到底，直到寻找出那个不证自明、最基础的核心事实（物理或逻辑的公理所在）。然后从这个绝对正确的“基点”出发，重新向上推导和构建解决方案。
+
+**特征与应用**：  
+- **打破常规**：不问“过去别人是怎么做的”，只问“抛开所有已知条件，完成这件事的物理极限或数学极限在哪里”。（马斯克造火箭的核心法则）。
+- **颠覆式创新**：微创新靠类比，颠覆式创新只能靠第一性原理。
+
+**🎁 “人生外挂”价值**：  
+在这个信息爆炸、极其容易陷入群体内耗的时代，第一性原理是**反焦虑**的最佳武器。当你迷茫时，使用它剥离层层的社会包装，用最低维的逻辑解决最高维的焦虑，回到你个人最源头的“绝对刚需”。
+
+---
+
+## 2. 奥卡姆剃刀原理 (Occam's Razor)
+
+**核心思想**：  
+**“如无必要，勿增实体”**（Entities should not be multiplied unnecessarily）。  
+在对于同一个现象有同等解释力、或对于同一个目标有同等达成率的多个方案中，应该**优先选择假设最少、最简单的那一个**。
+
+**特征与应用**：  
+- **代码重构与产品设计**：砍掉一切没有明显正向收益的“伪功能”。
+- **决策制定**：如果一件事可以用简单的逻辑解释，就不要引入高深莫测的阴谋论。
+
+**🎁 “人生外挂”价值**：  
+它是应对系统复杂性的最强“物理性剔除工具”。当面临多种选择、人生陷入纠结、业务变得臃肿、或人际关系极度复杂时，直接挥动剃刀，切掉所有非核心的冗余部分。**在人生系统中，简单往往意味着更高的反脆弱性和更低的维护成本。**
+
+---
+
+## 3. 《你的灯还亮着吗？》(Are Your Lights On?)
+
+**背景与核心思想**：  
+这是一本关于“如何真正解决问题”的经典神作。它提醒我们：**在光速去解决问题之前，先搞清楚问题到底是什么，以及这到底是谁的问题。**
+
+**核心洞见精华总结**：
+1. **什么是问题？** 
+   - 问题就是你“期望的状态”与你“体验到的状态”之间的差距。
+2. **警惕“完美地解决错误问题”**：
+   - 很多时候，客户或别人给你的往往是他们“预设的解答”，而不是“真正的问题”。不要急着扑上去找答案，多花一点时间确定真正的问题所在。
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:39Z)**_
+
+<think><details><summary>Thought Process</summary>
+Now I have a good picture. The user has two vaults:
+1. `/Users/hong/Documents/Obsidian Vault` - almost empty, only has Copilot now
+2. `/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault` - the main vault with actual content
+
+The main vault doesn't have Smart Connections or any AI plugin installed yet (no plugins folder). The user mentioned "AI记忆" (AI memory) notes - they might be referring to the Smart Connections plugin's memory/notes feature, or they might be asking about the notes in general.
+
+
+Let me look at what's in the Skills folder to get a better sense of the vault's structure.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:39Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read Skills notes
+
+`cat "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/Skills/anki-card.md" | head -30 && echo "===" && find "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault" -name "*.md" | xargs ls -lt 2>/dev/null | head -20`
+
+```text
+---
+tags: [skill, anki, python]
+created: 2025-10-28 06:25:00
+updated: 2025-10-28 06:25:00
+version: v1
+---
+
+# anki-card
+
+**描述**: 创建 Anki 英语单词学习卡片（带图片、音频、输入验证）
+
+**分类**: anki
+
+**路径**: `~/claude-skills/anki/create_card.py`
+
+## 使用方法
+
+```bash
+python3 ~/claude-skills/manager.py run anki-card [参数...]
+```
+
+## 代码
+
+```python
+#!/usr/bin/env python3
+"""
+Anki 英语单词卡片创建器
+支持：图片下载、音频生成、输入验证模板
+"""
+import os
+===
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:57:52Z)**_
+
+好的，看完你的库了。来说说情况：
+
+---
+
+**你的 Obsidian 情况：**
+
+你有**两个库**：
+- `Obsidian Vault`（空库，我刚把 Copilot 装在这里）
+- `Documents - zengmuge的MacBook Pro/Obsidian Vault`（**主库**，你的内容都在这里）
+
+主库里有：
+- `Claude Guard 极简教程.md`
+- `认知思维模型总结.md`（第一性原理、奥卡姆剃刀等）
+- `Skills/anki-card.md`
+
+---
+
+**关于"AI记忆"笔记的用法：**
+
+你问的应该是 **Smart Connections 的记忆功能**，原理是这样的：
+
+> Smart Connections 会读取你 Obsidian 库里**所有的笔记**，建立向量索引，让 AI 在聊天时能"记住"你写过的内容
+
+**实际用法：**
+- 在聊天框问：*"我之前写过哪些关于第一性原理的内容？"* → AI 会找到你的笔记回答
+- 问：*"帮我总结我的认知模型笔记"* → 直接调用你的库
+- 问：*"我最近记录了什么？"* → 根据日期笔记回答
+
+---
+
+**现在的问题：**
+
+你的 Smart Connections 装在哪个库？主库里我没看到插件文件夹。要不要我把 Copilot 也装到你的**主库**？那样才能真正访问你的笔记。
+
+---
+
+_**User (2026-04-21 02:58:28Z)**_
+
+我说的是这个
+
+_**User (2026-04-21 02:58:28Z)**_
+
+[Image: original 2704x1756, displayed at 2000x1299. Multiply coordinates by 1.35 to map to original image.]
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:58:48Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user is showing me a screenshot of their Obsidian with Smart Connections plugin already installed and working. I can see:
+
+1. They have a database/table view called "ai记忆" with 27 results
+2. The right panel shows a chat interface with "Smart Connections" 
+3. The chat shows a conversation where the user asked "我给他改了名字能看到吗" (Can you see that I renamed it?)
+4. The AI responded that yes, it can see the note named "ai记忆" and it's currently empty
+
+The bottom shows "llama" model with "0 条反向链接" and "Smart v2.4.0"
+
+
+Looking at the list of notes in their vault, I can see Smart Connections is definitely working—there are various items indexed including dated entries, templates for clipping web pages and YouTube transcripts, utility notes like grammar fixes and glossary generation, and some personal notes with timestamps. The "ai记忆" note appears to be their main memory/knowledge base that Smart Connections is actively indexing. I'm looking at the interface more carefully now - the "ai记忆" feature appears to be a table view that stores memory entries or notes from conversations, and it's currently showing 27 items that the Smart Connections plugin has collected. The user seems to be using a local Llama model through Ollama for their AI interactions, and they want to understand how this memory database works and how to use it effectively.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 02:58:51Z)**_
+
+明白了！你的 Smart Connections 已经装好并且在运行了。来解释这个界面：
+
+---
+
+**你看到的三个区域：**
+
+**左中：ai记忆 表格（27个结果）**
+这是 Smart Connections 自动生成的**记忆数据库**，里面存的是：
+- 你的对话记录（`hi@20260420_...`）
+- 失败的请求记录（`Model_Request_Failed@...`）
+- 各种内置 Prompt 模板（Emojify、Simplify、Summarize 等）
+- 你自己的笔记（idea1、idea2、Karpathy指南等）
+
+**右侧：聊天面板**
+就是 AI 对话窗口，底部显示用的是 **llama** 模型（本地免费模型）
+
+**右上：Relevant Notes**
+显示"No relevant notes found"——AI 在回答时会自动关联相关笔记
+
+---
+
+**核心用法：**
+
+```
+@ + 笔记名  →  让 AI 读取指定笔记内容
+/           →  调用内置 Prompt（如 /Summarize 总结当前笔记）
+直接提问     →  AI 会自动搜索你的库来回答
+```
+
+**例如：**
+- 输入 `@idea1 帮我扩展这个想法` → AI 读取 idea1 来回答
+- 输入 `我之前记了什么关于Claude的笔记？` → 自动搜索库
+
+---
+
+**你现在用的是 llama 本地模型，速度和质量有限。** 要不要把它换成 Groq 的免费模型，会快很多？
+
+---
+
+_**User (2026-04-21 03:00:34Z)**_
+
+https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f我让obsidian结合这个链接给我创建的笔记,你查看链接给我分析一下,如何使用llm-wiki.md
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:00:38Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to fetch the content of the GitHub Gist link and analyze it. Let me use WebFetch to get the content.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:00:39Z)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ToolSearch"><details>
+<summary>Tool use: **ToolSearch**</summary>
+
+**Input:**
+
+- max_results: `1`
+- query: `select:WebFetch`
+
+**Result:**
+
+```
+
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:00:58Z)**_
+
+<tool-use data-tool-type="read" data-tool-name="WebFetch"><details>
+<summary>Tool use: **WebFetch**</summary>
+ `https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f`
+
+```text
+# LLM Wiki: Karpathy's Knowledge Management Pattern
+
+## Overview
+
+Andrej Karpathy's "LLM Wiki" is a framework for building persistent, compounded knowledge bases where LLMs incrementally maintain markdown wikis rather than re-retrieving from raw sources on each query.
+
+## Core Architecture
+
+The system operates across three layers:
+
+**Raw sources** (immutable) → **Wiki** (LLM-maintained markdown) → **Schema** (configuration document)
+
+Instead of traditional RAG that retrieves chunks at query time, this pattern has the LLM "read sources, extract key information, and integrate into an existing wiki—updating entity pages, revising summaries, and flagging contradictions."
+
+## Key Operations
+
+- **Ingest**: Process new sources, update wiki pages, maintain cross-references
+- **Query**: Search compiled wiki pages and synthesize answers with citations
+- **Lint**: Health-check for contradictions, orphaned pages, and missing links
+
+## Critical Discussion Points
+
+The gist generated substantial debate about practical limitations:
+
+**Scalability concerns**: Index.md navigation breaks beyond ~100-200 pages; requires secondary retrieval layer (BM25/vector search).
+
+**Knowledge drift risk**: As one commenter noted, "when summaries lose precision and get stored as truth, nothing downstream catches it automatically."
+
+**Contradiction resolution**: The pattern underspecifies how to resolve conflicts between sources, leaving this to individual schema authors.
+
+**Large document handling**: Assumes sources fit in one pass; larger documents need pre-retrieval scaffolding.
+
+## Community Extensions
+
+Multiple implementations emerged addressing gaps: jDocMunch for token efficiency, knowledge graphs for deterministic retrieval, and hybrid approaches combining graph traversal with probabilistic reasoning.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:01:18Z)**_
+
+<tool-use data-tool-type="read" data-tool-name="WebFetch"><details>
+<summary>Tool use: **WebFetch**</summary>
+ `https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/llm-wiki.md`
+
+```text
+# LLM Wiki: Personal Knowledge Base Pattern
+
+## Core Concept
+
+The document outlines a system where LLMs maintain a persistent, interconnected wiki rather than repeatedly retrieving from raw documents. As noted, "the wiki is a persistent, compounding artifact" that grows richer with each source and query.
+
+## Three-Layer Architecture
+
+1. **Raw sources** — immutable documents you curate
+2. **The wiki** — markdown files the LLM generates and maintains
+3. **The schema** — configuration guiding how the LLM operates
+
+## Key Operations
+
+**Ingest**: Process new sources by extracting information and integrating it across 10-15 wiki pages, updating cross-references and summaries.
+
+**Query**: Ask questions; the LLM searches relevant pages and can file valuable answers back into the wiki as new pages.
+
+**Lint**: Periodic health checks identifying contradictions, orphan pages, and knowledge gaps.
+
+## Why It Works
+
+The approach offloads tedious maintenance to LLMs. As the author explains, "humans abandon wikis because the maintenance burden grows faster than the value." LLMs excel at updating cross-references and maintaining consistency across multiple files simultaneously.
+
+## Tools & Optional Enhancements
+
+- Obsidian for browsing the wiki in real-time
+- Search tools like qmd for larger collections
+- Plugins for graph visualization and dynamic queries
+
+The design echoes Vannevar Bush's Memex concept but solves the maintenance problem Bush couldn't address.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:01:33Z)**_
+
+好，内容拿到了。这是 Karpathy（Tesla/OpenAI 前 AI 负责人）写的一套**用 LLM 维护个人知识库**的方法论。
+
+---
+
+## 核心思想
+
+传统做法是每次问问题都去搜文档 → **低效**
+
+Karpathy 的方案：让 LLM 把信息**提炼成一个持续成长的 Wiki**，像维基百科一样越积越厚
+
+---
+
+## 三层结构
+
+```
+原始资料（你收集的文章/链接）
+    ↓ LLM 提炼
+Wiki（Markdown 笔记，互相链接）
+    ↓ 规则约束
+Schema（告诉 LLM 怎么写 Wiki 的配置文件）
+```
+
+---
+
+## 三个核心操作
+
+| 操作 | 含义 |
+|------|------|
+| **Ingest（摄入）** | 给 LLM 一篇文章，它自动更新 10-15 个相关笔记页面 |
+| **Query（查询）** | 问问题，LLM 搜索 Wiki 回答，好答案自动存回 Wiki |
+| **Lint（检查）** | 定期让 LLM 检查矛盾、孤立页面、知识缺口 |
+
+---
+
+## 结合你的 Obsidian 怎么用
+
+你的 Obsidian 已经是现成的 Wiki 平台，配合 Smart Connections：
+
+1. **收集资料** → 把文章链接/内容粘贴到 Obsidian 笔记
+2. **让 AI 摄入** → 在 Smart Connections 聊天框输入：
+   ```
+   @这篇文章 帮我提炼关键知识，更新到相关笔记页面
+   ```
+3. **查询** → 直接问 AI，它会搜你的库回答
+4. **定期整理** → 让 AI 检查笔记之间的矛盾和缺失
+
+你的 `ai记忆` 数据库就是在做这件事的雏形，只是还没系统化。要不要我帮你建一套简单的 Schema 规则笔记？
+
+---
+
+_**User (2026-04-21 03:03:12Z)**_
+
+你说的要创建的内容是指我正在进行的这些项目吗
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:03:22Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user is asking whether the Schema/Wiki I'm suggesting to create is for their current ongoing projects. Let me think about what projects they have:
+
+1. **英语输入学习应用** (english-input-app) - React app for English learning
+2. **小学数学App** (math app) - mentioned in memory
+3. **人生外挂** - a project they're planning (mentioned in the cognitive models note)
+4. **Claude Guard** - the risk monitoring app
+
+They're asking if the Karpathy LLM Wiki approach should be applied to document these projects. 
+
+So essentially, I'd be helping them use Obsidian as a living knowledge base for all these projects, with AI continuously helping to maintain and expand the documentation as they work.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:03:30Z)**_
+
+对，就是你正在做的这些：
+
+---
+
+**你目前的项目：**
+
+1. **英语输入学习 App** — React应用，已开发很久，功能复杂
+2. **小学数学 App** — 第一阶段完成，第二阶段待开发
+3. **人生外挂** — 你在 Obsidian 里写了理论框架，还没开始开发
+4. **Claude Guard** — 已有教程笔记
+
+---
+
+**Karpathy 方法用在这里的意思是：**
+
+与其每次开发都要靠记忆或翻代码，不如让 AI 帮你把这些项目的**决策、进展、技术方案**持续沉淀成 Wiki 笔记。
+
+比如英语 App，你每次改了什么、为什么这样设计、踩过什么坑——这些现在都只存在于我们的对话历史里，对话一旦结束就消失了。
+
+---
+
+**实际价值：**
+
+- 下次开新对话，直接 `@英语App设计文档` 就能让 AI 快速上下文
+- 不用每次重新解释项目背景
+- 知识真正**属于你**，不依赖某个 AI 对话窗口
+
+你的 Obsidian 里已经有 `英语输入学习应用开发总结.md` 了，其实已经在做这件事——只是还没系统化。
+
+要我帮你把这几个项目整理成标准的 Wiki 结构吗？
+
+---
+
+_**User (2026-04-21 03:25:39Z)**_
+
+# CLAUDE.md
+
+This file provides guidance to Claude (and other AI coding assistants) on how to work with code in this repository.
+
+## Project Guidelines
+
+- **Ask, don't guess:** If you are unsure about requirements or implementation details, ask clarifying questions before writing code. Do not make assumptions.
+- **Simplicity first:** Implement exactly what is requested. Do not add extra features, "future-proofing," or unnecessary complexity. Avoid over-engineering.
+- **Goal-oriented:** Focus on the goal/outcome. If a test case is provided, ensure your code passes it. If a specific behavior is requested, implement that behavior directly.
+- **Surgical changes:** Make minimal, targeted changes. Do not refactor unrelated code unless explicitly asked. Preserve existing style and patterns where possible.
+- **No placeholders:** Do not use placeholders like `// ... rest of code` or `pass`. Always write out the full, working code block.
+- **Be precise:** When explaining code or errors, be concise and technical. Avoid fluff.
+上面的内容也加上
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:25:50Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants to add the CLAUDE.md content to their Obsidian Wiki/knowledge base as part of their project documentation. This looks like project guidelines for Claude Code. Let me add this to their Obsidian notes in a structured way.
+
+Actually, re-reading the conversation - the user is asking me to include this CLAUDE.md content as part of the Wiki structure we're planning to build. They want this added to their knowledge base.
+
+Let me think about what they want - they want me to incorporate these project guidelines into the wiki structure for their projects. This makes sense as a "Schema" file in the Karpathy LLM Wiki approach - it's the rules that guide how Claude works with their code.
+
+
+I'll create a dedicated note in their Obsidian vault that captures these guidelines and integrates them into the overall project wiki structure.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:25:50Z)**_
+
+明白，这是你给 Claude 的编码规范，也要纳入 Wiki。我来帮你在主库里建立项目 Wiki 结构：
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:25:51Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Check main vault structure
+
+`ls "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/"`
+
+```text
+Claude Guard 极简教程.md
+Skills
+Welcome.md
+人生外挂
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:27:21Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Create project wiki folder structure
+
+```bash
+mkdir -p "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki"
+mkdir -p "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/英语学习App"
+mkdir -p "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/数学App"
+mkdir -p "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/人生外挂"
+echo "done"
+```
+
+```text
+done
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:27:53Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Write"><details>
+<summary>Tool use: **Write**</summary>
+
+```md
+# Schema：AI 协作规范
+
+> 这是所有项目通用的 AI 编码规范，适用于 Claude Code 及其他 AI 助手。
+> 基于 Karpathy LLM Wiki 方法论中的 Schema 层。
+
+---
+
+## Claude 编码行为准则
+
+- **Ask, don't guess（问，别猜）**：不确定需求或实现细节时，先提问，不要自行假设。
+- **Simplicity first（简单优先）**：只实现被要求的内容，不添加额外功能、"面向未来"的设计或不必要的复杂度，避免过度工程化。
+- **Goal-oriented（目标导向）**：专注于目标和结果。提供了测试用例就确保通过，要求了某种行为就直接实现。
+- **Surgical changes（外科式修改）**：做最小化、精准的改动。不重构无关代码，保留现有风格和模式。
+- **No placeholders（不用占位符）**：不写 `// ... rest of code` 或 `pass`，始终写出完整可运行的代码块。
+- **Be precise（精准表达）**：解释代码或错误时简洁、技术性，避免废话。
+
+---
+
+## Wiki 维护规范（Karpathy 模式）
+
+### Ingest（摄入新知识）
+当获得新的资料/文章/教程时：
+- 提炼核心知识点
+- 更新对应项目页面
+- 建立笔记间的双向链接
+
+### Query（查询）
+- 用 `@笔记名` 引用具体笔记给 AI 提供上下文
+- 好的回答自动存回对应项目 Wiki
+
+### Lint（定期检查）
+每月让 AI 检查：
+- 笔记间是否有矛盾
+- 是否有孤立页面
+- 哪些知识点需要更新
+
+---
+
+## 项目索引
+
+- [[英语学习App/总览]]
+- [[数学App/总览]]
+- [[人生外挂/总览]]
+- [[../人生外挂/认知思维模型总结]]
+- [[../Claude Guard 极简教程]]
+
+---
+
+*最后更新：2026-04-20*
+
+```
+
+```text
+File created successfully at: /Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/Schema-AI协作规范.md
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:28:00Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read existing English app summary
+
+`cat "/Users/hong/Documents/DevelopmentSkills/英语输入学习应用开发总结.md" | head -60`
+
+```text
+cat: /Users/hong/Documents/DevelopmentSkills/英语输入学习应用开发总结.md: No such file or directory
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:28:06Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Find English app notes
+
+`find /Users/hong/Documents -name "英语输入*" 2>/dev/null`
+
+```text
+/Users/hong/Documents/Documents - zengmuge的MacBook Pro/DevelopmentSkills/英语输入学习应用开发总结.md
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:28:13Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read English app development summary
+
+`cat "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/DevelopmentSkills/英语输入学习应用开发总结.md"`
+
+```text
+# 英语输入学习应用开发总结
+
+## 项目概览
+- **项目名称**: english-input-app
+- **技术栈**: React 19 + Vite + Tailwind CSS
+- **开发时间**: 2026年2月-3月
+- **代码规模**: 18个文件
+- **本地访问**: `cd /Users/hong/english-input-app/dist && python3 -m http.server 8765`
+
+## 核心功能模块
+
+### 练习系统 (ExerciseView + WordInput)
+- 逐词输入验证，空格/Enter 提交
+- 多级提示（1=全词 2=首字母 3=隐藏元音 4=隐藏辅音 5=全隐藏）
+- 错误后强制重练（2/3/4/5次），进度条显示剩余次数
+- 输入中蓝色字体，correct 后下划线消失
+- 拆句模式（buildUpChunks 逐步扩展）
+- 完成烟花动画 + 胜利音效
+
+### 词典卡片 (DictionaryCard)
+- 默认展示所有单词音标（dictionaryapi.dev）
+- **词法**按钮：点击选单词查看词性/释义/例句
+- **复制**按钮：复制格式 `此句语法："句子"`，方便粘贴到 AI 查询
+
+### 顶部导航栏（三栏布局，一行不换行）
+- **最左**：哇塞学英语 Logo（透明背景PNG，48px高，点击返回首页）
+- **左边**：返回 ＋ 首页 ＋ 设置 ＋ 登录 ＋ 练习
+- **中间**：当前课本单元名称 + 进度（仅练习页显示）
+- **右边**：课程 ＋ 教材 ＋ 语法 ＋ 选择 ＋ 填空
+
+### 底部操作栏（练习页）
+- 上一句 / 下一句
+- 上单元 / 下单元（基于 ALL_UNITS 扁平列表）
+- 已掌握 / 复习（近2天错误最多的10句）
+- 发音 / 解释 / 拆句 / 重练 等工具
+
+### 错误记录系统
+- `recordError()` 记录每次错误到 localStorage（最多500条）
+- `getRecentErrors(days)` 统计近 N 天 Top10 错误句子和单词
+- 复习按钮弹出错误统计面板
+
+### 数据管理
+- localStorage 多键持久化（progress / daily / checkin / error_log / study_time / lesson_history）
+- 学习时长按天统计，最近学习记录最多20条
+
+### 后端：Supabase 云同步
+- **认证**：邮箱注册/登录/退出/密码重置，`supabase.auth` + `onAuthStateChange` 持久化登录状态
+- **进度同步**：`progress` 表，登录后自动拉取云端进度合并本地，练习时实时 upsert
+- **错误记录**：`error_log` 表，每次输错同步写云端
+- **学习时长**：`study_sessions` 表，离开练习页时累加当日秒数
+- **打卡记录**：`checkins` 表，每次完成句子练习写入当日打卡
+- **离线兼容**：未登录时纯 localStorage，登录后双写
+- **行级安全（RLS）**：每个用户只能读写自己的数据
+
+## 键盘快捷键
+| 快捷键 | 功能 |
+|--------|------|
+| `Ctrl+A` | 朗读当前句 |
+| `Ctrl+M` | 标记已掌握 |
+| `Ctrl+Q` | 标记复习 |
+| `←/→`（非输入框）| 上一句/下一句 |
+| `Ctrl+←/→`（输入框）| 上一句/下一句 |
+| 完成后 `空格/Enter` | 跳下一句 |
+| 单元全完成后 `Enter` | 跳下一单元 |
+
+## 项目架构
+
+### 组件结构
+```
+App.jsx (主应用 + 顶部导航 + 底部操作栏)
+├── Dashboard (首页)
+├── ExerciseView (练习视图)
+│   ├── WordInput (单词输入)
+│   └── DictionaryCard (词典卡片)
+├── Courses (课程广场)
+├── Textbook (教材同步)
+├── Grammar (语法专项)
+├── Quiz (选择题)
+├── FillBlank (填空题)
+├── SentenceList (句子列表)
+├── ImportPanel (导入)
+└── Settings (设置)
+```
+
+### 关键 Hooks
+```
+hooks/
+  useProgress.js      — 进度/掌握/复习/错误记录/学习统计
+  useTTS.js           — 文字转语音
+  useSound.js         — 音效
+  useWordTranslate.js — 单词翻译（mymemory fallback）
+```
+
+### 数据文件
+```
+data/
+  grade3_up/down.json  — 三年级上/下册
+  grade4_up.json       — 四年级上册（97句，Unit1-6完整重建，2026-03-20）
+  grade4_down.json     — 四年级下册（164句）
+  grade5_up.json       — 五年级上册
+  duolingo.json        — 多邻国课程（1050句，Unit1-6共6单元）
+  sample.json / changyong.json
+```
+
+### 多邻国课程结构（Courses.jsx）
+| Unit | 主题 | 课数 | ID范围 |
+|------|------|------|--------|
+| Unit 1 | 入门：喜好、职业、问候 | 7课 | 1-31 |
+| Unit 2 | 基础：日常、购物、天气 | 28课 | 32-171 |
+| Unit 3 | 进阶：旅行、比较、过去时 | 25课 | 172-299 |
+| Unit 4 | 提高：购物、交通、职场 | 55课 | 300-592 |
+| Unit 5 | 进阶扩展 | 32课 | 593-771 |
+| Unit 6 | 高级提升 | 52课 | 772-1051 |
+
+**注**：Unit4 数据于 2026-04-18 完整重建，修复了 L13-L43 的错误占位内容，补全了缺失的 19 课（L25-L43）。Unit5/6 id 随之整体偏移 +131。
+
+## 技术难点与解决方案
+
+| 问题 | 解决方案 |
+|------|----------|
+| 下划线宽度重影 | 动态 `minWidth: Math.max(len*1.2, 4)ch`，不用固定px |
+| Enter 键优先级冲突 | App.jsx 用 `capture: true` 让单元级监听优先 |
+| 顶部导航换行 | 按钮文字缩短（课程广场→课程等），左右各5个 |
+| 继续按钮始终高亮 | 加 `isTextbookLesson` 判断，只对教材单元生效 |
+| 音节点击播全词 | eSpeak-NG WASM 精确音素时间戳切分，替代等比例估算 |
+
+## 待完成任务
+- [ ] 补全 grade4_down.json（id 91-164 的 words 注释）
+- [ ] WordInput 用 sentence.words 替代 mymemory（离线翻译）
+- [ ] ExerciseView 用 words[idx].pos/len 做精确汉语高亮
+- [x] 云端同步（Supabase Auth + 4张表）✅
+- [ ] Dashboard 读取云端学习时长/打卡数据展示
+- [ ] 单词仓库 / 学习计划 / 数据可视化
+- [ ] 移动端体验优化
+
+## 更新记录
+
+### 2026-04-18: Unit4 数据完整重建
+- 发现 L13（后3句）和 L14-L43（19课）因上下文截断写入了错误占位内容
+- 完整重建 duolingo.json ids 364-592（229句），补全所有缺失课程
+- Unit5/6 共 459 条数据整体 id +131 偏移（593-1051）
+- 同步修正 Courses.jsx 中 Unit4 L13-L55 及 Unit5/6 所有 id 引用（84个数组）
+- 总数据量：1051句，Unit1-6 六单元全部正确
+
+### 2026-03-29（晚）: Logo + Unit4 多邻国数据
+- 添加哇塞学英语圆形徽章 Logo（PNG透明底，flood-fill去背景），放在 header 最左
+- 多邻国 Unit4 数据写入 duolingo.json（id 300-461，54课，161句）
+- 四年级上册 grade4_up.json 按人教版原文完整重建（97句，Unit1A/1B/1C/2A/2B/3-6分组）
+- 课程广场改为只显示 Unit1-4（数据已存在的单元）
+- 已推送 GitHub，Vercel 自动部署
+
+### 2026-03-29: Supabase 后端接入
+- 安装 `@supabase/supabase-js`，新建 `src/lib/supabase.js`
+- Supabase 建表：`progress` / `error_log` / `study_sessions` / `checkins`，开启 RLS 行级安全
+- 登录弹窗重构：支持登录 / 注册 / 忘记密码三种模式
+- `useProgress.js` 接入云同步：登录后拉取进度合并本地，markMastered/markReview/incrementAttempts 双写
+- `saveStudyTime` / `checkinToday` / `recordError` 均加云端写入
+- 登录状态持久化：`onAuthStateChange` 监听，刷新不掉登录
+
+### 2026-03-27: 多邻国课程 Unit5-6 完整添加
+- duolingo.json 从 591 句扩展到 1050 句（共6个单元）
+- Unit 5：32课，179句（ids 592-770），提取去重后的独特话题分组
+  - 话题涵盖：独自旅行、外卖、校园、面试、清洁、居家办公、聚会、健康、社交媒体、晨间、童话、婚礼等
+- Unit 6：52课，280句（ids 771-1050），全部唯一内容
+  - 话题涵盖：感恩、邻居、休闲、新闻、电视剧、历史、家庭聚会、合同贷款、宗教、汽车维修、运动、购物退货等高级话题
+- Courses.jsx 新增 Unit5/6 卡片（[1,2,3,4,5,6]），UNIT_INFO 各自配色
+- 最新备份：`/Users/hong/Desktop/english-input-app_backup_20260320`
+
+### 2026-04-05: 单词模块 eSpeak-NG 音节切分
+- 集成 eSpeak-NG WASM（public/espeak/）：synthesize → 音素事件 → 元音定位 → 音节边界
+- 优先级：eSpeak精确切分 → dictionaryapi.dev等比例 → TTS兜底
+- SyllableWord：音节间加中点（·），字体 text-4xl → text-7xl（翻倍）
+- 音素事件字段：`e.id`（若报undefined改 `e.phoneme`）
+
+### 2026-03-20（下午）: 四年级上册数据重建
+- 用人教版原文完整重建 grade4_up.json，共 97 句（原为40句旧数据）
+- 单元划分：Unit1(1-26家庭职业) / Unit2(27-47朋友) / Unit3(47-56社区) / Unit4(56-67社区帮助) / Unit5(67-80天气) / Unit6(80-97季节)
+- 同步更新 Textbook.jsx 单元切片和描述，App.jsx ALL_UNITS 切片
+
+### 2026-03-20: UI 全面优化
+- 顶部导航三栏重构，一行显示不换行
+- 词典卡片：词法按钮 + 复制按钮（`此句语法："..."`）
+- 汉语句子改为苹果楷体-简，去除加粗
+- 输入蓝色/complete 下划线消失
+- 错误记录系统上线，复习按钮展示近2天 Top10
+
+### 2026-03-18: 四年级下册重构
+- 从71句扩展到164句完整教材
+- 修复导航返回 React state updater 问题
+
+### 2026-03-12: 项目初始创建
+- 基础练习功能、TTS、音效、进度持久化
+
+## 技术栈
+
+| 类别 | 技术 | 版本 |
+|------|------|------|
+| 框架 | React | 19.x |
+| 构建 | Vite | 7.3.1 |
+| 样式 | Tailwind CSS | 4.x |
+| NLP | compromise | 14.x |
+| 后端/Auth | Supabase | 免费tier |
+
+---
+
+**项目路径**: `/Users/hong/english-input-app`
+**Supabase 项目**: `https://jwgkjorcoqbjudycxhti.supabase.co`
+**最近备份**: `/Users/hong/Desktop/english-input-app_backup_20260320`
+**最后更新**: 2026-03-29（晚）
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:28:18Z)**_
+
+现在把这些都整合进 Wiki：
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:28:28Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Write"><details>
+<summary>Tool use: **Write**</summary>
+
+```md
+# 英语学习 App 总览
+
+> 详细开发记录见 [[../../DevelopmentSkills/英语输入学习应用开发总结]]（自动同步）
+
+---
+
+## 基本信息
+
+- **项目名**：english-input-app（哇塞学英语）
+- **技术栈**：React 19 + Vite + Tailwind CSS + Supabase
+- **本地运行**：`cd /Users/hong/english-input-app/dist && python3 -m http.server 8765`
+- **线上地址**：Vercel 自动部署（推送 GitHub 触发）
+- **Supabase**：`https://jwgkjorcoqbjudycxhti.supabase.co`
+
+---
+
+## 当前状态（2026-04-20）
+
+### 已完成
+- ✅ 练习系统（逐词输入、多级提示、错误强制重练）
+- ✅ 词典卡片（音标、词法、复制此句语法）
+- ✅ 教材数据（三/四/五年级，共 400+ 句）
+- ✅ 多邻国课程（6单元 1051 句）
+- ✅ Supabase 云同步（进度/错误/打卡/学习时长）
+- ✅ eSpeak-NG 音节切分
+
+### 待完成
+- [ ] Dashboard 展示云端学习数据
+- [ ] 移动端优化
+- [ ] 单词仓库 / 学习计划
+
+---
+
+## 快速上下文（给 AI 用）
+
+下次开新对话时，把这段发给 AI：
+
+\```
+我在开发一个小学英语输入练习App（React 19 + Vite + Tailwind CSS + Supabase）
+路径：/Users/hong/english-input-app
+详见：@英语学习App/总览
+\```
+
+---
+
+## 相关笔记
+
+- [[架构设计]]
+- [[数据结构]]
+- [[../Schema-AI协作规范]]
+
+```
+
+```text
+File created successfully at: /Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/英语学习App/总览.md
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:28:39Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Write"><details>
+<summary>Tool use: **Write**</summary>
+
+```md
+# 项目 Wiki 索引
+
+> 基于 Karpathy LLM Wiki 模式维护。AI 协作规范见 [[Schema-AI协作规范]]。
+
+---
+
+## 进行中的项目
+
+| 项目 | 状态 | 最近更新 |
+|------|------|----------|
+| [[英语学习App/总览]] | 🟢 活跃开发 | 2026-04-20 |
+| [[数学App/总览]] | 🟡 第二阶段待开始 | - |
+| [[人生外挂/总览]] | 🔵 构思中 | - |
+
+---
+
+## 工具 & 规范
+
+- [[Schema-AI协作规范]] — Claude 编码准则 + Wiki 维护规则
+- [[../Claude Guard 极简教程]] — API 使用风险监控
+- [[../Skills/anki-card]] — Anki 卡片创建脚本
+
+---
+
+## 知识库
+
+- [[../人生外挂/认知思维模型总结]] — 第一性原理、奥卡姆剃刀、灯还亮着吗
+
+---
+
+## 使用说明
+
+在 Smart Connections 聊天框：
+- `@INDEX` → 让 AI 了解所有项目概况
+- `@英语学习App/总览` → 快速给 AI 项目上下文
+- `@Schema-AI协作规范` → 提醒 AI 遵守编码规范
+
+```
+
+```text
+File created successfully at: /Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/INDEX.md
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:28:49Z)**_
+
+完成了，结构如下：
+
+```
+项目Wiki/
+  INDEX.md              ← 总入口，所有项目一览
+  Schema-AI协作规范.md  ← Claude 编码准则（你贴的那段）
+  英语学习App/
+    总览.md             ← 项目现状 + 给 AI 的快速上下文
+  数学App/（待填）
+  人生外挂/（待填）
+```
+
+---
+
+**实际使用方式：**
+
+下次在 Smart Connections 或任何 AI 开新对话时：
+
+```
+@INDEX              → AI 立刻知道你所有项目
+@英语学习App/总览   → 直接开始英语 App 的开发
+@Schema-AI协作规范  → 让 AI 按你的编码规范工作
+```
+
+这样就把 Karpathy 的方法落地了——知识存在你自己的 Obsidian，不依赖任何对话历史。数学 App 和人生外挂的 Wiki 要不要我也帮你填？
+
+---
+
+_**User (2026-04-21 03:31:33Z)**_
+
+数学app也填写下,可以调取其他对话框
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:31:41Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to fill in the Math App wiki. They mentioned "可以调取其他对话框" which means they want me to check if I can access information from other conversations. I have the memory files that contain information about the math app. Let me check the memory files.
+
+From the system reminder at the top, I can see there's a memory file mention:
+- [Math App Progress](math_app_progress.md) — Phase 1 done (6 question types, Units 1/3/4/6/9); Phase 2 = visual units (SVG geometry etc.)
+
+Let me read the actual memory files to get more details.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:31:42Z)**_
+
+可以，我的记忆文件里存着跨对话的项目信息，让我调取：
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:31:43Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read math app memory files
+
+`ls ~/.claude/projects/-Users-hong-english-input-app/memory/ && echo "===" && cat ~/.claude/projects/-Users-hong-english-input-app/memory/math_app_progress.md`
+
+```text
+MEMORY.md
+math_app_progress.md
+project_duolingo_progress.md
+project_state.md
+user_profile.md
+===
+---
+name: Math Practice App — Progress
+description: Phase-by-phase build status of the Grade 4 math practice app built by antigravity
+type: project
+originSessionId: dc988ef4-0047-40f5-a2c2-59bdb41f4a2c
+---
+# 数学练习App — 进度记录 (2026-04-19)
+
+**项目路径**: `/Users/hong/.gemini/antigravity/scratch/math-practice-app`
+**Tech stack**: React 19 + Vite + Tailwind CSS v4，深色主题
+**运行**: `npm run dev`（port 5174，也可通过 english-input-app worktree 的 launch.json 启动）
+**计划文件放在桌面**，命名规则：`antigravity_plan_*.md`
+
+---
+
+## 已完成：Phase 1 ✅
+
+### 题型系统（6种）
+| 题型 | type 字段 | 组件 |
+|------|-----------|------|
+| 选择题 | `choice` | PracticeView 内联 |
+| 填空题 | `input` | MathInput |
+| 判断题 | `truefalse` | PracticeView 内联 |
+| 分步题 | `stepped` | SteppedQuestion |
+| 多空填写 | `multi-input` | MultiInputQuestion（新增）|
+| 表格填写 | `table-input` | TableInputQuestion（新增）|
+
+`multi-input`：题目中用 `___` 占位，逐空填写，答案逗号拼接（如 `"b,a"`）
+`table-input`：JSON 中 `tableHeaders` + `tableRows`，空格单元格用 `{"blank":true}`，`answer` 按行→列顺序逗号拼接
+
+### 数据文件（src/data/）
+- `grade4_down_unit1.json` — 18题，四则运算（已验证完整运行）
+- `grade4_down_unit3.json` — 20题，运算律（含 multi-input/table-input）
+- `grade4_down_unit4.json` — 16题，小数意义与性质
+- `grade4_down_unit6.json` — 14题，小数加减法
+- `grade4_down_unit9.json` — 10题，数学广角·鸡兔同笼
+
+### index.js 结构
+Unit 2/5/7/8 暂时 `questions: []`（锁定），9个单元卡片全部在 UnitList 显示
+
+---
+
+## 已完成：Phase 2 ✅ — Unit 5 三角形
+
+### 新增组件
+- `SvgAngleQuestion.jsx` — 7种预设三角形（acute/right/right-isosceles/isosceles/isosceles-obtuse/equilateral/obtuse），含直角标记、等边标记、顶点字母，支持任意角留空输入
+- `grade4_down_unit5.json` — 18题（svg-angle×7、choice×5、truefalse×2、input×2、stepped×1、multi-input×1）
+- `handleVerify` 已修复：自动去除 `°` 符号，输入 45 或 45° 均判正确
+- 计划文件：`/Users/hong/Desktop/antigravity_plan_phase2_triangles.md`
+
+---
+
+## Phase 3：试卷模式 ✅（2026-04-20）
+
+### 新增文件
+- `TestView.jsx` — 无提示、自由跳题、提交后成绩报告
+- `grade4_down_unit1_exam.json` — 13题（四则运算）
+- `grade4_down_unit3_exam.json` — 10题（运算律）
+- `grade4_down_unit4_exam.json` — 12题（小数意义与性质）
+- `grade4_down_unit5_exam.json` — 17题（三角形）
+- `grade4_down_unit6_exam.json` — 9题（小数加减法）
+- `grade4_down_unit8_exam.json` — 9题（平均数+鸡兔同笼）
+
+### 各单元试卷状态
+| 单元 | 状态 | 说明 |
+|------|------|------|
+| Unit 1 四则运算 | ✅ 有试卷 | 13题 |
+| Unit 2 观察物体 | ⬜ 跳过 | 全是作图题 |
+| Unit 3 运算律 | ✅ 有试卷 | 10题 |
+| Unit 4 小数意义 | ✅ 有试卷 | 12题 |
+| Unit 5 三角形 | ✅ 有试卷 | 17题 |
+| Unit 6 小数加减法 | ✅ 有试卷 | 9题 |
+| Unit 7 图形运动 | ⬜ 跳过 | 全是作图题 |
+| Unit 8/9 统计+鸡兔同笼 | ✅ 有试卷 | 9题 |
+
+### 试卷来源
+PDF: `/Users/hong/Desktop/四下数学试卷/四年级下册试卷.pdf`（16页，9套）
+计划文件: `/Users/hong/Desktop/antigravity_plan_testview.md`、`antigravity_plan_exam_units3to9.md`
+
+---
+
+## 待完成：Phase 2 下一步
+
+## 已完成：Phase 2 ✅ — Unit 8 平均数与统计图
+
+### 新增组件
+- `ChartQuestion.jsx` — 纯 SVG，无第三方库；支持条形图（紫色柱）+ 折线图（绿色线），`chartInteraction: "input"|"choice"` 控制交互
+- `grade4_down_unit8.json` — 18题（平均数×6、条形图×6、折线图×6）
+- 计划文件：`/Users/hong/Desktop/antigravity_plan_phase2_charts.md`
+
+---
+
+## Phase 2 全部完成 ✅（2026-04-20）
+
+### 各单元状态
+| 单元 | 状态 | 题数 | 关键组件 |
+|------|------|------|----------|
+| Unit 2 观察物体 | ✅ 完成 | 18 | `IsoViewQuestion`（等轴测积木，画家算法，动态viewBox）|
+| Unit 5 三角形 | ✅ 完成 | 18 | `SvgAngleQuestion`（7种预设三角形）|
+| Unit 7 图形的运动 | ✅ 完成 | 18 | `TransformQuestion`（方格纸，轴对称/平移/旋转）|
+| Unit 8 统计图 | ✅ 完成 | 18 | `ChartQuestion`（纯SVG条形/折线图）|
+
+### 全项目总览
+- 所有9个单元全部解锁，共 **150题**
+- npm build 零报错，255ms 构建完成
+- 计划文件：`/Users/hong/Desktop/antigravity_plan_phase2_*.md`
+
+---
+
+## 设计原则（Brilliant 风格）
+- 先看→再想→再答（视觉优先）
+- 每屏单一知识点
+- 即时反馈（答对绿色+解析，答错抖动+提示）
+- 难度三级：L1概念 / L2应用 / L3挑战
+- 每单元目标题数：15-20题
+
+## Why:
+Phase 1 计划文件：`/Users/hong/Desktop/antigravity_plan_phase1_components.md`
+旧计划文件（Units 2-9 基础版）：`/Users/hong/Desktop/antigravity_plan_units2_9.md`（已被 Phase 1 取代，仅作参考）
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:31:48Z)**_
+
+记录很详细，直接写入：
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:32:03Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Write"><details>
+<summary>Tool use: **Write**</summary>
+
+```md
+# 小学数学练习 App 总览
+
+---
+
+## 基本信息
+
+- **项目路径**：`/Users/hong/.gemini/antigravity/scratch/math-practice-app`
+- **技术栈**：React 19 + Vite + Tailwind CSS v4，深色主题
+- **本地运行**：`npm run dev`（port 5174）
+- **设计风格**：Brilliant 风格（视觉优先、即时反馈、难度三级）
+
+---
+
+## 当前状态（2026-04-20）：Phase 1-3 全部完成 ✅
+
+### 题型系统（6种）
+
+| 题型 | type 字段 | 说明 |
+|------|-----------|------|
+| 选择题 | `choice` | 单选 |
+| 填空题 | `input` | 单空 |
+| 判断题 | `truefalse` | 对/错 |
+| 分步题 | `stepped` | 逐步引导 |
+| 多空填写 | `multi-input` | `___` 占位，逐空填写 |
+| 表格填写 | `table-input` | `tableHeaders + tableRows`，`blank:true` 留空 |
+
+### 可视化组件（Phase 2）
+
+| 组件 | 用途 |
+|------|------|
+| `SvgAngleQuestion` | 7种预设三角形，含直角/等边标记 |
+| `IsoViewQuestion` | 等轴测积木视图（画家算法） |
+| `TransformQuestion` | 方格纸轴对称/平移/旋转 |
+| `ChartQuestion` | 纯SVG条形图/折线图 |
+
+### 各单元状态
+
+| 单元 | 练习题 | 试卷 | 主题 |
+|------|--------|------|------|
+| Unit 1 | ✅ 18题 | ✅ 13题 | 四则运算 |
+| Unit 2 | ✅ 18题 | ⬜ 跳过 | 观察物体（作图） |
+| Unit 3 | ✅ 20题 | ✅ 10题 | 运算律 |
+| Unit 4 | ✅ 16题 | ✅ 12题 | 小数意义与性质 |
+| Unit 5 | ✅ 18题 | ✅ 17题 | 三角形 |
+| Unit 6 | ✅ 14题 | ✅ 9题 | 小数加减法 |
+| Unit 7 | ✅ 18题 | ⬜ 跳过 | 图形的运动（作图） |
+| Unit 8 | ✅ 18题 | ✅ 9题 | 平均数与统计图 |
+| Unit 9 | ✅ 10题 | ✅ 含于Unit8 | 鸡兔同笼 |
+
+**总计：150题练习 + 6套试卷**，全部单元解锁，构建零报错
+
+---
+
+## 设计原则
+
+- 先看 → 再想 → 再答（视觉优先）
+- 每屏单一知识点
+- 即时反馈（答对绿色+解析，答错抖动+提示）
+- 难度三级：L1概念 / L2应用 / L3挑战
+- 每单元目标题数：15-20题
+
+---
+
+## 待完成
+
+- [ ] Phase 4：待定（可能是五年级内容 / 闯关模式 / 错题本）
+- [ ] 移动端适配
+- [ ] 云端进度同步（参考英语App的 Supabase 方案）
+
+---
+
+## 参考文件
+
+- 计划文档：`/Users/hong/Desktop/antigravity_plan_*.md`
+- 试卷原件：`/Users/hong/Desktop/四下数学试卷/四年级下册试卷.pdf`
+
+---
+
+## 快速上下文（给 AI 用）
+
+\```
+我在开发一个小学四年级数学练习App（React 19 + Vite + Tailwind CSS）
+路径：/Users/hong/.gemini/antigravity/scratch/math-practice-app
+Phase1-3已完成，共150题+6套试卷，9个单元全解锁
+详见：@数学App/总览
+\```
+
+---
+
+## 相关笔记
+
+- [[../英语学习App/总览]]
+- [[../Schema-AI协作规范]]
+- [[../INDEX]]
+
+```
+
+```text
+File created successfully at: /Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/数学App/总览.md
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:32:11Z)**_
+
+完成。现在你的 Wiki 结构：
+
+```
+项目Wiki/
+  INDEX.md               ← 所有项目入口
+  Schema-AI协作规范.md   ← Claude 编码准则
+  英语学习App/
+    总览.md              ✅
+  数学App/
+    总览.md              ✅ 刚填好
+  人生外挂/（空）
+```
+
+---
+
+**数学 App 关键信息已同步：**
+- Phase 1-3 全完成，150题 + 6套试卷，9单元全解锁
+- 4个可视化组件（三角形/积木/图形变换/统计图）
+- Phase 4 待定
+
+下次开新对话想继续数学 App，直接在 Smart Connections 输入 `@数学App/总览` 发给 AI，不用重新解释背景了。
+
+人生外挂要填吗？Obsidian 里已经有你写的认知模型理论框架可以直接引用。
+
+---
+
+_**User (2026-04-21 03:35:51Z)**_
+
+好的
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:35:57Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read existing 人生外挂 notes
+
+`cat "/Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/人生外挂/认知思维模型总结.md"`
+
+```text
+---
+name: 人生外挂：三大核心思维模型
+description: 为新项目储备的底层理论框架，包括第一性原理、奥卡姆剃刀定律以及《你的灯还亮着吗？》的核心思想。
+---
+
+# 🛠 人生外挂：三大核心思维模型总结
+
+这是为即将开发的“人生外挂”新项目准备的基础理论框架。这三个模型结合在一起，能让我们在面对复杂现实时，分别拥有 **“触达本质”**、**“极简剔除”** 和 **“精准定义”** 的极强应对能力。
+
+---
+
+## 1. 第一性原理 (First Principles)
+
+**核心思想**：  
+打破“类比思维”，剥离事物表象的层层包裹，一直向下追问到底，直到寻找出那个不证自明、最基础的核心事实（物理或逻辑的公理所在）。然后从这个绝对正确的“基点”出发，重新向上推导和构建解决方案。
+
+**特征与应用**：  
+- **打破常规**：不问“过去别人是怎么做的”，只问“抛开所有已知条件，完成这件事的物理极限或数学极限在哪里”。（马斯克造火箭的核心法则）。
+- **颠覆式创新**：微创新靠类比，颠覆式创新只能靠第一性原理。
+
+**🎁 “人生外挂”价值**：  
+在这个信息爆炸、极其容易陷入群体内耗的时代，第一性原理是**反焦虑**的最佳武器。当你迷茫时，使用它剥离层层的社会包装，用最低维的逻辑解决最高维的焦虑，回到你个人最源头的“绝对刚需”。
+
+---
+
+## 2. 奥卡姆剃刀原理 (Occam's Razor)
+
+**核心思想**：  
+**“如无必要，勿增实体”**（Entities should not be multiplied unnecessarily）。  
+在对于同一个现象有同等解释力、或对于同一个目标有同等达成率的多个方案中，应该**优先选择假设最少、最简单的那一个**。
+
+**特征与应用**：  
+- **代码重构与产品设计**：砍掉一切没有明显正向收益的“伪功能”。
+- **决策制定**：如果一件事可以用简单的逻辑解释，就不要引入高深莫测的阴谋论。
+
+**🎁 “人生外挂”价值**：  
+它是应对系统复杂性的最强“物理性剔除工具”。当面临多种选择、人生陷入纠结、业务变得臃肿、或人际关系极度复杂时，直接挥动剃刀，切掉所有非核心的冗余部分。**在人生系统中，简单往往意味着更高的反脆弱性和更低的维护成本。**
+
+---
+
+## 3. 《你的灯还亮着吗？》(Are Your Lights On?)
+
+**背景与核心思想**：  
+这是一本关于“如何真正解决问题”的经典神作。它提醒我们：**在光速去解决问题之前，先搞清楚问题到底是什么，以及这到底是谁的问题。**
+
+**核心洞见精华总结**：
+1. **什么是问题？** 
+   - 问题就是你“期望的状态”与你“体验到的状态”之间的差距。
+2. **警惕“完美地解决错误问题”**：
+   - 很多时候，客户或别人给你的往往是他们“预设的解答”，而不是“真正的问题”。不要急着扑上去找答案，多花一点时间确定真正的问题所在。
+3. **转移问题的所有权**：
+   - 如果这是别人的问题，那就把它还给别人。当别人自己能够解决时，不要越俎代庖去替别人操心。很多棘手的问题，只要把责任还给当事人，问题就自然消失了。
+4. **书名的来源：“优雅的提醒”**：
+   - 书名来自于一个穿山隧道的警示牌案例。工程师不需要安装昂贵复杂的灯光感应器或强硬的断电系统，只需要一块简单的牌子写着：“你的灯还亮着吗？”。
+   - 这意味着：**有时候不需要过度干预系统，只需要一句给当事人的简单提醒，让系统（用户）自己去判断和行动，这就是最优雅的解决方案。**
+
+**🎁 “人生外挂”价值**：  
+在任何行动或焦虑前，先按下暂停键。这能帮我们省下 80% 的无效努力。永远先问两句话：**“这真是我的问题吗？”、“这里真正的问题到底是什么？”**。
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:36:03Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read user profile memory
+
+`cat ~/.claude/projects/-Users-hong-english-input-app/memory/user_profile.md`
+
+```text
+---
+name: User profile
+description: Who the user is and how they work
+type: user
+---
+
+# User Profile
+
+- Building an English learning app for Chinese-speaking students (primary school level, PEP textbooks)
+- Communicates in Chinese
+- Provides raw lesson text directly in chat; expects Claude to parse, assign ids, write Chinese translations, and structure into JSON
+- Uses Obsidian for dev notes at `~/Documents/DevelopmentSkills/英语输入学习应用开发总结.md`
+- Keeps desktop backups at `~/Desktop/english-input-app_backup_YYYYMMDD`
+- Asks for both Obsidian note update AND desktop backup after major changes
+- Prefers compact button labels (课程广场→课程, 教材同步→教材, etc.)
+- Wants single-row header that never wraps
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:36:23Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Write"><details>
+<summary>Tool use: **Write**</summary>
+
+```md
+# 人生外挂 总览
+
+> 一个帮助普通人应对复杂现实、降低决策成本、提升认知效率的工具/产品。
+
+---
+
+## 项目状态（2026-04-20）
+
+🔵 **构思阶段** — 理论框架已建立，产品形态待定
+
+---
+
+## 核心理念
+
+三大思维模型作为底层支撑，详见 [[../../人生外挂/认知思维模型总结]]：
+
+| 模型 | 核心句 | 用途 |
+|------|--------|------|
+| **第一性原理** | 剥离表象，追问到底层公理 | 反焦虑、颠覆式创新 |
+| **奥卡姆剃刀** | 如无必要，勿增实体 | 砍冗余、做减法决策 |
+| **灯还亮着吗？** | 先搞清这是不是真正的问题 | 避免解决错误的问题 |
+
+---
+
+## 产品方向（待定）
+
+可能的形态：
+- [ ] 决策辅助工具（每次做重要决定前过三个模型筛一遍）
+- [ ] 认知训练 App（像英语/数学 App 一样，每天练习思维模型）
+- [ ] 个人知识管理系统（结合 Karpathy LLM Wiki 方法）
+- [ ] 其他？
+
+---
+
+## 待思考的问题
+
+用第一性原理问自己：
+- 用户最根本的"刚需"是什么？（减少焦虑？做更好的决策？）
+- 现有工具（笔记、AI、冥想App）哪里做得不够？
+- 最简单的MVP是什么？
+
+---
+
+## 相关资源
+
+- [[../../人生外挂/认知思维模型总结]] — 三大模型详细笔记
+- [[../英语学习App/总览]] — 可复用的技术栈参考
+- [[../数学App/总览]] — 可复用的题型/组件设计参考
+- [[../Schema-AI协作规范]] — 开发时的 AI 协作规范
+
+---
+
+## 快速上下文（给 AI 用）
+
+\```
+我想开发一个"人生外挂"产品，目前在构思阶段
+底层理论：第一性原理 + 奥卡姆剃刀 + 《你的灯还亮着吗？》
+可复用技术栈：React 19 + Vite + Tailwind CSS（同英语/数学App）
+详见：@人生外挂/总览
+\```
+
+```
+
+```text
+File created successfully at: /Users/hong/Documents/Documents - zengmuge的MacBook Pro/Obsidian Vault/项目Wiki/人生外挂/总览.md
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 03:36:30Z)**_
+
+完成，三个项目 Wiki 全部建好：
+
+```
+项目Wiki/
+  INDEX.md
+  Schema-AI协作规范.md
+  英语学习App/总览.md   ✅
+  数学App/总览.md       ✅
+  人生外挂/总览.md      ✅ 刚填好
+```
+
+---
+
+人生外挂这个我给你留了几个**待思考的问题**，用第一性原理问自己：
+
+- 用户最根本的刚需是什么？
+- 现有工具哪里不够用？
+- 最简单的 MVP 是什么？
+
+等你想清楚产品方向，告诉我，我帮你把想法填进去，然后就可以像英语/数学 App 一样开始开发了。
+
+---
+
+_**User (2026-04-21 04:02:17Z)**_
+
+观察物体单元的试卷为添加,如何呢?
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:02:29Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user is asking about Unit 2 (观察物体/Observing Objects) which was skipped for the exam because it's all drawing questions. Let me check the memory file for context and think about how to handle this.
+
+From the math app memory:
+- Unit 2 观察物体 | ✅ 完成 | 18 | `IsoViewQuestion`（等轴测积木，画家算法，动态viewBox）
+- Unit 2 观察物体 | ⬜ 跳过 | 全是作图题
+
+So the practice questions use `IsoViewQuestion` with isometric view of blocks. The exam was skipped because it was "all drawing questions." 
+
+
+Actually, I can adapt this for a digital format by converting the drawing-based questions into multiple choice or counting tasks—like showing a 3D block structure and asking how many blocks there are, or presenting different views and asking which 3D structure matches, or showing a structure and asking users to identify what the front/top/side view would look like from SVG options.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:02:36Z)**_
+
+当时跳过是因为"全是作图题"，但数字化App里可以变通处理。几个方案：
+
+---
+
+**方案一：改成选择题（推荐）**
+
+把"画出正视图"变成"选出正确的正视图"——用已有的 `IsoViewQuestion` SVG 生成选项图，学生从4个中选1个。
+
+```
+题目：下面是一个积木的正面，从上面看是哪个？
+选项：[SVG图A] [SVG图B] [SVG图C] [SVG图D]
+```
+
+**方案二：填空数量题**
+
+不要求画图，改问数量：
+```
+从正面看这组积木，能看到几个面？答：___
+这组积木共用了几块？答：___
+```
+
+**方案三：判断题**
+
+```
+判断：从左面看和从右面看，形状一定相同。（✓/✗）
+```
+
+---
+
+**我的建议：**
+
+三种混合，组成约10题的试卷：
+- 选择题 × 5（SVG图形选答案）
+- 填空题 × 3（数数量）
+- 判断题 × 2（概念判断）
+
+---
+
+要我按这个方案帮你写 `grade4_down_unit2_exam.json` 吗？需要先看一下现有 Unit 2 练习题的数据结构。
+
+---
+
+_**User (2026-04-21 04:05:03Z)**_
+
+三种混合给我代码,我让antigravity执行
+
+---
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:05:08Z)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to create the exam JSON file for Unit 2 (观察物体) with a mix of three question types. They want to give the code to antigravity to execute. Let me first check the existing Unit 2 practice data to understand the structure, then create the exam JSON.
+</details></think>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:05:10Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Read Unit 2 practice data structure
+
+`cat "/Users/hong/.gemini/antigravity/scratch/math-practice-app/src/data/grade4_down_unit2.json" | head -80`
+
+```text
+[
+  {
+    "id": "g4d_u2_01",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "truefalse",
+    "difficulty": 1,
+    "question": "从不同方向观察同一个物体，看到的形状可能不同。",
+    "answer": "true",
+    "explanation": "同一物体从正面、侧面、上面看到的形状通常各不相同，这是立体图形的基本特征。"
+  },
+  {
+    "id": "g4d_u2_02",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "truefalse",
+    "difficulty": 1,
+    "question": "从正面和从侧面看到的图形一定不同。",
+    "answer": "false",
+    "explanation": "例如正方体，从正面和从侧面看到的都是正方形，形状完全相同。"
+  },
+  {
+    "id": "g4d_u2_03",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "choice",
+    "difficulty": 1,
+    "question": "从正上方俯视一个正方体，看到的是什么形状？",
+    "choices": ["圆形", "三角形", "正方形", "长方形"],
+    "answer": "正方形",
+    "explanation": "正方体六个面都是正方形，从上方看到的就是顶面——正方形。"
+  },
+  {
+    "id": "g4d_u2_04",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "choice",
+    "difficulty": 1,
+    "question": "从正前方看一排3个小正方体（横向排列），看到的是什么？",
+    "choices": ["1个正方形", "3个正方形并排", "1个长方形", "L形"],
+    "answer": "3个正方形并排",
+    "explanation": "从正面看，3个并排的小正方体显示为3个并排的正方形（或1个3:1的长方形）。"
+  },
+  {
+    "id": "g4d_u2_05",
+    "unit": "Unit 2",
+    "topic": "数积木",
+    "type": "iso-view",
+    "chartInteraction": "input",
+    "difficulty": 1,
+    "question": "图中共用了多少块小正方体？",
+    "isoScene": {
+      "layout": [[1, 2, 3]]
+    },
+    "answer": "6",
+    "explanation": "从左到右分别堆了1、2、3块，共 1+2+3=6 块。"
+  },
+  {
+    "id": "g4d_u2_06",
+    "unit": "Unit 2",
+    "topic": "数积木",
+    "type": "iso-view",
+    "chartInteraction": "input",
+    "difficulty": 1,
+    "question": "图中共用了多少块小正方体？",
+    "isoScene": {
+      "layout": [
+        [1, 1, 1],
+        [1, 0, 0]
+      ]
+    },
+    "answer": "4",
+    "explanation": "前排3块 + 后排左边1块，共 3+1=4 块。"
+  },
+  {
+    "id": "g4d_u2_07",
+    "unit": "Unit 2",
+    "topic": "数积木",
+    "type": "iso-view",
+    "chartInteraction": "input",
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:05:16Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+List all Unit 2 question types
+
+`cat "/Users/hong/.gemini/antigravity/scratch/math-practice-app/src/data/grade4_down_unit2.json" | python3 -c "import json,sys; d=json.load(sys.stdin); [print(x['id'], x['type'], x.get('topic','')) for x in d]"`
+
+```text
+g4d_u2_01 truefalse 观察物体
+g4d_u2_02 truefalse 观察物体
+g4d_u2_03 choice 观察物体
+g4d_u2_04 choice 观察物体
+g4d_u2_05 iso-view 数积木
+g4d_u2_06 iso-view 数积木
+g4d_u2_07 iso-view 数积木
+g4d_u2_08 iso-view 数积木
+g4d_u2_09 iso-view 数积木
+g4d_u2_10 iso-view 观察视角
+g4d_u2_11 iso-view 观察视角
+g4d_u2_12 iso-view 观察视角
+g4d_u2_13 iso-view 观察视角
+g4d_u2_14 iso-view 观察视角
+g4d_u2_15 iso-view 观察视角
+g4d_u2_16 iso-view 观察视角
+g4d_u2_17 iso-view 数积木
+g4d_u2_18 truefalse 数积木
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:05:26Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Show iso-view question structure
+
+```bash
+cat "/Users/hong/.gemini/antigravity/scratch/math-practice-app/src/data/grade4_down_unit2.json" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+# show iso-view examples
+for x in d:
+    if x['type'] == 'iso-view':
+        print(json.dumps(x, ensure_ascii=False, indent=2))
+        print('---')
+        break
+"
+```
+
+```text
+{
+  "id": "g4d_u2_05",
+  "unit": "Unit 2",
+  "topic": "数积木",
+  "type": "iso-view",
+  "chartInteraction": "input",
+  "difficulty": 1,
+  "question": "图中共用了多少块小正方体？",
+  "isoScene": {
+    "layout": [
+      [
+        1,
+        2,
+        3
+      ]
+    ]
+  },
+  "answer": "6",
+  "explanation": "从左到右分别堆了1、2、3块，共 1+2+3=6 块。"
+}
+---
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:05:32Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Show iso-view observation angle question structure
+
+```bash
+cat "/Users/hong/.gemini/antigravity/scratch/math-practice-app/src/data/grade4_down_unit2.json" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+for x in d:
+    if x.get('topic') == '观察视角':
+        print(json.dumps(x, ensure_ascii=False, indent=2))
+        print('---')
+        break
+"
+```
+
+```text
+{
+  "id": "g4d_u2_10",
+  "unit": "Unit 2",
+  "topic": "观察视角",
+  "type": "iso-view",
+  "chartInteraction": "choice",
+  "difficulty": 2,
+  "question": "从正前方看这个积木，看到的宽度是几格？",
+  "isoScene": {
+    "layout": [
+      [
+        1,
+        2,
+        3
+      ]
+    ]
+  },
+  "choices": [
+    "1格宽",
+    "2格宽",
+    "3格宽",
+    "6格宽"
+  ],
+  "answer": "3格宽",
+  "explanation": "场景A是单排3列，从正面看能看到3列，宽度为3格。"
+}
+---
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:05:38Z)**_
+
+结构清楚了，直接写试卷：
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:06:00Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Write"><details>
+<summary>Tool use: **Write**</summary>
+
+```json
+[
+  {
+    "id": "g4d_u2_exam_01",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "truefalse",
+    "difficulty": 1,
+    "question": "从不同方向观察同一个物体，看到的形状一定不同。",
+    "answer": "false",
+    "explanation": "不一定。例如正方体从正面和侧面看到的都是正方形，形状相同。"
+  },
+  {
+    "id": "g4d_u2_exam_02",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "truefalse",
+    "difficulty": 1,
+    "question": "两个不同的立体图形，从同一个方向看到的形状可能完全相同。",
+    "answer": "true",
+    "explanation": "可能相同。例如从正面看，一个正方体和一个正方形柱体看到的都是正方形。"
+  },
+  {
+    "id": "g4d_u2_exam_03",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "truefalse",
+    "difficulty": 2,
+    "question": "一组积木从正面看是正方形，从上面看也一定是正方形。",
+    "answer": "false",
+    "explanation": "不一定。正面看是正方形，上面看可能是长方形（积木前后有多层）。"
+  },
+  {
+    "id": "g4d_u2_exam_04",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "choice",
+    "difficulty": 1,
+    "question": "从正上方俯视一个长方体，看到的形状是？",
+    "choices": ["圆形", "正方形", "长方形", "三角形"],
+    "answer": "长方形",
+    "explanation": "长方体的顶面是长方形，从上方俯视看到的就是长方形（特殊情况下可能是正方形）。"
+  },
+  {
+    "id": "g4d_u2_exam_05",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "choice",
+    "difficulty": 2,
+    "question": "一组积木从正面看到的是 2×2 的正方形（2格宽、2格高），这组积木最少需要几块？",
+    "choices": ["1块", "2块", "4块", "8块"],
+    "answer": "4块",
+    "explanation": "从正面看2×2，最少排列是前排2×2共4块，后面不放。所以最少4块。"
+  },
+  {
+    "id": "g4d_u2_exam_06",
+    "unit": "Unit 2",
+    "topic": "观察物体",
+    "type": "choice",
+    "difficulty": 2,
+    "question": "小明从正面看到积木是"三格宽、一格高"，从上面看是"三格长、两格宽"，这组积木共有几块？",
+    "choices": ["3块", "5块", "6块", "9块"],
+    "answer": "6块",
+    "explanation": "上面看3列×2排=6个位置，每个位置1块高，共6块。"
+  },
+  {
+    "id": "g4d_u2_exam_07",
+    "unit": "Unit 2",
+    "topic": "数积木",
+    "type": "iso-view",
+    "chartInteraction": "input",
+    "difficulty": 1,
+    "question": "图中共用了多少块小正方体？",
+    "isoScene": {
+      "layout": [
+        [2, 1],
+        [1, 1]
+      ]
+    },
+    "answer": "5",
+    "explanation": "左前2块 + 右前1块 + 左后1块 + 右后1块 = 5块。"
+  },
+  {
+    "id": "g4d_u2_exam_08",
+    "unit": "Unit 2",
+    "topic": "数积木",
+    "type": "iso-view",
+    "chartInteraction": "input",
+    "difficulty": 2,
+    "question": "图中共用了多少块小正方体？",
+    "isoScene": {
+      "layout": [
+        [1, 2, 1],
+        [0, 1, 0]
+      ]
+    },
+    "answer": "5",
+    "explanation": "前排：1+2+1=4块；后排中间1块；共5块。"
+  },
+  {
+    "id": "g4d_u2_exam_09",
+    "unit": "Unit 2",
+    "topic": "数积木",
+    "type": "iso-view",
+    "chartInteraction": "input",
+    "difficulty": 2,
+    "question": "图中共用了多少块小正方体？",
+    "isoScene": {
+      "layout": [
+        [3, 2, 1],
+        [1, 1, 0]
+      ]
+    },
+    "answer": "8",
+    "explanation": "前排：3+2+1=6块；后排：1+1=2块；共8块。"
+  },
+  {
+    "id": "g4d_u2_exam_10",
+    "unit": "Unit 2",
+    "topic": "观察视角",
+    "type": "iso-view",
+    "chartInteraction": "choice",
+    "difficulty": 2,
+    "question": "从正前方看这组积木，看到的高度最高是几格？",
+    "isoScene": {
+      "layout": [
+        [1, 3, 2]
+      ]
+    },
+    "choices": ["1格", "2格", "3格", "6格"],
+    "answer": "3格",
+    "explanation": "这排积木从左到右高度分别是1、3、2格，从正面看最高处是3格。"
+  },
+  {
+    "id": "g4d_u2_exam_11",
+    "unit": "Unit 2",
+    "topic": "观察视角",
+    "type": "iso-view",
+    "chartInteraction": "choice",
+    "difficulty": 3,
+    "question": "从正上方俯视这组积木，看到的宽度（前后方向）是几格？",
+    "isoScene": {
+      "layout": [
+        [2, 1, 1],
+        [0, 1, 2]
+      ]
+    },
+    "choices": ["1格", "2格", "3格", "4格"],
+    "answer": "2格",
+    "explanation": "上面俯视看到的是占位情况：前排和后排共2排，宽度为2格。"
+  }
+]
+
+```
+
+```text
+File created successfully at: /Users/hong/.gemini/antigravity/scratch/math-practice-app/src/data/grade4_down_unit2_exam.json
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-4-6 2026-04-21 04:06:12Z)**_
+
+现在让 antigravity 把它接入 TestView，把这段指令发给它：
+
+---
+
+**给 antigravity 的指令：**
+
+```
+在 math-practice-app 里，Unit 2 观察物体现在有试卷数据了：
+src/data/grade4_down_unit2_exam.json（11题，含 truefalse/choice/iso-view 三种题型）
+
+请做以下修改：
+1. 在 src/data/index.js 里找到 Unit 2 的 examData 字段（目前为 null 或缺失），
+   改为 import grade4DownUnit2Exam from './grade4_down_unit2_exam.json'，
+   并把 examData 设为该数据
+
+2. 在 UnitList 或试卷入口处，确保 Unit 2 的"开始试卷"按钮变为可点击状态
+
+3. 验证 iso-view 题型在 TestView 里能正常渲染（TestView 支持 iso-view 组件即可）
+```
+
+---
+
+试卷共 **11 题**：
+- 判断题 × 3
+- 选择题 × 3  
+- 积木数数（iso-view input）× 3
+- 视角观察（iso-view choice）× 2

@@ -1,0 +1,4304 @@
+[
+  {
+    "id": 1,
+    "unit": "Unit 1",
+    "zh": "李响，你在电脑上做什么？",
+    "en": "Li Xiang, what are you doing on the computer?"
+  },
+  {
+    "id": 2,
+    "unit": "Unit 1",
+    "zh": "我在为学校聚会购物。",
+    "en": "I’m shopping for the school party."
+  },
+  {
+    "id": 3,
+    "unit": "Unit 1",
+    "zh": "你需要买什么？",
+    "en": "What do you need to buy?"
+  },
+  {
+    "id": 4,
+    "unit": "Unit 1",
+    "zh": "我在找一件新衬衫。",
+    "en": "I’m looking for a new shirt."
+  },
+  {
+    "id": 5,
+    "unit": "Unit 1",
+    "zh": "这件蓝色的怎么样？",
+    "en": "What about this blue one?"
+  },
+  {
+    "id": 6,
+    "unit": "Unit 1",
+    "zh": "它很适合聚会。",
+    "en": "It’s great for the party."
+  },
+  {
+    "id": 7,
+    "unit": "Unit 1",
+    "zh": "看看这双鞋。",
+    "en": "Look at this pair of shoes."
+  },
+  {
+    "id": 8,
+    "unit": "Unit 1",
+    "zh": "嗯，那要很多钱。",
+    "en": "Well, that’s a lot of money."
+  },
+  {
+    "id": 9,
+    "unit": "Unit 1",
+    "zh": "我认为你不需要它。",
+    "en": "I don’t think you need it."
+  },
+  {
+    "id": 10,
+    "unit": "Unit 1",
+    "zh": "为什么不买一条裤子呢？",
+    "en": "Why not buy a pair of trousers?"
+  },
+  {
+    "id": 11,
+    "unit": "Unit 1",
+    "zh": "但我不喜欢这家网店的裤子。",
+    "en": "But I don’t like the trousers in this online shop."
+  },
+  {
+    "id": 12,
+    "unit": "Unit 1",
+    "zh": "这周日去购物中心怎么样？",
+    "en": "How about going to the shopping mall this Sunday?"
+  },
+  {
+    "id": 13,
+    "unit": "Unit 1",
+    "zh": "玲玲是个聪明的购物者。",
+    "en": "Lingling is a smart shopper."
+  },
+  {
+    "id": 14,
+    "unit": "Unit 1",
+    "zh": "她总是列购物清单并寻找最优惠的价格。",
+    "en": "She always makes a shopping list and looks for the best prices."
+  },
+  {
+    "id": 15,
+    "unit": "Unit 1",
+    "zh": "她非常喜欢一条裙子，但她并不是真的需要它。",
+    "en": "She likes a skirt very much, but she doesn’t really need it."
+  },
+  {
+    "id": 16,
+    "unit": "Unit 1",
+    "zh": "所以她决定不买它。",
+    "en": "So she decides not to buy it."
+  },
+  {
+    "id": 17,
+    "unit": "Unit 1",
+    "zh": "每个星期天，李响都和他妈妈一起去超市。",
+    "en": "Every Sunday, Li Xiang goes to the supermarket with his mother."
+  },
+  {
+    "id": 18,
+    "unit": "Unit 1",
+    "zh": "他总是帮助他妈妈提沉重的袋子。",
+    "en": "He always helps his mother carry the heavy bags."
+  },
+  {
+    "id": 19,
+    "unit": "Unit 1",
+    "zh": "妈妈，让我来帮你拿袋子。",
+    "en": "Mom, let me take the bag for you."
+  },
+  {
+    "id": 20,
+    "unit": "Unit 1",
+    "zh": "我们可以通过角色的行为、感受和想法来了解其性格特征。",
+    "en": "We can learn character traits from the character’s actions, feelings and thoughts."
+  },
+  {
+    "id": 21,
+    "unit": "Unit 1",
+    "zh": "我的零花钱计划",
+    "en": "My Plan for My Pocket Money"
+  },
+  {
+    "id": 22,
+    "unit": "Unit 1",
+    "zh": "我该如何使用我的零花钱？",
+    "en": "How can I use my pocket money?"
+  },
+  {
+    "id": 23,
+    "unit": "Unit 1",
+    "zh": "小明是一个精明的购物者。",
+    "en": "Xiaoming is a smart shopper."
+  },
+  {
+    "id": 24,
+    "unit": "Unit 1",
+    "zh": "他只买他需要的东西，并尽量少花钱。",
+    "en": "He only buys what he needs and tries to spend as little as possible."
+  },
+  {
+    "id": 25,
+    "unit": "Unit 1",
+    "zh": "他通常会先列一个购物清单，然后去购物。",
+    "en": "He usually makes a shopping list first and then goes shopping."
+  },
+  {
+    "id": 26,
+    "unit": "Unit 1",
+    "zh": "为了以优惠的价格买东西，他经常去大商店购买打折商品。",
+    "en": "To buy things at good prices, he often goes to big stores for great sales."
+  },
+  {
+    "id": 27,
+    "unit": "Unit 1",
+    "zh": "李响是一位精明的购物者。",
+    "en": "Li Xiang is a smart shopper."
+  },
+  {
+    "id": 28,
+    "unit": "Unit 1",
+    "zh": "他经常在超市购物。",
+    "en": "He often shops in the supermarket."
+  },
+  {
+    "id": 29,
+    "unit": "Unit 1",
+    "zh": "那里的东西不贵，他可以有多种选择。",
+    "en": "Things there are not expensive, and he can make different choices."
+  },
+  {
+    "id": 30,
+    "unit": "Unit 1",
+    "zh": "他总是列一个购物清单，只买清单上的东西。",
+    "en": "He always makes a shopping list and only buys things on the list."
+  },
+  {
+    "id": 31,
+    "unit": "Unit 1",
+    "zh": "这也能帮助他节省时间和金钱。",
+    "en": "This can help him save time and money as well."
+  },
+  {
+    "id": 32,
+    "unit": "Unit 1",
+    "zh": "他也喜欢寻找促销活动，这样他就能以优惠的价格买东西。",
+    "en": "He also likes to look for sales, so he can buy things at good prices."
+  },
+  {
+    "id": 33,
+    "unit": "Unit 1",
+    "zh": "李响购物时非常仔细。",
+    "en": "Li Xiang is very careful when he is doing shopping."
+  },
+  {
+    "id": 34,
+    "unit": "Unit 1",
+    "zh": "在做选择之前，他总是检查价格和日期。",
+    "en": "He always checks the price and date before he makes a choice."
+  },
+  {
+    "id": 35,
+    "unit": "Unit 1",
+    "zh": "在付款时，他会再次检查所有东西。",
+    "en": "And when he is making payments, he checks everything again."
+  },
+  {
+    "id": 36,
+    "unit": "Unit 1",
+    "zh": "他也很注意不浪费钱。",
+    "en": "He is also very careful not to waste money."
+  },
+  {
+    "id": 37,
+    "unit": "Unit 1",
+    "zh": "例如，如果他能和朋友们分享某样东西，他就绝不会浪费钱买同样的东西。",
+    "en": "For example, if he can share something with his friends, he never wastes money on the same thing."
+  },
+  {
+    "id": 38,
+    "unit": "Unit 1",
+    "zh": "这里有两片面包。",
+    "en": "Here are two pieces of bread."
+  },
+  {
+    "id": 39,
+    "unit": "Unit 1",
+    "zh": "我需要买一瓶果汁。",
+    "en": "I need to buy a bottle of juice."
+  },
+  {
+    "id": 40,
+    "unit": "Unit 1",
+    "zh": "我有点口渴。",
+    "en": "I am a little thirsty."
+  },
+  {
+    "id": 41,
+    "unit": "Unit 1",
+    "zh": "这包肉看起来非常新鲜。",
+    "en": "This packet of meat looks so fresh."
+  },
+  {
+    "id": 42,
+    "unit": "Unit 1",
+    "zh": "两公斤草莓售价50元。",
+    "en": "Two kilos of strawberries cost 50 yuan."
+  },
+  {
+    "id": 43,
+    "unit": "Unit 1",
+    "zh": "小林经常和妈妈一起去超市购物。",
+    "en": "Xiao Lin often goes shopping with her mom in the supermarket."
+  },
+  {
+    "id": 44,
+    "unit": "Unit 1",
+    "zh": "今天，她妈妈需要买一袋盐、三瓶牛奶、两包鸡肉和一公斤西红柿。",
+    "en": "Today, her mom needs to buy a bag of salt, three bottles of milk, two packets of chicken, and a kilo of tomatoes."
+  },
+  {
+    "id": 45,
+    "unit": "Unit 1",
+    "zh": "小林还需要一些上学用的东西。",
+    "en": "Xiao Lin also needs something for school."
+  },
+  {
+    "id": 46,
+    "unit": "Unit 1",
+    "zh": "她拿了一副剪刀和两套彩色铅笔。",
+    "en": "She takes a pair of scissors and two sets of colored pencils."
+  },
+  {
+    "id": 47,
+    "unit": "Unit 1",
+    "zh": "有时，小林的小弟弟也会和他们一起去超市，他妈妈通常会给他买一盒果汁。",
+    "en": "Sometimes, Xiao Lin’s little brother also goes to the supermarket with them, and his mother usually buys a box of juice for him."
+  },
+  {
+    "id": 48,
+    "unit": "Unit 1",
+    "zh": "售货员：早上好！需要帮忙吗？",
+    "en": "Saleswoman: Good morning! May I help you?"
+  },
+  {
+    "id": 49,
+    "unit": "Unit 1",
+    "zh": "玲玲：是的。我想买一些蜂蜜和三明治。",
+    "en": "Lingling: Yes, please. I want to buy some honey and sandwiches."
+  },
+  {
+    "id": 50,
+    "unit": "Unit 1",
+    "zh": "玲玲：我需要两盒蜂蜜。",
+    "en": "Lingling: I need two boxes of honey."
+  },
+  {
+    "id": 51,
+    "unit": "Unit 2",
+    "zh": "我们没有大米了。",
+    "en": "We don't have any rice."
+  },
+  {
+    "id": 52,
+    "unit": "Unit 2",
+    "zh": "你能帮我买些东西吗？",
+    "en": "Can you help me do some shopping?"
+  },
+  {
+    "id": 53,
+    "unit": "Unit 2",
+    "zh": "我们需要多少大米？",
+    "en": "How much rice do we need?"
+  },
+  {
+    "id": 54,
+    "unit": "Unit 2",
+    "zh": "我们还需要一些苹果。",
+    "en": "And we need some apples, too."
+  },
+  {
+    "id": 55,
+    "unit": "Unit 2",
+    "zh": "我父母每个月给我一些零花钱。",
+    "en": "My parents give me some pocket money every month."
+  },
+  {
+    "id": 56,
+    "unit": "Unit 2",
+    "zh": "我总是尽力省钱，做一个聪明的购物者。",
+    "en": "I always try my best to save money and be a smart shopper."
+  },
+  {
+    "id": 57,
+    "unit": "Unit 2",
+    "zh": "在每个月初，我总是制作一个购物清单以节省时间，并仔细计划如何花我的零花钱。",
+    "en": "At the start of every month, I always make a shopping list to save time and carefully plan how to spend my pocket money."
+  },
+  {
+    "id": 58,
+    "unit": "Unit 2",
+    "zh": "在商店里，我查看广告寻找打折商品。",
+    "en": "At the store, I check the ads to look for things on sale."
+  },
+  {
+    "id": 59,
+    "unit": "Unit 2",
+    "zh": "这样，我就能在季末找到一些便宜又好的衣服。",
+    "en": "That way, I can find some cheap and good clothes at the end of the season."
+  },
+  {
+    "id": 60,
+    "unit": "Unit 2",
+    "zh": "我还会比较不同商店里相同商品的价格。",
+    "en": "I also check the prices of the same things at different stores."
+  },
+  {
+    "id": 61,
+    "unit": "Unit 2",
+    "zh": "让我们做一个聪明的购物者吧！",
+    "en": "Let’s be a smart shopper!"
+  },
+  {
+    "id": 62,
+    "unit": "Unit 2",
+    "zh": "我们可以节省金钱和时间。",
+    "en": "We can save money and time."
+  },
+  {
+    "id": 63,
+    "unit": "Unit 2",
+    "zh": "正在寻找一双好鞋吗？来看看我们的打折清单！",
+    "en": "Looking for a good pair of shoes? Come and check out our on-sale list!"
+  },
+  {
+    "id": 64,
+    "unit": "Unit 2",
+    "zh": "我们有各种种类非常好的鞋子，尺码齐全。",
+    "en": "We have different kinds of very good shoes in all sizes."
+  },
+  {
+    "id": 65,
+    "unit": "Unit 2",
+    "zh": "在这个特殊的假日季节，我们以优惠的价格出售它们。",
+    "en": "We sell them at good prices for this special holiday season."
+  },
+  {
+    "id": 66,
+    "unit": "Unit 2",
+    "zh": "这个季节只持续七天，所以你只有七天时间来做选择。",
+    "en": "The season lasts for seven days only, so you only have seven days to make your choices."
+  },
+  {
+    "id": 67,
+    "unit": "Unit 2",
+    "zh": "你还在等什么？现在就来购物吧！",
+    "en": "What are you waiting for? Come and shop now!"
+  },
+  {
+    "id": 68,
+    "unit": "Unit 2",
+    "zh": "为自己找到合适的鞋子，订单超过99元即可享受免费送货。",
+    "en": "Find the right shoes for yourself, and you can enjoy free shipping on orders over ¥ 99."
+  },
+  {
+    "id": 69,
+    "unit": "Unit 2",
+    "zh": "一公斤苹果多少钱？",
+    "en": "How much is one kilo of apples?"
+  },
+  {
+    "id": 70,
+    "unit": "Unit 2",
+    "zh": "你需要多少公斤苹果？",
+    "en": "How many kilos of apples do you need?"
+  },
+  {
+    "id": 71,
+    "unit": "Unit 2",
+    "zh": "一瓶苹果汁多少钱？",
+    "en": "How much is a bottle of apple juice?"
+  },
+  {
+    "id": 72,
+    "unit": "Unit 2",
+    "zh": "你想要多少瓶？",
+    "en": "How many bottles do you want?"
+  },
+  {
+    "id": 73,
+    "unit": "Unit 2",
+    "zh": "它们总共27元。",
+    "en": "They are 27 yuan in all."
+  },
+  {
+    "id": 74,
+    "unit": "Unit 2",
+    "zh": "我可以用手机支付吗？",
+    "en": "Can I use my phone to pay for them?"
+  },
+  {
+    "id": 75,
+    "unit": "Unit 2",
+    "zh": "你愿意为我们买些食物吗？",
+    "en": "Would you like to buy some food for us?"
+  },
+  {
+    "id": 76,
+    "unit": "Unit 2",
+    "zh": "一些苹果和一些果汁。",
+    "en": "Some apples and some juice."
+  },
+  {
+    "id": 77,
+    "unit": "Unit 2",
+    "zh": "不，我们不需要任何面包。",
+    "en": "No, we don’t need any bread."
+  },
+  {
+    "id": 78,
+    "unit": "Unit 2",
+    "zh": "它在地下、在海洋里、也在天空中。",
+    "en": "It’s under the ground, in the ocean and in the sky."
+  },
+  {
+    "id": 79,
+    "unit": "Unit 2",
+    "zh": "但我在天空看不到任何水。",
+    "en": "But I can’t see any water in the sky."
+  },
+  {
+    "id": 80,
+    "unit": "Unit 2",
+    "zh": "在晴朗的日子里，水上升到天空形成云。",
+    "en": "On sunny days, water goes up into the sky and forms clouds."
+  },
+  {
+    "id": 81,
+    "unit": "Unit 2",
+    "zh": "众所周知，水对我们非常重要。",
+    "en": "As we all know, water is very important to us."
+  },
+  {
+    "id": 82,
+    "unit": "Unit 2",
+    "zh": "我们每天都需要喝水。",
+    "en": "We need to drink water every day."
+  },
+  {
+    "id": 83,
+    "unit": "Unit 2",
+    "zh": "我们在生活中也需要使用大量的水。",
+    "en": "We also need to use a lot of water in our life."
+  },
+  {
+    "id": 84,
+    "unit": "Unit 2",
+    "zh": "很幸运地球上有大量的水。",
+    "en": "It’s lucky that we have a lot of water on the earth."
+  },
+  {
+    "id": 85,
+    "unit": "Unit 2",
+    "zh": "正因为如此，我们称地球为蓝色星球。",
+    "en": "Just because of this, we call the earth a blue planet."
+  },
+  {
+    "id": 86,
+    "unit": "Unit 2",
+    "zh": "但我们只能使用地球上约1%的水。",
+    "en": "But we can only use about 1% of the water on the earth."
+  },
+  {
+    "id": 87,
+    "unit": "Unit 2",
+    "zh": "其余的都是海水或冰。",
+    "en": "The rest is all sea water or ice."
+  },
+  {
+    "id": 88,
+    "unit": "Unit 2",
+    "zh": "那是非常少的水。",
+    "en": "That is very little water."
+  },
+  {
+    "id": 89,
+    "unit": "Unit 2",
+    "zh": "让我们节约每一滴水。",
+    "en": "Let’s save every drop of water."
+  },
+  {
+    "id": 90,
+    "unit": "Unit 2",
+    "zh": "在家里，我们用水来做饭、洗衣或清洁。",
+    "en": "At home, we use water to cook, do washing or cleaning."
+  },
+  {
+    "id": 91,
+    "unit": "Unit 2",
+    "zh": "在户外，我们可以通过水路旅行，在水中锻炼，并用水来娱乐。",
+    "en": "Outside home, we can travel by water, do exercise in water, and have fun with water."
+  },
+  {
+    "id": 92,
+    "unit": "Unit 2",
+    "zh": "所有生物都需要水。",
+    "en": "All living things need water."
+  },
+  {
+    "id": 93,
+    "unit": "Unit 2",
+    "zh": "人和动物每天喝水。",
+    "en": "People and animals drink water every day."
+  },
+  {
+    "id": 94,
+    "unit": "Unit 2",
+    "zh": "植物需要水来生长。",
+    "en": "Plants need water to grow."
+  },
+  {
+    "id": 95,
+    "unit": "Unit 2",
+    "zh": "主要思想给我们最重要的信息，而支持性细节则告诉我们更多关于主要思想的内容。",
+    "en": "The main idea gives us the most important information and the supporting details tell us more about the main idea."
+  },
+  {
+    "id": 96,
+    "unit": "Unit 2",
+    "zh": "你知道水循环吗？",
+    "en": "Do you know the water cycle?"
+  },
+  {
+    "id": 97,
+    "unit": "Unit 2",
+    "zh": "空气中的水变冷，形成云，然后形成水滴。",
+    "en": "Water in the air gets cold, makes clouds and then forms water drops."
+  },
+  {
+    "id": 98,
+    "unit": "Unit 2",
+    "zh": "水滴落下，就下雨了。",
+    "en": "The drops fall and it rains."
+  },
+  {
+    "id": 99,
+    "unit": "Unit 2",
+    "zh": "雨水流入河流、湖泊和海洋。",
+    "en": "Rainwater goes into rivers, lakes and oceans."
+  },
+  {
+    "id": 100,
+    "unit": "Unit 2",
+    "zh": "当天气晴朗时，水上升到天空，形成云，然后再次下雨。",
+    "en": "When it is sunny, water goes up into the sky, forms clouds and then it rains again."
+  },
+  {
+    "id": 101,
+    "unit": "Unit 3",
+    "zh": "在晴朗的日子里，水上升到空气中，变成天空中的云。",
+    "en": "On sunny days, water goes up in the air and turns into clouds in the sky."
+  },
+  {
+    "id": 102,
+    "unit": "Unit 3",
+    "zh": "在阅读时在脑海中形成画面可以帮助你更好地理解文本中发生的事情。",
+    "en": "Making pictures in your mind while reading can help you have a better understanding of what is going on in the text."
+  },
+  {
+    "id": 103,
+    "unit": "Unit 3",
+    "zh": "沙漠里有人居住吗？答案是有的。",
+    "en": "Are there any people living in the desert? The answer is yes."
+  },
+  {
+    "id": 104,
+    "unit": "Unit 3",
+    "zh": "事实上，沙漠是许多人的家园。",
+    "en": "As a matter of fact, the desert is home to many people."
+  },
+  {
+    "id": 105,
+    "unit": "Unit 3",
+    "zh": "我认识一个住在沙漠里的家庭。",
+    "en": "I know a family living in the desert."
+  },
+  {
+    "id": 106,
+    "unit": "Unit 3",
+    "zh": "水对他们来说非常重要和珍贵。",
+    "en": "Water is so important and valuable for them."
+  },
+  {
+    "id": 107,
+    "unit": "Unit 3",
+    "zh": "这个家庭没有足够的水。",
+    "en": "The family don’t have enough water."
+  },
+  {
+    "id": 108,
+    "unit": "Unit 3",
+    "zh": "他们很少种花或草。",
+    "en": "They seldom plant flowers or grass."
+  },
+  {
+    "id": 109,
+    "unit": "Unit 3",
+    "zh": "他们每周只能快速淋浴一次。",
+    "en": "They can only take a quick shower once a week."
+  },
+  {
+    "id": 110,
+    "unit": "Unit 3",
+    "zh": "淋浴期间，他们必须收集水。",
+    "en": "During the shower, they must collect the water."
+  },
+  {
+    "id": 111,
+    "unit": "Unit 3",
+    "zh": "淋浴后，他们会重复使用这些水。",
+    "en": "After the shower, they reuse the water."
+  },
+  {
+    "id": 112,
+    "unit": "Unit 3",
+    "zh": "沙漠里雨水不多。",
+    "en": "It doesn’t rain much in the desert."
+  },
+  {
+    "id": 113,
+    "unit": "Unit 3",
+    "zh": "大多数人从地下取水，因此他们必须花很多钱挖井。",
+    "en": "Most people get water from the underground, so they have to spend a lot of money digging wells."
+  },
+  {
+    "id": 114,
+    "unit": "Unit 3",
+    "zh": "我不需要担心水，但现在我开始节约用水。",
+    "en": "I don’t need to worry about water, but now I start to save water."
+  },
+  {
+    "id": 115,
+    "unit": "Unit 3",
+    "zh": "加入我，让我们一起做出改变。",
+    "en": "Join me and let’s make a difference together."
+  },
+  {
+    "id": 116,
+    "unit": "Unit 3",
+    "zh": "青海湖占地约4600平方公里。",
+    "en": "The Qinghai Lake covers about 4,600 square kilometers."
+  },
+  {
+    "id": 117,
+    "unit": "Unit 3",
+    "zh": "长江长约6300公里。",
+    "en": "The Changjiang River is about 6,300 kilometers long."
+  },
+  {
+    "id": 118,
+    "unit": "Unit 3",
+    "zh": "北冰洋的海岸线长约45390公里。",
+    "en": "The coastline of the Arctic Ocean is about 45,390 kilometers long."
+  },
+  {
+    "id": 119,
+    "unit": "Unit 3",
+    "zh": "大西洋占地超过9300万平方公里。",
+    "en": "The Atlantic Ocean covers more than 93,000,000 square kilometers."
+  },
+  {
+    "id": 120,
+    "unit": "Unit 3",
+    "zh": "当数字大于999时，我们从右往左每三位加一个逗号。",
+    "en": "We use a comma every 3 digits from the right when the number is greater than 999."
+  },
+  {
+    "id": 121,
+    "unit": "Unit 3",
+    "zh": "南极洲面积约1420万平方公里，冰覆盖了约98%的土地。",
+    "en": "Antarctica is about 14,200,000 square kilometers in size, and ice covers about 98 percent of the land."
+  },
+  {
+    "id": 122,
+    "unit": "Unit 3",
+    "zh": "马尔马拉海面积约11350平方公里。",
+    "en": "The Sea of Marmara is about 11,350 square kilometers."
+  },
+  {
+    "id": 123,
+    "unit": "Unit 3",
+    "zh": "海洋覆盖了地球约3.6亿平方公里。",
+    "en": "Oceans cover about 360,000,000 square kilometers of the earth."
+  },
+  {
+    "id": 124,
+    "unit": "Unit 3",
+    "zh": "世界上约有3.07亿个湖泊。",
+    "en": "There are about 307,000,000 lakes in the world."
+  },
+  {
+    "id": 125,
+    "unit": "Unit 3",
+    "zh": "哦，不要把它放在这里。请把它放在那张大椅子上。",
+    "en": "Oh, don’t put it here. Please put it on that big chair."
+  },
+  {
+    "id": 126,
+    "unit": "Unit 3",
+    "zh": "王老师，这是关于拯救海洋的海报。我可以把它放在这张桌子上吗？",
+    "en": "Miss Wang, here is the poster about saving the ocean. Can I put it on this table?"
+  },
+  {
+    "id": 127,
+    "unit": "Unit 3",
+    "zh": "节约用水，拯救我们的星球！",
+    "en": "Save water, save our planet!"
+  },
+  {
+    "id": 128,
+    "unit": "Unit 3",
+    "zh": "我们都需要水，但地球上的水并不充足。",
+    "en": "We all need water, but there isn’t enough water on the earth."
+  },
+  {
+    "id": 129,
+    "unit": "Unit 3",
+    "zh": "因此，我们需要节约用水。",
+    "en": "So, we need to save water."
+  },
+  {
+    "id": 130,
+    "unit": "Unit 3",
+    "zh": "你可以从在家节约用水的小事做起。",
+    "en": "You can start with little things to save water at home."
+  },
+  {
+    "id": 131,
+    "unit": "Unit 3",
+    "zh": "例如，刷牙时关掉水龙头；不要只用洗衣机洗几件脏衣服；淋浴而不是盆浴。",
+    "en": "For example, turn off the tap when brushing your teeth; don’t use the washing machine for just a few dirty clothes; and take a shower, not a bath."
+  },
+  {
+    "id": 132,
+    "unit": "Unit 3",
+    "zh": "你也可以在户外节约用水。",
+    "en": "You can also save water outside your home."
+  },
+  {
+    "id": 133,
+    "unit": "Unit 3",
+    "zh": "你可以在下雨时收集雨水。",
+    "en": "You can collect water when it rains."
+  },
+  {
+    "id": 134,
+    "unit": "Unit 3",
+    "zh": "当饮用水瓶里还有水时，不要扔掉它们。",
+    "en": "Don’t throw away drinking water bottles when there is still water in them."
+  },
+  {
+    "id": 135,
+    "unit": "Unit 3",
+    "zh": "你一定会找到许多节约用水的方法。",
+    "en": "And you are sure to find many ways to save water."
+  },
+  {
+    "id": 136,
+    "unit": "Unit 3",
+    "zh": "我们都知道需要节约用水。",
+    "en": "We all know we need to save water."
+  },
+  {
+    "id": 137,
+    "unit": "Unit 3",
+    "zh": "但你知道该怎么做吗？",
+    "en": "But do you know how to do it?"
+  },
+  {
+    "id": 138,
+    "unit": "Unit 3",
+    "zh": "刷牙时不要让水一直流。",
+    "en": "Don’t keep the water running while brushing your teeth."
+  },
+  {
+    "id": 139,
+    "unit": "Unit 3",
+    "zh": "每次用水后关掉水龙头。",
+    "en": "Turn off the tap each time after using water."
+  },
+  {
+    "id": 140,
+    "unit": "Unit 3",
+    "zh": "不要长时间淋浴。",
+    "en": "Do not take long showers."
+  },
+  {
+    "id": 141,
+    "unit": "Unit 3",
+    "zh": "收集雨水以备后用。",
+    "en": "Collect rainwater for later use."
+  },
+  {
+    "id": 142,
+    "unit": "Unit 3",
+    "zh": "重复使用洗涤用水。",
+    "en": "Reuse the water from washing."
+  },
+  {
+    "id": 143,
+    "unit": "Unit 3",
+    "zh": "一次尽可能多洗衣服。",
+    "en": "Wash as many clothes as possible at a time."
+  },
+  {
+    "id": 144,
+    "unit": "Unit 3",
+    "zh": "总之，我们需要养成节约用水的好习惯。",
+    "en": "In short, we need to develop the good habit of saving water."
+  },
+  {
+    "id": 145,
+    "unit": "Unit 3",
+    "zh": "让我们从现在开始节约用水。",
+    "en": "Let’s start saving water from now on."
+  },
+  {
+    "id": 146,
+    "unit": "Unit 3",
+    "zh": "李明：打扰一下，女士。您能告诉我去建国饭店的路吗？",
+    "en": "Li Ming: Excuse me, madam. Could you show me the way to the Jianguo Hotel?"
+  },
+  {
+    "id": 147,
+    "unit": "Unit 3",
+    "zh": "女士：抱歉，我刚到这里。你可以去问那位警察。",
+    "en": "Woman: Sorry, I just got here. You can go and ask that policeman."
+  },
+  {
+    "id": 148,
+    "unit": "Unit 3",
+    "zh": "李明：打扰一下，先生。我怎样才能到达建国饭店？",
+    "en": "Li Ming: Excuse me, sir. How can I get to the Jianguo Hotel?"
+  },
+  {
+    "id": 149,
+    "unit": "Unit 3",
+    "zh": "警察：你需要乘坐地铁2号线，然后在中山公园站下车。",
+    "en": "Policeman: You need to take the underground Line 2, and then get off at Zhongshan Park Station."
+  },
+  {
+    "id": 150,
+    "unit": "Unit 3",
+    "zh": "警察：从那里，你可以换乘18路公交车。",
+    "en": "Policeman: From there, you can change to the bus No.18."
+  },
+  {
+    "id": 151,
+    "unit": "Unit 4",
+    "zh": "李明：有多远？",
+    "en": "Li Ming: How far is it?"
+  },
+  {
+    "id": 152,
+    "unit": "Unit 4",
+    "zh": "警察：乘地铁需要10分钟，乘公交车需要20分钟。",
+    "en": "Policeman: And it takes 10 minutes on the underground, and 20 minutes on the bus."
+  },
+  {
+    "id": 153,
+    "unit": "Unit 4",
+    "zh": "李明：打扰一下，我在找建国饭店。你能帮我吗？",
+    "en": "Li Ming: Excuse me, I’m looking for the Jianguo Hotel. Can you help me?"
+  },
+  {
+    "id": 154,
+    "unit": "Unit 4",
+    "zh": "男子：可以。沿着黄河路一直走到第一个十字路口。",
+    "en": "Man: Yes. Go along Huanghe Road until you get to the first crossing."
+  },
+  {
+    "id": 155,
+    "unit": "Unit 4",
+    "zh": "男子：向左转然后继续走。",
+    "en": "Man: Turn left and walk on."
+  },
+  {
+    "id": 156,
+    "unit": "Unit 4",
+    "zh": "男子：你可以在你的右边看到它。",
+    "en": "Man: You can see it on your right."
+  },
+  {
+    "id": 157,
+    "unit": "Unit 4",
+    "zh": "李明：非常感谢。",
+    "en": "Li Ming: Thank you very much."
+  },
+  {
+    "id": 158,
+    "unit": "Unit 4",
+    "zh": "从前，一个名叫杰克的男孩去远足，然后迷路了。",
+    "en": "Once upon a time, a boy named Jack went on a hike, and lost his way back."
+  },
+  {
+    "id": 159,
+    "unit": "Unit 4",
+    "zh": "他上下打量，然后……好极了！",
+    "en": "He looked up and down, and then … hooray!"
+  },
+  {
+    "id": 160,
+    "unit": "Unit 4",
+    "zh": "他看了看地图，找到了路。",
+    "en": "He looked at a map, and found his way."
+  },
+  {
+    "id": 161,
+    "unit": "Unit 4",
+    "zh": "街上有一家24小时商店。",
+    "en": "There is a 24-hour store on the street."
+  },
+  {
+    "id": 162,
+    "unit": "Unit 4",
+    "zh": "八个男孩去那里见面。",
+    "en": "Eight boys go there to meet."
+  },
+  {
+    "id": 163,
+    "unit": "Unit 4",
+    "zh": "他们要么买果汁喝，要么买面包吃。",
+    "en": "They buy either juice to drink or bread to eat."
+  },
+  {
+    "id": 164,
+    "unit": "Unit 4",
+    "zh": "他们都跳了起来，因为他们的想法太棒了。",
+    "en": "They all jump because their ideas are so great."
+  },
+  {
+    "id": 165,
+    "unit": "Unit 4",
+    "zh": "起初，人们只能徒步旅行。",
+    "en": "First, people could travel only on foot."
+  },
+  {
+    "id": 166,
+    "unit": "Unit 4",
+    "zh": "然后，他们开始使用动物出行。",
+    "en": "Then, they started to use animals to get around."
+  },
+  {
+    "id": 167,
+    "unit": "Unit 4",
+    "zh": "接下来，人们学会了建造船只，并开始通过水路旅行。",
+    "en": "Next, people learned to build boats and ships and began to travel by water."
+  },
+  {
+    "id": 168,
+    "unit": "Unit 4",
+    "zh": "后来，人们有了更多的旅行方式，他们开始使用自行车、汽车、公共汽车和火车。",
+    "en": "Later, people had more ways of traveling and they started to use bicycles, cars, buses and trains."
+  },
+  {
+    "id": 169,
+    "unit": "Unit 4",
+    "zh": "现在，人们有了飞机和高速列车。",
+    "en": "Now, people have planes and high-speed trains."
+  },
+  {
+    "id": 170,
+    "unit": "Unit 4",
+    "zh": "他们可以在短时间内进行远距离旅行。",
+    "en": "They can travel far in a short time."
+  },
+  {
+    "id": 171,
+    "unit": "Unit 4",
+    "zh": "首先，小雅画了一张礼物的地图。",
+    "en": "First, Xiao Ya drew a map of the gift."
+  },
+  {
+    "id": 172,
+    "unit": "Unit 4",
+    "zh": "接着，李响看了看地图。",
+    "en": "Next, Li Xiang looked at the map."
+  },
+  {
+    "id": 173,
+    "unit": "Unit 4",
+    "zh": "然后，李响在树下挖了挖。",
+    "en": "Then, Li Xiang dug under the tree."
+  },
+  {
+    "id": 174,
+    "unit": "Unit 4",
+    "zh": "最后，李响在盒子里找到了礼物。",
+    "en": "Finally, Li Xiang found the gift in the box."
+  },
+  {
+    "id": 175,
+    "unit": "Unit 4",
+    "zh": "天黑了，风很大。",
+    "en": "It was dark, and the wind was strong."
+  },
+  {
+    "id": 176,
+    "unit": "Unit 4",
+    "zh": "终于，在我面前出现了一座岛屿。",
+    "en": "Finally, there was an island in front of me."
+  },
+  {
+    "id": 177,
+    "unit": "Unit 4",
+    "zh": "“我安全了，”我告诉自己。",
+    "en": "“I’m safe,” I told myself."
+  },
+  {
+    "id": 178,
+    "unit": "Unit 4",
+    "zh": "上个周末，我们进行了一次难忘的森林公园之旅。",
+    "en": "Last weekend, we had an unforgettable trip to a forest park."
+  },
+  {
+    "id": 179,
+    "unit": "Unit 4",
+    "zh": "起初，我和爸爸搭起了帐篷，妈妈准备了晚餐。",
+    "en": "At first, my father and I set up the tent, and my mother prepared for dinner."
+  },
+  {
+    "id": 180,
+    "unit": "Unit 4",
+    "zh": "这非常有趣。",
+    "en": "It was lots of fun."
+  },
+  {
+    "id": 181,
+    "unit": "Unit 4",
+    "zh": "但之后，我们没有足够的水了，所以我和爸爸四处去找水。",
+    "en": "But then, we didn’t have enough water, so my father and I went around to look for some."
+  },
+  {
+    "id": 182,
+    "unit": "Unit 4",
+    "zh": "过了一段时间，我们发现了一条小河。",
+    "en": "After some time, we found a small river."
+  },
+  {
+    "id": 183,
+    "unit": "Unit 4",
+    "zh": "我们从那里取了一大瓶淡水。",
+    "en": "We got a big bottle of fresh water from it."
+  },
+  {
+    "id": 184,
+    "unit": "Unit 4",
+    "zh": "接下来，你猜怎么着？我们找不到回去的路了！",
+    "en": "Next, you know what? We couldn’t find the way back!"
+  },
+  {
+    "id": 185,
+    "unit": "Unit 4",
+    "zh": "我握住了爸爸的手。",
+    "en": "I held my father’s hand."
+  },
+  {
+    "id": 186,
+    "unit": "Unit 4",
+    "zh": "他告诉我不要担心，并从他的包里拿出了一张地图。",
+    "en": "He told me not to worry and took out a map from his bag."
+  },
+  {
+    "id": 187,
+    "unit": "Unit 4",
+    "zh": "后来，我们一路跟着地图走。",
+    "en": "Later, we followed the map all the way back."
+  },
+  {
+    "id": 188,
+    "unit": "Unit 4",
+    "zh": "最后，我们回到了我们的帐篷。",
+    "en": "Finally, we returned to our tent."
+  },
+  {
+    "id": 189,
+    "unit": "Unit 4",
+    "zh": "妈妈看到我们回来非常高兴，给了我们一个大大的拥抱。",
+    "en": "My mother was so happy to see us back and gave us a big hug."
+  },
+  {
+    "id": 190,
+    "unit": "Unit 4",
+    "zh": "夜晚晴朗而宁静。",
+    "en": "The night was clear and quiet."
+  },
+  {
+    "id": 191,
+    "unit": "Unit 4",
+    "zh": "我们享用了食物并分享了我们的故事。",
+    "en": "We enjoyed our food and shared our stories."
+  },
+  {
+    "id": 192,
+    "unit": "Unit 4",
+    "zh": "李先生住在公园路的尽头。",
+    "en": "Mr. Li lives at the end of Park Road."
+  },
+  {
+    "id": 193,
+    "unit": "Unit 4",
+    "zh": "右边没有房子，但那里有一棵树。",
+    "en": "There are no houses to the right, but there is a tree there."
+  },
+  {
+    "id": 194,
+    "unit": "Unit 4",
+    "zh": "紧挨着李先生家的是林先生的房子。",
+    "en": "Next to Mr. Li’s, the house is Mr. Lin’s."
+  },
+  {
+    "id": 195,
+    "unit": "Unit 4",
+    "zh": "然后你可以看到刘先生的房子。",
+    "en": "And then you can see Mr. Liu’s house."
+  },
+  {
+    "id": 196,
+    "unit": "Unit 4",
+    "zh": "刘先生住在林先生和王先生之间。",
+    "en": "Mr. Liu lives between Mr. Lin and Mr. Wang."
+  },
+  {
+    "id": 197,
+    "unit": "Unit 4",
+    "zh": "张先生的房子在王先生的左边，琼斯一家住在张先生隔壁。",
+    "en": "Mr. Zhang’s house is to the left of Mr. Wang’s, and the Jones live next to Mr. Zhang."
+  },
+  {
+    "id": 198,
+    "unit": "Unit 4",
+    "zh": "教学楼前面有一个湖。",
+    "en": "There is a lake in front of the teaching building."
+  },
+  {
+    "id": 199,
+    "unit": "Unit 4",
+    "zh": "女孩正站在门后面。",
+    "en": "The girl is standing behind the door."
+  },
+  {
+    "id": 200,
+    "unit": "Unit 4",
+    "zh": "穿过桥，你可以在右边找到动物园。",
+    "en": "Go across the bridge, and you can find the zoo on your right."
+  },
+  {
+    "id": 201,
+    "unit": "Unit 5",
+    "zh": "我没有找到去你社区的路。我迷路了。",
+    "en": "I didn’t find the way to your community. I was lost."
+  },
+  {
+    "id": 202,
+    "unit": "Unit 5",
+    "zh": "康康，刚才你发生了什么事？",
+    "en": "Kangkang, what happened to you just now?"
+  },
+  {
+    "id": 203,
+    "unit": "Unit 5",
+    "zh": "我向一位老人求助。",
+    "en": "I asked an old man for help."
+  },
+  {
+    "id": 204,
+    "unit": "Unit 5",
+    "zh": "他告诉了我路线。",
+    "en": "He told me the way."
+  },
+  {
+    "id": 205,
+    "unit": "Unit 5",
+    "zh": "上个星期天，小雅和她的妈妈以及妹妹小梅去露营了。",
+    "en": "Last Sunday, Xiao Ya went camping with her mom and her sister Xiao Mei."
+  },
+  {
+    "id": 206,
+    "unit": "Unit 5",
+    "zh": "她们首先尝试搭起一个帐篷。",
+    "en": "They first tried to put up a tent."
+  },
+  {
+    "id": 207,
+    "unit": "Unit 5",
+    "zh": "突然，刮起了一阵大风，帐篷飞到了空中。",
+    "en": "Suddenly, there was a heavy wind and the tent flew into the air."
+  },
+  {
+    "id": 208,
+    "unit": "Unit 5",
+    "zh": "“请去找它，”她们的妈妈说。",
+    "en": "“Please go and find it,” their mom said."
+  },
+  {
+    "id": 209,
+    "unit": "Unit 5",
+    "zh": "小雅和小梅去找帐篷，然后小梅喊道：“看，它在树上。”",
+    "en": "Xiao Ya and Xiao Mei went to look for the tent and then Xiao Mei cried out, “Look, it is in the tree.”"
+  },
+  {
+    "id": 210,
+    "unit": "Unit 5",
+    "zh": "小雅抬头看到了它。",
+    "en": "Xiao Ya looked up and saw it."
+  },
+  {
+    "id": 211,
+    "unit": "Unit 5",
+    "zh": "她摇了摇树，帐篷掉了下来。",
+    "en": "She shook the tree and the tent fell down."
+  },
+  {
+    "id": 212,
+    "unit": "Unit 5",
+    "zh": "她们把帐篷带了回来。",
+    "en": "They brought the tent back."
+  },
+  {
+    "id": 213,
+    "unit": "Unit 5",
+    "zh": "然后她们一起搭起了帐篷。",
+    "en": "They then put up the tent together."
+  },
+  {
+    "id": 214,
+    "unit": "Unit 5",
+    "zh": "在帐篷旁边，她们还生了一堆火。",
+    "en": "Beside the tent, they also built a fire."
+  },
+  {
+    "id": 215,
+    "unit": "Unit 5",
+    "zh": "她们围坐在火堆旁，玩得很开心。",
+    "en": "They sat around the fire and had a great time."
+  },
+  {
+    "id": 216,
+    "unit": "Unit 5",
+    "zh": "然后你做了什么？",
+    "en": "What did you do then?"
+  },
+  {
+    "id": 217,
+    "unit": "Unit 5",
+    "zh": "今年夏天，我和家人一起去了我家乡附近的北山。",
+    "en": "This summer, I went to the North Mountain near my hometown with my family."
+  },
+  {
+    "id": 218,
+    "unit": "Unit 5",
+    "zh": "傍晚时分，我们到达了山顶并搭起了帐篷。",
+    "en": "In the evening, we arrived at the top of the mountain and set up the tent."
+  },
+  {
+    "id": 219,
+    "unit": "Unit 5",
+    "zh": "周围非常安静，我的父母很快就睡着了。",
+    "en": "It was very quiet, and my parents went to sleep soon."
+  },
+  {
+    "id": 220,
+    "unit": "Unit 5",
+    "zh": "但我和我的兄弟太兴奋了，睡不着。",
+    "en": "But my brother and I were too excited to sleep."
+  },
+  {
+    "id": 221,
+    "unit": "Unit 5",
+    "zh": "然后我们出去看星星。",
+    "en": "We then went out to watch the stars."
+  },
+  {
+    "id": 222,
+    "unit": "Unit 5",
+    "zh": "突然，开始下雨了。",
+    "en": "Suddenly, it started to rain."
+  },
+  {
+    "id": 223,
+    "unit": "Unit 5",
+    "zh": "我们看不太清楚，我的兄弟摔倒在地上。",
+    "en": "We couldn’t see very well and my brother fell down on the ground."
+  },
+  {
+    "id": 224,
+    "unit": "Unit 5",
+    "zh": "我的父母听到他哭就跑了出去。",
+    "en": "My parents heard him cry and ran out."
+  },
+  {
+    "id": 225,
+    "unit": "Unit 5",
+    "zh": "我父亲拥抱了他，我母亲亲吻了他。",
+    "en": "My father hugged him and my mother kissed him."
+  },
+  {
+    "id": 226,
+    "unit": "Unit 5",
+    "zh": "第二天，我们一路上都和父母待在一起。",
+    "en": "The next day, we stayed with our parents along the way."
+  },
+  {
+    "id": 227,
+    "unit": "Unit 5",
+    "zh": "我们去钓鱼，并一起拍了很多照片。",
+    "en": "We went fishing and took many photos together."
+  },
+  {
+    "id": 228,
+    "unit": "Unit 5",
+    "zh": "这是一次美妙的旅行。",
+    "en": "It was a wonderful trip."
+  },
+  {
+    "id": 229,
+    "unit": "Unit 5",
+    "zh": "一切都很美好，但我们必须始终把安全放在第一位。",
+    "en": "Everything was beautiful, but we must always put safety first."
+  },
+  {
+    "id": 230,
+    "unit": "Unit 5",
+    "zh": "我上个月和父母去了九寨沟。",
+    "en": "I went to Jiuzhaigou with my parents last month."
+  },
+  {
+    "id": 231,
+    "unit": "Unit 5",
+    "zh": "九寨沟在中国四川。",
+    "en": "Jiuzhaigou is in Sichuan, China."
+  },
+  {
+    "id": 232,
+    "unit": "Unit 5",
+    "zh": "它以其美丽的山脉、森林和湖泊而闻名。",
+    "en": "It’s famous for its beautiful mountains, forests and lakes."
+  },
+  {
+    "id": 233,
+    "unit": "Unit 5",
+    "zh": "我父亲订了一家酒店，我们在那里住了三天。",
+    "en": "My father booked a hotel and we stayed there for three days."
+  },
+  {
+    "id": 234,
+    "unit": "Unit 5",
+    "zh": "我们爬了山，拍了很多照片。",
+    "en": "We climbed mountains and took a lot of photos."
+  },
+  {
+    "id": 235,
+    "unit": "Unit 5",
+    "zh": "我们还看到了熊猫和猴子。",
+    "en": "We saw pandas and monkeys, too."
+  },
+  {
+    "id": 236,
+    "unit": "Unit 5",
+    "zh": "它们非常可爱和有趣。",
+    "en": "They were very cute and interesting."
+  },
+  {
+    "id": 237,
+    "unit": "Unit 5",
+    "zh": "我们度过了一次激动人心的旅行！",
+    "en": "We had an exciting trip!"
+  },
+  {
+    "id": 238,
+    "unit": "Unit 5",
+    "zh": "我感到累但很开心。",
+    "en": "I felt tired but happy."
+  },
+  {
+    "id": 239,
+    "unit": "Unit 5",
+    "zh": "你在假期里去旅行了吗？",
+    "en": "Did you go for a trip during your holiday?"
+  },
+  {
+    "id": 240,
+    "unit": "Unit 5",
+    "zh": "请告诉我一些关于它的事情。",
+    "en": "Please tell me something about it."
+  },
+  {
+    "id": 241,
+    "unit": "Unit 5",
+    "zh": "李太太：嗨，小雅。你能帮我吗？",
+    "en": "Mrs. Li: Hi, Xiao Ya. Could you help me?"
+  },
+  {
+    "id": 242,
+    "unit": "Unit 5",
+    "zh": "小雅：当然可以，李太太。怎么了？",
+    "en": "Xiao Ya: Sure, Mrs. Li. What’s up?"
+  },
+  {
+    "id": 243,
+    "unit": "Unit 5",
+    "zh": "李太太：我把钥匙和手机忘在家里了。现在我打不开门。",
+    "en": "Mrs. Li: I left my keys and my phone at home. Now I can’t open the door."
+  },
+  {
+    "id": 244,
+    "unit": "Unit 5",
+    "zh": "我可以用你的手机给我女儿打个电话吗？",
+    "en": "May I use your phone to call my daughter?"
+  },
+  {
+    "id": 245,
+    "unit": "Unit 5",
+    "zh": "小雅：请稍等。让我给你拿我的手机。",
+    "en": "Xiao Ya: Just a minute, please. Let me get my phone for you."
+  },
+  {
+    "id": 246,
+    "unit": "Unit 5",
+    "zh": "李太太：非常感谢。这是你的手机。",
+    "en": "Mrs. Li: Thank you so much. Here is your phone."
+  },
+  {
+    "id": 247,
+    "unit": "Unit 5",
+    "zh": "小雅：不客气。你女儿要来了吗？",
+    "en": "Xiao Ya: You’re welcome. Is your daughter coming?"
+  },
+  {
+    "id": 248,
+    "unit": "Unit 5",
+    "zh": "李太太：是的。她现在正在回来的路上。",
+    "en": "Mrs. Li: Yes. She is on her way back now."
+  },
+  {
+    "id": 249,
+    "unit": "Unit 5",
+    "zh": "小雅：太好了！你要进来在我家等她吗？",
+    "en": "Xiao Ya: Great! Would you come in and wait for her at my home?"
+  },
+  {
+    "id": 250,
+    "unit": "Unit 5",
+    "zh": "李太太：哦，你真是太好了，但我需要去买些东西。",
+    "en": "Mrs. Li: Oh, that’s very kind of you, but I need to do some shopping."
+  },
+  {
+    "id": 251,
+    "unit": "Unit 6",
+    "zh": "非常感谢你的帮助。",
+    "en": "Thank you very much for your help."
+  },
+  {
+    "id": 252,
+    "unit": "Unit 6",
+    "zh": "小雅：没关系。",
+    "en": "Xiao Ya: That’s all right."
+  },
+  {
+    "id": 253,
+    "unit": "Unit 6",
+    "zh": "小雅早早起床去上班。",
+    "en": "Xiao Ya got up to go to work early."
+  },
+  {
+    "id": 254,
+    "unit": "Unit 6",
+    "zh": "她参加了一个志愿者活动。",
+    "en": "She joined a volunteer activity."
+  },
+  {
+    "id": 255,
+    "unit": "Unit 6",
+    "zh": "她在社区遇到了她的新朋友。",
+    "en": "She met her new friend in the community."
+  },
+  {
+    "id": 256,
+    "unit": "Unit 6",
+    "zh": "在那里他们快速地用手清理了地面。",
+    "en": "There they cleaned the ground with their hands quickly."
+  },
+  {
+    "id": 257,
+    "unit": "Unit 6",
+    "zh": "小雅说：“让我们安静地唱首歌吧。”",
+    "en": "Xiao Ya said, \"Let’s sing a song quietly.\""
+  },
+  {
+    "id": 258,
+    "unit": "Unit 6",
+    "zh": "最后他们开心地拍了一些照片。",
+    "en": "At last they took some photos happily."
+  },
+  {
+    "id": 259,
+    "unit": "Unit 6",
+    "zh": "暑假期间，王俊峰去了芝加哥的一所暑期学校。",
+    "en": "During the summer holiday, Wang Junfeng went to a summer school in Chicago."
+  },
+  {
+    "id": 260,
+    "unit": "Unit 6",
+    "zh": "他在一个晴朗的日子到达，并受到了他的美国寄宿家庭的热烈欢迎。",
+    "en": "He arrived on a sunny day and got a warm welcome from his American host family."
+  },
+  {
+    "id": 261,
+    "unit": "Unit 6",
+    "zh": "大多数时候，王俊峰上午上课，下午参加不同的活动。",
+    "en": "Most of the time, Wang Junfeng had classes in the morning and took part in different activities in the afternoon."
+  },
+  {
+    "id": 262,
+    "unit": "Unit 6",
+    "zh": "周末，他在社区做志愿者。",
+    "en": "On weekends, he volunteered in the community."
+  },
+  {
+    "id": 263,
+    "unit": "Unit 6",
+    "zh": "王和他的美国家庭一起待了3周。",
+    "en": "Wang stayed with his American family for 3 weeks."
+  },
+  {
+    "id": 264,
+    "unit": "Unit 6",
+    "zh": "他在那里玩得很开心。",
+    "en": "He had a lot of fun there."
+  },
+  {
+    "id": 265,
+    "unit": "Unit 6",
+    "zh": "情节是故事中一系列相互关联的事件。",
+    "en": "Plot is a sequence of connected events in a story."
+  },
+  {
+    "id": 266,
+    "unit": "Unit 6",
+    "zh": "这些事件展示了故事中发生的事情以及情节是如何发展的。",
+    "en": "The events show what happens in the story and how the plot develops."
+  },
+  {
+    "id": 267,
+    "unit": "Unit 6",
+    "zh": "李翔去看望他的表弟赵杰。",
+    "en": "Li Xiang went to visit his cousin Zhao Jie."
+  },
+  {
+    "id": 268,
+    "unit": "Unit 6",
+    "zh": "李翔找不到去赵杰社区的路。",
+    "en": "Li Xiang couldn’t find the way to Zhao Jie’s community."
+  },
+  {
+    "id": 269,
+    "unit": "Unit 6",
+    "zh": "他给赵杰打了电话，赵杰后来接了他。",
+    "en": "He called Zhao Jie, and Zhao Jie picked him up later."
+  },
+  {
+    "id": 270,
+    "unit": "Unit 6",
+    "zh": "多年前，我的社区非常老旧和拥挤。",
+    "en": "Years ago, my community was very old and crowded."
+  },
+  {
+    "id": 271,
+    "unit": "Unit 6",
+    "zh": "那里没有高楼大厦。",
+    "en": "There were no tall buildings."
+  },
+  {
+    "id": 272,
+    "unit": "Unit 6",
+    "zh": "现在，我的社区看起来非常漂亮。",
+    "en": "Now, my community looks very beautiful."
+  },
+  {
+    "id": 273,
+    "unit": "Unit 6",
+    "zh": "建筑物是新的且高大的。",
+    "en": "The buildings are new and tall."
+  },
+  {
+    "id": 274,
+    "unit": "Unit 6",
+    "zh": "操场又大又宽。",
+    "en": "The playground is big and wide."
+  },
+  {
+    "id": 275,
+    "unit": "Unit 6",
+    "zh": "而且到处都是树木和鲜花。",
+    "en": "And there are trees and flowers everywhere."
+  },
+  {
+    "id": 276,
+    "unit": "Unit 6",
+    "zh": "昨天下午，我们在社区里做志愿者。",
+    "en": "Yesterday afternoon, we worked as volunteers in the community."
+  },
+  {
+    "id": 277,
+    "unit": "Unit 6",
+    "zh": "小明捡起了垃圾。",
+    "en": "Xiaoming picked up the litter."
+  },
+  {
+    "id": 278,
+    "unit": "Unit 6",
+    "zh": "小雅清扫了街道。",
+    "en": "Xiao Ya swept the street."
+  },
+  {
+    "id": 279,
+    "unit": "Unit 6",
+    "zh": "玲玲和我把垃圾放进垃圾袋里。",
+    "en": "Lingling and I put the rubbish into the rubbish bags."
+  },
+  {
+    "id": 280,
+    "unit": "Unit 6",
+    "zh": "赵家来自一个小镇。",
+    "en": "The Zhao family are from a small town."
+  },
+  {
+    "id": 281,
+    "unit": "Unit 6",
+    "zh": "他们上周刚搬到我所在的社区。",
+    "en": "They just moved to my community last week."
+  },
+  {
+    "id": 282,
+    "unit": "Unit 6",
+    "zh": "一切对他们来说都是新的，但社区里的每个人都向他们提供了帮助。",
+    "en": "Everything was new to them, but everyone in the community offered help to them."
+  },
+  {
+    "id": 283,
+    "unit": "Unit 6",
+    "zh": "当赵家到达时，王先生帮他们把箱子搬到了家里。",
+    "en": "When the Zhao family arrived, Mr. Wang helped them carry boxes to their house."
+  },
+  {
+    "id": 284,
+    "unit": "Unit 6",
+    "zh": "王太太给他们带来了一些菜肴。",
+    "en": "Mrs. Wang brought them some dishes."
+  },
+  {
+    "id": 285,
+    "unit": "Unit 6",
+    "zh": "高小姐是一名教师。",
+    "en": "Miss Gao is a teacher."
+  },
+  {
+    "id": 286,
+    "unit": "Unit 6",
+    "zh": "她给赵太太指了去学校的路。",
+    "en": "She showed Mrs. Zhao the way to the school."
+  },
+  {
+    "id": 287,
+    "unit": "Unit 6",
+    "zh": "他帮助赵先生清理了花园。",
+    "en": "He helped Mr. Zhao clean up the garden."
+  },
+  {
+    "id": 288,
+    "unit": "Unit 6",
+    "zh": "上个星期天，我们在社区中心为赵家举办了一个欢迎派对。",
+    "en": "Last Sunday, we held a welcome party for the Zhaos in the community center."
+  },
+  {
+    "id": 289,
+    "unit": "Unit 6",
+    "zh": "许多人来和他们聊天。",
+    "en": "Many people came and chatted with them."
+  },
+  {
+    "id": 290,
+    "unit": "Unit 6",
+    "zh": "社区是一个充满爱与关怀的地方。",
+    "en": "The community is a place of love and care."
+  },
+  {
+    "id": 291,
+    "unit": "Unit 6",
+    "zh": "我们都非常热爱我们的社区！",
+    "en": "We all love our community very much!"
+  },
+  {
+    "id": 292,
+    "unit": "Unit 6",
+    "zh": "她也是我的一个好朋友。",
+    "en": "She is also a good friend of mine."
+  },
+  {
+    "id": 293,
+    "unit": "Unit 6",
+    "zh": "我们都喜欢骑自行车去学校。",
+    "en": "We both like riding bikes to school."
+  },
+  {
+    "id": 294,
+    "unit": "Unit 6",
+    "zh": "我的自行车是红色的，她的是黑色的。",
+    "en": "My bike is red, and hers is black."
+  },
+  {
+    "id": 295,
+    "unit": "Unit 6",
+    "zh": "放学后，我们喜欢在社区游乐场骑自行车。",
+    "en": "After school, we enjoy riding bikes in the community playground."
+  },
+  {
+    "id": 296,
+    "unit": "Unit 6",
+    "zh": "我们对游乐场上的草地和花朵非常小心。",
+    "en": "We were very careful with the grass and flowers on the playground."
+  },
+  {
+    "id": 297,
+    "unit": "Unit 6",
+    "zh": "我们热爱我们的社区，社区里的一切都是我们的。",
+    "en": "We love our community, and everything in the community is ours."
+  },
+  {
+    "id": 298,
+    "unit": "Unit 6",
+    "zh": "那个男人正在遛他的狗。",
+    "en": "The man is walking his dog."
+  },
+  {
+    "id": 299,
+    "unit": "Unit 6",
+    "zh": "那个女孩正在骑她的自行车。",
+    "en": "The girl is riding her bike."
+  },
+  {
+    "id": 300,
+    "unit": "Unit 6",
+    "zh": "那辆红色的自行车是她的。",
+    "en": "The red bike is hers."
+  },
+  {
+    "id": 301,
+    "unit": "Unit 7",
+    "zh": "孩子们正在他们的院子里玩耍。",
+    "en": "The children are playing in their yard."
+  },
+  {
+    "id": 302,
+    "unit": "Unit 7",
+    "zh": "康康，你的风筝飞得很高。",
+    "en": "Kangkang, your kite flies high."
+  },
+  {
+    "id": 303,
+    "unit": "Unit 7",
+    "zh": "那个黄色的风筝是你的。",
+    "en": "The yellow kite is yours."
+  },
+  {
+    "id": 304,
+    "unit": "Unit 7",
+    "zh": "我们都在社区花园做了志愿工作。",
+    "en": "We all did volunteer work at the community garden."
+  },
+  {
+    "id": 305,
+    "unit": "Unit 7",
+    "zh": "我们种植了可爱的蔬菜和美丽的花朵。",
+    "en": "We grew lovely vegetables and beautiful flowers."
+  },
+  {
+    "id": 306,
+    "unit": "Unit 7",
+    "zh": "我们挖土、扫地，还种植。",
+    "en": "We dug, swept and we planted."
+  },
+  {
+    "id": 307,
+    "unit": "Unit 7",
+    "zh": "我们浇水，除掉坏植物，然后我们等待。",
+    "en": "We watered, cut out the bad plants, and then we waited."
+  },
+  {
+    "id": 308,
+    "unit": "Unit 7",
+    "zh": "我们一起工作很开心。",
+    "en": "We had fun working together."
+  },
+  {
+    "id": 309,
+    "unit": "Unit 7",
+    "zh": "我们享受互相帮助。",
+    "en": "We enjoyed helping each other."
+  },
+  {
+    "id": 310,
+    "unit": "Unit 7",
+    "zh": "园艺很有趣，我们的社区很好。",
+    "en": "Gardening is fun and our community is fine."
+  },
+  {
+    "id": 311,
+    "unit": "Unit 7",
+    "zh": "康康，你上周末的志愿活动怎么样？",
+    "en": "Kangkang, how was your volunteer activity last weekend?"
+  },
+  {
+    "id": 312,
+    "unit": "Unit 7",
+    "zh": "很棒！我们为野生动物筹集了一些钱。",
+    "en": "It was great! We collected some money for wild animals."
+  },
+  {
+    "id": 313,
+    "unit": "Unit 7",
+    "zh": "你参加了其他活动吗？",
+    "en": "Did you take part in other activities?"
+  },
+  {
+    "id": 314,
+    "unit": "Unit 7",
+    "zh": "是的，我们参加了。我们在社区种了一些树。",
+    "en": "Yes, we did. We planted some trees in the community."
+  },
+  {
+    "id": 315,
+    "unit": "Unit 7",
+    "zh": "3月5日，雷锋日，我在一家养老院做志愿者。",
+    "en": "On March 5th, Lei Feng Day, I volunteered at a nursing home."
+  },
+  {
+    "id": 316,
+    "unit": "Unit 7",
+    "zh": "这是一次很棒的体验。",
+    "en": "It was a wonderful experience."
+  },
+  {
+    "id": 317,
+    "unit": "Unit 7",
+    "zh": "我们早上9点到达那里。",
+    "en": "We arrived there at 9:00 a.m."
+  },
+  {
+    "id": 318,
+    "unit": "Unit 7",
+    "zh": "起初，我们擦了窗户、扫了地，然后拜访了那里的一些老人。",
+    "en": "At first, we cleaned the windows and swept the floor, and then we visited some elders there."
+  },
+  {
+    "id": 319,
+    "unit": "Unit 7",
+    "zh": "我们和他们聊天、打牌。",
+    "en": "We chatted and played cards with them."
+  },
+  {
+    "id": 320,
+    "unit": "Unit 7",
+    "zh": "李夫人，一位老妇人，曾是一名英语老师。",
+    "en": "Mrs. Li, an old lady, was an English teacher."
+  },
+  {
+    "id": 321,
+    "unit": "Unit 7",
+    "zh": "我们向她讲述了我们的学校生活。",
+    "en": "We told her about our school life."
+  },
+  {
+    "id": 322,
+    "unit": "Unit 7",
+    "zh": "她非常高兴和我们在一起。",
+    "en": "She was very happy to be with us."
+  },
+  {
+    "id": 323,
+    "unit": "Unit 7",
+    "zh": "帮助他人让我感觉很好。",
+    "en": "I felt good about helping others."
+  },
+  {
+    "id": 324,
+    "unit": "Unit 7",
+    "zh": "携手共进，我们可以让世界变得更美好。",
+    "en": "Together, we can make the world a better place."
+  },
+  {
+    "id": 325,
+    "unit": "Unit 7",
+    "zh": "每周六下午，我去农夫市场。",
+    "en": "Every Saturday afternoon, I go to the Farmer’s Market."
+  },
+  {
+    "id": 326,
+    "unit": "Unit 7",
+    "zh": "农民们来自附近的农场。",
+    "en": "Farmers come from the farms nearby."
+  },
+  {
+    "id": 327,
+    "unit": "Unit 7",
+    "zh": "然后他们开车把它们运到市场，等待人们购物。",
+    "en": "They then drive them to the market and wait for people to shop."
+  },
+  {
+    "id": 328,
+    "unit": "Unit 7",
+    "zh": "上周六我又去了农夫市场。",
+    "en": "Last Saturday I went to the Farmer’s Market again."
+  },
+  {
+    "id": 329,
+    "unit": "Unit 7",
+    "zh": "好像我社区的所有人都在那里。",
+    "en": "And it was like all the people in my community were there."
+  },
+  {
+    "id": 330,
+    "unit": "Unit 7",
+    "zh": "他们都买了一些新鲜的货物。",
+    "en": "They all bought some fresh goods."
+  },
+  {
+    "id": 331,
+    "unit": "Unit 7",
+    "zh": "我也买了一些水果和蔬菜。",
+    "en": "I bought some fruit and vegetables, too."
+  },
+  {
+    "id": 332,
+    "unit": "Unit 7",
+    "zh": "农民们很忙碌且乐于助人。",
+    "en": "The farmers are busy and helpful."
+  },
+  {
+    "id": 333,
+    "unit": "Unit 7",
+    "zh": "他们为我们提供新鲜的货物，并使市场成为我们社区的一个商业中心。",
+    "en": "They provide us with fresh goods, and make the market a business center of our community."
+  },
+  {
+    "id": 334,
+    "unit": "Unit 7",
+    "zh": "我们应该遵守哪些交通规则？",
+    "en": "What traffic rules should we follow?"
+  },
+  {
+    "id": 335,
+    "unit": "Unit 7",
+    "zh": "在教室里我们应该遵守哪些规则？",
+    "en": "What rules should we follow in the classroom?"
+  },
+  {
+    "id": 336,
+    "unit": "Unit 7",
+    "zh": "我们应该等待交通灯变绿。",
+    "en": "We should wait for the traffic lights to turn green."
+  },
+  {
+    "id": 337,
+    "unit": "Unit 7",
+    "zh": "尊老爱幼。",
+    "en": "Respect the old and care for the young."
+  },
+  {
+    "id": 338,
+    "unit": "Unit 7",
+    "zh": "等待交通灯变绿。",
+    "en": "Wait for the traffic lights to turn green."
+  },
+  {
+    "id": 339,
+    "unit": "Unit 7",
+    "zh": "不要在教室里吃东西或喝饮料。",
+    "en": "Don’t eat or drink in the classroom."
+  },
+  {
+    "id": 340,
+    "unit": "Unit 7",
+    "zh": "认真听老师讲课。",
+    "en": "Listen to the teacher carefully."
+  },
+  {
+    "id": 341,
+    "unit": "Unit 7",
+    "zh": "按时归还书籍。",
+    "en": "Return the books on time."
+  },
+  {
+    "id": 342,
+    "unit": "Unit 7",
+    "zh": "我们应该认真听老师讲课。",
+    "en": "We should listen to the teacher carefully."
+  },
+  {
+    "id": 343,
+    "unit": "Unit 7",
+    "zh": "不要在教室里吃东西，赵丽。那是我们的班级规则之一。",
+    "en": "Don’t eat in the classroom, Zhao Li. That’s one of our class rules."
+  },
+  {
+    "id": 344,
+    "unit": "Unit 7",
+    "zh": "我们的班级规则？对不起。我不知道。",
+    "en": "Our class rules? I’m sorry. I don’t know that."
+  },
+  {
+    "id": 345,
+    "unit": "Unit 7",
+    "zh": "你是新来的。我忘了告诉你。过来看看！规则在门后的黑板上。",
+    "en": "You are new to our school. I forgot to tell you about that. Come and have a look! The rules are on the board behind the door."
+  },
+  {
+    "id": 346,
+    "unit": "Unit 7",
+    "zh": "让我看看。按时到校。认真听别人说话。不要在教室里吃东西……哦，我明白了。我不应该在教室里吃东西。",
+    "en": "Let me see. Come to school on time. Listen to others carefully. Don’t eat in the classroom … Oh, I see. I shouldn’t eat in the classroom."
+  },
+  {
+    "id": 347,
+    "unit": "Unit 7",
+    "zh": "还有另一条规则：始终保持礼貌。但我刚才不太礼貌。我应该说“请”。所以，我必须向你道歉。",
+    "en": "There is also another rule: Always be polite. But I was not so polite just now. I should say “please”. So, I must say sorry to you."
+  },
+  {
+    "id": 348,
+    "unit": "Unit 7",
+    "zh": "没关系。谢谢你告诉我这些规则。",
+    "en": "It’s OK. Thank you for telling me about the rules."
+  },
+  {
+    "id": 349,
+    "unit": "Unit 7",
+    "zh": "一些图书馆为儿童提供读书俱乐部。",
+    "en": "Some libraries offer book clubs for children."
+  },
+  {
+    "id": 350,
+    "unit": "Unit 7",
+    "zh": "孩子们可以一起分享他们的故事并享受乐趣。",
+    "en": "Children can share their stories together and enjoy themselves."
+  },
+  {
+    "id": 351,
+    "unit": "Unit 8",
+    "zh": "大约下午4点在中心街，一个男孩正在飞快地骑自行车。",
+    "en": "At about 4:00 p.m. in the Center Street, a boy was riding his bicycle very fast."
+  },
+  {
+    "id": 352,
+    "unit": "Unit 8",
+    "zh": "几米开外，有一个向左的转弯。",
+    "en": "A few meters away, there was a turn to the left."
+  },
+  {
+    "id": 353,
+    "unit": "Unit 8",
+    "zh": "突然一辆车从转弯处驶出。",
+    "en": "Suddenly a car came out of the turn."
+  },
+  {
+    "id": 354,
+    "unit": "Unit 8",
+    "zh": "男孩看到了它，但他停不下来。",
+    "en": "The boy saw it, but he couldn’t stop."
+  },
+  {
+    "id": 355,
+    "unit": "Unit 8",
+    "zh": "他向右转弯，撞到墙上并伤到了腿。",
+    "en": "He turned right, ran into the wall and hurt his leg."
+  },
+  {
+    "id": 356,
+    "unit": "Unit 8",
+    "zh": "原因是某事为何发生。",
+    "en": "The cause is why something happens."
+  },
+  {
+    "id": 357,
+    "unit": "Unit 8",
+    "zh": "结果是发生了什么。",
+    "en": "The effect is what happens."
+  },
+  {
+    "id": 358,
+    "unit": "Unit 8",
+    "zh": "原因和结果帮助你理解事件是如何关联的。",
+    "en": "Causes and effects help you understand how events are related."
+  },
+  {
+    "id": 359,
+    "unit": "Unit 8",
+    "zh": "一个星期天的下午，我正在家做作业。",
+    "en": "On a Sunday afternoon, I was doing my homework at home."
+  },
+  {
+    "id": 360,
+    "unit": "Unit 8",
+    "zh": "突然，有人敲门。",
+    "en": "Suddenly, there was a knock at the door."
+  },
+  {
+    "id": 361,
+    "unit": "Unit 8",
+    "zh": "我走到门口，透过猫眼看了看。",
+    "en": "I went to the door and looked through the peephole."
+  },
+  {
+    "id": 362,
+    "unit": "Unit 8",
+    "zh": "我想起了我们的家规——不要给陌生人开门。",
+    "en": "I remembered our family rule — don’t open the door for strangers."
+  },
+  {
+    "id": 363,
+    "unit": "Unit 8",
+    "zh": "我决定不开门，回去做作业。",
+    "en": "I decided not to answer the door and went back to do my homework."
+  },
+  {
+    "id": 364,
+    "unit": "Unit 8",
+    "zh": "几分钟后，我妈妈打来电话。",
+    "en": "A few minutes later, my mom called."
+  },
+  {
+    "id": 365,
+    "unit": "Unit 8",
+    "zh": "她告诉我那是快递员，她对此感到高兴，因为我遵守了家规。",
+    "en": "She told me it was the delivery man and she was happy about it because I followed the family rule."
+  },
+  {
+    "id": 366,
+    "unit": "Unit 8",
+    "zh": "一个好的读者会在阅读前、阅读中和阅读后不断提问。",
+    "en": "A good reader keeps on asking questions before, during and after reading."
+  },
+  {
+    "id": 367,
+    "unit": "Unit 8",
+    "zh": "这些问题可以帮助你进行预测，更好地理解文本，并更多地思考所说的内容。",
+    "en": "The questions can help you make predictions, better understand the text, and think more about what is said."
+  },
+  {
+    "id": 368,
+    "unit": "Unit 8",
+    "zh": "为了帮助康康养成一些好习惯，他的父母为他制定了一些规则。",
+    "en": "To help Kangkang develop some good habits, his parents made some rules for him."
+  },
+  {
+    "id": 369,
+    "unit": "Unit 8",
+    "zh": "早上6:30起床并整理卧室。",
+    "en": "Get up at 6:30 a.m. and tidy up the bedroom."
+  },
+  {
+    "id": 370,
+    "unit": "Unit 8",
+    "zh": "放学后立即回家。",
+    "en": "Go home at once after school."
+  },
+  {
+    "id": 371,
+    "unit": "Unit 8",
+    "zh": "按时做作业并帮忙做家务。",
+    "en": "Do homework on time and help with housework."
+  },
+  {
+    "id": 372,
+    "unit": "Unit 8",
+    "zh": "晚上10:00上床睡觉。",
+    "en": "Go to bed at 10:00 p.m."
+  },
+  {
+    "id": 373,
+    "unit": "Unit 8",
+    "zh": "康康尽力遵守规则，因为他知道这些规则对他有好处。",
+    "en": "Kangkang tries his best to follow the rules because he knows the rules are good for him."
+  },
+  {
+    "id": 374,
+    "unit": "Unit 8",
+    "zh": "我们生活在一个充满规则的世界里。",
+    "en": "We live in a world of rules."
+  },
+  {
+    "id": 375,
+    "unit": "Unit 8",
+    "zh": "我们应该遵守规则，因为它们能给我们带来好处。",
+    "en": "We should follow the rules because they can bring us advantages."
+  },
+  {
+    "id": 376,
+    "unit": "Unit 8",
+    "zh": "当我们过马路时，必须听从交通协管员的指挥并遵守交通信号灯。",
+    "en": "When we cross the road, we must listen to the crossing guards and follow the traffic lights."
+  },
+  {
+    "id": 377,
+    "unit": "Unit 8",
+    "zh": "通过这种方式，我们可以避免交通事故。",
+    "en": "In this way, we can keep away from traffic accidents."
+  },
+  {
+    "id": 378,
+    "unit": "Unit 8",
+    "zh": "此外，规则维持事物秩序。",
+    "en": "Also, rules keep things in order."
+  },
+  {
+    "id": 379,
+    "unit": "Unit 8",
+    "zh": "例如，我们不应该在图书馆内吃东西、喝饮料或制造噪音。",
+    "en": "For example, we shouldn’t eat, drink or make any noise in the library."
+  },
+  {
+    "id": 380,
+    "unit": "Unit 8",
+    "zh": "在良好的环境中，人们可以更好地学习或工作。",
+    "en": "In a nice environment, people can study or work better."
+  },
+  {
+    "id": 381,
+    "unit": "Unit 8",
+    "zh": "更重要的是，规则能给我们带来更多乐趣。",
+    "en": "What’s more, rules can bring us more fun."
+  },
+  {
+    "id": 382,
+    "unit": "Unit 8",
+    "zh": "当我们玩游戏时，应该遵守规则。",
+    "en": "When we play games, we should follow the rules."
+  },
+  {
+    "id": 383,
+    "unit": "Unit 8",
+    "zh": "当游戏公平时，它才有趣。",
+    "en": "A game is fun when it is fair."
+  },
+  {
+    "id": 384,
+    "unit": "Unit 8",
+    "zh": "规则能带给我们安全、秩序和乐趣。",
+    "en": "Rules can give us safety, order and fun."
+  },
+  {
+    "id": 385,
+    "unit": "Unit 8",
+    "zh": "有了规则，世界会变得更美好。",
+    "en": "The world is a better place with rules."
+  },
+  {
+    "id": 386,
+    "unit": "Unit 8",
+    "zh": "亲爱的一鸣，很高兴收到你的来信。",
+    "en": "Dear Yiming, I’m happy to hear from you."
+  },
+  {
+    "id": 387,
+    "unit": "Unit 8",
+    "zh": "既然你想知道我的班级规则，我想告诉你其中一些。",
+    "en": "Since you want to know my class rules, I’d like to tell you some of them."
+  },
+  {
+    "id": 388,
+    "unit": "Unit 8",
+    "zh": "上课期间，我们应该始终保持安静。",
+    "en": "During classes, we should always keep quiet."
+  },
+  {
+    "id": 389,
+    "unit": "Unit 8",
+    "zh": "此外，我们应该把东西摆放整齐。",
+    "en": "Also, we should put things in order."
+  },
+  {
+    "id": 390,
+    "unit": "Unit 8",
+    "zh": "一个干净整洁的环境对每个人都非常重要。",
+    "en": "A clean and tidy environment is very important to everyone."
+  },
+  {
+    "id": 391,
+    "unit": "Unit 8",
+    "zh": "我们绝不应该和别人打架，因为安全总是第一位的。",
+    "en": "We should never fight with others because safety always comes first."
+  },
+  {
+    "id": 392,
+    "unit": "Unit 8",
+    "zh": "规则对我们真的很重要，所以我们应该牢记并遵守它们。",
+    "en": "Rules are really important to us, so we should keep them in mind and follow them."
+  },
+  {
+    "id": 393,
+    "unit": "Unit 8",
+    "zh": "请让我知道你对这些规则的看法。",
+    "en": "Please let me know what you think of the rules."
+  },
+  {
+    "id": 394,
+    "unit": "Unit 8",
+    "zh": "交通规则对每个人都很重要，因为它们能保障人们的安全。",
+    "en": "Traffic rules are important to everyone because they keep people safe."
+  },
+  {
+    "id": 395,
+    "unit": "Unit 8",
+    "zh": "学习和遵守交通规则对我们很有用。",
+    "en": "It’s useful for us to learn and follow them."
+  },
+  {
+    "id": 396,
+    "unit": "Unit 8",
+    "zh": "司机应该时刻告诫自己永远不要违反交通规则。",
+    "en": "Drivers should always tell themselves never to break the traffic rules."
+  },
+  {
+    "id": 397,
+    "unit": "Unit 8",
+    "zh": "作为学生，我们也应该记住道路规则。",
+    "en": "As students, we should remember the rules of the road, too."
+  },
+  {
+    "id": 398,
+    "unit": "Unit 8",
+    "zh": "我们应该尽力自己学习道路规则，比如交通标志和交通信号灯。",
+    "en": "We should try our best to learn the rules of the road by ourselves, such as traffic signs and traffic lights."
+  },
+  {
+    "id": 399,
+    "unit": "Unit 8",
+    "zh": "人们应该时刻牢记交通规则，因为它们对他人和自己都有好处。",
+    "en": "People should always keep traffic rules in mind because they are good for others and themselves."
+  },
+  {
+    "id": 400,
+    "unit": "Unit 8",
+    "zh": "我必须自己做晚饭。",
+    "en": "I have to make dinner by myself."
+  },
+  {
+    "id": 401,
+    "unit": "Unit 9",
+    "zh": "这辆车可以自动驾驶。",
+    "en": "The car can drive itself."
+  },
+  {
+    "id": 402,
+    "unit": "Unit 9",
+    "zh": "告诉自己在下次考试中要小心。",
+    "en": "Tell yourself to be careful in the next exam."
+  },
+  {
+    "id": 403,
+    "unit": "Unit 9",
+    "zh": "我们应该自己洗衣服。",
+    "en": "We should wash the clothes by ourselves."
+  },
+  {
+    "id": 404,
+    "unit": "Unit 9",
+    "zh": "小芳自学法语，吉姆自学中文。",
+    "en": "Xiao Fang teaches herself French, and Jim teaches himself Chinese."
+  },
+  {
+    "id": 405,
+    "unit": "Unit 9",
+    "zh": "这家人正在骑自行车并玩得很开心。",
+    "en": "The family are riding bikes and enjoying themselves."
+  },
+  {
+    "id": 406,
+    "unit": "Unit 9",
+    "zh": "规则2：我们禁止在街上奔跑。",
+    "en": "Rule 2: We mustn’t run on the streets."
+  },
+  {
+    "id": 407,
+    "unit": "Unit 9",
+    "zh": "规则1：过马路前我们必须看两边。",
+    "en": "Rule 1: We must look at both sides before crossing the road."
+  },
+  {
+    "id": 408,
+    "unit": "Unit 9",
+    "zh": "康康，我们今天下午学了一些交通规则。",
+    "en": "Kangkang, we learned some traffic rules this afternoon."
+  },
+  {
+    "id": 409,
+    "unit": "Unit 9",
+    "zh": "是的。交通规则对我们的安全非常重要。",
+    "en": "Yes. Traffic rules are very important for our safety."
+  },
+  {
+    "id": 410,
+    "unit": "Unit 9",
+    "zh": "对。我们应该始终遵守交通规则。",
+    "en": "Right. We should always follow the traffic rules."
+  },
+  {
+    "id": 411,
+    "unit": "Unit 9",
+    "zh": "是的，这不安全。规则3：我们不应该把头或手伸出车窗外。",
+    "en": "Yes, it’s not safe. Rule 3: We shouldn’t put our heads or hands out of the car windows."
+  },
+  {
+    "id": 412,
+    "unit": "Unit 9",
+    "zh": "我和姐姐上周末在我们家举办了一个派对。",
+    "en": "My sister and I held a party at our house last weekend."
+  },
+  {
+    "id": 413,
+    "unit": "Unit 9",
+    "zh": "派对结束后房子一片狼藉。",
+    "en": "The house was in a big mess after the party."
+  },
+  {
+    "id": 414,
+    "unit": "Unit 9",
+    "zh": "我们的父母非常生气，决定制定一些新的家规。",
+    "en": "Our parents got really angry and decided to make some new family rules."
+  },
+  {
+    "id": 415,
+    "unit": "Unit 9",
+    "zh": "首先，留下了很多脏盘子。",
+    "en": "First, there were a lot of dirty dishes left."
+  },
+  {
+    "id": 416,
+    "unit": "Unit 9",
+    "zh": "从现在开始，我们必须在每次派对后打扫厨房。",
+    "en": "From now on, we have to clean up the kitchen after every party."
+  },
+  {
+    "id": 417,
+    "unit": "Unit 9",
+    "zh": "其次，我们的一些朋友移动了爸爸的书。",
+    "en": "Second, a few of our friends moved our dad’s books."
+  },
+  {
+    "id": 418,
+    "unit": "Unit 9",
+    "zh": "所以现在，我们禁止在他的书房里玩耍。",
+    "en": "So now, we mustn’t play in his study."
+  },
+  {
+    "id": 419,
+    "unit": "Unit 9",
+    "zh": "最后，我们播放了非常响亮的音乐，这让我们的邻居很生气。",
+    "en": "Last, we played really loud music, and it made our neighbors angry."
+  },
+  {
+    "id": 420,
+    "unit": "Unit 9",
+    "zh": "新规定说我们不能制造太多噪音。",
+    "en": "The new rules say we can’t make too much noise."
+  },
+  {
+    "id": 421,
+    "unit": "Unit 9",
+    "zh": "我们承诺遵守新规则，并尽力不违反它们。",
+    "en": "We promise to follow the new rules and try our best not to break them."
+  },
+  {
+    "id": 422,
+    "unit": "Unit 9",
+    "zh": "我们中国人认为食物是我们生活的重要组成部分。",
+    "en": "We Chinese think of food as an important part of our lives."
+  },
+  {
+    "id": 423,
+    "unit": "Unit 9",
+    "zh": "以下是中国的一些餐桌礼仪。",
+    "en": "Here are some table manners in China."
+  },
+  {
+    "id": 424,
+    "unit": "Unit 9",
+    "zh": "通常有一个'上座'给最重要的人，并为每个人安排合适的座位。",
+    "en": "There is usually a 'Best Seat' for the most important person and a right seat for everyone."
+  },
+  {
+    "id": 425,
+    "unit": "Unit 9",
+    "zh": "所以，不要坐错座位。",
+    "en": "So, don't sit in the wrong seat."
+  },
+  {
+    "id": 426,
+    "unit": "Unit 9",
+    "zh": "用餐——需要学习的重要规则",
+    "en": "Eating — Important Rules to Learn"
+  },
+  {
+    "id": 427,
+    "unit": "Unit 9",
+    "zh": "总是要等长辈或其他人先尝菜。",
+    "en": "Always wait for the elders or others to try the dishes first."
+  },
+  {
+    "id": 428,
+    "unit": "Unit 9",
+    "zh": "不要在自己盘子里放太多食物。",
+    "en": "Don't put too much food on your own plate."
+  },
+  {
+    "id": 429,
+    "unit": "Unit 9",
+    "zh": "人们绝不能把筷子插在米饭里。",
+    "en": "People must not put chopsticks in rice."
+  },
+  {
+    "id": 430,
+    "unit": "Unit 9",
+    "zh": "不要用筷子发出声响。",
+    "en": "Do not make a noise with chopsticks."
+  },
+  {
+    "id": 431,
+    "unit": "Unit 9",
+    "zh": "永远不要用筷子指向人。",
+    "en": "Never point at people with chopsticks."
+  },
+  {
+    "id": 432,
+    "unit": "Unit 9",
+    "zh": "我们输了。你为什么不把足球传给我，李响？",
+    "en": "We lost. Why didn't you pass me the football, Li Xiang?"
+  },
+  {
+    "id": 433,
+    "unit": "Unit 9",
+    "zh": "对不起，王俊峰。我试图把它踢给你，但我失败了。",
+    "en": "Sorry, Wang Junfeng. I tried to kick it to you, but I failed."
+  },
+  {
+    "id": 434,
+    "unit": "Unit 9",
+    "zh": "没关系，李响。你已经尽力了。二班是一支顶尖的队伍。",
+    "en": "It’s OK, Li Xiang. You tried your best. Class Two is a top team."
+  },
+  {
+    "id": 435,
+    "unit": "Unit 9",
+    "zh": "那是真的。他们有很好的技术和团队合作。对不起，李响。",
+    "en": "That’s true. They have good skills and teamwork. I’m sorry, Li Xiang."
+  },
+  {
+    "id": 436,
+    "unit": "Unit 9",
+    "zh": "振作起来！你们也是好球员。",
+    "en": "Cheer up! You are good players, too."
+  },
+  {
+    "id": 437,
+    "unit": "Unit 9",
+    "zh": "是的。让我们互相帮助，学习更多关于团队合作的知识。",
+    "en": "Yes. Let’s help each other and learn more about teamwork."
+  },
+  {
+    "id": 438,
+    "unit": "Unit 9",
+    "zh": "当然。一个球员不能组成一个团队。",
+    "en": "Sure. One player doesn’t make a team."
+  },
+  {
+    "id": 439,
+    "unit": "Unit 9",
+    "zh": "让我们多练习，下次做得更好。",
+    "en": "Let’s practice more and do better next time."
+  },
+  {
+    "id": 440,
+    "unit": "Unit 9",
+    "zh": "团队合作，团队合作，这是唯一的方式。",
+    "en": "Teamwork, teamwork, that is the only way."
+  },
+  {
+    "id": 441,
+    "unit": "Unit 9",
+    "zh": "建设我们的国家，在工作和玩耍中。",
+    "en": "Building our nation, at work and at play."
+  },
+  {
+    "id": 442,
+    "unit": "Unit 9",
+    "zh": "\"让我们的城市整洁！\"年轻人说。",
+    "en": "\"Make our city tidy!\" young people say."
+  },
+  {
+    "id": 443,
+    "unit": "Unit 9",
+    "zh": "纯净的天空，水果汁。我们的朋友在这里停留。",
+    "en": "Pure sky, fruit juice. Our friends are here to stay."
+  },
+  {
+    "id": 444,
+    "unit": "Unit 9",
+    "zh": "这是我们的目的，无论在家还是在外：",
+    "en": "This is our purpose, at home or away:"
+  },
+  {
+    "id": 445,
+    "unit": "Unit 9",
+    "zh": "团队合作让明天更美好。",
+    "en": "Teamwork makes tomorrow a better day."
+  },
+  {
+    "id": 446,
+    "unit": "Unit 9",
+    "zh": "在我们小组的剪纸活动之后，我们的教室一片狼藉。",
+    "en": "After the paper-cut activity of our group, our classroom was in a big mess."
+  },
+  {
+    "id": 447,
+    "unit": "Unit 9",
+    "zh": "为了帮助整理，我们把自己分成了三个小组。",
+    "en": "To help tidy it up, we divided ourselves into three groups."
+  },
+  {
+    "id": 448,
+    "unit": "Unit 9",
+    "zh": "一个小组清洁了桌子和黑板。",
+    "en": "One group cleaned the desks and the blackboard."
+  },
+  {
+    "id": 449,
+    "unit": "Unit 9",
+    "zh": "另一个小组把桌椅摆放整齐。",
+    "en": "Another put the desks and chairs in order."
+  },
+  {
+    "id": 450,
+    "unit": "Unit 9",
+    "zh": "第三小组扫地并倒掉了垃圾。",
+    "en": "The third swept the floor and took out the waste."
+  },
+  {
+    "id": 451,
+    "unit": "Unit 10",
+    "zh": "仅仅十分钟后，我们的教室又变得干净了。",
+    "en": "Only ten minutes later, our classroom became clean again."
+  },
+  {
+    "id": 452,
+    "unit": "Unit 10",
+    "zh": "李翔摔倒了，伤到了左腿。",
+    "en": "Li Xiang fell down and hurt his left leg."
+  },
+  {
+    "id": 453,
+    "unit": "Unit 10",
+    "zh": "我们的教室一片狼藉。",
+    "en": "Our classroom was in a big mess."
+  },
+  {
+    "id": 454,
+    "unit": "Unit 10",
+    "zh": "玲玲照顾李翔，康康叫了出租车。",
+    "en": "Lingling looked after Li Xiang, and Kangkang called a taxi."
+  },
+  {
+    "id": 455,
+    "unit": "Unit 10",
+    "zh": "问题就是出错的地方，而解决方案是解决问题的方法。",
+    "en": "A problem is what goes wrong, and a solution is the way to solve the problem."
+  },
+  {
+    "id": 456,
+    "unit": "Unit 10",
+    "zh": "篮球是一项团队运动。",
+    "en": "Basketball is a team sport."
+  },
+  {
+    "id": 457,
+    "unit": "Unit 10",
+    "zh": "每队有五名球员。",
+    "en": "There are five players in each team."
+  },
+  {
+    "id": 458,
+    "unit": "Unit 10",
+    "zh": "球员必须把球传给合适的队友。",
+    "en": "Players must pass the ball to the right teammates."
+  },
+  {
+    "id": 459,
+    "unit": "Unit 10",
+    "zh": "当一支队伍输掉比赛时，队员应该互相鼓励。",
+    "en": "When a team fails the match, the team players should cheer up each other."
+  },
+  {
+    "id": 460,
+    "unit": "Unit 10",
+    "zh": "最好的团队球员为彼此而战，而不仅仅是一起打球。",
+    "en": "The best team players play for each other, not just with each other."
+  },
+  {
+    "id": 461,
+    "unit": "Unit 10",
+    "zh": "五名优秀的球员不一定总能赢得篮球比赛，但五名齐心的球员总能获胜。",
+    "en": "Five great players may not always win a basketball game, but five players with one heart always do."
+  },
+  {
+    "id": 462,
+    "unit": "Unit 10",
+    "zh": "团队合作在很多方面对我们有益。",
+    "en": "Teamwork can do good to us in many ways."
+  },
+  {
+    "id": 463,
+    "unit": "Unit 10",
+    "zh": "作为团队成员，我们总是一起工作。",
+    "en": "As team members, we always work together."
+  },
+  {
+    "id": 464,
+    "unit": "Unit 10",
+    "zh": "首先，我们总是互相帮助，我们是亲密的朋友。",
+    "en": "First, we always help each other and we are close friends."
+  },
+  {
+    "id": 465,
+    "unit": "Unit 10",
+    "zh": "其次，我们互相鼓励，这样我们就能一直保持活跃。",
+    "en": "Second, we cheer ourselves up, so we can be active all the time."
+  },
+  {
+    "id": 466,
+    "unit": "Unit 10",
+    "zh": "第三，我们一起练习并提高我们的技能。",
+    "en": "Third, we practice together and improve our skills."
+  },
+  {
+    "id": 467,
+    "unit": "Unit 10",
+    "zh": "在一个好的团队中，成员们总是亲密的朋友、活跃的队友和优秀的球员。",
+    "en": "In a good team, the members are always close friends, active teammates and great players."
+  },
+  {
+    "id": 468,
+    "unit": "Unit 10",
+    "zh": "周东是他家乡村庄的英雄。",
+    "en": "Zhou Dong is a hero in his hometown village."
+  },
+  {
+    "id": 469,
+    "unit": "Unit 10",
+    "zh": "他曾是一家大公司的工程师。",
+    "en": "He was an engineer in a big company."
+  },
+  {
+    "id": 470,
+    "unit": "Unit 10",
+    "zh": "但是，去年他放弃了工作，回到家乡帮助村民种植和销售橙子。",
+    "en": "But, last year, he gave up his job and returned home to help the villagers grow and sell oranges."
+  },
+  {
+    "id": 471,
+    "unit": "Unit 10",
+    "zh": "他家乡的许多村民种植橙子。",
+    "en": "Many villagers in his hometown grew oranges."
+  },
+  {
+    "id": 472,
+    "unit": "Unit 10",
+    "zh": "这些橙子味道很好但销路不佳。",
+    "en": "The oranges were tasty but didn’t sell well."
+  },
+  {
+    "id": 473,
+    "unit": "Unit 10",
+    "zh": "周为他们感到非常难过。",
+    "en": "Zhou felt so sorry for them."
+  },
+  {
+    "id": 474,
+    "unit": "Unit 10",
+    "zh": "去年，他终于下定决心要帮助他们。",
+    "en": "Last year, he finally made up his mind to help them."
+  },
+  {
+    "id": 475,
+    "unit": "Unit 10",
+    "zh": "他和三个朋友一起回来，并建立了一个网店来销售橙子。",
+    "en": "He returned with three of his friends and set up an online shop to sell the oranges."
+  },
+  {
+    "id": 476,
+    "unit": "Unit 10",
+    "zh": "周的团队想尽一切办法让人们知道这些美味的橙子，购物者通过网购只需一两天就能收到橙子。",
+    "en": "Zhou’s team tried every means to let people know the tasty oranges, and shoppers could get the oranges in just one or two days through online shopping."
+  },
+  {
+    "id": 477,
+    "unit": "Unit 10",
+    "zh": "很快，他们就卖光了所有的橙子。",
+    "en": "Soon, they sold out all the oranges."
+  },
+  {
+    "id": 478,
+    "unit": "Unit 10",
+    "zh": "但对于大多数橙园来说，还存在另一个问题。",
+    "en": "But there was another problem for most orange gardens."
+  },
+  {
+    "id": 479,
+    "unit": "Unit 10",
+    "zh": "那就是严重的水土流失。",
+    "en": "That’s heavy water and soil loss."
+  },
+  {
+    "id": 480,
+    "unit": "Unit 10",
+    "zh": "水和土壤对橙子的味道很重要。",
+    "en": "Water and soil are important to the taste of the oranges."
+  },
+  {
+    "id": 481,
+    "unit": "Unit 10",
+    "zh": "为了解决这个问题，周的团队帮助改变了水道并改良了土壤。",
+    "en": "To solve this problem, Zhou’s team helped change the water ways and improve the soil."
+  },
+  {
+    "id": 482,
+    "unit": "Unit 10",
+    "zh": "周和他的朋友们决定留下来，帮助给他们的家乡带来更多变化。",
+    "en": "Zhou and his friends decided to stay and help bring more changes to their hometown."
+  },
+  {
+    "id": 483,
+    "unit": "Unit 10",
+    "zh": "我们应该轻声交谈。",
+    "en": "We should speak quietly to each other."
+  },
+  {
+    "id": 484,
+    "unit": "Unit 10",
+    "zh": "我的祖母只能听到响亮的声音。",
+    "en": "My grandmother can only hear a loud voice."
+  },
+  {
+    "id": 485,
+    "unit": "Unit 10",
+    "zh": "我的祖父大声地对她说话。",
+    "en": "My grandfather speaks to her loudly."
+  },
+  {
+    "id": 486,
+    "unit": "Unit 10",
+    "zh": "下了一场大雨。",
+    "en": "There is a heavy rain."
+  },
+  {
+    "id": 487,
+    "unit": "Unit 10",
+    "zh": "当然。欢迎加入我们。",
+    "en": "Sure. Welcome to join us."
+  },
+  {
+    "id": 488,
+    "unit": "Unit 10",
+    "zh": "三班赢了，但我们都玩得很开心。",
+    "en": "Class Three won, but we all had fun."
+  },
+  {
+    "id": 489,
+    "unit": "Unit 10",
+    "zh": "听起来很有趣！下次小雅和我能加入你们吗？",
+    "en": "Sounds interesting! Can Xiao Ya and I join you next time?"
+  },
+  {
+    "id": 490,
+    "unit": "Unit 10",
+    "zh": "康康，是我们班还是三班赢了足球比赛？",
+    "en": "Kangkang, did our class or Class Three win the football game?"
+  },
+  {
+    "id": 491,
+    "unit": "Unit 10",
+    "zh": "上周，我们小组制作了一份很棒的黑板报。",
+    "en": "Last week, our group made a great blackboard newspaper."
+  },
+  {
+    "id": 492,
+    "unit": "Unit 10",
+    "zh": "这是一次很棒的团队合作经历！",
+    "en": "It was a wonderful teamwork experience!"
+  },
+  {
+    "id": 493,
+    "unit": "Unit 10",
+    "zh": "这不是一件容易的工作。",
+    "en": "It was not an easy job."
+  },
+  {
+    "id": 494,
+    "unit": "Unit 10",
+    "zh": "作为团队负责人，我给队友们分配了不同的工作。",
+    "en": "As the team head, I gave my teammates different jobs."
+  },
+  {
+    "id": 495,
+    "unit": "Unit 10",
+    "zh": "小雅想出了一些主意，李翔用彩色粉笔画画；玲玲写故事，我把它们抄在黑板上。",
+    "en": "Xiao Ya came up with some ideas and Li Xiang drew the pictures with colored chalks; Lingling wrote the stories and I copied them on the blackboard."
+  },
+  {
+    "id": 496,
+    "unit": "Unit 10",
+    "zh": "当我们遇到困难时，我们互相帮助和支持。",
+    "en": "When we had difficulties, we helped and supported each other."
+  },
+  {
+    "id": 497,
+    "unit": "Unit 10",
+    "zh": "我们都很忙，但我们尽量在放学后一起花些时间在这上面。",
+    "en": "We were all very busy, but we tried to spend some time on it together after school."
+  },
+  {
+    "id": 498,
+    "unit": "Unit 10",
+    "zh": "所有的学生和老师都喜欢我们的黑板报。",
+    "en": "All the students and teachers liked our blackboard newspaper."
+  },
+  {
+    "id": 499,
+    "unit": "Unit 10",
+    "zh": "我们对我们的团队合作感到高兴。",
+    "en": "We were happy with our teamwork."
+  },
+  {
+    "id": 500,
+    "unit": "Unit 10",
+    "zh": "我们尝试一起做所有事情。",
+    "en": "We try to do everything together."
+  },
+  {
+    "id": 501,
+    "unit": "Unit 11",
+    "zh": "我们非常了解彼此，并且我们是最好的朋友。",
+    "en": "We know each other very well and we are best friends."
+  },
+  {
+    "id": 502,
+    "unit": "Unit 11",
+    "zh": "上周日我的家人在公园里野餐。",
+    "en": "My family had a picnic in the park last Sunday."
+  },
+  {
+    "id": 503,
+    "unit": "Unit 11",
+    "zh": "那是美好的一天。",
+    "en": "It was a wonderful day."
+  },
+  {
+    "id": 504,
+    "unit": "Unit 11",
+    "zh": "这有助于建立彼此之间的信任。",
+    "en": "This helps build trust in each other."
+  },
+  {
+    "id": 505,
+    "unit": "Unit 11",
+    "zh": "其次，所有成员都应该知道如何做他们的工作。",
+    "en": "Second, all the members should know how to do their jobs."
+  },
+  {
+    "id": 506,
+    "unit": "Unit 11",
+    "zh": "在一个晴朗的早晨，王俊峰和他的朋友们在学校操场上进行了一场足球比赛。",
+    "en": "On a sunny morning, Wang Junfeng and his friends played a football match on the school playground."
+  },
+  {
+    "id": 507,
+    "unit": "Unit 11",
+    "zh": "王俊峰是一名非常优秀的球员，但他的一些队友并不太擅长这项运动。",
+    "en": "Wang Junfeng is a very good player, but some of his teammates are not very good at this sport."
+  },
+  {
+    "id": 508,
+    "unit": "Unit 11",
+    "zh": "在比赛的上半场，王俊峰的队伍不断犯错。",
+    "en": "In the first half of the game, Wang Junfeng’s team kept on making mistakes."
+  },
+  {
+    "id": 509,
+    "unit": "Unit 11",
+    "zh": "赵乐和马小超甚至互相生气了。",
+    "en": "Zhao Le and Ma Xiaochao even got angry at each other."
+  },
+  {
+    "id": 510,
+    "unit": "Unit 11",
+    "zh": "休息期间，王俊峰作为队长召开了一次会议。",
+    "en": "During the break, Wang Junfeng held a meeting as the team head."
+  },
+  {
+    "id": 511,
+    "unit": "Unit 11",
+    "zh": "他说：“兄弟们，我们必须作为一个团队来比赛。",
+    "en": "He said, “Boys, we must play as a team."
+  },
+  {
+    "id": 512,
+    "unit": "Unit 11",
+    "zh": "足球是一项团队运动。”",
+    "en": "Football is a team sport.”"
+  },
+  {
+    "id": 513,
+    "unit": "Unit 11",
+    "zh": "赵和马也和解了。",
+    "en": "Zhao and Ma also made peace."
+  },
+  {
+    "id": 514,
+    "unit": "Unit 11",
+    "zh": "在下半场，他们开始更好地传球并互相支持。",
+    "en": "In the second half, they started passing the ball better and supporting each other."
+  },
+  {
+    "id": 515,
+    "unit": "Unit 11",
+    "zh": "当比赛结束时，他们以1比3输掉了比赛。",
+    "en": "When the match ended, they lost the game, 1-- 3."
+  },
+  {
+    "id": 516,
+    "unit": "Unit 11",
+    "zh": "他们都发现了作为一个团队踢足球的乐趣。",
+    "en": "They all found the fun in playing football as a team."
+  },
+  {
+    "id": 517,
+    "unit": "Unit 11",
+    "zh": "你能帮我去买一些东西吗？",
+    "en": "Can you help me do some shopping?"
+  },
+  {
+    "id": 518,
+    "unit": "Unit 11",
+    "zh": "我总是尽我最大努力省钱，并且做一个理智的购物者。",
+    "en": "I always try my best to save money and be a smart shopper."
+  },
+  {
+    "id": 519,
+    "unit": "Unit 11",
+    "zh": "找到适合自己的鞋子，订单满99元即可享受免费运送。",
+    "en": "Find the right shoes for yourself, and you can enjoy free shipping on orders over ¥99."
+  },
+  {
+    "id": 520,
+    "unit": "Unit 11",
+    "zh": "李明身高一米八左右。",
+    "en": "Li Ming is about 1.8 meters tall."
+  },
+  {
+    "id": 521,
+    "unit": "Unit 11",
+    "zh": "我们的教室宽7米、长9米。",
+    "en": "Our classroom is 7 meters wide and 9 meters long."
+  },
+  {
+    "id": 522,
+    "unit": "Unit 11",
+    "zh": "众所周知，水对我们来说很重要。",
+    "en": "As we all know, water is very important to us."
+  },
+  {
+    "id": 523,
+    "unit": "Unit 11",
+    "zh": "在家里，我们用水来做饭、洗衣服或打扫卫生。",
+    "en": "At home, we use water to cook, do washing or cleaning."
+  },
+  {
+    "id": 524,
+    "unit": "Unit 11",
+    "zh": "加入我，让我们一起改变现状。",
+    "en": "Join me and let’s make a difference together."
+  },
+  {
+    "id": 525,
+    "unit": "Unit 11",
+    "zh": "北冰洋的海岸线大约有45,390千米长。",
+    "en": "The coastline of the Arctic Ocean is about 45,390 kilometers long."
+  },
+  {
+    "id": 526,
+    "unit": "Unit 11",
+    "zh": "……在刷牙时关掉水龙头……",
+    "en": "... turn off the tap when brushing your teeth ..."
+  },
+  {
+    "id": 527,
+    "unit": "Unit 11",
+    "zh": "请问，这附近有银行吗？",
+    "en": "Excuse me, is there a bank near here?"
+  },
+  {
+    "id": 528,
+    "unit": "Unit 11",
+    "zh": "有，在淮海路。",
+    "en": "Yes, there is. It’s on Huaihai Road."
+  },
+  {
+    "id": 529,
+    "unit": "Unit 11",
+    "zh": "向左转，然后继续走。",
+    "en": "Turn left and walk on."
+  },
+  {
+    "id": 530,
+    "unit": "Unit 11",
+    "zh": "你可以看到它在你的右边。",
+    "en": "You can see it on your right."
+  },
+  {
+    "id": 531,
+    "unit": "Unit 11",
+    "zh": "我们昨天下午参加了种树的志愿活动。",
+    "en": "We took part in a volunteer activity to plant trees yesterday afternoon."
+  },
+  {
+    "id": 532,
+    "unit": "Unit 11",
+    "zh": "什么都不能让我放弃梦想。",
+    "en": "Nothing can make me give up my dream."
+  },
+  {
+    "id": 533,
+    "unit": "Unit 11",
+    "zh": "吴先生想让他的儿子成为一名体育运动员。",
+    "en": "Mr. Wu wants to make his son a sports player."
+  },
+  {
+    "id": 534,
+    "unit": "Unit 11",
+    "zh": "按时还书。",
+    "en": "Return the books on time."
+  },
+  {
+    "id": 535,
+    "unit": "Unit 11",
+    "zh": "公共汽车正好准时到达。",
+    "en": "The bus came right on time."
+  },
+  {
+    "id": 536,
+    "unit": "Unit 11",
+    "zh": "我希望我们能及时到达那里。",
+    "en": "I hope we get there in time."
+  },
+  {
+    "id": 537,
+    "unit": "Unit 11",
+    "zh": "有时我们去散步。",
+    "en": "At times we go for a walk."
+  },
+  {
+    "id": 538,
+    "unit": "Unit 11",
+    "zh": "我忘记告诉你那件事了。",
+    "en": "I forgot to tell you about that."
+  },
+  {
+    "id": 539,
+    "unit": "Unit 11",
+    "zh": "我忘记锁门了。",
+    "en": "I forgot to lock the door."
+  },
+  {
+    "id": 540,
+    "unit": "Unit 11",
+    "zh": "我忘记已经锁过门了。",
+    "en": "I forgot locking the door."
+  },
+  {
+    "id": 541,
+    "unit": "Unit 11",
+    "zh": "我很高兴收到你的来信。",
+    "en": "I’m happy to hear from you."
+  },
+  {
+    "id": 542,
+    "unit": "Unit 11",
+    "zh": "收到你的信总是让人很高兴。",
+    "en": "It’s always great to hear from you."
+  },
+  {
+    "id": 543,
+    "unit": "Unit 11",
+    "zh": "学习并遵守它们对我们很有用。",
+    "en": "It’s useful for us to learn and follow them."
+  },
+  {
+    "id": 544,
+    "unit": "Unit 11",
+    "zh": "对我来说，学习数学很困难。",
+    "en": "It is difficult for me to learn math."
+  },
+  {
+    "id": 545,
+    "unit": "Unit 11",
+    "zh": "你帮了我很多忙，真是太好了。",
+    "en": "It’s kind of you to help me a lot."
+  },
+  {
+    "id": 546,
+    "unit": "Unit 11",
+    "zh": "我们承诺遵守新的规则，并尽最大的努力不去违反它们。",
+    "en": "We promise to follow the new rules and try our best not to break them."
+  },
+  {
+    "id": 547,
+    "unit": "Unit 11",
+    "zh": "她承诺去拜访他们。",
+    "en": "She promises to visit them."
+  },
+  {
+    "id": 548,
+    "unit": "Unit 11",
+    "zh": "介词一般用于名词或代词前, 表示该词与句子其他成分的关系。",
+    "en": "Preposition generally used before nouns or pronouns, indicating the relationship between the word and other components of the sentence."
+  },
+  {
+    "id": 549,
+    "unit": "Unit 11",
+    "zh": "介词后面的名词或代词称为介词宾语。",
+    "en": "The noun or pronoun after the preposition is called the object of the preposition."
+  },
+  {
+    "id": 550,
+    "unit": "Unit 11",
+    "zh": "介词和介词宾语一起构成介词短语。",
+    "en": "The preposition and the object of the preposition together form a prepositional phrase."
+  },
+  {
+    "id": 551,
+    "unit": "Unit 12",
+    "zh": "表示场所、方向、时间和日期的介词有：",
+    "en": "Prepositions indicating place, direction, time and date include:"
+  },
+  {
+    "id": 552,
+    "unit": "Unit 12",
+    "zh": "表示场所的介词及短语： at、in、on、under、near、next to、between、behind、in front of",
+    "en": "Prepositions and phrases indicating place: at, in, on, under, near, next to, between, behind, in front of"
+  },
+  {
+    "id": 553,
+    "unit": "Unit 12",
+    "zh": "表示方向的介词及短语： along、across、to、across from",
+    "en": "Prepositions and phrases indicating direction: along, across, to, across from"
+  },
+  {
+    "id": 554,
+    "unit": "Unit 12",
+    "zh": "表示时间和日期的介词：at、on、in",
+    "en": "Prepositions indicating time and date: at, on, in"
+  },
+  {
+    "id": 555,
+    "unit": "Unit 12",
+    "zh": "of : a picture of my family",
+    "en": "of : a picture of my family"
+  },
+  {
+    "id": 556,
+    "unit": "Unit 12",
+    "zh": "for: a ticket for speeding",
+    "en": "for: a ticket for speeding"
+  },
+  {
+    "id": 557,
+    "unit": "Unit 12",
+    "zh": "a present for Kangkang’s birthday",
+    "en": "a present for Kangkang’s birthday"
+  },
+  {
+    "id": 558,
+    "unit": "Unit 12",
+    "zh": "a good plan for the holidays",
+    "en": "a good plan for the holidays"
+  },
+  {
+    "id": 559,
+    "unit": "Unit 12",
+    "zh": "to: take these flowers to the party",
+    "en": "to: take these flowers to the party"
+  },
+  {
+    "id": 560,
+    "unit": "Unit 12",
+    "zh": "at: at half past seven",
+    "en": "at: at half past seven"
+  },
+  {
+    "id": 561,
+    "unit": "Unit 12",
+    "zh": "at the end of the Park Road",
+    "en": "at the end of the Park Road"
+  },
+  {
+    "id": 562,
+    "unit": "Unit 12",
+    "zh": "at the back of the classroom",
+    "en": "at the back of the classroom"
+  },
+  {
+    "id": 563,
+    "unit": "Unit 12",
+    "zh": "on: 后面跟日期、星期几或含有日期和星期几的时间状语。",
+    "en": "on: followed by dates, days of the week, or time adverbials containing dates and days of the week."
+  },
+  {
+    "id": 564,
+    "unit": "Unit 12",
+    "zh": "on the morning of  New Year’s Day",
+    "en": "on the morning of  New Year’s Day"
+  },
+  {
+    "id": 565,
+    "unit": "Unit 12",
+    "zh": "in: 后面跟年、月和季节。",
+    "en": "in: followed by years, months, and seasons."
+  },
+  {
+    "id": 566,
+    "unit": "Unit 12",
+    "zh": "about: learn about the past",
+    "en": "about: learn about the past"
+  },
+  {
+    "id": 567,
+    "unit": "Unit 12",
+    "zh": "under: under ￥500 a month",
+    "en": "under: under ￥500 a month"
+  },
+  {
+    "id": 568,
+    "unit": "Unit 12",
+    "zh": "along: go along this road",
+    "en": "along: go along this road"
+  },
+  {
+    "id": 569,
+    "unit": "Unit 12",
+    "zh": "across: go across the bridge",
+    "en": "across: go across the bridge"
+  },
+  {
+    "id": 570,
+    "unit": "Unit 12",
+    "zh": "家里没有水果了。",
+    "en": "There isn’t any fruit at home."
+  },
+  {
+    "id": 571,
+    "unit": "Unit 12",
+    "zh": "我们也没有盐了。",
+    "en": "And we don’t have any salt."
+  },
+  {
+    "id": 572,
+    "unit": "Unit 12",
+    "zh": "那我们列个购物清单去超市吧。",
+    "en": "Let’s make a shopping list and go to the supermarket then."
+  },
+  {
+    "id": 573,
+    "unit": "Unit 12",
+    "zh": "我们需要一些盐、咖啡和草莓。",
+    "en": "We need some salt, coffee and strawberries."
+  },
+  {
+    "id": 574,
+    "unit": "Unit 12",
+    "zh": "我们需要多少盐？",
+    "en": "How much salt do we need?"
+  },
+  {
+    "id": 575,
+    "unit": "Unit 12",
+    "zh": "我们需要一袋盐。",
+    "en": "We need one bag of salt."
+  },
+  {
+    "id": 576,
+    "unit": "Unit 12",
+    "zh": "我们应该买多少草莓？",
+    "en": "How many strawberries should we buy?"
+  },
+  {
+    "id": 577,
+    "unit": "Unit 12",
+    "zh": "我们应该买三公斤草莓。",
+    "en": "We should buy three kilos of strawberries."
+  },
+  {
+    "id": 578,
+    "unit": "Unit 12",
+    "zh": "两罐咖啡怎么样？",
+    "en": "What about two cans of coffee?"
+  },
+  {
+    "id": 579,
+    "unit": "Unit 12",
+    "zh": "哇，看那条粉红色的裙子！只要90元。",
+    "en": "Wow, look at the pink dress! It’s only 90 yuan."
+  },
+  {
+    "id": 580,
+    "unit": "Unit 12",
+    "zh": "但我不需要裙子。",
+    "en": "But I don’t need a dress."
+  },
+  {
+    "id": 581,
+    "unit": "Unit 12",
+    "zh": "我需要一顶帽子和一件毛衣。",
+    "en": "I need a cap and a sweater."
+  },
+  {
+    "id": 582,
+    "unit": "Unit 12",
+    "zh": "这顶黑色的帽子怎么样？45元。",
+    "en": "How about this black cap? It’s 45 yuan."
+  },
+  {
+    "id": 583,
+    "unit": "Unit 12",
+    "zh": "对我来说太贵了。",
+    "en": "It’s too expensive for me."
+  },
+  {
+    "id": 584,
+    "unit": "Unit 12",
+    "zh": "我想我不想要它。",
+    "en": "I don’t think I want it."
+  },
+  {
+    "id": 585,
+    "unit": "Unit 12",
+    "zh": "那件毛衣多少钱？",
+    "en": "How much is the sweater?"
+  },
+  {
+    "id": 586,
+    "unit": "Unit 12",
+    "zh": "我穿起来很好看。",
+    "en": "It looks good on me."
+  },
+  {
+    "id": 587,
+    "unit": "Unit 12",
+    "zh": "你需要什么，小雅？",
+    "en": "What do you need, Xiao Ya?"
+  },
+  {
+    "id": 588,
+    "unit": "Unit 12",
+    "zh": "棉袜6元一双，15元三双。",
+    "en": "The cotton socks are 6 yuan for a pair, and 15 yuan for three pairs."
+  },
+  {
+    "id": 589,
+    "unit": "Unit 12",
+    "zh": "嗨，小雅！你通常去哪里购物？",
+    "en": "Hi, Xiao Ya! Where do you usually go shopping?"
+  },
+  {
+    "id": 590,
+    "unit": "Unit 12",
+    "zh": "我经常和朋友们去购物中心。",
+    "en": "I often go to a shopping mall with my friends."
+  },
+  {
+    "id": 591,
+    "unit": "Unit 12",
+    "zh": "嗯，它在我家附近。而且我总能在那找到打折的商品。",
+    "en": "Well, it’s near my home. And I can always find things on sale there."
+  },
+  {
+    "id": 592,
+    "unit": "Unit 12",
+    "zh": "我喜欢在网上买东西。网店里有那么多东西。而且你可以就呆在家里买所有东西。",
+    "en": "I like to buy things online. There are so many things in the online shop. And you can just stay at home and buy all the things."
+  },
+  {
+    "id": 593,
+    "unit": "Unit 12",
+    "zh": "我知道。但是和朋友一起购物很有趣。",
+    "en": "I know. But shopping with friends is so much fun."
+  },
+  {
+    "id": 594,
+    "unit": "Unit 12",
+    "zh": "那很好。我们学校附近有一家新书店。下次我们去那里吧。",
+    "en": "That’s good. There’s a new bookstore near our school. Let’s go there next time."
+  },
+  {
+    "id": 595,
+    "unit": "Unit 12",
+    "zh": "玲玲，看地图。这条河叫什么？",
+    "en": "Lingling, look at the map. What is this river called?"
+  },
+  {
+    "id": 596,
+    "unit": "Unit 12",
+    "zh": "哦，我们叫它黄河。",
+    "en": "Oh, we call it the Yellow River."
+  },
+  {
+    "id": 597,
+    "unit": "Unit 12",
+    "zh": "你能告诉我更多关于它的事吗？",
+    "en": "Can you tell me more about it?"
+  },
+  {
+    "id": 598,
+    "unit": "Unit 12",
+    "zh": "超过五千公里？它真是一条很长的河。",
+    "en": "Over five thousand kilometers? It’s really a long river."
+  },
+  {
+    "id": 599,
+    "unit": "Unit 12",
+    "zh": "是的。它是中国的母亲河。",
+    "en": "Yes. It is a mother river of China."
+  },
+  {
+    "id": 600,
+    "unit": "Unit 12",
+    "zh": "是的。我们都知道黄河是我们的母亲河之一。",
+    "en": "Yes. We all know the Yellow River is one of our mother rivers."
+  },
+  {
+    "id": 601,
+    "unit": "Unit 13",
+    "zh": "你知道它有多宽吗？在一些地方，它宽达约20公里。",
+    "en": "Do you know how wide it is? At some places, it is as wide as about 20 kilometers."
+  },
+  {
+    "id": 602,
+    "unit": "Unit 13",
+    "zh": "明天是3月22日。是世界水日。",
+    "en": "Tomorrow is March 22nd. It’s World Water Day."
+  },
+  {
+    "id": 603,
+    "unit": "Unit 13",
+    "zh": "是的。我们小组需要为这一天制作一张海报。",
+    "en": "Yes. Our group needs to make a poster for this day."
+  },
+  {
+    "id": 604,
+    "unit": "Unit 13",
+    "zh": "我认为我们可以谈谈如何节约用水。",
+    "en": "I think we can talk about how to save water."
+  },
+  {
+    "id": 605,
+    "unit": "Unit 13",
+    "zh": "好主意！我们可以做很多事情来节约用水，比如短时间淋浴和重复用水。",
+    "en": "Good idea! We can do many things to save water, like taking a short shower and reusing water."
+  },
+  {
+    "id": 606,
+    "unit": "Unit 13",
+    "zh": "是的。保持水的清洁也很重要，所以我们不能在河流或湖泊里乱扔垃圾。",
+    "en": "Yes. And it’s also important to keep the water clean, so we can’t litter in the rivers or lakes."
+  },
+  {
+    "id": 607,
+    "unit": "Unit 13",
+    "zh": "听起来都是好主意！为什么不列一个该做和不该做的清单呢？",
+    "en": "All sound like great ideas! Why not make a list of dos and don’ts?"
+  },
+  {
+    "id": 608,
+    "unit": "Unit 13",
+    "zh": "太好了！我们可以向老师和同学征求他们的建议。",
+    "en": "Great! And we can ask our teachers and classmates for their suggestions."
+  },
+  {
+    "id": 609,
+    "unit": "Unit 13",
+    "zh": "我可以在网上搜索信息。",
+    "en": "I can search for information online."
+  },
+  {
+    "id": 610,
+    "unit": "Unit 13",
+    "zh": "好的。让我在这个世界水日向全班介绍这张海报。",
+    "en": "OK. Let me introduce the poster to the class on this World Water Day."
+  },
+  {
+    "id": 611,
+    "unit": "Unit 13",
+    "zh": "你现在在读什么书？",
+    "en": "What book are you reading now?"
+  },
+  {
+    "id": 612,
+    "unit": "Unit 13",
+    "zh": "是一本关于水和人体的书。",
+    "en": "It’s a book about water and human body."
+  },
+  {
+    "id": 613,
+    "unit": "Unit 13",
+    "zh": "哦，是吗？它说了什么？",
+    "en": "Oh yeah? What does it say?"
+  },
+  {
+    "id": 614,
+    "unit": "Unit 13",
+    "zh": "研究表明，我们人体高达60%是水，而且我们身体的某些部分水分更多。",
+    "en": "From the studies, up to 60% of our human body is water, and there’s more water in some parts of our body."
+  },
+  {
+    "id": 615,
+    "unit": "Unit 13",
+    "zh": "真有趣！因为这个，我们每天需要喝很多水。对吗？",
+    "en": "How interesting! Because of this, we need to drink a lot of water every day. Is that right?"
+  },
+  {
+    "id": 616,
+    "unit": "Unit 13",
+    "zh": "是的。男性需要更多的水，女性需要更少。",
+    "en": "Yes. Men need more water, and women need less."
+  },
+  {
+    "id": 617,
+    "unit": "Unit 13",
+    "zh": "那么，我们一天需要多少水呢？",
+    "en": "Then, how much water do we need a day?"
+  },
+  {
+    "id": 618,
+    "unit": "Unit 13",
+    "zh": "嗯，这很难说。总之，我们应该时不时地喝水。",
+    "en": "Well, it’s hard to say. Anyway, we should drink water every now and then."
+  },
+  {
+    "id": 619,
+    "unit": "Unit 13",
+    "zh": "当然。书上还说了什么？",
+    "en": "Sure. What else does the book say?"
+  },
+  {
+    "id": 620,
+    "unit": "Unit 13",
+    "zh": "我们也从食物中获取水分，我们应该多吃水果和蔬菜。",
+    "en": "We also get water from our food, and we should eat more fruit and vegetables."
+  },
+  {
+    "id": 621,
+    "unit": "Unit 13",
+    "zh": "我明白了。我能借你的书看看吗？",
+    "en": "I see. Can I borrow your book to look into it?"
+  },
+  {
+    "id": 622,
+    "unit": "Unit 13",
+    "zh": "上星期天我和我的同学去爬山了。",
+    "en": "I went mountain climbing with my classmates last Sunday."
+  },
+  {
+    "id": 623,
+    "unit": "Unit 13",
+    "zh": "前一天晚上，我查看了天气以确保是个晴天。",
+    "en": "The night before, I checked the weather to make sure it was a fine day."
+  },
+  {
+    "id": 624,
+    "unit": "Unit 13",
+    "zh": "为了做准备，首先我为我的同学们带了一些黄色的棒球帽，这样我们就能很容易地看到彼此。",
+    "en": "To prepare for it, first I took some yellow baseball caps for my classmates, so that we could easily see each other."
+  },
+  {
+    "id": 625,
+    "unit": "Unit 13",
+    "zh": "另外，我带了一件厚外套，因为山顶很冷。",
+    "en": "Also, I brought a heavy coat because it was cold on the mountain top."
+  },
+  {
+    "id": 626,
+    "unit": "Unit 13",
+    "zh": "我也带了一张地图。",
+    "en": "I took a map too."
+  },
+  {
+    "id": 627,
+    "unit": "Unit 13",
+    "zh": "它对于给我指山路很有用。",
+    "en": "It was useful to show me the way on the mountains."
+  },
+  {
+    "id": 628,
+    "unit": "Unit 13",
+    "zh": "至于食物和饮料，我准备了一些面包和水，我还放了一些水果在我的包里。",
+    "en": "As for food and drinks, I prepared some bread and water, and I also put some fruit in my bag."
+  },
+  {
+    "id": 629,
+    "unit": "Unit 13",
+    "zh": "早上，我们乘公共汽车到达山脚，然后我们开始爬山。",
+    "en": "In the morning, we got to the foot of the mountain by bus, and then we started climbing the mountain."
+  },
+  {
+    "id": 630,
+    "unit": "Unit 13",
+    "zh": "我们都非常兴奋！",
+    "en": "We were all very excited!"
+  },
+  {
+    "id": 631,
+    "unit": "Unit 13",
+    "zh": "妈妈，看看Leo。它怎么了？",
+    "en": "Mom, look at Leo. What is wrong with it?"
+  },
+  {
+    "id": 632,
+    "unit": "Unit 13",
+    "zh": "嗯……让我看看。它好像是生病了。",
+    "en": "Em ... Let me see. It seems that it is ill."
+  },
+  {
+    "id": 633,
+    "unit": "Unit 13",
+    "zh": "那我们该怎么办？",
+    "en": "What should we do then?"
+  },
+  {
+    "id": 634,
+    "unit": "Unit 13",
+    "zh": "别担心。让我用手机搜一下宠物医院。",
+    "en": "Don’t worry. Let me search for a pet hospital on the phone."
+  },
+  {
+    "id": 635,
+    "unit": "Unit 13",
+    "zh": "嗯……看，这里不远就有一家。",
+    "en": "Em ... Look, there is one not too far away from here."
+  },
+  {
+    "id": 636,
+    "unit": "Unit 13",
+    "zh": "让手机地图给我们指路吧。",
+    "en": "Let the phone map show us the way."
+  },
+  {
+    "id": 637,
+    "unit": "Unit 13",
+    "zh": "沿着红星路一直走到火车站。",
+    "en": "Go along the Hongxing Road until you get to the train station."
+  },
+  {
+    "id": 638,
+    "unit": "Unit 13",
+    "zh": "向左转然后直走。",
+    "en": "Turn left and go straight."
+  },
+  {
+    "id": 639,
+    "unit": "Unit 13",
+    "zh": "经过第一个十字路口。",
+    "en": "Go past the first crossing."
+  },
+  {
+    "id": 640,
+    "unit": "Unit 13",
+    "zh": "宠物医院在左边。",
+    "en": "The pet hospital is on the left."
+  },
+  {
+    "id": 641,
+    "unit": "Unit 13",
+    "zh": "昨天是重阳节。",
+    "en": "Yesterday was the Double Ninth Festival."
+  },
+  {
+    "id": 642,
+    "unit": "Unit 13",
+    "zh": "我的家人参加了为社区老人举办的志愿者活动。",
+    "en": "My family took part in the volunteer activities for the old people in the community."
+  },
+  {
+    "id": 643,
+    "unit": "Unit 13",
+    "zh": "我的爷爷参加了一场乒乓球比赛。",
+    "en": "My grandpa took part in a table tennis match."
+  },
+  {
+    "id": 644,
+    "unit": "Unit 13",
+    "zh": "他没有赢，但他仍然非常开心。",
+    "en": "He did not win, but he was still very happy."
+  },
+  {
+    "id": 645,
+    "unit": "Unit 13",
+    "zh": "我的妈妈是一名医生。",
+    "en": "My mom is a doctor."
+  },
+  {
+    "id": 646,
+    "unit": "Unit 13",
+    "zh": "她为老人们提供了免费的医疗检查。",
+    "en": "She gave free medical exams to the old people."
+  },
+  {
+    "id": 647,
+    "unit": "Unit 13",
+    "zh": "我的爸爸是一名工人。",
+    "en": "My dad is a worker."
+  },
+  {
+    "id": 648,
+    "unit": "Unit 13",
+    "zh": "他帮助老人们修理电视机和洗衣机。",
+    "en": "He helped the old people repair TV sets and washing machines."
+  },
+  {
+    "id": 649,
+    "unit": "Unit 13",
+    "zh": "而我帮助老人们做了一些清洁工作。",
+    "en": "And I helped the old people do some cleaning."
+  },
+  {
+    "id": 650,
+    "unit": "Unit 13",
+    "zh": "这是忙碌的一天。",
+    "en": "It was a busy day."
+  },
+  {
+    "id": 651,
+    "unit": "Unit 14",
+    "zh": "康康，你上周末做了什么？",
+    "en": "What did you do last weekend, Kangkang?"
+  },
+  {
+    "id": 652,
+    "unit": "Unit 14",
+    "zh": "我和我的邻居们在社区里参加了一个志愿者活动。",
+    "en": "I took part in a volunteer activity with my neighbors in my community."
+  },
+  {
+    "id": 653,
+    "unit": "Unit 14",
+    "zh": "哦！你们做了什么？",
+    "en": "Oh! What did you do?"
+  },
+  {
+    "id": 654,
+    "unit": "Unit 14",
+    "zh": "我们举办了一场跑步比赛为野生动物募捐。",
+    "en": "We had a running race to collect money for wild animals."
+  },
+  {
+    "id": 655,
+    "unit": "Unit 14",
+    "zh": "这是一场3公里的比赛，我们募集了550元。",
+    "en": "It’s a 3-kilometer race and we collected 550 yuan."
+  },
+  {
+    "id": 656,
+    "unit": "Unit 14",
+    "zh": "你对这次活动感觉如何？",
+    "en": "How did you feel about the activity?"
+  },
+  {
+    "id": 657,
+    "unit": "Unit 14",
+    "zh": "比赛后我有点累。",
+    "en": "I was a little tired after the race."
+  },
+  {
+    "id": 658,
+    "unit": "Unit 14",
+    "zh": "你是怎么知道这个志愿者活动的？",
+    "en": "How did you know about the volunteer activity?"
+  },
+  {
+    "id": 659,
+    "unit": "Unit 14",
+    "zh": "它在我们社区的网站上。",
+    "en": "It’s on our community website."
+  },
+  {
+    "id": 660,
+    "unit": "Unit 14",
+    "zh": "有很多志愿者活动的信息吗？",
+    "en": "Is there much information of volunteer activities?"
+  },
+  {
+    "id": 661,
+    "unit": "Unit 14",
+    "zh": "是的。有各种各样的活动，比如植树、关爱老人和给孩子们读故事书。",
+    "en": "Yes. There are all kinds of activities, such as planting trees, caring for the old, and reading story books to children."
+  },
+  {
+    "id": 662,
+    "unit": "Unit 14",
+    "zh": "哇，你们真的有一个很好的社区。",
+    "en": "Wow, you really have a nice neighborhood."
+  },
+  {
+    "id": 663,
+    "unit": "Unit 14",
+    "zh": "玲玲，你昨天做了什么？",
+    "en": "What did you do yesterday, Lingling?"
+  },
+  {
+    "id": 664,
+    "unit": "Unit 14",
+    "zh": "我去动物园照顾动物了。",
+    "en": "I went to take care of the animals in the zoo."
+  },
+  {
+    "id": 665,
+    "unit": "Unit 14",
+    "zh": "太棒了！你在哪里找到这个活动的？",
+    "en": "Great! Where did you find the activity?"
+  },
+  {
+    "id": 666,
+    "unit": "Unit 14",
+    "zh": "我在一个志愿者网站上找到的。",
+    "en": "I found it on a volunteer website."
+  },
+  {
+    "id": 667,
+    "unit": "Unit 14",
+    "zh": "我经常去那里寻找志愿工作。",
+    "en": "I often go there to look for volunteer work."
+  },
+  {
+    "id": 668,
+    "unit": "Unit 14",
+    "zh": "你什么时候开始做志愿工作的？",
+    "en": "When did you start to do volunteer work?"
+  },
+  {
+    "id": 669,
+    "unit": "Unit 14",
+    "zh": "你觉得志愿者活动怎么样？",
+    "en": "What do you think of volunteer activities?"
+  },
+  {
+    "id": 670,
+    "unit": "Unit 14",
+    "zh": "我认为它们重要且有意义。",
+    "en": "I think they are important and meaningful."
+  },
+  {
+    "id": 671,
+    "unit": "Unit 14",
+    "zh": "我们可以获得重要的经验并帮助有需要的人。",
+    "en": "We can get important experiences and help people in need."
+  },
+  {
+    "id": 672,
+    "unit": "Unit 14",
+    "zh": "你对未来的活动有什么计划吗？",
+    "en": "Do you have any plans for future activities?"
+  },
+  {
+    "id": 673,
+    "unit": "Unit 14",
+    "zh": "哦，是的！我计划参加志愿者培训课程。",
+    "en": "Oh, yes! I plan to take a training lesson for volunteers."
+  },
+  {
+    "id": 674,
+    "unit": "Unit 14",
+    "zh": "我们总能成为更好的志愿者！",
+    "en": "We can always be a better volunteer!"
+  },
+  {
+    "id": 675,
+    "unit": "Unit 14",
+    "zh": "小心！请开慢点。这里有这么多人！",
+    "en": "Be careful! Drive slowly please. There are so many people here!"
+  },
+  {
+    "id": 676,
+    "unit": "Unit 14",
+    "zh": "小宇，你先来。小雷，你是第二个。轮流玩，好吗？",
+    "en": "Xiao Yu, you go first. Xiao Lei, you are the second. Take turns to play, OK?"
+  },
+  {
+    "id": 677,
+    "unit": "Unit 14",
+    "zh": "请安静，孩子们。请把书保持整齐。",
+    "en": "Please be quiet, boys and girls. Please keep the books in order."
+  },
+  {
+    "id": 678,
+    "unit": "Unit 14",
+    "zh": "这是我们今天参观的最后一个地方。",
+    "en": "This is our last place to visit today."
+  },
+  {
+    "id": 679,
+    "unit": "Unit 14",
+    "zh": "在你们开始公园活动之前，我想再讲一下公园规则。",
+    "en": "Before you start your activities in the park, I’d like to talk about the park rules again."
+  },
+  {
+    "id": 680,
+    "unit": "Unit 14",
+    "zh": "请将废弃物放入垃圾桶。",
+    "en": "Please put the waste in the waste cans."
+  },
+  {
+    "id": 681,
+    "unit": "Unit 14",
+    "zh": "请照顾好您10岁以下的孩子。",
+    "en": "Take care of your children under 10 years old."
+  },
+  {
+    "id": 682,
+    "unit": "Unit 14",
+    "zh": "不要在湖里游泳。",
+    "en": "Don’t swim in the lake."
+  },
+  {
+    "id": 683,
+    "unit": "Unit 14",
+    "zh": "谢谢，祝你们玩得愉快！",
+    "en": "Thank you and have a good time!"
+  },
+  {
+    "id": 684,
+    "unit": "Unit 14",
+    "zh": "今天我将谈论世界上不同的交通规则。",
+    "en": "Today I’m going to talk about different traffic rules in the world."
+  },
+  {
+    "id": 685,
+    "unit": "Unit 14",
+    "zh": "在英国，人们靠左行驶。",
+    "en": "In Britain, people drive on the left."
+  },
+  {
+    "id": 686,
+    "unit": "Unit 14",
+    "zh": "在新加坡，人们禁止在地铁上饮食。",
+    "en": "People mustn’t eat or drink on the subway in Singapore."
+  },
+  {
+    "id": 687,
+    "unit": "Unit 14",
+    "zh": "如果你这样做，你将被处以最高500新加坡元的罚款。",
+    "en": "When you do so, you will get a fine up to 500 Singapore dollars."
+  },
+  {
+    "id": 688,
+    "unit": "Unit 14",
+    "zh": "在加拿大，18岁以下的儿童骑自行车时必须戴头盔。",
+    "en": "Children under 18 must wear helmets while riding bicycles in Canada."
+  },
+  {
+    "id": 689,
+    "unit": "Unit 14",
+    "zh": "在晚上，每位骑行者必须在自行车的前面和后面安装车灯。",
+    "en": "At night, every rider must have lights in the front and at the back of the bicycle."
+  },
+  {
+    "id": 690,
+    "unit": "Unit 14",
+    "zh": "在日本，请记住酒后不要骑自行车。",
+    "en": "Remember not to ride a bike after drinking in Japan."
+  },
+  {
+    "id": 691,
+    "unit": "Unit 14",
+    "zh": "上周六我们在家进行了一次大扫除。",
+    "en": "Last Saturday we had a house cleaning day at home."
+  },
+  {
+    "id": 692,
+    "unit": "Unit 14",
+    "zh": "我家的每个人都帮忙打扫房子。",
+    "en": "Everyone in my family helped clean the house."
+  },
+  {
+    "id": 693,
+    "unit": "Unit 14",
+    "zh": "我爸爸打扫了厨房。",
+    "en": "My dad cleaned the kitchen."
+  },
+  {
+    "id": 694,
+    "unit": "Unit 14",
+    "zh": "而我打扫了房间的地板。",
+    "en": "And I swept the floors of the rooms."
+  },
+  {
+    "id": 695,
+    "unit": "Unit 14",
+    "zh": "我的小妹妹做了什么？",
+    "en": "What did my little sister do?"
+  },
+  {
+    "id": 696,
+    "unit": "Unit 14",
+    "zh": "她整理了她的玩具，并把所有玩具摆放整齐。",
+    "en": "She tidied up her toys and put all her toys in order."
+  },
+  {
+    "id": 697,
+    "unit": "Unit 14",
+    "zh": "大扫除之后，房子又变得干净整洁了。",
+    "en": "The house became clean and tidy again after the house cleaning day."
+  },
+  {
+    "id": 698,
+    "unit": "Unit 14",
+    "zh": "三年前，我加入了高中的音乐俱乐部。",
+    "en": "Three years ago, I joined a music club in my high school."
+  },
+  {
+    "id": 699,
+    "unit": "Unit 14",
+    "zh": "我在那里交了很多朋友。",
+    "en": "I made many friends there."
+  },
+  {
+    "id": 700,
+    "unit": "Unit 14",
+    "zh": "我们经常分享关于音乐的想法，并互相帮助创作出美妙的音乐。",
+    "en": "We often shared ideas about music and helped each other to make beautiful music."
+  },
+  {
+    "id": 701,
+    "unit": "Unit 15",
+    "zh": "我们的音乐在学校很受欢迎。",
+    "en": "Our music was very popular at school."
+  },
+  {
+    "id": 702,
+    "unit": "Unit 15",
+    "zh": "现在我是一名歌手。",
+    "en": "Now I am a singer."
+  },
+  {
+    "id": 703,
+    "unit": "Unit 15",
+    "zh": "多亏了音乐俱乐部的朋友们，我的梦想实现了。",
+    "en": "Thanks to my friends at the music club, my dream comes true."
+  },
+  {
+    "id": 704,
+    "unit": "Unit 15",
+    "zh": "去年我在美国的一个动物园工作。",
+    "en": "I worked at a zoo last year in America."
+  },
+  {
+    "id": 705,
+    "unit": "Unit 15",
+    "zh": "我的工作是保持动物们的健康。",
+    "en": "My work was to keep the animals healthy."
+  },
+  {
+    "id": 706,
+    "unit": "Unit 15",
+    "zh": "动物园的其他工作人员对我非常友好。",
+    "en": "The other workers at the zoo were very friendly to me."
+  },
+  {
+    "id": 707,
+    "unit": "Unit 15",
+    "zh": "他们经常给我帮助和支持。",
+    "en": "They often gave me help and support."
+  },
+  {
+    "id": 708,
+    "unit": "Unit 15",
+    "zh": "我感觉就像生活在一个大家庭里。",
+    "en": "I felt like living in a big family."
+  },
+  {
+    "id": 709,
+    "unit": "Unit 15",
+    "zh": "我叔叔经常对我说：“独自一人我们能做的很少；团结一致我们能做的很多。”",
+    "en": "My uncle often says to me, “Alone we can do so little; together we can do so much.”"
+  },
+  {
+    "id": 710,
+    "unit": "Unit 15",
+    "zh": "今天，我们将讨论如何作为一个团队工作。",
+    "en": "Today, we are going to talk about how to work as a team."
+  },
+  {
+    "id": 711,
+    "unit": "Unit 15",
+    "zh": "首先，让团队的成员知道他们的工作。",
+    "en": "First, let the members of a team know their jobs."
+  },
+  {
+    "id": 712,
+    "unit": "Unit 15",
+    "zh": "每个人各司其职，然后他们作为一个团队共同完成工作。",
+    "en": "Everyone does his part, and together they finish the work as a team."
+  },
+  {
+    "id": 713,
+    "unit": "Unit 15",
+    "zh": "其次，团队的成员知道如何做好他们的工作。",
+    "en": "Second, members of a team know how to do their jobs well."
+  },
+  {
+    "id": 714,
+    "unit": "Unit 15",
+    "zh": "如果团队中的一个成员失败了，那么团队将无法完成团队合作。",
+    "en": "If one member of a team fails, then the team will not finish the teamwork."
+  },
+  {
+    "id": 715,
+    "unit": "Unit 15",
+    "zh": "最后，团队的成员应该倾听团队中其他成员的想法和建议。",
+    "en": "Lastly, members of a team should listen to the ideas and suggestions of other members in the team."
+  },
+  {
+    "id": 716,
+    "unit": "Unit 15",
+    "zh": "这有助于建立彼此之间的信任。",
+    "en": "This helps build trust in each other."
+  },
+  {
+    "id": 717,
+    "unit": "Unit 15",
+    "zh": "有了彼此之间的信任，他们就能很好地完成团队合作。",
+    "en": "With trust in each other, they can do the teamwork well."
+  }
+]

@@ -27,7 +27,7 @@ export default function SentenceList({ sentences, progress, onSelect }) {
             <button
               key={s.id}
               onClick={() => onSelect(i)}
-              className="text-left bg-gray-900 border border-gray-700 rounded-xl p-3 hover:border-gray-500 transition-colors flex flex-col justify-between gap-3 min-h-[90px]"
+              className="text-left bg-slate-800 border border-gray-700 rounded-xl p-3 hover:border-gray-500 transition-colors flex flex-col justify-between gap-3 min-h-[90px]"
             >
               {/* Top row: title + badge */}
               <div className="flex items-start justify-between gap-2">

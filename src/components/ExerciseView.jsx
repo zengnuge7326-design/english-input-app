@@ -391,8 +391,8 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
         {showList && (
           <div className="fixed inset-0 z-40 flex" onClick={() => setShowList(false)}>
             <div className="absolute inset-0 bg-black/60" />
-            <div className="relative ml-auto w-80 max-w-full h-full bg-gray-950 border-l border-gray-800 flex flex-col" onClick={e => e.stopPropagation()}>
-              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800">
+            <div className="relative ml-auto w-80 max-w-full h-full bg-slate-900 border-l border-slate-700 flex flex-col" onClick={e => e.stopPropagation()}>
+              <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700">
                 <span className="text-white text-sm font-semibold">本课句子 ({sentences.length})</span>
                 <button onClick={() => setShowList(false)} className="text-gray-500 hover:text-white text-lg leading-none">✕</button>
               </div>
@@ -404,12 +404,12 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
                   return (
                     <button key={s.id}
                       onClick={() => { setIndex(i); setCompleted(false); setKey(k => k + 1); setChunkIndex(0); setShowList(false) }}
-                      className={`w-full text-left px-4 py-3 flex items-start gap-3 transition-colors border-b border-gray-800/50
-                        ${isCurrent ? 'bg-blue-900/30' : 'hover:bg-gray-800/50'}`}
+                      className={`w-full text-left px-4 py-3 flex items-start gap-3 transition-colors border-b border-slate-700/50
+                        ${isCurrent ? 'bg-blue-900/30' : 'hover:bg-slate-700/50'}`}
                     >
                       <span className={`shrink-0 text-xs font-mono mt-0.5 w-6 text-right ${isCurrent ? 'text-blue-400' : 'text-gray-600'}`}>#{i + 1}</span>
                       <div className="flex-1 min-w-0">
-                        <div className={`text-sm leading-snug ${isCurrent ? 'text-white' : 'text-gray-300'}`}>{s.zh}</div>
+                        <div className={`text-base leading-snug ${isCurrent ? 'text-white' : 'text-gray-300'}`}>{s.zh}</div>
                         <div className="text-xs text-gray-600 mt-0.5 truncate">{s.en}</div>
                       </div>
                       <div className="shrink-0 flex flex-col items-end gap-1">
@@ -431,7 +431,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
             onClick={() => speak(chunks && splitMode ? chunks[chunkIndex] : sentence.en)}
             disabled={isRecording && settings?.blockTTSDuringRec !== false}
             className={`shrink-0 w-10 h-10 rounded-lg border transition-colors flex items-center justify-center mt-1
-              ${isRecording && settings?.blockTTSDuringRec !== false ? 'bg-gray-900 border-gray-800 text-gray-700 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white border-gray-700'}`}
+              ${isRecording && settings?.blockTTSDuringRec !== false ? 'bg-slate-800 border-slate-700 text-gray-700 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white border-gray-700'}`}
             title="朗读整句 (Ctrl+A)"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -451,7 +451,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
             {chunks && (
               <div className="flex gap-1.5 justify-center mt-2">
                 {chunks.map((_, i) => (
-                  <div key={i} className={`w-2 h-2 rounded-full transition-colors ${i < chunkIndex ? 'bg-green-500' : i === chunkIndex ? 'bg-blue-400' : 'bg-gray-600'}`} />
+                  <div key={i} className={`w-2 h-2 rounded-full transition-colors ${i < chunkIndex ? 'bg-gradient-to-r from-green-400 to-emerald-500' : i === chunkIndex ? 'bg-gradient-to-r from-blue-500 to-indigo-500' : 'bg-gray-600'}`} />
                 ))}
               </div>
             )}
@@ -460,7 +460,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
 
         {/* Speak gate — shown when settings.requireSpeak is on */}
         {speakActive && (
-          <div className="flex flex-col items-center gap-4 py-6 w-full max-w-md mx-auto bg-gray-900/90 rounded-3xl border border-gray-800 shadow-2xl px-6">
+          <div className="flex flex-col items-center gap-4 py-6 w-full max-w-md mx-auto bg-slate-800/90 rounded-3xl border border-slate-700 shadow-2xl px-6">
             <div className="text-xs uppercase tracking-widest font-semibold">
               {speakPhase === 'success'   && <span className="text-green-400">✓ 朗读正确！</span>}
               {speakPhase === 'recording' && <span className="text-red-400 animate-pulse">🎤 录音中…</span>}
@@ -476,9 +476,9 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
                   ))}
                 </div>
               ) : speakPhase === 'success' ? (
-                <div className="text-green-400 font-mono text-sm">{splitMode && chunks ? chunks[chunkIndex] : sentence.en}</div>
+                <div className="text-green-400 font-mono text-lg">{splitMode && chunks ? chunks[chunkIndex] : sentence.en}</div>
               ) : (
-                <div className="text-green-400 font-mono text-base font-semibold leading-relaxed">{splitMode && chunks ? chunks[chunkIndex] : sentence.en}</div>
+                <div className="text-green-400 font-mono text-xl font-semibold leading-relaxed">{splitMode && chunks ? chunks[chunkIndex] : sentence.en}</div>
               )}
             </div>
 
@@ -545,7 +545,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
         {/* Completion banner */}
         {completed && (
           <div className="pop w-full bg-green-900/50 border border-green-600 rounded-xl px-6 py-3 text-center">
-            <div className="text-green-300 text-lg font-semibold">✓ {sentence.en}</div>
+            <div className="text-green-300 text-2xl font-semibold">✓ {sentence.en}</div>
             {isLastSentence ? (
               <div className="text-green-500 text-sm mt-1">🎉 本课全部完成！</div>
             ) : (

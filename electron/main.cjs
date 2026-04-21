@@ -96,6 +96,7 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
+    icon: path.join(__dirname, '..', 'build', 'icon.icns'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -110,7 +111,7 @@ function createWindow() {
     if (permission === 'media') return true;
     return false;
   });
-  
+
   win.webContents.session.setPermissionRequestHandler((_webContents, permission, callback) => {
     if (permission === 'media') callback(true);
     else callback(false);

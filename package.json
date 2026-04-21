@@ -15,13 +15,35 @@
   "build": {
     "appId": "com.english-input-app",
     "productName": "英语输入学习",
+    "icon": "build/icon.icns",
     "mac": {
-      "target": "dmg",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
       "category": "public.app-category.education",
+      "icon": "build/icon.icns",
+      "darkModeSupport": true,
       "entitlements": "electron/entitlements.mac.plist",
       "entitlementsInherit": "electron/entitlements.mac.plist",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
       "extendInfo": {
-        "NSMicrophoneUsageDescription": "此应用需要访问麦克风以进行英语强制跟读练习。"
+        "NSMicrophoneUsageDescription": "此应用需要访问麦克风以进行英语跟读练习。",
+        "NSCameraUsageDescription": "此应用不需要摄像头。"
+      }
+    },
+    "dmg": {
+      "title": "英语输入学习",
+      "icon": "build/icon.icns",
+      "window": {
+        "width": 540,
+        "height": 380
       }
     },
     "win": {
@@ -30,13 +52,18 @@
     },
     "files": [
       "dist/**/*",
-      "electron/**/*"
+      "electron/**/*",
+      "!electron/model/**/*"
     ],
     "directories": {
       "output": "release"
-    }
+    },
+    "publish": null
   },
   "dependencies": {
+    "@capacitor/cli": "^8.3.0",
+    "@capacitor/core": "^8.3.0",
+    "@capacitor/ios": "^8.3.0",
     "@supabase/supabase-js": "^2.100.1",
     "compromise": "^14.15.0",
     "react": "^19.2.0",
@@ -48,13 +75,14 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
-    "electron": "^41.0.3",
+    "electron": "^41.2.1",
     "electron-builder": "^26.8.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "tailwindcss": "^4.2.1",
+    "typescript": "^6.0.2",
     "vite": "^7.3.1"
   }
 }

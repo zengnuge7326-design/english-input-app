@@ -21,7 +21,7 @@ class ErrorBoundary extends React.Component {
           <div className="text-4xl mb-4">😿</div>
           <h2 className="text-xl font-bold mb-2">程序出现意外错误</h2>
           <p className="text-gray-400 text-sm mb-4">这可能是由于数据加载或渲染问题导致的。</p>
-          <pre className="mt-2 p-4 bg-gray-900 border border-gray-800 rounded-xl text-xs text-red-400 max-w-full overflow-auto text-left">
+          <pre className="mt-2 p-4 bg-slate-800 border border-slate-700 rounded-xl text-xs text-red-400 max-w-full overflow-auto text-left">
             {this.state.error?.toString()}
           </pre>
           <div className="flex gap-4 mt-8">

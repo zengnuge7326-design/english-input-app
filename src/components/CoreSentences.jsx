@@ -68,7 +68,7 @@ function LessonGrid({ lessons, dataMap, accentColor, titlePrefix, onImport, onSy
         const stats = getLessonStats(data, progress)
         const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
         return (
-          <div key={i} className={`bg-gray-900 border border-gray-800 ${border} rounded-xl overflow-hidden flex flex-col transition-colors`}>
+          <div key={i} className={`bg-slate-800 border border-slate-700 ${border} rounded-xl overflow-hidden flex flex-col transition-colors`}>
             <button
               onClick={() => onImport(data, `${titlePrefix} · ${lesson.label}`)}
               className="text-left p-3 flex flex-col gap-1.5 flex-1"
@@ -104,7 +104,7 @@ function CourseHeader({ emoji, title, subtitle, percent, attempted, total, accen
   const btn  = { emerald: 'bg-emerald-600 hover:bg-emerald-500', violet: 'bg-violet-600 hover:bg-violet-500', sky: 'bg-sky-600 hover:bg-sky-500' }[accentColor]
   const grad = { emerald: 'from-emerald-600 to-teal-800', violet: 'from-violet-600 to-purple-800', sky: 'from-sky-600 to-blue-800' }[accentColor]
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6 flex items-center gap-6">
+    <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
       <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${grad} flex items-center justify-center text-3xl shrink-0`}>{emoji}</div>
       <div className="flex-1 min-w-0">
         <div className="text-xl font-bold text-white mb-1">{title}</div>
@@ -127,7 +127,7 @@ function CourseHeader({ emoji, title, subtitle, percent, attempted, total, accen
 function SyncPopup({ label, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4" onClick={onClose}>
-      <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8 max-w-xs w-full text-center shadow-2xl" onClick={e => e.stopPropagation()}>
+      <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8 max-w-xs w-full text-center shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="text-3xl mb-3">📝</div>
         <div className="text-white font-semibold mb-1">{label}</div>
         <div className="text-gray-400 text-sm mb-1">同步练习</div>
@@ -244,7 +244,7 @@ export default function CoreSentences({ onImport, onSetBack, progress = {} }) {
               <span className="text-3xl">{c.emoji}</span>
               <span className={`${c.textColor} text-xs font-semibold tracking-wider uppercase`}>{c.tag}</span>
             </div>
-            <div className="bg-gray-900 p-4 flex flex-col gap-1">
+            <div className="bg-slate-800 p-4 flex flex-col gap-1">
               <div className="text-sm font-bold text-white">{c.title}</div>
               <div className="text-xs text-gray-400">{c.desc}</div>
               <div className="flex gap-1.5 mt-2 flex-wrap">

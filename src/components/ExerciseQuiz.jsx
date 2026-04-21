@@ -192,8 +192,8 @@ function OptionBtn({ label, selected, correct, wrong, disabled, onClick }) {
   if (correct) cls += 'bg-green-900/40 border-green-500 text-green-300'
   else if (wrong) cls += 'bg-red-900/40 border-red-500 text-red-300'
   else if (selected) cls += 'bg-blue-900/40 border-blue-500 text-blue-200'
-  else if (disabled) cls += 'bg-gray-900 border-gray-800 text-gray-500'
-  else cls += 'bg-gray-900 border-gray-700 hover:border-gray-500 text-gray-200 cursor-pointer'
+  else if (disabled) cls += 'bg-slate-800 border-slate-700 text-gray-500'
+  else cls += 'bg-slate-800 border-gray-700 hover:border-gray-500 text-gray-200 cursor-pointer'
   return <button className={cls} disabled={disabled} onClick={onClick}>{label}</button>
 }
 
@@ -410,7 +410,7 @@ export default function ExerciseQuiz({ questions, title, onClose }) {
       </div>
 
       {/* 题目内容 */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4">
         {(q.type === 'listen_word' || q.type === 'listen_qa') && (
           <ListenQuestion q={q} speak={speak} onAnswer={handleAnswer} answered={showAnswer} />
         )}

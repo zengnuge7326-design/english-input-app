@@ -305,7 +305,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
               )}
               <div className="h-5 flex items-center justify-center mt-0.5 overflow-hidden">
                 {translations[i] && (
-                  <span className={`text-sm whitespace-nowrap ${isShaking ? 'text-red-400' : 'text-orange-400'}`}
+                  <span className={`text-base whitespace-nowrap ${isShaking ? 'text-red-400' : 'text-orange-400'}`}
                     style={{ fontFamily: '"Kaiti SC","STKaiti","KaiTi",serif', fontWeight: 'bold' }}>
                     {translations[i]}
                   </span>

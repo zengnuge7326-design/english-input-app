@@ -169,7 +169,7 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
         {/* Stats card */}
-        <div className="lg:col-span-2 bg-gray-900 border border-gray-800 rounded-2xl p-5 flex flex-col gap-4">
+        <div className="lg:col-span-2 bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-4">
           <div className="flex gap-1 flex-wrap">
             {[
               { id: 'total', label: '总计' },
@@ -181,7 +181,7 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
               <button
                 key={t.id}
                 onClick={() => setStatsTab(t.id)}
-                className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${statsTab === t.id ? 'bg-blue-600 text-white' : 'text-gray-400 hover:bg-gray-800'}`}
+                className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${statsTab === t.id ? 'bg-blue-600 text-white' : 'text-gray-400 hover:bg-slate-700'}`}
               >
                 {t.label}
               </button>
@@ -216,7 +216,7 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
         </div>
 
         {/* Quick actions */}
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5 flex flex-col gap-3">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-3">
           <div className="text-sm font-semibold text-gray-300">快速开始</div>
           <button
             onClick={onStartExercise}
@@ -236,7 +236,7 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
           >
             📝 示例句子
           </button>
-          <div className="mt-auto pt-2 border-t border-gray-800">
+          <div className="mt-auto pt-2 border-t border-slate-700">
             <div className="text-xs text-gray-600 mb-1">当前课程</div>
             <div className="text-sm text-gray-300">{sentences.length} 句 · 已完成 {totalStats.completed} 句</div>
           </div>
@@ -245,7 +245,7 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
 
       {/* Study time + checkin */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5 flex flex-col gap-4">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <span className="text-blue-400">⏱</span>
             <span className="text-sm font-semibold text-gray-300">学习时长</span>
@@ -264,7 +264,7 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
           </div>
         </div>
 
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5 flex flex-col gap-4">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <span className="text-orange-400">🔥</span>
             <span className="text-sm font-semibold text-gray-300">打卡统计</span>
@@ -286,7 +286,7 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
       </div>
 
       {/* Calendar heatmap */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <span className="text-gray-400 text-sm">📅</span>

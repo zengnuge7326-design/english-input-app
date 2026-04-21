@@ -89,7 +89,7 @@ export default function Quiz({ onImport, onClose }) {
   if (!selectedLevel) {
     return (
       <div className="w-full max-w-3xl mx-auto">
-        <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8">
+        <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-white mb-6">选择题练习 - PEP四年级下册Unit1</h2>
           <div className="grid grid-cols-2 gap-4">
             {Object.entries(quizBank).map(([key, level]) => (
@@ -113,7 +113,7 @@ export default function Quiz({ onImport, onClose }) {
 
   return (
     <div className="w-full max-w-3xl mx-auto">
-      <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8">
+      <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
         <div className="flex items-center justify-between mb-6">
           <button onClick={handleBack} className="text-gray-400 hover:text-white">← 返回</button>
           <h2 className="text-xl font-bold text-white">{quizBank[selectedLevel].name}</h2>
@@ -188,7 +188,7 @@ export default function Quiz({ onImport, onClose }) {
                       ))}
                     </div>
                     {showResult && quiz.explanation && (
-                      <div className="mt-4 bg-gray-900 rounded-lg p-4">
+                      <div className="mt-4 bg-slate-800 rounded-lg p-4">
                         <p className="text-yellow-400 text-sm font-semibold mb-1">💡 解析：</p>
                         <p className="text-gray-300 text-sm">{quiz.explanation}</p>
                         {quiz.tag && (

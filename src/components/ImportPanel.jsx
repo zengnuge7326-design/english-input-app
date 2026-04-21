@@ -107,7 +107,7 @@ export default function ImportPanel({ onImport, currentCount }) {
           onChange={e => setPasteText(e.target.value)}
           placeholder={`粘贴 JSON 或 CSV 内容，例如：\n[{"id":1,"zh":"你好","en":"Hello"}]\n\n或 CSV：\nid,zh,en\n1,你好,Hello`}
           rows={6}
-          className="w-full px-3 py-2 bg-gray-900 border border-gray-600 rounded-lg text-sm text-gray-300 font-mono resize-none focus:outline-none focus:border-blue-500 placeholder-gray-600"
+          className="w-full px-3 py-2 bg-slate-800 border border-gray-600 rounded-lg text-sm text-gray-300 font-mono resize-none focus:outline-none focus:border-blue-500 placeholder-gray-600"
         />
         <button
           onClick={handlePaste}

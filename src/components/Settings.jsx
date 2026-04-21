@@ -70,7 +70,7 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 px-4 pt-20 overflow-y-auto" onClick={onClose}>
       <div className="w-full max-w-3xl mx-auto" onClick={e => e.stopPropagation()}>
-        <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8">
+        <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-white font-bold text-2xl">设置</h3>
             <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
             </div>
           </div>
 
-          <div className="flex gap-2 mb-8 border-b border-gray-800">
+          <div className="flex gap-2 mb-8 border-b border-slate-700">
             {[['voice', '发音'],['sound', '音效'],['hint', '提示']].map(([id, label]) => (
               <button key={id} onClick={() => handleTabChange(id)}
                 className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
@@ -120,7 +120,7 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                   </div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-4">
+                <div className="border-t border-slate-700 pt-4">
                   <Toggle label="输入前朗读整句" checked={!!s.sentenceSpeak}
                     onChange={v => set({ sentenceSpeak: v })} />
                   <Toggle label="输入前朗读当前词" checked={s.wordSpeak !== false}
@@ -153,7 +153,7 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                   options={errorOptions}
                   onSelect={v => set({ errorSound: v })} />
 
-                <div className="border-t border-gray-800 pt-4">
+                <div className="border-t border-slate-700 pt-4">
                   <Toggle label="音效总开关" checked={s.soundEnabled !== false}
                     onChange={v => set({ soundEnabled: v })} />
                   <Toggle label="烟花声效" checked={s.fireworksSound !== false}
@@ -164,7 +164,7 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
 
             {activeTab === 'hint' && (
               <>
-                <div className="border-b border-gray-800 pb-4">
+                <div className="border-b border-slate-700 pb-4">
                   <Toggle label="🎤 强制跟读（隐藏跳过按钮）" checked={!!s.requireSpeak}
                     onChange={v => set({ requireSpeak: v })} />
                   <div className="text-xs text-gray-500 mt-1">开启后，朗读环节的跳过按钮被隐藏；连续失败 5 次自动通过</div>
@@ -190,13 +190,13 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                   </div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-4">
+                <div className="border-t border-slate-700 pt-4">
                   <Seg label="输错后需重复次数" value={s.errorRetryCount || 2}
                     options={[[2,'2次'],[3,'3次'],[4,'4次'],[5,'5次']]}
                     onSelect={v => set({ errorRetryCount: v })} />
                 </div>
 
-                <div className="border-t border-gray-800 pt-4">
+                <div className="border-t border-slate-700 pt-4">
                   <Toggle label="错误后显示答案" checked={s.showHintOnError !== false}
                     onChange={v => set({ showHintOnError: v })} />
 
@@ -209,20 +209,20 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                   )}
                 </div>
 
-                <div className="border-t border-gray-800 pt-4">
+                <div className="border-t border-slate-700 pt-4">
                   <Toggle label="🚫 隐藏跳过和下一个按钮" checked={s.hideSplitSkip !== false}
                     onChange={v => set({ hideSplitSkip: v })} />
                   <div className="text-xs text-gray-600 mb-2">全局生效：隐藏所有跳过/下一题按钮（键盘快捷键仍可用）</div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-4">
+                <div className="border-t border-slate-700 pt-4">
                   <div className="text-gray-500 text-xs mb-2 uppercase tracking-wider">防作弊</div>
                   <Toggle label="录音时禁用领读按钮" checked={s.blockTTSDuringRec !== false}
                     onChange={v => set({ blockTTSDuringRec: v })} />
                   <div className="text-xs text-gray-600 mb-2">防止用领读声音欺骗录音；录不上时可关闭</div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-4 mt-4">
+                <div className="border-t border-slate-700 pt-4 mt-4">
                   <button onClick={onReset}
                     className="w-full py-3 rounded-lg bg-red-900/40 hover:bg-red-800/60 text-red-400 text-sm font-medium border border-red-800/60 transition-colors">
                     重置进度

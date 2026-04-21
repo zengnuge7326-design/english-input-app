@@ -13,6 +13,60 @@ import grade7DownData from '../data/grade7_down.json'
 import grade8UpData from '../data/grade8_up.json'
 import grade8DownData from '../data/grade8_down.json'
 import grade9AllData from '../data/grade9_all.json'
+import renai7upData from '../data/renai_7up.json'
+import renai7downData from '../data/renai_7down.json'
+import renai8upData from '../data/renai_8up.json'
+import renai8downData from '../data/renai_8down.json'
+import renai9upData from '../data/renai_9up.json'
+import renai9downData from '../data/renai_9down.json'
+import bsdaB1Data from '../data/bsda_b1.json'
+import bsdaB2Data from '../data/bsda_b2.json'
+import bsdaB3Data from '../data/bsda_b3.json'
+import bsdaS1Data from '../data/bsda_s1.json'
+import bsdaS2Data from '../data/bsda_s2.json'
+import bsdaS3Data from '../data/bsda_s3.json'
+import bsdaS4Data from '../data/bsda_s4.json'
+
+function lessonsFromUnits(data, descByUnit) {
+  if (!Array.isArray(data) || data.length === 0) return []
+  const out = []
+  let start = 0
+  let unit = String(data[0]?.unit ?? '').trim()
+  for (let i = 1; i <= data.length; i++) {
+    const nextUnit = i < data.length ? String(data[i]?.unit ?? '').trim() : ''
+    if (i === data.length || nextUnit !== unit) {
+      const label = unit || '全册'
+      const len = i - start
+      const maxPerChunk = 10
+      const needSplit = len > maxPerChunk
+
+      let chunkStart = start
+      let chunkIdx = 0
+      while (chunkStart < i) {
+        let chunkEnd = chunkStart + maxPerChunk
+        if (chunkEnd > i) chunkEnd = i
+        
+        let chunkLabel = label
+        if (needSplit) {
+          chunkLabel = `${label}${String.fromCharCode(65 + chunkIdx)}`
+        }
+        
+        out.push({
+          label: chunkLabel,
+          desc: descByUnit[label] || '',
+          slice: [chunkStart, chunkEnd],
+        })
+        
+        chunkStart = chunkEnd
+        chunkIdx++
+      }
+
+      start = i
+      if (i < data.length) unit = nextUnit
+    }
+  }
+  return out
+}
 
 const TEXTBOOK_SLOTS = [
   {
@@ -149,93 +203,154 @@ const TEXTBOOK_SLOTS = [
     ]
   },
   {
-    id: 'grade7_up',
-    name: '初中七年级上册',
-    desc: '人教版初中英语七年级上册 Unit 1-9',
-    cover: './covers/grade7_up.jpg',
-    data: grade7UpData,
-    lessons: [
-      { label: 'Unit 1', desc: 'My name is Gina.', slice: [0, 11] },
-      { label: 'Unit 2', desc: 'Is this your pencil?', slice: [11, 22] },
-      { label: 'Unit 3', desc: 'This is my sister.', slice: [22, 33] },
-      { label: 'Unit 4', desc: 'Where\'s my backpack?', slice: [33, 44] },
-      { label: 'Unit 5', desc: 'Do you have a soccer ball?', slice: [44, 55] },
-      { label: 'Unit 6', desc: 'Do you like bananas?', slice: [55, 66] },
-      { label: 'Unit 7', desc: 'How much are these socks?', slice: [66, 77] },
-      { label: 'Unit 8', desc: 'When is your birthday?', slice: [77, 88] },
-      { label: 'Unit 9', desc: 'My favorite subject is science.', slice: [88, 94] },
-    ]
+    id: 'renai_7up',
+    name: '七年级上册',
+    desc: '仁爱版七年级上册',
+    cover: null,
+    gradient: 'from-sky-600 to-sky-800',
+    label: '仁爱版',
+    data: renai7upData,
+    lessons: lessonsFromUnits(renai7upData, {})
   },
   {
-    id: 'grade8_up',
-    name: '初中八年级上册',
-    desc: '人教版初中英语八年级上册 Unit 1-10',
-    cover: './covers/grade8_up.jpg',
-    data: grade8UpData,
-    lessons: [
-      { label: 'Unit 1', desc: 'Where did you go on vacation?', slice: [0, 10] },
-      { label: 'Unit 2', desc: 'How often do you exercise?', slice: [10, 20] },
-      { label: 'Unit 3', desc: 'I\'m more outgoing than my sister.', slice: [20, 30] },
-      { label: 'Unit 4', desc: 'What\'s the best movie theater?', slice: [30, 40] },
-      { label: 'Unit 5', desc: 'Do you want to watch a game show?', slice: [40, 50] },
-      { label: 'Unit 6', desc: 'I\'m going to study computer science.', slice: [50, 60] },
-      { label: 'Unit 7', desc: 'Will people have robots?', slice: [60, 70] },
-      { label: 'Unit 8', desc: 'How do you make a banana milk shake?', slice: [70, 80] },
-      { label: 'Unit 9', desc: 'Can you come to my party?', slice: [80, 90] },
-      { label: 'Unit 10', desc: 'If you go to the party, you\'ll have a great time.', slice: [90, 95] },
-    ]
+    id: 'renai_7down',
+    name: '七年级下册',
+    desc: '仁爱版七年级下册',
+    cover: null,
+    gradient: 'from-blue-600 to-blue-800',
+    label: '仁爱版',
+    data: renai7downData,
+    lessons: lessonsFromUnits(renai7downData, {})
   },
   {
-    id: 'grade7_down',
-    name: '初中七年级下册',
-    desc: '人教版初中英语七年级下册 Unit 1-9',
-    cover: './covers/grade7_up.jpg',
-    data: grade7DownData,
-    lessons: [
-      { label: 'Unit 1', desc: 'Can you play the guitar?', slice: [0, 10] },
-      { label: 'Unit 2', desc: 'What time do you go to school?', slice: [10, 20] },
-      { label: 'Unit 3', desc: 'How do you get to school?', slice: [20, 30] },
-      { label: 'Unit 4', desc: 'Don\'t eat in class.', slice: [30, 40] },
-      { label: 'Unit 5', desc: 'Why do you like pandas?', slice: [40, 50] },
-      { label: 'Unit 6', desc: 'I\'m watching TV.', slice: [50, 60] },
-      { label: 'Unit 7', desc: 'It\'s raining!', slice: [60, 70] },
-      { label: 'Unit 8', desc: 'Is there a post office near here?', slice: [70, 80] },
-      { label: 'Unit 9', desc: 'What does he look like?', slice: [80, 90] },
-    ]
+    id: 'renai_8up',
+    name: '八年级上册',
+    desc: '仁爱版八年级上册',
+    cover: null,
+    gradient: 'from-violet-600 to-violet-800',
+    label: '仁爱版',
+    data: renai8upData,
+    lessons: lessonsFromUnits(renai8upData, {})
   },
   {
-    id: 'grade8_down',
-    name: '初中八年级下册',
-    desc: '人教版初中英语八年级下册 Unit 1-10',
-    cover: './covers/grade8_up.jpg',
-    data: grade8DownData,
-    lessons: [
-      { label: 'Unit 1',  desc: 'What\'s the matter?', slice: [0, 13] },
-      { label: 'Unit 2',  desc: 'I\'ll help to clean up the city parks.', slice: [13, 26] },
-      { label: 'Unit 3',  desc: 'Could you please clean your room?', slice: [26, 39] },
-      { label: 'Unit 4',  desc: 'Why don\'t you talk to your parents?', slice: [39, 52] },
-      { label: 'Unit 5',  desc: 'What were you doing when the rainstorm came?', slice: [52, 65] },
-      { label: 'Unit 6',  desc: 'An old man tried to move the mountains.', slice: [65, 78] },
-      { label: 'Unit 7',  desc: 'What\'s the highest mountain in the world?', slice: [78, 91] },
-      { label: 'Unit 8',  desc: 'Have you read Treasure Island yet?', slice: [91, 104] },
-      { label: 'Unit 9',  desc: 'Have you ever been to a museum?', slice: [104, 117] },
-      { label: 'Unit 10', desc: 'I\'ve had this bike for three years.', slice: [117, 138] },
-    ]
+    id: 'renai_8down',
+    name: '八年级下册',
+    desc: '仁爱版八年级下册',
+    cover: null,
+    gradient: 'from-purple-600 to-purple-800',
+    label: '仁爱版',
+    data: renai8downData,
+    lessons: lessonsFromUnits(renai8downData, {})
   },
   {
-    id: 'grade9_all',
-    name: '初中九年级全册',
-    desc: '人教版初中英语九年级全一册 Unit 1-14',
-    cover: './covers/grade9_all.jpg',
-    data: grade9AllData,
-    lessons: [
-      { label: 'Unit 1-2',   desc: 'How can we become good learners?', slice: [0, 18] },
-      { label: 'Unit 3-4',   desc: 'Could you please tell me where...?', slice: [18, 36] },
-      { label: 'Unit 5-6',   desc: 'What are the shirts made of?', slice: [36, 54] },
-      { label: 'Unit 7-8',   desc: 'Teenagers should be allowed to...', slice: [54, 72] },
-      { label: 'Unit 9-10',  desc: 'I like music that I can dance to.', slice: [72, 90] },
-      { label: 'Unit 11-14', desc: 'Sad movies make me cry.', slice: [90, 120] },
-    ]
+    id: 'renai_9up',
+    name: '九年级上册',
+    desc: '仁爱版九年级上册',
+    cover: null,
+    gradient: 'from-rose-600 to-rose-800',
+    label: '仁爱版',
+    data: renai9upData,
+    lessons: lessonsFromUnits(renai9upData, {})
+  },
+  {
+    id: 'renai_9down',
+    name: '九年级下册',
+    desc: '仁爱版九年级下册',
+    cover: null,
+    gradient: 'from-orange-600 to-orange-800',
+    label: '仁爱版',
+    data: renai9downData,
+    lessons: lessonsFromUnits(renai9downData, {})
+  },
+  {
+    id: 'bsda_b1',
+    name: '必修 第一册',
+    desc: '北师大版高中英语必修第一册',
+    gradient: 'from-blue-700 to-blue-900',
+    coverText: '必修一',
+    data: bsdaB1Data,
+    lessons: lessonsFromUnits(bsdaB1Data, {
+      'Unit 1': 'Life Choices',
+      'Unit 2': 'Sports and Fitness',
+      'Unit 3': 'Celebrations',
+    }),
+  },
+  {
+    id: 'bsda_b2',
+    name: '必修 第二册',
+    desc: '北师大版高中英语必修第二册',
+    gradient: 'from-indigo-700 to-indigo-900',
+    coverText: '必修二',
+    data: bsdaB2Data,
+    lessons: lessonsFromUnits(bsdaB2Data, {
+      'Unit 1': 'Information Technology',
+      'Unit 2': 'Humans and Nature',
+      'Unit 3': 'The Admirable',
+    }),
+  },
+  {
+    id: 'bsda_b3',
+    name: '必修 第三册',
+    desc: '北师大版高中英语必修第三册',
+    gradient: 'from-violet-700 to-violet-900',
+    coverText: '必修三',
+    data: bsdaB3Data,
+    lessons: lessonsFromUnits(bsdaB3Data, {
+      'Unit 1': 'Art',
+      'Unit 2': 'Green Living',
+      'Unit 3': 'Learning',
+    }),
+  },
+  {
+    id: 'bsda_s1',
+    name: '选择性必修 第一册',
+    desc: '北师大版高中英语选择性必修第一册',
+    gradient: 'from-emerald-700 to-emerald-900',
+    coverText: '选必一',
+    data: bsdaS1Data,
+    lessons: lessonsFromUnits(bsdaS1Data, {
+      'Unit 1': 'Relationships',
+      'Unit 2': 'Success',
+    }),
+  },
+  {
+    id: 'bsda_s2',
+    name: '选择性必修 第二册',
+    desc: '北师大版高中英语选择性必修第二册',
+    gradient: 'from-teal-700 to-teal-900',
+    coverText: '选必二',
+    data: bsdaS2Data,
+    lessons: lessonsFromUnits(bsdaS2Data, {
+      'Unit 1': 'Humor',
+      'Unit 2': 'Education',
+      'Unit 3': 'The Media',
+    }),
+  },
+  {
+    id: 'bsda_s3',
+    name: '选择性必修 第三册',
+    desc: '北师大版高中英语选择性必修第三册',
+    gradient: 'from-cyan-700 to-cyan-900',
+    coverText: '选必三',
+    data: bsdaS3Data,
+    lessons: lessonsFromUnits(bsdaS3Data, {
+      'Unit 1': 'Careers',
+      'Unit 2': 'Literature',
+      'Unit 3': 'Human Biology',
+    }),
+  },
+  {
+    id: 'bsda_s4',
+    name: '选择性必修 第四册',
+    desc: '北师大版高中英语选择性必修第四册',
+    gradient: 'from-sky-700 to-sky-900',
+    coverText: '选必四',
+    data: bsdaS4Data,
+    lessons: lessonsFromUnits(bsdaS4Data, {
+      'Unit 1': 'Connections',
+      'Unit 2': 'Conflict and Compromise',
+      'Unit 3': 'Innovation',
+    }),
   },
   ...Array.from({ length: 2 }, (_, i) => ({
     id: `tb_slot_${i + 8}`,
@@ -286,9 +401,17 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
           <span className="text-gray-300 text-sm font-medium">{book.name}</span>
         </div>
 
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6 flex items-center gap-6">
-          <div className="w-20 h-28 rounded-xl overflow-hidden shrink-0 bg-gray-800">
-            <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
+          <div className={`w-20 h-28 rounded-xl overflow-hidden shrink-0 ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
+            {book.gradient ? (
+              <div className="flex flex-col items-center justify-center w-full h-full p-2 text-center border-2 border-white/10 mix-blend-overlay shadow-inner" style={{ backdropFilter: 'brightness(1.1)' }}>
+                <span className="text-white/80 text-[9px] font-bold tracking-widest mb-1.5 opacity-90 drop-shadow-sm">北师大版</span>
+                <span className="text-white text-base font-black tracking-widest mb-1.5 drop-shadow-md">{book.coverText}</span>
+                <span className="text-white/70 text-[10px] font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">高中英语</span>
+              </div>
+            ) : (
+              <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
+            )}
           </div>
           <div className="flex-1 min-w-0">
             <div className="text-xl font-bold text-white mb-1">{book.name}</div>
@@ -321,7 +444,7 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const done = stats.mastered === stats.total && stats.total > 0
             return (
-              <div key={i} className="text-left bg-gray-900 border border-gray-800 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
+              <div key={i} className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
                 <button
                   onClick={() => onImport(data, `${book.name} · ${lesson.label}`)}
                   className="p-4 flex flex-col gap-2 flex-1 text-left"
@@ -372,16 +495,23 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
             className={`flex flex-col rounded-2xl overflow-hidden border transition-all text-left
               ${book.name
                 ? 'border-gray-700 hover:border-gray-500 cursor-pointer'
-                : 'border-gray-800 border-dashed cursor-default opacity-40'}
+                : 'border-slate-700 border-dashed cursor-default opacity-40'}
             `}
           >
-            <div className="w-full aspect-[3/4] bg-gray-800 flex items-center justify-center overflow-hidden">
-              {book.cover
-                ? <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
-                : <span className="text-3xl text-gray-700">+</span>
-              }
+            <div className={`w-full aspect-[3/4] flex items-center justify-center overflow-hidden relative ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
+              {book.gradient ? (
+                <div className="absolute inset-2 flex flex-col items-center justify-center p-3 text-center border-[3px] border-white/20 rounded-xl shadow-inner mix-blend-overlay" style={{ backdropFilter: 'brightness(1.1)' }}>
+                  <span className="text-white/90 text-xs font-bold tracking-widest mb-3 opacity-90 drop-shadow-sm">北师大版</span>
+                  <span className="text-white text-3xl font-black tracking-widest mb-2 drop-shadow-md">{book.coverText}</span>
+                  <span className="text-white/80 text-sm font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">高中英语</span>
+                </div>
+              ) : book.cover ? (
+                <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-3xl text-gray-700">+</span>
+              )}
             </div>
-            <div className="bg-gray-900 p-3 flex flex-col gap-1">
+            <div className="bg-slate-800 p-3 flex flex-col gap-1">
               <div className="text-sm font-medium text-white truncate">
                 {book.name || '即将上线'}
               </div>

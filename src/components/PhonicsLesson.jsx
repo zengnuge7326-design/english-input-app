@@ -1,21 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import PHONICS_LESSONS from '../data/phonicsLessons.js'
-import { parseGraphemes } from '../utils/parseGraphemes.js'
-import { playPhoneme, splitIPA, IPA_TO_FILE } from '../utils/phonemes.js'
 import { unlockAudio } from '../utils/audioUnlock.js'
-
-// IPA phoneme → file key (for direct lookup from grapheme tokens)
-// We use the IPA string from parseGraphemes which may be multi-char
-function playIPAPhoneme(ipaStr) {
-  if (!ipaStr) return
-  // Try direct lookup first
-  if (IPA_TO_FILE[ipaStr]) { playPhoneme(ipaStr); return }
-  // Split multi-char and play each
-  const tokens = splitIPA(ipaStr)
-  tokens.forEach((tok, i) => {
-    setTimeout(() => playPhoneme(tok.symbol), i * 250)
-  })
-}
+import { getWordPhonics, fetchWordPhonics, playWordAudio, levelLabel } from '../utils/phonicsAudio.js'
 
 // ── Grapheme Button ────────────────────────────────────────────────────────────
 
@@ -28,11 +14,11 @@ const GBUTTON_COLORS = [
   { idle: 'bg-violet-900/40 text-violet-200 border-violet-700/50 hover:bg-violet-800/60', active: 'bg-violet-400 text-white border-violet-300 scale-110 shadow-lg shadow-violet-400/30' },
 ]
 
-function GraphemeBtn({ g, p, colorIdx, active, onClick, size = 'lg' }) {
+function GraphemeBtn({ g, colorIdx, active, onClick, size = 'lg' }) {
   const pal = GBUTTON_COLORS[colorIdx % GBUTTON_COLORS.length]
-  const sz  = size === 'xl' ? 'text-4xl px-5 py-3 min-w-[3.5rem]'
-            : size === 'lg' ? 'text-3xl px-4 py-2.5 min-w-[3rem]'
-            :                 'text-xl px-3 py-2   min-w-[2.5rem]'
+  const sz  = size === 'xl' ? 'text-5xl px-6 py-3.5 min-w-[4rem]'
+            : size === 'lg' ? 'text-4xl px-5 py-3   min-w-[3.5rem]'
+            :                 'text-2xl px-3 py-2   min-w-[2.5rem]'
   return (
     <button
       onClick={() => { unlockAudio(); onClick() }}
@@ -40,7 +26,6 @@ function GraphemeBtn({ g, p, colorIdx, active, onClick, size = 'lg' }) {
         ${sz} ${active ? pal.active : pal.idle}`}
     >
       {g}
-      {p && <div className="text-[0.55em] opacity-60 font-sans font-normal leading-none mt-0.5">/{p}/</div>}
     </button>
   )
 }
@@ -52,7 +37,12 @@ function IntroPanel({ lesson, onDone }) {
 
   function tap(idx) {
     setActiveIdx(idx)
-    playIPAPhoneme(lesson.phonemes[idx])
+    unlockAudio()
+    // Find a decodable word that contains this grapheme and play it
+    const g = lesson.newGraphemes[idx]
+    const exampleWord = lesson.decodableWords.find(w => w.toLowerCase().includes(g.toLowerCase()))
+      ?? lesson.decodableWords[0]
+    if (exampleWord) playWordAudio(exampleWord)
     setTimeout(() => setActiveIdx(null), 600)
   }
 
@@ -60,20 +50,23 @@ function IntroPanel({ lesson, onDone }) {
     <div className="flex flex-col items-center gap-6 py-6">
       <div className="text-center">
         <div className="text-white font-bold text-xl mb-1">{lesson.title}</div>
-        <div className="text-gray-400 text-sm">点击字母听音素</div>
+        <div className="text-gray-400 text-sm">点击字母听单词发音</div>
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-4">
         {lesson.newGraphemes.map((g, i) => (
-          <GraphemeBtn
-            key={g}
-            g={g}
-            p={lesson.phonemes[i]}
-            colorIdx={i}
-            active={activeIdx === i}
-            onClick={() => tap(i)}
-            size="xl"
-          />
+          <div key={g} className="flex flex-col items-center gap-1.5">
+            <GraphemeBtn
+              g={g}
+              colorIdx={i}
+              active={activeIdx === i}
+              onClick={() => tap(i)}
+              size="xl"
+            />
+            {lesson.phonemes[i] && (
+              <div className="text-gray-300 text-lg font-mono tracking-tight leading-none">/{lesson.phonemes[i]}/</div>
+            )}
+          </div>
         ))}
       </div>
 
@@ -87,29 +80,42 @@ function IntroPanel({ lesson, onDone }) {
   )
 }
 
-// ── Word Tap Mode: tap each grapheme to hear its phoneme ──────────────────────
+// ── Word Tap Mode: tap chunks to highlight while full word audio plays ────────
 
 function TapMode({ lesson, onDone }) {
   const [wordIdx, setWordIdx] = useState(0)
   const [activeChunk, setActiveChunk] = useState(null)
+  const [phonicsInfo, setPhonicsInfo] = useState(null)
   const word = lesson.decodableWords[wordIdx]
-  const chunks = parseGraphemes(word)
 
-  function tapChunk(idx, p) {
-    setActiveChunk(idx)
-    playIPAPhoneme(p)
-    setTimeout(() => setActiveChunk(null), 500)
-  }
+  useEffect(() => {
+    let alive = true
+    fetchWordPhonics(word).then(info => { if (alive) setPhonicsInfo(info) })
+    return () => { alive = false }
+  }, [word])
 
-  function speakWord() {
+  const chunks = phonicsInfo?.chunks ?? [word]
+  const levelText = levelLabel(phonicsInfo?.level)
+
+  // Clicking a chunk highlights it sequentially across all chunks, then plays full word
+  function tapChunk(idx) {
     unlockAudio()
-    const synth = window.speechSynthesis
-    if (!synth) return
-    synth.cancel()
-    const u = new SpeechSynthesisUtterance(word)
-    u.lang = 'en-US'; u.rate = 0.8
-    synth.speak(u)
+    // Highlight each chunk in sequence, then the tapped one stays lit while word plays
+    chunks.forEach((_, ci) => {
+      setTimeout(() => setActiveChunk(ci), ci * 160)
+    })
+    const totalHighlight = chunks.length * 160
+    setTimeout(() => {
+      playWordAudio(word)
+    }, totalHighlight)
+    setTimeout(() => setActiveChunk(null), totalHighlight + 900)
   }
+
+  // Clicking the IPA / word area also plays the full word
+  const speakWord = useCallback(() => {
+    unlockAudio()
+    playWordAudio(word)
+  }, [word])
 
   function nextWord() {
     if (wordIdx < lesson.decodableWords.length - 1) {
@@ -123,38 +129,37 @@ function TapMode({ lesson, onDone }) {
   return (
     <div className="flex flex-col items-center gap-5 py-4">
       <div className="text-gray-400 text-sm">
-        {wordIdx + 1} / {lesson.decodableWords.length} — 点击字母块听音素
+        {wordIdx + 1} / {lesson.decodableWords.length} — 点击拼读块听整词发音
       </div>
 
-      {/* Grapheme chunks */}
+      {/* Grapheme chunks — clicking plays full word with sequential highlight */}
       <div className="flex items-center gap-2 flex-wrap justify-center">
-        {chunks.map((tok, i) => (
-          tok.p ? (
-            <GraphemeBtn
-              key={i}
-              g={tok.g}
-              p={tok.p}
-              colorIdx={i}
-              active={activeChunk === i}
-              onClick={() => tapChunk(i, tok.p)}
-              size="xl"
-            />
-          ) : (
-            // Silent letter — show greyed out, not clickable
-            <div key={i} className="text-4xl font-mono px-4 py-2.5 text-gray-700 min-w-[3.5rem] text-center">
-              {tok.g}
-            </div>
-          )
+        {chunks.map((chunk, i) => (
+          <GraphemeBtn
+            key={`${word}-${chunk}-${i}`}
+            g={chunk}
+            colorIdx={i}
+            active={activeChunk === i}
+            onClick={() => tapChunk(i)}
+            size="xl"
+          />
         ))}
       </div>
 
-      {/* Play whole word */}
-      <button
-        onClick={speakWord}
-        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white text-sm transition-colors"
-      >
-        🔊 完整单词
-      </button>
+      {/* IPA row — display only */}
+      {phonicsInfo?.rule && (
+        <div
+          className="text-gray-300 text-xl font-mono tracking-tight"
+        >
+          {chunks.map((c, i) => (
+            <span key={i}>
+              {i > 0 && <span className="text-gray-500 mx-[1px]">·</span>}
+              <span className={activeChunk === i ? 'text-yellow-300' : ''}>{c}</span>
+            </span>
+          ))}
+          {levelText && <span className="ml-2 text-xs text-gray-600">({levelText})</span>}
+        </div>
+      )}
 
       <button
         onClick={nextWord}
@@ -166,34 +171,47 @@ function TapMode({ lesson, onDone }) {
   )
 }
 
-// ── Blend Mode: chunks revealed one at a time ─────────────────────────────────
+// ── Blend Mode: chunks revealed one at a time, word audio plays throughout ────
 
 function BlendMode({ lesson, onDone }) {
   const [cardIdx, setCardIdx] = useState(0)
-  const [revealed, setRevealed] = useState(0) // how many chunks shown
+  const [revealed, setRevealed] = useState(0)
   const [blending, setBlending] = useState(false)
+  const [activeChunk, setActiveChunk] = useState(null)
+  const [cardPhonics, setCardPhonics] = useState(null)
   const card = lesson.blendingCards[cardIdx]
 
+  useEffect(() => {
+    if (!card?.word) return
+    let alive = true
+    fetchWordPhonics(card.word).then(info => { if (alive) setCardPhonics(info) })
+    return () => { alive = false }
+  }, [card?.word])
+
+  const displayChunks = cardPhonics?.chunks ?? card?.chunks ?? [card?.word]
+
   function nextChunk() {
-    if (revealed < card.chunks.length) {
+    unlockAudio()
+    if (revealed < displayChunks.length) {
       const newRev = revealed + 1
       setRevealed(newRev)
-      // Play phoneme for newly revealed chunk
-      const chunk = card.chunks[newRev - 1]
-      const tokens = parseGraphemes(chunk)
-      tokens.forEach((tok, i) => {
-        if (tok.p) setTimeout(() => playIPAPhoneme(tok.p), i * 200)
-      })
+      // Highlight the newly revealed chunk while playing the full word
+      const ci = newRev - 1
+      setActiveChunk(ci)
+      playWordAudio(card.word, 0.8)
+      setTimeout(() => setActiveChunk(null), 900)
     } else {
-      // All chunks shown — blend the full word
+      // All chunks shown — blend: highlight all sequentially then play word
       setBlending(true)
+      displayChunks.forEach((_, ci) => {
+        setTimeout(() => setActiveChunk(ci), ci * 160)
+      })
+      const totalHighlight = displayChunks.length * 160
       setTimeout(() => {
-        const u = new SpeechSynthesisUtterance(card.word)
-        u.lang = 'en-US'; u.rate = 0.75
-        window.speechSynthesis?.cancel()
-        window.speechSynthesis?.speak(u)
+        playWordAudio(card.word, 0.75)
+        setActiveChunk(null)
         setTimeout(() => setBlending(false), 1200)
-      }, 200)
+      }, totalHighlight + 100)
     }
   }
 
@@ -202,12 +220,13 @@ function BlendMode({ lesson, onDone }) {
       setCardIdx(i => i + 1)
       setRevealed(0)
       setBlending(false)
+      setActiveChunk(null)
     } else {
       onDone()
     }
   }
 
-  const allRevealed = revealed >= card.chunks.length
+  const allRevealed = revealed >= displayChunks.length
 
   return (
     <div className="flex flex-col items-center gap-6 py-4">
@@ -217,34 +236,35 @@ function BlendMode({ lesson, onDone }) {
 
       {/* Chunk display */}
       <div className="flex items-center gap-3 min-h-[80px]">
-        {card.chunks.map((chunk, i) => {
+        {displayChunks.map((chunk, i) => {
           const isShown = i < revealed
-          const tokens = parseGraphemes(chunk)
           const colorIdx = i
           return (
             <div key={i} className={`transition-all duration-300 ${isShown ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-              {isShown && tokens.map((tok, ti) => (
+              {isShown && Array.from(chunk).map((letter, ti) => (
                 <span
                   key={ti}
-                  className={`text-5xl font-bold font-mono ${
-                    GBUTTON_COLORS[colorIdx % GBUTTON_COLORS.length].active.split(' ').includes('text-black')
-                      ? 'text-white' : 'text-white'
-                  }`}
-                  style={{ color: ['#fbbf24','#2dd4bf','#f472b6','#34d399','#fb923c','#a78bfa'][colorIdx % 6] }}
+                  className={`text-5xl font-bold font-mono transition-all duration-150 ${activeChunk === i ? 'scale-110' : ''}`}
+                  style={{ color: activeChunk === i
+                    ? '#fff'
+                    : ['#fbbf24','#2dd4bf','#f472b6','#34d399','#fb923c','#a78bfa'][colorIdx % 6] }}
                 >
-                  {tok.g}
+                  {letter}
                 </span>
               ))}
             </div>
           )
         })}
         {allRevealed && !blending && (
-          <div className="text-gray-500 text-2xl">→</div>
+          <div className="text-gray-500 text-2xl">·</div>
         )}
         {allRevealed && (
-          <div className={`text-5xl font-bold text-white transition-all duration-300 ${blending ? 'scale-110 text-blue-300' : ''}`}>
+          <button
+            onClick={() => { unlockAudio(); playWordAudio(card.word, 0.75) }}
+            className={`text-5xl font-bold text-white transition-all duration-300 hover:text-blue-300 ${blending ? 'scale-110 text-blue-300' : ''}`}
+          >
             {card.word}
-          </div>
+          </button>
         )}
       </div>
 
@@ -276,10 +296,7 @@ function HeartWordPanel({ lesson, onDone }) {
 
   function speakWord(w) {
     unlockAudio()
-    const u = new SpeechSynthesisUtterance(w)
-    u.lang = 'en-US'; u.rate = 0.8
-    window.speechSynthesis?.cancel()
-    window.speechSynthesis?.speak(u)
+    playWordAudio(w)
     setFlipped(f => ({ ...f, [w]: true }))
   }
 
@@ -306,7 +323,7 @@ function HeartWordPanel({ lesson, onDone }) {
         ))}
       </div>
 
-      <div className="bg-gray-900 border border-gray-700 rounded-xl px-6 py-4 text-center max-w-sm">
+      <div className="bg-slate-800 border border-gray-700 rounded-xl px-6 py-4 text-center max-w-sm">
         <div className="text-gray-400 text-xs mb-2">句子练习</div>
         <div className="text-white text-lg font-medium">{lesson.sentence}</div>
         <button
@@ -338,7 +355,7 @@ function LessonSelector({ onSelect }) {
           <button
             key={lesson.id}
             onClick={() => onSelect(lesson)}
-            className="bg-gray-900 border border-gray-700 hover:border-blue-500/60 rounded-2xl p-4 text-left transition-all active:scale-95"
+            className="bg-slate-800 border border-gray-700 hover:border-blue-500/60 rounded-2xl p-4 text-left transition-all active:scale-95"
           >
             <div className="text-blue-400 font-bold text-sm mb-2">第 {lesson.id} 课</div>
             <div className="flex flex-wrap gap-1.5 mb-2">

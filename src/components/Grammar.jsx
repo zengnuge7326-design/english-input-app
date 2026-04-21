@@ -328,7 +328,7 @@ export default function Grammar({ onImport, onClose, onSetBack, progress = {} })
           <span className="text-gray-600">/</span>
           <span className="text-gray-300 text-sm">{tenseObj.name}</span>
         </div>
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6 flex items-center gap-6">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
           <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${stageObj.color} flex items-center justify-center text-3xl shrink-0`}>
             {stageObj.icon}
           </div>
@@ -360,7 +360,7 @@ export default function Grammar({ onImport, onClose, onSetBack, progress = {} })
             const done = stats.mastered === stats.total && stats.total > 0
             return (
               <button key={i} onClick={() => onImport(data, `${stageObj.label} · ${tenseObj.name} · ${lesson.label}`)}
-                className="text-left bg-gray-900 border border-gray-800 hover:border-gray-600 rounded-xl p-4 flex flex-col gap-2 transition-colors">
+                className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl p-4 flex flex-col gap-2 transition-colors">
                 <div className="flex items-start justify-between gap-2">
                   <span className="text-white text-sm font-medium">{lesson.label}</span>
                   {done
@@ -390,7 +390,7 @@ export default function Grammar({ onImport, onClose, onSetBack, progress = {} })
         <div className="flex items-center gap-2 mb-6">
           <span className="text-gray-300 text-sm font-medium">{stageObj.label}阶段</span>
         </div>
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6 flex items-center gap-6">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
           <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${stageObj.color} flex items-center justify-center text-3xl shrink-0`}>
             {stageObj.icon}
           </div>
@@ -421,7 +421,7 @@ export default function Grammar({ onImport, onClose, onSetBack, progress = {} })
             const done = stats.mastered === stats.total && stats.total > 0
             return (
               <button key={t.id} onClick={() => setTense(t.id)}
-                className="text-left bg-gray-900 border border-gray-800 hover:border-gray-600 rounded-xl p-4 flex flex-col gap-2 transition-colors">
+                className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl p-4 flex flex-col gap-2 transition-colors">
                 <div className="flex items-start justify-between gap-2">
                   <span className="text-white text-sm font-medium">{t.name}</span>
                   {done
@@ -463,7 +463,7 @@ export default function Grammar({ onImport, onClose, onSetBack, progress = {} })
               <div className={`w-full h-28 bg-gradient-to-br ${s.color} flex items-center justify-center`}>
                 <span className="text-5xl">{s.icon}</span>
               </div>
-              <div className="bg-gray-900 p-4 flex flex-col gap-1">
+              <div className="bg-slate-800 p-4 flex flex-col gap-1">
                 <div className="text-base font-bold text-white">{s.label}阶段</div>
                 <div className="text-xs text-gray-400">{s.tenses.length} 个专题 · {allData.length} 句</div>
                 <div className="flex items-center gap-2 mt-1">
