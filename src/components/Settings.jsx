@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { previewSound } from '../hooks/useSound'
 
 export default function Settings({ settings, onChange, onReset, onClose }) {
   const s = settings
@@ -136,22 +137,22 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                 <Grid label="按键音" cols={5}
                   value={s.keypressSound ?? 'black-pbt'}
                   options={[['black-pbt','⌨️PBT'],['clicky','🔵响键'],['typewriter','🖨️打字机'],['soft','🤫静音'],['none','🔇关闭']]}
-                  onSelect={v => set({ keypressSound: v })} />
+                  onSelect={v => { set({ keypressSound: v }); previewSound('keypress', v) }} />
 
                 <Grid label="✅ 答对单词" cols={4}
                   value={s.correctSound ?? 'chime'}
                   options={soundOptions}
-                  onSelect={v => set({ correctSound: v })} />
+                  onSelect={v => { set({ correctSound: v }); previewSound('correct', v) }} />
 
                 <Grid label="🎉 完成整句" cols={4}
                   value={s.victorySound ?? 'chime'}
                   options={soundOptions}
-                  onSelect={v => set({ victorySound: v })} />
+                  onSelect={v => { set({ victorySound: v }); previewSound('victory', v) }} />
 
                 <Grid label="❌ 答错提示" cols={4}
                   value={s.errorSound ?? 'buzz'}
                   options={errorOptions}
-                  onSelect={v => set({ errorSound: v })} />
+                  onSelect={v => { set({ errorSound: v }); previewSound('error', v) }} />
 
                 <div className="border-t border-slate-700 pt-4">
                   <Toggle label="音效总开关" checked={s.soundEnabled !== false}

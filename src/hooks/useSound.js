@@ -365,3 +365,49 @@ export function useSound(settings) {
 
   return { playKeypress, playError, playCorrect, playVictory, playBubble, playFireworks }
 }
+
+export function previewSound(category, value) {
+  if (value === 'none') return
+  try {
+    const ctx = getCtx()
+    if (category === 'keypress') {
+      if (value === 'black-pbt') playBlackPBT(ctx)
+      else if (value === 'clicky') playClicky(ctx)
+      else if (value === 'typewriter') playTypewriter(ctx)
+      else if (value === 'soft') playSoft(ctx)
+    } else if (category === 'error') {
+      if (value === 'buzz') {
+        const t = ctx.currentTime
+        const osc = ctx.createOscillator()
+        const gain = ctx.createGain()
+        osc.connect(gain); gain.connect(ctx.destination)
+        osc.type = 'sawtooth'
+        osc.frequency.setValueAtTime(220, t)
+        osc.frequency.exponentialRampToValueAtTime(110, t + 0.2)
+        gain.gain.setValueAtTime(0.3, t)
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25)
+        osc.start(t); osc.stop(t + 0.25)
+      }
+      else if (value === 'chime') playChime(ctx, false)
+      else if (value === 'coin') playCoin(ctx, false)
+      else if (value === 'pop') playPop(ctx, false)
+      else if (value === 'retro') playRetro(ctx, false)
+      else if (value === 'fart') playFart(ctx, false)
+      else if (value === 'drum') playDrum(ctx, false)
+    } else if (category === 'correct') {
+      if (value === 'chime') playChime(ctx, false)
+      else if (value === 'coin') playCoin(ctx, false)
+      else if (value === 'pop') playPop(ctx, false)
+      else if (value === 'retro') playRetro(ctx, false)
+      else if (value === 'fart') playFart(ctx, false)
+      else if (value === 'drum') playDrum(ctx, false)
+    } else if (category === 'victory') {
+      if (value === 'chime') playChime(ctx, true)
+      else if (value === 'coin') playCoin(ctx, true)
+      else if (value === 'pop') playPop(ctx, true)
+      else if (value === 'retro') playRetro(ctx, true)
+      else if (value === 'fart') playFart(ctx, true)
+      else if (value === 'drum') playDrum(ctx, true)
+    }
+  } catch {}
+}

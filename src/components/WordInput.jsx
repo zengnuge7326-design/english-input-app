@@ -1,6 +1,20 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useMemo } from 'react'
 import { useWordTranslate } from '../hooks/useWordTranslate'
 import { recordError } from '../hooks/useProgress'
+import { fetchWordPhonetic, getSentencePOS, getFunctionWordTranslation } from '../utils/wordInfo'
+
+const POS_COLORS = {
+  noun:        { badge: 'bg-blue-500/80 text-blue-100', underline: 'bg-blue-400/70', label: '名词' },
+  verb:        { badge: 'bg-red-500/80 text-red-100', underline: 'bg-red-400/70', label: '动词' },
+  adjective:   { badge: 'bg-orange-500/80 text-orange-100', underline: 'bg-orange-400/70', label: '形容词' },
+  adverb:      { badge: 'bg-orange-500/80 text-orange-100', underline: 'bg-orange-400/70', label: '副词' },
+  pronoun:     { badge: 'bg-green-500/80 text-green-100', underline: 'bg-green-400/70', label: '代词' },
+  preposition: { badge: 'bg-gray-500/80 text-gray-100', underline: 'bg-gray-400/60', label: '介词' },
+  conjunction: { badge: 'bg-gray-500/80 text-gray-100', underline: 'bg-gray-400/60', label: '连词' },
+  other:       { badge: 'bg-gray-500/80 text-gray-100', underline: 'bg-gray-400/60', label: '其他' },
+}
+
+const YUANTI_FONT = '"Yuanti SC", "Yuanti TC", "PingFang SC", "Microsoft YaHei", sans-serif'
 
 function getWordAnnotation(sentence, wordStr) {
   if (!sentence.words) return null
@@ -34,7 +48,10 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
   const bubbleIdRef = useRef(0)
   const inputRefs = useRef([])
   const { translate } = useWordTranslate()
-  const [translations, setTranslations] = useState({}) // idx → zh text
+  const [translations, setTranslations] = useState({})
+  const [phonetics, setPhonetics] = useState({})
+
+  const posMap = useMemo(() => getSentencePOS(sentence.en), [sentence.id])
 
   useEffect(() => {
     setCurrent(0)
@@ -44,6 +61,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
     setErrorCount(words.map(() => 0))
     setShaking(false)
     setTranslations({})
+    setPhonetics({})
     onCurrentChange?.(0, words.length)
   }, [sentence.id])
 
@@ -52,12 +70,29 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
     words.forEach((wordStr, i) => {
       const [core] = splitPunct(wordStr)
       if (!core) return
-      // Try pre-annotated data first
       const ann = getWordAnnotation(sentence, wordStr)
       if (ann) { setTranslations(prev => ({ ...prev, [i]: ann.zh })); return }
-      // API fallback (cached by useWordTranslate)
+
+      const pos = posMap[core.toLowerCase()]
+      const funcTranslation = getFunctionWordTranslation(core, pos)
+      if (funcTranslation) {
+        setTranslations(prev => ({ ...prev, [i]: funcTranslation }))
+        return
+      }
+
       translate(core).then(text => {
         if (text) setTranslations(prev => ({ ...prev, [i]: text }))
+      })
+    })
+  }, [sentence.id, posMap])
+
+  // Pre-fetch phonetics for ALL words
+  useEffect(() => {
+    words.forEach((wordStr, i) => {
+      const [core] = splitPunct(wordStr)
+      if (!core) return
+      fetchWordPhonetic(core).then(ph => {
+        if (ph) setPhonetics(prev => ({ ...prev, [i]: ph }))
       })
     })
   }, [sentence.id])
@@ -236,7 +271,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
   }
 
   return (
-    <div className="flex flex-wrap gap-x-5 gap-y-6 items-end justify-center mt-3">
+    <div className="flex flex-wrap gap-x-6 gap-y-4 items-end justify-center mt-3">
       {words.map((word, i) => {
         const [core, punct] = splitPunct(word)
         const status = statuses[i]
@@ -256,20 +291,29 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
 
         const retryColors = ['#ef4444','#f97316','#eab308','#84cc16','#22c55e','#3b82f6']
 
-        // correct时下划线消失（transparent），输入中蓝色，当前蓝色，其他白色
+        const pos = posMap[core.toLowerCase()] || 'other'
+        const posStyle = POS_COLORS[pos] || POS_COLORS.other
+
         const underlineColor = status === 'correct' ? 'bg-transparent'
           : isShaking ? 'bg-red-500'
           : isCurrent ? 'bg-blue-400'
-          : 'bg-white/60'
+          : posStyle.underline
 
         const showPlaceholder = status === 'pending' && val === '' && isCurrent && hint
 
         return (
           <div key={i} className="relative flex items-end gap-0">
-            <div className="relative flex flex-col" style={{ minWidth: `${Math.max(core.length * 1.2, 4)}ch` }}>
+            <div className="relative flex flex-col items-center" style={{ minWidth: `${Math.max(core.length * 1.2, 4)}ch` }}>
               {wordBubbles.filter(b => b.idx === i).map(b => (
                 <div key={b.id} className="word-bubble" style={{ width: b.size, height: b.size, left: `${b.left}%`, '--dx': `${b.dx}px`, animationDelay: `${b.delay}s` }} />
               ))}
+
+              {/* phonetic */}
+              <div className="h-4 flex items-center justify-center w-full">
+                {phonetics[i] && (
+                  <span className="text-gray-400 text-[10px] sm:text-xs whitespace-nowrap leading-none">{phonetics[i]}</span>
+                )}
+              </div>
 
               {/* text display */}
               <div className={`text-4xl tracking-wide min-h-8 flex items-end w-full ${isShaking ? 'shake' : ''}`}
@@ -290,7 +334,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
 
               {/* underline / retry progress bar */}
               {retryCount[i] > 0 ? (
-                <div className="w-full h-0.5 mt-0.5 flex overflow-hidden rounded-full">
+                <div className="w-full h-1 mt-0.5 flex overflow-hidden rounded-full">
                   {Array.from({ length: errorRetryCount }).map((_, j) => {
                     const filled = j < retryCount[i]
                     const color = retryColors[Math.min(j, retryColors.length - 1)]
@@ -301,12 +345,21 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
                   })}
                 </div>
               ) : (
-                <div className={`w-full h-0.5 mt-0.5 transition-colors duration-150 ${underlineColor}`} />
+                <div className={`w-full h-1 mt-0.5 rounded-full transition-colors duration-150 ${underlineColor}`} />
               )}
-              <div className="h-5 flex items-center justify-center mt-0.5 overflow-hidden">
+
+              {/* POS badge */}
+              <div className="h-4 flex items-center justify-center mt-0.5 w-full">
+                <span className={`text-[9px] sm:text-[10px] px-1.5 py-px rounded-full leading-none font-medium ${posStyle.badge}`}>
+                  {posStyle.label}
+                </span>
+              </div>
+
+              {/* translation */}
+              <div className="h-5 flex items-center justify-center overflow-hidden w-full">
                 {translations[i] && (
-                  <span className={`text-base whitespace-nowrap ${isShaking ? 'text-red-400' : 'text-orange-400'}`}
-                    style={{ fontFamily: '"Kaiti SC","STKaiti","KaiTi",serif', fontWeight: 'bold' }}>
+                  <span className={`text-base whitespace-nowrap ${isShaking ? 'text-red-400' : 'text-white/90'}`}
+                    style={{ fontFamily: YUANTI_FONT, fontWeight: 'normal' }}>
                     {translations[i]}
                   </span>
                 )}
