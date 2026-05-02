@@ -22,7 +22,7 @@ function calcMatch(targetSentence, spokenText) {
   return { score, targetWords, spokenWords, matched }
 }
 
-export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId }) {
+export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide }) {
   const [index, setIndex] = useState(initialIndex)
   const [completed, setCompleted] = useState(false)
   const [key, setKey] = useState(0)
@@ -46,7 +46,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const [splitLevel, setSplitLevel]     = useState(0) // 0=off, 1=初级, 2=中级, 3=高级
   const splitMode = splitLevel > 0
   const [chunkTranslations, setChunkTranslations] = useState([])
-  const { speak } = useTTS(settings)
+  const { speak, prefetch } = useTTS(settings)
   const { playError, playCorrect, playVictory, playKeypress, playBubble, playFireworks } = useSound(settings)
   const [currentWordIndex, setCurrentWordIndex] = useState({ idx: 0, total: 0 })
   const [completeBubbles, setCompleteBubbles]   = useState([])
@@ -109,6 +109,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   useEffect(() => {
     const sentence = sentences[index]
     if (!sentence || gateEnabled || completed) return
+    prefetch(sentence.en)
     if (settings.sentenceSpeak) setTimeout(() => speak(sentence.en), 300)
   }, [index, key])
 
@@ -116,6 +117,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   useEffect(() => {
     if (speakActive && sentence) {
       const textToSpeak = (splitMode && chunks) ? chunks[chunkIndex] : sentence.en
+      prefetch(textToSpeak)
       setTimeout(() => speak(textToSpeak), 700)
     }
   }, [speakActive])
@@ -384,7 +386,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
         </div>
       )}
 
-      <div className="flex flex-col items-center gap-6 w-full max-w-2xl mx-auto px-4 relative" style={{zIndex:10}}>
+      <div className="flex flex-col items-center gap-3 w-full max-w-2xl mx-auto px-4 relative transition-all duration-200" style={{zIndex:10}}>
         {showCard && <DictionaryCard sentence={sentence} onClose={() => setShowCard(false)} />}
 
         {/* Sentence list drawer */}
@@ -426,7 +428,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
         )}
 
         {/* Chinese sentence + TTS button */}
-        <div className="flex items-start justify-center gap-3 mt-1">
+        <div className="flex items-start justify-center gap-3 mt-0 w-full transition-all duration-200">
           <button
             onClick={() => speak(chunks && splitMode ? chunks[chunkIndex] : sentence.en)}
             disabled={isRecording && settings?.blockTTSDuringRec !== false}
@@ -442,14 +444,26 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           </button>
 
           {/* Chinese text */}
-          <div className="text-center">
-            <div className="text-white leading-relaxed" style={{ fontFamily: '"Kaiti SC", "STKaiti", "KaiTi", serif', fontSize: '34px', letterSpacing: '0.18em', fontWeight: 'normal' }}>
-              {chunks && chunkTranslations[chunkIndex]
-                ? chunkTranslations[chunkIndex]
-                : sentence.zh}
+          <div className="text-center flex-1">
+            <div className="flex items-start justify-center gap-3">
+              {showChineseGuide && (
+                <div className="text-white leading-relaxed transition-all duration-200" style={{ fontFamily: '"Kaiti SC", "STKaiti", "KaiTi", serif', fontSize: '30px', letterSpacing: '0.18em', fontWeight: 'normal' }}>
+                  {chunks && chunkTranslations[chunkIndex]
+                    ? chunkTranslations[chunkIndex]
+                    : sentence.zh}
+                </div>
+              )}
+              <button
+                onClick={onToggleChineseGuide}
+                className="mt-1 px-2.5 py-1 rounded-lg text-xs border border-slate-600 text-slate-300 hover:text-white hover:border-slate-400 transition-colors"
+                title={showChineseGuide ? '隐藏中文引导句' : '显示中文引导句'}
+                type="button"
+              >
+                {showChineseGuide ? '隐藏中文' : '显示中文'}
+              </button>
             </div>
             {chunks && (
-              <div className="flex gap-1.5 justify-center mt-2">
+              <div className="flex gap-1.5 justify-center mt-1.5">
                 {chunks.map((_, i) => (
                   <div key={i} className={`w-2 h-2 rounded-full transition-colors ${i < chunkIndex ? 'bg-gradient-to-r from-green-400 to-emerald-500' : i === chunkIndex ? 'bg-gradient-to-r from-blue-500 to-indigo-500' : 'bg-gray-600'}`} />
                 ))}

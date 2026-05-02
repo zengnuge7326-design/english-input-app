@@ -1,6 +1,6 @@
 [
   {
-    "en": "Zhang Peng: Look! That’s the tallest dinosaur in this hall.",
+    "en": "Zhang Peng: Look! That's the tallest dinosaur in this hall.",
     "zh": "张鹏：快看！那只恐龙在这一间教室里最高的。",
     "id": 1
   },
@@ -15,7 +15,7 @@
     "id": 3
   },
   {
-    "en": "Mike: Wow! It’s taller than both of us together.",
+    "en": "Mike: Wow! It's taller than both of us together.",
     "zh": "迈克：哇！它比我们两个人加起来还要高。",
     "id": 4
   },
@@ -25,12 +25,12 @@
     "id": 5
   },
   {
-    "en": "Mike: They’re all so big and tall.",
+    "en": "Mike: They're all so big and tall.",
     "zh": "迈克：它们都很大很 tall。",
     "id": 6
   },
   {
-    "en": "Zhang Peng: Hey, this dinosaur isn’t tall! I’m taller than this one.",
+    "en": "Zhang Peng: Hey, this dinosaur isn't tall! I'm taller than this one.",
     "zh": "张鹏：嘿，这只恐龙不高！我比这只恐龙高。",
     "id": 7
   },
@@ -40,7 +40,7 @@
     "id": 8
   },
   {
-    "en": "Zhang Peng: I’m 1.65 metres.",
+    "en": "Zhang Peng: I'm 1.65 metres.",
     "zh": "张鹏：我1.65米。",
     "id": 9
   },
@@ -55,27 +55,27 @@
     "id": 11
   },
   {
-    "en": "How tall are you? I’m                     metres.",
-    "zh": "你有多高？我                     米。",
+    "en": "How tall are you? I'm metres.",
+    "zh": "你有多高？我 米。",
     "id": 12
   },
   {
-    "en": "Who is taller than you?                                               .",
-    "zh": "比你高的人是谁？                                               。",
+    "en": "Who is taller than you? .",
+    "zh": "比你高的人是谁？ 。",
     "id": 13
   },
   {
-    "en": "How old are you? I’m                     .",
-    "zh": "你多大？我                     。",
+    "en": "How old are you? I'm .",
+    "zh": "你多大？我 。",
     "id": 14
   },
   {
-    "en": "Who is older than you?                                                .",
-    "zh": "比你大的人是谁？                                                。",
+    "en": "Who is older than you? .",
+    "zh": "比你大的人是谁？ 。",
     "id": 15
   },
   {
-    "en": "Mike: Those shoes in the window are nice! Let’s have a look.",
+    "en": "Mike: Those shoes in the window are nice! Let's have a look.",
     "zh": "迈克：窗户里的鞋子真漂亮！我们去看看吧。",
     "id": 16
   },
@@ -90,7 +90,7 @@
     "id": 18
   },
   {
-    "en": "Wu Binbin: Size 7? That’s so small.",
+    "en": "Wu Binbin: Size 7? That's so small.",
     "zh": "吴彬彬：7码？真小。",
     "id": 19
   },
@@ -120,17 +120,17 @@
     "id": 24
   },
   {
-    "en": "Mike: I’m 48 kilograms.",
+    "en": "Mike: I'm 48 kilograms.",
     "zh": "迈克：我48公斤。",
     "id": 25
   },
   {
-    "en": "Wu Binbin: Yes, you’re heavier. I’m 46 kilograms.",
+    "en": "Wu Binbin: Yes, you're heavier. I'm 46 kilograms.",
     "zh": "吴彬彬：是的，你更重。我46公斤。",
     "id": 26
   },
   {
-    "en": "What size are Wu Binbin’s shoes?",
+    "en": "What size are Wu Binbin's shoes?",
     "zh": "吴彬彬穿什么码的鞋？",
     "id": 27
   },
@@ -140,8 +140,8 @@
     "id": 28
   },
   {
-    "en": "Who is heavier than you?                             .",
-    "zh": "比你重的人是谁？                             。",
+    "en": "Who is heavier than you? .",
+    "zh": "比你重的人是谁？ 。",
     "id": 29
   },
   {
@@ -150,13 +150,13 @@
     "id": 30
   },
   {
-    "en": "Whose shoes are bigger?                              .",
-    "zh": "谁穿的鞋更大？                              。",
+    "en": "Whose shoes are bigger? .",
+    "zh": "谁穿的鞋更大？ 。",
     "id": 31
   },
   {
-    "en": "thinner   heavier",
-    "zh": "更薄  更重",
+    "en": "thinner heavier",
+    "zh": "更薄 更重",
     "id": 32
   },
   {
@@ -175,7 +175,7 @@
     "id": 35
   },
   {
-    "en": "\"That’s easy, Little Duck. The sun goes down every day, and we grow older every day. Your shadow grows longer because you are growing taller. You are becoming a big beautiful bird!\"",
+    "en": "\"That's easy, Little Duck. The sun goes down every day, and we grow older every day. Your shadow grows longer because you are growing taller. You are becoming a big beautiful bird!\"",
     "zh": "“这很容易，小鸭子。太阳每天都落下，我们每天都变老。你的影子变长是因为你一天一天长大。你正变成了一只美丽的鸟！”",
     "id": 36
   },
@@ -190,7 +190,7 @@
     "id": 38
   },
   {
-    "en": "Can you answer Little Duck’s question, Robin?",
+    "en": "Can you answer Little Duck's question, Robin?",
     "zh": "你能回答小鸭子的问题吗，罗宾？",
     "id": 39
   },
@@ -205,7 +205,7 @@
     "id": 41
   },
   {
-    "en": "Old Tree: That’s easy. Your shadow gets longer because you are getting _______ and growing _______ every day.",
+    "en": "Old Tree: That's easy. Your shadow gets longer because you are getting _______ and growing _______ every day.",
     "zh": "老树说：那很简单。你的影子变长是因为你一天天长大，变得_______和_______。",
     "id": 42
   },
@@ -215,8 +215,8 @@
     "id": 43
   },
   {
-    "en": "Old Tree: Well, …",
-    "zh": "老树说：嗯…",
+    "en": "Old Tree: Well, ...",
+    "zh": "老树说：嗯...",
     "id": 44
   },
   {
@@ -225,7 +225,7 @@
     "id": 45
   },
   {
-    "en": "Deer: I’d like to have a try.",
+    "en": "Deer: I'd like to have a try.",
     "zh": "鹿说：我想试试。",
     "id": 46
   },
@@ -240,7 +240,7 @@
     "id": 48
   },
   {
-    "en": "Deer: I’m 1.8 metres.",
+    "en": "Deer: I'm 1.8 metres.",
     "zh": "鹿说：我1.8米高。",
     "id": 49
   },
@@ -250,12 +250,12 @@
     "id": 50
   },
   {
-    "en": "Deer: I’m 86 kilograms.",
+    "en": "Deer: I'm 86 kilograms.",
     "zh": "鹿说：我86公斤重。",
     "id": 51
   },
   {
-    "en": "Dog: I can’t wait.",
+    "en": "Dog: I can't wait.",
     "zh": "狗说：我迫不及待了。",
     "id": 52
   },
@@ -265,22 +265,22 @@
     "id": 53
   },
   {
-    "en": "Giraffe: I’m the tallest one.",
+    "en": "Giraffe: I'm the tallest one.",
     "zh": "长颈鹿说：我最高的。",
     "id": 54
   },
   {
-    "en": "Zip: Sorry. Your neck is too long. The others can’t reach you.",
+    "en": "Zip: Sorry. Your neck is too long. The others can't reach you.",
     "zh": "小马说：对不起。你的脖子太长了。其他人够不着你。",
     "id": 55
   },
   {
-    "en": "Zoom: Yes, and he’s stronger.",
+    "en": "Zoom: Yes, and he's stronger.",
     "zh": "迅猛龙说：是的，而且他更强壮。",
     "id": 56
   },
   {
-    "en": "But he can’t catch the ball!",
+    "en": "But he can't catch the ball!",
     "zh": "但是他没能抓住球！",
     "id": 57
   },
@@ -290,17 +290,17 @@
     "id": 58
   },
   {
-    "en": "Hippo: What’s happening here?",
+    "en": "Hippo: What's happening here?",
     "zh": "河马说：这里发生了什么？",
     "id": 59
   },
   {
-    "en": "Oh! Here’s the one we want!",
+    "en": "Oh! Here's the one we want!",
     "zh": "哦！这就是我们想要的东西！",
     "id": 60
   },
   {
-    "en": "Why? He’s too heavy!",
+    "en": "Why? He's too heavy!",
     "zh": "为什么？他太重了！",
     "id": 61
   },
@@ -315,7 +315,7 @@
     "id": 63
   },
   {
-    "en": "I’m fine, Mike. It was good, thank you.",
+    "en": "I'm fine, Mike. It was good, thank you.",
     "zh": "我很好，Mike。谢谢你，我周末过得不错。",
     "id": 64
   },
@@ -335,12 +335,12 @@
     "id": 67
   },
   {
-    "en": "I watched some children’s shows on TV.",
+    "en": "I watched some children's shows on TV.",
     "zh": "我看了很多儿童节目。",
     "id": 68
   },
   {
-    "en": "That’s nice. Did you do anything else?",
+    "en": "That's nice. Did you do anything else?",
     "zh": "真好。你还做了什么别的？",
     "id": 69
   },
@@ -355,7 +355,7 @@
     "id": 71
   },
   {
-    "en": "What did Mike’s grandpa do last weekend?",
+    "en": "What did Mike's grandpa do last weekend?",
     "zh": "Mike的爷爷上周末做了什么？",
     "id": 72
   },
@@ -375,7 +375,7 @@
     "id": 75
   },
   {
-    "en": "Hey, Amy. Let’s go to the bookstore. I want to buy the new film magazine.",
+    "en": "Hey, Amy. Let's go to the bookstore. I want to buy the new film magazine.",
     "zh": "Amy，我们去书店吧。我想买最新的电影杂志。",
     "id": 76
   },
@@ -405,12 +405,12 @@
     "id": 81
   },
   {
-    "en": "Oh, I’m sorry. I’m happy you feel better now.",
+    "en": "Oh, I'm sorry. I'm happy you feel better now.",
     "zh": "哦，我很抱歉。很高兴你现在感觉好多了。",
     "id": 82
   },
   {
-    "en": "Thanks. Let’s go by bus. It’s faster than walking.",
+    "en": "Thanks. Let's go by bus. It's faster than walking.",
     "zh": "谢谢。我们坐公交车去吧。比走路快。",
     "id": 83
   },
@@ -420,8 +420,8 @@
     "id": 84
   },
   {
-    "en": "What did you do yesterday/last night …?",
-    "zh": "你昨天/上个晚上做了什么…？",
+    "en": "What did you do yesterday/last night ...?",
+    "zh": "你昨天/上个晚上做了什么...？",
     "id": 85
   },
   {
@@ -490,12 +490,12 @@
     "id": 98
   },
   {
-    "en": "I wanted to watch TV but the TV didn’t work. The people in Room 301 listened to loud music. I didn’t sleep all night.",
+    "en": "I wanted to watch TV but the TV didn't work. The people in Room 301 listened to loud music. I didn't sleep all night.",
     "zh": "我想要看电视，但是电视坏了。房间301的人们放着很大的音乐。我一夜都没睡。",
     "id": 99
   },
   {
-    "en": "I’m sorry, but we didn’t enjoy our stay very much.",
+    "en": "I'm sorry, but we didn't enjoy our stay very much.",
     "zh": "我很抱歉，我们住得很不愉快。",
     "id": 100
   },
@@ -565,7 +565,7 @@
     "id": 113
   },
   {
-    "en": "Let’s wrap it up",
+    "en": "Let's wrap it up",
     "zh": "让我们收尾一下",
     "id": 114
   },
@@ -575,13 +575,13 @@
     "id": 115
   },
   {
-    "en": "There          lots of dinosaurs many years ago.",
-    "zh": "有……很多恐龙在很久以前。",
+    "en": "There lots of dinosaurs many years ago.",
+    "zh": "有......很多恐龙在很久以前。",
     "id": 116
   },
   {
-    "en": "Some of them           plants.",
-    "zh": "一些它们……植物。",
+    "en": "Some of them plants.",
+    "zh": "一些它们......植物。",
     "id": 117
   },
   {
@@ -595,12 +595,12 @@
     "id": 119
   },
   {
-    "en": "Zoom: Am I now on the moon? I can’t believe it!",
+    "en": "Zoom: Am I now on the moon? I can't believe it!",
     "zh": "朱姆：我现在在月球吗？我不敢相信！",
     "id": 120
   },
   {
-    "en": "She must be Chang’e.",
+    "en": "She must be Chang'e.",
     "zh": "她一定是嫦娥。",
     "id": 121
   },
@@ -640,7 +640,7 @@
     "id": 128
   },
   {
-    "en": "Zoom: I saw Chang’e, the rabbit and the tree.",
+    "en": "Zoom: I saw Chang'e, the rabbit and the tree.",
     "zh": "朱姆：我看到了嫦娥、兔子和树。",
     "id": 129
   },
@@ -695,7 +695,7 @@
     "id": 139
   },
   {
-    "en": "Sarah: Me too. One day I’m going to visit the moon.",
+    "en": "Sarah: Me too. One day I'm going to visit the moon.",
     "zh": "莎拉：我也是。有一天我要去月球参观。",
     "id": 140
   },
@@ -720,7 +720,7 @@
     "id": 144
   },
   {
-    "en": "What was Grandpa’s school like?",
+    "en": "What was Grandpa's school like?",
     "zh": "爷爷的学校是什么样的？",
     "id": 145
   },
@@ -730,17 +730,17 @@
     "id": 146
   },
   {
-    "en": "Chen Jie: John, come and look at Mike’s old photos!",
+    "en": "Chen Jie: John, come and look at Mike's old photos!",
     "zh": "陈洁：约翰，过来看看迈克的旧照片！",
     "id": 147
   },
   {
-    "en": "John: That’s funny, Mike! You’re wearing a pink T-shirt.",
+    "en": "John: That's funny, Mike! You're wearing a pink T-shirt.",
     "zh": "约翰：真滑稽，迈克！你穿着一件粉色的T恤。",
     "id": 148
   },
   {
-    "en": "Mike: Yes, but I don’t like pink now.",
+    "en": "Mike: Yes, but I don't like pink now.",
     "zh": "迈克：是的，但是我现在不喜欢粉色了。",
     "id": 149
   },
@@ -750,17 +750,17 @@
     "id": 150
   },
   {
-    "en": "Mike: Right. Before, I was quiet. Now, I’m very active in class.",
+    "en": "Mike: Right. Before, I was quiet. Now, I'm very active in class.",
     "zh": "迈克：对。以前我比较安静，现在我上课很活跃。",
     "id": 151
   },
   {
-    "en": "John: Well, I was short, so I couldn’t ride my bike well. Now, I go cycling every day. I like it very much.",
+    "en": "John: Well, I was short, so I couldn't ride my bike well. Now, I go cycling every day. I like it very much.",
     "zh": "约翰：我以前比较矮，所以骑自行车不好。现在我每天骑自行车，我非常喜欢。",
     "id": 152
   },
   {
-    "en": "Chen Jie: That’s good exercise.",
+    "en": "Chen Jie: That's good exercise.",
     "zh": "陈洁：这是一种很好的锻炼。",
     "id": 153
   },
@@ -775,8 +775,8 @@
     "id": 155
   },
   {
-    "en": "wasn’t tall/… didn’t like maths/… had long/… hair didn’t like cats/… didn’t wear glasses/… didn’t like eggs/…",
-    "zh": "他/她以前不高的/不喜欢数学的/有一头长头发的/不喜欢猫的/不戴眼镜的/不喜欢鸡蛋的…",
+    "en": "wasn't tall/... didn't like maths/... had long/... hair didn't like cats/... didn't wear glasses/... didn't like eggs/...",
+    "zh": "他/她以前不高的/不喜欢数学的/有一头长头发的/不喜欢猫的/不戴眼镜的/不喜欢鸡蛋的...",
     "id": 156
   },
   {
@@ -890,8 +890,8 @@
     "id": 178
   },
   {
-    "en": "I had a dream last night. In my dream, I …",
-    "zh": "我昨晚做了一个梦。在我的梦里，我……",
+    "en": "I had a dream last night. In my dream, I ...",
+    "zh": "我昨晚做了一个梦。在我的梦里，我......",
     "id": 179
   },
   {
@@ -900,7 +900,7 @@
     "id": 180
   },
   {
-    "en": "Cross out the words you didn’t hear.",
+    "en": "Cross out the words you didn't hear.",
     "zh": "圈出你没有听到的单词。",
     "id": 181
   },
@@ -910,7 +910,7 @@
     "id": 182
   },
   {
-    "en": "Let’s wrap it up",
+    "en": "Let's wrap it up",
     "zh": "让我们总结一下",
     "id": 183
   },
@@ -925,8 +925,8 @@
     "id": 185
   },
   {
-    "en": "Now …",
-    "zh": "现在……",
+    "en": "Now ...",
+    "zh": "现在......",
     "id": 186
   },
   {
@@ -935,8 +935,8 @@
     "id": 187
   },
   {
-    "en": "The cat was on the chair. Now …",
-    "zh": "猫坐在椅子上。现在……",
+    "en": "The cat was on the chair. Now ...",
+    "zh": "猫坐在椅子上。现在......",
     "id": 188
   },
   {
@@ -945,7 +945,7 @@
     "id": 189
   },
   {
-    "en": "Cavemen often ate raw meat. They didn’t cook their food.",
+    "en": "Cavemen often ate raw meat. They didn't cook their food.",
     "zh": "原始人经常吃生肉。他们不给食物做饭。",
     "id": 190
   },
@@ -965,7 +965,7 @@
     "id": 193
   },
   {
-    "en": "Zip: Oh, cavemen didn’t cook their meat? Zoom: It’s OK. They didn’t do the dishes either!",
+    "en": "Zip: Oh, cavemen didn't cook their meat? Zoom: It's OK. They didn't do the dishes either!",
     "zh": "齐普：哦，原始人没煮肉吗？ 卓姆：没关系。他们也不洗碗。",
     "id": 194
   },
@@ -980,7 +980,7 @@
     "id": 196
   },
   {
-    "en": "Zip: Look! How beautiful the world was! Oh! What will the birds do? Zoom: Don’t worry. People will help them.",
+    "en": "Zip: Look! How beautiful the world was! Oh! What will the birds do? Zoom: Don't worry. People will help them.",
     "zh": "齐普：快看！世界原来多美丽啊！哦！鸟儿会做什么？ 卓姆：不用担心。人们会帮助他们。",
     "id": 197
   },
@@ -1040,12 +1040,12 @@
     "id": 208
   },
   {
-    "en": "Mike’s happy days",
+    "en": "Mike's happy days",
     "zh": "迈克的快乐时光",
     "id": 209
   },
   {
-    "en": "Day 2 Farmers’ market",
+    "en": "Day 2 Farmers' market",
     "zh": "第二天的农贸市场",
     "id": 210
   },
@@ -1055,7 +1055,7 @@
     "id": 211
   },
   {
-    "en": "Bill                     short         tall",
+    "en": "Bill short tall",
     "zh": "比尔 短 高",
     "id": 212
   },
@@ -1065,7 +1065,7 @@
     "id": 213
   },
   {
-    "en": "Bill is my new friend. He’s short and heavy.",
+    "en": "Bill is my new friend. He's short and heavy.",
     "zh": "比尔是我的新朋友。 他很矮很重。",
     "id": 214
   },
@@ -1115,12 +1115,12 @@
     "id": 223
   },
   {
-    "en": "Day 7 Mike’s surprise",
+    "en": "Day 7 Mike's surprise",
     "zh": "第七天 迈克的惊喜",
     "id": 224
   },
   {
-    "en": "Mike’s school sent him an invitation.",
+    "en": "Mike's school sent him an invitation.",
     "zh": "迈克学校给他发了一份邀请函。",
     "id": 225
   },
@@ -1205,12 +1205,12 @@
     "id": 241
   },
   {
-    "en": "I’m going to a new middle school.",
+    "en": "I'm going to a new middle school.",
     "zh": "我要去新的中学。",
     "id": 242
   },
   {
-    "en": "I’ll be in Grade 7.",
+    "en": "I'll be in Grade 7.",
     "zh": "我将上七年级。",
     "id": 243
   },

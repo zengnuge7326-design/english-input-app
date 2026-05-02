@@ -151,6 +151,7 @@ export async function fetchWordPhonetic(word) {
   if (!word) return ''
   const key = word.toLowerCase().replace(/[^a-z']/g, '')
   if (!key) return ''
+  const fallback = `/${key}/`
 
   if (STATIC_PHONETICS[key]) return STATIC_PHONETICS[key]
 
@@ -170,20 +171,24 @@ export async function fetchWordPhonetic(word) {
       `https://api.dictionaryapi.dev/api/v2/entries/en/${key}`,
       { signal: AbortSignal.timeout(3000) }
     )
-    if (!res.ok) { phoneticCache.set(key, ''); sessionStorage.setItem(`ph_${key}`, ''); return '' }
+    if (!res.ok) {
+      phoneticCache.set(key, fallback)
+      sessionStorage.setItem(`ph_${key}`, fallback)
+      return fallback
+    }
     const data = await res.json()
     const entry = data[0]
     const phonetic = entry?.phonetic
       || entry?.phonetics?.find(p => p.text && p.audio?.includes('us'))?.text
       || entry?.phonetics?.find(p => p.text)?.text
-      || ''
-    phoneticCache.set(key, phonetic)
-    sessionStorage.setItem(`ph_${key}`, phonetic)
-    return phonetic
+      || fallback
+    phoneticCache.set(key, phonetic || fallback)
+    sessionStorage.setItem(`ph_${key}`, phonetic || fallback)
+    return phonetic || fallback
   } catch {
-    phoneticCache.set(key, '')
-    sessionStorage.setItem(`ph_${key}`, '')
-    return ''
+    phoneticCache.set(key, fallback)
+    sessionStorage.setItem(`ph_${key}`, fallback)
+    return fallback
   }
 }
 
@@ -192,13 +197,13 @@ const POS_MAP = {
   Noun: 'noun', Singular: 'noun', Plural: 'noun', Uncountable: 'noun',
   Verb: 'verb', Infinitive: 'verb', PastTense: 'verb', Gerund: 'verb',
   PresentTense: 'verb', FutureTense: 'verb', Copula: 'verb',
-  Modal: 'verb', Auxiliary: 'verb',
+  Modal: 'auxiliary', Auxiliary: 'auxiliary',
   Adjective: 'adjective', Comparable: 'adjective', Superlative: 'adjective',
   Adverb: 'adverb',
   Pronoun: 'pronoun',
   Preposition: 'preposition',
   Conjunction: 'conjunction', Subordinating: 'conjunction',
-  Determiner: 'other', Article: 'other',
+  Determiner: 'determiner', Article: 'determiner',
   Negative: 'other', QuestionWord: 'other',
 }
 

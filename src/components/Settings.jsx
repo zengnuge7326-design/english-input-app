@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { previewSound } from '../hooks/useSound'
 
 export default function Settings({ settings, onChange, onReset, onClose }) {
   const s = settings
   const set = (patch) => onChange({ ...s, ...patch })
+  const isElectron = !!window.nativeTTS
+  const [edgeProbe, setEdgeProbe] = useState({ loading: false, ok: null, message: '' })
+  const [cacheStats, setCacheStats] = useState({ loading: false, files: 0, bytes: 0 })
+  const [hybridTest, setHybridTest] = useState({ loading: false, message: '' })
 
   // 记住上次打开的 tab
   const [activeTab, setActiveTab] = useState(() => {
@@ -22,8 +26,77 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
     try { localStorage.setItem('settings_preset', JSON.stringify(s)); setSavedPreset({ ...s }) } catch {}
   }
   function restorePreset() {
-    if (savedPreset) onChange({ ...savedPreset })
+    if (savedPreset) {
+      onChange({ ...savedPreset, sentenceSpeak: true, autoSpeak: false })
+      return
+    }
+    onChange({ ...s, sentenceSpeak: true, autoSpeak: false })
   }
+
+  function formatBytes(bytes = 0) {
+    if (bytes < 1024) return `${bytes} B`
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
+  }
+
+  async function refreshEdgeProbe() {
+    if (!window.nativeTTS?.probeEdge) return
+    setEdgeProbe({ loading: true, ok: null, message: '检测中…' })
+    try {
+      const result = await window.nativeTTS.probeEdge()
+      if (result?.ok) {
+        setEdgeProbe({ loading: false, ok: true, message: result.info || 'Edge Neural 可用' })
+      } else {
+        setEdgeProbe({ loading: false, ok: false, message: result?.error || 'edge-tts 不可用' })
+      }
+    } catch (err) {
+      setEdgeProbe({ loading: false, ok: false, message: err?.message || '检测失败' })
+    }
+  }
+
+  async function refreshCacheStats() {
+    if (!window.nativeTTS?.getCacheStats) return
+    setCacheStats(prev => ({ ...prev, loading: true }))
+    try {
+      const result = await window.nativeTTS.getCacheStats()
+      setCacheStats({ loading: false, files: result?.files || 0, bytes: result?.bytes || 0 })
+    } catch {
+      setCacheStats({ loading: false, files: 0, bytes: 0 })
+    }
+  }
+
+  async function runHybridTest() {
+    if (!window.nativeTTS?.speakHybrid) return
+    setHybridTest({ loading: true, message: '测试中…' })
+    try {
+      const result = await window.nativeTTS.speakHybrid({
+        text: 'Hello, this is a hybrid TTS check.',
+        rate: s.rate || 1.0,
+        voice: s.edgeVoice || 'en-US-AvaNeural',
+      })
+      if (result?.ok) {
+        const layerText = result.layer || 'unknown'
+        setHybridTest({ loading: false, message: `成功：命中 ${layerText}` })
+      } else {
+        setHybridTest({ loading: false, message: `失败：${result?.reason || 'unknown'}` })
+      }
+      refreshCacheStats()
+    } catch (err) {
+      setHybridTest({ loading: false, message: `失败：${err?.message || 'unknown'}` })
+    }
+  }
+
+  async function clearTTSCache() {
+    if (!window.nativeTTS?.clearCache) return
+    await window.nativeTTS.clearCache()
+    refreshCacheStats()
+  }
+
+  useEffect(() => {
+    if (!isElectron) return
+    refreshEdgeProbe()
+    refreshCacheStats()
+  }, [isElectron])
 
   const Seg = ({ label, options, value, onSelect }) => (
     <div className="flex flex-col gap-2">
@@ -103,6 +176,73 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
           <div className="flex flex-col gap-6">
             {activeTab === 'voice' && (
               <>
+                <Seg label="语音引擎" value={s.ttsEngine || 'hybrid'}
+                  options={[['hybrid','混合架构（L1+L2+L3）'],['local-first','仅本地映射+系统回退'],['system','仅系统语音']]}
+                  onSelect={v => set({ ttsEngine: v })} />
+
+                <div className="text-xs text-gray-500 -mt-2">
+                  混合架构：L1 本地映射（src/data/ttsAudioMap.json 到 public/tts），L2 Edge Neural 在线合成并缓存，L3 系统语音兜底。
+                </div>
+
+                {s.ttsEngine !== 'system' && (
+                  <Seg label="Edge 音色（L2）" value={s.edgeVoice || 'en-US-AvaNeural'}
+                    options={[['en-US-AvaNeural','Ava 女声'],['en-US-AndrewNeural','Andrew 男声'],['en-GB-SoniaNeural','Sonia 英音']]}
+                    onSelect={v => set({ edgeVoice: v })} />
+                )}
+
+                <div className="border-t border-slate-700 pt-4 flex flex-col gap-3">
+                  <div className="text-gray-400 text-sm">混合架构状态</div>
+                  {!isElectron ? (
+                    <div className="text-xs text-amber-400 bg-amber-900/20 border border-amber-700/40 rounded-lg px-3 py-2">
+                      当前是浏览器模式：L2 Edge 缓存检测不可用，仅可使用本地映射与 Web Speech。
+                    </div>
+                  ) : (
+                    <>
+                      <div className={`text-xs rounded-lg px-3 py-2 border ${
+                        edgeProbe.ok === true
+                          ? 'text-green-300 bg-green-900/20 border-green-700/40'
+                          : edgeProbe.ok === false
+                          ? 'text-red-300 bg-red-900/20 border-red-700/40'
+                          : 'text-gray-300 bg-gray-800 border-gray-700'
+                      }`}>
+                        L2 Edge 检测：{edgeProbe.loading ? '检测中…' : (edgeProbe.message || '未检测')}
+                      </div>
+
+                      <div className="text-xs text-gray-400">
+                        缓存：{cacheStats.loading ? '读取中…' : `${cacheStats.files} 个文件 / ${formatBytes(cacheStats.bytes)}`}
+                      </div>
+
+                      <div className="flex gap-2">
+                        <button
+                          onClick={refreshEdgeProbe}
+                          className="px-3 py-2 rounded-lg text-xs font-medium bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-colors"
+                        >
+                          重新检测 L2
+                        </button>
+                        <button
+                          onClick={runHybridTest}
+                          disabled={hybridTest.loading}
+                          className="px-3 py-2 rounded-lg text-xs font-medium bg-blue-700 hover:bg-blue-600 disabled:opacity-60 text-white border border-blue-600 transition-colors"
+                        >
+                          {hybridTest.loading ? '测试中…' : '一键测通'}
+                        </button>
+                        <button
+                          onClick={clearTTSCache}
+                          className="px-3 py-2 rounded-lg text-xs font-medium bg-red-900/40 hover:bg-red-800/50 text-red-300 border border-red-700/50 transition-colors"
+                        >
+                          清空缓存
+                        </button>
+                      </div>
+
+                      {hybridTest.message && (
+                        <div className="text-xs text-blue-300 bg-blue-900/20 border border-blue-700/40 rounded-lg px-3 py-2">
+                          {hybridTest.message}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+
                 <Seg label="发音口音" value={s.lang}
                   options={[['en-US','🇺🇸 美式'],['en-GB','🇬🇧 英式']]}
                   onSelect={v => set({ lang: v })} />

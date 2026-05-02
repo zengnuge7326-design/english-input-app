@@ -533,7 +533,22 @@ const UNIT_INFO = {
   6: { name: 'Unit 6', desc: '精通：情感、文化、复杂语法', color: 'from-red-600 to-red-800', emoji: '🎓', cover: '/duolingo.webp' },
 }
 
-export default function Courses({ onImport, changyongData, sampleData, onClose, onSetBack, progress = {} }) {
+function PaywallOverlay({ onShowLogin }) {
+  return (
+    <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center gap-2 z-10 rounded-2xl">
+      <span className="text-2xl">🔒</span>
+      <span className="text-white text-xs font-semibold">会员专属</span>
+      <button
+        onClick={e => { e.stopPropagation(); onShowLogin() }}
+        className="mt-1 px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium transition-colors"
+      >
+        登录开通
+      </button>
+    </div>
+  )
+}
+
+export default function Courses({ onImport, changyongData, sampleData, onClose, onSetBack, progress = {}, isMember = false, onShowLogin }) {
   const [detail, setDetail] = useState(null) // null | unit number
   const [syncPopup, setSyncPopup] = useState(null) // lesson label string
 
@@ -644,6 +659,19 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
         <span className="text-xs text-gray-500">多邻国课程</span>
       </div>
 
+      {!isMember && (
+        <div className="mb-5 bg-gradient-to-r from-amber-900/40 to-orange-900/30 border border-amber-700/50 rounded-xl p-4 flex items-center gap-3">
+          <span className="text-2xl shrink-0">⭐</span>
+          <div className="flex-1 min-w-0">
+            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁全部课程</div>
+            <div className="text-amber-500/80 text-xs mt-0.5">多邻国 Unit 2-6、新概念英语全册均为会员专属</div>
+          </div>
+          <button onClick={onShowLogin} className="shrink-0 px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold transition-colors">
+            登录
+          </button>
+        </div>
+      )}
+
       {/* NCE1 */}
       <div className="text-xs text-gray-600 mb-3 uppercase tracking-wider">新概念英语</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
@@ -657,20 +685,23 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
           const stats = getLessonStats(allData, progress)
           const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
           return (
-            <button key={c.key} onClick={() => setDetail(c.key)}
-              className="flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left">
-              <div className="w-full h-28 overflow-hidden">
-                <img src={c.cover} alt={c.name} className="w-full h-full object-cover" />
-              </div>
-              <div className="bg-slate-800 p-3 flex flex-col gap-1">
-                <div className="text-sm font-medium text-white">{c.name}</div>
-                <div className="text-xs text-gray-500 truncate">{c.desc}</div>
-                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden mt-1">
-                  <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+            <div key={c.key} className="relative">
+              <button onClick={() => isMember ? setDetail(c.key) : onShowLogin?.()}
+                className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left">
+                <div className="w-full h-28 overflow-hidden">
+                  <img src={c.cover} alt={c.name} className="w-full h-full object-cover" />
                 </div>
-                <div className="text-xs text-gray-600">{c.lessons.length} 课 · {percent}%</div>
-              </div>
-            </button>
+                <div className="bg-slate-800 p-3 flex flex-col gap-1">
+                  <div className="text-sm font-medium text-white">{c.name}</div>
+                  <div className="text-xs text-gray-500 truncate">{c.desc}</div>
+                  <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden mt-1">
+                    <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+                  </div>
+                  <div className="text-xs text-gray-600">{c.lessons.length} 课 · {percent}%</div>
+                </div>
+              </button>
+              {!isMember && <PaywallOverlay onShowLogin={onShowLogin} />}
+            </div>
           )
         })}
       </div>
@@ -683,11 +714,12 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
           const allData = lessons.flatMap(l => getLessonData(l.ids))
           const stats = getLessonStats(allData, progress)
           const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
+          const isPremium = unit !== 1
           return (
+            <div key={unit} className="relative">
             <button
-              key={unit}
-              onClick={() => setDetail(unit)}
-              className="flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"
+              onClick={() => (isMember || !isPremium) ? setDetail(unit) : onShowLogin?.()}
+              className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"
             >
               <div className="w-full h-28 overflow-hidden">
                 <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
@@ -701,6 +733,8 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
                 <div className="text-xs text-gray-600">{lessons.length} 课 · {percent}%</div>
               </div>
             </button>
+              {isPremium && !isMember && <PaywallOverlay onShowLogin={onShowLogin} />}
+            </div>
           )
         })}
         {/* 即将上线占位卡片 */}

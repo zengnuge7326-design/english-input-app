@@ -45,7 +45,7 @@
     "id": 8,
     "unit": "Unit 1",
     "zh": "王俊峰：如何提高英语口语？这对我来说真的很难。",
-    "en": "Wang Junfeng: How to improve oral English? It’s really hard for me."
+    "en": "Wang Junfeng: How to improve oral English? It's really hard for me."
   },
   {
     "id": 9,
@@ -57,13 +57,13 @@
     "id": 10,
     "unit": "Unit 1",
     "zh": "王俊峰：这是个好主意。非常感谢你。",
-    "en": "Wang Junfeng: That’s a good idea. Thank you very much."
+    "en": "Wang Junfeng: That's a good idea. Thank you very much."
   },
   {
     "id": 11,
     "unit": "Unit 1",
     "zh": "王俊峰：玲玲，你通常怎么学新单词？这对我来说真的很难。",
-    "en": "Wang Junfeng: Lingling, how do you usually learn new words? It’s really hard for me."
+    "en": "Wang Junfeng: Lingling, how do you usually learn new words? It's really hard for me."
   },
   {
     "id": 12,
@@ -75,7 +75,7 @@
     "id": 13,
     "unit": "Unit 1",
     "zh": "王俊峰：那是为了什么？",
-    "en": "Wang Junfeng: What’s that for?"
+    "en": "Wang Junfeng: What's that for?"
   },
   {
     "id": 14,
@@ -87,13 +87,13 @@
     "id": 15,
     "unit": "Unit 1",
     "zh": "王俊峰：听起来很有趣。我会试试的。",
-    "en": "Wang Junfeng: That sounds interesting. I’ll try it."
+    "en": "Wang Junfeng: That sounds interesting. I'll try it."
   },
   {
     "id": 16,
     "unit": "Unit 1",
-    "zh": "A：……对我来说是个大问题。你能给我一些建议吗？",
-    "en": "A: … is a big problem for me. Can you give me some advice?"
+    "zh": "A：......对我来说是个大问题。你能给我一些建议吗？",
+    "en": "A: ... is a big problem for me. Can you give me some advice?"
   },
   {
     "id": 17,
@@ -189,13 +189,13 @@
     "id": 32,
     "unit": "Unit 1",
     "zh": "例如，当他想学习一些有文化背景的东西，比如“热狗”，他会在网上搜索有关该文化的信息。",
-    "en": "For example, when he wants to learn something with the cultural background, like “hot dog”, he will search online for information about the culture."
+    "en": "For example, when he wants to learn something with the cultural background, like \"hot dog\", he will search online for information about the culture."
   },
   {
     "id": 33,
     "unit": "Unit 1",
     "zh": "萱萱现在压力很大，因为她不想让自己和父母失望。",
-    "en": "Xuanxuan is under great pressure now because she doesn’t want to disappoint herself and her parents."
+    "en": "Xuanxuan is under great pressure now because she doesn't want to disappoint herself and her parents."
   },
   {
     "id": 34,
@@ -303,7 +303,7 @@
     "id": 51,
     "unit": "Unit 2",
     "zh": "所以有一次孔子告诉他：“知之为知之，不知为不知，是知也。”",
-    "en": "So once Confucius told him, “To know what you know and what you do not know, that is wisdom.”"
+    "en": "So once Confucius told him, \"To know what you know and what you do not know, that is wisdom.\""
   },
   {
     "id": 52,
@@ -321,7 +321,7 @@
     "id": 54,
     "unit": "Unit 2",
     "zh": "孔子告诉他的学生：“三人行，必有我师焉。”",
-    "en": "Confucius told his students, “When I walk along with two others, they may serve me as my teachers.”"
+    "en": "Confucius told his students, \"When I walk along with two others, they may serve me as my teachers.\""
   },
   {
     "id": 55,
@@ -345,7 +345,7 @@
     "id": 58,
     "unit": "Unit 2",
     "zh": "正如大师所说：“温故而知新。”",
-    "en": "Just like the master said, “Review the old knowledge and you will have new ideas.”"
+    "en": "Just like the master said, \"Review the old knowledge and you will have new ideas.\""
   },
   {
     "id": 59,
@@ -393,7 +393,7 @@
     "id": 66,
     "unit": "Unit 2",
     "zh": "在数字时代，电脑和智能手机是人们生活的重要组成部分。",
-    "en": "In the digital age, computers and smart phones are important parts of people’s life."
+    "en": "In the digital age, computers and smart phones are important parts of people's life."
   },
   {
     "id": 67,
@@ -471,7 +471,7 @@
     "id": 79,
     "unit": "Unit 2",
     "zh": "大家好！我很高兴与大家分享我的学习经历。",
-    "en": "Hi, everyone! I’m very glad to share my learning experiences with you."
+    "en": "Hi, everyone! I'm very glad to share my learning experiences with you."
   },
   {
     "id": 80,
@@ -495,7 +495,7 @@
     "id": 83,
     "unit": "Unit 2",
     "zh": "我听从了张老师的建议。",
-    "en": "I followed Mr. Zhang’s advice."
+    "en": "I followed Mr. Zhang's advice."
   },
   {
     "id": 84,
@@ -585,13 +585,13 @@
     "id": 98,
     "unit": "Unit 2",
     "zh": "玲玲：我总是害怕在公共场合说话。",
-    "en": "Lingling: I’m always afraid of speaking in public."
+    "en": "Lingling: I'm always afraid of speaking in public."
   },
   {
     "id": 99,
     "unit": "Unit 2",
     "zh": "每次，我都没什么可说的！",
-    "en": "Every time, there’s nothing for me to say!"
+    "en": "Every time, there's nothing for me to say!"
   },
   {
     "id": 100,
@@ -740,8 +740,8 @@
   {
     "id": 124,
     "unit": "Unit 3",
-    "zh": "王老师：好的。……嗯，我想要一碗牛肉面和一些面包和黄油。",
-    "en": "Miss Wang: Yes, please. … Em, I’d like a bowl of beef noodles and some bread and butter."
+    "zh": "王老师：好的。......嗯，我想要一碗牛肉面和一些面包和黄油。",
+    "en": "Miss Wang: Yes, please. ... Em, I'd like a bowl of beef noodles and some bread and butter."
   },
   {
     "id": 125,
@@ -765,13 +765,13 @@
     "id": 128,
     "unit": "Unit 3",
     "zh": "我会用我的手机支付。",
-    "en": "I’ll pay with my phone."
+    "en": "I'll pay with my phone."
   },
   {
     "id": 129,
     "unit": "Unit 3",
     "zh": "玲玲：我想点鱼和一碗米饭，我会用现金支付。",
-    "en": "Lingling: I want to order fish and a bowl of rice, and I’ll pay in cash."
+    "en": "Lingling: I want to order fish and a bowl of rice, and I'll pay in cash."
   },
   {
     "id": 130,
@@ -783,13 +783,13 @@
     "id": 131,
     "unit": "Unit 3",
     "zh": "小雅：我想要西红柿炒鸡蛋、一份芝士煎饼和一些粥。",
-    "en": "Xiao Ya: I’d like tomatoes with eggs, one pancake with cheese and some porridge."
+    "en": "Xiao Ya: I'd like tomatoes with eggs, one pancake with cheese and some porridge."
   },
   {
     "id": 132,
     "unit": "Unit 3",
     "zh": "我也会用我的手机支付。",
-    "en": "I’ll pay with my phone, too."
+    "en": "I'll pay with my phone, too."
   },
   {
     "id": 133,
@@ -837,7 +837,7 @@
     "id": 140,
     "unit": "Unit 3",
     "zh": "现在在中国支付非常方便，但我们应该把钱包、手机和卡片放在安全的地方。",
-    "en": "It’s so convenient to pay in China now, but we should keep our wallets, mobile phones and cards in safe places."
+    "en": "It's so convenient to pay in China now, but we should keep our wallets, mobile phones and cards in safe places."
   },
   {
     "id": 141,
@@ -861,7 +861,7 @@
     "id": 144,
     "unit": "Unit 3",
     "zh": "我希望它对你来说不会太贵。",
-    "en": "I hope it’s not too expensive for you."
+    "en": "I hope it's not too expensive for you."
   },
   {
     "id": 145,
@@ -873,7 +873,7 @@
     "id": 146,
     "unit": "Unit 3",
     "zh": "哇！那是个好主意。",
-    "en": "Wow! That’s a good idea."
+    "en": "Wow! That's a good idea."
   },
   {
     "id": 147,
@@ -891,7 +891,7 @@
     "id": 149,
     "unit": "Unit 3",
     "zh": "克朗想要诺克的工具来打猎，但他没有东西可以和诺克交易，所以他承诺用他未来狩猎所得的动物来交换诺克的工具。",
-    "en": "Kron wanted Nokk’s tools for hunting, but he had nothing to trade with Nokk, so he promised to trade the animals from his future hunts for Nokk’s tools."
+    "en": "Kron wanted Nokk's tools for hunting, but he had nothing to trade with Nokk, so he promised to trade the animals from his future hunts for Nokk's tools."
   },
   {
     "id": 150,
@@ -903,7 +903,7 @@
     "id": 151,
     "unit": "Unit 4",
     "zh": "这就是“信用”的起源。",
-    "en": "This is how “credit” began."
+    "en": "This is how \"credit\" began."
   },
   {
     "id": 152,
@@ -939,37 +939,37 @@
     "id": 157,
     "unit": "Unit 4",
     "zh": "“您想借多少钱？”一位银行职员问道。",
-    "en": "“How much money would you like to borrow?” a bank officer asked."
+    "en": "\"How much money would you like to borrow?\" a bank officer asked."
   },
   {
     "id": 158,
     "unit": "Unit 4",
     "zh": "“十万元，”农民回答。",
-    "en": "“One hundred thousand yuan,” the farmer answered."
+    "en": "\"One hundred thousand yuan,\" the farmer answered."
   },
   {
     "id": 159,
     "unit": "Unit 4",
     "zh": "“您有什么可以保障我们资金安全？”职员问道。",
-    "en": "“What do you have for the safety of our money?” the officer asked."
+    "en": "\"What do you have for the safety of our money?\" the officer asked."
   },
   {
     "id": 160,
     "unit": "Unit 4",
     "zh": "“哦，我有一辆旧卡车，我还养了一些母鸡和绵羊。”",
-    "en": "“Oh, I have an old truck, and I also own some hens and sheep.”"
+    "en": "\"Oh, I have an old truck, and I also own some hens and sheep.\""
   },
   {
     "id": 161,
     "unit": "Unit 4",
     "zh": "“嗯，恐怕这不行，”职员继续说道。",
-    "en": "“Well, it won’t work, I’m afraid,” the officer continued."
+    "en": "\"Well, it won't work, I'm afraid,\" the officer continued."
   },
   {
     "id": 162,
     "unit": "Unit 4",
     "zh": "“您有房子吗？”",
-    "en": "“Do you have a house?”"
+    "en": "\"Do you have a house?\""
   },
   {
     "id": 163,
@@ -981,7 +981,7 @@
     "id": 164,
     "unit": "Unit 4",
     "zh": "欢迎来到今天的《青少年酷历史》。",
-    "en": "Welcome to today’s Cool History for Teenagers."
+    "en": "Welcome to today's Cool History for Teenagers."
   },
   {
     "id": 165,
@@ -1017,7 +1017,7 @@
     "id": 170,
     "unit": "Unit 4",
     "zh": "在这种情况下，牛被用作一种“钱”的形式。",
-    "en": "In this case, the cow was used as a form of “money”."
+    "en": "In this case, the cow was used as a form of \"money\"."
   },
   {
     "id": 171,
@@ -1029,7 +1029,7 @@
     "id": 172,
     "unit": "Unit 4",
     "zh": "即使在今天，我们也可以在许多关于金钱或贸易的汉字中看到“贝壳”的符号。",
-    "en": "Even today we can see the symbol of “shell” in many Chinese characters about money or trade."
+    "en": "Even today we can see the symbol of \"shell\" in many Chinese characters about money or trade."
   },
   {
     "id": 173,
@@ -1059,7 +1059,7 @@
     "id": 177,
     "unit": "Unit 4",
     "zh": "几个世纪后，当用于制造钱的金属减少时，宋朝政府开始生产纸币——“交子”。",
-    "en": "Centuries later, when there was less metal for making money, the government of the Song Dynasty started to produce paper money—“jiaozi”."
+    "en": "Centuries later, when there was less metal for making money, the government of the Song Dynasty started to produce paper money—\"jiaozi\"."
   },
   {
     "id": 178,
@@ -1113,7 +1113,7 @@
     "id": 186,
     "unit": "Unit 4",
     "zh": "如果我有零花钱，我打算去云南旅游。",
-    "en": "If I have pocket money, I’m going to visit Yunnan."
+    "en": "If I have pocket money, I'm going to visit Yunnan."
   },
   {
     "id": 187,
@@ -1143,7 +1143,7 @@
     "id": 191,
     "unit": "Unit 4",
     "zh": "在这里，我想分享我的省钱计划。",
-    "en": "Here, I’d like to share my saving plan."
+    "en": "Here, I'd like to share my saving plan."
   },
   {
     "id": 192,
@@ -1203,7 +1203,7 @@
     "id": 201,
     "unit": "Unit 5",
     "zh": "李明：康康，公交车怎么了？我们只剩下20分钟了。",
-    "en": "Li Ming: Kangkang, what’s wrong with the bus? We only have 20 minutes left."
+    "en": "Li Ming: Kangkang, what's wrong with the bus? We only have 20 minutes left."
   },
   {
     "id": 202,
@@ -1227,13 +1227,13 @@
     "id": 205,
     "unit": "Unit 5",
     "zh": "李明：好主意！哦，我真傻！我今天没带现金。如果我们没有现金，我们怎么付出租车费？",
-    "en": "Li Ming: Good idea! Oh, silly me! I don’t have any cash with me today. How can we pay for the taxi if we don't have cash?"
+    "en": "Li Ming: Good idea! Oh, silly me! I don't have any cash with me today. How can we pay for the taxi if we don't have cash?"
   },
   {
     "id": 206,
     "unit": "Unit 5",
     "zh": "康康：别担心。我们总是可以用手机支付。",
-    "en": "Kangkang: Don’t worry. We can always pay with our phones."
+    "en": "Kangkang: Don't worry. We can always pay with our phones."
   },
   {
     "id": 207,
@@ -1299,7 +1299,7 @@
     "id": 217,
     "unit": "Unit 5",
     "zh": "“如果我杀了这只鹅，我就能得到所有的蛋”，他对自己说。",
-    "en": "“If I kill the goose, I’ll get all the eggs”, he said to himself."
+    "en": "\"If I kill the goose, I'll get all the eggs\", he said to himself."
   },
   {
     "id": 218,
@@ -1335,7 +1335,7 @@
     "id": 223,
     "unit": "Unit 5",
     "zh": "是的，我有。我叔叔的家住在佛罗里达的西海岸。",
-    "en": "Yes, I do. My uncle’s family live in the western coast of Florida."
+    "en": "Yes, I do. My uncle's family live in the western coast of Florida."
   },
   {
     "id": 224,
@@ -1359,7 +1359,7 @@
     "id": 227,
     "unit": "Unit 5",
     "zh": "你说得对！全年都有许多关于世界各地自然灾害的报道。",
-    "en": "You’re right! There are many reports of natural disasters around the world all year round."
+    "en": "You're right! There are many reports of natural disasters around the world all year round."
   },
   {
     "id": 228,
@@ -1389,7 +1389,7 @@
     "id": 232,
     "unit": "Unit 5",
     "zh": "这份报告让我想起了人们在环境保护方面的努力。",
-    "en": "The report reminded me of people’s efforts on environmental protection."
+    "en": "The report reminded me of people's efforts on environmental protection."
   },
   {
     "id": 233,
@@ -1413,7 +1413,7 @@
     "id": 236,
     "unit": "Unit 5",
     "zh": "我认为它非常可怕且危险。",
-    "en": "I think it’s very terrible and dangerous."
+    "en": "I think it's very terrible and dangerous."
   },
   {
     "id": 237,
@@ -1713,7 +1713,7 @@
     "id": 286,
     "unit": "Unit 6",
     "zh": "这对我来说是一次痛苦的经历，我至今仍无法释怀。",
-    "en": "It is a painful experience for me and I still can’t get over it."
+    "en": "It is a painful experience for me and I still can't get over it."
   },
   {
     "id": 287,
@@ -1737,7 +1737,7 @@
     "id": 290,
     "unit": "Unit 6",
     "zh": "我记得在李老师的地理课上学习过这个。",
-    "en": "I remembered learning about this in Mr. Li’s geography class."
+    "en": "I remembered learning about this in Mr. Li's geography class."
   },
   {
     "id": 291,
@@ -1827,7 +1827,7 @@
     "id": 305,
     "unit": "Unit 7",
     "zh": "康康：李响，怎么了？",
-    "en": "Kangkang: Li Xiang, what’s the problem?"
+    "en": "Kangkang: Li Xiang, what's the problem?"
   },
   {
     "id": 306,
@@ -1881,7 +1881,7 @@
     "id": 314,
     "unit": "Unit 7",
     "zh": "等一下。我想它又好了！",
-    "en": "Wait a minute. I think it’s working again!"
+    "en": "Wait a minute. I think it's working again!"
   },
   {
     "id": 315,
@@ -1893,13 +1893,13 @@
     "id": 316,
     "unit": "Unit 7",
     "zh": "康康：我正在搜索火星的照片。",
-    "en": "Kangkang: I’m searching for photos of Mars."
+    "en": "Kangkang: I'm searching for photos of Mars."
   },
   {
     "id": 317,
     "unit": "Unit 7",
     "zh": "它太快了，我可以在几秒钟内找到很多图片。",
-    "en": "It’s so fast that I can find many pictures in seconds."
+    "en": "It's so fast that I can find many pictures in seconds."
   },
   {
     "id": 318,
@@ -2175,7 +2175,7 @@
     "id": 363,
     "unit": "Unit 8",
     "zh": "你最好请人帮你检查一下。",
-    "en": "You’d better ask someone to check it out for you."
+    "en": "You'd better ask someone to check it out for you."
   },
   {
     "id": 364,
@@ -2187,7 +2187,7 @@
     "id": 365,
     "unit": "Unit 8",
     "zh": "在20世纪70年代，人们创造了电子邮件或“email”。",
-    "en": "In the 1970s, people created electronic mail or “email”."
+    "en": "In the 1970s, people created electronic mail or \"email\"."
   },
   {
     "id": 366,
@@ -2211,7 +2211,7 @@
     "id": 369,
     "unit": "Unit 8",
     "zh": "我的电脑突然不工作了。",
-    "en": "My computer suddenly doesn’t work."
+    "en": "My computer suddenly doesn't work."
   },
   {
     "id": 370,
@@ -2271,7 +2271,7 @@
     "id": 379,
     "unit": "Unit 8",
     "zh": "更重要的是，飞扬对互联网上大量有用信息感到惊叹。",
-    "en": "What’s more, Feiyang is amazed by lots of useful information on the internet."
+    "en": "What's more, Feiyang is amazed by lots of useful information on the internet."
   },
   {
     "id": 380,
@@ -2319,7 +2319,7 @@
     "id": 387,
     "unit": "Unit 8",
     "zh": "当电脑询问你是否保存密码时，点击“否”。",
-    "en": "When the computer asks you whether to save your password, click “No”."
+    "en": "When the computer asks you whether to save your password, click \"No\"."
   },
   {
     "id": 388,
@@ -2403,7 +2403,7 @@
     "id": 401,
     "unit": "Unit 9",
     "zh": "玲玲：听起来很棒！我喜欢唱歌，而且我相信我唱歌的时候，我们有些同学可以拉二胡或者弹琵琶。",
-    "en": "Lingling: Sounds great! I love singing and I believe that some of our classmates can play the erhu or the pipa when I’m singing."
+    "en": "Lingling: Sounds great! I love singing and I believe that some of our classmates can play the erhu or the pipa when I'm singing."
   },
   {
     "id": 402,
@@ -2421,7 +2421,7 @@
     "id": 404,
     "unit": "Unit 9",
     "zh": "李响：当然，我很乐意。",
-    "en": "Li Xiang: Sure, I’d love to."
+    "en": "Li Xiang: Sure, I'd love to."
   },
   {
     "id": 405,
@@ -2541,7 +2541,7 @@
     "id": 424,
     "unit": "Unit 9",
     "zh": "人物动机是角色以某种方式行事的原因。",
-    "en": "Character’s motives are the reasons why a character behaves in a certain way."
+    "en": "Character's motives are the reasons why a character behaves in a certain way."
   },
   {
     "id": 425,
@@ -2601,7 +2601,7 @@
     "id": 434,
     "unit": "Unit 9",
     "zh": "他们来自不同的地方：一位来自中国长安的丝绸商人，一位来自印度的马匹商人，以及一位来自中国山西的茶叶商人。",
-    "en": "They came from different places: a silk trader from Chang’an, China, a horse trader from India, and a tea trader from Shanxi, China."
+    "en": "They came from different places: a silk trader from Chang'an, China, a horse trader from India, and a tea trader from Shanxi, China."
   },
   {
     "id": 435,
@@ -2613,7 +2613,7 @@
     "id": 436,
     "unit": "Unit 9",
     "zh": "他和一群人从长安出发旅行。",
-    "en": "He traveled with a group from Chang’an."
+    "en": "He traveled with a group from Chang'an."
   },
   {
     "id": 437,
@@ -2703,7 +2703,7 @@
     "id": 451,
     "unit": "Unit 10",
     "zh": "如今，这些路线被称为“丝绸之路”、“古代茶马古道”和“山西商人的骆驼之路”。",
-    "en": "Today, these routes are known as “the Silk Road” “the Ancient Tea Horse Road”, and “the Shanxi Traders’ Camel Road”."
+    "en": "Today, these routes are known as \"the Silk Road\" \"the Ancient Tea Horse Road\", and \"the Shanxi Traders' Camel Road\"."
   },
   {
     "id": 452,
@@ -2775,7 +2775,7 @@
     "id": 463,
     "unit": "Unit 10",
     "zh": "孔子说：“犯了错误而不改正——这才是真正的错误。”",
-    "en": "Confucius said, “To make a mistake and not correct it — this is a real mistake.”"
+    "en": "Confucius said, \"To make a mistake and not correct it — this is a real mistake.\""
   },
   {
     "id": 464,
@@ -2835,7 +2835,7 @@
     "id": 473,
     "unit": "Unit 10",
     "zh": "许多人前来观看，高喊“更高，更高”为她们加油。",
-    "en": "Many people come to watch, shouting “higher, higher” to cheer them on."
+    "en": "Many people come to watch, shouting \"higher, higher\" to cheer them on."
   },
   {
     "id": 474,
@@ -2907,7 +2907,7 @@
     "id": 485,
     "unit": "Unit 10",
     "zh": "我表弟尝了之后，笑得合不拢嘴。",
-    "en": "My cousin tasted it and couldn’t stop smiling."
+    "en": "My cousin tasted it and couldn't stop smiling."
   },
   {
     "id": 486,
@@ -2931,7 +2931,7 @@
     "id": 489,
     "unit": "Unit 10",
     "zh": "我相信你会喜欢的。",
-    "en": "I’m sure you’ll love it."
+    "en": "I'm sure you'll love it."
   },
   {
     "id": 490,
@@ -3033,7 +3033,7 @@
     "id": 506,
     "unit": "Unit 11",
     "zh": "毛笔的每一个动作都展现了艺术家创作书法的个人风格，每一幅作品都以自己的方式展现了汉字和语言的美。",
-    "en": "Each movement of the brush shows the artist’s personal style of creating calligraphy, and every piece shows the beauty of the Chinese characters and the language in its own way."
+    "en": "Each movement of the brush shows the artist's personal style of creating calligraphy, and every piece shows the beauty of the Chinese characters and the language in its own way."
   },
   {
     "id": 507,
@@ -3105,7 +3105,7 @@
     "id": 518,
     "unit": "Unit 11",
     "zh": "我对哈利·波特最感兴趣。",
-    "en": "I’m most interested in Harry Potter."
+    "en": "I'm most interested in Harry Potter."
   },
   {
     "id": 519,
@@ -3147,7 +3147,7 @@
     "id": 525,
     "unit": "Unit 11",
     "zh": "哈利的朋友们和他一起对抗坏人。",
-    "en": "Harry’s friends join him in fighting against bad people."
+    "en": "Harry's friends join him in fighting against bad people."
   },
   {
     "id": 526,
@@ -3177,7 +3177,7 @@
     "id": 530,
     "unit": "Unit 11",
     "zh": "我们可以认识到，没有友谊和团队合作，一个人走不远。",
-    "en": "We can learn that one can’t go far without friendship and teamwork."
+    "en": "We can learn that one can't go far without friendship and teamwork."
   },
   {
     "id": 531,
@@ -3201,7 +3201,7 @@
     "id": 534,
     "unit": "Unit 11",
     "zh": "我们可以通过他/她的行为或言语来了解一个角色的特征。",
-    "en": "We can learn about a character’s traits through his/her actions or words."
+    "en": "We can learn about a character's traits through his/her actions or words."
   },
   {
     "id": 535,
@@ -3243,7 +3243,7 @@
     "id": 541,
     "unit": "Unit 11",
     "zh": "“也许一根燃烧的火柴能让我暖和起来，”她想。",
-    "en": "“Perhaps a burning match will warm me up,” she thought."
+    "en": "\"Perhaps a burning match will warm me up,\" she thought."
   },
   {
     "id": 542,
@@ -3309,7 +3309,7 @@
     "id": 552,
     "unit": "Unit 12",
     "zh": "当狐狸享用美味的汤时，鹳因为它的长喙什么也吃不到。",
-    "en": "While the fox enjoyed the delicious soup, the stork couldn’t eat anything because of his long beak."
+    "en": "While the fox enjoyed the delicious soup, the stork couldn't eat anything because of his long beak."
   },
   {
     "id": 553,
@@ -3333,7 +3333,7 @@
     "id": 556,
     "unit": "Unit 12",
     "zh": "狐狸的小嘴使它无法吃到任何东西，而鹳则用它的长喙轻松地享用了这顿饭。",
-    "en": "The fox’s small mouth prevented him from eating anything, while the stork enjoyed the meal easily by using his long beak."
+    "en": "The fox's small mouth prevented him from eating anything, while the stork enjoyed the meal easily by using his long beak."
   },
   {
     "id": 557,
@@ -3429,7 +3429,7 @@
     "id": 572,
     "unit": "Unit 12",
     "zh": "如今，《茶馆》不仅是老舍最杰出的作品之一，也是中国现代戏剧史上的瑰宝。",
-    "en": "Today, Teahouse is not only one of Lao She’s best works, but also a treasure in the history of modern Chinese dramas."
+    "en": "Today, Teahouse is not only one of Lao She's best works, but also a treasure in the history of modern Chinese dramas."
   },
   {
     "id": 573,
@@ -3501,7 +3501,7 @@
     "id": 584,
     "unit": "Unit 12",
     "zh": "圣地亚哥的勇气和对大海的深爱感动了读者，使故事非常感人。",
-    "en": "Santiago’s courage and deep love for the sea move the readers and make the story very touching."
+    "en": "Santiago's courage and deep love for the sea move the readers and make the story very touching."
   },
   {
     "id": 585,
@@ -3513,7 +3513,7 @@
     "id": 586,
     "unit": "Unit 12",
     "zh": "我想知道你是否愿意观看。",
-    "en": "I’m wondering whether you’d like to watch it or not."
+    "en": "I'm wondering whether you'd like to watch it or not."
   },
   {
     "id": 587,
@@ -3531,7 +3531,7 @@
     "id": 589,
     "unit": "Unit 12",
     "zh": "汤姆·索亚是马克·吐温最受欢迎的小说之一中的主要角色。",
-    "en": "Tom Sawyer is the main character in one of Mark Twain’s most popular novels."
+    "en": "Tom Sawyer is the main character in one of Mark Twain's most popular novels."
   },
   {
     "id": 590,
@@ -3555,7 +3555,7 @@
     "id": 593,
     "unit": "Unit 12",
     "zh": "成年人喜欢马克·吐温的语言和写作风格。",
-    "en": "Adults enjoy Mark Twain’s language and writing style."
+    "en": "Adults enjoy Mark Twain's language and writing style."
   },
   {
     "id": 594,
@@ -3711,7 +3711,7 @@
     "id": 619,
     "unit": "Unit 13",
     "zh": "不要担心理解错误。",
-    "en": "Don’t worry about getting it wrong."
+    "en": "Don't worry about getting it wrong."
   },
   {
     "id": 620,
@@ -3765,7 +3765,7 @@
     "id": 628,
     "unit": "Unit 13",
     "zh": "我想知道是否有中国古典文学名著。",
-    "en": "I’d like to know if there are any Chinese classics of literature."
+    "en": "I'd like to know if there are any Chinese classics of literature."
   },
   {
     "id": 629,
@@ -3783,7 +3783,7 @@
     "id": 631,
     "unit": "Unit 13",
     "zh": "我现在想借另外两本。",
-    "en": "I’d like to borrow the other two now."
+    "en": "I'd like to borrow the other two now."
   },
   {
     "id": 632,
@@ -3795,13 +3795,13 @@
     "id": 633,
     "unit": "Unit 13",
     "zh": "顺便说一下，我也对中国诗歌感兴趣。",
-    "en": "By the way, I’m also interested in Chinese poems."
+    "en": "By the way, I'm also interested in Chinese poems."
   },
   {
     "id": 634,
     "unit": "Unit 13",
     "zh": "我想知道你们是否有《唐诗三百首》。",
-    "en": "I’d like to know if you have Three Hundred Poems of the Tang Dynasty."
+    "en": "I'd like to know if you have Three Hundred Poems of the Tang Dynasty."
   },
   {
     "id": 635,
@@ -3927,7 +3927,7 @@
     "id": 655,
     "unit": "Unit 14",
     "zh": "我觉得它非常有用。我可以找到任何我想要的，而且比平时快得多。",
-    "en": "I think it’s very useful. I can find whatever I want and I can do it much faster than usual."
+    "en": "I think it's very useful. I can find whatever I want and I can do it much faster than usual."
   },
   {
     "id": 656,
@@ -3939,7 +3939,7 @@
     "id": 657,
     "unit": "Unit 14",
     "zh": "我正在搜寻火星的照片。",
-    "en": "I’m searching for photos of Mars."
+    "en": "I'm searching for photos of Mars."
   },
   {
     "id": 658,
@@ -4005,13 +4005,13 @@
     "id": 668,
     "unit": "Unit 14",
     "zh": "康康画画不如李华认真。",
-    "en": "Kangkang doesn’t draw as/so carefully as Li Hua."
+    "en": "Kangkang doesn't draw as/so carefully as Li Hua."
   },
   {
     "id": 669,
     "unit": "Unit 14",
     "zh": "你学习不如你姐姐努力。",
-    "en": "You don’t study as/so hard as your sister."
+    "en": "You don't study as/so hard as your sister."
   },
   {
     "id": 670,
@@ -4077,7 +4077,7 @@
     "id": 680,
     "unit": "Unit 14",
     "zh": "李华的妈妈听起来很担心。",
-    "en": "Li Hua’s mother sounded worried."
+    "en": "Li Hua's mother sounded worried."
   },
   {
     "id": 681,
@@ -4125,31 +4125,31 @@
     "id": 688,
     "unit": "Unit 14",
     "zh": "娜娜说她不喜欢这条短裙。",
-    "en": "Nana says (that) she doesn’t like the skirt."
+    "en": "Nana says (that) she doesn't like the skirt."
   },
   {
     "id": 689,
     "unit": "Unit 14",
     "zh": "我不知道和外国友人吃饭的时候是否需要遵守某些规则。",
-    "en": "I don’t know if/whether I need to obey some rules while I’m having dinner with foreign friends."
+    "en": "I don't know if/whether I need to obey some rules while I'm having dinner with foreign friends."
   },
   {
     "id": 690,
     "unit": "Unit 14",
     "zh": "你能告诉我吃饭时大声讲话是否礼貌吗？",
-    "en": "Could you tell me if/whether it’s polite to speak loudly at the table?"
+    "en": "Could you tell me if/whether it's polite to speak loudly at the table?"
   },
   {
     "id": 691,
     "unit": "Unit 14",
     "zh": "我不知道你是否正确。",
-    "en": "I don’t know if/whether you are right."
+    "en": "I don't know if/whether you are right."
   },
   {
     "id": 692,
     "unit": "Unit 14",
     "zh": "我不知道你对不对。",
-    "en": "I don’t know whether you are right or not."
+    "en": "I don't know whether you are right or not."
   },
   {
     "id": 693,
@@ -4167,7 +4167,7 @@
     "id": 695,
     "unit": "Unit 14",
     "zh": "我不知道谁会来英语角。",
-    "en": "I don’t know who will come to the English Corner."
+    "en": "I don't know who will come to the English Corner."
   },
   {
     "id": 696,
@@ -4239,7 +4239,7 @@
     "id": 707,
     "unit": "Unit 15",
     "zh": "一开始我不喜欢数学，但现在我对它非常感兴趣。",
-    "en": "I didn’t like math at the beginning, but I am very interested in it now."
+    "en": "I didn't like math at the beginning, but I am very interested in it now."
   },
   {
     "id": 708,
@@ -4299,7 +4299,7 @@
     "id": 717,
     "unit": "Unit 15",
     "zh": "我正在用英语制作一个关于运动的思维导图。",
-    "en": "I’m making a mind map about sports in English."
+    "en": "I'm making a mind map about sports in English."
   },
   {
     "id": 718,
@@ -4329,7 +4329,7 @@
     "id": 722,
     "unit": "Unit 15",
     "zh": "我知道那是你最喜欢的科目。",
-    "en": "I know it’s your favorite subject."
+    "en": "I know it's your favorite subject."
   },
   {
     "id": 723,
@@ -4341,7 +4341,7 @@
     "id": 724,
     "unit": "Unit 15",
     "zh": "边做边学是最好的学习方法，不是吗？",
-    "en": "Learning by doing is the best way to study, isn’t it?"
+    "en": "Learning by doing is the best way to study, isn't it?"
   },
   {
     "id": 725,
@@ -4359,13 +4359,13 @@
     "id": 727,
     "unit": "Unit 15",
     "zh": "你为什么不加入戏剧社呢？",
-    "en": "Why don’t you join the drama club?"
+    "en": "Why don't you join the drama club?"
   },
   {
     "id": 728,
     "unit": "Unit 15",
     "zh": "我是我们学校戏剧社的成员。",
-    "en": "I’m a member of the drama club in our school."
+    "en": "I'm a member of the drama club in our school."
   },
   {
     "id": 729,
@@ -4437,7 +4437,7 @@
     "id": 740,
     "unit": "Unit 15",
     "zh": "我的第一站将是德国，然后我会去英国。",
-    "en": "My first stop will be Germany, and then I’ll visit Britain."
+    "en": "My first stop will be Germany, and then I'll visit Britain."
   },
   {
     "id": 741,
@@ -4485,13 +4485,13 @@
     "id": 748,
     "unit": "Unit 15",
     "zh": "我和我的祖父母一起去。",
-    "en": "I’m going with my grandparents."
+    "en": "I'm going with my grandparents."
   },
   {
     "id": 749,
     "unit": "Unit 15",
     "zh": "妈妈，我们学校的运动会将在10月12日举行。",
-    "en": "Mom, our school’s sports meeting is coming on October 12th."
+    "en": "Mom, our school's sports meeting is coming on October 12th."
   },
   {
     "id": 750,
@@ -4521,7 +4521,7 @@
     "id": 754,
     "unit": "Unit 16",
     "zh": "你知道，我有一些零花钱，但我还差九十元。",
-    "en": "You know, I have some pocket money, but I’m still short of ninety yuan."
+    "en": "You know, I have some pocket money, but I'm still short of ninety yuan."
   },
   {
     "id": 755,
@@ -4539,7 +4539,7 @@
     "id": 757,
     "unit": "Unit 16",
     "zh": "好主意！你既能赢得比赛，又能学会省钱。这是你的九十元。",
-    "en": "Great idea! You can win the race and learn to save money as well. Here’s your ninety yuan."
+    "en": "Great idea! You can win the race and learn to save money as well. Here's your ninety yuan."
   },
   {
     "id": 758,
@@ -4551,13 +4551,13 @@
     "id": 759,
     "unit": "Unit 16",
     "zh": "哦，我在做购物清单。我总是在购物前写下需要买的东西。我认为我们应该明智地花钱。",
-    "en": "Oh, I’m making a shopping list. I always write down what I need to buy before going shopping. I think we should spend money wisely."
+    "en": "Oh, I'm making a shopping list. I always write down what I need to buy before going shopping. I think we should spend money wisely."
   },
   {
     "id": 760,
     "unit": "Unit 16",
     "zh": "我非常同意。说到这个，我们最好用现金支付。不要带比实际需要更多的现金。",
-    "en": "I can’t agree with you more. And speaking of that, we’d better pay in cash. Don’t bring more cash than we really need."
+    "en": "I can't agree with you more. And speaking of that, we'd better pay in cash. Don't bring more cash than we really need."
   },
   {
     "id": 761,
@@ -4569,7 +4569,7 @@
     "id": 762,
     "unit": "Unit 16",
     "zh": "你说得对。拥有良好的消费习惯对我们很重要。",
-    "en": "You’re right. It’s important for us to have a good spending habit."
+    "en": "You're right. It's important for us to have a good spending habit."
   },
   {
     "id": 763,
@@ -4587,13 +4587,13 @@
     "id": 765,
     "unit": "Unit 16",
     "zh": "我相信你的书房里有很多书。",
-    "en": "I’m sure you have many books in your study."
+    "en": "I'm sure you have many books in your study."
   },
   {
     "id": 766,
     "unit": "Unit 16",
     "zh": "你知道，我是电影的超级粉丝，我每个月都会存一些零花钱看电影。",
-    "en": "I’m a big fan of movies, you know, and I will save some of my pocket money every month for movies."
+    "en": "I'm a big fan of movies, you know, and I will save some of my pocket money every month for movies."
   },
   {
     "id": 767,
@@ -4611,7 +4611,7 @@
     "id": 769,
     "unit": "Unit 16",
     "zh": "亲爱的乘客们，请注意！这是从北京西开往深圳北的G81次高速列车。由于暴风雪，我们现在被困在石家庄。根据天气预报，暴风雪正在加剧，直到今晚8点才会停止。",
-    "en": "Dear passengers, attention, please! This is G81 high-speed train from Beijing West to Shenzhen North. We’re now stuck in Shijiazhuang because of a heavy snowstorm. According to the weather report, the snowstorm is getting worse and won’t stop until 8 o’clock this evening."
+    "en": "Dear passengers, attention, please! This is G81 high-speed train from Beijing West to Shenzhen North. We're now stuck in Shijiazhuang because of a heavy snowstorm. According to the weather report, the snowstorm is getting worse and won't stop until 8 o'clock this evening."
   },
   {
     "id": 770,
@@ -4623,7 +4623,7 @@
     "id": 771,
     "unit": "Unit 16",
     "zh": "晚上好！今天是7月21日，星期五。欢迎收看天气预报。我们正经历更强的",
-    "en": "Good evening! It’s Friday, July 21st. Welcome to the weather report. We are having a stronger"
+    "en": "Good evening! It's Friday, July 21st. Welcome to the weather report. We are having a stronger"
   },
   {
     "id": 772,
@@ -4665,7 +4665,7 @@
     "id": 778,
     "unit": "Unit 16",
     "zh": "第二，选择凉爽的衣物，并且别忘了多喝水。",
-    "en": "Second, choose cool clothing and don’t forget to drink lots of water."
+    "en": "Second, choose cool clothing and don't forget to drink lots of water."
   },
   {
     "id": 779,
@@ -4677,13 +4677,13 @@
     "id": 780,
     "unit": "Unit 16",
     "zh": "最后，如果你必须在户外工作，要更频繁地休息，一旦感觉不适就停止工作。",
-    "en": "Finally, take breaks more often if you have to work outdoors, and stop working once you don’t feel good."
+    "en": "Finally, take breaks more often if you have to work outdoors, and stop working once you don't feel good."
   },
   {
     "id": 781,
     "unit": "Unit 16",
     "zh": "这是今天的天气预报。",
-    "en": "It’s the weather report for today."
+    "en": "It's the weather report for today."
   },
   {
     "id": 782,
@@ -4797,13 +4797,13 @@
     "id": 800,
     "unit": "Unit 16",
     "zh": "这是当今保持联系的最佳方式。",
-    "en": "It’s the best way to keep in touch today."
+    "en": "It's the best way to keep in touch today."
   },
   {
     "id": 801,
     "unit": "Unit 17",
     "zh": "我是一个烹饪的超级粉丝。",
-    "en": "I’m a big fan of cooking."
+    "en": "I'm a big fan of cooking."
   },
   {
     "id": 802,
@@ -4815,7 +4815,7 @@
     "id": 803,
     "unit": "Unit 17",
     "zh": "嗨，玲玲！我正在做一个关于我们如何使用互联网的调查。你有时间回答几个快速的问题吗？",
-    "en": "Hi, Lingling! I’m doing a survey about how we use the internet. Do you have time for some quick questions?"
+    "en": "Hi, Lingling! I'm doing a survey about how we use the internet. Do you have time for some quick questions?"
   },
   {
     "id": 804,
@@ -4851,7 +4851,7 @@
     "id": 809,
     "unit": "Unit 17",
     "zh": "那是肯定的。你还用互联网做什么？",
-    "en": "That’s for sure. What else do you use the internet for?"
+    "en": "That's for sure. What else do you use the internet for?"
   },
   {
     "id": 810,
@@ -4869,7 +4869,7 @@
     "id": 812,
     "unit": "Unit 17",
     "zh": "你能想象互联网在未来将如何改变人们的生活吗？",
-    "en": "Can you imagine how the internet will change people’s life in the future?"
+    "en": "Can you imagine how the internet will change people's life in the future?"
   },
   {
     "id": 813,
@@ -4905,7 +4905,7 @@
     "id": 818,
     "unit": "Unit 17",
     "zh": "手机将在人们的日常生活中扮演更重要的角色。",
-    "en": "Mobile phones will play a greater role in people’s daily life."
+    "en": "Mobile phones will play a greater role in people's daily life."
   },
   {
     "id": 819,
@@ -4917,7 +4917,7 @@
     "id": 820,
     "unit": "Unit 17",
     "zh": "更重要的是，许多传统的工作，如司机、记者甚至医生，未来可能会消失。",
-    "en": "What’s more, many traditional jobs like drivers, reporters and even doctors may disappear in the future."
+    "en": "What's more, many traditional jobs like drivers, reporters and even doctors may disappear in the future."
   },
   {
     "id": 821,
@@ -5001,7 +5001,7 @@
     "id": 834,
     "unit": "Unit 17",
     "zh": "医生把一些针扎进我的膝盖，但起初我没有任何感觉。",
-    "en": "The doctor put some needles into my knee, but I didn’t feel anything at first."
+    "en": "The doctor put some needles into my knee, but I didn't feel anything at first."
   },
   {
     "id": 835,
@@ -5031,7 +5031,7 @@
     "id": 839,
     "unit": "Unit 17",
     "zh": "嗨，我是米娅，来自德国。",
-    "en": "Hi, I’m Mia and I’m from Germany."
+    "en": "Hi, I'm Mia and I'm from Germany."
   },
   {
     "id": 840,
@@ -5061,7 +5061,7 @@
     "id": 844,
     "unit": "Unit 17",
     "zh": "它们都是非常奇怪的东西，有些我甚至不知道名字。",
-    "en": "They were all very strange things and I didn’t even know the names of some of them."
+    "en": "They were all very strange things and I didn't even know the names of some of them."
   },
   {
     "id": 845,
@@ -5139,7 +5139,7 @@
     "id": 857,
     "unit": "Unit 18",
     "zh": "他不在乎权力或财富，并且总能理解他人。",
-    "en": "He doesn’t care about power or wealth, and he is always able to understand others."
+    "en": "He doesn't care about power or wealth, and he is always able to understand others."
   },
   {
     "id": 858,
@@ -5151,7 +5151,7 @@
     "id": 859,
     "unit": "Unit 18",
     "zh": "确实如此！但我最喜欢林黛玉。她写下了优美的诗歌，你可以从中感受到她对自己健康状况不佳的悲伤以及对自然的热爱。",
-    "en": "That’s true! But I like Lin Daiyu best. She writes beautiful poems, and you can feel her sadness about her poor health and her love of nature from them."
+    "en": "That's true! But I like Lin Daiyu best. She writes beautiful poems, and you can feel her sadness about her poor health and her love of nature from them."
   },
   {
     "id": 860,
@@ -5175,7 +5175,7 @@
     "id": 863,
     "unit": "Unit 18",
     "zh": "看，这是李白的画像。他的诗《静夜思》是关于思念故乡的。几乎每个人都知道这首诗。",
-    "en": "Look, this is a picture of Li Bai. His poem Still Night Thoughts is about missing one’s hometown. Almost everybody knows the poem."
+    "en": "Look, this is a picture of Li Bai. His poem Still Night Thoughts is about missing one's hometown. Almost everybody knows the poem."
   },
   {
     "id": 864,

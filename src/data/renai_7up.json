@@ -21,37 +21,37 @@
     "id": 4,
     "unit": "Unit 1",
     "zh": "我来自北京。你呢？",
-    "en": "I’m from Beijing. And you?"
+    "en": "I'm from Beijing. And you?"
   },
   {
     "id": 5,
     "unit": "Unit 1",
     "zh": "我在七年级六班。你在哪个班？",
-    "en": "I’m in Class 6, Grade 7. Which class are you in?"
+    "en": "I'm in Class 6, Grade 7. Which class are you in?"
   },
   {
     "id": 6,
     "unit": "Unit 1",
     "zh": "我也在七年级六班。我们是同学。",
-    "en": "I’m in Class 6, Grade 7, too. We are classmates."
+    "en": "I'm in Class 6, Grade 7, too. We are classmates."
   },
   {
     "id": 7,
     "unit": "Unit 1",
     "zh": "我十二岁。你多大了？",
-    "en": "I’m twelve. How old are you?"
+    "en": "I'm twelve. How old are you?"
   },
   {
     "id": 8,
     "unit": "Unit 1",
     "zh": "我十三岁。再见。",
-    "en": "I’m thirteen years old. See you."
+    "en": "I'm thirteen years old. See you."
   },
   {
     "id": 9,
     "unit": "Unit 1",
     "zh": "我很友好，我喜欢科学。",
-    "en": "I’m friendly and I like science."
+    "en": "I'm friendly and I like science."
   },
   {
     "id": 10,
@@ -63,7 +63,7 @@
     "id": 11,
     "unit": "Unit 1",
     "zh": "我在七年级三班。",
-    "en": "I’m in Class Three, Grade Seven."
+    "en": "I'm in Class Three, Grade Seven."
   },
   {
     "id": 12,
@@ -111,13 +111,13 @@
     "id": 19,
     "unit": "Unit 1",
     "zh": "嗨，我是康康。我来自北京。我在七年级六班。我十二岁。我喜欢科学。这是我的朋友们。",
-    "en": "Hi, I’m Kangkang. I’m from Beijing. I’m in Class Six, Grade Seven. I’m twelve. I like science. Here are my friends."
+    "en": "Hi, I'm Kangkang. I'm from Beijing. I'm in Class Six, Grade Seven. I'm twelve. I like science. Here are my friends."
   },
   {
     "id": 20,
     "unit": "Unit 1",
     "zh": "小雅来自天津。她也在六班。她善良又可爱。她喜欢唱歌和弹吉他。",
-    "en": "Xiao Ya is from Tianjin. She’s in Class Six, too. She is kind and cute. She likes singing and playing the guitar."
+    "en": "Xiao Ya is from Tianjin. She's in Class Six, too. She is kind and cute. She likes singing and playing the guitar."
   },
   {
     "id": 21,
@@ -129,7 +129,7 @@
     "id": 22,
     "unit": "Unit 1",
     "zh": "玲玲是我的同学。她友好又安静。她喜欢阅读。",
-    "en": "Lingling is my classmate. She’s friendly and quiet. She likes reading."
+    "en": "Lingling is my classmate. She's friendly and quiet. She likes reading."
   },
   {
     "id": 23,
@@ -177,7 +177,7 @@
     "id": 30,
     "unit": "Unit 1",
     "zh": "你好！我的名字是李梅。你叫什么名字？",
-    "en": "Hello! My name is Li Mei. What’s your name?"
+    "en": "Hello! My name is Li Mei. What's your name?"
   },
   {
     "id": 31,
@@ -201,7 +201,7 @@
     "id": 34,
     "unit": "Unit 1",
     "zh": "不，他不是。他在一班。",
-    "en": "No, he isn’t. He is in Class One."
+    "en": "No, he isn't. He is in Class One."
   },
   {
     "id": 35,
@@ -225,7 +225,7 @@
     "id": 38,
     "unit": "Unit 1",
     "zh": "我在七年级六班。",
-    "en": "I’m in Class Six, Grade Seven."
+    "en": "I'm in Class Six, Grade Seven."
   },
   {
     "id": 39,
@@ -273,7 +273,7 @@
     "id": 46,
     "unit": "Unit 1",
     "zh": "我叫阳阳。我来自石家庄。",
-    "en": "My name is Yangyang. I’m from Shijiazhuang."
+    "en": "My name is Yangyang. I'm from Shijiazhuang."
   },
   {
     "id": 47,
@@ -291,7 +291,7 @@
     "id": 49,
     "unit": "Unit 1",
     "zh": "她话不多，但她喜欢帮助别人。",
-    "en": "She doesn’t talk much, but she likes to help others."
+    "en": "She doesn't talk much, but she likes to help others."
   },
   {
     "id": 50,
@@ -303,13 +303,13 @@
     "id": 51,
     "unit": "Unit 2",
     "zh": "我很高兴能和她做朋友，并且我很享受和她在一起的时光。",
-    "en": "I’m happy to be friends with her and I enjoy the time with her."
+    "en": "I'm happy to be friends with her and I enjoy the time with her."
   },
   {
     "id": 52,
     "unit": "Unit 2",
     "zh": "我的名字是康康。我是一名学生。我在七年级六班。",
-    "en": "My name is Kangkang. I’m a student. I am in Class 6, Grade 7."
+    "en": "My name is Kangkang. I'm a student. I am in Class 6, Grade 7."
   },
   {
     "id": 53,
@@ -339,7 +339,7 @@
     "id": 57,
     "unit": "Unit 2",
     "zh": "穿黄色衣服的高个女孩是我的表妹。她是我叔叔的孩子。",
-    "en": "The tall girl in yellow is my cousin. She’s my uncle’s child."
+    "en": "The tall girl in yellow is my cousin. She's my uncle's child."
   },
   {
     "id": 58,
@@ -351,7 +351,7 @@
     "id": 59,
     "unit": "Unit 2",
     "zh": "不，她不是。她是我的表妹。",
-    "en": "No, she isn’t. She is my cousin."
+    "en": "No, she isn't. She is my cousin."
   },
   {
     "id": 60,
@@ -423,7 +423,7 @@
     "id": 71,
     "unit": "Unit 2",
     "zh": "李响的家庭很小。",
-    "en": "Li Xiang’s family is small."
+    "en": "Li Xiang's family is small."
   },
   {
     "id": 72,
@@ -465,7 +465,7 @@
     "id": 78,
     "unit": "Unit 2",
     "zh": "我的（外）祖父母不和我们住在一起。",
-    "en": "My grandparents don’t live with us."
+    "en": "My grandparents don't live with us."
   },
   {
     "id": 79,
@@ -573,7 +573,7 @@
     "id": 96,
     "unit": "Unit 2",
     "zh": "我是一名七年级的学生。",
-    "en": "I’m a student in Grade Seven."
+    "en": "I'm a student in Grade Seven."
   },
   {
     "id": 97,
@@ -693,7 +693,7 @@
     "id": 116,
     "unit": "Unit 3",
     "zh": "康康：现在几点了？",
-    "en": "Kangkang: What’s the time now?"
+    "en": "Kangkang: What's the time now?"
   },
   {
     "id": 117,
@@ -783,7 +783,7 @@
     "id": 131,
     "unit": "Unit 3",
     "zh": "我是康康，我在北京的一所中学学习。",
-    "en": "I’m Kangkang and I study at a middle school in Beijing."
+    "en": "I'm Kangkang and I study at a middle school in Beijing."
   },
   {
     "id": 132,
@@ -981,7 +981,7 @@
     "id": 164,
     "unit": "Unit 4",
     "zh": "我正在穿我的足球鞋。我想踢足球。",
-    "en": "I’m putting on my football shoes. I want to play football."
+    "en": "I'm putting on my football shoes. I want to play football."
   },
   {
     "id": 165,
@@ -993,7 +993,7 @@
     "id": 166,
     "unit": "Unit 4",
     "zh": "抱歉，我正在做作业。而且我踢足球真的不太擅长。",
-    "en": "Sorry, I’m working on my homework. And I’m not really good at playing football."
+    "en": "Sorry, I'm working on my homework. And I'm not really good at playing football."
   },
   {
     "id": 167,
@@ -1059,7 +1059,7 @@
     "id": 177,
     "unit": "Unit 4",
     "zh": "早上天气晴朗。",
-    "en": "It’s sunny in the morning."
+    "en": "It's sunny in the morning."
   },
   {
     "id": 178,
@@ -1089,13 +1089,13 @@
     "id": 182,
     "unit": "Unit 4",
     "zh": "对于大多数运动来说，在锻炼前热身是很重要的。",
-    "en": "For most sports, it’s important to warm up before exercise."
+    "en": "For most sports, it's important to warm up before exercise."
   },
   {
     "id": 183,
     "unit": "Unit 4",
     "zh": "不要在非常炎热或寒冷的天气里做太多运动。",
-    "en": "Don’t do sports too much in very hot or cold weather."
+    "en": "Don't do sports too much in very hot or cold weather."
   },
   {
     "id": 184,
@@ -1107,7 +1107,7 @@
     "id": 185,
     "unit": "Unit 4",
     "zh": "现在外面阳光明媚。",
-    "en": "Now it’s sunny out there."
+    "en": "Now it's sunny out there."
   },
   {
     "id": 186,
@@ -1119,13 +1119,13 @@
     "id": 187,
     "unit": "Unit 4",
     "zh": "王俊峰的队伍一开始踢得不是很好。",
-    "en": "Wang Junfeng’s team is not playing very well at the start."
+    "en": "Wang Junfeng's team is not playing very well at the start."
   },
   {
     "id": 188,
     "unit": "Unit 4",
     "zh": "但王俊峰没有放弃。",
-    "en": "But Wang Junfeng doesn’t give up."
+    "en": "But Wang Junfeng doesn't give up."
   },
   {
     "id": 189,
@@ -1149,7 +1149,7 @@
     "id": 192,
     "unit": "Unit 4",
     "zh": "他希望王俊峰能为校足球队效力，这也是王俊峰的愿望。",
-    "en": "He hopes Wang Junfeng can play for the school football team, and that is Wang Junfeng’s wish, too."
+    "en": "He hopes Wang Junfeng can play for the school football team, and that is Wang Junfeng's wish, too."
   },
   {
     "id": 193,
@@ -1257,7 +1257,7 @@
     "id": 210,
     "unit": "Unit 5",
     "zh": "我擅长转弯。",
-    "en": "I’m good at making turns."
+    "en": "I'm good at making turns."
   },
   {
     "id": 211,
@@ -1389,7 +1389,7 @@
     "id": 232,
     "unit": "Unit 5",
     "zh": "沙漠的气候是什么样的？",
-    "en": "What’s the climate like in deserts?"
+    "en": "What's the climate like in deserts?"
   },
   {
     "id": 233,
@@ -1575,7 +1575,7 @@
     "id": 263,
     "unit": "Unit 6",
     "zh": "大兴安岭有许多松树。",
-    "en": "There are lots of pine trees in Daxing’anling."
+    "en": "There are lots of pine trees in Daxing'anling."
   },
   {
     "id": 264,
@@ -1647,7 +1647,7 @@
     "id": 275,
     "unit": "Unit 6",
     "zh": "它们没有太多食物可吃，其中许多以其他小动物为生。",
-    "en": "They don’t have much to eat and many of them live on other small animals."
+    "en": "They don't have much to eat and many of them live on other small animals."
   },
   {
     "id": 276,
@@ -1755,7 +1755,7 @@
     "id": 293,
     "unit": "Unit 6",
     "zh": "它不能在水里游泳。",
-    "en": "It can’t swim in the water."
+    "en": "It can't swim in the water."
   },
   {
     "id": 294,
@@ -1767,7 +1767,7 @@
     "id": 295,
     "unit": "Unit 6",
     "zh": "它们不会在天空中飞。",
-    "en": "They can’t fly in the sky."
+    "en": "They can't fly in the sky."
   },
   {
     "id": 296,
@@ -1791,7 +1791,7 @@
     "id": 299,
     "unit": "Unit 6",
     "zh": "他不会说话，但当人们叫他的名字时，他能理解。",
-    "en": "He can’t talk, but when people call his name, he can understand it."
+    "en": "He can't talk, but when people call his name, he can understand it."
   },
   {
     "id": 300,
@@ -1965,7 +1965,7 @@
     "id": 328,
     "unit": "Unit 7",
     "zh": "露露：对不起，我不能。我现在很忙。",
-    "en": "Lulu: I’m sorry, I can’t. I’m busy now."
+    "en": "Lulu: I'm sorry, I can't. I'm busy now."
   },
   {
     "id": 329,
@@ -1977,7 +1977,7 @@
     "id": 330,
     "unit": "Unit 7",
     "zh": "露露：我正在为清明节买一些花。",
-    "en": "Lulu: I’m buying some flowers for Tomb-sweeping Day."
+    "en": "Lulu: I'm buying some flowers for Tomb-sweeping Day."
   },
   {
     "id": 331,
@@ -2043,7 +2043,7 @@
     "id": 341,
     "unit": "Unit 7",
     "zh": "每年，迈克尔的父母都会买一棵圣诞树。",
-    "en": "Every year, Michael’s parents buy a Christmas tree."
+    "en": "Every year, Michael's parents buy a Christmas tree."
   },
   {
     "id": 342,
@@ -2067,7 +2067,7 @@
     "id": 345,
     "unit": "Unit 7",
     "zh": "学生们正在学习一些关于元旦的知识。",
-    "en": "The students are learning something about New Year’s Day."
+    "en": "The students are learning something about New Year's Day."
   },
   {
     "id": 346,
@@ -2079,7 +2079,7 @@
     "id": 347,
     "unit": "Unit 7",
     "zh": "她们在元旦那天把卡片送给她们的朋友。",
-    "en": "They give the cards to their friends on New Year’s Day."
+    "en": "They give the cards to their friends on New Year's Day."
   },
   {
     "id": 348,
@@ -2127,7 +2127,7 @@
     "id": 355,
     "unit": "Unit 8",
     "zh": "9月10日是中国的教师节。",
-    "en": "September 10th is Teachers’ Day in China."
+    "en": "September 10th is Teachers' Day in China."
   },
   {
     "id": 356,
@@ -2139,7 +2139,7 @@
     "id": 357,
     "unit": "Unit 8",
     "zh": "他们在黑板上写下“谢谢您，老师！”或者为老师制作一张感谢卡。",
-    "en": "They write “Thank you, teacher!” on the blackboard or make a thank-you card for their teachers."
+    "en": "They write \"Thank you, teacher!\" on the blackboard or make a thank-you card for their teachers."
   },
   {
     "id": 358,
@@ -2157,7 +2157,7 @@
     "id": 360,
     "unit": "Unit 8",
     "zh": "这是中国农历年的最后一天，我们正在举行庆祝活动来迎接春节。",
-    "en": "It’s the last day of the Chinese lunar year, and we are having celebrations to welcome the Spring Festival."
+    "en": "It's the last day of the Chinese lunar year, and we are having celebrations to welcome the Spring Festival."
   },
   {
     "id": 361,
@@ -2175,7 +2175,7 @@
     "id": 363,
     "unit": "Unit 8",
     "zh": "现在，是晚餐时间了。",
-    "en": "Now, it’s time for dinner."
+    "en": "Now, it's time for dinner."
   },
   {
     "id": 364,
@@ -2217,7 +2217,7 @@
     "id": 370,
     "unit": "Unit 8",
     "zh": "教师节在9月10日。",
-    "en": "Teachers’ Day is on September 10th."
+    "en": "Teachers' Day is on September 10th."
   },
   {
     "id": 371,
@@ -2361,7 +2361,7 @@
     "id": 394,
     "unit": "Unit 8",
     "zh": "在西班牙马德里，人们在12月31日晚上开始庆祝新年。",
-    "en": "In Madrid, Spain, people begin New Year’s Day celebrations on the night of December 31st."
+    "en": "In Madrid, Spain, people begin New Year's Day celebrations on the night of December 31st."
   },
   {
     "id": 395,
@@ -2385,7 +2385,7 @@
     "id": 398,
     "unit": "Unit 8",
     "zh": "午夜时分，太阳门的钟声一起敲响十二次，人们吃下十二颗葡萄，然后互相说“新年快乐”。",
-    "en": "At midnight, the bells of Puerta del Sol ring together twelve times and people eat twelve grapes and then say “happy new year” to each other."
+    "en": "At midnight, the bells of Puerta del Sol ring together twelve times and people eat twelve grapes and then say \"happy new year\" to each other."
   },
   {
     "id": 399,
@@ -2409,7 +2409,7 @@
     "id": 402,
     "unit": "Unit 9",
     "zh": "我们要带着这些糕去徒步。",
-    "en": "We’re going for hiking with the cakes."
+    "en": "We're going for hiking with the cakes."
   },
   {
     "id": 403,
@@ -2475,19 +2475,19 @@
     "id": 413,
     "unit": "Unit 9",
     "zh": "你还知道关于林华家人的其他事吗？",
-    "en": "What other things do you know about Lin Hua’s family?"
+    "en": "What other things do you know about Lin Hua's family?"
   },
   {
     "id": 414,
     "unit": "Unit 9",
     "zh": "我喜欢篮球，但我打得不好。",
-    "en": "I like basketball, but I can’t play it well."
+    "en": "I like basketball, but I can't play it well."
   },
   {
     "id": 415,
     "unit": "Unit 9",
     "zh": "我是康康，我来自北京。",
-    "en": "I am Kangkang and I’m from Beijing."
+    "en": "I am Kangkang and I'm from Beijing."
   },
   {
     "id": 416,
@@ -2541,25 +2541,25 @@
     "id": 424,
     "unit": "Unit 9",
     "zh": "秋天的天气怎么样？",
-    "en": "—What’s the weather like in autumn?"
+    "en": "—What's the weather like in autumn?"
   },
   {
     "id": 425,
     "unit": "Unit 9",
     "zh": "北京春天的天气怎么样？",
-    "en": "—What’s the weather like in spring in Beijing?"
+    "en": "—What's the weather like in spring in Beijing?"
   },
   {
     "id": 426,
     "unit": "Unit 9",
     "zh": "而且我不是很擅长踢足球。",
-    "en": "And I’m not really good at playing football."
+    "en": "And I'm not really good at playing football."
   },
   {
     "id": 427,
     "unit": "Unit 9",
     "zh": "嗨，我是康康。你叫什么名字？",
-    "en": "Hi, I’m Kangkang. What’s your name?"
+    "en": "Hi, I'm Kangkang. What's your name?"
   },
   {
     "id": 428,
@@ -2571,25 +2571,25 @@
     "id": 429,
     "unit": "Unit 9",
     "zh": "你好，我是李明。我来自北京。我在七年级六班。你在哪个班？",
-    "en": "Hello, I’m Li Ming. I’m from Beijing. I’m in Class 6, Grade 7. Which class are you in?"
+    "en": "Hello, I'm Li Ming. I'm from Beijing. I'm in Class 6, Grade 7. Which class are you in?"
   },
   {
     "id": 430,
     "unit": "Unit 9",
     "zh": "你好，我是梅梅，我在七班。我来自天津。",
-    "en": "Hello, I’m Meimei, and I’m in Class 7. I’m from Tianjin."
+    "en": "Hello, I'm Meimei, and I'm in Class 7. I'm from Tianjin."
   },
   {
     "id": 431,
     "unit": "Unit 9",
     "zh": "我13岁。你呢，梅梅？",
-    "en": "I’m 13 years old. What about you, Meimei?"
+    "en": "I'm 13 years old. What about you, Meimei?"
   },
   {
     "id": 432,
     "unit": "Unit 9",
     "zh": "我12岁。我喜欢烹饪。你喜欢什么？",
-    "en": "I’m 12 years old. I like cooking. What do you like?"
+    "en": "I'm 12 years old. I like cooking. What do you like?"
   },
   {
     "id": 433,
@@ -2601,7 +2601,7 @@
     "id": 434,
     "unit": "Unit 9",
     "zh": "他是我的朋友，林华。他13岁。他来自武汉。",
-    "en": "He is my friend, Lin Hua. He is 13 years old. He’s from Wuhan."
+    "en": "He is my friend, Lin Hua. He is 13 years old. He's from Wuhan."
   },
   {
     "id": 435,
@@ -2643,7 +2643,7 @@
     "id": 441,
     "unit": "Unit 9",
     "zh": "这个女孩是我。我的名字是笑笑。我来自北京。我喜欢画画。",
-    "en": "This girl is me. My name is Xiaoxiao. I’m from Beijing. I like drawing."
+    "en": "This girl is me. My name is Xiaoxiao. I'm from Beijing. I like drawing."
   },
   {
     "id": 442,
@@ -2667,7 +2667,7 @@
     "id": 445,
     "unit": "Unit 9",
     "zh": "王俊峰：不，她不是。她是一名医生，但我的姑姑是一名护士。",
-    "en": "Wang Junfeng: No, she isn’t. She is a doctor, but my aunt is a nurse."
+    "en": "Wang Junfeng: No, she isn't. She is a doctor, but my aunt is a nurse."
   },
   {
     "id": 446,
@@ -2763,7 +2763,7 @@
     "id": 461,
     "unit": "Unit 10",
     "zh": "小雅：十点二十了。我十点半有生物课。这是我最喜欢的科目。你呢？",
-    "en": "Xiao Ya: It’s ten twenty. I have a biology class at ten thirty. It’s my favorite subject. What about you?"
+    "en": "Xiao Ya: It's ten twenty. I have a biology class at ten thirty. It's my favorite subject. What about you?"
   },
   {
     "id": 462,
@@ -2781,19 +2781,19 @@
     "id": 464,
     "unit": "Unit 10",
     "zh": "星期四下午两点半。",
-    "en": "It’s at half past two on Thursday afternoon."
+    "en": "It's at half past two on Thursday afternoon."
   },
   {
     "id": 465,
     "unit": "Unit 10",
     "zh": "我找不到我的书包了。它是黄色的。",
-    "en": "I can’t find my schoolbag. It’s yellow."
+    "en": "I can't find my schoolbag. It's yellow."
   },
   {
     "id": 466,
     "unit": "Unit 10",
     "zh": "我明白了。请问你叫什么名字？",
-    "en": "I see. What’s your name, please?"
+    "en": "I see. What's your name, please?"
   },
   {
     "id": 467,
@@ -2810,7 +2810,7 @@
   {
     "id": 469,
     "unit": "Unit 10",
-    "zh": "里面有一个乒乓球。嗯……还有两本书，一本数学书和一本科学书。",
+    "zh": "里面有一个乒乓球。嗯......还有两本书，一本数学书和一本科学书。",
     "en": "There is a ping-pong ball in it. Mmm ... There are also two books, a math book and a science book."
   },
   {
@@ -2835,7 +2835,7 @@
     "id": 473,
     "unit": "Unit 10",
     "zh": "我在艺术俱乐部。",
-    "en": "I’m in the Art Club."
+    "en": "I'm in the Art Club."
   },
   {
     "id": 474,
@@ -2853,7 +2853,7 @@
     "id": 476,
     "unit": "Unit 10",
     "zh": "没关系。我在体育俱乐部。",
-    "en": "It’s OK. I’m in the PE Club."
+    "en": "It's OK. I'm in the PE Club."
   },
   {
     "id": 477,
@@ -2865,19 +2865,19 @@
     "id": 478,
     "unit": "Unit 10",
     "zh": "每个星期二下午四点。",
-    "en": "At four o’clock every Tuesday afternoon."
+    "en": "At four o'clock every Tuesday afternoon."
   },
   {
     "id": 479,
     "unit": "Unit 10",
     "zh": "你在俱乐部最喜欢的运动是什么？",
-    "en": "What’s your favorite sport in your club?"
+    "en": "What's your favorite sport in your club?"
   },
   {
     "id": 480,
     "unit": "Unit 10",
     "zh": "篮球。玲玲，你最喜欢什么？",
-    "en": "Basketball. What’s your favorite, Lingling?"
+    "en": "Basketball. What's your favorite, Lingling?"
   },
   {
     "id": 481,
@@ -2895,7 +2895,7 @@
     "id": 483,
     "unit": "Unit 10",
     "zh": "加拿大夏天的天气怎么样？",
-    "en": "What’s the weather like in summer in Canada?"
+    "en": "What's the weather like in summer in Canada?"
   },
   {
     "id": 484,
@@ -2913,7 +2913,7 @@
     "id": 486,
     "unit": "Unit 10",
     "zh": "这是一项非常好的运动。",
-    "en": "It’s a very good exercise."
+    "en": "It's a very good exercise."
   },
   {
     "id": 487,
@@ -2943,7 +2943,7 @@
     "id": 491,
     "unit": "Unit 10",
     "zh": "冬天很冷，但他们却在户外打拳。",
-    "en": "It’s so cold in winter, but they are doing it outdoors."
+    "en": "It's so cold in winter, but they are doing it outdoors."
   },
   {
     "id": 492,
@@ -2985,7 +2985,7 @@
     "id": 498,
     "unit": "Unit 10",
     "zh": "没有空气，人和动物就无法生存。",
-    "en": "With no air, people and animals can’t live."
+    "en": "With no air, people and animals can't live."
   },
   {
     "id": 499,
@@ -3002,7 +3002,7 @@
   {
     "id": 501,
     "unit": "Unit 11",
-    "zh": "嗯……人们在生活中也需要树木来做很多事情。",
+    "zh": "嗯......人们在生活中也需要树木来做很多事情。",
     "en": "Em ... People also need trees for many things in their life."
   },
   {
@@ -3021,13 +3021,13 @@
     "id": 504,
     "unit": "Unit 11",
     "zh": "别忘了，夏天我们还可以在树下好好休息。",
-    "en": "And don’t forget we can also have a good rest under a tree in summer."
+    "en": "And don't forget we can also have a good rest under a tree in summer."
   },
   {
     "id": 505,
     "unit": "Unit 11",
     "zh": "所以这里非常寒冷且多风。",
-    "en": "so it’s very cold and windy here."
+    "en": "so it's very cold and windy here."
   },
   {
     "id": 506,
@@ -3057,7 +3057,7 @@
     "id": 510,
     "unit": "Unit 11",
     "zh": "它也在高地上。",
-    "en": "It’s also on a highland."
+    "en": "It's also on a highland."
   },
   {
     "id": 511,
@@ -3123,13 +3123,13 @@
     "id": 521,
     "unit": "Unit 11",
     "zh": "人们也会在天安门广场升起国旗。",
-    "en": "People also raise the national flag at Tian’anmen Square."
+    "en": "People also raise the national flag at Tian'anmen Square."
   },
   {
     "id": 522,
     "unit": "Unit 11",
     "zh": "我肯定很多人都喜欢在天安门观看这个。",
-    "en": "I’m sure a lot of people like to watch this at Tian’anmen."
+    "en": "I'm sure a lot of people like to watch this at Tian'anmen."
   },
   {
     "id": 523,
@@ -3159,7 +3159,7 @@
     "id": 527,
     "unit": "Unit 11",
     "zh": "让我们谈谈世界上的一些节日。",
-    "en": "Let’s talk about some festivals in the world."
+    "en": "Let's talk about some festivals in the world."
   },
   {
     "id": 528,

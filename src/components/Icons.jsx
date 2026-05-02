@@ -24,6 +24,7 @@ export const IconArrowLeft = ({ size = 16 }) => <svg {...p(size)}><line x1="19" 
 export const IconArrowRight = ({ size = 16 }) => <svg {...p(size)}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 export const IconRotateCcw = ({ size = 16 }) => <svg {...p(size)}><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
 export const IconCheck = ({ size = 16 }) => <svg {...p(size)}><polyline points="20 6 9 17 4 12"/></svg>
+export const IconKeyboard = ({ size = 18 }) => <svg {...p(size)}><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="6" y2="10"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="18" y1="10" x2="18" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
 export const IconBookmark = ({ size = 16 }) => <svg {...p(size)}><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
 export const IconSpeaker = ({ size = 24, className = '' }) => (
   <svg

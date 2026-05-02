@@ -1221,6 +1221,25 @@ const TYPE_LABEL = {
   listen_translate: '听翻译',
 }
 
+const OPTION_LABEL_COLORS = ['#CFCFCF', '#2A9BD9', '#2FB9B0', '#A38BEA']
+
+function AudioActionButton({ onClick, size = 22, title = '播放音频', compact = false }) {
+  return (
+    <button
+      onClick={onClick}
+      title={title}
+      type="button"
+      className={`inline-flex items-center justify-center rounded-lg border transition-colors active:scale-95 shrink-0 ${
+        compact
+          ? 'w-8 h-8 bg-slate-800 border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700'
+          : 'w-10 h-10 bg-slate-800 border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700'
+      }`}
+    >
+      <IconSpeaker size={size} />
+    </button>
+  )
+}
+
 // ── 选择题 ────────────────────────────────────────────────────────────────────
 function QuizCard({ q, onResult }) {
   const [selected, setSelected] = useState(null)
@@ -1237,9 +1256,7 @@ function QuizCard({ q, onResult }) {
     <div>
       <div className="flex items-start gap-3 mb-2">
         <p className="text-white text-xl font-medium leading-relaxed flex-1">{q.question}</p>
-        <button onClick={() => speak(q.question)} className="text-blue-400 hover:text-blue-300 text-xl mt-0.5 shrink-0">
-          <IconSpeaker size={22} />
-        </button>
+        <AudioActionButton onClick={() => speak(q.question)} title="播放题干音频" />
       </div>
       <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
       <div className="space-y-2">
@@ -1256,12 +1273,34 @@ function QuizCard({ q, onResult }) {
                 : selected === i
                 ? 'bg-blue-800/50 border-2 border-blue-500 text-white'
                 : 'bg-gray-800 border-2 border-transparent text-white hover:border-blue-500/50 hover:bg-blue-900/10'}`}>
-            <span className="font-mono text-sm opacity-60 shrink-0">{String.fromCharCode(65 + i)}</span>
+            <span
+              className="font-mono text-xs font-semibold shrink-0 px-2 py-1 rounded-md"
+              style={{
+                backgroundColor: OPTION_LABEL_COLORS[i % OPTION_LABEL_COLORS.length],
+                color: [1, 3].includes(i % OPTION_LABEL_COLORS.length) ? '#ffffff' : '#0f172a',
+              }}
+            >
+              {String.fromCharCode(65 + i)}
+            </span>
             <span>{opt}</span>
-            <button onClick={e => { e.stopPropagation(); speak(opt) }}
-              className="ml-auto text-blue-400/60 hover:text-blue-300 text-sm shrink-0">
-              <IconSpeaker size={22} />
-            </button>
+            <span className="ml-auto shrink-0 self-stretch">
+              <span
+                role="button"
+                tabIndex={0}
+                title="播放选项音频"
+                onClick={e => { e.stopPropagation(); speak(opt) }}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    speak(opt)
+                  }
+                }}
+                className="inline-flex items-center justify-center w-10 h-full min-h-[44px] rounded-lg border bg-slate-800 border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700 transition-colors"
+              >
+                <IconSpeaker size={18} />
+              </span>
+            </span>
           </button>
         ))}
       </div>
@@ -1283,8 +1322,12 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
   const [unlocked, setUnlocked] = useState(!requireSpeak)
   const [isRecording, setIsRecording] = useState(false)
   const [recognizingResult, setRecognizingResult] = useState('')
+  const [speakFailCount, setSpeakFailCount] = useState(0)
+  const AUTO_PASS_AFTER_FAILS = 5
   useEffect(() => {
     setUnlocked(!requireSpeak)
+    setSpeakFailCount(0)
+    setRecognizingResult('')
   }, [requireSpeak])
 
   const recognitionRef = useRef(null);
@@ -1330,7 +1373,16 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
           'no-speech': '未检测到说话声音',
           'aborted': '识别被中止'
         };
-        setRecognizingResult(`❌ 错误: ${errorMap[event.error] || event.error}`);
+        setSpeakFailCount(prev => {
+          const next = prev + 1
+          if (next >= AUTO_PASS_AFTER_FAILS) {
+            setUnlocked(true)
+            setRecognizingResult(`已连续失败 ${AUTO_PASS_AFTER_FAILS} 次，自动放行到输入模式`)
+            return next
+          }
+          setRecognizingResult(`❌ 错误: ${errorMap[event.error] || event.error}（${next}/${AUTO_PASS_AFTER_FAILS}）`)
+          return next
+        })
       };
 
       recognition.onresult = (event) => {
@@ -1364,9 +1416,19 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
     
     const isMatch = ansWords.length === 0 || (matchCount / (ansWords.length || 1)) >= 0.5;
     if (isMatch) {
+      setSpeakFailCount(0)
       setTimeout(() => setUnlocked(true), 500); 
     } else {
-      setTimeout(() => setRecognizingResult('匹配度较低，请再试一次'), 1500);
+      setSpeakFailCount(prev => {
+        const next = prev + 1
+        if (next >= AUTO_PASS_AFTER_FAILS) {
+          setUnlocked(true)
+          setRecognizingResult(`已连续失败 ${AUTO_PASS_AFTER_FAILS} 次，自动放行到输入模式`)
+          return next
+        }
+        setTimeout(() => setRecognizingResult(`匹配度较低，请再试一次（${next}/${AUTO_PASS_AFTER_FAILS}）`), 800)
+        return next
+      })
     }
   };
 
@@ -1400,10 +1462,7 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
       <div className="flex items-center gap-3 mb-2">
         <p className="text-white text-xl font-medium leading-relaxed flex-1"
           style={{ fontFamily: 'monospace' }}>{q.sentence}</p>
-        <button onClick={() => speak(q.sentence.replace('___', q.answer))}
-          className="text-blue-400 hover:text-blue-300 text-xl shrink-0">
-          <IconSpeaker size={22} />
-        </button>
+        <AudioActionButton onClick={() => speak(q.sentence.replace('___', q.answer))} title="播放整句音频" />
       </div>
       <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
 
@@ -1504,9 +1563,7 @@ function WordOrderCard({ q, onResult }) {
     <div>
       <div className="flex items-center gap-3 mb-2">
         <p className="text-gray-300 text-base">{q.zh}</p>
-        <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300 text-xl shrink-0">
-          <IconSpeaker size={22} />
-        </button>
+        <AudioActionButton onClick={() => speak(q.sentence)} title="播放句子音频" />
       </div>
       <div className="min-h-14 bg-gray-800 border-2 border-gray-700 rounded-2xl px-4 py-3 flex flex-wrap gap-2 mb-4 mt-4">
         {arranged.length === 0 && <span className="text-gray-600 text-base">点击下方单词排列</span>}
@@ -1560,10 +1617,7 @@ function ListenChoiceCard({ q, type, onResult }) {
   return (
     <div>
       <div className="flex justify-center mb-4">
-        <button onClick={() => speak(textToSpeak)}
-          className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-500 active:scale-95 flex items-center justify-center text-xl transition-all shadow-lg shadow-blue-900/40">
-          <IconSpeaker size={28} />
-        </button>
+        <AudioActionButton onClick={() => speak(textToSpeak)} size={26} title="播放听力音频" />
       </div>
       {type === 'listen_response' && (
         <p className="text-center text-gray-400 text-base mb-4">{q.zh}</p>
@@ -1582,7 +1636,15 @@ function ListenChoiceCard({ q, type, onResult }) {
                   ? 'bg-red-800/50 border-2 border-red-500 text-red-200'
                   : 'bg-gray-800 border-2 border-transparent text-gray-500'
                 : 'bg-gray-800 border-2 border-transparent text-white hover:border-blue-500/50 hover:bg-blue-900/10'}`}>
-            <span className="font-mono text-sm opacity-60 mr-2">{String.fromCharCode(65 + i)}.</span>
+            <span
+              className="font-mono text-xs font-semibold mr-2 px-2 py-1 rounded-md"
+              style={{
+                backgroundColor: OPTION_LABEL_COLORS[i % OPTION_LABEL_COLORS.length],
+                color: [1, 3].includes(i % OPTION_LABEL_COLORS.length) ? '#ffffff' : '#0f172a',
+              }}
+            >
+              {String.fromCharCode(65 + i)}
+            </span>
             {opt}
           </button>
         ))}
@@ -1822,7 +1884,7 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
   const typeLabel = TYPE_LABEL[q.type]
 
   return (
-    <div className="fixed inset-0 z-40 bg-black flex flex-col">
+    <div className="fixed inset-0 z-[60] bg-black flex flex-col">
       {/* 顶栏 */}
       <div className="shrink-0 px-4 pt-4 pb-2">
         <div className="flex items-center justify-between mb-2">
@@ -1840,8 +1902,8 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
       </div>
 
       {/* 题目卡片区（可内部滚动）*/}
-      <div className="flex-1 overflow-y-auto px-4 py-3">
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 max-w-lg mx-auto">
+      <div className="flex-1 overflow-y-auto px-4 py-3 min-h-0">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 max-w-2xl w-full mx-auto min-h-full flex flex-col justify-center">
           {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} />}
           {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} />}
           {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} />}

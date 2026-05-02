@@ -4,11 +4,28 @@ function getCtx() {
   if (!window._audioCtx) {
     window._audioCtx = new (window.AudioContext || window.webkitAudioContext)()
     window._noiseBuffer = null // reset buffer when ctx is recreated
+    window._masterGain = null
   }
   if (window._audioCtx.state === 'suspended') {
-    window._audioCtx.resume()
+    window._audioCtx.resume().catch(() => {})
   }
   return window._audioCtx
+}
+
+function getOutput(ctx) {
+  if (!window._masterGain) {
+    const gain = ctx.createGain()
+    gain.gain.value = 1
+    gain.connect(ctx.destination)
+    window._masterGain = gain
+  }
+  return window._masterGain
+}
+
+function setOutputVolume(ctx, volume = 1) {
+  const out = getOutput(ctx)
+  const v = Number.isFinite(volume) ? Math.max(0, Math.min(1, volume)) : 1
+  out.gain.setValueAtTime(v, ctx.currentTime)
 }
 
 function getNoiseBuffer(ctx) {
@@ -41,7 +58,7 @@ function playBlackPBT(ctx) {
   const gain = ctx.createGain()
   gain.gain.setValueAtTime(0.55, t)
   gain.gain.exponentialRampToValueAtTime(0.001, t + 0.065)
-  noise.connect(bp); bp.connect(hp); hp.connect(gain); gain.connect(ctx.destination)
+  noise.connect(bp); bp.connect(hp); hp.connect(gain); gain.connect(getOutput(ctx))
   noise.start(t); noise.stop(t + 0.07)
   // transient click
   const click = ctx.createBufferSource()
@@ -51,7 +68,7 @@ function playBlackPBT(ctx) {
   const cg = ctx.createGain()
   cg.gain.setValueAtTime(0.3, t)
   cg.gain.exponentialRampToValueAtTime(0.001, t + 0.008)
-  click.connect(chp); chp.connect(cg); cg.connect(ctx.destination)
+  click.connect(chp); chp.connect(cg); cg.connect(getOutput(ctx))
   click.start(t); click.stop(t + 0.01)
 }
 
@@ -65,7 +82,7 @@ function playClicky(ctx) {
   const gain = ctx.createGain()
   gain.gain.setValueAtTime(0.5, t)
   gain.gain.exponentialRampToValueAtTime(0.001, t + 0.018)
-  noise.connect(hp); hp.connect(gain); gain.connect(ctx.destination)
+  noise.connect(hp); hp.connect(gain); gain.connect(getOutput(ctx))
   noise.start(t); noise.stop(t + 0.02)
   // Low body thud
   const osc = ctx.createOscillator()
@@ -74,7 +91,7 @@ function playClicky(ctx) {
   const og = ctx.createGain()
   og.gain.setValueAtTime(0.25, t)
   og.gain.exponentialRampToValueAtTime(0.001, t + 0.02)
-  osc.connect(og); og.connect(ctx.destination)
+  osc.connect(og); og.connect(getOutput(ctx))
   osc.start(t); osc.stop(t + 0.02)
 }
 
@@ -87,7 +104,7 @@ function playTypewriter(ctx) {
   const gain = ctx.createGain()
   gain.gain.setValueAtTime(0.6, t)
   gain.gain.exponentialRampToValueAtTime(0.001, t + 0.09)
-  noise.connect(bp); bp.connect(gain); gain.connect(ctx.destination)
+  noise.connect(bp); bp.connect(gain); gain.connect(getOutput(ctx))
   noise.start(t); noise.stop(t + 0.1)
   // metallic ping
   const osc = ctx.createOscillator()
@@ -95,7 +112,7 @@ function playTypewriter(ctx) {
   const og = ctx.createGain()
   og.gain.setValueAtTime(0.12, t)
   og.gain.exponentialRampToValueAtTime(0.001, t + 0.04)
-  osc.connect(og); og.connect(ctx.destination)
+  osc.connect(og); og.connect(getOutput(ctx))
   osc.start(t); osc.stop(t + 0.04)
 }
 
@@ -108,7 +125,7 @@ function playSoft(ctx) {
   const gain = ctx.createGain()
   gain.gain.setValueAtTime(0.2, t)
   gain.gain.exponentialRampToValueAtTime(0.001, t + 0.035)
-  noise.connect(lp); lp.connect(gain); gain.connect(ctx.destination)
+  noise.connect(lp); lp.connect(gain); gain.connect(getOutput(ctx))
   noise.start(t); noise.stop(t + 0.04)
 }
 
@@ -119,7 +136,7 @@ function playChime(ctx, isVictory) {
   notes.forEach((freq, i) => {
     const osc = ctx.createOscillator()
     const gain = ctx.createGain()
-    osc.connect(gain); gain.connect(ctx.destination)
+    osc.connect(gain); gain.connect(getOutput(ctx))
     osc.type = 'sine'
     const t = ctx.currentTime + i * (isVictory ? 0.12 : 0.1)
     osc.frequency.setValueAtTime(freq, t)
@@ -138,7 +155,7 @@ function playCoin(ctx, isVictory) {
     const osc = ctx.createOscillator()
     osc.type = 'square'
     const gain = ctx.createGain()
-    osc.connect(gain); gain.connect(ctx.destination)
+    osc.connect(gain); gain.connect(getOutput(ctx))
     const t = ctx.currentTime + delay
     osc.frequency.setValueAtTime(freq, t)
     osc.frequency.exponentialRampToValueAtTime(freq * 1.3, t + 0.06)
@@ -154,7 +171,7 @@ function playPop(ctx, isVictory) {
     const osc = ctx.createOscillator()
     osc.type = 'sine'
     const gain = ctx.createGain()
-    osc.connect(gain); gain.connect(ctx.destination)
+    osc.connect(gain); gain.connect(getOutput(ctx))
     const t = ctx.currentTime + i * 0.1
     const baseFreq = isVictory ? 600 + i * 120 : 700
     osc.frequency.setValueAtTime(baseFreq, t)
@@ -173,7 +190,7 @@ function playRetro(ctx, isVictory) {
     const osc = ctx.createOscillator()
     osc.type = 'square'
     const gain = ctx.createGain()
-    osc.connect(gain); gain.connect(ctx.destination)
+    osc.connect(gain); gain.connect(getOutput(ctx))
     const t = ctx.currentTime + i * 0.07
     osc.frequency.setValueAtTime(freq, t)
     gain.gain.setValueAtTime(0.15, t)
@@ -197,7 +214,7 @@ function playFart(ctx, isVictory) {
     gain.gain.setValueAtTime(0.7, t)
     gain.gain.setValueAtTime(0.7, t + 0.05)
     gain.gain.exponentialRampToValueAtTime(0.001, t + 0.18)
-    noise.connect(bp); bp.connect(gain); gain.connect(ctx.destination)
+    noise.connect(bp); bp.connect(gain); gain.connect(getOutput(ctx))
     noise.start(t); noise.stop(t + 0.2)
   }
 }
@@ -216,7 +233,7 @@ function playDrum(ctx, isVictory) {
     const og = ctx.createGain()
     og.gain.setValueAtTime(0.9, t)
     og.gain.exponentialRampToValueAtTime(0.001, t + 0.12)
-    osc.connect(og); og.connect(ctx.destination)
+    osc.connect(og); og.connect(getOutput(ctx))
     osc.start(t); osc.stop(t + 0.13)
     // Transient snap
     const noise = ctx.createBufferSource()
@@ -226,7 +243,7 @@ function playDrum(ctx, isVictory) {
     const ng = ctx.createGain()
     ng.gain.setValueAtTime(0.4, t)
     ng.gain.exponentialRampToValueAtTime(0.001, t + 0.02)
-    noise.connect(hp); hp.connect(ng); ng.connect(ctx.destination)
+    noise.connect(hp); hp.connect(ng); ng.connect(getOutput(ctx))
     noise.start(t); noise.stop(t + 0.025)
   })
 }
@@ -252,8 +269,8 @@ function playCheer(ctx) {
     gain2.gain.setValueAtTime(0, start)
     gain2.gain.linearRampToValueAtTime(0.06, start + 0.015)
     gain2.gain.exponentialRampToValueAtTime(0.001, start + 0.35)
-    osc.connect(gain); gain.connect(ctx.destination)
-    osc2.connect(gain2); gain2.connect(ctx.destination)
+    osc.connect(gain); gain.connect(getOutput(ctx))
+    osc2.connect(gain2); gain2.connect(getOutput(ctx))
     osc.start(start); osc.stop(start + 0.6)
     osc2.start(start); osc2.stop(start + 0.4)
   })
@@ -266,7 +283,7 @@ function playCheer(ctx) {
   bellGain.gain.setValueAtTime(0, bs)
   bellGain.gain.linearRampToValueAtTime(0.22, bs + 0.01)
   bellGain.gain.exponentialRampToValueAtTime(0.001, bs + 0.8)
-  bell.connect(bellGain); bellGain.connect(ctx.destination)
+  bell.connect(bellGain); bellGain.connect(getOutput(ctx))
   bell.start(bs); bell.stop(bs + 0.85)
 }
 
@@ -279,7 +296,7 @@ function playBubblePop(ctx) {
   const gain = ctx.createGain()
   gain.gain.setValueAtTime(0.13, t)
   gain.gain.exponentialRampToValueAtTime(0.001, t + 0.08)
-  osc.connect(gain); gain.connect(ctx.destination)
+  osc.connect(gain); gain.connect(getOutput(ctx))
   osc.start(t); osc.stop(t + 0.09)
 }
 
@@ -295,22 +312,24 @@ export function useSound(settings) {
     if (!enabled || keypressSound === 'none') return
     try {
       const ctx = getCtx()
+      setOutputVolume(ctx, volume)
       if (keypressSound === 'black-pbt') playBlackPBT(ctx)
       else if (keypressSound === 'clicky') playClicky(ctx)
       else if (keypressSound === 'typewriter') playTypewriter(ctx)
       else if (keypressSound === 'soft') playSoft(ctx)
     } catch {}
-  }, [enabled, keypressSound])
+  }, [enabled, keypressSound, volume])
 
   const playError = useCallback(() => {
     if (!enabled || errorSound === 'none') return
     try {
       const ctx = getCtx()
+      setOutputVolume(ctx, volume)
       const t = ctx.currentTime
       if (errorSound === 'buzz') {
         const osc = ctx.createOscillator()
         const gain = ctx.createGain()
-        osc.connect(gain); gain.connect(ctx.destination)
+        osc.connect(gain); gain.connect(getOutput(ctx))
         osc.type = 'sawtooth'
         osc.frequency.setValueAtTime(220, t)
         osc.frequency.exponentialRampToValueAtTime(110, t + 0.2)
@@ -325,12 +344,13 @@ export function useSound(settings) {
       else if (errorSound === 'fart') playFart(ctx, false)
       else if (errorSound === 'drum') playDrum(ctx, false)
     } catch {}
-  }, [enabled, errorSound])
+  }, [enabled, errorSound, volume])
 
   const playCorrect = useCallback(() => {
     if (!enabled || correctSound === 'none') return
     try {
       const ctx = getCtx()
+      setOutputVolume(ctx, volume)
       if (correctSound === 'chime') playChime(ctx, false)
       else if (correctSound === 'coin') playCoin(ctx, false)
       else if (correctSound === 'pop') playPop(ctx, false)
@@ -338,12 +358,13 @@ export function useSound(settings) {
       else if (correctSound === 'fart') playFart(ctx, false)
       else if (correctSound === 'drum') playDrum(ctx, false)
     } catch {}
-  }, [enabled, correctSound])
+  }, [enabled, correctSound, volume])
 
   const playVictory = useCallback(() => {
     if (!enabled || victorySound === 'none') return
     try {
       const ctx = getCtx()
+      setOutputVolume(ctx, volume)
       if (victorySound === 'chime') playChime(ctx, true)
       else if (victorySound === 'coin') playCoin(ctx, true)
       else if (victorySound === 'pop') playPop(ctx, true)
@@ -351,17 +372,25 @@ export function useSound(settings) {
       else if (victorySound === 'fart') playFart(ctx, true)
       else if (victorySound === 'drum') playDrum(ctx, true)
     } catch {}
-  }, [enabled, victorySound])
+  }, [enabled, victorySound, volume])
 
   const playBubble = useCallback(() => {
     if (!enabled) return
-    try { playBubblePop(getCtx()) } catch {}
-  }, [enabled])
+    try {
+      const ctx = getCtx()
+      setOutputVolume(ctx, volume)
+      playBubblePop(ctx)
+    } catch {}
+  }, [enabled, volume])
 
   const playFireworks = useCallback(() => {
-    if (settings?.fireworksSound === false) return
-    try { playCheer(getCtx()) } catch {}
-  }, [settings?.fireworksSound])
+    if (!enabled || settings?.fireworksSound === false) return
+    try {
+      const ctx = getCtx()
+      setOutputVolume(ctx, volume)
+      playCheer(ctx)
+    } catch {}
+  }, [enabled, settings?.fireworksSound, volume])
 
   return { playKeypress, playError, playCorrect, playVictory, playBubble, playFireworks }
 }
@@ -370,6 +399,7 @@ export function previewSound(category, value) {
   if (value === 'none') return
   try {
     const ctx = getCtx()
+    setOutputVolume(ctx, 1)
     if (category === 'keypress') {
       if (value === 'black-pbt') playBlackPBT(ctx)
       else if (value === 'clicky') playClicky(ctx)
@@ -380,7 +410,7 @@ export function previewSound(category, value) {
         const t = ctx.currentTime
         const osc = ctx.createOscillator()
         const gain = ctx.createGain()
-        osc.connect(gain); gain.connect(ctx.destination)
+        osc.connect(gain); gain.connect(getOutput(ctx))
         osc.type = 'sawtooth'
         osc.frequency.setValueAtTime(220, t)
         osc.frequency.exponentialRampToValueAtTime(110, t + 0.2)

@@ -369,7 +369,7 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Textbook({ onImport, onClose, onSetBack, progress = {}, onNavigate, requireSpeak, hideSkipNext }) {
+export default function Textbook({ onImport, onClose, onSetBack, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin }) {
   const [detail, setDetail] = useState(null)
   const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
 
@@ -487,12 +487,32 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
         <span className="text-xs text-gray-500">共 {TEXTBOOK_SLOTS.length} 本教材</span>
       </div>
 
+      {!isMember && (
+        <div className="mb-5 bg-gradient-to-r from-amber-900/40 to-orange-900/30 border border-amber-700/50 rounded-xl p-4 flex items-center gap-3">
+          <span className="text-2xl shrink-0">⭐</span>
+          <div className="flex-1 min-w-0">
+            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁全部教材</div>
+            <div className="text-amber-500/80 text-xs mt-0.5">三年级下册起均为会员专属，免费用三年级上册体验</div>
+          </div>
+          <button onClick={onShowLogin} className="shrink-0 px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold transition-colors">
+            登录
+          </button>
+        </div>
+      )}
+
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        {TEXTBOOK_SLOTS.map((book) => (
+        {TEXTBOOK_SLOTS.map((book) => {
+          const isPremium = book.name && book.id !== 'grade3_up'
+          const locked = isPremium && !isMember
+          return (
+          <div key={book.id} className="relative">
           <button
-            key={book.id}
-            onClick={() => book.name ? setDetail(book.id) : null}
-            className={`flex flex-col rounded-2xl overflow-hidden border transition-all text-left
+            onClick={() => {
+              if (!book.name) return
+              if (locked) { onShowLogin?.(); return }
+              setDetail(book.id)
+            }}
+            className={`w-full flex flex-col rounded-2xl overflow-hidden border transition-all text-left
               ${book.name
                 ? 'border-gray-700 hover:border-gray-500 cursor-pointer'
                 : 'border-slate-700 border-dashed cursor-default opacity-40'}
@@ -532,7 +552,15 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
               })()}
             </div>
           </button>
-        ))}
+          {locked && (
+            <div className="absolute inset-0 bg-black/65 backdrop-blur-sm flex flex-col items-center justify-center gap-1.5 z-10 rounded-2xl pointer-events-none">
+              <span className="text-xl">🔒</span>
+              <span className="text-white text-xs font-semibold">会员专属</span>
+            </div>
+          )}
+          </div>
+          )
+        })}
       </div>
     </div>
   )

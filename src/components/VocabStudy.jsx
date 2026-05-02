@@ -728,7 +728,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
                             'bg-gray-800/80 text-gray-400 hover:bg-gray-700'}`}>
               {hidden
                 ? <span className="text-gray-600 text-lg tracking-widest">···</span>
-                : <span className="text-xl font-semibold truncate px-2">{w.word}</span>
+                : <span className="text-3xl font-semibold truncate px-2">{w.word}</span>
               }
             </button>
           )

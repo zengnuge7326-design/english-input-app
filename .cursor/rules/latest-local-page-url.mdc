@@ -1,0 +1,16 @@
+---
+description: Always verify the latest local page URL before answering address questions
+alwaysApply: true
+---
+
+# Latest Local Page URL
+
+When the user asks for the page URL, app address, local address, or says "给我打开应用的网址", do not reuse an older URL from memory.
+
+Before answering:
+
+- Check currently running dev servers and their printed `Local:` URLs.
+- If multiple Vite/local servers are running, verify which one serves this project and the latest source by requesting a project file such as `/src/components/WordInput.jsx`.
+- Prefer a fixed fresh port when existing ports are confusing, using `npm run dev -- --host 127.0.0.1 --port <free-port> --strictPort`.
+- Return the verified latest URL clearly, and mention if older ports may be stale.
+- If opening the browser, open the verified URL, not the last remembered URL.

@@ -1,5 +1,19 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
-import { supabase } from './lib/supabase'
+const API = 'https://okenglish.site/api'
+async function apiPost(path, body, token) {
+  const res = await fetch(API + path, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+    body: JSON.stringify(body)
+  })
+  return res.json()
+}
+async function apiGet(path, token) {
+  const res = await fetch(API + path, {
+    headers: { ...(token ? { Authorization: `Bearer ${token}` } : {}) }
+  })
+  return res.json()
+}
 import { unlockAudio, isAudioUnlocked } from './utils/audioUnlock'
 import ExerciseView from './components/ExerciseView'
 import ImportPanel from './components/ImportPanel'
@@ -15,6 +29,7 @@ import FillBlank from './components/FillBlank'
 import SyncPractice from './components/SyncPractice'
 import VocabStudy from './components/VocabStudy'
 import PhonicsLesson from './components/PhonicsLesson'
+import TypingPractice from './components/TypingPractice'
 import { useProgress, getRecentErrors } from './hooks/useProgress'
 import sampleData from './data/sample.json'
 import changyongData from './data/changyong.json'
@@ -40,13 +55,13 @@ import bsdaS2Data from './data/bsda_s2.json'
 import bsdaS3Data from './data/bsda_s3.json'
 import bsdaS4Data from './data/bsda_s4.json'
 import {
-  IconHome, IconPencil, IconList, IconBookOpen, IconBook,
+  IconHome, IconPencil, IconBookOpen, IconBook,
   IconGraduationCap, IconDownload, IconSettings,
   IconArchive, IconCalendar, IconStar, IconRefresh, IconCrown,
   IconChevronLeft, IconUser,
   IconArrowLeft, IconArrowRight, IconRotateCcw,
-  IconCheck, IconBookmark, IconVolume2, IconInfo, IconSplit,
-  IconCheckSquare, IconEdit,
+  IconCheck, IconBookmark, IconInfo, IconSplit,
+  IconCheckSquare, IconEdit, IconKeyboard,
 } from './components/Icons'
 
 const ALL_UNITS = [
@@ -144,12 +159,31 @@ function saveLessonHistory(label, sentences) {
 }
 
 const SETTINGS_KEY = 'english_input_settings'
+const DEFAULT_SETTINGS = {
+  lang: 'en-US',
+  rate: 1.0,
+  ttsEngine: 'hybrid',
+  edgeVoice: 'en-US-AvaNeural',
+  sentenceSpeak: true,
+  autoSpeak: false,
+  wordSpeak: true,
+  learningLevel: 2,
+  showHintOnError: true,
+  hintTriggerCount: 1,
+  splitMode: false,
+  soundEnabled: true,
+  keypressSound: 'black-pbt',
+  correctSound: 'chime',
+  victorySound: 'chime',
+  errorSound: 'buzz',
+}
 
 function loadSettings() {
   try {
-    return JSON.parse(localStorage.getItem(SETTINGS_KEY) || 'null') || { lang: 'en-US', rate: 1.0, autoSpeak: true, wordSpeak: true, learningLevel: 2, showHintOnError: true, hintTriggerCount: 1, splitMode: false, soundEnabled: true, keypressSound: 'black-pbt', correctSound: 'chime', victorySound: 'chime', errorSound: 'buzz' }
+    const stored = JSON.parse(localStorage.getItem(SETTINGS_KEY) || 'null')
+    return stored ? { ...DEFAULT_SETTINGS, ...stored } : { ...DEFAULT_SETTINGS }
   } catch {
-    return { lang: 'en-US', rate: 1.0, autoSpeak: true, wordSpeak: true, learningLevel: 2, showHintOnError: true, hintTriggerCount: 1, soundEnabled: true, keypressSound: 'black-pbt', correctSound: 'chime', victorySound: 'chime', errorSound: 'buzz' }
+    return { ...DEFAULT_SETTINGS }
   }
 }
 
@@ -172,10 +206,9 @@ const BOTTOM_ITEMS = [
   { id: 'member',    Icon: IconCrown,    label: '开通会员',  yellow: true },
 ]
 
-function LoginModal({ onClose }) {
-  // mode: 'login' | 'register' | 'reset'
+function LoginModal({ onClose, onLogin }) {
   const [mode, setMode] = useState('login')
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -185,58 +218,42 @@ function LoginModal({ onClose }) {
 
   async function handleSubmit() {
     setLoading(true); reset()
-    if (mode === 'reset') {
-      if (!email) { setError('请填写邮箱'); setLoading(false); return }
-      const { error: e } = await supabase.auth.resetPasswordForEmail(email)
-      if (e) setError(e.message)
-      else setSuccess('重置邮件已发送，请查收邮箱。')
-    } else if (mode === 'register') {
-      if (!email || !password) { setError('请填写邮箱和密码'); setLoading(false); return }
-      const { error: e } = await supabase.auth.signUp({ email, password })
-      if (e) setError(e.message)
-      else setSuccess('注册成功！请查收验证邮件后登录。')
+    const path = mode === 'register' ? '/register' : '/login'
+    const res = await apiPost(path, { username, password })
+    if (res.error) {
+      setError(res.error)
     } else {
-      if (!email || !password) { setError('请填写邮箱和密码'); setLoading(false); return }
-      const { error: e } = await supabase.auth.signInWithPassword({ email, password })
-      if (e) setError(e.message === 'Invalid login credentials' ? '邮箱或密码错误' : e.message)
-      else onClose()
+      localStorage.setItem('auth_token', res.token)
+      localStorage.setItem('auth_username', res.username)
+      onLogin(res.username, res.token, res.is_member)
+      onClose()
     }
     setLoading(false)
   }
 
-  const titles = { login: '登录', register: '注册账号', reset: '重置密码' }
-  const btnLabels = { login: '登录', register: '注册', reset: '发送重置邮件' }
+  const titles = { login: '登录', register: '注册账号' }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4" onClick={onClose}>
       <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8 w-full max-w-sm shadow-2xl" onClick={e => e.stopPropagation()}>
         <h2 className="text-xl font-bold text-white mb-1">{titles[mode]}</h2>
-        <p className="text-gray-500 text-sm mb-6">登录以同步学习进度</p>
+        <p className="text-gray-500 text-sm mb-6">登录以同步学习进度到云端</p>
         <input
-          type="email"
-          placeholder="邮箱"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
+          type="text"
+          placeholder="用户名（2-20个字符）"
+          value={username}
+          onChange={e => setUsername(e.target.value)}
           className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm mb-3 outline-none focus:border-blue-500 transition-colors"
           onKeyDown={e => e.key === 'Enter' && handleSubmit()}
         />
-        {mode !== 'reset' && (
-          <input
-            type="password"
-            placeholder="密码（至少6位）"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm mb-4 outline-none focus:border-blue-500 transition-colors"
-            onKeyDown={e => e.key === 'Enter' && handleSubmit()}
-          />
-        )}
-        {mode === 'login' && (
-          <div className="flex justify-end mb-4">
-            <button className="text-xs text-gray-500 hover:text-blue-400 transition-colors" onClick={() => { setMode('reset'); reset() }}>
-              忘记密码？
-            </button>
-          </div>
-        )}
+        <input
+          type="password"
+          placeholder="密码（至少6位）"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm mb-4 outline-none focus:border-blue-500 transition-colors"
+          onKeyDown={e => e.key === 'Enter' && handleSubmit()}
+        />
         {error && <p className="text-red-400 text-xs mb-3">{error}</p>}
         {success && <p className="text-green-400 text-xs mb-3">{success}</p>}
         <button
@@ -244,24 +261,17 @@ function LoginModal({ onClose }) {
           onClick={handleSubmit}
           disabled={loading}
         >
-          {loading ? '请稍候…' : btnLabels[mode]}
+          {loading ? '请稍候…' : (mode === 'login' ? '登录' : '注册')}
         </button>
-        {mode === 'login' && (
+        {mode === 'login' ? (
           <button className="w-full text-gray-500 hover:text-gray-300 text-sm transition-colors mb-2"
             onClick={() => { setMode('register'); reset() }}>
             没有账号？去注册
           </button>
-        )}
-        {mode === 'register' && (
+        ) : (
           <button className="w-full text-gray-500 hover:text-gray-300 text-sm transition-colors mb-2"
             onClick={() => { setMode('login'); reset() }}>
             已有账号？去登录
-          </button>
-        )}
-        {mode === 'reset' && (
-          <button className="w-full text-gray-500 hover:text-gray-300 text-sm transition-colors mb-2"
-            onClick={() => { setMode('login'); reset() }}>
-            返回登录
           </button>
         )}
         <button className="w-full text-gray-600 hover:text-gray-400 text-sm transition-colors" onClick={onClose}>取消</button>
@@ -274,7 +284,6 @@ export default function App() {
   const [sentences, setSentences] = useState(sampleData)
   const [settings, setSettings] = useState(loadSettings)
   const [tab, setTab] = useState('home')
-  const [audioReady, setAudioReady] = useState(false)
   const [exerciseIndex, setExerciseIndex] = useState(0)
   const [lessonProgress, setLessonProgress] = useState({ index: 0, total: sampleData.length })
   const [nav, setNav] = useState(null)
@@ -283,15 +292,20 @@ export default function App() {
   const [tabHistory, setTabHistory] = useState([])
   const [backFnHistory, setBackFnHistory] = useState([])
   const [showSettings, setShowSettings] = useState(false)
-  const [user, setUser] = useState(null)       // supabase User 对象
+  const [user, setUser] = useState(() => localStorage.getItem('auth_username') || null)
+  const [token, setToken] = useState(() => localStorage.getItem('auth_token') || null)
+  const [isMember, setIsMember] = useState(() => localStorage.getItem('auth_is_member') === '1')
   const [showLogin, setShowLogin] = useState(false)
-  const [authLoading, setAuthLoading] = useState(true)
+  const [authLoading, setAuthLoading] = useState(false)
+  const [syncStatus, setSyncStatus] = useState('')
   const [showLevelMenu, setShowLevelMenu] = useState(false)
   const [showExerciseHistory, setShowExerciseHistory] = useState(false)
   const [showReview, setShowReview] = useState(false)
   const [reviewData, setReviewData] = useState(null)
   const [showCoursesMenu, setShowCoursesMenu] = useState(false)
   const [showQuizMenu, setShowQuizMenu] = useState(false)
+  const [showChineseGuide, setShowChineseGuide] = useState(true)
+  const [menuHover, setMenuHover] = useState(false)
   const levelButtonRef = useRef(null)
   const { progress, markMastered, markReview, incrementAttempts, reset, synced } = useProgress(user?.id)
 
@@ -336,6 +350,22 @@ export default function App() {
     setBackFn(null)
   }
 
+  function navigateFromMenu(id) {
+    if (id === tab) return
+    if (id === 'home') {
+      setTab('home')
+      setBackFn(null)
+      setTabHistory([])
+      setBackFnHistory([])
+      return
+    }
+    setTab(id)
+    setBackFn(null)
+    // Menu navigation has a single parent: home
+    setTabHistory(['home'])
+    setBackFnHistory([null])
+  }
+
   function handlePageBack() {
     setTabHistory(h => {
       const prev = h[h.length - 1]
@@ -349,19 +379,52 @@ export default function App() {
     })
   }
 
-  // Track study time while on exercise tab
   const studyStartRef = useRef(null)
-  // Supabase Auth 状态监听
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-      setAuthLoading(false)
-    })
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null)
-    })
-    return () => subscription.unsubscribe()
-  }, [])
+
+  function handleLogin(username, tok, is_member) {
+    setUser(username)
+    setToken(tok)
+    setIsMember(!!is_member)
+    localStorage.setItem('auth_is_member', is_member ? '1' : '0')
+  }
+
+  function handleLogout() {
+    localStorage.removeItem('auth_token')
+    localStorage.removeItem('auth_username')
+    localStorage.removeItem('auth_is_member')
+    setUser(null)
+    setToken(null)
+    setIsMember(false)
+  }
+
+  async function handleUploadSync() {
+    if (!token) return
+    setSyncStatus('上传中…')
+    const data = {}
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i)
+      if (k && k !== 'auth_token' && k !== 'auth_username') {
+        data[k] = localStorage.getItem(k)
+      }
+    }
+    const res = await apiPost('/sync', { data }, token)
+    setSyncStatus(res.ok ? '已同步 ✓' : '同步失败')
+    setTimeout(() => setSyncStatus(''), 2500)
+  }
+
+  async function handleDownloadSync() {
+    if (!token) return
+    setSyncStatus('下载中…')
+    const res = await apiGet('/sync', token)
+    if (res.data) {
+      Object.entries(res.data).forEach(([k, v]) => localStorage.setItem(k, v))
+      setSyncStatus('已恢复 ✓')
+      setTimeout(() => { setSyncStatus(''); window.location.reload() }, 1200)
+    } else {
+      setSyncStatus('暂无云端数据')
+      setTimeout(() => setSyncStatus(''), 2000)
+    }
+  }
 
   useEffect(() => {
     if (tab === 'exercise') {
@@ -383,18 +446,27 @@ export default function App() {
   }, [tab, user?.id])
 
   // 统一返回逻辑
-  const canGoBack = !!(tabHistory.length > 0 || backFn)
+  const canGoBack = tab !== 'home' && !!(tabHistory.length > 0 || backFn)
   function handleBack() {
+    if (tab === 'home') return
     if (tab === 'exercise' && tabHistory.length > 0) {
       handlePageBack()
+      return
     }
     else if (backFn) {
       backFn()
       setBackFn(null)
+      return
     }
     else if (tabHistory.length > 0) {
       handlePageBack()
+      return
     }
+    // Fallback to home and stop back loop
+    setTab('home')
+    setBackFn(null)
+    setTabHistory([])
+    setBackFnHistory([])
   }
 
   // Enter key triggers next unit when lit up (capture phase)
@@ -418,128 +490,111 @@ export default function App() {
   function handleGlobalClick() {
     if (!isAudioUnlocked()) {
       unlockAudio()
-      setAudioReady(true)
     }
   }
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
+      <div className="flex flex-1 relative">
+        <div
+          className="absolute right-0 top-0 bottom-0 w-3 z-30"
+          onMouseEnter={() => setMenuHover(true)}
+          onMouseLeave={() => setMenuHover(false)}
+        />
+        {!menuHover && (
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-30 pointer-events-none">
+            <div
+              className="rounded-l-md border-y border-l text-[11px] font-medium"
+              style={{
+                backgroundColor: '#A58F63',
+                borderColor: '#8E7A52',
+                color: '#ffffff',
+                opacity: 1,
+                writingMode: 'vertical-rl',
+                textOrientation: 'upright',
+                letterSpacing: '1px',
+                paddingInline: '1px',
+                paddingBlock: '1px',
+                lineHeight: 1,
+              }}
+            >
+              鼠标移入打开菜单
+            </div>
+          </div>
+        )}
 
-      {/* Header */}
-      <header className="border-b-2 border-indigo-800/60 bg-slate-900/90 backdrop-blur py-0 flex items-center z-30 relative flex-nowrap overflow-x-auto" style={{minHeight:'48px'}}>
-        {/* Logo */}
-        <div className="shrink-0 cursor-pointer flex items-center gap-1.5 px-3 select-none" onClick={() => navigateTo('home')}>
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-            style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)' }}>
-            <span className="text-white font-black text-sm leading-none tracking-tight">OK</span>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-white font-bold text-sm tracking-wide">OK英语</span>
-            <span className="text-blue-400/70 text-[9px] tracking-widest font-medium">ENGLISH</span>
-          </div>
-        </div>
-        {/* Audio unlock indicator — click to unlock, turns green when active */}
-        <button
-          onClick={e => { e.stopPropagation(); unlockAudio(); setAudioReady(true) }}
-          title={audioReady ? '声音已激活' : '点击激活声音'}
-          className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-colors ml-1
-            ${audioReady ? 'text-green-400' : 'text-gray-600 hover:text-yellow-400 animate-pulse'}`}
+        <aside
+          className={`order-last shrink-0 bg-slate-900/92 border-l border-slate-700/70 backdrop-blur px-2 py-3 flex flex-col gap-2 z-20 transition-all duration-200 overflow-hidden sticky top-0 h-screen ${
+            menuHover ? 'w-32' : 'w-0 px-0 py-3 border-l-0'
+          }`}
+          onMouseEnter={() => setMenuHover(true)}
+          onMouseLeave={() => setMenuHover(false)}
         >
-          <IconVolume2 size={14} />
-        </button>
+          {/* Logo */}
+          <button className="cursor-pointer flex items-center gap-2 px-2 py-2 rounded-xl hover:bg-slate-800/80 transition-colors text-left shrink-0" onClick={() => navigateFromMenu('home')}>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+              style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)' }}>
+              <span className="text-white font-black text-sm leading-none tracking-tight">OK</span>
+            </div>
+            <div className="flex flex-col leading-none min-w-0">
+              <span className="text-white font-bold text-sm tracking-wide truncate">OK英语</span>
+              <span className="text-blue-400/70 text-[9px] tracking-widest font-medium">ENGLISH</span>
+            </div>
+          </button>
 
-        {/* Left group: 返回 + 首页 + 设置 + 登录 + 练习 */}
-        <div className="flex items-center gap-0.5 shrink-0 pl-2">
-          <button onClick={() => navigateTo('home')}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'home' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-slate-700/60 hover:text-gray-200'}`}>
-            <span className={tab === 'home' ? 'text-blue-400' : ''}><IconHome size={14} /></span>
-            <span>首页</span>
-          </button>
-          <button onClick={() => setShowSettings(true)}
-            className="flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-500 hover:bg-slate-700/60 hover:text-gray-200">
-            <IconSettings size={14} /><span>设置</span>
-          </button>
+          {/* 登录 / 用户信息 — 紧跟 Logo */}
           {user ? (
-            <button onClick={() => supabase.auth.signOut()} className="flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-500 hover:bg-slate-700/60 hover:text-gray-200" title="点击退出登录">
-              <div className="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold text-white">{user.email[0].toUpperCase()}</div>
-              <span className="max-w-[80px] truncate">{user.email.split('@')[0]}</span>
+            <button onClick={handleLogout} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors shrink-0">
+              <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">{user[0].toUpperCase()}</div>
+              <span className="truncate">{user} · 退出</span>
             </button>
           ) : (
-            <button onClick={() => setShowLogin(true)} className="flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-500 hover:bg-slate-700/60 hover:text-gray-200">
-              <IconUser size={14} /><span>登录</span>
+            <button onClick={() => setShowLogin(true)} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-blue-400 hover:bg-slate-800/80 hover:text-blue-300 transition-colors shrink-0">
+              <IconUser size={15} /><span>登录</span>
             </button>
           )}
-          <button onClick={() => setShowExerciseHistory(v => !v)}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'exercise' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-slate-700/60 hover:text-gray-200'}`}>
-            <span className={tab === 'exercise' ? 'text-blue-400' : ''}><IconPencil size={14} /></span>
-            <span>正在学习</span>
-          </button>
-        </div>
 
-        {/* Center: current lesson info */}
-        <div className="flex justify-center px-2 whitespace-nowrap">
-          {currentLesson && tab === 'exercise' ? (
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-gray-500 truncate max-w-[180px]">{currentLesson}</span>
-              {lessonProgress.total > 0 && (
-                <span className="text-gray-700 font-mono text-xs tabular-nums">{lessonProgress.index + 1}/{lessonProgress.total}</span>
-              )}
+          <div className="border-t border-slate-700/70 shrink-0" />
+
+          {/* 导航菜单 */}
+          {[
+            { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
+            { id: 'exercise', label: '正在学习', Icon: IconPencil, onClick: () => setShowExerciseHistory(v => !v) },
+            { id: 'core', label: '核心句群', iconText: '✨', onClick: () => navigateFromMenu('core') },
+            { id: 'courses', label: '课程', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
+            { id: 'textbook', label: '教材', Icon: IconBook, onClick: () => navigateFromMenu('textbook') },
+            { id: 'grammar', label: '语法', Icon: IconGraduationCap, onClick: () => navigateFromMenu('grammar') },
+            { id: 'vocab', label: '单词', Icon: IconBookmark, onClick: () => navigateFromMenu('vocab') },
+            { id: 'typing', label: '指法练习', Icon: IconKeyboard, onClick: () => navigateFromMenu('typing') },
+            { id: 'import', label: '导入', Icon: IconDownload, onClick: () => navigateFromMenu('import') },
+            { id: 'settings', label: '设置', Icon: IconSettings, onClick: () => setShowSettings(true) },
+          ].map(item => (
+            <button key={item.id}
+              onClick={item.onClick}
+              className={`flex items-center gap-2 px-2 py-2 rounded-lg text-sm transition-colors shrink-0
+                ${(tab === item.id || (item.id === 'settings' && showSettings)) ? 'bg-slate-700 text-white' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'}`}>
+              {item.Icon ? <item.Icon size={15} /> : <span className="w-[15px] text-center">{item.iconText}</span>}
+              <span className="truncate">{item.label}</span>
+            </button>
+          ))}
+
+          {/* 云同步（登录后显示） */}
+          {user && (
+            <div className="flex flex-col gap-1 pt-2 border-t border-slate-700/70 shrink-0">
+              <button onClick={handleUploadSync} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
+                <IconRefresh size={13} /><span>{syncStatus || '上传进度'}</span>
+              </button>
+              <button onClick={handleDownloadSync} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
+                <IconDownload size={13} /><span>恢复进度</span>
+              </button>
             </div>
-          ) : null}
-        </div>
-
-        {/* Right group: 核心句群 + 课程 + 教材 + 语法 + 返回 */}
-        <div className="flex items-center gap-0.5 shrink-0 whitespace-nowrap ml-auto pr-4">
-          <button onClick={() => navigateTo('core')}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'core' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-slate-700/60 hover:text-gray-200'}`}>
-            <span className={tab === 'core' ? 'text-emerald-400' : ''}>✨</span>
-            <span>核心句群</span>
-          </button>
-          <button onClick={() => navigateTo('courses')}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'courses' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-slate-700/60 hover:text-gray-200'}`}>
-            <span className={tab === 'courses' ? 'text-blue-400' : ''}><IconBookOpen size={14} /></span>
-            <span>课程</span>
-          </button>
-          <button onClick={() => navigateTo('textbook')}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'textbook' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-slate-700/60 hover:text-gray-200'}`}>
-            <span className={tab === 'textbook' ? 'text-blue-400' : ''}><IconBook size={14} /></span>
-            <span>教材</span>
-          </button>
-          <button onClick={() => navigateTo('grammar')}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'grammar' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-slate-700/60 hover:text-gray-200'}`}>
-            <span className={tab === 'grammar' ? 'text-blue-400' : ''}><IconGraduationCap size={14} /></span>
-            <span>语法</span>
-          </button>
-          <button onClick={() => navigateTo('vocab')}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors
-              ${tab === 'vocab' ? 'bg-gray-800 text-white' : 'text-gray-500 hover:bg-slate-700/60 hover:text-gray-200'}`}>
-            <span className={tab === 'vocab' ? 'text-blue-400' : ''}><IconBookmark size={14} /></span>
-            <span>单词</span>
-          </button>
-
-          <button
-            onClick={handleBack}
-            disabled={!canGoBack}
-            className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors shrink-0
-              ${canGoBack ? 'text-gray-400 hover:bg-slate-700 hover:text-white' : 'text-gray-800 cursor-default'}`}
-          >
-            <IconChevronLeft size={14} /><span>返回</span>
-          </button>
-        </div>
-      </header>
-
-      <div className="flex flex-1 relative">
+          )}
+        </aside>
 
         {/* Main content */}
         <main
           className={`flex-1 flex flex-col items-center justify-start px-4 pb-4 transition-all duration-200${tab === 'exercise' ? ' ocean-main' : ''}`}
-          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice' || tab === 'vocab' || tab === 'phonics') ? '0.75rem' : '8vh' }}
+          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice' || tab === 'vocab' || tab === 'phonics') ? '0.75rem' : '2.25rem' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
             <Dashboard
@@ -557,6 +612,8 @@ export default function App() {
               changyongData={changyongData}
               onSetBack={setBackFn}
               progress={progress}
+              isMember={isMember}
+              onShowLogin={() => setShowLogin(true)}
             />
           </div>
           <div style={{ display: tab === 'courses' ? 'contents' : 'none' }}>
@@ -567,6 +624,8 @@ export default function App() {
               onClose={() => setTab('exercise')}
               onSetBack={setBackFn}
               progress={progress}
+              isMember={isMember}
+              onShowLogin={() => setShowLogin(true)}
             />
           </div>
           <div style={{ display: tab === 'textbook' ? 'contents' : 'none' }}>
@@ -578,6 +637,8 @@ export default function App() {
               onNavigate={navigateTo}
               requireSpeak={settings?.requireSpeak}
               hideSkipNext={settings?.hideSplitSkip !== false}
+              isMember={isMember}
+              onShowLogin={() => setShowLogin(true)}
             />
           </div>
           <div style={{ display: tab === 'grammar' ? 'contents' : 'none' }}>
@@ -599,7 +660,9 @@ export default function App() {
               initialIndex={exerciseIndex}
               onProgressChange={(i, total) => setLessonProgress({ index: i, total })}
               onNav={setNav}
-              userId={user?.id}
+              userId={user}
+              showChineseGuide={showChineseGuide}
+              onToggleChineseGuide={() => setShowChineseGuide(v => !v)}
             />
           )}
           {tab === 'list' && (
@@ -627,76 +690,99 @@ export default function App() {
           {tab === 'phonics' && (
             <PhonicsLesson onBack={() => navigateTo('home')} />
           )}
+          {tab === 'typing' && (
+            <TypingPractice onBack={() => navigateTo('home')} />
+          )}
         </main>
       </div>
 
-      {/* Fixed bottom bar */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur border-t border-slate-700/60 z-10">
+      {/* Fixed bottom bar (sync practice uses full-screen cards, hide footer to avoid overlap) */}
+      {tab !== 'syncpractice' && (
+      <footer className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur border-t border-slate-700/60 z-40">
         <div>
           {tab === 'exercise' && nav && (
             <>
-              <div className="px-4 pt-2.5 pb-3 flex items-center justify-center gap-1.5 flex-wrap">
-                {/* 上一句 / 下一句 */}
-                <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
-                  <button onClick={nav.prev} disabled={!nav.canPrev}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors">
-                    <IconArrowLeft size={14} /><span>上一句</span>
-                  </button>
-                  <button onClick={nav.next} disabled={!nav.canNext}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors">
-                    <span>下一句</span><IconArrowRight size={14} />
-                  </button>
+              <div className="px-4 pt-1.5 pb-2 flex items-center gap-3">
+                <div className="flex items-center gap-1.5 shrink-0">
+                  {/* 返回（与底栏其他按钮同风格） */}
+                  <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
+                    <button
+                      onClick={handleBack}
+                      disabled={!canGoBack}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
+                        ${canGoBack ? 'text-white/70 hover:bg-slate-700 hover:text-white' : 'text-slate-600 cursor-default'}`}
+                      title="返回上一级"
+                    >
+                      <IconChevronLeft size={14} />
+                      <span>返回</span>
+                    </button>
+                  </div>
+
+                  <div className="w-px h-5 bg-gray-800 mx-0.5" />
+
+                  {/* 上一句 / 下一句 */}
+                  <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
+                    <button onClick={nav.prev} disabled={!nav.canPrev}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors">
+                      <IconArrowLeft size={14} /><span>上一句</span>
+                    </button>
+                    <button onClick={nav.next} disabled={!nav.canNext}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors">
+                      <span>下一句</span><IconArrowRight size={14} />
+                    </button>
+                  </div>
+
+                  <div className="w-px h-5 bg-gray-800 mx-0.5" />
+
+                  {/* 已掌握 / 复习 */}
+                  <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
+                    <button onClick={nav.mastered}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
+                        ${nav.status === 'mastered' ? 'bg-white/10 text-white border border-white/20' : 'text-white/70 hover:bg-slate-700 hover:text-white'}`}>
+                      <IconCheck size={14} /><span>已掌握</span>
+                    </button>
+                    <button
+                      onClick={() => { setReviewData(getRecentErrors(2)); setShowReview(true) }}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white transition-colors">
+                      <IconBookmark size={14} /><span>复习</span>
+                    </button>
+                  </div>
+
+                  <div className="w-px h-5 bg-gray-800 mx-0.5" />
+
+                  {/* 解释 */}
+                  <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
+                    <button onClick={nav.toggleCard}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white transition-colors">
+                      <IconInfo size={14} /><span>解释</span>
+                    </button>
+                  </div>
+
+                  <div className="w-px h-5 bg-gray-800 mx-0.5" />
+
+                  {/* 拆句: 初级 / 中级 / 高级 */}
+                  <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
+                    {[1, 2, 3].map(level => {
+                      const labels = { 1: '初级', 2: '中级', 3: '高级' }
+                      const isActive = nav.splitLevel === level
+                      return (
+                        <button key={level} onClick={() => nav.setSplitLevel?.(level)}
+                          className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+                            ${isActive ? 'bg-white/10 text-white border border-white/20' : 'text-white/70 hover:bg-slate-700 hover:text-white'}`}>
+                          {isActive && <IconSplit size={12} />}
+                          <span>拆{labels[level]}</span>
+                        </button>
+                      )
+                    })}
+                  </div>
                 </div>
 
-                <div className="w-px h-5 bg-gray-800 mx-0.5" />
-
-                {/* 已掌握 / 复习 */}
-                <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
-                  <button onClick={nav.mastered}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
-                      ${nav.status === 'mastered' ? 'bg-white/10 text-white border border-white/20' : 'text-white/70 hover:bg-slate-700 hover:text-white'}`}>
-                    <IconCheck size={14} /><span>已掌握</span>
-                  </button>
-                  <button
-                    onClick={() => { setReviewData(getRecentErrors(2)); setShowReview(true) }}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white transition-colors">
-                    <IconBookmark size={14} /><span>复习</span>
-                  </button>
+                <div className="flex-1 rounded-lg border border-slate-700 bg-slate-800/70 px-3 py-1.5 min-w-0 text-right">
+                  <div className="text-[11px] text-slate-500 truncate">{currentLesson || '当前课程'}</div>
+                  <div className="text-xs text-slate-300 font-mono">{lessonProgress.index + 1}/{lessonProgress.total}</div>
                 </div>
-
-                <div className="w-px h-5 bg-gray-800 mx-0.5" />
-
-                {/* 解释 */}
-                <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
-                  <button onClick={nav.toggleCard}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white transition-colors">
-                    <IconInfo size={14} /><span>解释</span>
-                  </button>
-                </div>
-
-                <div className="w-px h-5 bg-gray-800 mx-0.5" />
-
-                {/* 拆句: 初级 / 中级 / 高级 */}
-                <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
-                  {[1, 2, 3].map(level => {
-                    const labels = { 1: '初级', 2: '中级', 3: '高级' }
-                    const isActive = nav.splitLevel === level
-                    return (
-                      <button key={level} onClick={() => nav.setSplitLevel?.(level)}
-                        className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
-                          ${isActive ? 'bg-white/10 text-white border border-white/20' : 'text-white/70 hover:bg-slate-700 hover:text-white'}`}>
-                        {isActive && <IconSplit size={12} />}
-                        <span>拆{labels[level]}</span>
-                      </button>
-                    )
-                  })}
-                </div>
-
-                {lessonProgress.total > 0 && (
-                  <span className="text-white/30 text-xs tabular-nums ml-1 font-mono">{lessonProgress.index + 1}/{lessonProgress.total}</span>
-                )}
               </div>
-              <div className="px-4 pb-2.5">
+              <div className="px-4 pb-1.5">
                 <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-blue-500 transition-all duration-300 rounded-full"
@@ -706,8 +792,24 @@ export default function App() {
               </div>
             </>
           )}
+          {tab !== 'exercise' && (
+            <div className="px-4 py-1.5 flex items-center justify-start">
+              <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
+                <button
+                  onClick={handleBack}
+                  disabled={!canGoBack}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
+                    ${canGoBack ? 'text-white/70 hover:bg-slate-700 hover:text-white' : 'text-slate-600 cursor-default'}`}
+                >
+                  <IconChevronLeft size={14} />
+                  <span>返回</span>
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </footer>
+      )}
 
       {/* Exercise history modal */}
       {showExerciseHistory && (
@@ -808,7 +910,7 @@ export default function App() {
       )}
 
       {/* Login modal */}
-      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+      {showLogin && <LoginModal onClose={() => setShowLogin(false)} onLogin={handleLogin} />}
     </div>
   )
 }
