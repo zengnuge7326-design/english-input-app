@@ -211,17 +211,14 @@ ipcMain.handle('tts-speak-hybrid', async (_event, payload) => {
   const voice = String(payload?.voice || EDGE_DEFAULT_VOICE)
   if (!text) return { ok: false, layer: 'none', reason: 'empty_text' }
 
-  // L2: Edge Neural online synth + local cache
+  // L2: Edge Neural — wait for synthesis (edge-tts is local, fast enough to block)
   try {
-    const key = cacheKey(text, voice, rate)
-    const filePath = path.join(getTTSCacheDir(), `${key}.mp3`)
-    if (fs.existsSync(filePath)) {
-      return { ok: true, layer: 'L2-cache', audioUrl: `file://${filePath}` }
+    const result = await warmEdgeCache(text, voice, rate)
+    if (result?.filePath && fs.existsSync(result.filePath)) {
+      return { ok: true, layer: result.cached ? 'L2-cache' : 'L2-edge', audioUrl: `file://${result.filePath}` }
     }
-    // Fast start: do not block first playback on online synth.
-    warmEdgeCache(text, voice, rate).catch(() => {})
   } catch (err) {
-    // Ignore and fall through to L3 below
+    // edge-tts failed → fall through to system TTS
   }
 
   // L3: native system TTS fallback
