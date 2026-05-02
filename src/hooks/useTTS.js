@@ -129,6 +129,16 @@ export function useTTS(settings) {
         }
       }
 
+      // Web: call server TTS API (Edge Neural voice)
+      if (!window.nativeTTS && engine !== 'system') {
+        try {
+          const apiUrl = `https://okenglish.site/api/tts?text=${encodeURIComponent(cleanText)}&voice=${encodeURIComponent(edgeVoice)}`
+          if (playAudio(audioRef, apiUrl, volume)) return
+        } catch {
+          // fall through to Web Speech API
+        }
+      }
+
       // In Electron: use macOS native say command
       if (window.nativeTTS) {
         window.nativeTTS.speak(cleanText, rate)
