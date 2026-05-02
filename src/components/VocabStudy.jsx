@@ -199,7 +199,16 @@ function playBuffer(buffer, startSec = 0, endSec = null, rate = 1.0) {
 
 // ── TTS fallback ──────────────────────────────────────────────────────────────
 
-function speak(text, rate = 0.82) {
+const TTS_API = 'https://okenglish.site/api/tts'
+
+async function speak(text, rate = 0.82) {
+  // Try server neural TTS first
+  try {
+    const url = `${TTS_API}?text=${encodeURIComponent(text)}&voice=en-US-AvaNeural`
+    const a = new Audio(url)
+    await a.play()
+    return
+  } catch { /* fall through to system voice */ }
   window.speechSynthesis?.cancel()
   const u = new SpeechSynthesisUtterance(text)
   u.lang = 'en-US'; u.rate = rate; u.pitch = 1.0
@@ -891,9 +900,9 @@ export default function VocabStudy({ onSetBack }) {
 
   useEffect(() => {
     if (view === 'books') onSetBack?.(null)
-    else if (view === 'units') onSetBack?.(() => () => setView('books'))
-    else if (view === 'cards') onSetBack?.(() => () => setView('units'))
-    else if (view === 'quiz')  onSetBack?.(() => () => setView('cards'))
+    else if (view === 'units') onSetBack?.(() => setView('books'))
+    else if (view === 'cards') onSetBack?.(() => setView('units'))
+    else if (view === 'quiz')  onSetBack?.(() => setView('cards'))
   }, [view, onSetBack])
 
   if (view === 'books') return <BookGrid onSelect={b => { setBook(b); setView('units') }} />

@@ -288,9 +288,19 @@ export default function App() {
   const [lessonProgress, setLessonProgress] = useState({ index: 0, total: sampleData.length })
   const [nav, setNav] = useState(null)
   const [currentLesson, setCurrentLesson] = useState(null)
-  const [backFn, setBackFn] = useState(null)
-  const [tabHistory, setTabHistory] = useState([])
-  const [backFnHistory, setBackFnHistory] = useState([])
+  const [backFn, _setBackFn] = useState(null)
+  const backFnRef = useRef(null)
+  const setBackFn = useCallback((fn) => {
+    backFnRef.current = fn
+    _setBackFn(() => fn)
+  }, [])
+  // History API integration:
+  // - lessonRegistryRef: in-memory resolver label → { data, nextLoader } (closures can't be serialized)
+  // - historyDepth: number of pushState entries we've added past the initial "home"
+  // - isPopStateRef: guard so handleImport/navigateTo don't double-push when called from popstate
+  const lessonRegistryRef = useRef(new Map())
+  const [historyDepth, setHistoryDepth] = useState(0)
+  const isPopStateRef = useRef(false)
   const [showSettings, setShowSettings] = useState(false)
   const [user, setUser] = useState(() => localStorage.getItem('auth_username') || null)
   const [token, setToken] = useState(() => localStorage.getItem('auth_token') || null)
@@ -316,19 +326,35 @@ export default function App() {
   const currentUnitIdx = isTextbookLesson ? ALL_UNITS.findIndex(u => u.label === currentLesson) : -1
   const prevUnit = currentUnitIdx > 0 ? ALL_UNITS[currentUnitIdx - 1] : null
   const nextUnit = currentUnitIdx >= 0 ? (currentUnitIdx + 1 < ALL_UNITS.length ? ALL_UNITS[currentUnitIdx + 1] : 'textbook') : null
-  const showContinue = allDone && isTextbookLesson && nextUnit !== null
 
-  const handleImport = useCallback((data, label = null) => {
+  // Generic "next lesson" loader — set by any caller that knows its own sibling list
+  // (Duolingo, NCE, Core, Grammar, etc.). Wrapped in ref-like object to avoid React
+  // treating the function as a setter update.
+  const [nextLessonLoader, setNextLessonLoader] = useState(null)
+
+  const hasNextAvailable = !!nextLessonLoader || (isTextbookLesson && nextUnit !== null)
+  const showContinue = allDone && hasNextAvailable
+
+  // Apply lesson state WITHOUT pushing to history (shared by handleImport + popstate restore)
+  const applyLesson = useCallback((data, label, nextLoader) => {
     setSentences(data)
     setExerciseIndex(0)
     setLessonProgress({ index: 0, total: data.length })
     setCurrentLesson(label)
-    setTabHistory(h => [...h, tab])
-    setBackFnHistory(h => [...h, backFn])
+    setNextLessonLoader(nextLoader ? { run: nextLoader } : null)
     setTab('exercise')
     setBackFn(null)
+  }, [])
+
+  const handleImport = useCallback((data, label = null, nextLoader = null) => {
+    if (label) lessonRegistryRef.current.set(label, { data, nextLoader })
+    applyLesson(data, label, nextLoader)
     if (label) saveLessonHistory(label, data)
-  }, [tab, backFn])
+    if (!isPopStateRef.current) {
+      window.history.pushState({ kind: 'lesson', label }, '')
+      setHistoryDepth(d => d + 1)
+    }
+  }, [applyLesson])
 
   const handleSettings = useCallback((next) => {
     setSettings(next)
@@ -337,47 +363,74 @@ export default function App() {
 
   const handleSelectSentence = useCallback((i) => {
     setExerciseIndex(i)
-    setTabHistory(h => [...h, tab])
-    setBackFnHistory(h => [...h, backFn])
     setTab('exercise')
-    setBackFn(null) // 清空当前 backFn，返回时会从历史恢复
-  }, [tab, backFn])
+    setBackFn(null)
+    if (!isPopStateRef.current) {
+      window.history.pushState({ kind: 'tab', tab: 'exercise' }, '')
+      setHistoryDepth(d => d + 1)
+    }
+  }, [])
 
   function navigateTo(id) {
-    setTabHistory(h => [...h, tab])
-    setBackFnHistory(h => [...h, backFn])
     setTab(id)
     setBackFn(null)
+    if (!isPopStateRef.current) {
+      window.history.pushState({ kind: 'tab', tab: id }, '')
+      setHistoryDepth(d => d + 1)
+    }
   }
 
   function navigateFromMenu(id) {
     if (id === tab) return
-    if (id === 'home') {
-      setTab('home')
-      setBackFn(null)
-      setTabHistory([])
-      setBackFnHistory([])
-      return
-    }
     setTab(id)
     setBackFn(null)
-    // Menu navigation has a single parent: home
-    setTabHistory(['home'])
-    setBackFnHistory([null])
+    if (!isPopStateRef.current) {
+      window.history.pushState({ kind: 'tab', tab: id }, '')
+      setHistoryDepth(d => d + 1)
+    }
   }
 
-  function handlePageBack() {
-    setTabHistory(h => {
-      const prev = h[h.length - 1]
-      if (prev !== undefined) setTab(prev)
-      return h.slice(0, -1)
-    })
-    setBackFnHistory(h => {
-      const prevBackFn = h[h.length - 1]
-      setBackFn(prevBackFn ? () => prevBackFn : null)
-      return h.slice(0, -1)
-    })
-  }
+  // Listen to browser back/forward & trackpad swipe (popstate)
+  useEffect(() => {
+    if (window.history.state === null) {
+      window.history.replaceState({ kind: 'tab', tab: 'home' }, '')
+    }
+    function onPopState(e) {
+      const state = e.state
+      isPopStateRef.current = true
+      try {
+        // Sub-panel open: intercept back, close the panel, re-push state to keep depth
+        if (backFnRef.current) {
+          const fn = backFnRef.current
+          backFnRef.current = null
+          _setBackFn(() => null)
+          fn()
+          window.history.pushState(state, '')
+          return
+        }
+        if (!state) {
+          setTab('home')
+          setBackFn(null)
+        } else if (state.kind === 'lesson' && state.label) {
+          const entry = lessonRegistryRef.current.get(state.label)
+          if (entry) {
+            applyLesson(entry.data, state.label, entry.nextLoader)
+          } else {
+            setTab('home')
+            setBackFn(null)
+          }
+        } else if (state.kind === 'tab') {
+          setTab(state.tab)
+          setBackFn(null)
+        }
+        setHistoryDepth(d => Math.max(0, d - 1))
+      } finally {
+        isPopStateRef.current = false
+      }
+    }
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [applyLesson])
 
   const studyStartRef = useRef(null)
 
@@ -445,29 +498,34 @@ export default function App() {
     }
   }, [tab, user?.id])
 
-  // 统一返回逻辑
-  const canGoBack = tab !== 'home' && !!(tabHistory.length > 0 || backFn)
+  const canGoBack = !!backFn || historyDepth > 0
   function handleBack() {
-    if (tab === 'home') return
-    if (tab === 'exercise' && tabHistory.length > 0) {
-      handlePageBack()
+    if (historyDepth > 0) {
+      window.history.back()
       return
     }
-    else if (backFn) {
-      backFn()
-      setBackFn(null)
+    if (backFnRef.current) {
+      const fn = backFnRef.current
+      backFnRef.current = null
+      _setBackFn(() => null)
+      fn()
       return
     }
-    else if (tabHistory.length > 0) {
-      handlePageBack()
-      return
-    }
-    // Fallback to home and stop back loop
     setTab('home')
-    setBackFn(null)
-    setTabHistory([])
-    setBackFnHistory([])
   }
+
+  const goNextLesson = useCallback(() => {
+    if (!showContinue) return
+    if (nextLessonLoader?.run) {
+      nextLessonLoader.run()
+      return
+    }
+    if (nextUnit === 'textbook') {
+      navigateTo('textbook')
+    } else if (nextUnit) {
+      handleImport(nextUnit.data.slice(nextUnit.slice[0], nextUnit.slice[1]), nextUnit.label)
+    }
+  }, [showContinue, nextLessonLoader, nextUnit, handleImport])
 
   // Enter key triggers next unit when lit up (capture phase)
   useEffect(() => {
@@ -477,15 +535,11 @@ export default function App() {
       if (e.key !== 'Enter') return
       e.preventDefault()
       e.stopPropagation()
-      if (nextUnit === 'textbook') {
-        navigateTo('textbook')
-      } else {
-        handleImport(nextUnit.data.slice(nextUnit.slice[0], nextUnit.slice[1]), nextUnit.label)
-      }
+      goNextLesson()
     }
     window.addEventListener('keydown', handleContinueKey, true)
     return () => window.removeEventListener('keydown', handleContinueKey, true)
-  }, [tab, showContinue, nextUnit, handleImport])
+  }, [tab, showContinue, goNextLesson])
 
   function handleGlobalClick() {
     if (!isAudioUnlocked()) {
@@ -651,6 +705,7 @@ export default function App() {
           </div>
           {tab === 'exercise' && (
             <ExerciseView
+              key={currentLesson || 'default'}
               sentences={sentences}
               progress={progress}
               onMarkMastered={markMastered}
@@ -663,6 +718,8 @@ export default function App() {
               userId={user}
               showChineseGuide={showChineseGuide}
               onToggleChineseGuide={() => setShowChineseGuide(v => !v)}
+              hasNextLesson={showContinue}
+              onNextLesson={goNextLesson}
             />
           )}
           {tab === 'list' && (

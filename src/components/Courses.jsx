@@ -553,7 +553,7 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
   const [syncPopup, setSyncPopup] = useState(null) // lesson label string
 
   useEffect(() => {
-    onSetBack?.(detail ? () => () => setDetail(null) : null)
+    onSetBack?.(detail !== null ? () => setDetail(null) : null)
   }, [detail, onSetBack])
 
   if (detail !== null) {
@@ -570,9 +570,26 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
       : isNce4
       ? { name: '新概念英语第四册', desc: '精通散文，48课，774句', cover: '/nce4_cover.svg' }
       : UNIT_INFO[detail]
+    const isDuolingoView = !isNce1 && !isNce2 && !isNce3 && !isNce4
     const lessons = isNce1 ? NCE1_LESSONS : isNce2 ? NCE2_LESSONS : isNce3 ? NCE3_LESSONS : isNce4 ? NCE4_LESSONS : DUOLINGO_LESSONS.filter(l => l.unit === detail)
+    // For Duolingo, allow crossing unit boundaries when building the "next lesson" chain
+    const fullLessons = isDuolingoView ? DUOLINGO_LESSONS : lessons
     const dataMap = isNce1 ? nce1IdMap : isNce2 ? nce2IdMap : isNce3 ? nce3IdMap : isNce4 ? nce4IdMap : idMap
     const titlePrefix = isNce1 ? '新概念一' : isNce2 ? '新概念二' : isNce3 ? '新概念三' : isNce4 ? '新概念四' : `多邻国 ${info.name}`
+    const labelFor = (l) => isDuolingoView ? `多邻国 ${UNIT_INFO[l.unit]?.name || ''} · ${l.label}` : `${titlePrefix} · ${l.label}`
+    const buildNextLoader = (fullIdx) => {
+      const nextIdx = fullIdx + 1
+      if (nextIdx >= fullLessons.length) return null
+      const next = fullLessons[nextIdx]
+      // In Duolingo, Unit 2+ is members-only → route to login/paywall instead of loading
+      if (isDuolingoView && next.unit !== 1 && !isMember) {
+        return () => onShowLogin?.()
+      }
+      return () => {
+        const nextData = getLessonData(next.ids, dataMap)
+        onImport(nextData, labelFor(next), buildNextLoader(nextIdx))
+      }
+    }
     const allData = lessons.flatMap(l => getLessonData(l.ids, dataMap))
     const courseStats = getLessonStats(allData, progress)
     const coursePercent = courseStats.total ? Math.round((courseStats.attempted / courseStats.total) * 100) : 0
@@ -594,7 +611,11 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
             </div>
           </div>
           <button
-            onClick={() => onImport(getLessonData(lessons[0].ids, dataMap), `${titlePrefix} · ${lessons[0].label}`)}
+            onClick={() => {
+              const first = lessons[0]
+              const firstFullIdx = fullLessons.indexOf(first)
+              onImport(getLessonData(first.ids, dataMap), labelFor(first), buildNextLoader(firstFullIdx))
+            }}
             className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors shrink-0"
           >
             ▶ 开始学习
@@ -617,10 +638,11 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
             const data = getLessonData(lesson.ids, dataMap)
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
+            const fullIdx = fullLessons.indexOf(lesson)
             return (
               <div key={i} className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
                 <button
-                  onClick={() => onImport(data, `${titlePrefix} · ${lesson.label}`)}
+                  onClick={() => onImport(data, labelFor(lesson), buildNextLoader(fullIdx))}
                   className="text-left p-4 flex flex-col gap-3 flex-1"
                 >
                   <div className="flex items-start justify-between">

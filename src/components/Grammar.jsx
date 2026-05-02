@@ -313,8 +313,8 @@ export default function Grammar({ onImport, onClose, onSetBack, progress = {} })
   const [tense, setTense] = useState(null)
 
   useEffect(() => {
-    if (tense) onSetBack?.(() => () => setTense(null))
-    else if (stage) onSetBack?.(() => () => setStage(null))
+    if (tense) onSetBack?.(() => setTense(null))
+    else if (stage) onSetBack?.(() => setStage(null))
     else onSetBack?.(null)
   }, [stage, tense, onSetBack])
 

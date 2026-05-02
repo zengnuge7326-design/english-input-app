@@ -63,14 +63,23 @@ function LessonGrid({ lessons, dataMap, accentColor, titlePrefix, onImport, onSy
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-      {lessons.map((lesson, i) => {
+      {(() => {
+        const buildLoader = (idx) => {
+          if (idx >= lessons.length - 1) return null
+          return () => {
+            const next = lessons[idx + 1]
+            const nextData = next.ids.map(id => dataMap[id]).filter(Boolean)
+            onImport(nextData, `${titlePrefix} · ${next.label}`, buildLoader(idx + 1))
+          }
+        }
+        return lessons.map((lesson, i) => {
         const data  = lesson.ids.map(id => dataMap[id]).filter(Boolean)
         const stats = getLessonStats(data, progress)
         const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
         return (
           <div key={i} className={`bg-slate-800 border border-slate-700 ${border} rounded-xl overflow-hidden flex flex-col transition-colors`}>
             <button
-              onClick={() => onImport(data, `${titlePrefix} · ${lesson.label}`)}
+              onClick={() => onImport(data, `${titlePrefix} · ${lesson.label}`, buildLoader(i))}
               className="text-left p-3 flex flex-col gap-1.5 flex-1"
             >
               <div className="flex items-start justify-between gap-1">
@@ -93,7 +102,8 @@ function LessonGrid({ lessons, dataMap, accentColor, titlePrefix, onImport, onSy
             </button>
           </div>
         )
-      })}
+      })
+      })()}
     </div>
   )
 }
@@ -144,7 +154,7 @@ export default function CoreSentences({ onImport, onSetBack, progress = {} }) {
   const [syncPopup, setSyncPopup] = useState(null)   // label string | null
 
   useEffect(() => {
-    onSetBack?.(section ? () => () => setSection(null) : null)
+    onSetBack?.(section ? () => setSection(null) : null)
   }, [section, onSetBack])
 
   // ── 50基础句式 ─────────────────────────────────────────

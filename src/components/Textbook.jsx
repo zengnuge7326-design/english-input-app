@@ -209,6 +209,8 @@ const TEXTBOOK_SLOTS = [
     cover: null,
     gradient: 'from-sky-600 to-sky-800',
     label: '仁爱版',
+    subject: '初中英语',
+    coverText: '七上',
     data: renai7upData,
     lessons: lessonsFromUnits(renai7upData, {})
   },
@@ -219,6 +221,8 @@ const TEXTBOOK_SLOTS = [
     cover: null,
     gradient: 'from-blue-600 to-blue-800',
     label: '仁爱版',
+    subject: '初中英语',
+    coverText: '七下',
     data: renai7downData,
     lessons: lessonsFromUnits(renai7downData, {})
   },
@@ -229,6 +233,8 @@ const TEXTBOOK_SLOTS = [
     cover: null,
     gradient: 'from-violet-600 to-violet-800',
     label: '仁爱版',
+    subject: '初中英语',
+    coverText: '八上',
     data: renai8upData,
     lessons: lessonsFromUnits(renai8upData, {})
   },
@@ -239,6 +245,8 @@ const TEXTBOOK_SLOTS = [
     cover: null,
     gradient: 'from-purple-600 to-purple-800',
     label: '仁爱版',
+    subject: '初中英语',
+    coverText: '八下',
     data: renai8downData,
     lessons: lessonsFromUnits(renai8downData, {})
   },
@@ -249,6 +257,8 @@ const TEXTBOOK_SLOTS = [
     cover: null,
     gradient: 'from-rose-600 to-rose-800',
     label: '仁爱版',
+    subject: '初中英语',
+    coverText: '九上',
     data: renai9upData,
     lessons: lessonsFromUnits(renai9upData, {})
   },
@@ -259,6 +269,8 @@ const TEXTBOOK_SLOTS = [
     cover: null,
     gradient: 'from-orange-600 to-orange-800',
     label: '仁爱版',
+    subject: '初中英语',
+    coverText: '九下',
     data: renai9downData,
     lessons: lessonsFromUnits(renai9downData, {})
   },
@@ -374,11 +386,8 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
   const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
 
   useEffect(() => {
-    if (syncUnit) {
-      onSetBack?.(() => () => setSyncUnit(null))
-    } else {
-      onSetBack?.(detail ? () => () => setDetail(null) : null)
-    }
+    if (syncUnit) onSetBack?.(() => setSyncUnit(null))
+    else onSetBack?.(detail !== null ? () => setDetail(null) : null)
   }, [detail, syncUnit, onSetBack])
 
   if (syncUnit) {
@@ -405,9 +414,9 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
           <div className={`w-20 h-28 rounded-xl overflow-hidden shrink-0 ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
             {book.gradient ? (
               <div className="flex flex-col items-center justify-center w-full h-full p-2 text-center border-2 border-white/10 mix-blend-overlay shadow-inner" style={{ backdropFilter: 'brightness(1.1)' }}>
-                <span className="text-white/80 text-[9px] font-bold tracking-widest mb-1.5 opacity-90 drop-shadow-sm">北师大版</span>
+                <span className="text-white/80 text-[9px] font-bold tracking-widest mb-1.5 opacity-90 drop-shadow-sm">{book.label || '北师大版'}</span>
                 <span className="text-white text-base font-black tracking-widest mb-1.5 drop-shadow-md">{book.coverText}</span>
-                <span className="text-white/70 text-[10px] font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">高中英语</span>
+                <span className="text-white/70 text-[10px] font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">{book.subject || '高中英语'}</span>
               </div>
             ) : (
               <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
@@ -446,7 +455,17 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
             return (
               <div key={i} className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
                 <button
-                  onClick={() => onImport(data, `${book.name} · ${lesson.label}`)}
+                  onClick={() => {
+                    const buildLoader = (idx) => {
+                      if (idx >= book.lessons.length - 1) return null
+                      return () => {
+                        const next = book.lessons[idx + 1]
+                        const nextData = book.data.slice(next.slice[0], next.slice[1])
+                        onImport(nextData, `${book.name} · ${next.label}`, buildLoader(idx + 1))
+                      }
+                    }
+                    onImport(data, `${book.name} · ${lesson.label}`, buildLoader(i))
+                  }}
                   className="p-4 flex flex-col gap-2 flex-1 text-left"
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -521,9 +540,9 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
             <div className={`w-full aspect-[3/4] flex items-center justify-center overflow-hidden relative ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
               {book.gradient ? (
                 <div className="absolute inset-2 flex flex-col items-center justify-center p-3 text-center border-[3px] border-white/20 rounded-xl shadow-inner mix-blend-overlay" style={{ backdropFilter: 'brightness(1.1)' }}>
-                  <span className="text-white/90 text-xs font-bold tracking-widest mb-3 opacity-90 drop-shadow-sm">北师大版</span>
+                  <span className="text-white/90 text-xs font-bold tracking-widest mb-3 opacity-90 drop-shadow-sm">{book.label || '北师大版'}</span>
                   <span className="text-white text-3xl font-black tracking-widest mb-2 drop-shadow-md">{book.coverText}</span>
-                  <span className="text-white/80 text-sm font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">高中英语</span>
+                  <span className="text-white/80 text-sm font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">{book.subject || '高中英语'}</span>
                 </div>
               ) : book.cover ? (
                 <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
