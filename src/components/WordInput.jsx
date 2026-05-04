@@ -354,7 +354,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
                     className="text-lg sm:text-xl whitespace-nowrap leading-none font-bold"
                     style={{ color: INPUT_PALETTE.lavender }}
                   >
-                    {phonetics[i] || `/${core.toLowerCase()}/`}
+                    {phonetics[i]}
                   </span>
                 )}
               </div>

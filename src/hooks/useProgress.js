@@ -190,6 +190,9 @@ export function useProgress(userId) {
 
   const reset = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY)
+    localStorage.removeItem(DAILY_KEY)
+    localStorage.removeItem(CHECKIN_KEY)
+    localStorage.removeItem(ERROR_KEY)
     setProgress({})
   }, [])
 

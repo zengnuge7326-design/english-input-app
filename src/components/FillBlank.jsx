@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { IconSpeaker } from './Icons'
 import { fillblankBank } from '../data/fillblankData'
+import { useSound } from '../hooks/useSound'
 
-export default function FillBlank({ onClose }) {
+export default function FillBlank({ onClose, settings }) {
   const [view, setView] = useState('levels')
   const [level, setLevel] = useState(null)
   const [group, setGroup] = useState(null)
@@ -12,6 +13,7 @@ export default function FillBlank({ onClose }) {
   const [score, setScore] = useState({ correct: 0, total: 0 })
 
   const questions = level && group ? fillblankBank[level][group] : []
+  const { playCorrect, playError } = useSound(settings)
 
   function speak(text) {
     const u = new SpeechSynthesisUtterance(text)
@@ -39,6 +41,7 @@ export default function FillBlank({ onClose }) {
     const isCorrect = input.trim().toLowerCase() === q.answer.toLowerCase()
     setResult(isCorrect ? 'correct' : 'wrong')
     setScore(s => ({ ...s, correct: s.correct + (isCorrect ? 1 : 0), total: s.total + 1 }))
+    if (isCorrect) playCorrect(); else playError()
   }
 
   function next() {

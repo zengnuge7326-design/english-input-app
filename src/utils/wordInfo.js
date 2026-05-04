@@ -115,6 +115,10 @@ export const FUNCTION_WORDS = {
   want: '想要', wants: '想要', wanted: '想要了',
   need: '需要', needs: '需要', needed: '需要了',
   put: '放置',
+  play: { default: '玩；打（球）', verb: '玩；参加（运动）；打（球）', noun: '戏剧' },
+  plays: { default: '玩；打（球）', verb: '玩；参加（运动）；打（球）', noun: '戏剧' },
+  playing: { default: '正在玩／打（球）', verb: '正在参与（体育活动）', noun: '戏剧（行业说法）' },
+  played: { default: '玩／打（球）（过去）', verb: '（过去）玩；打（球）', adjective: '（比赛）用过的' },
   keep: '保持', keeps: '保持', kept: '保持了',
   let: '让', lets: '让',
   begin: '开始', begins: '开始', began: '开始了',
@@ -132,7 +136,7 @@ export const FUNCTION_WORDS = {
   well: '好', still: '仍然', even: '甚至',
   back: '回来', now: '现在', only: '只有',
   really: '真的', always: '总是', never: '从不',
-  again: '再次', often: '经常', already: '已经',
+  again: '再次', often: '经常', sometimes: '有时', already: '已经',
   away: '离开', around: '周围',
   however: '然而', therefore: '因此',
   both: '两者都', such: '如此', own: '自己的',
@@ -151,12 +155,21 @@ export async function fetchWordPhonetic(word) {
   if (!word) return ''
   const key = word.toLowerCase().replace(/[^a-z']/g, '')
   if (!key) return ''
-  const fallback = `/${key}/`
+  const fallback = ''
+
+  // Validate that a phonetic string looks like real IPA (not just the word itself)
+  function isValidIPA(ph) {
+    if (!ph) return false
+    const inner = ph.replace(/[/ˈˌ]/g, '').toLowerCase()
+    // Must contain at least one character outside basic ASCII a-z
+    if (/[^\x00-\x7F]/.test(inner)) return true
+    // Or contain a recognized IPA-only ASCII symbol
+    if (/[ːʔ]/.test(ph)) return true
+    // If it's just ASCII letters, it's probably the word itself — reject
+    return false
+  }
 
   if (STATIC_PHONETICS[key]) return STATIC_PHONETICS[key]
-
-  const lowerWord = word.toLowerCase()
-  if (STATIC_PHONETICS[lowerWord]) return STATIC_PHONETICS[lowerWord]
 
   if (phoneticCache.has(key)) return phoneticCache.get(key)
 
@@ -178,13 +191,15 @@ export async function fetchWordPhonetic(word) {
     }
     const data = await res.json()
     const entry = data[0]
-    const phonetic = entry?.phonetic
-      || entry?.phonetics?.find(p => p.text && p.audio?.includes('us'))?.text
-      || entry?.phonetics?.find(p => p.text)?.text
-      || fallback
-    phoneticCache.set(key, phonetic || fallback)
-    sessionStorage.setItem(`ph_${key}`, phonetic || fallback)
-    return phonetic || fallback
+    const candidates = [
+      entry?.phonetic,
+      entry?.phonetics?.find(p => p.text && p.audio?.includes('us'))?.text,
+      entry?.phonetics?.find(p => p.text)?.text,
+    ]
+    const phonetic = candidates.find(isValidIPA) || fallback
+    phoneticCache.set(key, phonetic)
+    sessionStorage.setItem(`ph_${key}`, phonetic)
+    return phonetic
   } catch {
     phoneticCache.set(key, fallback)
     sessionStorage.setItem(`ph_${key}`, fallback)

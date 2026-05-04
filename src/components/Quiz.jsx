@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import { IconSpeaker } from './Icons'
 import { quizBank } from '../data/quizData'
+import { useSound } from '../hooks/useSound'
 
-export default function Quiz({ onImport, onClose }) {
+export default function Quiz({ onImport, onClose, settings }) {
   const [selectedLevel, setSelectedLevel] = useState(null)
   const [currentGroup, setCurrentGroup] = useState('groupA')
   const [answers, setAnswers] = useState({})
   const [showResult, setShowResult] = useState(false)
 
   const QUESTIONS_PER_GROUP = 5
+  const { playCorrect, playError } = useSound(settings)
 
   const speak = (text) => {
     const utterance = new SpeechSynthesisUtterance(text)
@@ -73,7 +75,13 @@ export default function Quiz({ onImport, onClose }) {
   }
 
   const handleAnswer = (questionIndex, answerIndex) => {
+    if (answers[questionIndex] !== undefined) return
     setAnswers({ ...answers, [questionIndex]: answerIndex })
+    const quiz = quizBank[selectedLevel]?.[currentGroup]?.[questionIndex]
+    if (quiz != null) {
+      if (answerIndex === quiz.correct) playCorrect()
+      else playError()
+    }
   }
 
   const handleSubmit = () => {
@@ -108,7 +116,7 @@ export default function Quiz({ onImport, onClose }) {
     )
   }
 
-  const currentQuestions = quizBank[selectedLevel][currentGroup]
+  const currentQuestions = quizBank[selectedLevel]?.[currentGroup] ?? []
   const allAnswered = currentQuestions.every((_, idx) => answers[idx] !== undefined)
 
   return (
@@ -147,7 +155,7 @@ export default function Quiz({ onImport, onClose }) {
                   <div key={idx} className="bg-gray-800 rounded-xl p-6">
                     <div className="flex items-start gap-3 mb-4">
                       <p className="text-white font-medium flex-1">
-                        {idx + 1}. {quiz.question} <span className="text-gray-400 text-sm">({getTranslation(quiz.question)})</span>
+                        {idx + 1}. {quiz.question} {getTranslation(quiz.question) ? <span className="text-gray-400 text-sm">({getTranslation(quiz.question)})</span> : null}
                       </p>
                       <button
                         onClick={() => speak(quiz.question)}
@@ -163,7 +171,7 @@ export default function Quiz({ onImport, onClose }) {
                           <button
                             onClick={() => handleAnswer(idx, optIdx)}
                             disabled={showResult}
-                            className={`flex-1 text-left px-4 py-3 rounded-lg transition-colors ${
+                            className={`flex-1 text-left px-5 py-4 rounded-lg transition-colors text-lg font-medium ${
                               showResult
                                 ? optIdx === quiz.correct
                                   ? 'bg-green-600 text-white'
@@ -179,10 +187,10 @@ export default function Quiz({ onImport, onClose }) {
                           </button>
                           <button
                             onClick={() => speak(option)}
-                            className="shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
+                            className="shrink-0 w-14 h-14 flex items-center justify-center rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
                             title="朗读选项"
                           >
-                            <IconSpeaker size={20} />
+                            <IconSpeaker size={28} />
                           </button>
                         </div>
                       ))}

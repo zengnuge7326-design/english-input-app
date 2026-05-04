@@ -293,6 +293,10 @@ export default function App() {
   const setBackFn = useCallback((fn) => {
     backFnRef.current = fn
     _setBackFn(() => fn)
+    if (fn && !isPopStateRef.current) {
+      window.history.pushState({ kind: 'back-intercept' }, '')
+      setHistoryDepth(d => d + 1)
+    }
   }, [])
   // History API integration:
   // - lessonRegistryRef: in-memory resolver label → { data, nextLoader } (closures can't be serialized)
@@ -313,6 +317,7 @@ export default function App() {
   const [showReview, setShowReview] = useState(false)
   const [reviewData, setReviewData] = useState(null)
   const [showCoursesMenu, setShowCoursesMenu] = useState(false)
+  const [syncInitialUnit, setSyncInitialUnit] = useState(null)
   const [showQuizMenu, setShowQuizMenu] = useState(false)
   const [showChineseGuide, setShowChineseGuide] = useState(true)
   const [menuHover, setMenuHover] = useState(false)
@@ -551,7 +556,7 @@ export default function App() {
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
         <div
-          className="absolute right-0 top-0 bottom-0 w-3 z-30"
+          className="fixed right-0 top-0 bottom-0 w-3 z-50"
           onMouseEnter={() => setMenuHover(true)}
           onMouseLeave={() => setMenuHover(false)}
         />
@@ -680,6 +685,15 @@ export default function App() {
               progress={progress}
               isMember={isMember}
               onShowLogin={() => setShowLogin(true)}
+              onSyncPractice={(data, label, unitNum) => {
+                if (unitNum) {
+                  setSyncInitialUnit(unitNum)
+                  navigateTo('syncpractice')
+                } else {
+                  handleImport(data, label)
+                  navigateTo('syncpractice')
+                }
+              }}
             />
           </div>
           <div style={{ display: tab === 'textbook' ? 'contents' : 'none' }}>
@@ -733,13 +747,20 @@ export default function App() {
             </div>
           )}
           {tab === 'quiz' && (
-            <Quiz onImport={handleImport} onClose={() => setTab('home')} />
+            <Quiz onImport={handleImport} onClose={() => setTab('home')} settings={settings} />
           )}
           {tab === 'fillblank' && (
-            <FillBlank onClose={() => setTab('home')} />
+            <FillBlank onClose={() => setTab('home')} settings={settings} />
           )}
           {tab === 'syncpractice' && (
-            <SyncPractice onClose={() => setTab('home')} requireSpeak={settings?.requireSpeak} hideSkipNext={settings?.hideSplitSkip !== false} />
+            <SyncPractice
+              onClose={() => setTab('home')}
+              requireSpeak={settings?.requireSpeak}
+              hideSkipNext={settings?.hideSplitSkip !== false}
+              onSetBack={setBackFn}
+              initialUnit={syncInitialUnit}
+              onInitialConsumed={() => setSyncInitialUnit(null)}
+            />
           )}
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
             <VocabStudy onSetBack={setBackFn} />
@@ -791,24 +812,13 @@ export default function App() {
 
                   <div className="w-px h-5 bg-gray-800 mx-0.5" />
 
-                  {/* 已掌握 / 复习 */}
+                  {/* 复习 / 解释 */}
                   <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
-                    <button onClick={nav.mastered}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
-                        ${nav.status === 'mastered' ? 'bg-white/10 text-white border border-white/20' : 'text-white/70 hover:bg-slate-700 hover:text-white'}`}>
-                      <IconCheck size={14} /><span>已掌握</span>
-                    </button>
                     <button
                       onClick={() => { setReviewData(getRecentErrors(2)); setShowReview(true) }}
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white transition-colors">
                       <IconBookmark size={14} /><span>复习</span>
                     </button>
-                  </div>
-
-                  <div className="w-px h-5 bg-gray-800 mx-0.5" />
-
-                  {/* 解释 */}
-                  <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
                     <button onClick={nav.toggleCard}
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/70 hover:bg-slate-700 hover:text-white transition-colors">
                       <IconInfo size={14} /><span>解释</span>
@@ -817,10 +827,10 @@ export default function App() {
 
                   <div className="w-px h-5 bg-gray-800 mx-0.5" />
 
-                  {/* 拆句: 初级 / 中级 / 高级 */}
+                  {/* 拆句: 初级 / 高级 */}
                   <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
-                    {[1, 2, 3].map(level => {
-                      const labels = { 1: '初级', 2: '中级', 3: '高级' }
+                    {[1, 3].map(level => {
+                      const labels = { 1: '初级', 3: '高级' }
                       const isActive = nav.splitLevel === level
                       return (
                         <button key={level} onClick={() => nav.setSplitLevel?.(level)}
@@ -831,6 +841,29 @@ export default function App() {
                         </button>
                       )
                     })}
+                  </div>
+
+                  <div className="w-px h-5 bg-gray-800 mx-0.5" />
+
+                  {/* 上一单元 / 下一单元 */}
+                  <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-xl p-1">
+                    <button
+                      onClick={() => prevUnit && handleImport(prevUnit.data.slice(prevUnit.slice[0], prevUnit.slice[1]), prevUnit.label)}
+                      disabled={!prevUnit}
+                      className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+                        ${prevUnit ? 'text-white/70 hover:bg-slate-700 hover:text-white' : 'text-slate-600 cursor-default'}`}>
+                      <span>上一单元</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        if (nextUnit === 'textbook') { navigateTo('textbook') }
+                        else if (nextUnit) { handleImport(nextUnit.data.slice(nextUnit.slice[0], nextUnit.slice[1]), nextUnit.label) }
+                      }}
+                      disabled={!nextUnit}
+                      className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors
+                        ${nextUnit ? 'text-white/70 hover:bg-slate-700 hover:text-white' : 'text-slate-600 cursor-default'}`}>
+                      <span>下一单元</span>
+                    </button>
                   </div>
                 </div>
 

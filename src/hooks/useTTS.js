@@ -30,7 +30,7 @@ function normalizeAudioUrl(url) {
   return `/tts/${value.replace(/^\.?\//, '')}`
 }
 
-function playAudio(audioRef, url, volume) {
+async function playAudio(audioRef, url, volume) {
   if (!url) return false
   try {
     if (!audioRef.current) audioRef.current = new Audio()
@@ -39,7 +39,7 @@ function playAudio(audioRef, url, volume) {
     audio.currentTime = 0
     audio.src = url
     audio.volume = volume
-    audio.play().catch(() => {})
+    await audio.play()
     return true
   } catch {
     return false
@@ -68,6 +68,9 @@ function getBestEnglishVoice() {
 export function useTTS(settings) {
   const utteranceRef = useRef(null)
   const audioRef = useRef(null)
+  const speakIdRef = useRef(0)
+  const prefetchedRef = useRef(new Set())
+  const audioBlobCache = useRef(new Map())
   const [voicesReady, setVoicesReady] = useState(false)
 
   useEffect(() => {
@@ -82,11 +85,34 @@ export function useTTS(settings) {
   const prefetch = useCallback((text) => {
     const cleanText = String(text || '').trim()
     if (!cleanText) return
-    if (!window.nativeTTS?.prefetchHybrid) return
-    const rate = settings.rate || 1.0
-    const edgeVoice = settings.edgeVoice || 'en-US-AvaNeural'
-    window.nativeTTS.prefetchHybrid({ text: cleanText, rate, voice: edgeVoice }).catch(() => {})
-  }, [settings.rate, settings.edgeVoice])
+
+    // Electron: native prefetch
+    if (window.nativeTTS?.prefetchHybrid) {
+      const rate = settings.rate || 1.0
+      const edgeVoice = settings.edgeVoice || 'en-US-AvaNeural'
+      window.nativeTTS.prefetchHybrid({ text: cleanText, rate, voice: edgeVoice }).catch(() => {})
+      return
+    }
+
+    // Web: fetch audio into Blob cache so speak() plays from memory (no HTTP round-trip)
+    const engine = settings.ttsEngine || 'hybrid'
+    if (engine === 'system') return
+
+    const mapped = resolveMappedAudio(cleanText)
+    const url = mapped
+      ? normalizeAudioUrl(mapped)
+      : `https://okenglish.site/api/tts?text=${encodeURIComponent(cleanText)}&voice=${encodeURIComponent(settings.edgeVoice || 'en-US-AvaNeural')}`
+    if (!url || prefetchedRef.current.has(url)) return
+    prefetchedRef.current.add(url)
+    fetch(url, { credentials: 'omit' })
+      .then(r => r.blob())
+      .then(blob => {
+        const old = audioBlobCache.current.get(url)
+        if (old) URL.revokeObjectURL(old)
+        audioBlobCache.current.set(url, URL.createObjectURL(blob))
+      })
+      .catch(() => {})
+  }, [settings.rate, settings.edgeVoice, settings.ttsEngine])
 
   const speak = useCallback((text) => {
     if (!text) return
@@ -96,28 +122,40 @@ export function useTTS(settings) {
     const engine = settings.ttsEngine || 'hybrid'
     const edgeVoice = settings.edgeVoice || 'en-US-AvaNeural'
 
+    // Cancel any in-flight speak call so only the latest wins
+    const id = ++speakIdRef.current
+    if (audioRef.current) { audioRef.current.pause(); audioRef.current.currentTime = 0 }
+    window.speechSynthesis?.cancel()
+
     ;(async () => {
+      if (speakIdRef.current !== id) return
       const mappedAudio = resolveMappedAudio(cleanText)
       const mappedUrl = normalizeAudioUrl(mappedAudio)
       if (engine !== 'system' && mappedUrl) {
+        // Check blob cache first (prefetched), then fall back to network URL
+        const blobUrl = audioBlobCache.current.get(mappedUrl)
         if (window.nativeTTS?.resolveAssetUrl) {
           try {
             const resolved = await window.nativeTTS.resolveAssetUrl(mappedUrl)
-            if (resolved && playAudio(audioRef, resolved, volume)) return
+            if (speakIdRef.current !== id) return
+            if (resolved && await playAudio(audioRef, resolved, volume)) return
           } catch {
             // Continue to fallback layers.
           }
-        } else if (playAudio(audioRef, mappedUrl, volume)) {
+        } else if (await playAudio(audioRef, blobUrl || mappedUrl, volume)) {
           return
         }
       }
+
+      if (speakIdRef.current !== id) return
 
       // In Electron: L2 Edge Neural + cache, then L3 system fallback
       if (window.nativeTTS && engine === 'hybrid' && window.nativeTTS.speakHybrid) {
         try {
           const result = await window.nativeTTS.speakHybrid({ text: cleanText, rate, voice: edgeVoice })
+          if (speakIdRef.current !== id) return
           if (result?.audioUrl) {
-            playAudio(audioRef, result.audioUrl, volume)
+            await playAudio(audioRef, result.audioUrl, volume)
             return
           }
           if (result?.layer === 'L3-system') return
@@ -129,15 +167,18 @@ export function useTTS(settings) {
         }
       }
 
-      // Web: call server TTS API (Edge Neural voice)
+      // Web: check blob cache first, then call server TTS API
       if (!window.nativeTTS && engine !== 'system') {
         try {
           const apiUrl = `https://okenglish.site/api/tts?text=${encodeURIComponent(cleanText)}&voice=${encodeURIComponent(edgeVoice)}`
-          if (playAudio(audioRef, apiUrl, volume)) return
+          const blobUrl = audioBlobCache.current.get(apiUrl)
+          if (await playAudio(audioRef, blobUrl || apiUrl, volume)) return
         } catch {
           // fall through to Web Speech API
         }
       }
+
+      if (speakIdRef.current !== id) return
 
       // In Electron: use macOS native say command
       if (window.nativeTTS) {

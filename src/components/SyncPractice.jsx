@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import duolingoData from '../data/duolingo.json'
+import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import grade3UpData from '../data/grade3_up.json'
 import grade3DownData from '../data/grade3_down.json'
 import grade4UpData from '../data/grade4_up.json'
@@ -158,6 +160,12 @@ const DUO_CATALOG = [
   },
 ]
 
+// ── 多邻国数据查找 ─────────────────────────────────────────────────────────────
+const duoIdMap = Object.fromEntries(duolingoData.map(s => [s.id, s]))
+function getDuoLessonData(ids) {
+  return ids.map(id => duoIdMap[id]).filter(Boolean)
+}
+
 // ── 即将上线提示 ──────────────────────────────────────────────────────────────
 function ComingSoon({ name, onClose }) {
   return (
@@ -276,12 +284,24 @@ function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext })
 
 // ── 多邻国详情页（课列表）────────────────────────────────────────────────────
 function DuoDetail({ unit, onBack }) {
-  const [popup, setPopup] = useState(null)
+  const [quiz, setQuiz] = useState(null) // { title, questions }
+
+  const unitLessons = DUOLINGO_LESSONS.filter(l => l.unit === unit.unit)
+  const allUnitData = unitLessons.flatMap(l => getDuoLessonData(l.ids))
+
+  function openLesson(lesson) {
+    const data = getDuoLessonData(lesson.ids)
+    if (data.length < 2) return
+    const questions = generateQuiz(data, allUnitData.length >= 10 ? allUnitData : duolingoData)
+    setQuiz({ title: `多邻国 ${unit.name} · ${lesson.label}`, questions })
+  }
+
+  if (quiz) {
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} />
+  }
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
-      {popup && <ComingSoon name={popup} onClose={() => setPopup(null)} />}
-
       {/* 单元信息栏 */}
       <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 mb-5 flex items-center gap-5">
         <div className="w-20 h-12 rounded-xl overflow-hidden shrink-0 bg-gray-800">
@@ -295,14 +315,14 @@ function DuoDetail({ unit, onBack }) {
 
       {/* 课列表 */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        {unit.lessons.map((lesson, i) => (
+        {unitLessons.map((lesson, i) => (
           <button
             key={i}
-            onClick={() => setPopup(`多邻国 ${unit.name} · ${lesson}`)}
-            className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl px-4 py-3 flex items-center justify-between gap-2 transition-colors"
+            onClick={() => openLesson(lesson)}
+            className="text-left bg-slate-800 border border-slate-700 hover:border-blue-500 hover:bg-blue-900/10 rounded-xl px-4 py-3 flex items-center justify-between gap-2 transition-colors"
           >
-            <span className="text-white text-sm font-medium">{lesson}</span>
-            <span className="text-xs text-amber-500 bg-amber-900/30 border border-amber-700/40 px-2 py-0.5 rounded-full shrink-0">练习题</span>
+            <span className="text-white text-sm font-medium">{lesson.label}</span>
+            <span className="text-xs text-blue-400 bg-blue-900/30 border border-blue-700/40 px-2 py-0.5 rounded-full shrink-0">练习题</span>
           </button>
         ))}
       </div>
@@ -311,9 +331,20 @@ function DuoDetail({ unit, onBack }) {
 }
 
 // ── 主页面 ────────────────────────────────────────────────────────────────────
-export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext }) {
-  const [detail, setDetail] = useState(null)
+export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext, initialUnit, onInitialConsumed }) {
+  const [detail, setDetail] = useState(
+    initialUnit ? { type: 'duo', unit: initialUnit } : null
+  )
   const [expandedCats, setExpandedCats] = useState({ grade3_up: true })
+
+  // If we mounted with an initialUnit, immediately register back fn so browser back closes the detail
+  useEffect(() => {
+    if (initialUnit) {
+      onSetBack?.(() => setDetail(null))
+      onInitialConsumed?.()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // 直接在状态变化时调用，不用 useEffect
   const handleSetDetail = (newDetail) => {

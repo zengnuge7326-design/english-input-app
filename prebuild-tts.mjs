@@ -2,7 +2,7 @@
 // prebuild-tts.mjs — pre-generate Edge Neural TTS audio for all learning sentences
 // Usage:  node prebuild-tts.mjs [--voice en-US-AvaNeural] [--rate 1.0] [--limit 50]
 // Output: public/tts/<hash>.mp3 + updates src/data/ttsAudioMap.json
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSync, unlinkSync } from 'fs'
 import { join, relative } from 'path'
 import { execFile } from 'child_process'
 import { promisify } from 'util'
@@ -81,7 +81,7 @@ for (const text of todo) {
   const fname = `${hashKey(text)}.mp3`
   const outPath = join(OUT_DIR, fname)
 
-  if (existsSync(outPath)) {
+  if (existsSync(outPath) && statSync(outPath).size > 0) {
     audioMap[key] = fname
     done++
     continue
@@ -94,11 +94,17 @@ for (const text of todo) {
       '--text', text,
       '--write-media', outPath,
     ], { timeout: 15000 })
+    // Verify the file actually got content; edge-tts may leave empty files on network failure
+    if (!existsSync(outPath) || statSync(outPath).size === 0) {
+      try { if (existsSync(outPath)) unlinkSync(outPath) } catch {}
+      throw new Error('empty output file')
+    }
     audioMap[key] = fname
     done++
     process.stdout.write('✓\n')
   } catch (err) {
     failed++
+    try { if (existsSync(outPath) && statSync(outPath).size === 0) unlinkSync(outPath) } catch {}
     process.stdout.write(`✗ ${err.message?.slice(0, 50)}\n`)
   }
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { analyzeSyntax } from '../utils/syntaxAnalysis'
 
 // Play a single word using the dictionaryapi.dev audio first, then TTS fallback
 async function speakWord(word) {
@@ -19,7 +20,16 @@ async function speakWord(word) {
   ttsFallback(word)
 }
 
-function ttsFallback(word) {
+const TTS_API = 'https://okenglish.site/api/tts'
+
+async function ttsFallback(word) {
+  // Try server neural TTS first
+  try {
+    const url = `${TTS_API}?text=${encodeURIComponent(word)}&voice=en-US-AvaNeural`
+    const a = new Audio(url)
+    await a.play()
+    return
+  } catch { /* fall through */ }
   if (!window.speechSynthesis) return
   window.speechSynthesis.cancel()
   const u = new SpeechSynthesisUtterance(word)
@@ -184,6 +194,8 @@ function MorphPanel({ sentence, onClose }) {
 export default function DictionaryCard({ sentence, onClose }) {
   const tokens = parseTokens(sentence.en)
   const [showMorph, setShowMorph] = useState(false)
+  const [showSyntax, setShowSyntax] = useState(false)
+  const syntaxInfo = analyzeSyntax(sentence.en)
   const [copied, setCopied] = useState(false)
 
   function handleCopy() {
@@ -213,12 +225,25 @@ export default function DictionaryCard({ sentence, onClose }) {
 
         {/* Bottom action row */}
         <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-700">
-          <button
-            onClick={() => setShowMorph(true)}
-            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
-          >
-            词法
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowMorph(true)}
+              className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+            >
+              词法
+            </button>
+            <button
+              onClick={() => {
+                setShowSyntax(v => !v)
+                setShowMorph(false)
+              }}
+              className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
+                showSyntax ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-700'
+              }`}
+            >
+              句法
+            </button>
+          </div>
           <button
             onClick={handleCopy}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
@@ -228,6 +253,17 @@ export default function DictionaryCard({ sentence, onClose }) {
             {copied ? '已复制' : '复制'}
           </button>
         </div>
+
+        {showSyntax && (
+          <div className="mt-3 flex flex-col gap-2">
+            {syntaxInfo.map((item, i) => (
+              <div key={i} className="flex gap-2 items-start">
+                <span className="text-blue-400 text-xs font-bold shrink-0 mt-0.5 px-1.5 py-0.5 bg-blue-900/40 rounded">{item.label}</span>
+                {item.desc && <span className="text-gray-300 text-sm">{item.desc}</span>}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

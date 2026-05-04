@@ -1,219 +1,10 @@
 import { useState, useEffect } from 'react'
 import duolingoData from '../data/duolingo.json'
+import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import nce1Data from '../data/nce1.json'
 import nce2Data from '../data/nce2.json'
 import nce3Data from '../data/nce3.json'
 import nce4Data from '../data/nce4.json'
-
-// 多邻国课程：Unit1 7课 + Unit2 28课，共35课
-// 每课对应 duolingo.json 的 id 范围（按顺序连续）
-const DUOLINGO_LESSONS = [
-  // Unit 1
-  { unit: 1, label: 'L1', ids: [1,2,3,4] },
-  { unit: 1, label: 'L2', ids: [5,6,7,8] },
-  { unit: 1, label: 'L3', ids: [9,10,11,12] },
-  { unit: 1, label: 'L4', ids: [13,14,15,16] },
-  { unit: 1, label: 'L5', ids: [17,18,19,20] },
-  { unit: 1, label: 'L6', ids: [21,22,23,24,25,26] },
-  { unit: 1, label: 'L7', ids: [27,28,29,30,31] },
-  // Unit 2
-  { unit: 2, label: 'L1', ids: [32,33,34,35] },
-  { unit: 2, label: 'L2', ids: [36,37,38,39,40] },
-  { unit: 2, label: 'L3', ids: [41,42,43,44] },
-  { unit: 2, label: 'L4', ids: [45,46,47,48,49,50] },
-  { unit: 2, label: 'L5', ids: [51,52,53,54,55] },
-  { unit: 2, label: 'L6', ids: [56,57,58,59,60] },
-  { unit: 2, label: 'L7', ids: [61,62,63,64,65] },
-  { unit: 2, label: 'L8', ids: [66,67,68,69,70] },
-  { unit: 2, label: 'L9', ids: [71,72,73,74,75] },
-  { unit: 2, label: 'L10', ids: [76,77,78,79,80] },
-  { unit: 2, label: 'L11', ids: [81,82,83,84,85] },
-  { unit: 2, label: 'L12', ids: [86,87,88,89,90] },
-  { unit: 2, label: 'L13', ids: [91,92,93,94,95] },
-  { unit: 2, label: 'L14', ids: [96,97,98,99,100] },
-  { unit: 2, label: 'L15', ids: [101,102,103,104,105] },
-  { unit: 2, label: 'L16', ids: [106,107,108,109,110] },
-  { unit: 2, label: 'L17', ids: [111,112,113,114,115] },
-  { unit: 2, label: 'L18', ids: [116,117,118,119,120] },
-  { unit: 2, label: 'L19', ids: [121,122,123,124,125] },
-  { unit: 2, label: 'L20', ids: [126,127,128,129,130] },
-  { unit: 2, label: 'L21', ids: [131,132,133,134,135] },
-  { unit: 2, label: 'L22', ids: [136,137,138,139,140] },
-  { unit: 2, label: 'L23', ids: [141,142,143,144,145,146] },
-  { unit: 2, label: 'L24', ids: [147,148,149,150,151] },
-  { unit: 2, label: 'L25', ids: [152,153,154,155,156] },
-  { unit: 2, label: 'L26', ids: [157,158,159,160,161] },
-  { unit: 2, label: 'L27', ids: [162,163,164,165,166] },
-  { unit: 2, label: 'L28', ids: [167,168,169,170,171] },
-  // Unit 3
-  { unit: 3, label: 'L1', ids: [172,173,174,175,176,177] },
-  { unit: 3, label: 'L2', ids: [178,179,180,181,182] },
-  { unit: 3, label: 'L3', ids: [183,184,185,186,187] },
-  { unit: 3, label: 'L4', ids: [188,189,190,191,192] },
-  { unit: 3, label: 'L5', ids: [193,194,195,196,197] },
-  { unit: 3, label: 'L6', ids: [198,199,200,201,202] },
-  { unit: 3, label: 'L7', ids: [203,204,205,206,207,208] },
-  { unit: 3, label: 'L8', ids: [209,210,211,212,213] },
-  { unit: 3, label: 'L9', ids: [214,215,216,217,218] },
-  { unit: 3, label: 'L10', ids: [219,220,221,222] },
-  { unit: 3, label: 'L11', ids: [223,224,225,226,227] },
-  { unit: 3, label: 'L12', ids: [228,229,230,231,232,233] },
-  { unit: 3, label: 'L13', ids: [234,235,236,237,238] },
-  { unit: 3, label: 'L14', ids: [239,240,241,242,243] },
-  { unit: 3, label: 'L15', ids: [244,245,246,247,248] },
-  { unit: 3, label: 'L16', ids: [249,250,251,252,253,254,255] },
-  { unit: 3, label: 'L17', ids: [256,257,258,259,260] },
-  { unit: 3, label: 'L18', ids: [261,262,263,264,265] },
-  { unit: 3, label: 'L19', ids: [266,267,268,269] },
-  { unit: 3, label: 'L20', ids: [270,271,272,273,274] },
-  { unit: 3, label: 'L21', ids: [275,276,277,278,279] },
-  { unit: 3, label: 'L22', ids: [280,281,282,283] },
-  { unit: 3, label: 'L23', ids: [284,285,286,287,288] },
-  { unit: 3, label: 'L24', ids: [289,290,291,292,293,294] },
-  { unit: 3, label: 'L25', ids: [295,296,297,298,299] },
-  // Unit 4 (55 lessons, IDs: 301-461)
-  { unit: 4, label: 'L1', ids: [301,302,303,304,305] },
-  { unit: 4, label: 'L2', ids: [306,307,308,309,310] },
-  { unit: 4, label: 'L3', ids: [311,312,313,314,315] },
-  { unit: 4, label: 'L4', ids: [316,317,318,319,320] },
-  { unit: 4, label: 'L5', ids: [321,322,323,324,325] },
-  { unit: 4, label: 'L6', ids: [326,327,328,329,330] },
-  { unit: 4, label: 'L7', ids: [331,332,333,334,335] },
-  { unit: 4, label: 'L8', ids: [336,337,338,339,340] },
-  { unit: 4, label: 'L9', ids: [341,342,343,344,345] },
-  { unit: 4, label: 'L10', ids: [346,347,348,349,350,351] },
-  { unit: 4, label: 'L11', ids: [352,353,354,355,356] },
-  { unit: 4, label: 'L12', ids: [357,358,359,360,361] },
-  { unit: 4, label: 'L13', ids: [362,363,364,365,366] },
-  { unit: 4, label: 'L14', ids: [367,368,369,370,371] },
-  { unit: 4, label: 'L15', ids: [372,373,374,375,376] },
-  { unit: 4, label: 'L16', ids: [377,378,379,380,381] },
-  { unit: 4, label: 'L17', ids: [382,383,384,385,386] },
-  { unit: 4, label: 'L18', ids: [387,388,389,390,391] },
-  { unit: 4, label: 'L19', ids: [392,393,394,395,396] },
-  { unit: 4, label: 'L20', ids: [397,398,399,400,401] },
-  { unit: 4, label: 'L21', ids: [402,403,404,405,406,407] },
-  { unit: 4, label: 'L22', ids: [408,409,410,411,412] },
-  { unit: 4, label: 'L23', ids: [413,414,415,416,417] },
-  { unit: 4, label: 'L24', ids: [418,419,420,421,422,423] },
-  { unit: 4, label: 'L25', ids: [424,425,426,427,428] },
-  { unit: 4, label: 'L26', ids: [429,430,431,432,433] },
-  { unit: 4, label: 'L27', ids: [434,435,436,437,438] },
-  { unit: 4, label: 'L28', ids: [439,440,441,442,443,444] },
-  { unit: 4, label: 'L29', ids: [445,446,447,448,449,450] },
-  { unit: 4, label: 'L30', ids: [451,452,453,454,455,456] },
-  { unit: 4, label: 'L31', ids: [457,458,459,460,461] },
-  { unit: 4, label: 'L32', ids: [462,463,464,465,466,467] },
-  { unit: 4, label: 'L33', ids: [468,469,470,471,472,473] },
-  { unit: 4, label: 'L34', ids: [474,475,476,477,478,479] },
-  { unit: 4, label: 'L35', ids: [480,481,482,483,484,485] },
-  { unit: 4, label: 'L36', ids: [486,487,488,489,490,491] },
-  { unit: 4, label: 'L37', ids: [492,493,494,495,496] },
-  { unit: 4, label: 'L38', ids: [497,498,499,500,501,502] },
-  { unit: 4, label: 'L39', ids: [503,504,505,506,507,508] },
-  { unit: 4, label: 'L40', ids: [509,510,511,512,513,514] },
-  { unit: 4, label: 'L41', ids: [515,516,517,518,519,520] },
-  { unit: 4, label: 'L42', ids: [521,522,523,524,525] },
-  { unit: 4, label: 'L43', ids: [526,527,528,529,530] },
-  { unit: 4, label: 'L44', ids: [531,532,533,534,535] },
-  { unit: 4, label: 'L45', ids: [536,537,538,539,540] },
-  { unit: 4, label: 'L46', ids: [541,542,543,544,545,546] },
-  { unit: 4, label: 'L47', ids: [547,548,549,550,551] },
-  { unit: 4, label: 'L48', ids: [552,553,554,555,556] },
-  { unit: 4, label: 'L49', ids: [557,558,559,560,561,562] },
-  { unit: 4, label: 'L50', ids: [563,564,565,566,567] },
-  { unit: 4, label: 'L51', ids: [568,569,570,571,572] },
-  { unit: 4, label: 'L52', ids: [573,574,575,576,577] },
-  { unit: 4, label: 'L53', ids: [578,579,580,581,582] },
-  { unit: 4, label: 'L54', ids: [583,584,585,586,587] },
-  { unit: 4, label: 'L55', ids: [588,589,590,591,592] },
-  // Unit 5 (32 lessons, IDs: 462-640)
-  { unit: 5, label: 'L1',  ids: [593,594,595,596,597,598] },
-  { unit: 5, label: 'L2',  ids: [599,600,601,602,603,604] },
-  { unit: 5, label: 'L3',  ids: [605,606,607,608,609,610] },
-  { unit: 5, label: 'L4',  ids: [611,612,613,614,615,616] },
-  { unit: 5, label: 'L5',  ids: [617,618,619,620,621,622] },
-  { unit: 5, label: 'L6',  ids: [623,624,625,626,627,628] },
-  { unit: 5, label: 'L7',  ids: [629,630,631,632,633,634] },
-  { unit: 5, label: 'L8',  ids: [635,636,637,638,639,640] },
-  { unit: 5, label: 'L9',  ids: [641,642,643,644,645,646] },
-  { unit: 5, label: 'L10', ids: [647,648,649,650,651,652] },
-  { unit: 5, label: 'L11', ids: [653,654,655,656,657,658] },
-  { unit: 5, label: 'L12', ids: [659,660,661,662,663,664] },
-  { unit: 5, label: 'L13', ids: [665,666,667,668,669,670] },
-  { unit: 5, label: 'L14', ids: [671,672,673,674,675,676] },
-  { unit: 5, label: 'L15', ids: [677,678,679,680,681] },
-  { unit: 5, label: 'L16', ids: [682,683,684,685,686] },
-  { unit: 5, label: 'L17', ids: [687,688,689,690] },
-  { unit: 5, label: 'L18', ids: [691,692,693,694,695,696] },
-  { unit: 5, label: 'L19', ids: [697,698,699,700,701] },
-  { unit: 5, label: 'L20', ids: [702,703,704,705,706] },
-  { unit: 5, label: 'L21', ids: [707,708,709,710,711,712] },
-  { unit: 5, label: 'L22', ids: [713,714,715,716,717,718] },
-  { unit: 5, label: 'L23', ids: [719,720,721,722,723,724] },
-  { unit: 5, label: 'L24', ids: [725,726,727,728,729,730] },
-  { unit: 5, label: 'L25', ids: [731,732,733,734,735] },
-  { unit: 5, label: 'L26', ids: [736,737,738,739,740,741] },
-  { unit: 5, label: 'L27', ids: [742,743,744,745,746] },
-  { unit: 5, label: 'L28', ids: [747,748,749,750,751] },
-  { unit: 5, label: 'L29', ids: [752,753,754,755] },
-  { unit: 5, label: 'L30', ids: [756,757,758,759,760,761] },
-  { unit: 5, label: 'L31', ids: [762,763,764,765,766] },
-  { unit: 5, label: 'L32', ids: [767,768,769,770,771] },
-  // Unit 6 (52 lessons, IDs: 641-920)
-  { unit: 6, label: 'L1',  ids: [772,773,774,775,776] },
-  { unit: 6, label: 'L2',  ids: [777,778,779,780,781,782] },
-  { unit: 6, label: 'L3',  ids: [783,784,785,786,787,788] },
-  { unit: 6, label: 'L4',  ids: [789,790,791,792,793] },
-  { unit: 6, label: 'L5',  ids: [794,795,796,797,798] },
-  { unit: 6, label: 'L6',  ids: [799,800,801,802,803] },
-  { unit: 6, label: 'L7',  ids: [804,805,806,807,808,809] },
-  { unit: 6, label: 'L8',  ids: [810,811,812,813,814,815] },
-  { unit: 6, label: 'L9',  ids: [816,817,818,819,820] },
-  { unit: 6, label: 'L10', ids: [821,822,823,824,825,826] },
-  { unit: 6, label: 'L11', ids: [827,828,829,830,831,832,833] },
-  { unit: 6, label: 'L12', ids: [834,835,836,837,838,839] },
-  { unit: 6, label: 'L13', ids: [840,841,842,843,844,845] },
-  { unit: 6, label: 'L14', ids: [846,847,848,849,850,851] },
-  { unit: 6, label: 'L15', ids: [852,853,854,855,856] },
-  { unit: 6, label: 'L16', ids: [857,858,859,860,861,862] },
-  { unit: 6, label: 'L17', ids: [863,864,865,866,867] },
-  { unit: 6, label: 'L18', ids: [868,869,870,871] },
-  { unit: 6, label: 'L19', ids: [872,873,874,875,876,877] },
-  { unit: 6, label: 'L20', ids: [878,879,880,881,882] },
-  { unit: 6, label: 'L21', ids: [883,884,885,886,887,888] },
-  { unit: 6, label: 'L22', ids: [889,890,891,892,893,894] },
-  { unit: 6, label: 'L23', ids: [895,896,897,898] },
-  { unit: 6, label: 'L24', ids: [899,900,901,902,903] },
-  { unit: 6, label: 'L25', ids: [904,905,906,907,908,909] },
-  { unit: 6, label: 'L26', ids: [910,911,912,913,914] },
-  { unit: 6, label: 'L27', ids: [915,916,917,918,919] },
-  { unit: 6, label: 'L28', ids: [920,921,922,923,924,925] },
-  { unit: 6, label: 'L29', ids: [926,927,928,929,930,931] },
-  { unit: 6, label: 'L30', ids: [932,933,934,935,936,937] },
-  { unit: 6, label: 'L31', ids: [938,939,940,941,942,943] },
-  { unit: 6, label: 'L32', ids: [944,945,946,947,948,949] },
-  { unit: 6, label: 'L33', ids: [950,951,952,953] },
-  { unit: 6, label: 'L34', ids: [954,955,956,957,958] },
-  { unit: 6, label: 'L35', ids: [959,960,961,962,963,964] },
-  { unit: 6, label: 'L36', ids: [965,966,967,968] },
-  { unit: 6, label: 'L37', ids: [969,970,971,972,973] },
-  { unit: 6, label: 'L38', ids: [974,975,976,977,978,979] },
-  { unit: 6, label: 'L39', ids: [980,981,982,983,984] },
-  { unit: 6, label: 'L40', ids: [985,986,987,988] },
-  { unit: 6, label: 'L41', ids: [989,990,991,992,993,994] },
-  { unit: 6, label: 'L42', ids: [995,996,997,998,999] },
-  { unit: 6, label: 'L43', ids: [1000,1001,1002,1003,1004] },
-  { unit: 6, label: 'L44', ids: [1005,1006,1007,1008,1009] },
-  { unit: 6, label: 'L45', ids: [1010,1011,1012,1013,1014,1015] },
-  { unit: 6, label: 'L46', ids: [1016,1017,1018,1019,1020,1021] },
-  { unit: 6, label: 'L47', ids: [1022,1023,1024,1025,1026] },
-  { unit: 6, label: 'L48', ids: [1027,1028,1029,1030,1031,1032] },
-  { unit: 6, label: 'L49', ids: [1033,1034,1035,1036,1037] },
-  { unit: 6, label: 'L50', ids: [1038,1039,1040,1041,1042] },
-  { unit: 6, label: 'L51', ids: [1043,1044,1045,1046] },
-  { unit: 6, label: 'L52', ids: [1047,1048,1049,1050,1051] },
-]
 
 
 const idMap = Object.fromEntries(duolingoData.map(s => [s.id, s]))
@@ -548,7 +339,17 @@ function PaywallOverlay({ onShowLogin }) {
   )
 }
 
-export default function Courses({ onImport, changyongData, sampleData, onClose, onSetBack, progress = {}, isMember = false, onShowLogin }) {
+export default function Courses({
+  onImport,
+  changyongData,
+  sampleData,
+  onClose,
+  onSetBack,
+  progress = {},
+  isMember = false,
+  onShowLogin,
+  onSyncPractice,
+}) {
   const [detail, setDetail] = useState(null) // null | unit number
   const [syncPopup, setSyncPopup] = useState(null) // lesson label string
 
@@ -641,13 +442,33 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
             const fullIdx = fullLessons.indexOf(lesson)
             return (
               <div key={i} className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
-                <button
+                <div
+                  role="button"
+                  tabIndex={0}
                   onClick={() => onImport(data, labelFor(lesson), buildNextLoader(fullIdx))}
-                  className="text-left p-4 flex flex-col gap-3 flex-1"
+                  onKeyDown={e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      onImport(data, labelFor(lesson), buildNextLoader(fullIdx))
+                    }
+                  }}
+                  className="text-left p-4 flex flex-col gap-3 flex-1 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
                 >
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between gap-2">
                     <span className="text-white text-sm font-medium">{lesson.label}</span>
-                    <LessonStatusBadge {...stats} />
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <button
+                        type="button"
+                        onClick={e => {
+                          e.stopPropagation()
+                          onSyncPractice?.(data, isDuolingoView ? `多邻国 ${info.name} · ${lesson.label}` : labelFor(lesson), isDuolingoView ? detail : null)
+                        }}
+                        className="text-xs px-2 py-1 bg-purple-700/40 hover:bg-purple-600/60 text-purple-300 rounded-lg transition-colors"
+                      >
+                        跟读
+                      </button>
+                      <LessonStatusBadge {...stats} />
+                    </div>
                   </div>
                   <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
                     <div
@@ -659,9 +480,9 @@ export default function Courses({ onImport, changyongData, sampleData, onClose, 
                     <span>{stats.attempted}/{stats.total} 句</span>
                     <span className="text-gray-600 font-mono">#{i + 1}</span>
                   </div>
-                </button>
+                </div>
                 <button
-                  onClick={() => setSyncPopup(`${titlePrefix} · ${lesson.label}`)}
+                  onClick={(e) => { e.stopPropagation(); onSyncPractice?.(data, labelFor(lesson), isDuolingoView ? detail : null) }}
                   className="w-full py-1.5 text-xs font-semibold text-white bg-green-700 hover:bg-green-600 border-t border-green-900 transition-colors text-center"
                 >
                   {lesson.label} 同步练习

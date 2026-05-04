@@ -27,10 +27,8 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
   }
   function restorePreset() {
     if (savedPreset) {
-      onChange({ ...savedPreset, sentenceSpeak: true, autoSpeak: false })
-      return
+      onChange({ ...savedPreset })
     }
-    onChange({ ...s, sentenceSpeak: true, autoSpeak: false })
   }
 
   function formatBytes(bytes = 0) {
@@ -371,6 +369,7 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                 </div>
               </>
             )}
+
           </div>
         </div>
       </div>

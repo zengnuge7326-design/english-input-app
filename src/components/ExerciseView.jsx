@@ -22,7 +22,7 @@ function calcMatch(targetSentence, spokenText) {
   return { score, targetWords, spokenWords, matched }
 }
 
-export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide }) {
+export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson }) {
   const [index, setIndex] = useState(initialIndex)
   const [completed, setCompleted] = useState(false)
   const [key, setKey] = useState(0)
@@ -48,6 +48,9 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const [chunkTranslations, setChunkTranslations] = useState([])
   const { speak, prefetch } = useTTS(settings)
   const { playError, playCorrect, playVictory, playKeypress, playBubble, playFireworks } = useSound(settings)
+  const [leadCount, setLeadCount] = useState(1)
+  const leadTimersRef = useRef([])
+  useEffect(() => () => leadTimersRef.current.forEach(clearTimeout), [])
   const [currentWordIndex, setCurrentWordIndex] = useState({ idx: 0, total: 0 })
   const [completeBubbles, setCompleteBubbles]   = useState([])
   const [fwSparks, setFwSparks] = useState([])
@@ -159,6 +162,25 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     setCompleted(false); setKey(k => k + 1); setChunkIndex(0)
     setIndex(i => Math.max(i - 1, 0))
   }, [])
+
+  const restartLesson = useCallback(() => {
+    setCompleted(false)
+    setChunkIndex(0)
+    setIndex(0)
+    setKey(k => k + 1)
+  }, [])
+
+  const continueBtnRef = useRef(null)
+  const isLastSentenceForFocus = index === sentences.length - 1
+  useEffect(() => {
+    if (completed && isLastSentenceForFocus && hasNextLesson && continueBtnRef.current) {
+      const btn = continueBtnRef.current
+      const t = setTimeout(() => {
+        try { btn.focus({ preventScroll: true }) } catch { /* button may be unmounted */ }
+      }, 60)
+      return () => clearTimeout(t)
+    }
+  }, [completed, isLastSentenceForFocus, hasNextLesson])
 
   // Recording handler
   const handleRecordToggle = useCallback(() => {
@@ -287,6 +309,20 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const speakWord = useCallback((word) => {
     if (settings.wordSpeak !== false) speak(word)
   }, [speak, settings.wordSpeak])
+
+  const startLeadRead = useCallback((text, count) => {
+    leadTimersRef.current.forEach(clearTimeout)
+    leadTimersRef.current = []
+    const words = text.trim().split(/\s+/).length
+    const rate = settings?.rate || 1.0
+    // Estimate: (words * 0.45s/word / rate) + 0.9s gap, minimum 2s
+    const gap = Math.max(2000, Math.round((words * 450 / rate) + 900))
+    speak(text)
+    for (let i = 1; i < count; i++) {
+      const t = setTimeout(() => speak(text), gap * i)
+      leadTimersRef.current.push(t)
+    }
+  }, [speak, settings?.rate])
 
   useEffect(() => {
     function handleKey(e) {
@@ -429,19 +465,32 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
 
         {/* Chinese sentence + TTS button */}
         <div className="flex items-start justify-center gap-3 mt-0 w-full transition-all duration-200">
-          <button
-            onClick={() => speak(chunks && splitMode ? chunks[chunkIndex] : sentence.en)}
-            disabled={isRecording && settings?.blockTTSDuringRec !== false}
-            className={`shrink-0 w-10 h-10 rounded-lg border transition-colors flex items-center justify-center mt-1
-              ${isRecording && settings?.blockTTSDuringRec !== false ? 'bg-slate-800 border-slate-700 text-gray-700 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white border-gray-700'}`}
-            title="朗读整句 (Ctrl+A)"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-            </svg>
-          </button>
+          <div className="flex flex-col items-center gap-1 shrink-0 mt-1">
+            <button
+              onClick={() => speak(chunks && splitMode ? chunks[chunkIndex] : sentence.en)}
+              disabled={isRecording && settings?.blockTTSDuringRec !== false}
+              className={`w-10 h-10 rounded-lg border transition-colors flex items-center justify-center
+                ${isRecording && settings?.blockTTSDuringRec !== false ? 'bg-slate-800 border-slate-700 text-gray-700 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white border-gray-700'}`}
+              title="朗读整句 (Ctrl+A)"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+            {/* 领读 N次 */}
+            <div className="flex items-center gap-0.5">
+              {[1,2,3,4,5].map(n => (
+                <button key={n}
+                  onClick={() => { setLeadCount(n); startLeadRead(sentence.en, n) }}
+                  className={`w-5 h-5 rounded text-[10px] font-bold transition-colors
+                    ${leadCount === n ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-white'}`}
+                  title={`领读 ${n} 次`}
+                >{n}</button>
+              ))}
+            </div>
+          </div>
 
           {/* Chinese text */}
           <div className="text-center flex-1">
@@ -561,7 +610,32 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           <div className="pop w-full bg-green-900/50 border border-green-600 rounded-xl px-6 py-3 text-center">
             <div className="text-green-300 text-2xl font-semibold">✓ {sentence.en}</div>
             {isLastSentence ? (
-              <div className="text-green-500 text-sm mt-1">🎉 本课全部完成！</div>
+              <div className="mt-3 flex flex-col items-center gap-2">
+                <div className="text-green-400 text-base font-medium">🎉 本课全部完成！</div>
+                <div className="flex items-center justify-center gap-3 mt-1 flex-wrap">
+                  <button
+                    type="button"
+                    onClick={restartLesson}
+                    className="min-w-[140px] px-5 py-2.5 rounded-xl bg-green-900/40 hover:bg-green-800/60 text-green-200 text-base font-semibold border border-green-600/70 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400/80"
+                  >
+                    🔄 重新练习
+                  </button>
+                  {hasNextLesson && (
+                    <button
+                      ref={continueBtnRef}
+                      type="button"
+                      autoFocus
+                      onClick={() => onNextLesson?.()}
+                      className="min-w-[140px] px-5 py-2.5 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 active:from-green-600 active:to-emerald-600 text-white text-base font-semibold shadow-lg shadow-emerald-500/40 ring-2 ring-emerald-300/90 ring-offset-2 ring-offset-slate-900 transition-all animate-pulse focus:outline-none"
+                    >
+                      继续下一课 →
+                    </button>
+                  )}
+                </div>
+                {hasNextLesson && (
+                  <div className="text-xs text-green-700 mt-1">按 Enter 继续下一课</div>
+                )}
+              </div>
             ) : (
               <div className="text-green-600 text-sm mt-1">按空格 / Enter 继续下一句</div>
             )}
