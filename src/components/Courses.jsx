@@ -343,7 +343,6 @@ export default function Courses({
   onImport,
   changyongData,
   sampleData,
-  onClose,
   onSetBack,
   progress = {},
   isMember = false,

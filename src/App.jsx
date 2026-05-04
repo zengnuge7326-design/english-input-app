@@ -15,6 +15,7 @@ async function apiGet(path, token) {
   return res.json()
 }
 import { unlockAudio, isAudioUnlocked } from './utils/audioUnlock'
+import { supabase } from './lib/supabase'
 import ExerciseView from './components/ExerciseView'
 import ImportPanel from './components/ImportPanel'
 import SentenceList from './components/SentenceList'
@@ -682,7 +683,6 @@ export default function App() {
               onImport={handleImport}
               changyongData={changyongData}
               sampleData={sampleData}
-              onClose={() => setTab('exercise')}
               onSetBack={setBackFn}
               progress={progress}
               isMember={isMember}

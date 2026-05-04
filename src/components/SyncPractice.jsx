@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react'
 import duolingoData from '../data/duolingo.json'
 import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
-import grade3UpData from '../data/grade3_up.json'
-import grade3DownData from '../data/grade3_down.json'
-import grade4UpData from '../data/grade4_up.json'
 import grade4DownData from '../data/grade4_down.json'
-import grade5UpData from '../data/grade5_up.json'
 import ExerciseQuiz, { generateQuiz } from './ExerciseQuiz'
 import Unit1Flow from './Unit1Flow'
 
@@ -311,6 +307,7 @@ function DuoDetail({ unit, onBack, settings }) {
           <div className="text-lg font-bold text-white">多邻国 · {unit.name}</div>
           <div className="text-xs text-gray-500 mt-0.5">{unit.desc} · {unit.lessons.length} 课 · 练习题</div>
         </div>
+        <button onClick={onBack} className="px-3 py-1.5 rounded-lg text-sm text-gray-400 hover:bg-slate-700 hover:text-white transition-colors shrink-0">← 返回</button>
       </div>
 
       {/* 课列表 */}
