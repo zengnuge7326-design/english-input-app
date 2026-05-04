@@ -184,7 +184,7 @@ function ComingSoon({ name, onClose }) {
 }
 
 // ── 教材详情页（单元列表）────────────────────────────────────────────────────
-function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext }) {
+function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext, settings }) {
   const [popup, setPopup] = useState(null)
   const [activeUnit, setActiveUnit] = useState(null)  // { label, index }
   const [quiz, setQuiz] = useState(null)              // { title, questions }（ExerciseQuiz用）
@@ -283,7 +283,7 @@ function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext })
 }
 
 // ── 多邻国详情页（课列表）────────────────────────────────────────────────────
-function DuoDetail({ unit, onBack }) {
+function DuoDetail({ unit, onBack, settings }) {
   const [quiz, setQuiz] = useState(null) // { title, questions }
 
   const unitLessons = DUOLINGO_LESSONS.filter(l => l.unit === unit.unit)
@@ -355,12 +355,12 @@ export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext, in
 
   if (detail?.type === 'textbook') {
     const book = TEXTBOOK_CATALOG.find(b => b.id === detail.id)
-    return <TextbookDetail book={book} onBack={() => handleSetDetail(null)} onSetBack={onSetBack} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} />
+    return <TextbookDetail book={book} onBack={() => handleSetDetail(null)} onSetBack={onSetBack} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} settings={settings} />
   }
 
   if (detail?.type === 'duo') {
     const unit = DUO_CATALOG.find(u => u.unit === detail.unit)
-    return <DuoDetail unit={unit} onBack={() => handleSetDetail(null)} />
+    return <DuoDetail unit={unit} onBack={() => handleSetDetail(null)} settings={settings} />
   }
 
   return (
