@@ -561,14 +561,16 @@ export default function App() {
           onMouseLeave={() => setMenuHover(false)}
         />
         {!menuHover && (
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          <div
+            className="fixed top-1/2 -translate-y-1/2 z-30 pointer-events-none"
+            style={{ right: 2 }}
+          >
             <div
               className="rounded-l-md border-y border-l text-[11px] font-medium"
               style={{
                 backgroundColor: '#A58F63',
                 borderColor: '#8E7A52',
                 color: '#ffffff',
-                opacity: 1,
                 writingMode: 'vertical-rl',
                 textOrientation: 'upright',
                 letterSpacing: '1px',
@@ -583,7 +585,7 @@ export default function App() {
         )}
 
         <aside
-          className={`order-last shrink-0 bg-slate-900/92 border-l border-slate-700/70 backdrop-blur px-2 py-3 flex flex-col gap-2 z-20 transition-all duration-200 overflow-hidden sticky top-0 h-screen ${
+          className={`fixed right-0 top-0 h-screen bg-slate-900/92 border-l border-slate-700/70 backdrop-blur px-2 py-3 flex flex-col gap-2 z-20 transition-all duration-200 overflow-hidden ${
             menuHover ? 'w-32' : 'w-0 px-0 py-3 border-l-0'
           }`}
           onMouseEnter={() => setMenuHover(true)}
@@ -760,6 +762,7 @@ export default function App() {
               onSetBack={setBackFn}
               initialUnit={syncInitialUnit}
               onInitialConsumed={() => setSyncInitialUnit(null)}
+              settings={settings}
             />
           )}
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>

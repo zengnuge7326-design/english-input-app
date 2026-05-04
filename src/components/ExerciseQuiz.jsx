@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { IconSpeaker } from './Icons'
+import { useTTS } from '../hooks/useTTS'
 
 // ── 工具函数 ──────────────────────────────────────────────────────────────────
 
@@ -173,17 +174,6 @@ export function generateQuiz(sentences, allSentences) {
   return questions
 }
 
-// ── TTS 播放 ──────────────────────────────────────────────────────────────────
-function useTTS() {
-  const speak = (text) => {
-    window.speechSynthesis.cancel()
-    const u = new SpeechSynthesisUtterance(text)
-    u.lang = 'en-US'
-    u.rate = 0.9
-    window.speechSynthesis.speak(u)
-  }
-  return speak
-}
 
 // ── 单题渲染 ──────────────────────────────────────────────────────────────────
 
@@ -341,11 +331,12 @@ const Q_LABELS = {
   en_to_zh:    '英译中',
 }
 
-export default function ExerciseQuiz({ questions, title, onClose }) {
+export default function ExerciseQuiz({ questions, title, onClose, settings }) {
   const [idx, setIdx] = useState(0)
   const [answeredList, setAnsweredList] = useState([]) // true/false per question
   const [showAnswer, setShowAnswer] = useState(false)
-  const speak = useTTS()
+  const ttsSettings = settings || { rate: 0.9, ttsEngine: 'hybrid', edgeVoice: 'en-US-AvaNeural' }
+  const { speak } = useTTS(ttsSettings)
   const q = questions[idx]
 
   // 自动播放听力题

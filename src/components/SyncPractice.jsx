@@ -222,7 +222,7 @@ function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext })
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
   }
 
   if (activeUnit) {
@@ -297,7 +297,7 @@ function DuoDetail({ unit, onBack }) {
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
   }
 
   return (
@@ -331,7 +331,7 @@ function DuoDetail({ unit, onBack }) {
 }
 
 // ── 主页面 ────────────────────────────────────────────────────────────────────
-export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext, initialUnit, onInitialConsumed }) {
+export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext, initialUnit, onInitialConsumed, settings }) {
   const [detail, setDetail] = useState(
     initialUnit ? { type: 'duo', unit: initialUnit } : null
   )
