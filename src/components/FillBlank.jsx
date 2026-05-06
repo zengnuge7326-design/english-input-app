@@ -119,9 +119,9 @@ export default function FillBlank({ onClose, settings }) {
           <div className="text-6xl font-bold text-blue-400 mb-2">{score.correct}/{score.total}</div>
           <div className="text-gray-400 mb-8">正确率: {Math.round(score.correct / score.total * 100)}%</div>
           <div className="flex gap-4 justify-center">
-            <button onClick={restart}
+            <button type="button" onClick={restart}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-colors">
-              返回首页
+              再来一组
             </button>
           </div>
         </div>

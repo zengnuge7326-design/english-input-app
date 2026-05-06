@@ -219,12 +219,7 @@ export default function ListeningPractice({ type, onClose }) {
           <div className="text-gray-400 text-sm mb-4">{TYPE_LABEL[type]}</div>
           <div className="text-5xl font-bold text-blue-400 mb-1">{correct}/{total}</div>
           <div className="text-gray-500 text-sm mb-6">正确率 {pct}%</div>
-          <div className="flex gap-3 justify-center">
-            <button onClick={onClose}
-              className="px-6 py-2.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl text-sm font-medium transition-colors">
-              返回
-            </button>
-          </div>
+          <p className="text-gray-500 text-sm">使用浏览器后退返回上一级</p>
         </div>
       </div>
     )

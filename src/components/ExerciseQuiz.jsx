@@ -370,12 +370,7 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
         <div className="text-5xl">{score === questions.length ? '🎉' : score >= questions.length / 2 ? '👍' : '💪'}</div>
         <div className="text-white text-2xl font-bold">{score} / {questions.length}</div>
         <div className="text-gray-400 text-sm">{title}</div>
-        <div className="flex gap-3 flex-wrap justify-center">
-          <button onClick={onClose}
-            className="px-6 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold transition-colors">
-            返回目录
-          </button>
-        </div>
+        <p className="text-gray-500 text-sm text-center px-4">使用浏览器后退返回上一级</p>
       </div>
     )
   }

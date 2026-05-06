@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react'
 import duolingoData from '../data/duolingo.json'
 import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import grade4DownData from '../data/grade4_down.json'
 import ExerciseQuiz, { generateQuiz } from './ExerciseQuiz'
 import Unit1Flow from './Unit1Flow'
+import { pushStudy } from '../studyHistory'
 
 // 四年级下册单元切片（与 Textbook.jsx 保持一致）
 const GRADE4_DOWN_UNITS = [
@@ -180,7 +181,7 @@ function ComingSoon({ name, onClose }) {
 }
 
 // ── 教材详情页（单元列表）────────────────────────────────────────────────────
-function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext, settings }) {
+function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInner, onRestoreInnerConsumed }) {
   const [popup, setPopup] = useState(null)
   const [activeUnit, setActiveUnit] = useState(null)  // { label, index }
   const [quiz, setQuiz] = useState(null)              // { title, questions }（ExerciseQuiz用）
@@ -195,36 +196,58 @@ function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext, s
   const isFlowUnit = (label) => label.startsWith('Unit ') && (label.endsWith('A') || label.endsWith('B') || label.endsWith('C'))
 
   useEffect(() => {
-    if (quiz || activeUnit) {
-      onSetBack?.(() => { setQuiz(null); setActiveUnit(null) })
-    } else {
-      onSetBack?.(onBack)
+    if (!restoreInner || !book) return
+    const flowGrades = isGrade4Down || isGrade4Up || isGrade3Up || isGrade3Down || isGrade5Up || isGrade5Down
+
+    if (restoreInner.squ != null && isGrade4Down) {
+      const i = restoreInner.squ
+      const unitDef = GRADE4_DOWN_UNITS[i]
+      const unit = book.units[i]
+      if (unitDef && unit) {
+        const unitData = grade4DownData.slice(unitDef.slice[0], unitDef.slice[1])
+        const questions = generateQuiz(unitData, grade4DownData)
+        setQuiz({ title: `${book.name} · ${unit}`, questions })
+      }
+      onRestoreInnerConsumed?.()
+      return
     }
-  }, [quiz, activeUnit])
+
+    if (restoreInner.su != null && flowGrades) {
+      const idx = restoreInner.sui != null ? restoreInner.sui : book.units.indexOf(restoreInner.su)
+      if (idx >= 0) {
+        const label = book.units[idx] ?? restoreInner.su
+        setActiveUnit({ label, index: idx, bookId: book.id })
+      }
+      onRestoreInnerConsumed?.()
+      return
+    }
+
+    onRestoreInnerConsumed?.()
+  }, [restoreInner, book, isGrade4Down, isGrade4Up, isGrade3Up, isGrade3Down, isGrade5Up, isGrade5Down, onRestoreInnerConsumed])
 
   function handleUnitClick(e, unit, i) {
     e?.preventDefault()
     if (isGrade4Down || isGrade4Up || isGrade3Up || isGrade3Down || isGrade5Up || isGrade5Down) {
-      // For PEP books, all units are flow units
+      pushStudy({ tab: 'syncpractice', sb: book.id, su: unit, sui: i })
       setActiveUnit({ label: unit, index: i, bookId: book.id })
       return
     }
-    // This part is for older logic, likely to be removed or refactored
     if (!isGrade4Down) { setPopup(`${book.name} · ${unit}`); return }
     const unitDef = GRADE4_DOWN_UNITS[i]
     const unitData = grade4DownData.slice(unitDef.slice[0], unitDef.slice[1])
     const questions = generateQuiz(unitData, grade4DownData)
+    pushStudy({ tab: 'syncpractice', sb: book.id, squ: i })
     setQuiz({ title: `${book.name} · ${unit}`, questions })
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => window.history.back()} settings={settings} />
   }
 
   if (activeUnit) {
     const currentFlowKey = activeUnit.label;
     const currentBookId = activeUnit.bookId;
-    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onClose={() => {setActiveUnit(null)}} />
+    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onClose={() => window.history.back()} />
   }
 
   return (
@@ -274,21 +297,41 @@ function TextbookDetail({ book, onBack, onSetBack, requireSpeak, hideSkipNext, s
 }
 
 // ── 多邻国详情页（课列表）────────────────────────────────────────────────────
-function DuoDetail({ unit, onBack, settings }) {
+function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed }) {
   const [quiz, setQuiz] = useState(null) // { title, questions }
 
   const unitLessons = DUOLINGO_LESSONS.filter(l => l.unit === unit.unit)
   const allUnitData = unitLessons.flatMap(l => getDuoLessonData(l.ids))
 
+  useEffect(() => {
+    if (!restoreInner?.sl || !unit) return
+    const lessons = DUOLINGO_LESSONS.filter(l => l.unit === unit.unit)
+    const lesson = lessons.find(l => l.label === restoreInner.sl)
+    if (!lesson) {
+      onRestoreInnerConsumed?.()
+      return
+    }
+    const data = getDuoLessonData(lesson.ids)
+    if (data.length < 2) {
+      onRestoreInnerConsumed?.()
+      return
+    }
+    const flatAll = lessons.flatMap(l => getDuoLessonData(l.ids))
+    const questions = generateQuiz(data, flatAll.length >= 10 ? flatAll : duolingoData)
+    setQuiz({ title: `多邻国 ${unit.name} · ${lesson.label}`, questions })
+    onRestoreInnerConsumed?.()
+  }, [restoreInner, unit, onRestoreInnerConsumed])
+
   function openLesson(lesson) {
     const data = getDuoLessonData(lesson.ids)
     if (data.length < 2) return
     const questions = generateQuiz(data, allUnitData.length >= 10 ? allUnitData : duolingoData)
+    pushStudy({ tab: 'syncpractice', sd: unit.unit, sl: lesson.label })
     setQuiz({ title: `多邻国 ${unit.name} · ${lesson.label}`, questions })
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => window.history.back()} settings={settings} />
   }
 
   return (
@@ -322,36 +365,79 @@ function DuoDetail({ unit, onBack, settings }) {
 }
 
 // ── 主页面 ────────────────────────────────────────────────────────────────────
-export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext, initialUnit, onInitialConsumed, settings }) {
+export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, onInitialConsumed, settings, navRef }) {
   const [detail, setDetail] = useState(
     initialUnit ? { type: 'duo', unit: initialUnit } : null
   )
+  const [studyRestore, setStudyRestore] = useState(null)
   const [expandedCats, setExpandedCats] = useState({ grade3_up: true })
+  const initialDuoPushedRef = useRef(false)
 
-  // If we mounted with an initialUnit, immediately register back fn so browser back closes the detail
-  useEffect(() => {
-    if (initialUnit) {
-      onSetBack?.(() => setDetail(null))
-      onInitialConsumed?.()
+  const consumeStudyRestore = useCallback(() => setStudyRestore(null), [])
+
+  useLayoutEffect(() => {
+    if (!navRef) return
+    navRef.current.applyStudy = (s) => {
+      if (!s || s.tab !== 'syncpractice') return
+      const hasTextbook = s.sb != null && s.sb !== ''
+      const hasDuo = typeof s.sd === 'number'
+      if (!hasTextbook && !hasDuo) {
+        setDetail(null)
+        setStudyRestore(null)
+        return
+      }
+      if (hasTextbook) {
+        setDetail({ type: 'textbook', id: s.sb })
+        const inner = s.su != null || s.sui != null || s.squ != null
+        setStudyRestore(inner ? { su: s.su, sui: s.sui, squ: s.squ } : null)
+        return
+      }
+      if (hasDuo) {
+        setDetail({ type: 'duo', unit: s.sd })
+        setStudyRestore(s.sl ? { sl: s.sl } : null)
+      }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    return () => {
+      if (navRef) navRef.current.applyStudy = () => {}
+    }
+  }, [navRef])
 
-  // 直接在状态变化时调用，不用 useEffect
+  useEffect(() => {
+    if (!initialUnit || initialDuoPushedRef.current) return
+    initialDuoPushedRef.current = true
+    pushStudy({ tab: 'syncpractice', sd: initialUnit })
+    onInitialConsumed?.()
+  }, [initialUnit, onInitialConsumed])
+
   const handleSetDetail = (newDetail) => {
+    setStudyRestore(null)
     setDetail(newDetail)
-    if (!newDetail) onSetBack?.(null)
-    if (newDetail?.type === 'duo') onSetBack?.(() => setDetail(null))
   }
 
   if (detail?.type === 'textbook') {
     const book = TEXTBOOK_CATALOG.find(b => b.id === detail.id)
-    return <TextbookDetail book={book} onBack={() => handleSetDetail(null)} onSetBack={onSetBack} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} settings={settings} />
+    return (
+      <TextbookDetail
+        book={book}
+        requireSpeak={requireSpeak}
+        hideSkipNext={hideSkipNext}
+        settings={settings}
+        restoreInner={studyRestore}
+        onRestoreInnerConsumed={consumeStudyRestore}
+      />
+    )
   }
 
   if (detail?.type === 'duo') {
     const unit = DUO_CATALOG.find(u => u.unit === detail.unit)
-    return <DuoDetail unit={unit} onBack={() => handleSetDetail(null)} settings={settings} />
+    return (
+      <DuoDetail
+        unit={unit}
+        settings={settings}
+        restoreInner={studyRestore}
+        onRestoreInnerConsumed={consumeStudyRestore}
+      />
+    )
   }
 
   return (
@@ -364,7 +450,10 @@ export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext, in
           {TEXTBOOK_CATALOG.map(book => (
             <button
               key={book.id}
-              onClick={() => handleSetDetail({ type: 'textbook', id: book.id })}
+              onClick={() => {
+                pushStudy({ tab: 'syncpractice', sb: book.id })
+                handleSetDetail({ type: 'textbook', id: book.id })
+              }}
               className="flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 transition-all text-left"
             >
               <div className="w-full aspect-[3/4] bg-gray-800 overflow-hidden">
@@ -386,7 +475,10 @@ export default function SyncPractice({ onSetBack, requireSpeak, hideSkipNext, in
           {DUO_CATALOG.map(unit => (
             <button
               key={unit.unit}
-              onClick={() => handleSetDetail({ type: 'duo', unit: unit.unit })}
+              onClick={() => {
+                pushStudy({ tab: 'syncpractice', sd: unit.unit })
+                handleSetDetail({ type: 'duo', unit: unit.unit })
+              }}
               className="flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 transition-all text-left"
             >
               <div className="w-full h-20 bg-gray-800 overflow-hidden">

@@ -308,15 +308,16 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Grammar({ onImport, onClose, onSetBack, progress = {} }) {
+export default function Grammar({ onImport, onClose, onSetBack, progress = {}, active = true }) {
   const [stage, setStage] = useState(null)
   const [tense, setTense] = useState(null)
 
   useEffect(() => {
+    if (!active) return
     if (tense) onSetBack?.(() => setTense(null))
     else if (stage) onSetBack?.(() => setStage(null))
     else onSetBack?.(null)
-  }, [stage, tense, onSetBack])
+  }, [active, stage, tense, onSetBack])
 
   if (tense) {
     const stageObj = STAGES.find(s => s.id === stage)

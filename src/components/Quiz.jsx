@@ -88,12 +88,6 @@ export default function Quiz({ onImport, onClose, settings }) {
     setShowResult(true)
   }
 
-  const handleBack = () => {
-    setSelectedLevel(null)
-    setAnswers({})
-    setShowResult(false)
-  }
-
   if (!selectedLevel) {
     return (
       <div className="w-full max-w-3xl mx-auto">

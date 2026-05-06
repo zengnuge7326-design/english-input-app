@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import pepWords from '../data/pep_words.json'
+import renaiJuniorWords from '../data/renai_junior_words.json'
 import { IconSpeaker } from './Icons'
 
 // ── IPA syllabification (MOP) — mirrors gen_syllable_audio.py ────────────────
@@ -470,16 +471,26 @@ function useRecorder() {
 
 // ── Book selector ─────────────────────────────────────────────────────────────
 
-const GRADE_COLORS = { 3: 'from-green-700 to-green-900', 4: 'from-blue-700 to-blue-900', 5: 'from-purple-700 to-purple-900', 6: 'from-orange-700 to-orange-900' }
+const VOCAB_BOOKS = [...pepWords, ...renaiJuniorWords]
+
+const GRADE_COLORS = {
+  3: 'from-green-700 to-green-900',
+  4: 'from-blue-700 to-blue-900',
+  5: 'from-purple-700 to-purple-900',
+  6: 'from-orange-700 to-orange-900',
+  7: 'from-teal-700 to-teal-900',
+  8: 'from-cyan-700 to-cyan-900',
+  9: 'from-indigo-700 to-indigo-900',
+}
 
 function BookGrid({ onSelect }) {
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
       <h2 className="text-white text-xl font-bold mb-5">选择年级册次</h2>
       <div className="grid grid-cols-2 gap-4">
-        {pepWords.map(book => (
+        {VOCAB_BOOKS.map(book => (
           <button key={book.bookName} onClick={() => onSelect(book)}
-            className={`rounded-2xl bg-gradient-to-br ${GRADE_COLORS[book.grade]} p-6 text-left hover:opacity-90 active:scale-95 transition-all`}>
+            className={`rounded-2xl bg-gradient-to-br ${GRADE_COLORS[book.grade] || 'from-slate-700 to-slate-900'} p-6 text-left hover:opacity-90 active:scale-95 transition-all`}>
             <div className="text-sm text-white/60 mb-1">{book.grade}年级 · {book.sem === 'up' ? '上' : '下'}册</div>
             <div className="text-white font-bold text-lg">{book.bookName}</div>
             <div className="text-white/50 text-sm mt-2">{book.units.length} 单元 · {book.units.reduce((s, u) => s + u.words.length, 0)} 词</div>
@@ -491,26 +502,42 @@ function BookGrid({ onSelect }) {
 }
 
 // ── Unit selector ─────────────────────────────────────────────────────────────
+/** Max words per flash-card session (bottom grid is 3 cols × 4 rows at most). */
+const WORDS_PER_CARD = 12
 
-function UnitGrid({ book, progress, onSelect, onBack }) {
+function chunkUnitWords(words, maxPerChunk = WORDS_PER_CARD) {
+  const chunks = []
+  let offset = 0
+  for (let i = 0; i < words.length; i += maxPerChunk) {
+    const slice = words.slice(i, i + maxPerChunk)
+    chunks.push({ words: slice, offset })
+    offset += slice.length
+  }
+  return chunks
+}
+
+function unitChunkLabel(unitNum, chunkIndex, totalChunks) {
+  if (totalChunks <= 1) return `Unit ${unitNum}`
+  if (totalChunks === 2) return `Unit ${unitNum}${chunkIndex === 0 ? 'A' : 'B'}`
+  return `Unit ${unitNum} · ${chunkIndex + 1}/${totalChunks}`
+}
+
+function UnitGrid({ book, progress, onSelect }) {
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
-      <button onClick={onBack} className="text-gray-400 hover:text-white text-sm mb-5 block transition-colors">← 返回</button>
       <h2 className="text-white text-xl font-bold mb-4">{book.bookName}</h2>
       <div className="grid grid-cols-2 gap-4">
         {book.units.flatMap((unit, ui) => {
-          const mid = Math.ceil(unit.words.length / 2)
-          return [
-            { label: `Unit ${unit.unit}A`, words: unit.words.slice(0, mid), offset: 0 },
-            { label: `Unit ${unit.unit}B`, words: unit.words.slice(mid), offset: mid },
-          ].map((half, hi) => {
+          const parts = chunkUnitWords(unit.words)
+          return parts.map((half, hi) => {
+            const label = unitChunkLabel(unit.unit, hi, parts.length)
             const total = half.words.length
             const known = half.words.filter((_, wi) => (progress[`vocab_${book.bookName}_${ui}_${half.offset + wi}`] || 0) >= 2).length
             const pct = total ? Math.round(known / total * 100) : 0
             return (
               <button key={`${ui}-${hi}`} onClick={() => onSelect({ ...unit, words: half.words }, ui, half.offset)}
                 className="rounded-xl bg-slate-800 border border-slate-700 hover:border-gray-600 p-5 text-left transition-all active:scale-95">
-                <div className="text-xs text-gray-500 mb-1">{half.label}</div>
+                <div className="text-xs text-gray-500 mb-1">{label}</div>
                 <div className="text-white font-semibold text-base mb-3">{unit.title}</div>
                 <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden mb-1.5">
                   <div className="h-full bg-blue-500 rounded-full" style={{ width: `${pct}%` }} />
@@ -616,9 +643,9 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-2 flex flex-col gap-2" style={{ height: 'calc(100vh - 110px)' }}>
 
-      {/* Header: 返回 | 进度 | 已学习badge */}
+      {/* Header: 进度 | 已学习badge */}
       <div className="flex items-center justify-between shrink-0">
-        <button onClick={onBack} className="text-gray-400 hover:text-white text-sm">← 返回</button>
+        <span className="text-gray-600 text-sm w-10" aria-hidden />
         <span className="text-gray-500 text-sm">{idx + 1} / {unit.words.length}</span>
         <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${seen ? 'bg-blue-900/50 text-blue-400' : 'bg-gray-800 text-gray-600'}`}>
           {seen ? '已学习' : '未学习'}
@@ -775,7 +802,7 @@ function QuizWord({ word, ipa }) {
   )
 }
 
-function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
+function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChange, onSetBack, active = true }) {
   const [mode, setMode]     = useState(null)
   const [qIdx, setQIdx]     = useState(0)
   const [options, setOpts]  = useState([])
@@ -785,7 +812,26 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
   const [score, setScore]   = useState({ right: 0, wrong: 0 })
   const [order, setOrder]   = useState([])
   const inputRef = useRef()
-  const allWords = pepWords.flatMap(b => b.units.flatMap(u => u.words))
+  const allWords = VOCAB_BOOKS.flatMap(b => b.units.flatMap(u => u.words))
+
+  const backToModePicker = useCallback(() => {
+    setMode(null)
+    setQIdx(0)
+    setChosen(null)
+    setResult(null)
+    setInput('')
+    setScore({ right: 0, wrong: 0 })
+    setOrder([])
+  }, [])
+
+  useEffect(() => {
+    if (!active || !onSetBack) return
+    if (!mode) {
+      onSetBack(() => onBack)
+    } else {
+      onSetBack(() => backToModePicker)
+    }
+  }, [active, mode, onBack, onSetBack, backToModePicker])
 
   useEffect(() => {
     if (mode) { setOrder(shuffle(unit.words.map((_, i) => i))); setQIdx(0); setScore({ right: 0, wrong: 0 }); setChosen(null); setResult(null); setInput('') }
@@ -804,7 +850,7 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
     const ok = mode === 'en2zh' ? opt.zh === correct.zh : opt.word === correct.word
     setChosen(opt); setResult(ok ? 'correct' : 'wrong')
     setScore(s => ok ? { ...s, right: s.right + 1 } : { ...s, wrong: s.wrong + 1 })
-    if (ok) { saveProgress(book.bookName, unitIdx, order[qIdx], 2); onProgressChange() }
+    if (ok) { saveProgress(book.bookName, unitIdx, wordOffset + order[qIdx], 2); onProgressChange() }
   }
   function handleSpell(e) {
     e.preventDefault(); if (result) return
@@ -812,13 +858,12 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
     const ok = input.trim().toLowerCase() === correct.word.toLowerCase()
     setResult(ok ? 'correct' : 'wrong')
     setScore(s => ok ? { ...s, right: s.right + 1 } : { ...s, wrong: s.wrong + 1 })
-    if (ok) { saveProgress(book.bookName, unitIdx, order[qIdx], 2); onProgressChange() }
+    if (ok) { saveProgress(book.bookName, unitIdx, wordOffset + order[qIdx], 2); onProgressChange() }
   }
   function next() { qIdx < order.length - 1 ? setQIdx(i => i + 1) : setQIdx(-1); setResult(null); setInput(''); setChosen(null) }
 
   if (!mode) return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6 flex flex-col gap-4">
-      <button onClick={onBack} className="text-gray-400 hover:text-white text-sm self-start">← 返回</button>
       <h2 className="text-white text-xl font-bold">{unit.title} — 练习模式</h2>
       {[{ id: 'en2zh', label: '英 → 中', desc: '看英文选中文', emoji: '🇬🇧' },
         { id: 'zh2en', label: '中 → 英', desc: '看中文选英文', emoji: '🇨🇳' },
@@ -850,7 +895,7 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-4 flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <button onClick={() => setMode(null)} className="text-gray-400 hover:text-white text-sm">← 模式</button>
+        <span className="text-gray-600 text-sm w-14" aria-hidden />
         <span className="text-gray-500">{qIdx + 1}/{order.length}</span>
         <span className="text-green-400 font-mono">{score.right}✓ {score.wrong}✗</span>
       </div>
@@ -898,7 +943,7 @@ function QuizView({ book, unit, unitIdx, onBack, onProgressChange }) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-export default function VocabStudy({ onSetBack }) {
+export default function VocabStudy({ onSetBack, active = true }) {
   const [view, setView]           = useState('books')
   const [book, setBook]           = useState(null)
   const [unit, setUnit]           = useState(null)
@@ -912,15 +957,16 @@ export default function VocabStudy({ onSetBack }) {
   }, [])
 
   useEffect(() => {
+    if (!active) return
     if (view === 'books') onSetBack?.(null)
     else if (view === 'units') onSetBack?.(() => setView('books'))
     else if (view === 'cards') onSetBack?.(() => setView('units'))
-    else if (view === 'quiz')  onSetBack?.(() => setView('cards'))
-  }, [view, onSetBack])
+    // view === 'quiz'：由 QuizView 内注册浏览器后退层级
+  }, [active, view, onSetBack])
 
   if (view === 'books') return <BookGrid onSelect={b => { setBook(b); setView('units') }} />
-  if (view === 'units') return <UnitGrid book={book} progress={progress} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} onBack={() => setView('books')} />
+  if (view === 'units') return <UnitGrid book={book} progress={progress} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />
   if (view === 'cards') return <FlashCards book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} progress={progress} onBack={() => setView('units')} onProgressChange={refreshProgress} />
-  if (view === 'quiz')  return <QuizView  book={book} unit={unit} unitIdx={unitIdx} onBack={() => setView('cards')} onProgressChange={refreshProgress} />
+  if (view === 'quiz')  return <QuizView  book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} onBack={() => setView('cards')} onProgressChange={refreshProgress} onSetBack={onSetBack} active={active} />
   return null
 }

@@ -13,7 +13,7 @@ import { LESSONS } from '../typing/lessons';
 
 const CHAR_WIDTH = 40;
 
-export default function TypingPractice({ onBack }) {
+export default function TypingPractice() {
   const [currentLesson, setCurrentLesson] = useState(0);
   const [text, setText] = useState(LESSONS[0].content);
   const [currentIndex, setCurrentIndex] = useState(0);

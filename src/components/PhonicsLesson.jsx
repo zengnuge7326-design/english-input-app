@@ -386,10 +386,23 @@ const MODES = [
   { id: 'heart',   label: '心形词',   emoji: '❤️' },
 ]
 
-export default function PhonicsLesson({ onBack }) {
+export default function PhonicsLesson({ onSetBack }) {
   const [lesson, setLesson] = useState(null)
   const [mode, setMode]     = useState('intro')
   const [done, setDone]     = useState({})  // which modes completed
+
+  useEffect(() => {
+    if (!onSetBack) return
+    if (lesson) {
+      onSetBack(() => {
+        setLesson(null)
+        setMode('intro')
+        setDone({})
+      })
+    } else {
+      onSetBack(null)
+    }
+  }, [lesson, onSetBack])
 
   function selectLesson(l) {
     setLesson(l)
@@ -412,15 +425,8 @@ export default function PhonicsLesson({ onBack }) {
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-4">
-      {/* Header */}
-      <div className="flex items-center gap-3 mb-4">
-        <button
-          onClick={() => setLesson(null)}
-          className="text-gray-400 hover:text-white text-sm"
-        >
-          ← 课程列表
-        </button>
-        <div className="text-white font-bold text-sm flex-1 text-center">{lesson.title}</div>
+      <div className="flex items-center justify-center mb-4">
+        <div className="text-white font-bold text-sm text-center">{lesson.title}</div>
       </div>
 
       {/* Mode tabs */}

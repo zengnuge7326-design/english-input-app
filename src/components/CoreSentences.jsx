@@ -149,13 +149,14 @@ function SyncPopup({ label, onClose }) {
 }
 
 // ── 主组件 ───────────────────────────────────────────────
-export default function CoreSentences({ onImport, onSetBack, progress = {} }) {
+export default function CoreSentences({ onImport, onSetBack, progress = {}, active = true }) {
   const [section,   setSection]   = useState(null)   // null | 'core50' | 'core100' | 'core60'
   const [syncPopup, setSyncPopup] = useState(null)   // label string | null
 
   useEffect(() => {
+    if (!active) return
     onSetBack?.(section ? () => setSection(null) : null)
-  }, [section, onSetBack])
+  }, [active, section, onSetBack])
 
   // ── 50基础句式 ─────────────────────────────────────────
   if (section === 'core50') {

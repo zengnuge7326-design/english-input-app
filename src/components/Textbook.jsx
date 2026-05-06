@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import Unit1Flow from './Unit1Flow'
 import grade4DownData from '../data/grade4_down.json'
 import grade3UpData from '../data/grade3_up.json'
@@ -26,6 +26,7 @@ import bsdaS1Data from '../data/bsda_s1.json'
 import bsdaS2Data from '../data/bsda_s2.json'
 import bsdaS3Data from '../data/bsda_s3.json'
 import bsdaS4Data from '../data/bsda_s4.json'
+import { pushStudy } from '../studyHistory'
 
 function lessonsFromUnits(data, descByUnit) {
   if (!Array.isArray(data) || data.length === 0) return []
@@ -381,14 +382,32 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Textbook({ onImport, onClose, onSetBack, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin }) {
+export default function Textbook({ onImport, onClose, onSetBack, historyRef, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin, active = true }) {
   const [detail, setDetail] = useState(null)
   const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
 
+  useLayoutEffect(() => {
+    if (!historyRef) return
+    historyRef.current.applyStudy = (s) => {
+      if (!s?.tb) {
+        setDetail(null)
+        setSyncUnit(null)
+        return
+      }
+      setDetail(s.tb)
+      if (s.tu) setSyncUnit({ bookId: s.tb, label: s.tu })
+      else setSyncUnit(null)
+    }
+    return () => {
+      if (historyRef) historyRef.current.applyStudy = () => {}
+    }
+  }, [historyRef])
+
+  // 子层级由 studyHistory.pushStudy + App popstate 统一还原，不在此注册全局 backFn
   useEffect(() => {
-    if (syncUnit) onSetBack?.(() => setSyncUnit(null))
-    else onSetBack?.(detail !== null ? () => setDetail(null) : null)
-  }, [detail, syncUnit, onSetBack])
+    if (!active) return
+    if (detail === null && !syncUnit) onSetBack?.(null)
+  }, [active, detail, syncUnit, onSetBack])
 
   if (syncUnit) {
     return (
@@ -397,7 +416,7 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
         bookId={syncUnit.bookId}
         requireSpeak={requireSpeak}
         hideSkipNext={hideSkipNext}
-        onClose={() => setSyncUnit(null)}
+        onClose={() => window.history.back()}
       />
     )
   }
@@ -486,7 +505,10 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
                   </div>
                 </button>
                 <button
-                  onClick={() => setSyncUnit({ bookId: book.id, label: lesson.label })}
+                  onClick={() => {
+                    pushStudy({ tab: 'textbook', tb: book.id, tu: lesson.label })
+                    setSyncUnit({ bookId: book.id, label: lesson.label })
+                  }}
                   className="w-full py-1.5 text-xs font-semibold text-white bg-green-700 hover:bg-green-600 border-t border-green-900 transition-colors text-center rounded-b-xl"
                 >
                   {lesson.label} 同步练习
@@ -529,6 +551,7 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
             onClick={() => {
               if (!book.name) return
               if (locked) { onShowLogin?.(); return }
+              pushStudy({ tab: 'textbook', tb: book.id })
               setDetail(book.id)
             }}
             className={`w-full flex flex-col rounded-2xl overflow-hidden border transition-all text-left
@@ -572,36 +595,9 @@ export default function Textbook({ onImport, onClose, onSetBack, progress = {}, 
             </div>
           </button>
           {locked && (
-            <div
-              onClick={onShowLogin}
-              className="absolute inset-0 flex flex-col rounded-2xl overflow-hidden z-10 cursor-pointer"
-              style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(3px)' }}
-            >
-              {/* 右上角锁标 */}
-              <div className="absolute top-2 right-2 bg-black/50 rounded-full w-6 h-6 flex items-center justify-center text-xs">🔒</div>
-
-              {/* 中部：单元列表 */}
-              <div className="flex-1 flex flex-col items-center justify-center px-3 gap-1 pt-6">
-                <div className="text-amber-400 text-xs font-bold mb-1 tracking-wide">会员专属</div>
-                {book.lessons.slice(0, 3).map((l, i) => {
-                  const cnt = l.slice ? l.slice[1] - l.slice[0] : 0
-                  return (
-                    <div key={i} className="w-full flex justify-between text-[11px] text-white/70 px-1">
-                      <span className="truncate">{l.label}</span>
-                      <span className="text-white/40 shrink-0 ml-1">{cnt}句</span>
-                    </div>
-                  )
-                })}
-                {book.lessons.length > 3 && (
-                  <div className="text-[10px] text-white/30">…共 {book.lessons.length} 课</div>
-                )}
-              </div>
-
-              {/* 底部解锁按钮 */}
-              <div className="mx-3 mb-3 py-2 rounded-xl text-center text-xs font-bold text-amber-900"
-                style={{ background: 'linear-gradient(90deg,#f59e0b,#fbbf24)' }}>
-                ✦ 解锁全部内容
-              </div>
+            <div className="absolute inset-0 bg-black/65 backdrop-blur-sm flex flex-col items-center justify-center gap-1.5 z-10 rounded-2xl pointer-events-none">
+              <span className="text-xl">🔒</span>
+              <span className="text-white text-xs font-semibold">会员专属</span>
             </div>
           )}
           </div>

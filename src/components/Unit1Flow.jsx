@@ -1824,9 +1824,7 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
         <div className="text-4xl mb-4">🙊</div>
         <h2 className="text-xl font-bold mb-2">暂无练习数据</h2>
         <p className="text-gray-500 mb-6">该单元（{unitLabel}）暂未配置同步练习题库。</p>
-        <button onClick={onClose} className="px-8 py-3 bg-gray-800 hover:bg-gray-700 rounded-2xl transition-colors">
-          返回目录
-        </button>
+        <p className="text-gray-600 text-sm">使用浏览器后退返回上一级</p>
       </div>
     )
   }
@@ -1870,10 +1868,7 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
           <div className="text-gray-400 mb-6">{unitLabel} · {total} 道题</div>
           <div className="text-6xl font-bold text-blue-400 mb-1">{correct}<span className="text-3xl text-gray-500">/{total}</span></div>
           <div className="text-gray-500 mb-8">正确率 {pct}%</div>
-          <button onClick={onClose}
-            className="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-2xl text-lg font-medium transition-colors">
-            返回
-          </button>
+          <p className="text-gray-600 text-sm">使用浏览器后退返回上一级</p>
         </div>
       </div>
     )

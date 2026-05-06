@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
+import { pushStudy } from '../studyHistory'
 import duolingoData from '../data/duolingo.json'
 import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import nce1Data from '../data/nce1.json'
@@ -343,7 +344,10 @@ export default function Courses({
   onImport,
   changyongData,
   sampleData,
+  onClose,
   onSetBack,
+  historyRef,
+  active = true,
   progress = {},
   isMember = false,
   onShowLogin,
@@ -352,9 +356,22 @@ export default function Courses({
   const [detail, setDetail] = useState(null) // null | unit number
   const [syncPopup, setSyncPopup] = useState(null) // lesson label string
 
+  useLayoutEffect(() => {
+    if (!historyRef) return
+    historyRef.current.applyStudy = (s) => {
+      if (s.cd === undefined || s.cd === null) setDetail(null)
+      else setDetail(s.cd)
+    }
+    return () => {
+      if (historyRef) historyRef.current.applyStudy = () => {}
+    }
+  }, [historyRef])
+
+  // 册/单元子层由 pushStudy + App popstate 还原；勿再用 backFn(back-intercept)，否则与 tab/study 栈打架导致穿透
   useEffect(() => {
-    onSetBack?.(detail !== null ? () => setDetail(null) : null)
-  }, [detail, onSetBack])
+    if (!active) return
+    onSetBack?.(null)
+  }, [active, onSetBack])
 
   if (detail !== null) {
     const isNce1 = detail === 'nce1'
@@ -528,7 +545,11 @@ export default function Courses({
           const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
           return (
             <div key={c.key} className="relative">
-              <button onClick={() => isMember ? setDetail(c.key) : onShowLogin?.()}
+              <button onClick={() => {
+                if (!isMember) { onShowLogin?.(); return }
+                pushStudy({ tab: 'courses', cd: c.key })
+                setDetail(c.key)
+              }}
                 className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left">
                 <div className="w-full h-28 overflow-hidden">
                   <img src={c.cover} alt={c.name} className="w-full h-full object-cover" />
@@ -560,7 +581,11 @@ export default function Courses({
           return (
             <div key={unit} className="relative">
             <button
-              onClick={() => (isMember || !isPremium) ? setDetail(unit) : onShowLogin?.()}
+              onClick={() => {
+                if (!(isMember || !isPremium)) { onShowLogin?.(); return }
+                pushStudy({ tab: 'courses', cd: unit })
+                setDetail(unit)
+              }}
               className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"
             >
               <div className="w-full h-28 overflow-hidden">
