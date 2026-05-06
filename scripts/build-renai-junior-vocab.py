@@ -9,6 +9,9 @@
   python3 scripts/build-renai-junior-vocab.py
 
 输出：src/data/renai_junior_words.json
+
+生成后建议再运行一次音标规范化（修正 PDF 占位符与拉丁 I）：
+  python3 scripts/fix_vocab_ipa.py --write
 """
 from __future__ import annotations
 
