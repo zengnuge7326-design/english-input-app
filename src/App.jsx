@@ -564,66 +564,56 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
+        {/* 外包一层：收起时宽 32px+5px，负 margin 抵掉刘海占位，保证移入「细条+刘海」整块区域都能展开 */}
         <div
           className={[
-            'fixed top-0 bottom-0 z-50',
-            /* iPad / 触摸：避让安全区 + 更宽边缘热区 */
-            'right-[max(0px,env(safe-area-inset-right,0px))] w-6',
-            /* Mac 鼠标：贴右、保持原先窄条宽度 */
-            '[@media(hover:hover)_and_(pointer:fine)]:right-0 [@media(hover:hover)_and_(pointer:fine)]:w-4 [@media(hover:hover)_and_(pointer:fine)]:sm:w-3',
+            'order-last sticky top-0 h-screen z-50 shrink-0 flex justify-end overflow-visible transition-[width,margin] duration-200',
+            menuHover ? 'w-32 mr-0' : 'w-[37px] -mr-8',
           ].join(' ')}
           onMouseEnter={() => setMenuHover(true)}
           onMouseLeave={() => setMenuHover(false)}
           onTouchStart={() => setMenuHover(true)}
-        />
-        {!menuHover && (
-          <div
-            className={[
-              'absolute top-1/2 z-30 -translate-y-1/2 pointer-events-none',
-              /* 触摸端：整体移入可视区，避免只剩一条金边 */
-              'right-[max(14px,calc(env(safe-area-inset-right,0px)+12px))]',
-              '[@media(hover:hover)_and_(pointer:fine)]:right-0',
-            ].join(' ')}
-          >
-            <div
-              role="button"
-              tabIndex={0}
+        >
+        <aside
+          className={[
+            'flex flex-col border-l border-slate-700/70 bg-slate-900/92 backdrop-blur transition-[width,padding] duration-200 relative min-h-0',
+            menuHover ? 'w-full px-2 py-3 overflow-y-auto overflow-x-hidden' : 'w-[5px] px-0 py-0 overflow-visible shrink-0',
+          ].join(' ')}
+        >
+          {/* 收起态：与侧栏一体的「刘海」；背景同菜单栏，文案金色高亮 */}
+          {!menuHover && (
+            <button
+              type="button"
+              aria-label="展开菜单"
               onTouchEnd={(e) => {
                 e.preventDefault()
                 setMenuHover(true)
               }}
               className={[
-                'pointer-events-auto rounded-l-md border-y border-l font-medium shadow-md',
-                /* 触摸端略大字号与内边距；Mac 维持原样 */
-                'text-[12px] px-[6px] py-2',
-                '[@media(hover:hover)_and_(pointer:fine)]:text-[11px] [@media(hover:hover)_and_(pointer:fine)]:px-[4px] [@media(hover:hover)_and_(pointer:fine)]:py-[6px]',
+                'absolute top-1/2 left-0 z-10 flex items-center justify-center rounded-l-xl border-y border-l border-slate-700/70',
+                'bg-slate-900/95 backdrop-blur-md shadow-lg',
+                'w-8 h-32 max-[380px]:w-9 max-[380px]:h-36',
+                '-translate-y-1/2 -translate-x-full',
               ].join(' ')}
               style={{
-                backgroundColor: '#A58F63',
-                borderColor: '#8E7A52',
-                color: '#ffffff',
-                opacity: 1,
-                writingMode: 'vertical-rl',
-                textOrientation: 'upright',
-                letterSpacing: '1px',
-                lineHeight: 1,
+                marginRight: '-1px',
               }}
             >
-              <span className="[@media(hover:hover)_and_(pointer:fine)]:hidden">点按打开菜单</span>
-              <span className="hidden [@media(hover:hover)_and_(pointer:fine)]:inline">
-                鼠标移入打开菜单
+              <span
+                className={[
+                  'font-semibold tracking-wide select-none text-center leading-none',
+                  'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.55)]',
+                  'text-[11px] px-1 py-1 max-[380px]:text-[12px]',
+                  '[writing-mode:vertical-rl] [text-orientation:upright]',
+                ].join(' ')}
+              >
+                <span className="[@media(hover:hover)_and_(pointer:fine)]:hidden">点按打开菜单</span>
+                <span className="hidden [@media(hover:hover)_and_(pointer:fine)]:inline">鼠标移入打开菜单</span>
               </span>
-            </div>
-          </div>
-        )}
+            </button>
+          )}
 
-        <aside
-          className={`order-last shrink-0 bg-slate-900/92 border-l border-slate-700/70 backdrop-blur px-2 py-3 flex flex-col gap-2 z-20 transition-all duration-200 overflow-hidden sticky top-0 h-screen ${
-            menuHover ? 'w-32' : 'w-0 px-0 py-3 border-l-0'
-          }`}
-          onMouseEnter={() => setMenuHover(true)}
-          onMouseLeave={() => setMenuHover(false)}
-        >
+          <div className={`flex flex-col gap-2 min-h-0 ${menuHover ? '' : 'hidden'}`}>
           {/* Logo */}
           <button className="cursor-pointer flex items-center gap-2 px-2 py-2 rounded-xl hover:bg-slate-800/80 transition-colors text-left shrink-0" onClick={() => navigateFromMenu('home')}>
             <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
@@ -683,7 +673,9 @@ export default function App() {
               </button>
             </div>
           )}
+          </div>
         </aside>
+        </div>
 
         {/* Main content */}
         <main
