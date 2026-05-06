@@ -656,9 +656,9 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
               {speed}×
             </button>
             <button onClick={e => { e.stopPropagation(); toggleMoXie() }}
-              className={`w-11 h-11 flex items-center justify-center rounded-xl border text-sm font-bold transition-all active:scale-95 shrink-0
+              className={`min-h-11 px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 shrink-0 leading-tight text-center
                 ${moXie ? 'bg-purple-700 border-purple-500 text-white' : 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700'}`}>
-              写
+              默写
             </button>
           </div>
 
@@ -671,44 +671,57 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
           <div className="text-xl text-blue-300 font-medium">{word.zh}</div>
         </div>
       ) : (
-        /* 默写模式主卡 */
-        <div className="shrink-0 w-full bg-slate-800 border border-purple-800/60 rounded-xl flex flex-col items-center gap-2 py-3 px-4">
-          {/* 顶行：标题 + 默写按钮 */}
-          <div className="w-full flex items-center justify-between">
-            <span className="text-purple-400 text-xs font-semibold tracking-wider">默写模式</span>
-            <button onClick={toggleMoXie}
-              className="w-7 h-7 flex items-center justify-center bg-purple-700 border border-purple-500 text-white rounded-lg text-xs font-bold">
-              写
-            </button>
-          </div>
-          {/* 输入框 */}
-          <input ref={moInputRef}
-            value={moInput}
-            onChange={e => { setMoInput(e.target.value); if (moResult === 'wrong') setMoResult(null) }}
-            onKeyDown={e => {
-              if (e.key === ' ' && !moInput.trim()) { e.preventDefault(); playFull(); return }
-              if (e.key === 'Enter' && !moResult) checkMoXie()
-            }}
-            disabled={moResult === 'correct'}
-            placeholder="输入英文… (空格键听音)"
-            autoComplete="off" autoCapitalize="off" spellCheck="false"
-            className={`w-full bg-gray-800 border rounded-lg px-3 py-2 text-white text-center text-xl font-mono outline-none transition-colors
-              ${moResult === 'correct' ? 'border-green-500 bg-green-900/20' : moResult === 'wrong' ? 'border-red-500' : 'border-gray-700 focus:border-purple-500'}`}
-          />
-          {/* 音标 + 中文提示 */}
-          <div className="flex items-center gap-3 text-xs">
-            <span className="text-gray-500 font-mono">{renderIPAText(word.ipa || '')}</span>
-            <span className="text-gray-600">·</span>
-            <span className="text-blue-400/70">{word.zh}</span>
-          </div>
-          {/* 反馈 */}
-          {moResult === 'correct' && <div className="text-green-400 text-sm font-semibold">✓ 正确！跳转中…</div>}
-          {moResult === 'wrong' && (
-            <div className="flex items-center gap-2">
-              <span className="text-red-400 text-xs">✗ 正确答案：<span className="text-white font-bold">{word.word}</span></span>
-              <button onClick={checkMoXie} className="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded">再试</button>
+        /* 默写模式主卡：顶栏仅「默写模式」按钮退出；左中文+右音标同行；右列大输入；逻辑不变 */
+        <div className="shrink-0 w-full bg-slate-800 border border-purple-800/60 rounded-xl py-3 px-3 sm:px-4">
+          <div className="flex flex-col gap-3 w-full min-w-0">
+            <div className="flex justify-start">
+              <button
+                type="button"
+                onClick={toggleMoXie}
+                className="px-3 py-2 rounded-xl bg-purple-700 hover:bg-purple-600 border border-purple-400/80 text-white text-xs font-semibold tracking-wide shadow-md transition-colors active:scale-[0.98]"
+              >
+                默写模式
+              </button>
             </div>
-          )}
+
+            <div className="grid grid-cols-2 gap-x-3 sm:gap-x-4 gap-y-2 items-center min-w-0">
+              <div className="min-w-0 flex flex-row flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+                <span className="text-blue-300 text-lg sm:text-xl font-semibold shrink-0">{word.zh}</span>
+                <span className="text-amber-200 font-mono text-base sm:text-lg md:text-xl font-bold tracking-wide drop-shadow-[0_0_10px_rgba(251,191,36,0.35)] break-all">
+                  {renderIPAText(word.ipa || '')}
+                </span>
+              </div>
+              <div className="min-w-0 flex items-center">
+                <input ref={moInputRef}
+                  value={moInput}
+                  onChange={e => { setMoInput(e.target.value); if (moResult === 'wrong') setMoResult(null) }}
+                  onKeyDown={e => {
+                    if (e.key === ' ' && !moInput.trim()) { e.preventDefault(); playFull(); return }
+                    if (e.key === 'Enter' && !moResult) checkMoXie()
+                  }}
+                  disabled={moResult === 'correct'}
+                  placeholder="输入英文… (空格键听音)"
+                  autoComplete="off" autoCapitalize="off" spellCheck="false"
+                  className={`w-full min-w-0 min-h-[3.5rem] sm:min-h-[4rem] bg-gray-800 border-2 rounded-xl px-3 py-3 sm:px-4 sm:py-3.5 text-white text-left text-lg sm:text-xl font-mono outline-none transition-colors box-border
+                    ${moResult === 'correct' ? 'border-green-500 bg-green-900/20' : moResult === 'wrong' ? 'border-red-500' : 'border-purple-500/50 focus:border-purple-400'}`}
+                />
+              </div>
+            </div>
+
+            {moResult === 'correct' && (
+              <div className="text-green-400 text-sm font-semibold text-center">✓ 正确！跳转中…</div>
+            )}
+            {moResult === 'wrong' && (
+              <div className="flex flex-wrap items-center justify-center gap-2 text-center">
+                <span className="text-red-400 text-xs">
+                  ✗ 正确答案：<span className="text-white font-bold">{word.word}</span>
+                </span>
+                <button type="button" onClick={checkMoXie} className="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded shrink-0">
+                  再试
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
 

@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 const API = 'https://okenglish.site/api'
+/** 为 true 时课程广场与教材全员可用（不依赖登录会员标记） */
+const UNLOCK_ALL_COURSES = true
 async function apiPost(path, body, token) {
   const res = await fetch(API + path, {
     method: 'POST',
@@ -15,7 +17,6 @@ async function apiGet(path, token) {
   return res.json()
 }
 import { unlockAudio, isAudioUnlocked } from './utils/audioUnlock'
-import { supabase } from './lib/supabase'
 import ExerciseView from './components/ExerciseView'
 import ImportPanel from './components/ImportPanel'
 import SentenceList from './components/SentenceList'
@@ -557,36 +558,60 @@ export default function App() {
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
         <div
-          className="fixed right-0 top-0 bottom-0 w-3 z-50"
+          className={[
+            'fixed top-0 bottom-0 z-50',
+            /* iPad / 触摸：避让安全区 + 更宽边缘热区 */
+            'right-[max(0px,env(safe-area-inset-right,0px))] w-6',
+            /* Mac 鼠标：贴右、保持原先窄条宽度 */
+            '[@media(hover:hover)_and_(pointer:fine)]:right-0 [@media(hover:hover)_and_(pointer:fine)]:w-4 [@media(hover:hover)_and_(pointer:fine)]:sm:w-3',
+          ].join(' ')}
           onMouseEnter={() => setMenuHover(true)}
           onMouseLeave={() => setMenuHover(false)}
+          onTouchStart={() => setMenuHover(true)}
         />
         {!menuHover && (
           <div
-            className="fixed top-1/2 -translate-y-1/2 z-30 pointer-events-none"
-            style={{ right: 2 }}
+            className={[
+              'absolute top-1/2 z-30 -translate-y-1/2 pointer-events-none',
+              /* 触摸端：整体移入可视区，避免只剩一条金边 */
+              'right-[max(14px,calc(env(safe-area-inset-right,0px)+12px))]',
+              '[@media(hover:hover)_and_(pointer:fine)]:right-0',
+            ].join(' ')}
           >
             <div
-              className="rounded-l-md border-y border-l text-[11px] font-medium"
+              role="button"
+              tabIndex={0}
+              onTouchEnd={(e) => {
+                e.preventDefault()
+                setMenuHover(true)
+              }}
+              className={[
+                'pointer-events-auto rounded-l-md border-y border-l font-medium shadow-md',
+                /* 触摸端略大字号与内边距；Mac 维持原样 */
+                'text-[12px] px-[6px] py-2',
+                '[@media(hover:hover)_and_(pointer:fine)]:text-[11px] [@media(hover:hover)_and_(pointer:fine)]:px-[4px] [@media(hover:hover)_and_(pointer:fine)]:py-[6px]',
+              ].join(' ')}
               style={{
                 backgroundColor: '#A58F63',
                 borderColor: '#8E7A52',
                 color: '#ffffff',
+                opacity: 1,
                 writingMode: 'vertical-rl',
                 textOrientation: 'upright',
                 letterSpacing: '1px',
-                paddingInline: '1px',
-                paddingBlock: '1px',
                 lineHeight: 1,
               }}
             >
-              鼠标移入打开菜单
+              <span className="[@media(hover:hover)_and_(pointer:fine)]:hidden">点按打开菜单</span>
+              <span className="hidden [@media(hover:hover)_and_(pointer:fine)]:inline">
+                鼠标移入打开菜单
+              </span>
             </div>
           </div>
         )}
 
         <aside
-          className={`fixed right-0 top-0 h-screen bg-slate-900/92 border-l border-slate-700/70 backdrop-blur px-2 py-3 flex flex-col gap-2 z-20 transition-all duration-200 overflow-hidden ${
+          className={`order-last shrink-0 bg-slate-900/92 border-l border-slate-700/70 backdrop-blur px-2 py-3 flex flex-col gap-2 z-20 transition-all duration-200 overflow-hidden sticky top-0 h-screen ${
             menuHover ? 'w-32' : 'w-0 px-0 py-3 border-l-0'
           }`}
           onMouseEnter={() => setMenuHover(true)}
@@ -674,7 +699,7 @@ export default function App() {
               changyongData={changyongData}
               onSetBack={setBackFn}
               progress={progress}
-              isMember={isMember}
+              isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
             />
           </div>
@@ -683,9 +708,10 @@ export default function App() {
               onImport={handleImport}
               changyongData={changyongData}
               sampleData={sampleData}
+              onClose={() => setTab('exercise')}
               onSetBack={setBackFn}
               progress={progress}
-              isMember={isMember}
+              isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
               onSyncPractice={(data, label, unitNum) => {
                 if (unitNum) {
@@ -707,7 +733,7 @@ export default function App() {
               onNavigate={navigateTo}
               requireSpeak={settings?.requireSpeak}
               hideSkipNext={settings?.hideSplitSkip !== false}
-              isMember={isMember}
+              isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
             />
           </div>
@@ -762,7 +788,6 @@ export default function App() {
               onSetBack={setBackFn}
               initialUnit={syncInitialUnit}
               onInitialConsumed={() => setSyncInitialUnit(null)}
-              settings={settings}
             />
           )}
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>

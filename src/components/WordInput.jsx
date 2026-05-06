@@ -3,6 +3,7 @@ import { useWordTranslate } from '../hooks/useWordTranslate'
 import { recordError } from '../hooks/useProgress'
 import { fetchWordPhonetic, getSentencePOS, getFunctionWordTranslation } from '../utils/wordInfo'
 
+
 const INPUT_PALETTE = {
   pinkCoral: '#E38A95',
   sandGold: '#A58F63',

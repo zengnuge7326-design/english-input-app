@@ -123,7 +123,6 @@ export default function Quiz({ onImport, onClose, settings }) {
     <div className="w-full max-w-3xl mx-auto">
       <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
         <div className="flex items-center justify-between mb-6">
-          <button onClick={handleBack} className="text-gray-400 hover:text-white">← 返回</button>
           <h2 className="text-xl font-bold text-white">{quizBank[selectedLevel].name}</h2>
           <div className="w-16"></div>
         </div>

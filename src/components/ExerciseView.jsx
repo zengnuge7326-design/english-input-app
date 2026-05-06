@@ -22,6 +22,7 @@ function calcMatch(targetSentence, spokenText) {
   return { score, targetWords, spokenWords, matched }
 }
 
+
 export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson }) {
   const [index, setIndex] = useState(initialIndex)
   const [completed, setCompleted] = useState(false)
