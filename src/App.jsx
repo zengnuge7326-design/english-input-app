@@ -564,56 +564,53 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
-        {/* 外包一层：收起时 刘海宽 + 5px 细条，负 margin 抵掉占位；刘海加宽并 z-index 抬高，避免被主内容栈盖住 */}
+        {/* 收起：刘海 + 右侧 3px 在同一块 aside 内（同一底色 /80）；负 margin 只让排版占 3px */}
         <div
           className={[
-            'order-last sticky top-0 z-[100] h-screen shrink-0 flex justify-end overflow-visible transition-[width,margin] duration-200 isolate',
-            menuHover ? 'w-32 mr-0' : 'w-[47px] -mr-[42px]',
+            'order-last sticky top-0 z-[100] h-screen shrink-0 flex overflow-visible transition-[width,margin] duration-200 isolate',
+            menuHover ? 'w-32 mr-0 flex-col' : 'w-[47px] -mr-[44px] justify-end',
           ].join(' ')}
           onMouseEnter={() => setMenuHover(true)}
           onMouseLeave={() => setMenuHover(false)}
           onTouchStart={() => setMenuHover(true)}
         >
         <aside
+          aria-label={menuHover ? '导航菜单' : '展开菜单'}
           className={[
-            'flex flex-col border-l border-slate-700/70 bg-slate-900/92 backdrop-blur transition-[width,padding] duration-200 relative min-h-0',
-            menuHover ? 'w-full px-2 py-3 overflow-y-auto overflow-x-hidden' : 'w-[5px] px-0 py-0 overflow-visible shrink-0',
+            'flex min-h-0 border-l border-slate-600/45 bg-slate-900/80 backdrop-blur-md shadow-lg transition-all duration-200',
+            menuHover
+              ? 'flex-col w-full h-full min-h-0 px-2 py-3 overflow-y-auto overflow-x-hidden'
+              : 'flex-row items-stretch h-full w-full shrink-0 overflow-visible',
           ].join(' ')}
         >
-          {/* 收起态：与侧栏一体的「刘海」；背景同菜单栏，文案金色高亮 */}
-          {!menuHover && (
-            <button
-              type="button"
-              aria-label="展开菜单"
-              onTouchEnd={(e) => {
-                e.preventDefault()
-                setMenuHover(true)
-              }}
-              className={[
-                'absolute top-1/2 left-0 z-[110] box-border overflow-visible flex items-center justify-center rounded-l-xl border-y border-l border-slate-700/70',
-                'bg-slate-900/95 backdrop-blur-md shadow-lg',
-                'w-[42px] min-h-[8.25rem] py-2 max-[380px]:w-[46px] max-[380px]:min-h-[9rem]',
-                '-translate-y-1/2 -translate-x-full',
-              ].join(' ')}
-              style={{
-                marginRight: '-1px',
-              }}
-            >
-              <span
-                className={[
-                  'font-semibold tracking-wide select-none text-center leading-none max-w-full',
-                  'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.55)]',
-                  'text-[11px] pr-1.5 py-1 pl-[3px] max-[380px]:text-[12px]',
-                  '[writing-mode:vertical-rl] [text-orientation:upright]',
-                ].join(' ')}
+          {!menuHover ? (
+            <div className="flex flex-row items-stretch h-full w-full min-h-0">
+              {/* 刘海提示：与菜单栏同层同色，无单独 absolute */}
+              <div
+                className="flex flex-1 min-w-[40px] max-w-[44px] items-center justify-center rounded-l-xl border-y border-l border-slate-600/45 py-2 pl-[3px] pr-1.5 max-[380px]:min-w-[44px]"
+                onTouchEnd={(e) => {
+                  e.preventDefault()
+                  setMenuHover(true)
+                }}
               >
-                <span className="[@media(hover:hover)_and_(pointer:fine)]:hidden">点按打开菜单</span>
-                <span className="hidden [@media(hover:hover)_and_(pointer:fine)]:inline">鼠标移入打开菜单</span>
-              </span>
-            </button>
-          )}
+                <span
+                  className={[
+                    'font-semibold tracking-wide select-none text-center leading-none',
+                    'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.55)]',
+                    'text-[11px] max-[380px]:text-[12px]',
+                    '[writing-mode:vertical-rl] [text-orientation:upright]',
+                  ].join(' ')}
+                >
+                  <span className="[@media(hover:hover)_and_(pointer:fine)]:hidden">点按打开菜单</span>
+                  <span className="hidden [@media(hover:hover)_and_(pointer:fine)]:inline">鼠标移入打开菜单</span>
+                </span>
+              </div>
+              {/* 贴屏幕缘可见的 3px，与左侧同属一块 aside */}
+              <div className="w-[3px] shrink-0" aria-hidden />
+            </div>
+          ) : null}
 
-          <div className={`flex flex-col gap-2 min-h-0 ${menuHover ? '' : 'hidden'}`}>
+          <div className={`flex flex-col gap-2 min-h-0 flex-1 ${menuHover ? '' : 'hidden'}`}>
           {/* Logo */}
           <button className="cursor-pointer flex items-center gap-2 px-2 py-2 rounded-xl hover:bg-slate-800/80 transition-colors text-left shrink-0" onClick={() => navigateFromMenu('home')}>
             <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
