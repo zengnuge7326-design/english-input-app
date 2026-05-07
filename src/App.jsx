@@ -564,11 +564,11 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
-        {/* 外包一层：收起时宽 32px+5px，负 margin 抵掉刘海占位，保证移入「细条+刘海」整块区域都能展开 */}
+        {/* 外包一层：收起时 刘海宽 + 5px 细条，负 margin 抵掉占位；刘海加宽并 z-index 抬高，避免被主内容栈盖住 */}
         <div
           className={[
-            'order-last sticky top-0 h-screen z-50 shrink-0 flex justify-end overflow-visible transition-[width,margin] duration-200',
-            menuHover ? 'w-32 mr-0' : 'w-[37px] -mr-8',
+            'order-last sticky top-0 z-[100] h-screen shrink-0 flex justify-end overflow-visible transition-[width,margin] duration-200 isolate',
+            menuHover ? 'w-32 mr-0' : 'w-[47px] -mr-[42px]',
           ].join(' ')}
           onMouseEnter={() => setMenuHover(true)}
           onMouseLeave={() => setMenuHover(false)}
@@ -590,9 +590,9 @@ export default function App() {
                 setMenuHover(true)
               }}
               className={[
-                'absolute top-1/2 left-0 z-10 flex items-center justify-center rounded-l-xl border-y border-l border-slate-700/70',
+                'absolute top-1/2 left-0 z-[110] box-border overflow-visible flex items-center justify-center rounded-l-xl border-y border-l border-slate-700/70',
                 'bg-slate-900/95 backdrop-blur-md shadow-lg',
-                'w-8 h-32 max-[380px]:w-9 max-[380px]:h-36',
+                'w-[42px] min-h-[8.25rem] py-2 max-[380px]:w-[46px] max-[380px]:min-h-[9rem]',
                 '-translate-y-1/2 -translate-x-full',
               ].join(' ')}
               style={{
@@ -601,9 +601,9 @@ export default function App() {
             >
               <span
                 className={[
-                  'font-semibold tracking-wide select-none text-center leading-none',
+                  'font-semibold tracking-wide select-none text-center leading-none max-w-full',
                   'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.55)]',
-                  'text-[11px] px-1 py-1 max-[380px]:text-[12px]',
+                  'text-[11px] pr-1.5 py-1 pl-[3px] max-[380px]:text-[12px]',
                   '[writing-mode:vertical-rl] [text-orientation:upright]',
                 ].join(' ')}
               >
