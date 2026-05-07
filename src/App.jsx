@@ -62,6 +62,7 @@ import {
   IconGraduationCap, IconDownload, IconSettings,
   IconArchive, IconCalendar, IconStar, IconRefresh, IconCrown,
   IconUser,
+  IconMenu,
   IconArrowLeft, IconArrowRight, IconRotateCcw,
   IconCheck, IconBookmark, IconInfo, IconSplit,
   IconCheckSquare, IconEdit, IconKeyboard,
@@ -328,7 +329,7 @@ export default function App() {
   const [syncInitialUnit, setSyncInitialUnit] = useState(null)
   const [showQuizMenu, setShowQuizMenu] = useState(false)
   const [showChineseGuide, setShowChineseGuide] = useState(true)
-  const [menuHover, setMenuHover] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const levelButtonRef = useRef(null)
   const { progress, markMastered, markReview, incrementAttempts, reset, synced } = useProgress(user?.id)
 
@@ -354,6 +355,7 @@ export default function App() {
   }, [openTab])
 
   const navigateFromMenu = useCallback((id) => {
+    setMenuOpen(false)
     openTab(id, { skipIfSame: true })
   }, [openTab])
 
@@ -564,54 +566,31 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
-        {/* 固定贴靠视口右侧，避免 sticky + 负 margin 在部分布局下整栏被裁出屏外 */}
-        <div
-          className={[
-            'pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] overflow-visible transition-[width] duration-200 isolate',
-            'right-[max(0px,env(safe-area-inset-right,0px))]',
-            menuHover ? 'w-32 flex-col' : 'w-[42px] flex-row justify-end',
-          ].join(' ')}
-          onMouseEnter={() => setMenuHover(true)}
-          onMouseLeave={() => setMenuHover(false)}
-          onTouchStart={() => setMenuHover(true)}
+        <button
+          type="button"
+          aria-label={menuOpen ? '关闭菜单' : '打开菜单'}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(v => !v)}
+          className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 left-[max(0.75rem,env(safe-area-inset-left,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
         >
-        <aside
-          aria-label={menuHover ? '导航菜单' : '展开菜单'}
-          className={[
-            'flex min-h-0 border-l border-slate-600/45 bg-slate-900 shadow-lg transition-all duration-200',
-            menuHover
-              ? 'flex-col w-full h-full min-h-0 px-2 py-3 overflow-y-auto overflow-x-hidden'
-              : 'flex-row items-stretch h-full w-full shrink-0 overflow-visible',
-          ].join(' ')}
-        >
-          {!menuHover ? (
-            <div className="flex flex-row items-stretch h-full w-full min-h-0">
-              {/* 刘海提示：与菜单栏同层同色，无单独 absolute */}
-              <div
-                className="flex flex-1 min-w-0 items-center justify-center rounded-l-xl border-y border-l border-slate-600/45 py-2 pl-[8px] pr-[15px]"
-                onTouchEnd={(e) => {
-                  e.preventDefault()
-                  setMenuHover(true)
-                }}
-              >
-                <span
-                  className={[
-                    'font-semibold select-none text-center leading-none',
-                    'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.55)]',
-                    'text-[12px] max-[380px]:text-[13px]',
-                    '[writing-mode:vertical-rl] [text-orientation:upright] [letter-spacing:0.35em]',
-                  ].join(' ')}
-                >
-                  <span className="[@media(hover:hover)_and_(pointer:fine)]:hidden">点按打开菜单</span>
-                  <span className="hidden [@media(hover:hover)_and_(pointer:fine)]:inline">鼠标移入打开菜单</span>
-                </span>
-              </div>
-              {/* 贴屏幕缘可见的 3px，与左侧同属一块 aside */}
-              <div className="w-[3px] shrink-0" aria-hidden />
-            </div>
-          ) : null}
+          <IconMenu size={22} />
+        </button>
 
-          <div className={`flex flex-col gap-2 min-h-0 flex-1 ${menuHover ? '' : 'hidden'}`}>
+        {menuOpen ? (
+          <>
+            <div
+              className="fixed inset-0 z-[90] bg-black/45"
+              aria-hidden
+              onClick={() => setMenuOpen(false)}
+            />
+            <div
+              className="pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] w-32 isolate shadow-xl right-[max(0px,env(safe-area-inset-right,0px))]"
+            >
+              <aside
+                aria-label="导航菜单"
+                className="flex h-full min-h-0 w-full flex-col border-l border-slate-600/45 bg-slate-900 px-2 py-3 shadow-lg overflow-y-auto overflow-x-hidden"
+              >
+          <div className="flex min-h-0 flex-1 flex-col gap-2">
           {/* Logo */}
           <button className="cursor-pointer flex items-center gap-2 px-2 py-2 rounded-xl hover:bg-slate-800/80 transition-colors text-left shrink-0" onClick={() => navigateFromMenu('home')}>
             <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
@@ -626,12 +605,12 @@ export default function App() {
 
           {/* 登录 / 用户信息 — 紧跟 Logo */}
           {user ? (
-            <button onClick={handleLogout} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors shrink-0">
+            <button onClick={() => { setMenuOpen(false); handleLogout() }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors shrink-0">
               <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">{user[0].toUpperCase()}</div>
               <span className="truncate">{user} · 退出</span>
             </button>
           ) : (
-            <button onClick={() => setShowLogin(true)} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-blue-400 hover:bg-slate-800/80 hover:text-blue-300 transition-colors shrink-0">
+            <button onClick={() => { setMenuOpen(false); setShowLogin(true) }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-blue-400 hover:bg-slate-800/80 hover:text-blue-300 transition-colors shrink-0">
               <IconUser size={15} /><span>登录</span>
             </button>
           )}
@@ -641,7 +620,7 @@ export default function App() {
           {/* 导航菜单 */}
           {[
             { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
-            { id: 'exercise', label: '正在学习', Icon: IconPencil, onClick: () => setShowExerciseHistory(v => !v) },
+            { id: 'exercise', label: '正在学习', Icon: IconPencil, onClick: () => { setMenuOpen(false); setShowExerciseHistory(v => !v) } },
             { id: 'core', label: '核心句群', iconText: '✨', onClick: () => navigateFromMenu('core') },
             { id: 'courses', label: '课程', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
             { id: 'textbook', label: '教材', Icon: IconBook, onClick: () => navigateFromMenu('textbook') },
@@ -649,7 +628,7 @@ export default function App() {
             { id: 'vocab', label: '单词', Icon: IconBookmark, onClick: () => navigateFromMenu('vocab') },
             { id: 'typing', label: '指法练习', Icon: IconKeyboard, onClick: () => navigateFromMenu('typing') },
             { id: 'import', label: '导入', Icon: IconDownload, onClick: () => navigateFromMenu('import') },
-            { id: 'settings', label: '设置', Icon: IconSettings, onClick: () => setShowSettings(true) },
+            { id: 'settings', label: '设置', Icon: IconSettings, onClick: () => { setMenuOpen(false); setShowSettings(true) } },
           ].map(item => (
             <button key={item.id}
               onClick={item.onClick}
@@ -663,17 +642,19 @@ export default function App() {
           {/* 云同步（登录后显示） */}
           {user && (
             <div className="flex flex-col gap-1 pt-2 border-t border-slate-700/70 shrink-0">
-              <button onClick={handleUploadSync} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
+              <button onClick={() => { setMenuOpen(false); handleUploadSync() }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
                 <IconRefresh size={13} /><span>{syncStatus || '上传进度'}</span>
               </button>
-              <button onClick={handleDownloadSync} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
+              <button onClick={() => { setMenuOpen(false); handleDownloadSync() }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
                 <IconDownload size={13} /><span>恢复进度</span>
               </button>
             </div>
           )}
-          </div>
-        </aside>
-        </div>
+              </div>
+              </aside>
+            </div>
+          </>
+        ) : null}
 
         {/* Main content */}
         <main
