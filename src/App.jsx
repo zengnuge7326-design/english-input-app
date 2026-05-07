@@ -584,13 +584,13 @@ export default function App() {
               onClick={() => setMenuOpen(false)}
             />
             <div
-              className="pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] w-32 isolate shadow-xl right-[max(0px,env(safe-area-inset-right,0px))]"
+              className="pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] w-32 isolate shadow-[4px_0_24px_rgba(0,0,0,0.35)] left-[max(0.75rem,env(safe-area-inset-left,0px))]"
             >
               <aside
                 aria-label="导航菜单"
-                className="flex h-full min-h-0 w-full flex-col border-l border-slate-600/45 bg-slate-900 px-2 py-3 shadow-lg overflow-y-auto overflow-x-hidden"
+                className="flex h-full min-h-0 w-full flex-col border-r border-slate-600/45 bg-slate-900 px-2 py-3 shadow-lg overflow-y-auto overflow-x-hidden"
               >
-          <div className="flex min-h-0 flex-1 flex-col gap-2">
+          <div className="flex min-h-0 flex-1 flex-col gap-2 pt-[calc(max(0.75rem,env(safe-area-inset-top,0px))+2.75rem+0.375rem)]">
           {/* Logo */}
           <button className="cursor-pointer flex items-center gap-2 px-2 py-2 rounded-xl hover:bg-slate-800/80 transition-colors text-left shrink-0" onClick={() => navigateFromMenu('home')}>
             <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
