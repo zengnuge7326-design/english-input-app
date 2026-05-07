@@ -27,6 +27,7 @@ import bsdaS2Data from '../data/bsda_s2.json'
 import bsdaS3Data from '../data/bsda_s3.json'
 import bsdaS4Data from '../data/bsda_s4.json'
 import { pushStudy } from '../studyHistory'
+import { IconArrowLeft } from './Icons'
 
 function lessonsFromUnits(data, descByUnit) {
   if (!Array.isArray(data) || data.length === 0) return []
@@ -423,9 +424,20 @@ export default function Textbook({ onImport, onClose, onSetBack, historyRef, pro
 
   if (detail) {
     const book = TEXTBOOK_SLOTS.find(b => b.id === detail)
+    const backToTextbookList = () => {
+      window.history.back()
+    }
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
-        <div className="flex items-center gap-2 mb-6">
+        <div className="flex flex-wrap items-center gap-2 mb-6">
+          <button
+            type="button"
+            onClick={backToTextbookList}
+            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-600/60 bg-slate-800/80 px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-700 hover:text-white transition-colors"
+          >
+            <IconArrowLeft size={16} />
+            返回教材列表
+          </button>
           <span className="text-gray-300 text-sm font-medium">{book.name}</span>
         </div>
 
