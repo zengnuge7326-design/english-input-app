@@ -445,6 +445,7 @@ export default function Grammar({ onImport, onClose, progress = {}, active = tru
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
+      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-white">语法专项练习</h2>
         <span className="text-xs text-gray-500">共 {STAGES.reduce((a, s) => a + s.tenses.length, 0)} 个专题</span>

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
+import PageBackBar from './PageBackBar'
 import WordInput from './WordInput'
 import DictionaryCard from './DictionaryCard'
 import { useTTS } from '../hooks/useTTS'
@@ -23,7 +24,7 @@ function calcMatch(targetSentence, spokenText) {
 }
 
 
-export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson }) {
+export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson, onBack }) {
   const [index, setIndex] = useState(initialIndex)
   const [completed, setCompleted] = useState(false)
   const [key, setKey] = useState(0)
@@ -424,6 +425,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
       )}
 
       <div className="flex flex-col items-center gap-3 w-full max-w-2xl mx-auto px-4 relative transition-all duration-200" style={{zIndex:10}}>
+        {onBack && <PageBackBar onBack={onBack} label="返回" className="mb-2 mt-1 w-full self-start" />}
         {showCard && <DictionaryCard sentence={sentence} onClose={() => setShowCard(false)} />}
 
         {/* Sentence list drawer */}

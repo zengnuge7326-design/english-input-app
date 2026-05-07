@@ -484,9 +484,10 @@ const GRADE_COLORS = {
   9: 'from-indigo-700 to-indigo-900',
 }
 
-function BookGrid({ onSelect }) {
+function BookGrid({ onSelect, onBack }) {
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
+      {onBack && <PageBackBar onBack={onBack} label="返回练习" />}
       <h2 className="text-white text-xl font-bold mb-5">选择年级册次</h2>
       <div className="grid grid-cols-2 gap-4">
         {VOCAB_BOOKS.map(book => (
@@ -946,7 +947,7 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-export default function VocabStudy() {
+export default function VocabStudy({ onClose }) {
   const [view, setView]           = useState('books')
   const [book, setBook]           = useState(null)
   const [unit, setUnit]           = useState(null)
@@ -959,7 +960,7 @@ export default function VocabStudy() {
     if (signal === 'goQuiz') setView('quiz')
   }, [])
 
-  if (view === 'books') return <BookGrid onSelect={b => { setBook(b); setView('units') }} />
+  if (view === 'books') return <BookGrid onSelect={b => { setBook(b); setView('units') }} onBack={onClose} />
   if (view === 'units') return <UnitGrid book={book} progress={progress} onBack={() => setView('books')} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />
   if (view === 'cards') return <FlashCards book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} progress={progress} onBack={() => setView('units')} onProgressChange={refreshProgress} />
   if (view === 'quiz')  return <QuizView book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} onBack={() => setView('cards')} onProgressChange={refreshProgress} />

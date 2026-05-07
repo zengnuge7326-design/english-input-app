@@ -17,6 +17,7 @@ async function apiGet(path, token) {
   return res.json()
 }
 import { unlockAudio, isAudioUnlocked } from './utils/audioUnlock'
+import PageBackBar from './components/PageBackBar'
 import ExerciseView from './components/ExerciseView'
 import ImportPanel from './components/ImportPanel'
 import SentenceList from './components/SentenceList'
@@ -653,6 +654,7 @@ export default function App() {
               progress={progress}
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
+              onClose={() => openTab('exercise')}
             />
           </div>
           <div style={{ display: tab === 'courses' ? 'contents' : 'none' }}>
@@ -716,16 +718,18 @@ export default function App() {
               onToggleChineseGuide={() => setShowChineseGuide(v => !v)}
               hasNextLesson={showContinue}
               onNextLesson={goNextLesson}
+              onBack={() => window.history.back()}
             />
           )}
           {tab === 'list' && (
             <div className="w-full max-w-4xl">
+              <PageBackBar onBack={() => openTab('exercise')} label="返回练习" />
               <SentenceList sentences={sentences} progress={progress} onSelect={handleSelectSentence} />
             </div>
           )}
           {tab === 'import' && (
             <div className="w-full max-w-sm">
-              <ImportPanel onImport={handleImport} currentCount={sentences.length} />
+              <ImportPanel onImport={handleImport} currentCount={sentences.length} onClose={() => openTab('exercise')} />
             </div>
           )}
           {tab === 'quiz' && (
@@ -746,13 +750,13 @@ export default function App() {
             />
           )}
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
-            <VocabStudy />
+            <VocabStudy onClose={() => openTab('exercise')} />
           </div>
           {tab === 'phonics' && (
-            <PhonicsLesson />
+            <PhonicsLesson onClose={() => openTab('exercise')} />
           )}
           {tab === 'typing' && (
-            <TypingPractice />
+            <TypingPractice onClose={() => openTab('exercise')} />
           )}
         </main>
       </div>

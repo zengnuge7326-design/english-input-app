@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import PageBackBar from './PageBackBar'
 
 function parseJSON(text) {
   const data = JSON.parse(text)
@@ -36,7 +37,7 @@ function parseText(text) {
   return parseCSV(trimmed)
 }
 
-export default function ImportPanel({ onImport, currentCount }) {
+export default function ImportPanel({ onImport, currentCount, onClose }) {
   const fileRef = useRef(null)
   const [pasteText, setPasteText] = useState('')
   const [error, setError] = useState('')
@@ -79,6 +80,8 @@ export default function ImportPanel({ onImport, currentCount }) {
   }
 
   return (
+    <div className="w-full flex flex-col gap-3">
+      {onClose && <PageBackBar onBack={onClose} label="返回练习" className="mb-3" />}
     <div className="flex flex-col gap-5 p-5 bg-gray-800 rounded-xl border border-gray-700 w-full">
       <div className="flex items-center justify-between">
         <h3 className="text-white font-bold text-base">导入句子</h3>
@@ -128,6 +131,7 @@ export default function ImportPanel({ onImport, currentCount }) {
         <p>JSON: <code className="text-gray-400">[{'{'}id, zh, en{'}'}]</code></p>
         <p>CSV: 第一行为 <code className="text-gray-400">id,zh,en</code></p>
       </div>
+    </div>
     </div>
   )
 }

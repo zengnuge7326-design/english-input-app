@@ -150,7 +150,7 @@ function SyncPopup({ label, onClose }) {
 }
 
 // ── 主组件 ───────────────────────────────────────────────
-export default function CoreSentences({ onImport, progress = {}, active = true }) {
+export default function CoreSentences({ onImport, progress = {}, active = true, onClose }) {
   const [section,   setSection]   = useState(null)   // null | 'core50' | 'core100' | 'core60'
   const [syncPopup, setSyncPopup] = useState(null)   // label string | null
 
@@ -241,6 +241,7 @@ export default function CoreSentences({ onImport, progress = {}, active = true }
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
+      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-white">核心句群</h2>
         <span className="text-xs text-gray-500">入门 · 中级 · 综合</span>

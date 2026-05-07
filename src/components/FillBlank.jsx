@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { IconSpeaker } from './Icons'
+import PageBackBar from './PageBackBar'
 import { fillblankBank } from '../data/fillblankData'
 import { useSound } from '../hooks/useSound'
 
@@ -64,9 +65,18 @@ export default function FillBlank({ onClose, settings }) {
     setScore({ correct: 0, total: 0 })
   }
 
+  function backToGroups() {
+    setView('groups')
+    setCurrent(0)
+    setInput('')
+    setResult(null)
+    setScore({ correct: 0, total: 0 })
+  }
+
   if (view === 'levels') {
     return (
       <div className="w-full max-w-4xl mx-auto">
+        {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
         <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-white">填空题练习</h2>
@@ -89,10 +99,11 @@ export default function FillBlank({ onClose, settings }) {
   if (view === 'groups') {
     return (
       <div className="w-full max-w-4xl mx-auto">
+        <PageBackBar onBack={() => setView('levels')} label="返回难度" />
         <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-white">{fillblankBank[level].name}</h2>
-            <button onClick={() => setView('levels')} className="text-gray-400 hover:text-white text-2xl">✕</button>
+            <button type="button" onClick={() => setView('levels')} className="text-gray-400 hover:text-white text-2xl" aria-label="关闭">✕</button>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <button onClick={() => selectGroup('groupA')}
@@ -114,6 +125,7 @@ export default function FillBlank({ onClose, settings }) {
   if (view === 'result') {
     return (
       <div className="w-full max-w-4xl mx-auto">
+        <PageBackBar onBack={restart} label="返回选题" />
         <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">练习完成！</h2>
           <div className="text-6xl font-bold text-blue-400 mb-2">{score.correct}/{score.total}</div>
@@ -140,10 +152,11 @@ export default function FillBlank({ onClose, settings }) {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
+      <PageBackBar onBack={backToGroups} label="返回选组" />
       <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
         <div className="flex items-center justify-between mb-6">
           <div className="text-gray-400 text-sm">题目 {current + 1}/{questions.length}</div>
-          <button onClick={restart} className="text-gray-400 hover:text-white text-2xl">✕</button>
+          <button type="button" onClick={backToGroups} className="text-gray-400 hover:text-white text-2xl" aria-label="返回选组">✕</button>
         </div>
 
         <div className="mb-6">

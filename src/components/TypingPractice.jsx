@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import PageBackBar from './PageBackBar';
 import VirtualKeyboard from './VirtualKeyboard';
 import { calculateStats } from '../typing/KeyboardEngine';
 import {
@@ -13,7 +14,7 @@ import { LESSONS } from '../typing/lessons';
 
 const CHAR_WIDTH = 40;
 
-export default function TypingPractice() {
+export default function TypingPractice({ onClose }) {
   const [currentLesson, setCurrentLesson] = useState(0);
   const [text, setText] = useState(LESSONS[0].content);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -117,6 +118,11 @@ export default function TypingPractice() {
 
   return (
     <div className="w-full flex flex-col items-center relative overflow-hidden" style={{ minHeight: '80vh', background: 'linear-gradient(to bottom, #050505 0%, #0a0a0a 100%)' }}>
+      {onClose && (
+        <div className="w-full max-w-5xl mx-auto px-4 pt-1 self-stretch z-20">
+          <PageBackBar onBack={onClose} label="返回练习" className="mb-2" />
+        </div>
+      )}
 
       {/* 课程卡片横向滚动 */}
       <div className="w-full px-4 flex justify-center mt-2 mb-2 z-20">

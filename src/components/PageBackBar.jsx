@@ -1,9 +1,10 @@
 import { IconArrowLeft } from './Icons'
 
-/** 左上返回条：用于子页面回到上一级（不使用浏览器 history） */
-export default function PageBackBar({ onBack, label = '返回' }) {
+/** 左上返回条：用于子页面回到上一级；可与浏览器后退同时使用 */
+export default function PageBackBar({ onBack, label = '返回', className }) {
+  const spacing = className != null ? className : 'mb-4'
   return (
-    <div className="mb-4 flex flex-wrap items-center gap-2">
+    <div className={`flex flex-wrap items-center gap-2 ${spacing}`.trim()}>
       <button
         type="button"
         onClick={onBack}

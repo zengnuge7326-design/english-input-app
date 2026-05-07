@@ -27,6 +27,7 @@ import bsdaS2Data from '../data/bsda_s2.json'
 import bsdaS3Data from '../data/bsda_s3.json'
 import bsdaS4Data from '../data/bsda_s4.json'
 import { IconArrowLeft } from './Icons'
+import PageBackBar from './PageBackBar'
 
 function lessonsFromUnits(data, descByUnit) {
   if (!Array.isArray(data) || data.length === 0) return []
@@ -525,6 +526,7 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
+      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-white">教材同步</h2>
         <span className="text-xs text-gray-500">共 {TEXTBOOK_SLOTS.length} 本教材</span>

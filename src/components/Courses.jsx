@@ -507,6 +507,7 @@ export default function Courses({
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
+      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-white">课程广场</h2>
         <span className="text-xs text-gray-500">多邻国课程</span>

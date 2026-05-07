@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import PageBackBar from './PageBackBar'
 import PHONICS_LESSONS from '../data/phonicsLessons.js'
 import { unlockAudio } from '../utils/audioUnlock.js'
@@ -347,9 +347,10 @@ function HeartWordPanel({ lesson, onDone }) {
 
 // ── Lesson Selector ───────────────────────────────────────────────────────────
 
-function LessonSelector({ onSelect }) {
+function LessonSelector({ onSelect, onBack }) {
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
+      {onBack && <PageBackBar onBack={onBack} label="返回练习" />}
       <h2 className="text-white text-xl font-bold mb-4">自然拼读课程</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {PHONICS_LESSONS.map(lesson => (
@@ -387,7 +388,7 @@ const MODES = [
   { id: 'heart',   label: '心形词',   emoji: '❤️' },
 ]
 
-export default function PhonicsLesson() {
+export default function PhonicsLesson({ onClose }) {
   const [lesson, setLesson] = useState(null)
   const [mode, setMode]     = useState('intro')
   const [done, setDone]     = useState({})  // which modes completed
@@ -414,7 +415,7 @@ export default function PhonicsLesson() {
   }
 
   if (!lesson) {
-    return <LessonSelector onSelect={selectLesson} />
+    return <LessonSelector onSelect={selectLesson} onBack={onClose} />
   }
 
   return (
