@@ -1,4 +1,5 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback } from 'react'
+import PageBackBar from './PageBackBar'
 import PHONICS_LESSONS from '../data/phonicsLessons.js'
 import { unlockAudio } from '../utils/audioUnlock.js'
 import { getWordPhonics, fetchWordPhonics, playWordAudio, levelLabel } from '../utils/phonicsAudio.js'
@@ -386,23 +387,16 @@ const MODES = [
   { id: 'heart',   label: '心形词',   emoji: '❤️' },
 ]
 
-export default function PhonicsLesson({ onSetBack }) {
+export default function PhonicsLesson() {
   const [lesson, setLesson] = useState(null)
   const [mode, setMode]     = useState('intro')
   const [done, setDone]     = useState({})  // which modes completed
 
-  useEffect(() => {
-    if (!onSetBack) return
-    if (lesson) {
-      onSetBack(() => {
-        setLesson(null)
-        setMode('intro')
-        setDone({})
-      })
-    } else {
-      onSetBack(null)
-    }
-  }, [lesson, onSetBack])
+  function backToLessonList() {
+    setLesson(null)
+    setMode('intro')
+    setDone({})
+  }
 
   function selectLesson(l) {
     setLesson(l)
@@ -425,6 +419,7 @@ export default function PhonicsLesson({ onSetBack }) {
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-4">
+      <PageBackBar onBack={backToLessonList} label="返回自然拼读目录" />
       <div className="flex items-center justify-center mb-4">
         <div className="text-white font-bold text-sm text-center">{lesson.title}</div>
       </div>

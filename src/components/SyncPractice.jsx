@@ -4,7 +4,7 @@ import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import grade4DownData from '../data/grade4_down.json'
 import ExerciseQuiz, { generateQuiz } from './ExerciseQuiz'
 import Unit1Flow from './Unit1Flow'
-import { pushStudy } from '../studyHistory'
+import PageBackBar from './PageBackBar'
 
 // 四年级下册单元切片（与 Textbook.jsx 保持一致）
 const GRADE4_DOWN_UNITS = [
@@ -181,7 +181,7 @@ function ComingSoon({ name, onClose }) {
 }
 
 // ── 教材详情页（单元列表）────────────────────────────────────────────────────
-function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInner, onRestoreInnerConsumed }) {
+function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInner, onRestoreInnerConsumed, onBackCatalog }) {
   const [popup, setPopup] = useState(null)
   const [activeUnit, setActiveUnit] = useState(null)  // { label, index }
   const [quiz, setQuiz] = useState(null)              // { title, questions }（ExerciseQuiz用）
@@ -228,7 +228,6 @@ function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInn
   function handleUnitClick(e, unit, i) {
     e?.preventDefault()
     if (isGrade4Down || isGrade4Up || isGrade3Up || isGrade3Down || isGrade5Up || isGrade5Down) {
-      pushStudy({ tab: 'syncpractice', sb: book.id, su: unit, sui: i })
       setActiveUnit({ label: unit, index: i, bookId: book.id })
       return
     }
@@ -236,23 +235,23 @@ function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInn
     const unitDef = GRADE4_DOWN_UNITS[i]
     const unitData = grade4DownData.slice(unitDef.slice[0], unitDef.slice[1])
     const questions = generateQuiz(unitData, grade4DownData)
-    pushStudy({ tab: 'syncpractice', sb: book.id, squ: i })
     setQuiz({ title: `${book.name} · ${unit}`, questions })
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => window.history.back()} settings={settings} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
   }
 
   if (activeUnit) {
     const currentFlowKey = activeUnit.label;
     const currentBookId = activeUnit.bookId;
-    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onClose={() => window.history.back()} />
+    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onClose={() => setActiveUnit(null)} />
   }
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
       {popup && <ComingSoon name={popup} onClose={() => setPopup(null)} />}
+      {onBackCatalog && <PageBackBar onBack={onBackCatalog} label="返回练习题首页" />}
 
       <div className="flex items-center justify-between mb-5">
       </div>
@@ -297,7 +296,7 @@ function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInn
 }
 
 // ── 多邻国详情页（课列表）────────────────────────────────────────────────────
-function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed }) {
+function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed, onBackCatalog }) {
   const [quiz, setQuiz] = useState(null) // { title, questions }
 
   const unitLessons = DUOLINGO_LESSONS.filter(l => l.unit === unit.unit)
@@ -326,16 +325,16 @@ function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed }) {
     const data = getDuoLessonData(lesson.ids)
     if (data.length < 2) return
     const questions = generateQuiz(data, allUnitData.length >= 10 ? allUnitData : duolingoData)
-    pushStudy({ tab: 'syncpractice', sd: unit.unit, sl: lesson.label })
     setQuiz({ title: `多邻国 ${unit.name} · ${lesson.label}`, questions })
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => window.history.back()} settings={settings} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
   }
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
+      {onBackCatalog && <PageBackBar onBack={onBackCatalog} label="返回练习题首页" />}
       {/* 单元信息栏 */}
       <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 mb-5 flex items-center gap-5">
         <div className="w-20 h-12 rounded-xl overflow-hidden shrink-0 bg-gray-800">
@@ -365,7 +364,7 @@ function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed }) {
 }
 
 // ── 主页面 ────────────────────────────────────────────────────────────────────
-export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, onInitialConsumed, settings, navRef }) {
+export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, onInitialConsumed, settings, navRef, onClose }) {
   const [detail, setDetail] = useState(
     initialUnit ? { type: 'duo', unit: initialUnit } : null
   )
@@ -405,7 +404,6 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
   useEffect(() => {
     if (!initialUnit || initialDuoPushedRef.current) return
     initialDuoPushedRef.current = true
-    pushStudy({ tab: 'syncpractice', sd: initialUnit })
     onInitialConsumed?.()
   }, [initialUnit, onInitialConsumed])
 
@@ -424,6 +422,7 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
         settings={settings}
         restoreInner={studyRestore}
         onRestoreInnerConsumed={consumeStudyRestore}
+        onBackCatalog={() => handleSetDetail(null)}
       />
     )
   }
@@ -436,12 +435,14 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
         settings={settings}
         restoreInner={studyRestore}
         onRestoreInnerConsumed={consumeStudyRestore}
+        onBackCatalog={() => handleSetDetail(null)}
       />
     )
   }
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
+      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
 
       {/* ── 教材同步练习 ── */}
       <div className="mb-8">
@@ -451,7 +452,6 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
             <button
               key={book.id}
               onClick={() => {
-                pushStudy({ tab: 'syncpractice', sb: book.id })
                 handleSetDetail({ type: 'textbook', id: book.id })
               }}
               className="flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 transition-all text-left"
@@ -476,7 +476,6 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
             <button
               key={unit.unit}
               onClick={() => {
-                pushStudy({ tab: 'syncpractice', sd: unit.unit })
                 handleSetDetail({ type: 'duo', unit: unit.unit })
               }}
               className="flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 transition-all text-left"

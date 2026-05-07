@@ -292,18 +292,6 @@ export default function App() {
   const [lessonProgress, setLessonProgress] = useState({ index: 0, total: sampleData.length })
   const [nav, setNav] = useState(null)
   const [currentLesson, setCurrentLesson] = useState(null)
-  const [backFn, _setBackFn] = useState(null)
-  const backFnRef = useRef(null)
-  const setBackFn = useCallback((fn) => {
-    const had = !!backFnRef.current
-    backFnRef.current = fn
-    _setBackFn(() => fn)
-    // 仅在首次出现「可后退层级」时 push，避免子视图切换时重复堆叠 intercept
-    if (fn && !had && !isPopStateRef.current) {
-      window.history.pushState({ kind: 'back-intercept' }, '')
-      setHistoryDepth(d => d + 1)
-    }
-  }, [])
   // History API integration:
   // - lessonRegistryRef: in-memory resolver label → { data, nextLoader } (closures can't be serialized)
   // - historyDepth: number of pushState entries we've added past the initial "home"
@@ -343,12 +331,11 @@ export default function App() {
     const { skipIfSame = false, pushHistory = true } = options
     if (skipIfSame && tabRef.current === id) return
     setTab(id)
-    setBackFn(null)
     if (pushHistory && !isPopStateRef.current) {
       window.history.pushState({ kind: 'tab', tab: id }, '')
       setHistoryDepth(d => d + 1)
     }
-  }, [setBackFn])
+  }, [])
 
   const navigateTo = useCallback((id) => {
     openTab(id)
@@ -414,37 +401,24 @@ export default function App() {
       const state = e.state
       isPopStateRef.current = true
       try {
-        // Sub-panel open: intercept back, close the panel, re-push state to keep depth
-        if (backFnRef.current) {
-          const fn = backFnRef.current
-          backFnRef.current = null
-          _setBackFn(() => null)
-          fn()
-          window.history.pushState(state, '')
-          return
-        }
         if (!state) {
           setTab('home')
-          setBackFn(null)
         } else if (state.kind === 'lesson' && state.label) {
           const entry = lessonRegistryRef.current.get(state.label)
           if (entry) {
             applyLesson(entry.data, state.label, entry.nextLoader)
           } else {
             setTab('home')
-            setBackFn(null)
           }
         } else if (state.kind === STUDY_KIND) {
           setTab(state.tab)
-          setBackFn(null)
           if (state.tab === 'textbook') textbookHistoryRef.current.applyStudy?.(state)
           else if (state.tab === 'courses') coursesHistoryRef.current.applyStudy?.(state)
           else if (state.tab === 'syncpractice') syncPracticeNavRef.current.applyStudy?.(state)
         } else if (state.kind === 'back-intercept') {
-          setBackFn(null)
+          /* 旧版 backFn 占位条目，忽略 UI */
         } else if (state.kind === 'tab') {
           setTab(state.tab)
-          setBackFn(null)
           if (state.tab === 'textbook') {
             textbookHistoryRef.current.applyStudy?.({ kind: STUDY_KIND, tab: 'textbook' })
           }
@@ -675,7 +649,6 @@ export default function App() {
             <CoreSentences
               onImport={handleImport}
               changyongData={changyongData}
-              onSetBack={setBackFn}
               active={tab === 'core'}
               progress={progress}
               isMember={UNLOCK_ALL_COURSES || isMember}
@@ -688,7 +661,6 @@ export default function App() {
               changyongData={changyongData}
               sampleData={sampleData}
               onClose={() => openTab('exercise')}
-              onSetBack={setBackFn}
               historyRef={coursesHistoryRef}
               active={tab === 'courses'}
               progress={progress}
@@ -709,7 +681,6 @@ export default function App() {
             <Textbook
               onImport={handleImport}
               onClose={() => openTab('exercise')}
-              onSetBack={setBackFn}
               historyRef={textbookHistoryRef}
               active={tab === 'textbook'}
               progress={progress}
@@ -724,7 +695,6 @@ export default function App() {
             <Grammar
               onImport={handleImport}
               onClose={() => openTab('exercise')}
-              onSetBack={setBackFn}
               active={tab === 'grammar'}
               progress={progress}
             />
@@ -759,14 +729,14 @@ export default function App() {
             </div>
           )}
           {tab === 'quiz' && (
-            <Quiz onImport={handleImport} onClose={() => window.history.back()} settings={settings} />
+            <Quiz onImport={handleImport} onClose={() => openTab('exercise')} settings={settings} />
           )}
           {tab === 'fillblank' && (
-            <FillBlank onClose={() => window.history.back()} settings={settings} />
+            <FillBlank onClose={() => openTab('exercise')} settings={settings} />
           )}
           {tab === 'syncpractice' && (
             <SyncPractice
-              onClose={() => window.history.back()}
+              onClose={() => openTab('exercise')}
               requireSpeak={settings?.requireSpeak}
               hideSkipNext={settings?.hideSplitSkip !== false}
               navRef={syncPracticeNavRef}
@@ -776,10 +746,10 @@ export default function App() {
             />
           )}
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
-            <VocabStudy onSetBack={setBackFn} active={tab === 'vocab'} />
+            <VocabStudy />
           </div>
           {tab === 'phonics' && (
-            <PhonicsLesson onSetBack={setBackFn} />
+            <PhonicsLesson />
           )}
           {tab === 'typing' && (
             <TypingPractice />
@@ -787,7 +757,7 @@ export default function App() {
         </main>
       </div>
 
-      {/* 仅练习页展示底栏控件（已移除「返回」，其它 Tab 用浏览器后退） */}
+      {/* 仅练习页展示底栏控件；子页面请用各页左上角「返回」 */}
       {tab !== 'syncpractice' && tab === 'exercise' && nav && (
       <footer className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur border-t border-slate-700/60 z-40">
         <div>

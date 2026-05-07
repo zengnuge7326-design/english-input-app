@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { IconSpeaker } from './Icons'
+import PageBackBar from './PageBackBar'
 import { quizBank } from '../data/quizData'
 import { useSound } from '../hooks/useSound'
 
@@ -91,6 +92,7 @@ export default function Quiz({ onImport, onClose, settings }) {
   if (!selectedLevel) {
     return (
       <div className="w-full max-w-3xl mx-auto">
+        {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
         <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-white mb-6">选择题练习 - PEP四年级下册Unit1</h2>
           <div className="grid grid-cols-2 gap-4">
@@ -115,10 +117,18 @@ export default function Quiz({ onImport, onClose, settings }) {
 
   return (
     <div className="w-full max-w-3xl mx-auto">
+      <PageBackBar
+        onBack={() => {
+          setSelectedLevel(null)
+          setAnswers({})
+          setShowResult(false)
+        }}
+        label="返回年级选择"
+      />
       <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-white">{quizBank[selectedLevel].name}</h2>
-          <div className="w-16"></div>
+          <div className="w-16" aria-hidden />
         </div>
 
         <div className="flex gap-2 mb-6">

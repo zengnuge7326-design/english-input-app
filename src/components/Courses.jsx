@@ -1,5 +1,5 @@
-import { useState, useEffect, useLayoutEffect } from 'react'
-import { pushStudy } from '../studyHistory'
+import { useState, useLayoutEffect } from 'react'
+import PageBackBar from './PageBackBar'
 import duolingoData from '../data/duolingo.json'
 import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import nce1Data from '../data/nce1.json'
@@ -345,7 +345,6 @@ export default function Courses({
   changyongData,
   sampleData,
   onClose,
-  onSetBack,
   historyRef,
   active = true,
   progress = {},
@@ -366,12 +365,6 @@ export default function Courses({
       if (historyRef) historyRef.current.applyStudy = () => {}
     }
   }, [historyRef])
-
-  // 册/单元子层由 pushStudy + App popstate 还原；勿再用 backFn(back-intercept)，否则与 tab/study 栈打架导致穿透
-  useEffect(() => {
-    if (!active) return
-    onSetBack?.(null)
-  }, [active, onSetBack])
 
   if (detail !== null) {
     const isNce1 = detail === 'nce1'
@@ -413,6 +406,7 @@ export default function Courses({
 
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
+        <PageBackBar onBack={() => setDetail(null)} label="返回课程广场" />
         <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
           <div className="w-24 h-16 rounded-xl overflow-hidden shrink-0">
             <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
@@ -547,7 +541,6 @@ export default function Courses({
             <div key={c.key} className="relative">
               <button onClick={() => {
                 if (!isMember) { onShowLogin?.(); return }
-                pushStudy({ tab: 'courses', cd: c.key })
                 setDetail(c.key)
               }}
                 className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left">
@@ -583,7 +576,6 @@ export default function Courses({
             <button
               onClick={() => {
                 if (!(isMember || !isPremium)) { onShowLogin?.(); return }
-                pushStudy({ tab: 'courses', cd: unit })
                 setDetail(unit)
               }}
               className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"

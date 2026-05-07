@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import Unit1Flow from './Unit1Flow'
 import grade4DownData from '../data/grade4_down.json'
 import grade3UpData from '../data/grade3_up.json'
@@ -26,7 +26,6 @@ import bsdaS1Data from '../data/bsda_s1.json'
 import bsdaS2Data from '../data/bsda_s2.json'
 import bsdaS3Data from '../data/bsda_s3.json'
 import bsdaS4Data from '../data/bsda_s4.json'
-import { pushStudy } from '../studyHistory'
 import { IconArrowLeft } from './Icons'
 
 function lessonsFromUnits(data, descByUnit) {
@@ -383,7 +382,7 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Textbook({ onImport, onClose, onSetBack, historyRef, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin, active = true }) {
+export default function Textbook({ onImport, onClose, historyRef, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin, active = true }) {
   const [detail, setDetail] = useState(null)
   const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
 
@@ -404,12 +403,6 @@ export default function Textbook({ onImport, onClose, onSetBack, historyRef, pro
     }
   }, [historyRef])
 
-  // 子层级由 studyHistory.pushStudy + App popstate 统一还原，不在此注册全局 backFn
-  useEffect(() => {
-    if (!active) return
-    if (detail === null && !syncUnit) onSetBack?.(null)
-  }, [active, detail, syncUnit, onSetBack])
-
   if (syncUnit) {
     return (
       <Unit1Flow
@@ -417,16 +410,14 @@ export default function Textbook({ onImport, onClose, onSetBack, historyRef, pro
         bookId={syncUnit.bookId}
         requireSpeak={requireSpeak}
         hideSkipNext={hideSkipNext}
-        onClose={() => window.history.back()}
+        onClose={() => setSyncUnit(null)}
       />
     )
   }
 
   if (detail) {
     const book = TEXTBOOK_SLOTS.find(b => b.id === detail)
-    const backToTextbookList = () => {
-      window.history.back()
-    }
+    const backToTextbookList = () => setDetail(null)
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <div className="flex flex-wrap items-center gap-2 mb-6">
@@ -518,7 +509,6 @@ export default function Textbook({ onImport, onClose, onSetBack, historyRef, pro
                 </button>
                 <button
                   onClick={() => {
-                    pushStudy({ tab: 'textbook', tb: book.id, tu: lesson.label })
                     setSyncUnit({ bookId: book.id, label: lesson.label })
                   }}
                   className="w-full py-1.5 text-xs font-semibold text-white bg-green-700 hover:bg-green-600 border-t border-green-900 transition-colors text-center rounded-b-xl"
@@ -563,7 +553,6 @@ export default function Textbook({ onImport, onClose, onSetBack, historyRef, pro
             onClick={() => {
               if (!book.name) return
               if (locked) { onShowLogin?.(); return }
-              pushStudy({ tab: 'textbook', tb: book.id })
               setDetail(book.id)
             }}
             className={`w-full flex flex-col rounded-2xl overflow-hidden border transition-all text-left

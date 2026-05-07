@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import PageBackBar from './PageBackBar'
 import core50Data  from '../data/core50.json'
 import core100Data from '../data/core100.json'
 import core60Data  from '../data/core60.json'
@@ -149,14 +150,9 @@ function SyncPopup({ label, onClose }) {
 }
 
 // ── 主组件 ───────────────────────────────────────────────
-export default function CoreSentences({ onImport, onSetBack, progress = {}, active = true }) {
+export default function CoreSentences({ onImport, progress = {}, active = true }) {
   const [section,   setSection]   = useState(null)   // null | 'core50' | 'core100' | 'core60'
   const [syncPopup, setSyncPopup] = useState(null)   // label string | null
-
-  useEffect(() => {
-    if (!active) return
-    onSetBack?.(section ? () => setSection(null) : null)
-  }, [active, section, onSetBack])
 
   // ── 50基础句式 ─────────────────────────────────────────
   if (section === 'core50') {
@@ -164,6 +160,7 @@ export default function CoreSentences({ onImport, onSetBack, progress = {}, acti
     const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
+        <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
         {syncPopup && <SyncPopup label={syncPopup} onClose={() => setSyncPopup(null)} />}
         <CourseHeader emoji="✨" title="50 基础句式" accentColor="emerald"
           subtitle="5课 · 50句 · 入门核心句型" percent={pct} attempted={stats.attempted} total={stats.total}
@@ -180,6 +177,7 @@ export default function CoreSentences({ onImport, onSetBack, progress = {}, acti
     const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
+        <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
         {syncPopup && <SyncPopup label={syncPopup} onClose={() => setSyncPopup(null)} />}
         <CourseHeader emoji="🎯" title="100 中级句式" accentColor="violet"
           subtitle="10课 · 100句 · 时态 / 从句 / 逻辑表达" percent={pct} attempted={stats.attempted} total={stats.total}
@@ -196,6 +194,7 @@ export default function CoreSentences({ onImport, onSetBack, progress = {}, acti
     const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
+        <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
         {syncPopup && <SyncPopup label={syncPopup} onClose={() => setSyncPopup(null)} />}
         <CourseHeader emoji="🔬" title="60 综合句式" accentColor="sky"
           subtitle="6课 · 60句 · 语法体系全覆盖" percent={pct} attempted={stats.attempted} total={stats.total}

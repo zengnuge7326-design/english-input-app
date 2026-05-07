@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import PageBackBar from './PageBackBar'
 import presentSimpleData from '../data/grammar_tenses/elementary/present_simple.json'
 import presentContinuousData from '../data/grammar_tenses/elementary/present_continuous.json'
 import pastSimpleData from '../data/grammar_tenses/elementary/past_simple.json'
@@ -308,22 +309,16 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Grammar({ onImport, onClose, onSetBack, progress = {}, active = true }) {
+export default function Grammar({ onImport, onClose, progress = {}, active = true }) {
   const [stage, setStage] = useState(null)
   const [tense, setTense] = useState(null)
-
-  useEffect(() => {
-    if (!active) return
-    if (tense) onSetBack?.(() => setTense(null))
-    else if (stage) onSetBack?.(() => setStage(null))
-    else onSetBack?.(null)
-  }, [active, stage, tense, onSetBack])
 
   if (tense) {
     const stageObj = STAGES.find(s => s.id === stage)
     const tenseObj = stageObj.tenses.find(t => t.id === tense)
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
+        <PageBackBar onBack={() => setTense(null)} label={`返回${stageObj.label}列表`} />
         <div className="flex items-center gap-2 mb-6">
           <span className="text-gray-500 text-sm">{stageObj.label}</span>
           <span className="text-gray-600">/</span>
@@ -388,6 +383,7 @@ export default function Grammar({ onImport, onClose, onSetBack, progress = {}, a
     const allData = stageObj.tenses.flatMap(t => t.data)
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
+        <PageBackBar onBack={() => setStage(null)} label="返回语法首页" />
         <div className="flex items-center gap-2 mb-6">
           <span className="text-gray-300 text-sm font-medium">{stageObj.label}阶段</span>
         </div>

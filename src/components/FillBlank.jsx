@@ -118,11 +118,17 @@ export default function FillBlank({ onClose, settings }) {
           <h2 className="text-3xl font-bold text-white mb-4">练习完成！</h2>
           <div className="text-6xl font-bold text-blue-400 mb-2">{score.correct}/{score.total}</div>
           <div className="text-gray-400 mb-8">正确率: {Math.round(score.correct / score.total * 100)}%</div>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             <button type="button" onClick={restart}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-colors">
               再来一组
             </button>
+            {onClose && (
+              <button type="button" onClick={onClose}
+                className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl transition-colors">
+                返回练习
+              </button>
+            )}
           </div>
         </div>
       </div>

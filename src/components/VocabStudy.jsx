@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import pepWords from '../data/pep_words.json'
 import renaiJuniorWords from '../data/renai_junior_words.json'
-import { IconSpeaker } from './Icons'
+import { IconSpeaker, IconArrowLeft } from './Icons'
+import PageBackBar from './PageBackBar'
 
 // ── IPA syllabification (MOP) — mirrors gen_syllable_audio.py ────────────────
 
@@ -522,9 +523,10 @@ function unitChunkLabel(unitNum, chunkIndex, totalChunks) {
   return `Unit ${unitNum} · ${chunkIndex + 1}/${totalChunks}`
 }
 
-function UnitGrid({ book, progress, onSelect }) {
+function UnitGrid({ book, progress, onSelect, onBack }) {
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
+      <PageBackBar onBack={onBack} label="返回选册" />
       <h2 className="text-white text-xl font-bold mb-4">{book.bookName}</h2>
       <div className="grid grid-cols-2 gap-4">
         {book.units.flatMap((unit, ui) => {
@@ -645,7 +647,14 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
 
       {/* Header: 进度 | 已学习badge */}
       <div className="flex items-center justify-between shrink-0">
-        <span className="text-gray-600 text-sm w-10" aria-hidden />
+        <button
+          type="button"
+          onClick={onBack}
+          className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+          aria-label="返回单元列表"
+        >
+          <IconArrowLeft size={18} />
+        </button>
         <span className="text-gray-500 text-sm">{idx + 1} / {unit.words.length}</span>
         <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${seen ? 'bg-blue-900/50 text-blue-400' : 'bg-gray-800 text-gray-600'}`}>
           {seen ? '已学习' : '未学习'}
@@ -802,7 +811,7 @@ function QuizWord({ word, ipa }) {
   )
 }
 
-function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChange, onSetBack, active = true }) {
+function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChange }) {
   const [mode, setMode]     = useState(null)
   const [qIdx, setQIdx]     = useState(0)
   const [options, setOpts]  = useState([])
@@ -823,15 +832,6 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
     setScore({ right: 0, wrong: 0 })
     setOrder([])
   }, [])
-
-  useEffect(() => {
-    if (!active || !onSetBack) return
-    if (!mode) {
-      onSetBack(() => onBack)
-    } else {
-      onSetBack(() => backToModePicker)
-    }
-  }, [active, mode, onBack, onSetBack, backToModePicker])
 
   useEffect(() => {
     if (mode) { setOrder(shuffle(unit.words.map((_, i) => i))); setQIdx(0); setScore({ right: 0, wrong: 0 }); setChosen(null); setResult(null); setInput('') }
@@ -864,6 +864,7 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
 
   if (!mode) return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6 flex flex-col gap-4">
+      <PageBackBar onBack={onBack} label="返回单词卡" />
       <h2 className="text-white text-xl font-bold">{unit.title} — 练习模式</h2>
       {[{ id: 'en2zh', label: '英 → 中', desc: '看英文选中文', emoji: '🇬🇧' },
         { id: 'zh2en', label: '中 → 英', desc: '看中文选英文', emoji: '🇨🇳' },
@@ -880,6 +881,7 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
 
   if (qIdx === -1) return (
     <div className="w-full max-w-2xl mx-auto px-4 py-12 flex flex-col items-center gap-6">
+      <div className="w-full"><PageBackBar onBack={backToModePicker} label="返回模式选择" /></div>
       <div className="text-6xl">🎉</div>
       <div className="text-white text-3xl font-bold">完成！</div>
       <div className="text-gray-400 text-lg">{score.right} 对 · {score.wrong} 错</div>
@@ -894,6 +896,7 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
   const current = unit.words[order[qIdx]]
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-4 flex flex-col gap-4">
+      <PageBackBar onBack={backToModePicker} label="返回模式选择" />
       <div className="flex items-center justify-between">
         <span className="text-gray-600 text-sm w-14" aria-hidden />
         <span className="text-gray-500">{qIdx + 1}/{order.length}</span>
@@ -943,7 +946,7 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-export default function VocabStudy({ onSetBack, active = true }) {
+export default function VocabStudy() {
   const [view, setView]           = useState('books')
   const [book, setBook]           = useState(null)
   const [unit, setUnit]           = useState(null)
@@ -956,17 +959,9 @@ export default function VocabStudy({ onSetBack, active = true }) {
     if (signal === 'goQuiz') setView('quiz')
   }, [])
 
-  useEffect(() => {
-    if (!active) return
-    if (view === 'books') onSetBack?.(null)
-    else if (view === 'units') onSetBack?.(() => setView('books'))
-    else if (view === 'cards') onSetBack?.(() => setView('units'))
-    // view === 'quiz'：由 QuizView 内注册浏览器后退层级
-  }, [active, view, onSetBack])
-
   if (view === 'books') return <BookGrid onSelect={b => { setBook(b); setView('units') }} />
-  if (view === 'units') return <UnitGrid book={book} progress={progress} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />
+  if (view === 'units') return <UnitGrid book={book} progress={progress} onBack={() => setView('books')} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />
   if (view === 'cards') return <FlashCards book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} progress={progress} onBack={() => setView('units')} onProgressChange={refreshProgress} />
-  if (view === 'quiz')  return <QuizView  book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} onBack={() => setView('cards')} onProgressChange={refreshProgress} onSetBack={onSetBack} active={active} />
+  if (view === 'quiz')  return <QuizView book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} onBack={() => setView('cards')} onProgressChange={refreshProgress} />
   return null
 }

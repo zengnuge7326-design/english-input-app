@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { IconSpeaker } from './Icons'
+import PageBackBar from './PageBackBar'
 import { useTTS } from '../hooks/useTTS'
 
 // ── 工具函数 ──────────────────────────────────────────────────────────────────
@@ -370,13 +371,20 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
         <div className="text-5xl">{score === questions.length ? '🎉' : score >= questions.length / 2 ? '👍' : '💪'}</div>
         <div className="text-white text-2xl font-bold">{score} / {questions.length}</div>
         <div className="text-gray-400 text-sm">{title}</div>
-        <p className="text-gray-500 text-sm text-center px-4">使用浏览器后退返回上一级</p>
+        <button
+          type="button"
+          onClick={onClose}
+          className="mt-2 px-8 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold text-sm transition-colors"
+        >
+          返回上一级
+        </button>
       </div>
     )
   }
 
   return (
     <div className="w-full max-w-lg mx-auto px-2 py-3 flex flex-col gap-3">
+      <PageBackBar onBack={onClose} label="退出练习" />
 
       {/* 进度条 */}
       <div className="flex items-center gap-3">
