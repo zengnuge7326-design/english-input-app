@@ -569,7 +569,7 @@ export default function App() {
           className={[
             'pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] overflow-visible transition-[width] duration-200 isolate',
             'right-[max(0px,env(safe-area-inset-right,0px))]',
-            menuHover ? 'w-32 flex-col' : 'w-[47px] flex-row justify-end',
+            menuHover ? 'w-32 flex-col' : 'w-[42px] flex-row justify-end',
           ].join(' ')}
           onMouseEnter={() => setMenuHover(true)}
           onMouseLeave={() => setMenuHover(false)}
@@ -578,7 +578,7 @@ export default function App() {
         <aside
           aria-label={menuHover ? '导航菜单' : '展开菜单'}
           className={[
-            'flex min-h-0 border-l border-slate-600/45 bg-slate-900/80 backdrop-blur-md shadow-lg transition-all duration-200',
+            'flex min-h-0 border-l border-slate-600/45 bg-slate-900 shadow-lg transition-all duration-200',
             menuHover
               ? 'flex-col w-full h-full min-h-0 px-2 py-3 overflow-y-auto overflow-x-hidden'
               : 'flex-row items-stretch h-full w-full shrink-0 overflow-visible',
@@ -588,7 +588,7 @@ export default function App() {
             <div className="flex flex-row items-stretch h-full w-full min-h-0">
               {/* 刘海提示：与菜单栏同层同色，无单独 absolute */}
               <div
-                className="flex flex-1 min-w-[40px] max-w-[44px] items-center justify-center rounded-l-xl border-y border-l border-slate-600/45 py-2 pl-[3px] pr-1.5 max-[380px]:min-w-[44px]"
+                className="flex flex-1 min-w-0 items-center justify-center rounded-l-xl border-y border-l border-slate-600/45 py-2 pl-[8px] pr-[15px]"
                 onTouchEnd={(e) => {
                   e.preventDefault()
                   setMenuHover(true)
@@ -596,10 +596,10 @@ export default function App() {
               >
                 <span
                   className={[
-                    'font-semibold tracking-wide select-none text-center leading-none',
+                    'font-semibold select-none text-center leading-none',
                     'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.55)]',
-                    'text-[11px] max-[380px]:text-[12px]',
-                    '[writing-mode:vertical-rl] [text-orientation:upright]',
+                    'text-[12px] max-[380px]:text-[13px]',
+                    '[writing-mode:vertical-rl] [text-orientation:upright] [letter-spacing:0.35em]',
                   ].join(' ')}
                 >
                   <span className="[@media(hover:hover)_and_(pointer:fine)]:hidden">点按打开菜单</span>
