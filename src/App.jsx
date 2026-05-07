@@ -564,11 +564,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
-        {/* 收起：刘海 + 右侧 3px 在同一块 aside 内（同一底色 /80）；负 margin 只让排版占 3px */}
+        {/* 固定贴靠视口右侧，避免 sticky + 负 margin 在部分布局下整栏被裁出屏外 */}
         <div
           className={[
-            'order-last sticky top-0 z-[100] h-screen shrink-0 flex overflow-visible transition-[width,margin] duration-200 isolate',
-            menuHover ? 'w-32 mr-0 flex-col' : 'w-[47px] -mr-[44px] justify-end',
+            'pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] overflow-visible transition-[width] duration-200 isolate',
+            'right-[max(0px,env(safe-area-inset-right,0px))]',
+            menuHover ? 'w-32 flex-col' : 'w-[47px] flex-row justify-end',
           ].join(' ')}
           onMouseEnter={() => setMenuHover(true)}
           onMouseLeave={() => setMenuHover(false)}
