@@ -1248,15 +1248,15 @@ function QuizCard({ q, onResult, speak }) {
   return (
     <div>
       <div className="flex items-start gap-3 mb-2">
-        <p className="text-white text-xl font-medium leading-relaxed flex-1">{q.question}</p>
+        <p className="text-white text-2xl font-medium leading-relaxed flex-1">{q.question}</p>
         <AudioActionButton onClick={() => speak(q.question)} title="播放题干音频" />
       </div>
-      <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
+      <p className="text-gray-400 text-lg mb-5" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
       <div className="space-y-2">
         {q.options.map((opt, i) => (
           <div
             key={i}
-            className={`w-full rounded-xl text-base transition-colors flex items-stretch gap-0 overflow-hidden
+            className={`w-full rounded-xl text-lg transition-colors flex items-stretch gap-0 overflow-hidden
               ${resultPhase
                 ? i === q.correct
                   ? 'bg-green-800/50 border-2 border-green-500 text-green-200'
@@ -1271,10 +1271,10 @@ function QuizCard({ q, onResult, speak }) {
               type="button"
               onClick={() => choose(i)}
               disabled={resultPhase}
-              className="flex-1 text-left px-4 py-2.5 flex items-center gap-3 min-w-0 disabled:cursor-default"
+              className="flex-1 text-left px-4 py-3 flex items-center gap-3 min-w-0 disabled:cursor-default"
             >
               <span
-                className="font-mono text-xs font-semibold shrink-0 px-2 py-1 rounded-md"
+                className="font-mono text-sm font-semibold shrink-0 px-2 py-1 rounded-md"
                 style={{
                   backgroundColor: OPTION_LABEL_COLORS[i % OPTION_LABEL_COLORS.length],
                   color: [1, 3].includes(i % OPTION_LABEL_COLORS.length) ? '#ffffff' : '#0f172a',
@@ -1293,7 +1293,7 @@ function QuizCard({ q, onResult, speak }) {
         ))}
       </div>
       {resultPhase && q.explanation && (
-        <div className="mt-4 bg-gray-800/60 rounded-xl px-4 py-3 text-sm text-gray-300">
+        <div className="mt-4 bg-gray-800/60 rounded-xl px-4 py-3.5 text-base text-gray-300">
           💡 {q.explanation}
         </div>
       )}
@@ -1305,7 +1305,6 @@ function QuizCard({ q, onResult, speak }) {
 function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
   const [input, setInput] = useState('')
   const [submitted, setSubmitted] = useState(false)
-  const [correct, setCorrect] = useState(null)
 
   const [unlocked, setUnlocked] = useState(!requireSpeak)
   const [isRecording, setIsRecording] = useState(false)
@@ -1440,7 +1439,6 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
   function submit() {
     if (!input.trim()) return
     const ok = input.trim().toLowerCase() === q.answer.toLowerCase()
-    setCorrect(ok)
     setSubmitted(true)
     onResult(ok)
   }
@@ -1448,15 +1446,15 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
   return (
     <div>
       <div className="flex items-center gap-3 mb-2">
-        <p className="text-white text-xl font-medium leading-relaxed flex-1"
+        <p className="text-white text-2xl font-medium leading-relaxed flex-1"
           style={{ fontFamily: 'monospace' }}>{q.sentence}</p>
         <AudioActionButton onClick={() => speak(q.sentence.replace('___', q.answer))} title="播放整句音频" />
       </div>
-      <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
+      <p className="text-gray-400 text-lg mb-5" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
 
      { !unlocked ? (
       <div className="flex flex-col items-center gap-4 py-12 max-w-sm mx-auto bg-slate-800 rounded-3xl border border-slate-700 shadow-xl px-4">
-        <div className="text-2xl md:text-3xl font-medium text-white text-center leading-relaxed mb-1" style={{ fontFamily: 'AI Nile, monospace' }}>
+        <div className="text-3xl md:text-4xl font-medium text-white text-center leading-relaxed mb-1" style={{ fontFamily: 'AI Nile, monospace' }}>
           {q.answer}
         </div>
         <button 
@@ -1467,13 +1465,13 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
             <span>🎤</span>
             <span className="text-[10px] absolute -bottom-6 w-20 text-gray-500 font-normal">空格键录音</span>
           </button>
-          <div className={`text-center font-medium px-4 ${recognizingResult?.startsWith('❌') ? 'text-red-400' : 'text-blue-400 opacity-80'}`}>
+          <div className={`text-center font-medium text-base px-4 ${recognizingResult?.startsWith('❌') ? 'text-red-400' : 'text-blue-400 opacity-80'}`}>
             {recognizingResult || '点击麦克风或按空格录音'}
             <div className="mt-4">
               {!hideSkipNext && (
                 <button
                   onClick={(e) => { e.stopPropagation(); setUnlocked(true); setRecognizingResult('已切换到手动模式'); }}
-                  className="px-4 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs rounded-xl border border-gray-700 transition-all active:scale-95 shadow-lg"
+                  className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm rounded-xl border border-gray-700 transition-all active:scale-95 shadow-lg"
                 >
                   点此跳过录音，直接输入答案
                 </button>
@@ -1489,16 +1487,11 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
           onKeyDown={e => e.key === 'Enter' && submit()}
           placeholder="输入答案 (Enter 提交)"
           autoFocus
-          className="w-full bg-gray-800 border-2 border-gray-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-lg outline-none transition-colors"
+          className="w-full bg-gray-800 border-2 border-gray-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-xl outline-none transition-colors"
         />
-      ) : (
-        <div className={`rounded-xl px-4 py-3 text-base font-semibold
-          ${correct ? 'bg-green-900/40 border-2 border-green-600 text-green-300' : 'bg-red-900/40 border-2 border-red-600 text-red-300'}`}>
-          {correct ? '✓ 正确！' : `✗ 正确答案：${q.answer}`}
-        </div>
-      )}
+      ) : null}
       {submitted && q.explanation && (
-        <div className="mt-4 bg-gray-800/60 rounded-xl px-4 py-3 text-sm text-gray-300">
+        <div className="mt-4 bg-gray-800/60 rounded-xl px-4 py-3 text-base text-gray-300">
           💡 {q.explanation}
         </div>
       )}
@@ -1550,14 +1543,14 @@ function WordOrderCard({ q, onResult, speak }) {
   return (
     <div>
       <div className="flex items-center gap-3 mb-2">
-        <p className="text-gray-300 text-base">{q.zh}</p>
+        <p className="text-gray-300 text-lg">{q.zh}</p>
         <AudioActionButton onClick={() => speak(q.sentence)} title="播放句子音频" />
       </div>
       <div className="min-h-14 bg-gray-800 border-2 border-gray-700 rounded-2xl px-4 py-3 flex flex-wrap gap-2 mb-4 mt-4">
-        {arranged.length === 0 && <span className="text-gray-600 text-base">点击下方单词排列</span>}
+        {arranged.length === 0 && <span className="text-gray-600 text-lg">点击下方单词排列</span>}
         {arranged.map((w, i) => (
           <button key={i} onClick={() => removeWord(i)} disabled={submitted}
-            className={`px-4 py-2 rounded-xl text-base font-medium transition-colors
+            className={`px-4 py-2 rounded-xl text-lg font-medium transition-colors
               ${submitted ? correct ? 'bg-green-800 text-green-200' : 'bg-red-800 text-red-200'
                 : 'bg-blue-700 hover:bg-blue-600 text-white'}`}>
             {w}
@@ -1567,17 +1560,17 @@ function WordOrderCard({ q, onResult, speak }) {
       <div className="flex flex-wrap gap-2 mb-4">
         {pool.map((w, i) => (
           <button key={i} onClick={() => addWord(i)} disabled={submitted}
-            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-xl text-base font-medium transition-colors disabled:opacity-40">
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-xl text-lg font-medium transition-colors disabled:opacity-40">
             {w}
           </button>
         ))}
       </div>
       {submitted && !correct && (
-        <div className="text-base text-gray-400 mb-3">正确答案：<span className="text-white">{q.answer.join(' ')}</span></div>
+        <div className="text-lg text-gray-400 mb-3">正确答案：<span className="text-white">{q.answer.join(' ')}</span></div>
       )}
       {!submitted && (
         <button onClick={submit} disabled={arranged.length === 0}
-          className="w-full py-4 bg-blue-600 hover:bg-blue-500 disabled:bg-gray-700 disabled:cursor-not-allowed text-white text-lg font-semibold rounded-2xl transition-colors">
+          className="w-full py-4 bg-blue-600 hover:bg-blue-500 disabled:bg-gray-700 disabled:cursor-not-allowed text-white text-xl font-semibold rounded-2xl transition-colors">
           提交
         </button>
       )}
@@ -1608,15 +1601,15 @@ function ListenChoiceCard({ q, type, onResult, speak }) {
         <AudioActionButton onClick={() => speak(textToSpeak)} size={26} title="播放听力音频" />
       </div>
       {type === 'listen_response' && (
-        <p className="text-center text-gray-400 text-base mb-4">{q.zh}</p>
+        <p className="text-center text-gray-400 text-lg mb-4">{q.zh}</p>
       )}
       {type === 'listen_word' && q.zh && (
-        <p className="text-center text-gray-400 text-base mb-1" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.zh}</p>
+        <p className="text-center text-gray-400 text-lg mb-1" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.zh}</p>
       )}
       <div className="space-y-2">
         {q.options.map((opt, i) => (
           <button key={i} onClick={() => choose(i)} disabled={submitted}
-            className={`w-full text-left px-4 py-2.5 rounded-xl text-base transition-colors
+            className={`w-full text-left px-4 py-3 rounded-xl text-lg transition-colors
               ${submitted
                 ? i === q.correct
                   ? 'bg-green-800/50 border-2 border-green-500 text-green-200'
@@ -1625,7 +1618,7 @@ function ListenChoiceCard({ q, type, onResult, speak }) {
                   : 'bg-gray-800 border-2 border-transparent text-gray-500'
                 : 'bg-gray-800 border-2 border-transparent text-white hover:border-blue-500/50 hover:bg-blue-900/10'}`}>
             <span
-              className="font-mono text-xs font-semibold mr-2 px-2 py-1 rounded-md"
+              className="font-mono text-sm font-semibold mr-2 px-2 py-1 rounded-md"
               style={{
                 backgroundColor: OPTION_LABEL_COLORS[i % OPTION_LABEL_COLORS.length],
                 color: [1, 3].includes(i % OPTION_LABEL_COLORS.length) ? '#ffffff' : '#0f172a',
@@ -1909,9 +1902,9 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
       {/* 顶栏 */}
       <div className="shrink-0 px-4 pt-4 pb-2">
         <div className="flex items-center justify-between mb-2">
-          <div className="text-xs text-gray-500 uppercase tracking-wider">{unitLabel} · {typeLabel}</div>
+          <div className="text-sm text-gray-500 uppercase tracking-wider">{unitLabel} · {typeLabel}</div>
           <div className="flex items-center gap-3">
-            <span className="text-xs text-gray-500 tabular-nums">{current + 1} / {total}</span>
+            <span className="text-sm text-gray-500 tabular-nums">{current + 1} / {total}</span>
             <button onClick={onClose} className="text-gray-600 hover:text-white text-lg transition-colors">✕</button>
           </div>
         </div>
@@ -1922,42 +1915,42 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
         </div>
       </div>
 
-      {/* 题目卡片区（可内部滚动）*/}
-      <div className="flex-1 overflow-y-auto px-4 py-3 min-h-0">
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 max-w-2xl w-full mx-auto min-h-full flex flex-col justify-center">
-          {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
-          {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} speak={speak} />}
-          {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
-          {(q.type === 'listen_word' || q.type === 'listen_sentence' || q.type === 'listen_response' || q.type === 'listen_translate') &&
-            <ListenChoiceCard key={current} q={q.data} type={q.type} onResult={handleResult} speak={speak} />}
-        </div>
-      </div>
-
-      {/* 底部区：结果反馈与「继续」同一行（Enter 逻辑不变；不受 hideSkipNext 影响） */}
-      <div className="shrink-0 px-4 pb-6 pt-2 border-t border-slate-700/60 max-w-lg mx-auto w-full">
-        {pendingResult !== null && (
-          <div
-            className={`rounded-xl px-4 py-2.5 flex items-center justify-between gap-3
-            ${pendingResult
-              ? 'bg-green-900/40 border border-green-700'
-              : 'bg-red-900/40 border border-red-700'}`}
-          >
-            <span className={`text-sm font-medium min-w-0 ${pendingResult ? 'text-green-300' : 'text-red-300'}`}>
-              {pendingResult ? '✓ 正确！' : '✗ 回答错误'}
-            </span>
-            <button
-              type="button"
-              onClick={handleNext}
-              className={`shrink-0 px-4 py-2 rounded-xl text-sm font-semibold transition-colors active:scale-[0.98]
-                ${pendingResult
-                  ? 'bg-green-600 hover:bg-green-500 text-white'
-                  : 'bg-red-600 hover:bg-red-500 text-white'}`}
-            >
-              {current < total - 1 ? '继续' : '查看结果'}
-              <span className="ml-1.5 opacity-80 font-normal text-xs">Enter</span>
-            </button>
+      {/* 题目卡片区（顶对齐；反馈条在题卡内底部） */}
+      <div className="flex-1 overflow-y-auto px-4 pt-1 pb-4 min-h-0">
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 max-w-2xl w-full mx-auto flex flex-col">
+          <div className="min-h-0">
+            {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
+            {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} speak={speak} />}
+            {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
+            {(q.type === 'listen_word' || q.type === 'listen_sentence' || q.type === 'listen_response' || q.type === 'listen_translate') &&
+              <ListenChoiceCard key={current} q={q.data} type={q.type} onResult={handleResult} speak={speak} />}
           </div>
-        )}
+          {pendingResult !== null && (
+            <div className="mt-6 pt-4 border-t border-slate-700/80 shrink-0">
+              <div
+                className={`rounded-xl px-4 py-3 flex items-center justify-between gap-3
+                ${pendingResult
+                  ? 'bg-green-900/40 border border-green-700'
+                  : 'bg-red-900/40 border border-red-700'}`}
+              >
+                <span className={`text-base font-medium min-w-0 ${pendingResult ? 'text-green-300' : 'text-red-300'}`}>
+                  {pendingResult ? '✓ 正确！' : '✗ 回答错误'}
+                </span>
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  className={`shrink-0 px-4 py-2.5 rounded-xl text-base font-semibold transition-colors active:scale-[0.98]
+                    ${pendingResult
+                      ? 'bg-green-600 hover:bg-green-500 text-white'
+                      : 'bg-red-600 hover:bg-red-500 text-white'}`}
+                >
+                  {current < total - 1 ? '继续' : '查看结果'}
+                  <span className="ml-1.5 opacity-80 font-normal text-sm">Enter</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
