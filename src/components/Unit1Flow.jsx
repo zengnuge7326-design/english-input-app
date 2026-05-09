@@ -1,4 +1,6 @@
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { useTTS } from '../hooks/useTTS'
+import { unlockAudio } from '../utils/audioUnlock.js'
 import { quizBank } from '../data/quizData'
 import { fillblankBank } from '../data/fillblankData'
 import {
@@ -749,15 +751,6 @@ import {
 
 import { IconSpeaker } from './Icons'
 
-// ── 工具：生成随机字母供填词干扰 ────────────────────────────────────────────────
-function speak(text) {
-  const u = new SpeechSynthesisUtterance(text)
-  u.lang = 'en-US'
-  u.rate = 0.85
-  speechSynthesis.cancel()
-  speechSynthesis.speak(u)
-}
-
 // 把所有题型数据统一标记 type
 function buildQuestions(banks) {
   if (!banks) return [];
@@ -1241,7 +1234,7 @@ function AudioActionButton({ onClick, size = 22, title = '播放音频', compact
 }
 
 // ── 选择题 ────────────────────────────────────────────────────────────────────
-function QuizCard({ q, onResult }) {
+function QuizCard({ q, onResult, speak }) {
   const [selected, setSelected] = useState(null)
   const [resultPhase, setResultPhase] = useState(false)
 
@@ -1261,9 +1254,9 @@ function QuizCard({ q, onResult }) {
       <p className="text-gray-400 text-base mb-6" style={{ fontFamily: 'KaiTi-Simplified, serif' }}>{q.chinese}</p>
       <div className="space-y-2">
         {q.options.map((opt, i) => (
-          <button key={i} onClick={() => choose(i)}
-            disabled={resultPhase}
-            className={`w-full text-left px-4 py-2.5 rounded-xl text-base transition-colors flex items-center gap-3
+          <div
+            key={i}
+            className={`w-full rounded-xl text-base transition-colors flex items-stretch gap-0 overflow-hidden
               ${resultPhase
                 ? i === q.correct
                   ? 'bg-green-800/50 border-2 border-green-500 text-green-200'
@@ -1272,36 +1265,31 @@ function QuizCard({ q, onResult }) {
                   : 'bg-gray-800 border-2 border-transparent text-gray-500'
                 : selected === i
                 ? 'bg-blue-800/50 border-2 border-blue-500 text-white'
-                : 'bg-gray-800 border-2 border-transparent text-white hover:border-blue-500/50 hover:bg-blue-900/10'}`}>
-            <span
-              className="font-mono text-xs font-semibold shrink-0 px-2 py-1 rounded-md"
-              style={{
-                backgroundColor: OPTION_LABEL_COLORS[i % OPTION_LABEL_COLORS.length],
-                color: [1, 3].includes(i % OPTION_LABEL_COLORS.length) ? '#ffffff' : '#0f172a',
-              }}
+                : 'bg-gray-800 border-2 border-transparent text-white hover:border-blue-500/50 hover:bg-blue-900/10'}`}
+          >
+            <button
+              type="button"
+              onClick={() => choose(i)}
+              disabled={resultPhase}
+              className="flex-1 text-left px-4 py-2.5 flex items-center gap-3 min-w-0 disabled:cursor-default"
             >
-              {String.fromCharCode(65 + i)}
-            </span>
-            <span>{opt}</span>
-            <span className="ml-auto shrink-0 self-stretch">
               <span
-                role="button"
-                tabIndex={0}
-                title="播放选项音频"
-                onClick={e => { e.stopPropagation(); speak(opt) }}
-                onKeyDown={e => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    speak(opt)
-                  }
+                className="font-mono text-xs font-semibold shrink-0 px-2 py-1 rounded-md"
+                style={{
+                  backgroundColor: OPTION_LABEL_COLORS[i % OPTION_LABEL_COLORS.length],
+                  color: [1, 3].includes(i % OPTION_LABEL_COLORS.length) ? '#ffffff' : '#0f172a',
                 }}
-                className="inline-flex items-center justify-center w-10 h-full min-h-[44px] rounded-lg border bg-slate-800 border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700 transition-colors"
               >
-                <IconSpeaker size={18} />
+                {String.fromCharCode(65 + i)}
               </span>
-            </span>
-          </button>
+              <span className="min-w-0">{opt}</span>
+            </button>
+            <AudioActionButton
+              compact
+              title="播放选项音频"
+              onClick={() => speak(opt)}
+            />
+          </div>
         ))}
       </div>
       {resultPhase && q.explanation && (
@@ -1314,7 +1302,7 @@ function QuizCard({ q, onResult }) {
 }
 
 // ── 填空题 ────────────────────────────────────────────────────────────────────
-function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
+function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
   const [input, setInput] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [correct, setCorrect] = useState(null)
@@ -1519,7 +1507,7 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext }) {
 }
 
 // ── 连词成句 ──────────────────────────────────────────────────────────────────
-function WordOrderCard({ q, onResult }) {
+function WordOrderCard({ q, onResult, speak }) {
   const [arranged, setArranged] = useState([])
   const [pool, setPool] = useState(() => {
     const arr = [...q.words]
@@ -1598,7 +1586,7 @@ function WordOrderCard({ q, onResult }) {
 }
 
 // ── 听力选择题（通用）────────────────────────────────────────────────────────
-function ListenChoiceCard({ q, type, onResult }) {
+function ListenChoiceCard({ q, type, onResult, speak }) {
   const [selected, setSelected] = useState(null)
   const [submitted, setSubmitted] = useState(false)
 
@@ -1769,7 +1757,7 @@ const BANKS_G5_DOWN = {
 }
 
 // ── 主流程 ────────────────────────────────────────────────────────────────────
-export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNext, onClose }) {
+export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNext, onClose, settings }) {
   const questions = useMemo(() => {
     const label = unitLabel?.toLowerCase() ?? ''
     
@@ -1817,7 +1805,71 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
   const [pendingResult, setPendingResult] = useState(null)
   const [done, setDone] = useState(false)
 
-  // Guard against empty questions
+  const ttsSettings = settings ?? {
+    lang: 'en-US',
+    rate: 1.0,
+    ttsEngine: 'hybrid',
+    edgeVoice: 'en-US-AvaNeural',
+    volume: 1,
+  }
+  const { speak: speakTTS, prefetch } = useTTS(ttsSettings)
+  const speak = useCallback((text) => {
+    const t = String(text ?? '').trim()
+    if (!t) return
+    unlockAudio()
+    speakTTS(t)
+  }, [speakTTS])
+
+  const handleResult = useCallback((isCorrect) => {
+    setPendingResult(isCorrect)
+  }, [])
+
+  const handleNext = useCallback(() => {
+    const newScores = [...scores, pendingResult]
+    if (current < total - 1) {
+      setScores(newScores)
+      setCurrent(c => c + 1)
+      setPendingResult(null)
+    } else {
+      setScores(newScores)
+      setDone(true)
+    }
+  }, [scores, pendingResult, current, total])
+
+  useEffect(() => {
+    const fn = (e) => {
+      if (e.key === 'Enter' && pendingResult !== null) {
+        handleNext()
+      }
+    }
+    window.addEventListener('keydown', fn)
+    return () => window.removeEventListener('keydown', fn)
+  }, [pendingResult, handleNext])
+
+  useEffect(() => {
+    if (total === 0) return
+    const item = questions[current]
+    if (!item?.data) return
+    if (item.type === 'quiz') {
+      const d = item.data
+      if (d.question) prefetch(d.question)
+      ;(d.options || []).forEach((o) => { if (o) prefetch(o) })
+    } else if (item.type === 'fillblank') {
+      const d = item.data
+      const full = typeof d.sentence === 'string' ? d.sentence.replace(/___/g, d.answer) : ''
+      if (full) prefetch(full)
+    } else if (item.type === 'listen_order') {
+      if (item.data?.sentence) prefetch(item.data.sentence)
+    } else if (item.type === 'listen_word' || item.type === 'listen_sentence' || item.type === 'listen_response' || item.type === 'listen_translate') {
+      const d = item.data
+      const textToSpeak = item.type === 'listen_word' ? d.word
+        : item.type === 'listen_sentence' ? d.sentence
+        : item.type === 'listen_response' ? d.question
+        : d.sentence
+      if (textToSpeak) prefetch(textToSpeak)
+    }
+  }, [current, total, questions, prefetch])
+
   if (total === 0) {
     return (
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 text-center">
@@ -1830,32 +1882,6 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
   }
 
   const q = questions[current]
-
-  useEffect(() => {
-    const fn = (e) => {
-      if (e.key === 'Enter' && pendingResult !== null) {
-        handleNext()
-      }
-    }
-    window.addEventListener('keydown', fn)
-    return () => window.removeEventListener('keydown', fn)
-  }, [pendingResult, current, total])
-
-  function handleResult(isCorrect) {
-    setPendingResult(isCorrect)
-  }
-
-  function handleNext() {
-    const newScores = [...scores, pendingResult]
-    if (current < total - 1) {
-      setScores(newScores)
-      setCurrent(c => c + 1)
-      setPendingResult(null)
-    } else {
-      setScores(newScores)
-      setDone(true)
-    }
-  }
 
   if (done) {
     const correct = scores.filter(Boolean).length
@@ -1899,29 +1925,38 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
       {/* 题目卡片区（可内部滚动）*/}
       <div className="flex-1 overflow-y-auto px-4 py-3 min-h-0">
         <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 max-w-2xl w-full mx-auto min-h-full flex flex-col justify-center">
-          {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} />}
-          {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} />}
-          {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} />}
+          {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
+          {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} speak={speak} />}
+          {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
           {(q.type === 'listen_word' || q.type === 'listen_sentence' || q.type === 'listen_response' || q.type === 'listen_translate') &&
-            <ListenChoiceCard key={current} q={q.data} type={q.type} onResult={handleResult} />}
+            <ListenChoiceCard key={current} q={q.data} type={q.type} onResult={handleResult} speak={speak} />}
         </div>
       </div>
 
-      {/* 底部区：结果反馈 + 下一题按钮 */}
+      {/* 底部区：结果反馈与「继续」同一行（Enter 逻辑不变；不受 hideSkipNext 影响） */}
       <div className="shrink-0 px-4 pb-6 pt-2 border-t border-slate-700/60 max-w-lg mx-auto w-full">
         {pendingResult !== null && (
-          <div className={`rounded-xl px-4 py-2.5 mb-2.5 text-sm font-medium
+          <div
+            className={`rounded-xl px-4 py-2.5 flex items-center justify-between gap-3
             ${pendingResult
-              ? 'bg-green-900/40 border border-green-700 text-green-300'
-              : 'bg-red-900/40 border border-red-700 text-red-300'}`}>
-            {pendingResult ? '✓ 正确！' : '✗ 回答错误'}
+              ? 'bg-green-900/40 border border-green-700'
+              : 'bg-red-900/40 border border-red-700'}`}
+          >
+            <span className={`text-sm font-medium min-w-0 ${pendingResult ? 'text-green-300' : 'text-red-300'}`}>
+              {pendingResult ? '✓ 正确！' : '✗ 回答错误'}
+            </span>
+            <button
+              type="button"
+              onClick={handleNext}
+              className={`shrink-0 px-4 py-2 rounded-xl text-sm font-semibold transition-colors active:scale-[0.98]
+                ${pendingResult
+                  ? 'bg-green-600 hover:bg-green-500 text-white'
+                  : 'bg-red-600 hover:bg-red-500 text-white'}`}
+            >
+              {current < total - 1 ? '继续' : '查看结果'}
+              <span className="ml-1.5 opacity-80 font-normal text-xs">Enter</span>
+            </button>
           </div>
-        )}
-        {pendingResult !== null && !hideSkipNext && (
-          <button onClick={handleNext}
-            className="w-full py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl shadow-lg transition-transform active:scale-95 text-xl">
-            {current < total - 1 ? '下一题 (Enter) →' : '查看结果 (Enter)'}
-          </button>
         )}
       </div>
     </div>

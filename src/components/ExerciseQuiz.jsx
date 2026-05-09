@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { IconSpeaker } from './Icons'
 import PageBackBar from './PageBackBar'
 import { useTTS } from '../hooks/useTTS'
+import { unlockAudio } from '../utils/audioUnlock.js'
 
 // ── 工具函数 ──────────────────────────────────────────────────────────────────
 
@@ -200,7 +201,8 @@ function ListenQuestion({ q, speak, onAnswer, answered }) {
   return (
     <div className="flex flex-col gap-4">
       <button
-        onClick={() => speak(q.tts)}
+        type="button"
+        onClick={() => { unlockAudio(); speak(q.tts) }}
         className="flex items-center gap-3 mx-auto px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors"
       >
         <IconSpeaker size={28} />
@@ -306,12 +308,6 @@ function WordOrderQuestion({ q, onAnswer, answered }) {
         ))}
       </div>
 
-      {/* 结果 & 提交 */}
-      {answered && (
-        <div className={`text-sm text-center px-3 py-2 rounded-xl ${result ? 'text-green-400 bg-green-900/30' : 'text-red-400 bg-red-900/30'}`}>
-          {result ? '✓ 正确！' : `✗ 正确答案：${q.answer}`}
-        </div>
-      )}
       {!answered && (
         <button onClick={check} disabled={!canCheck}
           className="mx-auto px-8 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm disabled:opacity-40 disabled:cursor-not-allowed transition-colors">
@@ -340,26 +336,39 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
   const { speak } = useTTS(ttsSettings)
   const q = questions[idx]
 
-  // 自动播放听力题
+  const goNext = useCallback(() => {
+    setShowAnswer(false)
+    setIdx(i => i + 1)
+  }, [])
+
+  // 自动播放听力题（无用户手势时部分浏览器会静音，可点「播放录音」）
   useEffect(() => {
     if ((q?.type === 'listen_word' || q?.type === 'listen_qa') && !showAnswer) {
+      unlockAudio()
       const t = setTimeout(() => speak(q.tts), 400)
       return () => clearTimeout(t)
     }
-  }, [idx])
+  }, [idx, q?.type, q?.tts, showAnswer, speak])
+
+  useEffect(() => {
+    if (!showAnswer) return
+    function onKey(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        goNext()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [showAnswer, goNext])
 
   function handleAnswer(correct) {
     setAnsweredList(prev => {
-      const next = [...prev]
-      next[idx] = correct
-      return next
+      const row = [...prev]
+      row[idx] = correct
+      return row
     })
     setShowAnswer(true)
-  }
-
-  function next() {
-    setShowAnswer(false)
-    setIdx(i => i + 1)
   }
 
   const done = idx >= questions.length
@@ -416,18 +425,24 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
         )}
       </div>
 
-      {/* 答对/答错反馈 + 下一题 */}
-      {showAnswer && q.type !== 'word_order' && (
-        <div className={`text-sm text-center px-3 py-2 rounded-xl ${answeredList[idx] ? 'text-green-400 bg-green-900/30' : 'text-red-400 bg-red-900/30'}`}>
-          {answeredList[idx] ? '✓ 正确！' : `✗ 正确答案：${q.answer}`}
-        </div>
-      )}
-
       {showAnswer && (
-        <button onClick={next}
-          className="mx-auto px-10 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors">
-          {idx + 1 < questions.length ? '下一题 →' : '查看成绩'}
-        </button>
+        <div
+          className={`rounded-xl px-4 py-2.5 flex items-center justify-between gap-3
+            ${answeredList[idx] ? 'bg-green-900/40 border border-green-700' : 'bg-red-900/40 border border-red-700'}`}
+        >
+          <span className={`text-sm font-medium min-w-0 text-left ${answeredList[idx] ? 'text-green-300' : 'text-red-300'}`}>
+            {answeredList[idx] ? '✓ 正确！' : `✗ 正确答案：${q.answer}`}
+          </span>
+          <button
+            type="button"
+            onClick={goNext}
+            className={`shrink-0 px-4 py-2 rounded-xl text-sm font-semibold transition-colors active:scale-[0.98]
+              ${answeredList[idx] ? 'bg-green-600 hover:bg-green-500 text-white' : 'bg-red-600 hover:bg-red-500 text-white'}`}
+          >
+            {idx + 1 < questions.length ? '继续' : '查看成绩'}
+            <span className="ml-1.5 opacity-80 font-normal text-xs">Enter</span>
+          </button>
+        </div>
       )}
     </div>
   )
