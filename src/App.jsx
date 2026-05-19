@@ -16,6 +16,9 @@ async function apiGet(path, token) {
   })
   return res.json()
 }
+import TeacherDashboard from './components/TeacherDashboard'
+import StudentJoin from './components/StudentJoin'
+import { useStudentCheckin } from './hooks/useStudentCheckin'
 import { unlockAudio, isAudioUnlocked } from './utils/audioUnlock'
 import PageBackBar from './components/PageBackBar'
 import ExerciseView from './components/ExerciseView'
@@ -27,12 +30,16 @@ import Courses from './components/Courses'
 import CoreSentences from './components/CoreSentences'
 import Textbook from './components/Textbook'
 import Grammar from './components/Grammar'
+import ExerciseQuiz, { generateQuiz } from './components/ExerciseQuiz'
 import Quiz from './components/Quiz'
 import FillBlank from './components/FillBlank'
 import SyncPractice from './components/SyncPractice'
 import VocabStudy from './components/VocabStudy'
+import AlphabetLearn from './components/AlphabetLearn'
+import PhonemeLearn from './components/PhonemeLearn'
 import PhonicsLesson from './components/PhonicsLesson'
 import TypingPractice from './components/TypingPractice'
+import GutenbergReading from './components/GutenbergReading'
 import { STUDY_KIND } from './studyHistory'
 import { useProgress, getRecentErrors } from './hooks/useProgress'
 import sampleData from './data/sample.json'
@@ -66,14 +73,14 @@ import {
   IconMenu,
   IconArrowLeft, IconArrowRight, IconRotateCcw,
   IconCheck, IconBookmark, IconInfo, IconSplit,
-  IconCheckSquare, IconEdit, IconKeyboard,
+  IconCheckSquare, IconEdit, IconKeyboard, IconList,
 } from './components/Icons'
 
 const ALL_UNITS = [
   ...[ { label: 'Unit 1', slice: [0,11] }, { label: 'Unit 2', slice: [11,16] }, { label: 'Unit 3', slice: [16,27] }, { label: 'Unit 4', slice: [27,35] }, { label: 'Unit 5', slice: [35,43] }, { label: 'Unit 6', slice: [43,54] } ].map(u => ({ bookName: '三年级上册', bookId: 'grade3_up', data: grade3UpData, ...u, label: `三年级上册 · ${u.label}` })),
   ...[ { label: 'Unit 1', slice: [0,13] }, { label: 'Unit 2', slice: [13,19] }, { label: 'Unit 3', slice: [19,27] }, { label: 'Unit 4', slice: [27,31] }, { label: 'Unit 5', slice: [31,35] }, { label: 'Unit 6', slice: [35,43] } ].map(u => ({ bookName: '三年级下册', bookId: 'grade3_down', data: grade3DownData, ...u, label: `三年级下册 · ${u.label}` })),
   ...[ { label: 'Unit 1A', slice: [0,9] }, { label: 'Unit 1B', slice: [9,18] }, { label: 'Unit 1C', slice: [18,26] }, { label: 'Unit 2A', slice: [26,36] }, { label: 'Unit 2B', slice: [36,47] }, { label: 'Unit 3', slice: [47,56] }, { label: 'Unit 4', slice: [56,67] }, { label: 'Unit 5', slice: [67,80] }, { label: 'Unit 6A', slice: [80,89] }, { label: 'Unit 6B', slice: [89,97] } ].map(u => ({ bookName: '四年级上册', bookId: 'grade4_up', data: grade4UpData, ...u, label: `四年级上册 · ${u.label}` })),
-  ...[ { label: 'Unit 1A', slice: [0,10] }, { label: 'Unit 1B', slice: [10,20] }, { label: 'Unit 1C', slice: [20,30] }, { label: 'Unit 2A', slice: [30,41] }, { label: 'Unit 2B', slice: [41,51] }, { label: 'Unit 2C', slice: [51,62] }, { label: 'Unit 3A', slice: [62,72] }, { label: 'Unit 3B', slice: [72,81] }, { label: 'Unit 3C', slice: [81,90] }, { label: 'Unit 4A', slice: [90,99] }, { label: 'Unit 4B', slice: [99,108] }, { label: 'Unit 4C', slice: [108,116] }, { label: 'Unit 5A', slice: [116,126] }, { label: 'Unit 5B', slice: [126,135] }, { label: 'Unit 6A', slice: [135,145] }, { label: 'Unit 6B', slice: [145,155] }, { label: 'Unit 6C', slice: [155,164] } ].map(u => ({ bookName: '四年级下册', bookId: 'grade4_down', data: grade4DownData, ...u, label: `四年级下册 · ${u.label}` })),
+  ...[ { label: 'Unit 1A', slice: [0,10] }, { label: 'Unit 1B', slice: [10,20] }, { label: 'Unit 1C', slice: [20,30] }, { label: 'Unit 2A', slice: [30,41] }, { label: 'Unit 2B', slice: [41,51] }, { label: 'Unit 2C', slice: [51,62] }, { label: 'Unit 3A', slice: [62,72] }, { label: 'Unit 3B', slice: [72,81] }, { label: 'Unit 3C', slice: [81,90] }, { label: 'Unit 4A', slice: [90,99] }, { label: 'Unit 4B', slice: [99,108] }, { label: 'Unit 4C', slice: [108,116] }, { label: 'Unit 5A', slice: [116,123] }, { label: 'Unit 5B', slice: [123,129] }, { label: 'Unit 5C', slice: [129,135] }, { label: 'Unit 6A', slice: [135,145] }, { label: 'Unit 6B', slice: [145,155] }, { label: 'Unit 6C', slice: [155,164] } ].map(u => ({ bookName: '四年级下册', bookId: 'grade4_down', data: grade4DownData, ...u, label: `四年级下册 · ${u.label}` })),
   ...[ { label: 'Unit 1', slice: [0,8] }, { label: 'Unit 2', slice: [8,14] }, { label: 'Unit 3', slice: [14,20] }, { label: 'Unit 4', slice: [20,24] }, { label: 'Unit 5', slice: [24,30] }, { label: 'Unit 6', slice: [30,36] } ].map(u => ({ bookName: '五年级上册', bookId: 'grade5_up', data: grade5UpData, ...u, label: `五年级上册 · ${u.label}` })),
   ...[ { label: 'Unit 1', slice: [0,20] }, { label: 'Unit 2', slice: [20,40] }, { label: 'Unit 3', slice: [40,60] }, { label: 'Unit 4', slice: [60,80] }, { label: 'Unit 5', slice: [80,100] }, { label: 'Unit 6', slice: [100,124] } ].map(u => ({ bookName: '五年级下册', bookId: 'grade5_down', data: grade5DownData, ...u, label: `五年级下册 · ${u.label}` })),
   ...[ { label: 'Unit 1', slice: [0,37] }, { label: 'Unit 2', slice: [37,74] }, { label: 'Unit 3', slice: [74,111] }, { label: 'Unit 4', slice: [111,148] }, { label: 'Unit 5', slice: [148,185] }, { label: 'Unit 6', slice: [185,227] } ].map(u => ({ bookName: '六年级上册', bookId: 'grade6_up', data: grade6UpData, ...u, label: `六年级上册 · ${u.label}` })),
@@ -181,6 +188,10 @@ const DEFAULT_SETTINGS = {
   correctSound: 'chime',
   victorySound: 'chime',
   errorSound: 'buzz',
+  /** 教材句子练习「领读」次数 1–5，换单元后仍保留 */
+  leadReadCount: 1,
+  /** 输入阅读：整框 = 框内全文；整句 = 光标所在英文分句 */
+  readingSpeakScope: 'box',
 }
 
 function loadSettings() {
@@ -286,6 +297,11 @@ function LoginModal({ onClose, onLogin }) {
 }
 
 export default function App() {
+  // 教师端模式：URL 含 ?teacher 时直接渲染教师工作台
+  if (window.location.search.includes('teacher') || window.location.pathname === '/teacher') {
+    return <TeacherDashboard />
+  }
+
   const [sentences, setSentences] = useState(sampleData)
   const [settings, setSettings] = useState(loadSettings)
   const [tab, setTab] = useState('home')
@@ -293,6 +309,14 @@ export default function App() {
   const [lessonProgress, setLessonProgress] = useState({ index: 0, total: sampleData.length })
   const [nav, setNav] = useState(null)
   const [currentLesson, setCurrentLesson] = useState(null)
+  /** 仅语法专项等传入；关闭 grammarUi 开关时为 null */
+  const [lessonPackMeta, setLessonPackMeta] = useState(null)
+  const lessonPackMetaRef = useRef(null)
+  useEffect(() => {
+    lessonPackMetaRef.current = lessonPackMeta
+  }, [lessonPackMeta])
+  /** 语法专项「同步练习」小题包（与教材 Lesson 底栏同款入口） */
+  const [grammarSyncQuiz, setGrammarSyncQuiz] = useState(null)
   // History API integration:
   // - lessonRegistryRef: in-memory resolver label → { data, nextLoader } (closures can't be serialized)
   // - historyDepth: number of pushState entries we've added past the initial "home"
@@ -308,6 +332,13 @@ export default function App() {
   const [token, setToken] = useState(() => localStorage.getItem('auth_token') || null)
   const [isMember, setIsMember] = useState(() => localStorage.getItem('auth_is_member') === '1')
   const [showLogin, setShowLogin] = useState(false)
+  const [showStudentJoin, setShowStudentJoin] = useState(false)
+  const [studentInfo, setStudentInfo] = useState(() => {
+    const sid = localStorage.getItem('student_id')
+    if (!sid) return null
+    return { studentId: sid, studentName: localStorage.getItem('student_name') || '', classId: localStorage.getItem('student_class_id') || '', className: localStorage.getItem('student_class_name') || '' }
+  })
+  const { onSentenceDone, onWordDone, forceFlush } = useStudentCheckin()
   const [authLoading, setAuthLoading] = useState(false)
   const [syncStatus, setSyncStatus] = useState('')
   const [showLevelMenu, setShowLevelMenu] = useState(false)
@@ -364,18 +395,39 @@ export default function App() {
   const showContinue = allDone && hasNextAvailable
 
   // Apply lesson state WITHOUT pushing to history (shared by handleImport + popstate restore)
-  const applyLesson = useCallback((data, label, nextLoader) => {
+  const applyLesson = useCallback((data, label, nextLoader, packMeta = null) => {
     setSentences(data)
     setExerciseIndex(0)
     setLessonProgress({ index: 0, total: data.length })
     setCurrentLesson(label)
+    setLessonPackMeta(packMeta ?? null)
     setNextLessonLoader(nextLoader ? { run: nextLoader } : null)
     openTab('exercise', { pushHistory: false })
   }, [openTab])
 
-  const handleImport = useCallback((data, label = null, nextLoader = null) => {
-    if (label) lessonRegistryRef.current.set(label, { data, nextLoader })
-    applyLesson(data, label, nextLoader)
+  const handleGrammarSyncPractice = useCallback((lessonData, label, distractorPool) => {
+    const pool = distractorPool?.length ? distractorPool : lessonData
+    const questions = generateQuiz(lessonData, pool)
+    if (!questions.length) {
+      window.alert('当前课文句子较少，无法生成同步练习题。')
+      return
+    }
+    setGrammarSyncQuiz({ questions, title: `${label} · 同步练习` })
+    openTab('grammarSync')
+  }, [openTab])
+
+  useEffect(() => {
+    if (tab !== 'grammarSync') setGrammarSyncQuiz(null)
+  }, [tab])
+
+  const handleImport = useCallback((data, label = null, nextLoader = null, packMeta = null) => {
+    let returnTab = tabRef.current
+    if (returnTab === 'exercise' && lessonPackMetaRef.current?.returnTab != null) {
+      returnTab = lessonPackMetaRef.current.returnTab
+    }
+    const mergedMeta = { ...(packMeta || {}), returnTab }
+    if (label) lessonRegistryRef.current.set(label, { data, nextLoader, packMeta: mergedMeta })
+    applyLesson(data, label, nextLoader, mergedMeta)
     if (label) saveLessonHistory(label, data)
     if (!isPopStateRef.current) {
       window.history.pushState({ kind: 'lesson', label }, '')
@@ -383,9 +435,37 @@ export default function App() {
     }
   }, [applyLesson])
 
+  /** 练习页左上角返回：回到进入练习前的 Tab（上一级），不使用浏览器 history.back */
+  const handleExerciseBack = useCallback(() => {
+    const meta = lessonPackMetaRef.current
+    let target = meta?.returnTab
+    if (target == null || target === 'exercise') {
+      if (meta?.source === 'gutenberg') target = 'gutenberg'
+      else if (meta?.source === 'grammar') target = 'grammar'
+      else if (currentLesson && ALL_UNITS.some(u => u.label === currentLesson)) target = 'textbook'
+      else target = 'home'
+    }
+    setLessonPackMeta(null)
+    isPopStateRef.current = true
+    try {
+      openTab(target, { pushHistory: false })
+      window.history.replaceState({ kind: 'tab', tab: target }, '')
+    } finally {
+      isPopStateRef.current = false
+    }
+  }, [currentLesson, openTab])
+
   const handleSettings = useCallback((next) => {
     setSettings(next)
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(next))
+  }, [])
+
+  const patchSettings = useCallback((patch) => {
+    setSettings((prev) => {
+      const next = { ...prev, ...patch }
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify(next))
+      return next
+    })
   }, [])
 
   const handleSelectSentence = useCallback((i) => {
@@ -407,7 +487,7 @@ export default function App() {
         } else if (state.kind === 'lesson' && state.label) {
           const entry = lessonRegistryRef.current.get(state.label)
           if (entry) {
-            applyLesson(entry.data, state.label, entry.nextLoader)
+            applyLesson(entry.data, state.label, entry.nextLoader, entry.packMeta ?? null)
           } else {
             setTab('home')
           }
@@ -455,6 +535,14 @@ export default function App() {
     setUser(null)
     setToken(null)
     setIsMember(false)
+  }
+
+  function handleLeaveClass() {
+    localStorage.removeItem('student_id')
+    localStorage.removeItem('student_name')
+    localStorage.removeItem('student_class_id')
+    localStorage.removeItem('student_class_name')
+    setStudentInfo(null)
   }
 
   async function handleUploadSync() {
@@ -546,10 +634,19 @@ export default function App() {
           aria-label={menuOpen ? '关闭菜单' : '打开菜单'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(v => !v)}
-          className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 left-[max(0.75rem,env(safe-area-inset-left,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+          className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
         >
           <IconMenu size={22} />
         </button>
+
+        {/* 贴右边边缘滑入即可展开菜单（桌面端）；窄条避免挡正文过多 */}
+        {!menuOpen && (
+          <div
+            className="fixed top-0 right-0 z-[99] h-[100dvh] w-3 max-w-[14px] pointer-events-auto"
+            onMouseEnter={() => setMenuOpen(true)}
+            aria-hidden
+          />
+        )}
 
         {menuOpen ? (
           <>
@@ -559,11 +656,11 @@ export default function App() {
               onClick={() => setMenuOpen(false)}
             />
             <div
-              className="pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] w-32 isolate shadow-[4px_0_24px_rgba(0,0,0,0.35)] left-[max(0.75rem,env(safe-area-inset-left,0px))]"
+              className="pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] w-32 isolate shadow-[-4px_0_24px_rgba(0,0,0,0.35)] right-[max(0.75rem,env(safe-area-inset-right,0px))]"
             >
               <aside
                 aria-label="导航菜单"
-                className="flex h-full min-h-0 w-full flex-col border-r border-slate-600/45 bg-slate-900 px-2 py-3 shadow-lg overflow-y-auto overflow-x-hidden"
+                className="flex h-full min-h-0 w-full flex-col border-l border-slate-600/45 bg-slate-900 px-2 py-3 shadow-lg overflow-y-auto overflow-x-hidden"
               >
           <div className="flex min-h-0 flex-1 flex-col gap-2 pt-[calc(max(0.75rem,env(safe-area-inset-top,0px))+2.75rem+0.375rem)]">
           {/* Logo */}
@@ -590,6 +687,19 @@ export default function App() {
             </button>
           )}
 
+          {/* 班级状态 */}
+          {studentInfo ? (
+            <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-green-900/30 border border-green-800/50 shrink-0">
+              <span className="text-green-400 text-xs">🏫</span>
+              <span className="text-green-300 text-xs truncate flex-1">{studentInfo.studentName} · {studentInfo.className}</span>
+              <button onClick={() => { setMenuOpen(false); handleLeaveClass() }} className="text-gray-600 hover:text-red-400 text-[10px] transition-colors">✕</button>
+            </div>
+          ) : (
+            <button onClick={() => { setMenuOpen(false); setShowStudentJoin(true) }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-green-400 hover:bg-green-900/30 transition-colors shrink-0">
+              <span>🏫</span><span>加入班级（打卡）</span>
+            </button>
+          )}
+
           <div className="border-t border-slate-700/70 shrink-0" />
 
           {/* 导航菜单 */}
@@ -600,15 +710,19 @@ export default function App() {
             { id: 'courses', label: '课程', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
             { id: 'textbook', label: '教材', Icon: IconBook, onClick: () => navigateFromMenu('textbook') },
             { id: 'grammar', label: '语法', Icon: IconGraduationCap, onClick: () => navigateFromMenu('grammar') },
+            { id: 'gutenberg', label: '输入阅读', Icon: IconList, onClick: () => navigateFromMenu('gutenberg') },
             { id: 'vocab', label: '单词', Icon: IconBookmark, onClick: () => navigateFromMenu('vocab') },
+            { id: 'alphabet', label: '26字母学习', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('alphabet') },
+            { id: 'phonemes', label: '音标学习', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('phonemes') },
             { id: 'typing', label: '指法练习', Icon: IconKeyboard, onClick: () => navigateFromMenu('typing') },
             { id: 'import', label: '导入', Icon: IconDownload, onClick: () => navigateFromMenu('import') },
             { id: 'settings', label: '设置', Icon: IconSettings, onClick: () => { setMenuOpen(false); setShowSettings(true) } },
           ].map(item => (
             <button key={item.id}
               onClick={item.onClick}
-              className={`flex items-center gap-2 px-2 py-2 rounded-lg text-sm transition-colors shrink-0
-                ${(tab === item.id || (item.id === 'settings' && showSettings)) ? 'bg-slate-700 text-white' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'}`}>
+              className={`flex items-center gap-2 py-2 rounded-lg transition-colors shrink-0
+                ${item.sub ? 'pl-7 pr-2 text-xs' : 'px-2 text-sm'}
+                ${(tab === item.id || (item.id === 'settings' && showSettings)) ? 'bg-slate-700 text-white' : item.sub ? 'text-slate-400 hover:bg-slate-800/80 hover:text-slate-200' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'}`}>
               {item.Icon ? <item.Icon size={15} /> : <span className="w-[15px] text-center">{item.iconText}</span>}
               <span className="truncate">{item.label}</span>
             </button>
@@ -634,7 +748,7 @@ export default function App() {
         {/* Main content */}
         <main
           className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${tab === 'exercise' ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'}`}
-          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'syncpractice' || tab === 'vocab' || tab === 'phonics' || tab === 'typing') ? '0.75rem' : '2.25rem' }}
+          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'grammarSync' || tab === 'gutenberg' || tab === 'syncpractice' || tab === 'vocab' || tab === 'alphabet' || tab === 'phonemes' || tab === 'phonics' || tab === 'typing') ? '0.75rem' : '2.25rem' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
             <Dashboard
@@ -642,6 +756,7 @@ export default function App() {
               progress={progress}
               onStartExercise={() => openTab('exercise')}
               onImport={handleImport}
+              onOpenGutenberg={() => navigateFromMenu('gutenberg')}
               changyongData={changyongData}
               sampleData={sampleData}
             />
@@ -691,16 +806,42 @@ export default function App() {
               hideSkipNext={settings?.hideSplitSkip !== false}
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
+              settings={settings}
             />
           </div>
           <div style={{ display: tab === 'grammar' ? 'contents' : 'none' }}>
             <Grammar
               onImport={handleImport}
               onClose={() => openTab('exercise')}
+              onGrammarSyncPractice={handleGrammarSyncPractice}
               active={tab === 'grammar'}
               progress={progress}
             />
           </div>
+          <div style={{ display: tab === 'gutenberg' ? 'contents' : 'none' }}>
+            <GutenbergReading
+              onClose={() => openTab('exercise')}
+              onStartReading={(data, label) => handleImport(data, label, null, { source: 'gutenberg' })}
+            />
+          </div>
+          {tab === 'grammarSync' && (
+            grammarSyncQuiz ? (
+              <ExerciseQuiz
+                questions={grammarSyncQuiz.questions}
+                title={grammarSyncQuiz.title}
+                settings={settings}
+                onClose={() => {
+                  setGrammarSyncQuiz(null)
+                  openTab('grammar')
+                }}
+              />
+            ) : (
+              <div className="w-full max-w-lg mx-auto px-4 py-6">
+                <PageBackBar onBack={() => openTab('grammar')} label="返回语法专项" />
+                <p className="text-gray-500 text-sm mt-4 text-center">没有进行中的同步练习，请从语法专项某一课进入。</p>
+              </div>
+            )
+          )}
           {tab === 'exercise' && (
             <ExerciseView
               key={currentLesson || 'default'}
@@ -710,6 +851,7 @@ export default function App() {
               onMarkReview={markReview}
               onIncrementAttempts={incrementAttempts}
               settings={settings}
+              onPatchSettings={patchSettings}
               initialIndex={exerciseIndex}
               onProgressChange={(i, total) => setLessonProgress({ index: i, total })}
               onNav={setNav}
@@ -719,6 +861,7 @@ export default function App() {
               hasNextLesson={showContinue}
               onNextLesson={goNextLesson}
               onBack={() => window.history.back()}
+              grammarContext={lessonPackMeta}
             />
           )}
           {tab === 'list' && (
@@ -752,6 +895,12 @@ export default function App() {
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
             <VocabStudy onClose={() => openTab('exercise')} />
           </div>
+          <div style={{ display: tab === 'alphabet' ? 'contents' : 'none' }}>
+            <AlphabetLearn onClose={() => openTab('exercise')} />
+          </div>
+          <div style={{ display: tab === 'phonemes' ? 'contents' : 'none' }}>
+            <PhonemeLearn onClose={() => openTab('exercise')} />
+          </div>
           {tab === 'phonics' && (
             <PhonicsLesson onClose={() => openTab('exercise')} />
           )}
@@ -762,7 +911,7 @@ export default function App() {
       </div>
 
       {/* 仅练习页展示底栏控件；子页面请用各页左上角「返回」 */}
-      {tab !== 'syncpractice' && tab === 'exercise' && nav && (
+      {tab !== 'syncpractice' && tab === 'exercise' && nav && !nav.readingMode && (
       <footer className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur border-t border-slate-700/60 z-40">
         <div>
             <>
@@ -955,6 +1104,12 @@ export default function App() {
 
       {/* Login modal */}
       {showLogin && <LoginModal onClose={() => setShowLogin(false)} onLogin={handleLogin} />}
+      {showStudentJoin && (
+        <StudentJoin
+          onJoined={info => { setStudentInfo(info); setShowStudentJoin(false) }}
+          onSkip={() => setShowStudentJoin(false)}
+        />
+      )}
     </div>
   )
 }
