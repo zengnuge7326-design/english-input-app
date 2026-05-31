@@ -1,0 +1,382 @@
+/* ── Liquid Glass Theme — Full App Coverage ────────────────────────────────── */
+
+.theme-light-glass {
+  --lg-bg-page: #f2f3f7;
+  --lg-bg-page-accent: #e8f4f8;
+  --lg-text-primary: #1a1a2e;
+  --lg-text-secondary: #5a5a72;
+  --lg-text-muted: #9a9ab0;
+  --lg-glass-bg: rgba(255, 255, 255, 0.58);
+  --lg-glass-border: rgba(255, 255, 255, 0.70);
+  --lg-glass-border-subtle: rgba(210, 210, 230, 0.45);
+  --lg-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
+  --lg-glass-blur: 20px;
+  --lg-accent-lavender: rgba(235, 222, 240, 0.88);
+  --lg-accent-mint: rgba(232, 248, 245, 0.92);
+  --lg-accent-peach: rgba(255, 236, 220, 0.85);
+  --lg-accent-sky: rgba(220, 238, 255, 0.88);
+  --lg-accent-teal: #5b9bd5;
+  --lg-accent-teal-soft: rgba(91, 155, 213, 0.15);
+  --lg-radius-card: 20px;
+  --lg-radius-pill: 9999px;
+  --lg-nav-icon: 17px;
+  --lg-nav-font: 15px;
+
+  color: var(--lg-text-primary);
+  background-color: var(--lg-bg-page);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(200, 225, 255, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 45% at 95% 100%, rgba(235, 215, 255, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 35% at 50% 50%, rgba(220, 240, 255, 0.2) 0%, transparent 70%);
+}
+
+/* ── 1. Main container / page backgrounds ───────────────────────────────── */
+
+.theme-light-glass .bg-black,
+.theme-light-glass .ocean-main {
+  background: var(--lg-bg-page) !important;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(200, 225, 255, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 45% at 95% 100%, rgba(235, 215, 255, 0.45) 0%, transparent 55%) !important;
+}
+
+/* Stars / space particles — hide in light mode */
+.theme-light-glass .star,
+.theme-light-glass .milky-way,
+.theme-light-glass .ocean-bubble,
+.theme-light-glass .ocean-fish { opacity: 0 !important; pointer-events: none !important; }
+
+/* ── 2. Panel / card backgrounds ─────────────────────────────────────────── */
+
+.theme-light-glass .bg-gray-950 {
+  background-color: rgba(245, 246, 252, 0.92) !important;
+}
+.theme-light-glass .bg-gray-900,
+.theme-light-glass .bg-slate-900 {
+  background-color: var(--lg-glass-bg) !important;
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+}
+.theme-light-glass .bg-gray-800,
+.theme-light-glass .bg-slate-800 {
+  background-color: rgba(255, 255, 255, 0.48) !important;
+}
+
+/* Opacity variants — e.g. bg-gray-800/60, bg-gray-900/80 */
+.theme-light-glass [class*="bg-gray-800/"],
+.theme-light-glass [class*="bg-gray-900/"],
+.theme-light-glass [class*="bg-slate-800/"],
+.theme-light-glass [class*="bg-slate-900/"] {
+  background-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+/* ── 3. Bottom nav bar ────────────────────────────────────────────────────── */
+
+.theme-light-glass footer,
+.theme-light-glass .bg-slate-900\/95 {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-top: 1px solid rgba(210, 210, 235, 0.5) !important;
+}
+
+/* ── 4. Borders ──────────────────────────────────────────────────────────── */
+
+.theme-light-glass .border-gray-800,
+.theme-light-glass .border-gray-700,
+.theme-light-glass .border-gray-600,
+.theme-light-glass .border-slate-700,
+.theme-light-glass .border-slate-600,
+.theme-light-glass .border-slate-500 {
+  border-color: var(--lg-glass-border-subtle) !important;
+}
+
+.theme-light-glass [class*="border-gray-800/"],
+.theme-light-glass [class*="border-gray-700/"],
+.theme-light-glass [class*="border-slate-700/"],
+.theme-light-glass [class*="border-slate-600/"] {
+  border-color: rgba(200, 200, 225, 0.35) !important;
+}
+
+/* ── 5. Text colors ──────────────────────────────────────────────────────── */
+
+/* Headings and primary text */
+.theme-light-glass .text-white {
+  color: var(--lg-text-primary) !important;
+}
+.theme-light-glass .text-gray-100,
+.theme-light-glass .text-gray-200,
+.theme-light-glass .text-gray-300,
+.theme-light-glass .text-slate-200,
+.theme-light-glass .text-slate-300 {
+  color: #2d2d48 !important;
+}
+.theme-light-glass .text-gray-400,
+.theme-light-glass .text-slate-400 {
+  color: var(--lg-text-secondary) !important;
+}
+.theme-light-glass .text-gray-500,
+.theme-light-glass .text-gray-600,
+.theme-light-glass .text-slate-500 {
+  color: var(--lg-text-muted) !important;
+}
+
+/* Preserve white text on colored buttons */
+.theme-light-glass .bg-blue-600 .text-white,
+.theme-light-glass .bg-blue-500 .text-white,
+.theme-light-glass .bg-green-600 .text-white,
+.theme-light-glass .bg-purple-600 .text-white,
+.theme-light-glass .bg-red-600 .text-white,
+.theme-light-glass .bg-amber-500 .text-white,
+.theme-light-glass [class*="bg-blue-"] .text-white,
+.theme-light-glass [class*="bg-green-"] .text-white,
+.theme-light-glass [class*="bg-indigo-"] .text-white {
+  color: white !important;
+}
+
+/* ── 6. Input fields ─────────────────────────────────────────────────────── */
+
+.theme-light-glass input[class*="bg-gray"],
+.theme-light-glass input[class*="bg-slate"],
+.theme-light-glass textarea[class*="bg-gray"],
+.theme-light-glass textarea[class*="bg-slate"] {
+  background-color: rgba(255, 255, 255, 0.80) !important;
+  border-color: rgba(200, 200, 230, 0.6) !important;
+  color: var(--lg-text-primary) !important;
+}
+.theme-light-glass input::placeholder,
+.theme-light-glass textarea::placeholder {
+  color: var(--lg-text-muted) !important;
+}
+
+/* ── 7. Word input exercise area ─────────────────────────────────────────── */
+
+/* The underline word inputs */
+.theme-light-glass .border-b-2,
+.theme-light-glass [class*="border-b-"] {
+  /* Keep underlines visible but softer */
+}
+
+/* Word input token container */
+.theme-light-glass [class*="bg-gray-900"][class*="rounded"] {
+  background-color: rgba(255, 255, 255, 0.60) !important;
+}
+
+/* ── 8. Modals / overlays ─────────────────────────────────────────────────── */
+
+.theme-light-glass .bg-black\/70,
+.theme-light-glass .bg-black\/60,
+.theme-light-glass .bg-black\/45 {
+  background-color: rgba(180, 185, 210, 0.55) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Modal inner panels */
+.theme-light-glass .fixed.inset-0 > .bg-gray-900,
+.theme-light-glass .fixed > .bg-gray-900 {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid var(--lg-glass-border) !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ── 9. Scrollbar ─────────────────────────────────────────────────────────── */
+
+.theme-light-glass ::-webkit-scrollbar { width: 4px; height: 4px; }
+.theme-light-glass ::-webkit-scrollbar-track { background: transparent; }
+.theme-light-glass ::-webkit-scrollbar-thumb { background: rgba(150, 150, 200, 0.3); border-radius: 4px; }
+.theme-light-glass ::-webkit-scrollbar-thumb:hover { background: rgba(120, 120, 180, 0.5); }
+
+/* ── 10. Colored accent areas — keep their hue but lighten ──────────────── */
+
+.theme-light-glass [class*="bg-blue-900"],
+.theme-light-glass [class*="bg-blue-950"] {
+  background-color: rgba(220, 235, 255, 0.7) !important;
+}
+.theme-light-glass [class*="bg-green-900"],
+.theme-light-glass [class*="bg-green-950"] {
+  background-color: rgba(220, 248, 235, 0.7) !important;
+}
+.theme-light-glass [class*="bg-purple-900"],
+.theme-light-glass [class*="bg-purple-950"] {
+  background-color: rgba(240, 220, 255, 0.7) !important;
+}
+.theme-light-glass [class*="bg-red-900"],
+.theme-light-glass [class*="bg-red-950"] {
+  background-color: rgba(255, 220, 220, 0.7) !important;
+}
+.theme-light-glass [class*="bg-amber-900"],
+.theme-light-glass [class*="bg-amber-950"] {
+  background-color: rgba(255, 240, 200, 0.7) !important;
+}
+
+/* Text in those colored containers */
+.theme-light-glass [class*="bg-blue-900"] .text-blue-300,
+.theme-light-glass [class*="bg-blue-900"] .text-blue-400 { color: #2563eb !important; }
+.theme-light-glass [class*="bg-green-900"] .text-green-300,
+.theme-light-glass [class*="bg-green-900"] .text-green-400 { color: #16a34a !important; }
+.theme-light-glass [class*="bg-purple-900"] .text-purple-300,
+.theme-light-glass [class*="bg-purple-900"] .text-purple-400 { color: #7c3aed !important; }
+.theme-light-glass [class*="bg-red-900"] .text-red-300,
+.theme-light-glass [class*="bg-red-900"] .text-red-400 { color: #dc2626 !important; }
+.theme-light-glass [class*="bg-amber-900"] .text-amber-300,
+.theme-light-glass [class*="bg-amber-900"] .text-amber-400 { color: #d97706 !important; }
+
+/* ── 11. Nav rail (right side, light mode) ───────────────────────────────── */
+
+.theme-light-glass .lg-glass-card {
+  background: var(--lg-glass-bg);
+  border: 1px solid var(--lg-glass-border);
+  border-radius: var(--lg-radius-card);
+  box-shadow: var(--lg-glass-shadow);
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+}
+
+.theme-light-glass .lg-glass-inset {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 14px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.theme-light-glass .lg-glass-nav {
+  background: var(--lg-glass-bg);
+  border-left: 1px solid var(--lg-glass-border);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+}
+
+.theme-light-glass .lg-nav-rail {
+  background: var(--lg-glass-bg);
+  border-left: 1px solid var(--lg-glass-border);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+}
+
+.theme-light-glass .lg-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  font-size: var(--lg-nav-font);
+  line-height: 1.25;
+  color: var(--lg-text-secondary);
+  transition: background 0.15s, color 0.15s;
+}
+.theme-light-glass .lg-nav-item:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--lg-text-primary);
+}
+.theme-light-glass .lg-nav-item--active {
+  background: var(--lg-accent-lavender);
+  color: var(--lg-text-primary);
+  font-weight: 600;
+}
+.theme-light-glass .lg-nav-item--mint {
+  background: var(--lg-accent-mint);
+  color: var(--lg-text-primary);
+}
+
+/* ── 12. Buttons ─────────────────────────────────────────────────────────── */
+
+.theme-light-glass .lg-btn-primary {
+  background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #c5e1a5 100%);
+  color: var(--lg-text-primary);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 16px rgba(168, 230, 207, 0.35), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+.theme-light-glass .lg-btn-primary:hover { filter: brightness(1.04); }
+
+.theme-light-glass .lg-btn-secondary {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(250, 189, 212, 0.45);
+  color: var(--lg-text-primary);
+}
+
+/* Generic action buttons — make them glass-pill */
+.theme-light-glass .bg-gray-800 button,
+.theme-light-glass button.bg-gray-800,
+.theme-light-glass button.bg-gray-700 {
+  background-color: rgba(255, 255, 255, 0.60) !important;
+  border: 1px solid var(--lg-glass-border) !important;
+  color: var(--lg-text-primary) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+}
+
+/* ── 13. Tabs ─────────────────────────────────────────────────────────────── */
+
+.theme-light-glass .lg-tab-active {
+  background: var(--lg-accent-lavender);
+  color: var(--lg-text-primary);
+  font-weight: 600;
+}
+.theme-light-glass .lg-tab-inactive { color: var(--lg-text-secondary); }
+.theme-light-glass .lg-tab-inactive:hover {
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--lg-text-primary);
+}
+
+/* ── 14. Misc utility classes ────────────────────────────────────────────── */
+
+.theme-light-glass .lg-stat-chip {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 14px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.theme-light-glass .lg-divider { border-color: rgba(0, 0, 0, 0.07); }
+.theme-light-glass .lg-overlay { background: rgba(235, 238, 248, 0.55); }
+
+/* ── 15. Progress bars ────────────────────────────────────────────────────── */
+
+.theme-light-glass [class*="bg-gray-800"][class*="rounded-full"] {
+  background-color: rgba(200, 200, 230, 0.35) !important;
+}
+
+/* ── 16. Dividers / hr ────────────────────────────────────────────────────── */
+
+.theme-light-glass .divide-gray-800 > * + *,
+.theme-light-glass .divide-gray-700 > * + * {
+  border-color: rgba(200, 200, 230, 0.3) !important;
+}
+
+/* ── 17. Hover states on dark backgrounds ────────────────────────────────── */
+
+.theme-light-glass [class*="hover:bg-gray-800"]:hover,
+.theme-light-glass [class*="hover:bg-slate-800"]:hover {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+}
+.theme-light-glass [class*="hover:bg-gray-700"]:hover,
+.theme-light-glass [class*="hover:bg-slate-700"]:hover {
+  background-color: rgba(255, 255, 255, 0.70) !important;
+}
+
+/* ── 18. Selected / active states ─────────────────────────────────────────── */
+
+.theme-light-glass .bg-slate-700 {
+  background-color: var(--lg-accent-lavender) !important;
+}
+
+/* ── 19. Monospace / code text ────────────────────────────────────────────── */
+
+.theme-light-glass .font-mono,
+.theme-light-glass [class*="tabular-nums"] {
+  color: inherit;
+}
+
+/* ── 20. reduce-transparency fallback ────────────────────────────────────── */
+
+@media (prefers-reduced-transparency: reduce) {
+  .theme-light-glass .lg-glass-card,
+  .theme-light-glass .lg-glass-nav,
+  .theme-light-glass .lg-nav-rail,
+  .theme-light-glass .bg-gray-900,
+  .theme-light-glass .bg-slate-900 {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.97) !important;
+  }
+}

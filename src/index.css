@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/theme-light-glass.css";
 
 /* Rounded font loaded via index.html <link> tag */
 
@@ -216,3 +217,255 @@ body {
   animation: color-bubble-rise ease-out forwards;
   pointer-events: none;
 }
+
+/* +XP 飘字（多邻国式即时奖励反馈）*/
+@keyframes xp-float {
+  0%   { transform: translateY(8px) scale(0.6); opacity: 0; }
+  20%  { transform: translateY(0) scale(1.1); opacity: 1; }
+  35%  { transform: translateY(-2px) scale(1); opacity: 1; }
+  100% { transform: translateY(-44px) scale(0.95); opacity: 0; }
+}
+.xp-float {
+  animation: xp-float 1s ease-out forwards;
+  pointer-events: none;
+}
+
+/* 💎 钻石获得动画 — 爆发式放大 + 光晕脉冲 */
+@keyframes gem-burst {
+  0%   { transform: translate(-50%, -50%) scale(0.15) rotate(-12deg); opacity: 0; }
+  18%  { transform: translate(-50%, -50%) scale(1.55) rotate(6deg); opacity: 1; }
+  32%  { transform: translate(-50%, -50%) scale(1.0) rotate(0deg); opacity: 1; }
+  55%  { transform: translate(-50%, -55%) scale(1.15) rotate(-2deg); opacity: 1; }
+  80%  { transform: translate(-50%, -65%) scale(1.05) rotate(1deg); opacity: 0.9; }
+  100% { transform: translate(-50%, -85%) scale(0.85) rotate(0deg); opacity: 0; }
+}
+.gem-burst {
+  animation: gem-burst 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  pointer-events: none;
+}
+/* 旧 class 名兼容：保留以防其它地方还在用 */
+.crystal-float {
+  animation: gem-burst 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  pointer-events: none;
+}
+
+/* 💎 顶部徽章被击中时的脉冲 */
+@keyframes crystal-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  40%      { transform: scale(1.25); filter: brightness(1.5) drop-shadow(0 0 8px rgba(168,85,247,0.8)); }
+}
+.crystal-pulse { animation: crystal-pulse 0.55s ease-out; }
+
+/* 同步习题：答错时题卡抖动 */
+@keyframes card-shake {
+  0%, 100% { transform: translateX(0); }
+  15%      { transform: translateX(-9px); }
+  30%      { transform: translateX(8px); }
+  45%      { transform: translateX(-6px); }
+  60%      { transform: translateX(5px); }
+  75%      { transform: translateX(-3px); }
+  90%      { transform: translateX(2px); }
+}
+.card-shake { animation: card-shake 0.45s cubic-bezier(.36,.07,.19,.97); }
+
+/* 同步习题：连击徽章弹出 */
+@keyframes combo-pop {
+  0%   { transform: scale(0.4) rotate(-10deg); opacity: 0; }
+  45%  { transform: scale(1.4) rotate(6deg); opacity: 1; }
+  70%  { transform: scale(0.95) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+.combo-pop { animation: combo-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); transform-origin: center; }
+
+/* 配对：听力按钮波形跳动 */
+@keyframes wave-bounce {
+  0%, 100% { transform: scaleY(0.5); }
+  50%      { transform: scaleY(1); }
+}
+.wave-anim { animation: wave-bounce 0.6s ease-in-out infinite; transform-origin: bottom; }
+
+/* 顶部连胜条横向滚动条（细 amber 风） */
+.scrollbar-thin-amber::-webkit-scrollbar { height: 4px; }
+.scrollbar-thin-amber::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin-amber::-webkit-scrollbar-thumb { background: rgba(251,191,36,0.3); border-radius: 2px; }
+.scrollbar-thin-amber::-webkit-scrollbar-thumb:hover { background: rgba(251,191,36,0.5); }
+
+/* 同步习题：+XP 飞向左上 🔥 徽章 */
+@keyframes xp-fly {
+  0%   { transform: translate(-50%, 0) scale(0.6); opacity: 0; }
+  15%  { transform: translate(-50%, -20px) scale(1.4); opacity: 1; }
+  30%  { transform: translate(-50%, -30px) scale(1); opacity: 1; }
+  100% {
+    /* 飞到左上角（顶部 🔥 徽章位置）并缩小消失 */
+    left: 2.5rem;
+    top: 1.75rem;
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+}
+.xp-fly { animation: xp-fly 1.05s cubic-bezier(0.5, 0, 0.5, 1) forwards; will-change: transform, left, top; }
+
+/* 结算页：水晶逐颗飞入 */
+@keyframes result-gem-in {
+  0%   { transform: translateY(40px) scale(0.2) rotate(-15deg); opacity: 0; filter: blur(4px); }
+  60%  { transform: translateY(-8px) scale(1.25) rotate(8deg); opacity: 1; filter: blur(0); }
+  80%  { transform: translateY(2px) scale(0.95) rotate(-2deg); }
+  100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+}
+.result-gem-in {
+  animation: result-gem-in 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  filter: drop-shadow(0 4px 12px rgba(99,102,241,0.4));
+}
+
+/* ── 跟读模式：3D 翻卡 ───────────────────────────────────────── */
+.du-flip-card { perspective: 1200px; }
+.du-flip-inner {
+  position: relative;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1.15);
+  transform-style: preserve-3d;
+}
+.du-flip-inner.is-flipped { transform: rotateY(180deg); }
+.du-flip-front, .du-flip-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.du-flip-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+/* 错误抖动提示 */
+@keyframes du-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+.du-shake { animation: du-shake 0.4s ease-in-out; }
+
+/* 蓝色声波 listening 动画 */
+@keyframes du-wave {
+  0%, 100% { transform: scaleY(0.4); }
+  50%      { transform: scaleY(1); }
+}
+.du-wave-bar {
+  width: 3px;
+  border-radius: 2px;
+  background: currentColor;
+  transform-origin: center;
+  animation: du-wave 0.8s ease-in-out infinite;
+}
+
+/* 小卡片专用翻卡（grid cell 内绝对定位，两面都填满整格） */
+.du-tile-flip { perspective: 800px; }
+.du-tile-flip-inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1.15);
+  transform-style: preserve-3d;
+}
+.du-tile-flip-inner.is-flipped { transform: rotateY(180deg); }
+.du-tile-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: inherit;
+  overflow: hidden;
+}
+.du-tile-back { transform: rotateY(180deg); }
+
+/* ── 字母学习卡通效果 ─────────────────────────────────────── */
+
+/* 字母卡片悬停 + 选中弹跳 */
+@keyframes letter-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%      { transform: translateY(-12px) scale(1.08); }
+  60%      { transform: translateY(-4px) scale(1.04); }
+}
+.letter-bounce { animation: letter-bounce 0.7s ease-in-out; }
+
+/* 字母卡选中态：呼吸光晕 */
+@keyframes letter-pulse {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 8px currentColor); }
+  50%      { filter: brightness(1.15) drop-shadow(0 0 18px currentColor); }
+}
+.letter-pulse { animation: letter-pulse 1.6s ease-in-out infinite; }
+
+/* 星星散射 */
+@keyframes sparkle-burst {
+  0%   { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 0; }
+  30%  { transform: translate(-50%, -50%) scale(1.4) rotate(180deg); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(0.3) rotate(360deg); opacity: 0; }
+}
+.sparkle {
+  position: absolute;
+  left: 50%; top: 50%;
+  font-size: 24px;
+  pointer-events: none;
+  animation: sparkle-burst 1s ease-out forwards;
+}
+
+/* 撒花 confetti */
+@keyframes confetti-fall {
+  0%   { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+.confetti {
+  position: fixed;
+  width: 10px; height: 14px;
+  pointer-events: none;
+  animation: confetti-fall 2.4s linear forwards;
+  z-index: 220;
+}
+
+/* SVG 字母描边动画 */
+@keyframes svg-draw {
+  to { stroke-dashoffset: 0; }
+}
+.svg-draw path { stroke-dasharray: 400; stroke-dashoffset: 400; animation: svg-draw 1.6s ease-out forwards; }
+
+/* 熊猫陪练表情过渡 */
+.panda-correct { animation: panda-cheer 0.6s ease-out; }
+@keyframes panda-cheer {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30%      { transform: translateY(-10px) rotate(-4deg); }
+  60%      { transform: translateY(-4px) rotate(4deg); }
+}
+.panda-wrong { animation: panda-shake 0.5s ease-in-out; }
+@keyframes panda-shake {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-8deg); }
+  75%      { transform: rotate(8deg); }
+}
+.panda-listening { animation: panda-listen 1.5s ease-in-out infinite; }
+@keyframes panda-listen {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+/* 熊猫耳边声波 */
+@keyframes panda-wave-anim {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.3); }
+}
+.panda-wave-l, .panda-wave-r {
+  transform-origin: center;
+  animation: panda-wave-anim 0.9s ease-in-out infinite;
+}
+.panda-wave-r { animation-delay: 0.15s; }
+
+/* 关卡选择 Tab 卡通按钮 */
+.lvl-tab {
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+.lvl-tab:hover { transform: translateY(-2px) scale(1.03); }
+.lvl-tab-active { transform: translateY(-4px); }
+
+/* 大字母选中时背景脉动 */
+@keyframes hero-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(255,255,255,0.2), 0 8px 24px rgba(0,0,0,0.5); }
+  50%      { box-shadow: 0 0 60px rgba(255,255,255,0.45), 0 8px 36px rgba(0,0,0,0.6); }
+}
+.hero-glow { animation: hero-glow 2.5s ease-in-out infinite; }
+

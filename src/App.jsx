@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 const API = 'https://okenglish.site/api'
 /** 为 true 时课程广场与教材全员可用（不依赖登录会员标记） */
-const UNLOCK_ALL_COURSES = true
+const UNLOCK_ALL_COURSES = false
 async function apiPost(path, body, token) {
   const res = await fetch(API + path, {
     method: 'POST',
@@ -40,8 +40,18 @@ import PhonemeLearn from './components/PhonemeLearn'
 import PhonicsLesson from './components/PhonicsLesson'
 import TypingPractice from './components/TypingPractice'
 import GutenbergReading from './components/GutenbergReading'
+import MemberPage from './components/MemberPage'
+import ReferralCenter from './components/ReferralCenter'
+import FounderCenter from './components/FounderCenter'
 import { STUDY_KIND } from './studyHistory'
 import { useProgress, getRecentErrors } from './hooks/useProgress'
+import { useXP } from './hooks/useXP'
+import { useCrystal } from './hooks/useCrystal'
+import { useSound } from './hooks/useSound'
+import CrystalPanel from './components/CrystalPanel'
+import CrystalFloat from './components/CrystalFloat'
+import GemSVG from './components/GemSVG'
+import PandaLogo from './components/PandaLogo'
 import sampleData from './data/sample.json'
 import changyongData from './data/changyong.json'
 import grade4DownData from './data/grade4_down.json'
@@ -68,12 +78,13 @@ import bsdaS4Data from './data/bsda_s4.json'
 import {
   IconHome, IconPencil, IconBookOpen, IconBook,
   IconGraduationCap, IconDownload, IconSettings,
-  IconArchive, IconCalendar, IconStar, IconRefresh, IconCrown,
+  IconArchive, IconCalendar, IconStar, IconRefresh, IconCrown, IconUsers,
   IconUser,
   IconMenu,
   IconArrowLeft, IconArrowRight, IconRotateCcw,
   IconCheck, IconBookmark, IconInfo, IconSplit,
-  IconCheckSquare, IconEdit, IconKeyboard, IconList,
+  IconCheckSquare, IconEdit, IconKeyboard, IconList, IconBell, IconMessageSquare,
+  IconSun, IconMoon,
 } from './components/Icons'
 
 const ALL_UNITS = [
@@ -222,26 +233,37 @@ const BOTTOM_ITEMS = [
   { id: 'member',    Icon: IconCrown,    label: '开通会员',  yellow: true },
 ]
 
-function LoginModal({ onClose, onLogin }) {
-  const [mode, setMode] = useState('login')
+function LoginModal({ onClose, onLogin, initialInviteCode = '' }) {
+  const [mode, setMode] = useState(initialInviteCode ? 'register' : 'login')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [inviteCode, setInviteCode] = useState(initialInviteCode)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
+  // 从 URL ?ref= 或 localStorage 读取推荐码
+  const [refCode] = useState(() => {
+    const urlRef = new URLSearchParams(window.location.search).get('ref')
+    if (urlRef) { localStorage.setItem('pending_ref_code', urlRef.toUpperCase()); return urlRef.toUpperCase() }
+    return localStorage.getItem('pending_ref_code') || ''
+  })
 
   function reset() { setError(''); setSuccess('') }
 
   async function handleSubmit() {
     setLoading(true); reset()
     const path = mode === 'register' ? '/register' : '/login'
-    const res = await apiPost(path, { username, password })
+    const body = { username, password }
+    if (mode === 'register' && refCode) body.ref_code = refCode
+    if (mode === 'register' && inviteCode.trim()) body.invite_code = inviteCode.trim().toUpperCase()
+    const res = await apiPost(path, body)
     if (res.error) {
       setError(res.error)
     } else {
+      if (mode === 'register') localStorage.removeItem('pending_ref_code')
       localStorage.setItem('auth_token', res.token)
       localStorage.setItem('auth_username', res.username)
-      onLogin(res.username, res.token, res.is_member)
+      onLogin(res.username, res.token, res.is_member, res.is_founder)
       onClose()
     }
     setLoading(false)
@@ -254,6 +276,12 @@ function LoginModal({ onClose, onLogin }) {
       <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8 w-full max-w-sm shadow-2xl" onClick={e => e.stopPropagation()}>
         <h2 className="text-xl font-bold text-white mb-1">{titles[mode]}</h2>
         <p className="text-gray-500 text-sm mb-6">登录以同步学习进度到云端</p>
+        {mode === 'register' && refCode && (
+          <div className="bg-green-900/30 border border-green-700/50 rounded-xl px-3 py-2 mb-3 flex items-center gap-2">
+            <span className="text-green-400 text-xs">🎁 通过推荐链接注册，推荐码：</span>
+            <span className="font-mono text-green-300 font-bold text-sm">{refCode}</span>
+          </div>
+        )}
         <input
           type="text"
           placeholder="用户名（2-20个字符）"
@@ -267,9 +295,20 @@ function LoginModal({ onClose, onLogin }) {
           placeholder="密码（至少6位）"
           value={password}
           onChange={e => setPassword(e.target.value)}
-          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm mb-4 outline-none focus:border-blue-500 transition-colors"
+          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm mb-3 outline-none focus:border-blue-500 transition-colors"
           onKeyDown={e => e.key === 'Enter' && handleSubmit()}
         />
+        {mode === 'register' && (
+          <input
+            type="text"
+            placeholder="创始会员邀请码（选填，格式 FD-XXXXXXXX）"
+            value={inviteCode}
+            onChange={e => setInviteCode(e.target.value)}
+            className={`w-full border rounded-xl px-4 py-3 text-sm mb-4 outline-none transition-colors
+              ${inviteCode ? 'bg-amber-950/40 border-amber-600/60 text-amber-300 focus:border-amber-400' : 'bg-gray-800 border-gray-700 text-white focus:border-blue-500'}`}
+          />
+        )}
+        {mode !== 'register' && <div className="mb-1" />}
         {error && <p className="text-red-400 text-xs mb-3">{error}</p>}
         {success && <p className="text-green-400 text-xs mb-3">{success}</p>}
         <button
@@ -331,6 +370,7 @@ export default function App() {
   const [user, setUser] = useState(() => localStorage.getItem('auth_username') || null)
   const [token, setToken] = useState(() => localStorage.getItem('auth_token') || null)
   const [isMember, setIsMember] = useState(() => localStorage.getItem('auth_is_member') === '1')
+  const [isFounder, setIsFounder] = useState(() => localStorage.getItem('auth_is_founder') === '1')
   const [showLogin, setShowLogin] = useState(false)
   const [showStudentJoin, setShowStudentJoin] = useState(false)
   const [studentInfo, setStudentInfo] = useState(() => {
@@ -351,7 +391,88 @@ export default function App() {
   const [showChineseGuide, setShowChineseGuide] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
   const levelButtonRef = useRef(null)
+
+  // ── 公告 & 留言中心 ────────────────────────────────────
+  const [announcement, setAnnouncement] = useState('')
+  const [showMsgCenter, setShowMsgCenter] = useState(false)
+  const [showAnnBanner, setShowAnnBanner] = useState(false)
+  const [msgContent, setMsgContent] = useState('')
+  const [msgSending, setMsgSending] = useState(false)
+  const [msgSent, setMsgSent] = useState(false)
+  const annToday = new Date().toISOString().slice(0, 10)
+  // 有公告 且 今天未关闭过 → 显示红点
+  const hasUnreadAnn = !!announcement && localStorage.getItem('ann_dismissed_date') !== annToday
+
+  useEffect(() => {
+    // 捕获 URL 中的推荐码 ?ref=XXX，存入 localStorage
+    const urlRef = new URLSearchParams(window.location.search).get('ref')
+    if (urlRef) localStorage.setItem('pending_ref_code', urlRef.toUpperCase())
+  }, [])
+
+  useEffect(() => {
+    fetch(`${API}/announcement`)
+      .then(r => r.json())
+      .then(d => {
+        if (d.announcement) {
+          setAnnouncement(d.announcement)
+          if (localStorage.getItem('ann_dismissed_date') !== new Date().toISOString().slice(0, 10)) {
+            setShowAnnBanner(true)
+          }
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  function dismissAnnBanner() {
+    localStorage.setItem('ann_dismissed_date', annToday)
+    setShowAnnBanner(false)
+  }
+
+  async function sendMessage() {
+    const content = msgContent.trim()
+    if (!content) return
+    setMsgSending(true)
+    try {
+      const res = await fetch(`${API}/messages`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content, username: user || '匿名' }),
+      })
+      const json = await res.json()
+      if (json.ok) {
+        setMsgContent('')
+        setMsgSent(true)
+        setTimeout(() => setMsgSent(false), 3000)
+      } else {
+        alert(json.error || '发送失败，请稍后再试')
+      }
+    } catch {
+      alert('网络错误，请稍后再试')
+    } finally {
+      setMsgSending(false)
+    }
+  }
   const { progress, markMastered, markReview, incrementAttempts, reset, synced } = useProgress(user?.id)
+
+  // 激励系统：XP + 每日目标 + 连续打卡
+  const { playVictory: playGoalSound, playFireworks: playGoalFw, playCrystal } = useSound(settings)
+  const [goalToast, setGoalToast] = useState(null)
+  const handleGoalReached = useCallback(() => {
+    playGoalSound(); playGoalFw()
+    setGoalToast(true)
+    setTimeout(() => setGoalToast(false), 3500)
+  }, [playGoalSound, playGoalFw])
+  const xp = useXP(token, handleGoalReached)
+
+  // 水晶系统
+  const crystal = useCrystal(token)
+  const [showCrystalPanel, setShowCrystalPanel] = useState(false)
+  const [crystalPulse, setCrystalPulse] = useState(0)
+  // 监听 crystal.recent 触发徽章脉冲（每次获得抖一下）
+  useEffect(() => {
+    if (!crystal.recent) return
+    setCrystalPulse(p => p + 1)
+  }, [crystal.recent])
 
   /** 所有 Tab 切换的统一入口：同步 React 状态与 history（popstate 回放时不要 push） */
   const tabRef = useRef(tab)
@@ -521,20 +642,24 @@ export default function App() {
 
   const studyStartRef = useRef(null)
 
-  function handleLogin(username, tok, is_member) {
+  function handleLogin(username, tok, is_member, is_founder = false) {
     setUser(username)
     setToken(tok)
     setIsMember(!!is_member)
+    setIsFounder(!!is_founder)
     localStorage.setItem('auth_is_member', is_member ? '1' : '0')
+    localStorage.setItem('auth_is_founder', is_founder ? '1' : '0')
   }
 
   function handleLogout() {
     localStorage.removeItem('auth_token')
     localStorage.removeItem('auth_username')
     localStorage.removeItem('auth_is_member')
+    localStorage.removeItem('auth_is_founder')
     setUser(null)
     setToken(null)
     setIsMember(false)
+    setIsFounder(false)
   }
 
   function handleLeaveClass() {
@@ -626,21 +751,183 @@ export default function App() {
     }
   }
 
+  const [isLightMode, setIsLightMode] = useState(() => localStorage.getItem('theme') === 'light')
+  function toggleTheme() {
+    setIsLightMode(v => {
+      const next = !v
+      localStorage.setItem('theme', next ? 'light' : 'dark')
+      return next
+    })
+  }
+  const isHomeLight = isLightMode || tab === 'home'
+
+  const mainNavItems = [
+    { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
+    { id: 'core', label: '核心句群', Icon: IconStar, onClick: () => navigateFromMenu('core') },
+    { id: 'courses', label: '课程', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
+    { id: 'textbook', label: '教材', Icon: IconBook, onClick: () => navigateFromMenu('textbook') },
+    { id: 'grammar', label: '语法', Icon: IconGraduationCap, onClick: () => navigateFromMenu('grammar') },
+    { id: 'gutenberg', label: '输入阅读', Icon: IconList, onClick: () => navigateFromMenu('gutenberg') },
+    { id: 'vocab', label: '单词', Icon: IconBookmark, onClick: () => navigateFromMenu('vocab') },
+    { id: 'alphabet', label: '26字母', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('alphabet') },
+    { id: 'phonemes', label: '音标学习', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('phonemes') },
+    { id: 'typing', label: '指法练习', Icon: IconKeyboard, onClick: () => navigateFromMenu('typing') },
+    { id: 'import', label: '导入', Icon: IconDownload, onClick: () => navigateFromMenu('import') },
+    { id: 'settings', label: '设置', Icon: IconSettings, onClick: () => { setMenuOpen(false); setShowSettings(true) } },
+    { id: 'msgcenter', label: '公告&留言', Icon: IconMessageSquare, bell: true, onClick: () => { setMenuOpen(false); setShowMsgCenter(true) } },
+    isFounder
+      ? { id: 'founder', label: '创始成员', Icon: IconUsers, gold: true, onClick: () => { setMenuOpen(false); navigateTo('founder') } }
+      : { id: 'member', label: '开通会员', Icon: IconCrown, yellow: true, onClick: () => navigateFromMenu('member') },
+  ]
+
+  function navItemClass(item) {
+    if (isHomeLight) {
+      const active = tab === item.id || (item.id === 'settings' && showSettings)
+      if (item.gold) return active ? 'lg-nav-item lg-nav-item--mint font-semibold' : 'lg-nav-item text-amber-700'
+      if (item.yellow) return active ? 'lg-nav-item lg-nav-item--mint font-semibold' : 'lg-nav-item text-amber-600'
+      if (item.bell) return 'lg-nav-item text-sky-600'
+      return active ? 'lg-nav-item lg-nav-item--active' : 'lg-nav-item'
+    }
+    return `flex items-center gap-2 py-1.5 rounded-lg transition-colors shrink-0 px-2 text-sm relative
+      ${item.gold ? (tab === 'founder' ? 'bg-yellow-500 text-black' : 'text-yellow-400 hover:bg-yellow-900/40 hover:text-yellow-300')
+        : item.yellow ? (tab === 'member' ? 'bg-amber-600 text-white' : 'text-amber-400 hover:bg-amber-900/40 hover:text-amber-300')
+        : item.bell ? 'text-sky-400 hover:bg-sky-900/40 hover:text-sky-300'
+        : (tab === item.id || (item.id === 'settings' && showSettings)) ? 'bg-slate-700 text-white' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'}`
+  }
+
+  const navIconSize = isHomeLight ? 17 : 15
+
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col" onClick={handleGlobalClick}>
+    <div className={`min-h-screen flex flex-col ${isHomeLight ? 'theme-light-glass' : 'bg-black text-white'}`} onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
+        {!menuOpen && !isHomeLight && (
+          <>
+            <button
+              type="button"
+              aria-label="打开菜单"
+              onClick={() => setMenuOpen(true)}
+              className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+            >
+              <IconMenu size={22} />
+              {hasUnreadAnn && (
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ring-1 ring-slate-800" />
+              )}
+            </button>
+            {/* 日夜切换按钮 — 暗色模式时显示在汉堡左侧 */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              title="切换日间模式"
+              aria-label="切换日间模式"
+              className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-amber-300 shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+              style={{ right: 'calc(max(0.75rem, env(safe-area-inset-right, 0px)) + 3.25rem)' }}
+            >
+              <IconSun size={18} />
+            </button>
+          </>
+        )}
+
+        {/* 常驻连续打卡徽章（左上角，点击回首页） */}
         <button
           type="button"
-          aria-label={menuOpen ? '关闭菜单' : '打开菜单'}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(v => !v)}
-          className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+          onClick={() => openTab('home')}
+          title={`连续打卡 ${xp.streak} 天 · 今日 ${xp.todayXp}/${xp.goal} XP`}
+          className={`pointer-events-auto fixed z-[101] flex h-11 items-center gap-1 rounded-xl border px-2.5 shadow-lg backdrop-blur-sm transition-colors left-[max(0.75rem,env(safe-area-inset-left,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]
+            ${isHomeLight
+              ? (xp.reachedGoalToday ? 'border-amber-300/60 bg-amber-50/90 text-amber-700' : 'border-white/70 bg-white/55 text-[#1a1a1a] hover:bg-white/75')
+              : (xp.reachedGoalToday ? 'border-amber-500/50 bg-amber-500/15 text-amber-300' : 'border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700')}`}
         >
-          <IconMenu size={22} />
+          <span className="text-base leading-none">🔥</span>
+          <span className="text-sm font-bold tabular-nums">{xp.streak}</span>
         </button>
 
-        {/* 贴右边边缘滑入即可展开菜单（桌面端）；窄条避免挡正文过多 */}
-        {!menuOpen && (
+        {/* 水晶徽章（紧邻 🔥 右侧） */}
+        <button
+          type="button"
+          onClick={() => setShowCrystalPanel(true)}
+          title={`水晶塔 Lv.${crystal.towerLevel} · 共 ${crystal.total} 颗水晶`}
+          className={`pointer-events-auto fixed z-[101] flex h-11 items-center gap-1 rounded-xl border backdrop-blur-sm px-2.5 shadow-lg transition-colors
+            ${isHomeLight
+              ? 'border-[#b794f6]/40 bg-[rgba(235,222,240,0.75)] text-[#6b21a8] hover:bg-[rgba(235,222,240,0.95)]'
+              : 'border-purple-500/50 bg-purple-900/60 text-purple-200 hover:bg-purple-800/80'}`}
+          style={{ left: 'calc(max(0.75rem, env(safe-area-inset-left, 0px)) + 3.6rem)', top: 'max(0.75rem, env(safe-area-inset-top, 0px))' }}
+        >
+          <span key={crystalPulse} className="inline-flex items-center justify-center crystal-pulse">
+            <GemSVG color="blue" size={22} />
+          </span>
+          <span className="text-sm font-bold tabular-nums">{crystal.total}</span>
+        </button>
+
+        {/* 今日目标达成 toast */}
+        {goalToast && (
+          <div className="fixed z-[120] left-1/2 -translate-x-1/2 top-[max(0.75rem,env(safe-area-inset-top,0px))] pointer-events-none">
+            <div className="flex items-center gap-2 rounded-full border border-amber-500/50 bg-amber-500/20 px-4 py-2 text-amber-200 text-sm font-semibold shadow-lg backdrop-blur animate-[fadeIn_.3s_ease]">
+              🎉 今日目标达成！连续 {xp.streak} 天
+            </div>
+          </div>
+        )}
+
+        {/* 水晶飘字 + 面板（全局） */}
+        <CrystalFloat recent={crystal.recent} onPlaySound={playCrystal} />
+        {showCrystalPanel && (
+          <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
+        )}
+
+        {/* 首页浅色主题：固定露出图标轨；其它页仍靠边缘滑入 */}
+        {!menuOpen && isHomeLight && (
+          <nav
+            aria-label="导航快捷栏"
+            className="lg-nav-rail pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] w-[3.25rem] flex-col items-center gap-0.5 overflow-y-auto overflow-x-hidden py-2 right-[max(0.5rem,env(safe-area-inset-right,0px))] pt-[max(0.5rem,env(safe-area-inset-top,0px))] pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]"
+          >
+            <button
+              type="button"
+              onClick={() => navigateFromMenu('home')}
+              className="mb-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl transition-transform active:scale-95"
+              aria-label="首页"
+            >
+              <img src="/panda-icon.webp" alt="" className="h-9 w-9 rounded-[22%] object-cover" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              aria-label="展开菜单"
+              className="mb-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[#707070] transition-colors hover:bg-white/50"
+            >
+              <IconArrowLeft size={18} />
+            </button>
+            {mainNavItems.filter(it => !it.sub).map(item => {
+              const active = tab === item.id || (item.id === 'settings' && showSettings)
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={item.onClick}
+                  title={item.label}
+                  aria-label={item.label}
+                  className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors
+                    ${active ? 'bg-[rgba(235,222,240,0.88)] text-[#1a1a1a]' : 'text-[#707070] hover:bg-white/55 hover:text-[#1a1a1a]'}`}
+                >
+                  {item.Icon ? <item.Icon size={navIconSize} /> : null}
+                  {item.bell && hasUnreadAnn && (
+                    <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-red-500" />
+                  )}
+                </button>
+              )
+            })}
+            {/* 日夜模式切换 — 在右侧轨道底部 */}
+            <div className="flex-1" />
+            <button
+              type="button"
+              onClick={toggleTheme}
+              title={isLightMode ? '切换夜间模式' : '切换日间模式'}
+              aria-label={isLightMode ? '切换夜间模式' : '切换日间模式'}
+              className="mb-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[#707070] transition-colors hover:bg-white/55 hover:text-[#1a1a1a]"
+            >
+              {isLightMode ? <IconMoon size={17} /> : <IconSun size={17} />}
+            </button>
+          </nav>
+        )}
+        {!menuOpen && !isHomeLight && (
           <div
             className="fixed top-0 right-0 z-[99] h-[100dvh] w-3 max-w-[14px] pointer-events-auto"
             onMouseEnter={() => setMenuOpen(true)}
@@ -651,91 +938,97 @@ export default function App() {
         {menuOpen ? (
           <>
             <div
-              className="fixed inset-0 z-[90] bg-black/45"
+              className={`fixed inset-0 z-[90] ${isHomeLight ? 'lg-overlay' : 'bg-black/45'}`}
               aria-hidden
               onClick={() => setMenuOpen(false)}
             />
             <div
-              className="pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] max-h-[100dvh] w-32 isolate shadow-[-4px_0_24px_rgba(0,0,0,0.35)] right-[max(0.75rem,env(safe-area-inset-right,0px))]"
+              className={`pointer-events-auto fixed top-0 z-[100] h-[100dvh] max-h-[100dvh] isolate right-[max(0.75rem,env(safe-area-inset-right,0px))] ${isHomeLight ? 'w-36 shadow-[-8px_0_32px_rgba(0,0,0,0.06)]' : 'w-32 shadow-[-6px_0_28px_rgba(0,0,0,0.4)]'}`}
             >
+              {/* ── 主侧边栏 ── */}
               <aside
                 aria-label="导航菜单"
-                className="flex h-full min-h-0 w-full flex-col border-l border-slate-600/45 bg-slate-900 px-2 py-3 shadow-lg overflow-y-auto overflow-x-hidden"
+                className={`flex h-full min-h-0 w-full flex-col overflow-hidden ${isHomeLight ? 'lg-glass-nav' : 'border-l border-slate-600/45 bg-slate-900'}`}
               >
-          <div className="flex min-h-0 flex-1 flex-col gap-2 pt-[calc(max(0.75rem,env(safe-area-inset-top,0px))+2.75rem+0.375rem)]">
-          {/* Logo */}
-          <button className="cursor-pointer flex items-center gap-2 px-2 py-2 rounded-xl hover:bg-slate-800/80 transition-colors text-left shrink-0" onClick={() => navigateFromMenu('home')}>
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-              style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)' }}>
-              <span className="text-white font-black text-sm leading-none tracking-tight">OK</span>
-            </div>
-            <div className="flex flex-col leading-none min-w-0">
-              <span className="text-white font-bold text-sm tracking-wide truncate">OK英语</span>
-              <span className="text-blue-400/70 text-[9px] tracking-widest font-medium">ENGLISH</span>
-            </div>
-          </button>
+          {/* ── 品牌头部：熊猫 + 收起（首页无顶栏汉堡） ── */}
+          <div className="shrink-0 flex items-center gap-1.5 pt-[max(0.75rem,env(safe-area-inset-top,0px))] px-1.5 pb-2">
+            <button
+              onClick={() => navigateFromMenu('home')}
+              className="group flex-1 flex items-center justify-center transition-transform active:scale-95"
+              aria-label="首页"
+            >
+              <div className="w-16 h-16 rounded-[22%] overflow-hidden">
+                <img
+                  src="/panda-icon.webp"
+                  alt="OK英语"
+                  className="w-full h-full object-cover scale-110 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-3"
+                />
+              </div>
+            </button>
+            <button
+              onClick={() => setMenuOpen(false)}
+              aria-label="收起菜单"
+              className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors
+                ${isHomeLight
+                  ? 'border border-white/60 bg-white/40 text-[#1a1a1a] hover:bg-white/65'
+                  : 'border border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700'}`}
+            >
+              {isHomeLight ? <IconArrowRight size={20} /> : <IconMenu size={22} />}
+              {hasUnreadAnn && (
+                <span className={`absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ${isHomeLight ? 'ring-1 ring-white' : 'ring-1 ring-slate-800'}`} />
+              )}
+            </button>
+          </div>
+          <div className="flex min-h-0 flex-1 flex-col gap-0.5 px-2 pb-3 overflow-y-auto overflow-x-hidden">
 
-          {/* 登录 / 用户信息 — 紧跟 Logo */}
+          {/* 登录 / 用户信息 */}
           {user ? (
-            <button onClick={() => { setMenuOpen(false); handleLogout() }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors shrink-0">
-              <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">{user[0].toUpperCase()}</div>
+            <button onClick={() => { setMenuOpen(false); handleLogout() }} className={`shrink-0 flex items-center gap-2 px-2 py-1.5 rounded-lg transition-colors ${isHomeLight ? 'lg-nav-item text-[#707070]' : 'text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white'}`}>
+              <div className={`shrink-0 flex items-center justify-center rounded-full font-bold text-white ${isHomeLight ? 'h-6 w-6 bg-[#5b9bd5] text-[11px]' : 'w-5 h-5 bg-blue-600 text-[10px]'}`}>{user[0].toUpperCase()}</div>
               <span className="truncate">{user} · 退出</span>
             </button>
           ) : (
-            <button onClick={() => { setMenuOpen(false); setShowLogin(true) }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-blue-400 hover:bg-slate-800/80 hover:text-blue-300 transition-colors shrink-0">
-              <IconUser size={15} /><span>登录</span>
+            <button onClick={() => { setMenuOpen(false); setShowLogin(true) }} className={`shrink-0 flex items-center gap-2 px-2 py-1.5 rounded-lg transition-colors ${isHomeLight ? 'lg-nav-item text-[#5b9bd5]' : 'text-sm text-blue-400 hover:bg-slate-800/80 hover:text-blue-300'}`}>
+              <IconUser size={navIconSize} /><span>登录</span>
             </button>
           )}
 
           {/* 班级状态 */}
           {studentInfo ? (
-            <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-green-900/30 border border-green-800/50 shrink-0">
-              <span className="text-green-400 text-xs">🏫</span>
-              <span className="text-green-300 text-xs truncate flex-1">{studentInfo.studentName} · {studentInfo.className}</span>
-              <button onClick={() => { setMenuOpen(false); handleLeaveClass() }} className="text-gray-600 hover:text-red-400 text-[10px] transition-colors">✕</button>
+            <div className={`flex shrink-0 items-center gap-2 rounded-xl px-2 py-1.5 ${isHomeLight ? 'border border-emerald-200/80 bg-[rgba(232,248,245,0.75)]' : 'bg-green-900/30 border border-green-800/50'}`}>
+              <span className={`text-xs ${isHomeLight ? 'text-emerald-700' : 'text-green-400'}`}>🏫</span>
+              <span className={`flex-1 truncate text-xs ${isHomeLight ? 'text-[#1a1a1a]' : 'text-green-300'}`}>{studentInfo.studentName} · {studentInfo.className}</span>
+              <button onClick={() => { setMenuOpen(false); handleLeaveClass() }} className="text-[10px] text-gray-400 transition-colors hover:text-red-500">✕</button>
             </div>
           ) : (
-            <button onClick={() => { setMenuOpen(false); setShowStudentJoin(true) }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-green-400 hover:bg-green-900/30 transition-colors shrink-0">
+            <button onClick={() => { setMenuOpen(false); setShowStudentJoin(true) }} className={`shrink-0 flex items-center gap-2 rounded-xl px-2 py-1.5 text-xs transition-colors ${isHomeLight ? 'lg-nav-item text-emerald-700' : 'text-green-400 hover:bg-green-900/30'}`}>
               <span>🏫</span><span>加入班级（打卡）</span>
             </button>
           )}
 
-          <div className="border-t border-slate-700/70 shrink-0" />
+          <div className={`shrink-0 border-t ${isHomeLight ? 'lg-divider' : 'border-slate-700/70'}`} />
 
           {/* 导航菜单 */}
-          {[
-            { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
-            { id: 'exercise', label: '正在学习', Icon: IconPencil, onClick: () => { setMenuOpen(false); setShowExerciseHistory(v => !v) } },
-            { id: 'core', label: '核心句群', iconText: '✨', onClick: () => navigateFromMenu('core') },
-            { id: 'courses', label: '课程', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
-            { id: 'textbook', label: '教材', Icon: IconBook, onClick: () => navigateFromMenu('textbook') },
-            { id: 'grammar', label: '语法', Icon: IconGraduationCap, onClick: () => navigateFromMenu('grammar') },
-            { id: 'gutenberg', label: '输入阅读', Icon: IconList, onClick: () => navigateFromMenu('gutenberg') },
-            { id: 'vocab', label: '单词', Icon: IconBookmark, onClick: () => navigateFromMenu('vocab') },
-            { id: 'alphabet', label: '26字母学习', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('alphabet') },
-            { id: 'phonemes', label: '音标学习', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('phonemes') },
-            { id: 'typing', label: '指法练习', Icon: IconKeyboard, onClick: () => navigateFromMenu('typing') },
-            { id: 'import', label: '导入', Icon: IconDownload, onClick: () => navigateFromMenu('import') },
-            { id: 'settings', label: '设置', Icon: IconSettings, onClick: () => { setMenuOpen(false); setShowSettings(true) } },
-          ].map(item => (
+          {mainNavItems.map(item => (
             <button key={item.id}
               onClick={item.onClick}
-              className={`flex items-center gap-2 py-2 rounded-lg transition-colors shrink-0
-                ${item.sub ? 'pl-7 pr-2 text-xs' : 'px-2 text-sm'}
-                ${(tab === item.id || (item.id === 'settings' && showSettings)) ? 'bg-slate-700 text-white' : item.sub ? 'text-slate-400 hover:bg-slate-800/80 hover:text-slate-200' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'}`}>
-              {item.Icon ? <item.Icon size={15} /> : <span className="w-[15px] text-center">{item.iconText}</span>}
+              className={`${navItemClass(item)} shrink-0 relative ${isHomeLight ? '' : 'px-2 text-sm'}`}>
+              {item.Icon ? <item.Icon size={navIconSize} /> : <span className="w-[17px] text-center">{item.iconText}</span>}
               <span className="truncate">{item.label}</span>
+              {item.bell && hasUnreadAnn && (
+                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+              )}
             </button>
           ))}
 
           {/* 云同步（登录后显示） */}
           {user && (
-            <div className="flex flex-col gap-1 pt-2 border-t border-slate-700/70 shrink-0">
-              <button onClick={() => { setMenuOpen(false); handleUploadSync() }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
-                <IconRefresh size={13} /><span>{syncStatus || '上传进度'}</span>
+            <div className={`flex shrink-0 flex-col gap-1 pt-2 border-t ${isHomeLight ? 'lg-divider' : 'border-slate-700/70'}`}>
+              <button onClick={() => { setMenuOpen(false); handleUploadSync() }} className={isHomeLight ? 'lg-nav-item text-[#707070]' : 'flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors'}>
+                <IconRefresh size={isHomeLight ? 15 : 13} /><span>{syncStatus || '上传进度'}</span>
               </button>
-              <button onClick={() => { setMenuOpen(false); handleDownloadSync() }} className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors">
-                <IconDownload size={13} /><span>恢复进度</span>
+              <button onClick={() => { setMenuOpen(false); handleDownloadSync() }} className={isHomeLight ? 'lg-nav-item text-[#707070]' : 'flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors'}>
+                <IconDownload size={isHomeLight ? 15 : 13} /><span>恢复进度</span>
               </button>
             </div>
           )}
@@ -747,8 +1040,8 @@ export default function App() {
 
         {/* Main content */}
         <main
-          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${tab === 'exercise' ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'}`}
-          style={{ paddingTop: (tab === 'home' || tab === 'courses' || tab === 'core' || tab === 'textbook' || tab === 'grammar' || tab === 'grammarSync' || tab === 'gutenberg' || tab === 'syncpractice' || tab === 'vocab' || tab === 'alphabet' || tab === 'phonemes' || tab === 'phonics' || tab === 'typing') ? '0.75rem' : '2.25rem' }}
+          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'} ${isHomeLight ? 'pr-[3.75rem]' : ''}`}
+          style={{ paddingTop: 'calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.25rem)' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
             <Dashboard
@@ -759,6 +1052,10 @@ export default function App() {
               onOpenGutenberg={() => navigateFromMenu('gutenberg')}
               changyongData={changyongData}
               sampleData={sampleData}
+              xp={xp}
+              isMember={isMember}
+              isFounder={isFounder}
+              studentInfo={studentInfo}
             />
           </div>
           <div style={{ display: tab === 'core' ? 'contents' : 'none' }}>
@@ -807,6 +1104,8 @@ export default function App() {
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
               settings={settings}
+              onXp={xp.addXP}
+              onCrystal={crystal.earn}
             />
           </div>
           <div style={{ display: tab === 'grammar' ? 'contents' : 'none' }}>
@@ -816,12 +1115,16 @@ export default function App() {
               onGrammarSyncPractice={handleGrammarSyncPractice}
               active={tab === 'grammar'}
               progress={progress}
+              isMember={UNLOCK_ALL_COURSES || isMember}
+              onShowLogin={() => setShowLogin(true)}
             />
           </div>
           <div style={{ display: tab === 'gutenberg' ? 'contents' : 'none' }}>
             <GutenbergReading
               onClose={() => openTab('exercise')}
               onStartReading={(data, label) => handleImport(data, label, null, { source: 'gutenberg' })}
+              isMember={UNLOCK_ALL_COURSES || isMember}
+              onShowLogin={() => setShowLogin(true)}
             />
           </div>
           {tab === 'grammarSync' && (
@@ -830,6 +1133,8 @@ export default function App() {
                 questions={grammarSyncQuiz.questions}
                 title={grammarSyncQuiz.title}
                 settings={settings}
+                onXp={xp.addXP}
+                onCrystal={crystal.earn}
                 onClose={() => {
                   setGrammarSyncQuiz(null)
                   openTab('grammar')
@@ -862,6 +1167,10 @@ export default function App() {
               onNextLesson={goNextLesson}
               onBack={() => window.history.back()}
               grammarContext={lessonPackMeta}
+              onSentenceDone={onSentenceDone}
+              onWordDone={onWordDone}
+              onXp={xp.addXP}
+              onCrystal={crystal.earn}
             />
           )}
           {tab === 'list' && (
@@ -876,10 +1185,14 @@ export default function App() {
             </div>
           )}
           {tab === 'quiz' && (
-            <Quiz onImport={handleImport} onClose={() => openTab('exercise')} settings={settings} />
+            <Quiz onImport={handleImport} onClose={() => openTab('exercise')} settings={settings}
+              onXp={xp.addXP}
+              isMember={UNLOCK_ALL_COURSES || isMember} onShowLogin={() => setShowLogin(true)} />
           )}
           {tab === 'fillblank' && (
-            <FillBlank onClose={() => openTab('exercise')} settings={settings} />
+            <FillBlank onClose={() => openTab('exercise')} settings={settings}
+              onXp={xp.addXP}
+              isMember={UNLOCK_ALL_COURSES || isMember} onShowLogin={() => setShowLogin(true)} />
           )}
           {tab === 'syncpractice' && (
             <SyncPractice
@@ -893,7 +1206,9 @@ export default function App() {
             />
           )}
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
-            <VocabStudy onClose={() => openTab('exercise')} />
+            <VocabStudy onClose={() => openTab('exercise')}
+              isMember={UNLOCK_ALL_COURSES || isMember} onShowLogin={() => setShowLogin(true)} settings={settings}
+              onXp={xp.addXP} onCrystal={crystal.earn} />
           </div>
           <div style={{ display: tab === 'alphabet' ? 'contents' : 'none' }}>
             <AlphabetLearn onClose={() => openTab('exercise')} />
@@ -906,6 +1221,39 @@ export default function App() {
           )}
           {tab === 'typing' && (
             <TypingPractice onClose={() => openTab('exercise')} />
+          )}
+          {tab === 'member' && (
+            <MemberPage
+              user={user}
+              token={token}
+              onClose={() => openTab('home')}
+              onShowLogin={() => setShowLogin(true)}
+              onFounderSuccess={() => {
+                setIsFounder(true)
+                localStorage.setItem('auth_is_founder', '1')
+              }}
+              onOpenFounder={() => openTab(isFounder ? 'founder' : 'member')}
+            />
+          )}
+          {tab === 'referral' && (
+            <ReferralCenter token={token} username={user} />
+          )}
+          {tab === 'founder' && (
+            isFounder
+              ? <FounderCenter token={token} username={user} onClose={() => openTab('home')} />
+              : <MemberPage
+                  user={user}
+                  token={token}
+                  initialPlan="founder"
+                  onClose={() => openTab('home')}
+                  onShowLogin={() => setShowLogin(true)}
+                  onFounderSuccess={() => {
+                    setIsFounder(true)
+                    localStorage.setItem('auth_is_founder', '1')
+                    openTab('founder')
+                  }}
+                  onOpenFounder={() => openTab('founder')}
+                />
           )}
         </main>
       </div>
@@ -1104,6 +1452,110 @@ export default function App() {
 
       {/* Login modal */}
       {showLogin && <LoginModal onClose={() => setShowLogin(false)} onLogin={handleLogin} />}
+
+      {/* ── 公告横幅 ── */}
+      {showAnnBanner && announcement && (
+        <div className="fixed top-0 left-0 right-0 z-[50] flex items-start gap-3 bg-amber-600/95 backdrop-blur px-4 py-2.5 shadow-lg pr-16">
+          <span className="text-lg shrink-0 mt-0.5">📢</span>
+          <p className="flex-1 text-sm text-white leading-snug">{announcement}</p>
+          <button
+            onClick={dismissAnnBanner}
+            className="shrink-0 text-white/70 hover:text-white text-lg leading-none transition-colors mt-0.5"
+            aria-label="关闭公告"
+          >✕</button>
+        </div>
+      )}
+
+      {/* ── 公告 & 留言中心弹窗 ── */}
+      {showMsgCenter && (
+        <div
+          className="fixed inset-0 z-[300] flex items-center justify-center bg-black/70 px-4"
+          onClick={() => setShowMsgCenter(false)}
+        >
+          <div
+            className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* 标题栏 */}
+            <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b border-gray-800">
+              <div className="flex items-center gap-2">
+                <IconMessageSquare size={17} className="text-sky-400" />
+                <h3 className="text-base font-bold text-white">公告 & 留言</h3>
+              </div>
+              <button
+                onClick={() => setShowMsgCenter(false)}
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-gray-500 hover:text-white hover:bg-gray-700 transition-colors text-lg leading-none"
+                aria-label="关闭"
+              >✕</button>
+            </div>
+
+            <div className="p-5 flex flex-col gap-5">
+              {/* 公告区 */}
+              <div>
+                <div className="flex items-center gap-1.5 mb-2">
+                  <span className="text-base">📢</span>
+                  <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider">最新公告</span>
+                </div>
+                <div className="bg-gray-800/60 rounded-xl px-4 py-3 min-h-[3rem] flex items-center">
+                  {announcement
+                    ? <p className="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap">{announcement}</p>
+                    : <p className="text-gray-600 text-sm">暂无公告</p>
+                  }
+                </div>
+              </div>
+
+              {/* 留言区 */}
+              <div>
+                <div className="flex items-center gap-1.5 mb-2">
+                  <span className="text-base">💬</span>
+                  <span className="text-xs font-semibold text-sky-400 uppercase tracking-wider">给我们留言</span>
+                </div>
+                {user ? (
+                  <>
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">
+                        {user[0].toUpperCase()}
+                      </div>
+                      <span className="text-gray-400 text-xs">{user}</span>
+                    </div>
+                    <textarea
+                      value={msgContent}
+                      onChange={e => setMsgContent(e.target.value)}
+                      placeholder="写下你的问题或建议…"
+                      rows={3}
+                      maxLength={500}
+                      className="w-full bg-gray-800 border border-gray-700 focus:border-blue-500 rounded-xl px-3 py-2.5 text-sm text-white placeholder-gray-600 outline-none resize-none transition-colors"
+                    />
+                    <div className="flex items-center justify-between mt-2">
+                      <span className="text-xs text-gray-600">{msgContent.length}/500</span>
+                      {msgSent
+                        ? <span className="text-xs text-green-400 font-medium">✓ 已发送，感谢反馈！</span>
+                        : <button
+                            onClick={sendMessage}
+                            disabled={msgSending || !msgContent.trim()}
+                            className="px-4 py-1.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white text-sm font-semibold rounded-lg transition-colors"
+                          >
+                            {msgSending ? '发送中…' : '发送'}
+                          </button>
+                      }
+                    </div>
+                  </>
+                ) : (
+                  <div className="bg-gray-800/60 rounded-xl px-4 py-3 text-center">
+                    <p className="text-gray-500 text-sm">请先
+                      <button
+                        onClick={() => { setShowMsgCenter(false); setShowLogin(true) }}
+                        className="text-blue-400 hover:text-blue-300 mx-1 underline underline-offset-2"
+                      >登录</button>
+                      后留言
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       {showStudentJoin && (
         <StudentJoin
           onJoined={info => { setStudentInfo(info); setShowStudentJoin(false) }}

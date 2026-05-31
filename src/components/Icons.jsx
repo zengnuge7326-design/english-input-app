@@ -24,6 +24,7 @@ export const IconArrowLeft = ({ size = 16 }) => <svg {...p(size)}><line x1="19" 
 export const IconArrowRight = ({ size = 16 }) => <svg {...p(size)}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 export const IconRotateCcw = ({ size = 16 }) => <svg {...p(size)}><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
 export const IconCheck = ({ size = 16 }) => <svg {...p(size)}><polyline points="20 6 9 17 4 12"/></svg>
+export const IconUsers = ({ size = 18 }) => <svg {...p(size)}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
 export const IconKeyboard = ({ size = 18 }) => <svg {...p(size)}><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="6" y2="10"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="18" y1="10" x2="18" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
 export const IconBookmark = ({ size = 16 }) => <svg {...p(size)}><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
 export const IconSpeaker = ({ size = 24, className = '' }) => (
@@ -32,7 +33,7 @@ export const IconSpeaker = ({ size = 24, className = '' }) => (
     height={size}
     viewBox="0 0 24 24"
     fill="currentColor"
-    className={className}
+    className={`block shrink-0 ${className}`.trim()}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
@@ -54,3 +55,7 @@ export const IconInfo = ({ size = 16 }) => <svg {...p(size)}><circle cx="12" cy=
 export const IconSplit = ({ size = 16 }) => <svg {...p(size)}><path d="M16 3h5v5M4 20L21 3"/><path d="M21 16v5h-5M15 15l6 6"/><path d="M4 4l5 5"/></svg>
 export const IconCheckSquare = ({ size = 18 }) => <svg {...p(size)}><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
 export const IconEdit = ({ size = 18 }) => <svg {...p(size)}><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+export const IconBell = ({ size = 18 }) => <svg {...p(size)}><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+export const IconMessageSquare = ({ size = 18 }) => <svg {...p(size)}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+export const IconSun = ({ size = 18 }) => <svg {...p(size)}><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+export const IconMoon = ({ size = 18 }) => <svg {...p(size)}><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
