@@ -751,7 +751,8 @@ export default function App() {
     }
   }
 
-  const [isLightMode, setIsLightMode] = useState(() => localStorage.getItem('theme') === 'light')
+  // 默认亮色（首次访问 / 未设置时为亮色模式）
+  const [isLightMode, setIsLightMode] = useState(() => localStorage.getItem('theme') !== 'dark')
   function toggleTheme() {
     setIsLightMode(v => {
       const next = !v
@@ -759,7 +760,7 @@ export default function App() {
       return next
     })
   }
-  const isHomeLight = isLightMode || tab === 'home'
+  const isHomeLight = isLightMode
 
   const mainNavItems = [
     { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
