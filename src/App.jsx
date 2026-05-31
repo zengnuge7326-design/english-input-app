@@ -801,43 +801,23 @@ export default function App() {
   return (
     <div className={`min-h-screen flex flex-col ${isHomeLight ? 'theme-light-glass' : 'bg-black text-white theme-dark'}`} onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
-        {/* 手机端亮色也需要汉堡（右侧轨道 hidden sm:flex 时） */}
-        {!menuOpen && isHomeLight && (
+        {/* 统一汉堡按钮 — 两种主题共用，右上角固定 */}
+        {!menuOpen && (
           <button
             type="button"
             aria-label="打开菜单"
             onClick={() => setMenuOpen(true)}
-            className="sm:hidden pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-white/60 bg-white/60 text-[#707070] shadow-lg backdrop-blur-sm transition-colors hover:bg-white/80 right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+            className={`pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border shadow-lg backdrop-blur-sm transition-colors
+              right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]
+              ${isHomeLight
+                ? 'border-white/60 bg-white/65 text-[#555] hover:bg-white/85'
+                : 'border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700'}`}
           >
             <IconMenu size={22} />
-            {hasUnreadAnn && <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500" />}
+            {hasUnreadAnn && (
+              <span className={`absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ${isHomeLight ? '' : 'ring-1 ring-slate-800'}`} />
+            )}
           </button>
-        )}
-        {!menuOpen && !isHomeLight && (
-          <>
-            <button
-              type="button"
-              aria-label="打开菜单"
-              onClick={() => setMenuOpen(true)}
-              className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
-            >
-              <IconMenu size={22} />
-              {hasUnreadAnn && (
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ring-1 ring-slate-800" />
-              )}
-            </button>
-            {/* 日夜切换按钮 — 暗色模式时显示在汉堡左侧 */}
-            <button
-              type="button"
-              onClick={toggleTheme}
-              title="切换日间模式"
-              aria-label="切换日间模式"
-              className="pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/50 bg-slate-800/95 text-amber-300 shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-700 top-[max(0.75rem,env(safe-area-inset-top,0px))]"
-              style={{ right: 'calc(max(0.75rem, env(safe-area-inset-right, 0px)) + 3.25rem)' }}
-            >
-              <IconSun size={18} />
-            </button>
-          </>
         )}
 
         {/* 常驻连续打卡徽章（左上角，点击回首页） */}
@@ -886,67 +866,6 @@ export default function App() {
           <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
         )}
 
-        {/* 首页浅色主题：固定露出图标轨；手机端隐藏改用汉堡 */}
-        {!menuOpen && isHomeLight && (
-          <nav
-            aria-label="导航快捷栏"
-            className="lg-nav-rail pointer-events-auto fixed top-0 z-[100] hidden sm:flex h-[100dvh] w-[3.25rem] flex-col items-center gap-0.5 overflow-y-auto overflow-x-hidden py-2 right-[max(0.5rem,env(safe-area-inset-right,0px))] pt-[max(0.5rem,env(safe-area-inset-top,0px))] pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]"
-          >
-            <button
-              type="button"
-              onClick={() => navigateFromMenu('home')}
-              className="mb-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl transition-transform active:scale-95"
-              aria-label="首页"
-            >
-              <img src="/panda-icon.webp" alt="" className="h-9 w-9 rounded-[22%] object-cover" />
-            </button>
-            <button
-              type="button"
-              onClick={() => setMenuOpen(true)}
-              aria-label="展开菜单"
-              className="mb-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[#707070] transition-colors hover:bg-white/50"
-            >
-              <IconArrowLeft size={18} />
-            </button>
-            {mainNavItems.filter(it => !it.sub).map(item => {
-              const active = tab === item.id || (item.id === 'settings' && showSettings)
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={item.onClick}
-                  title={item.label}
-                  aria-label={item.label}
-                  className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors
-                    ${active ? 'bg-[rgba(235,222,240,0.88)] text-[#1a1a1a]' : 'text-[#707070] hover:bg-white/55 hover:text-[#1a1a1a]'}`}
-                >
-                  {item.Icon ? <item.Icon size={navIconSize} /> : null}
-                  {item.bell && hasUnreadAnn && (
-                    <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-red-500" />
-                  )}
-                </button>
-              )
-            })}
-            {/* 日夜模式切换 — 在右侧轨道底部 */}
-            <div className="flex-1" />
-            <button
-              type="button"
-              onClick={toggleTheme}
-              title={isLightMode ? '切换夜间模式' : '切换日间模式'}
-              aria-label={isLightMode ? '切换夜间模式' : '切换日间模式'}
-              className="mb-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[#707070] transition-colors hover:bg-white/55 hover:text-[#1a1a1a]"
-            >
-              {isLightMode ? <IconMoon size={17} /> : <IconSun size={17} />}
-            </button>
-          </nav>
-        )}
-        {!menuOpen && !isHomeLight && (
-          <div
-            className="fixed top-0 right-0 z-[99] h-[100dvh] w-3 max-w-[14px] pointer-events-auto"
-            onMouseEnter={() => setMenuOpen(true)}
-            aria-hidden
-          />
-        )}
 
         {menuOpen ? (
           <>
@@ -956,39 +875,43 @@ export default function App() {
               onClick={() => setMenuOpen(false)}
             />
             <div
-              className={`pointer-events-auto fixed top-0 z-[100] h-[100dvh] max-h-[100dvh] isolate right-[max(0.75rem,env(safe-area-inset-right,0px))] ${isHomeLight ? 'w-36 shadow-[-8px_0_32px_rgba(0,0,0,0.06)]' : 'w-32 shadow-[-6px_0_28px_rgba(0,0,0,0.4)]'}`}
+              className={`pointer-events-auto fixed top-0 right-0 z-[100] h-[100dvh] max-h-[100dvh] isolate w-48 ${isHomeLight ? 'shadow-[-12px_0_40px_rgba(0,0,0,0.08)]' : 'shadow-[-8px_0_32px_rgba(0,0,0,0.5)]'}`}
             >
               {/* ── 主侧边栏 ── */}
               <aside
                 aria-label="导航菜单"
-                className={`flex h-full min-h-0 w-full flex-col overflow-hidden ${isHomeLight ? 'lg-glass-nav' : 'border-l border-slate-600/45 bg-slate-900'}`}
+                className={`flex h-full min-h-0 w-full flex-col overflow-hidden ${isHomeLight ? 'lg-glass-nav border-l border-white/60' : 'border-l border-slate-600/45 bg-slate-900'}`}
               >
-          {/* ── 品牌头部：熊猫 + 收起（首页无顶栏汉堡） ── */}
-          <div className="shrink-0 flex items-center gap-1.5 pt-[max(0.75rem,env(safe-area-inset-top,0px))] px-1.5 pb-2">
+          {/* ── 头部：熊猫 + 日夜切换 + 收起 ── */}
+          <div className="shrink-0 flex items-center gap-1.5 pt-[max(0.75rem,env(safe-area-inset-top,0px))] px-2 pb-2">
             <button
               onClick={() => navigateFromMenu('home')}
-              className="group flex-1 flex items-center justify-center transition-transform active:scale-95"
+              className="group flex items-center justify-center transition-transform active:scale-95"
               aria-label="首页"
             >
-              <div className="w-16 h-16 rounded-[22%] overflow-hidden">
-                <img
-                  src="/panda-icon.webp"
-                  alt="OK英语"
-                  className="w-full h-full object-cover scale-110 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-3"
-                />
+              <div className="w-11 h-11 rounded-[22%] overflow-hidden shrink-0">
+                <img src="/panda-icon.webp" alt="OK英语" className="w-full h-full object-cover scale-110 transition-transform duration-300 group-hover:scale-125" />
               </div>
+            </button>
+            {/* 日夜模式切换 — 统一放在菜单栏头部 */}
+            <button
+              onClick={toggleTheme}
+              title={isLightMode ? '切换夜间模式' : '切换日间模式'}
+              aria-label={isLightMode ? '切换夜间模式' : '切换日间模式'}
+              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors
+                ${isHomeLight ? 'text-[#707070] hover:bg-white/60' : 'text-slate-400 hover:bg-slate-700 hover:text-white'}`}
+            >
+              {isLightMode ? <IconMoon size={17} /> : <IconSun size={17} />}
             </button>
             <button
               onClick={() => setMenuOpen(false)}
               aria-label="收起菜单"
-              className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors
-                ${isHomeLight
-                  ? 'border border-white/60 bg-white/40 text-[#1a1a1a] hover:bg-white/65'
-                  : 'border border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700'}`}
+              className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors
+                ${isHomeLight ? 'text-[#707070] hover:bg-white/60' : 'text-slate-400 hover:bg-slate-700 hover:text-white'}`}
             >
-              {isHomeLight ? <IconArrowRight size={20} /> : <IconMenu size={22} />}
+              <IconArrowRight size={18} />
               {hasUnreadAnn && (
-                <span className={`absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ${isHomeLight ? 'ring-1 ring-white' : 'ring-1 ring-slate-800'}`} />
+                <span className={`absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-red-500`} />
               )}
             </button>
           </div>
@@ -1053,7 +976,7 @@ export default function App() {
 
         {/* Main content */}
         <main
-          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'} ${isHomeLight ? 'sm:pr-[3.75rem]' : ''}`}
+          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'}`}
           style={{ paddingTop: 'calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.25rem)' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
