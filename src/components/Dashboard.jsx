@@ -1,4 +1,227 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect, useRef } from 'react'
+import { GOAL_OPTIONS } from '../hooks/useXP'
+import { evaluateAchievements } from '../data/achievements'
+import { getClassLeaderboard } from '../lib/teacher'
+
+const SEEN_BADGES_KEY = 'english_seen_badges'
+
+// 成就徽章卡
+function AchievementsCard({ xp, isMember, isFounder }) {
+  const badges = useMemo(
+    () => evaluateAchievements({ ...xp, isMember, isFounder }),
+    [xp, isMember, isFounder]
+  )
+  const earnedCount = badges.filter(b => b.earned).length
+
+  // 检测新解锁（本地"已见"集合），轻量提示
+  const [justEarned, setJustEarned] = useState([])
+  useEffect(() => {
+    let seen
+    try { seen = new Set(JSON.parse(localStorage.getItem(SEEN_BADGES_KEY) || '[]')) } catch { seen = new Set() }
+    const newly = badges.filter(b => b.earned && !seen.has(b.key)).map(b => b.key)
+    if (newly.length) {
+      const merged = [...new Set([...seen, ...badges.filter(b => b.earned).map(b => b.key)])]
+      localStorage.setItem(SEEN_BADGES_KEY, JSON.stringify(merged))
+      setJustEarned(newly)
+      const t = setTimeout(() => setJustEarned([]), 4000)
+      return () => clearTimeout(t)
+    }
+  }, [badges])
+
+  return (
+    <div className="lg-glass-card p-3 sm:p-4">
+      <div className="flex items-center justify-between mb-2 sm:mb-3">
+        <div className="flex items-center gap-1.5">
+          <span>🏅</span>
+          <span className="text-xs sm:text-sm font-semibold text-[#1a1a1a]">成就徽章</span>
+        </div>
+        <span className="text-[10px] sm:text-xs text-[#707070]">{earnedCount} / {badges.length}</span>
+      </div>
+      <div className="grid grid-cols-6 sm:grid-cols-8 gap-1.5 sm:gap-2">
+        {badges.map(b => {
+          const isNew = justEarned.includes(b.key)
+          return (
+            <div
+              key={b.key}
+              title={`${b.name}：${b.desc}${b.earned ? '' : '（未解锁）'}`}
+              className={`flex flex-col items-center gap-0.5 rounded-xl py-1.5 px-0.5 transition-all
+                ${b.earned ? 'border border-amber-300/50 bg-amber-50/80' : 'border border-transparent bg-white/40'}
+                ${isNew ? 'ring-2 ring-amber-400 animate-pulse' : ''}`}
+            >
+              <span className={`text-lg leading-none ${b.earned ? '' : 'grayscale opacity-30'}`}>{b.icon}</span>
+              <span className={`text-[9px] text-center leading-tight ${b.earned ? 'text-amber-800' : 'text-[#9ca3af]'}`}>{b.name}</span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+// 班级排行榜卡（学生端）
+function ClassLeaderboardCard({ studentInfo }) {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    if (!studentInfo?.classId) return
+    getClassLeaderboard(studentInfo.classId, 7).then(d => { setData(d); setLoading(false) })
+  }, [studentInfo?.classId])
+
+  if (!studentInfo?.classId) return null
+  const myId = String(studentInfo.studentId)
+  const top = data?.students?.slice(0, 8) || []
+  const myRow = data?.students?.find(s => String(s.id) === myId)
+  const medal = (rank) => rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}`
+
+  return (
+    <div className="lg-glass-card p-5">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <span>🏆</span>
+          <span className="text-sm font-semibold text-[#1a1a1a]">班级排行榜</span>
+          <span className="text-xs text-[#707070]">· {studentInfo.className}</span>
+        </div>
+        {myRow && <span className="text-xs text-[#5b9bd5] font-medium">我排第 {myRow.rank} 名</span>}
+      </div>
+      {loading ? (
+        <p className="text-[#707070] text-sm text-center py-4">加载中…</p>
+      ) : top.length === 0 ? (
+        <p className="text-[#707070] text-sm text-center py-4">本周还没有打卡记录，快来抢第一！</p>
+      ) : (
+        <div className="flex flex-col gap-1">
+          {top.map(s => {
+            const isMe = String(s.id) === myId
+            return (
+              <div key={s.id} className={`flex items-center gap-3 px-3 py-2 rounded-xl text-sm ${isMe ? 'border border-[#5b9bd5]/35 bg-[rgba(214,234,248,0.55)]' : ''}`}>
+                <span className={`w-6 text-center font-bold ${s.rank <= 3 ? 'text-base' : 'text-[#9ca3af] text-xs'}`}>{medal(s.rank)}</span>
+                <span className={`flex-1 truncate ${isMe ? 'text-[#1a1a1a] font-medium' : 'text-[#4a4a4a]'}`}>{s.name}{isMe ? '（我）' : ''}</span>
+                <span className="text-amber-600 font-semibold tabular-nums">{s.points}</span>
+                <span className="text-[#9ca3af] text-xs">分</span>
+              </div>
+            )
+          })}
+        </div>
+      )}
+      <div className="text-[11px] text-[#9ca3af] mt-3">积分 = 本周完成句数 × 2 + 单词数</div>
+    </div>
+  )
+}
+
+// 每日目标进度环
+// 近 N 天日期 + 是否打卡 + 是否今天（用于顶部横向滚动连胜条）
+function getRecentDays(checkinSet, todayKey, n = 21) {
+  const WEEK_LABEL = ['日', '一', '二', '三', '四', '五', '六']
+  const arr = []
+  for (let i = n - 1; i >= 0; i--) {
+    const d = new Date(todayKey)
+    d.setDate(d.getDate() - i)
+    const k = d.toISOString().slice(0, 10)
+    arr.push({
+      key: k,
+      label: WEEK_LABEL[d.getDay()],
+      dayNum: d.getDate(),
+      isToday: k === todayKey,
+      checked: checkinSet.has(k),
+    })
+  }
+  return arr
+}
+
+// 顶部多邻国风：横向滚动连胜条，今天靠右
+function StreakStripTop({ days, streak, streakMax }) {
+  const scrollRef = useRef(null)
+  // 进入时滚到最右（最新一天）
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollLeft = scrollRef.current.scrollWidth
+  }, [days.length])
+  return (
+    <div className="lg-glass-card flex items-center gap-3 px-3 py-2 border border-amber-200/40">
+      <div className="shrink-0 flex items-center gap-1.5 pr-2 border-r border-amber-200/50">
+        <span className="text-2xl leading-none">🔥</span>
+        <div className="flex flex-col leading-none">
+          <span className="text-lg font-bold text-amber-600 tabular-nums">{streak}</span>
+          <span className="text-[9px] text-[#707070]">最高 {streakMax}</span>
+        </div>
+      </div>
+      <div
+        ref={scrollRef}
+        className="flex-1 min-w-0 flex gap-1.5 overflow-x-auto scrollbar-thin-amber pb-1"
+        style={{ scrollbarWidth: 'thin' }}
+      >
+        {days.map(d => (
+          <div
+            key={d.key}
+            className="flex flex-col items-center gap-0.5 shrink-0 w-7"
+          >
+            <div className={`text-[9px] font-medium leading-none ${d.isToday ? 'text-amber-600' : 'text-[#9ca3af]'}`}>{d.label}</div>
+            <div
+              className={`w-6 h-6 rounded-full flex items-center justify-center text-[11px] leading-none transition-all
+                ${d.checked
+                  ? 'bg-amber-400 text-white shadow-[0_0_8px_rgba(251,191,36,0.45)]'
+                  : d.isToday
+                    ? 'border-2 border-dashed border-amber-400/60 bg-white/70 text-amber-600'
+                    : 'border border-black/5 bg-white/50 text-[#9ca3af]'}`}
+            >
+              {d.checked ? '🔥' : d.dayNum}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function DailyGoalCard({ xp }) {
+  if (!xp) return null
+  const { todayXp, goal, streak, streakMax, totalXp, freezes, reachedGoalToday, setGoal } = xp
+  const pct = Math.min(todayXp / goal, 1)
+  const R = 34, C = 2 * Math.PI * R
+  const remaining = Math.max(0, goal - todayXp)
+  const sentencesLeft = Math.ceil(remaining / 2)
+  return (
+    <div className="lg-glass-card flex items-center gap-3 p-3">
+      <div className="relative shrink-0" style={{ width: 80, height: 80 }}>
+        <svg width="80" height="80" className="-rotate-90">
+          <circle cx="40" cy="40" r={R} fill="none" stroke="rgba(0,0,0,0.08)" strokeWidth="7" />
+          <circle
+            cx="40" cy="40" r={R} fill="none"
+            stroke={reachedGoalToday ? '#f59e0b' : '#5b9bd5'}
+            strokeWidth="7" strokeLinecap="round"
+            strokeDasharray={C} strokeDashoffset={C * (1 - pct)}
+            style={{ transition: 'stroke-dashoffset .6s ease, stroke .3s' }}
+          />
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className={`text-lg font-bold leading-none ${reachedGoalToday ? 'text-amber-600' : 'text-[#1a1a1a]'}`}>{todayXp}</div>
+          <div className="text-[9px] text-[#707070] mt-0.5">/{goal} XP</div>
+        </div>
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-1.5 mb-1 flex-wrap">
+          <span className="text-sm font-bold text-[#1a1a1a]">每日目标</span>
+          {reachedGoalToday && <span className="text-amber-700 text-[10px] bg-amber-100 border border-amber-300/60 px-1.5 py-0.5 rounded-full">🎉 达成</span>}
+        </div>
+        <div className="text-[11px] text-[#707070] mb-1.5">
+          {reachedGoalToday
+            ? `已连续 ${streak} 天 · 最高 ${streakMax} 天`
+            : `再练约 ${sentencesLeft} 句完成今日目标`}
+        </div>
+        <div className="flex items-center gap-1 flex-wrap min-w-0">
+          {GOAL_OPTIONS.map(o => (
+            <button
+              key={o.value}
+              onClick={() => setGoal(o.value)}
+              className={`shrink-0 px-1.5 py-0.5 rounded-lg text-[10px] font-medium transition-colors ${goal === o.value ? 'lg-tab-active' : 'lg-tab-inactive bg-white/50'}`}
+            >
+              {o.label}{o.value}
+            </button>
+          ))}
+          <span className="ml-1 text-[10px] text-[#9ca3af] shrink-0">🏅 {totalXp} · ❄️ {freezes}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const STUDY_TIME_KEY = 'english_study_time'
 const CHECKIN_KEY = 'english_checkin'
@@ -61,14 +284,14 @@ function sumDaily(daily, dates) {
 }
 
 function heatColor(secs) {
-  if (!secs) return 'bg-gray-800'
-  if (secs < 300) return 'bg-blue-900'
-  if (secs < 900) return 'bg-blue-700'
-  if (secs < 1800) return 'bg-blue-500'
-  return 'bg-blue-400'
+  if (!secs) return 'bg-white/55 border border-black/5'
+  if (secs < 300) return 'bg-sky-200'
+  if (secs < 900) return 'bg-sky-400'
+  if (secs < 1800) return 'bg-sky-500'
+  return 'bg-sky-600'
 }
 
-export default function Dashboard({ sentences, progress, onStartExercise, onImport, changyongData, sampleData }) {
+export default function Dashboard({ sentences, progress, onStartExercise, onImport, onOpenGutenberg, changyongData, sampleData, xp, isMember, isFounder, studentInfo }) {
   const [calMonth, setCalMonth] = useState(() => {
     const d = new Date()
     return { year: d.getFullYear(), month: d.getMonth() }
@@ -162,14 +385,25 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
 
   const monthName = `${calMonth.year}-${String(calMonth.month + 1).padStart(2, '0')}`
 
+  const recentDays = getRecentDays(checkinSet, today, 21)
+
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-6 flex flex-col gap-5">
+    <div className="w-full max-w-5xl mx-auto px-2 sm:px-4 py-3 sm:py-5 flex flex-col gap-2 sm:gap-3 overflow-x-hidden">
+
+      {/* 顶部：横向滚动连胜条（多邻国风） */}
+      <StreakStripTop days={recentDays} streak={streak} streakMax={streakMax} />
+
+      {/* 每日目标进度环 */}
+      <DailyGoalCard xp={xp} />
+
+      {/* 班级排行榜（学生加入班级后显示） */}
+      <ClassLeaderboardCard studentInfo={studentInfo} />
 
       {/* Stats + quick actions */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
 
         {/* Stats card */}
-        <div className="lg:col-span-2 bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-4">
+        <div className="lg:col-span-2 lg-glass-card flex flex-col gap-3 sm:gap-4 p-3 sm:p-5">
           <div className="flex gap-1 flex-wrap">
             {[
               { id: 'total', label: '总计' },
@@ -181,129 +415,143 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
               <button
                 key={t.id}
                 onClick={() => setStatsTab(t.id)}
-                className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${statsTab === t.id ? 'bg-blue-600 text-white' : 'text-gray-400 hover:bg-slate-700'}`}
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${statsTab === t.id ? 'lg-tab-active' : 'lg-tab-inactive'}`}
               >
                 {t.label}
               </button>
             ))}
           </div>
 
-          <div className="flex gap-4">
-            <div className="flex-1 bg-gray-800 rounded-xl p-4">
-              <div className="text-xs text-gray-500 mb-1">完成句子数量</div>
-              <div className="text-3xl font-bold text-white">{s.completed} <span className="text-base font-normal text-gray-500">个</span></div>
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+            <div className="lg-stat-chip p-3">
+              <div className="text-[11px] text-[#707070] mb-0.5">完成句子</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">{s.completed} <span className="text-sm font-normal text-[#9ca3af]">个</span></div>
             </div>
-            <div className="flex-1 bg-gray-800 rounded-xl p-4">
-              <div className="text-xs text-gray-500 mb-1">练习次数</div>
-              <div className="text-3xl font-bold text-white">{s.attempts} <span className="text-base font-normal text-gray-500">次</span></div>
+            <div className="lg-stat-chip p-3">
+              <div className="text-[11px] text-[#707070] mb-0.5">练习次数</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">{s.attempts} <span className="text-sm font-normal text-[#9ca3af]">次</span></div>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 text-center">
+          <div className="grid grid-cols-5 gap-1.5 sm:gap-2 text-center">
             {[
-              { label: '错题本', val: s.errors },
-              { label: '不熟悉', val: statsTab === 'total' ? s.notMastered : '-' },
+              { label: '错题', val: s.errors },
+              { label: '不熟', val: statsTab === 'total' ? s.notMastered : '-' },
               { label: '已掌握', val: s.mastered },
-              { label: '加入复习', val: s.review },
-              { label: statsTab === 'total' ? '总句子数' : '练习次数', val: statsTab === 'total' ? sentences.length : s.attempts },
+              { label: '复习', val: s.review },
+              { label: statsTab === 'total' ? '总数' : '次数', val: statsTab === 'total' ? sentences.length : s.attempts },
             ].map(item => (
-              <div key={item.label} className="bg-gray-800/60 rounded-xl py-3 px-2">
-                <div className="text-xs text-gray-500 mb-1 leading-tight">{item.label}</div>
-                <div className="text-xl font-bold text-white">{item.val}</div>
+              <div key={item.label} className="lg-stat-chip py-2 px-1">
+                <div className="text-[10px] sm:text-xs text-[#707070] mb-0.5 leading-tight">{item.label}</div>
+                <div className="text-base sm:text-xl font-bold text-[#1a1a1a]">{item.val}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Quick actions */}
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-3">
-          <div className="text-sm font-semibold text-gray-300">快速开始</div>
+        <div className="lg-glass-card flex flex-col gap-2 sm:gap-3 p-3 sm:p-5">
+          <div className="text-sm font-semibold text-[#1a1a1a]">快速开始</div>
           <button
             onClick={onStartExercise}
-            className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors text-sm"
+            className="lg-btn-primary w-full rounded-full py-2.5 text-sm transition-colors"
           >
             ▶ 继续练习
           </button>
-          <button
-            onClick={() => onImport(changyongData.slice(0, 44), '常用句式 · 第 1 课')}
-            className="w-full py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition-colors text-sm"
-          >
-            📖 常用句式 第1课
-          </button>
-          <button
-            onClick={() => onImport(sampleData, '示例句子')}
-            className="w-full py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition-colors text-sm"
-          >
-            📝 示例句子
-          </button>
-          <div className="mt-auto pt-2 border-t border-slate-700">
-            <div className="text-xs text-gray-600 mb-1">当前课程</div>
-            <div className="text-sm text-gray-300">{sentences.length} 句 · 已完成 {totalStats.completed} 句</div>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => onImport(changyongData.slice(0, 44), '常用句式 · 第 1 课')}
+              className="lg-btn-secondary rounded-full py-2.5 text-xs font-medium transition-colors"
+            >
+              📖 常用句式
+            </button>
+            <button
+              onClick={() => onImport(sampleData, '示例句子')}
+              className="lg-btn-secondary rounded-full py-2.5 text-xs font-medium transition-colors"
+            >
+              📝 示例句子
+            </button>
+          </div>
+          {onOpenGutenberg && (
+            <button
+              type="button"
+              onClick={onOpenGutenberg}
+              className="w-full rounded-full border border-[#b794f6]/40 bg-[rgba(235,222,240,0.5)] py-2.5 text-xs font-medium text-[#1a1a1a] transition-colors hover:bg-[rgba(235,222,240,0.75)]"
+            >
+              📚 输入式阅读
+            </button>
+          )}
+          <div className="mt-auto pt-2 border-t lg-divider">
+            <div className="text-[10px] text-[#9ca3af] mb-0.5">当前课程</div>
+            <div className="text-xs text-[#4a4a4a]">{sentences.length} 句 · 已完成 {totalStats.completed} 句</div>
           </div>
         </div>
       </div>
 
       {/* Study time + checkin */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+        <div className="lg-glass-card flex flex-col gap-2 sm:gap-3 p-3 sm:p-5">
           <div className="flex items-center gap-2">
-            <span className="text-blue-400">⏱</span>
-            <span className="text-sm font-semibold text-gray-300">学习时长</span>
+            <span className="text-[#5b9bd5]">⏱</span>
+            <span className="text-sm font-semibold text-[#1a1a1a]">学习时长</span>
           </div>
-          <div className="grid grid-cols-3 gap-3 text-center">
+          <div className="grid grid-cols-3 gap-2 text-center">
             {[
               { label: '累计', val: formatDuration(totalSeconds) },
               { label: '今日', val: formatDuration(todaySeconds) },
               { label: '本月', val: formatDuration(monthSeconds) },
             ].map(item => (
-              <div key={item.label} className="bg-gray-800 rounded-xl py-3 px-2">
-                <div className="text-xs text-gray-500 mb-1">{item.label}</div>
-                <div className="text-xs font-bold text-white leading-snug">{item.val}</div>
+              <div key={item.label} className="lg-stat-chip py-2 px-1">
+                <div className="text-[10px] text-[#707070] mb-0.5">{item.label}</div>
+                <div className="text-[11px] font-bold text-[#1a1a1a] leading-snug break-keep">{item.val}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-4">
+        <div className="lg-glass-card flex flex-col gap-2 sm:gap-3 p-3 sm:p-5">
           <div className="flex items-center gap-2">
-            <span className="text-orange-400">🔥</span>
-            <span className="text-sm font-semibold text-gray-300">打卡统计</span>
-            {checkinSet.has(today) && <span className="ml-auto text-xs text-green-400 bg-green-900/40 px-2 py-0.5 rounded-full">今日已打卡</span>}
+            <span>🔥</span>
+            <span className="text-sm font-semibold text-[#1a1a1a]">打卡统计</span>
+            {checkinSet.has(today) && <span className="ml-auto text-[10px] sm:text-xs text-emerald-700 bg-[rgba(232,248,245,0.9)] border border-emerald-200/70 px-2 py-0.5 rounded-full">今日已打卡</span>}
           </div>
-          <div className="grid grid-cols-3 gap-3 text-center">
+          <div className="grid grid-cols-3 gap-2 text-center">
             {[
               { label: '当前连续', val: streak },
               { label: '最高连续', val: streakMax },
               { label: '累计打卡', val: checkins.length },
             ].map(item => (
-              <div key={item.label} className="bg-gray-800 rounded-xl py-3">
-                <div className="text-xs text-gray-500 mb-1">{item.label}</div>
-                <div className="text-2xl font-bold text-white">{item.val}</div>
+              <div key={item.label} className="lg-stat-chip py-2">
+                <div className="text-[10px] text-[#707070] mb-0.5">{item.label}</div>
+                <div className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">{item.val}</div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
+      {/* 成就徽章 */}
+      <AchievementsCard xp={xp} isMember={isMember} isFounder={isFounder} />
+
       {/* Calendar heatmap */}
-      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <span className="text-gray-400 text-sm">📅</span>
-            <span className="text-sm font-semibold text-gray-300">{monthName} 学习记录</span>
+      <div className="lg-glass-card p-3 sm:p-4">
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
+          <div className="flex items-center gap-1.5">
+            <span className="text-sm">📅</span>
+            <span className="text-xs sm:text-sm font-semibold text-[#1a1a1a]">{monthName} 学习记录</span>
           </div>
           <div className="flex gap-1">
             <button
               onClick={() => setCalMonth(m => { const d = new Date(m.year, m.month - 1, 1); return { year: d.getFullYear(), month: d.getMonth() } })}
-              className="w-7 h-7 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 text-xs flex items-center justify-center transition-colors"
+              className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/60 text-xs text-[#707070] transition-colors hover:bg-white/90"
             >‹</button>
             <button
               onClick={() => setCalMonth(m => { const d = new Date(m.year, m.month + 1, 1); return { year: d.getFullYear(), month: d.getMonth() } })}
-              className="w-7 h-7 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 text-xs flex items-center justify-center transition-colors"
+              className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/60 text-xs text-[#707070] transition-colors hover:bg-white/90"
             >›</button>
           </div>
         </div>
-        <div className="flex gap-1.5 flex-wrap">
+        <div className="flex gap-1 flex-wrap">
           {monthKeys.map((dateStr, i) => {
             const secs = studyTime[dateStr] || 0
             const isToday = dateStr === today
@@ -312,26 +560,25 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
               <div
                 key={dateStr}
                 title={`${dateStr}: ${formatDuration(secs)}${hasCheckin ? ' ✓打卡' : ''}`}
-                className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-medium transition-colors relative
-                  ${isToday ? 'ring-2 ring-blue-400' : ''}
+                className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-medium transition-colors relative
+                  ${isToday ? 'ring-2 ring-[#5b9bd5]' : ''}
                   ${heatColor(secs)}
-                  ${secs > 0 ? 'text-white' : 'text-gray-600'}
-                `}
+                  ${secs > 0 ? 'text-white' : 'text-[#9ca3af]'}`}
               >
                 {i + 1}
-                {hasCheckin && <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-orange-400 rounded-full" />}
+                {hasCheckin && <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-orange-400 rounded-full" />}
               </div>
             )
           })}
         </div>
-        <div className="flex items-center gap-2 mt-3">
-          <span className="text-xs text-gray-600">少</span>
-          {['bg-gray-800', 'bg-blue-900', 'bg-blue-700', 'bg-blue-500', 'bg-blue-400'].map(c => (
-            <div key={c} className={`w-4 h-4 rounded ${c}`} />
+        <div className="flex items-center gap-1.5 mt-2">
+          <span className="text-[10px] text-[#9ca3af]">少</span>
+          {['bg-white/55', 'bg-sky-200', 'bg-sky-400', 'bg-sky-500', 'bg-sky-600'].map(c => (
+            <div key={c} className={`w-3 h-3 rounded ${c}`} />
           ))}
-          <span className="text-xs text-gray-600">多</span>
-          <span className="ml-3 flex items-center gap-1 text-xs text-gray-600">
-            <span className="w-2 h-2 bg-orange-400 rounded-full inline-block" /> 打卡
+          <span className="text-[10px] text-[#9ca3af]">多</span>
+          <span className="ml-2 flex items-center gap-1 text-[10px] text-[#9ca3af]">
+            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full inline-block" /> 打卡
           </span>
         </div>
       </div>

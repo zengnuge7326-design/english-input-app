@@ -799,8 +799,20 @@ export default function App() {
   const navIconSize = isHomeLight ? 17 : 15
 
   return (
-    <div className={`min-h-screen flex flex-col ${isHomeLight ? 'theme-light-glass' : 'bg-black text-white'}`} onClick={handleGlobalClick}>
+    <div className={`min-h-screen flex flex-col ${isHomeLight ? 'theme-light-glass' : 'bg-black text-white theme-dark'}`} onClick={handleGlobalClick}>
       <div className="flex flex-1 relative">
+        {/* 手机端亮色也需要汉堡（右侧轨道 hidden sm:flex 时） */}
+        {!menuOpen && isHomeLight && (
+          <button
+            type="button"
+            aria-label="打开菜单"
+            onClick={() => setMenuOpen(true)}
+            className="sm:hidden pointer-events-auto fixed z-[101] flex h-11 w-11 items-center justify-center rounded-xl border border-white/60 bg-white/60 text-[#707070] shadow-lg backdrop-blur-sm transition-colors hover:bg-white/80 right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+          >
+            <IconMenu size={22} />
+            {hasUnreadAnn && <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500" />}
+          </button>
+        )}
         {!menuOpen && !isHomeLight && (
           <>
             <button
@@ -874,11 +886,11 @@ export default function App() {
           <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
         )}
 
-        {/* 首页浅色主题：固定露出图标轨；其它页仍靠边缘滑入 */}
+        {/* 首页浅色主题：固定露出图标轨；手机端隐藏改用汉堡 */}
         {!menuOpen && isHomeLight && (
           <nav
             aria-label="导航快捷栏"
-            className="lg-nav-rail pointer-events-auto fixed top-0 z-[100] flex h-[100dvh] w-[3.25rem] flex-col items-center gap-0.5 overflow-y-auto overflow-x-hidden py-2 right-[max(0.5rem,env(safe-area-inset-right,0px))] pt-[max(0.5rem,env(safe-area-inset-top,0px))] pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]"
+            className="lg-nav-rail pointer-events-auto fixed top-0 z-[100] hidden sm:flex h-[100dvh] w-[3.25rem] flex-col items-center gap-0.5 overflow-y-auto overflow-x-hidden py-2 right-[max(0.5rem,env(safe-area-inset-right,0px))] pt-[max(0.5rem,env(safe-area-inset-top,0px))] pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]"
           >
             <button
               type="button"
@@ -1041,7 +1053,7 @@ export default function App() {
 
         {/* Main content */}
         <main
-          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'} ${isHomeLight ? 'pr-[3.75rem]' : ''}`}
+          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'} ${isHomeLight ? 'sm:pr-[3.75rem]' : ''}`}
           style={{ paddingTop: 'calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.25rem)' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>

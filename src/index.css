@@ -469,3 +469,101 @@ body {
 }
 .hero-glow { animation: hero-glow 2.5s ease-in-out infinite; }
 
+/* ── 暗色主题 Dashboard 专项覆盖 ────────────────────────────────────────── */
+/* 当根节点有 .theme-dark 时，修正 Dashboard 的亮色专用类 */
+
+.theme-dark .lg-glass-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .lg-stat-chip {
+  background: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: none;
+}
+
+.theme-dark .lg-tab-active {
+  background: rgba(139, 92, 246, 0.35) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.theme-dark .lg-tab-inactive {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+.theme-dark .lg-tab-inactive:hover {
+  background: rgba(255, 255, 255, 0.10) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 硬编码亮色文字 → 暗色模式适配 */
+.theme-dark [class*="text-[#1a1a1a]"],
+.theme-dark [class*="text-[#4a4a4a]"] {
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+.theme-dark [class*="text-[#707070]"] {
+  color: rgba(255, 255, 255, 0.50) !important;
+}
+.theme-dark [class*="text-[#9ca3af]"] {
+  color: rgba(255, 255, 255, 0.32) !important;
+}
+
+/* 卡片内白色/透明背景 → 深色 */
+.theme-dark [class*="bg-white/"] {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+.theme-dark [class*="bg-amber-50"] {
+  background-color: rgba(251, 191, 36, 0.15) !important;
+}
+
+/* 分隔线 */
+.theme-dark [class*="border-amber-200"] {
+  border-color: rgba(251, 191, 36, 0.25) !important;
+}
+.theme-dark [class*="border-black/"] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 进度环底圈 */
+.theme-dark circle[stroke="rgba(0,0,0,0.08)"] {
+  stroke: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* 快速开始按钮 */
+.theme-dark .lg-btn-primary {
+  background: linear-gradient(135deg, #1e6b4a 0%, #2d5a27 100%) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+.theme-dark .lg-btn-secondary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+/* 导航项 */
+.theme-dark .lg-nav-item {
+  color: rgba(255, 255, 255, 0.60) !important;
+}
+.theme-dark .lg-nav-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+.theme-dark .lg-nav-item--active {
+  background: rgba(139, 92, 246, 0.30) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+.theme-dark .lg-divider {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.theme-dark .lg-glass-nav,
+.theme-dark .lg-nav-rail {
+  background: rgba(15, 15, 25, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.theme-dark .lg-overlay {
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+
