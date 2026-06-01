@@ -397,16 +397,16 @@ export default function App() {
   const [navSlidePos, setNavSlidePos] = useState(null)    // 悬停时位置 {top,h}
   const [navActivePos, setNavActivePos] = useState(null)  // 激活项位置 {top,h}
 
-  // 菜单打开 / tab 变化时，计算激活项位置
+  // 菜单打开 / tab 变化时，计算激活项位置（用 isLightMode 避免 TDZ）
   useEffect(() => {
-    if (!menuOpen || !isHomeLight) return
+    if (!menuOpen || !isLightMode) return
     requestAnimationFrame(() => {
       const container = navSlideRef.current
       if (!container) return
       const active = container.querySelector('[data-nav-active="true"]')
       if (active) setNavActivePos({ top: active.offsetTop, h: active.offsetHeight })
     })
-  }, [menuOpen, tab, showSettings, isHomeLight])
+  }, [menuOpen, tab, showSettings, isLightMode])
 
   // ── 公告 & 留言中心 ────────────────────────────────────
   const [announcement, setAnnouncement] = useState('')
