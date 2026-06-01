@@ -392,12 +392,21 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const levelButtonRef = useRef(null)
 
-  // ── 滑动高亮（菜单薰衣草玻璃块跟随鼠标） ─────────────────
-  const navSlideRef = useRef(null)           // 导航项容器
-  const [navSlidePos, setNavSlidePos] = useState(null)    // 悬停时位置 {top,h}
-  const [navActivePos, setNavActivePos] = useState(null)  // 激活项位置 {top,h}
+  // 主题模式 — 必须在 navSlide useEffect 之前声明，否则 TDZ
+  const [isLightMode, setIsLightMode] = useState(() => localStorage.getItem('theme') !== 'dark')
+  function toggleTheme() {
+    setIsLightMode(v => {
+      const next = !v
+      localStorage.setItem('theme', next ? 'light' : 'dark')
+      return next
+    })
+  }
 
-  // 菜单打开 / tab 变化时，计算激活项位置（用 isLightMode 避免 TDZ）
+  // ── 滑动高亮（菜单薰衣草玻璃块跟随鼠标） ─────────────────
+  const navSlideRef = useRef(null)
+  const [navSlidePos, setNavSlidePos] = useState(null)
+  const [navActivePos, setNavActivePos] = useState(null)
+
   useEffect(() => {
     if (!menuOpen || !isLightMode) return
     requestAnimationFrame(() => {
@@ -767,15 +776,6 @@ export default function App() {
     }
   }
 
-  // 默认亮色（首次访问 / 未设置时为亮色模式）
-  const [isLightMode, setIsLightMode] = useState(() => localStorage.getItem('theme') !== 'dark')
-  function toggleTheme() {
-    setIsLightMode(v => {
-      const next = !v
-      localStorage.setItem('theme', next ? 'light' : 'dark')
-      return next
-    })
-  }
   const isHomeLight = isLightMode
 
   const mainNavItems = [
