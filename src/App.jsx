@@ -392,6 +392,22 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const levelButtonRef = useRef(null)
 
+  // ── 滑动高亮（菜单薰衣草玻璃块跟随鼠标） ─────────────────
+  const navSlideRef = useRef(null)           // 导航项容器
+  const [navSlidePos, setNavSlidePos] = useState(null)    // 悬停时位置 {top,h}
+  const [navActivePos, setNavActivePos] = useState(null)  // 激活项位置 {top,h}
+
+  // 菜单打开 / tab 变化时，计算激活项位置
+  useEffect(() => {
+    if (!menuOpen || !isHomeLight) return
+    requestAnimationFrame(() => {
+      const container = navSlideRef.current
+      if (!container) return
+      const active = container.querySelector('[data-nav-active="true"]')
+      if (active) setNavActivePos({ top: active.offsetTop, h: active.offsetHeight })
+    })
+  }, [menuOpen, tab, showSettings, isHomeLight])
+
   // ── 公告 & 留言中心 ────────────────────────────────────
   const [announcement, setAnnouncement] = useState('')
   const [showMsgCenter, setShowMsgCenter] = useState(false)
@@ -980,18 +996,54 @@ export default function App() {
 
           <div className={`shrink-0 border-t ${isHomeLight ? 'lg-divider' : 'border-slate-700/70'}`} />
 
-          {/* 导航菜单 */}
-          {mainNavItems.map(item => (
-            <button key={item.id}
-              onClick={item.onClick}
-              className={`${navItemClass(item)} shrink-0 relative ${isHomeLight ? '' : 'px-2 text-sm'}`}>
-              {item.Icon ? <item.Icon size={navIconSize} /> : <span className="w-[17px] text-center">{item.iconText}</span>}
-              <span className="truncate">{item.label}</span>
-              {item.bell && hasUnreadAnn && (
-                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-              )}
-            </button>
-          ))}
+          {/* 导航菜单 — 亮色模式加滑动薰衣草玻璃高亮 */}
+          <div
+            ref={navSlideRef}
+            className="relative flex flex-col gap-0.5"
+            onMouseLeave={() => setNavSlidePos(null)}
+          >
+            {/* 滑动高亮块（亮色模式专用） */}
+            {isHomeLight && (navSlidePos || navActivePos) && (
+              <div
+                aria-hidden
+                style={{
+                  position: 'absolute',
+                  left: 0, right: 0,
+                  top: (navSlidePos || navActivePos).top,
+                  height: (navSlidePos || navActivePos).h,
+                  borderRadius: 12,
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                  willChange: 'top',
+                  transition: 'top 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.2s ease, opacity 0.15s ease',
+                  background: 'linear-gradient(158deg, rgba(255,255,255,0.88) 0%, rgba(185,175,228,0.56) 38%, rgba(168,155,220,0.44) 100%)',
+                  border: '1px solid rgba(255,255,255,0.84)',
+                  boxShadow: '0 6px 22px rgba(185,175,228,0.30), 0 2px 8px rgba(185,175,228,0.16), inset 0 1.5px 0 rgba(255,255,255,0.95)',
+                }}
+              />
+            )}
+
+            {mainNavItems.map(item => {
+              const active = tab === item.id || (item.id === 'settings' && showSettings)
+              return (
+                <button key={item.id}
+                  data-nav-active={active ? 'true' : undefined}
+                  onClick={item.onClick}
+                  onMouseEnter={isHomeLight ? (e) => {
+                    setNavSlidePos({ top: e.currentTarget.offsetTop, h: e.currentTarget.offsetHeight })
+                  } : undefined}
+                  style={{ position: 'relative', zIndex: 1 }}
+                  className={`${navItemClass(item)} shrink-0 ${isHomeLight ? 'nav-slide-item' : 'px-2 text-sm'}`}
+                >
+                  {item.Icon ? <item.Icon size={navIconSize} /> : <span className="w-[17px] text-center">{item.iconText}</span>}
+                  <span className="truncate">{item.label}</span>
+                  {item.bell && hasUnreadAnn && (
+                    <span className="ml-auto w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                  )}
+                </button>
+              )
+            })}
+          </div>
 
           {/* 云同步（登录后显示） */}
           {user && (
@@ -1012,7 +1064,7 @@ export default function App() {
 
         {/* Main content */}
         <main
-          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'} ${isHomeLight ? 'sm:pr-[3.75rem]' : ''}`}
+          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'} }`}
           style={{ paddingTop: 'calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.25rem)' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>

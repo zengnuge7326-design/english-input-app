@@ -310,7 +310,21 @@
     background   0.08s var(--lg-ease-press);
 }
 
-/* Active / 当前页 — 薰衣草玻璃 */
+/* 滑动模式下激活项本身不需要背景（由滑块提供） */
+.theme-light-glass .nav-slide-item.lg-nav-item--active {
+  background: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+/* 滑动模式下 hover 也不需要背景（由滑块提供） */
+.theme-light-glass .nav-slide-item:hover {
+  background: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  transform: none !important;
+}
+
+/* Active / 当前页 — 薰衣草玻璃（非滑动模式保留） */
 .theme-light-glass .lg-nav-item--active {
   background: linear-gradient(158deg,
     rgba(255,255,255,0.88) 0%,
