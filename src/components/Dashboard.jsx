@@ -388,65 +388,52 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
   const recentDays = getRecentDays(checkinSet, today, 21)
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-3 sm:px-5 py-3 sm:py-5 flex flex-col gap-3 overflow-x-hidden">
+    <div className="w-full max-w-5xl mx-auto px-2 sm:px-4 py-3 sm:py-5 flex flex-col gap-2 sm:gap-3 overflow-x-hidden">
 
-      {/* ── 打卡连胜条（全宽） ── */}
+      {/* 顶部：横向滚动连胜条（多邻国风） */}
       <StreakStripTop days={recentDays} streak={streak} streakMax={streakMax} />
 
-      {/* ── 主网格：手机1列 / 平板2列 / 桌面3列 ── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {/* 每日目标进度环 */}
+      <DailyGoalCard xp={xp} />
 
-        {/* 每日目标进度环 */}
-        <DailyGoalCard xp={xp} />
+      {/* 班级排行榜（学生加入班级后显示） */}
+      <ClassLeaderboardCard studentInfo={studentInfo} />
 
-        {/* 快速开始 */}
-        <div className="lg-glass-card flex flex-col gap-2.5 p-4">
-          <div className="text-sm font-semibold text-[#1a1a1a]">快速开始</div>
-          <button onClick={onStartExercise} className="lg-btn-primary w-full rounded-full py-2.5 text-sm font-semibold transition-colors">
-            ▶ 继续练习
-          </button>
-          <div className="grid grid-cols-2 gap-2">
-            <button onClick={() => onImport(changyongData.slice(0, 44), '常用句式 · 第 1 课')} className="lg-btn-secondary rounded-full py-2 text-xs font-medium transition-colors">
-              📖 常用句式
-            </button>
-            <button onClick={() => onImport(sampleData, '示例句子')} className="lg-btn-secondary rounded-full py-2 text-xs font-medium transition-colors">
-              📝 示例句子
-            </button>
-          </div>
-          {onOpenGutenberg && (
-            <button type="button" onClick={onOpenGutenberg} className="w-full rounded-full border border-[#b794f6]/40 bg-[rgba(235,222,240,0.5)] py-2 text-xs font-medium text-[#1a1a1a] transition-colors hover:bg-[rgba(235,222,240,0.75)]">
-              📚 输入式阅读
-            </button>
-          )}
-          <div className="mt-auto pt-2 border-t lg-divider">
-            <div className="text-[10px] text-[#9ca3af]">当前课程：{sentences.length} 句 · 已完成 {totalStats.completed} 句</div>
-          </div>
-        </div>
+      {/* Stats + quick actions */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
 
-        {/* 统计卡：平板跨2列（和前两卡合成2列），桌面单列 */}
-        <div className="sm:col-span-2 lg:col-span-1 lg-glass-card flex flex-col gap-3 p-4">
-          {/* Tab 切换 */}
+        {/* Stats card */}
+        <div className="lg:col-span-2 lg-glass-card flex flex-col gap-3 sm:gap-4 p-3 sm:p-5">
           <div className="flex gap-1 flex-wrap">
-            {[{ id: 'total', label: '总计' }, { id: 'today', label: '今天' }, { id: 'yesterday', label: '昨天' }, { id: 'week', label: '本周' }, { id: 'month', label: '本月' }].map(t => (
-              <button key={t.id} onClick={() => setStatsTab(t.id)}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${statsTab === t.id ? 'lg-tab-active' : 'lg-tab-inactive'}`}>
+            {[
+              { id: 'total', label: '总计' },
+              { id: 'today', label: '今天' },
+              { id: 'yesterday', label: '昨天' },
+              { id: 'week', label: '本周' },
+              { id: 'month', label: '本月' },
+            ].map(t => (
+              <button
+                key={t.id}
+                onClick={() => setStatsTab(t.id)}
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${statsTab === t.id ? 'lg-tab-active' : 'lg-tab-inactive'}`}
+              >
                 {t.label}
               </button>
             ))}
           </div>
-          {/* 主要数字 */}
-          <div className="grid grid-cols-2 gap-2">
+
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             <div className="lg-stat-chip p-3">
               <div className="text-[11px] text-[#707070] mb-0.5">完成句子</div>
-              <div className="text-2xl font-bold text-[#1a1a1a]">{s.completed}<span className="text-sm font-normal text-[#9ca3af] ml-1">个</span></div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">{s.completed} <span className="text-sm font-normal text-[#9ca3af]">个</span></div>
             </div>
             <div className="lg-stat-chip p-3">
               <div className="text-[11px] text-[#707070] mb-0.5">练习次数</div>
-              <div className="text-2xl font-bold text-[#1a1a1a]">{s.attempts}<span className="text-sm font-normal text-[#9ca3af] ml-1">次</span></div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">{s.attempts} <span className="text-sm font-normal text-[#9ca3af]">次</span></div>
             </div>
           </div>
-          {/* 细分数据 */}
-          <div className="grid grid-cols-5 gap-1.5 text-center">
+
+          <div className="grid grid-cols-5 gap-1.5 sm:gap-2 text-center">
             {[
               { label: '错题', val: s.errors },
               { label: '不熟', val: statsTab === 'total' ? s.notMastered : '-' },
@@ -454,23 +441,56 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
               { label: '复习', val: s.review },
               { label: statsTab === 'total' ? '总数' : '次数', val: statsTab === 'total' ? sentences.length : s.attempts },
             ].map(item => (
-              <div key={item.label} className="lg-stat-chip py-2 px-0.5">
-                <div className="text-[10px] text-[#707070] mb-0.5 leading-tight">{item.label}</div>
-                <div className="text-sm sm:text-base font-bold text-[#1a1a1a]">{item.val}</div>
+              <div key={item.label} className="lg-stat-chip py-2 px-1">
+                <div className="text-[10px] sm:text-xs text-[#707070] mb-0.5 leading-tight">{item.label}</div>
+                <div className="text-base sm:text-xl font-bold text-[#1a1a1a]">{item.val}</div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Quick actions */}
+        <div className="lg-glass-card flex flex-col gap-2 sm:gap-3 p-3 sm:p-5">
+          <div className="text-sm font-semibold text-[#1a1a1a]">快速开始</div>
+          <button
+            onClick={onStartExercise}
+            className="lg-btn-primary w-full rounded-full py-2.5 text-sm transition-colors"
+          >
+            ▶ 继续练习
+          </button>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => onImport(changyongData.slice(0, 44), '常用句式 · 第 1 课')}
+              className="lg-btn-secondary rounded-full py-2.5 text-xs font-medium transition-colors"
+            >
+              📖 常用句式
+            </button>
+            <button
+              onClick={() => onImport(sampleData, '示例句子')}
+              className="lg-btn-secondary rounded-full py-2.5 text-xs font-medium transition-colors"
+            >
+              📝 示例句子
+            </button>
+          </div>
+          {onOpenGutenberg && (
+            <button
+              type="button"
+              onClick={onOpenGutenberg}
+              className="w-full rounded-full border border-[#b794f6]/40 bg-[rgba(235,222,240,0.5)] py-2.5 text-xs font-medium text-[#1a1a1a] transition-colors hover:bg-[rgba(235,222,240,0.75)]"
+            >
+              📚 输入式阅读
+            </button>
+          )}
+          <div className="mt-auto pt-2 border-t lg-divider">
+            <div className="text-[10px] text-[#9ca3af] mb-0.5">当前课程</div>
+            <div className="text-xs text-[#4a4a4a]">{sentences.length} 句 · 已完成 {totalStats.completed} 句</div>
+          </div>
+        </div>
       </div>
 
-      {/* 班级排行榜（学生加入班级后显示） */}
-      <ClassLeaderboardCard studentInfo={studentInfo} />
-
-      {/* ── 次级网格：学习时长 + 打卡统计 + 成就（手机1列/平板2列/桌面3列） ── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-
-        {/* 学习时长 */}
-        <div className="lg-glass-card flex flex-col gap-2.5 p-4">
+      {/* Study time + checkin */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+        <div className="lg-glass-card flex flex-col gap-2 sm:gap-3 p-3 sm:p-5">
           <div className="flex items-center gap-2">
             <span className="text-[#5b9bd5]">⏱</span>
             <span className="text-sm font-semibold text-[#1a1a1a]">学习时长</span>
@@ -483,20 +503,17 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
             ].map(item => (
               <div key={item.label} className="lg-stat-chip py-2 px-1">
                 <div className="text-[10px] text-[#707070] mb-0.5">{item.label}</div>
-                <div className="text-[11px] font-bold text-[#1a1a1a] leading-snug">{item.val}</div>
+                <div className="text-[11px] font-bold text-[#1a1a1a] leading-snug break-keep">{item.val}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* 打卡统计 */}
-        <div className="lg-glass-card flex flex-col gap-2.5 p-4">
+        <div className="lg-glass-card flex flex-col gap-2 sm:gap-3 p-3 sm:p-5">
           <div className="flex items-center gap-2">
             <span>🔥</span>
             <span className="text-sm font-semibold text-[#1a1a1a]">打卡统计</span>
-            {checkinSet.has(today) && (
-              <span className="ml-auto text-[10px] text-emerald-700 bg-[rgba(232,248,245,0.9)] border border-emerald-200/70 px-2 py-0.5 rounded-full">今日✓</span>
-            )}
+            {checkinSet.has(today) && <span className="ml-auto text-[10px] sm:text-xs text-emerald-700 bg-[rgba(232,248,245,0.9)] border border-emerald-200/70 px-2 py-0.5 rounded-full">今日已打卡</span>}
           </div>
           <div className="grid grid-cols-3 gap-2 text-center">
             {[
@@ -506,52 +523,65 @@ export default function Dashboard({ sentences, progress, onStartExercise, onImpo
             ].map(item => (
               <div key={item.label} className="lg-stat-chip py-2">
                 <div className="text-[10px] text-[#707070] mb-0.5">{item.label}</div>
-                <div className="text-xl font-bold text-[#1a1a1a]">{item.val}</div>
+                <div className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">{item.val}</div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* 日历热力图（手机和平板跨全行，桌面单列） */}
-        <div className="sm:col-span-2 lg:col-span-1 lg-glass-card p-4">
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-1.5">
-              <span className="text-sm">📅</span>
-              <span className="text-xs font-semibold text-[#1a1a1a]">{monthName}</span>
-            </div>
-            <div className="flex gap-1">
-              <button onClick={() => setCalMonth(m => { const d = new Date(m.year, m.month - 1, 1); return { year: d.getFullYear(), month: d.getMonth() } })}
-                className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/60 text-xs text-[#707070] hover:bg-white/90">‹</button>
-              <button onClick={() => setCalMonth(m => { const d = new Date(m.year, m.month + 1, 1); return { year: d.getFullYear(), month: d.getMonth() } })}
-                className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/60 text-xs text-[#707070] hover:bg-white/90">›</button>
-            </div>
-          </div>
-          <div className="flex gap-1 flex-wrap">
-            {monthKeys.map((dateStr, i) => {
-              const secs = studyTime[dateStr] || 0
-              return (
-                <div key={dateStr} title={`${dateStr}: ${formatDuration(secs)}${checkinSet.has(dateStr) ? ' ✓打卡' : ''}`}
-                  className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-medium relative
-                    ${dateStr === today ? 'ring-2 ring-[#5b9bd5]' : ''}
-                    ${heatColor(secs)} ${secs > 0 ? 'text-white' : 'text-[#9ca3af]'}`}>
-                  {i + 1}
-                  {checkinSet.has(dateStr) && <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-orange-400 rounded-full" />}
-                </div>
-              )
-            })}
-          </div>
-          <div className="flex items-center gap-1 mt-2">
-            <span className="text-[10px] text-[#9ca3af]">少</span>
-            {['bg-white/55', 'bg-sky-200', 'bg-sky-400', 'bg-sky-500', 'bg-sky-600'].map(c => (
-              <div key={c} className={`w-3 h-3 rounded ${c}`} />
-            ))}
-            <span className="text-[10px] text-[#9ca3af]">多</span>
-          </div>
-        </div>
       </div>
 
-      {/* 成就徽章（全宽） */}
+      {/* 成就徽章 */}
       <AchievementsCard xp={xp} isMember={isMember} isFounder={isFounder} />
+
+      {/* Calendar heatmap */}
+      <div className="lg-glass-card p-3 sm:p-4">
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
+          <div className="flex items-center gap-1.5">
+            <span className="text-sm">📅</span>
+            <span className="text-xs sm:text-sm font-semibold text-[#1a1a1a]">{monthName} 学习记录</span>
+          </div>
+          <div className="flex gap-1">
+            <button
+              onClick={() => setCalMonth(m => { const d = new Date(m.year, m.month - 1, 1); return { year: d.getFullYear(), month: d.getMonth() } })}
+              className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/60 text-xs text-[#707070] transition-colors hover:bg-white/90"
+            >‹</button>
+            <button
+              onClick={() => setCalMonth(m => { const d = new Date(m.year, m.month + 1, 1); return { year: d.getFullYear(), month: d.getMonth() } })}
+              className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/60 text-xs text-[#707070] transition-colors hover:bg-white/90"
+            >›</button>
+          </div>
+        </div>
+        <div className="flex gap-1 flex-wrap">
+          {monthKeys.map((dateStr, i) => {
+            const secs = studyTime[dateStr] || 0
+            const isToday = dateStr === today
+            const hasCheckin = checkinSet.has(dateStr)
+            return (
+              <div
+                key={dateStr}
+                title={`${dateStr}: ${formatDuration(secs)}${hasCheckin ? ' ✓打卡' : ''}`}
+                className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-medium transition-colors relative
+                  ${isToday ? 'ring-2 ring-[#5b9bd5]' : ''}
+                  ${heatColor(secs)}
+                  ${secs > 0 ? 'text-white' : 'text-[#9ca3af]'}`}
+              >
+                {i + 1}
+                {hasCheckin && <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-orange-400 rounded-full" />}
+              </div>
+            )
+          })}
+        </div>
+        <div className="flex items-center gap-1.5 mt-2">
+          <span className="text-[10px] text-[#9ca3af]">少</span>
+          {['bg-white/55', 'bg-sky-200', 'bg-sky-400', 'bg-sky-500', 'bg-sky-600'].map(c => (
+            <div key={c} className={`w-3 h-3 rounded ${c}`} />
+          ))}
+          <span className="text-[10px] text-[#9ca3af]">多</span>
+          <span className="ml-2 flex items-center gap-1 text-[10px] text-[#9ca3af]">
+            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full inline-block" /> 打卡
+          </span>
+        </div>
+      </div>
 
     </div>
   )
