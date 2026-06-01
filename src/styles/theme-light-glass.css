@@ -1,86 +1,110 @@
-/* ── Liquid Glass Theme — Full App Coverage ────────────────────────────────── */
+/* ── Liquid Glass Theme — Full App Coverage ─────────────────────────────────
+   参考: iOS 26 Liquid Glass Design Language
+   核心特征: 彩色玻璃渐变 + 顶部白色高光线 + 彩色阴影 + 弹性动画曲线
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── 0. Design Tokens ───────────────────────────────────────────────────────── */
 
 .theme-light-glass {
-  --lg-bg-page: #f2f3f7;
-  --lg-bg-page-accent: #e8f4f8;
-  --lg-text-primary: #1a1a2e;
-  --lg-text-secondary: #5a5a72;
-  --lg-text-muted: #9a9ab0;
-  --lg-glass-bg: rgba(255, 255, 255, 0.58);
-  --lg-glass-border: rgba(255, 255, 255, 0.70);
-  --lg-glass-border-subtle: rgba(210, 210, 230, 0.45);
-  --lg-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
-  --lg-glass-blur: 20px;
-  --lg-accent-lavender: rgba(235, 222, 240, 0.88);
-  --lg-accent-mint: rgba(232, 248, 245, 0.92);
-  --lg-accent-peach: rgba(255, 236, 220, 0.85);
-  --lg-accent-sky: rgba(220, 238, 255, 0.88);
-  --lg-accent-teal: #5b9bd5;
-  --lg-accent-teal-soft: rgba(91, 155, 213, 0.15);
-  --lg-radius-card: 20px;
-  --lg-radius-pill: 9999px;
-  --lg-nav-icon: 17px;
-  --lg-nav-font: 15px;
+  /* 背景 — 暖米灰，和参考图一致，避免冷蓝 */
+  --lg-bg-page:            #edecea;
+  --lg-bg-gradient-lt:     rgba(210, 205, 245, 0.50);  /* 左上薰衣草光晕 */
+  --lg-bg-gradient-rb:     rgba(245, 210, 228, 0.38);  /* 右下玫瑰光晕   */
+
+  /* 文字 */
+  --lg-text-primary:       #1c1b22;
+  --lg-text-secondary:     #56546a;
+  --lg-text-muted:         #9896aa;
+
+  /* 玻璃基础 */
+  --lg-glass-bg:           rgba(255, 255, 255, 0.62);
+  --lg-glass-border:       rgba(255, 255, 255, 0.82);
+  --lg-glass-border-subtle:rgba(215, 213, 228, 0.45);
+  --lg-glass-blur:         22px;
+  --lg-glass-sat:          saturate(1.5);
+
+  /* 顶部高光线 — 玻璃感的灵魂 */
+  --lg-highlight:          inset 0 1.5px 0 rgba(255, 255, 255, 0.95);
+
+  /* 彩色调色板 (R,G,B 方便 rgba() 复用) */
+  --lg-c-lavender:         185, 175, 228;
+  --lg-c-mint:             148, 208, 175;
+  --lg-c-peach:            238, 182, 138;
+  --lg-c-sky:              170, 200, 232;
+  --lg-c-rose:             225, 170, 198;
+
+  /* 动画曲线 — 弹性回弹，和参考图"活"的感觉一致 */
+  --lg-spring:             cubic-bezier(0.34, 1.56, 0.64, 1);
+  --lg-spring-fast:        cubic-bezier(0.25, 1.20, 0.50, 1);
+  --lg-ease-press:         cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* 圆角 */
+  --lg-radius-card:        20px;
+  --lg-radius-btn:         9999px;
+  --lg-nav-font:           14px;
+  --lg-nav-icon:           16px;
 
   color: var(--lg-text-primary);
   background-color: var(--lg-bg-page);
   background-image:
-    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(200, 225, 255, 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 45% at 95% 100%, rgba(235, 215, 255, 0.45) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 35% at 50% 50%, rgba(220, 240, 255, 0.2) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 50% at 8%  0%,   var(--lg-bg-gradient-lt) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 45% at 92% 100%,  var(--lg-bg-gradient-rb) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 35% at 55% 45%,   rgba(232,228,255,0.18)   0%, transparent 70%);
 }
 
-/* ── 1. Main container / page backgrounds ───────────────────────────────── */
+/* ── 1. 页面背景覆盖 ─────────────────────────────────────────────────────────── */
 
 .theme-light-glass .bg-black,
 .theme-light-glass .ocean-main {
-  background: var(--lg-bg-page) !important;
+  background-color: var(--lg-bg-page) !important;
   background-image:
-    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(200, 225, 255, 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 45% at 95% 100%, rgba(235, 215, 255, 0.45) 0%, transparent 55%) !important;
+    radial-gradient(ellipse 80% 50% at 8%  0%,   var(--lg-bg-gradient-lt) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 45% at 92% 100%,  var(--lg-bg-gradient-rb) 0%, transparent 60%) !important;
 }
 
-/* Stars / space particles — hide in light mode */
+/* 隐藏星空粒子 */
 .theme-light-glass .star,
 .theme-light-glass .milky-way,
 .theme-light-glass .ocean-bubble,
-.theme-light-glass .ocean-fish { opacity: 0 !important; pointer-events: none !important; }
+.theme-light-glass .ocean-fish {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
-/* ── 2. Panel / card backgrounds ─────────────────────────────────────────── */
+/* ── 2. 卡片 / 面板背景 ──────────────────────────────────────────────────────── */
 
 .theme-light-glass .bg-gray-950 {
-  background-color: rgba(245, 246, 252, 0.92) !important;
+  background-color: rgba(240, 238, 235, 0.94) !important;
 }
 .theme-light-glass .bg-gray-900,
 .theme-light-glass .bg-slate-900 {
-  background-color: var(--lg-glass-bg) !important;
-  backdrop-filter: blur(var(--lg-glass-blur));
-  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  background: linear-gradient(160deg, rgba(255,255,255,0.72) 0%, rgba(250,248,246,0.60) 100%) !important;
+  backdrop-filter: blur(var(--lg-glass-blur)) var(--lg-glass-sat);
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur)) var(--lg-glass-sat);
 }
 .theme-light-glass .bg-gray-800,
 .theme-light-glass .bg-slate-800 {
-  background-color: rgba(255, 255, 255, 0.48) !important;
+  background-color: rgba(255, 255, 255, 0.50) !important;
 }
-
-/* Opacity variants — e.g. bg-gray-800/60, bg-gray-900/80 */
 .theme-light-glass [class*="bg-gray-800/"],
 .theme-light-glass [class*="bg-gray-900/"],
 .theme-light-glass [class*="bg-slate-800/"],
 .theme-light-glass [class*="bg-slate-900/"] {
-  background-color: rgba(255, 255, 255, 0.38) !important;
+  background-color: rgba(255, 255, 255, 0.40) !important;
 }
 
-/* ── 3. Bottom nav bar ────────────────────────────────────────────────────── */
+/* ── 3. 底部导航栏 ───────────────────────────────────────────────────────────── */
 
 .theme-light-glass footer,
 .theme-light-glass .bg-slate-900\/95 {
-  background: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-  border-top: 1px solid rgba(210, 210, 235, 0.5) !important;
+  background: rgba(240, 238, 235, 0.82) !important;
+  backdrop-filter: blur(28px) var(--lg-glass-sat) !important;
+  -webkit-backdrop-filter: blur(28px) var(--lg-glass-sat) !important;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.06) !important;
 }
 
-/* ── 4. Borders ──────────────────────────────────────────────────────────── */
+/* ── 4. 边框 ─────────────────────────────────────────────────────────────────── */
 
 .theme-light-glass .border-gray-800,
 .theme-light-glass .border-gray-700,
@@ -90,293 +114,456 @@
 .theme-light-glass .border-slate-500 {
   border-color: var(--lg-glass-border-subtle) !important;
 }
-
 .theme-light-glass [class*="border-gray-800/"],
 .theme-light-glass [class*="border-gray-700/"],
 .theme-light-glass [class*="border-slate-700/"],
 .theme-light-glass [class*="border-slate-600/"] {
-  border-color: rgba(200, 200, 225, 0.35) !important;
+  border-color: rgba(205, 203, 218, 0.38) !important;
 }
 
-/* ── 5. Text colors ──────────────────────────────────────────────────────── */
+/* ── 5. 文字颜色 ─────────────────────────────────────────────────────────────── */
 
-/* Headings and primary text */
-.theme-light-glass .text-white {
-  color: var(--lg-text-primary) !important;
-}
+.theme-light-glass .text-white { color: var(--lg-text-primary) !important; }
 .theme-light-glass .text-gray-100,
 .theme-light-glass .text-gray-200,
 .theme-light-glass .text-gray-300,
 .theme-light-glass .text-slate-200,
-.theme-light-glass .text-slate-300 {
-  color: #2d2d48 !important;
-}
+.theme-light-glass .text-slate-300 { color: #2c2b38 !important; }
 .theme-light-glass .text-gray-400,
-.theme-light-glass .text-slate-400 {
-  color: var(--lg-text-secondary) !important;
-}
+.theme-light-glass .text-slate-400 { color: var(--lg-text-secondary) !important; }
 .theme-light-glass .text-gray-500,
 .theme-light-glass .text-gray-600,
-.theme-light-glass .text-slate-500 {
-  color: var(--lg-text-muted) !important;
-}
+.theme-light-glass .text-slate-500 { color: var(--lg-text-muted) !important; }
 
-/* Preserve white text on colored buttons */
-.theme-light-glass .bg-blue-600 .text-white,
-.theme-light-glass .bg-blue-500 .text-white,
-.theme-light-glass .bg-green-600 .text-white,
-.theme-light-glass .bg-purple-600 .text-white,
-.theme-light-glass .bg-red-600 .text-white,
-.theme-light-glass .bg-amber-500 .text-white,
-.theme-light-glass [class*="bg-blue-"] .text-white,
-.theme-light-glass [class*="bg-green-"] .text-white,
-.theme-light-glass [class*="bg-indigo-"] .text-white {
-  color: white !important;
-}
+/* 彩色背景上保留白字 */
+.theme-light-glass [class*="bg-blue-"]   .text-white,
+.theme-light-glass [class*="bg-green-"]  .text-white,
+.theme-light-glass [class*="bg-indigo-"] .text-white,
+.theme-light-glass [class*="bg-red-"]    .text-white { color: white !important; }
 
-/* ── 6. Input fields ─────────────────────────────────────────────────────── */
+/* ── 6. 输入框 ───────────────────────────────────────────────────────────────── */
 
 .theme-light-glass input[class*="bg-gray"],
 .theme-light-glass input[class*="bg-slate"],
 .theme-light-glass textarea[class*="bg-gray"],
 .theme-light-glass textarea[class*="bg-slate"] {
-  background-color: rgba(255, 255, 255, 0.80) !important;
-  border-color: rgba(200, 200, 230, 0.6) !important;
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(200, 198, 218, 0.60) !important;
   color: var(--lg-text-primary) !important;
 }
 .theme-light-glass input::placeholder,
-.theme-light-glass textarea::placeholder {
-  color: var(--lg-text-muted) !important;
-}
+.theme-light-glass textarea::placeholder { color: var(--lg-text-muted) !important; }
 
-/* ── 7. Word input exercise area ─────────────────────────────────────────── */
-
-/* The underline word inputs */
-.theme-light-glass .border-b-2,
-.theme-light-glass [class*="border-b-"] {
-  /* Keep underlines visible but softer */
-}
-
-/* Word input token container */
-.theme-light-glass [class*="bg-gray-900"][class*="rounded"] {
-  background-color: rgba(255, 255, 255, 0.60) !important;
-}
-
-/* ── 8. Modals / overlays ─────────────────────────────────────────────────── */
+/* ── 7. 遮罩 / 模态框 ────────────────────────────────────────────────────────── */
 
 .theme-light-glass .bg-black\/70,
 .theme-light-glass .bg-black\/60,
 .theme-light-glass .bg-black\/45 {
-  background-color: rgba(180, 185, 210, 0.55) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background-color: rgba(165, 160, 188, 0.52) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
-
-/* Modal inner panels */
 .theme-light-glass .fixed.inset-0 > .bg-gray-900,
 .theme-light-glass .fixed > .bg-gray-900 {
-  background: rgba(255, 255, 255, 0.88) !important;
+  background: rgba(252, 251, 249, 0.92) !important;
   border: 1px solid var(--lg-glass-border) !important;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.12) !important;
 }
 
-/* ── 9. Scrollbar ─────────────────────────────────────────────────────────── */
+/* ── 8. 滚动条 ───────────────────────────────────────────────────────────────── */
 
 .theme-light-glass ::-webkit-scrollbar { width: 4px; height: 4px; }
 .theme-light-glass ::-webkit-scrollbar-track { background: transparent; }
-.theme-light-glass ::-webkit-scrollbar-thumb { background: rgba(150, 150, 200, 0.3); border-radius: 4px; }
-.theme-light-glass ::-webkit-scrollbar-thumb:hover { background: rgba(120, 120, 180, 0.5); }
+.theme-light-glass ::-webkit-scrollbar-thumb { background: rgba(155,150,185,0.28); border-radius: 4px; }
+.theme-light-glass ::-webkit-scrollbar-thumb:hover { background: rgba(130,125,168,0.48); }
 
-/* ── 10. Colored accent areas — keep their hue but lighten ──────────────── */
+/* ── 9. 彩色深色背景区域 ─────────────────────────────────────────────────────── */
 
 .theme-light-glass [class*="bg-blue-900"],
-.theme-light-glass [class*="bg-blue-950"] {
-  background-color: rgba(220, 235, 255, 0.7) !important;
-}
+.theme-light-glass [class*="bg-blue-950"]   { background-color: rgba(var(--lg-c-sky),    0.22) !important; }
 .theme-light-glass [class*="bg-green-900"],
-.theme-light-glass [class*="bg-green-950"] {
-  background-color: rgba(220, 248, 235, 0.7) !important;
-}
+.theme-light-glass [class*="bg-green-950"]  { background-color: rgba(var(--lg-c-mint),   0.22) !important; }
 .theme-light-glass [class*="bg-purple-900"],
-.theme-light-glass [class*="bg-purple-950"] {
-  background-color: rgba(240, 220, 255, 0.7) !important;
-}
+.theme-light-glass [class*="bg-purple-950"] { background-color: rgba(var(--lg-c-lavender),0.22) !important; }
 .theme-light-glass [class*="bg-red-900"],
-.theme-light-glass [class*="bg-red-950"] {
-  background-color: rgba(255, 220, 220, 0.7) !important;
-}
+.theme-light-glass [class*="bg-red-950"]    { background-color: rgba(var(--lg-c-rose),   0.22) !important; }
 .theme-light-glass [class*="bg-amber-900"],
-.theme-light-glass [class*="bg-amber-950"] {
-  background-color: rgba(255, 240, 200, 0.7) !important;
-}
+.theme-light-glass [class*="bg-amber-950"]  { background-color: rgba(var(--lg-c-peach),  0.22) !important; }
 
-/* Text in those colored containers */
-.theme-light-glass [class*="bg-blue-900"] .text-blue-300,
-.theme-light-glass [class*="bg-blue-900"] .text-blue-400 { color: #2563eb !important; }
-.theme-light-glass [class*="bg-green-900"] .text-green-300,
-.theme-light-glass [class*="bg-green-900"] .text-green-400 { color: #16a34a !important; }
+.theme-light-glass [class*="bg-blue-900"]   .text-blue-300,
+.theme-light-glass [class*="bg-blue-900"]   .text-blue-400   { color: #2563eb !important; }
+.theme-light-glass [class*="bg-green-900"]  .text-green-300,
+.theme-light-glass [class*="bg-green-900"]  .text-green-400  { color: #16a34a !important; }
 .theme-light-glass [class*="bg-purple-900"] .text-purple-300,
 .theme-light-glass [class*="bg-purple-900"] .text-purple-400 { color: #7c3aed !important; }
-.theme-light-glass [class*="bg-red-900"] .text-red-300,
-.theme-light-glass [class*="bg-red-900"] .text-red-400 { color: #dc2626 !important; }
-.theme-light-glass [class*="bg-amber-900"] .text-amber-300,
-.theme-light-glass [class*="bg-amber-900"] .text-amber-400 { color: #d97706 !important; }
+.theme-light-glass [class*="bg-red-900"]    .text-red-300,
+.theme-light-glass [class*="bg-red-900"]    .text-red-400    { color: #dc2626 !important; }
+.theme-light-glass [class*="bg-amber-900"]  .text-amber-300,
+.theme-light-glass [class*="bg-amber-900"]  .text-amber-400  { color: #d97706 !important; }
 
-/* ── 11. Nav rail (right side, light mode) ───────────────────────────────── */
+/* ── 10. 进度条轨道 ──────────────────────────────────────────────────────────── */
+
+.theme-light-glass [class*="bg-gray-800"][class*="rounded-full"] {
+  background-color: rgba(195, 192, 215, 0.32) !important;
+}
+
+/* ── 11. Hover 态深色背景 ────────────────────────────────────────────────────── */
+
+.theme-light-glass [class*="hover:bg-gray-800"]:hover,
+.theme-light-glass [class*="hover:bg-slate-800"]:hover { background-color: rgba(255,255,255,0.58) !important; }
+.theme-light-glass [class*="hover:bg-gray-700"]:hover,
+.theme-light-glass [class*="hover:bg-slate-700"]:hover { background-color: rgba(255,255,255,0.72) !important; }
+
+/* ── 12. 激活态 ──────────────────────────────────────────────────────────────── */
+
+.theme-light-glass .bg-slate-700 { background-color: rgba(var(--lg-c-lavender), 0.28) !important; }
+
+/* ── 13. 分隔线 ──────────────────────────────────────────────────────────────── */
+
+.theme-light-glass .divide-gray-800 > * + *,
+.theme-light-glass .divide-gray-700 > * + * { border-color: rgba(200,198,215,0.30) !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   LIQUID GLASS COMPONENTS — 核心玻璃组件
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── A. 主卡片 lg-glass-card ─────────────────────────────────────────────────── */
 
 .theme-light-glass .lg-glass-card {
-  background: var(--lg-glass-bg);
-  border: 1px solid var(--lg-glass-border);
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.78) 0%,
+    rgba(252,250,248,0.62) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.85);
   border-radius: var(--lg-radius-card);
-  box-shadow: var(--lg-glass-shadow);
-  backdrop-filter: blur(var(--lg-glass-blur));
-  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.07),
+    0 2px 8px  rgba(0,0,0,0.04),
+    var(--lg-highlight);
+  backdrop-filter: blur(var(--lg-glass-blur)) var(--lg-glass-sat);
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur)) var(--lg-glass-sat);
 }
 
-.theme-light-glass .lg-glass-inset {
-  background: rgba(255, 255, 255, 0.72);
-  border-radius: 14px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06);
-}
+/* ── B. 菜单面板 lg-glass-nav ────────────────────────────────────────────────── */
 
 .theme-light-glass .lg-glass-nav {
-  background: var(--lg-glass-bg);
-  border-left: 1px solid var(--lg-glass-border);
-  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.06);
-  backdrop-filter: blur(var(--lg-glass-blur));
-  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.78) 0%,
+    rgba(245,243,240,0.70) 100%
+  );
+  border-left: 2px solid rgba(255,255,255,0.90);
+  box-shadow:
+    -14px 0 48px rgba(0,0,0,0.10),
+    -1px  0  0   rgba(255,255,255,0.95);
+  backdrop-filter: blur(32px) var(--lg-glass-sat);
+  -webkit-backdrop-filter: blur(32px) var(--lg-glass-sat);
 }
 
-.theme-light-glass .lg-nav-rail {
-  background: var(--lg-glass-bg);
-  border-left: 1px solid var(--lg-glass-border);
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.06);
-  backdrop-filter: blur(var(--lg-glass-blur));
-  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
-}
+/* ── C. 菜单导航项 lg-nav-item ───────────────────────────────────────────────── */
 
 .theme-light-glass .lg-nav-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 8px;
+  padding: 7px 10px;
   border-radius: 12px;
+  border: 1px solid transparent;
   font-size: var(--lg-nav-font);
+  font-weight: 500;
   line-height: 1.25;
   color: var(--lg-text-secondary);
-  transition: background 0.15s, color 0.15s;
+
+  /* 弹性动画 — 让所有属性都走弹性曲线 */
+  transition:
+    background   0.22s var(--lg-spring),
+    border-color 0.22s var(--lg-spring),
+    box-shadow   0.22s var(--lg-spring),
+    transform    0.22s var(--lg-spring),
+    color        0.18s ease;
+  will-change: transform, box-shadow, background;
 }
+
+/* Hover: 玻璃浮起 */
 .theme-light-glass .lg-nav-item:hover {
-  background: rgba(255, 255, 255, 0.5);
-  color: var(--lg-text-primary);
-}
-.theme-light-glass .lg-nav-item--active {
-  background: var(--lg-accent-lavender);
-  color: var(--lg-text-primary);
-  font-weight: 600;
-}
-.theme-light-glass .lg-nav-item--mint {
-  background: var(--lg-accent-mint);
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.88) 0%,
+    rgba(255,255,255,0.62) 100%
+  );
+  border-color: rgba(255,255,255,0.80);
+  box-shadow:
+    0 6px 20px rgba(0,0,0,0.09),
+    0 2px 6px  rgba(0,0,0,0.05),
+    var(--lg-highlight);
+  transform: translateY(-1.5px);
   color: var(--lg-text-primary);
 }
 
-/* ── 12. Buttons ─────────────────────────────────────────────────────────── */
+/* Press: 轻微下压 */
+.theme-light-glass .lg-nav-item:active:not(.lg-nav-item--active) {
+  transform: translateY(1px) scale(0.985);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.80);
+  transition:
+    transform    0.08s var(--lg-ease-press),
+    box-shadow   0.08s var(--lg-ease-press),
+    background   0.08s var(--lg-ease-press);
+}
+
+/* Active / 当前页 — 薰衣草玻璃 */
+.theme-light-glass .lg-nav-item--active {
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.88) 0%,
+    rgba(var(--lg-c-lavender), 0.55) 38%,
+    rgba(var(--lg-c-lavender), 0.42) 100%
+  );
+  border-color: rgba(255,255,255,0.82);
+  box-shadow:
+    0 6px 22px rgba(var(--lg-c-lavender), 0.28),
+    0 2px 8px  rgba(var(--lg-c-lavender), 0.15),
+    var(--lg-highlight),
+    inset 0 -1.5px 4px rgba(var(--lg-c-lavender), 0.20);
+  color: var(--lg-text-primary);
+  font-weight: 600;
+  transform: none;
+}
+.theme-light-glass .lg-nav-item--active:hover {
+  transform: none;
+  box-shadow:
+    0 8px 28px rgba(var(--lg-c-lavender), 0.32),
+    0 2px 8px  rgba(var(--lg-c-lavender), 0.18),
+    inset 0 1.5px 0 rgba(255,255,255,0.98);
+}
+
+/* 薄荷色变体（特殊导航项） */
+.theme-light-glass .lg-nav-item--mint {
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.85) 0%,
+    rgba(var(--lg-c-mint), 0.50) 38%,
+    rgba(var(--lg-c-mint), 0.38) 100%
+  );
+  border-color: rgba(255,255,255,0.78);
+  box-shadow:
+    0 4px 16px rgba(var(--lg-c-mint), 0.22),
+    var(--lg-highlight);
+  color: var(--lg-text-primary);
+}
+
+/* ── D. 顶部固定按钮（月亮/太阳/汉堡）lg-topbar-btn ─────────────────────────── */
+
+.theme-light-glass .lg-topbar-btn {
+  background: linear-gradient(155deg,
+    rgba(255,255,255,0.85) 0%,
+    rgba(255,255,255,0.60) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.82);
+  box-shadow:
+    0 6px 22px rgba(0,0,0,0.10),
+    0 2px 8px  rgba(0,0,0,0.06),
+    var(--lg-highlight);
+  transition:
+    background   0.22s var(--lg-spring),
+    box-shadow   0.22s var(--lg-spring),
+    transform    0.22s var(--lg-spring),
+    border-color 0.22s var(--lg-spring);
+  will-change: transform, box-shadow;
+}
+.theme-light-glass .lg-topbar-btn:hover {
+  background: linear-gradient(155deg,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.75) 100%
+  );
+  border-color: rgba(255,255,255,0.92);
+  box-shadow:
+    0 10px 32px rgba(0,0,0,0.13),
+    0 3px 10px  rgba(0,0,0,0.07),
+    inset 0 1.5px 0 rgba(255,255,255,0.98);
+  transform: translateY(-2px);
+}
+.theme-light-glass .lg-topbar-btn:active {
+  transform: translateY(1px) scale(0.96);
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.85);
+  transition:
+    transform  0.08s var(--lg-ease-press),
+    box-shadow 0.08s var(--lg-ease-press);
+}
+
+/* ── E. 主按钮 lg-btn-primary（继续练习）— 薄荷玻璃 ─────────────────────────── */
 
 .theme-light-glass .lg-btn-primary {
-  background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #c5e1a5 100%);
-  color: var(--lg-text-primary);
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.78) 0%,
+    rgba(var(--lg-c-mint), 0.68) 35%,
+    rgba(var(--lg-c-mint), 0.55) 100%
+  );
+  color: #163824;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 16px rgba(168, 230, 207, 0.35), inset 0 1px 0 rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.82);
+  box-shadow:
+    0 6px 24px rgba(var(--lg-c-mint), 0.35),
+    0 2px 8px  rgba(var(--lg-c-mint), 0.18),
+    var(--lg-highlight),
+    inset 0 -1.5px 4px rgba(var(--lg-c-mint), 0.22);
+  transition:
+    background   0.22s var(--lg-spring),
+    box-shadow   0.22s var(--lg-spring),
+    transform    0.22s var(--lg-spring),
+    border-color 0.22s var(--lg-spring);
+  will-change: transform, box-shadow;
 }
-.theme-light-glass .lg-btn-primary:hover { filter: brightness(1.04); }
+.theme-light-glass .lg-btn-primary:hover {
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.90) 0%,
+    rgba(var(--lg-c-mint), 0.78) 35%,
+    rgba(var(--lg-c-mint), 0.65) 100%
+  );
+  box-shadow:
+    0 12px 36px rgba(var(--lg-c-mint), 0.40),
+    0 4px  12px rgba(var(--lg-c-mint), 0.22),
+    inset 0 1.5px 0 rgba(255,255,255,0.98);
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.90);
+}
+.theme-light-glass .lg-btn-primary:active {
+  transform: translateY(1px) scale(0.985);
+  box-shadow:
+    0 3px 10px rgba(var(--lg-c-mint), 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.85);
+  transition:
+    transform  0.08s var(--lg-ease-press),
+    box-shadow 0.08s var(--lg-ease-press);
+}
+
+/* ── F. 次级按钮 lg-btn-secondary — 白色玻璃 ─────────────────────────────────── */
 
 .theme-light-glass .lg-btn-secondary {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(250, 189, 212, 0.45);
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.82) 0%,
+    rgba(255,255,255,0.58) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.78);
   color: var(--lg-text-primary);
+  box-shadow:
+    0 4px 16px rgba(0,0,0,0.08),
+    0 1px 4px  rgba(0,0,0,0.05),
+    var(--lg-highlight);
+  transition:
+    background   0.22s var(--lg-spring),
+    box-shadow   0.22s var(--lg-spring),
+    transform    0.22s var(--lg-spring),
+    border-color 0.22s var(--lg-spring);
+  will-change: transform, box-shadow;
+}
+.theme-light-glass .lg-btn-secondary:hover {
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.94) 0%,
+    rgba(255,255,255,0.72) 100%
+  );
+  box-shadow:
+    0 8px 26px rgba(0,0,0,0.11),
+    0 2px 8px  rgba(0,0,0,0.06),
+    inset 0 1.5px 0 rgba(255,255,255,0.98);
+  transform: translateY(-1.5px);
+  border-color: rgba(255,255,255,0.90);
+}
+.theme-light-glass .lg-btn-secondary:active {
+  transform: translateY(1px) scale(0.985);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.07),
+    inset 0 1px 0 rgba(255,255,255,0.82);
+  transition:
+    transform  0.08s var(--lg-ease-press),
+    box-shadow 0.08s var(--lg-ease-press);
 }
 
-/* Generic action buttons — make them glass-pill */
-.theme-light-glass .bg-gray-800 button,
-.theme-light-glass button.bg-gray-800,
-.theme-light-glass button.bg-gray-700 {
-  background-color: rgba(255, 255, 255, 0.60) !important;
-  border: 1px solid var(--lg-glass-border) !important;
-  color: var(--lg-text-primary) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9) !important;
-}
-
-/* ── 13. Tabs ─────────────────────────────────────────────────────────────── */
-
-.theme-light-glass .lg-tab-active {
-  background: var(--lg-accent-lavender);
-  color: var(--lg-text-primary);
-  font-weight: 600;
-}
-.theme-light-glass .lg-tab-inactive { color: var(--lg-text-secondary); }
-.theme-light-glass .lg-tab-inactive:hover {
-  background: rgba(255, 255, 255, 0.45);
-  color: var(--lg-text-primary);
-}
-
-/* ── 14. Misc utility classes ────────────────────────────────────────────── */
+/* ── G. 统计数据芯片 lg-stat-chip ────────────────────────────────────────────── */
 
 .theme-light-glass .lg-stat-chip {
-  background: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(155deg,
+    rgba(255,255,255,0.88) 0%,
+    rgba(252,250,248,0.70) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.80);
   border-radius: 14px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-.theme-light-glass .lg-divider { border-color: rgba(0, 0, 0, 0.07); }
-.theme-light-glass .lg-overlay { background: rgba(235, 238, 248, 0.55); }
-
-/* ── 15. Progress bars ────────────────────────────────────────────────────── */
-
-.theme-light-glass [class*="bg-gray-800"][class*="rounded-full"] {
-  background-color: rgba(200, 200, 230, 0.35) !important;
+  box-shadow:
+    0 2px 10px rgba(0,0,0,0.06),
+    var(--lg-highlight);
 }
 
-/* ── 16. Dividers / hr ────────────────────────────────────────────────────── */
+/* ── H. Tab 标签 ─────────────────────────────────────────────────────────────── */
 
-.theme-light-glass .divide-gray-800 > * + *,
-.theme-light-glass .divide-gray-700 > * + * {
-  border-color: rgba(200, 200, 230, 0.3) !important;
+.theme-light-glass .lg-tab-active {
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.88) 0%,
+    rgba(var(--lg-c-lavender), 0.52) 40%,
+    rgba(var(--lg-c-lavender), 0.40) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.80);
+  box-shadow:
+    0 3px 12px rgba(var(--lg-c-lavender), 0.22),
+    var(--lg-highlight);
+  color: var(--lg-text-primary);
+  font-weight: 600;
+  transition:
+    background  0.22s var(--lg-spring),
+    box-shadow  0.22s var(--lg-spring),
+    transform   0.22s var(--lg-spring);
+}
+.theme-light-glass .lg-tab-active:hover {
+  box-shadow:
+    0 5px 18px rgba(var(--lg-c-lavender), 0.28),
+    inset 0 1.5px 0 rgba(255,255,255,0.98);
+  transform: translateY(-1px);
+}
+.theme-light-glass .lg-tab-inactive {
+  color: var(--lg-text-secondary);
+  border: 1px solid transparent;
+  transition:
+    background   0.18s var(--lg-spring),
+    border-color 0.18s var(--lg-spring),
+    box-shadow   0.18s var(--lg-spring),
+    transform    0.18s var(--lg-spring),
+    color        0.15s ease;
+}
+.theme-light-glass .lg-tab-inactive:hover {
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.80) 0%,
+    rgba(255,255,255,0.55) 100%
+  );
+  border-color: rgba(255,255,255,0.72);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07), var(--lg-highlight);
+  transform: translateY(-1px);
+  color: var(--lg-text-primary);
 }
 
-/* ── 17. Hover states on dark backgrounds ────────────────────────────────── */
+/* ── I. 辅助工具 ─────────────────────────────────────────────────────────────── */
 
-.theme-light-glass [class*="hover:bg-gray-800"]:hover,
-.theme-light-glass [class*="hover:bg-slate-800"]:hover {
-  background-color: rgba(255, 255, 255, 0.55) !important;
-}
-.theme-light-glass [class*="hover:bg-gray-700"]:hover,
-.theme-light-glass [class*="hover:bg-slate-700"]:hover {
-  background-color: rgba(255, 255, 255, 0.70) !important;
-}
+.theme-light-glass .lg-divider  { border-color: rgba(0,0,0,0.07); }
+.theme-light-glass .lg-overlay  { background: rgba(210, 205, 230, 0.50); }
 
-/* ── 18. Selected / active states ─────────────────────────────────────────── */
-
-.theme-light-glass .bg-slate-700 {
-  background-color: var(--lg-accent-lavender) !important;
+.theme-light-glass .lg-glass-inset {
+  background: rgba(255,255,255,0.75);
+  border-radius: 14px;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* ── 19. Monospace / code text ────────────────────────────────────────────── */
-
-.theme-light-glass .font-mono,
-.theme-light-glass [class*="tabular-nums"] {
-  color: inherit;
-}
-
-/* ── 20. reduce-transparency fallback ────────────────────────────────────── */
+/* ── J. 透明度降低模式兼容 ───────────────────────────────────────────────────── */
 
 @media (prefers-reduced-transparency: reduce) {
   .theme-light-glass .lg-glass-card,
   .theme-light-glass .lg-glass-nav,
-  .theme-light-glass .lg-nav-rail,
   .theme-light-glass .bg-gray-900,
   .theme-light-glass .bg-slate-900 {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(255, 255, 255, 0.97) !important;
+    background: rgba(240,238,235,0.97) !important;
+  }
+  .theme-light-glass .lg-nav-item:hover,
+  .theme-light-glass .lg-btn-primary:hover,
+  .theme-light-glass .lg-btn-secondary:hover,
+  .theme-light-glass .lg-topbar-btn:hover {
+    transform: none;
   }
 }

@@ -809,7 +809,7 @@ export default function App() {
               onClick={toggleTheme}
               title="切换夜间模式"
               aria-label="切换夜间模式"
-              className="pointer-events-auto fixed z-[102] flex h-11 w-11 items-center justify-center rounded-xl border border-white/60 bg-white/65 text-[#707070] shadow-lg backdrop-blur-sm transition-colors hover:bg-white/85 top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+              className="lg-topbar-btn pointer-events-auto fixed z-[102] flex h-11 w-11 items-center justify-center rounded-xl text-[#555] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
               style={{ right: 'calc(max(0.75rem, env(safe-area-inset-right, 0px)) + 3.25rem)' }}
             >
               <IconMoon size={18} />
@@ -818,7 +818,7 @@ export default function App() {
               type="button"
               aria-label="打开菜单"
               onClick={() => setMenuOpen(true)}
-              className="pointer-events-auto fixed z-[102] flex h-11 w-11 items-center justify-center rounded-xl border border-white/60 bg-white/65 text-[#707070] shadow-lg backdrop-blur-sm transition-colors hover:bg-white/85 right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+              className="lg-topbar-btn pointer-events-auto fixed z-[102] flex h-11 w-11 items-center justify-center rounded-xl text-[#555] right-[max(0.75rem,env(safe-area-inset-right,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
             >
               <IconMenu size={22} />
               {hasUnreadAnn && <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500" />}
