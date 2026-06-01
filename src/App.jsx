@@ -898,7 +898,8 @@ export default function App() {
           <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
         )}
 
-        {!menuOpen && !isHomeLight && (
+        {/* 右边缘悬停触发菜单 — 两种模式都生效 */}
+        {!menuOpen && (
           <div
             className="fixed top-0 right-0 z-[99] h-[100dvh] w-3 max-w-[14px] pointer-events-auto"
             onMouseEnter={() => setMenuOpen(true)}
@@ -944,7 +945,7 @@ export default function App() {
                   ? 'border border-white/60 bg-white/40 text-[#1a1a1a] hover:bg-white/65'
                   : 'border border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700'}`}
             >
-              {isHomeLight ? <IconArrowRight size={20} /> : <IconMenu size={22} />}
+              <IconMenu size={22} />
               {hasUnreadAnn && (
                 <span className={`absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ${isHomeLight ? 'ring-1 ring-white' : 'ring-1 ring-slate-800'}`} />
               )}
