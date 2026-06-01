@@ -1064,7 +1064,7 @@ export default function App() {
 
         {/* Main content */}
         <main
-          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-4' : 'pb-24'} }`}
+          className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-32' : 'pb-24'} }`}
           style={{ paddingTop: 'calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.25rem)' }}
         >
           <div style={{ display: tab === 'home' ? 'contents' : 'none' }}>
