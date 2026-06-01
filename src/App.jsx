@@ -898,34 +898,6 @@ export default function App() {
           <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
         )}
 
-        {/* 亮色主题右侧图标轨：贴边 right-0，顶部留空给月亮+汉堡按钮 */}
-        {!menuOpen && isHomeLight && (
-          <nav
-            aria-label="导航快捷栏"
-            className="lg-nav-rail pointer-events-auto fixed top-0 right-0 z-[100] flex h-[100dvh] w-[3.25rem] flex-col items-center gap-0.5 overflow-y-auto overflow-x-hidden pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]"
-            style={{ paddingTop: 'calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.25rem)' }}
-          >
-            {mainNavItems.map(item => {
-              const active = tab === item.id || (item.id === 'settings' && showSettings)
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={item.onClick}
-                  title={item.label}
-                  aria-label={item.label}
-                  className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors
-                    ${active ? 'bg-[rgba(235,222,240,0.88)] text-[#1a1a1a]' : 'text-[#707070] hover:bg-white/55 hover:text-[#1a1a1a]'}`}
-                >
-                  {item.Icon ? <item.Icon size={navIconSize} /> : null}
-                  {item.bell && hasUnreadAnn && (
-                    <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-red-500" />
-                  )}
-                </button>
-              )
-            })}
-          </nav>
-        )}
         {!menuOpen && !isHomeLight && (
           <div
             className="fixed top-0 right-0 z-[99] h-[100dvh] w-3 max-w-[14px] pointer-events-auto"
