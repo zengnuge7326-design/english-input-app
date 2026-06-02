@@ -27,7 +27,7 @@ import SentenceList from './components/SentenceList'
 import Settings from './components/Settings'
 import Dashboard from './components/Dashboard'
 import Courses from './components/Courses'
-import CoreSentences from './components/CoreSentences'
+import Shop from './components/Shop'
 import Textbook from './components/Textbook'
 import Grammar from './components/Grammar'
 import ExerciseQuiz, { generateQuiz } from './components/ExerciseQuiz'
@@ -794,8 +794,8 @@ export default function App() {
 
   const mainNavItems = [
     { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
-    { id: 'core', label: '核心句群', Icon: IconStar, onClick: () => navigateFromMenu('core') },
-    { id: 'courses', label: '课程', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
+    { id: 'shop', label: '商店', Icon: IconStar, onClick: () => navigateFromMenu('shop') },
+    { id: 'courses', label: '课程广场', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
     { id: 'textbook', label: '教材', Icon: IconBook, onClick: () => navigateFromMenu('textbook') },
     { id: 'grammar', label: '语法', Icon: IconGraduationCap, onClick: () => navigateFromMenu('grammar') },
     { id: 'gutenberg', label: '输入阅读', Icon: IconList, onClick: () => navigateFromMenu('gutenberg') },
@@ -1099,14 +1099,10 @@ export default function App() {
               studentInfo={studentInfo}
             />
           </div>
-          <div style={{ display: tab === 'core' ? 'contents' : 'none' }}>
-            <CoreSentences
-              onImport={handleImport}
-              changyongData={changyongData}
-              active={tab === 'core'}
-              progress={progress}
-              isMember={UNLOCK_ALL_COURSES || isMember}
-              onShowLogin={() => setShowLogin(true)}
+          <div style={{ display: tab === 'shop' ? 'contents' : 'none' }}>
+            <Shop
+              token={token}
+              crystal={crystal}
               onClose={() => openTab('exercise')}
             />
           </div>

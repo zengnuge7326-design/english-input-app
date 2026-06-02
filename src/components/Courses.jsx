@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from 'react'
 import PageBackBar from './PageBackBar'
+import CoreSentences from './CoreSentences'
 import duolingoData from '../data/duolingo.json'
 import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import nce1Data from '../data/nce1.json'
@@ -352,7 +353,7 @@ export default function Courses({
   onShowLogin,
   onSyncPractice,
 }) {
-  const [detail, setDetail] = useState(null) // null | unit number
+  const [detail, setDetail] = useState(null) // null | unit number | 'core'
   const [syncPopup, setSyncPopup] = useState(null) // lesson label string
 
   useLayoutEffect(() => {
@@ -365,6 +366,20 @@ export default function Courses({
       if (historyRef) historyRef.current.applyStudy = () => {}
     }
   }, [historyRef])
+
+  if (detail === 'core') {
+    return (
+      <CoreSentences
+        onImport={onImport}
+        changyongData={changyongData}
+        active={active}
+        progress={progress}
+        isMember={isMember}
+        onShowLogin={onShowLogin}
+        onClose={() => setDetail(null)}
+      />
+    )
+  }
 
   if (detail !== null) {
     const isNce1 = detail === 'nce1'
@@ -541,6 +556,22 @@ export default function Courses({
           </button>
         </div>
       )}
+
+      {/* 核心句群 */}
+      <div className="text-xs text-gray-600 mb-3 uppercase tracking-wider">精选内容</div>
+      <div className="mb-6">
+        <button
+          onClick={() => setDetail('core')}
+          className="w-full flex items-center gap-4 rounded-2xl border border-indigo-700/50 bg-gradient-to-r from-indigo-900/40 to-purple-900/30 hover:from-indigo-900/60 hover:to-purple-900/50 p-4 transition-all text-left"
+        >
+          <div className="text-4xl shrink-0">⭐</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-semibold text-white">核心句群</div>
+            <div className="text-xs text-indigo-300 mt-0.5">精选高频核心句，快速突破口语</div>
+          </div>
+          <div className="text-gray-500 text-sm shrink-0">›</div>
+        </button>
+      </div>
 
       {/* NCE1 */}
       <div className="text-xs text-gray-600 mb-3 uppercase tracking-wider">新概念英语</div>
