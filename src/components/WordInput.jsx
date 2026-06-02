@@ -42,7 +42,29 @@ function splitPunct(word) {
   return [word, '']
 }
 
-export default function WordInput({ sentence, onComplete, speakWord, learningLevel = 2, showHintOnError = true, hintTriggerCount = 1, errorRetryCount = 2, onError, onWordCorrect, onKeypress, onBubble, onCurrentChange, totalRetryCount, userId }) {
+export default function WordInput({
+  sentence,
+  onComplete,
+  speakWord,
+  learningLevel = 2,
+  showHintOnError = true,
+  hintTriggerCount = 1,
+  errorRetryCount = 2,
+  onError,
+  onWordCorrect,
+  onWordFinal,
+  onKeypress,
+  onBubble,
+  onCurrentChange,
+  totalRetryCount,
+  userId,
+  /** 输入阅读：整句灰色对照、收紧间距、藏逐词中文 */
+  readingMode = false,
+  /** 由工具栏控制音标显示 */
+  phoneticControl = null,
+  /** 输入阅读：外层卡片已展示灰字整句，隐藏组件内重复一行 */
+  readingHideGrayBanner = false,
+}) {
   const words = tokenize(sentence.en)
   const [current, setCurrent] = useState(0)
   const [inputs, setInputs] = useState(() => words.map(() => ''))
@@ -50,13 +72,16 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
   const [retryCount, setRetryCount] = useState(() => words.map(() => 0))
   const [errorCount, setErrorCount] = useState(() => words.map(() => 0))
   const [shaking, setShaking] = useState(false)
+  const [poppedIdx, setPoppedIdx] = useState(null)
   const [wordBubbles, setWordBubbles] = useState([])
   const bubbleIdRef = useRef(0)
   const inputRefs = useRef([])
   const { translate } = useWordTranslate()
   const [translations, setTranslations] = useState({})
   const [phonetics, setPhonetics] = useState({})
-  const [showPhonetic, setShowPhonetic] = useState(true)
+  const [internalPhonetic, setInternalPhonetic] = useState(true)
+  const showPhonetic = phoneticControl ? phoneticControl.value : internalPhonetic
+  const setShowPhonetic = phoneticControl ? phoneticControl.onChange : setInternalPhonetic
 
   const posMap = useMemo(() => getSentencePOS(sentence.en), [sentence.id])
 
@@ -69,12 +94,13 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
     setShaking(false)
     setTranslations({})
     setPhonetics({})
-    setShowPhonetic(true)
+    if (!phoneticControl) setInternalPhonetic(true)
     onCurrentChange?.(0, words.length)
   }, [sentence.id])
 
-  // Pre-fetch translations for ALL words when sentence changes
+  // Pre-fetch translations for ALL words when sentence changes（输入阅读仅用句级译文）
   useEffect(() => {
+    if (readingMode) return
     words.forEach((wordStr, i) => {
       const [core] = splitPunct(wordStr)
       if (!core) return
@@ -92,17 +118,22 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
         if (text) setTranslations(prev => ({ ...prev, [i]: text }))
       })
     })
-  }, [sentence.id, posMap])
+  }, [sentence.id, posMap, readingMode, translate])
 
-  // Pre-fetch phonetics for ALL words
+  // Pre-fetch phonetics — serial to avoid concurrent requests hammering dictionaryapi.dev
   useEffect(() => {
-    words.forEach((wordStr, i) => {
-      const [core] = splitPunct(wordStr)
-      if (!core) return
-      fetchWordPhonetic(core).then(ph => {
-        if (ph) setPhonetics(prev => ({ ...prev, [i]: ph }))
-      })
-    })
+    let alive = true
+    async function fetchAll() {
+      for (const [i, wordStr] of words.entries()) {
+        if (!alive) break
+        const [core] = splitPunct(wordStr)
+        if (!core) continue
+        const ph = await fetchWordPhonetic(core)
+        if (ph && alive) setPhonetics(prev => ({ ...prev, [i]: ph }))
+      }
+    }
+    fetchAll()
+    return () => { alive = false }
   }, [sentence.id])
 
   useEffect(() => {
@@ -183,6 +214,9 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
           next[idx] = 'correct'
           setStatuses(next)
           onWordCorrect?.()
+          onWordFinal?.()
+          setPoppedIdx(idx)
+          setTimeout(() => setPoppedIdx(null), 320)
           spawnWordBubbles(idx)
           advanceAfter(next, idx)
         } else {
@@ -202,6 +236,9 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
         next[idx] = 'correct'
         setStatuses(next)
         onWordCorrect?.()
+        onWordFinal?.()
+        setPoppedIdx(idx)
+        setTimeout(() => setPoppedIdx(null), 320)
         spawnWordBubbles(idx)
         advanceAfter(next, idx)
       }
@@ -243,6 +280,8 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
   }
 
   function handleKeyDown(e, i) {
+    // 已完成单词不处理 Enter/Space，让事件冒泡到 ExerciseView 的下一句监听器
+    if (statuses[i] === 'correct') return
     if (e.key === 'Enter') {
       e.preventDefault()
       submitWord(i)
@@ -278,26 +317,43 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
     return core[0] || ''
   }
 
+  const wordGap = readingMode ? 'gap-x-3 gap-y-2' : 'gap-x-6 gap-y-4'
+  const wordTextSize = readingMode ? 'text-3xl sm:text-4xl' : 'text-5xl'
+  const phoneticRow = readingMode ? 'h-5' : 'h-7'
+  const zhRow = readingMode ? 'hidden' : ''
+
   return (
     <div className="w-full">
-      <div className="flex justify-end mb-2">
-        <button
-          type="button"
-          onClick={() => setShowPhonetic(v => !v)}
-          className="px-3 py-1.5 rounded-lg text-sm border transition-colors"
-          style={{
-            color: showPhonetic ? INPUT_PALETTE.ivory : INPUT_PALETTE.silver,
-            borderColor: showPhonetic ? INPUT_PALETTE.skyBlue : INPUT_PALETTE.sandGold,
-            background: showPhonetic
-              ? `linear-gradient(135deg, ${INPUT_PALETTE.lakeBlue}33, ${INPUT_PALETTE.violet}33)`
-              : `linear-gradient(135deg, ${INPUT_PALETTE.sandGold}22, ${INPUT_PALETTE.caramel}22)`,
-          }}
-          title={showPhonetic ? '隐藏音标' : '显示音标'}
+      {!phoneticControl && (
+        <div className="flex justify-end mb-2">
+          <button
+            type="button"
+            onClick={() => setShowPhonetic(v => !v)}
+            className="px-3 py-1.5 rounded-lg text-sm border transition-colors"
+            style={{
+              color: showPhonetic ? 'var(--ink-word)' : 'var(--ink-soft)',
+              borderColor: showPhonetic ? INPUT_PALETTE.skyBlue : INPUT_PALETTE.sandGold,
+              background: showPhonetic
+                ? `linear-gradient(135deg, ${INPUT_PALETTE.lakeBlue}33, ${INPUT_PALETTE.violet}33)`
+                : `linear-gradient(135deg, ${INPUT_PALETTE.sandGold}22, ${INPUT_PALETTE.caramel}22)`,
+            }}
+            title={showPhonetic ? '隐藏音标' : '显示音标'}
+          >
+            {showPhonetic ? '音标: 开' : '音标: 关'}
+          </button>
+        </div>
+      )}
+      {readingMode && !readingHideGrayBanner && (
+        <p
+          className="text-gray-500 text-sm sm:text-[15px] leading-snug tracking-normal mb-2 max-w-full text-left break-words font-serif"
+          aria-hidden
         >
-          {showPhonetic ? '音标: 开' : '音标: 关'}
-        </button>
-      </div>
-      <div className="flex flex-wrap gap-x-6 gap-y-4 items-end justify-center mt-1">
+          {sentence.en}
+        </p>
+      )}
+      <div
+        className={`flex flex-wrap ${wordGap} items-end mt-1 ${readingMode && readingHideGrayBanner ? 'justify-start' : 'justify-center'}`}
+      >
       {words.map((word, i) => {
         const [core, punct] = splitPunct(word)
         const status = statuses[i]
@@ -313,7 +369,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
           ? INPUT_PALETTE.salmonRed
           : showHint
           ? INPUT_PALETTE.turquoise
-          : '#ffffff'
+          : 'var(--ink-word)'
 
         const retryColors = [
           INPUT_PALETTE.pinkCoral,
@@ -349,10 +405,10 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
               ))}
 
               {/* phonetic */}
-              <div className="h-7 flex items-center justify-center w-full">
+              <div className={`${phoneticRow} flex items-center justify-center w-full`}>
                 {showPhonetic && phonetics[i] && (
                   <span
-                    className="text-lg sm:text-xl whitespace-nowrap leading-none font-bold"
+                    className={`${readingMode ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'} whitespace-nowrap leading-none font-bold`}
                     style={{ color: INPUT_PALETTE.lavender }}
                   >
                     {phonetics[i]}
@@ -361,7 +417,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
               </div>
 
               {/* text display */}
-              <div className={`text-5xl tracking-wide min-h-10 flex items-end w-full ${isShaking ? 'shake' : ''}`}
+              <div className={`${wordTextSize} tracking-wide min-h-9 flex items-end w-full ${isShaking ? 'shake' : ''} ${status === 'correct' && i === poppedIdx ? 'pop' : ''}`}
                 style={{ fontFamily: 'AI Nile, monospace', fontWeight: 'normal' }}>
                 <span style={{ color: textColor }}>
                   {status === 'correct'
@@ -396,13 +452,13 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
                 />
               )}
 
-              {/* translation (moved below underline) */}
-              <div className="h-6 mt-1.5 flex items-center justify-center overflow-hidden w-full">
+              {/* translation (moved below underline) — 输入阅读不用逐词中文 */}
+              <div className={`h-6 mt-1 flex items-center justify-center overflow-hidden w-full ${zhRow}`}>
                 {translations[i] && (
                   <span
                     className="text-lg whitespace-nowrap"
                     style={{
-                      color: isShaking ? INPUT_PALETTE.salmonRed : INPUT_PALETTE.ivory,
+                      color: isShaking ? INPUT_PALETTE.salmonRed : 'var(--ink-soft)',
                       fontFamily: YUANTI_FONT,
                       fontWeight: 'normal',
                     }}
@@ -434,7 +490,7 @@ export default function WordInput({ sentence, onComplete, speakWord, learningLev
               />
             </div>
             {punct && (
-              <span className="font-mono text-5xl mb-0.5" style={{ color: `${INPUT_PALETTE.ivory}99` }}>{punct}</span>
+              <span className={`font-mono mb-0.5 ${wordTextSize}`} style={{ color: 'var(--ink-muted)' }}>{punct}</span>
             )}
           </div>
         )

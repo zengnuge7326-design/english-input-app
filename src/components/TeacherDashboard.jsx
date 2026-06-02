@@ -1,23 +1,30 @@
 import { useState, useEffect } from 'react'
 import {
-  teacherSignUp, teacherSignIn, teacherSignOut, getTeacherSession,
-  createClass, getMyClasses, deleteClass,
-  getClassStudents, getStudentCheckins
+  getTeacherProfile, updateTeacherProfile,
+  getMyClasses, createClass, deleteClass,
+  getClassStudents, getStudentCheckins, getClassLeaderboard,
 } from '../lib/teacher'
 
 // ── 小工具 ────────────────────────────────────────────
 
-function Card({ children, className = '' }) {
-  return <div className={`bg-gray-900 border border-gray-800 rounded-2xl ${className}`}>{children}</div>
+function Card({ children, className = '', onClick }) {
+  return (
+    <div
+      className={`bg-gray-900 border border-gray-800 rounded-2xl ${className}`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  )
 }
 
 function Btn({ children, onClick, color = 'blue', size = 'md', disabled, className = '' }) {
   const colors = {
-    blue:   'bg-blue-600 hover:bg-blue-500 text-white',
-    red:    'bg-red-900/60 hover:bg-red-800 text-red-300 border border-red-800',
-    gray:   'bg-gray-800 hover:bg-gray-700 text-gray-200',
-    green:  'bg-green-700 hover:bg-green-600 text-white',
-    ghost:  'text-gray-400 hover:text-white hover:bg-gray-800',
+    blue:  'bg-blue-600 hover:bg-blue-500 text-white',
+    red:   'bg-red-900/60 hover:bg-red-800 text-red-300 border border-red-800',
+    gray:  'bg-gray-800 hover:bg-gray-700 text-gray-200',
+    green: 'bg-green-700 hover:bg-green-600 text-white',
+    ghost: 'text-gray-400 hover:text-white hover:bg-gray-800',
   }
   const sizes = { sm: 'px-3 py-1.5 text-xs', md: 'px-4 py-2 text-sm', lg: 'px-6 py-3 text-base' }
   return (
@@ -31,7 +38,7 @@ function Btn({ children, onClick, color = 'blue', size = 'md', disabled, classNa
   )
 }
 
-function Input({ label, ...props }) {
+function InputField({ label, ...props }) {
   return (
     <div>
       {label && <label className="block text-xs text-gray-500 mb-1">{label}</label>}
@@ -68,7 +75,7 @@ function CheckinHeatmap({ checkins }) {
               className="w-7 rounded-md transition-all"
               style={{
                 height: `${Math.max(8, pct * 48)}px`,
-                backgroundColor: count === 0 ? '#1f2937' : `rgba(59,130,246,${0.3 + pct * 0.7})`
+                backgroundColor: count === 0 ? '#1f2937' : `rgba(59,130,246,${0.3 + pct * 0.7})`,
               }}
               title={`${date}: ${count}人打卡`}
             />
@@ -82,21 +89,21 @@ function CheckinHeatmap({ checkins }) {
 
 // ── 学生列表 ─────────────────────────────────────────
 
-function StudentList({ classId }) {
+function StudentList({ token, classId }) {
   const [students, setStudents] = useState([])
   const [checkins, setCheckins] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     Promise.all([
-      getClassStudents(classId),
-      getStudentCheckins(classId, 7)
+      getClassStudents(token, classId),
+      getStudentCheckins(token, classId, 7),
     ]).then(([s, c]) => {
       setStudents(s)
       setCheckins(c)
       setLoading(false)
     })
-  }, [classId])
+  }, [token, classId])
 
   const today = new Date().toISOString().slice(0, 10)
 
@@ -142,20 +149,55 @@ function StudentList({ classId }) {
   )
 }
 
+// ── 班级排行榜（老师视角，带奖牌）──────────────────────
+
+function ClassLeaderboard({ classId }) {
+  const [board, setBoard] = useState(null)
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    getClassLeaderboard(classId, 7).then(d => { setBoard(d); setLoading(false) })
+  }, [classId])
+  const medal = (r) => r === 1 ? '🥇' : r === 2 ? '🥈' : r === 3 ? '🥉' : `${r}`
+  const list = board?.students || []
+  return (
+    <Card className="overflow-hidden">
+      <div className="px-5 py-4 border-b border-gray-800 flex items-center justify-between">
+        <h2 className="text-sm font-semibold text-white">🏆 本周排行榜</h2>
+        <span className="text-xs text-gray-600">积分 = 句数×2 + 词数</span>
+      </div>
+      {loading ? (
+        <p className="text-gray-600 text-sm py-6 text-center">加载中…</p>
+      ) : list.length === 0 ? (
+        <p className="text-gray-600 text-sm py-6 text-center">暂无学生</p>
+      ) : (
+        <div className="flex flex-col">
+          {list.map(s => (
+            <div key={s.id} className="flex items-center gap-3 px-5 py-2.5 border-b border-gray-800/50 text-sm">
+              <span className={`w-7 text-center font-bold ${s.rank <= 3 ? 'text-lg' : 'text-gray-500 text-xs'}`}>{medal(s.rank)}</span>
+              <span className="flex-1 truncate text-white">{s.name}</span>
+              <span className="text-gray-500 text-xs">{s.sentences}句 · {s.daysActive}天</span>
+              <span className="text-amber-400 font-bold tabular-nums w-12 text-right">{s.points}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </Card>
+  )
+}
+
 // ── 班级详情页 ────────────────────────────────────────
 
-function ClassDetail({ cls, onBack }) {
+function ClassDetail({ token, cls, onBack }) {
   const [checkins, setCheckins] = useState([])
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    getStudentCheckins(cls.id, 7).then(c => { setCheckins(c); setLoading(false) })
-  }, [cls.id])
+    getStudentCheckins(token, cls.id, 7).then(c => { setCheckins(c); setLoading(false) })
+  }, [token, cls.id])
 
   function copyCode() {
-    const text = `加入 ${cls.name} 班级码：${cls.class_code}\n打开 https://okenglish.site 输入班级码即可进入`
-    navigator.clipboard.writeText(text)
+    navigator.clipboard.writeText(cls.class_code)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -165,7 +207,6 @@ function ClassDetail({ cls, onBack }) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 space-y-5">
-      {/* 顶部 */}
       <div className="flex items-center gap-3">
         <button onClick={onBack} className="text-gray-400 hover:text-white text-sm flex items-center gap-1">
           ← 返回
@@ -173,7 +214,6 @@ function ClassDetail({ cls, onBack }) {
         <h1 className="text-xl font-bold text-white flex-1">{cls.name}</h1>
       </div>
 
-      {/* 班级信息卡 */}
       <Card className="p-5 flex flex-wrap gap-6 items-center">
         <div>
           <p className="text-xs text-gray-500 mb-1">班级码</p>
@@ -193,12 +233,13 @@ function ClassDetail({ cls, onBack }) {
         </div>
       </Card>
 
-      {/* 学生列表 */}
+      <ClassLeaderboard classId={cls.id} />
+
       <Card className="overflow-hidden">
         <div className="px-5 py-4 border-b border-gray-800">
           <h2 className="text-sm font-semibold text-white">学生学习情况</h2>
         </div>
-        <StudentList classId={cls.id} />
+        <StudentList token={token} classId={cls.id} />
       </Card>
     </div>
   )
@@ -206,7 +247,8 @@ function ClassDetail({ cls, onBack }) {
 
 // ── 教师主界面 ────────────────────────────────────────
 
-function TeacherHome({ teacher, onSignOut }) {
+function TeacherHome({ token, username }) {
+  const [profile, setProfile] = useState(null)
   const [classes, setClasses] = useState([])
   const [loading, setLoading] = useState(true)
   const [detail, setDetail] = useState(null)
@@ -215,20 +257,27 @@ function TeacherHome({ teacher, onSignOut }) {
   const [creating, setCreating] = useState(false)
   const [createErr, setCreateErr] = useState('')
 
-  useEffect(() => { loadClasses() }, [])
+  useEffect(() => {
+    Promise.all([
+      getTeacherProfile(token),
+      getMyClasses(token),
+    ]).then(([prof, list]) => {
+      setProfile(prof)
+      setClasses(list)
+      setLoading(false)
+    })
+  }, [token])
 
   async function loadClasses() {
-    setLoading(true)
-    const list = await getMyClasses(teacher.id)
+    const list = await getMyClasses(token)
     setClasses(list)
-    setLoading(false)
   }
 
   async function handleCreate() {
     if (!newClassName.trim()) return
     setCreating(true); setCreateErr('')
-    const { data, error } = await createClass(teacher.id, newClassName.trim())
-    if (error) { setCreateErr(error); setCreating(false); return }
+    const data = await createClass(token, newClassName.trim())
+    if (data.error) { setCreateErr(data.error); setCreating(false); return }
     setClasses(prev => [data, ...prev])
     setNewClassName('')
     setShowCreate(false)
@@ -237,31 +286,39 @@ function TeacherHome({ teacher, onSignOut }) {
 
   async function handleDelete(cls) {
     if (!window.confirm(`确定删除班级「${cls.name}」？所有学生数据将一并删除。`)) return
-    await deleteClass(cls.id)
+    await deleteClass(token, cls.id)
     setClasses(prev => prev.filter(c => c.id !== cls.id))
   }
 
-  if (detail) return <ClassDetail cls={detail} onBack={() => setDetail(null)} />
+  if (detail) return <ClassDetail token={token} cls={detail} onBack={() => setDetail(null)} />
+
+  if (loading) return (
+    <div className="flex items-center justify-center py-12">
+      <span className="text-gray-600 text-sm">加载中…</span>
+    </div>
+  )
+
+  const displayName = profile?.name || username || '老师'
+  const school = profile?.school || ''
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 space-y-5">
       {/* 顶部栏 */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold text-white">教师工作台</h1>
-          <p className="text-gray-500 text-sm mt-0.5">{teacher.name}{teacher.school ? ` · ${teacher.school}` : ''}</p>
+          <h1 className="text-xl font-bold text-white">班级管理</h1>
+          <p className="text-gray-500 text-sm mt-0.5">
+            {displayName}{school ? ` · ${school}` : ''}
+          </p>
         </div>
-        <div className="flex gap-2">
-          <Btn color="green" onClick={() => setShowCreate(true)}>＋ 创建班级</Btn>
-          <Btn color="ghost" size="sm" onClick={onSignOut}>退出</Btn>
-        </div>
+        <Btn color="green" onClick={() => setShowCreate(true)}>＋ 创建班级</Btn>
       </div>
 
       {/* 创建班级弹窗 */}
       {showCreate && (
         <Card className="p-5 space-y-4">
           <h2 className="text-white font-semibold">创建新班级</h2>
-          <Input
+          <InputField
             label="班级名称"
             placeholder="如：五年级2班 / 英语A班"
             value={newClassName}
@@ -280,20 +337,21 @@ function TeacherHome({ teacher, onSignOut }) {
       )}
 
       {/* 班级列表 */}
-      {loading ? (
-        <p className="text-gray-600 text-sm text-center py-8">加载班级…</p>
-      ) : classes.length === 0 ? (
+      {classes.length === 0 ? (
         <Card className="p-10 text-center">
-          <p className="text-gray-500 text-sm mb-4">还没有班级，先创建一个</p>
+          <p className="text-gray-500 text-sm mb-4">还没有班级，先创建一个吧</p>
           <Btn color="green" onClick={() => setShowCreate(true)}>＋ 创建第一个班级</Btn>
         </Card>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {classes.map(cls => {
-            const studentCount = cls.class_students?.[0]?.count ?? 0
+            const studentCount = cls.student_count ?? 0
             return (
-              <Card key={cls.id} className="p-5 hover:border-gray-700 transition-colors cursor-pointer group"
-                onClick={() => setDetail(cls)}>
+              <Card
+                key={cls.id}
+                className="p-5 hover:border-gray-700 transition-colors cursor-pointer group"
+                onClick={() => setDetail(cls)}
+              >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-white font-semibold group-hover:text-blue-300 transition-colors">
@@ -322,106 +380,13 @@ function TeacherHome({ teacher, onSignOut }) {
   )
 }
 
-// ── 教师登录/注册 ─────────────────────────────────────
+// ── 主入口（接受主站 JWT）────────────────────────────
 
-function TeacherAuth({ onAuth }) {
-  const [mode, setMode] = useState('login') // 'login' | 'register'
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
-  const [school, setSchool] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [info, setInfo] = useState('')
-
-  async function handleSubmit() {
-    if (!email || !password) return
-    setLoading(true); setError(''); setInfo('')
-    if (mode === 'login') {
-      const res = await teacherSignIn(email, password)
-      if (res.error) setError(res.error)
-      else onAuth(res.teacher)
-    } else {
-      if (!name.trim()) { setError('请填写姓名'); setLoading(false); return }
-      const res = await teacherSignUp(email, password, name.trim(), school.trim())
-      if (res.error) setError(res.error)
-      else {
-        setInfo('注册成功！请检查邮箱点击确认链接后再登录。')
-        setMode('login')
-      }
-    }
-    setLoading(false)
-  }
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950 px-4">
-      <div className="w-full max-w-sm">
-        {/* Logo / Title */}
-        <div className="text-center mb-8">
-          <div className="text-4xl mb-3">🏫</div>
-          <h1 className="text-2xl font-bold text-white">教师工作台</h1>
-          <p className="text-gray-500 text-sm mt-1">OK English · 班级管理平台</p>
-        </div>
-
-        <Card className="p-8 space-y-4">
-          <div className="flex gap-1 bg-gray-800 rounded-xl p-1 mb-2">
-            {['login','register'].map(m => (
-              <button key={m} onClick={() => { setMode(m); setError(''); setInfo('') }}
-                className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors ${mode === m ? 'bg-gray-700 text-white' : 'text-gray-500 hover:text-gray-300'}`}>
-                {m === 'login' ? '登录' : '注册'}
-              </button>
-            ))}
-          </div>
-
-          {mode === 'register' && (
-            <>
-              <Input label="姓名" placeholder="您的姓名" value={name} onChange={e => setName(e.target.value)} />
-              <Input label="学校（选填）" placeholder="所在学校" value={school} onChange={e => setSchool(e.target.value)} />
-            </>
-          )}
-          <Input label="邮箱" type="email" placeholder="teacher@school.com" value={email} onChange={e => setEmail(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSubmit()} />
-          <Input label="密码" type="password" placeholder="至少6位" value={password} onChange={e => setPassword(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSubmit()} />
-
-          {error && <p className="text-red-400 text-xs bg-red-900/20 border border-red-900/40 rounded-lg px-3 py-2">{error}</p>}
-          {info  && <p className="text-green-400 text-xs bg-green-900/20 border border-green-900/40 rounded-lg px-3 py-2">{info}</p>}
-
-          <Btn color="blue" className="w-full justify-center" onClick={handleSubmit} disabled={loading}>
-            {loading ? '请稍候…' : (mode === 'login' ? '登录' : '注册教师账号')}
-          </Btn>
-        </Card>
-
-        <p className="text-center text-gray-700 text-xs mt-4">
-          学生端访问：<a href="/" className="text-blue-600 hover:text-blue-400">okenglish.site</a>
-        </p>
-      </div>
+export default function TeacherDashboard({ token, username }) {
+  if (!token) return (
+    <div className="flex items-center justify-center py-12 text-gray-600 text-sm">
+      未检测到登录状态，请重新进入
     </div>
   )
-}
-
-// ── 主入口（自动检测已有 session）────────────────────
-
-export default function TeacherDashboard() {
-  const [teacher, setTeacher] = useState(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    getTeacherSession().then(res => {
-      if (res?.teacher) setTeacher(res.teacher)
-      setLoading(false)
-    })
-  }, [])
-
-  async function handleSignOut() {
-    await teacherSignOut()
-    setTeacher(null)
-  }
-
-  if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950">
-      <div className="text-gray-600 text-sm">加载中…</div>
-    </div>
-  )
-
-  if (!teacher) return <TeacherAuth onAuth={setTeacher} />
-  return <TeacherHome teacher={teacher} onSignOut={handleSignOut} />
+  return <TeacherHome token={token} username={username} />
 }

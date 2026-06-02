@@ -391,9 +391,16 @@ export default function Courses({
       const nextIdx = fullIdx + 1
       if (nextIdx >= fullLessons.length) return null
       const next = fullLessons[nextIdx]
-      // In Duolingo, Unit 2+ is members-only → route to login/paywall instead of loading
-      if (isDuolingoView && next.unit !== 1 && !isMember) {
-        return () => onShowLogin?.()
+      // 后半课节会员专属（多邻国 & NCE 均适用）
+      if (!isMember) {
+        if (isDuolingoView) {
+          const unitLessons = DUOLINGO_LESSONS.filter(l => l.unit === next.unit)
+          const posInUnit = unitLessons.indexOf(next)
+          if (posInUnit >= Math.ceil(unitLessons.length / 2)) return () => onShowLogin?.()
+        } else {
+          // NCE：nextIdx 即在 lessons 中的位置
+          if (nextIdx >= Math.ceil(lessons.length / 2)) return () => onShowLogin?.()
+        }
       }
       return () => {
         const nextData = getLessonData(next.ids, dataMap)
@@ -407,13 +414,29 @@ export default function Courses({
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setDetail(null)} label="返回课程广场" />
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
-          <div className="w-24 h-16 rounded-xl overflow-hidden shrink-0">
-            <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4 sm:p-6 mb-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <div className="flex items-center gap-3 sm:gap-0 sm:contents">
+            <div className="w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden shrink-0">
+              <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
+            </div>
+            <div className="flex-1 min-w-0 sm:hidden">
+              <div className="text-lg font-bold text-white truncate">{info.name}</div>
+              <div className="text-gray-400 text-xs truncate">{info.desc}</div>
+            </div>
+            <button
+              onClick={() => {
+                const first = lessons[0]
+                const firstFullIdx = fullLessons.indexOf(first)
+                onImport(getLessonData(first.ids, dataMap), labelFor(first), buildNextLoader(firstFullIdx))
+              }}
+              className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm transition-colors shrink-0 sm:order-last"
+            >
+              ▶ 开始学习
+            </button>
           </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-xl font-bold text-white mb-1">{info.name}</div>
-            <div className="text-gray-400 text-sm mb-3">{info.desc}</div>
+          <div className="flex-1 min-w-0 w-full">
+            <div className="hidden sm:block text-xl font-bold text-white mb-1">{info.name}</div>
+            <div className="hidden sm:block text-gray-400 text-sm mb-3">{info.desc}</div>
             <div className="flex items-center gap-2">
               <div className="flex-1 h-1.5 bg-gray-800 rounded-full overflow-hidden">
                 <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${coursePercent}%` }} />
@@ -421,16 +444,6 @@ export default function Courses({
               <span className="text-xs text-gray-500 tabular-nums shrink-0">{courseStats.attempted}/{courseStats.total} 句</span>
             </div>
           </div>
-          <button
-            onClick={() => {
-              const first = lessons[0]
-              const firstFullIdx = fullLessons.indexOf(first)
-              onImport(getLessonData(first.ids, dataMap), labelFor(first), buildNextLoader(firstFullIdx))
-            }}
-            className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors shrink-0"
-          >
-            ▶ 开始学习
-          </button>
         </div>
 
         {syncPopup && (
@@ -444,41 +457,50 @@ export default function Courses({
             </div>
           </div>
         )}
+        {!isMember && (
+          <div className="mb-4 bg-amber-900/30 border border-amber-700/40 rounded-xl px-4 py-3 flex items-center gap-3">
+            <span className="text-lg">🔒</span>
+            <div>
+              <div className="text-amber-300 text-sm font-semibold">前半部分免费体验</div>
+              <div className="text-amber-600 text-xs">开通会员解锁全部课节</div>
+            </div>
+            <button onClick={onShowLogin} className="ml-auto shrink-0 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold transition-colors">
+              开通会员
+            </button>
+          </div>
+        )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {lessons.map((lesson, i) => {
+            const halfIdx = Math.ceil(lessons.length / 2)
+            const lessonLocked = !isMember && i >= halfIdx
             const data = getLessonData(lesson.ids, dataMap)
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const fullIdx = fullLessons.indexOf(lesson)
             return (
-              <div key={i} className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
+              <div key={i} className="relative text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
                 <div
                   role="button"
                   tabIndex={0}
-                  onClick={() => onImport(data, labelFor(lesson), buildNextLoader(fullIdx))}
+                  onClick={() => {
+                    if (lessonLocked) { onShowLogin?.(); return }
+                    onImport(data, labelFor(lesson), buildNextLoader(fullIdx))
+                  }}
                   onKeyDown={e => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
+                      if (lessonLocked) { onShowLogin?.(); return }
                       onImport(data, labelFor(lesson), buildNextLoader(fullIdx))
                     }
                   }}
                   className="text-left p-4 flex flex-col gap-3 flex-1 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <span className="text-white text-sm font-medium">{lesson.label}</span>
-                    <div className="flex items-center gap-1.5 shrink-0">
-                      <button
-                        type="button"
-                        onClick={e => {
-                          e.stopPropagation()
-                          onSyncPractice?.(data, isDuolingoView ? `多邻国 ${info.name} · ${lesson.label}` : labelFor(lesson), isDuolingoView ? detail : null)
-                        }}
-                        className="text-xs px-2 py-1 bg-purple-700/40 hover:bg-purple-600/60 text-purple-300 rounded-lg transition-colors"
-                      >
-                        跟读
-                      </button>
-                      <LessonStatusBadge {...stats} />
-                    </div>
+                    <span className={`text-sm font-medium ${lessonLocked ? 'text-gray-500' : 'text-white'}`}>{lesson.label}</span>
+                    {lessonLocked
+                      ? <span className="text-xs text-amber-600 bg-amber-900/30 border border-amber-800/50 px-2 py-0.5 rounded-full shrink-0">🔒会员</span>
+                      : <LessonStatusBadge {...stats} />
+                    }
                   </div>
                   <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
                     <div
@@ -491,12 +513,6 @@ export default function Courses({
                     <span className="text-gray-600 font-mono">#{i + 1}</span>
                   </div>
                 </div>
-                <button
-                  onClick={(e) => { e.stopPropagation(); onSyncPractice?.(data, labelFor(lesson), isDuolingoView ? detail : null) }}
-                  className="w-full py-1.5 text-xs font-semibold text-white bg-green-700 hover:bg-green-600 border-t border-green-900 transition-colors text-center"
-                >
-                  {lesson.label} 同步练习
-                </button>
               </div>
             )
           })}
@@ -517,8 +533,8 @@ export default function Courses({
         <div className="mb-5 bg-gradient-to-r from-amber-900/40 to-orange-900/30 border border-amber-700/50 rounded-xl p-4 flex items-center gap-3">
           <span className="text-2xl shrink-0">⭐</span>
           <div className="flex-1 min-w-0">
-            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁全部课程</div>
-            <div className="text-amber-500/80 text-xs mt-0.5">多邻国 Unit 2-6、新概念英语全册均为会员专属</div>
+            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁全部内容</div>
+            <div className="text-amber-500/80 text-xs mt-0.5">所有课程前半部分免费体验，开通会员解锁全部内容</div>
           </div>
           <button onClick={onShowLogin} className="shrink-0 px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold transition-colors">
             登录
@@ -541,7 +557,6 @@ export default function Courses({
           return (
             <div key={c.key} className="relative">
               <button onClick={() => {
-                if (!isMember) { onShowLogin?.(); return }
                 setDetail(c.key)
               }}
                 className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left">
@@ -557,7 +572,7 @@ export default function Courses({
                   <div className="text-xs text-gray-600">{c.lessons.length} 课 · {percent}%</div>
                 </div>
               </button>
-              {!isMember && <PaywallOverlay onShowLogin={onShowLogin} />}
+              {/* 不再整本锁，后半课节在详情页内锁 */}
             </div>
           )
         })}
@@ -571,12 +586,11 @@ export default function Courses({
           const allData = lessons.flatMap(l => getLessonData(l.ids))
           const stats = getLessonStats(allData, progress)
           const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
-          const isPremium = unit !== 1
+          const isPremium = false  // 单元全部可进，锁在课节层
           return (
             <div key={unit} className="relative">
             <button
               onClick={() => {
-                if (!(isMember || !isPremium)) { onShowLogin?.(); return }
                 setDetail(unit)
               }}
               className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"

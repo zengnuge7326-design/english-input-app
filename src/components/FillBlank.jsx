@@ -4,7 +4,7 @@ import PageBackBar from './PageBackBar'
 import { fillblankBank } from '../data/fillblankData'
 import { useSound } from '../hooks/useSound'
 
-export default function FillBlank({ onClose, settings }) {
+export default function FillBlank({ onClose, settings, isMember = true, onShowLogin, onXp }) {
   const [view, setView] = useState('levels')
   const [level, setLevel] = useState(null)
   const [group, setGroup] = useState(null)
@@ -43,6 +43,7 @@ export default function FillBlank({ onClose, settings }) {
     setResult(isCorrect ? 'correct' : 'wrong')
     setScore(s => ({ ...s, correct: s.correct + (isCorrect ? 1 : 0), total: s.total + 1 }))
     if (isCorrect) playCorrect(); else playError()
+    onXp?.(isCorrect ? 2 : 1)
   }
 
   function next() {
@@ -105,15 +106,18 @@ export default function FillBlank({ onClose, settings }) {
             <h2 className="text-2xl font-bold text-white">{fillblankBank[level].name}</h2>
             <button type="button" onClick={() => setView('levels')} className="text-gray-400 hover:text-white text-2xl" aria-label="关闭">✕</button>
           </div>
+          {!isMember && (
+            <p className="text-xs text-gray-500 mb-4">A组免费体验，开通会员解锁B组</p>
+          )}
           <div className="grid grid-cols-2 gap-4">
             <button onClick={() => selectGroup('groupA')}
               className="bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl p-6 text-left transition-colors">
               <div className="text-green-400 text-lg font-bold mb-2">A组</div>
               <div className="text-gray-400 text-sm">5道题目</div>
             </button>
-            <button onClick={() => selectGroup('groupB')}
-              className="bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl p-6 text-left transition-colors">
-              <div className="text-purple-400 text-lg font-bold mb-2">B组</div>
+            <button onClick={() => isMember ? selectGroup('groupB') : onShowLogin?.()}
+              className={`border border-gray-700 rounded-xl p-6 text-left transition-colors ${isMember ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-800 opacity-60'}`}>
+              <div className="text-purple-400 text-lg font-bold mb-2">B组 {!isMember && '🔒'}</div>
               <div className="text-gray-400 text-sm">5道题目</div>
             </button>
           </div>
@@ -162,7 +166,12 @@ export default function FillBlank({ onClose, settings }) {
         <div className="mb-6">
           <div className="flex items-center gap-3 mb-2">
             <div className="text-white text-xl" style={{ fontFamily: 'AI Nile, monospace' }}>{q.sentence}</div>
-            <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300">
+            <button
+              type="button"
+              onClick={() => speak(q.sentence)}
+              className="shrink-0 w-10 h-10 min-w-10 min-h-10 inline-flex items-center justify-center p-0 rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
+              title="朗读题目"
+            >
               <IconSpeaker size={22} />
             </button>
           </div>

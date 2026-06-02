@@ -5,7 +5,7 @@
  */
 
 // ── IPA symbol → audio filename ───────────────────────────────────────────────
-const IPA_TO_FILE = {
+export const IPA_TO_FILE = {
   // Plosives
   'p': 'p',   'b': 'b',   't': 't',   'd': 'd',
   'k': 'k',   'ɡ': 'g',   'g': 'g',   // ɡ = voiced velar (Unicode g-variant)
@@ -68,6 +68,10 @@ export function splitIPA(ipa) {
 /**
  * Map phoneme index → approximate letter range in word spelling (proportional fallback).
  */
+export function ipaToAudioFile(symbol) {
+  return IPA_TO_FILE[symbol] ?? null
+}
+
 export function mapPhonemesToLetters(word, phonemes) {
   const total = phonemes.length
   const wlen  = word.length

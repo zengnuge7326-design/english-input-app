@@ -4,7 +4,7 @@ import PageBackBar from './PageBackBar'
 import { quizBank } from '../data/quizData'
 import { useSound } from '../hooks/useSound'
 
-export default function Quiz({ onImport, onClose, settings }) {
+export default function Quiz({ onImport, onClose, settings, isMember = true, onShowLogin, onXp }) {
   const [selectedLevel, setSelectedLevel] = useState(null)
   const [currentGroup, setCurrentGroup] = useState('groupA')
   const [answers, setAnswers] = useState({})
@@ -80,8 +80,8 @@ export default function Quiz({ onImport, onClose, settings }) {
     setAnswers({ ...answers, [questionIndex]: answerIndex })
     const quiz = quizBank[selectedLevel]?.[currentGroup]?.[questionIndex]
     if (quiz != null) {
-      if (answerIndex === quiz.correct) playCorrect()
-      else playError()
+      if (answerIndex === quiz.correct) { playCorrect(); onXp?.(2) }
+      else { playError(); onXp?.(1) }
     }
   }
 
@@ -141,40 +141,44 @@ export default function Quiz({ onImport, onClose, settings }) {
             A组
           </button>
           <button
-            onClick={() => handleGroupSelect('groupB')}
-            className={`flex-1 py-2 rounded-lg transition-colors ${
-              currentGroup === 'groupB' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-400'
+            onClick={() => isMember ? handleGroupSelect('groupB') : onShowLogin?.()}
+            className={`flex-1 py-2 rounded-lg transition-colors relative ${
+              currentGroup === 'groupB' ? 'bg-blue-600 text-white' : isMember ? 'bg-gray-800 text-gray-400' : 'bg-gray-800 text-gray-600 opacity-60'
             }`}
           >
-            B组
+            B组 {!isMember && '🔒'}
           </button>
         </div>
+        {!isMember && (
+          <p className="text-xs text-gray-500 mb-4 text-center">A组免费体验，开通会员解锁B组</p>
+        )}
 
             <div className="space-y-6">
               {currentQuestions.map((quiz, idx) => {
                 const selected = answers[idx]
 
                 return (
-                  <div key={idx} className="bg-gray-800 rounded-xl p-6">
-                    <div className="flex items-start gap-3 mb-4">
-                      <p className="text-white font-medium flex-1">
+                  <div key={idx} className="bg-gray-800 rounded-xl p-8">
+                    <div className="flex items-start gap-3 mb-5">
+                      <p className="text-white font-medium text-lg flex-1">
                         {idx + 1}. {quiz.question} {getTranslation(quiz.question) ? <span className="text-gray-400 text-sm">({getTranslation(quiz.question)})</span> : null}
                       </p>
                       <button
+                        type="button"
                         onClick={() => speak(quiz.question)}
-                        className="shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
+                        className="shrink-0 w-12 h-12 min-w-12 min-h-12 inline-flex items-center justify-center p-0 rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
                         title="朗读题目"
                       >
-                        <IconSpeaker size={20} />
+                        <IconSpeaker size={26} />
                       </button>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       {quiz.options.map((option, optIdx) => (
                         <div key={optIdx} className="flex items-center gap-2">
                           <button
                             onClick={() => handleAnswer(idx, optIdx)}
                             disabled={showResult}
-                            className={`flex-1 text-left px-5 py-4 rounded-lg transition-colors text-lg font-medium ${
+                            className={`flex-1 text-left px-6 py-5 rounded-lg transition-colors text-xl font-medium ${
                               showResult
                                 ? optIdx === quiz.correct
                                   ? 'bg-green-600 text-white'
@@ -189,19 +193,20 @@ export default function Quiz({ onImport, onClose, settings }) {
                             {String.fromCharCode(65 + optIdx)}. {option}
                           </button>
                           <button
+                            type="button"
                             onClick={() => speak(option)}
-                            className="shrink-0 w-14 h-14 flex items-center justify-center rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
+                            className="shrink-0 w-12 h-12 min-w-12 min-h-12 inline-flex items-center justify-center p-0 rounded-lg bg-gray-700 hover:bg-blue-600 text-blue-400 hover:text-white transition-colors"
                             title="朗读选项"
                           >
-                            <IconSpeaker size={28} />
+                            <IconSpeaker size={26} />
                           </button>
                         </div>
                       ))}
                     </div>
                     {showResult && quiz.explanation && (
                       <div className="mt-4 bg-slate-800 rounded-lg p-4">
-                        <p className="text-yellow-400 text-sm font-semibold mb-1">💡 解析：</p>
-                        <p className="text-gray-300 text-sm">{quiz.explanation}</p>
+                        <p className="text-yellow-400 text-base font-semibold mb-1">💡 解析：</p>
+                        <p className="text-gray-300 text-base">{quiz.explanation}</p>
                         {quiz.tag && (
                           <span className="inline-block mt-2 px-2 py-1 bg-blue-600/30 text-blue-400 text-xs rounded">
                             {quiz.tag}
@@ -218,7 +223,7 @@ export default function Quiz({ onImport, onClose, settings }) {
           <button
             onClick={handleSubmit}
             disabled={!allAnswered}
-            className={`w-full mt-6 py-3 rounded-xl font-semibold transition-colors ${
+            className={`w-full mt-6 py-4 rounded-xl font-semibold text-lg transition-colors ${
               allAnswered
                 ? 'bg-green-600 hover:bg-green-500 text-white'
                 : 'bg-gray-700 text-gray-500 cursor-not-allowed'
@@ -227,7 +232,7 @@ export default function Quiz({ onImport, onClose, settings }) {
             {allAnswered ? '提交答案' : `请完成所有题目 (${Object.keys(answers).length}/${QUESTIONS_PER_GROUP})`}
           </button>
         ) : (
-          <div className="mt-6 text-center py-4 bg-blue-600 text-white rounded-xl font-bold text-lg">
+          <div className="mt-6 text-center py-5 bg-blue-600 text-white rounded-xl font-bold text-xl">
             得分: {currentQuestions.filter((q, idx) => answers[idx] === q.correct).length} / {QUESTIONS_PER_GROUP}
           </div>
         )}

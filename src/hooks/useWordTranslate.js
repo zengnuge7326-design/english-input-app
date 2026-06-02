@@ -1,9 +1,12 @@
+import { useCallback } from 'react'
 import { FUNCTION_WORDS } from '../utils/wordInfo'
 
 const cache = new Map()
 
 export function useWordTranslate() {
-  async function translate(word) {
+  // useCallback([], ...) 让 translate 引用稳定，避免每次渲染创建新函数
+  // 导致 WordInput 翻译 effect 无限重复执行
+  const translate = useCallback(async function(word) {
     const key = word.toLowerCase()
 
     const funcWord = FUNCTION_WORDS[key]
@@ -33,7 +36,7 @@ export function useWordTranslate() {
     } catch {
       return null
     }
-  }
+  }, [])
 
   return { translate }
 }

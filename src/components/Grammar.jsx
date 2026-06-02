@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import PageBackBar from './PageBackBar'
+import { GRAMMAR_LEARNING_UI_ENABLED } from '../config/grammarUi'
+import { buildGrammarLessonPackMeta, getGrammarTopicMeta } from '../data/grammar_tenses/grammarTopicMeta'
 import presentSimpleData from '../data/grammar_tenses/elementary/present_simple.json'
 import presentContinuousData from '../data/grammar_tenses/elementary/present_continuous.json'
 import pastSimpleData from '../data/grammar_tenses/elementary/past_simple.json'
@@ -42,7 +44,7 @@ const STAGES = [
   {
     id: 'elementary',
     label: '小学',
-    color: 'from-green-600 to-green-800',
+    color: 'from-green-600/45 to-green-800/30',
     icon: '🌱',
     tenses: [
       { id: 'present_simple', name: '一般现在时', desc: 'Simple Present Tense', data: presentSimpleData,
@@ -124,7 +126,7 @@ const STAGES = [
   {
     id: 'junior',
     label: '初中',
-    color: 'from-blue-600 to-blue-800',
+    color: 'from-blue-600/45 to-blue-800/30',
     icon: '📘',
     tenses: [
       { id: 'past_continuous', name: '过去进行时', desc: 'Past Continuous Tense', data: pastContinuousData,
@@ -221,7 +223,7 @@ const STAGES = [
   {
     id: 'senior',
     label: '高中',
-    color: 'from-purple-600 to-purple-800',
+    color: 'from-purple-600/45 to-purple-800/30',
     icon: '🎓',
     tenses: [
       { id: 'past_perfect_continuous', name: '过去完成进行时', desc: 'Past Perfect Continuous', data: pastPerfectContinuousData,
@@ -302,6 +304,13 @@ const STAGES = [
   },
 ]
 
+/** 语法首页封面短文案，与教材同步「封面 + 底部信息」风格一致 */
+const STAGE_COVER_TAGLINE = {
+  elementary: '词法与时态入门',
+  junior: '复合句 · 语态 · 从句',
+  senior: '虚拟 · 倒装 · 综合',
+}
+
 function getLessonStats(data, progress) {
   const total = data.length
   const attempted = data.filter(s => (progress[`sentence_${s.id}`]?.attempts || 0) > 0).length
@@ -309,7 +318,7 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Grammar({ onImport, onClose, progress = {}, active = true }) {
+export default function Grammar({ onImport, onClose, onGrammarSyncPractice, progress = {}, active = true, isMember = true, onShowLogin }) {
   const [stage, setStage] = useState(null)
   const [tense, setTense] = useState(null)
 
@@ -324,53 +333,118 @@ export default function Grammar({ onImport, onClose, progress = {}, active = tru
           <span className="text-gray-600">/</span>
           <span className="text-gray-300 text-sm">{tenseObj.name}</span>
         </div>
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
-          <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${stageObj.color} flex items-center justify-center text-3xl shrink-0`}>
-            {stageObj.icon}
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-xl font-bold text-white mb-1">{tenseObj.name}</div>
-            <div className="text-gray-400 text-sm mb-3">{tenseObj.desc}</div>
-            {(() => {
-              const stats = getLessonStats(tenseObj.data, progress)
-              const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
-              return (
-                <div className="flex items-center gap-2">
-                  <div className="flex-1 h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+        <div className="rounded-3xl overflow-hidden border border-white/15 mb-6 flex flex-col bg-slate-900/40 backdrop-blur-xl shadow-md"
+          style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 4px 16px rgba(0,0,0,0.25)' }}>
+          <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+            {/* 顶部一行：图标 + 标题 + 按钮（手机版） */}
+            <div className="flex items-center gap-3 sm:gap-0 sm:contents">
+              <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${stageObj.color} backdrop-blur-xl border border-white/10 flex items-center justify-center text-2xl sm:text-3xl shrink-0`}>
+                {stageObj.icon}
+              </div>
+              <div className="flex-1 min-w-0 sm:hidden">
+                <div className="text-lg font-bold text-white truncate">{tenseObj.name}</div>
+                <div className="text-gray-400 text-xs truncate">{tenseObj.desc}</div>
+              </div>
+              <button onClick={() => onImport(tenseObj.data, `${stageObj.label} · ${tenseObj.name} · 全部`, null, buildGrammarLessonPackMeta(tenseObj.id))}
+                className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-blue-600/85 backdrop-blur border border-blue-400/40 hover:bg-blue-500/90 text-white font-semibold text-xs sm:text-sm transition-colors shrink-0 sm:order-last">
+                ▶ 全部练习
+              </button>
+            </div>
+            {/* 中间内容（在 sm+ 占 flex-1，在手机占全宽） */}
+            <div className="flex-1 min-w-0 w-full">
+              <div className="hidden sm:block text-xl font-bold text-white mb-1">{tenseObj.name}</div>
+              <div className="hidden sm:block text-gray-400 text-sm mb-3">{tenseObj.desc}</div>
+              {GRAMMAR_LEARNING_UI_ENABLED && (() => {
+                const gm = getGrammarTopicMeta(tenseObj.id)
+                if (!gm) return null
+                return (
+                  <div className="mb-3 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md px-3 py-2.5 space-y-2">
+                    <div className="text-[10px] font-semibold text-blue-400/90 uppercase tracking-wider">学习目标</div>
+                    <ul className="text-xs text-gray-300 space-y-1 list-disc pl-4 leading-relaxed break-words">
+                      {gm.grammarPurpose.map((line, i) => (
+                        <li key={i}>{line}</li>
+                      ))}
+                    </ul>
+                    {gm.coreRules?.length > 0 && (
+                      <div>
+                        <div className="text-[10px] font-semibold text-amber-500/90 uppercase tracking-wider mb-0.5">核心规则</div>
+                        <ul className="text-xs text-gray-400 space-y-0.5 list-decimal pl-4 break-words">
+                          {gm.coreRules.map((line, i) => (
+                            <li key={i}>{line}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                  <span className="text-xs text-gray-500 tabular-nums shrink-0">{stats.attempted}/{stats.total} 句</span>
-                </div>
-              )
-            })()}
+                )
+              })()}
+              {(() => {
+                const stats = getLessonStats(tenseObj.data, progress)
+                const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
+                return (
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-1.5 bg-slate-800/60 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-400 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+                    </div>
+                    <span className="text-xs text-gray-500 tabular-nums shrink-0">{stats.attempted}/{stats.total} 句</span>
+                  </div>
+                )
+              })()}
+            </div>
           </div>
-          <button onClick={() => onImport(tenseObj.data, `${stageObj.label} · ${tenseObj.name} · 全部`)} className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors shrink-0">
-            ▶ 全部练习
+          <button
+            type="button"
+            onClick={() => onGrammarSyncPractice?.(tenseObj.data, `${stageObj.label} · ${tenseObj.name} · 本专题`, tenseObj.data)}
+            className="w-full py-2 text-xs font-semibold text-white bg-green-700/70 backdrop-blur border-t border-white/10 hover:bg-green-600/80 transition-colors text-center"
+          >
+            {tenseObj.name} 同步练习
           </button>
         </div>
+        {!isMember && (
+          <p className="text-xs text-gray-500 mb-4">前半部分课程免费体验，开通会员解锁全部课程</p>
+        )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {tenseObj.lessons.map((lesson, i) => {
+            const halfIdx = Math.ceil(tenseObj.lessons.length / 2)
+            const locked = !isMember && i >= halfIdx
             const data = tenseObj.data.slice(lesson.slice[0], lesson.slice[1])
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const done = stats.mastered === stats.total && stats.total > 0
+            const lessonTitle = `${stageObj.label} · ${tenseObj.name} · ${lesson.label}`
             return (
-              <button key={i} onClick={() => onImport(data, `${stageObj.label} · ${tenseObj.name} · ${lesson.label}`)}
-                className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl p-4 flex flex-col gap-2 transition-colors">
-                <div className="flex items-start justify-between gap-2">
-                  <span className="text-white text-sm font-medium">{lesson.label}</span>
-                  {done
-                    ? <span className="text-xs text-green-400 bg-green-900/40 border border-green-700/50 px-2 py-0.5 rounded-full shrink-0">已完成</span>
-                    : stats.attempted > 0
-                      ? <span className="text-xs text-blue-400 bg-blue-900/40 border border-blue-700/50 px-2 py-0.5 rounded-full shrink-0">进行中</span>
-                      : <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full shrink-0">{data.length} 句</span>
-                  }
-                </div>
-                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
-                  <div className={`h-full rounded-full transition-all duration-500 ${done ? 'bg-green-500' : 'bg-blue-500'}`} style={{ width: `${percent}%` }} />
-                </div>
-                <div className="text-xs text-gray-500 leading-snug line-clamp-2">{lesson.desc}</div>
-              </button>
+              <div key={i} className={`text-left rounded-2xl overflow-hidden border flex flex-col transition-all bg-white/[0.04] backdrop-blur-xl backdrop-saturate-150 hover:scale-[1.02]
+                ${locked ? 'border-white/10 opacity-60' : 'border-white/15 hover:border-white/25'}`}
+                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 3px rgba(0,0,0,0.2)' }}>
+                <button
+                  type="button"
+                  onClick={() => locked ? onShowLogin?.() : onImport(data, lessonTitle, null, buildGrammarLessonPackMeta(tenseObj.id))}
+                  className="p-4 flex flex-col gap-2 flex-1 text-left"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="text-white text-sm font-medium">{lesson.label}</span>
+                    {locked
+                      ? <span className="text-gray-500 text-sm shrink-0">🔒</span>
+                      : done
+                        ? <span className="text-xs text-green-300 bg-green-500/15 border border-green-500/30 px-2 py-0.5 rounded-full shrink-0">已完成</span>
+                        : stats.attempted > 0
+                          ? <span className="text-xs text-blue-300 bg-blue-500/15 border border-blue-500/30 px-2 py-0.5 rounded-full shrink-0">进行中</span>
+                          : <span className="text-xs text-gray-400 bg-slate-800/50 border border-white/10 px-2 py-0.5 rounded-full shrink-0">{data.length} 句</span>
+                    }
+                  </div>
+                  <div className="w-full h-1 bg-slate-800/60 rounded-full overflow-hidden">
+                    <div className={`h-full rounded-full transition-all duration-500 ${done ? 'bg-green-400' : 'bg-blue-400'}`} style={{ width: `${percent}%` }} />
+                  </div>
+                  <div className="text-xs text-gray-400 leading-snug line-clamp-2">{lesson.desc}</div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => locked ? onShowLogin?.() : onGrammarSyncPractice?.(data, lessonTitle, tenseObj.data)}
+                  className={`w-full py-2 text-xs font-semibold text-white border-t border-white/10 backdrop-blur transition-colors text-center rounded-b-2xl ${locked ? 'bg-gray-700/50' : 'bg-green-700/70 hover:bg-green-600/80'}`}
+                >
+                  {locked ? '🔒 会员专属' : `${lesson.label} 同步练习`}
+                </button>
+              </div>
             )
           })}
         </div>
@@ -387,53 +461,76 @@ export default function Grammar({ onImport, onClose, progress = {}, active = tru
         <div className="flex items-center gap-2 mb-6">
           <span className="text-gray-300 text-sm font-medium">{stageObj.label}阶段</span>
         </div>
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
-          <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${stageObj.color} flex items-center justify-center text-3xl shrink-0`}>
-            {stageObj.icon}
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-xl font-bold text-white mb-1">{stageObj.label}语法专项</div>
-            <div className="text-gray-400 text-sm mb-3">{stageObj.tenses.length} 个专题 · 共 {allData.length} 句</div>
-            {(() => {
-              const stats = getLessonStats(allData, progress)
-              const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
-              return (
-                <div className="flex items-center gap-2">
-                  <div className="flex-1 h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+        <div className="rounded-3xl overflow-hidden border border-white/15 mb-6 bg-slate-900/40 backdrop-blur-xl shadow-md"
+          style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 4px 16px rgba(0,0,0,0.25)' }}>
+          <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+            <div className="flex items-center gap-3 sm:gap-0 sm:contents">
+              <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${stageObj.color} backdrop-blur-xl border border-white/10 flex items-center justify-center text-2xl sm:text-3xl shrink-0`}>
+                {stageObj.icon}
+              </div>
+              <div className="flex-1 min-w-0 sm:hidden">
+                <div className="text-lg font-bold text-white truncate">{stageObj.label}语法专项</div>
+                <div className="text-gray-400 text-xs">{stageObj.tenses.length} 个专题 · 共 {allData.length} 句</div>
+              </div>
+              <button onClick={() => onImport(allData, `${stageObj.label}语法 · 全阶段`)}
+                className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-blue-600/85 backdrop-blur border border-blue-400/40 hover:bg-blue-500/90 text-white font-semibold text-xs sm:text-sm transition-colors shrink-0 sm:order-last">
+                ▶ 全阶段练习
+              </button>
+            </div>
+            <div className="flex-1 min-w-0 w-full">
+              <div className="hidden sm:block text-xl font-bold text-white mb-1">{stageObj.label}语法专项</div>
+              <div className="hidden sm:block text-gray-400 text-sm mb-3">{stageObj.tenses.length} 个专题 · 共 {allData.length} 句</div>
+              {(() => {
+                const stats = getLessonStats(allData, progress)
+                const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
+                return (
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-1.5 bg-slate-800/60 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-400 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+                    </div>
+                    <span className="text-xs text-gray-500 tabular-nums shrink-0">{stats.attempted}/{stats.total} 句</span>
                   </div>
-                  <span className="text-xs text-gray-500 tabular-nums shrink-0">{stats.attempted}/{stats.total} 句</span>
-                </div>
-              )
-            })()}
+                )
+              })()}
+            </div>
           </div>
-          <button onClick={() => onImport(allData, `${stageObj.label}语法 · 全阶段`)} className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors shrink-0">
-            ▶ 全阶段练习
-          </button>
         </div>
+        {!isMember && (
+          <p className="text-xs text-gray-500 mb-4">前半部分专题免费体验，开通会员解锁全部专题</p>
+        )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          {stageObj.tenses.map((t) => {
+          {stageObj.tenses.map((t, ti) => {
+            const halfIdx = Math.ceil(stageObj.tenses.length / 2)
+            const locked = !isMember && ti >= halfIdx
             const stats = getLessonStats(t.data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const done = stats.mastered === stats.total && stats.total > 0
             return (
-              <button key={t.id} onClick={() => setTense(t.id)}
-                className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl p-4 flex flex-col gap-2 transition-colors">
+              <button key={t.id}
+                type="button"
+                onClick={() => locked ? onShowLogin?.() : setTense(t.id)}
+                className={`text-left rounded-2xl overflow-hidden border bg-white/[0.04] backdrop-blur-xl backdrop-saturate-150 transition-all hover:scale-[1.02] active:scale-[0.98]
+                  ${locked ? 'border-white/10 opacity-60' : 'border-white/15 hover:border-white/25'}
+                  p-4 flex flex-col gap-2`}
+                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 3px rgba(0,0,0,0.2)' }}
+              >
                 <div className="flex items-start justify-between gap-2">
                   <span className="text-white text-sm font-medium">{t.name}</span>
-                  {done
-                    ? <span className="text-xs text-green-400 bg-green-900/40 border border-green-700/50 px-2 py-0.5 rounded-full shrink-0">已完成</span>
-                    : stats.attempted > 0
-                      ? <span className="text-xs text-blue-400 bg-blue-900/40 border border-blue-700/50 px-2 py-0.5 rounded-full shrink-0">进行中</span>
-                      : <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full shrink-0">{t.data.length} 句</span>
+                  {locked
+                    ? <span className="text-gray-500 text-sm shrink-0">🔒</span>
+                    : done
+                      ? <span className="text-xs text-green-300 bg-green-500/15 border border-green-500/30 px-2 py-0.5 rounded-full shrink-0">已完成</span>
+                      : stats.attempted > 0
+                        ? <span className="text-xs text-blue-300 bg-blue-500/15 border border-blue-500/30 px-2 py-0.5 rounded-full shrink-0">进行中</span>
+                        : <span className="text-xs text-gray-400 bg-slate-800/50 border border-white/10 px-2 py-0.5 rounded-full shrink-0">{t.data.length} 句</span>
                   }
                 </div>
-                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
-                  <div className={`h-full rounded-full transition-all duration-500 ${done ? 'bg-green-500' : 'bg-blue-500'}`} style={{ width: `${percent}%` }} />
+                <div className="w-full h-1 bg-slate-800/60 rounded-full overflow-hidden">
+                  <div className={`h-full rounded-full transition-all duration-500 ${done ? 'bg-green-400' : 'bg-blue-400'}`} style={{ width: `${percent}%` }} />
                 </div>
-                <div className="flex items-center justify-between text-xs text-gray-500 mt-0.5">
+                <div className="flex items-center justify-between text-xs text-gray-400 mt-0.5">
                   <span>{t.desc}</span>
-                  <span className="text-gray-600 shrink-0 ml-1">{t.lessons.length} 课</span>
+                  <span className="text-gray-500 shrink-0 ml-1">{t.lessons.length} 课</span>
                 </div>
               </button>
             )
@@ -455,25 +552,37 @@ export default function Grammar({ onImport, onClose, progress = {}, active = tru
           const allData = s.tenses.flatMap(t => t.data)
           const stats = getLessonStats(allData, progress)
           const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
+          const previewNames = s.tenses.slice(0, 3).map(t => t.name).join('、')
+          const previewLine = `${previewNames} 等 ${s.tenses.length} 个专题`
+          const tagline = STAGE_COVER_TAGLINE[s.id] || ''
           return (
-            <button key={s.id} onClick={() => setStage(s.id)}
-              className="flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 transition-all text-left cursor-pointer">
-              <div className={`w-full h-28 bg-gradient-to-br ${s.color} flex items-center justify-center`}>
-                <span className="text-5xl">{s.icon}</span>
-              </div>
-              <div className="bg-slate-800 p-4 flex flex-col gap-1">
-                <div className="text-base font-bold text-white">{s.label}阶段</div>
-                <div className="text-xs text-gray-400">{s.tenses.length} 个专题 · {allData.length} 句</div>
-                <div className="flex items-center gap-2 mt-1">
-                  <div className="flex-1 h-1 bg-gray-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
-                  </div>
-                  <span className="text-xs text-gray-600 tabular-nums shrink-0">{percent}%</span>
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => setStage(s.id)}
+              className="w-full flex flex-col rounded-3xl overflow-hidden border border-white/15 hover:border-white/30 hover:scale-[1.02] active:scale-[0.98] transition-all text-left bg-slate-900/40 backdrop-blur-xl shadow-md"
+              style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 4px 16px rgba(0,0,0,0.25)' }}
+            >
+              <div className={`w-full aspect-[5/4] max-h-[180px] sm:max-h-[200px] flex items-center justify-center overflow-hidden relative bg-gradient-to-br ${s.color} backdrop-blur-xl backdrop-saturate-150`}>
+                <div className="absolute inset-1.5 sm:inset-2 flex flex-col items-center justify-center p-2 sm:p-2.5 text-center border-2 border-white/15 rounded-2xl gap-0.5 sm:gap-1">
+                  <span className="text-white/85 text-[10px] font-bold tracking-[0.15em] drop-shadow-sm shrink-0">语法专项</span>
+                  <span className="text-white text-xl sm:text-2xl font-black tracking-widest drop-shadow-md leading-tight">
+                    {s.label}
+                  </span>
+                  <span className="text-3xl sm:text-4xl leading-none my-0.5 drop-shadow-md" aria-hidden>{s.icon}</span>
+                  <span className="text-white/85 text-[10px] sm:text-[11px] font-semibold tracking-wide mt-0.5 leading-snug px-1 line-clamp-2">
+                    {tagline}
+                  </span>
                 </div>
-                <div className="flex flex-wrap gap-1 mt-1">
-                  {s.tenses.map(t => (
-                    <span key={t.id} className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full">{t.name}</span>
-                  ))}
+              </div>
+              <div className="bg-white/[0.03] backdrop-blur-md p-3 flex flex-col gap-1.5 border-t border-white/10">
+                <div className="text-sm font-medium text-white truncate">{s.label}阶段语法</div>
+                <div className="text-xs text-gray-400 line-clamp-2 leading-relaxed">{previewLine}</div>
+                <div className="w-full h-1 bg-slate-800/60 rounded-full overflow-hidden mt-0.5">
+                  <div className="h-full bg-blue-400 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+                </div>
+                <div className="text-xs text-gray-500">
+                  {s.tenses.length} 专题 · {allData.length} 句 · {percent}%
                 </div>
               </div>
             </button>

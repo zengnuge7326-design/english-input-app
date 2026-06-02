@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { analyzeSyntax } from '../utils/syntaxAnalysis'
+import { GRAMMAR_LEARNING_UI_ENABLED } from '../config/grammarUi'
 
 // Play a single word using the dictionaryapi.dev audio first, then TTS fallback
 async function speakWord(word) {
@@ -54,24 +55,33 @@ function parseTokens(en) {
   })
 }
 
-async function fetchPhonetic(word) {
+const phoneticCache = {}
+
+async function fetchPhonetic(word, signal) {
+  if (phoneticCache[word] !== undefined) return phoneticCache[word]
   try {
-    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    if (!res.ok) return ''
+    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`, { signal })
+    if (!res.ok) { phoneticCache[word] = ''; return '' }
     const data = await res.json()
-    return data[0]?.phonetic || data[0]?.phonetics?.find(p => p.text)?.text || ''
+    const result = data[0]?.phonetic || data[0]?.phonetics?.find(p => p.text)?.text || ''
+    phoneticCache[word] = result
+    return result
   } catch {
     return ''
   }
 }
 
+const wordInfoCache = {}
+
 async function fetchWordInfo(word) {
+  if (wordInfoCache[word] !== undefined) return wordInfoCache[word]
   try {
-    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    if (!res.ok) return null
+    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`,
+      { signal: AbortSignal.timeout(8000) })
+    if (!res.ok) { wordInfoCache[word] = null; return null }
     const data = await res.json()
     const entry = data[0]
-    if (!entry) return null
+    if (!entry) { wordInfoCache[word] = null; return null }
     const meanings = (entry.meanings || []).slice(0, 3).map(m => ({
       pos: m.partOfSpeech,
       defs: (m.definitions || []).slice(0, 2).map(d => ({
@@ -79,7 +89,9 @@ async function fetchWordInfo(word) {
         example: d.example || '',
       })),
     }))
-    return { phonetic: entry.phonetic || entry.phonetics?.find(p => p.text)?.text || '', meanings }
+    const result = { phonetic: entry.phonetic || entry.phonetics?.find(p => p.text)?.text || '', meanings }
+    wordInfoCache[word] = result
+    return result
   } catch {
     return null
   }
@@ -93,12 +105,22 @@ const POS_LABEL = {
 }
 
 function WordCard({ token, color }) {
-  const [phonetic, setPhonetic] = useState(null)
+  const [phonetic, setPhonetic] = useState(
+    token.word && phoneticCache[token.word] !== undefined ? phoneticCache[token.word] : null
+  )
 
   useEffect(() => {
     if (!token.word) return
+    if (phoneticCache[token.word] !== undefined) {
+      setPhonetic(phoneticCache[token.word])
+      return
+    }
     setPhonetic(null)
-    fetchPhonetic(token.word).then(setPhonetic)
+    const controller = new AbortController()
+    fetchPhonetic(token.word, controller.signal).then(p => {
+      if (!controller.signal.aborted) setPhonetic(p)
+    })
+    return () => controller.abort()
   }, [token.word])
 
   if (!token.word) return (
@@ -191,7 +213,7 @@ function MorphPanel({ sentence, onClose }) {
   )
 }
 
-export default function DictionaryCard({ sentence, onClose }) {
+export default function DictionaryCard({ sentence, onClose, grammarTopicMeta }) {
   const tokens = parseTokens(sentence.en)
   const [showMorph, setShowMorph] = useState(false)
   const [showSyntax, setShowSyntax] = useState(false)
@@ -216,6 +238,34 @@ export default function DictionaryCard({ sentence, onClose }) {
         className="bg-slate-800 border border-gray-700 rounded-2xl p-5 w-full max-w-2xl shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
+        {GRAMMAR_LEARNING_UI_ENABLED && grammarTopicMeta && (
+          <div className="mb-4 pb-3 border-b border-slate-700 text-left space-y-2">
+            <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider">本课语法</div>
+            <div className="text-sm font-semibold text-white">
+              {grammarTopicMeta.titleZh}
+              {grammarTopicMeta.titleEn && (
+                <span className="text-gray-500 font-normal text-xs ml-1.5">{grammarTopicMeta.titleEn}</span>
+              )}
+            </div>
+            {grammarTopicMeta.grammarPurpose?.length > 0 && (
+              <ul className="text-xs text-gray-400 space-y-1 list-disc pl-4 leading-relaxed">
+                {grammarTopicMeta.grammarPurpose.slice(0, 2).map((line, i) => (
+                  <li key={i}>{line}</li>
+                ))}
+              </ul>
+            )}
+            {grammarTopicMeta.coreRules?.length > 0 && (
+              <div>
+                <div className="text-[10px] font-semibold text-amber-500/90 uppercase tracking-wider mb-0.5">核心规则</div>
+                <ul className="text-xs text-gray-400 space-y-0.5 list-decimal pl-4">
+                  {grammarTopicMeta.coreRules.map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
         {/* Words row */}
         <div className="flex flex-wrap gap-x-6 gap-y-4 justify-center">
           {tokens.map((t, i) => (

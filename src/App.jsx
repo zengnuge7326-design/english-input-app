@@ -408,7 +408,7 @@ export default function App() {
   const [navActivePos, setNavActivePos] = useState(null)
 
   useEffect(() => {
-    if (!menuOpen || !isLightMode) return
+    if (!menuOpen) return
     requestAnimationFrame(() => {
       const container = navSlideRef.current
       if (!container) return
@@ -416,6 +416,20 @@ export default function App() {
       if (active) setNavActivePos({ top: active.offsetTop, h: active.offsetHeight })
     })
   }, [menuOpen, tab, showSettings, isLightMode])
+
+  // 触屏：根据 touch.clientY 找到落在哪个 nav 项上，并把滑块挪过去
+  function navSlideFromTouch(touchY) {
+    const container = navSlideRef.current
+    if (!container) return
+    const items = container.querySelectorAll('[data-nav-item="true"]')
+    for (const el of items) {
+      const r = el.getBoundingClientRect()
+      if (touchY >= r.top && touchY <= r.bottom) {
+        setNavSlidePos({ top: el.offsetTop, h: el.offsetHeight })
+        return
+      }
+    }
+  }
 
   // ── 公告 & 留言中心 ────────────────────────────────────
   const [announcement, setAnnouncement] = useState('')
@@ -489,7 +503,7 @@ export default function App() {
   }, [playGoalSound, playGoalFw])
   const xp = useXP(token, handleGoalReached)
 
-  // 水晶系统
+  // 钻石系统
   const crystal = useCrystal(token)
   const [showCrystalPanel, setShowCrystalPanel] = useState(false)
   const [crystalPulse, setCrystalPulse] = useState(0)
@@ -882,11 +896,11 @@ export default function App() {
           <span className="text-sm font-bold tabular-nums">{xp.streak}</span>
         </button>
 
-        {/* 水晶徽章（紧邻 🔥 右侧） */}
+        {/* 钻石徽章（紧邻 🔥 右侧） */}
         <button
           type="button"
           onClick={() => setShowCrystalPanel(true)}
-          title={`水晶塔 Lv.${crystal.towerLevel} · 共 ${crystal.total} 颗水晶`}
+          title={`钻石塔 Lv.${crystal.towerLevel} · 共 ${crystal.total} 颗钻石`}
           className={`pointer-events-auto fixed z-[101] flex h-11 items-center gap-1 rounded-xl border backdrop-blur-sm px-2.5 shadow-lg transition-colors
             ${isHomeLight
               ? 'border-[#b794f6]/40 bg-[rgba(235,222,240,0.75)] text-[#6b21a8] hover:bg-[rgba(235,222,240,0.95)]'
@@ -908,7 +922,7 @@ export default function App() {
           </div>
         )}
 
-        {/* 水晶飘字 + 面板（全局） */}
+        {/* 钻石飘字 + 面板（全局） */}
         <CrystalFloat recent={crystal.recent} onPlaySound={playCrystal} />
         {showCrystalPanel && (
           <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
@@ -996,29 +1010,31 @@ export default function App() {
 
           <div className={`shrink-0 border-t ${isHomeLight ? 'lg-divider' : 'border-slate-700/70'}`} />
 
-          {/* 导航菜单 — 亮色模式加滑动薰衣草玻璃高亮 */}
+          {/* 导航菜单 — 滑动薰衣草玻璃高亮（明暗双模 + 触屏跟随，禁用页面滚动） */}
           <div
             ref={navSlideRef}
             className="relative flex flex-col gap-0.5"
+            style={{ touchAction: 'none' }}
             onMouseLeave={() => setNavSlidePos(null)}
+            onTouchStart={(e) => { e.preventDefault(); if (e.touches[0]) navSlideFromTouch(e.touches[0].clientY) }}
+            onTouchMove={(e) => { e.preventDefault(); if (e.touches[0]) navSlideFromTouch(e.touches[0].clientY) }}
+            onTouchEnd={() => setNavSlidePos(null)}
           >
-            {/* 滑动高亮块（亮色模式专用） */}
-            {isHomeLight && (navSlidePos || navActivePos) && (
+            {/* 滑动高亮块（明暗都启用） */}
+            {(navSlidePos || navActivePos) && (
               <div
                 aria-hidden
+                className={`nav-slide-highlight ${isHomeLight ? 'is-light' : 'is-dark'}`}
                 style={{
                   position: 'absolute',
                   left: 0, right: 0,
                   top: (navSlidePos || navActivePos).top,
                   height: (navSlidePos || navActivePos).h,
-                  borderRadius: 12,
+                  borderRadius: 14,
                   pointerEvents: 'none',
                   zIndex: 0,
                   willChange: 'top',
                   transition: 'top 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.2s ease, opacity 0.15s ease',
-                  background: 'linear-gradient(158deg, rgba(255,255,255,0.88) 0%, rgba(185,175,228,0.56) 38%, rgba(168,155,220,0.44) 100%)',
-                  border: '1px solid rgba(255,255,255,0.84)',
-                  boxShadow: '0 6px 22px rgba(185,175,228,0.30), 0 2px 8px rgba(185,175,228,0.16), inset 0 1.5px 0 rgba(255,255,255,0.95)',
                 }}
               />
             )}
@@ -1028,12 +1044,13 @@ export default function App() {
               return (
                 <button key={item.id}
                   data-nav-active={active ? 'true' : undefined}
+                  data-nav-item="true"
                   onClick={item.onClick}
-                  onMouseEnter={isHomeLight ? (e) => {
+                  onMouseEnter={(e) => {
                     setNavSlidePos({ top: e.currentTarget.offsetTop, h: e.currentTarget.offsetHeight })
-                  } : undefined}
+                  }}
                   style={{ position: 'relative', zIndex: 1 }}
-                  className={`${navItemClass(item)} shrink-0 ${isHomeLight ? 'nav-slide-item' : 'px-2 text-sm'}`}
+                  className={`${navItemClass(item)} shrink-0 nav-slide-item ${isHomeLight ? '' : 'px-2 text-sm'}`}
                 >
                   {item.Icon ? <item.Icon size={navIconSize} /> : <span className="w-[17px] text-center">{item.iconText}</span>}
                   <span className="truncate">{item.label}</span>

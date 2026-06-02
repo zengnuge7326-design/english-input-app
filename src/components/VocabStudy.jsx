@@ -1,8 +1,41 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import pepWords from '../data/pep_words.json'
 import renaiJuniorWords from '../data/renai_junior_words.json'
+import bsdaWords from '../data/bsda_words.json'
 import { IconSpeaker, IconArrowLeft } from './Icons'
 import PageBackBar from './PageBackBar'
+import WordMatch from './WordMatch'
+import OceanBg from './OceanBg'
+import { useSpeechRecognition, matchWord } from '../hooks/useSpeechRecognition'
+import { useSound } from '../hooks/useSound'
+
+// 蓝色声波动画（跟读 listening 时显示）
+function SoundWave({ active }) {
+  const delays = [0, 0.15, 0.3, 0.15, 0]
+  return (
+    <span className="flex items-center justify-center gap-[3px] h-5">
+      {delays.map((d, i) => (
+        <span key={i} className="du-wave-bar" style={{
+          height: '100%',
+          animationDelay: `${d}s`,
+          animationPlayState: active ? 'running' : 'paused',
+        }} />
+      ))}
+    </span>
+  )
+}
+
+// 麦克风图标（跟读未启动时显示）
+function MicGlyph() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+      <line x1="12" y1="19" x2="12" y2="23"/>
+      <line x1="8" y1="23" x2="16" y2="23"/>
+    </svg>
+  )
+}
 
 // ── IPA syllabification (MOP) — mirrors gen_syllable_audio.py ────────────────
 
@@ -133,7 +166,8 @@ function syllabifyOne(word) {
 function syllabify(word) {
   let raw = []
   if (word.includes(' ')) {
-    word.split(' ').forEach((w, i) => { if (i > 0) raw.push(' '); syllabifyOne(w).forEach(s => raw.push(s)) })
+    // Phrase: each space-separated token is ONE colored unit — no intra-word syllabification
+    word.split(' ').forEach((w, i) => { if (i > 0) raw.push(' '); if (w) raw.push(w) })
   } else if (word.includes('-')) {
     word.split('-').forEach((w, i) => { if (i > 0) raw.push('-'); syllabifyOne(w).forEach(s => raw.push(s)) })
   } else {
@@ -158,6 +192,8 @@ const urlCache = new Map()   // word -> mp3 url | null
 const bufCache = new Map()   // url  -> AudioBuffer
 
 async function fetchUrl(word) {
+  // Multi-word phrases (e.g. "eat breakfast") → skip dict API, always use TTS
+  if (word.includes(' ')) return null
   const key = word.toLowerCase().split(' ')[0]
   if (urlCache.has(key)) return urlCache.get(key)
   try {
@@ -225,6 +261,8 @@ function useWordAudio(word, ipa = '', speed = 1.0) {
   const rawIPASyls   = useMemo(() => syllabifyIPA(ipa), [ipa])
   // Force IPA chunk count to match word chunk count
   const ipaSyllables = useMemo(() => {
+    // Phrase: show IPA as a single unsplit string
+    if (word.includes(' ')) return rawIPASyls.length ? [rawIPASyls.join('')] : []
     const n = realSyls.length
     if (!rawIPASyls.length || n === 0) return rawIPASyls
     if (rawIPASyls.length === n) return rawIPASyls
@@ -237,7 +275,7 @@ function useWordAudio(word, ipa = '', speed = 1.0) {
       const end   = Math.round((i + 1) * chunkSize)
       return chars.slice(start, end).join('')
     }).filter(Boolean)
-  }, [rawIPASyls, realSyls.length])
+  }, [rawIPASyls, realSyls.length, word])
 
   const [activeSylIdx, setActiveSylIdx] = useState(-1)
   const [loading, setLoading]           = useState(false)
@@ -326,7 +364,7 @@ function SyllableWord({ syllables, activeSylIdx, onSylClick, size = 'text-4xl' }
   return (
     <span className={`${size} font-bold tracking-wide select-none inline-flex items-baseline flex-wrap`}>
       {syllables.map((s, i) => {
-        if (s.isSep) return <span key={i} className="text-gray-500">{s.text}</span>
+        if (s.isSep) return <span key={i} className="inline-block" style={{ width: '0.28em' }} />
         const col = SYL_COLORS[s.idx % SYL_COLORS.length]
         const active = activeSylIdx === s.idx
         const prevIsRealSyl = i > 0 && !syllables[i - 1].isSep
@@ -472,7 +510,7 @@ function useRecorder() {
 
 // ── Book selector ─────────────────────────────────────────────────────────────
 
-const VOCAB_BOOKS = [...pepWords, ...renaiJuniorWords]
+const VOCAB_BOOKS = [...pepWords, ...renaiJuniorWords, ...bsdaWords]
 
 const GRADE_COLORS = {
   3: 'from-green-700 to-green-900',
@@ -482,6 +520,12 @@ const GRADE_COLORS = {
   7: 'from-teal-700 to-teal-900',
   8: 'from-cyan-700 to-cyan-900',
   9: 'from-indigo-700 to-indigo-900',
+  '高中': 'from-rose-700 to-rose-900',
+}
+
+function bookSubtitle(book) {
+  if (typeof book.grade !== 'number') return `${book.grade} · 北师大版`
+  return `${book.grade}年级 · ${book.sem === 'up' ? '上' : '下'}册`
 }
 
 function BookGrid({ onSelect, onBack }) {
@@ -493,7 +537,7 @@ function BookGrid({ onSelect, onBack }) {
         {VOCAB_BOOKS.map(book => (
           <button key={book.bookName} onClick={() => onSelect(book)}
             className={`rounded-2xl bg-gradient-to-br ${GRADE_COLORS[book.grade] || 'from-slate-700 to-slate-900'} p-6 text-left hover:opacity-90 active:scale-95 transition-all`}>
-            <div className="text-sm text-white/60 mb-1">{book.grade}年级 · {book.sem === 'up' ? '上' : '下'}册</div>
+            <div className="text-sm text-white/60 mb-1">{bookSubtitle(book)}</div>
             <div className="text-white font-bold text-lg">{book.bookName}</div>
             <div className="text-white/50 text-sm mt-2">{book.units.length} 单元 · {book.units.reduce((s, u) => s + u.words.length, 0)} 词</div>
           </button>
@@ -524,31 +568,38 @@ function unitChunkLabel(unitNum, chunkIndex, totalChunks) {
   return `Unit ${unitNum} · ${chunkIndex + 1}/${totalChunks}`
 }
 
-function UnitGrid({ book, progress, onSelect, onBack }) {
+function UnitGrid({ book, progress, onSelect, onBack, isMember = true, onShowLogin }) {
+  const allChunks = book.units.flatMap((unit, ui) => {
+    const parts = chunkUnitWords(unit.words)
+    return parts.map((half, hi) => ({ unit, ui, half, hi, parts }))
+  })
+  const halfIdx = Math.ceil(allChunks.length / 2)
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
       <PageBackBar onBack={onBack} label="返回选册" />
       <h2 className="text-white text-xl font-bold mb-4">{book.bookName}</h2>
+      {!isMember && (
+        <p className="text-xs text-gray-500 mb-4">前半部分单元免费体验，开通会员解锁全部单元</p>
+      )}
       <div className="grid grid-cols-2 gap-4">
-        {book.units.flatMap((unit, ui) => {
-          const parts = chunkUnitWords(unit.words)
-          return parts.map((half, hi) => {
-            const label = unitChunkLabel(unit.unit, hi, parts.length)
-            const total = half.words.length
-            const known = half.words.filter((_, wi) => (progress[`vocab_${book.bookName}_${ui}_${half.offset + wi}`] || 0) >= 2).length
-            const pct = total ? Math.round(known / total * 100) : 0
-            return (
-              <button key={`${ui}-${hi}`} onClick={() => onSelect({ ...unit, words: half.words }, ui, half.offset)}
-                className="rounded-xl bg-slate-800 border border-slate-700 hover:border-gray-600 p-5 text-left transition-all active:scale-95">
-                <div className="text-xs text-gray-500 mb-1">{label}</div>
-                <div className="text-white font-semibold text-base mb-3">{unit.title}</div>
-                <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden mb-1.5">
-                  <div className="h-full bg-blue-500 rounded-full" style={{ width: `${pct}%` }} />
-                </div>
-                <div className="text-xs text-gray-500">{known}/{total} 已掌握</div>
-              </button>
-            )
-          })
+        {allChunks.map(({ unit, ui, half, hi, parts }, idx) => {
+          const label = unitChunkLabel(unit.unit, hi, parts.length)
+          const total = half.words.length
+          const known = half.words.filter((_, wi) => (progress[`vocab_${book.bookName}_${ui}_${half.offset + wi}`] || 0) >= 2).length
+          const pct = total ? Math.round(known / total * 100) : 0
+          const locked = !isMember && idx >= halfIdx
+          return (
+            <button key={`${ui}-${hi}`}
+              onClick={() => locked ? onShowLogin?.() : onSelect({ ...unit, words: half.words }, ui, half.offset)}
+              className={`rounded-xl bg-slate-800 border border-slate-700 hover:border-gray-600 p-5 text-left transition-all active:scale-95 relative ${locked ? 'opacity-60' : ''}`}>
+              <div className="text-xs text-gray-500 mb-1">{label} {locked && '🔒'}</div>
+              <div className="text-white font-semibold text-base mb-3">{unit.title}</div>
+              <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden mb-1.5">
+                <div className="h-full bg-blue-500 rounded-full" style={{ width: `${pct}%` }} />
+              </div>
+              <div className="text-xs text-gray-500">{known}/{total} 已掌握</div>
+            </button>
+          )
         })}
       </div>
     </div>
@@ -557,7 +608,7 @@ function UnitGrid({ book, progress, onSelect, onBack }) {
 
 // ── Flash card ────────────────────────────────────────────────────────────────
 
-function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onProgressChange }) {
+function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onProgressChange, settings, onXp, onCrystal }) {
   const [idx, setIdx]             = useState(0)
   const [speed, setSpeed]         = useState(1.0)
   const [localSeen, setLocalSeen] = useState({})
@@ -565,8 +616,60 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   const [moXieDone, setMoXieDone] = useState({}) // idx → true, tracks correct dictations
   const [moInput, setMoInput]     = useState('')
   const [moResult, setMoResult]   = useState(null)
+  const [showMatch, setShowMatch]  = useState(false)
   const moInputRef                = useRef()
-  const { recState, recErr, startRec, stopRec, playRec, reset: resetRec } = useRecorder()
+  // 跟读 / 译读 模式（读单词→识别→翻卡）
+  const [duMode, setDuMode]   = useState(null)    // null | 'read'（看英文读英文） | 'translate'（看中文读英文）
+  const [flipped, setFlipped] = useState(false)   // 当前卡是否已翻面
+  const [duResult, setDuResult] = useState(null)  // 'pass' | 'fail' | 'skip' | null
+  const [duMsg, setDuMsg]     = useState('')
+  const [duMarks, setDuMarks] = useState({})      // idx → 'pass' | 'skip'
+  const { supported: srSupported, listening: srListening, heard: srHeard, listen: srListen, stop: srStop } = useSpeechRecognition()
+  const duOn = duMode != null
+  const cancelTokenRef = useRef(0)
+  // ── 奖励相关 ────────────────────────────────────────
+  const comboRef = useRef(0)
+  const statsRef = useRef({ pass: 0, skip: 0 })
+  const [xpFlies, setXpFlies] = useState([])
+
+  function flyXp(amount, color = '#fde68a') {
+    const id = Date.now() + Math.random()
+    setXpFlies(f => [...f, { id, amount, color }])
+    setTimeout(() => setXpFlies(f => f.filter(x => x.id !== id)), 1100)
+  }
+  function rewardPass() {
+    statsRef.current.pass += 1
+    comboRef.current += 1
+    const combo = comboRef.current
+    const base = 2 + (combo >= 3 ? 1 : 0)
+    onXp?.(base)
+    flyXp(base, combo >= 3 ? '#c4b5fd' : '#fde68a')
+    try { playBubble?.() } catch {}
+    if (combo === 5) onCrystal?.('purple', 1, 'combo_5', { combo, source: 'vocab_read', book: book.bookName, unit: unitIdx })
+    else if (combo === 10) onCrystal?.('purple', 2, 'combo_10', { combo, source: 'vocab_read', book: book.bookName, unit: unitIdx })
+  }
+  function rewardSkip() {
+    statsRef.current.skip += 1
+    comboRef.current = 0
+  }
+  function rewardUnitComplete() {
+    const { pass, skip } = statsRef.current
+    const total = unit.words.length
+    onXp?.(5)
+    flyXp(5, '#60a5fa')
+    onCrystal?.('blue', 1, 'vocab_read_done', { book: book.bookName, unit: unitIdx, pass, skip, total })
+    try { playFireworks?.() } catch {}
+    if (skip === 0 && pass === total) {
+      onXp?.(10)
+      setTimeout(() => flyXp(10, '#86efac'), 300)
+      onCrystal?.('green', 2, 'vocab_read_perfect', { book: book.bookName, unit: unitIdx, total })
+    }
+  }
+  // 进入跟读时重置 combo / stats
+  useEffect(() => {
+    if (duOn) { comboRef.current = 0; statsRef.current = { pass: 0, skip: 0 } }
+  }, [duOn])
+  const { playCorrect, playError, playVictory, playFireworks, playBubble } = useSound(settings)
   const word = unit.words[idx]
   const pendingPlayRef = useRef(false)
   const { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl } = useWordAudio(word.word, word.ipa || '', speed)
@@ -593,11 +696,123 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
     }
   }, [idx])
 
-  useEffect(() => { resetRec(); setMoInput(''); setMoResult(null) }, [idx])
+  useEffect(() => { setMoInput(''); setMoResult(null); if (!duOn) { setFlipped(false); setDuResult(null); setDuMsg('') } }, [idx])
 
   useEffect(() => {
     if (pendingPlayRef.current) { pendingPlayRef.current = false; playFull() }
   }, [idx])
+
+  // ── 跟读 / 译读 会话驱动：识别→翻卡，3 次失败跳过；无声自动重试 2 次不计失败 ──
+  // alive 通过 cancelToken 双重保险：组件卸载、idx/duMode 变化、或手动按钮中断都会 cancel。
+  useEffect(() => {
+    if (!duMode) return
+    const w = unit.words[idx]
+    const myToken = ++cancelTokenRef.current
+    let fails = 0          // 真正没读对的次数（满 3 跳过）
+    let softTries = 0      // 无声/中断软重试次数（不计失败）
+    let timer
+
+    function alive() { return cancelTokenRef.current === myToken }
+
+    function nextCard() {
+      if (!alive()) return
+      if (idx < unit.words.length - 1) setIdx(i => i + 1)
+      else {
+        rewardUnitComplete()
+        setDuMode(null); setFlipped(false); setDuResult('pass'); setDuMsg('🎉 全部读完！'); playVictory?.()
+      }
+    }
+
+    function attempt() {
+      if (!alive()) return
+      setDuResult(null)
+      setDuMsg('🎤 看中文，读出英文…')
+      srListen({
+        onResult: (text, alts) => {
+          if (!alive()) return
+          if (typeof window !== 'undefined') console.debug('[跟读]', { target: w.word, heard: text, alts })
+          const ok = matchWord(w.word, alts && alts.length ? alts : [text])
+          if (ok) {
+            softTries = 0
+            playCorrect?.()
+            rewardPass()
+            setFlipped(true); setDuResult('pass'); setDuMsg('✓ 读对了！')
+            setDuMarks(m => ({ ...m, [idx]: 'pass' }))
+            saveProgress(book.bookName, unitIdx, wordOffset + idx, 2)
+            onProgressChange()
+            timer = setTimeout(() => { if (alive()) { setFlipped(false); nextCard() } }, 1200)
+          } else {
+            softTries = 0
+            miss(`没听清「${text || '…'}」`)
+          }
+        },
+        onError: (err) => {
+          if (!alive()) return
+          if (err === 'unsupported') { setDuMsg('此浏览器不支持语音识别，请用 Chrome 打开'); setDuMode(null); return }
+          if (err === 'not-allowed' || err === 'service-not-allowed') { setDuMsg('请允许麦克风权限后重试'); setDuMode(null); return }
+          if (err === 'aborted') return
+          if (err === 'no-speech' || err === 'audio-capture' || err === 'network') {
+            if (softTries < 2) {
+              softTries += 1
+              setDuMsg(`🔇 没听到声音，请大声一点（重试 ${softTries}/2）`)
+              timer = setTimeout(attempt, 300)
+              return
+            }
+            softTries = 0
+            miss('一直没听到声音')
+            return
+          }
+          softTries = 0
+          miss('识别出错')
+        },
+      })
+    }
+
+    function miss(reason) {
+      if (!alive()) return
+      fails += 1
+      playError?.()
+      if (fails >= 3) {
+        rewardSkip()
+        setDuResult('skip'); setDuMsg(`${reason}，已跳过：${w.word}`)
+        setDuMarks(m => ({ ...m, [idx]: m[idx] || 'skip' }))
+        timer = setTimeout(() => { if (alive()) nextCard() }, 1300)
+      } else {
+        setDuResult('fail'); setDuMsg(`${reason}，再读一次 (${fails}/3)`)
+        timer = setTimeout(() => { if (alive()) attempt() }, 950)
+      }
+    }
+
+    timer = setTimeout(attempt, 450)
+    return () => { cancelTokenRef.current += 1; clearTimeout(timer); srStop() }
+  }, [idx, duMode])
+
+  // 手动判定（兜底）：识别卡住时，用户可点"我读对了"或"跳过"立即推进
+  function manualVerdict(verdict) {
+    if (!duOn) return
+    cancelTokenRef.current += 1   // 中断当前识别链
+    srStop()
+    const w = unit.words[idx]
+    const goNextOrEnd = () => {
+      if (idx < unit.words.length - 1) setIdx(i => i + 1)
+      else { rewardUnitComplete(); setDuMode(null); setFlipped(false); playVictory?.() }
+    }
+    if (verdict === 'pass') {
+      playCorrect?.()
+      rewardPass()
+      setDuMarks(m => ({ ...m, [idx]: 'pass' }))
+      saveProgress(book.bookName, unitIdx, wordOffset + idx, 2)
+      onProgressChange()
+      setFlipped(true); setDuResult('pass'); setDuMsg('✓ 标记为已会')
+      setTimeout(() => { setFlipped(false); goNextOrEnd() }, 750)
+    } else {
+      playError?.()
+      rewardSkip()
+      setDuMarks(m => ({ ...m, [idx]: 'skip' }))
+      setDuResult('skip'); setDuMsg(`已跳过：${w.word}`)
+      setTimeout(goNextOrEnd, 650)
+    }
+  }
 
   useEffect(() => {
     if (moXie && moInputRef.current) moInputRef.current.focus()
@@ -615,11 +830,18 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
     else onBack()
   }
 
-  function handleRecord() {
-    if (recState === 'recording') { stopRec(); return }
-    if (recState === 'recorded')  { playRec(); return }
-    if (recState === 'preparing') return
-    startRec()
+  function startDu(mode) {
+    if (!srSupported) { setDuMsg('此浏览器不支持语音识别，请用 Chrome 打开'); return }
+    if (moXie) setMoXie(false)
+    setDuMarks({}); setDuResult(null); setDuMode(mode)
+  }
+  function stopDu() {
+    setDuMode(null); srStop(); setFlipped(false); setDuResult(null); setDuMsg('')
+  }
+  function toggleDu(mode) {
+    if (duMode === mode) stopDu()
+    else if (duMode) { stopDu(); setTimeout(() => startDu(mode), 60) }
+    else startDu(mode)
   }
 
   function checkMoXie() {
@@ -635,10 +857,11 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
     }
   }
 
-  const recCls = recState === 'recording' ? 'bg-red-700 border-red-500 text-white animate-pulse'
-               : recState === 'recorded'   ? 'bg-green-800 border-green-600 text-green-200'
-               : recState === 'preparing'  ? 'bg-gray-700 border-gray-600 text-gray-400 opacity-60'
-               :                             'bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700'
+  const micCls = !duOn
+    ? 'bg-gray-800 border-gray-700 text-blue-300 hover:bg-gray-700'
+    : duResult === 'fail' || duResult === 'skip' ? 'bg-red-700 border-red-500 text-white'
+    : duResult === 'pass' ? 'bg-green-700 border-green-500 text-white'
+    : 'bg-blue-600 border-blue-400 text-white shadow-[0_0_14px_rgba(59,130,246,0.6)]'
 
   const seen = (progress[`vocab_${book.bookName}_${unitIdx}_${wordOffset + idx}`] || 0) >= 1
   const gridRows = Math.ceil(unit.words.length / 3)
@@ -646,66 +869,144 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-2 flex flex-col gap-2" style={{ height: 'calc(100vh - 110px)' }}>
 
-      {/* Header: 进度 | 已学习badge */}
-      <div className="flex items-center justify-between shrink-0">
-        <button
-          type="button"
-          onClick={onBack}
-          className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
-          aria-label="返回单元列表"
-        >
-          <IconArrowLeft size={18} />
-        </button>
-        <span className="text-gray-500 text-sm">{idx + 1} / {unit.words.length}</span>
-        <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${seen ? 'bg-blue-900/50 text-blue-400' : 'bg-gray-800 text-gray-600'}`}>
-          {seen ? '已学习' : '未学习'}
-        </span>
-      </div>
+      {/* 配对弹窗（放在最外层，避免被 du-flip-card 的 perspective 困住） */}
+      {showMatch && (
+        <WordMatch
+          words={unit.words}
+          onClose={() => setShowMatch(false)}
+          settings={settings}
+          onXp={onXp}
+          onCrystal={onCrystal}
+        />
+      )}
 
-      {/* 主卡 — 紧凑布局 */}
-      {!moXie ? (
-        <div
-          className="shrink-0 w-full bg-slate-800 border border-gray-700 rounded-xl flex flex-col items-center gap-1.5 py-3 px-4 transition-all">
+      {/* XP 飞向顶部 🔥 徽章 */}
+      {xpFlies.map(f => (
+        <div key={f.id}
+          className="xp-fly pointer-events-none fixed text-2xl font-extrabold select-none z-[200]"
+          style={{
+            color: f.color,
+            textShadow: '0 0 12px rgba(251,191,36,0.9), 0 2px 6px rgba(0,0,0,0.6)',
+            left: '50%',
+            top: '38%',
+          }}>
+          +{f.amount} XP
+        </div>
+      ))}
 
-          {/* mic | word | speed× | 默写 */}
-          <div className="flex justify-center items-center gap-2" onClick={e => e.stopPropagation()}>
-            <button onClick={handleRecord}
-              disabled={recState === 'preparing'}
-              className={`flex items-center justify-center w-11 h-11 rounded-xl border transition-all active:scale-95 shrink-0 ${recCls}`}>
-              {recState === 'recording' ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
-              ) : recState === 'recorded' ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-              ) : recState === 'preparing' ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="animate-spin opacity-60"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                  <line x1="12" y1="19" x2="12" y2="23"/>
-                  <line x1="8" y1="23" x2="16" y2="23"/>
-                </svg>
-              )}
+      {/* Header: back | 大渐变进度条 | 计数 + 状态 */}
+      {(() => {
+        const total = unit.words.length
+        const masteredCount = unit.words.filter((_, i) => (progress[`vocab_${book.bookName}_${unitIdx}_${wordOffset + i}`] || 0) >= 2).length
+        const sessionMarked = Object.keys(duMarks).length
+        const frac = Math.min(1, Math.max(masteredCount, sessionMarked, idx + 1) / Math.max(1, total))
+        const full = frac >= 0.999
+        return (
+          <div className="flex items-center gap-3 shrink-0 relative" style={{ zIndex: 2 }}>
+            <button
+              type="button"
+              onClick={onBack}
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors shrink-0"
+              aria-label="返回单元列表"
+            >
+              <IconArrowLeft size={18} />
             </button>
-            <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-5xl" />
+            {/* 渐变进度条（与 ExerciseView 一致） */}
+            <div className="flex-1 min-w-0">
+              <div className="w-full h-3 rounded-full bg-slate-800/80 overflow-hidden">
+                <div className="h-full rounded-full relative"
+                  style={{
+                    width: `${frac * 100}%`,
+                    background: full
+                      ? 'linear-gradient(90deg,#f59e0b,#fbbf24)'
+                      : 'linear-gradient(90deg,#3b82f6,#22d3ee)',
+                    transition: 'width .45s cubic-bezier(.34,1.56,.64,1), background .3s',
+                  }}>
+                  <div className="absolute left-1 right-1 top-[2px] h-[3px] rounded-full bg-white/30" />
+                </div>
+              </div>
+            </div>
+            <span className="text-gray-500 text-sm tabular-nums shrink-0">{idx + 1} / {total}</span>
+            <span className={`text-xs px-2.5 py-1 rounded-full font-medium shrink-0 ${seen ? 'bg-blue-900/50 text-blue-400' : 'bg-gray-800 text-gray-600'}`}>
+              {seen ? '已学习' : '未学习'}
+            </span>
+          </div>
+        )
+      })()}
+
+      {/* 主卡 — 跟读翻卡 */}
+      {!moXie ? (
+        <div className={`du-flip-card shrink-0 w-full ${duResult === 'fail' || duResult === 'skip' ? 'du-shake' : ''}`} key={`flip-${idx}-${duResult}`}>
+          <div className={`du-flip-inner ${flipped ? 'is-flipped' : ''}`}>
+            {/* 正面 */}
+            <div className="du-flip-front w-full bg-slate-800 border border-gray-700 rounded-xl flex flex-col items-center gap-1.5 py-3 px-4 transition-all">
+
+          {/* 麦克风 | 词/中文 | speed× | 默写 | 配对 */}
+          <div className="flex justify-center items-center gap-2" onClick={e => e.stopPropagation()}>
+            <button onClick={e => { e.stopPropagation(); toggleDu('translate') }}
+              title="跟读：看中文，读出英文；读对自动翻卡显示单词"
+              className={`flex items-center justify-center w-11 h-11 rounded-xl border transition-all active:scale-95 shrink-0 ${micCls}`}>
+              {duOn && !duResult ? <SoundWave active={srListening} /> : <MicGlyph />}
+            </button>
+            {duOn ? (
+              <span className="text-2xl sm:text-3xl font-bold text-blue-300 text-center px-1 min-w-0 break-words leading-tight">{word.zh}</span>
+            ) : (
+              <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-5xl" />
+            )}
             <button onClick={e => { e.stopPropagation(); cycleSpeed() }}
               className="w-11 h-11 flex items-center justify-center bg-gray-800 hover:bg-gray-700 border border-gray-700 text-yellow-400 rounded-xl text-sm font-mono font-bold transition-all active:scale-95 shrink-0">
               {speed}×
             </button>
             <button onClick={e => { e.stopPropagation(); toggleMoXie() }}
-              className={`min-h-11 px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 shrink-0 leading-tight text-center
+              disabled={duOn}
+              className={`min-h-11 px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 shrink-0 leading-tight text-center disabled:opacity-40
                 ${moXie ? 'bg-purple-700 border-purple-500 text-white' : 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700'}`}>
               默写
             </button>
+            <button onClick={e => { e.stopPropagation(); setShowMatch(true) }}
+              disabled={duOn}
+              className="min-h-11 px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 shrink-0 leading-tight text-center bg-gray-800 border-gray-700 text-teal-400 hover:bg-gray-700 disabled:opacity-40">
+              配对
+            </button>
           </div>
-
-          <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onPlayWord={playFull} />
+          {!duOn && <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onPlayWord={playFull} />}
           {loading && <div className="text-blue-400 text-xs animate-pulse">加载音频…</div>}
-          {recState === 'preparing' && <div className="text-gray-400 text-xs animate-pulse">准备录音…</div>}
-          {recState === 'recording' && <div className="text-red-400 text-xs animate-pulse">● 录音中（最长4秒）</div>}
-          {recState === 'recorded' && <div className="text-green-400 text-xs">已录音 · 点麦克风播放</div>}
-          {recErr && <div className="text-orange-400 text-xs">{recErr}</div>}
-          <div className="text-xl text-blue-300 font-medium">{word.zh}</div>
+          {duMsg && (
+            <div className={`text-xs font-medium ${
+              duResult === 'pass' ? 'text-green-400'
+              : duResult === 'fail' || duResult === 'skip' ? 'text-red-400'
+              : 'text-blue-300 animate-pulse'}`}>
+              {duMsg}
+            </div>
+          )}
+          {duOn && srListening && srHeard && (
+            <div className="text-xs text-gray-500">听到：<span className="text-gray-300 font-mono font-semibold">{srHeard}</span></div>
+          )}
+          {duOn && duResult !== 'pass' && (
+            <div className="flex items-center gap-2 mt-0.5" onClick={e => e.stopPropagation()}>
+              <button onClick={() => manualVerdict('pass')}
+                className="text-xs font-semibold px-3 py-1 rounded-full bg-green-700/60 hover:bg-green-600 text-green-100 border border-green-600/70 transition-colors active:scale-95">
+                ✓ 我读对了
+              </button>
+              <button onClick={() => manualVerdict('skip')}
+                className="text-xs font-semibold px-3 py-1 rounded-full bg-gray-700/80 hover:bg-gray-600 text-gray-100 border border-gray-600 transition-colors active:scale-95">
+                ⏭ 跳过
+              </button>
+            </div>
+          )}
+          {duOn
+            ? <div className="text-[11px] text-emerald-300/80">看中文 · 读出英文（读对翻卡显示单词；连续 3 次没通过自动跳过）</div>
+            : <div className="text-xl text-blue-300 font-medium">{word.zh}</div>
+          }
+            </div>
+            {/* 背面：识别正确翻出 */}
+            <div className="du-flip-back w-full bg-green-900/40 border-2 border-green-500 rounded-xl flex flex-col items-center justify-center gap-1 py-3 px-4">
+              <div className="text-4xl">✅</div>
+              <div className="text-4xl font-bold text-green-200">{word.word}</div>
+              <div className="text-lg text-blue-200">{word.zh}</div>
+              <div className="text-xs text-green-400">读对了！</div>
+            </div>
+          </div>
         </div>
       ) : (
         /* 默写模式主卡：顶栏仅「默写模式」按钮退出；左中文+右音标同行；右列大输入；逻辑不变 */
@@ -773,22 +1074,48 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
         {unit.words.map((w, i) => {
           const lvl = progress[`vocab_${book.bookName}_${unitIdx}_${wordOffset + i}`] || 0
           const hidden = moXie && !allMoXieDone && !moXieDone[i]
+          const mark = duMarks[i]
+          const isCur = i === idx
+          let cls
+          if (isCur && duOn) cls = 'bg-blue-600 text-white ring-2 ring-blue-400 animate-pulse'
+          else if (isCur)    cls = 'bg-blue-600 text-white ring-2 ring-blue-400'
+          else if (mark === 'pass') cls = 'bg-green-700/70 text-green-100 ring-1 ring-green-500'
+          else if (mark === 'skip') cls = 'bg-amber-800/50 text-amber-200 ring-1 ring-amber-600'
+          else if (lvl >= 2) cls = 'bg-green-900/60 text-green-300'
+          else if (lvl === 1) cls = 'bg-blue-900/30 text-blue-400'
+          else cls = 'bg-gray-800/80 text-gray-400 hover:bg-gray-700'
+          const showZh = duOn
+          const shouldFlip = duOn && (mark === 'pass' || mark === 'skip')
+          const backCls = mark === 'pass'
+            ? 'bg-green-700 border-2 border-green-400 text-white shadow-[0_0_12px_rgba(34,197,94,0.5)]'
+            : 'bg-amber-800/90 border-2 border-amber-500 text-amber-100'
           return (
-            <button key={i} onClick={() => {
+            <button key={i} disabled={duOn} onClick={() => {
+                if (duOn) return
                 setMoInput(''); setMoResult(null)
                 if (i === idx) { playFull(); return }
                 pendingPlayRef.current = true
                 setIdx(i)
               }}
-              className={`rounded-xl font-medium transition-all active:scale-95 flex items-center justify-center overflow-hidden ${
-                i === idx ? 'bg-blue-600 text-white ring-2 ring-blue-400' :
-                lvl >= 2  ? 'bg-green-900/60 text-green-300' :
-                lvl === 1 ? 'bg-blue-900/30 text-blue-400' :
-                            'bg-gray-800/80 text-gray-400 hover:bg-gray-700'}`}>
-              {hidden
-                ? <span className="text-gray-600 text-lg tracking-widest">···</span>
-                : <span className="text-3xl font-semibold truncate px-2">{w.word}</span>
-              }
+              className={`du-tile-flip relative rounded-xl font-medium transition-all active:scale-95 ${shouldFlip ? '' : cls}`}>
+              <div className={`du-tile-flip-inner ${shouldFlip ? 'is-flipped' : ''}`}>
+                {/* 前面：默认显示英文；跟读时显示中文 */}
+                <div className="du-tile-face flex items-center justify-center">
+                  {hidden ? (
+                    <span className="text-gray-600 text-lg tracking-widest">···</span>
+                  ) : showZh ? (
+                    <span className="text-sm sm:text-base font-semibold px-2 text-center leading-tight line-clamp-2">{w.zh}</span>
+                  ) : (
+                    <span className="text-3xl font-semibold truncate px-2">{w.word}</span>
+                  )}
+                </div>
+                {/* 背面：读对/跳过 翻面显示英文答案 */}
+                <div className={`du-tile-face du-tile-back flex items-center justify-center ${backCls}`}>
+                  <span className="text-2xl sm:text-3xl font-bold truncate px-2">{w.word}</span>
+                  {mark === 'pass' && <span className="absolute top-1 right-1.5 text-xs">✓</span>}
+                  {mark === 'skip' && <span className="absolute top-1 right-1.5 text-xs">↷</span>}
+                </div>
+              </div>
             </button>
           )
         })}
@@ -947,7 +1274,7 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-export default function VocabStudy({ onClose }) {
+export default function VocabStudy({ onClose, isMember = true, onShowLogin, settings, onXp, onCrystal }) {
   const [view, setView]           = useState('books')
   const [book, setBook]           = useState(null)
   const [unit, setUnit]           = useState(null)
@@ -960,9 +1287,13 @@ export default function VocabStudy({ onClose }) {
     if (signal === 'goQuiz') setView('quiz')
   }, [])
 
-  if (view === 'books') return <BookGrid onSelect={b => { setBook(b); setView('units') }} onBack={onClose} />
-  if (view === 'units') return <UnitGrid book={book} progress={progress} onBack={() => setView('books')} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />
-  if (view === 'cards') return <FlashCards book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} progress={progress} onBack={() => setView('units')} onProgressChange={refreshProgress} />
-  if (view === 'quiz')  return <QuizView book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} onBack={() => setView('cards')} onProgressChange={refreshProgress} />
-  return null
+  return (
+    <>
+      <OceanBg />
+      {view === 'books' && <BookGrid onSelect={b => { setBook(b); setView('units') }} onBack={onClose} />}
+      {view === 'units' && <UnitGrid book={book} progress={progress} isMember={isMember} onShowLogin={onShowLogin} onBack={() => setView('books')} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />}
+      {view === 'cards' && <FlashCards book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} progress={progress} onBack={() => setView('units')} onProgressChange={refreshProgress} settings={settings} onXp={onXp} onCrystal={onCrystal} />}
+      {view === 'quiz'  && <QuizView book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} onBack={() => setView('cards')} onProgressChange={refreshProgress} />}
+    </>
+  )
 }

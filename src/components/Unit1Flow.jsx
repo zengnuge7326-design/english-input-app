@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { useTTS } from '../hooks/useTTS'
+import { useSound } from '../hooks/useSound'
 import { unlockAudio } from '../utils/audioUnlock.js'
+import GemSVG from './GemSVG'
 import { quizBank } from '../data/quizData'
 import { fillblankBank } from '../data/fillblankData'
 import {
@@ -1216,16 +1218,15 @@ const TYPE_LABEL = {
 
 const OPTION_LABEL_COLORS = ['#CFCFCF', '#2A9BD9', '#2FB9B0', '#A38BEA']
 
-function AudioActionButton({ onClick, size = 22, title = '播放音频', compact = false }) {
+function AudioActionButton({ onClick, size = 22, title = '播放音频' }) {
+  const large = size > 22
   return (
     <button
       onClick={onClick}
       title={title}
       type="button"
-      className={`inline-flex items-center justify-center rounded-lg border transition-colors active:scale-95 shrink-0 ${
-        compact
-          ? 'w-8 h-8 bg-slate-800 border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700'
-          : 'w-10 h-10 bg-slate-800 border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700'
+      className={`inline-flex items-center justify-center rounded-lg border transition-colors active:scale-95 shrink-0 p-0 bg-slate-800 border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700 ${
+        large ? 'w-12 h-12 min-w-12 min-h-12' : 'w-10 h-10 min-w-10 min-h-10'
       }`}
     >
       <IconSpeaker size={size} />
@@ -1284,11 +1285,7 @@ function QuizCard({ q, onResult, speak }) {
               </span>
               <span className="min-w-0">{opt}</span>
             </button>
-            <AudioActionButton
-              compact
-              title="播放选项音频"
-              onClick={() => speak(opt)}
-            />
+            <AudioActionButton title="播放选项音频" onClick={() => speak(opt)} />
           </div>
         ))}
       </div>
@@ -1302,7 +1299,7 @@ function QuizCard({ q, onResult, speak }) {
 }
 
 // ── 填空题 ────────────────────────────────────────────────────────────────────
-function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
+function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak, speakFailLimit = 3 }) {
   const [input, setInput] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
@@ -1310,7 +1307,7 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak }) {
   const [isRecording, setIsRecording] = useState(false)
   const [recognizingResult, setRecognizingResult] = useState('')
   const [speakFailCount, setSpeakFailCount] = useState(0)
-  const AUTO_PASS_AFTER_FAILS = 5
+  const AUTO_PASS_AFTER_FAILS = speakFailLimit
   useEffect(() => {
     setUnlocked(!requireSpeak)
     setSpeakFailCount(0)
@@ -1750,7 +1747,7 @@ const BANKS_G5_DOWN = {
 }
 
 // ── 主流程 ────────────────────────────────────────────────────────────────────
-export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNext, onClose, settings }) {
+export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideSkipNext, onClose, settings, onXp, onCrystal, isMember = false }) {
   const questions = useMemo(() => {
     const label = unitLabel?.toLowerCase() ?? ''
     
@@ -1790,13 +1787,22 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
     
     // Fallbacks just in case
     const bankSet = activeBanks[key] || activeBanks.unit1a || activeBanks.unit1;
-    return buildQuestions(bankSet)
-  }, [unitLabel, bookId])
+    const all = buildQuestions(bankSet)
+    // 分包：A=前10题 B=中10题 C=剩余
+    if (part === 'A') return all.slice(0, 10)
+    if (part === 'B') return all.slice(10, 20)
+    if (part === 'C') return all.slice(20)
+    return all
+  }, [unitLabel, bookId, part])
   const total = questions.length
   const [current, setCurrent] = useState(0)
   const [scores, setScores] = useState([])
   const [pendingResult, setPendingResult] = useState(null)
   const [done, setDone] = useState(false)
+  // XP 飞向顶部 + 连击徽章
+  const [xpFlies, setXpFlies] = useState([])      // [{id, amount}]
+  const [comboFlash, setComboFlash] = useState(0) // 用于触发连击徽章脉冲
+  const [shake, setShake] = useState(0)           // 用于触发题卡抖动
 
   const ttsSettings = settings ?? {
     lang: 'en-US',
@@ -1813,9 +1819,36 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
     speakTTS(t)
   }, [speakTTS])
 
+  // 音效
+  const { playCorrect, playError, playVictory } = useSound(ttsSettings)
+
+  // 同步习题的连击计数
+  const syncComboRef = useRef(0)
+  const [comboDisplay, setComboDisplay] = useState(0)
+
   const handleResult = useCallback((isCorrect) => {
     setPendingResult(isCorrect)
-  }, [])
+    if (isCorrect) {
+      playCorrect?.(syncComboRef.current)
+      onXp?.(2)
+      const c = ++syncComboRef.current
+      setComboDisplay(c)
+      setComboFlash(f => f + 1)
+      // 飞出 +2 XP 飘字（飞向顶部 🔥 徽章）
+      const flyId = Date.now() + Math.random()
+      setXpFlies(arr => [...arr, { id: flyId, amount: 2 }])
+      setTimeout(() => setXpFlies(arr => arr.filter(x => x.id !== flyId)), 1100)
+      // 5/10 连击 紫钻石
+      if (c > 0 && c % 5 === 0) {
+        onCrystal?.('purple', c >= 10 ? 2 : 1, c >= 10 ? 'combo_10' : 'combo_5', { combo: c, source: 'sync' })
+      }
+    } else {
+      playError?.()
+      setShake(s => s + 1)
+      syncComboRef.current = 0
+      setComboDisplay(0)
+    }
+  }, [onXp, onCrystal, playCorrect, playError])
 
   const handleNext = useCallback(() => {
     const newScores = [...scores, pendingResult]
@@ -1826,8 +1859,24 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
     } else {
       setScores(newScores)
       setDone(true)
+      playVictory?.()
+      // 完成同步习题：发钻石
+      const correct = newScores.filter(Boolean).length
+      const pct = newScores.length ? correct / newScores.length : 0
+      // 完成本身 → 蓝钻石 1 颗
+      onCrystal?.('blue', 1, 'sync_done', { unit: unitLabel, part, total: newScores.length, correct })
+      // 全对 → 额外给绿钻石；金钻石（会员专属）
+      if (pct === 1 && newScores.length > 0) {
+        onCrystal?.('green', 2, 'sync_perfect', { unit: unitLabel, part })
+        if (isMember) {
+          onCrystal?.('gold', 1, 'member_bonus', { unit: unitLabel, part })
+        }
+      } else if (pct >= 0.8) {
+        // 80% 以上 → 红钻石 1 颗（鼓励"差点全对"）
+        onCrystal?.('red', 1, 'sentence_recover', { unit: unitLabel, part, pct: Math.round(pct * 100) })
+      }
     }
-  }, [scores, pendingResult, current, total])
+  }, [scores, pendingResult, current, total, onCrystal, unitLabel, part, isMember, playVictory])
 
   useEffect(() => {
     const fn = (e) => {
@@ -1881,13 +1930,60 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
     const pct = Math.round((correct / total) * 100)
     return (
       <div className="fixed inset-0 z-40 bg-black flex items-center justify-center px-4">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white flex items-center justify-center text-xl font-bold transition-colors"
+          title="关闭"
+        >
+          ✕
+        </button>
         <div className="text-center">
           <div className="text-5xl mb-4">{pct >= 80 ? '🎉' : pct >= 60 ? '👍' : '💪'}</div>
           <div className="text-3xl font-bold text-white mb-1">全部完成！</div>
-          <div className="text-gray-400 mb-6">{unitLabel} · {total} 道题</div>
+          <div className="text-gray-400 mb-6">{unitLabel}{part ? ` · ${part}部分` : ''} · {total} 道题</div>
           <div className="text-6xl font-bold text-blue-400 mb-1">{correct}<span className="text-3xl text-gray-500">/{total}</span></div>
-          <div className="text-gray-500 mb-8">正确率 {pct}%</div>
-          <p className="text-gray-600 text-sm">使用浏览器后退返回上一级</p>
+          <div className="text-gray-500 mb-4">正确率 {pct}%</div>
+          {/* 钻石奖励小结 — 钻石飞入动画 */}
+          <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
+            <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.15s' }}>
+              <GemSVG color="blue" size={40} />
+              <span className="text-blue-300 text-xs font-bold">+1</span>
+            </div>
+            {pct === 100 && (
+              <>
+                <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.35s' }}>
+                  <GemSVG color="green" size={40} />
+                  <span className="text-emerald-300 text-xs font-bold">+2</span>
+                </div>
+                {isMember && (
+                  <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.55s' }}>
+                    <GemSVG color="gold" size={40} />
+                    <span className="text-amber-300 text-xs font-bold">+1</span>
+                  </div>
+                )}
+              </>
+            )}
+            {pct >= 80 && pct < 100 && (
+              <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.35s' }}>
+                <GemSVG color="red" size={40} />
+                <span className="text-rose-300 text-xs font-bold">+1</span>
+              </div>
+            )}
+          </div>
+          <div className="flex items-center justify-center gap-3">
+            <button
+              onClick={() => { setCurrent(0); setScores([]); setDone(false) }}
+              className="px-6 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-sm font-semibold transition-colors"
+            >
+              🔁 再做一遍
+            </button>
+            <button
+              onClick={onClose}
+              className="px-8 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white text-sm font-semibold shadow-lg shadow-blue-900/40 transition-colors"
+            >
+              ← 返回教材
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -1900,27 +1996,73 @@ export default function Unit1Flow({ unitLabel, bookId, requireSpeak, hideSkipNex
   return (
     <div className="fixed inset-0 z-[60] bg-black flex flex-col">
       {/* 顶栏 */}
-      <div className="shrink-0 px-4 pt-4 pb-2">
+      <div className="shrink-0 px-4 pr-16 pt-4 pb-2 relative">
         <div className="flex items-center justify-between mb-2">
-          <div className="text-sm text-gray-500 uppercase tracking-wider">{unitLabel} · {typeLabel}</div>
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="text-sm text-gray-500 uppercase tracking-wider truncate">{unitLabel}{part ? ` · ${part}` : ''} · {typeLabel}</div>
+            {comboDisplay >= 2 && (
+              <span
+                key={comboFlash}
+                className="combo-pop inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs font-bold shadow-lg shadow-orange-500/30"
+              >
+                🔥 {comboDisplay} 连击
+              </span>
+            )}
+          </div>
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-500 tabular-nums">{current + 1} / {total}</span>
             <button onClick={onClose} className="text-gray-600 hover:text-white text-lg transition-colors">✕</button>
           </div>
         </div>
-        {/* 进度条 */}
-        <div className="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
-          <div className="h-full bg-blue-500 rounded-full transition-all duration-300"
-            style={{ width: `${(current / total) * 100}%` }} />
+        {/* 分段进度条 */}
+        <div className="flex items-stretch gap-1 w-full" style={{ height: 8 }}>
+          {Array.from({ length: total }).map((_, i) => {
+            const answered = i < current
+            const correct = scores[i]
+            return (
+              <div
+                key={i}
+                className="flex-1 rounded-full transition-all duration-300 overflow-hidden"
+                style={{
+                  background: answered
+                    ? correct
+                      ? 'linear-gradient(90deg,#60a5fa,#a78bfa)'
+                      : '#7f1d1d'
+                    : i === current
+                      ? 'rgba(96,165,250,0.4)'
+                      : 'rgba(55,65,81,0.6)',
+                  boxShadow: answered && correct ? '0 0 6px rgba(167,139,250,0.6)' : 'none',
+                }}
+              />
+            )
+          })}
         </div>
+        {/* XP 飞向顶部 🔥 徽章 */}
+        {xpFlies.map(f => (
+          <div
+            key={f.id}
+            className="xp-fly pointer-events-none fixed text-white font-extrabold text-2xl select-none z-[200]"
+            style={{
+              color: '#fde68a',
+              textShadow: '0 0 10px rgba(251,191,36,0.8), 0 2px 4px rgba(0,0,0,0.5)',
+              left: '50%',
+              top: '40%',
+            }}
+          >
+            +{f.amount} XP
+          </div>
+        ))}
       </div>
 
       {/* 题目卡片区（顶对齐；反馈条在题卡内底部） */}
       <div className="flex-1 overflow-y-auto px-4 pt-1 pb-4 min-h-0">
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 max-w-2xl w-full mx-auto flex flex-col">
+        <div
+          key={`shake-${shake}`}
+          className={`bg-slate-800 border border-slate-700 rounded-2xl p-6 max-w-2xl w-full mx-auto flex flex-col ${shake ? 'card-shake' : ''}`}
+        >
           <div className="min-h-0">
             {q.type === 'quiz' && <QuizCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
-            {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} speak={speak} />}
+            {q.type === 'fillblank' && <FillBlankCard key={current} q={q.data} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onResult={handleResult} speak={speak} speakFailLimit={settings?.speakFailLimit || 3} />}
             {q.type === 'listen_order' && <WordOrderCard key={current} q={q.data} onResult={handleResult} speak={speak} />}
             {(q.type === 'listen_word' || q.type === 'listen_sentence' || q.type === 'listen_response' || q.type === 'listen_translate') &&
               <ListenChoiceCard key={current} q={q.data} type={q.type} onResult={handleResult} speak={speak} />}

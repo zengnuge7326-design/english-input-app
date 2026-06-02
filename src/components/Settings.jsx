@@ -306,7 +306,12 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                 <div className="border-b border-slate-700 pb-4">
                   <Toggle label="🎤 强制跟读（隐藏跳过按钮）" checked={!!s.requireSpeak}
                     onChange={v => set({ requireSpeak: v })} />
-                  <div className="text-xs text-gray-500 mt-1">开启后，朗读环节的跳过按钮被隐藏；连续失败 5 次自动通过</div>
+                  <div className="text-xs text-gray-500 mt-1 mb-2">开启后，朗读环节的跳过按钮被隐藏；连续失败 N 次自动通过</div>
+                  {!!s.requireSpeak && (
+                    <Seg label="连续失败自动通过次数" value={s.speakFailLimit || 3}
+                      options={[[2,'2次'],[3,'3次'],[4,'4次'],[5,'5次']]}
+                      onSelect={v => set({ speakFailLimit: v })} />
+                  )}
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="text-gray-400 text-sm">学习模式等级</div>

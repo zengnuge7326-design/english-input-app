@@ -57,55 +57,63 @@ function StatusBadge({ attempted, mastered, total }) {
 }
 
 // ── 课程卡网格 ───────────────────────────────────────────
-function LessonGrid({ lessons, dataMap, accentColor, titlePrefix, onImport, onSync, progress }) {
+function LessonGrid({ lessons, dataMap, accentColor, titlePrefix, onImport, onSync, progress, isMember = true, onShowLogin }) {
   const barColor = { emerald: 'bg-emerald-500', violet: 'bg-violet-500', sky: 'bg-sky-500' }[accentColor]
   const border   = { emerald: 'hover:border-emerald-700/60', violet: 'hover:border-violet-700/60', sky: 'hover:border-sky-700/60' }[accentColor]
   const syncBg   = { emerald: 'bg-emerald-700 hover:bg-emerald-600 border-emerald-900', violet: 'bg-violet-700 hover:bg-violet-600 border-violet-900', sky: 'bg-sky-700 hover:bg-sky-600 border-sky-900' }[accentColor]
+  const halfIdx  = Math.ceil(lessons.length / 2)
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-      {(() => {
-        const buildLoader = (idx) => {
-          if (idx >= lessons.length - 1) return null
-          return () => {
+    <>
+      {!isMember && (
+        <p className="text-xs text-gray-500 mb-4">前半部分课程免费体验，开通会员解锁全部课程</p>
+      )}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        {(() => {
+          const buildLoader = (idx) => {
+            if (idx >= lessons.length - 1) return null
             const next = lessons[idx + 1]
-            const nextData = next.ids.map(id => dataMap[id]).filter(Boolean)
-            onImport(nextData, `${titlePrefix} · ${next.label}`, buildLoader(idx + 1))
+            if (!isMember && (idx + 1) >= halfIdx) return null
+            return () => {
+              const nextData = next.ids.map(id => dataMap[id]).filter(Boolean)
+              onImport(nextData, `${titlePrefix} · ${next.label}`, buildLoader(idx + 1))
+            }
           }
-        }
-        return lessons.map((lesson, i) => {
-        const data  = lesson.ids.map(id => dataMap[id]).filter(Boolean)
-        const stats = getLessonStats(data, progress)
-        const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
-        return (
-          <div key={i} className={`bg-slate-800 border border-slate-700 ${border} rounded-xl overflow-hidden flex flex-col transition-colors`}>
-            <button
-              onClick={() => onImport(data, `${titlePrefix} · ${lesson.label}`, buildLoader(i))}
-              className="text-left p-3 flex flex-col gap-1.5 flex-1"
-            >
-              <div className="flex items-start justify-between gap-1">
-                <span className="text-white text-sm font-semibold">{lesson.label}</span>
-                <StatusBadge {...stats} />
+          return lessons.map((lesson, i) => {
+            const locked = !isMember && i >= halfIdx
+            const data  = lesson.ids.map(id => dataMap[id]).filter(Boolean)
+            const stats = getLessonStats(data, progress)
+            const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
+            return (
+              <div key={i} className={`bg-slate-800 border rounded-xl overflow-hidden flex flex-col transition-colors ${locked ? 'border-slate-700/50 opacity-70' : `border-slate-700 ${border}`}`}>
+                <button
+                  onClick={() => locked ? onShowLogin?.() : onImport(data, `${titlePrefix} · ${lesson.label}`, buildLoader(i))}
+                  className="text-left p-3 flex flex-col gap-1.5 flex-1"
+                >
+                  <div className="flex items-start justify-between gap-1">
+                    <span className="text-white text-sm font-semibold">{lesson.label}</span>
+                    {locked ? <span className="text-gray-500 text-sm">🔒</span> : <StatusBadge {...stats} />}
+                  </div>
+                  <div className="text-xs text-gray-400 leading-snug line-clamp-2">{lesson.title}</div>
+                  <div className="text-xs text-gray-600">{lesson.desc}</div>
+                  <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden mt-auto">
+                    <div className={`h-full rounded-full transition-all duration-500 ${stats.mastered === stats.total && stats.total > 0 ? 'bg-green-500' : barColor}`}
+                      style={{ width: `${pct}%` }} />
+                  </div>
+                  <div className="text-xs text-gray-600">{stats.attempted}/{stats.total} 句</div>
+                </button>
+                <button
+                  onClick={() => locked ? onShowLogin?.() : onSync(`${titlePrefix} · ${lesson.label}`)}
+                  className={`w-full py-1.5 text-xs font-semibold text-white border-t transition-colors text-center ${locked ? 'bg-gray-700 border-gray-800' : `${syncBg}`}`}
+                >
+                  {locked ? '🔒 会员专属' : '同步练习'}
+                </button>
               </div>
-              <div className="text-xs text-gray-400 leading-snug line-clamp-2">{lesson.title}</div>
-              <div className="text-xs text-gray-600">{lesson.desc}</div>
-              <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden mt-auto">
-                <div className={`h-full rounded-full transition-all duration-500 ${stats.mastered === stats.total && stats.total > 0 ? 'bg-green-500' : barColor}`}
-                  style={{ width: `${pct}%` }} />
-              </div>
-              <div className="text-xs text-gray-600">{stats.attempted}/{stats.total} 句</div>
-            </button>
-            <button
-              onClick={() => onSync(`${titlePrefix} · ${lesson.label}`)}
-              className={`w-full py-1.5 text-xs font-semibold text-white ${syncBg} border-t transition-colors text-center`}
-            >
-              同步练习
-            </button>
-          </div>
-        )
-      })
-      })()}
-    </div>
+            )
+          })
+        })()}
+      </div>
+    </>
   )
 }
 
@@ -150,7 +158,7 @@ function SyncPopup({ label, onClose }) {
 }
 
 // ── 主组件 ───────────────────────────────────────────────
-export default function CoreSentences({ onImport, progress = {}, active = true, onClose }) {
+export default function CoreSentences({ onImport, progress = {}, active = true, onClose, isMember = true, onShowLogin }) {
   const [section,   setSection]   = useState(null)   // null | 'core50' | 'core100' | 'core60'
   const [syncPopup, setSyncPopup] = useState(null)   // label string | null
 
@@ -166,7 +174,7 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
           subtitle="5课 · 50句 · 入门核心句型" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE50_LESSONS[0].ids.map(id => core50Map[id]).filter(Boolean), '基础句式 · L1')} />
         <LessonGrid lessons={CORE50_LESSONS} dataMap={core50Map} accentColor="emerald"
-          titlePrefix="基础句式" onImport={onImport} onSync={setSyncPopup} progress={progress} />
+          titlePrefix="基础句式" onImport={onImport} onSync={setSyncPopup} progress={progress} isMember={isMember} onShowLogin={onShowLogin} />
       </div>
     )
   }
@@ -183,7 +191,7 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
           subtitle="10课 · 100句 · 时态 / 从句 / 逻辑表达" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE100_LESSONS[0].ids.map(id => core100Map[id]).filter(Boolean), '中级句式 · L1')} />
         <LessonGrid lessons={CORE100_LESSONS} dataMap={core100Map} accentColor="violet"
-          titlePrefix="中级句式" onImport={onImport} onSync={setSyncPopup} progress={progress} />
+          titlePrefix="中级句式" onImport={onImport} onSync={setSyncPopup} progress={progress} isMember={isMember} onShowLogin={onShowLogin} />
       </div>
     )
   }
@@ -200,7 +208,7 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
           subtitle="6课 · 60句 · 语法体系全覆盖" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE60_LESSONS[0].ids.map(id => core60Map[id]).filter(Boolean), '综合句式 · L1')} />
         <LessonGrid lessons={CORE60_LESSONS} dataMap={core60Map} accentColor="sky"
-          titlePrefix="综合句式" onImport={onImport} onSync={setSyncPopup} progress={progress} />
+          titlePrefix="综合句式" onImport={onImport} onSync={setSyncPopup} progress={progress} isMember={isMember} onShowLogin={onShowLogin} />
       </div>
     )
   }
@@ -248,7 +256,7 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {cards.map(c => (
+        {cards.map((c) => (
           <button key={c.key} onClick={() => setSection(c.section)}
             className={`flex flex-col rounded-2xl overflow-hidden border border-gray-700 ${c.border} transition-all text-left`}>
             <div className={`w-full h-24 bg-gradient-to-br ${c.grad} flex flex-col items-center justify-center gap-1.5`}>

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { IconSpeaker } from './Icons'
 import PageBackBar from './PageBackBar'
 import { useTTS } from '../hooks/useTTS'
+import { useSound } from '../hooks/useSound'
 import { unlockAudio } from '../utils/audioUnlock.js'
 
 // ── 工具函数 ──────────────────────────────────────────────────────────────────
@@ -83,8 +84,14 @@ function makeListenQA(sentence, allSentences) {
 }
 
 function makeWordOrder(sentence) {
-  // Q3: 连词成句 — 打乱单词顺序
-  const words = sentence.words?.map(w => w.w).filter(Boolean)
+  // Q3: 连词成句 — 打乱单词顺序（无 words 时从英文句切词，兼容语法 JSON 等）
+  let words = sentence.words?.map(w => w.w).filter(Boolean)
+  if (!words || words.length < 3) {
+    words = sentence.en
+      .replace(/[.,!?'"']/g, '')
+      .split(/\s+/)
+      .filter(Boolean)
+  }
   if (!words || words.length < 3) return null
   const shuffled = shuffle(words)
   // 确保打乱后不等于原顺序
@@ -180,7 +187,7 @@ export function generateQuiz(sentences, allSentences) {
 // ── 单题渲染 ──────────────────────────────────────────────────────────────────
 
 function OptionBtn({ label, selected, correct, wrong, disabled, onClick }) {
-  let cls = 'w-full text-left px-5 py-4 rounded-xl border text-lg transition-all '
+  let cls = 'w-full text-left px-6 py-5 rounded-xl border text-xl transition-all '
   if (correct) cls += 'bg-green-900/40 border-green-500 text-green-300'
   else if (wrong) cls += 'bg-red-900/40 border-red-500 text-red-300'
   else if (selected) cls += 'bg-blue-900/40 border-blue-500 text-blue-200'
@@ -203,13 +210,15 @@ function ListenQuestion({ q, speak, onAnswer, answered }) {
       <button
         type="button"
         onClick={() => { unlockAudio(); speak(q.tts) }}
-        className="flex items-center gap-3 mx-auto px-6 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white text-lg font-semibold transition-colors"
+        className="flex items-center justify-center gap-3 mx-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white text-xl font-semibold transition-colors"
       >
-        <IconSpeaker size={28} />
+        <span className="inline-flex items-center justify-center p-0 leading-none">
+          <IconSpeaker size={32} />
+        </span>
         <span>播放录音</span>
       </button>
-      <p className="text-gray-400 text-base text-center">{q.question}</p>
-      <div className="grid grid-cols-2 gap-2">
+      <p className="text-gray-400 text-lg text-center">{q.question}</p>
+      <div className="grid grid-cols-2 gap-3">
         {q.options.map((opt, i) => (
           <OptionBtn
             key={i} label={opt}
@@ -236,10 +245,10 @@ function ChoiceQuestion({ q, onAnswer, answered }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-white text-2xl leading-relaxed bg-gray-800/60 rounded-xl px-5 py-4 text-center font-medium">
+      <p className="text-white text-3xl leading-relaxed bg-gray-800/60 rounded-xl px-6 py-5 text-center font-medium">
         {q.question}
       </p>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         {q.options.map((opt, i) => (
           <OptionBtn
             key={i} label={opt}
@@ -283,15 +292,15 @@ function WordOrderQuestion({ q, onAnswer, answered }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-gray-400 text-base text-center">{q.question}</p>
+      <p className="text-gray-400 text-lg text-center">{q.question}</p>
 
       {/* 已排列区 */}
-      <div className="min-h-12 bg-gray-800/40 border border-gray-700 rounded-xl px-3 py-2 flex flex-wrap gap-2">
+      <div className="min-h-16 bg-gray-800/40 border border-gray-700 rounded-xl px-3 py-2 flex flex-wrap gap-2">
         {placed.length === 0
-          ? <span className="text-gray-600 text-base self-center">点击下方单词排列句子…</span>
+          ? <span className="text-gray-600 text-lg self-center">点击下方单词排列句子…</span>
           : placed.map((item, i) => (
             <button key={i} onClick={() => removeWord(item)}
-              className="px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-600 text-white text-base transition-colors">
+              className="px-4 py-2 rounded-lg bg-blue-700 hover:bg-blue-600 text-white text-lg transition-colors">
               {item.w}
             </button>
           ))
@@ -302,7 +311,7 @@ function WordOrderQuestion({ q, onAnswer, answered }) {
       <div className="flex flex-wrap gap-2 justify-center">
         {pool.map((item, i) => (
           <button key={i} onClick={() => addWord(item)}
-            className="px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-700 hover:border-gray-500 text-gray-200 text-base transition-colors">
+            className="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 hover:border-gray-500 text-gray-200 text-lg transition-colors">
             {item.w}
           </button>
         ))}
@@ -310,7 +319,7 @@ function WordOrderQuestion({ q, onAnswer, answered }) {
 
       {!answered && (
         <button onClick={check} disabled={!canCheck}
-          className="mx-auto px-8 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base disabled:opacity-40 disabled:cursor-not-allowed transition-colors">
+          className="mx-auto px-10 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-lg disabled:opacity-40 disabled:cursor-not-allowed transition-colors">
           确认
         </button>
       )}
@@ -328,12 +337,13 @@ const Q_LABELS = {
   en_to_zh:    '英译中',
 }
 
-export default function ExerciseQuiz({ questions, title, onClose, settings }) {
+export default function ExerciseQuiz({ questions, title, onClose, settings, onXp }) {
   const [idx, setIdx] = useState(0)
   const [answeredList, setAnsweredList] = useState([]) // true/false per question
   const [showAnswer, setShowAnswer] = useState(false)
   const ttsSettings = settings || { rate: 0.9, ttsEngine: 'hybrid', edgeVoice: 'en-US-AvaNeural' }
   const { speak } = useTTS(ttsSettings)
+  const { playCorrect, playError } = useSound(settings)
   const q = questions[idx]
 
   const goNext = useCallback(() => {
@@ -363,6 +373,8 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
   }, [showAnswer, goNext])
 
   function handleAnswer(correct) {
+    if (correct) playCorrect(); else playError()
+    onXp?.(correct ? 2 : 1)
     setAnsweredList(prev => {
       const row = [...prev]
       row[idx] = correct
@@ -377,8 +389,8 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
   if (done) {
     return (
       <div className="flex flex-col items-center justify-center gap-6 py-12 px-4">
-        <div className="text-5xl">{score === questions.length ? '🎉' : score >= questions.length / 2 ? '👍' : '💪'}</div>
-        <div className="text-white text-2xl font-bold">{score} / {questions.length}</div>
+        <div className="text-6xl">{score === questions.length ? '🎉' : score >= questions.length / 2 ? '👍' : '💪'}</div>
+        <div className="text-white text-3xl font-bold">{score} / {questions.length}</div>
         <div className="text-gray-400 text-sm">{title}</div>
         <button
           type="button"
@@ -397,7 +409,7 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
 
       {/* 进度条 */}
       <div className="flex items-center gap-3">
-        <div className="flex-1 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+        <div className="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
           <div className="h-full bg-blue-500 rounded-full transition-all"
             style={{ width: `${(idx / questions.length) * 100}%` }} />
         </div>
@@ -406,14 +418,14 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
 
       {/* 题型标签 */}
       <div className="flex items-center justify-between">
-        <span className="text-xs text-amber-500 bg-amber-900/30 border border-amber-700/40 px-2.5 py-1 rounded-full">
+        <span className="text-sm text-amber-500 bg-amber-900/30 border border-amber-700/40 px-2.5 py-1 rounded-full">
           {Q_LABELS[q.type] || q.type}
         </span>
-        <span className="text-xs text-gray-600">{title}</span>
+        <span className="text-sm text-gray-600">{title}</span>
       </div>
 
       {/* 题目内容（反馈条在卡内底部） */}
-      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col">
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col">
         <div className="min-h-0">
           {(q.type === 'listen_word' || q.type === 'listen_qa') && (
             <ListenQuestion q={q} speak={speak} onAnswer={handleAnswer} answered={showAnswer} />
@@ -431,13 +443,13 @@ export default function ExerciseQuiz({ questions, title, onClose, settings }) {
               className={`rounded-xl px-4 py-3 flex items-center justify-between gap-3
                 ${answeredList[idx] ? 'bg-green-900/40 border border-green-700' : 'bg-red-900/40 border border-red-700'}`}
             >
-              <span className={`text-base font-medium min-w-0 text-left ${answeredList[idx] ? 'text-green-300' : 'text-red-300'}`}>
+              <span className={`text-lg font-medium min-w-0 text-left ${answeredList[idx] ? 'text-green-300' : 'text-red-300'}`}>
                 {answeredList[idx] ? '✓ 正确！' : `✗ 正确答案：${q.answer}`}
               </span>
               <button
                 type="button"
                 onClick={goNext}
-                className={`shrink-0 px-4 py-2.5 rounded-xl text-base font-semibold transition-colors active:scale-[0.98]
+                className={`shrink-0 px-5 py-3 rounded-xl text-lg font-semibold transition-colors active:scale-[0.98]
                   ${answeredList[idx] ? 'bg-green-600 hover:bg-green-500 text-white' : 'bg-red-600 hover:bg-red-500 text-white'}`}
               >
                 {idx + 1 < questions.length ? '继续' : '查看成绩'}

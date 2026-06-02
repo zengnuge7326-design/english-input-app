@@ -7,6 +7,17 @@
 :root {
   --color-primary: #6366f1;
   --color-accent: #10b981;
+
+  /* 主题墨色 — 用于 JS 内联样式（输入单词/翻译/标点），随明暗切换 */
+  --ink-word:  #ffffff;                 /* 输入单词主色（暗色：白） */
+  --ink-soft:  #EADDC1;                 /* 翻译/音标行（暗色：象牙） */
+  --ink-muted: rgba(234,221,193,0.6);   /* 标点等弱化文字 */
+}
+/* 白昼模式：墨色转深，避免白字在浅背景上看不见 */
+.theme-light-glass {
+  --ink-word:  #262430;
+  --ink-soft:  #5f5b70;
+  --ink-muted: rgba(60,56,80,0.5);
 }
 .glass-key {
   background: rgba(255,255,255,0.05);
@@ -305,7 +316,7 @@ body {
 }
 .xp-fly { animation: xp-fly 1.05s cubic-bezier(0.5, 0, 0.5, 1) forwards; will-change: transform, left, top; }
 
-/* 结算页：水晶逐颗飞入 */
+/* 结算页：钻石逐颗飞入 */
 @keyframes result-gem-in {
   0%   { transform: translateY(40px) scale(0.2) rotate(-15deg); opacity: 0; filter: blur(4px); }
   60%  { transform: translateY(-8px) scale(1.25) rotate(8deg); opacity: 1; filter: blur(0); }
@@ -567,3 +578,167 @@ body {
   background: rgba(0, 0, 0, 0.55) !important;
 }
 
+
+/* ════════════════════════════════════════════════════════════════════════════
+   首页彩色玻璃组件 (Dashboard only) — 明暗双模通用
+   参考 iOS Liquid Glass UI Kit：饱满柔和的粉彩玻璃 + 顶部高光 + 彩色阴影
+   ════════════════════════════════════════════════════════════════════════════ */
+
+.lg-chip {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(14px) saturate(1.5);
+  -webkit-backdrop-filter: blur(14px) saturate(1.5);
+  box-shadow:
+    0 8px 22px rgba(60,54,98,0.13),
+    0 2px 6px rgba(60,54,98,0.07),
+    inset 0 2px 1px rgba(255,255,255,0.98),
+    inset 0 -4px 9px rgba(90,80,130,0.16);
+  color: #2a2733;
+  transition: transform .28s cubic-bezier(0.34,1.56,0.64,1), box-shadow .28s ease;
+  will-change: transform;
+}
+.lg-chip:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 30px rgba(60,54,98,0.18),
+    0 4px 10px rgba(60,54,98,0.10),
+    inset 0 2px 1px rgba(255,255,255,0.99),
+    inset 0 -4px 9px rgba(90,80,130,0.16);
+}
+.lg-chip-label { color: rgba(40,38,55,0.60); }
+.lg-chip-val   { color: #15131c; }
+
+/* 彩色变体 —— 饱满粉彩渐变 */
+.lg-chip-sky      { background: linear-gradient(155deg, rgba(196,222,250,0.96) 0%, rgba(150,191,238,0.78) 100%); box-shadow: 0 10px 24px rgba(120,165,225,0.30), 0 2px 6px rgba(0,0,0,0.05), inset 0 2px 1px rgba(255,255,255,0.98), inset 0 -5px 11px rgba(95,80,135,0.20); }
+.lg-chip-mint     { background: linear-gradient(155deg, rgba(190,232,206,0.96) 0%, rgba(140,210,172,0.78) 100%); box-shadow: 0 10px 24px rgba(120,200,160,0.30), 0 2px 6px rgba(0,0,0,0.05), inset 0 2px 1px rgba(255,255,255,0.98), inset 0 -5px 11px rgba(95,80,135,0.20); }
+.lg-chip-peach    { background: linear-gradient(155deg, rgba(252,216,180,0.96) 0%, rgba(244,184,138,0.80) 100%); box-shadow: 0 10px 24px rgba(238,180,120,0.32), 0 2px 6px rgba(0,0,0,0.05), inset 0 2px 1px rgba(255,255,255,0.98), inset 0 -5px 11px rgba(95,80,135,0.20); }
+.lg-chip-rose     { background: linear-gradient(155deg, rgba(248,200,218,0.96) 0%, rgba(232,168,198,0.80) 100%); box-shadow: 0 10px 24px rgba(228,160,190,0.32), 0 2px 6px rgba(0,0,0,0.05), inset 0 2px 1px rgba(255,255,255,0.98), inset 0 -5px 11px rgba(95,80,135,0.20); }
+.lg-chip-lavender { background: linear-gradient(155deg, rgba(216,206,250,0.96) 0%, rgba(188,172,232,0.80) 100%); box-shadow: 0 10px 24px rgba(185,170,228,0.34), 0 2px 6px rgba(0,0,0,0.05), inset 0 2px 1px rgba(255,255,255,0.98), inset 0 -5px 11px rgba(95,80,135,0.20); }
+.lg-chip-amber    { background: linear-gradient(155deg, rgba(255,228,168,0.97) 0%, rgba(250,200,118,0.82) 100%); box-shadow: 0 10px 24px rgba(250,200,120,0.38), 0 2px 6px rgba(0,0,0,0.05), inset 0 2px 1px rgba(255,255,255,0.98), inset 0 -5px 11px rgba(95,80,135,0.20); }
+
+/* 暗色模式：粉彩在黑底上保持发光感，但稍微提亮边框/高光 */
+.theme-dark .lg-chip {
+  border: 1px solid rgba(255,255,255,0.30);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.55);
+}
+.theme-dark .lg-chip-label { color: rgba(30,28,40,0.62); }
+.theme-dark .lg-chip-val   { color: #15131c; }
+
+/* 首页主卡片：比通用 lg-glass-card 更柔和饱满的容器 */
+.lg-home-panel {
+  border-radius: 24px;
+  background: linear-gradient(158deg, rgba(255,255,255,0.82) 0%, rgba(251,249,253,0.64) 100%);
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow: 0 16px 48px rgba(64,54,98,0.15), 0 4px 14px rgba(64,54,98,0.08), inset 0 1.5px 0 rgba(255,255,255,0.95);
+  backdrop-filter: blur(22px) saturate(1.5);
+  -webkit-backdrop-filter: blur(22px) saturate(1.5);
+}
+.theme-dark .lg-home-panel {
+  background: linear-gradient(158deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.035) 100%);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+/* 火焰格子：连胜 */
+.lg-fire {
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 9999px;
+  transition: transform .28s cubic-bezier(0.34,1.56,0.64,1);
+}
+.lg-fire:hover { transform: scale(1.12) translateY(-2px); }
+.lg-fire-on {
+  background: linear-gradient(155deg, #ffd36b 0%, #ff9f43 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(255,159,67,0.55), inset 0 1.5px 0 rgba(255,255,255,0.8);
+}
+.lg-fire-today {
+  border: 2px dashed rgba(255,159,67,0.75);
+  background: rgba(255,159,67,0.10);
+  color: #f5852a; font-weight: 700;
+}
+.lg-fire-off {
+  background: linear-gradient(155deg, rgba(255,255,255,0.7) 0%, rgba(244,242,246,0.5) 100%);
+  border: 1px solid rgba(0,0,0,0.05);
+  color: #c0bdc9;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.theme-dark .lg-fire-off {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.35);
+  box-shadow: none;
+}
+
+/* 徽章玻璃 */
+.lg-badge {
+  border-radius: 16px;
+  transition: transform .25s cubic-bezier(0.34,1.56,0.64,1), box-shadow .25s;
+}
+.lg-badge:hover { transform: translateY(-3px) scale(1.04); }
+.lg-badge-on {
+  background: linear-gradient(155deg, rgba(255,232,180,0.95) 0%, rgba(252,206,132,0.78) 100%);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 6px 16px rgba(250,200,120,0.35), inset 0 1.5px 0 rgba(255,255,255,0.95);
+}
+.lg-badge-off {
+  background: linear-gradient(155deg, rgba(255,255,255,0.55) 0%, rgba(248,246,250,0.4) 100%);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.theme-dark .lg-badge-off {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   菜单滑动高亮块 (.nav-slide-highlight) — 立体液态玻璃，明暗双模 + 触屏跟随
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* 白昼：薰衣草玻璃，顶部高亮 + 底部内凹（pillow） */
+.nav-slide-highlight.is-light {
+  background: linear-gradient(158deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(196,184,236,0.66) 38%,
+    rgba(170,154,222,0.52) 100%);
+  border: 1px solid rgba(255,255,255,0.88);
+  box-shadow:
+    0 8px 22px rgba(150,128,210,0.32),
+    0 2px 8px  rgba(150,128,210,0.16),
+    inset 0 2px 1px rgba(255,255,255,0.98),
+    inset 0 -5px 10px rgba(120,98,180,0.22);
+  backdrop-filter: blur(8px) saturate(1.4);
+  -webkit-backdrop-filter: blur(8px) saturate(1.4);
+}
+
+/* 暗夜：紫色玻璃发光，深底上更亮的"光晕枕" */
+.nav-slide-highlight.is-dark {
+  background: linear-gradient(158deg,
+    rgba(160,140,230,0.32) 0%,
+    rgba(130,108,210,0.42) 50%,
+    rgba(110,88,200,0.36) 100%);
+  border: 1px solid rgba(190,170,240,0.35);
+  box-shadow:
+    0 8px 24px rgba(140,110,230,0.45),
+    0 2px 8px  rgba(140,110,230,0.25),
+    inset 0 1.5px 0 rgba(220,200,255,0.55),
+    inset 0 -4px 10px rgba(60,40,120,0.45);
+  backdrop-filter: blur(8px) saturate(1.5);
+  -webkit-backdrop-filter: blur(8px) saturate(1.5);
+}
+
+/* 因为高亮块由 JS 滑块提供，nav-slide-item 本身的 hover/active 背景要让位 */
+.theme-dark .nav-slide-item.lg-nav-item--active,
+.theme-dark .nav-slide-item:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  transform: none !important;
+}
+.theme-dark .nav-slide-item {
+  color: rgba(255,255,255,0.85) !important;
+}
+.theme-dark .nav-slide-item.lg-nav-item--active {
+  color: #fff !important;
+  font-weight: 600;
+}

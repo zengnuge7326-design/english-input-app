@@ -116,7 +116,9 @@ export function useTTS(settings) {
 
   const speak = useCallback((text) => {
     if (!text) return
-    const cleanText = text.trim().split(/\s+/).length === 1 ? text.toLowerCase() : text
+    // 去掉填空题下划线（___），避免 TTS 读出 "underscore underscore underscore"
+    const stripped = String(text).replace(/_+/g, '').replace(/\s{2,}/g, ' ').trim()
+    const cleanText = stripped.split(/\s+/).length === 1 ? stripped.toLowerCase() : stripped
     const rate = settings.rate || 1.0
     const volume = Math.max(0, Math.min(1, settings.volume ?? 1))
     const engine = settings.ttsEngine || 'hybrid'

@@ -1,5 +1,31 @@
 import { useState, useLayoutEffect } from 'react'
 import Unit1Flow from './Unit1Flow'
+import GrammarLesson from './GrammarLesson'
+import { hasGrammar } from '../data/grammar'
+import { getGrammarPercent } from '../data/grammar/progress'
+
+// 环形进度组件（仿 Claude Code 小转圈风格）
+function RingProgress({ value = 0, size = 56, stroke = 4, accent = '#3b82f6', label, sub }) {
+  const r = (size - stroke) / 2
+  const C = 2 * Math.PI * r
+  const off = C * (1 - Math.max(0, Math.min(1, value)))
+  return (
+    <div className="relative shrink-0" style={{ width: size, height: size }}>
+      <svg width={size} height={size} className="-rotate-90">
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none"
+          stroke="rgba(255,255,255,0.12)" strokeWidth={stroke} />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none"
+          stroke={accent} strokeWidth={stroke} strokeLinecap="round"
+          strokeDasharray={C} strokeDashoffset={off}
+          style={{ transition: 'stroke-dashoffset .55s cubic-bezier(.34,1.56,.64,1), stroke .3s' }} />
+      </svg>
+      <div className="absolute inset-0 flex flex-col items-center justify-center leading-none">
+        {label && <div className="text-white font-bold" style={{ fontSize: size * 0.26 }}>{label}</div>}
+        {sub && <div className="text-white/60 font-medium" style={{ fontSize: size * 0.18, marginTop: 1 }}>{sub}</div>}
+      </div>
+    </div>
+  )
+}
 import grade4DownData from '../data/grade4_down.json'
 import grade3UpData from '../data/grade3_up.json'
 import grade3DownData from '../data/grade3_down.json'
@@ -139,8 +165,9 @@ const TEXTBOOK_SLOTS = [
       { label: 'Unit 4A', desc: 'Going shopping (1)', slice: [90, 99] },
       { label: 'Unit 4B', desc: 'Going shopping (2)', slice: [99, 108] },
       { label: 'Unit 4C', desc: 'Going shopping (3)', slice: [108, 116] },
-      { label: 'Unit 5A', desc: 'Farm animals (1)', slice: [116, 126] },
-      { label: 'Unit 5B', desc: 'Farm animals (2)', slice: [126, 135] },
+      { label: 'Unit 5A', desc: 'Farm animals (1)', slice: [116, 123] },
+      { label: 'Unit 5B', desc: 'Farm animals (2)', slice: [123, 129] },
+      { label: 'Unit 5C', desc: 'Farm animals (3)', slice: [129, 135] },
       { label: 'Unit 6A', desc: 'On the farm (1)', slice: [135, 145] },
       { label: 'Unit 6B', desc: 'On the farm (2)', slice: [145, 155] },
       { label: 'Unit 6C', desc: 'On the farm (3)', slice: [155, 164] },
@@ -383,9 +410,17 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Textbook({ onImport, onClose, historyRef, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin, active = true }) {
+// 同步练习分包：A=前10题 B=中10题 C=剩余（约15题）——宝石玻璃风格按钮
+const SYNC_PARTS = [
+  { key: 'A', count: 10, grad: 'from-emerald-400 to-teal-600', shadow: 'shadow-emerald-900/40', glow: 'rgba(16,185,129,0.55)' },
+  { key: 'B', count: 10, grad: 'from-sky-400 to-blue-600',      shadow: 'shadow-blue-900/40',    glow: 'rgba(59,130,246,0.55)' },
+  { key: 'C', count: 15, grad: 'from-fuchsia-400 to-purple-600', shadow: 'shadow-purple-900/40',  glow: 'rgba(192,38,211,0.55)' },
+]
+
+export default function Textbook({ onImport, onClose, historyRef, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin, active = true, settings, onXp, onCrystal }) {
   const [detail, setDetail] = useState(null)
   const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
+  const [grammar, setGrammar] = useState(null)   // { bookId, bookName, label, mode }
 
   useLayoutEffect(() => {
     if (!historyRef) return
@@ -404,14 +439,34 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
     }
   }, [historyRef])
 
+  if (grammar) {
+    return (
+      <GrammarLesson
+        bookId={grammar.bookId}
+        bookName={grammar.bookName}
+        unitLabel={grammar.label}
+        mode={grammar.mode}
+        settings={settings}
+        onXp={onXp}
+        onCrystal={onCrystal}
+        onClose={() => setGrammar(null)}
+      />
+    )
+  }
+
   if (syncUnit) {
     return (
       <Unit1Flow
         unitLabel={syncUnit.label}
         bookId={syncUnit.bookId}
+        part={syncUnit.part}
         requireSpeak={requireSpeak}
         hideSkipNext={hideSkipNext}
+        settings={settings}
         onClose={() => setSyncUnit(null)}
+        onXp={onXp}
+        onCrystal={onCrystal}
+        isMember={isMember}
       />
     )
   }
@@ -433,21 +488,36 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
           <span className="text-gray-300 text-sm font-medium">{book.name}</span>
         </div>
 
-        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
-          <div className={`w-20 h-28 rounded-xl overflow-hidden shrink-0 ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
-            {book.gradient ? (
-              <div className="flex flex-col items-center justify-center w-full h-full p-2 text-center border-2 border-white/10 mix-blend-overlay shadow-inner" style={{ backdropFilter: 'brightness(1.1)' }}>
-                <span className="text-white/80 text-[9px] font-bold tracking-widest mb-1.5 opacity-90 drop-shadow-sm">{book.label || '北师大版'}</span>
-                <span className="text-white text-base font-black tracking-widest mb-1.5 drop-shadow-md">{book.coverText}</span>
-                <span className="text-white/70 text-[10px] font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">{book.subject || '高中英语'}</span>
-              </div>
-            ) : (
-              <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
-            )}
+        <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4 sm:p-6 mb-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <div className="flex items-center gap-3 sm:gap-0 sm:contents">
+            <div className={`w-16 h-20 sm:w-20 sm:h-28 rounded-xl overflow-hidden shrink-0 ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
+              {book.gradient ? (
+                <div className="flex flex-col items-center justify-center w-full h-full p-2 text-center border-2 border-white/10 mix-blend-overlay shadow-inner" style={{ backdropFilter: 'brightness(1.1)' }}>
+                  <span className="text-white/80 text-[9px] font-bold tracking-widest mb-1.5 opacity-90 drop-shadow-sm">{book.label || '北师大版'}</span>
+                  <span className="text-white text-base font-black tracking-widest mb-1.5 drop-shadow-md">{book.coverText}</span>
+                  <span className="text-white/70 text-[10px] font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">{book.subject || '高中英语'}</span>
+                </div>
+              ) : (
+                <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
+              )}
+            </div>
+            <div className="flex-1 min-w-0 sm:hidden">
+              <div className="text-lg font-bold text-white truncate">{book.name}</div>
+              <div className="text-gray-400 text-xs truncate">{book.desc}</div>
+            </div>
+            <button
+              onClick={() => {
+                if (!isMember) { onShowLogin?.(); return }
+                onImport(book.data, `${book.name} · 全册`)
+              }}
+              className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm transition-colors shrink-0 sm:order-last"
+            >
+              {isMember ? '▶ 全册练习' : '🔒 全册练习'}
+            </button>
           </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-xl font-bold text-white mb-1">{book.name}</div>
-            <div className="text-gray-400 text-sm mb-3">{book.desc}</div>
+          <div className="flex-1 min-w-0 w-full">
+            <div className="hidden sm:block text-xl font-bold text-white mb-1">{book.name}</div>
+            <div className="hidden sm:block text-gray-400 text-sm mb-3">{book.desc}</div>
             {(() => {
               const stats = getLessonStats(book.data, progress)
               const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
@@ -460,62 +530,136 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                 </div>
               )
             })()}
+            <div className="mt-2 text-xs text-green-400/70">💡 点击卡片底部绿色按钮，可练习该单元同步习题</div>
           </div>
-          <button
-            onClick={() => onImport(book.data, `${book.name} · 全册`)}
-            className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors shrink-0"
-          >
-            ▶ 全册练习
-          </button>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        {/* Half-lock notice */}
+        {!isMember && (
+          <div className="mb-4 bg-amber-900/30 border border-amber-700/40 rounded-xl px-4 py-3 flex items-center gap-3">
+            <span className="text-lg">🔒</span>
+            <div>
+              <div className="text-amber-300 text-sm font-semibold">前半部分免费体验</div>
+              <div className="text-amber-600 text-xs">开通会员解锁全部单元</div>
+            </div>
+            <button onClick={onShowLogin} className="ml-auto shrink-0 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold transition-colors">
+              开通会员
+            </button>
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {book.lessons.map((lesson, i) => {
+            const halfIdx = Math.ceil(book.lessons.length / 2)
+            const lessonLocked = !isMember && i >= halfIdx
             const data = book.data.slice(lesson.slice[0], lesson.slice[1])
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const done = stats.mastered === stats.total && stats.total > 0
+            const g1Ready = hasGrammar(book.id, lesson.label)
+            const g2Ready = g1Ready  // 语法二与语法一同步上线
+            const goMain = () => {
+              if (lessonLocked) { onShowLogin?.(); return }
+              const buildLoader = (idx) => {
+                if (idx >= book.lessons.length - 1) return null
+                const next = book.lessons[idx + 1]
+                if (!isMember && idx + 1 >= halfIdx) return () => onShowLogin?.()
+                return () => {
+                  const nextData = book.data.slice(next.slice[0], next.slice[1])
+                  onImport(nextData, `${book.name} · ${next.label}`, buildLoader(idx + 1))
+                }
+              }
+              onImport(data, `${book.name} · ${lesson.label}`, buildLoader(i))
+            }
+            const goGrammar = (mode) => {
+              if (lessonLocked) { onShowLogin?.(); return }
+              setGrammar({ bookId: book.id, bookName: book.name, label: lesson.label, mode })
+            }
+            // ABC 字母对应文字色（玻璃底 · 去彩边）
+            const abcLetterColor = { A: 'text-emerald-300', B: 'text-sky-300', C: 'text-pink-300' }
+            // 主练习进度 / 语法一二 进度
+            const mainPct = (percent || 0) / 100
+            const g1Pct = getGrammarPercent(book.id, lesson.label, 'lesson')
+            const g2Pct = getGrammarPercent(book.id, lesson.label, 'practice')
+            const accentMain = done ? '#fbbf24' : '#3b82f6'
             return (
-              <div key={i} className="text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
-                <button
-                  onClick={() => {
-                    const buildLoader = (idx) => {
-                      if (idx >= book.lessons.length - 1) return null
-                      return () => {
-                        const next = book.lessons[idx + 1]
-                        const nextData = book.data.slice(next.slice[0], next.slice[1])
-                        onImport(nextData, `${book.name} · ${next.label}`, buildLoader(idx + 1))
-                      }
-                    }
-                    onImport(data, `${book.name} · ${lesson.label}`, buildLoader(i))
-                  }}
-                  className="p-4 flex flex-col gap-2 flex-1 text-left"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <span className="text-white text-sm font-medium">{lesson.label}</span>
-                    {done
-                      ? <span className="text-xs text-green-400 bg-green-900/40 border border-green-700/50 px-2 py-0.5 rounded-full shrink-0">已完成</span>
-                      : stats.attempted > 0
-                        ? <span className="text-xs text-blue-400 bg-blue-900/40 border border-blue-700/50 px-2 py-0.5 rounded-full shrink-0">进行中</span>
-                        : <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full shrink-0">{data.length} 句</span>
-                    }
+              <div key={i} className="relative bg-slate-900/35 backdrop-blur-xl backdrop-saturate-150 border border-amber-300/40 ring-1 ring-amber-200/20 rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:border-amber-300/60 transition-all"
+                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 0 12px rgba(251,191,36,0.18), 0 4px 16px rgba(0,0,0,0.25)' }}>
+
+                {/* 主区：主练习 + 两个语法按钮（顶部彩条已去掉） */}
+                <div className="px-3 pt-3 pb-2 flex gap-2">
+                  {/* 左：主练习按钮 — 只留 Unit label + #N + 右侧环形进度 */}
+                  <button onClick={goMain}
+                    style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 3px rgba(0,0,0,0.2)' }}
+                    className={`flex-1 min-w-0 rounded-2xl flex items-center gap-3 transition-all active:scale-[0.98]
+                      bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150 border border-white/15 hover:bg-white/[0.12] hover:border-white/25
+                      border-l-4 ${done ? 'border-l-white/50' : lessonLocked ? 'border-l-white/15' : 'border-l-white/30 hover:border-l-white/50'}
+                      ${lessonLocked ? 'opacity-60' : ''}
+                      p-3 pl-3.5`}>
+                    <div className="flex flex-col text-left flex-1 min-w-0">
+                      <span className="text-lg font-bold text-white truncate">{lesson.label}</span>
+                      <span className="text-[10px] font-mono text-white/40 mt-0.5">#{i + 1}</span>
+                    </div>
+                    <RingProgress value={mainPct} size={56} stroke={4} accent={accentMain}
+                      label={`${Math.round(mainPct * 100)}`} sub="%" />
+                  </button>
+
+                  {/* 右：两个语法按钮 — 只留 label + 右侧环形进度 */}
+                  <div className="flex flex-col gap-2 w-[36%] max-w-[160px] shrink-0">
+                    {/* 语法一 */}
+                    <button onClick={() => goGrammar('lesson')}
+                      disabled={lessonLocked}
+                      style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 3px rgba(0,0,0,0.2)' }}
+                      className={`flex-1 rounded-2xl flex items-center gap-2 transition-all active:scale-[0.96]
+                        bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150 border border-white/15 hover:bg-white/[0.12] hover:border-white/25
+                        border-l-4 ${g1Ready ? 'border-l-white/30 hover:border-l-white/50' : 'border-l-white/12'}
+                        ${lessonLocked ? 'opacity-40' : ''}
+                        p-2 pl-2.5`}>
+                      <span className="text-white text-sm font-bold leading-tight flex-1 text-left">语法一</span>
+                      <RingProgress value={g1Pct} size={36} stroke={3} accent="#fbbf24"
+                        label={g1Pct > 0 ? `${Math.round(g1Pct * 100)}` : ''} />
+                    </button>
+
+                    {/* 语法二 */}
+                    <button onClick={() => goGrammar('practice')}
+                      disabled={lessonLocked}
+                      style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 3px rgba(0,0,0,0.2)' }}
+                      className={`flex-1 rounded-2xl flex items-center gap-2 transition-all active:scale-[0.96]
+                        bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150 border border-white/15 hover:bg-white/[0.12] hover:border-white/25
+                        border-l-4 ${g2Ready ? 'border-l-white/30 hover:border-l-white/50' : 'border-l-white/12'}
+                        ${lessonLocked ? 'opacity-40' : ''}
+                        p-2 pl-2.5`}>
+                      <span className="text-white text-sm font-bold leading-tight flex-1 text-left">语法二</span>
+                      <RingProgress value={g2Pct} size={36} stroke={3} accent="#e879f9"
+                        label={g2Pct > 0 ? `${Math.round(g2Pct * 100)}` : ''} />
+                    </button>
                   </div>
-                  <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
-                    <div className={`h-full rounded-full transition-all duration-500 ${done ? 'bg-green-500' : 'bg-blue-500'}`} style={{ width: `${percent}%` }} />
+                </div>
+
+                {/* 底栏：同步练习 + ABC（绿色动作区 #7EB973） */}
+                <div className="group/sync w-full px-3 py-2.5 backdrop-blur-xl backdrop-saturate-150
+                  border-t border-white/15 flex items-center gap-2 transition-colors"
+                  style={{
+                    backgroundColor: 'rgba(126, 185, 115, 0.35)',
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
+                  }}>
+                  <span className="text-sm font-bold text-white/95 shrink-0">同步练习</span>
+                  <div className="flex items-center gap-2 ml-auto">
+                    {SYNC_PARTS.map(sp => (
+                      <button key={sp.key}
+                        onClick={() => setSyncUnit({ bookId: book.id, label: lesson.label, part: sp.key })}
+                        disabled={lessonLocked}
+                        title={`${sp.key} 部分 · ${sp.count} 题`}
+                        style={{ boxShadow: `inset 0 1px 0 rgba(255,255,255,0.22), 0 2px 6px rgba(0,0,0,0.25)` }}
+                        className={`w-10 h-10 rounded-xl text-base font-black ${abcLetterColor[sp.key]} flex items-center justify-center
+                          bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150 border border-white/15
+                          hover:scale-110 hover:bg-white/[0.14] hover:border-white/25 active:scale-95 transition-all
+                          ${lessonLocked ? 'opacity-30 pointer-events-none' : ''}`}>
+                        {sp.key}
+                      </button>
+                    ))}
                   </div>
-                  <div className="flex items-center justify-between text-xs text-gray-500">
-                    <span className="leading-snug line-clamp-1 text-gray-500">{lesson.desc}</span>
-                    <span className="text-gray-600 font-mono shrink-0 ml-1">#{i + 1}</span>
-                  </div>
-                </button>
-                <button
-                  onClick={() => {
-                    setSyncUnit({ bookId: book.id, label: lesson.label })
-                  }}
-                  className="w-full py-1.5 text-xs font-semibold text-white bg-green-700 hover:bg-green-600 border-t border-green-900 transition-colors text-center rounded-b-xl"
-                >
-                  {lesson.label} 同步练习
-                </button>
+                </div>
               </div>
             )
           })}
@@ -536,8 +680,8 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
         <div className="mb-5 bg-gradient-to-r from-amber-900/40 to-orange-900/30 border border-amber-700/50 rounded-xl p-4 flex items-center gap-3">
           <span className="text-2xl shrink-0">⭐</span>
           <div className="flex-1 min-w-0">
-            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁全部教材</div>
-            <div className="text-amber-500/80 text-xs mt-0.5">三年级下册起均为会员专属，免费用三年级上册体验</div>
+            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁每册后半部分</div>
+            <div className="text-amber-500/80 text-xs mt-0.5">每册前半单元免费体验，后半单元需要会员</div>
           </div>
           <button onClick={onShowLogin} className="shrink-0 px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold transition-colors">
             登录
@@ -547,8 +691,8 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {TEXTBOOK_SLOTS.map((book) => {
-          const isPremium = book.name && book.id !== 'grade3_up'
-          const locked = isPremium && !isMember
+          const isPremium = false   // 书目全部可进，锁在单元层
+          const locked = false
           return (
           <div key={book.id} className="relative">
           <button

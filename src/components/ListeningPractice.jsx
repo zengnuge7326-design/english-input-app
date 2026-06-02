@@ -72,7 +72,12 @@ function WordOrderQuestion({ q, onResult }) {
     <div>
       <div className="flex items-center gap-2 mb-4">
         <div className="text-gray-300 text-sm">{q.zh}</div>
-        <button onClick={() => speak(q.sentence)} className="text-blue-400 hover:text-blue-300 text-lg">
+        <button
+          type="button"
+          onClick={() => speak(q.sentence)}
+          className="shrink-0 w-10 h-10 min-w-10 min-h-10 inline-flex items-center justify-center p-0 rounded-lg bg-slate-800 border border-slate-700 text-blue-300 hover:text-white hover:bg-slate-700 transition-colors"
+          title="播放句子"
+        >
           <IconSpeaker size={22} />
         </button>
       </div>
@@ -140,8 +145,12 @@ function ChoiceQuestion({ q, type, onResult }) {
     <div>
       {/* 播放按钮 */}
       <div className="flex items-center justify-center mb-6">
-        <button onClick={() => speak(textToSpeak)}
-          className="w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center text-2xl transition-colors">
+        <button
+          type="button"
+          onClick={() => speak(textToSpeak)}
+          className="w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center p-0 transition-colors"
+          title="播放听力"
+        >
           <IconSpeaker size={28} />
         </button>
       </div>

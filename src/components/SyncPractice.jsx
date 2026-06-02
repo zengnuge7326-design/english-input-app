@@ -245,7 +245,7 @@ function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInn
   if (activeUnit) {
     const currentFlowKey = activeUnit.label;
     const currentBookId = activeUnit.bookId;
-    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} onClose={() => setActiveUnit(null)} />
+    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} settings={settings} onClose={() => setActiveUnit(null)} />
   }
 
   return (

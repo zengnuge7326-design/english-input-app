@@ -131,7 +131,7 @@ function playSoft(ctx) {
 
 // ── Feedback sounds ──────────────────────────────────────────
 
-function playChime(ctx, isVictory) {
+function playChime(ctx, isVictory, pm = 1) {
   const notes = isVictory ? [523, 659, 784, 1047] : [523, 659, 784]
   notes.forEach((freq, i) => {
     const osc = ctx.createOscillator()
@@ -139,14 +139,14 @@ function playChime(ctx, isVictory) {
     osc.connect(gain); gain.connect(getOutput(ctx))
     osc.type = 'sine'
     const t = ctx.currentTime + i * (isVictory ? 0.12 : 0.1)
-    osc.frequency.setValueAtTime(freq, t)
+    osc.frequency.setValueAtTime(freq * pm, t)
     gain.gain.setValueAtTime(isVictory ? 0.3 : 0.25, t)
     gain.gain.exponentialRampToValueAtTime(0.001, t + (isVictory ? 0.3 : 0.2))
     osc.start(t); osc.stop(t + (isVictory ? 0.3 : 0.2))
   })
 }
 
-function playCoin(ctx, isVictory) {
+function playCoin(ctx, isVictory, pm = 1) {
   // Mario-style coin: square wave freq sweep up
   const sequences = isVictory
     ? [[988, 0], [1319, 0.08], [1568, 0.16], [2093, 0.26]]
@@ -157,15 +157,15 @@ function playCoin(ctx, isVictory) {
     const gain = ctx.createGain()
     osc.connect(gain); gain.connect(getOutput(ctx))
     const t = ctx.currentTime + delay
-    osc.frequency.setValueAtTime(freq, t)
-    osc.frequency.exponentialRampToValueAtTime(freq * 1.3, t + 0.06)
+    osc.frequency.setValueAtTime(freq * pm, t)
+    osc.frequency.exponentialRampToValueAtTime(freq * pm * 1.3, t + 0.06)
     gain.gain.setValueAtTime(0.18, t)
     gain.gain.exponentialRampToValueAtTime(0.001, t + 0.08)
     osc.start(t); osc.stop(t + 0.09)
   })
 }
 
-function playPop(ctx, isVictory) {
+function playPop(ctx, isVictory, pm = 1) {
   const count = isVictory ? 4 : 1
   for (let i = 0; i < count; i++) {
     const osc = ctx.createOscillator()
@@ -173,7 +173,7 @@ function playPop(ctx, isVictory) {
     const gain = ctx.createGain()
     osc.connect(gain); gain.connect(getOutput(ctx))
     const t = ctx.currentTime + i * 0.1
-    const baseFreq = isVictory ? 600 + i * 120 : 700
+    const baseFreq = (isVictory ? 600 + i * 120 : 700) * pm
     osc.frequency.setValueAtTime(baseFreq, t)
     osc.frequency.exponentialRampToValueAtTime(baseFreq * 0.3, t + 0.06)
     gain.gain.setValueAtTime(0.35, t)
@@ -182,7 +182,7 @@ function playPop(ctx, isVictory) {
   }
 }
 
-function playRetro(ctx, isVictory) {
+function playRetro(ctx, isVictory, pm = 1) {
   const notes = isVictory
     ? [262, 330, 392, 523, 659, 784]
     : [440, 554]
@@ -192,7 +192,7 @@ function playRetro(ctx, isVictory) {
     const gain = ctx.createGain()
     osc.connect(gain); gain.connect(getOutput(ctx))
     const t = ctx.currentTime + i * 0.07
-    osc.frequency.setValueAtTime(freq, t)
+    osc.frequency.setValueAtTime(freq * pm, t)
     gain.gain.setValueAtTime(0.15, t)
     gain.gain.exponentialRampToValueAtTime(0.001, t + 0.06)
     osc.start(t); osc.stop(t + 0.07)
@@ -346,15 +346,17 @@ export function useSound(settings) {
     } catch {}
   }, [enabled, errorSound, volume])
 
-  const playCorrect = useCallback(() => {
+  const playCorrect = useCallback((combo = 0) => {
     if (!enabled || correctSound === 'none') return
     try {
       const ctx = getCtx()
       setOutputVolume(ctx, volume)
-      if (correctSound === 'chime') playChime(ctx, false)
-      else if (correctSound === 'coin') playCoin(ctx, false)
-      else if (correctSound === 'pop') playPop(ctx, false)
-      else if (correctSound === 'retro') playRetro(ctx, false)
+      // Every 5 combo steps pitch rises ~6%; max +60% at combo 10
+      const pm = 1 + Math.min(combo, 10) * 0.06
+      if (correctSound === 'chime') playChime(ctx, false, pm)
+      else if (correctSound === 'coin') playCoin(ctx, false, pm)
+      else if (correctSound === 'pop') playPop(ctx, false, pm)
+      else if (correctSound === 'retro') playRetro(ctx, false, pm)
       else if (correctSound === 'fart') playFart(ctx, false)
       else if (correctSound === 'drum') playDrum(ctx, false)
     } catch {}
@@ -392,7 +394,28 @@ export function useSound(settings) {
     } catch {}
   }, [enabled, settings?.fireworksSound, volume])
 
-  return { playKeypress, playError, playCorrect, playVictory, playBubble, playFireworks }
+  // 钻石获得：清脆的"叮叮叮"上升音
+  const playCrystal = useCallback(() => {
+    if (!enabled) return
+    try {
+      const ctx = getCtx()
+      setOutputVolume(ctx, volume)
+      const notes = [880, 1175, 1568]  // A5, D6, G6（明亮的上升三音）
+      notes.forEach((freq, i) => {
+        const osc = ctx.createOscillator()
+        const gain = ctx.createGain()
+        osc.connect(gain); gain.connect(getOutput(ctx))
+        osc.type = 'triangle'
+        const t = ctx.currentTime + i * 0.08
+        osc.frequency.setValueAtTime(freq, t)
+        gain.gain.setValueAtTime(0.22, t)
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25)
+        osc.start(t); osc.stop(t + 0.26)
+      })
+    } catch {}
+  }, [enabled, volume])
+
+  return { playKeypress, playError, playCorrect, playVictory, playBubble, playFireworks, playCrystal }
 }
 
 export function previewSound(category, value) {

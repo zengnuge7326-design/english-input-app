@@ -6,10 +6,10 @@
 /* ── 0. Design Tokens ───────────────────────────────────────────────────────── */
 
 .theme-light-glass {
-  /* 背景 — 暖米灰，和参考图一致，避免冷蓝 */
-  --lg-bg-page:            #edecea;
-  --lg-bg-gradient-lt:     rgba(210, 205, 245, 0.50);  /* 左上薰衣草光晕 */
-  --lg-bg-gradient-rb:     rgba(245, 210, 228, 0.38);  /* 右下玫瑰光晕   */
+  /* 背景 — 柔和薰衣灰底，比卡片更深，制造玻璃浮起的层次 */
+  --lg-bg-page:            #d9d7e4;
+  --lg-bg-gradient-lt:     rgba(196, 186, 240, 0.62);  /* 左上薰衣草光晕 */
+  --lg-bg-gradient-rb:     rgba(246, 198, 216, 0.52);  /* 右下玫瑰光晕   */
 
   /* 文字 */
   --lg-text-primary:       #1c1b22;
@@ -25,6 +25,9 @@
 
   /* 顶部高光线 — 玻璃感的灵魂 */
   --lg-highlight:          inset 0 1.5px 0 rgba(255, 255, 255, 0.95);
+  /* 立体枕状内阴影 — 顶部更亮 + 底部内凹，营造"鼓起"的 3D 玻璃 */
+  --lg-pillow:             inset 0 2px 1px rgba(255,255,255,0.98), inset 0 -4px 8px rgba(108,98,150,0.16);
+  --lg-pillow-press:       inset 0 2px 5px rgba(108,98,150,0.22), inset 0 1px 0 rgba(255,255,255,0.6);
 
   /* 彩色调色板 (R,G,B 方便 rgba() 复用) */
   --lg-c-lavender:         185, 175, 228;
@@ -45,11 +48,8 @@
   --lg-nav-icon:           16px;
 
   color: var(--lg-text-primary);
-  background-color: var(--lg-bg-page);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 8%  0%,   var(--lg-bg-gradient-lt) 0%, transparent 60%),
-    radial-gradient(ellipse 65% 45% at 92% 100%,  var(--lg-bg-gradient-rb) 0%, transparent 60%),
-    radial-gradient(ellipse 55% 35% at 55% 45%,   rgba(232,228,255,0.18)   0%, transparent 70%);
+  background: linear-gradient(180deg, #F2F2F2 0%, #E8E8E8 100%);
+  background-attachment: fixed;
 }
 
 /* ── 1. 页面背景覆盖 ─────────────────────────────────────────────────────────── */
@@ -237,8 +237,8 @@
   border: 1px solid rgba(255,255,255,0.85);
   border-radius: var(--lg-radius-card);
   box-shadow:
-    0 8px 32px rgba(0,0,0,0.07),
-    0 2px 8px  rgba(0,0,0,0.04),
+    0 14px 44px rgba(64,54,98,0.14),
+    0 4px 12px  rgba(64,54,98,0.08),
     var(--lg-highlight);
   backdrop-filter: blur(var(--lg-glass-blur)) var(--lg-glass-sat);
   -webkit-backdrop-filter: blur(var(--lg-glass-blur)) var(--lg-glass-sat);
@@ -372,9 +372,9 @@
   );
   border: 1px solid rgba(255,255,255,0.82);
   box-shadow:
-    0 6px 22px rgba(0,0,0,0.10),
-    0 2px 8px  rgba(0,0,0,0.06),
-    var(--lg-highlight);
+    0 8px 18px rgba(60,54,98,0.16),
+    0 2px 5px  rgba(60,54,98,0.10),
+    var(--lg-pillow);
   transition:
     background   0.22s var(--lg-spring),
     box-shadow   0.22s var(--lg-spring),
@@ -389,16 +389,16 @@
   );
   border-color: rgba(255,255,255,0.92);
   box-shadow:
-    0 10px 32px rgba(0,0,0,0.13),
-    0 3px 10px  rgba(0,0,0,0.07),
-    inset 0 1.5px 0 rgba(255,255,255,0.98);
+    0 14px 30px rgba(60,54,98,0.20),
+    0 4px 10px  rgba(60,54,98,0.12),
+    var(--lg-pillow);
   transform: translateY(-2px);
 }
 .theme-light-glass .lg-topbar-btn:active {
   transform: translateY(1px) scale(0.96);
   box-shadow:
-    0 3px 10px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.85);
+    0 2px 6px rgba(60,54,98,0.10),
+    var(--lg-pillow-press);
   transition:
     transform  0.08s var(--lg-ease-press),
     box-shadow 0.08s var(--lg-ease-press);
@@ -416,10 +416,10 @@
   font-weight: 600;
   border: 1px solid rgba(255,255,255,0.82);
   box-shadow:
-    0 6px 24px rgba(var(--lg-c-mint), 0.35),
-    0 2px 8px  rgba(var(--lg-c-mint), 0.18),
-    var(--lg-highlight),
-    inset 0 -1.5px 4px rgba(var(--lg-c-mint), 0.22);
+    0 8px 24px rgba(var(--lg-c-mint), 0.40),
+    0 2px 8px  rgba(var(--lg-c-mint), 0.20),
+    inset 0 2px 1px rgba(255,255,255,0.98),
+    inset 0 -4px 9px rgba(70,120,90,0.28);
   transition:
     background   0.22s var(--lg-spring),
     box-shadow   0.22s var(--lg-spring),
@@ -434,9 +434,10 @@
     rgba(var(--lg-c-mint), 0.65) 100%
   );
   box-shadow:
-    0 12px 36px rgba(var(--lg-c-mint), 0.40),
-    0 4px  12px rgba(var(--lg-c-mint), 0.22),
-    inset 0 1.5px 0 rgba(255,255,255,0.98);
+    0 14px 38px rgba(var(--lg-c-mint), 0.46),
+    0 5px  14px rgba(var(--lg-c-mint), 0.26),
+    inset 0 2px 1px rgba(255,255,255,0.99),
+    inset 0 -4px 9px rgba(70,120,90,0.26);
   transform: translateY(-2px);
   border-color: rgba(255,255,255,0.90);
 }
@@ -444,7 +445,8 @@
   transform: translateY(1px) scale(0.985);
   box-shadow:
     0 3px 10px rgba(var(--lg-c-mint), 0.22),
-    inset 0 1px 0 rgba(255,255,255,0.85);
+    inset 0 2px 6px rgba(70,120,90,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.6);
   transition:
     transform  0.08s var(--lg-ease-press),
     box-shadow 0.08s var(--lg-ease-press);
@@ -460,9 +462,9 @@
   border: 1px solid rgba(255,255,255,0.78);
   color: var(--lg-text-primary);
   box-shadow:
-    0 4px 16px rgba(0,0,0,0.08),
-    0 1px 4px  rgba(0,0,0,0.05),
-    var(--lg-highlight);
+    0 6px 16px rgba(60,54,98,0.13),
+    0 1px 4px  rgba(60,54,98,0.07),
+    var(--lg-pillow);
   transition:
     background   0.22s var(--lg-spring),
     box-shadow   0.22s var(--lg-spring),
@@ -476,17 +478,17 @@
     rgba(255,255,255,0.72) 100%
   );
   box-shadow:
-    0 8px 26px rgba(0,0,0,0.11),
-    0 2px 8px  rgba(0,0,0,0.06),
-    inset 0 1.5px 0 rgba(255,255,255,0.98);
-  transform: translateY(-1.5px);
+    0 12px 28px rgba(60,54,98,0.17),
+    0 3px 9px  rgba(60,54,98,0.09),
+    var(--lg-pillow);
+  transform: translateY(-2px);
   border-color: rgba(255,255,255,0.90);
 }
 .theme-light-glass .lg-btn-secondary:active {
   transform: translateY(1px) scale(0.985);
   box-shadow:
-    0 2px 6px rgba(0,0,0,0.07),
-    inset 0 1px 0 rgba(255,255,255,0.82);
+    0 2px 6px rgba(60,54,98,0.08),
+    var(--lg-pillow-press);
   transition:
     transform  0.08s var(--lg-ease-press),
     box-shadow 0.08s var(--lg-ease-press);

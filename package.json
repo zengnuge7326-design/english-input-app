@@ -9,6 +9,7 @@
     "dev:fresh": "vite --port 5174 --strictPort",
     "build": "vite build",
     "lint": "eslint .",
+    "import:gutenberg": "node scripts/import-gutenberg-desktop.mjs",
     "preview": "vite preview",
     "electron:dev": "npm run build && npx electron .",
     "electron:build": "npm run build && npx electron-builder --mac"

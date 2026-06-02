@@ -1,10 +1,16 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import PageBackBar from './PageBackBar'
+import ReadingAudioToolbar from './ReadingAudioToolbar'
+import ReadingParagraphInput from './ReadingParagraphInput'
 import WordInput from './WordInput'
 import DictionaryCard from './DictionaryCard'
+import GrammarLearningStrip from './GrammarLearningStrip'
+import { GRAMMAR_LEARNING_UI_ENABLED } from '../config/grammarUi'
+import { getGrammarTopicMeta } from '../data/grammar_tenses/grammarTopicMeta'
 import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
 import { buildSplitChunksLevel } from '../utils/splitSentence'
+import { getSpeakTextForReading } from '../utils/readingSpeak.js'
 
 // Fuzzy match: score 0-1 based on content words
 function calcMatch(targetSentence, spokenText) {
@@ -24,7 +30,8 @@ function calcMatch(targetSentence, spokenText) {
 }
 
 
-export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson, onBack }) {
+export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, onPatchSettings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson, onBack, grammarContext = null, onSentenceDone, onWordDone, onXp, onCrystal }) {
+  const readingMode = grammarContext?.source === 'gutenberg'
   const [index, setIndex] = useState(initialIndex)
   const [completed, setCompleted] = useState(false)
   const [key, setKey] = useState(0)
@@ -48,14 +55,20 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const [splitLevel, setSplitLevel]     = useState(0) // 0=off, 1=初级, 2=中级, 3=高级
   const splitMode = splitLevel > 0
   const [chunkTranslations, setChunkTranslations] = useState([])
-  const { speak, prefetch } = useTTS(settings)
+  const { speak, prefetch, cancel } = useTTS(settings)
   const { playError, playCorrect, playVictory, playKeypress, playBubble, playFireworks } = useSound(settings)
-  const [leadCount, setLeadCount] = useState(1)
+  const leadCount = Math.min(5, Math.max(1, Number(settings?.leadReadCount) || 1))
   const leadTimersRef = useRef([])
   useEffect(() => () => leadTimersRef.current.forEach(clearTimeout), [])
   const [currentWordIndex, setCurrentWordIndex] = useState({ idx: 0, total: 0 })
   const [completeBubbles, setCompleteBubbles]   = useState([])
   const [fwSparks, setFwSparks] = useState([])
+  const [xpFloats, setXpFloats] = useState([])   // 完成时飘出的 +XP
+  const [praise, setPraise] = useState('')        // 完成横幅的随机鼓励语
+  const PRAISES = ['太棒了！', '完美！', '继续保持！', '答对啦！', '真厉害！', '漂亮！', '就是这样！']
+  const comboRef = useRef(0)                       // 连续答对计数（不触发重渲染）
+  const [comboFloats, setComboFloats] = useState([]) // 里程碑连击飘字
+  const sentenceErrorRef = useRef(0)                // 本句出错次数（用于钻石判断）
 
   const FW_COLORS = ['#ff4d4d','#ffcc00','#4dff88','#4db8ff','#ff80ff','#ff9933','#fff','#c084fc']
 
@@ -94,6 +107,36 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     return s
   }, [sentences, index, chunks, chunkIndex, chunkTranslations])
 
+  const readingAutoplayEn = useMemo(() => {
+    if (!readingMode || !sentences[index]?.en) return ''
+    const en = sentences[index].en
+    return settings?.readingSpeakScope === 'sentence'
+      ? getSpeakTextForReading('sentence', en, 0)
+      : en
+  }, [readingMode, index, sentences, settings?.readingSpeakScope])
+
+  const readingSpeakTarget = useMemo(() => {
+    if (!readingMode || !activeSentence?.en) return ''
+    return getSpeakTextForReading(
+      settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box',
+      activeSentence.en,
+      currentWordIndex.idx,
+    )
+  }, [readingMode, activeSentence, settings?.readingSpeakScope, currentWordIndex.idx])
+
+  useEffect(() => () => {
+    cancel()
+    leadTimersRef.current.forEach(clearTimeout)
+    leadTimersRef.current = []
+  }, [cancel])
+
+  // Reset combo on new sentence or retry
+  useEffect(() => {
+    comboRef.current = 0
+    setComboFloats([])
+    sentenceErrorRef.current = 0
+  }, [index, key])
+
   // Reset speak gate on new sentence / retry / setting change
   useEffect(() => {
     setSpeakUnlocked(!gateEnabled)
@@ -105,26 +148,35 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     if (recognitionRef.current) { recognitionRef.current.stop(); recognitionRef.current = null }
   }, [index, key, settings?.requireSpeak])
 
-  // Auto-accept after 5 failed speak attempts
+  // Auto-accept after N failed speak attempts (configurable, default 3)
+  const speakFailLimit = settings?.speakFailLimit || 3
   useEffect(() => {
-    if (speakAttempts >= 5 && speakActive) setSpeakUnlocked(true)
-  }, [speakAttempts])
+    if (speakAttempts >= speakFailLimit && speakActive) setSpeakUnlocked(true)
+  }, [speakAttempts, speakFailLimit])
 
   // Auto-play on new sentence (no gate)
   useEffect(() => {
     const sentence = sentences[index]
     if (!sentence || gateEnabled || completed) return
-    prefetch(sentence.en)
-    if (settings.sentenceSpeak) setTimeout(() => speak(sentence.en), 300)
-  }, [index, key])
+    const speakEn = readingMode ? readingAutoplayEn : sentence.en
+    if (!speakEn) return
+    prefetch(speakEn)
+    if (settings.sentenceSpeak) setTimeout(() => speak(speakEn), 300)
+  }, [index, key, readingMode, readingAutoplayEn, gateEnabled, completed, settings.sentenceSpeak, prefetch, speak])
 
   // Auto-play when speak gate activates (so child hears sentence before reading)
   useEffect(() => {
-    if (speakActive && sentence) {
-      const textToSpeak = (splitMode && chunks) ? chunks[chunkIndex] : sentence.en
-      prefetch(textToSpeak)
-      setTimeout(() => speak(textToSpeak), 700)
+    if (!speakActive || !sentence) return
+    let textToSpeak = (splitMode && chunks) ? chunks[chunkIndex] : sentence.en
+    if (readingMode && activeSentence?.en) {
+      textToSpeak = getSpeakTextForReading(
+        settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box',
+        activeSentence.en,
+        currentWordIndex.idx,
+      )
     }
+    prefetch(textToSpeak)
+    setTimeout(() => speak(textToSpeak), 700)
   }, [speakActive])
 
   useEffect(() => {
@@ -135,7 +187,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     onNav?.({
       prev: goPrev,
       next: goNext,
-      retry: () => { setCompleted(false); setKey(k => k + 1) },
+      retry: () => { completedRef.current = false; setCompleted(false); setKey(k => k + 1) },
       mastered: () => onMarkMastered(sentence?.id),
       review: () => onMarkReview(sentence?.id),
       speak: () => speak(sentence?.en),
@@ -150,27 +202,43 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
       status: progress[`sentence_${sentences[index]?.id}`]?.status || 'new',
       canPrev: index > 0,
       canNext: index < sentences.length - 1,
+      readingMode,
     })
-  }, [index, sentences.length, completed, progress, splitMode, splitLevel, showCard, showList])
+  }, [index, sentences.length, completed, progress, splitMode, splitLevel, showCard, showList, readingMode])
 
   const sentence = sentences[index]
 
   const goNext = useCallback(() => {
+    completedRef.current = false
     setCompleted(false); setKey(k => k + 1); setChunkIndex(0)
     setIndex(i => Math.min(i + 1, sentences.length - 1))
   }, [sentences.length])
 
   const goPrev = useCallback(() => {
+    completedRef.current = false
     setCompleted(false); setKey(k => k + 1); setChunkIndex(0)
     setIndex(i => Math.max(i - 1, 0))
   }, [])
 
   const restartLesson = useCallback(() => {
+    completedRef.current = false
     setCompleted(false)
     setChunkIndex(0)
     setIndex(0)
     setKey(k => k + 1)
   }, [])
+
+  const isLastSentence = index === sentences.length - 1
+
+  const handleReadingContinue = useCallback(() => {
+    setFwSparks([])
+    if (!isLastSentence) {
+      goNext()
+      return
+    }
+    if (hasNextLesson) onNextLesson?.()
+    else onBack?.()
+  }, [isLastSentence, goNext, hasNextLesson, onNextLesson, onBack])
 
   const continueBtnRef = useRef(null)
   const isLastSentenceForFocus = index === sentences.length - 1
@@ -254,28 +322,48 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     return () => window.removeEventListener('keydown', onSpace)
   }, [speakActive, handleRecordToggle])
 
+  const completedRef = useRef(false)
   const handleComplete = useCallback(() => {
     if (chunks && chunkIndex < chunks.length - 1) {
       setChunkIndex(i => i + 1); setKey(k => k + 1); return
     }
+    if (completedRef.current) return   // 防止重复触发
+    completedRef.current = true
     setCompleted(true)
     onIncrementAttempts(sentence.id)
+    onSentenceDone?.()
+    onXp?.(2)
+    // 钻石：本句无错→绿，有错坚持完成→红（鼓励错题坚持）
+    if (sentenceErrorRef.current === 0) {
+      onCrystal?.('green', 1, 'sentence_clean', { id: sentence.id })
+    } else if (sentenceErrorRef.current >= 2) {
+      onCrystal?.('red', 1, 'sentence_recover', { id: sentence.id, errs: sentenceErrorRef.current })
+    }
+    // 完成整个单元（最后一句）→ 蓝钻石
+    if (index === sentences.length - 1) {
+      onCrystal?.('blue', 1, 'unit_complete', { lesson: grammarContext?.name || '' })
+    }
+    setPraise(PRAISES[Math.floor(Math.random() * PRAISES.length)])
+    const floatId = Date.now()
+    setXpFloats(f => [...f, { id: floatId }])
+    setTimeout(() => setXpFloats(f => f.filter(x => x.id !== floatId)), 1000)
     playVictory()
     const W = window.innerWidth, H = window.innerHeight
-    const sparks = [0, 0.15, 0.3, 0.45, 0.6, 0.75].flatMap((delay, bi) => {
+    // 3组×12粒=36个粒子，避免过多动画导致卡顿
+    const sparks = [0, 0.2, 0.4].flatMap((delay, bi) => {
       const cx = W * 0.2 + Math.random() * W * 0.6
       const cy = H * 0.1 + Math.random() * H * 0.3
-      return Array.from({ length: 26 }, (_, i) => {
-        const angle = (i / 26) * Math.PI * 2 + Math.random() * 0.3
+      return Array.from({ length: 12 }, (_, i) => {
+        const angle = (i / 12) * Math.PI * 2 + Math.random() * 0.3
         const dist = 80 + Math.random() * 150
         return { id: `${bi}-${i}-${Date.now()}`, cx, cy, fx: Math.cos(angle) * dist, fy: Math.sin(angle) * dist - 50, size: 4 + Math.random() * 5, color: FW_COLORS[Math.floor(Math.random() * FW_COLORS.length)], duration: 0.6 + Math.random() * 0.5, delay }
       })
     })
     setFwSparks(sparks)
-    setTimeout(() => setFwSparks([]), 1800)
+    setTimeout(() => setFwSparks([]), 1600)
     playFireworks()
     if (settings.autoSpeak && !splitMode) setTimeout(() => speak(sentence.en), 600)
-  }, [sentence, chunks, chunkIndex, settings.autoSpeak, speak, onIncrementAttempts, playVictory, splitMode])
+  }, [sentence, chunks, chunkIndex, settings.autoSpeak, speak, onIncrementAttempts, playVictory, playFireworks, splitMode, onCrystal, onSentenceDone, onXp, index, sentences.length, grammarContext])
 
   const prevKeyRef = useRef(null)
   useEffect(() => {
@@ -286,12 +374,10 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     if (chunk) setTimeout(() => speak(chunk), 100)
   }, [chunkIndex, key])
 
-  const isLastSentence = index === sentences.length - 1
-
   useEffect(() => {
     if (!completed) { setCompleteBubbles([]); return }
     const colors = ['#ff6b9d','#4ecdc4','#ffe66d','#a8e6cf','#ff8b94','#c7ceea','#ffd93d','#6bcb77','#74b9ff','#fd79a8','#55efc4','#fdcb6e']
-    setCompleteBubbles(Array.from({length: 25}, (_, i) => ({
+    setCompleteBubbles(Array.from({length: 12}, (_, i) => ({
       id: i, glow: colors[i % colors.length],
       size: 18 + Math.random() * 28, left: 2 + Math.random() * 96,
       dx: (Math.random() - 0.5) * 120, duration: 1.4 + Math.random() * 1.0, delay: i * 0.04,
@@ -301,12 +387,25 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   useEffect(() => {
     if (!completed) return
     if (isLastSentence) return
+    if (readingMode) return
     function handleNextKey(e) {
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); goNext() }
     }
     window.addEventListener('keydown', handleNextKey)
     return () => window.removeEventListener('keydown', handleNextKey)
-  }, [completed, goNext, isLastSentence])
+  }, [completed, goNext, isLastSentence, readingMode])
+
+  /** 输入阅读：完成后按 Enter 等同点击「继续」（捕获阶段避免与按钮重复触发） */
+  useEffect(() => {
+    if (!readingMode || !completed || speakActive) return
+    function onEnterContinue(e) {
+      if (e.key !== 'Enter') return
+      e.preventDefault()
+      handleReadingContinue()
+    }
+    window.addEventListener('keydown', onEnterContinue, true)
+    return () => window.removeEventListener('keydown', onEnterContinue, true)
+  }, [readingMode, completed, speakActive, handleReadingContinue])
 
   const speakWord = useCallback((word) => {
     if (settings.wordSpeak !== false) speak(word)
@@ -335,13 +434,36 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
         if (e.key === 'ArrowRight') { goNext(); return }
         if (e.key === 'ArrowLeft')  { goPrev(); return }
       }
-      if (e.ctrlKey && e.key === 'a') { e.preventDefault(); speak(sentence.en); return }
+      if (e.ctrlKey && e.key === 'a') {
+        e.preventDefault()
+        const a = readingMode && activeSentence?.en
+          ? getSpeakTextForReading(
+              settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box',
+              activeSentence.en,
+              currentWordIndex.idx,
+            )
+          : sentence.en
+        speak(a)
+        return
+      }
       if (e.ctrlKey && e.key === 'm') { e.preventDefault(); onMarkMastered(sentence.id); return }
       if (e.ctrlKey && e.key === 'q') { e.preventDefault(); onMarkReview(sentence.id); return }
     }
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
-  }, [sentence, speak, goNext, goPrev, onMarkMastered, onMarkReview])
+  }, [sentence, speak, goNext, goPrev, onMarkMastered, onMarkReview, readingMode, activeSentence, currentWordIndex, settings?.readingSpeakScope])
+
+  const grammarTopicMeta = useMemo(() => {
+    if (!GRAMMAR_LEARNING_UI_ENABLED) return null
+    if (!grammarContext || grammarContext.source !== 'grammar' || !grammarContext.tenseId) return null
+    return getGrammarTopicMeta(grammarContext.tenseId)
+  }, [grammarContext])
+
+  useEffect(() => {
+    if (!readingMode) return
+    setSplitLevel(0)
+    setChunkIndex(0)
+  }, [readingMode])
 
   if (!sentence) return <div className="text-gray-400 text-center mt-20">没有句子，请先导入数据。</div>
 
@@ -385,6 +507,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   return (
     <>
       {/* Space decorations */}
+      {!readingMode && (
       <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{zIndex:1}}>
         <div className="milky-way" style={{ left: '-10%', top: '10%', width: '120%', height: '35%' }} />
         {STARS.map((s, i) => (
@@ -399,6 +522,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           </div>
         ))}
       </div>
+      )}
 
       {/* Completion bubbles */}
       {completeBubbles.length > 0 && (
@@ -424,9 +548,75 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
         </div>
       )}
 
-      <div className="flex flex-col items-center gap-3 w-full max-w-2xl mx-auto px-4 relative transition-all duration-200" style={{zIndex:10}}>
-        {onBack && <PageBackBar onBack={onBack} label="返回" className="mb-2 mt-1 w-full self-start" />}
-        {showCard && <DictionaryCard sentence={sentence} onClose={() => setShowCard(false)} />}
+      {/* 连击里程碑飘字 */}
+      {comboFloats.map(f => (
+        <div key={f.id} className="fixed left-1/2 top-1/3 -translate-x-1/2 pointer-events-none xp-float" style={{ zIndex: 9998 }}>
+          <div className="bg-orange-500/90 text-white font-extrabold text-2xl px-5 py-2 rounded-2xl shadow-xl shadow-orange-900/50 whitespace-nowrap flex items-center gap-2">
+            🔥 {f.combo}连击！<span className="text-amber-200 text-lg font-bold">+5 XP</span>
+          </div>
+        </div>
+      ))}
+
+      <div className={`flex flex-col items-center mx-auto px-4 relative transition-all duration-200 w-full ${readingMode ? 'max-w-4xl gap-2' : 'max-w-2xl gap-3'}`} style={{zIndex:10}}>
+        {(onBack || (readingMode && !speakActive)) && (
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 w-full self-start mt-1 mb-1">
+            {onBack && (
+              <PageBackBar onBack={onBack} label={readingMode ? '返回阅读' : '返回'} className="mb-0 shrink-0" />
+            )}
+            {readingMode && !speakActive && (
+              <ReadingAudioToolbar
+                onSpeakFull={() => speak(readingSpeakTarget)}
+                onLeadRead={(count) => {
+                  onPatchSettings?.({ leadReadCount: count })
+                  startLeadRead(readingSpeakTarget, count)
+                }}
+                onPatchSettings={onPatchSettings}
+                leadReadCount={Math.min(3, Math.max(1, Number(settings?.leadReadCount) || 1))}
+                speakDisabled={isRecording && settings?.blockTTSDuringRec !== false}
+                readingSpeakScope={settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box'}
+                onReadingSpeakScopeChange={(scope) => onPatchSettings?.({ readingSpeakScope: scope })}
+              />
+            )}
+          </div>
+        )}
+        {/* 语法卡先于进度条显示（用户要求） */}
+        {grammarTopicMeta && !readingMode && <GrammarLearningStrip meta={grammarTopicMeta} />}
+        {!readingMode && (() => {
+          const frac = Math.min(1, (index + (completed ? 1 : (currentWordIndex.total > 0 ? currentWordIndex.idx / currentWordIndex.total : 0))) / Math.max(1, sentences.length))
+          const full = frac >= 0.999
+          return (
+            <div className="relative w-full mt-0">
+              <div className="w-full h-3 rounded-full bg-slate-800/80 overflow-hidden">
+                <div
+                  className="h-full rounded-full relative"
+                  style={{
+                    width: `${frac * 100}%`,
+                    background: full
+                      ? 'linear-gradient(90deg,#f59e0b,#fbbf24)'
+                      : 'linear-gradient(90deg,#3b82f6,#22d3ee)',
+                    transition: 'width .45s cubic-bezier(.34,1.56,.64,1), background .3s',
+                  }}
+                >
+                  {/* 顶部高光 */}
+                  <div className="absolute left-1 right-1 top-[2px] h-[3px] rounded-full bg-white/30" />
+                </div>
+              </div>
+              {/* +XP 飘字 */}
+              {xpFloats.map(f => (
+                <div key={f.id} className="xp-float absolute right-0 -top-1 text-amber-400 font-bold text-lg drop-shadow">
+                  +2 XP
+                </div>
+              ))}
+            </div>
+          )
+        })()}
+        {showCard && (
+          <DictionaryCard
+            sentence={sentence}
+            onClose={() => setShowCard(false)}
+            grammarTopicMeta={grammarTopicMeta || undefined}
+          />
+        )}
 
         {/* Sentence list drawer */}
         {showList && (
@@ -466,7 +656,8 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           </div>
         )}
 
-        {/* Chinese sentence + TTS button */}
+        {/* 默认练习：中文在上 + 朗读；输入阅读：独立工具栏在输入区上方 */}
+        {!readingMode && (
         <div className="flex items-start justify-center gap-3 mt-0 w-full transition-all duration-200">
           <div className="flex flex-col items-center gap-1 shrink-0 mt-1">
             <button
@@ -477,39 +668,35 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
               title="朗读整句 (Ctrl+A)"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
               </svg>
             </button>
-            {/* 领读 N次 */}
             <div className="flex items-center gap-0.5">
-              {[1,2,3,4,5].map(n => (
-                <button key={n}
-                  onClick={() => { setLeadCount(n); startLeadRead(sentence.en, n) }}
-                  className={`w-5 h-5 rounded text-[10px] font-bold transition-colors
-                    ${leadCount === n ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-white'}`}
+              {[1, 2, 3, 4, 5].map((n) => (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => { onPatchSettings?.({ leadReadCount: n }); startLeadRead(sentence.en, n) }}
+                  className={`w-5 h-5 rounded text-[10px] font-bold transition-colors ${leadCount === n ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-white'}`}
                   title={`领读 ${n} 次`}
                 >{n}</button>
               ))}
             </div>
           </div>
-
-          {/* Chinese text */}
           <div className="text-center flex-1">
             <div className="flex items-start justify-center gap-3">
               {showChineseGuide && (
                 <div className="text-white leading-relaxed transition-all duration-200" style={{ fontFamily: '"Kaiti SC", "STKaiti", "KaiTi", serif', fontSize: '30px', letterSpacing: '0.18em', fontWeight: 'normal' }}>
-                  {chunks && chunkTranslations[chunkIndex]
-                    ? chunkTranslations[chunkIndex]
-                    : sentence.zh}
+                  {chunks && chunkTranslations[chunkIndex] ? chunkTranslations[chunkIndex] : sentence.zh}
                 </div>
               )}
               <button
+                type="button"
                 onClick={onToggleChineseGuide}
                 className="mt-1 px-2.5 py-1 rounded-lg text-xs border border-slate-600 text-slate-300 hover:text-white hover:border-slate-400 transition-colors"
                 title={showChineseGuide ? '隐藏中文引导句' : '显示中文引导句'}
-                type="button"
               >
                 {showChineseGuide ? '隐藏中文' : '显示中文'}
               </button>
@@ -523,6 +710,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
             )}
           </div>
         </div>
+        )}
 
         {/* Speak gate — shown when settings.requireSpeak is on */}
         {speakActive && (
@@ -588,29 +776,83 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           </div>
         )}
 
-        {/* Word input — hidden while gate is blocking */}
-        <div className="w-full min-h-20" style={{ display: speakActive ? 'none' : undefined }}>
-          <WordInput
-            key={`${sentence.id}-${key}-${speakActive}`}
-            sentence={activeSentence}
-            onComplete={handleComplete}
-            speakWord={speakWord}
-            learningLevel={settings.learningLevel || 2}
-            showHintOnError={settings.showHintOnError !== false}
-            hintTriggerCount={settings.hintTriggerCount || 1}
-            errorRetryCount={settings.errorRetryCount || 2}
-            onError={playError}
-            onWordCorrect={playCorrect}
-            onKeypress={playKeypress}
-            onBubble={playBubble}
-            onCurrentChange={(idx, total) => setCurrentWordIndex({ idx, total })}
-            userId={userId}
-          />
-        </div>
+        {/* Word input — 默认练习单行；输入阅读为卡片堆叠 + 当前句内嵌输入 */}
+        {!readingMode && (
+          <div className="w-full min-h-20" style={{ display: speakActive ? 'none' : undefined }}>
+            <WordInput
+              key={`${sentence.id}-${key}-${speakActive}`}
+              sentence={activeSentence}
+              onComplete={handleComplete}
+              speakWord={speakWord}
+              learningLevel={settings.learningLevel || 2}
+              showHintOnError={settings.showHintOnError !== false}
+              hintTriggerCount={settings.hintTriggerCount || 1}
+              errorRetryCount={settings.errorRetryCount || 2}
+              onError={() => { playError(); comboRef.current = 0; sentenceErrorRef.current += 1 }}
+              onWordCorrect={() => { onWordDone?.() }}
+              onWordFinal={() => {
+                const c = ++comboRef.current
+                playCorrect(c)
+                if (c > 0 && c % 5 === 0) {
+                  onXp?.(5)
+                  // 钻石：5连击给1紫，10连击给2紫
+                  onCrystal?.('purple', c >= 10 ? 2 : 1, c >= 10 ? 'combo_10' : 'combo_5', { combo: c })
+                  const fid = Date.now()
+                  setComboFloats(f => [...f, { id: fid, combo: c }])
+                  setTimeout(() => setComboFloats(f => f.filter(x => x.id !== fid)), 1400)
+                }
+              }}
+              onKeypress={playKeypress}
+              onBubble={playBubble}
+              onCurrentChange={(idx, total) => setCurrentWordIndex({ idx, total })}
+              userId={userId}
+              readingMode={false}
+              phoneticControl={null}
+            />
+          </div>
+        )}
 
-        {/* Completion banner */}
-        {completed && (
+        {readingMode && !speakActive && (
+          <div className="w-full space-y-4">
+            <ReadingParagraphInput
+              key={`${sentence.id}-${key}`}
+              sentence={activeSentence}
+              onComplete={handleComplete}
+              showChinese={showChineseGuide}
+              frozen={completed}
+              learningLevel={settings.learningLevel || 2}
+              speakWord={speakWord}
+              onKeypress={playKeypress}
+              onError={playError}
+              onWordCorrect={() => { playCorrect(); onWordDone?.() }}
+              errorRetryCount={settings.errorRetryCount || 2}
+              hintTriggerCount={settings.hintTriggerCount || 1}
+              showHintOnError={settings.showHintOnError !== false}
+              userId={userId}
+              onCurrentChange={(idx, total) => setCurrentWordIndex({ idx, total })}
+            />
+            {completed && (
+              <div className="flex flex-col items-center gap-2 pt-1">
+                <button
+                  type="button"
+                  onClick={handleReadingContinue}
+                  title="继续（Enter）"
+                  className="min-w-[200px] px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-base font-semibold shadow-lg shadow-purple-900/40 ring-2 ring-purple-400/30 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400/80"
+                >
+                  {isLastSentence ? (hasNextLesson ? '进入下一课' : '完成阅读') : '继续'}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Completion banner（默认练习；输入阅读用底部「继续」） */}
+        {completed && !readingMode && (
           <div className="pop w-full bg-green-900/50 border border-green-600 rounded-xl px-6 py-3 text-center">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <span className="text-green-300 text-lg font-bold">🎉 {praise || '答对啦！'}</span>
+              <span className="text-amber-400 text-sm font-bold bg-amber-500/15 border border-amber-500/40 px-2 py-0.5 rounded-full">+2 XP</span>
+            </div>
             <div className="text-green-300 text-2xl font-semibold">✓ {sentence.en}</div>
             {isLastSentence ? (
               <div className="mt-3 flex flex-col items-center gap-2">

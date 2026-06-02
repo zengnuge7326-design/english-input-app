@@ -22,6 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REN_PATH = ROOT / "src" / "data" / "renai_junior_words.json"
 PEP_PATH = ROOT / "src" / "data" / "pep_words.json"
+BSDA_PATH = ROOT / "src" / "data" / "bsda_words.json"
 
 # 仁爱教材 PDF 映射到 IPA 的占位符（Supplementary Private Use Area）
 C77 = "\U00100c77"
@@ -168,6 +169,7 @@ def audit_pep(data: list[dict]) -> tuple[list[str], list[str]]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true", help="写回 JSON 文件")
+    ap.add_argument("--bsda", action="store_true", help="同时处理北师大 bsda_words.json")
     args = ap.parse_args()
 
     ren = json.loads(REN_PATH.read_text(encoding="utf-8"))
@@ -190,6 +192,20 @@ def main() -> int:
     if suspicious[:15]:
         for line in suspicious[:15]:
             print("  suspicious:", line)
+
+    if args.bsda and BSDA_PATH.is_file():
+        bsda = json.loads(BSDA_PATH.read_text(encoding="utf-8"))
+        b_changed, b_total, b_notes = process_renai(bsda)
+        print(f"北师大: {b_changed}/{b_total} 条 ipa 已规范化")
+        if b_notes:
+            print(f"北师大 复检疑点 {len(b_notes)}（请人工扫一眼）:")
+            for line in b_notes[:20]:
+                print(" ", line)
+        if args.write:
+            BSDA_PATH.write_text(
+                json.dumps(bsda, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            print(f"已写入 {BSDA_PATH}")
 
     if args.write:
         REN_PATH.write_text(json.dumps(ren, ensure_ascii=False, indent=2), encoding="utf-8")

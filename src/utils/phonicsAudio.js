@@ -1,12 +1,102 @@
 /**
- * phonicsAudio.js — 自然拼读音频工具
- * phonics_master.json 从 /data/ 懒加载（不打进 bundle）
- * 音频: /audio/phonics/words/{word}.mp3  缺失回退 TTS
- *       /audio/phonics/chunks/{chunk}.mp3
+ * phonicsAudio.js — 自然拼读 / 字母 / 音标 音频
+ * 优先 Edge 神经 TTS（与单词卡、练习页一致）
  */
+
+import { ipaToAudioFile } from './phonemes.js'
+import { PHONEME_EXAMPLES } from '../data/phonemeChart.js'
+
+const TTS_API = 'https://okenglish.site/api/tts'
+const SETTINGS_KEY = 'english_input_settings'
 
 let _wordMap = null
 let _loading = null
+let _neuralAudio = null
+let _phonemeAudio = null
+
+const PHONEME_AUDIO_BASE = '/audio/phonemes'
+
+export function loadTtsVoice() {
+  try {
+    const s = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}')
+    return s.edgeVoice || 'en-US-AvaNeural'
+  } catch {
+    return 'en-US-AvaNeural'
+  }
+}
+
+export function loadTtsRate() {
+  try {
+    const s = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}')
+    return typeof s.rate === 'number' ? s.rate : 1.0
+  } catch {
+    return 1.0
+  }
+}
+
+function stopPhoneme() {
+  if (_phonemeAudio) {
+    _phonemeAudio.pause()
+    _phonemeAudio.currentTime = 0
+    _phonemeAudio = null
+  }
+}
+
+function stopNeural() {
+  if (_neuralAudio) {
+    _neuralAudio.pause()
+    _neuralAudio.currentTime = 0
+    _neuralAudio = null
+  }
+  window.speechSynthesis?.cancel()
+}
+
+function stopAllAudio() {
+  stopNeural()
+  stopPhoneme()
+}
+
+/** Edge 神经音（Web API / Electron hybrid / 系统音回退） */
+export async function speakNeural(text, options = {}) {
+  const clean = String(text || '').replace(/_+/g, '').replace(/\s{2,}/g, ' ').trim()
+  if (!clean) return false
+
+  const voice = options.voice || loadTtsVoice()
+  const rate = options.rate ?? loadTtsRate()
+
+  stopAllAudio()
+
+  if (window.nativeTTS?.speakHybrid) {
+    try {
+      const result = await window.nativeTTS.speakHybrid({ text: clean, rate, voice })
+      if (result?.audioUrl) {
+        _neuralAudio = new Audio(result.audioUrl)
+        _neuralAudio.playbackRate = rate
+        await _neuralAudio.play()
+        return true
+      }
+      if (result?.layer === 'L3-system') return false
+    } catch {
+      /* fall through */
+    }
+  }
+
+  try {
+    const url = `${TTS_API}?text=${encodeURIComponent(clean)}&voice=${encodeURIComponent(voice)}`
+    _neuralAudio = new Audio(url)
+    _neuralAudio.playbackRate = rate
+    await _neuralAudio.play()
+    return true
+  } catch {
+    const synth = window.speechSynthesis
+    if (!synth) return false
+    const u = new SpeechSynthesisUtterance(clean)
+    u.lang = 'en-US'
+    u.rate = rate
+    synth.speak(u)
+    return false
+  }
+}
 
 async function getWordMap() {
   if (_wordMap) return _wordMap
@@ -44,43 +134,111 @@ export function getAllPhonics() { return _wordMap }
 
 export function preloadPhonicsData() { return getWordMap() }
 
-const _cache = new Map()
-
-function loadAudio(candidates) {
-  return new Promise((res, rej) => {
-    const try_ = (i) => {
-      if (i >= candidates.length) { rej(); return }
-      const a = new Audio(candidates[i])
-      a.addEventListener('canplaythrough', () => res(a), { once: true })
-      a.addEventListener('error', () => try_(i + 1), { once: true })
-      a.load()
-    }
-    try_(0)
-  })
-}
-
-export async function playWordAudio(word, rate = 0.85) {
+export async function playWordAudio(word, rate = 0.88) {
   const key = String(word || '').toLowerCase().replace(/[^a-z'-]/g, '')
   if (!key) return
-  if (!_cache.has(key)) {
+  await speakNeural(word, { rate })
+}
+
+/** 字母名 — 优先本地 26 个预生成 MP3（瞬时、可靠），失败回落神经 TTS */
+const LETTER_AUDIO_BASE = '/audio/letters'
+const _letterAudioCache = Object.create(null)
+const _letterMissing = new Set()
+
+/** Edge TTS 读单字母 "B" 等常无音；回退须用字母名拼读 */
+const LETTER_SPOKEN_NAMES = {
+  A: 'A', B: 'bee', C: 'see', D: 'dee', E: 'E', F: 'eff', G: 'gee',
+  H: 'aitch', I: 'eye', J: 'jay', K: 'kay', L: 'ell', M: 'em', N: 'en',
+  O: 'oh', P: 'pee', Q: 'cue', R: 'ar', S: 'ess', T: 'tee', U: 'you',
+  V: 'vee', W: 'double you', X: 'ex', Y: 'why', Z: 'zee',
+}
+
+export function letterSpokenName(letter) {
+  const upper = String(letter || '').trim()[0]?.toUpperCase()
+  return LETTER_SPOKEN_NAMES[upper] || upper || ''
+}
+
+// 预加载（首次进入字母模块时调用）
+export function preloadLetterAudio() {
+  for (let i = 0; i < 26; i++) {
+    const L = String.fromCharCode(65 + i)
+    if (_letterAudioCache[L] || _letterMissing.has(L)) continue
+    const a = new Audio(`${LETTER_AUDIO_BASE}/${L}.mp3`)
+    a.preload = 'auto'
+    // 预加载失败不永久拉黑：404/网络抖动时仍可在点击时再试或走 TTS
+    a.addEventListener('error', () => { delete _letterAudioCache[L] }, { once: true })
+    _letterAudioCache[L] = a
+  }
+}
+
+export function speakLetter(letter, rate = 0.95) {
+  const ch = String(letter || '').trim()
+  if (!ch) return
+  const upper = ch[0].toUpperCase()
+  const spoken = letterSpokenName(upper)
+  if (/^[A-Z]$/.test(upper) && !_letterMissing.has(upper)) {
+    stopAllAudio()
+    let a = _letterAudioCache[upper]
+    if (!a) {
+      a = new Audio(`${LETTER_AUDIO_BASE}/${upper}.mp3`)
+      _letterAudioCache[upper] = a
+    }
     try {
-      const a = await loadAudio([
-        `/audio/phonics/words/${key}_us_v1.mp3`,
-        `/audio/phonics/words/${key}.mp3`,
-      ])
-      _cache.set(key, a)
+      a.currentTime = 0
+      a.playbackRate = Math.min(1.2, Math.max(0.8, rate))
+      _neuralAudio = a
+      a.play().catch(() => {
+        _letterMissing.add(upper)
+        speakNeural(spoken, { rate })
+      })
+      return
     } catch {
-      _cache.set(key, null)
+      _letterMissing.add(upper)
     }
   }
-  const audio = _cache.get(key)
-  if (audio) { audio.currentTime = 0; audio.play(); return }
-  if (window.speechSynthesis) {
-    window.speechSynthesis.cancel()
-    const u = new SpeechSynthesisUtterance(word)
-    u.lang = 'en-US'; u.rate = rate
-    window.speechSynthesis.speak(u)
+  // 兜底：神经 TTS（字母名拼读，勿传单字母 "B"）
+  speakNeural(spoken, { rate })
+}
+
+/** 音标 → 本地 MP3（Wikimedia 真人 IPA 录音），失败则 TTS 示例词兜底 */
+export async function playPhoneme(symbol, rate = 1.0) {
+  const sym = String(symbol || '').trim()
+  const fileKey = ipaToAudioFile(sym)
+
+  stopAllAudio()
+
+  if (fileKey) {
+    try {
+      const audio = new Audio(`${PHONEME_AUDIO_BASE}/${fileKey}.mp3`)
+      _phonemeAudio = audio
+      audio.playbackRate = Math.min(1.2, Math.max(0.85, rate))
+      await audio.play()
+      return true
+    } catch {
+      stopPhoneme()
+    }
   }
+
+  // 兜底：TTS 示例词（0.82x 稍慢）
+  const ex = PHONEME_EXAMPLES[sym]
+  if (ex?.word) {
+    await speakNeural(ex.word, { rate: 0.82 })
+    return true
+  }
+  return false
+}
+
+/** 听含该音标的示例词（神经语音，可选） */
+export async function playPhonemeExample(symbol, rate = 0.88) {
+  const sym = String(symbol || '').trim()
+  const ex = PHONEME_EXAMPLES[sym]
+  if (!ex?.word) return false
+  await speakNeural(ex.word, { rate })
+  return true
+}
+
+export function getPhonemeExample(symbol) {
+  return PHONEME_EXAMPLES[String(symbol || '').trim()] ?? null
 }
 
 export function levelLabel(level) {

@@ -1,0 +1,3048 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-10T02:38:35.174Z",
+  "source": "/Users/hong/Desktop/gutenberg_texts",
+  "maxChunksPerBook": 800,
+  "levels": [
+    {
+      "id": "level1",
+      "dir": "Level1_初级",
+      "label": "Level 1 初级",
+      "gradeHint": "FK Grade 0–6 · 儿童 / 简单散文",
+      "articles": [
+        {
+          "id": "level1_001_The_Princess_Nobody_A_Tale_of_Fairyland_52545",
+          "title": "The Princess Nobody: A Tale of Fairyland",
+          "url": "gutenberg/Level1_初级/001_The_Princess_Nobody_A_Tale_of_Fairyland_52545.json",
+          "sentenceCount": 87
+        },
+        {
+          "id": "level1_002_The_Crime_of_the_French_Caf_and_Other_Stories_11989",
+          "title": "The Crime of the French Café and Other Stories",
+          "url": "gutenberg/Level1_初级/002_The_Crime_of_the_French_Caf_and_Other_Stories_11989.json",
+          "sentenceCount": 754
+        },
+        {
+          "id": "level1_003_The_Second-Story_Man_3302",
+          "title": "The Second-Story Man",
+          "url": "gutenberg/Level1_初级/003_The_Second-Story_Man_3302.json",
+          "sentenceCount": 54
+        },
+        {
+          "id": "level1_004_Under_Padlock_and_Seal_31231",
+          "title": "Under Padlock and Seal",
+          "url": "gutenberg/Level1_初级/004_Under_Padlock_and_Seal_31231.json",
+          "sentenceCount": 368
+        },
+        {
+          "id": "level1_005_The_Orphan_Or_The_Unhappy_Marriage_A_Tragedy_in_F_31463",
+          "title": "The Orphan; Or, The Unhappy Marriage.  A Tragedy, in Five Ac",
+          "url": "gutenberg/Level1_初级/005_The_Orphan_Or_The_Unhappy_Marriage_A_Tragedy_in_F_31463.json",
+          "sentenceCount": 240
+        },
+        {
+          "id": "level1_006_Stories_Pictures_Tell_Book_1_32471",
+          "title": "Stories Pictures Tell. Book 1",
+          "url": "gutenberg/Level1_初级/006_Stories_Pictures_Tell_Book_1_32471.json",
+          "sentenceCount": 189
+        },
+        {
+          "id": "level1_007_The_Land_of_the_Long_Night_22727",
+          "title": "The Land of the Long Night",
+          "url": "gutenberg/Level1_初级/007_The_Land_of_the_Long_Night_22727.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_008_The_Search_25866",
+          "title": "The Search",
+          "url": "gutenberg/Level1_初级/008_The_Search_25866.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_009_Jim_of_Hellas_or_In_Durance_Vile_The_Troubling_of_52068",
+          "title": "Jim of Hellas, or In Durance Vile; The Troubling of Bethesda",
+          "url": "gutenberg/Level1_初级/009_Jim_of_Hellas_or_In_Durance_Vile_The_Troubling_of_52068.json",
+          "sentenceCount": 240
+        },
+        {
+          "id": "level1_010_Wide_Awake_Magazine_Volume_4_Number_3_January_10_1_52535",
+          "title": "Wide Awake Magazine, Volume 4, Number 3, January 10, 1916",
+          "url": "gutenberg/Level1_初级/010_Wide_Awake_Magazine_Volume_4_Number_3_January_10_1_52535.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_011_Mrs_Caudles_Curtain_Lectures_44904",
+          "title": "Mrs. Caudle's Curtain Lectures",
+          "url": "gutenberg/Level1_初级/011_Mrs_Caudles_Curtain_Lectures_44904.json",
+          "sentenceCount": 219
+        },
+        {
+          "id": "level1_012_Complete_Classified_Price_List_of_School_College_31639",
+          "title": "Complete Classified Price List of School & College Textbooks",
+          "url": "gutenberg/Level1_初级/012_Complete_Classified_Price_List_of_School_College_31639.json",
+          "sentenceCount": 312
+        },
+        {
+          "id": "level1_013_The_Missioner_33546",
+          "title": "The Missioner",
+          "url": "gutenberg/Level1_初级/013_The_Missioner_33546.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_014_Brainchild_59814",
+          "title": "Brainchild",
+          "url": "gutenberg/Level1_初级/014_Brainchild_59814.json",
+          "sentenceCount": 132
+        },
+        {
+          "id": "level1_015_The_Merry_Wives_of_Windsor_The_Works_of_William_Sh_23044",
+          "title": "The Merry Wives of Windsor",
+          "url": "gutenberg/Level1_初级/015_The_Merry_Wives_of_Windsor_The_Works_of_William_Sh_23044.json",
+          "sentenceCount": 694
+        },
+        {
+          "id": "level1_016_Needler_70668",
+          "title": "Needler",
+          "url": "gutenberg/Level1_初级/016_Needler_70668.json",
+          "sentenceCount": 300
+        },
+        {
+          "id": "level1_017_Little_Dramas_for_Primary_Grades_53245",
+          "title": "Little Dramas for Primary Grades",
+          "url": "gutenberg/Level1_初级/017_Little_Dramas_for_Primary_Grades_53245.json",
+          "sentenceCount": 219
+        },
+        {
+          "id": "level1_018_Exiles_of_the_Three_Red_Moons_61752",
+          "title": "Exiles of the Three Red Moons",
+          "url": "gutenberg/Level1_初级/018_Exiles_of_the_Three_Red_Moons_61752.json",
+          "sentenceCount": 145
+        },
+        {
+          "id": "level1_019_Stories_of_Great_Men_35331",
+          "title": "Stories of Great Men",
+          "url": "gutenberg/Level1_初级/019_Stories_of_Great_Men_35331.json",
+          "sentenceCount": 389
+        },
+        {
+          "id": "level1_020_Blacky_the_Crow_4979",
+          "title": "Blacky the Crow",
+          "url": "gutenberg/Level1_初级/020_Blacky_the_Crow_4979.json",
+          "sentenceCount": 373
+        },
+        {
+          "id": "level1_021_The_Pagans_Progress_67692",
+          "title": "The Pagan's Progress",
+          "url": "gutenberg/Level1_初级/021_The_Pagans_Progress_67692.json",
+          "sentenceCount": 347
+        },
+        {
+          "id": "level1_022_The_Rustlers_of_Pecos_County_15580",
+          "title": "The Rustlers of Pecos County",
+          "url": "gutenberg/Level1_初级/022_The_Rustlers_of_Pecos_County_15580.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_023_Galactic_Ghost_62244",
+          "title": "Galactic Ghost",
+          "url": "gutenberg/Level1_初级/023_Galactic_Ghost_62244.json",
+          "sentenceCount": 60
+        },
+        {
+          "id": "level1_024_The_Paying_Guest_4298",
+          "title": "The Paying Guest",
+          "url": "gutenberg/Level1_初级/024_The_Paying_Guest_4298.json",
+          "sentenceCount": 424
+        },
+        {
+          "id": "level1_025_The_Sun-Death_64724",
+          "title": "The Sun-Death",
+          "url": "gutenberg/Level1_初级/025_The_Sun-Death_64724.json",
+          "sentenceCount": 187
+        },
+        {
+          "id": "level1_026_When_freemen_shall_stand_74576",
+          "title": "When freemen shall stand",
+          "url": "gutenberg/Level1_初级/026_When_freemen_shall_stand_74576.json",
+          "sentenceCount": 768
+        },
+        {
+          "id": "level1_027_Heir_Apparent_64963",
+          "title": "Heir Apparent",
+          "url": "gutenberg/Level1_初级/027_Heir_Apparent_64963.json",
+          "sentenceCount": 70
+        },
+        {
+          "id": "level1_028_The_Painted_Veil_64682",
+          "title": "The Painted Veil",
+          "url": "gutenberg/Level1_初级/028_The_Painted_Veil_64682.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_029_The_Story_of_the_Treasure_Seekers_Being_the_Advent_770",
+          "title": "The Story of the Treasure Seekers",
+          "url": "gutenberg/Level1_初级/029_The_Story_of_the_Treasure_Seekers_Being_the_Advent_770.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_030_The_Heritage_of_the_Hills_34507",
+          "title": "The Heritage of the Hills",
+          "url": "gutenberg/Level1_初级/030_The_Heritage_of_the_Hills_34507.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_031_Boy_Scouts_in_the_North_Sea_Or_The_Mystery_of_a_Su_25798",
+          "title": "Boy Scouts in the North Sea; Or, The Mystery of a Sub",
+          "url": "gutenberg/Level1_初级/031_Boy_Scouts_in_the_North_Sea_Or_The_Mystery_of_a_Su_25798.json",
+          "sentenceCount": 725
+        },
+        {
+          "id": "level1_032_Wait_and_Hope_Or_A_Plucky_Boys_Luck_33591",
+          "title": "Wait and Hope; Or, A Plucky Boy's Luck",
+          "url": "gutenberg/Level1_初级/032_Wait_and_Hope_Or_A_Plucky_Boys_Luck_33591.json",
+          "sentenceCount": 689
+        },
+        {
+          "id": "level1_033_Walter_Sherwoods_Probation_5993",
+          "title": "Walter Sherwood's Probation",
+          "url": "gutenberg/Level1_初级/033_Walter_Sherwoods_Probation_5993.json",
+          "sentenceCount": 723
+        },
+        {
+          "id": "level1_034_The_Aab_66447",
+          "title": "The Aab",
+          "url": "gutenberg/Level1_初级/034_The_Aab_66447.json",
+          "sentenceCount": 39
+        },
+        {
+          "id": "level1_035_The_Putnam_Hall_Rivals_or_Fun_and_Sport_Afloat_and_46872",
+          "title": "The Putnam Hall Rivals; or, Fun and Sport Afloat and Ashore",
+          "url": "gutenberg/Level1_初级/035_The_Putnam_Hall_Rivals_or_Fun_and_Sport_Afloat_and_46872.json",
+          "sentenceCount": 729
+        },
+        {
+          "id": "level1_036_As_the_Goose_Flies_48593",
+          "title": "As the Goose Flies",
+          "url": "gutenberg/Level1_初级/036_As_the_Goose_Flies_48593.json",
+          "sentenceCount": 421
+        },
+        {
+          "id": "level1_037_John_Barings_House_56416",
+          "title": "John Baring's House",
+          "url": "gutenberg/Level1_初级/037_John_Barings_House_56416.json",
+          "sentenceCount": 387
+        },
+        {
+          "id": "level1_038_At_Sunwich_Port_Part_3_Contents_Chapters_11-15_10873",
+          "title": "At Sunwich Port, Part 3.",
+          "url": "gutenberg/Level1_初级/038_At_Sunwich_Port_Part_3_Contents_Chapters_11-15_10873.json",
+          "sentenceCount": 191
+        },
+        {
+          "id": "level1_039_A_Little_Change_A_Farce_in_One_Scene_46044",
+          "title": "A Little Change: A Farce in One Scene",
+          "url": "gutenberg/Level1_初级/039_A_Little_Change_A_Farce_in_One_Scene_46044.json",
+          "sentenceCount": 98
+        },
+        {
+          "id": "level1_040_Dr_Hardhacks_Prescription_A_Play_for_Children_in_F_36195",
+          "title": "Dr. Hardhack's Prescription: A Play for Children in Four Act",
+          "url": "gutenberg/Level1_初级/040_Dr_Hardhacks_Prescription_A_Play_for_Children_in_F_36195.json",
+          "sentenceCount": 125
+        },
+        {
+          "id": "level1_041_More_Jonathan_Papers_20141",
+          "title": "More Jonathan Papers",
+          "url": "gutenberg/Level1_初级/041_More_Jonathan_Papers_20141.json",
+          "sentenceCount": 639
+        },
+        {
+          "id": "level1_042_The_Box-Car_Children_42796",
+          "title": "The Box-Car Children",
+          "url": "gutenberg/Level1_初级/042_The_Box-Car_Children_42796.json",
+          "sentenceCount": 385
+        },
+        {
+          "id": "level1_043_Beyond_the_Door_28644",
+          "title": "Beyond the Door",
+          "url": "gutenberg/Level1_初级/043_Beyond_the_Door_28644.json",
+          "sentenceCount": 38
+        },
+        {
+          "id": "level1_044_The_Diary_of_Philip_Westerly_32635",
+          "title": "The Diary of Philip Westerly",
+          "url": "gutenberg/Level1_初级/044_The_Diary_of_Philip_Westerly_32635.json",
+          "sentenceCount": 24
+        },
+        {
+          "id": "level1_045_The_High_School_Left_End_or_Dick_Co_Grilling_on_t_12691",
+          "title": "The High School Left End; or, Dick & Co. Grilling on the Foo",
+          "url": "gutenberg/Level1_初级/045_The_High_School_Left_End_or_Dick_Co_Grilling_on_t_12691.json",
+          "sentenceCount": 724
+        },
+        {
+          "id": "level1_046_Harpers_Young_People_July_25_1882_An_Illustrated_W_58832",
+          "title": "Harper's Young People, July 25, 1882",
+          "url": "gutenberg/Level1_初级/046_Harpers_Young_People_July_25_1882_An_Illustrated_W_58832.json",
+          "sentenceCount": 256
+        },
+        {
+          "id": "level1_047_Mary_Gray_20201",
+          "title": "Mary Gray",
+          "url": "gutenberg/Level1_初级/047_Mary_Gray_20201.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_048_Tydores_Gift_63975",
+          "title": "Tydore's Gift",
+          "url": "gutenberg/Level1_初级/048_Tydores_Gift_63975.json",
+          "sentenceCount": 36
+        },
+        {
+          "id": "level1_049_Punch_or_the_London_Charivari_December_2_1893_39505",
+          "title": "Punch, or the London Charivari, December 2, 1893",
+          "url": "gutenberg/Level1_初级/049_Punch_or_the_London_Charivari_December_2_1893_39505.json",
+          "sentenceCount": 125
+        },
+        {
+          "id": "level1_050_Phebe_Her_Profession_A_Sequel_to_Teddy_Her_Book_12584",
+          "title": "Phebe, Her Profession",
+          "url": "gutenberg/Level1_初级/050_Phebe_Her_Profession_A_Sequel_to_Teddy_Her_Book_12584.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_051_The_Telegraph_Boy_24013",
+          "title": "The Telegraph Boy",
+          "url": "gutenberg/Level1_初级/051_The_Telegraph_Boy_24013.json",
+          "sentenceCount": 630
+        },
+        {
+          "id": "level1_052_Crimes_of_Charity_42363",
+          "title": "Crimes of Charity",
+          "url": "gutenberg/Level1_初级/052_Crimes_of_Charity_42363.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_053_The_Potato_Child_Others_5662",
+          "title": "The Potato Child & Others",
+          "url": "gutenberg/Level1_初级/053_The_Potato_Child_Others_5662.json",
+          "sentenceCount": 112
+        },
+        {
+          "id": "level1_054_Pariah_66324",
+          "title": "Pariah",
+          "url": "gutenberg/Level1_初级/054_Pariah_66324.json",
+          "sentenceCount": 55
+        },
+        {
+          "id": "level1_055_The_Perfume_of_Eros_A_Fifth_Avenue_Incident_33207",
+          "title": "The Perfume of Eros: A Fifth Avenue Incident",
+          "url": "gutenberg/Level1_初级/055_The_Perfume_of_Eros_A_Fifth_Avenue_Incident_33207.json",
+          "sentenceCount": 648
+        },
+        {
+          "id": "level1_056_If_You_Was_a_Moklin_51752",
+          "title": "If You Was a Moklin",
+          "url": "gutenberg/Level1_初级/056_If_You_Was_a_Moklin_51752.json",
+          "sentenceCount": 133
+        },
+        {
+          "id": "level1_057_Easy_money_Night_watches_Part_9_12159",
+          "title": "Easy money [Night watches, Part 9.]",
+          "url": "gutenberg/Level1_初级/057_Easy_money_Night_watches_Part_9_12159.json",
+          "sentenceCount": 65
+        },
+        {
+          "id": "level1_058_Flashlights_75630",
+          "title": "Flashlights",
+          "url": "gutenberg/Level1_初级/058_Flashlights_75630.json",
+          "sentenceCount": 256
+        },
+        {
+          "id": "level1_059_The_Good_Work_60682",
+          "title": "The Good Work",
+          "url": "gutenberg/Level1_初级/059_The_Good_Work_60682.json",
+          "sentenceCount": 73
+        },
+        {
+          "id": "level1_060_Mr_Punchs_Book_of_Love_Being_the_Humours_of_Courts_42400",
+          "title": "Mr. Punch's Book of Love: Being the Humours of Courtship and",
+          "url": "gutenberg/Level1_初级/060_Mr_Punchs_Book_of_Love_Being_the_Humours_of_Courts_42400.json",
+          "sentenceCount": 206
+        },
+        {
+          "id": "level1_061_Luna_Escapade_40961",
+          "title": "Luna Escapade",
+          "url": "gutenberg/Level1_初级/061_Luna_Escapade_40961.json",
+          "sentenceCount": 75
+        },
+        {
+          "id": "level1_062_Bahyyih_Khnum_19242",
+          "title": "Bahíyyih Khánum",
+          "url": "gutenberg/Level1_初级/062_Bahyyih_Khnum_19242.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_063_Book_of_cats_and_dogs_and_other_friends_for_little_69242",
+          "title": "Book of cats and dogs, and other friends, for little folks",
+          "url": "gutenberg/Level1_初级/063_Book_of_cats_and_dogs_and_other_friends_for_little_69242.json",
+          "sentenceCount": 215
+        },
+        {
+          "id": "level1_064_The_Baronets_Bride_Or_A_Womans_Vengeance_15317",
+          "title": "The Baronet's Bride; Or, A Woman's Vengeance",
+          "url": "gutenberg/Level1_初级/064_The_Baronets_Bride_Or_A_Womans_Vengeance_15317.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_065_Witness_for_the_Defence_12535",
+          "title": "Witness for the Defence",
+          "url": "gutenberg/Level1_初级/065_Witness_for_the_Defence_12535.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_066_The_Eyes_Have_It_30438",
+          "title": "The Eyes Have It",
+          "url": "gutenberg/Level1_初级/066_The_Eyes_Have_It_30438.json",
+          "sentenceCount": 46
+        },
+        {
+          "id": "level1_067_Bobby_of_Cloverfield_Farm_28652",
+          "title": "Bobby of Cloverfield Farm",
+          "url": "gutenberg/Level1_初级/067_Bobby_of_Cloverfield_Farm_28652.json",
+          "sentenceCount": 200
+        },
+        {
+          "id": "level1_068_Star_of_Rebirth_60655",
+          "title": "Star of Rebirth",
+          "url": "gutenberg/Level1_初级/068_Star_of_Rebirth_60655.json",
+          "sentenceCount": 62
+        },
+        {
+          "id": "level1_069_The_Highwayman_9749",
+          "title": "The Highwayman",
+          "url": "gutenberg/Level1_初级/069_The_Highwayman_9749.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_070_The_Game_and_the_Candle_35740",
+          "title": "The Game and the Candle",
+          "url": "gutenberg/Level1_初级/070_The_Game_and_the_Candle_35740.json",
+          "sentenceCount": 797
+        },
+        {
+          "id": "level1_071_The_Girls_Own_Paper_Vol_XX_No_990_December_17_1898_50795",
+          "title": "The Girl's Own Paper, Vol. XX, No. 990, December 17, 1898",
+          "url": "gutenberg/Level1_初级/071_The_Girls_Own_Paper_Vol_XX_No_990_December_17_1898_50795.json",
+          "sentenceCount": 337
+        },
+        {
+          "id": "level1_072_Very_good_Jeeves_77923",
+          "title": "Very good, Jeeves",
+          "url": "gutenberg/Level1_初级/072_Very_good_Jeeves_77923.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_073_The_starry_skies_77859",
+          "title": "The starry skies",
+          "url": "gutenberg/Level1_初级/073_The_starry_skies_77859.json",
+          "sentenceCount": 791
+        },
+        {
+          "id": "level1_074_Absolutely_no_paradox_70464",
+          "title": "Absolutely no paradox",
+          "url": "gutenberg/Level1_初级/074_Absolutely_no_paradox_70464.json",
+          "sentenceCount": 25
+        },
+        {
+          "id": "level1_075_Cultural_Exchange_60743",
+          "title": "Cultural Exchange",
+          "url": "gutenberg/Level1_初级/075_Cultural_Exchange_60743.json",
+          "sentenceCount": 122
+        },
+        {
+          "id": "level1_076_T_B_Petersons_List_of_Publications_1857_48631",
+          "title": "T. B. Peterson's List of Publications (1857)",
+          "url": "gutenberg/Level1_初级/076_T_B_Petersons_List_of_Publications_1857_48631.json",
+          "sentenceCount": 209
+        },
+        {
+          "id": "level1_077_Through_the_Outlooking_Glass_39657",
+          "title": "Through the Outlooking Glass",
+          "url": "gutenberg/Level1_初级/077_Through_the_Outlooking_Glass_39657.json",
+          "sentenceCount": 143
+        },
+        {
+          "id": "level1_078_When_Polly_Was_Eighteen_58512",
+          "title": "When Polly Was Eighteen",
+          "url": "gutenberg/Level1_初级/078_When_Polly_Was_Eighteen_58512.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_079_Garsides_Career_A_Comedy_in_Four_Acts_55290",
+          "title": "Garside's Career: A Comedy in Four Acts",
+          "url": "gutenberg/Level1_初级/079_Garsides_Career_A_Comedy_in_Four_Acts_55290.json",
+          "sentenceCount": 340
+        },
+        {
+          "id": "level1_080_Captains_Courageous_A_Story_of_the_Grand_Banks_2186",
+          "title": "\"Captains Courageous\": A Story of the Grand Banks",
+          "url": "gutenberg/Level1_初级/080_Captains_Courageous_A_Story_of_the_Grand_Banks_2186.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_081_The_Bobbsey_Twins_in_a_Great_City_15169",
+          "title": "The Bobbsey Twins in a Great City",
+          "url": "gutenberg/Level1_初级/081_The_Bobbsey_Twins_in_a_Great_City_15169.json",
+          "sentenceCount": 716
+        },
+        {
+          "id": "level1_082_The_Great_Green_Blight_63807",
+          "title": "The Great Green Blight",
+          "url": "gutenberg/Level1_初级/082_The_Great_Green_Blight_63807.json",
+          "sentenceCount": 329
+        },
+        {
+          "id": "level1_083_The_Grain_Ship_26194",
+          "title": "The Grain Ship",
+          "url": "gutenberg/Level1_初级/083_The_Grain_Ship_26194.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_084_Leonie_the_Typewriter_A_Romance_of_Actual_Life_54177",
+          "title": "Leonie, the Typewriter: A Romance of Actual Life",
+          "url": "gutenberg/Level1_初级/084_Leonie_the_Typewriter_A_Romance_of_Actual_Life_54177.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_085_The_Turned-About_Girls_46048",
+          "title": "The Turned-About Girls",
+          "url": "gutenberg/Level1_初级/085_The_Turned-About_Girls_46048.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_086_Loves_Labours_Lost_2241",
+          "title": "Love's Labour's Lost",
+          "url": "gutenberg/Level1_初级/086_Loves_Labours_Lost_2241.json",
+          "sentenceCount": 369
+        },
+        {
+          "id": "level1_087_The_Boys_of_the_Wireless_Or_A_Stirring_Rescue_from_35044",
+          "title": "The Boys of the Wireless; Or, A Stirring Rescue from the Dee",
+          "url": "gutenberg/Level1_初级/087_The_Boys_of_the_Wireless_Or_A_Stirring_Rescue_from_35044.json",
+          "sentenceCount": 615
+        },
+        {
+          "id": "level1_088_Westerfelt_17178",
+          "title": "Westerfelt",
+          "url": "gutenberg/Level1_初级/088_Westerfelt_17178.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_089_Gloria_and_Treeless_Street_9398",
+          "title": "Gloria and Treeless Street",
+          "url": "gutenberg/Level1_初级/089_Gloria_and_Treeless_Street_9398.json",
+          "sentenceCount": 193
+        },
+        {
+          "id": "level1_090_Lord_Ormont_and_His_Aminta_Volume_4_4480",
+          "title": "Lord Ormont and His Aminta — Volume 4",
+          "url": "gutenberg/Level1_初级/090_Lord_Ormont_and_His_Aminta_Volume_4_4480.json",
+          "sentenceCount": 355
+        },
+        {
+          "id": "level1_091_The_Little_Spanish_Dancer_40592",
+          "title": "The Little Spanish Dancer",
+          "url": "gutenberg/Level1_初级/091_The_Little_Spanish_Dancer_40592.json",
+          "sentenceCount": 268
+        },
+        {
+          "id": "level1_092_Deirdre_of_the_Sorrows_1922",
+          "title": "Deirdre of the Sorrows",
+          "url": "gutenberg/Level1_初级/092_Deirdre_of_the_Sorrows_1922.json",
+          "sentenceCount": 266
+        },
+        {
+          "id": "level1_093_The_Merryweathers_25505",
+          "title": "The Merryweathers",
+          "url": "gutenberg/Level1_初级/093_The_Merryweathers_25505.json",
+          "sentenceCount": 637
+        },
+        {
+          "id": "level1_094_The_Mind_the_Paint_Girl_A_Comedy_in_Four_Acts_21849",
+          "title": "The 'Mind the Paint' Girl: A Comedy in Four Acts",
+          "url": "gutenberg/Level1_初级/094_The_Mind_the_Paint_Girl_A_Comedy_in_Four_Acts_21849.json",
+          "sentenceCount": 559
+        },
+        {
+          "id": "level1_095_The_Radio_Girls_on_Station_Island_The_wireless_fro_69317",
+          "title": "The Radio Girls on Station Island: The wireless from the ste",
+          "url": "gutenberg/Level1_初级/095_The_Radio_Girls_on_Station_Island_The_wireless_fro_69317.json",
+          "sentenceCount": 653
+        },
+        {
+          "id": "level1_096_Ruperts_Ambition_54621",
+          "title": "Rupert's Ambition",
+          "url": "gutenberg/Level1_初级/096_Ruperts_Ambition_54621.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_097_Bully_Bull_Frog_and_His_Home_in_Rainbow_Valley_67781",
+          "title": "Bully Bull Frog and His Home in Rainbow Valley",
+          "url": "gutenberg/Level1_初级/097_Bully_Bull_Frog_and_His_Home_in_Rainbow_Valley_67781.json",
+          "sentenceCount": 391
+        },
+        {
+          "id": "level1_098_The_Prisoners_of_Hartling_61246",
+          "title": "The Prisoners of Hartling",
+          "url": "gutenberg/Level1_初级/098_The_Prisoners_of_Hartling_61246.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level1_099_Perfect_Companion_65200",
+          "title": "Perfect Companion",
+          "url": "gutenberg/Level1_初级/099_Perfect_Companion_65200.json",
+          "sentenceCount": 63
+        },
+        {
+          "id": "level1_100_Get_Out_of_My_Body_65176",
+          "title": "Get Out of My Body!",
+          "url": "gutenberg/Level1_初级/100_Get_Out_of_My_Body_65176.json",
+          "sentenceCount": 78
+        }
+      ]
+    },
+    {
+      "id": "level2",
+      "dir": "Level2_中初级",
+      "label": "Level 2 中初级",
+      "gradeHint": "Grade 6–9",
+      "articles": [
+        {
+          "id": "level2_001_The_Continental_Monthly_Vol_4_No_6_December_1863_D_18946",
+          "title": "The Continental Monthly, Vol. 4, No. 6, December 1863",
+          "url": "gutenberg/Level2_中初级/001_The_Continental_Monthly_Vol_4_No_6_December_1863_D_18946.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_002_The_American_Bee_Journal_Volume_XXXIII_No_2_Januar_58493",
+          "title": "The American Bee Journal, Volume XXXIII, No. 2, January 11,",
+          "url": "gutenberg/Level2_中初级/002_The_American_Bee_Journal_Volume_XXXIII_No_2_Januar_58493.json",
+          "sentenceCount": 286
+        },
+        {
+          "id": "level2_003_The_scarlet_car_The_Princess_Aline_69715",
+          "title": "The scarlet car; The Princess Aline",
+          "url": "gutenberg/Level2_中初级/003_The_scarlet_car_The_Princess_Aline_69715.json",
+          "sentenceCount": 796
+        },
+        {
+          "id": "level2_004_Business_Hints_for_Men_and_Women_6167",
+          "title": "Business Hints for Men and Women",
+          "url": "gutenberg/Level2_中初级/004_Business_Hints_for_Men_and_Women_6167.json",
+          "sentenceCount": 609
+        },
+        {
+          "id": "level2_005_The_Traders_Wife_1901_24837",
+          "title": "The Trader's Wife",
+          "url": "gutenberg/Level2_中初级/005_The_Traders_Wife_1901_24837.json",
+          "sentenceCount": 163
+        },
+        {
+          "id": "level2_006_The_Melting_of_Molly_15817",
+          "title": "The Melting of Molly",
+          "url": "gutenberg/Level2_中初级/006_The_Melting_of_Molly_15817.json",
+          "sentenceCount": 537
+        },
+        {
+          "id": "level2_007_Princess_Napraxine_Volume_1_of_3_49305",
+          "title": "Princess Napraxine, Volume 1 (of 3)",
+          "url": "gutenberg/Level2_中初级/007_Princess_Napraxine_Volume_1_of_3_49305.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_008_Made_in_Tanganyika_29242",
+          "title": "Made in Tanganyika",
+          "url": "gutenberg/Level2_中初级/008_Made_in_Tanganyika_29242.json",
+          "sentenceCount": 75
+        },
+        {
+          "id": "level2_009_The_Hound_of_the_Baskervilles_3070",
+          "title": "The Hound of the Baskervilles",
+          "url": "gutenberg/Level2_中初级/009_The_Hound_of_the_Baskervilles_3070.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_010_The_Rod_and_Gun_Club_60838",
+          "title": "The Rod and Gun Club",
+          "url": "gutenberg/Level2_中初级/010_The_Rod_and_Gun_Club_60838.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_011_The_Kansas_University_Science_Bulletin_Vol_I_No_1_54581",
+          "title": "The Kansas University Science Bulletin (Vol. I, No. 1)",
+          "url": "gutenberg/Level2_中初级/011_The_Kansas_University_Science_Bulletin_Vol_I_No_1_54581.json",
+          "sentenceCount": 235
+        },
+        {
+          "id": "level2_012_A_Secret_Inheritance_Volume_3_of_3_45882",
+          "title": "A Secret Inheritance (Volume 3 of 3)",
+          "url": "gutenberg/Level2_中初级/012_A_Secret_Inheritance_Volume_3_of_3_45882.json",
+          "sentenceCount": 604
+        },
+        {
+          "id": "level2_013_The_Ultimate_Salient_61859",
+          "title": "The Ultimate Salient",
+          "url": "gutenberg/Level2_中初级/013_The_Ultimate_Salient_61859.json",
+          "sentenceCount": 319
+        },
+        {
+          "id": "level2_014_The_long_trail_A_story_of_African_adventure_68440",
+          "title": "The long trail: A story of African adventure",
+          "url": "gutenberg/Level2_中初级/014_The_long_trail_A_story_of_African_adventure_68440.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_015_A_Handy_Guide_for_Beggars_Especially_Those_of_the_67947",
+          "title": "A Handy Guide for Beggars: Especially Those of the Poetic Fr",
+          "url": "gutenberg/Level2_中初级/015_A_Handy_Guide_for_Beggars_Especially_Those_of_the_67947.json",
+          "sentenceCount": 579
+        },
+        {
+          "id": "level2_016_The_soul_of_a_bishop_1269",
+          "title": "The soul of a bishop",
+          "url": "gutenberg/Level2_中初级/016_The_soul_of_a_bishop_1269.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_017_Tibby_A_novel_dealing_with_psychic_forces_and_tele_69307",
+          "title": "Tibby: A novel dealing with psychic forces and telepathy",
+          "url": "gutenberg/Level2_中初级/017_Tibby_A_novel_dealing_with_psychic_forces_and_tele_69307.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_018_The_Fte_At_Coqueville_1907_23222",
+          "title": "The Fête At Coqueville",
+          "url": "gutenberg/Level2_中初级/018_The_Fte_At_Coqueville_1907_23222.json",
+          "sentenceCount": 176
+        },
+        {
+          "id": "level2_019_The_Impudent_Comedian_Others_51923",
+          "title": "The Impudent Comedian, & Others",
+          "url": "gutenberg/Level2_中初级/019_The_Impudent_Comedian_Others_51923.json",
+          "sentenceCount": 640
+        },
+        {
+          "id": "level2_020_Dreams_and_Dust_458",
+          "title": "Dreams and Dust",
+          "url": "gutenberg/Level2_中初级/020_Dreams_and_Dust_458.json",
+          "sentenceCount": 296
+        },
+        {
+          "id": "level2_021_On_to_Pekin_or_Old_Glory_in_China_69749",
+          "title": "On to Pekin; or, Old Glory in China",
+          "url": "gutenberg/Level2_中初级/021_On_to_Pekin_or_Old_Glory_in_China_69749.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_022_Captain_Billys_Whiz_Bang_Vol_2_No_24_September_192_61307",
+          "title": "Captain Billy's Whiz Bang, Vol. 2, No. 24, September, 1921",
+          "url": "gutenberg/Level2_中初级/022_Captain_Billys_Whiz_Bang_Vol_2_No_24_September_192_61307.json",
+          "sentenceCount": 256
+        },
+        {
+          "id": "level2_023_The_Golden-Breasted_Kootoo_and_Other_Stories_49750",
+          "title": "The Golden-Breasted Kootoo, and Other Stories",
+          "url": "gutenberg/Level2_中初级/023_The_Golden-Breasted_Kootoo_and_Other_Stories_49750.json",
+          "sentenceCount": 146
+        },
+        {
+          "id": "level2_024_Oscar_in_Africa_54954",
+          "title": "Oscar in Africa",
+          "url": "gutenberg/Level2_中初级/024_Oscar_in_Africa_54954.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_025_Extracts_from_Adams_Diary_translated_from_the_orig_1892",
+          "title": "Extracts from Adam's Diary, translated from the original ms.",
+          "url": "gutenberg/Level2_中初级/025_Extracts_from_Adams_Diary_translated_from_the_orig_1892.json",
+          "sentenceCount": 71
+        },
+        {
+          "id": "level2_026_Dwell_Deep_or_Hilda_Thorns_Life_Story_22243",
+          "title": "Dwell Deep; or, Hilda Thorn's Life Story",
+          "url": "gutenberg/Level2_中初级/026_Dwell_Deep_or_Hilda_Thorns_Life_Story_22243.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_027_Our_Little_Grecian_Cousin_46508",
+          "title": "Our Little Grecian Cousin",
+          "url": "gutenberg/Level2_中初级/027_Our_Little_Grecian_Cousin_46508.json",
+          "sentenceCount": 392
+        },
+        {
+          "id": "level2_028_Life_of_Emanuel_Swedenborg_Together_with_a_brief_s_67821",
+          "title": "Life of Emanuel Swedenborg",
+          "url": "gutenberg/Level2_中初级/028_Life_of_Emanuel_Swedenborg_Together_with_a_brief_s_67821.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_029_Wounds_in_the_rain_War_stories_43706",
+          "title": "Wounds in the rain: War stories",
+          "url": "gutenberg/Level2_中初级/029_Wounds_in_the_rain_War_stories_43706.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_030_Punch_or_the_London_Charivari_Volume_105_September_38672",
+          "title": "Punch, or the London Charivari, Volume 105, September 30th 1",
+          "url": "gutenberg/Level2_中初级/030_Punch_or_the_London_Charivari_Volume_105_September_38672.json",
+          "sentenceCount": 134
+        },
+        {
+          "id": "level2_031_The_path_of_honor_A_tale_of_the_war_in_the_Bocage_69105",
+          "title": "The path of honor: A tale of the war in the Bocage",
+          "url": "gutenberg/Level2_中初级/031_The_path_of_honor_A_tale_of_the_war_in_the_Bocage_69105.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_032_Jesus_Says_So_Or_a_Memorial_of_Little_Sarah_G--_10618",
+          "title": "\"Jesus Says So\"",
+          "url": "gutenberg/Level2_中初级/032_Jesus_Says_So_Or_a_Memorial_of_Little_Sarah_G--_10618.json",
+          "sentenceCount": 44
+        },
+        {
+          "id": "level2_033_The_Bible_King_James_version_Book_35_Habakkuk_8035",
+          "title": "The Bible, King James version, Book 35: Habakkuk",
+          "url": "gutenberg/Level2_中初级/033_The_Bible_King_James_version_Book_35_Habakkuk_8035.json",
+          "sentenceCount": 26
+        },
+        {
+          "id": "level2_034_The_Cadets_of_Flemming_Hall_59005",
+          "title": "The Cadets of Flemming Hall",
+          "url": "gutenberg/Level2_中初级/034_The_Cadets_of_Flemming_Hall_59005.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_035_The_Strand_Magazine_Vol_05_Issue_29_May_1893_An_Il_30443",
+          "title": "The Strand Magazine, Vol. 05, Issue 29, May 1893",
+          "url": "gutenberg/Level2_中初级/035_The_Strand_Magazine_Vol_05_Issue_29_May_1893_An_Il_30443.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_036_Sargasso_of_Lost_Starships_64048",
+          "title": "Sargasso of Lost Starships",
+          "url": "gutenberg/Level2_中初级/036_Sargasso_of_Lost_Starships_64048.json",
+          "sentenceCount": 285
+        },
+        {
+          "id": "level2_037_Aunt_Hannah_and_Seth_31265",
+          "title": "Aunt Hannah and Seth",
+          "url": "gutenberg/Level2_中初级/037_Aunt_Hannah_and_Seth_31265.json",
+          "sentenceCount": 392
+        },
+        {
+          "id": "level2_038_Voyages_and_Travels_of_Count_Funnibos_and_Baron_St_21463",
+          "title": "Voyages and Travels of Count Funnibos and Baron Stilkin",
+          "url": "gutenberg/Level2_中初级/038_Voyages_and_Travels_of_Count_Funnibos_and_Baron_St_21463.json",
+          "sentenceCount": 776
+        },
+        {
+          "id": "level2_039_Punchinello_Volume_1_No_18_July_30_1870_10014",
+          "title": "Punchinello, Volume 1, No. 18, July 30, 1870",
+          "url": "gutenberg/Level2_中初级/039_Punchinello_Volume_1_No_18_July_30_1870_10014.json",
+          "sentenceCount": 248
+        },
+        {
+          "id": "level2_040_New_York_Nocturnes_and_Other_Poems_56418",
+          "title": "New York Nocturnes, and Other Poems",
+          "url": "gutenberg/Level2_中初级/040_New_York_Nocturnes_and_Other_Poems_56418.json",
+          "sentenceCount": 84
+        },
+        {
+          "id": "level2_041_The_Maker_of_Opportunities_38702",
+          "title": "The Maker of Opportunities",
+          "url": "gutenberg/Level2_中初级/041_The_Maker_of_Opportunities_38702.json",
+          "sentenceCount": 670
+        },
+        {
+          "id": "level2_042_Motor_Matts_Engagement_or_On_the_Road_with_a_Show_52138",
+          "title": "Motor Matt's Engagement; or, On the Road with a Show",
+          "url": "gutenberg/Level2_中初级/042_Motor_Matts_Engagement_or_On_the_Road_with_a_Show_52138.json",
+          "sentenceCount": 509
+        },
+        {
+          "id": "level2_043_The_Golf_Course_Mystery_1495",
+          "title": "The Golf Course Mystery",
+          "url": "gutenberg/Level2_中初级/043_The_Golf_Course_Mystery_1495.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_044_The_little_Cuban_rebel_76019",
+          "title": "The little Cuban rebel",
+          "url": "gutenberg/Level2_中初级/044_The_little_Cuban_rebel_76019.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_045_Corsairs_of_the_cosmos_75438",
+          "title": "Corsairs of the cosmos",
+          "url": "gutenberg/Level2_中初级/045_Corsairs_of_the_cosmos_75438.json",
+          "sentenceCount": 145
+        },
+        {
+          "id": "level2_046_Books_and_Bookmen_1961",
+          "title": "Books and Bookmen",
+          "url": "gutenberg/Level2_中初级/046_Books_and_Bookmen_1961.json",
+          "sentenceCount": 557
+        },
+        {
+          "id": "level2_047_Literary_Lapses_6340",
+          "title": "Literary Lapses",
+          "url": "gutenberg/Level2_中初级/047_Literary_Lapses_6340.json",
+          "sentenceCount": 682
+        },
+        {
+          "id": "level2_048_The_Poet_62821",
+          "title": "The Poet",
+          "url": "gutenberg/Level2_中初级/048_The_Poet_62821.json",
+          "sentenceCount": 486
+        },
+        {
+          "id": "level2_049_Desert_Dust_27437",
+          "title": "Desert Dust",
+          "url": "gutenberg/Level2_中初级/049_Desert_Dust_27437.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_050_The_mirrors_of_Tuzun_Thune_70879",
+          "title": "The mirrors of Tuzun Thune",
+          "url": "gutenberg/Level2_中初级/050_The_mirrors_of_Tuzun_Thune_70879.json",
+          "sentenceCount": 57
+        },
+        {
+          "id": "level2_051_Noteworthy_Mammals_from_Sinaloa_Mexico_31683",
+          "title": "Noteworthy Mammals from Sinaloa, Mexico",
+          "url": "gutenberg/Level2_中初级/051_Noteworthy_Mammals_from_Sinaloa_Mexico_31683.json",
+          "sentenceCount": 89
+        },
+        {
+          "id": "level2_052_A_London_Plane-Tree_and_Other_Verse_56974",
+          "title": "A London Plane-Tree, and Other Verse",
+          "url": "gutenberg/Level2_中初级/052_A_London_Plane-Tree_and_Other_Verse_56974.json",
+          "sentenceCount": 111
+        },
+        {
+          "id": "level2_053_Humpty_Dumptys_Little_Son_29367",
+          "title": "Humpty Dumpty's Little Son",
+          "url": "gutenberg/Level2_中初级/053_Humpty_Dumptys_Little_Son_29367.json",
+          "sentenceCount": 52
+        },
+        {
+          "id": "level2_054_Letters_from_a_Self-Made_Merchant_to_His_Son_Being_21959",
+          "title": "Letters from a Self-Made Merchant to His Son",
+          "url": "gutenberg/Level2_中初级/054_Letters_from_a_Self-Made_Merchant_to_His_Son_Being_21959.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_055_Nick_Carter_Stories_No_145_June_19_1915_An_Unsolve_68022",
+          "title": "Nick Carter Stories No. 145, June 19, 1915: An Unsolved Myst",
+          "url": "gutenberg/Level2_中初级/055_Nick_Carter_Stories_No_145_June_19_1915_An_Unsolve_68022.json",
+          "sentenceCount": 571
+        },
+        {
+          "id": "level2_056_The_Seven_Purposes_An_Experience_in_Psychic_Phenom_60406",
+          "title": "The Seven Purposes: An Experience in Psychic Phenomena",
+          "url": "gutenberg/Level2_中初级/056_The_Seven_Purposes_An_Experience_in_Psychic_Phenom_60406.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_057_Stories_Pictures_Tell_Book_4_31411",
+          "title": "Stories Pictures Tell. Book 4",
+          "url": "gutenberg/Level2_中初级/057_Stories_Pictures_Tell_Book_4_31411.json",
+          "sentenceCount": 277
+        },
+        {
+          "id": "level2_058_Alcatraz_11195",
+          "title": "Alcatraz",
+          "url": "gutenberg/Level2_中初级/058_Alcatraz_11195.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_059_The_White_People_459",
+          "title": "The White People",
+          "url": "gutenberg/Level2_中初级/059_The_White_People_459.json",
+          "sentenceCount": 355
+        },
+        {
+          "id": "level2_060_Windfalls_47429",
+          "title": "Windfalls",
+          "url": "gutenberg/Level2_中初级/060_Windfalls_47429.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_061_To-morrow_3609",
+          "title": "To-morrow?",
+          "url": "gutenberg/Level2_中初级/061_To-morrow_3609.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_062_Baseball_Joe_on_the_Giants_or_Making_Good_as_a_Bal_43021",
+          "title": "Baseball Joe on the Giants; or, Making Good as a Ball Twirle",
+          "url": "gutenberg/Level2_中初级/062_Baseball_Joe_on_the_Giants_or_Making_Good_as_a_Bal_43021.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_063_Ethel_Morton_and_the_Christmas_Ship_36007",
+          "title": "Ethel Morton and the Christmas Ship",
+          "url": "gutenberg/Level2_中初级/063_Ethel_Morton_and_the_Christmas_Ship_36007.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_064_Punch_or_the_London_Charivari_Volume_104_January_7_26385",
+          "title": "Punch, or the London Charivari, Volume 104, January 7, 1893",
+          "url": "gutenberg/Level2_中初级/064_Punch_or_the_London_Charivari_Volume_104_January_7_26385.json",
+          "sentenceCount": 122
+        },
+        {
+          "id": "level2_065_Girls_Faults_and_Ideals_A_Familiar_Talk_with_Quota_9386",
+          "title": "Girls: Faults and Ideals",
+          "url": "gutenberg/Level2_中初级/065_Girls_Faults_and_Ideals_A_Familiar_Talk_with_Quota_9386.json",
+          "sentenceCount": 99
+        },
+        {
+          "id": "level2_066_The_Chronicles_of_Rhoda_40526",
+          "title": "The Chronicles of Rhoda",
+          "url": "gutenberg/Level2_中初级/066_The_Chronicles_of_Rhoda_40526.json",
+          "sentenceCount": 614
+        },
+        {
+          "id": "level2_067_Off_Santiago_with_Sampson_43420",
+          "title": "Off Santiago with Sampson",
+          "url": "gutenberg/Level2_中初级/067_Off_Santiago_with_Sampson_43420.json",
+          "sentenceCount": 369
+        },
+        {
+          "id": "level2_068_The_Bible_Douay-Rheims_Book_73_Apocalypse_The_Chal_8373",
+          "title": "The Bible, Douay-Rheims, Book 73: Apocalypse",
+          "url": "gutenberg/Level2_中初级/068_The_Bible_Douay-Rheims_Book_73_Apocalypse_The_Chal_8373.json",
+          "sentenceCount": 250
+        },
+        {
+          "id": "level2_069_A_Young_Folks_History_of_the_Church_of_Jesus_Chris_16534",
+          "title": "A Young Folks' History of the Church of Jesus Christ of Latt",
+          "url": "gutenberg/Level2_中初级/069_A_Young_Folks_History_of_the_Church_of_Jesus_Chris_16534.json",
+          "sentenceCount": 791
+        },
+        {
+          "id": "level2_070_The_Dwelling_Place_of_Light_Volume_3_3648",
+          "title": "The Dwelling Place of Light — Volume 3",
+          "url": "gutenberg/Level2_中初级/070_The_Dwelling_Place_of_Light_Volume_3_3648.json",
+          "sentenceCount": 755
+        },
+        {
+          "id": "level2_071_The_Strand_Magazine_Vol_05_Issue_30_June_1893_An_I_24188",
+          "title": "The Strand Magazine, Vol. 05, Issue 30, June 1893",
+          "url": "gutenberg/Level2_中初级/071_The_Strand_Magazine_Vol_05_Issue_30_June_1893_An_I_24188.json",
+          "sentenceCount": 740
+        },
+        {
+          "id": "level2_072_Thoughts_of_the_servant_of_God_Thrse_of_the_Chil_72720",
+          "title": "Thoughts of the servant of God, Thérèse of the Child Jesus",
+          "url": "gutenberg/Level2_中初级/072_Thoughts_of_the_servant_of_God_Thrse_of_the_Chil_72720.json",
+          "sentenceCount": 552
+        },
+        {
+          "id": "level2_073_The_Lost_House_1807",
+          "title": "The Lost House",
+          "url": "gutenberg/Level2_中初级/073_The_Lost_House_1807.json",
+          "sentenceCount": 315
+        },
+        {
+          "id": "level2_074_A_Rose_of_a_Hundred_Leaves_A_Love_Story_33599",
+          "title": "A Rose of a Hundred Leaves: A Love Story",
+          "url": "gutenberg/Level2_中初级/074_A_Rose_of_a_Hundred_Leaves_A_Love_Story_33599.json",
+          "sentenceCount": 567
+        },
+        {
+          "id": "level2_075_Slaves_of_Mercury_29966",
+          "title": "Slaves of Mercury",
+          "url": "gutenberg/Level2_中初级/075_Slaves_of_Mercury_29966.json",
+          "sentenceCount": 473
+        },
+        {
+          "id": "level2_076_The_Journal_of_the_Maine_Ornithological_Society_Vo_59355",
+          "title": "The Journal of the Maine Ornithological Society, Vol. XI. No",
+          "url": "gutenberg/Level2_中初级/076_The_Journal_of_the_Maine_Ornithological_Society_Vo_59355.json",
+          "sentenceCount": 177
+        },
+        {
+          "id": "level2_077_A_Lie_Never_Justifiable_A_Study_in_Ethics_10591",
+          "title": "A Lie Never Justifiable: A Study in Ethics",
+          "url": "gutenberg/Level2_中初级/077_A_Lie_Never_Justifiable_A_Study_in_Ethics_10591.json",
+          "sentenceCount": 696
+        },
+        {
+          "id": "level2_078_Notes_and_Queries_Number_223_February_4_1854_A_Med_28405",
+          "title": "Notes and Queries, Number 223, February 4, 1854",
+          "url": "gutenberg/Level2_中初级/078_Notes_and_Queries_Number_223_February_4_1854_A_Med_28405.json",
+          "sentenceCount": 368
+        },
+        {
+          "id": "level2_079_The_Happy_Venture_11216",
+          "title": "The Happy Venture",
+          "url": "gutenberg/Level2_中初级/079_The_Happy_Venture_11216.json",
+          "sentenceCount": 577
+        },
+        {
+          "id": "level2_080_Pee-wee_Harris_in_Luck_59247",
+          "title": "Pee-wee Harris in Luck",
+          "url": "gutenberg/Level2_中初级/080_Pee-wee_Harris_in_Luck_59247.json",
+          "sentenceCount": 602
+        },
+        {
+          "id": "level2_081_Ethels_trial_77449",
+          "title": "Ethel's trial",
+          "url": "gutenberg/Level2_中初级/081_Ethels_trial_77449.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_082_The_K-Factor_22540",
+          "title": "The K-Factor",
+          "url": "gutenberg/Level2_中初级/082_The_K-Factor_22540.json",
+          "sentenceCount": 153
+        },
+        {
+          "id": "level2_083_The_Heart_of_Denise_and_Other_Tales_38284",
+          "title": "The Heart of Denise, and Other Tales",
+          "url": "gutenberg/Level2_中初级/083_The_Heart_of_Denise_and_Other_Tales_38284.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_084_The_Khaki_Boys_over_the_Top_Or_Doing_and_Daring_fo_12957",
+          "title": "The Khaki Boys over the Top; Or, Doing and Daring for Uncle",
+          "url": "gutenberg/Level2_中初级/084_The_Khaki_Boys_over_the_Top_Or_Doing_and_Daring_fo_12957.json",
+          "sentenceCount": 698
+        },
+        {
+          "id": "level2_085_Tales_from_the_Works_of_G_A_Henty_53700",
+          "title": "Tales from the Works of G. A. Henty",
+          "url": "gutenberg/Level2_中初级/085_Tales_from_the_Works_of_G_A_Henty_53700.json",
+          "sentenceCount": 715
+        },
+        {
+          "id": "level2_086_US_Copyright_Renewals_1956_January_-_June_11813",
+          "title": "U.S. Copyright Renewals, 1956 January - June",
+          "url": "gutenberg/Level2_中初级/086_US_Copyright_Renewals_1956_January_-_June_11813.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_087_Love_at_Second_Sight_9851",
+          "title": "Love at Second Sight",
+          "url": "gutenberg/Level2_中初级/087_Love_at_Second_Sight_9851.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_088_Rainy_Week_43025",
+          "title": "Rainy Week",
+          "url": "gutenberg/Level2_中初级/088_Rainy_Week_43025.json",
+          "sentenceCount": 650
+        },
+        {
+          "id": "level2_089_The_Practice_of_Autosuggestion_29339",
+          "title": "The Practice of Autosuggestion",
+          "url": "gutenberg/Level2_中初级/089_The_Practice_of_Autosuggestion_29339.json",
+          "sentenceCount": 472
+        },
+        {
+          "id": "level2_090_The_Crimson_Sweater_33425",
+          "title": "The Crimson Sweater",
+          "url": "gutenberg/Level2_中初级/090_The_Crimson_Sweater_33425.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_091_Notes_on_the_Bibliography_of_Yucatan_and_Central_A_40728",
+          "title": "Notes on the Bibliography of Yucatan and Central America",
+          "url": "gutenberg/Level2_中初级/091_Notes_on_the_Bibliography_of_Yucatan_and_Central_A_40728.json",
+          "sentenceCount": 215
+        },
+        {
+          "id": "level2_092_The_Greater_Inclination_9190",
+          "title": "The Greater Inclination",
+          "url": "gutenberg/Level2_中初级/092_The_Greater_Inclination_9190.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_093_Anchorite_23561",
+          "title": "Anchorite",
+          "url": "gutenberg/Level2_中初级/093_Anchorite_23561.json",
+          "sentenceCount": 294
+        },
+        {
+          "id": "level2_094_A_Night_Out_9295",
+          "title": "A Night Out",
+          "url": "gutenberg/Level2_中初级/094_A_Night_Out_9295.json",
+          "sentenceCount": 67
+        },
+        {
+          "id": "level2_095_Little_Folks_Christmas_Stories_and_Plays_52231",
+          "title": "Little Folks' Christmas Stories and Plays",
+          "url": "gutenberg/Level2_中初级/095_Little_Folks_Christmas_Stories_and_Plays_52231.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_096_The_Ghost_26779",
+          "title": "The Ghost",
+          "url": "gutenberg/Level2_中初级/096_The_Ghost_26779.json",
+          "sentenceCount": 291
+        },
+        {
+          "id": "level2_097_A_Night_in_Acadie_63025",
+          "title": "A Night in Acadie",
+          "url": "gutenberg/Level2_中初级/097_A_Night_in_Acadie_63025.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_098_The_Boy_Chums_in_the_Forest_Or_Hunting_for_Plume_B_27561",
+          "title": "The Boy Chums in the Forest; Or, Hunting for Plume Birds in",
+          "url": "gutenberg/Level2_中初级/098_The_Boy_Chums_in_the_Forest_Or_Hunting_for_Plume_B_27561.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level2_099_Going_into_Society_1422",
+          "title": "Going into Society",
+          "url": "gutenberg/Level2_中初级/099_Going_into_Society_1422.json",
+          "sentenceCount": 86
+        },
+        {
+          "id": "level2_100_Amateur_in_Chancery_51681",
+          "title": "Amateur in Chancery",
+          "url": "gutenberg/Level2_中初级/100_Amateur_in_Chancery_51681.json",
+          "sentenceCount": 77
+        }
+      ]
+    },
+    {
+      "id": "level3",
+      "dir": "Level3_中级",
+      "label": "Level 3 中级",
+      "gradeHint": "Grade 9–12",
+      "articles": [
+        {
+          "id": "level3_001_The_young_immigrunts_78483",
+          "title": "The young immigrunts",
+          "url": "gutenberg/Level3_中级/001_The_young_immigrunts_78483.json",
+          "sentenceCount": 104
+        },
+        {
+          "id": "level3_002_Hunting_Indians_in_a_Taxi-Cab_65423",
+          "title": "Hunting Indians in a Taxi-Cab",
+          "url": "gutenberg/Level3_中级/002_Hunting_Indians_in_a_Taxi-Cab_65423.json",
+          "sentenceCount": 112
+        },
+        {
+          "id": "level3_003_Ormond_Or_The_Secret_Witness_Volume_1_of_3_36289",
+          "title": "Ormond; Or, The Secret Witness. Volume 1 (of 3)",
+          "url": "gutenberg/Level3_中级/003_Ormond_Or_The_Secret_Witness_Volume_1_of_3_36289.json",
+          "sentenceCount": 519
+        },
+        {
+          "id": "level3_004_Florence_Nightingale_to_Her_Nurses_A_selection_fro_49732",
+          "title": "Florence Nightingale to Her Nurses",
+          "url": "gutenberg/Level3_中级/004_Florence_Nightingale_to_Her_Nurses_A_selection_fro_49732.json",
+          "sentenceCount": 547
+        },
+        {
+          "id": "level3_005_Scientific_American_Supplement_No_392_July_7_1883_8742",
+          "title": "Scientific American Supplement, No. 392, July 7, 1883",
+          "url": "gutenberg/Level3_中级/005_Scientific_American_Supplement_No_392_July_7_1883_8742.json",
+          "sentenceCount": 688
+        },
+        {
+          "id": "level3_006_Secrets_of_Earth_and_Sea_53751",
+          "title": "Secrets of Earth and Sea",
+          "url": "gutenberg/Level3_中级/006_Secrets_of_Earth_and_Sea_53751.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_007_Big_Bend_National_Park_Land_of_Dramatic_Contrasts_62658",
+          "title": "Big Bend National Park: Land of Dramatic Contrasts and Sceni",
+          "url": "gutenberg/Level3_中级/007_Big_Bend_National_Park_Land_of_Dramatic_Contrasts_62658.json",
+          "sentenceCount": 61
+        },
+        {
+          "id": "level3_008_The_Strange_Adventures_of_Captain_Dangerous_Vol_1_26667",
+          "title": "The Strange Adventures of Captain Dangerous, Vol. 1",
+          "url": "gutenberg/Level3_中级/008_The_Strange_Adventures_of_Captain_Dangerous_Vol_1_26667.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_009_The_vale_of_Lyvennet_46319",
+          "title": "The vale of Lyvennet",
+          "url": "gutenberg/Level3_中级/009_The_vale_of_Lyvennet_46319.json",
+          "sentenceCount": 505
+        },
+        {
+          "id": "level3_010_Concerning_Genealogies_Being_Suggestions_of_Value_54459",
+          "title": "Concerning Genealogies",
+          "url": "gutenberg/Level3_中级/010_Concerning_Genealogies_Being_Suggestions_of_Value_54459.json",
+          "sentenceCount": 270
+        },
+        {
+          "id": "level3_011_A_Manual_of_Wood_Carving_42949",
+          "title": "A Manual of Wood Carving",
+          "url": "gutenberg/Level3_中级/011_A_Manual_of_Wood_Carving_42949.json",
+          "sentenceCount": 597
+        },
+        {
+          "id": "level3_012_The_Uses_of_Italic_A_Primer_of_Information_Regardi_24829",
+          "title": "The Uses of Italic",
+          "url": "gutenberg/Level3_中级/012_The_Uses_of_Italic_A_Primer_of_Information_Regardi_24829.json",
+          "sentenceCount": 109
+        },
+        {
+          "id": "level3_013_A_Midsummer_Nights_Dream_2242",
+          "title": "A Midsummer Night's Dream",
+          "url": "gutenberg/Level3_中级/013_A_Midsummer_Nights_Dream_2242.json",
+          "sentenceCount": 1
+        },
+        {
+          "id": "level3_014_Poems_54505",
+          "title": "Poems",
+          "url": "gutenberg/Level3_中级/014_Poems_54505.json",
+          "sentenceCount": 509
+        },
+        {
+          "id": "level3_015_How_Members_of_Congress_Are_Bribed_3316",
+          "title": "How Members of Congress Are Bribed",
+          "url": "gutenberg/Level3_中级/015_How_Members_of_Congress_Are_Bribed_3316.json",
+          "sentenceCount": 71
+        },
+        {
+          "id": "level3_016_The_Discards_37212",
+          "title": "The Discards",
+          "url": "gutenberg/Level3_中级/016_The_Discards_37212.json",
+          "sentenceCount": 172
+        },
+        {
+          "id": "level3_017_The_Cabala_68105",
+          "title": "The Cabala",
+          "url": "gutenberg/Level3_中级/017_The_Cabala_68105.json",
+          "sentenceCount": 706
+        },
+        {
+          "id": "level3_018_The_Great_Keinplatz_Experiment_and_Other_Tales_of_32777",
+          "title": "The Great Keinplatz Experiment and Other Tales of Twilight a",
+          "url": "gutenberg/Level3_中级/018_The_Great_Keinplatz_Experiment_and_Other_Tales_of_32777.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_019_Addresses_by_the_Right_Reverend_Phillips_Brooks_14497",
+          "title": "Addresses by the Right Reverend Phillips Brooks",
+          "url": "gutenberg/Level3_中级/019_Addresses_by_the_Right_Reverend_Phillips_Brooks_14497.json",
+          "sentenceCount": 644
+        },
+        {
+          "id": "level3_020_Sea-Weeds_Shells_and_Fossils_37119",
+          "title": "Sea-Weeds, Shells and Fossils",
+          "url": "gutenberg/Level3_中级/020_Sea-Weeds_Shells_and_Fossils_37119.json",
+          "sentenceCount": 498
+        },
+        {
+          "id": "level3_021_John_Lothrop_Motley_a_memoir_Volume_2_4726",
+          "title": "John Lothrop Motley. a memoir — Volume 2",
+          "url": "gutenberg/Level3_中级/021_John_Lothrop_Motley_a_memoir_Volume_2_4726.json",
+          "sentenceCount": 353
+        },
+        {
+          "id": "level3_022_Princess_Zara_24427",
+          "title": "Princess Zara",
+          "url": "gutenberg/Level3_中级/022_Princess_Zara_24427.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_023_The_Practical_Magician_and_Ventriloquists_Guide_A_53235",
+          "title": "The Practical Magician and Ventriloquist's Guide",
+          "url": "gutenberg/Level3_中级/023_The_Practical_Magician_and_Ventriloquists_Guide_A_53235.json",
+          "sentenceCount": 616
+        },
+        {
+          "id": "level3_024_The_Chief_Engineer_34673",
+          "title": "The Chief Engineer",
+          "url": "gutenberg/Level3_中级/024_The_Chief_Engineer_34673.json",
+          "sentenceCount": 152
+        },
+        {
+          "id": "level3_025_Fables_and_Fabulists_Ancient_and_Modern_42761",
+          "title": "Fables and Fabulists: Ancient and Modern",
+          "url": "gutenberg/Level3_中级/025_Fables_and_Fabulists_Ancient_and_Modern_42761.json",
+          "sentenceCount": 559
+        },
+        {
+          "id": "level3_026_Great_Inventions_and_Discoveries_37574",
+          "title": "Great Inventions and Discoveries",
+          "url": "gutenberg/Level3_中级/026_Great_Inventions_and_Discoveries_37574.json",
+          "sentenceCount": 722
+        },
+        {
+          "id": "level3_027_The_Veterinarian_20279",
+          "title": "The Veterinarian",
+          "url": "gutenberg/Level3_中级/027_The_Veterinarian_20279.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_028_Chamberss_Journal_of_Popular_Literature_Science_an_49741",
+          "title": "Chambers's Journal of Popular Literature, Science, and Art,",
+          "url": "gutenberg/Level3_中级/028_Chamberss_Journal_of_Popular_Literature_Science_an_49741.json",
+          "sentenceCount": 302
+        },
+        {
+          "id": "level3_029_A_Reaping_58202",
+          "title": "A Reaping",
+          "url": "gutenberg/Level3_中级/029_A_Reaping_58202.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_030_Spices_Their_Histories_Valuable_Information_for_Gr_60192",
+          "title": "Spices, Their Histories: Valuable Information for Grocers",
+          "url": "gutenberg/Level3_中级/030_Spices_Their_Histories_Valuable_Information_for_Gr_60192.json",
+          "sentenceCount": 248
+        },
+        {
+          "id": "level3_031_Punch_or_the_London_Charivari_Vol_147_October_14_1_28360",
+          "title": "Punch, or the London Charivari, Vol. 147, October 14, 1914",
+          "url": "gutenberg/Level3_中级/031_Punch_or_the_London_Charivari_Vol_147_October_14_1_28360.json",
+          "sentenceCount": 224
+        },
+        {
+          "id": "level3_032_Unity_of_Good_16591",
+          "title": "Unity of Good",
+          "url": "gutenberg/Level3_中级/032_Unity_of_Good_16591.json",
+          "sentenceCount": 238
+        },
+        {
+          "id": "level3_033_The_book_of_Edinburgh_anecdote_69099",
+          "title": "The book of Edinburgh anecdote",
+          "url": "gutenberg/Level3_中级/033_The_book_of_Edinburgh_anecdote_69099.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_034_The_Champagne_Standard_41820",
+          "title": "The Champagne Standard",
+          "url": "gutenberg/Level3_中级/034_The_Champagne_Standard_41820.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_035_The_Game_of_Go_The_National_Game_of_Japan_66632",
+          "title": "The Game of Go: The National Game of Japan",
+          "url": "gutenberg/Level3_中级/035_The_Game_of_Go_The_National_Game_of_Japan_66632.json",
+          "sentenceCount": 733
+        },
+        {
+          "id": "level3_036_The_Story_Hour_A_Book_for_the_Home_and_the_Kinderg_5835",
+          "title": "The Story Hour: A Book for the Home and the Kindergarten",
+          "url": "gutenberg/Level3_中级/036_The_Story_Hour_A_Book_for_the_Home_and_the_Kinderg_5835.json",
+          "sentenceCount": 594
+        },
+        {
+          "id": "level3_037_Americans_by_adoption_70434",
+          "title": "Americans by adoption",
+          "url": "gutenberg/Level3_中级/037_Americans_by_adoption_70434.json",
+          "sentenceCount": 715
+        },
+        {
+          "id": "level3_038_The_mystery_of_the_Kingdom_of_God_75886",
+          "title": "The mystery of the Kingdom of God",
+          "url": "gutenberg/Level3_中级/038_The_mystery_of_the_Kingdom_of_God_75886.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_039_Studies_in_Spermatogenesis_Part_1_of_2_31545",
+          "title": "Studies in Spermatogenesis (Part 1 of 2)",
+          "url": "gutenberg/Level3_中级/039_Studies_in_Spermatogenesis_Part_1_of_2_31545.json",
+          "sentenceCount": 149
+        },
+        {
+          "id": "level3_040_The_Sanitary_Condition_of_the_Poor_in_Relation_to_53877",
+          "title": "The Sanitary Condition of the Poor in Relation to Disease, P",
+          "url": "gutenberg/Level3_中级/040_The_Sanitary_Condition_of_the_Poor_in_Relation_to_53877.json",
+          "sentenceCount": 176
+        },
+        {
+          "id": "level3_041_Biographical_notice_of_Nicolo_Paganini_With_an_ana_58184",
+          "title": "Biographical notice of Nicolo Paganini",
+          "url": "gutenberg/Level3_中级/041_Biographical_notice_of_Nicolo_Paganini_With_an_ana_58184.json",
+          "sentenceCount": 558
+        },
+        {
+          "id": "level3_042_The_Book-lover_A_Guide_to_the_Best_Reading_47013",
+          "title": "The Book-lover: A Guide to the Best Reading",
+          "url": "gutenberg/Level3_中级/042_The_Book-lover_A_Guide_to_the_Best_Reading_47013.json",
+          "sentenceCount": 627
+        },
+        {
+          "id": "level3_043_Some_points_in_choosing_textiles_76441",
+          "title": "Some points in choosing textiles",
+          "url": "gutenberg/Level3_中级/043_Some_points_in_choosing_textiles_76441.json",
+          "sentenceCount": 88
+        },
+        {
+          "id": "level3_044_A_Roadside_Harp_A_Book_of_Verses_54822",
+          "title": "A Roadside Harp: A Book of Verses",
+          "url": "gutenberg/Level3_中级/044_A_Roadside_Harp_A_Book_of_Verses_54822.json",
+          "sentenceCount": 159
+        },
+        {
+          "id": "level3_045_Required_Poems_for_Reading_and_Memorizing_Third_an_10131",
+          "title": "Required Poems for Reading and Memorizing",
+          "url": "gutenberg/Level3_中级/045_Required_Poems_for_Reading_and_Memorizing_Third_an_10131.json",
+          "sentenceCount": 509
+        },
+        {
+          "id": "level3_046_Handbook_of_Wool_Knitting_and_Crochet_26113",
+          "title": "Handbook of Wool Knitting and Crochet",
+          "url": "gutenberg/Level3_中级/046_Handbook_of_Wool_Knitting_and_Crochet_26113.json",
+          "sentenceCount": 377
+        },
+        {
+          "id": "level3_047_German_Spies_in_England_An_Exposure_61069",
+          "title": "German Spies in England: An Exposure",
+          "url": "gutenberg/Level3_中级/047_German_Spies_in_England_An_Exposure_61069.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_048_It_May_Be_True_Vol_1_of_3_40418",
+          "title": "It May Be True, Vol. 1 (of 3)",
+          "url": "gutenberg/Level3_中级/048_It_May_Be_True_Vol_1_of_3_40418.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_049_The_Delinquent_Vol_IV_No_3_March_1914_56905",
+          "title": "The Delinquent (Vol. IV, No. 3, March 1914)",
+          "url": "gutenberg/Level3_中级/049_The_Delinquent_Vol_IV_No_3_March_1914_56905.json",
+          "sentenceCount": 297
+        },
+        {
+          "id": "level3_050_Family_fare_72624",
+          "title": "Family fare",
+          "url": "gutenberg/Level3_中级/050_Family_fare_72624.json",
+          "sentenceCount": 438
+        },
+        {
+          "id": "level3_051_Divine_Authority_Or_the_Question_Was_Joseph_Smith_46243",
+          "title": "Divine Authority; Or, the Question: Was Joseph Smith Sent of",
+          "url": "gutenberg/Level3_中级/051_Divine_Authority_Or_the_Question_Was_Joseph_Smith_46243.json",
+          "sentenceCount": 231
+        },
+        {
+          "id": "level3_052_Charles_Dickens_61760",
+          "title": "Charles Dickens",
+          "url": "gutenberg/Level3_中级/052_Charles_Dickens_61760.json",
+          "sentenceCount": 169
+        },
+        {
+          "id": "level3_053_Lippincotts_Magazine_of_Popular_Literature_and_Sci_14327",
+          "title": "Lippincott's Magazine of Popular Literature and Science, Vol",
+          "url": "gutenberg/Level3_中级/053_Lippincotts_Magazine_of_Popular_Literature_and_Sci_14327.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_054_A_Book_of_Porcelain_Fine_examples_in_the_Victoria_49439",
+          "title": "A Book of Porcelain: Fine examples in the Victoria & Albert",
+          "url": "gutenberg/Level3_中级/054_A_Book_of_Porcelain_Fine_examples_in_the_Victoria_49439.json",
+          "sentenceCount": 439
+        },
+        {
+          "id": "level3_055_Chamberss_Journal_of_Popular_Literature_Science_an_47066",
+          "title": "Chambers's Journal of Popular Literature, Science, and Art,",
+          "url": "gutenberg/Level3_中级/055_Chamberss_Journal_of_Popular_Literature_Science_an_47066.json",
+          "sentenceCount": 306
+        },
+        {
+          "id": "level3_056_American_Dangers_and_Duties_65452",
+          "title": "American Dangers and Duties",
+          "url": "gutenberg/Level3_中级/056_American_Dangers_and_Duties_65452.json",
+          "sentenceCount": 127
+        },
+        {
+          "id": "level3_057_A_Thorny_Path_Volume_05_5534",
+          "title": "A Thorny Path — Volume 05",
+          "url": "gutenberg/Level3_中级/057_A_Thorny_Path_Volume_05_5534.json",
+          "sentenceCount": 246
+        },
+        {
+          "id": "level3_058_Scotts_Lady_of_the_Lake_45888",
+          "title": "Scott's Lady of the Lake",
+          "url": "gutenberg/Level3_中级/058_Scotts_Lady_of_the_Lake_45888.json",
+          "sentenceCount": 746
+        },
+        {
+          "id": "level3_059_England_38790",
+          "title": "England",
+          "url": "gutenberg/Level3_中级/059_England_38790.json",
+          "sentenceCount": 707
+        },
+        {
+          "id": "level3_060_Notes_and_Queries_Vol_V_Number_127_April_3_1852_A_41138",
+          "title": "Notes and Queries, Vol. V, Number 127, April 3, 1852",
+          "url": "gutenberg/Level3_中级/060_Notes_and_Queries_Vol_V_Number_127_April_3_1852_A_41138.json",
+          "sentenceCount": 389
+        },
+        {
+          "id": "level3_061_Sacred_Hymns_from_the_German_Translated_by_Frances_39440",
+          "title": "Sacred Hymns from the German",
+          "url": "gutenberg/Level3_中级/061_Sacred_Hymns_from_the_German_Translated_by_Frances_39440.json",
+          "sentenceCount": 472
+        },
+        {
+          "id": "level3_062_The_Angevins_and_the_Charter_1154-1216_The_Beginni_50791",
+          "title": "The Angevins and the Charter (1154-1216)",
+          "url": "gutenberg/Level3_中级/062_The_Angevins_and_the_Charter_1154-1216_The_Beginni_50791.json",
+          "sentenceCount": 690
+        },
+        {
+          "id": "level3_063_The_Carmina_of_Caius_Valerius_Catullus_20732",
+          "title": "The Carmina of Caius Valerius Catullus",
+          "url": "gutenberg/Level3_中级/063_The_Carmina_of_Caius_Valerius_Catullus_20732.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_064_Tutors_Lane_24771",
+          "title": "Tutors' Lane",
+          "url": "gutenberg/Level3_中级/064_Tutors_Lane_24771.json",
+          "sentenceCount": 622
+        },
+        {
+          "id": "level3_065_The_Mothers_Nursery_Songs_42612",
+          "title": "The Mother's Nursery Songs",
+          "url": "gutenberg/Level3_中级/065_The_Mothers_Nursery_Songs_42612.json",
+          "sentenceCount": 175
+        },
+        {
+          "id": "level3_066_Eating_in_Two_or_Three_Languages_18526",
+          "title": "Eating in Two or Three Languages",
+          "url": "gutenberg/Level3_中级/066_Eating_in_Two_or_Three_Languages_18526.json",
+          "sentenceCount": 168
+        },
+        {
+          "id": "level3_067_Reminiscences_of_a_Rebel_24341",
+          "title": "Reminiscences of a Rebel",
+          "url": "gutenberg/Level3_中级/067_Reminiscences_of_a_Rebel_24341.json",
+          "sentenceCount": 377
+        },
+        {
+          "id": "level3_068_Masters_of_Space_Morse_and_the_Telegraph_Thompson_12375",
+          "title": "Masters of Space",
+          "url": "gutenberg/Level3_中级/068_Masters_of_Space_Morse_and_the_Telegraph_Thompson_12375.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_069_Icelandic_Fairy_Tales_67085",
+          "title": "Icelandic Fairy Tales",
+          "url": "gutenberg/Level3_中级/069_Icelandic_Fairy_Tales_67085.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_070_The_Toys_of_Peace_and_Other_Papers_1477",
+          "title": "The Toys of Peace, and Other Papers",
+          "url": "gutenberg/Level3_中级/070_The_Toys_of_Peace_and_Other_Papers_1477.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_071_Making_a_Lawn_27066",
+          "title": "Making a Lawn",
+          "url": "gutenberg/Level3_中级/071_Making_a_Lawn_27066.json",
+          "sentenceCount": 118
+        },
+        {
+          "id": "level3_072_The_cave_dwellers_of_Southern_Tunisia_71585",
+          "title": "The cave dwellers of Southern Tunisia",
+          "url": "gutenberg/Level3_中级/072_The_cave_dwellers_of_Southern_Tunisia_71585.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_073_The_Story_of_the_Atlantic_Cable_46105",
+          "title": "The Story of the Atlantic Cable",
+          "url": "gutenberg/Level3_中级/073_The_Story_of_the_Atlantic_Cable_46105.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_074_The_Achievement_of_the_British_Navy_in_the_World-W_56027",
+          "title": "The Achievement of the British Navy in the World-War",
+          "url": "gutenberg/Level3_中级/074_The_Achievement_of_the_British_Navy_in_the_World-W_56027.json",
+          "sentenceCount": 367
+        },
+        {
+          "id": "level3_075_The_Science_of_the_Stars_48218",
+          "title": "The Science of the Stars",
+          "url": "gutenberg/Level3_中级/075_The_Science_of_the_Stars_48218.json",
+          "sentenceCount": 458
+        },
+        {
+          "id": "level3_076_The_Perfect_Tribute_12830",
+          "title": "The Perfect Tribute",
+          "url": "gutenberg/Level3_中级/076_The_Perfect_Tribute_12830.json",
+          "sentenceCount": 100
+        },
+        {
+          "id": "level3_077_The_White_Lady_of_Hazelwood_A_Tale_of_the_Fourteen_23623",
+          "title": "The White Lady of Hazelwood: A Tale of the Fourteenth Centur",
+          "url": "gutenberg/Level3_中级/077_The_White_Lady_of_Hazelwood_A_Tale_of_the_Fourteen_23623.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_078_A_Traveller_in_War-Time_5398",
+          "title": "A Traveller in War-Time",
+          "url": "gutenberg/Level3_中级/078_A_Traveller_in_War-Time_5398.json",
+          "sentenceCount": 376
+        },
+        {
+          "id": "level3_079_A_Wifes_Duty_A_Tale_35294",
+          "title": "A Wife's Duty: A Tale",
+          "url": "gutenberg/Level3_中级/079_A_Wifes_Duty_A_Tale_35294.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_080_A_Cluster_of_Grapes_A_Book_of_Twentieth_Century_Po_21649",
+          "title": "A Cluster of Grapes",
+          "url": "gutenberg/Level3_中级/080_A_Cluster_of_Grapes_A_Book_of_Twentieth_Century_Po_21649.json",
+          "sentenceCount": 262
+        },
+        {
+          "id": "level3_081_Notes_and_Queries_Number_29_May_18_1850_15197",
+          "title": "Notes and Queries, Number 29, May 18, 1850",
+          "url": "gutenberg/Level3_中级/081_Notes_and_Queries_Number_29_May_18_1850_15197.json",
+          "sentenceCount": 232
+        },
+        {
+          "id": "level3_082_History_of_King_Charles_the_Second_of_England_6659",
+          "title": "History of King Charles the Second of England",
+          "url": "gutenberg/Level3_中级/082_History_of_King_Charles_the_Second_of_England_6659.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_083_Sprays_of_Shamrock_28032",
+          "title": "Sprays of Shamrock",
+          "url": "gutenberg/Level3_中级/083_Sprays_of_Shamrock_28032.json",
+          "sentenceCount": 111
+        },
+        {
+          "id": "level3_084_Grahams_Magazine_Vol_XX_No_4_April_1842_67456",
+          "title": "Graham's Magazine, Vol. XX, No. 4, April 1842",
+          "url": "gutenberg/Level3_中级/084_Grahams_Magazine_Vol_XX_No_4_April_1842_67456.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_085_Exits_and_Entrances_62822",
+          "title": "Exits and Entrances",
+          "url": "gutenberg/Level3_中级/085_Exits_and_Entrances_62822.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_086_Law_and_Laughter_30003",
+          "title": "Law and Laughter",
+          "url": "gutenberg/Level3_中级/086_Law_and_Laughter_30003.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_087_The_Colored_Man_in_the_Methodist_Episcopal_Church_61417",
+          "title": "The Colored Man in the Methodist Episcopal Church",
+          "url": "gutenberg/Level3_中级/087_The_Colored_Man_in_the_Methodist_Episcopal_Church_61417.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_088_A_Journey_to_Crete_Costantinople_Naples_and_Floren_41246",
+          "title": "A Journey to Crete, Costantinople, Naples and Florence: Thre",
+          "url": "gutenberg/Level3_中级/088_A_Journey_to_Crete_Costantinople_Naples_and_Floren_41246.json",
+          "sentenceCount": 738
+        },
+        {
+          "id": "level3_089_Evelinas_Garden_17891",
+          "title": "Evelina's Garden",
+          "url": "gutenberg/Level3_中级/089_Evelinas_Garden_17891.json",
+          "sentenceCount": 307
+        },
+        {
+          "id": "level3_090_The_Red_Lily_Volume_01_3919",
+          "title": "The Red Lily — Volume 01",
+          "url": "gutenberg/Level3_中级/090_The_Red_Lily_Volume_01_3919.json",
+          "sentenceCount": 465
+        },
+        {
+          "id": "level3_091_Mutiny_of_the_Bounty_and_story_of_Pitcairn_Island_69363",
+          "title": "Mutiny of the Bounty and story of Pitcairn Island, 1790-1894",
+          "url": "gutenberg/Level3_中级/091_Mutiny_of_the_Bounty_and_story_of_Pitcairn_Island_69363.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_092_Chats_on_Postage_Stamps_53431",
+          "title": "Chats on Postage Stamps",
+          "url": "gutenberg/Level3_中级/092_Chats_on_Postage_Stamps_53431.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_093_Baron_dHolbach_a_Study_of_Eighteenth_Century_Radi_5621",
+          "title": "Baron d'Holbach : a Study of Eighteenth Century Radicalism i",
+          "url": "gutenberg/Level3_中级/093_Baron_dHolbach_a_Study_of_Eighteenth_Century_Radi_5621.json",
+          "sentenceCount": 549
+        },
+        {
+          "id": "level3_094_In_quest_of_the_perfect_book_71634",
+          "title": "In quest of the perfect book",
+          "url": "gutenberg/Level3_中级/094_In_quest_of_the_perfect_book_71634.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_095_The_Blight_of_Respectability_An_Anatomy_of_the_Dis_49263",
+          "title": "The Blight of Respectability",
+          "url": "gutenberg/Level3_中级/095_The_Blight_of_Respectability_An_Anatomy_of_the_Dis_49263.json",
+          "sentenceCount": 451
+        },
+        {
+          "id": "level3_096_Michigans_Copper_Country_in_Early_Photos_55149",
+          "title": "Michigan's Copper Country in Early Photos",
+          "url": "gutenberg/Level3_中级/096_Michigans_Copper_Country_in_Early_Photos_55149.json",
+          "sentenceCount": 28
+        },
+        {
+          "id": "level3_097_Famous_American_Belles_of_the_Nineteenth_Century_46013",
+          "title": "Famous American Belles of the Nineteenth Century",
+          "url": "gutenberg/Level3_中级/097_Famous_American_Belles_of_the_Nineteenth_Century_46013.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_098_Echoes_of_Old_Lancashire_48123",
+          "title": "Echoes of Old Lancashire",
+          "url": "gutenberg/Level3_中级/098_Echoes_of_Old_Lancashire_48123.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level3_099_The_Mirror_of_Literature_Amusement_and_Instruction_11369",
+          "title": "The Mirror of Literature, Amusement, and Instruction. Volume",
+          "url": "gutenberg/Level3_中级/099_The_Mirror_of_Literature_Amusement_and_Instruction_11369.json",
+          "sentenceCount": 226
+        },
+        {
+          "id": "level3_100_Days_and_Nights_in_London_Or_Studies_in_Black_and_36683",
+          "title": "Days and Nights in London; Or, Studies in Black and Gray",
+          "url": "gutenberg/Level3_中级/100_Days_and_Nights_in_London_Or_Studies_in_Black_and_36683.json",
+          "sentenceCount": 794
+        }
+      ]
+    },
+    {
+      "id": "level4",
+      "dir": "Level4_中高级",
+      "label": "Level 4 中高级",
+      "gradeHint": "Grade 12–16",
+      "articles": [
+        {
+          "id": "level4_001_A_Journey_Made_in_the_Summer_of_1794_through_Holla_62795",
+          "title": "A Journey Made in the Summer of 1794, through Holland and th",
+          "url": "gutenberg/Level4_中高级/001_A_Journey_Made_in_the_Summer_of_1794_through_Holla_62795.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_002_A_defence_of_modern_spiritualism_69454",
+          "title": "A defence of modern spiritualism",
+          "url": "gutenberg/Level4_中高级/002_A_defence_of_modern_spiritualism_69454.json",
+          "sentenceCount": 473
+        },
+        {
+          "id": "level4_003_Life_and_bloody_career_of_the_executed_criminal_Ja_73377",
+          "title": "Life and bloody career of the executed criminal, James Copel",
+          "url": "gutenberg/Level4_中高级/003_Life_and_bloody_career_of_the_executed_criminal_Ja_73377.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_004_Six_days_on_the_hurricane_deck_of_a_mule_27136",
+          "title": "Six days on the hurricane deck of a mule",
+          "url": "gutenberg/Level4_中高级/004_Six_days_on_the_hurricane_deck_of_a_mule_27136.json",
+          "sentenceCount": 165
+        },
+        {
+          "id": "level4_005_The_United_Seas_41987",
+          "title": "\"The United Seas\"",
+          "url": "gutenberg/Level4_中高级/005_The_United_Seas_41987.json",
+          "sentenceCount": 305
+        },
+        {
+          "id": "level4_006_A_New_History_of_Blue_Beard_For_the_Amusement_of_L_43050",
+          "title": "A New History of Blue Beard",
+          "url": "gutenberg/Level4_中高级/006_A_New_History_of_Blue_Beard_For_the_Amusement_of_L_43050.json",
+          "sentenceCount": 40
+        },
+        {
+          "id": "level4_007_What_I_Saw_in_Berlin_and_Other_European_Capitals_D_64166",
+          "title": "What I Saw in Berlin and Other European Capitals During Wart",
+          "url": "gutenberg/Level4_中高级/007_What_I_Saw_in_Berlin_and_Other_European_Capitals_D_64166.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_008_Glaucoma_23544",
+          "title": "Glaucoma",
+          "url": "gutenberg/Level4_中高级/008_Glaucoma_23544.json",
+          "sentenceCount": 383
+        },
+        {
+          "id": "level4_009_As_a_Matter_of_Course_4385",
+          "title": "As a Matter of Course",
+          "url": "gutenberg/Level4_中高级/009_As_a_Matter_of_Course_4385.json",
+          "sentenceCount": 406
+        },
+        {
+          "id": "level4_010_A_Book_of_Simples_53951",
+          "title": "A Book of Simples",
+          "url": "gutenberg/Level4_中高级/010_A_Book_of_Simples_53951.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_011_Assyrian_Historiography_A_Source_Study_6559",
+          "title": "Assyrian Historiography: A Source Study",
+          "url": "gutenberg/Level4_中高级/011_Assyrian_Historiography_A_Source_Study_6559.json",
+          "sentenceCount": 403
+        },
+        {
+          "id": "level4_012_Public_health_and_insurance_American_addresses_69823",
+          "title": "Public health and insurance: American addresses",
+          "url": "gutenberg/Level4_中高级/012_Public_health_and_insurance_American_addresses_69823.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_013_Chamberss_Edinburgh_Journal_No_456_Volume_18_New_S_23655",
+          "title": "Chambers's Edinburgh Journal, No. 456",
+          "url": "gutenberg/Level4_中高级/013_Chamberss_Edinburgh_Journal_No_456_Volume_18_New_S_23655.json",
+          "sentenceCount": 371
+        },
+        {
+          "id": "level4_014_The_Black_Death_and_The_Dancing_Mania_1739",
+          "title": "The Black Death, and The Dancing Mania",
+          "url": "gutenberg/Level4_中高级/014_The_Black_Death_and_The_Dancing_Mania_1739.json",
+          "sentenceCount": 765
+        },
+        {
+          "id": "level4_015_The_Training_of_a_Forester_31367",
+          "title": "The Training of a Forester",
+          "url": "gutenberg/Level4_中高级/015_The_Training_of_a_Forester_31367.json",
+          "sentenceCount": 374
+        },
+        {
+          "id": "level4_016_The_myth_of_the_Jewish_menace_in_world_affairs_or_35711",
+          "title": "The myth of the Jewish menace in world affairs",
+          "url": "gutenberg/Level4_中高级/016_The_myth_of_the_Jewish_menace_in_world_affairs_or_35711.json",
+          "sentenceCount": 251
+        },
+        {
+          "id": "level4_017_The_Book_of_the_Fly_A_nature_study_of_the_house-fl_56129",
+          "title": "The Book of the Fly",
+          "url": "gutenberg/Level4_中高级/017_The_Book_of_the_Fly_A_nature_study_of_the_house-fl_56129.json",
+          "sentenceCount": 499
+        },
+        {
+          "id": "level4_018_Ingersoll_in_Canada_A_Reply_to_Wendling_Archbishop_38303",
+          "title": "Ingersoll in Canada: A Reply to Wendling, Archbishop Lynch,",
+          "url": "gutenberg/Level4_中高级/018_Ingersoll_in_Canada_A_Reply_to_Wendling_Archbishop_38303.json",
+          "sentenceCount": 446
+        },
+        {
+          "id": "level4_019_Drawings_of_Rossetti_46087",
+          "title": "Drawings of Rossetti",
+          "url": "gutenberg/Level4_中高级/019_Drawings_of_Rossetti_46087.json",
+          "sentenceCount": 91
+        },
+        {
+          "id": "level4_020_The_Schemes_of_the_Kaiser_17737",
+          "title": "The Schemes of the Kaiser",
+          "url": "gutenberg/Level4_中高级/020_The_Schemes_of_the_Kaiser_17737.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_021_This_and_That_and_the_Other_61590",
+          "title": "This and That and the Other",
+          "url": "gutenberg/Level4_中高级/021_This_and_That_and_the_Other_61590.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_022_The_Trial_of_Reuben_Crandall_MD_Charged_with_Publi_28197",
+          "title": "The Trial of Reuben Crandall, M.D.",
+          "url": "gutenberg/Level4_中高级/022_The_Trial_of_Reuben_Crandall_MD_Charged_with_Publi_28197.json",
+          "sentenceCount": 450
+        },
+        {
+          "id": "level4_023_Anatole_France_58792",
+          "title": "Anatole France",
+          "url": "gutenberg/Level4_中高级/023_Anatole_France_58792.json",
+          "sentenceCount": 362
+        },
+        {
+          "id": "level4_024_Barbara_Blomberg_Volume_06_5566",
+          "title": "Barbara Blomberg — Volume 06",
+          "url": "gutenberg/Level4_中高级/024_Barbara_Blomberg_Volume_06_5566.json",
+          "sentenceCount": 339
+        },
+        {
+          "id": "level4_025_The_History_and_Practice_of_the_Art_of_Photography_168",
+          "title": "The History and Practice of the Art of Photography",
+          "url": "gutenberg/Level4_中高级/025_The_History_and_Practice_of_the_Art_of_Photography_168.json",
+          "sentenceCount": 633
+        },
+        {
+          "id": "level4_026_Some_Christmas_Stories_1467",
+          "title": "Some Christmas Stories",
+          "url": "gutenberg/Level4_中高级/026_Some_Christmas_Stories_1467.json",
+          "sentenceCount": 349
+        },
+        {
+          "id": "level4_027_Islam_Her_Moral_And_Spiritual_Value_A_Rational_And_38114",
+          "title": "Islam, Her Moral And Spiritual Value: A Rational And Pyschol",
+          "url": "gutenberg/Level4_中高级/027_Islam_Her_Moral_And_Spiritual_Value_A_Rational_And_38114.json",
+          "sentenceCount": 586
+        },
+        {
+          "id": "level4_028_Catalogue_of_valuable_paintings_and_water_colors_m_70649",
+          "title": "Catalogue of valuable paintings and water colors mostly of t",
+          "url": "gutenberg/Level4_中高级/028_Catalogue_of_valuable_paintings_and_water_colors_m_70649.json",
+          "sentenceCount": 199
+        },
+        {
+          "id": "level4_029_The_Gentleman_from_San_Francisco_and_Other_Stories_44998",
+          "title": "The Gentleman from San Francisco, and Other Stories",
+          "url": "gutenberg/Level4_中高级/029_The_Gentleman_from_San_Francisco_and_Other_Stories_44998.json",
+          "sentenceCount": 341
+        },
+        {
+          "id": "level4_030_Petroleum_52825",
+          "title": "Petroleum",
+          "url": "gutenberg/Level4_中高级/030_Petroleum_52825.json",
+          "sentenceCount": 789
+        },
+        {
+          "id": "level4_031_Sir_Lawrence_Alma_Tadema_69208",
+          "title": "Sir Lawrence Alma Tadema",
+          "url": "gutenberg/Level4_中高级/031_Sir_Lawrence_Alma_Tadema_69208.json",
+          "sentenceCount": 243
+        },
+        {
+          "id": "level4_032_A_Detailed_Account_of_the_Battle_of_Austerlitz_66641",
+          "title": "A Detailed Account of the Battle of Austerlitz",
+          "url": "gutenberg/Level4_中高级/032_A_Detailed_Account_of_the_Battle_of_Austerlitz_66641.json",
+          "sentenceCount": 367
+        },
+        {
+          "id": "level4_033_Eugenie_Grandet_1715",
+          "title": "Eugenie Grandet",
+          "url": "gutenberg/Level4_中高级/033_Eugenie_Grandet_1715.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_034_Ponies_past_and_present_75401",
+          "title": "Ponies past and present",
+          "url": "gutenberg/Level4_中高级/034_Ponies_past_and_present_75401.json",
+          "sentenceCount": 432
+        },
+        {
+          "id": "level4_035_The_Letter_of_Petrus_Peregrinus_on_the_Magnet_AD_1_50524",
+          "title": "The Letter of Petrus Peregrinus on the Magnet, A.D. 1269",
+          "url": "gutenberg/Level4_中高级/035_The_Letter_of_Petrus_Peregrinus_on_the_Magnet_AD_1_50524.json",
+          "sentenceCount": 138
+        },
+        {
+          "id": "level4_036_The_Mirror_of_Literature_Amusement_and_Instruction_11404",
+          "title": "The Mirror of Literature, Amusement, and Instruction. Volume",
+          "url": "gutenberg/Level4_中高级/036_The_Mirror_of_Literature_Amusement_and_Instruction_11404.json",
+          "sentenceCount": 214
+        },
+        {
+          "id": "level4_037_Vestiges_of_the_supremacy_of_Mercia_in_the_south_o_52389",
+          "title": "Vestiges of the supremacy of Mercia in the south of England",
+          "url": "gutenberg/Level4_中高级/037_Vestiges_of_the_supremacy_of_Mercia_in_the_south_o_52389.json",
+          "sentenceCount": 418
+        },
+        {
+          "id": "level4_038_The_Face_of_the_Earth_as_Seen_from_the_Air_A_Study_62068",
+          "title": "The Face of the Earth as Seen from the Air",
+          "url": "gutenberg/Level4_中高级/038_The_Face_of_the_Earth_as_Seen_from_the_Air_A_Study_62068.json",
+          "sentenceCount": 245
+        },
+        {
+          "id": "level4_039_The_Invention_of_a_New_Religion_2510",
+          "title": "The Invention of a New Religion",
+          "url": "gutenberg/Level4_中高级/039_The_Invention_of_a_New_Religion_2510.json",
+          "sentenceCount": 83
+        },
+        {
+          "id": "level4_040_Social_Pictorial_Satire_12834",
+          "title": "Social Pictorial Satire",
+          "url": "gutenberg/Level4_中高级/040_Social_Pictorial_Satire_12834.json",
+          "sentenceCount": 249
+        },
+        {
+          "id": "level4_041_Among_the_Tibetans_4244",
+          "title": "Among the Tibetans",
+          "url": "gutenberg/Level4_中高级/041_Among_the_Tibetans_4244.json",
+          "sentenceCount": 501
+        },
+        {
+          "id": "level4_042_The_land_of_gold_reality_versus_fiction_69295",
+          "title": "The land of gold; reality versus fiction",
+          "url": "gutenberg/Level4_中高级/042_The_land_of_gold_reality_versus_fiction_69295.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_043_Psychology_and_Achievement_Being_the_First_of_a_Se_13791",
+          "title": "Psychology and Achievement",
+          "url": "gutenberg/Level4_中高级/043_Psychology_and_Achievement_Being_the_First_of_a_Se_13791.json",
+          "sentenceCount": 204
+        },
+        {
+          "id": "level4_044_The_Famous_Missions_of_California_5211",
+          "title": "The Famous Missions of California",
+          "url": "gutenberg/Level4_中高级/044_The_Famous_Missions_of_California_5211.json",
+          "sentenceCount": 258
+        },
+        {
+          "id": "level4_045_Chronicles_3_of_6_Historie_of_England_1_of_9_Henri_28188",
+          "title": "Chronicles (3 of 6): Historie of England (1 of 9)",
+          "url": "gutenberg/Level4_中高级/045_Chronicles_3_of_6_Historie_of_England_1_of_9_Henri_28188.json",
+          "sentenceCount": 683
+        },
+        {
+          "id": "level4_046_Tom_Finchs_Monkey_and_How_he_Dined_with_the_Admira_21097",
+          "title": "Tom Finch's Monkey",
+          "url": "gutenberg/Level4_中高级/046_Tom_Finchs_Monkey_and_How_he_Dined_with_the_Admira_21097.json",
+          "sentenceCount": 460
+        },
+        {
+          "id": "level4_047_Anthropology_and_the_Classics_Six_Lectures_Deliver_53646",
+          "title": "Anthropology and the Classics",
+          "url": "gutenberg/Level4_中高级/047_Anthropology_and_the_Classics_Six_Lectures_Deliver_53646.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_048_Selections_from_Poe_8893",
+          "title": "Selections from Poe",
+          "url": "gutenberg/Level4_中高级/048_Selections_from_Poe_8893.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_049_The_Categories_2412",
+          "title": "The Categories",
+          "url": "gutenberg/Level4_中高级/049_The_Categories_2412.json",
+          "sentenceCount": 257
+        },
+        {
+          "id": "level4_050_Overtones_a_book_of_temperaments_70670",
+          "title": "Overtones, a book of temperaments",
+          "url": "gutenberg/Level4_中高级/050_Overtones_a_book_of_temperaments_70670.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_051_Diary_of_Samuel_Pepys_Volume_52_April_1667_4175",
+          "title": "Diary of Samuel Pepys — Volume 52: April 1667",
+          "url": "gutenberg/Level4_中高级/051_Diary_of_Samuel_Pepys_Volume_52_April_1667_4175.json",
+          "sentenceCount": 292
+        },
+        {
+          "id": "level4_052_Peeps_at_Many_Lands_Burma_30064",
+          "title": "Peeps at Many Lands: Burma",
+          "url": "gutenberg/Level4_中高级/052_Peeps_at_Many_Lands_Burma_30064.json",
+          "sentenceCount": 388
+        },
+        {
+          "id": "level4_053_The_Bulletin_of_the_Loudoun_County_Historical_Soci_57221",
+          "title": "The Bulletin of the Loudoun County Historical Society, Volum",
+          "url": "gutenberg/Level4_中高级/053_The_Bulletin_of_the_Loudoun_County_Historical_Soci_57221.json",
+          "sentenceCount": 411
+        },
+        {
+          "id": "level4_054_The_Life_and_Adventures_of_Guzman_DAlfarache_or_th_52938",
+          "title": "The Life and Adventures of Guzman D'Alfarache, or the Spanis",
+          "url": "gutenberg/Level4_中高级/054_The_Life_and_Adventures_of_Guzman_DAlfarache_or_th_52938.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_055_The_Mysterious_Wanderer_Vol_III_A_Novel_in_Three_V_39425",
+          "title": "The Mysterious Wanderer, Vol. III",
+          "url": "gutenberg/Level4_中高级/055_The_Mysterious_Wanderer_Vol_III_A_Novel_in_Three_V_39425.json",
+          "sentenceCount": 474
+        },
+        {
+          "id": "level4_056_Stories_to_Tell_Children_Fifty-Four_Stories_With_S_16693",
+          "title": "Stories to Tell Children",
+          "url": "gutenberg/Level4_中高级/056_Stories_to_Tell_Children_Fifty-Four_Stories_With_S_16693.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_057_The_Old_Road_40759",
+          "title": "The Old Road",
+          "url": "gutenberg/Level4_中高级/057_The_Old_Road_40759.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_058_The_Book_of_Bulbs_44843",
+          "title": "The Book of Bulbs",
+          "url": "gutenberg/Level4_中高级/058_The_Book_of_Bulbs_44843.json",
+          "sentenceCount": 429
+        },
+        {
+          "id": "level4_059_In_the_Heart_of_the_Vosges_and_Other_Sketches_by_a_9480",
+          "title": "In the Heart of the Vosges and Other Sketches by a \"Devious",
+          "url": "gutenberg/Level4_中高级/059_In_the_Heart_of_the_Vosges_and_Other_Sketches_by_a_9480.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_060_An_Humble_Address_and_Earnest_Appeal_to_Those_Resp_32557",
+          "title": "An Humble Address and Earnest Appeal to Those Respectable Pe",
+          "url": "gutenberg/Level4_中高级/060_An_Humble_Address_and_Earnest_Appeal_to_Those_Resp_32557.json",
+          "sentenceCount": 344
+        },
+        {
+          "id": "level4_061_An_Architects_Note-Book_in_Spain_principally_illus_33820",
+          "title": "An Architect's Note-Book in Spain",
+          "url": "gutenberg/Level4_中高级/061_An_Architects_Note-Book_in_Spain_principally_illus_33820.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_062_How_to_teach_a_foreign_language_54943",
+          "title": "How to teach a foreign language",
+          "url": "gutenberg/Level4_中高级/062_How_to_teach_a_foreign_language_54943.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_063_Phaedrus_1636",
+          "title": "Phaedrus",
+          "url": "gutenberg/Level4_中高级/063_Phaedrus_1636.json",
+          "sentenceCount": 627
+        },
+        {
+          "id": "level4_064_Conservation_Through_Engineering_Extract_from_the_31899",
+          "title": "Conservation Through Engineering",
+          "url": "gutenberg/Level4_中高级/064_Conservation_Through_Engineering_Extract_from_the_31899.json",
+          "sentenceCount": 297
+        },
+        {
+          "id": "level4_065_Evolution_of_Expression_Volume_1_4942",
+          "title": "Evolution of Expression — Volume 1",
+          "url": "gutenberg/Level4_中高级/065_Evolution_of_Expression_Volume_1_4942.json",
+          "sentenceCount": 428
+        },
+        {
+          "id": "level4_066_Side_Show_Studies_23542",
+          "title": "Side Show Studies",
+          "url": "gutenberg/Level4_中高级/066_Side_Show_Studies_23542.json",
+          "sentenceCount": 581
+        },
+        {
+          "id": "level4_067_The_Loom_of_Life_29587",
+          "title": "The Loom of Life",
+          "url": "gutenberg/Level4_中高级/067_The_Loom_of_Life_29587.json",
+          "sentenceCount": 200
+        },
+        {
+          "id": "level4_068_The_Story_of_the_Typewriter_1873-1923_60794",
+          "title": "The Story of the Typewriter, 1873-1923",
+          "url": "gutenberg/Level4_中高级/068_The_Story_of_the_Typewriter_1873-1923_60794.json",
+          "sentenceCount": 448
+        },
+        {
+          "id": "level4_069_Oowikapun_or_How_the_Gospel_reached_the_Nelson_Riv_23261",
+          "title": "Oowikapun, or, How the Gospel reached the Nelson River India",
+          "url": "gutenberg/Level4_中高级/069_Oowikapun_or_How_the_Gospel_reached_the_Nelson_Riv_23261.json",
+          "sentenceCount": 710
+        },
+        {
+          "id": "level4_070_A_Treatise_on_Tobacco_Tea_Coffee_and_Chocolate_53027",
+          "title": "A Treatise on Tobacco, Tea, Coffee, and Chocolate",
+          "url": "gutenberg/Level4_中高级/070_A_Treatise_on_Tobacco_Tea_Coffee_and_Chocolate_53027.json",
+          "sentenceCount": 569
+        },
+        {
+          "id": "level4_071_The_Evolution_of_Old_Testament_Religion_45952",
+          "title": "The Evolution of Old Testament Religion",
+          "url": "gutenberg/Level4_中高级/071_The_Evolution_of_Old_Testament_Religion_45952.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_072_The_Art_of_Cross-Examination_With_the_Cross-Examin_40781",
+          "title": "The Art of Cross-Examination",
+          "url": "gutenberg/Level4_中高级/072_The_Art_of_Cross-Examination_With_the_Cross-Examin_40781.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_073_Supplementary_Copyright_Statutes_US_Copy_Office_4365",
+          "title": "Supplementary Copyright Statutes, US Copy. Office",
+          "url": "gutenberg/Level4_中高级/073_Supplementary_Copyright_Statutes_US_Copy_Office_4365.json",
+          "sentenceCount": 480
+        },
+        {
+          "id": "level4_074_Vistas_in_Sicily_40381",
+          "title": "Vistas in Sicily",
+          "url": "gutenberg/Level4_中高级/074_Vistas_in_Sicily_40381.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_075_The_Girl_and_Her_Religion_16520",
+          "title": "The Girl and Her Religion",
+          "url": "gutenberg/Level4_中高级/075_The_Girl_and_Her_Religion_16520.json",
+          "sentenceCount": 707
+        },
+        {
+          "id": "level4_076_The_Man_Behind_the_Bars_56112",
+          "title": "The Man Behind the Bars",
+          "url": "gutenberg/Level4_中高级/076_The_Man_Behind_the_Bars_56112.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_077_The_Bride_of_the_Nile_Volume_02_5518",
+          "title": "The Bride of the Nile — Volume 02",
+          "url": "gutenberg/Level4_中高级/077_The_Bride_of_the_Nile_Volume_02_5518.json",
+          "sentenceCount": 358
+        },
+        {
+          "id": "level4_078_Chamberss_Journal_of_Popular_Literature_Science_an_49246",
+          "title": "Chambers's Journal of Popular Literature, Science, and Art,",
+          "url": "gutenberg/Level4_中高级/078_Chamberss_Journal_of_Popular_Literature_Science_an_49246.json",
+          "sentenceCount": 307
+        },
+        {
+          "id": "level4_079_The_Widows_Dog_22842",
+          "title": "The Widow's Dog",
+          "url": "gutenberg/Level4_中高级/079_The_Widows_Dog_22842.json",
+          "sentenceCount": 73
+        },
+        {
+          "id": "level4_080_The_Rural_Magazine_and_Literary_Evening_Fire-Side_49800",
+          "title": "The Rural Magazine, and Literary Evening Fire-Side, Vol. 1 N",
+          "url": "gutenberg/Level4_中高级/080_The_Rural_Magazine_and_Literary_Evening_Fire-Side_49800.json",
+          "sentenceCount": 455
+        },
+        {
+          "id": "level4_081_Mysticism_and_Logic_and_Other_Essays_25447",
+          "title": "Mysticism and Logic and Other Essays",
+          "url": "gutenberg/Level4_中高级/081_Mysticism_and_Logic_and_Other_Essays_25447.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_082_Subspeciation_in_the_Kangaroo_Rat_Dipodomys_ordii_42810",
+          "title": "Subspeciation in the Kangaroo Rat, Dipodomys ordii",
+          "url": "gutenberg/Level4_中高级/082_Subspeciation_in_the_Kangaroo_Rat_Dipodomys_ordii_42810.json",
+          "sentenceCount": 595
+        },
+        {
+          "id": "level4_083_Chamberss_Edinburgh_Journal_No_444_Volume_18_New_S_21010",
+          "title": "Chambers's Edinburgh Journal, No. 444",
+          "url": "gutenberg/Level4_中高级/083_Chamberss_Edinburgh_Journal_No_444_Volume_18_New_S_21010.json",
+          "sentenceCount": 368
+        },
+        {
+          "id": "level4_084_How_to_Become_Rich_A_Treatise_on_Phrenology_Choice_21646",
+          "title": "How to Become Rich: A Treatise on Phrenology, Choice of Prof",
+          "url": "gutenberg/Level4_中高级/084_How_to_Become_Rich_A_Treatise_on_Phrenology_Choice_21646.json",
+          "sentenceCount": 713
+        },
+        {
+          "id": "level4_085_The_long_march_76604",
+          "title": "The long march",
+          "url": "gutenberg/Level4_中高级/085_The_long_march_76604.json",
+          "sentenceCount": 389
+        },
+        {
+          "id": "level4_086_Essays_of_Michel_de_Montaigne_Volume_19_3599",
+          "title": "Essays of Michel de Montaigne — Volume 19",
+          "url": "gutenberg/Level4_中高级/086_Essays_of_Michel_de_Montaigne_Volume_19_3599.json",
+          "sentenceCount": 396
+        },
+        {
+          "id": "level4_087_Baptism_According_to_Scripture_52441",
+          "title": "Baptism According to Scripture",
+          "url": "gutenberg/Level4_中高级/087_Baptism_According_to_Scripture_52441.json",
+          "sentenceCount": 430
+        },
+        {
+          "id": "level4_088_Memoirs_of_Jean_Franois_Paul_de_Gondi_Cardinal_de_3842",
+          "title": "Memoirs of Jean François Paul de Gondi, Cardinal de Retz — V",
+          "url": "gutenberg/Level4_中高级/088_Memoirs_of_Jean_Franois_Paul_de_Gondi_Cardinal_de_3842.json",
+          "sentenceCount": 254
+        },
+        {
+          "id": "level4_089_Dutch_Methods_of_Birth_Control_61495",
+          "title": "Dutch Methods of Birth Control",
+          "url": "gutenberg/Level4_中高级/089_Dutch_Methods_of_Birth_Control_61495.json",
+          "sentenceCount": 96
+        },
+        {
+          "id": "level4_090_Hand-book_for_horsewomen_39605",
+          "title": "Hand-book for horsewomen",
+          "url": "gutenberg/Level4_中高级/090_Hand-book_for_horsewomen_39605.json",
+          "sentenceCount": 333
+        },
+        {
+          "id": "level4_091_The_Sardonic_Arm_60114",
+          "title": "The Sardonic Arm",
+          "url": "gutenberg/Level4_中高级/091_The_Sardonic_Arm_60114.json",
+          "sentenceCount": 117
+        },
+        {
+          "id": "level4_092_Scotts_Wabash_Expedition_1791_64829",
+          "title": "Scott's Wabash Expedition, 1791",
+          "url": "gutenberg/Level4_中高级/092_Scotts_Wabash_Expedition_1791_64829.json",
+          "sentenceCount": 38
+        },
+        {
+          "id": "level4_093_Eugenie_Empress_of_the_French_62965",
+          "title": "Eugenie, Empress of the French",
+          "url": "gutenberg/Level4_中高级/093_Eugenie_Empress_of_the_French_62965.json",
+          "sentenceCount": 526
+        },
+        {
+          "id": "level4_094_The_Lives_of_the_Twelve_Caesars_Volume_09_Vitelliu_6394",
+          "title": "The Lives of the Twelve Caesars, Volume 09: Vitellius",
+          "url": "gutenberg/Level4_中高级/094_The_Lives_of_the_Twelve_Caesars_Volume_09_Vitelliu_6394.json",
+          "sentenceCount": 98
+        },
+        {
+          "id": "level4_095_Franois_the_waif_69153",
+          "title": "François the waif",
+          "url": "gutenberg/Level4_中高级/095_Franois_the_waif_69153.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level4_096_Harlem_shadows_64989",
+          "title": "Harlem shadows",
+          "url": "gutenberg/Level4_中高级/096_Harlem_shadows_64989.json",
+          "sentenceCount": 198
+        },
+        {
+          "id": "level4_097_Reasons_for_Leaving_the_Church_of_Rome_62055",
+          "title": "Reasons for Leaving the Church of Rome",
+          "url": "gutenberg/Level4_中高级/097_Reasons_for_Leaving_the_Church_of_Rome_62055.json",
+          "sentenceCount": 200
+        },
+        {
+          "id": "level4_098_Atoms_at_the_Science_Fair_Exhibiting_Nuclear_Proje_65893",
+          "title": "Atoms at the Science Fair: Exhibiting Nuclear Projects",
+          "url": "gutenberg/Level4_中高级/098_Atoms_at_the_Science_Fair_Exhibiting_Nuclear_Proje_65893.json",
+          "sentenceCount": 181
+        },
+        {
+          "id": "level4_099_The_Engineering_Contributions_of_Wendel_Bollman_33912",
+          "title": "The Engineering Contributions of Wendel Bollman",
+          "url": "gutenberg/Level4_中高级/099_The_Engineering_Contributions_of_Wendel_Bollman_33912.json",
+          "sentenceCount": 137
+        },
+        {
+          "id": "level4_100_The_Journal_of_Lieut_John_L_Hardenbergh_of_the_Sec_32733",
+          "title": "The Journal of Lieut. John L. Hardenbergh of the Second New",
+          "url": "gutenberg/Level4_中高级/100_The_Journal_of_Lieut_John_L_Hardenbergh_of_the_Sec_32733.json",
+          "sentenceCount": 591
+        }
+      ]
+    },
+    {
+      "id": "level5",
+      "dir": "Level5_高级",
+      "label": "Level 5 高级",
+      "gradeHint": "Grade 16+ · 学术 / 古典文学",
+      "articles": [
+        {
+          "id": "level5_001_Diary_of_Samuel_Pepys_Volume_72_February-March_16_4197",
+          "title": "Diary of Samuel Pepys — Volume 72: February-March 1668-69",
+          "url": "gutenberg/Level5_高级/001_Diary_of_Samuel_Pepys_Volume_72_February-March_16_4197.json",
+          "sentenceCount": 396
+        },
+        {
+          "id": "level5_002_Historical_Record_of_the_Twelfth_or_the_Prince_of_56294",
+          "title": "Historical Record of the Twelfth, or the Prince of Wales's R",
+          "url": "gutenberg/Level5_高级/002_Historical_Record_of_the_Twelfth_or_the_Prince_of_56294.json",
+          "sentenceCount": 309
+        },
+        {
+          "id": "level5_003_The_Sceptics_of_the_Old_Testament_Job_-_Koheleth_-_8193",
+          "title": "The Sceptics of the Old Testament: Job - Koheleth - Agur",
+          "url": "gutenberg/Level5_高级/003_The_Sceptics_of_the_Old_Testament_Job_-_Koheleth_-_8193.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_004_The_Rise_and_Progress_of_Palaeontology_Essay_2_fro_2628",
+          "title": "The Rise and Progress of Palaeontology",
+          "url": "gutenberg/Level5_高级/004_The_Rise_and_Progress_of_Palaeontology_Essay_2_fro_2628.json",
+          "sentenceCount": 90
+        },
+        {
+          "id": "level5_005_The_Jubilee_of_the_Constitution_Delivered_at_New_Y_896",
+          "title": "The Jubilee of the Constitution",
+          "url": "gutenberg/Level5_高级/005_The_Jubilee_of_the_Constitution_Delivered_at_New_Y_896.json",
+          "sentenceCount": 143
+        },
+        {
+          "id": "level5_006_Kate_Mulhall_78040",
+          "title": "Kate Mulhall",
+          "url": "gutenberg/Level5_高级/006_Kate_Mulhall_78040.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_007_The_Flowing_Bowl_A_Treatise_on_Drinks_of_All_Kinds_57179",
+          "title": "The Flowing Bowl",
+          "url": "gutenberg/Level5_高级/007_The_Flowing_Bowl_A_Treatise_on_Drinks_of_All_Kinds_57179.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_008_Lundys_Lane_and_Other_Poems_22717",
+          "title": "Lundy's Lane, and Other Poems",
+          "url": "gutenberg/Level5_高级/008_Lundys_Lane_and_Other_Poems_22717.json",
+          "sentenceCount": 281
+        },
+        {
+          "id": "level5_009_Giordano_Bruno_4228",
+          "title": "Giordano Bruno",
+          "url": "gutenberg/Level5_高级/009_Giordano_Bruno_4228.json",
+          "sentenceCount": 96
+        },
+        {
+          "id": "level5_010_The_Ontario_Archives_Scope_of_its_Operations_36992",
+          "title": "The Ontario Archives: Scope of its Operations",
+          "url": "gutenberg/Level5_高级/010_The_Ontario_Archives_Scope_of_its_Operations_36992.json",
+          "sentenceCount": 76
+        },
+        {
+          "id": "level5_011_One_of_Cleopatras_Nights_and_Other_Fantastic_Roman_39397",
+          "title": "One of Cleopatra's Nights and Other Fantastic Romances",
+          "url": "gutenberg/Level5_高级/011_One_of_Cleopatras_Nights_and_Other_Fantastic_Roman_39397.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_012_Copyright_Law_of_the_United_States_of_America_Cont_252",
+          "title": "Copyright Law of the United States of America",
+          "url": "gutenberg/Level5_高级/012_Copyright_Law_of_the_United_States_of_America_Cont_252.json",
+          "sentenceCount": 520
+        },
+        {
+          "id": "level5_013_Peoples_Handy_Atlas_of_the_World_1910_Census_Editi_21054",
+          "title": "People's Handy Atlas of the World",
+          "url": "gutenberg/Level5_高级/013_Peoples_Handy_Atlas_of_the_World_1910_Census_Editi_21054.json",
+          "sentenceCount": 132
+        },
+        {
+          "id": "level5_014_Ireton_a_Poem_60112",
+          "title": "Ireton, a Poem",
+          "url": "gutenberg/Level5_高级/014_Ireton_a_Poem_60112.json",
+          "sentenceCount": 134
+        },
+        {
+          "id": "level5_015_Flatland_A_Romance_of_Many_Dimensions_97",
+          "title": "Flatland: A Romance of Many Dimensions",
+          "url": "gutenberg/Level5_高级/015_Flatland_A_Romance_of_Many_Dimensions_97.json",
+          "sentenceCount": 577
+        },
+        {
+          "id": "level5_016_The_Conuercyon_of_swerers_The_Conversion_of_Sweare_22289",
+          "title": "The Conuercyon of swerers",
+          "url": "gutenberg/Level5_高级/016_The_Conuercyon_of_swerers_The_Conversion_of_Sweare_22289.json",
+          "sentenceCount": 57
+        },
+        {
+          "id": "level5_017_The_Character_of_a_Priest_38377",
+          "title": "The Character of a Priest",
+          "url": "gutenberg/Level5_高级/017_The_Character_of_a_Priest_38377.json",
+          "sentenceCount": 31
+        },
+        {
+          "id": "level5_018_Fern_Vale_or_the_Queensland_Squatter_Volume_1_27169",
+          "title": "Fern Vale; or, the Queensland Squatter. Volume 1",
+          "url": "gutenberg/Level5_高级/018_Fern_Vale_or_the_Queensland_Squatter_Volume_1_27169.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_019_Quotes_and_Images_From_The_Confessions_of_Jean_Jac_7555",
+          "title": "Quotes and Images From The Confessions of Jean Jacques Rouss",
+          "url": "gutenberg/Level5_高级/019_Quotes_and_Images_From_The_Confessions_of_Jean_Jac_7555.json",
+          "sentenceCount": 21
+        },
+        {
+          "id": "level5_020_Remarks_Concerning_Stones_Said_to_Have_Fallen_from_29281",
+          "title": "Remarks Concerning Stones Said to Have Fallen from the Cloud",
+          "url": "gutenberg/Level5_高级/020_Remarks_Concerning_Stones_Said_to_Have_Fallen_from_29281.json",
+          "sentenceCount": 140
+        },
+        {
+          "id": "level5_021_Index_of_the_Project_Gutenberg_Works_of_Robert_G_I_58696",
+          "title": "Index of the Project Gutenberg Works of Robert G. Ingersoll",
+          "url": "gutenberg/Level5_高级/021_Index_of_the_Project_Gutenberg_Works_of_Robert_G_I_58696.json",
+          "sentenceCount": 298
+        },
+        {
+          "id": "level5_022_A_Short_View_of_the_Laws_Now_Subsisting_with_Respe_37082",
+          "title": "A Short View of the Laws Now Subsisting with Respect to the",
+          "url": "gutenberg/Level5_高级/022_A_Short_View_of_the_Laws_Now_Subsisting_with_Respe_37082.json",
+          "sentenceCount": 81
+        },
+        {
+          "id": "level5_023_Putnams_Phrase_Book_An_Aid_to_Social_Letter_Writin_48441",
+          "title": "Putnam's Phrase Book",
+          "url": "gutenberg/Level5_高级/023_Putnams_Phrase_Book_An_Aid_to_Social_Letter_Writin_48441.json",
+          "sentenceCount": 688
+        },
+        {
+          "id": "level5_024_Songs_from_Books_15529",
+          "title": "Songs from Books",
+          "url": "gutenberg/Level5_高级/024_Songs_from_Books_15529.json",
+          "sentenceCount": 545
+        },
+        {
+          "id": "level5_025_The_British_Army_from_Within_52974",
+          "title": "The British Army from Within",
+          "url": "gutenberg/Level5_高级/025_The_British_Army_from_Within_52974.json",
+          "sentenceCount": 685
+        },
+        {
+          "id": "level5_026_Christianity_and_Islam_in_Spain_AD_756-1031_15262",
+          "title": "Christianity and Islam in Spain, A.D. 756-1031",
+          "url": "gutenberg/Level5_高级/026_Christianity_and_Islam_in_Spain_AD_756-1031_15262.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_027_The_Living_Letter_Written_with_the_Pen_of_Truth_Be_58011",
+          "title": "The Living Letter, Written with the Pen of Truth",
+          "url": "gutenberg/Level5_高级/027_The_Living_Letter_Written_with_the_Pen_of_Truth_Be_58011.json",
+          "sentenceCount": 77
+        },
+        {
+          "id": "level5_028_Late_Lyrics_and_Earlier_With_Many_Other_Verses_4758",
+          "title": "Late Lyrics and Earlier, With Many Other Verses",
+          "url": "gutenberg/Level5_高级/028_Late_Lyrics_and_Earlier_With_Many_Other_Verses_4758.json",
+          "sentenceCount": 496
+        },
+        {
+          "id": "level5_029_The_Irish_Penny_Journal_Vol_1_No_28_January_9_1841_54624",
+          "title": "The Irish Penny Journal, Vol. 1 No. 28, January 9, 1841",
+          "url": "gutenberg/Level5_高级/029_The_Irish_Penny_Journal_Vol_1_No_28_January_9_1841_54624.json",
+          "sentenceCount": 203
+        },
+        {
+          "id": "level5_030_Quotes_and_Images_From_Motleys_History_of_the_Neth_7552",
+          "title": "Quotes and Images From Motley's History of the Netherlands",
+          "url": "gutenberg/Level5_高级/030_Quotes_and_Images_From_Motleys_History_of_the_Neth_7552.json",
+          "sentenceCount": 130
+        },
+        {
+          "id": "level5_031_Heroic_Romances_of_Ireland_Translated_into_English_5678",
+          "title": "Heroic Romances of Ireland, Translated into English Prose an",
+          "url": "gutenberg/Level5_高级/031_Heroic_Romances_of_Ireland_Translated_into_English_5678.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_032_Vice_in_its_Proper_Shape_Or_The_Wonderful_and_Mela_26379",
+          "title": "Vice in its Proper Shape",
+          "url": "gutenberg/Level5_高级/032_Vice_in_its_Proper_Shape_Or_The_Wonderful_and_Mela_26379.json",
+          "sentenceCount": 179
+        },
+        {
+          "id": "level5_033_The_Darwinian_Hypothesis_2927",
+          "title": "The Darwinian Hypothesis",
+          "url": "gutenberg/Level5_高级/033_The_Darwinian_Hypothesis_2927.json",
+          "sentenceCount": 96
+        },
+        {
+          "id": "level5_034_Charmides_and_Other_Poems_1031",
+          "title": "Charmides, and Other Poems",
+          "url": "gutenberg/Level5_高级/034_Charmides_and_Other_Poems_1031.json",
+          "sentenceCount": 237
+        },
+        {
+          "id": "level5_035_Chamberss_Journal_of_Popular_Literature_Science_an_70539",
+          "title": "Chambers's Journal of Popular Literature, Science, and Art,",
+          "url": "gutenberg/Level5_高级/035_Chamberss_Journal_of_Popular_Literature_Science_an_70539.json",
+          "sentenceCount": 285
+        },
+        {
+          "id": "level5_036_Sesame_and_Lilies_1293",
+          "title": "Sesame and Lilies",
+          "url": "gutenberg/Level5_高级/036_Sesame_and_Lilies_1293.json",
+          "sentenceCount": 781
+        },
+        {
+          "id": "level5_037_State_of_the_Union_Addresses_5014",
+          "title": "State of the Union Addresses",
+          "url": "gutenberg/Level5_高级/037_State_of_the_Union_Addresses_5014.json",
+          "sentenceCount": 746
+        },
+        {
+          "id": "level5_038_The_Memoirs_of_Count_Grammont_Volume_05_5413",
+          "title": "The Memoirs of Count Grammont — Volume 05",
+          "url": "gutenberg/Level5_高级/038_The_Memoirs_of_Count_Grammont_Volume_05_5413.json",
+          "sentenceCount": 254
+        },
+        {
+          "id": "level5_039_Phrases_for_Public_Speakers_and_Paragraphs_for_Stu_10639",
+          "title": "Phrases for Public Speakers and Paragraphs for Study",
+          "url": "gutenberg/Level5_高级/039_Phrases_for_Public_Speakers_and_Paragraphs_for_Stu_10639.json",
+          "sentenceCount": 210
+        },
+        {
+          "id": "level5_040_The_Migration_of_North_American_Birds_1935_65265",
+          "title": "The Migration of North American Birds (1935)",
+          "url": "gutenberg/Level5_高级/040_The_Migration_of_North_American_Birds_1935_65265.json",
+          "sentenceCount": 503
+        },
+        {
+          "id": "level5_041_Cessions_of_Land_by_Indian_Tribes_to_the_United_St_17148",
+          "title": "Cessions of Land by Indian Tribes to the United States: Illu",
+          "url": "gutenberg/Level5_高级/041_Cessions_of_Land_by_Indian_Tribes_to_the_United_St_17148.json",
+          "sentenceCount": 117
+        },
+        {
+          "id": "level5_042_Woodrow_Wilsons_Administration_and_Achievements_29850",
+          "title": "Woodrow Wilson's Administration and Achievements",
+          "url": "gutenberg/Level5_高级/042_Woodrow_Wilsons_Administration_and_Achievements_29850.json",
+          "sentenceCount": 694
+        },
+        {
+          "id": "level5_043_Continental_Monthly_Vol_4_No_3_September_1863_Devo_27496",
+          "title": "Continental Monthly, Vol. 4, No 3, September 1863",
+          "url": "gutenberg/Level5_高级/043_Continental_Monthly_Vol_4_No_3_September_1863_Devo_27496.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_044_The_garden_as_a_picture_69479",
+          "title": "The garden as a picture",
+          "url": "gutenberg/Level5_高级/044_The_garden_as_a_picture_69479.json",
+          "sentenceCount": 72
+        },
+        {
+          "id": "level5_045_Catalonia_the_Balearic_Islands_an_historical_and_64923",
+          "title": "Catalonia & the Balearic Islands: an historical and descipti",
+          "url": "gutenberg/Level5_高级/045_Catalonia_the_Balearic_Islands_an_historical_and_64923.json",
+          "sentenceCount": 399
+        },
+        {
+          "id": "level5_046_Feuerbach_27814",
+          "title": "Feuerbach",
+          "url": "gutenberg/Level5_高级/046_Feuerbach_27814.json",
+          "sentenceCount": 392
+        },
+        {
+          "id": "level5_047_The_Ruins_of_the_Roman_City_of_Uriconium_at_Wroxet_62425",
+          "title": "The Ruins of the Roman City of Uriconium, at Wroxeter, near",
+          "url": "gutenberg/Level5_高级/047_The_Ruins_of_the_Roman_City_of_Uriconium_at_Wroxet_62425.json",
+          "sentenceCount": 408
+        },
+        {
+          "id": "level5_048_An_Idyl_of_the_East_Side_1891_23809",
+          "title": "An Idyl of the East Side",
+          "url": "gutenberg/Level5_高级/048_An_Idyl_of_the_East_Side_1891_23809.json",
+          "sentenceCount": 187
+        },
+        {
+          "id": "level5_049_The_Eighteenth_Brumaire_of_Louis_Bonaparte_1346",
+          "title": "The Eighteenth Brumaire of Louis Bonaparte",
+          "url": "gutenberg/Level5_高级/049_The_Eighteenth_Brumaire_of_Louis_Bonaparte_1346.json",
+          "sentenceCount": 678
+        },
+        {
+          "id": "level5_050_Violin_tone_and_violin_makers_71706",
+          "title": "Violin tone and violin makers",
+          "url": "gutenberg/Level5_高级/050_Violin_tone_and_violin_makers_71706.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_051_The_Virginia_Housewife_Or_Methodical_Cook_12519",
+          "title": "The Virginia Housewife; Or, Methodical Cook",
+          "url": "gutenberg/Level5_高级/051_The_Virginia_Housewife_Or_Methodical_Cook_12519.json",
+          "sentenceCount": 788
+        },
+        {
+          "id": "level5_052_Notes_in_Japan_62924",
+          "title": "Notes in Japan",
+          "url": "gutenberg/Level5_高级/052_Notes_in_Japan_62924.json",
+          "sentenceCount": 600
+        },
+        {
+          "id": "level5_053_Essays_on_Taste_13464",
+          "title": "Essays on Taste",
+          "url": "gutenberg/Level5_高级/053_Essays_on_Taste_13464.json",
+          "sentenceCount": 145
+        },
+        {
+          "id": "level5_054_The_American_Spirit_in_the_Writings_of_Americans_o_62103",
+          "title": "The American Spirit in the Writings of Americans of Foreign",
+          "url": "gutenberg/Level5_高级/054_The_American_Spirit_in_the_Writings_of_Americans_o_62103.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_055_Ireland_In_The_New_Century_14342",
+          "title": "Ireland In The New Century",
+          "url": "gutenberg/Level5_高级/055_Ireland_In_The_New_Century_14342.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_056_The_Confessions_of_Jean_Jacques_Rousseau_Volume_0_3905",
+          "title": "The Confessions of Jean Jacques Rousseau — Volume 05",
+          "url": "gutenberg/Level5_高级/056_The_Confessions_of_Jean_Jacques_Rousseau_Volume_0_3905.json",
+          "sentenceCount": 355
+        },
+        {
+          "id": "level5_057_In_the_Rocky_Mountains_A_Tale_of_Adventure_19419",
+          "title": "In the Rocky Mountains: A Tale of Adventure",
+          "url": "gutenberg/Level5_高级/057_In_the_Rocky_Mountains_A_Tale_of_Adventure_19419.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_058_The_Renaissance_studies_in_art_and_poetry_4060",
+          "title": "The Renaissance: studies in art and poetry",
+          "url": "gutenberg/Level5_高级/058_The_Renaissance_studies_in_art_and_poetry_4060.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_059_A_Voyage_to_Abyssinia_1436",
+          "title": "A Voyage to Abyssinia",
+          "url": "gutenberg/Level5_高级/059_A_Voyage_to_Abyssinia_1436.json",
+          "sentenceCount": 714
+        },
+        {
+          "id": "level5_060_The_Southern_Literary_Messenger_Vol_I_No_9_May_183_57871",
+          "title": "The Southern Literary Messenger, Vol. I., No. 9, May, 1835",
+          "url": "gutenberg/Level5_高级/060_The_Southern_Literary_Messenger_Vol_I_No_9_May_183_57871.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_061_Letters_on_International_Copyright_Second_Edition_14295",
+          "title": "Letters on International Copyright; Second Edition",
+          "url": "gutenberg/Level5_高级/061_Letters_on_International_Copyright_Second_Edition_14295.json",
+          "sentenceCount": 619
+        },
+        {
+          "id": "level5_062_Coral_and_Coral_Reefs_2937",
+          "title": "Coral and Coral Reefs",
+          "url": "gutenberg/Level5_高级/062_Coral_and_Coral_Reefs_2937.json",
+          "sentenceCount": 121
+        },
+        {
+          "id": "level5_063_A_Dissertation_on_Horses_Wherein_It_is_Demonstrate_5710",
+          "title": "A Dissertation on Horses",
+          "url": "gutenberg/Level5_高级/063_A_Dissertation_on_Horses_Wherein_It_is_Demonstrate_5710.json",
+          "sentenceCount": 135
+        },
+        {
+          "id": "level5_064_The_Popular_Science_Monthly_September_1900_Vol_57_47281",
+          "title": "The Popular Science Monthly, September, 1900",
+          "url": "gutenberg/Level5_高级/064_The_Popular_Science_Monthly_September_1900_Vol_57_47281.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_065_The_American_Practitioner_and_News_Vol_XXV_No_3_Fe_60511",
+          "title": "The American Practitioner and News. Vol. XXV. No. 3. Feb. 1,",
+          "url": "gutenberg/Level5_高级/065_The_American_Practitioner_and_News_Vol_XXV_No_3_Fe_60511.json",
+          "sentenceCount": 306
+        },
+        {
+          "id": "level5_066_Q_E_D_or_New_Light_on_the_Doctrine_of_Creation_13370",
+          "title": "Q. E. D., or New Light on the Doctrine of Creation",
+          "url": "gutenberg/Level5_高级/066_Q_E_D_or_New_Light_on_the_Doctrine_of_Creation_13370.json",
+          "sentenceCount": 569
+        },
+        {
+          "id": "level5_067_The_History_of_Don_Quixote_Volume_2_Part_23_5926",
+          "title": "The History of Don Quixote, Volume 2, Part 23",
+          "url": "gutenberg/Level5_高级/067_The_History_of_Don_Quixote_Volume_2_Part_23_5926.json",
+          "sentenceCount": 109
+        },
+        {
+          "id": "level5_068_Maiolica_57806",
+          "title": "Maiolica",
+          "url": "gutenberg/Level5_高级/068_Maiolica_57806.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_069_Life_of_Daniel_Boone_the_Great_Western_Hunter_and_14023",
+          "title": "Life of Daniel Boone, the Great Western Hunter and Pioneer",
+          "url": "gutenberg/Level5_高级/069_Life_of_Daniel_Boone_the_Great_Western_Hunter_and_14023.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_070_The_island_of_stone_money_72830",
+          "title": "The island of stone money",
+          "url": "gutenberg/Level5_高级/070_The_island_of_stone_money_72830.json",
+          "sentenceCount": 675
+        },
+        {
+          "id": "level5_071_Historical_Record_of_the_Twenty-first_Regiment_or_54029",
+          "title": "Historical Record of the Twenty-first Regiment, or the Royal",
+          "url": "gutenberg/Level5_高级/071_Historical_Record_of_the_Twenty-first_Regiment_or_54029.json",
+          "sentenceCount": 414
+        },
+        {
+          "id": "level5_072_The_Irish_Penny_Journal_Vol_1_No_49_June_5_1841_55460",
+          "title": "The Irish Penny Journal, Vol. 1 No. 49, June 5, 1841",
+          "url": "gutenberg/Level5_高级/072_The_Irish_Penny_Journal_Vol_1_No_49_June_5_1841_55460.json",
+          "sentenceCount": 203
+        },
+        {
+          "id": "level5_073_Report_of_Governors_Representatives_for_California_47657",
+          "title": "Report of Governor's Representatives for California at Alask",
+          "url": "gutenberg/Level5_高级/073_Report_of_Governors_Representatives_for_California_47657.json",
+          "sentenceCount": 189
+        },
+        {
+          "id": "level5_074_Acts_of_30_43_Geo_III_relating_to_a_district_in_t_62016",
+          "title": "Acts of 30° & 43° Geo. III. relating to a district in the Pa",
+          "url": "gutenberg/Level5_高级/074_Acts_of_30_43_Geo_III_relating_to_a_district_in_t_62016.json",
+          "sentenceCount": 123
+        },
+        {
+          "id": "level5_075_Probabilities_An_aid_to_Faith_16857",
+          "title": "Probabilities : An aid to Faith",
+          "url": "gutenberg/Level5_高级/075_Probabilities_An_aid_to_Faith_16857.json",
+          "sentenceCount": 490
+        },
+        {
+          "id": "level5_076_A_Political_Romance_20257",
+          "title": "A Political Romance",
+          "url": "gutenberg/Level5_高级/076_A_Political_Romance_20257.json",
+          "sentenceCount": 130
+        },
+        {
+          "id": "level5_077_Aunt_Carolines_Dixieland_recipes_71119",
+          "title": "Aunt Caroline's Dixieland recipes",
+          "url": "gutenberg/Level5_高级/077_Aunt_Carolines_Dixieland_recipes_71119.json",
+          "sentenceCount": 237
+        },
+        {
+          "id": "level5_078_Thought-Forms_16269",
+          "title": "Thought-Forms",
+          "url": "gutenberg/Level5_高级/078_Thought-Forms_16269.json",
+          "sentenceCount": 371
+        },
+        {
+          "id": "level5_079_Treatise_on_landscape_painting_in_water-colours_by_65962",
+          "title": "Treatise on landscape painting in water-colours by David Cox",
+          "url": "gutenberg/Level5_高级/079_Treatise_on_landscape_painting_in_water-colours_by_65962.json",
+          "sentenceCount": 133
+        },
+        {
+          "id": "level5_080_A_biographical_memoir_of_the_late_Dr_Walter_Oudney_72209",
+          "title": "A biographical memoir of the late Dr. Walter Oudney, Captain",
+          "url": "gutenberg/Level5_高级/080_A_biographical_memoir_of_the_late_Dr_Walter_Oudney_72209.json",
+          "sentenceCount": 587
+        },
+        {
+          "id": "level5_081_Sketch_of_the_Sikhs_A_Singular_Nation_Who_Inhabit_53510",
+          "title": "Sketch of the Sikhs",
+          "url": "gutenberg/Level5_高级/081_Sketch_of_the_Sikhs_A_Singular_Nation_Who_Inhabit_53510.json",
+          "sentenceCount": 559
+        },
+        {
+          "id": "level5_082_Essay_upon_Wit_13484",
+          "title": "Essay upon Wit",
+          "url": "gutenberg/Level5_高级/082_Essay_upon_Wit_13484.json",
+          "sentenceCount": 157
+        },
+        {
+          "id": "level5_083_Encyclopedia_of_Diet_A_Treatise_on_the_Food_Questi_50660",
+          "title": "Encyclopedia of Diet: A Treatise on the Food Question, Vol.",
+          "url": "gutenberg/Level5_高级/083_Encyclopedia_of_Diet_A_Treatise_on_the_Food_Questi_50660.json",
+          "sentenceCount": 544
+        },
+        {
+          "id": "level5_084_The_Gracious_Designs_of_God_Accomplished_by_the_Ma_58535",
+          "title": "The Gracious Designs of God, Accomplished by the Malice of H",
+          "url": "gutenberg/Level5_高级/084_The_Gracious_Designs_of_God_Accomplished_by_the_Ma_58535.json",
+          "sentenceCount": 77
+        },
+        {
+          "id": "level5_085_A_Brief_Account_of_the_Rise_and_Progress_of_the_Pe_19377",
+          "title": "A Brief Account of the Rise and Progress of the People Calle",
+          "url": "gutenberg/Level5_高级/085_A_Brief_Account_of_the_Rise_and_Progress_of_the_Pe_19377.json",
+          "sentenceCount": 403
+        },
+        {
+          "id": "level5_086_Orpheus_and_Other_Poems_53800",
+          "title": "Orpheus and Other Poems",
+          "url": "gutenberg/Level5_高级/086_Orpheus_and_Other_Poems_53800.json",
+          "sentenceCount": 211
+        },
+        {
+          "id": "level5_087_The_Mirror_of_Literature_Amusement_and_Instruction_11742",
+          "title": "The Mirror of Literature, Amusement, and Instruction. Volume",
+          "url": "gutenberg/Level5_高级/087_The_Mirror_of_Literature_Amusement_and_Instruction_11742.json",
+          "sentenceCount": 204
+        },
+        {
+          "id": "level5_088_Peachmonk_A_Serio-Comic_Detective_Tale_in_Which_No_40253",
+          "title": "Peachmonk",
+          "url": "gutenberg/Level5_高级/088_Peachmonk_A_Serio-Comic_Detective_Tale_in_Which_No_40253.json",
+          "sentenceCount": 112
+        },
+        {
+          "id": "level5_089_Sculpture_in_Spain_60898",
+          "title": "Sculpture in Spain",
+          "url": "gutenberg/Level5_高级/089_Sculpture_in_Spain_60898.json",
+          "sentenceCount": 639
+        },
+        {
+          "id": "level5_090_Salmonia_Or_Days_of_Fly_Fishing_In_a_series_of_con_50944",
+          "title": "Salmonia; Or, Days of Fly Fishing",
+          "url": "gutenberg/Level5_高级/090_Salmonia_Or_Days_of_Fly_Fishing_In_a_series_of_con_50944.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_091_The_Love_Letters_of_Henry_VIII_to_Anne_Boleyn_With_32155",
+          "title": "The Love Letters of Henry VIII to Anne Boleyn; With Notes",
+          "url": "gutenberg/Level5_高级/091_The_Love_Letters_of_Henry_VIII_to_Anne_Boleyn_With_32155.json",
+          "sentenceCount": 94
+        },
+        {
+          "id": "level5_092_The_Stranger_in_Shrewsbury_or_an_historical_and_de_62274",
+          "title": "The Stranger in Shrewsbury",
+          "url": "gutenberg/Level5_高级/092_The_Stranger_in_Shrewsbury_or_an_historical_and_de_62274.json",
+          "sentenceCount": 561
+        },
+        {
+          "id": "level5_093_Selections_from_the_Principles_of_Philosophy_4391",
+          "title": "Selections from the Principles of Philosophy",
+          "url": "gutenberg/Level5_高级/093_Selections_from_the_Principles_of_Philosophy_4391.json",
+          "sentenceCount": 482
+        },
+        {
+          "id": "level5_094_Instincts_of_the_Herd_in_Peace_and_War_53453",
+          "title": "Instincts of the Herd in Peace and War",
+          "url": "gutenberg/Level5_高级/094_Instincts_of_the_Herd_in_Peace_and_War_53453.json",
+          "sentenceCount": 800
+        },
+        {
+          "id": "level5_095_Critical_Miscellanies_Vol_1_Essay_2_Carlyle_20878",
+          "title": "Critical Miscellanies, Vol. 1, Essay 2: Carlyle",
+          "url": "gutenberg/Level5_高级/095_Critical_Miscellanies_Vol_1_Essay_2_Carlyle_20878.json",
+          "sentenceCount": 301
+        },
+        {
+          "id": "level5_096_Historical_Record_of_the_Fourteenth_or_the_Bucking_54107",
+          "title": "Historical Record of the Fourteenth, or, the Buckinghamshire",
+          "url": "gutenberg/Level5_高级/096_Historical_Record_of_the_Fourteenth_or_the_Bucking_54107.json",
+          "sentenceCount": 548
+        },
+        {
+          "id": "level5_097_Marriage_in_Free_Society_40209",
+          "title": "Marriage in Free Society",
+          "url": "gutenberg/Level5_高级/097_Marriage_in_Free_Society_40209.json",
+          "sentenceCount": 153
+        },
+        {
+          "id": "level5_098_The_Perpetuation_of_Living_Beings_Hereditary_Trans_2924",
+          "title": "The Perpetuation of Living Beings, Hereditary Transmission a",
+          "url": "gutenberg/Level5_高级/098_The_Perpetuation_of_Living_Beings_Hereditary_Trans_2924.json",
+          "sentenceCount": 112
+        },
+        {
+          "id": "level5_099_The_Irish_Penny_Journal_Vol_1_No_16_October_17_184_54258",
+          "title": "The Irish Penny Journal, Vol. 1 No. 16, October 17, 1840",
+          "url": "gutenberg/Level5_高级/099_The_Irish_Penny_Journal_Vol_1_No_16_October_17_184_54258.json",
+          "sentenceCount": 186
+        },
+        {
+          "id": "level5_100_English_Songs_and_Ballads_22223",
+          "title": "English Songs and Ballads",
+          "url": "gutenberg/Level5_高级/100_English_Songs_and_Ballads_22223.json",
+          "sentenceCount": 800
+        }
+      ]
+    }
+  ]
+}
