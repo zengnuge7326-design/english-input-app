@@ -9,6 +9,7 @@ import PageBackBar from './PageBackBar'
 import PetCatalog from './PetCatalog'
 import MyInventory from './MyInventory'
 import RechargePanel from './RechargePanel'
+import DailySpinWheel from './DailySpinWheel'
 
 const API = 'https://okenglish.site/api'
 
@@ -421,6 +422,11 @@ export default function Shop({
     }
   }, [token, crystal])
 
+  const handleSpinPrize = useCallback(async () => {
+    if (crystal?.refresh) await crystal.refresh()
+    refreshInventory()
+  }, [crystal, refreshInventory])
+
   const displayCrystal = localBalance
     ? {
         ...crystal,
@@ -439,6 +445,12 @@ export default function Shop({
       </div>
 
       <BalanceBar crystal={displayCrystal} onOpenInventory={token ? () => setShowInventory(true) : undefined} />
+
+      <DailySpinWheel
+        token={token}
+        onShowLogin={onShowLogin}
+        onPrizeWon={handleSpinPrize}
+      />
 
       <TabBar active={tab} onChange={setTab} />
 
