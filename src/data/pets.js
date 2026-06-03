@@ -68,6 +68,40 @@ export const TIER_LABELS = {
   UR: '传说',
 }
 
+/** 图鉴展示用中文名（API name 异常时兜底） */
+export const PET_DISPLAY_NAMES = {
+  pet_duck: '小黄鸭',
+  pet_penguin: '帝企鹅',
+  pet_otter: '小水獭',
+  pet_cat: '橘猫',
+  pet_shiba: '柴犬',
+  pet_panda: '国宝熊猫',
+  pet_fox: '小狐狸',
+  pet_capybara: '水豚',
+  pet_axolotl: '六角恐龙',
+  pet_alien: '三眼仔',
+  pet_unicorn: '独角兽',
+  pet_dragon_baby: '小恐龙',
+  pet_shield_dog: '刀盾狗',
+  pet_robot: '像素机器人',
+  pet_lucky_cat: '招财猫',
+  pet_dragon_god: '龙神',
+  pet_yellow_chu: '电气鼠',
+  pet_hero_red: '光之巨人',
+  pet_hero_blue: '蓝色英雄',
+  pet_phoenix: '朱雀凤凰',
+  pet_kaiju: '深海怪兽',
+  pet_godzilla: '巨型怪兽',
+  pet_kirin: '麒麟',
+}
+
+export function getPetDisplayName(petId, apiName) {
+  const n = (apiName || '').trim()
+  const stripped = n.replace(/^[\p{Extended_Pictographic}\uFE0F]+\s*/u, '').trim()
+  if (stripped && !/^pet_/i.test(stripped)) return stripped
+  return PET_DISPLAY_NAMES[petId] || stripped || petId
+}
+
 export function getPetFallback(petId) {
   return PET_FALLBACK[petId] || { emoji: '📦', bg: 'from-gray-500 to-gray-700' }
 }

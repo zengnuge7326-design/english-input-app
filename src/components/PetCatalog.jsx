@@ -4,7 +4,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import GemSVG from './GemSVG'
 import PetAvatar from './PetAvatar'
-import { TIER_STYLES, TIER_LABELS } from '../data/pets'
+import { TIER_STYLES, TIER_LABELS, getPetDisplayName } from '../data/pets'
 
 const API = 'https://okenglish.site/api'
 
@@ -116,7 +116,7 @@ function PetDetailModal({
           <div className={`rounded-2xl p-2 mb-3 border ${tierStyle.card} ${tierStyle.glow}`}>
             <PetAvatar petId={product.id} size={128} />
           </div>
-          <h3 className="text-xl font-bold text-white">{product.name?.replace(/^[^\s]+\s*/, '') || product.name}</h3>
+          <h3 className="text-xl font-bold text-white">{getPetDisplayName(product.id, product.name)}</h3>
           <div className="flex items-center gap-2 mt-1">
             <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${tierStyle.badge}`}>
               {product.tier} {TIER_LABELS[product.tier] || ''}
@@ -259,7 +259,7 @@ export default function PetCatalog({
           const isEquipped = equippedId === p.id
           const tierStyle = TIER_STYLES[p.tier] || TIER_STYLES.N
           const price = formatPrice(p)
-          const displayName = (p.name || '').replace(/^[^\s]+\s*/, '') || p.id
+          const displayName = getPetDisplayName(p.id, p.name)
 
           return (
             <button
@@ -275,7 +275,7 @@ export default function PetCatalog({
               {owned && !isEquipped && (
                 <span className="absolute top-1 left-1 text-[9px] text-emerald-400">✓</span>
               )}
-              <PetAvatar petId={p.id} size={48} className="mb-1" />
+              <PetAvatar petId={p.id} size={56} className="mb-1.5" />
               <span className={`text-[9px] px-1 rounded ${tierStyle.badge}`}>{p.tier}</span>
               <span className="text-[10px] text-white font-medium truncate w-full mt-0.5">{displayName}</span>
               {price && (
