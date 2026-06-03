@@ -10,6 +10,7 @@ import PetCatalog from './PetCatalog'
 import MyInventory from './MyInventory'
 import RechargePanel from './RechargePanel'
 import DailySpinWheel from './DailySpinWheel'
+import CartoonIcon, { resolveProductIconId } from './cartoon/CartoonIcon'
 
 const API = 'https://okenglish.site/api'
 
@@ -22,10 +23,10 @@ const COLOR_INFO = {
 }
 
 const TABS = [
-  { id: 'recharge',   icon: '🎁', label: '充值' },
-  { id: 'items',      icon: '🎫', label: '道具' },
-  { id: 'pets',       icon: '🐾', label: '宠物' },
-  { id: 'membership', icon: '👑', label: '会员' },
+  { id: 'recharge',   label: '充值' },
+  { id: 'items',      label: '道具' },
+  { id: 'pets',       label: '宠物' },
+  { id: 'membership', label: '会员' },
 ]
 
 const EMPTY_EQUIPPED = { avatar: null, panda_skin: null, theme: null, flame_color: null }
@@ -77,11 +78,11 @@ function TabBar({ active, onChange }) {
           onClick={() => onChange(t.id)}
           className={`flex-1 flex flex-col items-center py-2 rounded-xl text-xs font-semibold transition-all
             ${active === t.id
-              ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/50'
+              ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/50 scale-[1.02]'
               : 'bg-gray-800/60 text-gray-400 hover:bg-gray-700/60 hover:text-gray-200'
             }`}
         >
-          <span className="text-lg mb-0.5">{t.icon}</span>
+          <CartoonIcon kind="tab" id={t.id} size={26} className="mb-0.5" />
           {t.label}
         </button>
       ))}
@@ -136,7 +137,9 @@ function BuyModal({ product, token, crystal, onSuccess, onClose }) {
         onClick={e => e.stopPropagation()}
       >
         <div className="text-center mb-4">
-          <div className="text-4xl mb-2">{product.icon || '📦'}</div>
+          <div className="mb-2 flex justify-center">
+            <CartoonIcon kind="item" id={resolveProductIconId(product)} size={56} />
+          </div>
           <h3 className="text-lg font-bold text-white">{product.name}</h3>
           {product.desc && <p className="text-sm text-gray-400 mt-1">{product.desc}</p>}
         </div>
@@ -230,7 +233,7 @@ function ItemsTab({ token, crystal, onBuySuccess }) {
               onClick={() => setSelected(p)}
               className="bg-gray-800/60 border border-gray-700/60 rounded-xl p-3 flex flex-col items-center text-center hover:border-indigo-500/60 hover:bg-gray-700/60 transition-all"
             >
-              <span className="text-3xl mb-1">{p.icon || '📦'}</span>
+              <CartoonIcon kind="item" id={resolveProductIconId(p)} size={44} className="mb-1" />
               <span className="text-xs font-semibold text-white truncate w-full">{p.name}</span>
               {p.desc && <span className="text-[10px] text-gray-500 truncate w-full mt-0.5">{p.desc}</span>}
               <div className="mt-2 flex items-center gap-1">
@@ -302,7 +305,7 @@ function MembershipTab({ token, crystal, onBuySuccess }) {
               onClick={() => setSelected(p)}
               className="bg-gradient-to-r from-amber-900/40 to-yellow-900/30 border border-amber-700/50 rounded-2xl p-4 flex items-center gap-4 hover:from-amber-900/60 hover:to-yellow-900/50 transition-all text-left"
             >
-              <span className="text-3xl shrink-0">{p.icon || '👑'}</span>
+              <CartoonIcon kind="item" id={resolveProductIconId(p)} size={44} className="shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-bold text-white">{p.name}</div>
                 {p.desc && <div className="text-xs text-amber-400/80 mt-0.5">{p.desc}</div>}

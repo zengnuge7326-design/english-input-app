@@ -3,6 +3,7 @@
  */
 import { useState, useMemo } from 'react'
 import PetAvatar from './PetAvatar'
+import CartoonIcon from './cartoon/CartoonIcon'
 import { getPetFallback } from '../data/pets'
 
 const API = 'https://okenglish.site/api'
@@ -135,7 +136,7 @@ export default function MyInventory({
                       key={it.item_id}
                       className={`flex items-center gap-3 rounded-xl border border-gray-700/60 px-3 py-2.5 ${disabled ? 'opacity-40' : 'bg-gray-800/40'}`}
                     >
-                      <span className="text-2xl">{meta.icon || '📦'}</span>
+                      <CartoonIcon kind="item" id={it.item_id} size={36} className="shrink-0" />
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-medium text-white truncate">{meta.name}</div>
                         <div className="text-xs text-gray-500">×{it.count}</div>
