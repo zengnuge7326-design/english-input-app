@@ -62,6 +62,20 @@ require('./routes/dailySpin')({ app, pool, auth })
 
 ---
 
+## 商店调价（¥1=500 金钻）
+
+线上已有 `shop_products` 时执行：
+
+```bash
+mysql -u root -p okenglish < server-deploy/migrations/003_shop_price_rebalance.sql
+```
+
+并更新 `routes/recharge.js`、`routes/shop.js` 中的 `RECHARGE_PACKS`，`pm2 restart okenglish-api`。
+
+前端 `RechargePanel` 的加成百分比按 `rmb × 500` 基准自动计算；部署静态站后生效。
+
+---
+
 ## 推荐返佣比例（40%）
 
 复制 `lib/referralCommission.js` 到线上 API，在 **支付成功** 逻辑里调用 `creditReferralCommission`。

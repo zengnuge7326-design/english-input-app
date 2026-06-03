@@ -32,7 +32,7 @@ const PACK_STYLES = {
 const PACK_ORDER = ['p1', 'p3', 'p10', 'p30']
 
 function bonusLabel(pack) {
-  const base = (pack.rmb || 0) * 50
+  const base = (pack.rmb || 0) * 500
   if (!base || !pack.diamonds) return null
   const extra = pack.diamonds - base
   if (extra <= 0) return null

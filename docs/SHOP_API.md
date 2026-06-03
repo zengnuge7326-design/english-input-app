@@ -44,7 +44,7 @@
     { "id": "p1",  "rmb": 1,  "diamonds": 50,   "bonus": 0 },
     { "id": "p3",  "rmb": 3,  "diamonds": 160,  "bonus": 10 },
     { "id": "p10", "rmb": 10, "diamonds": 800,  "bonus": 300, "tag": "最划算" },
-    { "id": "p30", "rmb": 30, "diamonds": 2000, "bonus": 500 }
+    { "id": "p30", "rmb": 30, "diamonds": 3000, "bonus": 1500 }
   ]
 }
 ```

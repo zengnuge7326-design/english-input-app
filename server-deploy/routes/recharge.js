@@ -17,10 +17,10 @@ module.exports = function mountRecharge({
 }) {
 
   const RECHARGE_PACKS = {
-    p1:  { rmb: 1,  diamonds: 50 },
-    p3:  { rmb: 3,  diamonds: 160 },
-    p10: { rmb: 10, diamonds: 800 },
-    p30: { rmb: 30, diamonds: 2000 },
+    p1:  { rmb: 1,  diamonds: 500 },
+    p3:  { rmb: 3,  diamonds: 1600 },
+    p10: { rmb: 10, diamonds: 6000 },
+    p30: { rmb: 30, diamonds: 20000 },
   }
 
   const _crypto = require('crypto')

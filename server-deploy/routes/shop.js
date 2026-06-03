@@ -8,10 +8,10 @@ module.exports = function mountShop({ app, pool, auth, crystalState, CRYSTAL_COL
 
   // 充值档（无需登录）
   const RECHARGE_PACKS = [
-    { id: 'p1',  rmb: 1,  diamonds: 50,   bonus: 0 },
-    { id: 'p3',  rmb: 3,  diamonds: 160,  bonus: 10 },
-    { id: 'p10', rmb: 10, diamonds: 800,  bonus: 300, tag: '最划算' },
-    { id: 'p30', rmb: 30, diamonds: 2000, bonus: 500 },
+    { id: 'p1',  rmb: 1,  diamonds: 500,   bonus: 0 },
+    { id: 'p3',  rmb: 3,  diamonds: 1600,  bonus: 100 },
+    { id: 'p10', rmb: 10, diamonds: 6000,  bonus: 1000, tag: '最划算' },
+    { id: 'p30', rmb: 30, diamonds: 20000, bonus: 5000 },
   ]
 
   // ─── 商品列表 ──────────────────────────────────────────────
