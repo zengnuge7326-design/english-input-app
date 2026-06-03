@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { IconUsers, IconRefresh } from './Icons'
+import { REFERRAL_COMMISSION_PERCENT } from '../config/referral'
 
 // 简单本地图标
 const IconLink = ({ size = 16 }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -157,7 +158,7 @@ export default function ReferralCenter({ token, username }) {
       {/* 标题 */}
       <div>
         <h2 className="text-lg font-bold text-white">推荐返佣</h2>
-        <p className="text-gray-500 text-sm mt-1">分享你的专属链接，好友付费后你获得 <span className="text-yellow-400 font-semibold">30%</span> 佣金</p>
+        <p className="text-gray-500 text-sm mt-1">分享你的专属链接，好友付费后你获得 <span className="text-yellow-400 font-semibold">{REFERRAL_COMMISSION_PERCENT}%</span> 佣金，可直接申请提现</p>
         {username && (
           <p className="text-xs text-blue-400/70 mt-1">当前账号：<span className="font-mono font-semibold text-blue-400">{username}</span></p>
         )}
@@ -229,7 +230,7 @@ export default function ReferralCenter({ token, username }) {
           {[
             ['1', '复制你的专属链接，分享给朋友、学生、家长'],
             ['2', '好友点击链接注册，自动绑定你的推荐关系'],
-            ['3', '好友购买任意会员，你立即获得 30% 佣金'],
+            ['3', `好友购买任意会员，你立即获得 ${REFERRAL_COMMISSION_PERCENT}% 佣金`],
             ['4', '点击「申请提现」，1-3个工作日内到账'],
           ].map(([n, t]) => (
             <div key={n} className="flex items-start gap-3">

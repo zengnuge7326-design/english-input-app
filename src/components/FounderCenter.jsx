@@ -20,7 +20,7 @@ export default function FounderCenter({ token, username, onClose }) {
             <h2 className="text-lg font-bold text-white">创始成员中心</h2>
           </div>
           <p className="text-xs text-amber-400/80 mt-0.5">
-            永久会员权益 · 30% 推荐返佣 · 班级管理
+            永久会员权益 · 推荐佣金直接提现 · 班级管理
           </p>
         </div>
         <button

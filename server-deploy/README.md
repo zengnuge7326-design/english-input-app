@@ -62,6 +62,20 @@ require('./routes/dailySpin')({ app, pool, auth })
 
 ---
 
+## 推荐返佣比例（40%）
+
+复制 `lib/referralCommission.js` 到线上 API，在 **支付成功** 逻辑里调用 `creditReferralCommission`。
+
+在服务器上搜索旧比例并替换：
+
+```bash
+grep -rn '0\.3\|30%' /path/to/okenglish-api/routes --include='*.js'
+# 将佣金计算改为 REFERRAL_COMMISSION_RATE = 0.4（或 require lib/referralCommission.js）
+pm2 restart okenglish-api
+```
+
+---
+
 ## 反作弊
 - 每分钟同一 user+reason 最多 30 次（429 限流）
 - spend 用 `FOR UPDATE` 行锁 + 事务

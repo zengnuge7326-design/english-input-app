@@ -45,7 +45,7 @@ const PLANS = [
     badge: '限100名',
     color: 'border-yellow-400/60 hover:border-yellow-300',
     activeBg: 'bg-yellow-500/10 border-yellow-400',
-    desc: '永久会员 + 推荐好友获 30% 佣金 + 班级管理功能',
+    desc: '永久会员 + 推荐好友获取佣金直接提现 + 班级管理功能',
     isFounder: true,
   },
 ]
