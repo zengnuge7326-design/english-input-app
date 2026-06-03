@@ -6,6 +6,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import GemSVG from './GemSVG'
 import PageBackBar from './PageBackBar'
+import PetCatalog from './PetCatalog'
+import MyInventory from './MyInventory'
 
 const API = 'https://okenglish.site/api'
 
@@ -24,8 +26,10 @@ const TABS = [
   { id: 'membership', icon: '👑', label: '会员' },
 ]
 
+const EMPTY_EQUIPPED = { avatar: null, panda_skin: null, theme: null, flame_color: null }
+
 // ─── 余额栏 ──────────────────────────────────────────────────────────────────
-function BalanceBar({ crystal }) {
+function BalanceBar({ crystal, onOpenInventory }) {
   return (
     <div className="bg-gray-900/80 border border-gray-700/60 rounded-2xl p-4 mb-4">
       <div className="flex items-center justify-between mb-3">
@@ -33,7 +37,18 @@ function BalanceBar({ crystal }) {
           <GemSVG color="gold" size={20} />
           我的钻石
         </span>
-        <span className="text-xs text-gray-500">共 <span className="text-white font-semibold tabular-nums">{crystal?.total ?? 0}</span> 颗</span>
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-gray-500">共 <span className="text-white font-semibold tabular-nums">{crystal?.total ?? 0}</span> 颗</span>
+          {onOpenInventory && (
+            <button
+              type="button"
+              onClick={onOpenInventory}
+              className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-gray-700/80 text-gray-200 hover:bg-gray-600 border border-gray-600/60"
+            >
+              🎒 背包
+            </button>
+          )}
+        </div>
       </div>
       <div className="grid grid-cols-5 gap-2">
         {['blue', 'green', 'red', 'purple', 'gold'].map(c => (
@@ -351,26 +366,80 @@ function RechargeTab() {
   )
 }
 
-// ─── 宠物占位（任务 5 实现）────────────────────────────────────────────────────
-function PetsTab() {
-  return (
-    <div className="flex flex-col items-center justify-center py-16 gap-3 text-center">
-      <span className="text-5xl">🐾</span>
-      <div className="text-white font-semibold text-lg">宠物图鉴</div>
-      <div className="text-gray-400 text-sm max-w-xs">N / R / SR / SSR 四档宠物即将上线，可替换顶部 Logo 头像</div>
-      <p className="text-xs text-gray-600">宠物功能开发中，敬请期待</p>
-    </div>
-  )
-}
-
 // ─── 主组件 ──────────────────────────────────────────────────────────────────
-export default function Shop({ token, crystal, onClose }) {
-  const [tab, setTab] = useState('recharge')
+export default function Shop({
+  token,
+  crystal,
+  onClose,
+  inventory: inventoryProp,
+  onInventoryChange,
+  onEquippedChange,
+  initialTab,
+}) {
+  const [tab, setTab] = useState(initialTab || 'recharge')
   const [localBalance, setLocalBalance] = useState(null)
+  const [inventory, setInventory] = useState(inventoryProp || { items: [], pets: [], equipped: EMPTY_EQUIPPED })
+  const [products, setProducts] = useState([])
+  const [showInventory, setShowInventory] = useState(false)
+
+  useEffect(() => {
+    if (initialTab) setTab(initialTab)
+  }, [initialTab])
+
+  useEffect(() => {
+    if (inventoryProp) setInventory(inventoryProp)
+  }, [inventoryProp])
+
+  const refreshInventory = useCallback(async () => {
+    if (!token) return
+    try {
+      const r = await fetch(`${API}/shop/inventory`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      const d = await r.json()
+      if (!d.error) {
+        const inv = {
+          items: d.items || [],
+          pets: d.pets || [],
+          equipped: d.equipped || EMPTY_EQUIPPED,
+        }
+        setInventory(inv)
+        onInventoryChange?.(inv)
+        if (d.equipped) onEquippedChange?.(d.equipped)
+      }
+    } catch { /* ignore */ }
+  }, [token, onInventoryChange, onEquippedChange])
+
+  useEffect(() => {
+    refreshInventory()
+  }, [refreshInventory])
+
+  useEffect(() => {
+    let alive = true
+    fetch(`${API}/shop/products`)
+      .then(r => r.json())
+      .then(d => { if (alive) setProducts(d.products || []) })
+      .catch(() => {})
+    return () => { alive = false }
+  }, [])
 
   const handleBuySuccess = useCallback((newBalance) => {
     if (newBalance) setLocalBalance(newBalance)
   }, [])
+
+  const handlePetBuySuccess = useCallback((data) => {
+    if (data.new_balance) setLocalBalance(data.new_balance)
+    refreshInventory()
+  }, [refreshInventory])
+
+  const handleEquipped = useCallback((equipped) => {
+    setInventory(prev => {
+      const next = { ...prev, equipped: equipped || EMPTY_EQUIPPED }
+      onInventoryChange?.(next)
+      return next
+    })
+    onEquippedChange?.(equipped)
+  }, [onInventoryChange, onEquippedChange])
 
   const displayCrystal = localBalance
     ? {
@@ -389,16 +458,48 @@ export default function Shop({ token, crystal, onClose }) {
         <h2 className="text-xl font-bold text-white">商店</h2>
       </div>
 
-      <BalanceBar crystal={displayCrystal} />
+      <BalanceBar crystal={displayCrystal} onOpenInventory={token ? () => setShowInventory(true) : undefined} />
 
       <TabBar active={tab} onChange={setTab} />
 
       <div className="min-h-[300px]">
         {tab === 'recharge'   && <RechargeTab />}
         {tab === 'items'      && <ItemsTab token={token} crystal={displayCrystal} onBuySuccess={handleBuySuccess} />}
-        {tab === 'pets'       && <PetsTab />}
+        {tab === 'pets'       && (
+          <PetCatalog
+            token={token}
+            crystal={displayCrystal}
+            inventory={inventory}
+            products={products}
+            onBuySuccess={handlePetBuySuccess}
+            onEquippedChange={handleEquipped}
+          />
+        )}
         {tab === 'membership' && <MembershipTab token={token} crystal={displayCrystal} onBuySuccess={handleBuySuccess} />}
       </div>
+
+      {showInventory && (
+        <MyInventory
+          token={token}
+          inventory={inventory}
+          products={products}
+          onClose={() => setShowInventory(false)}
+          onInventoryChange={(next) => {
+            if (typeof next === 'function') {
+              setInventory(prev => {
+                const updated = next(prev)
+                onInventoryChange?.(updated)
+                return updated
+              })
+            } else {
+              setInventory(next)
+              onInventoryChange?.(next)
+            }
+          }}
+          onEquippedChange={handleEquipped}
+          onGoToShopPets={() => { setShowInventory(false); setTab('pets') }}
+        />
+      )}
     </div>
   )
 }
