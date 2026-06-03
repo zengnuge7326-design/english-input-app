@@ -1163,6 +1163,7 @@ export default function App() {
                 setShopInventory(prev => ({ ...prev, equipped: equipped || { avatar: null, panda_skin: null, theme: null, flame_color: null } }))
               }}
               initialTab={shopInitialTab}
+              onShowLogin={() => setShowLogin(true)}
               onClose={() => { setShopInitialTab(null); openTab('exercise') }}
             />
           </div>

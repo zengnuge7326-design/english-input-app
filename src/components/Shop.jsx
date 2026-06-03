@@ -8,6 +8,7 @@ import GemSVG from './GemSVG'
 import PageBackBar from './PageBackBar'
 import PetCatalog from './PetCatalog'
 import MyInventory from './MyInventory'
+import RechargePanel from './RechargePanel'
 
 const API = 'https://okenglish.site/api'
 
@@ -332,44 +333,11 @@ function MembershipTab({ token, crystal, onBuySuccess }) {
   )
 }
 
-// ─── 充值占位（任务 4 实现）────────────────────────────────────────────────────
-function RechargeTab() {
-  return (
-    <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
-      <span className="text-5xl">🎁</span>
-      <div className="text-white font-semibold text-lg">充值金钻石</div>
-      <div className="text-gray-400 text-sm max-w-xs">充值面板即将就绪，金钻石是付费货币，可购买宠物、道具等</div>
-      <div className="flex flex-col gap-2 w-full max-w-xs">
-        {[
-          { id: 'p1',  rmb: 1,  diamonds: 50,   tag: '' },
-          { id: 'p3',  rmb: 3,  diamonds: 160,  tag: '' },
-          { id: 'p10', rmb: 10, diamonds: 800,  tag: '最划算' },
-          { id: 'p30', rmb: 30, diamonds: 2000, tag: '' },
-        ].map(p => (
-          <div
-            key={p.id}
-            className="relative flex items-center justify-between bg-gradient-to-r from-yellow-900/40 to-amber-900/30 border border-amber-700/40 rounded-2xl px-4 py-3"
-          >
-            {p.tag && (
-              <span className="absolute -top-2 -right-1 text-[10px] bg-rose-600 text-white px-2 py-0.5 rounded-full font-bold">{p.tag}</span>
-            )}
-            <div className="flex items-center gap-2">
-              <GemSVG color="gold" size={24} />
-              <span className="text-amber-300 font-bold tabular-nums">{p.diamonds.toLocaleString()} 金钻</span>
-            </div>
-            <span className="text-white font-bold">¥{p.rmb}</span>
-          </div>
-        ))}
-      </div>
-      <p className="text-xs text-gray-600 mt-2">充值功能开发中，敬请期待</p>
-    </div>
-  )
-}
-
 // ─── 主组件 ──────────────────────────────────────────────────────────────────
 export default function Shop({
   token,
   crystal,
+  onShowLogin,
   onClose,
   inventory: inventoryProp,
   onInventoryChange,
@@ -441,6 +409,18 @@ export default function Shop({
     onEquippedChange?.(equipped)
   }, [onInventoryChange, onEquippedChange])
 
+  const handleRechargeSuccess = useCallback(async () => {
+    if (crystal?.refresh) {
+      await crystal.refresh()
+    } else if (token) {
+      try {
+        const r = await fetch(`${API}/crystal/state`, { headers: { Authorization: `Bearer ${token}` } })
+        const d = await r.json()
+        if (!d.error) setLocalBalance(d)
+      } catch { /* ignore */ }
+    }
+  }, [token, crystal])
+
   const displayCrystal = localBalance
     ? {
         ...crystal,
@@ -463,7 +443,13 @@ export default function Shop({
       <TabBar active={tab} onChange={setTab} />
 
       <div className="min-h-[300px]">
-        {tab === 'recharge'   && <RechargeTab />}
+        {tab === 'recharge'   && (
+          <RechargePanel
+            token={token}
+            onShowLogin={onShowLogin}
+            onSuccess={handleRechargeSuccess}
+          />
+        )}
         {tab === 'items'      && <ItemsTab token={token} crystal={displayCrystal} onBuySuccess={handleBuySuccess} />}
         {tab === 'pets'       && (
           <PetCatalog

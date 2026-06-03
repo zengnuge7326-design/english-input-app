@@ -188,6 +188,22 @@ export function useCrystal(token) {
 
   const clearRecent = useCallback(() => setRecent(null), [])
 
+  const refresh = useCallback(async () => {
+    if (!token) return
+    try {
+      const r = await fetch(`${API}/crystal/state`, { headers: { Authorization: `Bearer ${token}` } })
+      const d = await r.json()
+      if (!d.error) {
+        setState(s => {
+          const next = { ...s, blue: d.blue ?? s.blue, green: d.green ?? s.green, red: d.red ?? s.red, purple: d.purple ?? s.purple, gold: d.gold ?? s.gold }
+          next.total = next.blue + next.green + next.red + next.purple + next.gold
+          next.towerLevel = Math.floor(next.total / 100)
+          return next
+        })
+      }
+    } catch { /* ignore */ }
+  }, [token])
+
   // 页面隐藏时强制 flush
   useEffect(() => {
     function onHide() { if (document.visibilityState === 'hidden') { clearTimeout(timerRef.current); flushEarn() } }
@@ -195,5 +211,5 @@ export function useCrystal(token) {
     return () => document.removeEventListener('visibilitychange', onHide)
   }, [flushEarn])
 
-  return { ...state, earn, spend, getLog, recent, clearRecent }
+  return { ...state, earn, spend, getLog, recent, clearRecent, refresh }
 }
