@@ -441,7 +441,7 @@ export default function Shop({
 
       <div className="flex items-center gap-2 mb-4">
         <GemSVG color="gold" size={28} />
-        <h2 className="text-xl font-bold text-white">商店</h2>
+        <h2 className="text-xl font-bold text-white">宝石小店</h2>
       </div>
 
       <BalanceBar crystal={displayCrystal} onOpenInventory={token ? () => setShowInventory(true) : undefined} />

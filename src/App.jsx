@@ -820,7 +820,7 @@ export default function App() {
 
   const mainNavItems = [
     { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
-    { id: 'shop', label: '商店', Icon: IconStar, onClick: () => navigateFromMenu('shop') },
+    { id: 'shop', label: '宝石小店', Icon: IconStar, onClick: () => navigateFromMenu('shop') },
     { id: 'courses', label: '课程广场', Icon: IconBookOpen, onClick: () => navigateFromMenu('courses') },
     { id: 'textbook', label: '教材', Icon: IconBook, onClick: () => navigateFromMenu('textbook') },
     { id: 'grammar', label: '语法', Icon: IconGraduationCap, onClick: () => navigateFromMenu('grammar') },
