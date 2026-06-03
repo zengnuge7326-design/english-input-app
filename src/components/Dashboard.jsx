@@ -25,7 +25,7 @@ function sumDaily(daily, dates) {
 function loadJSON(key, fallback) { try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)) } catch { return fallback } }
 
 // ─── 连胜火焰条（7天，饱满橙色火球）─────────────────────────────────────────
-function StreakRow({ checkinSet, streak, streakMax, today }) {
+function StreakRow({ checkinSet, streak, streakMax, today, xp }) {
   const WEEK = ['日', '一', '二', '三', '四', '五', '六']
   const days = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(today); d.setDate(d.getDate() - 6 + i)
@@ -37,9 +37,17 @@ function StreakRow({ checkinSet, streak, streakMax, today }) {
       {/* 连胜数字 */}
       <div className="shrink-0 flex items-center gap-2 pr-3 sm:pr-4 border-r border-amber-300/40">
         <span className="text-4xl sm:text-5xl leading-none drop-shadow-[0_2px_8px_rgba(255,159,67,0.55)]">🔥</span>
-        <div className="flex flex-col leading-none">
+        <div className="flex flex-col leading-none gap-1">
           <span className="text-3xl font-extrabold bg-gradient-to-br from-amber-500 to-orange-500 bg-clip-text text-transparent tabular-nums">{streak}</span>
-          <span className="text-[10px] text-[#9ca3af] mt-1">最高 {streakMax}</span>
+          <span className="text-[10px] text-[#9ca3af]">最高 {streakMax}</span>
+          {xp != null && (
+            <span className="text-[10px] text-[#6b7280] tabular-nums">今日 {xp.todayXp}/{xp.goal} XP</span>
+          )}
+          {xp?.isDoubleXp && (
+            <span className="inline-flex w-fit px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-lg animate-pulse">
+              ⚡ 双倍 XP 生效中
+            </span>
+          )}
         </div>
       </div>
       {/* 7 个火球，自适应等分，更大 */}
@@ -247,7 +255,7 @@ export default function Dashboard({ sentences, progress, xp, isMember, isFounder
     <div className="w-full max-w-2xl lg:max-w-5xl mx-auto px-3 sm:px-5 py-4 sm:py-6 flex flex-col gap-3 sm:gap-4">
 
       {/* ① 连胜火焰条 */}
-      <StreakRow checkinSet={checkinSet} streak={streak} streakMax={streakMax} today={today} />
+      <StreakRow checkinSet={checkinSet} streak={streak} streakMax={streakMax} today={today} xp={xp} />
 
       {/* ② 统计 + 班级排行（有班级时桌面双栏，否则统计独占） */}
       {hasClass ? (

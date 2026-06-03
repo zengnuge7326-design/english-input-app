@@ -12,6 +12,8 @@ import { useSound } from '../hooks/useSound'
 import { buildSplitChunksLevel } from '../utils/splitSentence'
 import { getSpeakTextForReading } from '../utils/readingSpeak.js'
 
+const API = 'https://okenglish.site/api'
+
 // Fuzzy match: score 0-1 based on content words
 function calcMatch(targetSentence, spokenText) {
   const STOP = new Set(['a','an','the','of','to','in','on','at','is','are','was','were',
@@ -30,7 +32,7 @@ function calcMatch(targetSentence, spokenText) {
 }
 
 
-export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, onPatchSettings, initialIndex = 0, onProgressChange, onNav, userId, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson, onBack, grammarContext = null, onSentenceDone, onWordDone, onXp, onCrystal }) {
+export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, onPatchSettings, initialIndex = 0, onProgressChange, onNav, userId, token, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson, onBack, grammarContext = null, onSentenceDone, onWordDone, onXp, onCrystal }) {
   const readingMode = grammarContext?.source === 'gutenberg'
   const [index, setIndex] = useState(initialIndex)
   const [completed, setCompleted] = useState(false)
@@ -69,6 +71,10 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const comboRef = useRef(0)                       // 连续答对计数（不触发重渲染）
   const [comboFloats, setComboFloats] = useState([]) // 里程碑连击飘字
   const sentenceErrorRef = useRef(0)                // 本句出错次数（用于钻石判断）
+  const completedRef = useRef(false)
+  const [itemBalance, setItemBalance] = useState({ hint_balance: 0, skip_balance: 0 })
+  const [revealHintNonce, setRevealHintNonce] = useState(0)
+  const [itemToast, setItemToast] = useState('')
 
   const FW_COLORS = ['#ff4d4d','#ffcc00','#4dff88','#4db8ff','#ff80ff','#ff9933','#fff','#c084fc']
 
@@ -228,6 +234,86 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     setKey(k => k + 1)
   }, [])
 
+  const fetchItemBalance = useCallback(() => {
+    if (!token) {
+      setItemBalance({ hint_balance: 0, skip_balance: 0 })
+      return
+    }
+    fetch(`${API}/user/balance`, { headers: { Authorization: `Bearer ${token}` } })
+      .then(r => r.json())
+      .then(d => {
+        if (!d.error) {
+          setItemBalance({
+            hint_balance: d.hint_balance ?? 0,
+            skip_balance: d.skip_balance ?? 0,
+          })
+        }
+      })
+      .catch(() => {})
+  }, [token])
+
+  useEffect(() => { fetchItemBalance() }, [fetchItemBalance])
+
+  const showItemToast = useCallback((msg) => {
+    setItemToast(msg)
+    setTimeout(() => setItemToast(''), 2500)
+  }, [])
+
+  const useHint = useCallback(async () => {
+    if (!token || itemBalance.hint_balance <= 0 || completed || speakActive) return
+    setRevealHintNonce(n => n + 1)
+    try {
+      const res = await fetch(`${API}/user/use-hint`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      const data = await res.json()
+      if (data.ok !== false && data.hint_balance !== undefined) {
+        setItemBalance(b => ({ ...b, hint_balance: data.hint_balance }))
+      } else if (!data.error) {
+        setItemBalance(b => ({ ...b, hint_balance: Math.max(0, b.hint_balance - 1) }))
+      } else {
+        showItemToast(data.message || '提示卡使用失败')
+        fetchItemBalance()
+      }
+    } catch {
+      showItemToast('网络错误')
+    }
+  }, [token, itemBalance.hint_balance, completed, speakActive, showItemToast, fetchItemBalance])
+
+  const useSkip = useCallback(async () => {
+    if (!token || itemBalance.skip_balance <= 0 || speakActive) return
+    if (index >= sentences.length - 1) {
+      showItemToast('已是最后一句')
+      return
+    }
+    try {
+      const res = await fetch(`${API}/user/use-skip`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      const data = await res.json()
+      if (data.ok !== false && data.skip_balance !== undefined) {
+        setItemBalance(b => ({ ...b, skip_balance: data.skip_balance }))
+      } else if (!data.error) {
+        setItemBalance(b => ({ ...b, skip_balance: Math.max(0, b.skip_balance - 1) }))
+      } else {
+        showItemToast(data.message || '跳过卡使用失败')
+        fetchItemBalance()
+        return
+      }
+    } catch {
+      showItemToast('网络错误')
+      return
+    }
+    completedRef.current = false
+    setCompleted(false)
+    setSpeakUnlocked(!gateEnabled)
+    setSpeakPhase('idle')
+    goNext()
+    showItemToast('已跳到下一句')
+  }, [token, itemBalance.skip_balance, speakActive, index, sentences.length, goNext, gateEnabled, showItemToast, fetchItemBalance, completedRef])
+
   const isLastSentence = index === sentences.length - 1
 
   const handleReadingContinue = useCallback(() => {
@@ -322,7 +408,6 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     return () => window.removeEventListener('keydown', onSpace)
   }, [speakActive, handleRecordToggle])
 
-  const completedRef = useRef(false)
   const handleComplete = useCallback(() => {
     if (chunks && chunkIndex < chunks.length - 1) {
       setChunkIndex(i => i + 1); setKey(k => k + 1); return
@@ -776,6 +861,34 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           </div>
         )}
 
+        {/* 道具：提示卡 / 跳过卡 */}
+        {!readingMode && token && (itemBalance.hint_balance > 0 || itemBalance.skip_balance > 0) && !speakActive && (
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+            {itemBalance.hint_balance > 0 && (
+              <button
+                type="button"
+                onClick={useHint}
+                disabled={completed}
+                className="px-3 py-1.5 rounded-xl text-sm font-semibold border border-amber-600/50 bg-amber-900/40 text-amber-200 hover:bg-amber-800/50 disabled:opacity-40 transition-colors"
+              >
+                💡 提示 ({itemBalance.hint_balance})
+              </button>
+            )}
+            {itemBalance.skip_balance > 0 && (
+              <button
+                type="button"
+                onClick={useSkip}
+                className="px-3 py-1.5 rounded-xl text-sm font-semibold border border-purple-600/50 bg-purple-900/40 text-purple-200 hover:bg-purple-800/50 transition-colors"
+              >
+                🪄 跳过 ({itemBalance.skip_balance})
+              </button>
+            )}
+          </div>
+        )}
+        {itemToast && (
+          <div className="text-center text-xs text-emerald-400 mb-2">{itemToast}</div>
+        )}
+
         {/* Word input — 默认练习单行；输入阅读为卡片堆叠 + 当前句内嵌输入 */}
         {!readingMode && (
           <div className="w-full min-h-20" style={{ display: speakActive ? 'none' : undefined }}>
@@ -787,6 +900,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
               learningLevel={settings.learningLevel || 2}
               showHintOnError={settings.showHintOnError !== false}
               hintTriggerCount={settings.hintTriggerCount || 1}
+              revealHintNonce={revealHintNonce}
               errorRetryCount={settings.errorRetryCount || 2}
               onError={() => { playError(); comboRef.current = 0; sentenceErrorRef.current += 1 }}
               onWordCorrect={() => { onWordDone?.() }}

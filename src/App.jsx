@@ -1259,6 +1259,7 @@ export default function App() {
               onProgressChange={(i, total) => setLessonProgress({ index: i, total })}
               onNav={setNav}
               userId={user}
+              token={token}
               showChineseGuide={showChineseGuide}
               onToggleChineseGuide={() => setShowChineseGuide(v => !v)}
               hasNextLesson={showContinue}

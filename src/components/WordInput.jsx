@@ -64,6 +64,8 @@ export default function WordInput({
   phoneticControl = null,
   /** 输入阅读：外层卡片已展示灰字整句，隐藏组件内重复一行 */
   readingHideGrayBanner = false,
+  /** 父组件递增以触发「提示卡」揭示当前词 */
+  revealHintNonce = 0,
 }) {
   const words = tokenize(sentence.en)
   const [current, setCurrent] = useState(0)
@@ -80,6 +82,7 @@ export default function WordInput({
   const [translations, setTranslations] = useState({})
   const [phonetics, setPhonetics] = useState({})
   const [internalPhonetic, setInternalPhonetic] = useState(true)
+  const [fullRevealIdx, setFullRevealIdx] = useState(null)
   const showPhonetic = phoneticControl ? phoneticControl.value : internalPhonetic
   const setShowPhonetic = phoneticControl ? phoneticControl.onChange : setInternalPhonetic
 
@@ -96,7 +99,20 @@ export default function WordInput({
     setPhonetics({})
     if (!phoneticControl) setInternalPhonetic(true)
     onCurrentChange?.(0, words.length)
+    setFullRevealIdx(null)
   }, [sentence.id])
+
+  useEffect(() => {
+    if (!revealHintNonce) return
+    const idx = current
+    if (idx < 0 || idx >= words.length || statuses[idx] === 'correct') return
+    setFullRevealIdx(idx)
+    setStatuses(s => s.map((st, j) => (j === idx ? 'hinting' : st)))
+    setTimeout(() => {
+      const el = inputRefs.current[idx]
+      if (el) el.focus()
+    }, 0)
+  }, [revealHintNonce])
 
   // Pre-fetch translations for ALL words when sentence changes（输入阅读仅用句级译文）
   useEffect(() => {
@@ -298,9 +314,11 @@ export default function WordInput({
     if (e.key === 'ArrowRight') { e.preventDefault(); jumpTo(i + 1); return }
   }
 
-  function getHint(word) {
+  function getHint(word, wordIndex) {
     const [core] = splitPunct(word)
     const vowels = 'aeiouyAEIOUY'
+
+    if (fullRevealIdx === wordIndex) return core
 
     // learningLevel: 1=全词, 2=首字母, 3=隐藏元音, 4=隐藏辅音, 5=全隐藏
     if (learningLevel === 1) return core
@@ -360,7 +378,7 @@ export default function WordInput({
         const isCurrent = i === current
         const isShaking = shaking && isCurrent
         const val = inputs[i]
-        const hint = getHint(word)
+        const hint = getHint(word, i)
         const isHinting = status === 'hinting'
         const showHint = isHinting && val === ''
 

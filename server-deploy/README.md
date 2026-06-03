@@ -50,6 +50,18 @@ curl -H "Authorization: Bearer <jwt>" https://okenglish.site/api/crystal/state
 - `redeem_pet` / `redeem_theme` 兑换道具
 - `daily_login` 每日首次登录（可选）
 
+## 每日转盘（任务 9）
+
+把 `routes/dailySpin.js` 挂到主入口（与 shop 相同方式）：
+
+```js
+require('./routes/dailySpin')({ app, pool, auth })
+```
+
+接口：`POST /api/shop/daily-spin`（需登录）
+
+---
+
 ## 反作弊
 - 每分钟同一 user+reason 最多 30 次（429 限流）
 - spend 用 `FOR UPDATE` 行锁 + 事务

@@ -73,10 +73,20 @@ const EMPTY = { todayXp: 0, goal: 20, streak: 0, streakMax: 0, totalXp: 0, freez
 
 export function useXP(token, onGoalReached) {
   const [state, setState] = useState(() => (token ? EMPTY : buildLocalState()))
+  const [xpMultiplierUntil, setXpMultiplierUntil] = useState(null)
   const stateRef = useRef(state)
   stateRef.current = state
+  const xpMultiplierUntilRef = useRef(null)
+  xpMultiplierUntilRef.current = xpMultiplierUntil
   const onGoalRef = useRef(onGoalReached)
   onGoalRef.current = onGoalReached
+
+  const isDoubleXp = !!(xpMultiplierUntil && new Date(xpMultiplierUntil) > new Date())
+
+  const xpMultiplier = useCallback(() => {
+    const until = xpMultiplierUntilRef.current
+    return until && new Date(until) > new Date() ? 2 : 1
+  }, [])
 
   // 登录态变化：拉取服务器状态，或重建本地状态
   useEffect(() => {
@@ -84,10 +94,16 @@ export function useXP(token, onGoalReached) {
     if (token) {
       fetch(`${API}/xp/state`, { headers: { Authorization: `Bearer ${token}` } })
         .then(r => r.json())
-        .then(d => { if (alive && !d.error) setState(s => ({ ...s, ...d })) })
+        .then(d => {
+          if (alive && !d.error) {
+            setState(s => ({ ...s, ...d }))
+            setXpMultiplierUntil(d.xp_multiplier_until || null)
+          }
+        })
         .catch(() => {})
     } else {
       setState(buildLocalState())
+      setXpMultiplierUntil(null)
     }
     return () => { alive = false }
   }, [token])
@@ -106,22 +122,29 @@ export function useXP(token, onGoalReached) {
       body: JSON.stringify({ amount }),
     })
       .then(r => r.json())
-      .then(d => { if (!d.error) setState(s => ({ ...s, todayXp: d.todayXp, streak: d.streak, streakMax: d.streakMax, totalXp: d.totalXp, freezes: d.freezes, reachedGoalToday: d.reachedGoalToday })) })
+      .then(d => {
+        if (!d.error) {
+          setState(s => ({ ...s, todayXp: d.todayXp, streak: d.streak, streakMax: d.streakMax, totalXp: d.totalXp, freezes: d.freezes, reachedGoalToday: d.reachedGoalToday }))
+          if (d.xp_multiplier_until !== undefined) setXpMultiplierUntil(d.xp_multiplier_until || null)
+        }
+      })
       .catch(() => {})
   }, [token])
 
   const addXP = useCallback((amount) => {
     amount = Math.max(0, Math.min(1000, Math.round(amount) || 0))
     if (!amount) return
+    const mult = xpMultiplier()
+    const grant = amount * mult
     const prev = stateRef.current
     const wasReached = prev.reachedGoalToday
-    const nowReached = (prev.todayXp + amount) >= prev.goal
+    const nowReached = (prev.todayXp + grant) >= prev.goal
     const justReached = !wasReached && nowReached
 
     if (token) {
       // 乐观更新数字 + 即时庆祝；streak 由服务器回执校准
-      setState(s => ({ ...s, todayXp: s.todayXp + amount, totalXp: s.totalXp + amount, reachedGoalToday: (s.todayXp + amount) >= s.goal }))
-      pendingRef.current += amount
+      setState(s => ({ ...s, todayXp: s.todayXp + grant, totalXp: s.totalXp + grant, reachedGoalToday: (s.todayXp + grant) >= s.goal }))
+      pendingRef.current += grant
       clearTimeout(timerRef.current)
       timerRef.current = setTimeout(flushServer, 1200)
     } else {
@@ -138,7 +161,19 @@ export function useXP(token, onGoalReached) {
       setState(buildLocalState())
     }
     if (justReached) onGoalRef.current?.(nowReached)
-  }, [token, flushServer])
+  }, [token, flushServer, xpMultiplier])
+
+  const refresh = useCallback(async () => {
+    if (!token) return
+    try {
+      const r = await fetch(`${API}/xp/state`, { headers: { Authorization: `Bearer ${token}` } })
+      const d = await r.json()
+      if (!d.error) {
+        setState(s => ({ ...s, ...d }))
+        setXpMultiplierUntil(d.xp_multiplier_until || null)
+      }
+    } catch { /* ignore */ }
+  }, [token])
 
   const setGoal = useCallback((goal) => {
     if (![10, 20, 30, 50].includes(goal)) return
@@ -161,5 +196,5 @@ export function useXP(token, onGoalReached) {
     return () => document.removeEventListener('visibilitychange', onHide)
   }, [flushServer])
 
-  return { ...state, addXP, setGoal }
+  return { ...state, addXP, setGoal, refresh, isDoubleXp, xpMultiplierUntil }
 }
