@@ -51,7 +51,8 @@ import { useSound } from './hooks/useSound'
 import CrystalPanel from './components/CrystalPanel'
 import CrystalFloat from './components/CrystalFloat'
 import GemSVG from './components/GemSVG'
-import PandaLogo from './components/PandaLogo'
+import PetAvatar from './components/PetAvatar'
+import AvatarPicker from './components/AvatarPicker'
 import sampleData from './data/sample.json'
 import changyongData from './data/changyong.json'
 import grade4DownData from './data/grade4_down.json'
@@ -507,6 +508,31 @@ export default function App() {
   const crystal = useCrystal(token)
   const [showCrystalPanel, setShowCrystalPanel] = useState(false)
   const [crystalPulse, setCrystalPulse] = useState(0)
+
+  // 商店背包 / 装备头像
+  const [shopInventory, setShopInventory] = useState({
+    items: [], pets: [], equipped: { avatar: null, panda_skin: null, theme: null, flame_color: null },
+  })
+  const [showAvatarPicker, setShowAvatarPicker] = useState(false)
+  const [shopInitialTab, setShopInitialTab] = useState(null)
+
+  useEffect(() => {
+    if (!token) {
+      setShopInventory({ items: [], pets: [], equipped: { avatar: null, panda_skin: null, theme: null, flame_color: null } })
+      return
+    }
+    apiGet('/shop/inventory', token)
+      .then(d => {
+        if (!d.error) {
+          setShopInventory({
+            items: d.items || [],
+            pets: d.pets || [],
+            equipped: d.equipped || { avatar: null, panda_skin: null, theme: null, flame_color: null },
+          })
+        }
+      })
+      .catch(() => {})
+  }, [token])
   // 监听 crystal.recent 触发徽章脉冲（每次获得抖一下）
   useEffect(() => {
     if (!crystal.recent) return
@@ -927,6 +953,21 @@ export default function App() {
         {showCrystalPanel && (
           <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
         )}
+        {showAvatarPicker && (
+          <AvatarPicker
+            token={token}
+            inventory={shopInventory}
+            onClose={() => setShowAvatarPicker(false)}
+            onEquippedChange={(equipped) => {
+              setShopInventory(prev => ({ ...prev, equipped: equipped || { avatar: null, panda_skin: null, theme: null, flame_color: null } }))
+            }}
+            onGoToShop={() => {
+              setShowAvatarPicker(false)
+              setShopInitialTab('pets')
+              openTab('shop')
+            }}
+          />
+        )}
 
         {/* 右边缘悬停触发菜单 — 两种模式都生效 */}
         {!menuOpen && (
@@ -952,19 +993,32 @@ export default function App() {
                 aria-label="导航菜单"
                 className={`flex h-full min-h-0 w-full flex-col overflow-hidden ${isHomeLight ? 'lg-glass-nav' : 'border-l border-slate-600/45 bg-slate-900'}`}
               >
-          {/* ── 品牌头部：熊猫 + 收起（首页无顶栏汉堡） ── */}
+          {/* ── 品牌头部：头像（可切换）+ 收起 ── */}
           <div className="shrink-0 flex items-center gap-1.5 pt-[max(0.75rem,env(safe-area-inset-top,0px))] px-1.5 pb-2">
             <button
-              onClick={() => navigateFromMenu('home')}
+              type="button"
+              onClick={() => {
+                setMenuOpen(false)
+                if (token) setShowAvatarPicker(true)
+                else setShowLogin(true)
+              }}
               className="group flex-1 flex items-center justify-center transition-transform active:scale-95"
-              aria-label="首页"
+              aria-label="切换头像"
             >
-              <div className="w-16 h-16 rounded-[22%] overflow-hidden">
-                <img
-                  src="/panda-icon.webp"
-                  alt="OK英语"
-                  className="w-full h-full object-cover scale-110 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-3"
-                />
+              <div className="w-16 h-16 rounded-[22%] overflow-hidden flex items-center justify-center">
+                {shopInventory.equipped?.avatar ? (
+                  <PetAvatar
+                    petId={shopInventory.equipped.avatar}
+                    size={64}
+                    className="transition-transform duration-300 group-hover:scale-110"
+                  />
+                ) : (
+                  <img
+                    src="/panda-icon.webp"
+                    alt="OK英语"
+                    className="w-full h-full object-cover scale-110 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-3"
+                  />
+                )}
               </div>
             </button>
             <button
@@ -1103,7 +1157,13 @@ export default function App() {
             <Shop
               token={token}
               crystal={crystal}
-              onClose={() => openTab('exercise')}
+              inventory={shopInventory}
+              onInventoryChange={setShopInventory}
+              onEquippedChange={(equipped) => {
+                setShopInventory(prev => ({ ...prev, equipped: equipped || { avatar: null, panda_skin: null, theme: null, flame_color: null } }))
+              }}
+              initialTab={shopInitialTab}
+              onClose={() => { setShopInitialTab(null); openTab('exercise') }}
             />
           </div>
           <div style={{ display: tab === 'courses' ? 'contents' : 'none' }}>
