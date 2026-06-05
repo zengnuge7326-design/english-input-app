@@ -396,12 +396,12 @@ function renderIPAText(text) {
   })
 }
 
-function IPASyllableStrip({ ipaSyllables, activeSylIdx, onPlayWord }) {
+function IPASyllableStrip({ ipaSyllables, activeSylIdx, onPlayWord, size = 'text-lg' }) {
   if (!ipaSyllables?.length) return null
   return (
     <button
       onClick={e => { e.stopPropagation(); onPlayWord?.() }}
-      className="flex items-center gap-0 flex-wrap justify-center cursor-pointer select-none"
+      className="flex items-center gap-0 flex-wrap justify-center cursor-pointer select-none leading-tight"
     >
       {ipaSyllables.map((syl, i) => {
         const col = SYL_COLORS[i % SYL_COLORS.length]
@@ -409,7 +409,7 @@ function IPASyllableStrip({ ipaSyllables, activeSylIdx, onPlayWord }) {
         return (
           <span key={i} className="flex items-center">
             {i > 0 && <span className="text-gray-500 select-none" style={{ fontSize: '0.4em', margin: '0 0.2em', lineHeight: 1 }}>·</span>}
-            <span className={`text-2xl font-mono transition-all duration-150
+            <span className={`${size} font-mono transition-all duration-150
               ${active
                 ? `${col.active} scale-110 underline underline-offset-4 drop-shadow-[0_0_10px_currentColor]`
                 : col.base}`}>
@@ -851,7 +851,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   const gridRows = Math.ceil(unit.words.length / 3)
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 py-2 flex flex-col gap-2" style={{ height: 'calc(100vh - 110px)' }}>
+    <div className="w-full max-w-2xl mx-auto px-4 py-1.5 flex flex-col gap-1.5" style={{ height: 'calc(100vh - 110px)' }}>
 
       {/* 配对弹窗（放在最外层，避免被 du-flip-card 的 perspective 困住） */}
       {showMatch && (
@@ -923,16 +923,16 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
         <div className={`du-flip-card shrink-0 w-full ${duResult === 'fail' || duResult === 'skip' ? 'du-shake' : ''}`} key={`flip-${idx}-${duResult}`}>
           <div className={`du-flip-inner ${flipped ? 'is-flipped' : ''}`}>
             {/* 正面 */}
-            <div className="du-flip-front w-full bg-slate-800 border border-gray-700 rounded-xl flex flex-col py-2 px-4 transition-all">
+            <div className="du-flip-front w-full bg-slate-800 border border-gray-700 rounded-xl flex flex-col py-1 px-3 transition-all">
 
-          {/* 左：单词+音标+释义（居中）| 右：三按钮（顶栏高度 = 9rem） */}
-          <div className="flex w-full items-start gap-3" onClick={e => e.stopPropagation()}>
-            <div className="flex-1 min-w-0 flex flex-col items-center gap-1 text-center">
-              <div className="flex items-center justify-center w-full h-36 min-h-36">
+          {/* 左：单词+音标+释义（居中）| 右：三按钮（顶栏高度 = 7.25rem） */}
+          <div className="flex w-full items-start gap-2" onClick={e => e.stopPropagation()}>
+            <div className="flex-1 min-w-0 flex flex-col items-center gap-0 text-center leading-tight">
+              <div className="flex items-center justify-center w-full h-[7.25rem] min-h-[7.25rem]">
                 {duOn ? (
-                  <span className="text-2xl sm:text-3xl font-bold text-blue-300 px-1 min-w-0 break-words leading-tight">{word.zh}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-blue-300 px-1 min-w-0 break-words leading-tight">{word.zh}</span>
                 ) : (
-                  <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-5xl" />
+                  <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-4xl" />
                 )}
               </div>
               {!duOn && <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onPlayWord={playFull} />}
@@ -961,24 +961,24 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
                 </div>
               )}
               {duOn
-                ? <div className="text-[11px] text-emerald-300/80">看中文 · 读出英文（读对翻卡显示单词；连续 3 次没通过自动跳过）</div>
-                : <div className="text-xl text-blue-300 font-medium">{word.zh}</div>
+                ? <div className="text-[10px] leading-snug text-emerald-300/80">看中文 · 读出英文（读对翻卡显示单词；连续 3 次没通过自动跳过）</div>
+                : <div className="text-base text-blue-300 font-medium leading-snug">{word.zh}</div>
               }
             </div>
-            <div className="flex flex-col gap-1.5 shrink-0 h-36">
+            <div className="flex flex-col gap-1 shrink-0 h-[7.25rem]">
               <button onClick={e => { e.stopPropagation(); toggleDu('translate') }}
                 title="跟读：看中文，读出英文；读对自动翻卡显示单词"
-                className={`min-h-11 min-w-[3.25rem] px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 leading-tight text-center ${micCls}`}>
+                className={`min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-bold transition-all active:scale-95 leading-tight text-center ${micCls}`}>
                 {duOn && !duResult && srListening ? <SoundWave active={srListening} /> : '跟读'}
               </button>
               <button onClick={e => { e.stopPropagation(); setShowMatch(true) }}
                 disabled={duOn}
-                className="min-h-11 min-w-[3.25rem] px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 leading-tight text-center bg-gray-800 border-gray-700 text-teal-400 hover:bg-gray-700 disabled:opacity-40">
+                className="min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-bold transition-all active:scale-95 leading-tight text-center bg-gray-800 border-gray-700 text-teal-400 hover:bg-gray-700 disabled:opacity-40">
                 配对
               </button>
               <button onClick={e => { e.stopPropagation(); toggleMoXie() }}
                 disabled={duOn}
-                className={`min-h-11 min-w-[3.25rem] px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 leading-tight text-center disabled:opacity-40
+                className={`min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-bold transition-all active:scale-95 leading-tight text-center disabled:opacity-40
                   ${moXie ? 'bg-purple-700 border-purple-500 text-white' : 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700'}`}>
                 默写
               </button>
