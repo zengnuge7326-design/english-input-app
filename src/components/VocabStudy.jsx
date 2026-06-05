@@ -25,18 +25,6 @@ function SoundWave({ active }) {
   )
 }
 
-// 麦克风图标（跟读未启动时显示）
-function MicGlyph() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-      <line x1="12" y1="19" x2="12" y2="23"/>
-      <line x1="8" y1="23" x2="16" y2="23"/>
-    </svg>
-  )
-}
-
 // ── IPA syllabification (MOP) — mirrors gen_syllable_audio.py ────────────────
 
 const IPA_VOWELS = new Set(['æ','e','ɪ','ɒ','ʌ','ʊ','ə','i','u',
@@ -610,7 +598,6 @@ function UnitGrid({ book, progress, onSelect, onBack, isMember = true, onShowLog
 
 function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onProgressChange, settings, onXp, onCrystal }) {
   const [idx, setIdx]             = useState(0)
-  const [speed, setSpeed]         = useState(1.0)
   const [localSeen, setLocalSeen] = useState({})
   const [moXie, setMoXie]         = useState(false)
   const [moXieDone, setMoXieDone] = useState({}) // idx → true, tracks correct dictations
@@ -672,7 +659,7 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   const { playCorrect, playError, playVictory, playFireworks, playBubble } = useSound(settings)
   const word = unit.words[idx]
   const pendingPlayRef = useRef(false)
-  const { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl } = useWordAudio(word.word, word.ipa || '', speed)
+  const { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl } = useWordAudio(word.word, word.ipa || '')
 
   // Preload current + next word audio buffers to eliminate click-to-play delay
   useEffect(() => {
@@ -680,9 +667,6 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
     const next = unit.words[idx + 1]
     if (next?.word) fetchUrl(next.word).then(url => { if (url) fetchBuffer(url) })
   }, [idx])
-
-  const SPEEDS = [0.7, 1.0, 1.3]
-  const cycleSpeed = () => setSpeed(s => SPEEDS[(SPEEDS.indexOf(s) + 1) % SPEEDS.length])
 
   // 默写完成判断
   const allMoXieDone = Object.keys(moXieDone).length >= unit.words.length
@@ -941,33 +925,33 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
             {/* 正面 */}
             <div className="du-flip-front w-full bg-slate-800 border border-gray-700 rounded-xl flex flex-col items-center gap-1.5 py-3 px-4 transition-all">
 
-          {/* 麦克风 | 词/中文 | speed× | 默写 | 配对 */}
-          <div className="flex justify-center items-center gap-2" onClick={e => e.stopPropagation()}>
-            <button onClick={e => { e.stopPropagation(); toggleDu('translate') }}
-              title="跟读：看中文，读出英文；读对自动翻卡显示单词"
-              className={`flex items-center justify-center w-11 h-11 rounded-xl border transition-all active:scale-95 shrink-0 ${micCls}`}>
-              {duOn && !duResult ? <SoundWave active={srListening} /> : <MicGlyph />}
-            </button>
-            {duOn ? (
-              <span className="text-2xl sm:text-3xl font-bold text-blue-300 text-center px-1 min-w-0 break-words leading-tight">{word.zh}</span>
-            ) : (
-              <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-5xl" />
-            )}
-            <button onClick={e => { e.stopPropagation(); cycleSpeed() }}
-              className="w-11 h-11 flex items-center justify-center bg-gray-800 hover:bg-gray-700 border border-gray-700 text-yellow-400 rounded-xl text-sm font-mono font-bold transition-all active:scale-95 shrink-0">
-              {speed}×
-            </button>
-            <button onClick={e => { e.stopPropagation(); toggleMoXie() }}
-              disabled={duOn}
-              className={`min-h-11 px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 shrink-0 leading-tight text-center disabled:opacity-40
-                ${moXie ? 'bg-purple-700 border-purple-500 text-white' : 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700'}`}>
-              默写
-            </button>
-            <button onClick={e => { e.stopPropagation(); setShowMatch(true) }}
-              disabled={duOn}
-              className="min-h-11 px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 shrink-0 leading-tight text-center bg-gray-800 border-gray-700 text-teal-400 hover:bg-gray-700 disabled:opacity-40">
-              配对
-            </button>
+          {/* 词/中文（左）| 跟读·配对·默写（右列） */}
+          <div className="flex w-full items-stretch gap-3" onClick={e => e.stopPropagation()}>
+            <div className="flex-1 min-w-0 flex items-center justify-center">
+              {duOn ? (
+                <span className="text-2xl sm:text-3xl font-bold text-blue-300 text-center px-1 min-w-0 break-words leading-tight w-full">{word.zh}</span>
+              ) : (
+                <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-5xl" />
+              )}
+            </div>
+            <div className="flex flex-col gap-1.5 shrink-0 justify-center">
+              <button onClick={e => { e.stopPropagation(); toggleDu('translate') }}
+                title="跟读：看中文，读出英文；读对自动翻卡显示单词"
+                className={`min-h-11 min-w-[3.25rem] px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 leading-tight text-center ${micCls}`}>
+                {duOn && !duResult && srListening ? <SoundWave active={srListening} /> : '跟读'}
+              </button>
+              <button onClick={e => { e.stopPropagation(); setShowMatch(true) }}
+                disabled={duOn}
+                className="min-h-11 min-w-[3.25rem] px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 leading-tight text-center bg-gray-800 border-gray-700 text-teal-400 hover:bg-gray-700 disabled:opacity-40">
+                配对
+              </button>
+              <button onClick={e => { e.stopPropagation(); toggleMoXie() }}
+                disabled={duOn}
+                className={`min-h-11 min-w-[3.25rem] px-2.5 flex items-center justify-center rounded-xl border text-xs font-bold transition-all active:scale-95 leading-tight text-center disabled:opacity-40
+                  ${moXie ? 'bg-purple-700 border-purple-500 text-white' : 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700'}`}>
+                默写
+              </button>
+            </div>
           </div>
           {!duOn && <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onPlayWord={playFull} />}
           {loading && <div className="text-blue-400 text-xs animate-pulse">加载音频…</div>}
