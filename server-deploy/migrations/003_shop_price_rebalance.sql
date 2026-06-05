@@ -45,4 +45,4 @@ UPDATE shop_products SET price_json='[{"color":"gold","amount":20000}]' WHERE id
 -- 会员（金钻兑换）
 UPDATE shop_products SET price_json='[{"color":"gold","amount":800}]' WHERE id='mem_trial_3d';
 UPDATE shop_products SET price_json='[{"color":"gold","amount":8000}]' WHERE id='mem_month';
-UPDATE shop_products SET price_json='[{"color":"gold","amount":60000}]' WHERE id='mem_year';
+UPDATE shop_products SET price_json='[{"color":"gold","amount":30000}]' WHERE id='mem_year';

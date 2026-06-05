@@ -841,11 +841,13 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
     }
   }
 
-  const micCls = !duOn
-    ? 'bg-gray-800 border-gray-700 text-blue-300 hover:bg-gray-700'
-    : duResult === 'fail' || duResult === 'skip' ? 'bg-red-700 border-red-500 text-white'
-    : duResult === 'pass' ? 'bg-green-700 border-green-500 text-white'
-    : 'bg-blue-600 border-blue-400 text-white shadow-[0_0_14px_rgba(59,130,246,0.6)]'
+  const duBtnCls = !duOn
+    ? 'bg-blue-500/25 backdrop-blur-md border-blue-300/50 text-blue-100 shadow-[0_0_14px_rgba(59,130,246,0.35)] hover:bg-blue-500/40'
+    : duResult === 'fail' || duResult === 'skip'
+    ? 'bg-red-500/35 backdrop-blur-md border-red-300/55 text-red-50 shadow-[0_0_14px_rgba(239,68,68,0.45)]'
+    : duResult === 'pass'
+    ? 'bg-emerald-500/35 backdrop-blur-md border-emerald-300/55 text-emerald-50 shadow-[0_0_14px_rgba(16,185,129,0.45)]'
+    : 'bg-cyan-500/40 backdrop-blur-md border-cyan-200/60 text-white shadow-[0_0_18px_rgba(34,211,238,0.55)]'
 
   const seen = (progress[`vocab_${book.bookName}_${unitIdx}_${wordOffset + idx}`] || 0) >= 1
   const gridRows = Math.ceil(unit.words.length / 3)
@@ -971,18 +973,20 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
             <div className="flex flex-col gap-1 shrink-0 self-start">
               <button onClick={e => { e.stopPropagation(); toggleDu('translate') }}
                 title="跟读：看中文，读出英文；读对自动翻卡显示单词"
-                className={`min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-bold transition-all active:scale-95 leading-tight text-center ${micCls}`}>
+                className={`min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-extrabold tracking-wide transition-all active:scale-95 leading-tight text-center drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] ${duBtnCls}`}>
                 {duOn && !duResult && srListening ? <SoundWave active={srListening} /> : '跟读'}
               </button>
               <button onClick={e => { e.stopPropagation(); setShowMatch(true) }}
                 disabled={duOn}
-                className="min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-bold transition-all active:scale-95 leading-tight text-center bg-gray-800 border-gray-700 text-teal-400 hover:bg-gray-700 disabled:opacity-40">
+                className="min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-extrabold tracking-wide transition-all active:scale-95 leading-tight text-center backdrop-blur-md bg-teal-500/25 border-teal-300/50 text-teal-100 shadow-[0_0_12px_rgba(20,184,166,0.4)] hover:bg-teal-500/40 drop-shadow-[0_0_6px_rgba(45,212,191,0.45)] disabled:opacity-40">
                 配对
               </button>
               <button onClick={e => { e.stopPropagation(); toggleMoXie() }}
                 disabled={duOn}
-                className={`min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-bold transition-all active:scale-95 leading-tight text-center disabled:opacity-40
-                  ${moXie ? 'bg-purple-700 border-purple-500 text-white' : 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700'}`}>
+                className={`min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-extrabold tracking-wide transition-all active:scale-95 leading-tight text-center backdrop-blur-md drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] disabled:opacity-40
+                  ${moXie
+                    ? 'bg-violet-500/40 border-violet-200/60 text-violet-50 shadow-[0_0_14px_rgba(139,92,246,0.5)]'
+                    : 'bg-amber-500/20 border-amber-300/45 text-amber-100 shadow-[0_0_12px_rgba(245,158,11,0.35)] hover:bg-amber-500/35'}`}>
                 默写
               </button>
             </div>

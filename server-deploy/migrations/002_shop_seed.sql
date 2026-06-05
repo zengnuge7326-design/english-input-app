@@ -56,4 +56,4 @@ INSERT INTO shop_products (id, category, tier, name, description, image_path, pr
 INSERT INTO shop_products (id, category, name, description, icon, price_json, sort_order, meta) VALUES
 ('mem_trial_3d',  'membership', '月卡体验 3 天',  '尝鲜全功能',     '🎫', '[{"color":"gold","amount":800}]',   610, '{"days":3}'),
 ('mem_month',     'membership', '月度会员（30天）', '比直购贵',     '👑', '[{"color":"gold","amount":8000}]',  611, '{"days":30}'),
-('mem_year',      'membership', '年度会员（365天）','囤积钻石可换',  '👑', '[{"color":"gold","amount":60000}]', 612, '{"days":365}');
+('mem_year',      'membership', '年度会员（365天）','囤积钻石可换',  '👑', '[{"color":"gold","amount":30000}]', 612, '{"days":365}');
