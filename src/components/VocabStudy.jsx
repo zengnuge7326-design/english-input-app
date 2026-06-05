@@ -925,47 +925,50 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
             {/* 正面 */}
             <div className="du-flip-front w-full bg-slate-800 border border-gray-700 rounded-xl flex flex-col py-1 px-3 transition-all">
 
-          {/* 左：单词+音标+释义（居中）| 右：三按钮（顶栏高度 = 7.25rem） */}
+          {/* 左：单词+音标+释义（紧凑居中）| 右：三按钮 */}
           <div className="flex w-full items-start gap-2" onClick={e => e.stopPropagation()}>
-            <div className="flex-1 min-w-0 flex flex-col items-center gap-0 text-center leading-tight">
-              <div className="flex items-center justify-center w-full h-[7.25rem] min-h-[7.25rem]">
-                {duOn ? (
-                  <span className="text-xl sm:text-2xl font-bold text-blue-300 px-1 min-w-0 break-words leading-tight">{word.zh}</span>
-                ) : (
-                  <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-4xl" />
-                )}
-              </div>
-              {!duOn && <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onPlayWord={playFull} />}
-              {loading && <div className="text-blue-400 text-xs animate-pulse">加载音频…</div>}
-              {duMsg && (
-                <div className={`text-xs font-medium ${
-                  duResult === 'pass' ? 'text-green-400'
-                  : duResult === 'fail' || duResult === 'skip' ? 'text-red-400'
-                  : 'text-blue-300 animate-pulse'}`}>
-                  {duMsg}
+            <div className="flex-1 min-w-0 flex flex-col items-center text-center">
+              {duOn ? (
+                <>
+                  <span className="text-2xl sm:text-3xl font-bold text-blue-300 px-1 min-w-0 break-words leading-tight">{word.zh}</span>
+                  {loading && <div className="text-blue-400 text-xs animate-pulse mt-1">加载音频…</div>}
+                  {duMsg && (
+                    <div className={`text-xs font-medium mt-1 ${
+                      duResult === 'pass' ? 'text-green-400'
+                      : duResult === 'fail' || duResult === 'skip' ? 'text-red-400'
+                      : 'text-blue-300 animate-pulse'}`}>
+                      {duMsg}
+                    </div>
+                  )}
+                  {srListening && srHeard && (
+                    <div className="text-xs text-gray-500 mt-1">听到：<span className="text-gray-300 font-mono font-semibold">{srHeard}</span></div>
+                  )}
+                  {duResult !== 'pass' && (
+                    <div className="flex items-center justify-center gap-2 mt-1" onClick={e => e.stopPropagation()}>
+                      <button onClick={() => manualVerdict('pass')}
+                        className="text-xs font-semibold px-3 py-1 rounded-full bg-green-700/60 hover:bg-green-600 text-green-100 border border-green-600/70 transition-colors active:scale-95">
+                        ✓ 我读对了
+                      </button>
+                      <button onClick={() => manualVerdict('skip')}
+                        className="text-xs font-semibold px-3 py-1 rounded-full bg-gray-700/80 hover:bg-gray-600 text-gray-100 border border-gray-600 transition-colors active:scale-95">
+                        ⏭ 跳过
+                      </button>
+                    </div>
+                  )}
+                  <div className="text-[10px] leading-snug text-emerald-300/80 mt-1">看中文 · 读出英文（读对翻卡显示单词；连续 3 次没通过自动跳过）</div>
+                </>
+              ) : (
+                <div className="flex flex-col items-center leading-none">
+                  <SyllableWord syllables={syllables} activeSylIdx={activeSylIdx} onSylClick={playSyl} size="text-5xl" />
+                  <div className="mt-0.5">
+                    <IPASyllableStrip ipaSyllables={ipaSyllables} activeSylIdx={activeSylIdx} onPlayWord={playFull} />
+                  </div>
+                  <div className="text-base text-blue-300 font-medium leading-snug mt-0.5">{word.zh}</div>
+                  {loading && <div className="text-blue-400 text-xs animate-pulse mt-1">加载音频…</div>}
                 </div>
               )}
-              {duOn && srListening && srHeard && (
-                <div className="text-xs text-gray-500">听到：<span className="text-gray-300 font-mono font-semibold">{srHeard}</span></div>
-              )}
-              {duOn && duResult !== 'pass' && (
-                <div className="flex items-center justify-center gap-2" onClick={e => e.stopPropagation()}>
-                  <button onClick={() => manualVerdict('pass')}
-                    className="text-xs font-semibold px-3 py-1 rounded-full bg-green-700/60 hover:bg-green-600 text-green-100 border border-green-600/70 transition-colors active:scale-95">
-                    ✓ 我读对了
-                  </button>
-                  <button onClick={() => manualVerdict('skip')}
-                    className="text-xs font-semibold px-3 py-1 rounded-full bg-gray-700/80 hover:bg-gray-600 text-gray-100 border border-gray-600 transition-colors active:scale-95">
-                    ⏭ 跳过
-                  </button>
-                </div>
-              )}
-              {duOn
-                ? <div className="text-[10px] leading-snug text-emerald-300/80">看中文 · 读出英文（读对翻卡显示单词；连续 3 次没通过自动跳过）</div>
-                : <div className="text-base text-blue-300 font-medium leading-snug">{word.zh}</div>
-              }
             </div>
-            <div className="flex flex-col gap-1 shrink-0 h-[7.25rem]">
+            <div className="flex flex-col gap-1 shrink-0 self-start">
               <button onClick={e => { e.stopPropagation(); toggleDu('translate') }}
                 title="跟读：看中文，读出英文；读对自动翻卡显示单词"
                 className={`min-h-9 min-w-[2.75rem] px-2 flex items-center justify-center rounded-lg border text-[11px] font-bold transition-all active:scale-95 leading-tight text-center ${micCls}`}>
