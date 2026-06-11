@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import PageBackBar from './PageBackBar'
+import LockedOverlay from './LockedOverlay'
 import { GUTENBERG_LEVELS, gutenbergToSentences } from '../data/gutenberg/catalog'
 
-export default function GutenbergReading({ onClose, onStartReading, isMember = true, onShowLogin }) {
+export default function GutenbergReading({ onClose, onStartReading, isMember = true, onShowLogin, unlocks, crystalBalance = 0, onGoShop }) {
   const [levelId, setLevelId] = useState(null)
   const [loadingId, setLoadingId] = useState(null)
   const level = levelId ? GUTENBERG_LEVELS.find(l => l.id === levelId) : null
@@ -44,13 +45,10 @@ export default function GutenbergReading({ onClose, onStartReading, isMember = t
           </div>
           <span className="text-xs text-gray-500">{level.articles.length} 篇</span>
         </div>
-        {!isMember && (
-          <p className="text-xs text-gray-500 mb-4">前半部分文章免费体验，开通会员解锁全部文章</p>
-        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {level.articles.map((a, ai) => {
-            const halfIdx = Math.ceil(level.articles.length / 2)
-            const locked = !isMember && ai >= halfIdx
+            // 级已通过外层宝石锁控制，文章全部开放（单层锁标准）
+            const locked = false
             const n = a.url
               ? (a.sentenceCount ?? 0)
               : gutenbergToSentences(a.id, a.raw).length
@@ -92,18 +90,40 @@ export default function GutenbergReading({ onClose, onStartReading, isMember = t
         （默认读取 ~/Desktop/gutenberg_texts，写入 public/gutenberg 与清单）。各级 Level 内也可直接放入少量 *.json 样例。
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {GUTENBERG_LEVELS.map((lv) => (
-          <button
-            key={lv.id}
-            type="button"
-            onClick={() => setLevelId(lv.id)}
-            className="text-left rounded-2xl border border-slate-700 bg-slate-800 hover:border-gray-500 transition-colors p-5 flex flex-col gap-2"
-          >
-            <div className="text-sm font-bold text-white">{lv.label}</div>
-            <div className="text-[11px] text-gray-500 leading-snug">{lv.gradeHint}</div>
-            <div className="text-xs text-gray-600 mt-1">{lv.dir} · {lv.articles.length} 篇</div>
-          </button>
-        ))}
+        {GUTENBERG_LEVELS.map((lv, li) => {
+          // 第一级免费；其余看已解锁 / 会员（单层宝石锁标准）
+          const locked = li > 0 &&
+            !isMember &&
+            !(unlocks?.isUnlocked?.('reading', lv.id))
+          const COST = 40
+          const card = (
+            <button
+              type="button"
+              onClick={() => setLevelId(lv.id)}
+              className="w-full text-left rounded-2xl border border-slate-700 bg-slate-800 hover:border-gray-500 transition-colors p-5 flex flex-col gap-2"
+            >
+              <div className="text-sm font-bold text-white">{lv.label}</div>
+              <div className="text-[11px] text-gray-500 leading-snug">{lv.gradeHint}</div>
+              <div className="text-xs text-gray-600 mt-1">{lv.dir} · {lv.articles.length} 篇</div>
+            </button>
+          )
+          return (
+            <div key={lv.id} className="relative">
+              <LockedOverlay
+                locked={locked}
+                cost={COST}
+                color="blue"
+                crystalBalance={crystalBalance}
+                title={lv.label}
+                reason={`花费 ${COST} 钻石解锁本级全部文章，会员免费`}
+                onUnlock={() => unlocks?.unlock?.('reading', lv.id, COST, 'blue')}
+                onGoShop={onGoShop}
+              >
+                {card}
+              </LockedOverlay>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

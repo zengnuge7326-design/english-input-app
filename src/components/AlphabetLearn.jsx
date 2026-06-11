@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { ALPHABET_LETTERS, themeOf } from '../data/alphabet.js'
 import { AlphabetIcon } from './AlphabetIcons'
 import LockedOverlay from './LockedOverlay'
+import UnlockConfirmModal from './UnlockConfirmModal'
 import PandaMascot from './PandaMascot'
 import OceanBg from './OceanBg'
 import { useSound } from '../hooks/useSound'
@@ -936,9 +937,11 @@ export default function AlphabetLearn({ onClose, settings, onXp, onCrystal, isMe
       <div className="relative z-10">
         {level === 1 && <LevelSayIt   progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds} sr={sr} lockedBack10={lockedBack10} onUnlockBack10={() => setBack10Confirm(true)} crystalBalance={crystalBalance} onGoShop={onGoShop}/>}
         {back10Confirm && (
-          <Back10ConfirmModal
-            crystalBalance={crystalBalance}
+          <UnlockConfirmModal
+            title="后 10 个字母 (Q-Z)"
+            reason="学完前 16 个字母可自动解锁，或花钻石提前开启"
             cost={20}
+            crystalBalance={crystalBalance}
             onCancel={() => setBack10Confirm(false)}
             onConfirm={async () => {
               const r = await unlocks?.unlock?.('alphabet', 'back10', 20, 'blue')
@@ -951,55 +954,6 @@ export default function AlphabetLearn({ onClose, settings, onXp, onCrystal, isMe
         {level === 2 && <LevelFindIt  progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds}/>}
         {level === 3 && <LevelMatchPic progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds}/>}
         {level === 4 && <LevelOrderIt progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds}/>}
-      </div>
-    </div>
-  )
-}
-
-
-// ─────────────────────────────────────────────────────────────
-// 后 10 字母解锁确认弹窗
-// ─────────────────────────────────────────────────────────────
-function Back10ConfirmModal({ crystalBalance, cost, onCancel, onConfirm, onGoShop }) {
-  const [busy, setBusy] = useState(false)
-  const [err, setErr] = useState("")
-  const enough = crystalBalance >= cost
-  async function handle() {
-    setBusy(true); setErr("")
-    const r = await onConfirm()
-    setBusy(false)
-    if (!r?.ok) {
-      if (r?.reason === "insufficient") setErr(`钻石不够，需要 ${r.need}，你有 ${r.have}`)
-      else setErr("解锁失败，请稍后再试")
-    }
-  }
-  return (
-    <div className="fixed inset-0 z-[1100] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onClick={e => { if (e.target === e.currentTarget) onCancel() }}>
-      <div className="w-full max-w-sm rounded-2xl bg-slate-900 border border-slate-700 p-6 shadow-2xl">
-        <div className="text-center">
-          <div className="text-4xl mb-2">💎</div>
-          <h3 className="text-lg font-black text-white mb-1">解锁后 10 个字母</h3>
-          <p className="text-xs text-slate-400 mb-4">学完前 16 个字母可自动解锁，或花钻石提前开启</p>
-        </div>
-        <div className="rounded-xl bg-slate-800/70 border border-slate-700 px-4 py-3 mb-4">
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-slate-400">解锁价</span>
-            <span className="font-bold text-purple-300 tabular-nums">💎 {cost}</span>
-          </div>
-          <div className="flex items-center justify-between text-sm mt-1.5">
-            <span className="text-slate-400">我的钻石</span>
-            <span className={`font-bold tabular-nums ${enough ? "text-emerald-300" : "text-red-400"}`}>💎 {crystalBalance}</span>
-          </div>
-        </div>
-        {err && <div className="text-center text-red-400 text-xs mb-3">{err}</div>}
-        <div className="flex gap-2">
-          <button onClick={onCancel} disabled={busy} className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-bold transition-colors">取消</button>
-          {enough ? (
-            <button onClick={handle} disabled={busy} className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-sm font-bold disabled:opacity-60">{busy ? "解锁中…" : `花费 ${cost} 💎 解锁`}</button>
-          ) : (
-            <button onClick={onGoShop} className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold">去小店补充钻石</button>
-          )}
-        </div>
       </div>
     </div>
   )

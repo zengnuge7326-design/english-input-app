@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import PageBackBar from './PageBackBar'
+import LockedOverlay from './LockedOverlay'
 import core50Data from '../data/core50.json'
 import core100Data from '../data/core100.json'
 import core60Data from '../data/core60.json'
@@ -35,26 +36,21 @@ function LessonGrid({ lessons, dataMap, quizBank, accentColor, titlePrefix, onIm
   const barColor = { emerald: 'bg-emerald-500', violet: 'bg-violet-500', sky: 'bg-sky-500' }[accentColor]
   const border   = { emerald: 'hover:border-emerald-700/60', violet: 'hover:border-violet-700/60', sky: 'hover:border-sky-700/60' }[accentColor]
   const syncBg   = { emerald: 'bg-emerald-700 hover:bg-emerald-600 border-emerald-900', violet: 'bg-violet-700 hover:bg-violet-600 border-violet-900', sky: 'bg-sky-700 hover:bg-sky-600 border-sky-900' }[accentColor]
-  const halfIdx  = Math.ceil(lessons.length / 2)
-
   return (
     <>
-      {!isMember && (
-        <p className="text-xs text-gray-500 mb-4">前半部分课程免费体验，开通会员解锁全部课程</p>
-      )}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         {(() => {
           const buildLoader = (idx) => {
             if (idx >= lessons.length - 1) return null
             const next = lessons[idx + 1]
-            if (!isMember && (idx + 1) >= halfIdx) return null
             return () => {
               const nextData = next.ids.map(id => dataMap[id]).filter(Boolean)
               onImport(nextData, `${titlePrefix} · ${next.label}`, buildLoader(idx + 1))
             }
           }
           return lessons.map((lesson, i) => {
-            const locked = !isMember && i >= halfIdx
+            // 节已通过外层宝石锁控制，课节全部开放（单层锁标准）
+            const locked = false
             const data  = lesson.ids.map(id => dataMap[id]).filter(Boolean)
             const stats = getLessonStats(data, progress)
             const pct   = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
@@ -148,6 +144,9 @@ export default function CoreSentences({
   onShowLogin,
   onExerciseQuiz,
   initialSection = null,
+  unlocks,
+  crystalBalance = 0,
+  onGoShop,
 }) {
   const [section, setSection] = useState(initialSection) // null | 'core50' | 'core100' | 'core60'
 
@@ -252,7 +251,14 @@ export default function CoreSentences({
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {cards.map((c) => {
+        {(() => {
+          // 每节整体进度（用于「上一节 60% 自动解锁」）
+          const sectionPcts = cards.map(c => {
+            const all = c.lessons.flatMap(l => l.ids.map(id => c.map[id]).filter(Boolean))
+            const st = getLessonStats(all, progress)
+            return st.total ? Math.round((st.attempted / st.total) * 100) : 0
+          })
+          return cards.map((c, ci) => {
           const allData = c.lessons.flatMap(l => l.ids.map(id => c.map[id]).filter(Boolean))
           const totalStats = getLessonStats(allData, progress)
           const overallPct = totalStats.total ? Math.round((totalStats.attempted / totalStats.total) * 100) : 0
@@ -260,8 +266,15 @@ export default function CoreSentences({
             const s = getLessonStats(l.ids.map(id => c.map[id]).filter(Boolean), progress)
             return s.mastered === s.total && s.total > 0
           }).length
-          return (
-            <button key={c.key} onClick={() => setSection(c.section)}
+          // 第一节免费；其余看上一节 60% / 已解锁 / 会员（单层宝石锁标准）
+          const prevPct = ci > 0 ? sectionPcts[ci - 1] : 100
+          const locked = ci > 0 &&
+            !isMember &&
+            !(unlocks?.isUnlocked?.('core', c.key)) &&
+            prevPct < 60
+          const COST = 30
+          const card = (
+            <button onClick={() => setSection(c.section)}
               className={`group relative flex flex-col rounded-2xl overflow-hidden border border-white/10 ${c.border} shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left`}>
               {/* 头部渐变 + 大图标 + 微动 */}
               <div className={`relative w-full h-32 bg-gradient-to-br ${c.grad} flex flex-col items-center justify-center gap-2 overflow-hidden`}>
@@ -308,7 +321,24 @@ export default function CoreSentences({
               </div>
             </button>
           )
-        })}
+          return (
+            <div key={c.key} className="relative">
+              <LockedOverlay
+                locked={locked}
+                cost={COST}
+                color="blue"
+                crystalBalance={crystalBalance}
+                title={c.title}
+                reason={`完成上一节 60%，或花费 ${COST} 钻石提前开启`}
+                onUnlock={() => unlocks?.unlock?.('core', c.key, COST, 'blue')}
+                onGoShop={onGoShop}
+              >
+                {card}
+              </LockedOverlay>
+            </div>
+          )
+        })
+        })()}
       </div>
     </div>
   )

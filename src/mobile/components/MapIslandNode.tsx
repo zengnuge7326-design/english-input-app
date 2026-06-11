@@ -6,6 +6,8 @@ export type IslandTier = 'locked' | 'unlearned' | 'green' | 'purple'
 interface Props {
   node: MapNode
   onClick: () => void
+  /** 锁定岛被点击（用于宝石跳关确认） */
+  onLockedClick?: () => void
 }
 
 /** 水晶进度：0=蓝 · 1=绿 · 2+=紫 · 3=紫+金星 */
@@ -91,7 +93,7 @@ function IslandStar({ gold, tier }: { gold?: boolean; tier: IslandTier }) {
   )
 }
 
-export default function MapIslandNode({ node, onClick }: Props) {
+export default function MapIslandNode({ node, onClick, onLockedClick }: Props) {
   const tier = islandTier(node)
   const locked = tier === 'locked'
   const glyph = islandGlyph(node, tier)
@@ -100,9 +102,9 @@ export default function MapIslandNode({ node, onClick }: Props) {
 
   return (
     <motion.button
-      whileTap={locked ? undefined : { scale: 0.9 }}
-      onClick={locked ? undefined : onClick}
-      disabled={locked}
+      whileTap={{ scale: 0.9 }}
+      onClick={locked ? onLockedClick : onClick}
+      disabled={locked && !onLockedClick}
       className={[
         'map-island',
         'map-island--orb',

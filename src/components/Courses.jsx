@@ -390,6 +390,9 @@ export default function Courses({
         onExerciseQuiz={onExerciseQuiz}
         initialSection={coreSection}
         onClose={() => { setDetail(null); setCoreSection(null) }}
+        unlocks={unlocks}
+        crystalBalance={crystalBalance}
+        onGoShop={onGoShop}
       />
     )
   }

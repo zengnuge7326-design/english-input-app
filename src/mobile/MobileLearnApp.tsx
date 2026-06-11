@@ -29,6 +29,7 @@ import { tabThemeClass } from './data/tabThemes'
 import MobilePhoneFrame from './components/MobilePhoneFrame'
 import MobileTabBar, { type MobileTabId } from './components/MobileTabBar'
 import MicPermissionSheet from '../components/MicPermissionSheet'
+import UnlockConfirmModal from '../components/UnlockConfirmModal'
 import './mobile.css'
 import './styles/map-island-legacy.css'
 import type {
@@ -48,6 +49,12 @@ interface Props {
   onCrystalEarn?: CrystalEarnFn
   onOpenShop?: () => void
   onOpenLeaderboard?: () => void
+  /** 宝石跳关：useUnlocks 实例 + 蓝钻余额 */
+  unlocks?: {
+    isUnlocked: (scope: string, id: string) => boolean
+    unlock: (scope: string, id: string, cost: number, color?: string) => Promise<{ ok: boolean; reason?: string; need?: number; have?: number }>
+  }
+  crystalBalance?: number
   mainXp?: MainXpSnapshot
   mainCrystal?: MainCrystalSnapshot
   crystalPulse?: number
@@ -63,6 +70,8 @@ export default function MobileLearnApp({
   onCrystalEarn,
   onOpenShop,
   onOpenLeaderboard,
+  unlocks,
+  crystalBalance = 0,
   mainXp,
   mainCrystal,
   crystalPulse = 0,
@@ -77,6 +86,7 @@ export default function MobileLearnApp({
   const [vocabBookProgress, setVocabBookProgress] = useState<Record<string, number>>({ 'g3-1': 8 })
   const [practiceWords, setPracticeWords] = useState<VocabWord[]>(() => defaultVocabBook().units[0]?.words ?? [])
   const [practiceUnitLabel, setPracticeUnitLabel] = useState('Unit 1')
+  const [skipNode, setSkipNode] = useState<MapNode | null>(null)
 
   const practiceBookId = progress.practiceBookId ?? DEFAULT_PRACTICE_BOOK_ID
   const selectedPracticeBook = getGradeBook(practiceBookId) ?? getGradeBook(DEFAULT_PRACTICE_BOOK_ID)!
@@ -137,6 +147,19 @@ export default function MobileLearnApp({
   function handleContinue() {
     const current = units.flatMap(u => u.nodes).find(n => n.id === progress.currentNodeId)
     if (current && current.status !== 'locked') startNode(current)
+  }
+
+  // 宝石跳关：解锁成功 → 把学习进度推进到该岛
+  const SKIP_COST = 15
+  async function handleSkipUnlock() {
+    if (!skipNode) return { ok: false }
+    const r = await unlocks?.unlock?.('island', skipNode.id, SKIP_COST, 'blue')
+      ?? { ok: false, reason: 'no_unlocks' }
+    if (r.ok) {
+      updateProgress({ ...progress, currentNodeId: skipNode.id })
+      setSkipNode(null)
+    }
+    return r
   }
 
   function handleLessonComplete(result: { correct: number; total: number }) {
@@ -317,6 +340,18 @@ export default function MobileLearnApp({
             crystalPulse={crystalPulse}
             onOpenLeaderboard={onOpenLeaderboard}
             onOpenShop={onOpenShop}
+            onLockedNode={node => setSkipNode(node)}
+          />
+        )}
+        {skipNode && (
+          <UnlockConfirmModal
+            title={`跳关 · ${skipNode.title}`}
+            reason="完成前面的关卡可自动解锁，也可花钻石直接跳到这一关"
+            cost={SKIP_COST}
+            crystalBalance={crystalBalance}
+            onCancel={() => setSkipNode(null)}
+            onConfirm={handleSkipUnlock}
+            onGoShop={() => { setSkipNode(null); onOpenShop?.() }}
           />
         )}
         {activeTab === 'game' && (

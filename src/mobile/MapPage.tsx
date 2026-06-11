@@ -22,6 +22,8 @@ interface Props {
   crystalPulse?: number
   onOpenLeaderboard?: () => void
   onOpenShop?: () => void
+  /** 点击锁定岛（宝石跳关） */
+  onLockedNode?: (node: MapNode) => void
 }
 
 const ISLANDS_PER_UNIT = 8
@@ -44,6 +46,7 @@ export default function MapPage({
   crystalPulse,
   onOpenLeaderboard,
   onOpenShop,
+  onLockedNode,
 }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false)
   const streak = mainXp?.streak ?? progress.streak
@@ -159,6 +162,7 @@ export default function MapPage({
                           currentNodeId={progress.currentNodeId}
                           currentRef={currentRef}
                           onSelectNode={onSelectNode}
+                          onLockedNode={onLockedNode}
                         />
                       </motion.div>
                     )}

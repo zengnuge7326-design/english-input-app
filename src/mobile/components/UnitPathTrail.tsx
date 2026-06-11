@@ -8,9 +8,11 @@ interface Props {
   currentNodeId: string
   currentRef: RefObject<HTMLDivElement | null>
   onSelectNode: (node: MapNode) => void
+  /** 点击锁定岛（宝石跳关） */
+  onLockedNode?: (node: MapNode) => void
 }
 
-export default function UnitPathTrail({ nodes, currentNodeId, currentRef, onSelectNode }: Props) {
+export default function UnitPathTrail({ nodes, currentNodeId, currentRef, onSelectNode, onLockedNode }: Props) {
   const n = nodes.length
   const height = trailHeight(n)
 
@@ -23,7 +25,11 @@ export default function UnitPathTrail({ nodes, currentNodeId, currentRef, onSele
           className="map-unit-trail__anchor"
           style={nodeAnchorStyle(i, n)}
         >
-          <MapIslandNode node={node} onClick={() => onSelectNode(node)} />
+          <MapIslandNode
+            node={node}
+            onClick={() => onSelectNode(node)}
+            onLockedClick={onLockedNode ? () => onLockedNode(node) : undefined}
+          />
         </div>
       ))}
     </div>

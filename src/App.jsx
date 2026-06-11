@@ -1145,6 +1145,8 @@ function MainApp() {
                 openTab('shop')
               }}
               onOpenLeaderboard={() => setShowLeaderboard(true)}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
               mainXp={{
                 streak: xp.streak,
                 totalXp: xp.totalXp,
@@ -1497,6 +1499,9 @@ function MainApp() {
               onStartReading={(data, label) => handleImport(data, label, null, { source: 'gutenberg' })}
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
             />
           </div>
           {tab === 'grammarSync' && (
@@ -1651,7 +1656,15 @@ function MainApp() {
             <PhonicsLesson onClose={() => openTab('exercise')} onXp={xp.addXP} onCrystal={crystal.earn} />
           )}
           {tab === 'typing' && (
-            <TypingPractice onClose={() => openTab('exercise')} onXp={xp.addXP} onCrystal={crystal.earn} />
+            <TypingPractice
+              onClose={() => openTab('exercise')}
+              onXp={xp.addXP}
+              onCrystal={crystal.earn}
+              isMember={UNLOCK_ALL_COURSES || isMember}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
+            />
           )}
           {tab === 'member' && (
             <MemberPage

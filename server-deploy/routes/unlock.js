@@ -3,7 +3,7 @@
  * 挂载: require('./routes/unlock')({ app, pool, auth })
  */
 
-const SCOPES = new Set(['course', 'book', 'grammar', 'vocab_unit', 'alphabet', 'phoneme'])
+const SCOPES = new Set(['course', 'book', 'grammar', 'vocab_unit', 'alphabet', 'phoneme', 'core', 'reading', 'typing', 'island'])
 const COLORS = new Set(['blue', 'green', 'red', 'purple', 'gold'])
 const COL_MAP = {
   blue: 'crystals_blue',

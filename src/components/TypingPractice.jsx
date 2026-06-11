@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PageBackBar from './PageBackBar';
+import UnlockConfirmModal from './UnlockConfirmModal';
 import VirtualKeyboard from './VirtualKeyboard';
 import { calculateStats } from '../typing/KeyboardEngine';
 import {
@@ -15,7 +16,7 @@ import { settleGroup } from '../config/rewardRules';
 
 const CHAR_WIDTH = 40;
 
-export default function TypingPractice({ onClose, onXp, onCrystal }) {
+export default function TypingPractice({ onClose, onXp, onCrystal, isMember = false, unlocks, crystalBalance = 0, onGoShop }) {
   const [currentLesson, setCurrentLesson] = useState(0);
   const [text, setText] = useState(LESSONS[0].content);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,6 +36,17 @@ export default function TypingPractice({ onClose, onXp, onCrystal }) {
   });
   /** 用户点击过某一预设后，才认为已满足浏览器的 AudioContext 手势策略 */
   const [typingAudioPrimed, setTypingAudioPrimed] = useState(false);
+  const [unlockConfirm, setUnlockConfirm] = useState(false);
+
+  // 锁定：前 5 关免费；其余看「前 5 关全部通过」/ 已解锁 / 会员（💎20 一次性）
+  const FREE_STAGES = 5;
+  const front5Done = (() => {
+    try {
+      const done = JSON.parse(localStorage.getItem('typing_first_clear') || '[]');
+      return [0, 1, 2, 3, 4].every(i => done.includes(i));
+    } catch { return false; }
+  })();
+  const backUnlocked = isMember || front5Done || !!(unlocks?.isUnlocked?.('typing', 'back'));
 
   // 完成一关 → 统一标准结算（accuracy 100 视为零错误）
   useEffect(() => {
@@ -141,10 +153,16 @@ export default function TypingPractice({ onClose, onXp, onCrystal }) {
       {/* 课程卡片横向滚动 */}
       <div className="w-full px-4 flex justify-center mt-2 mb-2 z-20">
         <div className="flex gap-2 overflow-x-auto pb-1 max-w-5xl w-full" style={{ scrollbarWidth: 'none' }}>
-          {LESSONS.map((lesson, idx) => (
+          {LESSONS.map((lesson, idx) => {
+            const stageLocked = idx >= FREE_STAGES && !backUnlocked;
+            return (
             <motion.button
               key={lesson.id}
-              onClick={() => { setCurrentLesson(idx); setupTest(idx); }}
+              style={stageLocked ? { filter: 'grayscale(0.85) brightness(0.55)' } : undefined}
+              onClick={() => {
+                if (stageLocked) { setUnlockConfirm(true); return; }
+                setCurrentLesson(idx); setupTest(idx);
+              }}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
               className={`flex-shrink-0 w-40 p-2.5 rounded-xl border transition-all text-left relative overflow-hidden ${
@@ -161,9 +179,26 @@ export default function TypingPractice({ onClose, onXp, onCrystal }) {
               </div>
               {currentLesson === idx && <motion.div layoutId="activeLesson" className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-500" />}
             </motion.button>
-          ))}
+            );
+          })}
         </div>
       </div>
+
+      {unlockConfirm && (
+        <UnlockConfirmModal
+          title={`后 ${LESSONS.length - FREE_STAGES} 个指法关卡`}
+          reason={`通过前 ${FREE_STAGES} 关可自动解锁，或花钻石提前开启`}
+          cost={20}
+          crystalBalance={crystalBalance}
+          onCancel={() => setUnlockConfirm(false)}
+          onConfirm={async () => {
+            const r = await unlocks?.unlock?.('typing', 'back', 20, 'blue');
+            if (r?.ok) setUnlockConfirm(false);
+            return r;
+          }}
+          onGoShop={() => { setUnlockConfirm(false); onGoShop?.(); }}
+        />
+      )}
 
       {/* 速度 / 准确率 + 键盘音效（Web Audio，点选即解锁） */}
       <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 mb-3 w-full max-w-4xl px-2">
