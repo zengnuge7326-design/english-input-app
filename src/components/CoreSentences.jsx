@@ -1,39 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PageBackBar from './PageBackBar'
-import core50Data  from '../data/core50.json'
+import core50Data from '../data/core50.json'
 import core100Data from '../data/core100.json'
-import core60Data  from '../data/core60.json'
-
-// ── 课程配置 ────────────────────────────────────────────
-const CORE50_LESSONS = [
-  { label: 'L1', title: 'I am / I have / I like',      desc: '基础陈述',  ids: [50001,50002,50003,50004,50005,50006,50007,50008,50009,50010] },
-  { label: 'L2', title: 'I want / I need / Can I',     desc: '表达需求',  ids: [50011,50012,50013,50014,50015,50016,50017,50018,50019,50020] },
-  { label: 'L3', title: 'There is / This is / It is',  desc: '描述句型',  ids: [50021,50022,50023,50024,50025,50026,50027,50028,50029,50030] },
-  { label: 'L4', title: 'I think / I feel / I hope',   desc: '内心感受',  ids: [50031,50032,50033,50034,50035,50036,50037,50038,50039,50040] },
-  { label: 'L5', title: "Let's / I'm going to / I will", desc: '行动计划', ids: [50041,50042,50043,50044,50045,50046,50047,50048,50049,50050] },
-]
-
-const CORE100_LESSONS = [
-  { label: 'L1',  title: '基础扩展 · 时态入门',         desc: '陈述 / 现在时',      ids: [51001,51002,51003,51004,51005,51006,51007,51008,51009,51010] },
-  { label: 'L2',  title: '时态综合',                    desc: '过去 / 将来 / 完成时', ids: [51011,51012,51013,51014,51015,51016,51017,51018,51019,51020] },
-  { label: 'L3',  title: '从句 · because / if',         desc: '原因与条件',          ids: [51021,51022,51023,51024,51025,51026,51027,51028,51029,51030] },
-  { label: 'L4',  title: '从句 · when / while / before', desc: '时间连词',           ids: [51031,51032,51033,51034,51035,51036,51037,51038,51039,51040] },
-  { label: 'L5',  title: '定语从句 · which / who / what', desc: '关系词',            ids: [51041,51042,51043,51044,51045,51046,51047,51048,51049,51050] },
-  { label: 'L6',  title: '情态动词 · 比较级',            desc: 'must / may / bigger', ids: [51051,51052,51053,51054,51055,51056,51057,51058,51059,51060] },
-  { label: 'L7',  title: '目的 · 结果 · 观点',           desc: 'to do / so that',    ids: [51061,51062,51063,51064,51065,51066,51067,51068,51069,51070] },
-  { label: 'L8',  title: '观点 · 经历 · 被动',           desc: 'agree / have done',  ids: [51071,51072,51073,51074,51075,51076,51077,51078,51079,51080] },
-  { label: 'L9',  title: '被动 · 疑问 · 连接',           desc: 'passive / wh- / and', ids: [51081,51082,51083,51084,51085,51086,51087,51088,51089,51090] },
-  { label: 'L10', title: '逻辑连词 · 日常表达',          desc: 'however / although', ids: [51091,51092,51093,51094,51095,51096,51097,51098,51099,51100] },
-]
-
-const CORE60_LESSONS = [
-  { label: 'L1', title: '五大句型 · 时态全览',           desc: 'S+V / S+V+O / 时态',   ids: [52001,52002,52003,52004,52005,52006,52007,52008,52009,52010] },
-  { label: 'L2', title: '情态动词 · 疑问 · 比较',        desc: 'can/must / wh- / than', ids: [52011,52012,52013,52014,52015,52016,52017,52018,52019,52020] },
-  { label: 'L3', title: '目的 · 结果 · 被动 · 条件',     desc: 'to / passive / if',     ids: [52021,52022,52023,52024,52025,52026,52027,52028,52029,52030] },
-  { label: 'L4', title: '时间从句 · 名词从句 · 关系从句', desc: 'before / that / who',   ids: [52031,52032,52033,52034,52035,52036,52037,52038,52039,52040] },
-  { label: 'L5', title: '逻辑连词 · 观点 · 经历',        desc: 'although / I think',    ids: [52041,52042,52043,52044,52045,52046,52047,52048,52049,52050] },
-  { label: 'L6', title: '进阶表达 · 综合语法',           desc: 'wish / gerund / the more', ids: [52051,52052,52053,52054,52055,52056,52057,52058,52059,52060] },
-]
+import core60Data from '../data/core60.json'
+import { CORE50_LESSONS, CORE100_LESSONS, CORE60_LESSONS } from '../data/coreSentences/lessons.js'
+import { CORE_QUIZ_BANK as CORE50_QUIZ } from '../data/coreSentences/core50_quiz.js'
+import { CORE_QUIZ_BANK as CORE100_QUIZ } from '../data/coreSentences/core100_quiz.js'
+import { CORE_QUIZ_BANK as CORE60_QUIZ } from '../data/coreSentences/core60_quiz.js'
+import { adaptCoreQuizQuestions } from '../data/coreSentences/quizAdapter.js'
 
 // ── id 映射 ─────────────────────────────────────────────
 const core50Map  = Object.fromEntries(core50Data.map(s  => [s.id, s]))
@@ -57,7 +31,7 @@ function StatusBadge({ attempted, mastered, total }) {
 }
 
 // ── 课程卡网格 ───────────────────────────────────────────
-function LessonGrid({ lessons, dataMap, accentColor, titlePrefix, onImport, onSync, progress, isMember = true, onShowLogin }) {
+function LessonGrid({ lessons, dataMap, quizBank, accentColor, titlePrefix, onImport, onExerciseQuiz, progress, isMember = true, onShowLogin, returnSection }) {
   const barColor = { emerald: 'bg-emerald-500', violet: 'bg-violet-500', sky: 'bg-sky-500' }[accentColor]
   const border   = { emerald: 'hover:border-emerald-700/60', violet: 'hover:border-violet-700/60', sky: 'hover:border-sky-700/60' }[accentColor]
   const syncBg   = { emerald: 'bg-emerald-700 hover:bg-emerald-600 border-emerald-900', violet: 'bg-violet-700 hover:bg-violet-600 border-violet-900', sky: 'bg-sky-700 hover:bg-sky-600 border-sky-900' }[accentColor]
@@ -102,12 +76,34 @@ function LessonGrid({ lessons, dataMap, accentColor, titlePrefix, onImport, onSy
                   </div>
                   <div className="text-xs text-gray-600">{stats.attempted}/{stats.total} 句</div>
                 </button>
-                <button
-                  onClick={() => locked ? onShowLogin?.() : onSync(`${titlePrefix} · ${lesson.label}`)}
-                  className={`w-full py-1.5 text-xs font-semibold text-white border-t transition-colors text-center ${locked ? 'bg-gray-700 border-gray-800' : `${syncBg}`}`}
-                >
-                  {locked ? '🔒 会员专属' : '同步练习'}
-                </button>
+                {(() => {
+                  const hasQuiz = !locked && quizBank?.[lesson.label]?.length >= 8
+                  const openQuiz = () => {
+                    const raw = quizBank[lesson.label]
+                    const questions = adaptCoreQuizQuestions(raw)
+                    if (!questions.length) return
+                    const title = `${titlePrefix} · ${lesson.label} · 同步练习`
+                    const payload = { questions, title, returnSection, lessonLabel: lesson.label }
+                    onExerciseQuiz?.({
+                      ...payload,
+                      onRetry: () => onExerciseQuiz?.(payload),
+                    })
+                  }
+                  return (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (locked) onShowLogin?.()
+                        else if (hasQuiz) openQuiz()
+                      }}
+                      disabled={!locked && !hasQuiz}
+                      className={`w-full py-1.5 text-xs font-semibold border-t transition-colors text-center
+                        ${locked ? 'bg-gray-700 border-gray-800 text-white' : hasQuiz ? `text-white ${syncBg}` : 'bg-gray-800 border-gray-700 text-gray-500 cursor-not-allowed'}`}
+                    >
+                      {locked ? '🔒 会员专属' : hasQuiz ? '同步练习' : '敬请期待'}
+                    </button>
+                  )
+                })()}
               </div>
             )
           })
@@ -142,25 +138,22 @@ function CourseHeader({ emoji, title, subtitle, percent, attempted, total, accen
   )
 }
 
-// ── 同步练习弹窗 ─────────────────────────────────────────
-function SyncPopup({ label, onClose }) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4" onClick={onClose}>
-      <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8 max-w-xs w-full text-center shadow-2xl" onClick={e => e.stopPropagation()}>
-        <div className="text-3xl mb-3">📝</div>
-        <div className="text-white font-semibold mb-1">{label}</div>
-        <div className="text-gray-400 text-sm mb-1">同步练习</div>
-        <div className="text-gray-500 text-xs mb-5">即将上线，敬请期待</div>
-        <button onClick={onClose} className="px-6 py-2 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm transition-colors">关闭</button>
-      </div>
-    </div>
-  )
-}
-
 // ── 主组件 ───────────────────────────────────────────────
-export default function CoreSentences({ onImport, progress = {}, active = true, onClose, isMember = true, onShowLogin }) {
-  const [section,   setSection]   = useState(null)   // null | 'core50' | 'core100' | 'core60'
-  const [syncPopup, setSyncPopup] = useState(null)   // label string | null
+export default function CoreSentences({
+  onImport,
+  progress = {},
+  active = true,
+  onClose,
+  isMember = true,
+  onShowLogin,
+  onExerciseQuiz,
+  initialSection = null,
+}) {
+  const [section, setSection] = useState(initialSection) // null | 'core50' | 'core100' | 'core60'
+
+  useEffect(() => {
+    if (initialSection) setSection(initialSection)
+  }, [initialSection])
 
   // ── 50基础句式 ─────────────────────────────────────────
   if (section === 'core50') {
@@ -169,12 +162,12 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
-        {syncPopup && <SyncPopup label={syncPopup} onClose={() => setSyncPopup(null)} />}
         <CourseHeader emoji="✨" title="50 基础句式" accentColor="emerald"
           subtitle="5课 · 50句 · 入门核心句型" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE50_LESSONS[0].ids.map(id => core50Map[id]).filter(Boolean), '基础句式 · L1')} />
-        <LessonGrid lessons={CORE50_LESSONS} dataMap={core50Map} accentColor="emerald"
-          titlePrefix="基础句式" onImport={onImport} onSync={setSyncPopup} progress={progress} isMember={isMember} onShowLogin={onShowLogin} />
+        <LessonGrid lessons={CORE50_LESSONS} dataMap={core50Map} quizBank={CORE50_QUIZ} accentColor="emerald"
+          titlePrefix="基础句式" onImport={onImport} onExerciseQuiz={onExerciseQuiz} progress={progress}
+          isMember={isMember} onShowLogin={onShowLogin} returnSection="core50" />
       </div>
     )
   }
@@ -186,12 +179,12 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
-        {syncPopup && <SyncPopup label={syncPopup} onClose={() => setSyncPopup(null)} />}
         <CourseHeader emoji="🎯" title="100 中级句式" accentColor="violet"
           subtitle="10课 · 100句 · 时态 / 从句 / 逻辑表达" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE100_LESSONS[0].ids.map(id => core100Map[id]).filter(Boolean), '中级句式 · L1')} />
-        <LessonGrid lessons={CORE100_LESSONS} dataMap={core100Map} accentColor="violet"
-          titlePrefix="中级句式" onImport={onImport} onSync={setSyncPopup} progress={progress} isMember={isMember} onShowLogin={onShowLogin} />
+        <LessonGrid lessons={CORE100_LESSONS} dataMap={core100Map} quizBank={CORE100_QUIZ} accentColor="violet"
+          titlePrefix="中级句式" onImport={onImport} onExerciseQuiz={onExerciseQuiz} progress={progress}
+          isMember={isMember} onShowLogin={onShowLogin} returnSection="core100" />
       </div>
     )
   }
@@ -203,12 +196,12 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
-        {syncPopup && <SyncPopup label={syncPopup} onClose={() => setSyncPopup(null)} />}
         <CourseHeader emoji="🔬" title="60 综合句式" accentColor="sky"
           subtitle="6课 · 60句 · 语法体系全覆盖" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE60_LESSONS[0].ids.map(id => core60Map[id]).filter(Boolean), '综合句式 · L1')} />
-        <LessonGrid lessons={CORE60_LESSONS} dataMap={core60Map} accentColor="sky"
-          titlePrefix="综合句式" onImport={onImport} onSync={setSyncPopup} progress={progress} isMember={isMember} onShowLogin={onShowLogin} />
+        <LessonGrid lessons={CORE60_LESSONS} dataMap={core60Map} quizBank={CORE60_QUIZ} accentColor="sky"
+          titlePrefix="综合句式" onImport={onImport} onExerciseQuiz={onExerciseQuiz} progress={progress}
+          isMember={isMember} onShowLogin={onShowLogin} returnSection="core60" />
       </div>
     )
   }
@@ -249,39 +242,73 @@ export default function CoreSentences({ onImport, progress = {}, active = true, 
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
-      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-lg font-bold text-white">核心句群</h2>
-        <span className="text-xs text-gray-500">入门 · 中级 · 综合</span>
+      {onClose && <PageBackBar onBack={onClose} label="返回课程广场" />}
+      <div className="flex items-center justify-between mb-6 mt-2">
+        <div>
+          <h2 className="text-2xl font-extrabold text-white tracking-tight">核心句群</h2>
+          <p className="text-xs text-slate-400 mt-1">3 个等级 · 210 句精选 · 从入门到综合表达</p>
+        </div>
+        <span className="text-[10px] text-slate-500 uppercase tracking-widest">3 tiers</span>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {cards.map((c) => (
-          <button key={c.key} onClick={() => setSection(c.section)}
-            className={`flex flex-col rounded-2xl overflow-hidden border border-gray-700 ${c.border} transition-all text-left`}>
-            <div className={`w-full h-24 bg-gradient-to-br ${c.grad} flex flex-col items-center justify-center gap-1.5`}>
-              <span className="text-3xl">{c.emoji}</span>
-              <span className={`${c.textColor} text-xs font-semibold tracking-wider uppercase`}>{c.tag}</span>
-            </div>
-            <div className="bg-slate-800 p-4 flex flex-col gap-1">
-              <div className="text-sm font-bold text-white">{c.title}</div>
-              <div className="text-xs text-gray-400">{c.desc}</div>
-              <div className="flex gap-1.5 mt-2 flex-wrap">
-                {c.lessons.map((l, i) => {
-                  const data  = l.ids.map(id => c.map[id]).filter(Boolean)
-                  const stats = getLessonStats(data, progress)
-                  return (
-                    <div key={i} className="flex flex-col items-center gap-0.5">
-                      <div className={`w-1.5 h-1.5 rounded-full ${stats.mastered === stats.total && stats.total > 0 ? c.dot.done : stats.attempted > 0 ? c.dot.active : 'bg-gray-700'}`} />
-                      <span className="text-gray-600 text-xs">{l.label}</span>
-                    </div>
-                  )
-                })}
+        {cards.map((c) => {
+          const allData = c.lessons.flatMap(l => l.ids.map(id => c.map[id]).filter(Boolean))
+          const totalStats = getLessonStats(allData, progress)
+          const overallPct = totalStats.total ? Math.round((totalStats.attempted / totalStats.total) * 100) : 0
+          const doneLessons = c.lessons.filter(l => {
+            const s = getLessonStats(l.ids.map(id => c.map[id]).filter(Boolean), progress)
+            return s.mastered === s.total && s.total > 0
+          }).length
+          return (
+            <button key={c.key} onClick={() => setSection(c.section)}
+              className={`group relative flex flex-col rounded-2xl overflow-hidden border border-white/10 ${c.border} shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left`}>
+              {/* 头部渐变 + 大图标 + 微动 */}
+              <div className={`relative w-full h-32 bg-gradient-to-br ${c.grad} flex flex-col items-center justify-center gap-2 overflow-hidden`}>
+                {/* 装饰光晕 */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/10 blur-2xl group-hover:scale-150 transition-transform duration-500" />
+                <div className="absolute -bottom-8 -left-8 w-20 h-20 rounded-full bg-white/5 blur-xl" />
+                <span className="text-5xl drop-shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">{c.emoji}</span>
+                <span className={`${c.textColor} text-[10px] font-bold tracking-[0.18em] uppercase relative z-10 drop-shadow`}>{c.tag}</span>
               </div>
-              <div className="text-xs text-gray-600 mt-1">{c.meta}</div>
-            </div>
-          </button>
-        ))}
+              {/* 主体 */}
+              <div className="bg-gradient-to-b from-slate-800 to-slate-900 p-4 flex flex-col gap-2 flex-1">
+                <div className="flex items-baseline justify-between">
+                  <span className="text-base font-extrabold text-white">{c.title}</span>
+                  <span className={`text-[10px] ${c.textColor} font-mono font-semibold`}>{overallPct}%</span>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">{c.desc}</p>
+                {/* 进度条 */}
+                <div className="h-1.5 w-full rounded-full bg-slate-700/60 overflow-hidden mt-1">
+                  <div className={`h-full rounded-full bg-gradient-to-r ${c.grad} brightness-150 transition-all duration-700`}
+                    style={{ width: `${overallPct}%` }} />
+                </div>
+                {/* lesson dots */}
+                <div className="flex gap-1.5 mt-1 flex-wrap">
+                  {c.lessons.map((l, i) => {
+                    const data  = l.ids.map(id => c.map[id]).filter(Boolean)
+                    const stats = getLessonStats(data, progress)
+                    const done = stats.mastered === stats.total && stats.total > 0
+                    const active = stats.attempted > 0 && !done
+                    return (
+                      <div key={i} className="flex flex-col items-center gap-1">
+                        <div className={`w-2 h-2 rounded-full ring-1 ${done ? 'bg-emerald-400 ring-emerald-400/40' : active ? `${c.dot.active} ring-white/30 animate-pulse` : 'bg-slate-700 ring-slate-700/50'}`} />
+                        <span className={`text-[9px] tabular-nums ${done ? 'text-emerald-400' : active ? 'text-slate-300' : 'text-slate-600'}`}>{l.label}</span>
+                      </div>
+                    )
+                  })}
+                </div>
+                <div className="flex items-center justify-between pt-2 mt-auto border-t border-slate-700/60">
+                  <span className="text-[11px] text-slate-500">{c.meta}</span>
+                  <span className="text-[10px] text-slate-500">
+                    {doneLessons > 0 && <span className="text-emerald-400">⭐{doneLessons}</span>}
+                    <span className={`ml-2 ${c.textColor} opacity-70 group-hover:opacity-100 group-hover:translate-x-1 inline-block transition-all`}>进入 ›</span>
+                  </span>
+                </div>
+              </div>
+            </button>
+          )
+        })}
       </div>
     </div>
   )

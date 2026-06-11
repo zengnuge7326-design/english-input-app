@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from 'react'
 import PageBackBar from './PageBackBar'
+import LockedOverlay from './LockedOverlay'
 import CoreSentences from './CoreSentences'
 import duolingoData from '../data/duolingo.json'
 import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
@@ -352,15 +353,25 @@ export default function Courses({
   isMember = false,
   onShowLogin,
   onSyncPractice,
+  onExerciseQuiz,
+  unlocks,
+  crystalBalance = 0,
+  onGoShop,
 }) {
   const [detail, setDetail] = useState(null) // null | unit number | 'core'
+  const [coreSection, setCoreSection] = useState(null) // core50 | core100 | core60
   const [syncPopup, setSyncPopup] = useState(null) // lesson label string
 
   useLayoutEffect(() => {
     if (!historyRef) return
     historyRef.current.applyStudy = (s) => {
-      if (s.cd === undefined || s.cd === null) setDetail(null)
-      else setDetail(s.cd)
+      if (s.cd === undefined || s.cd === null) {
+        setDetail(null)
+        setCoreSection(null)
+      } else {
+        setDetail(s.cd)
+        if (s.coreSection) setCoreSection(s.coreSection)
+      }
     }
     return () => {
       if (historyRef) historyRef.current.applyStudy = () => {}
@@ -376,7 +387,9 @@ export default function Courses({
         progress={progress}
         isMember={isMember}
         onShowLogin={onShowLogin}
-        onClose={() => setDetail(null)}
+        onExerciseQuiz={onExerciseQuiz}
+        initialSection={coreSection}
+        onClose={() => { setDetail(null); setCoreSection(null) }}
       />
     )
   }
@@ -538,7 +551,6 @@ export default function Courses({
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
-      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-white">课程广场</h2>
         <span className="text-xs text-gray-500">多邻国课程</span>
@@ -611,37 +623,62 @@ export default function Courses({
 
       <div className="text-xs text-gray-600 mb-3 uppercase tracking-wider">多邻国课程</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {[1, 2, 3, 4, 5, 6].map(unit => {
-          const info = UNIT_INFO[unit]
-          const lessons = DUOLINGO_LESSONS.filter(l => l.unit === unit)
-          const allData = lessons.flatMap(l => getLessonData(l.ids))
-          const stats = getLessonStats(allData, progress)
-          const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
-          const isPremium = false  // 单元全部可进，锁在课节层
-          return (
-            <div key={unit} className="relative">
-            <button
-              onClick={() => {
-                setDetail(unit)
-              }}
-              className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"
-            >
-              <div className="w-full h-28 overflow-hidden">
-                <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
-              </div>
-              <div className="bg-slate-800 p-3 flex flex-col gap-1">
-                <div className="text-sm font-medium text-white">多邻国 · {info.name}</div>
-                <div className="text-xs text-gray-500 truncate">{info.desc}</div>
-                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden mt-1">
-                  <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+        {(() => {
+          // 每单元的整体进度（用于「上一单元 60% 自动解锁」）
+          const unitPercents = [1, 2, 3, 4, 5, 6].map(u => {
+            const ls = DUOLINGO_LESSONS.filter(l => l.unit === u)
+            const all = ls.flatMap(l => getLessonData(l.ids))
+            const s = getLessonStats(all, progress)
+            return s.total ? Math.round((s.attempted / s.total) * 100) : 0
+          })
+          return [1, 2, 3, 4, 5, 6].map(unit => {
+            const info = UNIT_INFO[unit]
+            const lessons = DUOLINGO_LESSONS.filter(l => l.unit === unit)
+            const percent = unitPercents[unit - 1]
+            const itemId = `duo_unit_${unit}`
+            const prevPercent = unit > 1 ? unitPercents[unit - 2] : 100
+            // 锁定逻辑：Unit 1 永远开放；其余看会员/已解锁/前一单元≥60%
+            const locked = unit > 1 &&
+              !isMember &&
+              !(unlocks?.isUnlocked?.('course', itemId)) &&
+              prevPercent < 60
+            const COST = 50
+            const card = (
+              <button
+                onClick={() => setDetail(unit)}
+                className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"
+              >
+                <div className="w-full h-28 overflow-hidden">
+                  <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
                 </div>
-                <div className="text-xs text-gray-600">{lessons.length} 课 · {percent}%</div>
+                <div className="bg-slate-800 p-3 flex flex-col gap-1">
+                  <div className="text-sm font-medium text-white">多邻国 · {info.name}</div>
+                  <div className="text-xs text-gray-500 truncate">{info.desc}</div>
+                  <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden mt-1">
+                    <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
+                  </div>
+                  <div className="text-xs text-gray-600">{lessons.length} 课 · {percent}%</div>
+                </div>
+              </button>
+            )
+            return (
+              <div key={unit} className="relative">
+                <LockedOverlay
+                  locked={locked}
+                  cost={COST}
+                  color="blue"
+                  crystalBalance={crystalBalance}
+                  title={`多邻国 ${info.name}`}
+                  reason={`完成上一单元 60%，或花费 ${COST} 钻石提前开启`}
+                  onUnlock={() => unlocks?.unlock?.('course', itemId, COST, 'blue')}
+                  onGoShop={onGoShop}
+                >
+                  {card}
+                </LockedOverlay>
               </div>
-            </button>
-              {isPremium && !isMember && <PaywallOverlay onShowLogin={onShowLogin} />}
-            </div>
-          )
-        })}
+            )
+          })
+        })()}
         {/* 即将上线占位卡片 */}
         {[1, 2].map(i => (
           <div

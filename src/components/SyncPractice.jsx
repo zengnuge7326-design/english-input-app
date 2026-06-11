@@ -442,8 +442,6 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
-      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
-
       {/* ── 教材同步练习 ── */}
       <div className="mb-8">
         <div className="text-xs text-gray-500 uppercase tracking-wider mb-3">教材同步 · 练习题</div>

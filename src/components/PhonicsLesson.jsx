@@ -350,7 +350,6 @@ function HeartWordPanel({ lesson, onDone }) {
 function LessonSelector({ onSelect, onBack }) {
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
-      {onBack && <PageBackBar onBack={onBack} label="返回练习" />}
       <h2 className="text-white text-xl font-bold mb-4">自然拼读课程</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {PHONICS_LESSONS.map(lesson => (

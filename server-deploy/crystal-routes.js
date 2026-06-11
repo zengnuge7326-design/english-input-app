@@ -1,22 +1,14 @@
 /**
- * 水晶系统路由
+ * 水晶系统路由 · v1.1
+ *
+ * 修复要点（P0）：
+ *   ✅ #3 频控不再按 reason 维度（避免改 reason 字符串绕过）
+ *   ✅ #4 earn 加事务（UPDATE + INSERT 原子）
+ *   ✅ #5 内部 GET state 不再用 router.handle 递归调用，改抽工具函数
+ *
  * 挂载方式（在 server.js / app.js）：
  *   const crystalRoutes = require('./routes/crystal')
  *   app.use('/api/crystal', crystalRoutes(pool, authMiddleware))
- *
- * 依赖：
- *   - mysql2/promise 连接池（pool.execute）
- *   - JWT 中间件，req.userId 已经塞好
- *
- * 接口：
- *   GET  /api/crystal/state          -> 当前各色数量 + 塔等级 + 总数
- *   POST /api/crystal/earn           body {color, amount, reason, meta?}
- *   POST /api/crystal/spend          body {color, amount, reason, meta?}
- *   GET  /api/crystal/log?limit=20   最近流水
- *
- * 服务端校验：余额不足拒绝；color 必须合法；amount 1..50；reason 长度 ≤64
- *
- * 反作弊：每分钟同 reason 最多 30 次（防客户端循环）
  */
 const express = require('express')
 
@@ -28,9 +20,38 @@ const COL_MAP = {
   purple: 'crystals_purple',
   gold:   'crystals_gold',
 }
-// 100颗水晶升1层（计算用，不存DB；从总和推导）
+
+// 频控：每用户每分钟最多 100 次 earn（不分 reason）
+// 这样改 reason 字符串绕不过去
+const RATE_LIMIT_PER_MIN = 100
+
 function towerLevelFromTotal(total) {
   return Math.floor(total / 100)
+}
+
+// 工具：取用户当前状态（避免内部 router.handle 转发）
+async function loadState(pool, userId) {
+  const [rows] = await pool.execute(
+    'SELECT crystals_blue, crystals_green, crystals_red, crystals_purple, crystals_gold, tower_level FROM users WHERE id=?',
+    [userId]
+  )
+  if (!rows.length) return null
+  const r = rows[0]
+  const total = r.crystals_blue + r.crystals_green + r.crystals_red + r.crystals_purple + r.crystals_gold
+  const towerLevel = towerLevelFromTotal(total)
+  // 校正 DB 中存的 tower_level（已是次要冗余字段）
+  if (towerLevel !== r.tower_level) {
+    await pool.execute('UPDATE users SET tower_level=? WHERE id=?', [towerLevel, userId])
+  }
+  return {
+    blue: r.crystals_blue,
+    green: r.crystals_green,
+    red: r.crystals_red,
+    purple: r.crystals_purple,
+    gold: r.crystals_gold,
+    total,
+    towerLevel,
+  }
 }
 
 module.exports = function createCrystalRoutes(pool, auth) {
@@ -40,27 +61,9 @@ module.exports = function createCrystalRoutes(pool, auth) {
   // -- 当前状态 --------------------------------------------
   router.get('/state', async (req, res) => {
     try {
-      const [rows] = await pool.execute(
-        'SELECT crystals_blue, crystals_green, crystals_red, crystals_purple, crystals_gold, tower_level FROM users WHERE id=?',
-        [req.userId]
-      )
-      if (!rows.length) return res.status(404).json({ error: 'user not found' })
-      const r = rows[0]
-      const total = r.crystals_blue + r.crystals_green + r.crystals_red + r.crystals_purple + r.crystals_gold
-      const towerLevel = towerLevelFromTotal(total)
-      // 如果数据库存储的塔等级和算出的不一致，自动同步
-      if (towerLevel !== r.tower_level) {
-        await pool.execute('UPDATE users SET tower_level=? WHERE id=?', [towerLevel, req.userId])
-      }
-      res.json({
-        blue: r.crystals_blue,
-        green: r.crystals_green,
-        red: r.crystals_red,
-        purple: r.crystals_purple,
-        gold: r.crystals_gold,
-        total,
-        towerLevel,
-      })
+      const state = await loadState(pool, req.userId)
+      if (!state) return res.status(404).json({ error: 'user not found' })
+      res.json(state)
     } catch (e) {
       console.error('crystal/state', e)
       res.status(500).json({ error: 'server error' })
@@ -71,26 +74,43 @@ module.exports = function createCrystalRoutes(pool, auth) {
   router.post('/earn', async (req, res) => {
     const { color, amount = 1, reason = 'unknown', meta = null } = req.body || {}
     if (!COLORS.includes(color)) return res.status(400).json({ error: 'bad color' })
+    if (color === 'gold') return res.status(403).json({ error: 'forbidden color' }) // 金钻仅服务端发放（recharge/daily-spin），禁止客户端 earn
     const a = Math.max(1, Math.min(50, parseInt(amount) || 0))
     if (!a) return res.status(400).json({ error: 'bad amount' })
     if (typeof reason !== 'string' || reason.length > 64) return res.status(400).json({ error: 'bad reason' })
 
     try {
-      // 防作弊：每分钟同 user+reason 最多 30 次
+      // 修复 #3：频控按 user_id 总次数（不分 reason），避免改 reason 字符串绕过
       const [cnt] = await pool.execute(
-        "SELECT COUNT(*) AS c FROM crystal_log WHERE user_id=? AND reason=? AND created_at > NOW() - INTERVAL 1 MINUTE",
-        [req.userId, reason]
+        'SELECT COUNT(*) AS c FROM crystal_log WHERE user_id=? AND delta>0 AND created_at > NOW() - INTERVAL 1 MINUTE',
+        [req.userId]
       )
-      if (cnt[0].c > 30) return res.status(429).json({ error: 'rate limit' })
+      if (cnt[0].c >= RATE_LIMIT_PER_MIN) {
+        return res.status(429).json({ error: 'rate limit', limit: RATE_LIMIT_PER_MIN })
+      }
 
-      const col = COL_MAP[color]
-      await pool.execute(`UPDATE users SET ${col} = ${col} + ? WHERE id=?`, [a, req.userId])
-      await pool.execute(
-        'INSERT INTO crystal_log (user_id, color, delta, reason, meta) VALUES (?,?,?,?,?)',
-        [req.userId, color, a, reason, meta ? JSON.stringify(meta) : null]
-      )
-      // 返回最新状态
-      return router.handle({ ...req, method: 'GET', url: '/state' }, res, () => {})
+      // 修复 #4：UPDATE + INSERT 包在事务里，保证原子
+      const conn = await pool.getConnection()
+      try {
+        await conn.beginTransaction()
+        const col = COL_MAP[color]
+        await conn.execute(`UPDATE users SET ${col} = ${col} + ? WHERE id=?`, [a, req.userId])
+        await conn.execute(
+          'INSERT INTO crystal_log (user_id, color, delta, reason, meta) VALUES (?,?,?,?,?)',
+          [req.userId, color, a, reason, meta ? JSON.stringify(meta) : null]
+        )
+        await conn.commit()
+        conn.release()
+      } catch (txErr) {
+        try { await conn.rollback() } catch {}
+        conn.release()
+        throw txErr
+      }
+
+      // 修复 #5：直接调工具函数，不用 router.handle 转发
+      const state = await loadState(pool, req.userId)
+      if (!state) return res.status(404).json({ error: 'user not found' })
+      res.json(state)
     } catch (e) {
       console.error('crystal/earn', e)
       res.status(500).json({ error: 'server error' })
@@ -110,8 +130,8 @@ module.exports = function createCrystalRoutes(pool, auth) {
       await conn.beginTransaction()
       const col = COL_MAP[color]
       const [rows] = await conn.execute(`SELECT ${col} AS bal FROM users WHERE id=? FOR UPDATE`, [req.userId])
-      if (!rows.length) { await conn.rollback(); return res.status(404).json({ error: 'user not found' }) }
-      if (rows[0].bal < a) { await conn.rollback(); return res.status(400).json({ error: 'insufficient balance' }) }
+      if (!rows.length) { await conn.rollback(); conn.release(); return res.status(404).json({ error: 'user not found' }) }
+      if (rows[0].bal < a) { await conn.rollback(); conn.release(); return res.status(400).json({ error: 'insufficient balance' }) }
 
       await conn.execute(`UPDATE users SET ${col} = ${col} - ? WHERE id=?`, [a, req.userId])
       await conn.execute(
@@ -121,16 +141,10 @@ module.exports = function createCrystalRoutes(pool, auth) {
       await conn.commit()
       conn.release()
 
-      // 重新查并返回
-      const [r2] = await pool.execute(
-        'SELECT crystals_blue, crystals_green, crystals_red, crystals_purple, crystals_gold FROM users WHERE id=?',
-        [req.userId]
-      )
-      const u = r2[0]
-      const total = u.crystals_blue + u.crystals_green + u.crystals_red + u.crystals_purple + u.crystals_gold
-      const towerLevel = towerLevelFromTotal(total)
-      await pool.execute('UPDATE users SET tower_level=? WHERE id=?', [towerLevel, req.userId])
-      res.json({ blue: u.crystals_blue, green: u.crystals_green, red: u.crystals_red, purple: u.crystals_purple, gold: u.crystals_gold, total, towerLevel })
+      // 重新查 + 同步 tower_level
+      const state = await loadState(pool, req.userId)
+      if (!state) return res.status(404).json({ error: 'user not found' })
+      res.json(state)
     } catch (e) {
       try { await conn.rollback() } catch {}
       conn.release()
@@ -156,3 +170,8 @@ module.exports = function createCrystalRoutes(pool, auth) {
 
   return router
 }
+
+// 导出工具函数（方便其他模块复用）
+module.exports.loadCrystalState = loadState
+module.exports.COL_MAP = COL_MAP
+module.exports.COLORS = COLORS

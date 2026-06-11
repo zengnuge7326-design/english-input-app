@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import { previewSound } from '../hooks/useSound'
+import CloseBadge from './CloseBadge'
+import { useHistoryLayer } from '../hooks/useHistoryLayer'
 
-export default function Settings({ settings, onChange, onReset, onClose }) {
+export default function Settings({ settings, onChange, onReset, onClose, onOpenImport }) {
+  useHistoryLayer(true, onClose)
   const s = settings
   const set = (patch) => onChange({ ...s, ...patch })
   const isElectron = !!window.nativeTTS
@@ -156,9 +159,15 @@ export default function Settings({ settings, onChange, onReset, onClose }) {
                 className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-400 rounded-lg border border-gray-700 transition-colors">
                 📌 {savedPreset ? '更新默认' : '一键设置'}
               </button>
-              <button onClick={onClose} className="text-gray-400 hover:text-white text-2xl transition-colors ml-1">✕</button>
+              {onOpenImport && (
+                <button onClick={onOpenImport}
+                  className="text-xs px-3 py-1.5 bg-emerald-900/50 hover:bg-emerald-800/60 text-emerald-300 rounded-lg border border-emerald-700/50 transition-colors">
+                  📥 导入句子
+                </button>
+              )}
             </div>
           </div>
+          <CloseBadge onClose={onClose} />
 
           <div className="flex gap-2 mb-8 border-b border-slate-700">
             {[['voice', '发音'],['sound', '音效'],['hint', '提示']].map(([id, label]) => (

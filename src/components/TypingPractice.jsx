@@ -118,12 +118,6 @@ export default function TypingPractice({ onClose }) {
 
   return (
     <div className="w-full flex flex-col items-center relative overflow-hidden" style={{ minHeight: '80vh', background: 'linear-gradient(to bottom, #050505 0%, #0a0a0a 100%)' }}>
-      {onClose && (
-        <div className="w-full max-w-5xl mx-auto px-4 pt-1 self-stretch z-20">
-          <PageBackBar onBack={onClose} label="返回练习" className="mb-2" />
-        </div>
-      )}
-
       {/* 课程卡片横向滚动 */}
       <div className="w-full px-4 flex justify-center mt-2 mb-2 z-20">
         <div className="flex gap-2 overflow-x-auto pb-1 max-w-5xl w-full" style={{ scrollbarWidth: 'none' }}>

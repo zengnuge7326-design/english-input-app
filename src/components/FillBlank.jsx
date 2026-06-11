@@ -77,7 +77,6 @@ export default function FillBlank({ onClose, settings, isMember = true, onShowLo
   if (view === 'levels') {
     return (
       <div className="w-full max-w-4xl mx-auto">
-        {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
         <div className="bg-slate-800 border border-gray-700 rounded-2xl p-8">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-white">填空题练习</h2>

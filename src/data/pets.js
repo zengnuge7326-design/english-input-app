@@ -1,5 +1,5 @@
 /**
- * 23 个宠物的 emoji 占位 + 渐变背景，SVG 美术就绪后切到 image 模式
+ * 宠物渐变背景色 + CartoonIcon SVG 立绘（按 petId 映射）
  */
 export const PET_FALLBACK = {
   pet_duck:        { emoji: '🦆', bg: 'from-yellow-300 to-amber-400' },

@@ -36,6 +36,7 @@ app.get('/api/crystal/state', auth, async (req, res) => {
 app.post('/api/crystal/earn', auth, async (req, res) => {
   const { color, amount = 1, reason = 'unknown', meta = null } = req.body || {}
   if (!CRYSTAL_COLORS.includes(color)) return res.status(400).json({ error: 'bad color' })
+  if (color === 'gold') return res.status(403).json({ error: 'forbidden color' }) // 金钻仅服务端发放（recharge/daily-spin），禁止客户端 earn
   const a = Math.max(1, Math.min(50, parseInt(amount) || 0))
   if (!a) return res.status(400).json({ error: 'bad amount' })
   if (typeof reason !== 'string' || reason.length > 64) return res.status(400).json({ error: 'bad reason' })

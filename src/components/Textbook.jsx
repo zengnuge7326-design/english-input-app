@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from 'react'
 import Unit1Flow from './Unit1Flow'
+import LockedOverlay from './LockedOverlay'
 import GrammarLesson from './GrammarLesson'
 import { hasGrammar } from '../data/grammar'
 import { getGrammarPercent } from '../data/grammar/progress'
@@ -403,6 +404,8 @@ const TEXTBOOK_SLOTS = [
   }))
 ]
 
+import { getSyncPartCount } from '../utils/syncPartProgress'
+
 function getLessonStats(data, progress) {
   const total = data.length
   const attempted = data.filter(s => (progress[`sentence_${s.id}`]?.attempts || 0) > 0).length
@@ -417,7 +420,7 @@ const SYNC_PARTS = [
   { key: 'C', count: 15, grad: 'from-fuchsia-400 to-purple-600', shadow: 'shadow-purple-900/40',  glow: 'rgba(192,38,211,0.55)' },
 ]
 
-export default function Textbook({ onImport, onClose, historyRef, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin, active = true, settings, onXp, onCrystal }) {
+export default function Textbook({ onImport, onClose, historyRef, progress = {}, onNavigate, requireSpeak, hideSkipNext, isMember = false, onShowLogin, active = true, settings, onXp, onCrystal, unlocks, crystalBalance = 0, onGoShop }) {
   const [detail, setDetail] = useState(null)
   const [syncUnit, setSyncUnit] = useState(null) // { bookId, label }
   const [grammar, setGrammar] = useState(null)   // { bookId, bookName, label, mode }
@@ -485,7 +488,6 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
             <IconArrowLeft size={16} />
             返回教材列表
           </button>
-          <span className="text-gray-300 text-sm font-medium">{book.name}</span>
         </div>
 
         <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4 sm:p-6 mb-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
@@ -644,20 +646,28 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                     boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
                   }}>
                   <span className="text-sm font-bold text-white/95 shrink-0">同步练习</span>
-                  <div className="flex items-center gap-2 ml-auto">
-                    {SYNC_PARTS.map(sp => (
-                      <button key={sp.key}
+                  <div className="flex items-end gap-2 ml-auto">
+                    {SYNC_PARTS.map(sp => {
+                      const practiceCount = getSyncPartCount(book.id, lesson.label, sp.key)
+                      return (
+                      <div key={sp.key} className="flex flex-col items-center gap-0.5">
+                        <button
                         onClick={() => setSyncUnit({ bookId: book.id, label: lesson.label, part: sp.key })}
                         disabled={lessonLocked}
-                        title={`${sp.key} 部分 · ${sp.count} 题`}
+                        title={`${sp.key} 部分 · ${sp.count} 题 · 已练 ${practiceCount} 次`}
                         style={{ boxShadow: `inset 0 1px 0 rgba(255,255,255,0.22), 0 2px 6px rgba(0,0,0,0.25)` }}
                         className={`w-10 h-10 rounded-xl text-base font-black ${abcLetterColor[sp.key]} flex items-center justify-center
                           bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150 border border-white/15
                           hover:scale-110 hover:bg-white/[0.14] hover:border-white/25 active:scale-95 transition-all
                           ${lessonLocked ? 'opacity-30 pointer-events-none' : ''}`}>
                         {sp.key}
-                      </button>
-                    ))}
+                        </button>
+                        <span className="text-[10px] font-semibold text-white/75 tabular-nums leading-none min-h-[12px]">
+                          {practiceCount}
+                        </span>
+                      </div>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
@@ -670,7 +680,6 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
-      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-white">教材同步</h2>
         <span className="text-xs text-gray-500">共 {TEXTBOOK_SLOTS.length} 本教材</span>
@@ -690,15 +699,32 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
       )}
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        {TEXTBOOK_SLOTS.map((book) => {
-          const isPremium = false   // 书目全部可进，锁在单元层
-          const locked = false
-          return (
-          <div key={book.id} className="relative">
+        {(() => {
+          // 计算每册的完成度，用于「上一册 60% 自动解锁」
+          const namedSlots = TEXTBOOK_SLOTS.filter(b => b.name)
+          const bookPercents = new Map()
+          namedSlots.forEach(b => {
+            const s = getLessonStats(b.data, progress)
+            bookPercents.set(b.id, s.total ? Math.round((s.attempted / s.total) * 100) : 0)
+          })
+          return TEXTBOOK_SLOTS.map((book) => {
+          // 第 0 本（三年级上册）免费，其余看顺序解锁
+          let locked = false
+          const COST = 80
+          if (book.name) {
+            const idx = namedSlots.findIndex(b => b.id === book.id)
+            if (idx > 0) {
+              const prevId = namedSlots[idx - 1].id
+              const prevPct = bookPercents.get(prevId) ?? 0
+              locked = !isMember &&
+                !(unlocks?.isUnlocked?.('book', book.id)) &&
+                prevPct < 60
+            }
+          }
+          const card = (
           <button
             onClick={() => {
               if (!book.name) return
-              if (locked) { onShowLogin?.(); return }
               setDetail(book.id)
             }}
             className={`w-full flex flex-col rounded-2xl overflow-hidden border transition-all text-left
@@ -741,15 +767,25 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
               })()}
             </div>
           </button>
-          {locked && (
-            <div className="absolute inset-0 bg-black/65 backdrop-blur-sm flex flex-col items-center justify-center gap-1.5 z-10 rounded-2xl pointer-events-none">
-              <span className="text-xl">🔒</span>
-              <span className="text-white text-xs font-semibold">会员专属</span>
-            </div>
-          )}
-          </div>
           )
-        })}
+          return (
+            <div key={book.id} className="relative">
+              <LockedOverlay
+                locked={locked}
+                cost={COST}
+                color="blue"
+                crystalBalance={crystalBalance}
+                title={book.name}
+                reason={`完成上一册 60%，或花费 ${COST} 钻石提前开启`}
+                onUnlock={() => unlocks?.unlock?.('book', book.id, COST, 'blue')}
+                onGoShop={onGoShop}
+              >
+                {card}
+              </LockedOverlay>
+            </div>
+          )
+        })
+        })()}
       </div>
     </div>
   )

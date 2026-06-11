@@ -10,6 +10,13 @@ const config: CapacitorConfig = {
   ios: {
     contentInset: 'automatic',
     preferredContentMode: 'mobile',
+    backgroundColor: '#a8d8ff',
+  },
+  android: {
+    backgroundColor: '#a8d8ff',
+  },
+  plugins: {
+    // 纯手机学习壳默认全屏 WebView
   },
 };
 

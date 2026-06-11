@@ -11,6 +11,8 @@
     "lint": "eslint .",
     "import:gutenberg": "node scripts/import-gutenberg-desktop.mjs",
     "preview": "vite preview",
+    "island:mono": "node scripts/toggle-map-island-style.mjs mono",
+    "island:legacy": "node scripts/toggle-map-island-style.mjs legacy",
     "electron:dev": "npm run build && npx electron .",
     "electron:build": "npm run build && npx electron-builder --mac"
   },

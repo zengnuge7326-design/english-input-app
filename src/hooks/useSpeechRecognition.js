@@ -1,4 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from 'react'
+import { ensureMic, showMicGuide } from '../utils/micGate'
 
 // 浏览器语音识别（Web Speech API）。网页版 Chrome / Edge / Safari 可用。
 // 返回多候选结果，供跟读单词比对。
@@ -124,6 +125,26 @@ const HOMOPHONES = {
   yes: ['yas','ya','yess'],
   ok: ['okay','okey'],
   okay: ['ok','okey'],
+  // 问候 / 入门课常见词（翻译单词、跟读）
+  name: ['naim','nem','nam','neym','naym','main','mayn','nom','neim','nim'],
+  hello: ['halo','hellow','hallo','helo','hallow','hullo','cello','hella'],
+  morning: ['mourning','mornin','moring','morening','mornen','mornng'],
+  fine: ['vine','find','fan','fain','fein','fined','feign'],
+  goodbye: ['goodby','goodbai','gudbye','godbye','goodbye','good bye'],
+  lily: ['lili','lilly','lilie','lee','lilye'],
+  tom: ['tum','dom','tam','thumb'],
+  amy: ['ame','aim','emi','amey','amie'],
+  school: ['skool','schol','schoel','skul'],
+  teacher: ['teecher','techer','ticher','teachar','tutor'],
+  student: ['studant','studint','students'],
+  welcome: ['wellcome','welkom','welcame','welcom'],
+  class: ['classe','klas','glass','closs'],
+  desk: ['disk','desks','death'],
+  book: ['books','look','buck'],
+  chair: ['cheer','share','chairs'],
+  pen: ['pan','pin','ben'],
+  bag: ['beg','back','bags'],
+  ruler: ['ruller','rooler','rules'],
 }
 
 // 填充词：识别结果常带 "a / the / an / um / uh" 这类前后缀，需要剔除
@@ -165,6 +186,22 @@ export function matchWord(target, alts) {
   })
 }
 
+/** 句子跟读：目标词中足够比例被识别即算通过（默认 55%） */
+export function matchSentence(target, alts, minRatio = 0.55) {
+  const targetTokens = tokensOf(target)
+  if (!targetTokens.length) return matchWord(target, alts)
+  const need = Math.max(1, Math.ceil(targetTokens.length * minRatio))
+  return (alts || []).some(alt => {
+    const heard = tokensOf(alt)
+    if (!heard.length) return false
+    let matched = 0
+    for (const t of targetTokens) {
+      if (heard.some(h => closeMatch(t, h))) matched++
+    }
+    return matched >= need
+  })
+}
+
 export function useSpeechRecognition() {
   const SR = getSR()
   const supported = !!SR
@@ -180,7 +217,7 @@ export function useSpeechRecognition() {
     setListening(false)
   }, [])
 
-  const listen = useCallback(({ onResult, onError } = {}) => {
+  const _startListen = useCallback(({ onResult, onError } = {}) => {
     if (!SR) { onError?.('unsupported'); return }
     try { recRef.current?.abort() } catch {}
     const myId = ++callIdRef.current
@@ -268,6 +305,26 @@ export function useSpeechRecognition() {
       onError?.(String(err))
     }
   }, [SR])
+
+  const listen = useCallback(({ onResult, onError } = {}) => {
+    const purpose = '评测你的发音'
+    if (!SR) {
+      showMicGuide({ purpose })
+      onError?.('unsupported')
+      return
+    }
+    ensureMic(purpose).then((res) => {
+      if (!res.ok) {
+        showMicGuide({
+          purpose,
+          mode: res.reason === 'denied' ? 'denied' : undefined,
+        })
+        onError?.(res.reason === 'unsupported' ? 'unsupported' : 'not-allowed')
+        return
+      }
+      _startListen({ onResult, onError })
+    })
+  }, [SR, _startListen])
 
   useEffect(() => () => { try { recRef.current?.abort() } catch {} }, [])
 

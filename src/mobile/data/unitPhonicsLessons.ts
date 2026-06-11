@@ -1,0 +1,115 @@
+import type { Lesson } from '../types'
+
+/** Unit 1 · 元音发音（æ vs aʊ 最小对立体） */
+export const PHONICS_LESSONS: Record<string, Lesson> = {
+  'u1-phonics': {
+    id: 'u1-phonics',
+    nodeId: 'u1-phonics',
+    title: '元音发音',
+    questions: [
+      {
+        type: 'phonicsIntro',
+        id: 'q1',
+        prompt: '一起来学英语发音！',
+        subtitle: '磨耳朵，练就地道元音',
+        vowels: [
+          { symbol: 'æ', example: 'cat', word: 'at' },
+          { symbol: 'aʊ', example: 'out', word: 'out' },
+          { symbol: 'æ', example: 'lad', word: 'lad' },
+          { symbol: 'aʊ', example: 'loud', word: 'loud' },
+        ],
+      },
+      {
+        type: 'phonicsPick',
+        id: 'q2',
+        prompt: '你听到了什么？',
+        audioWord: 'at',
+        options: [
+          { word: 'at', ipa: '/æt/' },
+          { word: 'out', ipa: '/aʊt/' },
+        ],
+        answerIndex: 0,
+      },
+      {
+        type: 'phonicsSameDiff',
+        id: 'q3',
+        prompt: '听音选择',
+        wordA: 'at',
+        wordB: 'out',
+        sameWord: false,
+        ipaA: '/æt/',
+        ipaB: '/aʊt/',
+      },
+      {
+        type: 'phonicsPick',
+        id: 'q4',
+        prompt: '你听到了什么？',
+        audioWord: 'lad',
+        options: [
+          { word: 'loud', ipa: '/laʊd/' },
+          { word: 'lad', ipa: '/læd/' },
+        ],
+        answerIndex: 1,
+      },
+      {
+        type: 'phonicsSameDiff',
+        id: 'q5',
+        prompt: '听音选择',
+        wordA: 'loud',
+        wordB: 'lad',
+        sameWord: false,
+        ipaA: '/laʊd/',
+        ipaB: '/læd/',
+      },
+      {
+        type: 'phonicsRepeat',
+        id: 'q6',
+        prompt: '跟着念',
+        characterRole: 'student',
+        word: 'at',
+        ipa: '/æt/',
+      },
+      {
+        type: 'phonicsRepeat',
+        id: 'q7',
+        prompt: '跟着念',
+        characterRole: 'student',
+        word: 'loud',
+        ipa: '/laʊd/',
+      },
+      {
+        type: 'matching',
+        id: 'q8',
+        prompt: '选择配对',
+        pairs: [
+          { id: 'p1', audioText: 'at', labelZh: 'at' },
+          { id: 'p2', audioText: 'out', labelZh: 'out' },
+          { id: 'p3', audioText: 'lad', labelZh: 'lad' },
+          { id: 'p4', audioText: 'loud', labelZh: 'loud' },
+          { id: 'p5', audioText: 'cat', labelZh: 'cat' },
+        ],
+      },
+      {
+        type: 'phonicsPick',
+        id: 'q9',
+        prompt: '你听到了什么？',
+        audioWord: 'out',
+        options: [
+          { word: 'out', ipa: '/aʊt/' },
+          { word: 'at', ipa: '/æt/' },
+        ],
+        answerIndex: 0,
+      },
+      {
+        type: 'phonicsSameDiff',
+        id: 'q10',
+        prompt: '听音选择',
+        wordA: 'at',
+        wordB: 'at',
+        sameWord: true,
+        ipaA: '/æt/',
+        ipaB: '/æt/',
+      },
+    ],
+  },
+}

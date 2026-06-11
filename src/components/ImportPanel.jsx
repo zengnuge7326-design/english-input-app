@@ -81,7 +81,6 @@ export default function ImportPanel({ onImport, currentCount, onClose }) {
 
   return (
     <div className="w-full flex flex-col gap-3">
-      {onClose && <PageBackBar onBack={onClose} label="返回练习" className="mb-3" />}
     <div className="flex flex-col gap-5 p-5 bg-gray-800 rounded-xl border border-gray-700 w-full">
       <div className="flex items-center justify-between">
         <h3 className="text-white font-bold text-base">导入句子</h3>

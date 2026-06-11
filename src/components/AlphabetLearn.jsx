@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { ALPHABET_LETTERS, themeOf } from '../data/alphabet.js'
 import { AlphabetIcon } from './AlphabetIcons'
+import LockedOverlay from './LockedOverlay'
 import PandaMascot from './PandaMascot'
 import OceanBg from './OceanBg'
 import { useSound } from '../hooks/useSound'
@@ -186,39 +187,35 @@ function ConfettiLayer({ items }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 字母小卡片：动漫风彩色 + SVG 图标 + 掌握进度环
+// 字母小卡片：动漫风彩色 + 外缘掌握进度条
 // ─────────────────────────────────────────────────────────────
 function LetterCard({ letter, selected, mastered, stars, onClick }) {
   const t = themeOf(letter)
-  const total = STAR_TOTAL
-  const ringStrokeBase = 'rgba(255,255,255,0.25)'
-  const ringStrokeFilled = 'rgba(255,255,255,0.95)'
-  // ring 实现：4 段，分别旋转 90°
-  const segments = Array.from({ length: total }, (_, i) => i < stars)
+  const pct = Math.min(100, (stars / STAR_TOTAL) * 100)
+  const trackStroke = 'rgba(255,255,255,0.22)'
+  const fillStroke = mastered ? 'rgba(251,191,36,0.95)' : 'rgba(255,255,255,0.92)'
 
   return (
     <button onClick={onClick}
-      className={`relative group rounded-2xl p-1 sm:p-2 transition-all active:scale-95 bg-gradient-to-br ${t.from} ${t.to} backdrop-blur-xl backdrop-saturate-150 border border-white/15
-        ${selected ? `ring-2 sm:ring-4 ${t.ring} ${t.glow} letter-pulse` : 'hover:scale-105 hover:-translate-y-0.5 shadow-md'}
+      className={`relative group aspect-square rounded-2xl transition-all active:scale-95 bg-gradient-to-br ${t.from} ${t.to} backdrop-blur-xl backdrop-saturate-150 border border-white/10
+        ${selected ? `ring-2 sm:ring-3 ${t.ring} ${t.glow} letter-pulse` : 'hover:scale-105 hover:-translate-y-0.5 shadow-md'}
       `}>
-      {/* 掌握度环 - 右上角小圈（手机更小） */}
-      <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-7 sm:h-7 z-10">
-        <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-          <circle cx="18" cy="18" r="14" fill="rgba(15,23,42,0.85)" stroke={ringStrokeBase} strokeWidth="3"/>
-          {segments.map((on, i) => on && (
-            <circle key={i} cx="18" cy="18" r="14" fill="none"
-              stroke={ringStrokeFilled} strokeWidth="3"
-              strokeDasharray={`${Math.PI * 28 / total} ${Math.PI * 28}`}
-              strokeDashoffset={-i * Math.PI * 28 / total}/>
-          ))}
-        </svg>
-        {mastered && <span className="absolute inset-0 flex items-center justify-center text-yellow-300 text-[10px] sm:text-sm leading-none">★</span>}
-      </div>
+      {/* 掌握度：沿卡片外缘一圈的进度条 */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" aria-hidden>
+        <rect x="2.5" y="2.5" width="95" height="95" rx="16" ry="16" fill="none" stroke={trackStroke} strokeWidth="3" />
+        {pct > 0 && (
+          <rect
+            x="2.5" y="2.5" width="95" height="95" rx="16" ry="16" fill="none"
+            stroke={fillStroke} strokeWidth="3" strokeLinecap="round"
+            pathLength="100"
+            strokeDasharray={`${pct} ${100 - pct}`}
+            transform="rotate(-90 50 50)"
+          />
+        )}
+      </svg>
 
-      {/* 大写 + 小写（紧凑：手机端能放下 26 个） */}
-      <div className="flex flex-col items-center justify-center gap-0 py-1">
-        <span className={`text-2xl sm:text-4xl font-extrabold ${t.text} leading-tight drop-shadow-[0_2px_3px_rgba(0,0,0,0.35)]`}>{letter.upper}</span>
-        <span className={`text-base sm:text-2xl font-bold ${t.text} opacity-85 leading-tight`}>{letter.lower}</span>
+      <div className="relative z-[1] flex h-full w-full items-center justify-center">
+        <span className={`text-2xl sm:text-3xl font-extrabold ${t.text} leading-none drop-shadow-[0_2px_3px_rgba(0,0,0,0.35)]`}>{letter.upper}</span>
       </div>
     </button>
   )
@@ -227,7 +224,7 @@ function LetterCard({ letter, selected, mastered, stars, onClick }) {
 // ─────────────────────────────────────────────────────────────
 // Level 1 · 看读：大卡片 + 跟读识别 + 翻面显示例词
 // ─────────────────────────────────────────────────────────────
-function LevelSayIt({ progress, setProgress, onXp, onCrystal, sounds, sr }) {
+function LevelSayIt({ progress, setProgress, onXp, onCrystal, sounds, sr, lockedBack10 = false, onUnlockBack10, crystalBalance = 0, onGoShop }) {
   const [idx, setIdx] = useState(0)
   const [flipped, setFlipped] = useState(false)
   const [pandaMood, setPandaMood] = useState('idle')
@@ -323,36 +320,36 @@ function LevelSayIt({ progress, setProgress, onXp, onCrystal, sounds, sr }) {
   return (
     <div className="w-full flex flex-col gap-4">
       {/* 主大卡片 */}
-      <div className="relative du-flip-card w-full max-w-3xl mx-auto" style={{ minHeight: 280 }}>
+      <div className="relative du-flip-card w-full max-w-3xl mx-auto" style={{ minHeight: 252 }}>
         <div className={`du-flip-inner ${flipped ? 'is-flipped' : ''}`}>
           {/* 正面 */}
-          <div className={`du-flip-front rounded-3xl bg-gradient-to-br ${t.from} ${t.to} ${t.glow} backdrop-blur-xl backdrop-saturate-150 border border-white/15 p-6`}>
-            <div className="flex items-center gap-6 sm:gap-10">
+          <div className={`du-flip-front rounded-3xl bg-gradient-to-br ${t.from} ${t.to} ${t.glow} backdrop-blur-xl backdrop-saturate-150 border border-white/15 p-5`}>
+            <div className="flex items-center gap-5 sm:gap-9">
               <div className="flex-shrink-0">
-                <PandaMascot mood={pandaMood} size={140} />
+                <PandaMascot mood={pandaMood} size={126} />
               </div>
               <button onClick={onTap}
-                className={`flex-1 rounded-3xl bg-white/12 hover:bg-white/20 active:scale-95 transition-all p-4 ${pandaMood === 'listening' ? 'hero-glow' : ''}`}>
-                <div className={`flex items-baseline justify-center gap-3 ${t.text}`}>
-                  <span className="text-[110px] sm:text-[130px] font-black leading-none drop-shadow-[0_6px_8px_rgba(0,0,0,0.4)]">{letter.upper}</span>
-                  <span className="text-[80px] sm:text-[100px] font-black leading-none opacity-90">{letter.lower}</span>
+                className={`flex-1 rounded-3xl bg-white/12 hover:bg-white/20 active:scale-95 transition-all p-3.5 ${pandaMood === 'listening' ? 'hero-glow' : ''}`}>
+                <div className={`flex items-baseline justify-center gap-2.5 ${t.text}`}>
+                  <span className="text-[99px] sm:text-[117px] font-black leading-none drop-shadow-[0_6px_8px_rgba(0,0,0,0.4)]">{letter.upper}</span>
+                  <span className="text-[72px] sm:text-[90px] font-black leading-none opacity-90">{letter.lower}</span>
                 </div>
-                <div className={`mt-1 text-center ${t.text} text-sm font-bold opacity-90`}>
-                  读音 <span className="font-mono">{letter.sound}</span>
+                <div className={`mt-0.5 text-center ${t.text} text-sm font-bold opacity-90`}>
+                  字母名 <span className="font-mono">{letter.nameIpa}</span>
                 </div>
-                <div className={`text-center ${t.text} text-xs opacity-80 mt-1`}>👆 点这里听字母 + 跟读</div>
+                <div className={`text-center ${t.text} text-xs opacity-80 mt-0.5`}>👆 点这里听字母 + 跟读</div>
               </button>
             </div>
-            {duMsg && <div className={`mt-2 text-center text-sm font-semibold ${t.text} drop-shadow`}>{duMsg}</div>}
+            {duMsg && <div className={`mt-1.5 text-center text-sm font-semibold ${t.text} drop-shadow`}>{duMsg}</div>}
             {sr.listening && sr.heard && (
-              <div className={`mt-1 text-center text-xs ${t.text} opacity-80`}>
+              <div className={`mt-0.5 text-center text-xs ${t.text} opacity-80`}>
                 听到: <span className="font-mono font-bold">{sr.heard}</span>
               </div>
             )}
             <SparkleBurst trigger={showSparkle} />
           </div>
           {/* 背面 - 例词 */}
-          <div className={`du-flip-back rounded-3xl bg-gradient-to-br ${t.from} ${t.to} backdrop-blur-xl backdrop-saturate-150 border border-white/15 p-6 flex flex-col items-center justify-center gap-3`}>
+          <div className={`du-flip-back rounded-3xl bg-gradient-to-br ${t.from} ${t.to} backdrop-blur-xl backdrop-saturate-150 border border-white/15 p-5 flex flex-col items-center justify-center gap-2.5`}>
             <div className="text-3xl">✨</div>
             <AlphabetIcon name={letter.icon} size={120} />
             <div className={`text-3xl font-bold ${t.text}`}>{letter.example}</div>
@@ -362,13 +359,34 @@ function LevelSayIt({ progress, setProgress, onXp, onCrystal, sounds, sr }) {
       </div>
 
       {/* 26 字母网格 */}
-      <div className="grid grid-cols-7 sm:grid-cols-9 gap-1.5 sm:gap-2.5 w-full max-w-3xl mx-auto">
-        {ALPHABET_LETTERS.map((L, i) => (
-          <LetterCard key={L.upper} letter={L} selected={i === idx}
-            mastered={isLetterFullyMastered(progress, L)}
-            stars={letterStarsCount(progress, L)}
-            onClick={() => { setIdx(i); unlockAudio(); speakLetter(L.upper) }} />
-        ))}
+      <div className="relative w-full max-w-3xl mx-auto">
+        <div className="grid grid-cols-7 sm:grid-cols-9 gap-1 sm:gap-2">
+          {ALPHABET_LETTERS.map((L, i) => {
+            const isBack10 = i >= 16
+            const greyed = lockedBack10 && isBack10
+            return (
+              <div key={L.upper} className={greyed ? 'pointer-events-none' : ''} style={greyed ? { filter: 'grayscale(0.85) brightness(0.5)' } : undefined}>
+                <LetterCard letter={L} selected={i === idx}
+                  mastered={isLetterFullyMastered(progress, L)}
+                  stars={letterStarsCount(progress, L)}
+                  onClick={() => {
+                    if (greyed) return
+                    setIdx(i); unlockAudio(); speakLetter(L.upper)
+                  }} />
+              </div>
+            )
+          })}
+        </div>
+        {lockedBack10 && (
+          <button
+            type="button"
+            onClick={onUnlockBack10}
+            className="absolute left-1/2 -translate-x-1/2 -bottom-3 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold shadow-lg hover:scale-105 transition-transform flex items-center gap-1.5"
+          >
+            <span>💎 20</span>
+            <span>解锁 Q-Z</span>
+          </button>
+        )}
       </div>
 
       <div className="text-center text-xs text-slate-500 mb-2">点字母听音 + 跟读 · 读对 +3 XP ⭐</div>
@@ -836,12 +854,18 @@ const LEVELS = [
 // ─────────────────────────────────────────────────────────────
 // 主组件
 // ─────────────────────────────────────────────────────────────
-export default function AlphabetLearn({ onClose, settings, onXp, onCrystal }) {
+export default function AlphabetLearn({ onClose, settings, onXp, onCrystal, isMember = false, unlocks, crystalBalance = 0, onGoShop }) {
   const [level, setLevel] = useState(1)
   const [progress, setProgress] = useState(loadAlphaProgress)
   const [confetti, setConfetti] = useState([])
+  const [back10Confirm, setBack10Confirm] = useState(false)
   const sounds = useSound(settings)
   const sr = useSpeechRecognition()
+
+  // 解锁逻辑：前 16 个字母全部至少学过一遍 → 自动解锁后 10 个
+  const front16Done = ALPHABET_LETTERS.slice(0, 16).every(L => (letterStarsCount(progress, L) || 0) > 0)
+  const back10Unlocked = isMember || front16Done || !!(unlocks?.isUnlocked?.('alphabet', 'back10'))
+  const lockedBack10 = !back10Unlocked
 
   // 预加载 26 个字母音频（瞬时响应）
   useEffect(() => { preloadLetterAudio() }, [])
@@ -910,10 +934,72 @@ export default function AlphabetLearn({ onClose, settings, onXp, onCrystal }) {
 
       {/* 关卡内容 */}
       <div className="relative z-10">
-        {level === 1 && <LevelSayIt   progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds} sr={sr}/>}
+        {level === 1 && <LevelSayIt   progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds} sr={sr} lockedBack10={lockedBack10} onUnlockBack10={() => setBack10Confirm(true)} crystalBalance={crystalBalance} onGoShop={onGoShop}/>}
+        {back10Confirm && (
+          <Back10ConfirmModal
+            crystalBalance={crystalBalance}
+            cost={20}
+            onCancel={() => setBack10Confirm(false)}
+            onConfirm={async () => {
+              const r = await unlocks?.unlock?.('alphabet', 'back10', 20, 'blue')
+              if (r?.ok) setBack10Confirm(false)
+              return r
+            }}
+            onGoShop={() => { setBack10Confirm(false); onGoShop?.() }}
+          />
+        )}
         {level === 2 && <LevelFindIt  progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds}/>}
         {level === 3 && <LevelMatchPic progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds}/>}
         {level === 4 && <LevelOrderIt progress={progress} setProgress={setProgress} onXp={onXp} onCrystal={onCrystal} sounds={sounds}/>}
+      </div>
+    </div>
+  )
+}
+
+
+// ─────────────────────────────────────────────────────────────
+// 后 10 字母解锁确认弹窗
+// ─────────────────────────────────────────────────────────────
+function Back10ConfirmModal({ crystalBalance, cost, onCancel, onConfirm, onGoShop }) {
+  const [busy, setBusy] = useState(false)
+  const [err, setErr] = useState("")
+  const enough = crystalBalance >= cost
+  async function handle() {
+    setBusy(true); setErr("")
+    const r = await onConfirm()
+    setBusy(false)
+    if (!r?.ok) {
+      if (r?.reason === "insufficient") setErr(`钻石不够，需要 ${r.need}，你有 ${r.have}`)
+      else setErr("解锁失败，请稍后再试")
+    }
+  }
+  return (
+    <div className="fixed inset-0 z-[1100] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onClick={e => { if (e.target === e.currentTarget) onCancel() }}>
+      <div className="w-full max-w-sm rounded-2xl bg-slate-900 border border-slate-700 p-6 shadow-2xl">
+        <div className="text-center">
+          <div className="text-4xl mb-2">💎</div>
+          <h3 className="text-lg font-black text-white mb-1">解锁后 10 个字母</h3>
+          <p className="text-xs text-slate-400 mb-4">学完前 16 个字母可自动解锁，或花钻石提前开启</p>
+        </div>
+        <div className="rounded-xl bg-slate-800/70 border border-slate-700 px-4 py-3 mb-4">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-slate-400">解锁价</span>
+            <span className="font-bold text-purple-300 tabular-nums">💎 {cost}</span>
+          </div>
+          <div className="flex items-center justify-between text-sm mt-1.5">
+            <span className="text-slate-400">我的钻石</span>
+            <span className={`font-bold tabular-nums ${enough ? "text-emerald-300" : "text-red-400"}`}>💎 {crystalBalance}</span>
+          </div>
+        </div>
+        {err && <div className="text-center text-red-400 text-xs mb-3">{err}</div>}
+        <div className="flex gap-2">
+          <button onClick={onCancel} disabled={busy} className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-bold transition-colors">取消</button>
+          {enough ? (
+            <button onClick={handle} disabled={busy} className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-sm font-bold disabled:opacity-60">{busy ? "解锁中…" : `花费 ${cost} 💎 解锁`}</button>
+          ) : (
+            <button onClick={onGoShop} className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold">去小店补充钻石</button>
+          )}
+        </div>
       </div>
     </div>
   )

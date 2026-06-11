@@ -53,7 +53,7 @@ const Finger = ({ id, activeFinger, path }) => {
 const VIEWBOX_W = 400;
 const VIEWBOX_H = 200;
 
-const TypingHands = ({ activeFinger, targetPos }) => {
+const TypingHands = ({ activeFinger, targetPos, glowHand = false }) => {
   const scaleX = targetPos?.gridWidth ? targetPos.gridWidth / VIEWBOX_W : 1;
   const scaleY = targetPos?.gridHeight ? targetPos.gridHeight / VIEWBOX_H : 1;
 
@@ -117,8 +117,8 @@ const TypingHands = ({ activeFinger, targetPos }) => {
            <path 
              d={leftHandSilhouette} 
              fill="none" 
-             stroke="rgba(255, 255, 255, 0.22)" 
-             strokeWidth="1.2" 
+             stroke={glowHand ? "rgba(255, 255, 255, 0.75)" : "rgba(255, 255, 255, 0.22)"}
+             strokeWidth={glowHand ? "1.6" : "1.2"}
            />
            {leftPaths.map(f => (
              <Finger key={f.id} id={f.id} activeFinger={activeFinger} path={f.path} />
@@ -131,8 +131,8 @@ const TypingHands = ({ activeFinger, targetPos }) => {
            <path 
              d={rightHandSilhouette} 
              fill="none" 
-             stroke="rgba(255, 255, 255, 0.22)" 
-             strokeWidth="1.2" 
+             stroke={glowHand ? "rgba(255, 255, 255, 0.75)" : "rgba(255, 255, 255, 0.22)"}
+             strokeWidth={glowHand ? "1.6" : "1.2"}
            />
            {rightPaths.map(f => (
              <Finger key={f.id} id={f.id} activeFinger={activeFinger} path={f.path} />

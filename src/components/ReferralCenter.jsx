@@ -90,15 +90,21 @@ export default function ReferralCenter({ token, username }) {
   const [showWithdraw, setShowWithdraw] = useState(false)
   const [withdrawSuccess, setWithdrawSuccess] = useState('')
 
+  const [summary, setSummary] = useState(null)  // Phase 1 状态明细
+  const [invitees, setInvitees] = useState([])
   const load = useCallback(async () => {
     if (!token) return
     setLoading(true)
-    const [stats, wds] = await Promise.all([
+    const [stats, wds, sum, invs] = await Promise.all([
       apiFetch('/referral/my-code', token),
       apiFetch('/referral/withdrawals', token),
+      apiFetch('/referral/v2/my-summary', token).catch(() => null),
+      apiFetch('/referral/v2/my-invitees', token).catch(() => null),
     ])
     setData(stats)
     setWithdrawals(Array.isArray(wds) ? wds : [])
+    if (sum?.ok) setSummary(sum)
+    if (invs?.ok) setInvitees(invs.items || [])
     setLoading(false)
   }, [token])
 
@@ -259,6 +265,84 @@ export default function ReferralCenter({ token, username }) {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* Phase 1 · 三档佣金状态 */}
+      {summary && (
+        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
+          <div className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <span>📊</span> 佣金状态明细
+          </div>
+          <div className="grid grid-cols-3 gap-2.5 mb-3">
+            <div className="bg-amber-900/30 border border-amber-800/40 rounded-xl p-3 text-center">
+              <div className="text-xl font-bold text-amber-300">¥{summary.pending?.amount?.toFixed(2) || '0.00'}</div>
+              <div className="text-[11px] text-amber-400/80 mt-1">冷静期 ({summary.pending?.count || 0})</div>
+              <div className="text-[9px] text-amber-500/60 mt-0.5">30天后转待付</div>
+            </div>
+            <div className="bg-blue-900/30 border border-blue-800/40 rounded-xl p-3 text-center">
+              <div className="text-xl font-bold text-blue-300">¥{summary.settled?.amount?.toFixed(2) || '0.00'}</div>
+              <div className="text-[11px] text-blue-400/80 mt-1">待付款 ({summary.settled?.count || 0})</div>
+              <div className="text-[9px] text-blue-500/60 mt-0.5">等管理员转账</div>
+            </div>
+            <div className="bg-emerald-900/30 border border-emerald-800/40 rounded-xl p-3 text-center">
+              <div className="text-xl font-bold text-emerald-300">¥{summary.paid?.amount?.toFixed(2) || '0.00'}</div>
+              <div className="text-[11px] text-emerald-400/80 mt-1">已付 ({summary.paid?.count || 0})</div>
+              <div className="text-[9px] text-emerald-500/60 mt-0.5">已到账</div>
+            </div>
+          </div>
+          <div className="text-xs text-gray-500 flex items-center justify-between border-t border-gray-800 pt-3">
+            <span>邀请 <span className="text-white font-semibold">{summary.invited}</span> 人 · 付费 <span className="text-emerald-400 font-semibold">{summary.paid_invitees}</span> 人</span>
+            {summary.reversed > 0 && (
+              <span className="text-rose-400">退款冲销 ¥{summary.reversed.toFixed(2)}</span>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* 邀请人列表（脱敏）*/}
+      {invitees.length > 0 && (
+        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-3">
+            <IconUsers size={16} className="text-purple-400" />
+            <span className="text-sm font-medium text-white">我的邀请记录</span>
+            <span className="text-xs text-gray-600">{invitees.length} 人</span>
+          </div>
+          <div className="space-y-1.5 max-h-72 overflow-y-auto">
+            {invitees.map((u, i) => {
+              const statusColor = {
+                paid: 'text-emerald-400 bg-emerald-900/30',
+                settled: 'text-blue-400 bg-blue-900/30',
+                pending: 'text-amber-400 bg-amber-900/30',
+                suspicious: 'text-rose-400 bg-rose-900/30',
+                reversed: 'text-gray-500 bg-gray-800',
+              }
+              const statusLabel = {
+                paid: '已付', settled: '待付', pending: '冷静期',
+                suspicious: '审查中', reversed: '已退款',
+              }
+              return (
+                <div key={i} className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-gray-800/50 transition-colors">
+                  <div>
+                    <div className="text-sm text-white font-medium">{u.name}</div>
+                    <div className="text-[10px] text-gray-600">
+                      注册 {u.joined_at?.slice(0, 10)} · {u.is_member ? '会员' : '免费'}
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    {u.commission > 0 && (
+                      <div className="text-emerald-400 text-sm font-bold">+¥{u.commission.toFixed(2)}</div>
+                    )}
+                    {u.last_status && (
+                      <span className={`inline-block mt-0.5 text-[9px] px-1.5 py-0.5 rounded-full ${statusColor[u.last_status] || 'text-gray-500 bg-gray-800'}`}>
+                        {statusLabel[u.last_status] || u.last_status}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       )}

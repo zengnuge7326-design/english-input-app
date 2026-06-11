@@ -21,8 +21,9 @@ export function isAudioUnlocked() {
 }
 
 export function unlockAudio() {
-  if (_unlocked) return
-  _unlocked = true
+  // Always re-run unlock steps — a prior call without a user gesture can
+  // fail silently; we must not skip the real click/touch unlock.
+  let audioReady = false
 
   // ── 1. AudioContext (used by useSound.js) ──────────────────────────────
   try {
@@ -43,6 +44,7 @@ export function unlockAudio() {
       src.buffer = buf
       src.connect(ctx.destination)
       src.start(0)
+      audioReady = ctx.state === 'running'
     }
   } catch (_) { /* ignore */ }
 
@@ -57,6 +59,9 @@ export function unlockAudio() {
       window.speechSynthesis.speak(u)
       // Cancel immediately — we only needed the gesture registration
       setTimeout(() => window.speechSynthesis?.cancel(), 50)
+      audioReady = true
     }
   } catch (_) { /* ignore */ }
+
+  if (audioReady) _unlocked = true
 }

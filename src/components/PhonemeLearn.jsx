@@ -6,7 +6,7 @@ import { IconArrowLeft } from './Icons'
 import { useSound } from '../hooks/useSound'
 import { useSpeechRecognition, matchWord } from '../hooks/useSpeechRecognition'
 import { PHONEME_GROUPS, PHONEME_EXAMPLES, MINIMAL_PAIRS, themeOfGroup, symbolToGroup } from '../data/phonemeChart.js'
-import { playPhoneme, playPhonemeExample, playWordAudio } from '../utils/phonicsAudio.js'
+import { playPhoneme, playPhonemeExample, playWordAudio, preloadPhonemeAudio } from '../utils/phonicsAudio.js'
 import { unlockAudio } from '../utils/audioUnlock.js'
 
 // ─── 持久化掌握度 ────────────────────────────────────────────
@@ -93,7 +93,7 @@ function TopProgressBar({ stars, total, label }) {
 // ───────────────────────────────────────────────────────────
 // 层 1：8 个分类封面
 // ───────────────────────────────────────────────────────────
-function GroupGrid({ mastery, onPick, onClose }) {
+function GroupGrid({ mastery, onPick, onClose, lockedBack = false, onUnlockBack }) {
   const totalStarsAll = PHONEME_GROUPS.reduce((s, g) => s + groupProgress(mastery, g).stars, 0)
   const totalAll = PHONEME_GROUPS.reduce((s, g) => s + groupProgress(mastery, g).total, 0)
   return (
@@ -107,15 +107,29 @@ function GroupGrid({ mastery, onPick, onClose }) {
         <TopProgressBar stars={totalStarsAll} total={totalAll} label="音标学习 · 8 分类" />
       </div>
       <h2 className="relative z-10 text-white text-lg font-bold mb-3">选择音标分类</h2>
+      {lockedBack && (
+        <div className="relative z-10 mb-3">
+          <button
+            type="button"
+            onClick={onUnlockBack}
+            className="w-full px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600/80 to-pink-600/80 text-white text-sm font-bold shadow-lg hover:scale-[1.01] transition-transform flex items-center justify-center gap-2 border border-purple-400/40"
+          >
+            <span>💎 20</span>
+            <span>解锁后 4 个分类（含双元音、塞擦音、鼻音、流音）</span>
+          </button>
+        </div>
+      )}
       <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-        {PHONEME_GROUPS.map(group => {
+        {PHONEME_GROUPS.map((group, gIdx) => {
           const t = themeOfGroup(group)
           const { stars, total } = groupProgress(mastery, group)
           const pct = total ? Math.round((stars / total) * 100) : 0
           const sample = group.symbols.slice(0, 3).join(' · ')
           const allDone = stars >= total
+          const groupLocked = lockedBack && gIdx >= 4
           return (
-            <button key={group.id} onClick={() => onPick(group)}
+            <button key={group.id} onClick={() => groupLocked ? onUnlockBack?.() : onPick(group)}
+              style={groupLocked ? { filter: 'grayscale(0.85) brightness(0.55)' } : undefined}
               className={`relative rounded-3xl bg-gradient-to-br ${t.from} ${t.to} ${t.glow} p-4 sm:p-5
                 backdrop-blur-xl backdrop-saturate-150 border border-white/15
                 flex flex-col gap-2 text-left transition-all active:scale-95 hover:scale-[1.03] shadow-md
@@ -653,13 +667,23 @@ function PhonemeFlashCard({ group, symbol, mastery, setMastery, onBack, sounds, 
 // ───────────────────────────────────────────────────────────
 // 顶层导出
 // ───────────────────────────────────────────────────────────
-export default function PhonemeLearn({ onClose, settings, onXp, onCrystal }) {
+export default function PhonemeLearn({ onClose, settings, onXp, onCrystal, isMember = false, unlocks, crystalBalance = 0, onGoShop }) {
   const [groupSel, setGroupSel] = useState(null)
   const [symbolSel, setSymbolSel] = useState(null)
   const [mastery, setMastery] = useState(loadPhonMastery)
   const [confetti, setConfetti] = useState([])
+  const [backConfirm, setBackConfirm] = useState(false)
   const sounds = useSound(settings)
   const sr = useSpeechRecognition()
+
+  // 前 4 组（短元音/长元音/双元音/爆破音）每组至少有 1 个掌握 → 自动解锁后 4 组
+  const front4Started = PHONEME_GROUPS.slice(0, 4).every(g =>
+    g.symbols.some(s => (mastery[s] && Object.values(mastery[s]).some(Boolean)))
+  )
+  const lockedBack = !(isMember || front4Started || unlocks?.isUnlocked?.('phoneme', 'back10'))
+
+  // 进入音标模块即空闲预热全部 IPA 切片，消除首次点击的网络往返
+  useEffect(() => preloadPhonemeAudio(), [])
 
   useEffect(() => {
     const allDone = PHONEME_GROUPS.every(g => g.symbols.every(s => phonFullyMastered(mastery, s)))
@@ -679,7 +703,26 @@ export default function PhonemeLearn({ onClose, settings, onXp, onCrystal }) {
     <>
       <ConfettiLayer items={confetti} />
       {!groupSel && (
-        <GroupGrid mastery={mastery} onPick={g => setGroupSel(g)} onClose={onClose} />
+        <GroupGrid
+          mastery={mastery}
+          onPick={g => setGroupSel(g)}
+          onClose={onClose}
+          lockedBack={lockedBack}
+          onUnlockBack={() => setBackConfirm(true)}
+        />
+      )}
+      {backConfirm && (
+        <PhonBackConfirmModal
+          crystalBalance={crystalBalance}
+          cost={20}
+          onCancel={() => setBackConfirm(false)}
+          onConfirm={async () => {
+            const r = await unlocks?.unlock?.('phoneme', 'back10', 20, 'blue')
+            if (r?.ok) setBackConfirm(false)
+            return r
+          }}
+          onGoShop={() => { setBackConfirm(false); onGoShop?.() }}
+        />
       )}
       {groupSel && !symbolSel && (
         <PhonemeGrid group={groupSel} mastery={mastery}
@@ -695,5 +738,54 @@ export default function PhonemeLearn({ onClose, settings, onXp, onCrystal }) {
           onBack={() => setSymbolSel(null)} />
       )}
     </>
+  )
+}
+
+
+// ─────────────────────────────────────────────────────────────
+// 后 4 组音标解锁确认弹窗
+// ─────────────────────────────────────────────────────────────
+function PhonBackConfirmModal({ crystalBalance, cost, onCancel, onConfirm, onGoShop }) {
+  const [busy, setBusy] = useState(false)
+  const [err, setErr] = useState('')
+  const enough = crystalBalance >= cost
+  async function handle() {
+    setBusy(true); setErr('')
+    const r = await onConfirm()
+    setBusy(false)
+    if (!r?.ok) {
+      if (r?.reason === 'insufficient') setErr(`钻石不够，需要 ${r.need}，你有 ${r.have}`)
+      else setErr('解锁失败，请稍后再试')
+    }
+  }
+  return (
+    <div className="fixed inset-0 z-[1100] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onClick={e => { if (e.target === e.currentTarget) onCancel() }}>
+      <div className="w-full max-w-sm rounded-2xl bg-slate-900 border border-slate-700 p-6 shadow-2xl">
+        <div className="text-center">
+          <div className="text-4xl mb-2">💎</div>
+          <h3 className="text-lg font-black text-white mb-1">解锁后 4 组音标</h3>
+          <p className="text-xs text-slate-400 mb-4">前 4 组每组各掌握 1 个音标可自动解锁，或花钻石提前开启</p>
+        </div>
+        <div className="rounded-xl bg-slate-800/70 border border-slate-700 px-4 py-3 mb-4">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-slate-400">解锁价</span>
+            <span className="font-bold text-purple-300 tabular-nums">💎 {cost}</span>
+          </div>
+          <div className="flex items-center justify-between text-sm mt-1.5">
+            <span className="text-slate-400">我的钻石</span>
+            <span className={`font-bold tabular-nums ${enough ? 'text-emerald-300' : 'text-red-400'}`}>💎 {crystalBalance}</span>
+          </div>
+        </div>
+        {err && <div className="text-center text-red-400 text-xs mb-3">{err}</div>}
+        <div className="flex gap-2">
+          <button onClick={onCancel} disabled={busy} className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-bold transition-colors">取消</button>
+          {enough ? (
+            <button onClick={handle} disabled={busy} className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-sm font-bold disabled:opacity-60">{busy ? '解锁中…' : `花费 ${cost} 💎 解锁`}</button>
+          ) : (
+            <button onClick={onGoShop} className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold">去小店补充钻石</button>
+          )}
+        </div>
+      </div>
+    </div>
   )
 }

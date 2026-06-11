@@ -3,18 +3,36 @@ const API = 'https://okenglish.site/api'
 /** 为 true 时课程广场与教材全员可用（不依赖登录会员标记） */
 const UNLOCK_ALL_COURSES = false
 async function apiPost(path, body, token) {
-  const res = await fetch(API + path, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-    body: JSON.stringify(body)
-  })
-  return res.json()
+  try {
+    const res = await fetch(API + path, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+      body: JSON.stringify(body)
+    })
+    const text = await res.text()
+    try {
+      return JSON.parse(text)
+    } catch {
+      return { error: res.ok ? '服务器响应异常' : `请求失败 (${res.status})` }
+    }
+  } catch {
+    return { error: '网络连接失败，请检查网络后重试' }
+  }
 }
 async function apiGet(path, token) {
-  const res = await fetch(API + path, {
-    headers: { ...(token ? { Authorization: `Bearer ${token}` } : {}) }
-  })
-  return res.json()
+  try {
+    const res = await fetch(API + path, {
+      headers: { ...(token ? { Authorization: `Bearer ${token}` } : {}) }
+    })
+    const text = await res.text()
+    try {
+      return JSON.parse(text)
+    } catch {
+      return { error: res.ok ? '服务器响应异常' : `请求失败 (${res.status})` }
+    }
+  } catch {
+    return { error: '网络连接失败，请检查网络后重试' }
+  }
 }
 import TeacherDashboard from './components/TeacherDashboard'
 import StudentJoin from './components/StudentJoin'
@@ -43,12 +61,30 @@ import GutenbergReading from './components/GutenbergReading'
 import MemberPage from './components/MemberPage'
 import ReferralCenter from './components/ReferralCenter'
 import FounderCenter from './components/FounderCenter'
+import MicPermissionSheet from './components/MicPermissionSheet'
 import { STUDY_KIND } from './studyHistory'
+import { supabase } from './lib/supabase'
 import { useProgress, getRecentErrors } from './hooks/useProgress'
 import { useXP } from './hooks/useXP'
 import { useCrystal } from './hooks/useCrystal'
 import { useSound } from './hooks/useSound'
 import CrystalPanel from './components/CrystalPanel'
+import WhackAMole from './components/WhackAMole'
+import FrogJump from './components/FrogJump/FrogJump'
+import GameLauncher from './components/GameLauncher'
+import Leaderboard from './components/Leaderboard'
+import useUnlocks from './hooks/useUnlocks'
+import AICoach from './components/AICoach/AICoach'
+import AboutSite from './components/AboutSite'
+import MobileLearnApp from './mobile/MobileLearnApp'
+import {
+  isCapacitorNative,
+  setMobileShellEnabled,
+  shouldAutoLaunchMobileShell,
+  shouldHideMainChrome,
+} from './mobile/nativeShell'
+import CloseBadge from './components/CloseBadge'
+import { useHistoryLayer } from './hooks/useHistoryLayer'
 import CrystalFloat from './components/CrystalFloat'
 import GemSVG from './components/GemSVG'
 import PetAvatar from './components/PetAvatar'
@@ -78,7 +114,7 @@ import bsdaS3Data from './data/bsda_s3.json'
 import bsdaS4Data from './data/bsda_s4.json'
 import {
   IconHome, IconPencil, IconBookOpen, IconBook,
-  IconGraduationCap, IconDownload, IconSettings,
+  IconGraduationCap, IconDownload, IconSettings, IconSparkles, IconGamepad,
   IconArchive, IconCalendar, IconStar, IconRefresh, IconCrown, IconUsers,
   IconUser,
   IconMenu,
@@ -200,10 +236,8 @@ const DEFAULT_SETTINGS = {
   correctSound: 'chime',
   victorySound: 'chime',
   errorSound: 'buzz',
-  /** 教材句子练习「领读」次数 1–5，换单元后仍保留 */
+  /** 输入学习：全局领读遍数 1–5（持久化，所有练习框共用） */
   leadReadCount: 1,
-  /** 输入阅读：整框 = 框内全文；整句 = 光标所在英文分句 */
-  readingSpeakScope: 'box',
 }
 
 function loadSettings() {
@@ -221,7 +255,6 @@ const NAV_ITEMS = [
   { id: 'courses',  Icon: IconBookOpen,        label: '课程广场' },
   { id: 'textbook', Icon: IconBook,            label: '教材同步' },
   { id: 'grammar',  Icon: IconGraduationCap,   label: '语法专项' },
-  { id: 'import',   Icon: IconDownload,        label: '导入' },
   { id: 'quiz',     Icon: IconCheckSquare,     label: '选择题' },
   { id: 'fillblank', Icon: IconEdit,           label: '填空题' },
 ]
@@ -235,6 +268,7 @@ const BOTTOM_ITEMS = [
 ]
 
 function LoginModal({ onClose, onLogin, initialInviteCode = '' }) {
+  useHistoryLayer(true, onClose)
   const [mode, setMode] = useState(initialInviteCode ? 'register' : 'login')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -252,28 +286,36 @@ function LoginModal({ onClose, onLogin, initialInviteCode = '' }) {
   function reset() { setError(''); setSuccess('') }
 
   async function handleSubmit() {
-    setLoading(true); reset()
-    const path = mode === 'register' ? '/register' : '/login'
-    const body = { username, password }
-    if (mode === 'register' && refCode) body.ref_code = refCode
-    if (mode === 'register' && inviteCode.trim()) body.invite_code = inviteCode.trim().toUpperCase()
-    const res = await apiPost(path, body)
-    if (res.error) {
-      setError(res.error)
-    } else {
-      if (mode === 'register') localStorage.removeItem('pending_ref_code')
-      localStorage.setItem('auth_token', res.token)
-      localStorage.setItem('auth_username', res.username)
-      onLogin(res.username, res.token, res.is_member, res.is_founder)
-      onClose()
+    if (!username.trim() || !password) {
+      setError('请输入用户名和密码')
+      return
     }
-    setLoading(false)
+    setLoading(true); reset()
+    try {
+      const path = mode === 'register' ? '/register' : '/login'
+      const body = { username, password }
+      if (mode === 'register' && refCode) body.ref_code = refCode
+      if (mode === 'register' && inviteCode.trim()) body.invite_code = inviteCode.trim().toUpperCase()
+      const res = await apiPost(path, body)
+      if (res.error) {
+        setError(res.error)
+      } else {
+        if (mode === 'register') localStorage.removeItem('pending_ref_code')
+        onLogin(res.username, res.token, res.is_member, res.is_founder)
+        onClose()
+      }
+    } catch {
+      setError('登录失败，请稍后重试')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const titles = { login: '登录', register: '注册账号' }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[10001] flex items-center justify-center bg-black/70 px-4" onClick={onClose}>
+      <CloseBadge onClose={onClose} />
       <div className="bg-gray-900 border border-gray-700 rounded-2xl p-8 w-full max-w-sm shadow-2xl" onClick={e => e.stopPropagation()}>
         <h2 className="text-xl font-bold text-white mb-1">{titles[mode]}</h2>
         <p className="text-gray-500 text-sm mb-6">登录以同步学习进度到云端</p>
@@ -312,36 +354,45 @@ function LoginModal({ onClose, onLogin, initialInviteCode = '' }) {
         {mode !== 'register' && <div className="mb-1" />}
         {error && <p className="text-red-400 text-xs mb-3">{error}</p>}
         {success && <p className="text-green-400 text-xs mb-3">{success}</p>}
-        <button
-          className="w-full bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-semibold py-3 rounded-xl transition-colors mb-3"
-          onClick={handleSubmit}
-          disabled={loading}
-        >
-          {loading ? '请稍候…' : (mode === 'login' ? '登录' : '注册')}
-        </button>
-        {mode === 'login' ? (
-          <button className="w-full text-gray-500 hover:text-gray-300 text-sm transition-colors mb-2"
-            onClick={() => { setMode('register'); reset() }}>
-            没有账号？去注册
+
+        {/* 登录 / 注册 双按钮组（中间细缝分隔，视觉一体） */}
+        <div className="flex rounded-xl overflow-hidden shadow-lg mb-3 ring-1 ring-white/10">
+          <button
+            onClick={() => {
+              if (mode !== 'login') { setMode('login'); reset(); return }
+              handleSubmit()
+            }}
+            disabled={loading}
+            className={`flex-1 py-3 font-bold text-sm transition-all disabled:opacity-50
+              ${mode === 'login'
+                ? 'bg-blue-600 hover:bg-blue-500 text-white'
+                : 'bg-slate-700 hover:bg-slate-600 text-blue-200'}`}>
+            {loading && mode === 'login' ? '请稍候…' : '登 录'}
           </button>
-        ) : (
-          <button className="w-full text-gray-500 hover:text-gray-300 text-sm transition-colors mb-2"
-            onClick={() => { setMode('login'); reset() }}>
-            已有账号？去登录
+          <div className="w-px bg-slate-950" />
+          <button
+            onClick={() => {
+              if (mode !== 'register') { setMode('register'); reset(); return }
+              handleSubmit()
+            }}
+            disabled={loading}
+            className={`flex-1 py-3 font-bold text-sm transition-all disabled:opacity-50
+              ${mode === 'register'
+                ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
+                : 'bg-slate-700 hover:bg-slate-600 text-emerald-200'}`}>
+            {loading && mode === 'register' ? '请稍候…' : '注 册'}
           </button>
-        )}
+        </div>
+        <p className="text-center text-[11px] text-gray-500 mb-2">
+          {mode === 'login' ? '当前：登录模式 · 点右侧切换注册' : '当前：注册模式 · 点左侧切换登录'}
+        </p>
         <button className="w-full text-gray-600 hover:text-gray-400 text-sm transition-colors" onClick={onClose}>取消</button>
       </div>
     </div>
   )
 }
 
-export default function App() {
-  // 教师端模式：URL 含 ?teacher 时直接渲染教师工作台
-  if (window.location.search.includes('teacher') || window.location.pathname === '/teacher') {
-    return <TeacherDashboard />
-  }
-
+function MainApp() {
   const [sentences, setSentences] = useState(sampleData)
   const [settings, setSettings] = useState(loadSettings)
   const [tab, setTab] = useState('home')
@@ -357,6 +408,8 @@ export default function App() {
   }, [lessonPackMeta])
   /** 语法专项「同步练习」小题包（与教材 Lesson 底栏同款入口） */
   const [grammarSyncQuiz, setGrammarSyncQuiz] = useState(null)
+  /** 核心句群同步练习 */
+  const [coreSyncQuiz, setCoreSyncQuiz] = useState(null)
   // History API integration:
   // - lessonRegistryRef: in-memory resolver label → { data, nextLoader } (closures can't be serialized)
   // - historyDepth: number of pushState entries we've added past the initial "home"
@@ -408,13 +461,23 @@ export default function App() {
   const [navSlidePos, setNavSlidePos] = useState(null)
   const [navActivePos, setNavActivePos] = useState(null)
 
+  function navSlideMetrics(el) {
+    if (!el) return null
+    return { top: el.offsetTop, h: el.offsetHeight, left: el.offsetLeft, w: el.offsetWidth }
+  }
+
+  function navSlideFromEl(el) {
+    const metrics = navSlideMetrics(el)
+    if (metrics) setNavSlidePos(metrics)
+  }
+
   useEffect(() => {
     if (!menuOpen) return
     requestAnimationFrame(() => {
       const container = navSlideRef.current
       if (!container) return
       const active = container.querySelector('[data-nav-active="true"]')
-      if (active) setNavActivePos({ top: active.offsetTop, h: active.offsetHeight })
+      if (active) setNavActivePos(navSlideMetrics(active))
     })
   }, [menuOpen, tab, showSettings, isLightMode])
 
@@ -426,7 +489,7 @@ export default function App() {
     for (const el of items) {
       const r = el.getBoundingClientRect()
       if (touchY >= r.top && touchY <= r.bottom) {
-        setNavSlidePos({ top: el.offsetTop, h: el.offsetHeight })
+        navSlideFromEl(el)
         return
       }
     }
@@ -506,7 +569,38 @@ export default function App() {
 
   // 钻石系统
   const crystal = useCrystal(token)
+  const unlocks = useUnlocks(token, isMember || isFounder)
   const [showCrystalPanel, setShowCrystalPanel] = useState(false)
+  const [showLeaderboard, setShowLeaderboard] = useState(false)
+  const [showWhack, setShowWhack] = useState(false)
+  const [showFrog, setShowFrog] = useState(false)
+  const [showGames, setShowGames] = useState(false)
+  const [showCoach, setShowCoach] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
+  const [showMobileLearn, setShowMobileLearn] = useState(false)
+  const [mobileShellMode, setMobileShellMode] = useState(() => shouldHideMainChrome())
+
+  useEffect(() => {
+    if (shouldAutoLaunchMobileShell()) {
+      setShowMobileLearn(true)
+      setMobileShellMode(true)
+      setMobileShellEnabled(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    const root = document.documentElement
+    if (showMobileLearn && mobileShellMode) {
+      root.classList.add('mobile-shell-active')
+      setMenuOpen(false)
+    } else {
+      root.classList.remove('mobile-shell-active')
+    }
+    return () => root.classList.remove('mobile-shell-active')
+  }, [showMobileLearn, mobileShellMode])
+  // 浏览器返回拦截：内联模态各自接管一层
+  useHistoryLayer(showMsgCenter, () => setShowMsgCenter(false))
+  useHistoryLayer(showStudentJoin, () => setShowStudentJoin(false))
   const [crystalPulse, setCrystalPulse] = useState(0)
 
   // 商店背包 / 装备头像
@@ -602,8 +696,18 @@ export default function App() {
     openTab('grammarSync')
   }, [openTab])
 
+  const handleCoreExerciseQuiz = useCallback((payload) => {
+    if (!payload?.questions?.length) return
+    setCoreSyncQuiz({ ...payload, sessionKey: Date.now() })
+    openTab('coreSync')
+  }, [openTab])
+
   useEffect(() => {
     if (tab !== 'grammarSync') setGrammarSyncQuiz(null)
+  }, [tab])
+
+  useEffect(() => {
+    if (tab !== 'coreSync') setCoreSyncQuiz(null)
   }, [tab])
 
   const handleImport = useCallback((data, label = null, nextLoader = null, packMeta = null) => {
@@ -665,6 +769,12 @@ export default function App() {
       window.history.replaceState({ kind: 'tab', tab: 'home' }, '')
     }
     function onPopState(e) {
+      // 协作：若有 useHistoryLayer 的模态在场上，这次 pop 是关层不是真正的导航
+      // 不要重新 applyLesson / setTab，否则会重置 exerciseIndex / 重拉数据 / 抢音频缓存
+      if ((window.__layerCount || 0) > 0) {
+        window.__layerCount = Math.max(0, window.__layerCount - 1)
+        return
+      }
       const state = e.state
       isPopStateRef.current = true
       try {
@@ -712,6 +822,8 @@ export default function App() {
     setToken(tok)
     setIsMember(!!is_member)
     setIsFounder(!!is_founder)
+    localStorage.setItem('auth_token', tok)
+    localStorage.setItem('auth_username', username)
     localStorage.setItem('auth_is_member', is_member ? '1' : '0')
     localStorage.setItem('auth_is_founder', is_founder ? '1' : '0')
   }
@@ -726,6 +838,30 @@ export default function App() {
     setIsMember(false)
     setIsFounder(false)
   }
+
+  useEffect(() => {
+    const tok = localStorage.getItem('auth_token')
+    if (!tok) return
+    let cancelled = false
+    setAuthLoading(true)
+    apiGet('/session', tok).then(res => {
+      if (cancelled) return
+      if (res.error) {
+        handleLogout()
+        return
+      }
+      setUser(res.username)
+      setToken(tok)
+      setIsMember(!!res.is_member)
+      setIsFounder(!!res.is_founder)
+      localStorage.setItem('auth_username', res.username)
+      localStorage.setItem('auth_is_member', res.is_member ? '1' : '0')
+      localStorage.setItem('auth_is_founder', res.is_founder ? '1' : '0')
+    }).finally(() => {
+      if (!cancelled) setAuthLoading(false)
+    })
+    return () => { cancelled = true }
+  }, [])
 
   function handleLeaveClass() {
     localStorage.removeItem('student_id')
@@ -816,7 +952,29 @@ export default function App() {
     }
   }
 
+  // 全局兜底：用户与页面的第一次任意交互即解锁音频，
+  // 避免某些组件忘记调 unlockAudio() 导致首屏自动朗读被浏览器静默拦截。
+  useEffect(() => {
+    if (isAudioUnlocked()) return
+    const onFirst = () => { try { unlockAudio() } catch { /* ignore */ } cleanup() }
+    const opts = { capture: true, passive: true }
+    const evs = ['pointerdown', 'touchstart', 'keydown']
+    function cleanup() { evs.forEach((e) => window.removeEventListener(e, onFirst, opts)) }
+    evs.forEach((e) => window.addEventListener(e, onFirst, opts))
+    return cleanup
+  }, [])
+
   const isHomeLight = isLightMode
+
+  // 移动端断点检测（<640px 启用紧凑菜单）
+  const [isMobileMenu, setIsMobileMenu] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  )
+  useEffect(() => {
+    const onResize = () => setIsMobileMenu(window.innerWidth < 640)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
 
   const mainNavItems = [
     { id: 'home', label: '首页', Icon: IconHome, onClick: () => navigateFromMenu('home') },
@@ -829,7 +987,7 @@ export default function App() {
     { id: 'alphabet', label: '26字母', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('alphabet') },
     { id: 'phonemes', label: '音标学习', Icon: IconBookmark, sub: true, onClick: () => navigateFromMenu('phonemes') },
     { id: 'typing', label: '指法练习', Icon: IconKeyboard, onClick: () => navigateFromMenu('typing') },
-    { id: 'import', label: '导入', Icon: IconDownload, onClick: () => navigateFromMenu('import') },
+    { id: 'games', label: '游戏中心', Icon: IconGamepad, onClick: () => { setMenuOpen(false); setShowGames(true) } },
     { id: 'settings', label: '设置', Icon: IconSettings, onClick: () => { setMenuOpen(false); setShowSettings(true) } },
     { id: 'msgcenter', label: '公告&留言', Icon: IconMessageSquare, bell: true, onClick: () => { setMenuOpen(false); setShowMsgCenter(true) } },
     isFounder
@@ -852,13 +1010,19 @@ export default function App() {
         : (tab === item.id || (item.id === 'settings' && showSettings)) ? 'bg-slate-700 text-white' : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'}`
   }
 
+  function accountNavClass() {
+    if (isHomeLight) return 'lg-nav-item nav-slide-item shrink-0'
+    return 'flex items-center gap-2 py-1.5 rounded-lg transition-colors shrink-0 px-2 text-sm relative nav-slide-item text-slate-300'
+  }
+
   const navIconSize = isHomeLight ? 17 : 15
 
   return (
     <div className={`min-h-screen flex flex-col ${isHomeLight ? 'theme-light-glass' : 'bg-black text-white theme-dark'}`} onClick={handleGlobalClick}>
+      <MicPermissionSheet />
       <div className="flex flex-1 relative">
         {/* 亮色模式：月亮切换 + 汉堡，全屏可见，与暗色模式位置对齐 */}
-        {!menuOpen && isHomeLight && (
+        {!showMobileLearn && !menuOpen && isHomeLight && (
           <>
             <button
               type="button"
@@ -881,7 +1045,7 @@ export default function App() {
             </button>
           </>
         )}
-        {!menuOpen && !isHomeLight && (
+        {!showMobileLearn && !menuOpen && !isHomeLight && (
           <>
             <button
               type="button"
@@ -908,36 +1072,85 @@ export default function App() {
           </>
         )}
 
-        {/* 常驻连续打卡徽章（左上角，点击回首页） */}
-        <button
-          type="button"
-          onClick={() => openTab('home')}
-          title={`连续打卡 ${xp.streak} 天 · 今日 ${xp.todayXp}/${xp.goal} XP`}
-          className={`pointer-events-auto fixed z-[101] flex h-11 items-center gap-1 rounded-xl border px-2.5 shadow-lg backdrop-blur-sm transition-colors left-[max(0.75rem,env(safe-area-inset-left,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]
-            ${isHomeLight
-              ? (xp.reachedGoalToday ? 'border-amber-300/60 bg-amber-50/90 text-amber-700' : 'border-white/70 bg-white/55 text-[#1a1a1a] hover:bg-white/75')
-              : (xp.reachedGoalToday ? 'border-amber-500/50 bg-amber-500/15 text-amber-300' : 'border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700')}`}
+        {/* 左上角状态徽章：等宽排列（避免多位数字撑宽中间钻石格） */}
+        <div
+          data-app-chrome
+          className="pointer-events-auto fixed z-[101] flex items-center gap-1.5 left-[max(0.75rem,env(safe-area-inset-left,0px))] top-[max(0.75rem,env(safe-area-inset-top,0px))]"
+          style={{ display: showMobileLearn ? 'none' : undefined }}
         >
-          <span className="text-base leading-none">🔥</span>
-          <span className="text-sm font-bold tabular-nums">{xp.streak}</span>
-        </button>
+          <button
+            type="button"
+            onClick={() => setShowLeaderboard(true)}
+            title={`连续打卡 ${xp.streak} 天 · 今日 ${xp.todayXp}/${xp.goal} XP · 点击查看排行榜`}
+            className={`flex h-11 w-14 shrink-0 items-center justify-center gap-0.5 rounded-xl border px-1.5 shadow-lg backdrop-blur-sm transition-colors
+              ${isHomeLight
+                ? (xp.reachedGoalToday ? 'border-amber-300/60 bg-amber-50/90 text-amber-700' : 'border-white/70 bg-white/55 text-[#1a1a1a] hover:bg-white/75')
+                : (xp.reachedGoalToday ? 'border-amber-500/50 bg-amber-500/15 text-amber-300' : 'border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700')}`}
+          >
+            <span className="text-lg leading-none">🔥</span>
+            <span className="text-sm font-bold tabular-nums">{xp.streak}</span>
+          </button>
 
-        {/* 钻石徽章（紧邻 🔥 右侧） */}
-        <button
-          type="button"
-          onClick={() => setShowCrystalPanel(true)}
-          title={`钻石塔 Lv.${crystal.towerLevel} · 共 ${crystal.total} 颗钻石`}
-          className={`pointer-events-auto fixed z-[101] flex h-11 items-center gap-1 rounded-xl border backdrop-blur-sm px-2.5 shadow-lg transition-colors
-            ${isHomeLight
-              ? 'border-[#b794f6]/40 bg-[rgba(235,222,240,0.75)] text-[#6b21a8] hover:bg-[rgba(235,222,240,0.95)]'
-              : 'border-purple-500/50 bg-purple-900/60 text-purple-200 hover:bg-purple-800/80'}`}
-          style={{ left: 'calc(max(0.75rem, env(safe-area-inset-left, 0px)) + 3.6rem)', top: 'max(0.75rem, env(safe-area-inset-top, 0px))' }}
-        >
-          <span key={crystalPulse} className="inline-flex items-center justify-center crystal-pulse">
-            <GemSVG color="blue" size={22} />
-          </span>
-          <span className="text-sm font-bold tabular-nums">{crystal.total}</span>
-        </button>
+          <button
+            type="button"
+            onClick={() => setShowCrystalPanel(true)}
+            title={`钻石塔 Lv.${crystal.towerLevel} · 共 ${crystal.total} 颗钻石`}
+            className={`flex h-11 w-14 shrink-0 items-center justify-center gap-0.5 rounded-xl border px-1.5 shadow-lg backdrop-blur-sm transition-colors
+              ${isHomeLight
+                ? 'border-[#b794f6]/40 bg-[rgba(235,222,240,0.75)] text-[#6b21a8] hover:bg-[rgba(235,222,240,0.95)]'
+                : 'border-purple-500/50 bg-purple-900/60 text-purple-200 hover:bg-purple-800/80'}`}
+          >
+            <span key={crystalPulse} className="inline-flex shrink-0 items-center justify-center crystal-pulse">
+              <GemSVG color="blue" size={18} />
+            </span>
+            <span className="text-sm font-bold tabular-nums">{crystal.total}</span>
+          </button>
+        </div>
+
+        {showGames && (
+          <GameLauncher
+            onClose={() => setShowGames(false)}
+            onPickGame={id => {
+              setShowGames(false)
+              if (id === 'whack') setShowWhack(true)
+              else if (id === 'frog') setShowFrog(true)
+            }}
+          />
+        )}
+        {showLeaderboard && (
+          <Leaderboard
+            token={token}
+            currentUsername={user}
+            onClose={() => setShowLeaderboard(false)}
+          />
+        )}
+        {showWhack && <WhackAMole onClose={() => setShowWhack(false)} />}
+        {showFrog && <FrogJump onClose={() => setShowFrog(false)} onCrystal={crystal.earn} />}
+        {showCoach && <AICoach token={token} onClose={() => setShowCoach(false)} />}
+        {showAbout && <AboutSite onClose={() => setShowAbout(false)} />}
+        {showMobileLearn && (
+          <div className="fixed inset-0 z-[200] overflow-hidden">
+            <MobileLearnApp
+              shellMode={mobileShellMode}
+              onClose={() => setShowMobileLearn(false)}
+              onExitShell={() => {
+                setMobileShellEnabled(false)
+                setMobileShellMode(false)
+                setShowMobileLearn(false)
+              }}
+              onAddXp={xp.addXP}
+              onCrystalEarn={crystal.earn}
+              mainXp={{
+                streak: xp.streak,
+                totalXp: xp.totalXp,
+                todayXp: xp.todayXp,
+                goal: xp.goal,
+              }}
+              mainCrystal={{ total: crystal.total }}
+              crystalPulse={crystalPulse}
+            />
+          </div>
+        )}
 
         {/* 今日目标达成 toast */}
         {goalToast && (
@@ -986,15 +1199,16 @@ export default function App() {
               onClick={() => setMenuOpen(false)}
             />
             <div
-              className={`pointer-events-auto fixed top-0 right-0 z-[100] h-[100dvh] max-h-[100dvh] isolate ${isHomeLight ? 'w-36 shadow-[-8px_0_32px_rgba(0,0,0,0.06)]' : 'w-32 shadow-[-6px_0_28px_rgba(0,0,0,0.4)]'}`}
+              className={`pointer-events-auto fixed top-0 right-0 z-[100] h-[100dvh] max-h-[100dvh] isolate w-32
+                ${isHomeLight ? 'shadow-[-8px_0_32px_rgba(0,0,0,0.06)]' : 'shadow-[-6px_0_28px_rgba(0,0,0,0.4)]'}`}
             >
               {/* ── 主侧边栏 ── */}
               <aside
                 aria-label="导航菜单"
-                className={`flex h-full min-h-0 w-full flex-col overflow-hidden ${isHomeLight ? 'lg-glass-nav' : 'border-l border-slate-600/45 bg-slate-900'}`}
+                className={`flex h-full min-h-0 w-full flex-col overflow-hidden ${isHomeLight ? 'lg-glass-nav' : 'border-l border-slate-600/45 bg-slate-900'}${isMobileMenu ? ' nav-menu-mobile' : ''}`}
               >
           {/* ── 品牌头部：头像（可切换）+ 收起 ── */}
-          <div className="shrink-0 flex items-center gap-1.5 pt-[max(0.75rem,env(safe-area-inset-top,0px))] px-1.5 pb-2">
+          <div className={`nav-menu-header shrink-0 flex items-center gap-1 px-1.5 ${isMobileMenu ? 'pt-[max(0.25rem,env(safe-area-inset-top,0px))] pb-0' : 'pt-[max(0.75rem,env(safe-area-inset-top,0px))] pb-2'}`}>
             <button
               type="button"
               onClick={() => {
@@ -1005,11 +1219,11 @@ export default function App() {
               className="group flex-1 flex items-center justify-center transition-transform active:scale-95"
               aria-label="切换头像"
             >
-              <div className="w-16 h-16 rounded-[22%] overflow-hidden flex items-center justify-center">
+              <div className={`nav-menu-avatar-slot rounded-[22%] overflow-hidden flex items-center justify-center ${isMobileMenu ? 'w-11 h-11' : 'w-16 h-16'}`}>
                 {shopInventory.equipped?.avatar ? (
                   <PetAvatar
                     petId={shopInventory.equipped.avatar}
-                    size={64}
+                    size={isMobileMenu ? 44 : 64}
                     className="transition-transform duration-300 group-hover:scale-110"
                   />
                 ) : (
@@ -1024,50 +1238,28 @@ export default function App() {
             <button
               onClick={() => setMenuOpen(false)}
               aria-label="收起菜单"
-              className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors
+              className={`nav-menu-close relative flex shrink-0 items-center justify-center rounded-xl transition-colors
+                ${isMobileMenu ? 'h-8 w-8' : 'h-11 w-11'}
                 ${isHomeLight
                   ? 'border border-white/60 bg-white/40 text-[#1a1a1a] hover:bg-white/65'
                   : 'border border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700'}`}
             >
-              <IconMenu size={22} />
+              <IconMenu size={isMobileMenu ? 16 : 22} />
               {hasUnreadAnn && (
                 <span className={`absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ${isHomeLight ? 'ring-1 ring-white' : 'ring-1 ring-slate-800'}`} />
               )}
             </button>
           </div>
-          <div className="flex min-h-0 flex-1 flex-col gap-0.5 px-2 pb-3 overflow-y-auto overflow-x-hidden">
 
-          {/* 登录 / 用户信息 */}
-          {user ? (
-            <button onClick={() => { setMenuOpen(false); handleLogout() }} className={`shrink-0 flex items-center gap-2 px-2 py-1.5 rounded-lg transition-colors ${isHomeLight ? 'lg-nav-item text-[#707070]' : 'text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white'}`}>
-              <div className={`shrink-0 flex items-center justify-center rounded-full font-bold text-white ${isHomeLight ? 'h-6 w-6 bg-[#5b9bd5] text-[11px]' : 'w-5 h-5 bg-blue-600 text-[10px]'}`}>{user[0].toUpperCase()}</div>
-              <span className="truncate">{user} · 退出</span>
-            </button>
-          ) : (
-            <button onClick={() => { setMenuOpen(false); setShowLogin(true) }} className={`shrink-0 flex items-center gap-2 px-2 py-1.5 rounded-lg transition-colors ${isHomeLight ? 'lg-nav-item text-[#5b9bd5]' : 'text-sm text-blue-400 hover:bg-slate-800/80 hover:text-blue-300'}`}>
-              <IconUser size={navIconSize} /><span>登录</span>
-            </button>
-          )}
+          <div className={`shrink-0 mx-2 border-t ${isHomeLight ? 'lg-divider' : 'border-slate-700/70'}`} />
 
-          {/* 班级状态 */}
-          {studentInfo ? (
-            <div className={`flex shrink-0 items-center gap-2 rounded-xl px-2 py-1.5 ${isHomeLight ? 'border border-emerald-200/80 bg-[rgba(232,248,245,0.75)]' : 'bg-green-900/30 border border-green-800/50'}`}>
-              <span className={`text-xs ${isHomeLight ? 'text-emerald-700' : 'text-green-400'}`}>🏫</span>
-              <span className={`flex-1 truncate text-xs ${isHomeLight ? 'text-[#1a1a1a]' : 'text-green-300'}`}>{studentInfo.studentName} · {studentInfo.className}</span>
-              <button onClick={() => { setMenuOpen(false); handleLeaveClass() }} className="text-[10px] text-gray-400 transition-colors hover:text-red-500">✕</button>
-            </div>
-          ) : (
-            <button onClick={() => { setMenuOpen(false); setShowStudentJoin(true) }} className={`shrink-0 flex items-center gap-2 rounded-xl px-2 py-1.5 text-xs transition-colors ${isHomeLight ? 'lg-nav-item text-emerald-700' : 'text-green-400 hover:bg-green-900/30'}`}>
-              <span>🏫</span><span>加入班级（打卡）</span>
-            </button>
-          )}
+          <div className={`nav-menu-scroll flex min-h-0 flex-1 flex-col overflow-x-hidden overscroll-contain ${isMobileMenu ? 'px-1.5 overflow-hidden' : 'px-2 gap-0.5 overflow-y-auto'}`}
+            style={{ paddingBottom: isMobileMenu ? 'max(env(safe-area-inset-bottom, 0px), 4px)' : 'calc(env(safe-area-inset-bottom, 0px) + 24px)' }}>
 
-          <div className={`shrink-0 border-t ${isHomeLight ? 'lg-divider' : 'border-slate-700/70'}`} />
-
-          {/* 导航菜单 — 滑动薰衣草玻璃高亮（明暗双模 + 触屏跟随，禁用页面滚动） */}
+          {/* 导航菜单 — 登录/班级 + 页面入口，滑动薰衣草玻璃高亮 */}
           <div
             ref={navSlideRef}
-            className="relative flex flex-col gap-0.5"
+            className={`nav-menu-nav relative flex flex-col ${isMobileMenu ? 'min-h-0 flex-1 justify-between' : 'gap-0.5'}`}
             style={{ touchAction: 'none' }}
             onMouseLeave={() => setNavSlidePos(null)}
             onTouchStart={(e) => { e.preventDefault(); if (e.touches[0]) navSlideFromTouch(e.touches[0].clientY) }}
@@ -1075,22 +1267,82 @@ export default function App() {
             onTouchEnd={() => setNavSlidePos(null)}
           >
             {/* 滑动高亮块（明暗都启用） */}
-            {(navSlidePos || navActivePos) && (
+            {(navSlidePos || navActivePos) && (() => {
+              const pos = navSlidePos || navActivePos
+              return (
               <div
                 aria-hidden
                 className={`nav-slide-highlight ${isHomeLight ? 'is-light' : 'is-dark'}`}
                 style={{
                   position: 'absolute',
-                  left: 0, right: 0,
-                  top: (navSlidePos || navActivePos).top,
-                  height: (navSlidePos || navActivePos).h,
+                  top: pos.top,
+                  height: pos.h,
+                  left: pos.left ?? 0,
+                  width: pos.w ?? undefined,
+                  right: pos.w != null ? undefined : 0,
                   borderRadius: 14,
                   pointerEvents: 'none',
                   zIndex: 0,
-                  willChange: 'top',
-                  transition: 'top 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.2s ease, opacity 0.15s ease',
+                  willChange: 'top, left, width',
+                  transition: 'top 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.2s ease, opacity 0.15s ease',
                 }}
               />
+              )
+            })()}
+
+            {/* 登录 / 班级 — 各占一行，与导航项同款 */}
+            {user ? (
+              <button
+                type="button"
+                data-nav-item="true"
+                onClick={() => { setMenuOpen(false); handleLogout() }}
+                title={`${user} · 点击退出`}
+                onMouseEnter={(e) => navSlideFromEl(e.currentTarget)}
+                style={{ position: 'relative', zIndex: 1 }}
+                className={`${accountNavClass()} ${isHomeLight ? '' : 'px-2 text-sm'}`}
+              >
+                <IconUser size={navIconSize} />
+                <span className="truncate">{user}</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                data-nav-item="true"
+                onClick={() => { setMenuOpen(false); setShowLogin(true) }}
+                onMouseEnter={(e) => navSlideFromEl(e.currentTarget)}
+                style={{ position: 'relative', zIndex: 1 }}
+                className={`${accountNavClass()} ${isHomeLight ? '' : 'px-2 text-sm'}`}
+              >
+                <IconUser size={navIconSize} />
+                <span className="truncate">登录</span>
+              </button>
+            )}
+
+            {studentInfo ? (
+              <button
+                type="button"
+                data-nav-item="true"
+                onClick={() => { setMenuOpen(false); handleLeaveClass() }}
+                title={`${studentInfo.studentName} · ${studentInfo.className} · 点击退出`}
+                onMouseEnter={(e) => navSlideFromEl(e.currentTarget)}
+                style={{ position: 'relative', zIndex: 1 }}
+                className={`${accountNavClass()} ${isHomeLight ? '' : 'px-2 text-sm'}`}
+              >
+                <IconUsers size={navIconSize} />
+                <span className="truncate">{studentInfo.className}</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                data-nav-item="true"
+                onClick={() => { setMenuOpen(false); setShowStudentJoin(true) }}
+                onMouseEnter={(e) => navSlideFromEl(e.currentTarget)}
+                style={{ position: 'relative', zIndex: 1 }}
+                className={`${accountNavClass()} ${isHomeLight ? '' : 'px-2 text-sm'}`}
+              >
+                <IconUsers size={navIconSize} />
+                <span className="truncate">加入班级</span>
+              </button>
             )}
 
             {mainNavItems.map(item => {
@@ -1100,9 +1352,7 @@ export default function App() {
                   data-nav-active={active ? 'true' : undefined}
                   data-nav-item="true"
                   onClick={item.onClick}
-                  onMouseEnter={(e) => {
-                    setNavSlidePos({ top: e.currentTarget.offsetTop, h: e.currentTarget.offsetHeight })
-                  }}
+                  onMouseEnter={(e) => navSlideFromEl(e.currentTarget)}
                   style={{ position: 'relative', zIndex: 1 }}
                   className={`${navItemClass(item)} shrink-0 nav-slide-item ${isHomeLight ? '' : 'px-2 text-sm'}`}
                 >
@@ -1116,8 +1366,8 @@ export default function App() {
             })}
           </div>
 
-          {/* 云同步（登录后显示） */}
-          {user && (
+          {/* 云同步（登录后显示，桌面端） */}
+          {user && !isMobileMenu && (
             <div className={`flex shrink-0 flex-col gap-1 pt-2 border-t ${isHomeLight ? 'lg-divider' : 'border-slate-700/70'}`}>
               <button onClick={() => { setMenuOpen(false); handleUploadSync() }} className={isHomeLight ? 'lg-nav-item text-[#707070]' : 'flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs text-slate-400 hover:bg-slate-800/80 hover:text-white transition-colors'}>
                 <IconRefresh size={isHomeLight ? 15 : 13} /><span>{syncStatus || '上传进度'}</span>
@@ -1135,6 +1385,7 @@ export default function App() {
 
         {/* Main content */}
         <main
+          data-app-main
           className={`flex-1 flex flex-col items-center justify-start px-4 transition-all duration-200${(tab === 'exercise' || tab === 'vocab') ? ' ocean-main' : ''} ${tab === 'exercise' && nav ? 'pb-32' : 'pb-24'} }`}
           style={{ paddingTop: 'calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.25rem)' }}
         >
@@ -1145,6 +1396,14 @@ export default function App() {
               onStartExercise={() => openTab('exercise')}
               onImport={handleImport}
               onOpenGutenberg={() => navigateFromMenu('gutenberg')}
+              onOpenAbout={() => setShowAbout(true)}
+              onOpenMobileLearn={() => {
+                setShowMobileLearn(true)
+                if (isCapacitorNative()) {
+                  setMobileShellMode(true)
+                  setMobileShellEnabled(true)
+                }
+              }}
               changyongData={changyongData}
               sampleData={sampleData}
               xp={xp}
@@ -1178,6 +1437,9 @@ export default function App() {
               progress={progress}
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
               onSyncPractice={(data, label, unitNum) => {
                 if (unitNum) {
                   setSyncInitialUnit(unitNum)
@@ -1187,6 +1449,7 @@ export default function App() {
                   navigateTo('syncpractice')
                 }
               }}
+              onExerciseQuiz={handleCoreExerciseQuiz}
             />
           </div>
           <div style={{ display: tab === 'textbook' ? 'contents' : 'none' }}>
@@ -1204,6 +1467,9 @@ export default function App() {
               settings={settings}
               onXp={xp.addXP}
               onCrystal={crystal.earn}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
             />
           </div>
           <div style={{ display: tab === 'grammar' ? 'contents' : 'none' }}>
@@ -1215,6 +1481,9 @@ export default function App() {
               progress={progress}
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
             />
           </div>
           <div style={{ display: tab === 'gutenberg' ? 'contents' : 'none' }}>
@@ -1232,7 +1501,6 @@ export default function App() {
                 title={grammarSyncQuiz.title}
                 settings={settings}
                 onXp={xp.addXP}
-                onCrystal={crystal.earn}
                 onClose={() => {
                   setGrammarSyncQuiz(null)
                   openTab('grammar')
@@ -1242,6 +1510,39 @@ export default function App() {
               <div className="w-full max-w-lg mx-auto px-4 py-6">
                 <PageBackBar onBack={() => openTab('grammar')} label="返回语法专项" />
                 <p className="text-gray-500 text-sm mt-4 text-center">没有进行中的同步练习，请从语法专项某一课进入。</p>
+              </div>
+            )
+          )}
+          {tab === 'coreSync' && (
+            coreSyncQuiz ? (
+              <ExerciseQuiz
+                key={coreSyncQuiz.sessionKey}
+                questions={coreSyncQuiz.questions}
+                title={coreSyncQuiz.title}
+                settings={settings}
+                onXp={xp.addXP}
+                onFinish={({ score, total }) => {
+                  if (score >= 7) crystal.earn('green', 1, 'core-sync-pass', { title: coreSyncQuiz.title })
+                  if (score === total) crystal.earn('purple', 1, 'core-sync-perfect', { title: coreSyncQuiz.title })
+                }}
+                onRetry={() => handleCoreExerciseQuiz({
+                  questions: coreSyncQuiz.questions,
+                  title: coreSyncQuiz.title,
+                  returnSection: coreSyncQuiz.returnSection,
+                  lessonLabel: coreSyncQuiz.lessonLabel,
+                })}
+                closeLabel="返回核心句群"
+                onClose={() => {
+                  const section = coreSyncQuiz.returnSection
+                  setCoreSyncQuiz(null)
+                  coursesHistoryRef.current.applyStudy?.({ cd: 'core', coreSection: section })
+                  openTab('courses')
+                }}
+              />
+            ) : (
+              <div className="w-full max-w-lg mx-auto px-4 py-6">
+                <PageBackBar onBack={() => openTab('courses')} label="返回课程广场" />
+                <p className="text-gray-500 text-sm mt-4 text-center">没有进行中的同步练习，请从核心句群某一课进入。</p>
               </div>
             )
           )}
@@ -1264,7 +1565,7 @@ export default function App() {
               onToggleChineseGuide={() => setShowChineseGuide(v => !v)}
               hasNextLesson={showContinue}
               onNextLesson={goNextLesson}
-              onBack={() => window.history.back()}
+              onBack={handleExerciseBack}
               grammarContext={lessonPackMeta}
               onSentenceDone={onSentenceDone}
               onWordDone={onWordDone}
@@ -1307,13 +1608,35 @@ export default function App() {
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
             <VocabStudy onClose={() => openTab('exercise')}
               isMember={UNLOCK_ALL_COURSES || isMember} onShowLogin={() => setShowLogin(true)} settings={settings}
-              onXp={xp.addXP} onCrystal={crystal.earn} />
+              onXp={xp.addXP} onCrystal={crystal.earn}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
+            />
           </div>
           <div style={{ display: tab === 'alphabet' ? 'contents' : 'none' }}>
-            <AlphabetLearn onClose={() => openTab('exercise')} />
+            <AlphabetLearn
+              onClose={() => openTab('exercise')}
+              settings={settings}
+              onXp={xp.addXP}
+              onCrystal={crystal.earn}
+              isMember={UNLOCK_ALL_COURSES || isMember}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
+            />
           </div>
           <div style={{ display: tab === 'phonemes' ? 'contents' : 'none' }}>
-            <PhonemeLearn onClose={() => openTab('exercise')} />
+            <PhonemeLearn
+              onClose={() => openTab('exercise')}
+              settings={settings}
+              onXp={xp.addXP}
+              onCrystal={crystal.earn}
+              isMember={UNLOCK_ALL_COURSES || isMember}
+              unlocks={unlocks}
+              crystalBalance={crystal.blue}
+              onGoShop={() => openTab('shop')}
+            />
           </div>
           {tab === 'phonics' && (
             <PhonicsLesson onClose={() => openTab('exercise')} />
@@ -1438,14 +1761,6 @@ export default function App() {
                   <div className="text-xs text-slate-300 font-mono">{lessonProgress.index + 1}/{lessonProgress.total}</div>
                 </div>
               </div>
-              <div className="px-4 pb-1.5">
-                <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-blue-500 transition-all duration-300 rounded-full"
-                    style={{ width: lessonProgress.total ? `${((lessonProgress.index + 1) / lessonProgress.total) * 100}%` : '0%' }}
-                  />
-                </div>
-              </div>
             </>
         </div>
       </footer>
@@ -1546,22 +1861,50 @@ export default function App() {
 
       {/* Settings modal */}
       {showSettings && (
-        <Settings settings={settings} onChange={handleSettings} onReset={reset} onClose={() => setShowSettings(false)} />
+        <Settings settings={settings} onChange={handleSettings} onReset={reset}
+          onClose={() => setShowSettings(false)}
+          onOpenImport={() => { setShowSettings(false); openTab('import') }}
+        />
       )}
 
       {/* Login modal */}
       {showLogin && <LoginModal onClose={() => setShowLogin(false)} onLogin={handleLogin} />}
 
-      {/* ── 公告横幅 ── */}
+      {/* ── 公告弹窗（居中长方形，最高 z-index，所有用户可见）── */}
       {showAnnBanner && announcement && (
-        <div className="fixed top-0 left-0 right-0 z-[50] flex items-start gap-3 bg-amber-600/95 backdrop-blur px-4 py-2.5 shadow-lg pr-16">
-          <span className="text-lg shrink-0 mt-0.5">📢</span>
-          <p className="flex-1 text-sm text-white leading-snug">{announcement}</p>
-          <button
-            onClick={dismissAnnBanner}
-            className="shrink-0 text-white/70 hover:text-white text-lg leading-none transition-colors mt-0.5"
-            aria-label="关闭公告"
-          >✕</button>
+        <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/75 backdrop-blur-sm px-4"
+          onClick={dismissAnnBanner}>
+          <div
+            className="relative w-full max-w-lg bg-gradient-to-br from-amber-500 to-orange-600 border-2 border-amber-300/40 rounded-3xl shadow-2xl overflow-hidden"
+            onClick={e => e.stopPropagation()}>
+            {/* 关闭按钮 */}
+            <button
+              onClick={dismissAnnBanner}
+              aria-label="关闭公告"
+              className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white/95 hover:bg-white text-slate-800 text-lg font-bold shadow flex items-center justify-center transition-transform hover:scale-110">
+              ×
+            </button>
+            {/* 头部 */}
+            <div className="flex items-center gap-3 px-6 pt-6 pb-3">
+              <div className="w-12 h-12 rounded-2xl bg-white/25 flex items-center justify-center text-2xl shrink-0 shadow-inner">📢</div>
+              <div>
+                <div className="text-[11px] uppercase tracking-widest text-white/80 font-semibold">站点公告</div>
+                <h3 className="text-xl font-extrabold text-white">最新通知</h3>
+              </div>
+            </div>
+            {/* 内容 */}
+            <div className="bg-white/95 px-6 py-5 m-4 rounded-2xl">
+              <p className="text-slate-800 text-base leading-relaxed whitespace-pre-wrap">{announcement}</p>
+            </div>
+            {/* 底部按钮 */}
+            <div className="px-6 pb-5 flex justify-end">
+              <button
+                onClick={dismissAnnBanner}
+                className="px-6 py-2.5 rounded-full bg-white text-amber-700 font-bold text-sm shadow-lg hover:scale-105 transition-transform">
+                知道了
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
@@ -1571,6 +1914,7 @@ export default function App() {
           className="fixed inset-0 z-[300] flex items-center justify-center bg-black/70 px-4"
           onClick={() => setShowMsgCenter(false)}
         >
+          <CloseBadge onClose={() => setShowMsgCenter(false)} />
           <div
             className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden"
             onClick={e => e.stopPropagation()}
@@ -1581,11 +1925,6 @@ export default function App() {
                 <IconMessageSquare size={17} className="text-sky-400" />
                 <h3 className="text-base font-bold text-white">公告 & 留言</h3>
               </div>
-              <button
-                onClick={() => setShowMsgCenter(false)}
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-gray-500 hover:text-white hover:bg-gray-700 transition-colors text-lg leading-none"
-                aria-label="关闭"
-              >✕</button>
             </div>
 
             <div className="p-5 flex flex-col gap-5">
@@ -1663,4 +2002,12 @@ export default function App() {
       )}
     </div>
   )
+}
+
+export default function App() {
+  // 教师端模式：URL 含 ?teacher 时直接渲染教师工作台（不挂载主应用的 hooks）
+  if (window.location.search.includes('teacher') || window.location.pathname === '/teacher') {
+    return <TeacherDashboard />
+  }
+  return <MainApp />
 }

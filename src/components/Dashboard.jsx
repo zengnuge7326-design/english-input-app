@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect } from 'react'
 import { evaluateAchievements } from '../data/achievements'
+import BadgeIcon from './BadgeIcons'
 import { getClassLeaderboard } from '../lib/teacher'
 
 const SEEN_BADGES_KEY = 'english_seen_badges'
@@ -173,14 +174,14 @@ function AchievementsCard({ xp, isMember, isFounder }) {
         </div>
         <span className="text-xs font-semibold text-[#9ca3af]">{earnedCount} / {badges.length}</span>
       </div>
-      <div className="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-11 gap-2">
+      <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-11 gap-2">
         {badges.map(b => (
           <div key={b.key} title={`${b.name}：${b.desc}${b.earned ? '' : '（未解锁）'}`}
-            className={`lg-badge flex flex-col items-center gap-1 py-2 px-0.5
-              ${b.earned ? 'lg-badge-on' : 'lg-badge-off'}
+            className={`flex flex-col items-center gap-1 py-2 px-1 rounded-2xl transition-all
+              ${b.earned ? 'bg-gradient-to-b from-white/70 to-white/30 shadow-md hover:scale-105' : 'bg-white/20'}
               ${justEarned.includes(b.key) ? 'ring-2 ring-amber-400 animate-pulse' : ''}`}>
-            <span className={`text-lg leading-none ${b.earned ? '' : 'grayscale opacity-30'}`}>{b.icon}</span>
-            <span className={`text-[8px] text-center leading-tight font-medium ${b.earned ? 'text-amber-900' : 'text-[#b8b5c4]'}`}>{b.name}</span>
+            <BadgeIcon name={b.key} size={42} locked={!b.earned} />
+            <span className={`text-[10px] text-center leading-tight font-semibold tracking-wide ${b.earned ? 'text-[#3d2a5d]' : 'text-[#b8b5c4]'}`}>{b.name}</span>
           </div>
         ))}
       </div>
@@ -233,7 +234,7 @@ function ClassLeaderboardCard({ studentInfo }) {
 }
 
 // ─── 主组件 ──────────────────────────────────────────────────────────────────
-export default function Dashboard({ sentences, progress, xp, isMember, isFounder, studentInfo }) {
+export default function Dashboard({ sentences, progress, xp, isMember, isFounder, studentInfo, onOpenAbout, onOpenMobileLearn }) {
   const today = todayStr()
   const checkins = loadJSON(CHECKIN_KEY, [])
   const daily = loadJSON(DAILY_KEY, {})
@@ -253,6 +254,34 @@ export default function Dashboard({ sentences, progress, xp, isMember, isFounder
 
   return (
     <div className="w-full max-w-2xl lg:max-w-5xl mx-auto px-3 sm:px-5 py-4 sm:py-6 flex flex-col gap-3 sm:gap-4">
+
+      {/* 纯手机模式 + 了解本站 */}
+      {(onOpenMobileLearn || onOpenAbout) && (
+        <div className="flex gap-2 sm:gap-3">
+          {onOpenMobileLearn && (
+            <button onClick={onOpenMobileLearn}
+              className="lg-home-panel w-1/4 min-w-0 flex flex-col items-center justify-center gap-1 px-2 py-3 sm:py-3.5 text-center hover:scale-[1.02] transition-transform active:scale-95">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-lg sm:text-xl shrink-0 shadow-md">
+                📱
+              </div>
+              <div className="text-[10px] sm:text-xs font-bold text-[#1a1a1a] leading-tight">纯手机<br className="sm:hidden" />模式学习</div>
+            </button>
+          )}
+          {onOpenAbout && (
+            <button onClick={onOpenAbout}
+              className={`lg-home-panel flex items-center gap-3 px-4 py-3 sm:py-3.5 text-left hover:scale-[1.01] transition-transform group ${onOpenMobileLearn ? 'w-3/4 min-w-0' : 'w-full'}`}>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-xl shrink-0 shadow-md">
+                📖
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm sm:text-base font-bold text-[#1a1a1a]">了解本站</div>
+                <div className="text-xs text-[#7a7088] truncate">功能介绍 · 快速上手 · 隐私说明</div>
+              </div>
+              <span className="text-[#9575cd] text-xl shrink-0 group-hover:translate-x-1 transition-transform">›</span>
+            </button>
+          )}
+        </div>
+      )}
 
       {/* ① 连胜火焰条 */}
       <StreakRow checkinSet={checkinSet} streak={streak} streakMax={streakMax} today={today} xp={xp} />

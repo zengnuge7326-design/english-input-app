@@ -5,6 +5,7 @@
  */
 import { useState } from 'react'
 import { findClassByCode, joinClass } from '../lib/teacher'
+import CloseBadge from './CloseBadge'
 
 export default function StudentJoin({ onJoined, onSkip }) {
   const [step, setStep] = useState('code')   // 'code' | 'name'
@@ -46,6 +47,7 @@ export default function StudentJoin({ onJoined, onSkip }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4">
+      <CloseBadge onClose={onSkip} />
       <div className="w-full max-w-sm bg-gray-900 border border-gray-700 rounded-2xl p-8 shadow-2xl space-y-5">
 
         {step === 'code' ? (

@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "./styles/theme-light-glass.css";
 
+/* 麦克风权限引导浮层入场动画 */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Rounded font loaded via index.html <link> tag */
 
 /* ── Typing Practice (keyboard-master) ── */
@@ -588,6 +594,8 @@ body {
 .theme-dark .lg-nav-item {
   color: rgba(255, 255, 255, 0.60) !important;
 }
+
+/* 手机端菜单尺寸已回退到桌面同款（不再压字号），用户希望保留原尺寸 */
 .theme-dark .lg-nav-item:hover {
   background: rgba(255, 255, 255, 0.08) !important;
   color: rgba(255, 255, 255, 0.90) !important;
@@ -771,4 +779,24 @@ body {
 .theme-dark .nav-slide-item.lg-nav-item--active {
   color: #fff !important;
   font-weight: 600;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   手机端侧边栏 (.nav-menu-mobile) — 等分铺满高度，底留白最小，字号不变
+   ════════════════════════════════════════════════════════════════════════════ */
+
+.nav-menu-mobile .nav-menu-scroll {
+  overflow-y: hidden !important;
+}
+
+.nav-menu-mobile .nav-menu-nav {
+  gap: 0;
+}
+
+.nav-menu-mobile .lg-nav-item,
+.nav-menu-mobile .nav-slide-item.flex.items-center {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  line-height: 1.25;
+  flex-shrink: 0;
 }

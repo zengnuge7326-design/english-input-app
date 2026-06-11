@@ -138,7 +138,9 @@ function BuyModal({ product, token, crystal, onSuccess, onClose }) {
       >
         <div className="text-center mb-4">
           <div className="mb-2 flex justify-center">
-            <CartoonIcon kind="item" id={resolveProductIconId(product)} size={56} />
+            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-b from-indigo-900/40 to-gray-900/80 ring-1 ring-white/10 shadow-lg">
+              <CartoonIcon kind="item" id={resolveProductIconId(product)} size={64} />
+            </div>
           </div>
           <h3 className="text-lg font-bold text-white">{product.name}</h3>
           {product.desc && <p className="text-sm text-gray-400 mt-1">{product.desc}</p>}
@@ -233,7 +235,9 @@ function ItemsTab({ token, crystal, onBuySuccess }) {
               onClick={() => setSelected(p)}
               className="bg-gray-800/60 border border-gray-700/60 rounded-xl p-3 flex flex-col items-center text-center hover:border-indigo-500/60 hover:bg-gray-700/60 transition-all"
             >
-              <CartoonIcon kind="item" id={resolveProductIconId(p)} size={44} className="mb-1" />
+              <div className="mb-1.5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-b from-gray-700/50 to-gray-900/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-white/5">
+                <CartoonIcon kind="item" id={resolveProductIconId(p)} size={48} />
+              </div>
               <span className="text-xs font-semibold text-white truncate w-full">{p.name}</span>
               {p.desc && <span className="text-[10px] text-gray-500 truncate w-full mt-0.5">{p.desc}</span>}
               <div className="mt-2 flex items-center gap-1">
@@ -440,8 +444,6 @@ export default function Shop({
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
-      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
-
       <div className="flex items-center gap-2 mb-4">
         <GemSVG color="gold" size={28} />
         <h2 className="text-xl font-bold text-white">宝石小店</h2>

@@ -95,7 +95,7 @@
 
 /* ── 3. 底部导航栏 ───────────────────────────────────────────────────────────── */
 
-.theme-light-glass footer,
+.theme-light-glass footer:not(.mobile-quiz__submit),
 .theme-light-glass .bg-slate-900\/95 {
   background: rgba(240, 238, 235, 0.82) !important;
   backdrop-filter: blur(28px) var(--lg-glass-sat) !important;
@@ -223,6 +223,199 @@
 .theme-light-glass .divide-gray-800 > * + *,
 .theme-light-glass .divide-gray-700 > * + * { border-color: rgba(200,198,215,0.30) !important; }
 
+/* ── 14. 白昼补丁：彩底按钮保留白字（同元素 bg-*-6xx + text-white）────────── */
+/* 仅作用于 .theme-light-glass，不影响 .theme-dark / 黑夜模式 */
+
+.theme-light-glass [class*="bg-blue-5"][class*="text-white"],
+.theme-light-glass [class*="bg-blue-6"][class*="text-white"],
+.theme-light-glass [class*="bg-blue-7"][class*="text-white"],
+.theme-light-glass [class*="bg-indigo-5"][class*="text-white"],
+.theme-light-glass [class*="bg-indigo-6"][class*="text-white"],
+.theme-light-glass [class*="bg-indigo-7"][class*="text-white"],
+.theme-light-glass [class*="bg-purple-5"][class*="text-white"],
+.theme-light-glass [class*="bg-purple-6"][class*="text-white"],
+.theme-light-glass [class*="bg-violet-5"][class*="text-white"],
+.theme-light-glass [class*="bg-violet-6"][class*="text-white"],
+.theme-light-glass [class*="bg-green-5"][class*="text-white"],
+.theme-light-glass [class*="bg-green-6"][class*="text-white"],
+.theme-light-glass [class*="bg-green-7"][class*="text-white"],
+.theme-light-glass [class*="bg-emerald-5"][class*="text-white"],
+.theme-light-glass [class*="bg-emerald-6"][class*="text-white"],
+.theme-light-glass [class*="bg-emerald-7"][class*="text-white"],
+.theme-light-glass [class*="bg-amber-5"][class*="text-white"],
+.theme-light-glass [class*="bg-amber-6"][class*="text-white"],
+.theme-light-glass [class*="bg-amber-7"][class*="text-white"],
+.theme-light-glass [class*="bg-orange-5"][class*="text-white"],
+.theme-light-glass [class*="bg-orange-6"][class*="text-white"],
+.theme-light-glass [class*="bg-red-5"][class*="text-white"],
+.theme-light-glass [class*="bg-red-6"][class*="text-white"],
+.theme-light-glass [class*="bg-rose-5"][class*="text-white"],
+.theme-light-glass [class*="bg-rose-6"][class*="text-white"],
+.theme-light-glass [class*="bg-pink-5"][class*="text-white"],
+.theme-light-glass [class*="bg-pink-6"][class*="text-white"],
+.theme-light-glass [class*="bg-teal-5"][class*="text-white"],
+.theme-light-glass [class*="bg-teal-6"][class*="text-white"],
+.theme-light-glass [class*="bg-cyan-5"][class*="text-white"],
+.theme-light-glass [class*="bg-cyan-6"][class*="text-white"],
+.theme-light-glass [class*="bg-sky-5"][class*="text-white"],
+.theme-light-glass [class*="bg-sky-6"][class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* ── 15. 白昼补丁：透明度文字 / 白边 / 微透明白底 ─────────────────────────── */
+
+.theme-light-glass [class*="text-white/"] {
+  color: var(--lg-text-secondary) !important;
+}
+.theme-light-glass [class*="hover:text-white"]:hover {
+  color: var(--lg-text-primary) !important;
+}
+/* 教材封面等深色渐变区保留白字 */
+.theme-light-glass [class*="from-"][class*="to-"] [class*="text-white/"],
+.theme-light-glass [class*="bg-gradient-to-"] [class*="text-white/"],
+.theme-light-glass img + [class*="text-white"],
+.theme-light-glass .relative[class*="from-"] [class*="text-white"] {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.theme-light-glass [class*="border-white/"] {
+  border-color: rgba(0, 0, 0, 0.10) !important;
+}
+
+.theme-light-glass [class*="bg-white/["],
+.theme-light-glass .bg-white\/5,
+.theme-light-glass .bg-white\/10,
+.theme-light-glass [class*="bg-white/5"],
+.theme-light-glass [class*="bg-white/10"] {
+  background-color: rgba(255, 255, 255, 0.52) !important;
+}
+.theme-light-glass [class*="bg-white/3"],
+.theme-light-glass [class*="bg-white/4"],
+.theme-light-glass [class*="bg-white/6"] {
+  background-color: rgba(255, 255, 255, 0.62) !important;
+}
+
+/* ── 16. 白昼补丁：补充文字色 / 实色灰底 / 深色色阶 ─────────────────────── */
+
+.theme-light-glass .text-gray-700,
+.theme-light-glass .text-slate-600 {
+  color: #3d3b4a !important;
+}
+.theme-light-glass .text-slate-700 {
+  color: var(--lg-text-secondary) !important;
+}
+
+.theme-light-glass .bg-gray-700,
+.theme-light-glass [class*="bg-gray-700/"] {
+  background-color: rgba(255, 255, 255, 0.48) !important;
+}
+.theme-light-glass .bg-gray-600,
+.theme-light-glass [class*="bg-gray-600/"] {
+  background-color: rgba(255, 255, 255, 0.58) !important;
+}
+
+.theme-light-glass .bg-slate-950,
+.theme-light-glass [class*="bg-slate-950"] {
+  background-color: rgba(255, 255, 255, 0.68) !important;
+  backdrop-filter: blur(12px) var(--lg-glass-sat);
+  -webkit-backdrop-filter: blur(12px) var(--lg-glass-sat);
+}
+
+.theme-light-glass [class*="bg-[#080808]"],
+.theme-light-glass [class*="bg-[#0a0a0a]"] {
+  background-color: rgba(252, 251, 249, 0.94) !important;
+  border: 1px solid var(--lg-glass-border-subtle) !important;
+}
+
+/* ── 17. 白昼补丁：扩展遮罩透明度 ─────────────────────────────────────────── */
+
+.theme-light-glass .bg-black\/30,
+.theme-light-glass .bg-black\/65,
+.theme-light-glass .bg-black\/80,
+.theme-light-glass .bg-black\/95,
+.theme-light-glass [class*="bg-black/30"],
+.theme-light-glass [class*="bg-black/65"],
+.theme-light-glass [class*="bg-black/80"],
+.theme-light-glass [class*="bg-black/95"] {
+  background-color: rgba(165, 160, 188, 0.52) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* ── 18. 白昼补丁：语义色文字加深（独立使用，非彩底按钮）────────────────── */
+
+.theme-light-glass .text-blue-300,
+.theme-light-glass .text-blue-400   { color: #1d4ed8 !important; }
+.theme-light-glass .text-indigo-300,
+.theme-light-glass .text-indigo-400 { color: #4338ca !important; }
+.theme-light-glass .text-purple-300,
+.theme-light-glass .text-purple-400 { color: #7c3aed !important; }
+.theme-light-glass .text-violet-300,
+.theme-light-glass .text-violet-400 { color: #6d28d9 !important; }
+.theme-light-glass .text-emerald-300,
+.theme-light-glass .text-emerald-400 { color: #047857 !important; }
+.theme-light-glass .text-green-300,
+.theme-light-glass .text-green-400  { color: #15803d !important; }
+.theme-light-glass .text-teal-300,
+.theme-light-glass .text-teal-400   { color: #0f766e !important; }
+.theme-light-glass .text-cyan-300,
+.theme-light-glass .text-cyan-400   { color: #0e7490 !important; }
+.theme-light-glass .text-sky-300,
+.theme-light-glass .text-sky-400    { color: #0369a1 !important; }
+.theme-light-glass .text-amber-300,
+.theme-light-glass .text-amber-400,
+.theme-light-glass .text-amber-500  { color: #b45309 !important; }
+.theme-light-glass .text-yellow-300,
+.theme-light-glass .text-yellow-400 { color: #a16207 !important; }
+.theme-light-glass .text-orange-300,
+.theme-light-glass .text-orange-400 { color: #c2410c !important; }
+.theme-light-glass .text-rose-300,
+.theme-light-glass .text-rose-400   { color: #be123c !important; }
+.theme-light-glass .text-red-300,
+.theme-light-glass .text-red-400    { color: #dc2626 !important; }
+.theme-light-glass .text-pink-300,
+.theme-light-glass .text-pink-400   { color: #db2777 !important; }
+
+/* ── 19. 白昼补丁：扩展语义色浅背景（900 档徽章/标签）────────────────────── */
+
+.theme-light-glass [class*="bg-emerald-900"],
+.theme-light-glass [class*="bg-teal-900"]    { background-color: rgba(var(--lg-c-mint),    0.22) !important; }
+.theme-light-glass [class*="bg-cyan-900"]     { background-color: rgba(var(--lg-c-sky),     0.22) !important; }
+.theme-light-glass [class*="bg-indigo-900"],
+.theme-light-glass [class*="bg-violet-900"]   { background-color: rgba(var(--lg-c-lavender), 0.22) !important; }
+.theme-light-glass [class*="bg-orange-900"],
+.theme-light-glass [class*="bg-yellow-900"]   { background-color: rgba(var(--lg-c-peach),   0.22) !important; }
+.theme-light-glass [class*="bg-pink-900"],
+.theme-light-glass [class*="bg-rose-900"]     { background-color: rgba(var(--lg-c-rose),    0.22) !important; }
+
+.theme-light-glass [class*="bg-emerald-900"] .text-emerald-200,
+.theme-light-glass [class*="bg-emerald-900"] .text-emerald-300,
+.theme-light-glass [class*="bg-emerald-900"] .text-emerald-400 { color: #047857 !important; }
+.theme-light-glass [class*="bg-teal-900"] .text-teal-200,
+.theme-light-glass [class*="bg-teal-900"] .text-teal-300,
+.theme-light-glass [class*="bg-teal-900"] .text-teal-400       { color: #0f766e !important; }
+.theme-light-glass [class*="bg-indigo-900"] .text-indigo-300,
+.theme-light-glass [class*="bg-indigo-900"] .text-indigo-400   { color: #4338ca !important; }
+.theme-light-glass [class*="bg-yellow-900"] .text-yellow-200,
+.theme-light-glass [class*="bg-yellow-900"] .text-yellow-300   { color: #a16207 !important; }
+.theme-light-glass [class*="bg-orange-900"] .text-orange-200,
+.theme-light-glass [class*="bg-orange-900"] .text-orange-300   { color: #c2410c !important; }
+.theme-light-glass [class*="bg-pink-900"] .text-pink-200,
+.theme-light-glass [class*="bg-pink-900"] .text-pink-300       { color: #be185d !important; }
+.theme-light-glass [class*="bg-rose-900"] .text-rose-300,
+.theme-light-glass [class*="bg-rose-900"] .text-rose-400      { color: #be123c !important; }
+
+/* ── 20. 白昼补丁：ring-offset / 硬编码灰字 ─────────────────────────────────── */
+
+.theme-light-glass [class*="ring-offset-slate-900"],
+.theme-light-glass [class*="ring-offset-gray-900"] {
+  --tw-ring-offset-color: rgba(240, 238, 235, 0.96) !important;
+}
+
+.theme-light-glass [class*="text-[#707070]"] {
+  color: var(--lg-text-secondary) !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════════
    LIQUID GLASS COMPONENTS — 核心玻璃组件
    ═══════════════════════════════════════════════════════════════════════════════ */
@@ -282,6 +475,8 @@
     color        0.18s ease;
   will-change: transform, box-shadow, background;
 }
+
+/* 手机端紧凑尺寸见 index.css .nav-menu-mobile（仅 <640px） */
 
 /* Hover: 玻璃浮起 */
 .theme-light-glass .lg-nav-item:hover {

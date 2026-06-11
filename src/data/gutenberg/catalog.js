@@ -7,7 +7,7 @@
  * JSON 格式：{ "title": "...", "sentences": [ { "en": "..." , "zh?": "..." } ] }
  */
 import generatedManifest from './generated-manifest.json'
-import { sanitizeGutenbergSentence } from '../../utils/gutenbergTextCleanup.js'
+import { hasRealSentenceZh, sanitizeGutenbergSentence } from '../../utils/gutenbergTextCleanup.js'
 
 const level1Glob = import.meta.glob('./Level1_初级/*.json', { eager: true })
 const level2Glob = import.meta.glob('./Level2_中初级/*.json', { eager: true })
@@ -119,7 +119,7 @@ export function gutenbergToSentences(articleId, raw) {
     return {
       id: `gb_${articleId}_${s.id ?? i + 1}`,
       en,
-      zh: (s.zh && String(s.zh).trim()) || '（阅读原文，可关闭中文提示）',
+      zh: hasRealSentenceZh(s.zh) ? String(s.zh).trim() : '',
     }
   }).filter((s) => s.en.length > 0)
 }

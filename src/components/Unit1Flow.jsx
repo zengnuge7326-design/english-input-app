@@ -1,7 +1,9 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { incrementSyncPartCount } from '../utils/syncPartProgress'
 import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
 import { unlockAudio } from '../utils/audioUnlock.js'
+import { ensureMic } from '../utils/micGate'
 import GemSVG from './GemSVG'
 import { quizBank } from '../data/quizData'
 import { fillblankBank } from '../data/fillblankData'
@@ -1241,6 +1243,7 @@ function QuizCard({ q, onResult, speak }) {
 
   function choose(i) {
     if (resultPhase) return
+    unlockAudio()
     setSelected(i)
     setResultPhase(true)
     onResult(i === q.correct)
@@ -1332,10 +1335,14 @@ function FillBlankCard({ q, onResult, requireSpeak, hideSkipNext, speak, speakFa
       return;
     }
 
+    // 预检闸门：统一引导浮层处理 授权 / 被拒 / 不支持
+    const micRes = await ensureMic('评测你的发音')
+    if (!micRes.ok) {
+      setRecognizingResult(micRes.reason === 'unsupported' ? '此浏览器不支持语音识别，请使用 Chrome' : '请允许麦克风权限后重试')
+      return
+    }
+
     try {
-      // 显式请求麦克风权限
-      await navigator.mediaDevices.getUserMedia({ audio: true });
-      
       const recognition = new SpeechRecognition();
       recognitionRef.current = recognition;
       recognition.lang = 'en-US';
@@ -1820,7 +1827,7 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
   }, [speakTTS])
 
   // 音效
-  const { playCorrect, playError, playVictory } = useSound(ttsSettings)
+  const { playCorrect, playError, playVictory, playBubble, playFireworks } = useSound(settings ?? ttsSettings)
 
   // 同步习题的连击计数
   const syncComboRef = useRef(0)
@@ -1829,11 +1836,14 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
   const handleResult = useCallback((isCorrect) => {
     setPendingResult(isCorrect)
     if (isCorrect) {
+      unlockAudio()
       playCorrect?.(syncComboRef.current)
+      playBubble?.()
       onXp?.(2)
       const c = ++syncComboRef.current
       setComboDisplay(c)
       setComboFlash(f => f + 1)
+      if (c > 0 && c % 5 === 0) playFireworks?.()
       // 飞出 +2 XP 飘字（飞向顶部 🔥 徽章）
       const flyId = Date.now() + Math.random()
       setXpFlies(arr => [...arr, { id: flyId, amount: 2 }])
@@ -1843,12 +1853,13 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
         onCrystal?.('purple', c >= 10 ? 2 : 1, c >= 10 ? 'combo_10' : 'combo_5', { combo: c, source: 'sync' })
       }
     } else {
+      unlockAudio()
       playError?.()
       setShake(s => s + 1)
       syncComboRef.current = 0
       setComboDisplay(0)
     }
-  }, [onXp, onCrystal, playCorrect, playError])
+  }, [onXp, onCrystal, playCorrect, playError, playBubble, playFireworks])
 
   const handleNext = useCallback(() => {
     const newScores = [...scores, pendingResult]
@@ -1860,6 +1871,7 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
       setScores(newScores)
       setDone(true)
       playVictory?.()
+      if (part) incrementSyncPartCount(bookId, unitLabel, part)
       // 完成同步习题：发钻石
       const correct = newScores.filter(Boolean).length
       const pct = newScores.length ? correct / newScores.length : 0
@@ -1876,7 +1888,7 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
         onCrystal?.('red', 1, 'sentence_recover', { unit: unitLabel, part, pct: Math.round(pct * 100) })
       }
     }
-  }, [scores, pendingResult, current, total, onCrystal, unitLabel, part, isMember, playVictory])
+  }, [scores, pendingResult, current, total, onCrystal, unitLabel, part, bookId, isMember, playVictory])
 
   useEffect(() => {
     const fn = (e) => {
@@ -1994,48 +2006,55 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
   const typeLabel = TYPE_LABEL[q.type]
 
   return (
-    <div className="fixed inset-0 z-[60] bg-black flex flex-col">
-      {/* 顶栏 */}
-      <div className="shrink-0 px-4 pr-16 pt-4 pb-2 relative">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2 min-w-0">
-            <div className="text-sm text-gray-500 uppercase tracking-wider truncate">{unitLabel}{part ? ` · ${part}` : ''} · {typeLabel}</div>
-            {comboDisplay >= 2 && (
-              <span
-                key={comboFlash}
-                className="combo-pop inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs font-bold shadow-lg shadow-orange-500/30"
+    <div className="fixed inset-0 z-[110] bg-black flex flex-col">
+      <div className="shrink-0 px-4 pt-[max(1rem,env(safe-area-inset-top,0px))] pb-2">
+        <div className="max-w-2xl mx-auto w-full">
+          <div className="flex items-center justify-between mb-2 gap-2">
+            <div className="flex items-center gap-2 min-w-0">
+              <div className="text-sm text-gray-500 uppercase tracking-wider truncate">{unitLabel}{part ? ` · ${part}` : ''} · {typeLabel}</div>
+              {comboDisplay >= 2 && (
+                <span
+                  key={comboFlash}
+                  className="combo-pop inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs font-bold shadow-lg shadow-orange-500/30"
+                >
+                  🔥 {comboDisplay} 连击
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="text-sm text-gray-500 tabular-nums">{current + 1} / {total}</span>
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="关闭练习"
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-400 hover:bg-slate-800 hover:text-white transition-colors"
               >
-                🔥 {comboDisplay} 连击
-              </span>
-            )}
+                ✕
+              </button>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-500 tabular-nums">{current + 1} / {total}</span>
-            <button onClick={onClose} className="text-gray-600 hover:text-white text-lg transition-colors">✕</button>
+          <div className="flex items-stretch gap-1 w-full" style={{ height: 8 }}>
+            {Array.from({ length: total }).map((_, i) => {
+              const answered = i < current
+              const correct = scores[i]
+              return (
+                <div
+                  key={i}
+                  className="flex-1 rounded-full transition-all duration-300 overflow-hidden"
+                  style={{
+                    background: answered
+                      ? correct
+                        ? 'linear-gradient(90deg,#60a5fa,#a78bfa)'
+                        : '#7f1d1d'
+                      : i === current
+                        ? 'rgba(96,165,250,0.4)'
+                        : 'rgba(55,65,81,0.6)',
+                    boxShadow: answered && correct ? '0 0 6px rgba(167,139,250,0.6)' : 'none',
+                  }}
+                />
+              )
+            })}
           </div>
-        </div>
-        {/* 分段进度条 */}
-        <div className="flex items-stretch gap-1 w-full" style={{ height: 8 }}>
-          {Array.from({ length: total }).map((_, i) => {
-            const answered = i < current
-            const correct = scores[i]
-            return (
-              <div
-                key={i}
-                className="flex-1 rounded-full transition-all duration-300 overflow-hidden"
-                style={{
-                  background: answered
-                    ? correct
-                      ? 'linear-gradient(90deg,#60a5fa,#a78bfa)'
-                      : '#7f1d1d'
-                    : i === current
-                      ? 'rgba(96,165,250,0.4)'
-                      : 'rgba(55,65,81,0.6)',
-                  boxShadow: answered && correct ? '0 0 6px rgba(167,139,250,0.6)' : 'none',
-                }}
-              />
-            )
-          })}
         </div>
         {/* XP 飞向顶部 🔥 徽章 */}
         {xpFlies.map(f => (

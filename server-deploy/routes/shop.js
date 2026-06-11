@@ -6,13 +6,9 @@
 
 module.exports = function mountShop({ app, pool, auth, crystalState, CRYSTAL_COL, CRYSTAL_COLORS }) {
 
-  // 充值档（无需登录）
-  const RECHARGE_PACKS = [
-    { id: 'p1',  rmb: 1,  diamonds: 500,   bonus: 0 },
-    { id: 'p3',  rmb: 3,  diamonds: 1600,  bonus: 100 },
-    { id: 'p10', rmb: 10, diamonds: 6000,  bonus: 1000, tag: '最划算' },
-    { id: 'p30', rmb: 30, diamonds: 20000, bonus: 5000 },
-  ]
+  // 充值档：单一来源 lib/rechargePacks.js（修复双定义不一致 bug）
+  const { listPacks, estimateRmbFromDiamonds } = require('../lib/rechargePacks')
+  const { creditReferralCommission } = require('../lib/referralCommission')
 
   // ─── 商品列表 ──────────────────────────────────────────────
   app.get('/api/shop/products', async (req, res) => {
@@ -43,7 +39,8 @@ module.exports = function mountShop({ app, pool, auth, crystalState, CRYSTAL_COL
 
   // ─── 充值档位 ──────────────────────────────────────────────
   app.get('/api/shop/recharge-packs', (req, res) => {
-    res.json({ packs: RECHARGE_PACKS })
+    // 用 listPacks 保持与 recharge.js 单一来源
+    res.json({ packs: listPacks() })
   })
 
   // ─── 用钻石购买 ──────────────────────────────────────────────
@@ -156,6 +153,27 @@ module.exports = function mountShop({ app, pool, auth, crystalState, CRYSTAL_COL
 
       await conn.commit()
       conn.release()
+
+      // 6. 钻石买会员 → 推荐人也得拿返佣（修复 P0 #2：用等价 RMB 折算）
+      if (p.category === 'membership') {
+        try {
+          const goldCost = costs.find(c => c.color === 'gold')?.amount || 0
+          if (goldCost > 0) {
+            const equivalentRmb = estimateRmbFromDiamonds(goldCost)
+            if (equivalentRmb > 0) {
+              await creditReferralCommission(pool, {
+                buyerUserId: req.user.id,
+                paidRmb: equivalentRmb,
+                orderId: `shop_mem_${orderResult.insertId}`,
+                plan: product_id,
+              })
+            }
+          }
+        } catch (commErr) {
+          // 返佣失败不影响主流程，仅记日志（购买已成功）
+          console.error('[shop/buy] referral commission error:', commErr)
+        }
+      }
 
       const balance = await crystalState(req.user.id)
       const inv = await loadInventory(req.user.id)

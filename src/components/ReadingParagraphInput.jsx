@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
 import { recordError } from '../hooks/useProgress'
+import { hasRealSentenceZh } from '../utils/gutenbergTextCleanup.js'
 
 const INPUT_PALETTE = {
   pinkCoral: '#E38A95',
@@ -103,23 +104,24 @@ export default function ReadingParagraphInput({
   onCurrentChange,
 }) {
   const { en, zh } = sentence
+  const showWordZh = showChinese && hasRealSentenceZh(zh)
 
   const sections = useMemo(() => {
     const enParas = splitParagraphs(en)
-    const zhParas = zh ? splitParagraphs(zh) : []
+    const zhParas = showWordZh && zh ? splitParagraphs(zh) : []
     if (enParas.length === 0) return []
     return enParas.map((text, i) => ({
       words: tokenizeLine(text),
       zhLine: zhParas[i] ?? (i === 0 ? zh || '' : ''),
     }))
-  }, [en, zh])
+  }, [en, zh, showWordZh])
 
   const words = useMemo(() => sections.flatMap((s) => s.words), [sections])
 
   const zhFragmentsPerSection = useMemo(() => {
-    if (!showChinese) return sections.map((sec) => sec.words.map(() => ''))
+    if (!showWordZh) return sections.map((sec) => sec.words.map(() => ''))
     return sections.map((sec) => splitZhByEnglishWeights(sec.zhLine, sec.words))
-  }, [sections, showChinese])
+  }, [sections, showWordZh])
 
   const [current, setCurrent] = useState(0)
   const [inputs, setInputs] = useState(() => words.map(() => ''))
@@ -138,6 +140,13 @@ export default function ReadingParagraphInput({
     setShaking(false)
     onCurrentChange?.(0, words.length)
   }, [sentence.id, words.length])
+
+  useEffect(() => {
+    if (!frozen && speakWord && words[current]) {
+      const [core] = splitPunct(words[current])
+      if (core) speakWord(core)
+    }
+  }, [current, sentence.id, frozen])
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -186,17 +195,6 @@ export default function ReadingParagraphInput({
     while (ni < words.length && nextStatuses[ni] === 'correct') ni++
     if (ni >= words.length) ni = nextStatuses.findIndex((s) => s !== 'correct')
     if (ni >= 0) jumpTo(ni)
-  }
-
-  function getHint(word) {
-    const [core] = splitPunct(word)
-    const vowels = 'aeiouyAEIOUY'
-    if (learningLevel === 1) return core
-    if (learningLevel === 2) return core[0] || ''
-    if (learningLevel === 3) return core.split('').map((c) => (vowels.includes(c) ? '_' : c)).join('')
-    if (learningLevel === 4) return core.split('').map((c) => (vowels.includes(c) ? c : '_')).join('')
-    if (learningLevel === 5) return ''
-    return core[0] || ''
   }
 
   function submitWord(idx) {
@@ -287,8 +285,8 @@ export default function ReadingParagraphInput({
     }
   }
 
-  const wordGap = 'gap-x-3 sm:gap-x-4 gap-y-4'
-  const wordTextSize = 'text-3xl sm:text-4xl md:text-[2.65rem]'
+  const wordGap = 'gap-x-1 gap-y-3'
+  const wordTextSize = 'text-3xl sm:text-4xl md:text-[2.65rem] leading-tight'
 
   if (sections.length === 0 || words.length === 0) {
     return (
@@ -299,53 +297,48 @@ export default function ReadingParagraphInput({
   }
 
   function renderWordCell(wordStr, globalIdx, si, wi, zhFrag) {
-    const [core, punct] = splitPunct(wordStr)
+    const [core] = splitPunct(wordStr)
     const status = statuses[globalIdx]
     const isCurrent = globalIdx === current
     const isShaking = shaking && isCurrent
     const val = inputs[globalIdx]
-    const hint = getHint(wordStr)
     const isHinting = status === 'hinting'
-    const showHint = isHinting && val === ''
     const done = frozen || status === 'correct'
-
-    const textColor = isShaking
-      ? INPUT_PALETTE.salmonRed
-      : showHint
-        ? INPUT_PALETTE.turquoise
-        : 'var(--ink-word)'
+    const typed = !done && val.length > 0
 
     const underlineColor =
       status === 'correct'
-        ? `${INPUT_PALETTE.turquoise}66`
+        ? 'rgba(255,255,255,0.45)'
         : isShaking
           ? INPUT_PALETTE.salmonRed
           : isCurrent
             ? INPUT_PALETTE.skyBlue
-            : INPUT_PALETTE.sandGold
-
-    const showPlaceholder = status === 'pending' && val === '' && isCurrent && hint && !frozen
+            : 'rgba(74,222,128,0.35)'
 
     const rc = retryCount[globalIdx]
 
+    let displayCls = 'text-emerald-400'
+    if (isShaking) displayCls = 'text-red-400'
+    else if (done || typed) displayCls = 'text-white font-semibold drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]'
+    else if (isHinting) displayCls = 'text-teal-300'
+
     return (
-      <div key={`${si}-${wi}`} className="relative flex items-end gap-0">
-        <div className="relative flex flex-col items-center" style={{ minWidth: `${Math.max(core.length * 1.25, 4)}ch` }}>
-          <div className={`${wordTextSize} tracking-wide min-h-[3.25rem] sm:min-h-[3.5rem] flex items-end justify-center w-full ${isShaking ? 'shake' : ''}`}
-            style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontWeight: 'normal' }}>
-            <span
-              className={done ? 'text-emerald-400 font-medium' : ''}
-              style={{ color: done ? undefined : textColor }}
-            >
-              {done
-                ? core
-                : showHint
-                  ? core
-                  : val
-                    ? val
-                    : showPlaceholder
-                      ? <span className="opacity-25">{hint}</span>
-                      : <span className="text-gray-500">{core}</span>}
+      <div key={`${si}-${wi}`} className="relative inline-flex items-end max-w-full">
+        <div className="relative inline-flex flex-col items-center max-w-full">
+          <div
+            className={`${wordTextSize} min-h-[3rem] sm:min-h-[3.25rem] flex items-end justify-center max-w-full ${isShaking ? 'shake' : ''} ${displayCls}`}
+            style={{
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+              fontWeight: 'normal',
+              hyphens: 'auto',
+              WebkitHyphens: 'auto',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word',
+            }}
+            lang="en"
+          >
+            <span className="text-center px-0.5">
+              {done ? core : val || core}
             </span>
           </div>
           {/* 与教材 WordInput 一致：有错待加时显示分段进度条，否则单色下划线 */}
@@ -372,12 +365,12 @@ export default function ReadingParagraphInput({
               style={done ? undefined : { backgroundColor: underlineColor }}
             />
           )}
-          {showChinese ? (
+          {showWordZh && zhFrag ? (
             <span
-              className="mt-1.5 block w-full max-w-[min(100%,18ch)] text-center text-[11px] sm:text-xs leading-snug text-gray-500 px-0.5"
+              className="mt-1 block w-full max-w-[min(100%,18ch)] text-center text-xs sm:text-[13px] leading-snug text-slate-400 px-0.5"
               style={{ fontFamily: '"Kaiti SC", "STKaiti", "KaiTi", serif', wordBreak: 'break-all' }}
             >
-              {zhFrag || '\u00a0'}
+              {zhFrag}
             </span>
           ) : null}
           {!frozen && (
@@ -388,7 +381,7 @@ export default function ReadingParagraphInput({
                 if (status === 'correct') return
                 onKeypress?.()
                 const next = [...inputs]
-                next[globalIdx] = e.target.value
+                next[globalIdx] = e.target.value.replace(/[^a-zA-Z']/g, '')
                 setInputs(next)
               }}
               onKeyDown={(e) => handleKeyDown(e, globalIdx)}
@@ -405,24 +398,19 @@ export default function ReadingParagraphInput({
             />
           )}
         </div>
-        {punct ? (
-          <span className={`font-mono mb-0.5 ${wordTextSize}`} style={{ color: 'var(--ink-muted)' }}>
-            {punct}
-          </span>
-        ) : null}
       </div>
     )
   }
 
   return (
     <div className="w-full">
-      <div className="rounded-xl border-2 border-purple-500/80 bg-slate-950/60 overflow-hidden shadow-[0_0_28px_-10px_rgba(168,85,247,0.4)]">
-        <div className="p-4 sm:p-5 space-y-8">
+      <div className="rounded-xl border border-cyan-400/30 bg-slate-950/55 backdrop-blur-sm overflow-hidden shadow-[0_0_24px_-12px_rgba(34,211,238,0.28)]">
+        <div className="p-3 sm:p-4 space-y-5">
           {sections.map((sec, si) => {
             const wordBase = sections.slice(0, si).reduce((acc, s) => acc + s.words.length, 0)
             return (
               <div key={si} className="space-y-3">
-                <div className={`flex flex-wrap ${wordGap} items-start justify-start`}>
+                <div className={`flex flex-wrap ${wordGap} items-end justify-start w-full`}>
                   {sec.words.map((raw, wi) =>
                     renderWordCell(raw, wordBase + wi, si, wi, zhFragmentsPerSection[si]?.[wi] ?? ''),
                   )}

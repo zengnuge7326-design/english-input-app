@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { IconSpeaker } from './Icons'
+import { IconSpeaker, IconArrowLeft } from './Icons'
 import PageBackBar from './PageBackBar'
 import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
@@ -248,6 +248,7 @@ function ChoiceQuestion({ q, onAnswer, answered }) {
       <p className="text-white text-3xl leading-relaxed bg-gray-800/60 rounded-xl px-6 py-5 text-center font-medium">
         {q.question}
       </p>
+      {q.sub && <p className="text-gray-400 text-base text-center -mt-2">💡 {q.sub}</p>}
       <div className="flex flex-col gap-4">
         {q.options.map((opt, i) => (
           <OptionBtn
@@ -335,15 +336,19 @@ const Q_LABELS = {
   word_order:  '连词成句',
   zh_to_en:    '中译英',
   en_to_zh:    '英译中',
+  fill_blank:  '填空',
 }
 
-export default function ExerciseQuiz({ questions, title, onClose, settings, onXp }) {
+export default function ExerciseQuiz({
+  questions, title, onClose, settings, onXp, onFinish, onRetry, closeLabel = '返回上一级',
+}) {
   const [idx, setIdx] = useState(0)
   const [answeredList, setAnsweredList] = useState([]) // true/false per question
   const [showAnswer, setShowAnswer] = useState(false)
+  const [finishNotified, setFinishNotified] = useState(false)
   const ttsSettings = settings || { rate: 0.9, ttsEngine: 'hybrid', edgeVoice: 'en-US-AvaNeural' }
   const { speak } = useTTS(ttsSettings)
-  const { playCorrect, playError } = useSound(settings)
+  const { playCorrect, playError, playBubble, playFireworks } = useSound(settings)
   const q = questions[idx]
 
   const goNext = useCallback(() => {
@@ -373,7 +378,13 @@ export default function ExerciseQuiz({ questions, title, onClose, settings, onXp
   }, [showAnswer, goNext])
 
   function handleAnswer(correct) {
-    if (correct) playCorrect(); else playError()
+    unlockAudio()
+    if (correct) {
+      playCorrect()
+      playBubble?.()
+    } else {
+      playError()
+    }
     onXp?.(correct ? 2 : 1)
     setAnsweredList(prev => {
       const row = [...prev]
@@ -386,29 +397,60 @@ export default function ExerciseQuiz({ questions, title, onClose, settings, onXp
   const done = idx >= questions.length
   const score = answeredList.filter(Boolean).length
 
+  useEffect(() => {
+    if (done && onFinish && !finishNotified) {
+      setFinishNotified(true)
+      onFinish({ score, total: questions.length })
+    }
+  }, [done, finishNotified, onFinish, score, questions.length])
+
+  function handleRetry() {
+    setIdx(0)
+    setAnsweredList([])
+    setShowAnswer(false)
+    setFinishNotified(false)
+    onRetry?.()
+  }
+
   if (done) {
     return (
       <div className="flex flex-col items-center justify-center gap-6 py-12 px-4">
         <div className="text-6xl">{score === questions.length ? '🎉' : score >= questions.length / 2 ? '👍' : '💪'}</div>
         <div className="text-white text-3xl font-bold">{score} / {questions.length}</div>
         <div className="text-gray-400 text-sm">{title}</div>
-        <button
-          type="button"
-          onClick={onClose}
-          className="mt-2 px-8 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold text-sm transition-colors"
-        >
-          返回上一级
-        </button>
+        <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full max-w-xs">
+          {onRetry && (
+            <button
+              type="button"
+              onClick={handleRetry}
+              className="flex-1 px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors"
+            >
+              再来
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex-1 px-8 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold text-sm transition-colors"
+          >
+            {closeLabel}
+          </button>
+        </div>
       </div>
     )
   }
 
   return (
     <div className="w-full max-w-lg mx-auto px-2 py-3 flex flex-col gap-3">
-      <PageBackBar onBack={onClose} label="退出练习" />
-
-      {/* 进度条 */}
+      {/* 返回 + 进度条 */}
       <div className="flex items-center gap-3">
+        {onClose && (
+          <button onClick={onClose}
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white shrink-0"
+            aria-label="返回">
+            <IconArrowLeft size={18} />
+          </button>
+        )}
         <div className="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
           <div className="h-full bg-blue-500 rounded-full transition-all"
             style={{ width: `${(idx / questions.length) * 100}%` }} />
@@ -430,7 +472,7 @@ export default function ExerciseQuiz({ questions, title, onClose, settings, onXp
           {(q.type === 'listen_word' || q.type === 'listen_qa') && (
             <ListenQuestion q={q} speak={speak} onAnswer={handleAnswer} answered={showAnswer} />
           )}
-          {(q.type === 'zh_to_en' || q.type === 'en_to_zh') && (
+          {(q.type === 'zh_to_en' || q.type === 'en_to_zh' || q.type === 'fill_blank') && (
             <ChoiceQuestion q={q} onAnswer={handleAnswer} answered={showAnswer} />
           )}
           {q.type === 'word_order' && (

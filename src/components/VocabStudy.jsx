@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import LockedOverlay from './LockedOverlay'
 import pepWords from '../data/pep_words.json'
 import renaiJuniorWords from '../data/renai_junior_words.json'
 import bsdaWords from '../data/bsda_words.json'
@@ -8,6 +9,8 @@ import WordMatch from './WordMatch'
 import OceanBg from './OceanBg'
 import { useSpeechRecognition, matchWord } from '../hooks/useSpeechRecognition'
 import { useSound } from '../hooks/useSound'
+import { unlockAudio } from '../utils/audioUnlock'
+import { playWordImmediate as playWordFast, preloadWords, stopWordAudio } from '../utils/wordAudio.js'
 
 // 蓝色声波动画（跟读 listening 时显示）
 function SoundWave({ active }) {
@@ -205,13 +208,17 @@ async function fetchBuffer(url) {
 }
 
 let _currentSource = null
-function stopAudio() {
+function stopSyllableAudio() {
   try { _currentSource?.stop() } catch {}
   _currentSource = null
 }
+function stopAllPlayback() {
+  stopSyllableAudio()
+  stopWordAudio()
+}
 
 function playBuffer(buffer, startSec = 0, endSec = null, rate = 1.0) {
-  stopAudio()
+  stopAllPlayback()
   const ctx = getCtx()
   const src = ctx.createBufferSource()
   src.buffer = buffer
@@ -271,7 +278,7 @@ function useWordAudio(word, ipa = '', speed = 1.0) {
   const bufRef    = useRef(null)  // 预加载缓冲，playFull/playSyl 同步读取，消除延迟
 
   function clearTimers() { timersRef.current.forEach(clearTimeout); timersRef.current = [] }
-  function reset() { clearTimers(); stopAudio(); setActiveSylIdx(-1) }
+  function reset() { clearTimers(); stopSyllableAudio(); setActiveSylIdx(-1) }
 
   // word 变化时预加载音频缓冲 → bufRef.current
   useEffect(() => {
@@ -302,7 +309,7 @@ function useWordAudio(word, ipa = '', speed = 1.0) {
 
   // 播全词，顺序点亮音节 — 同步读取 bufRef，无 await 延迟
   function playFull() {
-    reset()
+    clearTimers(); stopAllPlayback(); setActiveSylIdx(-1)
     const buf = bufRef.current
     if (buf) {
       const wallMs = (buf.duration / speed) * 1000
@@ -311,18 +318,17 @@ function useWordAudio(word, ipa = '', speed = 1.0) {
     } else {
       const fallbackMs = realSyls.length * (420 / speed)
       scheduleHighlight(fallbackMs)
-      speak(word, 0.5 * speed)
+      playWordFast(word, { rate: 0.5 * speed })
     }
   }
 
   // 点音节也播全词，只高亮该音节 — 同步
   function playSyl(sylIdx) {
-    reset()
-    setActiveSylIdx(sylIdx)
+    clearTimers(); stopAllPlayback(); setActiveSylIdx(sylIdx)
     timersRef.current.push(setTimeout(() => setActiveSylIdx(-1), 1500))
     const buf = bufRef.current
     if (buf) { playBuffer(buf, 0, null, speed); return }
-    speak(word, 0.5 * speed)
+    playWordFast(word, { rate: 0.5 * speed })
   }
 
   async function playIPASyl(i) {
@@ -500,15 +506,26 @@ function useRecorder() {
 
 const VOCAB_BOOKS = [...pepWords, ...renaiJuniorWords, ...bsdaWords]
 
-const GRADE_COLORS = {
-  3: 'from-green-700 to-green-900',
-  4: 'from-blue-700 to-blue-900',
-  5: 'from-purple-700 to-purple-900',
-  6: 'from-orange-700 to-orange-900',
-  7: 'from-teal-700 to-teal-900',
-  8: 'from-cyan-700 to-cyan-900',
-  9: 'from-indigo-700 to-indigo-900',
-  '高中': 'from-rose-700 to-rose-900',
+const GRADE_THEME = {
+  3: { grad: 'from-emerald-600 via-green-700 to-emerald-950', accent: 'text-emerald-300', border: 'hover:border-emerald-500/40', chip: 'bg-emerald-500/25 text-emerald-200', publisher: '人教版 PEP', emoji: '🌱' },
+  4: { grad: 'from-blue-600 via-blue-700 to-blue-950', accent: 'text-blue-300', border: 'hover:border-blue-500/40', chip: 'bg-blue-500/25 text-blue-200', publisher: '人教版 PEP', emoji: '📘' },
+  5: { grad: 'from-violet-600 via-purple-700 to-violet-950', accent: 'text-violet-300', border: 'hover:border-violet-500/40', chip: 'bg-violet-500/25 text-violet-200', publisher: '人教版 PEP', emoji: '📗' },
+  6: { grad: 'from-orange-600 via-amber-700 to-orange-950', accent: 'text-orange-300', border: 'hover:border-orange-500/40', chip: 'bg-orange-500/25 text-orange-200', publisher: '人教版 PEP', emoji: '📙' },
+  7: { grad: 'from-teal-600 via-cyan-800 to-teal-950', accent: 'text-teal-300', border: 'hover:border-teal-500/40', chip: 'bg-teal-500/25 text-teal-200', publisher: '仁爱科普版', emoji: '🎒' },
+  8: { grad: 'from-cyan-600 via-sky-800 to-cyan-950', accent: 'text-cyan-300', border: 'hover:border-cyan-500/40', chip: 'bg-cyan-500/25 text-cyan-200', publisher: '仁爱科普版', emoji: '✏️' },
+  9: { grad: 'from-indigo-600 via-indigo-800 to-indigo-950', accent: 'text-indigo-300', border: 'hover:border-indigo-500/40', chip: 'bg-indigo-500/25 text-indigo-200', publisher: '仁爱科普版', emoji: '🎯' },
+  '高中': { grad: 'from-rose-600 via-pink-800 to-rose-950', accent: 'text-rose-300', border: 'hover:border-rose-500/40', chip: 'bg-rose-500/25 text-rose-200', publisher: '北师大版', emoji: '🎓' },
+}
+
+function bookCoverSrc(book) {
+  if (typeof book.grade !== 'number' || !book.sem) return null
+  if (book.grade >= 3 && book.grade <= 5) {
+    return `/covers/grade${book.grade}_${book.sem}.jpg`
+  }
+  if (book.grade === 6) {
+    return `/covers/grade6_${book.sem}.svg`
+  }
+  return null
 }
 
 function bookSubtitle(book) {
@@ -516,20 +533,143 @@ function bookSubtitle(book) {
   return `${book.grade}年级 · ${book.sem === 'up' ? '上' : '下'}册`
 }
 
-function BookGrid({ onSelect, onBack }) {
+function bookWordCount(book) {
+  return book.units.reduce((s, u) => s + u.words.length, 0)
+}
+
+function bookProgressStats(book, progress = {}) {
+  let total = 0
+  let known = 0
+  book.units.forEach((unit, ui) => {
+    unit.words.forEach((_, wi) => {
+      total += 1
+      if ((progress[`vocab_${book.bookName}_${ui}_${wi}`] || 0) >= 2) known += 1
+    })
+  })
+  const pct = total ? Math.round((known / total) * 100) : 0
+  return { total, known, pct }
+}
+
+function BookCard({ book, onSelect, progress = {} }) {
+  const theme = GRADE_THEME[book.grade] || GRADE_THEME[3]
+  const [coverOk, setCoverOk] = useState(true)
+  const coverSrc = bookCoverSrc(book)
+  const cover = coverSrc && coverOk ? coverSrc : null
+  const words = bookWordCount(book)
+  const { known, total, pct } = bookProgressStats(book, progress)
+  const done = total > 0 && known === total
+  const semLabel = book.sem === 'up' ? '上册' : book.sem === 'down' ? '下册' : null
+
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(book)}
+      className={`group relative flex flex-col rounded-2xl overflow-hidden border border-white/10 bg-slate-900/80 shadow-lg text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] ${theme.border}`}
+    >
+      <div className={`relative h-28 sm:h-32 bg-gradient-to-br ${theme.grad} overflow-hidden`}>
+        <div className="absolute -top-8 -right-8 h-28 w-28 rounded-full bg-white/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
+        <div className="absolute -bottom-10 -left-6 h-24 w-24 rounded-full bg-black/20 blur-xl" />
+        {cover ? (
+          <>
+            <img
+              src={cover}
+              alt=""
+              onError={() => setCoverOk(false)}
+              className="absolute inset-0 h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+          </>
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3">
+            <span className="text-4xl drop-shadow-lg transition-transform duration-300 group-hover:scale-110">{theme.emoji}</span>
+            {typeof book.grade === 'number' && (
+              <span className="text-3xl font-black text-white/90 drop-shadow-md tabular-nums">{book.grade}</span>
+            )}
+          </div>
+        )}
+        {semLabel && (
+          <span className={`absolute top-2.5 right-2.5 rounded-full px-2.5 py-0.5 text-[10px] font-bold tracking-wide backdrop-blur-sm border border-white/20 ${theme.chip}`}>
+            {semLabel}
+          </span>
+        )}
+        <span className="absolute bottom-2 left-2.5 text-[10px] font-semibold text-white/70 tracking-wider drop-shadow">
+          {theme.publisher}
+        </span>
+      </div>
+      <div className="flex flex-col gap-2 p-4 bg-gradient-to-b from-slate-800/95 to-slate-900">
+        <div className="text-[11px] text-slate-500">{bookSubtitle(book)}</div>
+        <div className="text-base font-extrabold text-white leading-snug line-clamp-2">{book.bookName}</div>
+        <div className="flex items-center justify-between gap-2 text-xs text-slate-400">
+          <span>
+            {book.units.length} 单元 · <span className={`font-semibold ${theme.accent}`}>{words}</span> 词
+          </span>
+          {done && (
+            <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300 border border-emerald-500/30">
+              ✓ 已学完
+            </span>
+          )}
+        </div>
+        <div className="pt-1 border-t border-slate-700/60">
+          <div className="flex items-center justify-between gap-2 mb-1.5">
+            <span className="text-[11px] text-slate-500">
+              已掌握 <span className={`font-semibold tabular-nums ${known > 0 ? theme.accent : 'text-slate-500'}`}>{known}</span>/{total}
+            </span>
+            <span className={`text-[10px] font-mono tabular-nums ${pct >= 100 ? 'text-emerald-400' : 'text-slate-500'}`}>{pct}%</span>
+          </div>
+          <div className="h-1.5 w-full rounded-full bg-slate-700/70 overflow-hidden">
+            <div
+              className={`h-full rounded-full transition-all duration-700 ${done ? 'bg-emerald-500' : `bg-gradient-to-r ${theme.grad}`}`}
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+        </div>
+        <div className={`text-[10px] font-semibold text-right opacity-0 transition-opacity group-hover:opacity-100 ${theme.accent}`}>
+          进入 ›
+        </div>
+      </div>
+    </button>
+  )
+}
+
+function BookGrid({ onSelect, onBack, progress = {} }) {
+  const grouped = useMemo(() => {
+    const map = new Map()
+    for (const book of VOCAB_BOOKS) {
+      const key = String(book.grade)
+      if (!map.has(key)) map.set(key, [])
+      map.get(key).push(book)
+    }
+    return [...map.entries()]
+  }, [])
+
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
-      {onBack && <PageBackBar onBack={onBack} label="返回练习" />}
-      <h2 className="text-white text-xl font-bold mb-5">选择年级册次</h2>
-      <div className="grid grid-cols-2 gap-4">
-        {VOCAB_BOOKS.map(book => (
-          <button key={book.bookName} onClick={() => onSelect(book)}
-            className={`rounded-2xl bg-gradient-to-br ${GRADE_COLORS[book.grade] || 'from-slate-700 to-slate-900'} p-6 text-left hover:opacity-90 active:scale-95 transition-all`}>
-            <div className="text-sm text-white/60 mb-1">{bookSubtitle(book)}</div>
-            <div className="text-white font-bold text-lg">{book.bookName}</div>
-            <div className="text-white/50 text-sm mt-2">{book.units.length} 单元 · {book.units.reduce((s, u) => s + u.words.length, 0)} 词</div>
-          </button>
-        ))}
+      {onBack && <PageBackBar onBack={onBack} label="返回" />}
+      <div className="flex items-end justify-between gap-3 mb-5 mt-2">
+        <div>
+          <h2 className="text-white text-xl font-bold">选择年级册次</h2>
+          <p className="text-xs text-slate-500 mt-1">小学 PEP · 初中仁爱 · 高中北师大</p>
+        </div>
+        <span className="text-[10px] text-slate-600 uppercase tracking-widest shrink-0">{VOCAB_BOOKS.length} 册</span>
+      </div>
+      <div className="flex flex-col gap-6">
+        {grouped.map(([gradeKey, books]) => {
+          const theme = GRADE_THEME[books[0]?.grade] || GRADE_THEME[3]
+          const gradeLabel = typeof books[0]?.grade === 'number' ? `${books[0].grade} 年级` : books[0]?.grade
+          return (
+            <section key={gradeKey}>
+              <div className="flex items-center gap-2 mb-3">
+                <span className={`text-xs font-bold ${theme.accent}`}>{gradeLabel}</span>
+                <div className="flex-1 h-px bg-slate-700/80" />
+              </div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {books.map(book => (
+                  <BookCard key={book.bookName} book={book} onSelect={onSelect} progress={progress} />
+                ))}
+              </div>
+            </section>
+          )
+        })}
       </div>
     </div>
   )
@@ -556,7 +696,7 @@ function unitChunkLabel(unitNum, chunkIndex, totalChunks) {
   return `Unit ${unitNum} · ${chunkIndex + 1}/${totalChunks}`
 }
 
-function UnitGrid({ book, progress, onSelect, onBack, isMember = true, onShowLogin }) {
+function UnitGrid({ book, progress, onSelect, onBack, isMember = true, onShowLogin, unlocks, crystalBalance = 0, onGoShop }) {
   const allChunks = book.units.flatMap((unit, ui) => {
     const parts = chunkUnitWords(unit.words)
     return parts.map((half, hi) => ({ unit, ui, half, hi, parts }))
@@ -570,25 +710,56 @@ function UnitGrid({ book, progress, onSelect, onBack, isMember = true, onShowLog
         <p className="text-xs text-gray-500 mb-4">前半部分单元免费体验，开通会员解锁全部单元</p>
       )}
       <div className="grid grid-cols-2 gap-4">
-        {allChunks.map(({ unit, ui, half, hi, parts }, idx) => {
-          const label = unitChunkLabel(unit.unit, hi, parts.length)
-          const total = half.words.length
-          const known = half.words.filter((_, wi) => (progress[`vocab_${book.bookName}_${ui}_${half.offset + wi}`] || 0) >= 2).length
-          const pct = total ? Math.round(known / total * 100) : 0
-          const locked = !isMember && idx >= halfIdx
-          return (
-            <button key={`${ui}-${hi}`}
-              onClick={() => locked ? onShowLogin?.() : onSelect({ ...unit, words: half.words }, ui, half.offset)}
-              className={`rounded-xl bg-slate-800 border border-slate-700 hover:border-gray-600 p-5 text-left transition-all active:scale-95 relative ${locked ? 'opacity-60' : ''}`}>
-              <div className="text-xs text-gray-500 mb-1">{label} {locked && '🔒'}</div>
-              <div className="text-white font-semibold text-base mb-3">{unit.title}</div>
-              <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden mb-1.5">
-                <div className="h-full bg-blue-500 rounded-full" style={{ width: `${pct}%` }} />
+        {(() => {
+          // 每个块的完成度（用于「上一单元巩固过 1 次」自动解锁判断）
+          const chunkPcts = allChunks.map(({ ui, half }) => {
+            const total = half.words.length
+            const known = half.words.filter((_, wi) => (progress[`vocab_${book.bookName}_${ui}_${half.offset + wi}`] || 0) >= 1).length
+            return total ? (known / total) : 0
+          })
+          return allChunks.map(({ unit, ui, half, hi, parts }, idx) => {
+            const label = unitChunkLabel(unit.unit, hi, parts.length)
+            const total = half.words.length
+            const known = half.words.filter((_, wi) => (progress[`vocab_${book.bookName}_${ui}_${half.offset + wi}`] || 0) >= 2).length
+            const pct = total ? Math.round(known / total * 100) : 0
+            // 单元锁：第 0 个免费；之后看上一个有没有「巩固过」（任一词 known 即可）
+            const itemId = `${book.bookName}_${ui}_${hi}`
+            const prevTouched = idx > 0 ? chunkPcts[idx - 1] > 0 : true
+            const locked = idx > 0 &&
+              !isMember &&
+              !(unlocks?.isUnlocked?.('vocab_unit', itemId)) &&
+              !prevTouched
+            const COST = 15
+            const card = (
+              <button
+                onClick={() => onSelect({ ...unit, words: half.words }, ui, half.offset)}
+                className="w-full rounded-xl bg-slate-800 border border-slate-700 hover:border-gray-600 p-5 text-left transition-all active:scale-95 relative">
+                <div className="text-xs text-gray-500 mb-1">{label}</div>
+                <div className="text-white font-semibold text-base mb-3">{unit.title}</div>
+                <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden mb-1.5">
+                  <div className="h-full bg-blue-500 rounded-full" style={{ width: `${pct}%` }} />
+                </div>
+                <div className="text-xs text-gray-500">{known}/{total} 已掌握</div>
+              </button>
+            )
+            return (
+              <div key={`${ui}-${hi}`} className="relative">
+                <LockedOverlay
+                  locked={locked}
+                  cost={COST}
+                  color="blue"
+                  crystalBalance={crystalBalance}
+                  title={label}
+                  reason={`完成上一单元任一词，或花费 ${COST} 钻石提前开启`}
+                  onUnlock={() => unlocks?.unlock?.('vocab_unit', itemId, COST, 'blue')}
+                  onGoShop={onGoShop}
+                >
+                  {card}
+                </LockedOverlay>
               </div>
-              <div className="text-xs text-gray-500">{known}/{total} 已掌握</div>
-            </button>
-          )
-        })}
+            )
+          })
+        })()}
       </div>
     </div>
   )
@@ -658,15 +829,19 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   }, [duOn])
   const { playCorrect, playError, playVictory, playFireworks, playBubble } = useSound(settings)
   const word = unit.words[idx]
-  const pendingPlayRef = useRef(false)
   const { syllables, ipaSyllables, activeSylIdx, loading, playFull, playSyl, playIPASyl } = useWordAudio(word.word, word.ipa || '')
 
-  // Preload current + next word audio buffers to eliminate click-to-play delay
+  // 并行预取本单元全部单词 TTS Blob；当前词优先
+  useEffect(() => {
+    preloadWords(unit.words, { voice: settings?.edgeVoice, rate: settings?.rate, currentIdx: idx })
+  }, [unit, settings?.edgeVoice, settings?.rate, idx])
+
+  // 词典 AudioBuffer 仍用于主卡音节高亮（后台加载，不阻塞点击）
   useEffect(() => {
     fetchUrl(word.word).then(url => { if (url) fetchBuffer(url) })
     const next = unit.words[idx + 1]
     if (next?.word) fetchUrl(next.word).then(url => { if (url) fetchBuffer(url) })
-  }, [idx])
+  }, [idx, word.word, unit.words])
 
   // 默写完成判断
   const allMoXieDone = Object.keys(moXieDone).length >= unit.words.length
@@ -681,10 +856,6 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
   }, [idx])
 
   useEffect(() => { setMoInput(''); setMoResult(null); if (!duOn) { setFlipped(false); setDuResult(null); setDuMsg('') } }, [idx])
-
-  useEffect(() => {
-    if (pendingPlayRef.current) { pendingPlayRef.current = false; playFull() }
-  }, [idx])
 
   // ── 跟读 / 译读 会话驱动：识别→翻卡，3 次失败跳过；无声自动重试 2 次不计失败 ──
   // alive 通过 cancelToken 双重保险：组件卸载、idx/duMode 变化、或手动按钮中断都会 cancel。
@@ -1086,9 +1257,9 @@ function FlashCards({ book, unit, unitIdx, wordOffset = 0, progress, onBack, onP
             <button key={i} disabled={duOn} onClick={() => {
                 if (duOn) return
                 setMoInput(''); setMoResult(null)
-                if (i === idx) { playFull(); return }
-                pendingPlayRef.current = true
-                setIdx(i)
+                unlockAudio()
+                if (i !== idx) setIdx(i)
+                playWordFast(unit.words[i].word, { rate: settings?.rate, volume: settings?.volume })
               }}
               className={`du-tile-flip relative rounded-xl font-medium transition-all active:scale-95 ${shouldFlip ? '' : cls}`}>
               <div className={`du-tile-flip-inner ${shouldFlip ? 'is-flipped' : ''}`}>
@@ -1267,7 +1438,7 @@ function QuizView({ book, unit, unitIdx, wordOffset = 0, onBack, onProgressChang
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-export default function VocabStudy({ onClose, isMember = true, onShowLogin, settings, onXp, onCrystal }) {
+export default function VocabStudy({ onClose, isMember = true, onShowLogin, settings, onXp, onCrystal, unlocks, crystalBalance = 0, onGoShop }) {
   const [view, setView]           = useState('books')
   const [book, setBook]           = useState(null)
   const [unit, setUnit]           = useState(null)
@@ -1283,8 +1454,8 @@ export default function VocabStudy({ onClose, isMember = true, onShowLogin, sett
   return (
     <>
       <OceanBg />
-      {view === 'books' && <BookGrid onSelect={b => { setBook(b); setView('units') }} onBack={onClose} />}
-      {view === 'units' && <UnitGrid book={book} progress={progress} isMember={isMember} onShowLogin={onShowLogin} onBack={() => setView('books')} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />}
+      {view === 'books' && <BookGrid progress={progress} onSelect={b => { setBook(b); setView('units') }} onBack={onClose} />}
+      {view === 'units' && <UnitGrid book={book} progress={progress} isMember={isMember} onShowLogin={onShowLogin} unlocks={unlocks} crystalBalance={crystalBalance} onGoShop={onGoShop} onBack={() => { setProgress(loadProgress()); setView('books') }} onSelect={(u, ui, offset) => { setUnit(u); setUnitIdx(ui); setWordOffset(offset || 0); setView('cards') }} />}
       {view === 'cards' && <FlashCards book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} progress={progress} onBack={() => setView('units')} onProgressChange={refreshProgress} settings={settings} onXp={onXp} onCrystal={onCrystal} />}
       {view === 'quiz'  && <QuizView book={book} unit={unit} unitIdx={unitIdx} wordOffset={wordOffset} onBack={() => setView('cards')} onProgressChange={refreshProgress} />}
     </>

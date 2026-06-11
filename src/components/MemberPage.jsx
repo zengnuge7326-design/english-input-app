@@ -379,15 +379,7 @@ export default function MemberPage({ user, token, onClose, initialPlan = 'year',
         {/* 快捷入口 */}
         <div className="flex gap-2 mb-4">
           <button
-            onClick={() => {
-              const pwd = window.prompt('请输入站长密码')
-              if (pwd === null) return
-              if (pwd === 'OkAdmin2024!@#') {
-                window.open('/admin-panel', '_blank')
-              } else {
-                window.alert('密码错误')
-              }
-            }}
+            onClick={() => window.open('/admin-panel', '_blank')}
             className="flex-1 py-2 rounded-xl border border-gray-700 bg-gray-900/60 text-gray-400 hover:border-gray-500 hover:text-gray-200 text-xs font-medium transition-colors"
           >
             🔧 站长入口

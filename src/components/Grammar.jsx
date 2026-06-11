@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import PageBackBar from './PageBackBar'
+import LockedOverlay from './LockedOverlay'
 import { GRAMMAR_LEARNING_UI_ENABLED } from '../config/grammarUi'
 import { buildGrammarLessonPackMeta, getGrammarTopicMeta } from '../data/grammar_tenses/grammarTopicMeta'
 import presentSimpleData from '../data/grammar_tenses/elementary/present_simple.json'
@@ -318,7 +319,7 @@ function getLessonStats(data, progress) {
   return { total, attempted, mastered }
 }
 
-export default function Grammar({ onImport, onClose, onGrammarSyncPractice, progress = {}, active = true, isMember = true, onShowLogin }) {
+export default function Grammar({ onImport, onClose, onGrammarSyncPractice, progress = {}, active = true, isMember = true, onShowLogin, unlocks, crystalBalance = 0, onGoShop }) {
   const [stage, setStage] = useState(null)
   const [tense, setTense] = useState(null)
 
@@ -328,12 +329,7 @@ export default function Grammar({ onImport, onClose, onGrammarSyncPractice, prog
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setTense(null)} label={`返回${stageObj.label}列表`} />
-        <div className="flex items-center gap-2 mb-6">
-          <span className="text-gray-500 text-sm">{stageObj.label}</span>
-          <span className="text-gray-600">/</span>
-          <span className="text-gray-300 text-sm">{tenseObj.name}</span>
-        </div>
-        <div className="rounded-3xl overflow-hidden border border-white/15 mb-6 flex flex-col bg-slate-900/40 backdrop-blur-xl shadow-md"
+        <div className="rounded-3xl overflow-hidden border border-white/15 mb-6 mt-2 flex flex-col bg-slate-900/40 backdrop-blur-xl shadow-md"
           style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 4px 16px rgba(0,0,0,0.25)' }}>
           <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             {/* 顶部一行：图标 + 标题 + 按钮（手机版） */}
@@ -458,10 +454,7 @@ export default function Grammar({ onImport, onClose, onGrammarSyncPractice, prog
     return (
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setStage(null)} label="返回语法首页" />
-        <div className="flex items-center gap-2 mb-6">
-          <span className="text-gray-300 text-sm font-medium">{stageObj.label}阶段</span>
-        </div>
-        <div className="rounded-3xl overflow-hidden border border-white/15 mb-6 bg-slate-900/40 backdrop-blur-xl shadow-md"
+        <div className="rounded-3xl overflow-hidden border border-white/15 mb-6 mt-2 bg-slate-900/40 backdrop-blur-xl shadow-md"
           style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 4px 16px rgba(0,0,0,0.25)' }}>
           <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-3 sm:gap-0 sm:contents">
@@ -542,22 +535,34 @@ export default function Grammar({ onImport, onClose, onGrammarSyncPractice, prog
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
-      {onClose && <PageBackBar onBack={onClose} label="返回练习" />}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-white">语法专项练习</h2>
         <span className="text-xs text-gray-500">共 {STAGES.reduce((a, s) => a + s.tenses.length, 0)} 个专题</span>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {STAGES.map((s) => {
-          const allData = s.tenses.flatMap(t => t.data)
-          const stats = getLessonStats(allData, progress)
-          const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
-          const previewNames = s.tenses.slice(0, 3).map(t => t.name).join('、')
-          const previewLine = `${previewNames} 等 ${s.tenses.length} 个专题`
-          const tagline = STAGE_COVER_TAGLINE[s.id] || ''
-          return (
+        {(() => {
+          // 每阶段的整体进度，用于「上一阶段 60% 自动解锁」
+          const stagePercents = STAGES.map(s => {
+            const all = s.tenses.flatMap(t => t.data)
+            const st = getLessonStats(all, progress)
+            return st.total ? Math.round((st.attempted / st.total) * 100) : 0
+          })
+          return STAGES.map((s, idx) => {
+            const allData = s.tenses.flatMap(t => t.data)
+            const stats = getLessonStats(allData, progress)
+            const percent = stagePercents[idx]
+            const previewNames = s.tenses.slice(0, 3).map(t => t.name).join('、')
+            const previewLine = `${previewNames} 等 ${s.tenses.length} 个专题`
+            const tagline = STAGE_COVER_TAGLINE[s.id] || ''
+            const itemId = `stage_${s.id}`
+            const prevPct = idx > 0 ? stagePercents[idx - 1] : 100
+            const locked = idx > 0 &&
+              !isMember &&
+              !(unlocks?.isUnlocked?.('grammar', itemId)) &&
+              prevPct < 60
+            const COST = 30
+            const card = (
             <button
-              key={s.id}
               type="button"
               onClick={() => setStage(s.id)}
               className="w-full flex flex-col rounded-3xl overflow-hidden border border-white/15 hover:border-white/30 hover:scale-[1.02] active:scale-[0.98] transition-all text-left bg-slate-900/40 backdrop-blur-xl shadow-md"
@@ -586,8 +591,25 @@ export default function Grammar({ onImport, onClose, onGrammarSyncPractice, prog
                 </div>
               </div>
             </button>
-          )
-        })}
+            )
+            return (
+              <div key={s.id} className="relative">
+                <LockedOverlay
+                  locked={locked}
+                  cost={COST}
+                  color="blue"
+                  crystalBalance={crystalBalance}
+                  title={`${s.label}阶段语法`}
+                  reason={`完成上一阶段 60%，或花费 ${COST} 钻石提前开启`}
+                  onUnlock={() => unlocks?.unlock?.('grammar', itemId, COST, 'blue')}
+                  onGoShop={onGoShop}
+                >
+                  {card}
+                </LockedOverlay>
+              </div>
+            )
+          })
+        })()}
       </div>
     </div>
   )

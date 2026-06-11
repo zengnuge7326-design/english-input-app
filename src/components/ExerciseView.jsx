@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
-import PageBackBar from './PageBackBar'
+import { IconArrowLeft, IconArrowRight } from './Icons'
 import ReadingAudioToolbar from './ReadingAudioToolbar'
 import ReadingParagraphInput from './ReadingParagraphInput'
 import WordInput from './WordInput'
@@ -10,7 +10,7 @@ import { getGrammarTopicMeta } from '../data/grammar_tenses/grammarTopicMeta'
 import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
 import { buildSplitChunksLevel } from '../utils/splitSentence'
-import { getSpeakTextForReading } from '../utils/readingSpeak.js'
+import { ensureMic } from '../utils/micGate'
 
 const API = 'https://okenglish.site/api'
 
@@ -61,7 +61,28 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const { playError, playCorrect, playVictory, playKeypress, playBubble, playFireworks } = useSound(settings)
   const leadCount = Math.min(5, Math.max(1, Number(settings?.leadReadCount) || 1))
   const leadTimersRef = useRef([])
+  const [readingTtsOn, setReadingTtsOn] = useState(false)
   useEffect(() => () => leadTimersRef.current.forEach(clearTimeout), [])
+
+  const stopReadingTts = useCallback(() => {
+    cancel()
+    leadTimersRef.current.forEach(clearTimeout)
+    leadTimersRef.current = []
+    setReadingTtsOn(false)
+  }, [cancel])
+
+  /** 按全局 leadReadCount 领读整句（换句自动播放、手动点选次数均走此逻辑） */
+  const runLeadRead = useCallback((text, count = leadCount) => {
+    if (!text) return
+    stopReadingTts()
+    const n = Math.min(5, Math.max(1, Number(count) || 1))
+    const rate = settings?.rate || 1.0
+    const gap = Math.max(2000, Math.round((text.trim().split(/\s+/).length * 450 / rate) + 900))
+    speak(text)
+    for (let i = 1; i < n; i++) {
+      leadTimersRef.current.push(setTimeout(() => speak(text), gap * i))
+    }
+  }, [leadCount, speak, settings?.rate, stopReadingTts])
   const [currentWordIndex, setCurrentWordIndex] = useState({ idx: 0, total: 0 })
   const [completeBubbles, setCompleteBubbles]   = useState([])
   const [fwSparks, setFwSparks] = useState([])
@@ -115,20 +136,17 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
 
   const readingAutoplayEn = useMemo(() => {
     if (!readingMode || !sentences[index]?.en) return ''
-    const en = sentences[index].en
-    return settings?.readingSpeakScope === 'sentence'
-      ? getSpeakTextForReading('sentence', en, 0)
-      : en
-  }, [readingMode, index, sentences, settings?.readingSpeakScope])
+    return sentences[index].en
+  }, [readingMode, index, sentences])
 
-  const readingSpeakTarget = useMemo(() => {
+  const currentReadingWord = useMemo(() => {
     if (!readingMode || !activeSentence?.en) return ''
-    return getSpeakTextForReading(
-      settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box',
-      activeSentence.en,
-      currentWordIndex.idx,
-    )
-  }, [readingMode, activeSentence, settings?.readingSpeakScope, currentWordIndex.idx])
+    const tokens = activeSentence.en.trim().split(/\s+/).filter(Boolean)
+    const idx = currentWordIndex.idx
+    if (idx < 0 || idx >= tokens.length) return ''
+    const m = tokens[idx].match(/^([a-zA-Z0-9']+)/)
+    return m ? m[1] : tokens[idx]
+  }, [readingMode, activeSentence, currentWordIndex.idx])
 
   useEffect(() => () => {
     cancel()
@@ -167,23 +185,16 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     const speakEn = readingMode ? readingAutoplayEn : sentence.en
     if (!speakEn) return
     prefetch(speakEn)
-    if (settings.sentenceSpeak) setTimeout(() => speak(speakEn), 300)
-  }, [index, key, readingMode, readingAutoplayEn, gateEnabled, completed, settings.sentenceSpeak, prefetch, speak])
+    if (settings.sentenceSpeak) setTimeout(() => runLeadRead(speakEn, leadCount), 300)
+  }, [index, key, readingMode, readingAutoplayEn, gateEnabled, completed, settings.sentenceSpeak, settings.leadReadCount, leadCount, prefetch, runLeadRead])
 
   // Auto-play when speak gate activates (so child hears sentence before reading)
   useEffect(() => {
-    if (!speakActive || !sentence) return
-    let textToSpeak = (splitMode && chunks) ? chunks[chunkIndex] : sentence.en
-    if (readingMode && activeSentence?.en) {
-      textToSpeak = getSpeakTextForReading(
-        settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box',
-        activeSentence.en,
-        currentWordIndex.idx,
-      )
-    }
+    if (!speakActive || !sentences[index]) return
+    const textToSpeak = (splitMode && chunks) ? chunks[chunkIndex] : sentences[index].en
     prefetch(textToSpeak)
-    setTimeout(() => speak(textToSpeak), 700)
-  }, [speakActive])
+    setTimeout(() => runLeadRead(textToSpeak, leadCount), 700)
+  }, [speakActive, index, sentences, splitMode, chunks, chunkIndex, leadCount, prefetch, runLeadRead])
 
   useEffect(() => {
     onProgressChange?.(index, sentences.length)
@@ -339,6 +350,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   }, [completed, isLastSentenceForFocus, hasNextLesson])
 
   // Recording handler
+  const micReadyRef = useRef(false)
   const handleRecordToggle = useCallback(() => {
     if (speakPhase === 'success') return
     if (isRecording && recognitionRef.current) { recognitionRef.current.stop(); return }
@@ -347,6 +359,20 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     if (!SR) {
       setSpeakPhase('fail')
       setRecResult('此浏览器不支持语音识别，请使用 Chrome')
+      return
+    }
+
+    // 预检闸门：首次录音先确保麦克风权限（统一引导浮层），授权后重入
+    if (!micReadyRef.current) {
+      ensureMic('评测你的发音').then((res) => {
+        if (!res.ok) {
+          setSpeakPhase('fail')
+          setRecResult(res.reason === 'unsupported' ? '此浏览器不支持语音识别，请使用 Chrome' : '请允许麦克风权限后重试')
+          return
+        }
+        micReadyRef.current = true
+        handleRecordToggle()
+      })
       return
     }
 
@@ -492,23 +518,25 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     return () => window.removeEventListener('keydown', onEnterContinue, true)
   }, [readingMode, completed, speakActive, handleReadingContinue])
 
-  const speakWord = useCallback((word) => {
-    if (settings.wordSpeak !== false) speak(word)
-  }, [speak, settings.wordSpeak])
-
-  const startLeadRead = useCallback((text, count) => {
-    leadTimersRef.current.forEach(clearTimeout)
-    leadTimersRef.current = []
-    const words = text.trim().split(/\s+/).length
+  const speakWordRepeat = useCallback((word, count) => {
+    if (settings.wordSpeak === false || !word) return
+    stopReadingTts()
+    const n = Math.min(5, Math.max(1, Number(count) || 1))
     const rate = settings?.rate || 1.0
-    // Estimate: (words * 0.45s/word / rate) + 0.9s gap, minimum 2s
-    const gap = Math.max(2000, Math.round((words * 450 / rate) + 900))
-    speak(text)
-    for (let i = 1; i < count; i++) {
-      const t = setTimeout(() => speak(text), gap * i)
-      leadTimersRef.current.push(t)
+    const gap = Math.max(450, Math.round(700 / rate))
+    speak(word)
+    for (let i = 1; i < n; i++) {
+      leadTimersRef.current.push(setTimeout(() => speak(word), gap * i))
     }
-  }, [speak, settings?.rate])
+  }, [speak, settings.wordSpeak, settings?.rate, stopReadingTts])
+
+  const speakWord = useCallback((word) => {
+    speakWordRepeat(word, settings.leadReadCount || 1)
+  }, [speakWordRepeat, settings.leadReadCount])
+
+  const speakCurrentReadingWord = useCallback((count) => {
+    speakWordRepeat(currentReadingWord, count ?? settings.leadReadCount ?? 1)
+  }, [speakWordRepeat, currentReadingWord, settings.leadReadCount])
 
   useEffect(() => {
     function handleKey(e) {
@@ -521,13 +549,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
       }
       if (e.ctrlKey && e.key === 'a') {
         e.preventDefault()
-        const a = readingMode && activeSentence?.en
-          ? getSpeakTextForReading(
-              settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box',
-              activeSentence.en,
-              currentWordIndex.idx,
-            )
-          : sentence.en
+        const a = readingMode && activeSentence?.en ? activeSentence.en : sentence.en
         speak(a)
         return
       }
@@ -536,7 +558,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     }
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
-  }, [sentence, speak, goNext, goPrev, onMarkMastered, onMarkReview, readingMode, activeSentence, currentWordIndex, settings?.readingSpeakScope])
+  }, [sentence, speak, goNext, goPrev, onMarkMastered, onMarkReview, readingMode, activeSentence])
 
   const grammarTopicMeta = useMemo(() => {
     if (!GRAMMAR_LEARNING_UI_ENABLED) return null
@@ -549,6 +571,10 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     setSplitLevel(0)
     setChunkIndex(0)
   }, [readingMode])
+
+  useEffect(() => {
+    if (readingMode) stopReadingTts()
+  }, [index, readingMode, stopReadingTts])
 
   if (!sentence) return <div className="text-gray-400 text-center mt-20">没有句子，请先导入数据。</div>
 
@@ -643,25 +669,66 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
       ))}
 
       <div className={`flex flex-col items-center mx-auto px-4 relative transition-all duration-200 w-full ${readingMode ? 'max-w-4xl gap-2' : 'max-w-2xl gap-3'}`} style={{zIndex:10}}>
-        {(onBack || (readingMode && !speakActive)) && (
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 w-full self-start mt-1 mb-1">
-            {onBack && (
-              <PageBackBar onBack={onBack} label={readingMode ? '返回阅读' : '返回'} className="mb-0 shrink-0" />
-            )}
-            {readingMode && !speakActive && (
+        {readingMode && !speakActive && (
+          <div className="w-full self-start rounded-xl border border-cyan-500/25 bg-slate-900/75 backdrop-blur-md shadow-lg shadow-cyan-950/25 overflow-hidden">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-2 px-3 py-2">
+              {onBack && (
+                <button
+                  type="button"
+                  onClick={onBack}
+                  className="inline-flex items-center gap-1 rounded-lg border border-slate-600/60 bg-slate-800/80 px-2 py-1.5 text-sm font-medium text-slate-200 hover:bg-slate-700 hover:text-white transition-colors shrink-0"
+                >
+                  <IconArrowLeft size={16} />
+                  返回
+                </button>
+              )}
+              <div className="flex items-center gap-0.5 rounded-lg border border-slate-600/60 bg-slate-800/60 p-0.5 shrink-0">
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  disabled={index <= 0}
+                  title="上一段"
+                  aria-label="上一段"
+                  className="flex h-8 w-8 items-center justify-center rounded-md text-slate-200 hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  <IconArrowLeft size={16} />
+                </button>
+                <span className="px-1.5 text-sm tabular-nums text-cyan-200/90 font-semibold min-w-[2.75rem] text-center">
+                  {index + 1}/{sentences.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  disabled={index >= sentences.length - 1}
+                  title="下一段"
+                  aria-label="下一段"
+                  className="flex h-8 w-8 items-center justify-center rounded-md text-slate-200 hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  <IconArrowRight size={16} />
+                </button>
+              </div>
+              <div className="hidden sm:block w-px h-6 bg-slate-600/50 shrink-0" />
               <ReadingAudioToolbar
-                onSpeakFull={() => speak(readingSpeakTarget)}
-                onLeadRead={(count) => {
-                  onPatchSettings?.({ leadReadCount: count })
-                  startLeadRead(readingSpeakTarget, count)
+                isSpeaking={readingTtsOn}
+                onStopSpeak={stopReadingTts}
+                onSpeakFull={() => {
+                  if (!activeSentence?.en) return
+                  stopReadingTts()
+                  setReadingTtsOn(true)
+                  speak(activeSentence.en)
+                  const rate = settings?.rate || 1.0
+                  const words = activeSentence.en.trim().split(/\s+/).length
+                  const ms = Math.max(2500, Math.round((words * 450 / rate) + 1200))
+                  leadTimersRef.current.push(setTimeout(() => setReadingTtsOn(false), ms))
                 }}
+                wordSpeakOn={settings.wordSpeak !== false}
+                onWordSpeakChange={(v) => onPatchSettings?.({ wordSpeak: v })}
+                onSpeakCurrentWord={speakCurrentReadingWord}
                 onPatchSettings={onPatchSettings}
-                leadReadCount={Math.min(3, Math.max(1, Number(settings?.leadReadCount) || 1))}
+                leadReadCount={leadCount}
                 speakDisabled={isRecording && settings?.blockTTSDuringRec !== false}
-                readingSpeakScope={settings?.readingSpeakScope === 'sentence' ? 'sentence' : 'box'}
-                onReadingSpeakScopeChange={(scope) => onPatchSettings?.({ readingSpeakScope: scope })}
               />
-            )}
+            </div>
           </div>
         )}
         {/* 语法卡先于进度条显示（用户要求） */}
@@ -670,28 +737,39 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
           const frac = Math.min(1, (index + (completed ? 1 : (currentWordIndex.total > 0 ? currentWordIndex.idx / currentWordIndex.total : 0))) / Math.max(1, sentences.length))
           const full = frac >= 0.999
           return (
-            <div className="relative w-full mt-0">
-              <div className="w-full h-3 rounded-full bg-slate-800/80 overflow-hidden">
-                <div
-                  className="h-full rounded-full relative"
-                  style={{
-                    width: `${frac * 100}%`,
-                    background: full
-                      ? 'linear-gradient(90deg,#f59e0b,#fbbf24)'
-                      : 'linear-gradient(90deg,#3b82f6,#22d3ee)',
-                    transition: 'width .45s cubic-bezier(.34,1.56,.64,1), background .3s',
-                  }}
+            <div className="relative w-full mt-1 flex items-center gap-3" style={{ zIndex: 2 }}>
+              {onBack && (
+                <button
+                  type="button"
+                  onClick={onBack}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors shrink-0"
+                  aria-label="返回"
                 >
-                  {/* 顶部高光 */}
-                  <div className="absolute left-1 right-1 top-[2px] h-[3px] rounded-full bg-white/30" />
+                  <IconArrowLeft size={18} />
+                </button>
+              )}
+              <div className="flex-1 min-w-0 relative">
+                <div className="w-full h-3 rounded-full bg-slate-800/80 overflow-hidden">
+                  <div
+                    className="h-full rounded-full relative"
+                    style={{
+                      width: `${frac * 100}%`,
+                      background: full
+                        ? 'linear-gradient(90deg,#f59e0b,#fbbf24)'
+                        : 'linear-gradient(90deg,#3b82f6,#22d3ee)',
+                      transition: 'width .45s cubic-bezier(.34,1.56,.64,1), background .3s',
+                    }}
+                  >
+                    <div className="absolute left-1 right-1 top-[2px] h-[3px] rounded-full bg-white/30" />
+                  </div>
                 </div>
+                {xpFloats.map(f => (
+                  <div key={f.id} className="xp-float absolute right-0 -top-1 text-amber-400 font-bold text-lg drop-shadow">
+                    +2 XP
+                  </div>
+                ))}
               </div>
-              {/* +XP 飘字 */}
-              {xpFloats.map(f => (
-                <div key={f.id} className="xp-float absolute right-0 -top-1 text-amber-400 font-bold text-lg drop-shadow">
-                  +2 XP
-                </div>
-              ))}
+              <span className="text-gray-500 text-sm tabular-nums shrink-0">{index + 1}/{sentences.length}</span>
             </div>
           )
         })()}
@@ -763,7 +841,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
                 <button
                   key={n}
                   type="button"
-                  onClick={() => { onPatchSettings?.({ leadReadCount: n }); startLeadRead(sentence.en, n) }}
+                  onClick={() => { onPatchSettings?.({ leadReadCount: n }); runLeadRead(sentence.en, n) }}
                   className={`w-5 h-5 rounded text-[10px] font-bold transition-colors ${leadCount === n ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-white'}`}
                   title={`领读 ${n} 次`}
                 >{n}</button>

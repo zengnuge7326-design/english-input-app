@@ -59,3 +59,25 @@ export const IconBell = ({ size = 18 }) => <svg {...p(size)}><path d="M18 8A6 6 
 export const IconMessageSquare = ({ size = 18 }) => <svg {...p(size)}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
 export const IconSun = ({ size = 18 }) => <svg {...p(size)}><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 export const IconMoon = ({ size = 18 }) => <svg {...p(size)}><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+export const IconSparkles = ({ size = 18 }) => <svg {...p(size)}><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>
+export const IconGamepad = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+    <defs>
+      <linearGradient id="gp-body" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#a78bfa"/>
+        <stop offset="55%" stopColor="#7c3aed"/>
+        <stop offset="100%" stopColor="#ec4899"/>
+      </linearGradient>
+      <linearGradient id="gp-hi" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="rgba(255,255,255,0.55)"/>
+        <stop offset="100%" stopColor="rgba(255,255,255,0)"/>
+      </linearGradient>
+    </defs>
+    <path d="M6 7h12a4 4 0 0 1 4 4v4a3 3 0 0 1-5.4 1.8l-1.2-1.6a2 2 0 0 0-1.6-.8h-3.6a2 2 0 0 0-1.6.8L7.4 16.8A3 3 0 0 1 2 15v-4a4 4 0 0 1 4-4Z" fill="url(#gp-body)" stroke="rgba(0,0,0,0.25)" strokeWidth="0.6"/>
+    <path d="M6 7.5h12a3.5 3.5 0 0 1 3.5 3.5v0.2c-1-1.4-2.6-2.2-4.5-2.2H7c-1.9 0-3.5 0.8-4.5 2.2V11A3.5 3.5 0 0 1 6 7.5Z" fill="url(#gp-hi)"/>
+    <circle cx="8" cy="12" r="1.5" fill="#fff" opacity="0.95"/>
+    <path d="M7 12h2M8 11v2" stroke="#7c3aed" strokeWidth="0.9" strokeLinecap="round"/>
+    <circle cx="15.5" cy="11" r="1" fill="#fde047"/>
+    <circle cx="17.5" cy="13" r="1" fill="#f472b6"/>
+  </svg>
+)
