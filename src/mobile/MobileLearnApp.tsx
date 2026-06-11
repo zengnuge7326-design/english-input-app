@@ -43,6 +43,7 @@ interface Props {
   onExitShell?: () => void
   onAddXp?: (amount: number) => void
   onCrystalEarn?: CrystalEarnFn
+  onOpenShop?: () => void
   mainXp?: MainXpSnapshot
   mainCrystal?: MainCrystalSnapshot
   crystalPulse?: number
@@ -56,6 +57,7 @@ export default function MobileLearnApp({
   onExitShell,
   onAddXp,
   onCrystalEarn,
+  onOpenShop,
   mainXp,
   mainCrystal,
   crystalPulse = 0,
@@ -297,6 +299,7 @@ export default function MobileLearnApp({
             onExitApp={handleExitApp}
             onResetProgress={handleResetProgress}
             onOpenPhonics={startPhonicsLesson}
+            onOpenShop={onOpenShop}
             shellMode={shellMode}
           />
         )}

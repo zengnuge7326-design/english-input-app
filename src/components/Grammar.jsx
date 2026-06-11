@@ -396,13 +396,10 @@ export default function Grammar({ onImport, onClose, onGrammarSyncPractice, prog
             {tenseObj.name} 同步练习
           </button>
         </div>
-        {!isMember && (
-          <p className="text-xs text-gray-500 mb-4">前半部分课程免费体验，开通会员解锁全部课程</p>
-        )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {tenseObj.lessons.map((lesson, i) => {
-            const halfIdx = Math.ceil(tenseObj.lessons.length / 2)
-            const locked = !isMember && i >= halfIdx
+            // 阶段已通过外层宝石锁控制，课节全部开放（单层锁标准）
+            const locked = false
             const data = tenseObj.data.slice(lesson.slice[0], lesson.slice[1])
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
@@ -488,13 +485,10 @@ export default function Grammar({ onImport, onClose, onGrammarSyncPractice, prog
             </div>
           </div>
         </div>
-        {!isMember && (
-          <p className="text-xs text-gray-500 mb-4">前半部分专题免费体验，开通会员解锁全部专题</p>
-        )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {stageObj.tenses.map((t, ti) => {
-            const halfIdx = Math.ceil(stageObj.tenses.length / 2)
-            const locked = !isMember && ti >= halfIdx
+            // 阶段已通过外层宝石锁控制，专题全部开放（单层锁标准）
+            const locked = false
             const stats = getLessonStats(t.data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const done = stats.mastered === stats.total && stats.total > 0

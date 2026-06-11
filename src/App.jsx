@@ -1140,6 +1140,10 @@ function MainApp() {
               }}
               onAddXp={xp.addXP}
               onCrystalEarn={crystal.earn}
+              onOpenShop={() => {
+                setShowMobileLearn(false)
+                openTab('shop')
+              }}
               mainXp={{
                 streak: xp.streak,
                 totalXp: xp.totalXp,

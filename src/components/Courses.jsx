@@ -419,17 +419,7 @@ export default function Courses({
       const nextIdx = fullIdx + 1
       if (nextIdx >= fullLessons.length) return null
       const next = fullLessons[nextIdx]
-      // 后半课节会员专属（多邻国 & NCE 均适用）
-      if (!isMember) {
-        if (isDuolingoView) {
-          const unitLessons = DUOLINGO_LESSONS.filter(l => l.unit === next.unit)
-          const posInUnit = unitLessons.indexOf(next)
-          if (posInUnit >= Math.ceil(unitLessons.length / 2)) return () => onShowLogin?.()
-        } else {
-          // NCE：nextIdx 即在 lessons 中的位置
-          if (nextIdx >= Math.ceil(lessons.length / 2)) return () => onShowLogin?.()
-        }
-      }
+      // 课程已通过外层宝石锁控制，课节全部开放（单层锁标准）
       return () => {
         const nextData = getLessonData(next.ids, dataMap)
         onImport(nextData, labelFor(next), buildNextLoader(nextIdx))
@@ -485,22 +475,10 @@ export default function Courses({
             </div>
           </div>
         )}
-        {!isMember && (
-          <div className="mb-4 bg-amber-900/30 border border-amber-700/40 rounded-xl px-4 py-3 flex items-center gap-3">
-            <span className="text-lg">🔒</span>
-            <div>
-              <div className="text-amber-300 text-sm font-semibold">前半部分免费体验</div>
-              <div className="text-amber-600 text-xs">开通会员解锁全部课节</div>
-            </div>
-            <button onClick={onShowLogin} className="ml-auto shrink-0 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold transition-colors">
-              开通会员
-            </button>
-          </div>
-        )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {lessons.map((lesson, i) => {
-            const halfIdx = Math.ceil(lessons.length / 2)
-            const lessonLocked = !isMember && i >= halfIdx
+            // 课程已通过外层宝石锁控制，课节全部开放（单层锁标准）
+            const lessonLocked = false
             const data = getLessonData(lesson.ids, dataMap)
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
@@ -560,8 +538,8 @@ export default function Courses({
         <div className="mb-5 bg-gradient-to-r from-amber-900/40 to-orange-900/30 border border-amber-700/50 rounded-xl p-4 flex items-center gap-3">
           <span className="text-2xl shrink-0">⭐</span>
           <div className="flex-1 min-w-0">
-            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁全部内容</div>
-            <div className="text-amber-500/80 text-xs mt-0.5">所有课程前半部分免费体验，开通会员解锁全部内容</div>
+            <div className="text-amber-300 font-semibold text-sm">开通会员，全部课程免钻石解锁</div>
+            <div className="text-amber-500/80 text-xs mt-0.5">学完上一单元自动解锁下一单元，也可用钻石提前开启</div>
           </div>
           <button onClick={onShowLogin} className="shrink-0 px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold transition-colors">
             登录

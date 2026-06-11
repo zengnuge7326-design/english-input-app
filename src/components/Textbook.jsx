@@ -508,13 +508,10 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
               <div className="text-gray-400 text-xs truncate">{book.desc}</div>
             </div>
             <button
-              onClick={() => {
-                if (!isMember) { onShowLogin?.(); return }
-                onImport(book.data, `${book.name} · 全册`)
-              }}
+              onClick={() => onImport(book.data, `${book.name} · 全册`)}
               className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm transition-colors shrink-0 sm:order-last"
             >
-              {isMember ? '▶ 全册练习' : '🔒 全册练习'}
+              ▶ 全册练习
             </button>
           </div>
           <div className="flex-1 min-w-0 w-full">
@@ -537,23 +534,10 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
         </div>
 
         {/* Half-lock notice */}
-        {!isMember && (
-          <div className="mb-4 bg-amber-900/30 border border-amber-700/40 rounded-xl px-4 py-3 flex items-center gap-3">
-            <span className="text-lg">🔒</span>
-            <div>
-              <div className="text-amber-300 text-sm font-semibold">前半部分免费体验</div>
-              <div className="text-amber-600 text-xs">开通会员解锁全部单元</div>
-            </div>
-            <button onClick={onShowLogin} className="ml-auto shrink-0 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold transition-colors">
-              开通会员
-            </button>
-          </div>
-        )}
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {book.lessons.map((lesson, i) => {
-            const halfIdx = Math.ceil(book.lessons.length / 2)
-            const lessonLocked = !isMember && i >= halfIdx
+            // 册已通过外层宝石锁控制，册内单元全部开放（单层锁标准）
+            const lessonLocked = false
             const data = book.data.slice(lesson.slice[0], lesson.slice[1])
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
@@ -565,7 +549,6 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
               const buildLoader = (idx) => {
                 if (idx >= book.lessons.length - 1) return null
                 const next = book.lessons[idx + 1]
-                if (!isMember && idx + 1 >= halfIdx) return () => onShowLogin?.()
                 return () => {
                   const nextData = book.data.slice(next.slice[0], next.slice[1])
                   onImport(nextData, `${book.name} · ${next.label}`, buildLoader(idx + 1))
@@ -689,8 +672,8 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
         <div className="mb-5 bg-gradient-to-r from-amber-900/40 to-orange-900/30 border border-amber-700/50 rounded-xl p-4 flex items-center gap-3">
           <span className="text-2xl shrink-0">⭐</span>
           <div className="flex-1 min-w-0">
-            <div className="text-amber-300 font-semibold text-sm">开通会员，解锁每册后半部分</div>
-            <div className="text-amber-500/80 text-xs mt-0.5">每册前半单元免费体验，后半单元需要会员</div>
+            <div className="text-amber-300 font-semibold text-sm">开通会员，全部教材免钻石解锁</div>
+            <div className="text-amber-500/80 text-xs mt-0.5">学完上一册自动解锁下一册，也可用钻石提前开启</div>
           </div>
           <button onClick={onShowLogin} className="shrink-0 px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold transition-colors">
             登录

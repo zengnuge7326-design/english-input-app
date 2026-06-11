@@ -14,6 +14,7 @@ interface Props {
   onExitApp: () => void
   onResetProgress: () => void
   onOpenPhonics?: () => void
+  onOpenShop?: () => void
   shellMode?: boolean
 }
 
@@ -28,6 +29,7 @@ export default function MorePage({
   onExitApp,
   onResetProgress,
   onOpenPhonics,
+  onOpenShop,
   shellMode,
 }: Props) {
   const [settingsOpen, setSettingsOpen] = useState(false)
@@ -89,6 +91,13 @@ export default function MorePage({
           <button type="button" onClick={onOpenPhonics} className="mobile-more-page__row">
             <MobileIcon name="languages" size={20} />
             <span className="flex-1 text-left font-semibold">音标学习</span>
+            <span className="text-white/40">›</span>
+          </button>
+        )}
+        {onOpenShop && (
+          <button type="button" onClick={onOpenShop} className="mobile-more-page__row">
+            <MobileGemIcon size={20} />
+            <span className="flex-1 text-left font-semibold">宝石小店 · 充值</span>
             <span className="text-white/40">›</span>
           </button>
         )}

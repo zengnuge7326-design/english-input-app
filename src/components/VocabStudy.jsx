@@ -701,13 +701,12 @@ function UnitGrid({ book, progress, onSelect, onBack, isMember = true, onShowLog
     const parts = chunkUnitWords(unit.words)
     return parts.map((half, hi) => ({ unit, ui, half, hi, parts }))
   })
-  const halfIdx = Math.ceil(allChunks.length / 2)
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-6">
       <PageBackBar onBack={onBack} label="返回选册" />
       <h2 className="text-white text-xl font-bold mb-4">{book.bookName}</h2>
       {!isMember && (
-        <p className="text-xs text-gray-500 mb-4">前半部分单元免费体验，开通会员解锁全部单元</p>
+        <p className="text-xs text-gray-500 mb-4">完成上一单元自动解锁下一单元，也可用钻石提前开启</p>
       )}
       <div className="grid grid-cols-2 gap-4">
         {(() => {
