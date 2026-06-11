@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { gemsForLessonComplete, type GemReward } from './data/mobileCrystalRules'
 import { useMobileTTS } from './hooks/useMobileTTS'
+import { useMobileSfx } from './hooks/useMobileSfx'
 import { collectLessonAudioTexts } from './utils/lessonAudio'
 import AIChatMock from './components/AIChatMock'
 import ChoiceQuestion from './components/ChoiceQuestion'
@@ -49,6 +50,7 @@ function computeXpEarned(meta: LessonRewardMeta, perfect: boolean, newSets: numb
 
 export default function LessonFlow({ lesson, rewardMeta, onCrystalEarn, onComplete, onExit }: Props) {
   const { prefetch } = useMobileTTS()
+  const { playCorrect, playWrong, playVictory } = useMobileSfx()
   const [step, setStep] = useState(0)
   const [results, setResults] = useState<boolean[]>([])
   const [showSummary, setShowSummary] = useState(false)
@@ -65,8 +67,11 @@ export default function LessonFlow({ lesson, rewardMeta, onCrystalEarn, onComple
   const total = questions.length
 
   function handleAnswer(ok: boolean) {
+    if (ok) playCorrect()
+    else playWrong()
     setResults(r => [...r, ok])
     if (step + 1 >= total) {
+      playVictory()
       setShowSummary(true)
     } else {
       setStep(s => s + 1)

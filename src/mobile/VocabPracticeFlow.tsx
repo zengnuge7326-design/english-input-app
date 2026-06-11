@@ -9,6 +9,7 @@ import {
 } from './data/vocabQuizBuilder'
 import type { QuestionData } from './types'
 import { useMobileTTS } from './hooks/useMobileTTS'
+import { useMobileSfx } from './hooks/useMobileSfx'
 import ListeningQuestion from './components/ListeningQuestion'
 import MatchingQuestion from './components/MatchingQuestion'
 import SpellingQuestion from './components/SpellingQuestion'
@@ -33,6 +34,7 @@ export default function VocabPracticeFlow({
   onComplete,
 }: Props) {
   const { prefetch } = useMobileTTS()
+  const { playCorrect, playWrong, playVictory } = useMobileSfx()
 
   const lesson = useMemo(
     () => buildVocabPracticeLesson(words, unitLabel, bookId),
@@ -70,8 +72,11 @@ export default function VocabPracticeFlow({
   }
 
   function handleAnswer(ok: boolean) {
+    if (ok) playCorrect()
+    else playWrong()
     setResults(r => [...r, ok])
     if (quizStep + 1 >= total) {
+      if (!isPreview) playVictory()
       if (isPreview) {
         setStep('intro')
         setSessionQuestions([])

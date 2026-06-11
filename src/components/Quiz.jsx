@@ -4,7 +4,7 @@ import PageBackBar from './PageBackBar'
 import { quizBank } from '../data/quizData'
 import { useSound } from '../hooks/useSound'
 
-export default function Quiz({ onImport, onClose, settings, isMember = true, onShowLogin, onXp }) {
+export default function Quiz({ onImport, onClose, settings, isMember = true, onShowLogin, onXp, onCrystal }) {
   const [selectedLevel, setSelectedLevel] = useState(null)
   const [currentGroup, setCurrentGroup] = useState('groupA')
   const [answers, setAnswers] = useState({})
@@ -86,6 +86,13 @@ export default function Quiz({ onImport, onClose, settings, isMember = true, onS
   }
 
   const handleSubmit = () => {
+    // 统一标准：完成一组 +1 蓝钻，零错误 +1 绿钻
+    const qs = quizBank[selectedLevel]?.[currentGroup] ?? []
+    const correct = qs.filter((q, idx) => answers[idx] === q.correct).length
+    onCrystal?.('blue', 1, 'quiz_group_done')
+    if (correct === qs.length && qs.length > 0) {
+      onCrystal?.('green', 1, 'quiz_zero_error')
+    }
     setShowResult(true)
   }
 

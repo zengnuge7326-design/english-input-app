@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { SpellingQuestionData } from '../types'
+import { useMobileTTS } from '../hooks/useMobileTTS'
 import MobileSubmitButton from './MobileSubmitButton'
 import QuizPromptVisual from './QuizPromptVisual'
 import QuestionShell from './QuestionShell'
@@ -16,12 +17,15 @@ interface Props {
 export default function SpellingQuestion({ data, step, total, lessonTitle, onExit, onAnswer }: Props) {
   const [value, setValue] = useState('')
   const [feedback, setFeedback] = useState<'idle' | 'right' | 'wrong'>('idle')
+  const { speak } = useMobileTTS()
 
   function submit() {
     if (!value.trim() || feedback !== 'idle') return
     const ok = value.trim().toLowerCase() === data.answer.toLowerCase()
     setFeedback(ok ? 'right' : 'wrong')
-    setTimeout(() => onAnswer(ok), ok ? 500 : 800)
+    // 答题后朗读正确单词，强化音形对应
+    speak(data.answer)
+    setTimeout(() => onAnswer(ok), ok ? 700 : 1100)
   }
 
   return (

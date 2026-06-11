@@ -181,7 +181,7 @@ function ComingSoon({ name, onClose }) {
 }
 
 // ── 教材详情页（单元列表）────────────────────────────────────────────────────
-function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInner, onRestoreInnerConsumed, onBackCatalog }) {
+function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInner, onRestoreInnerConsumed, onBackCatalog, onXp, onCrystal }) {
   const [popup, setPopup] = useState(null)
   const [activeUnit, setActiveUnit] = useState(null)  // { label, index }
   const [quiz, setQuiz] = useState(null)              // { title, questions }（ExerciseQuiz用）
@@ -239,13 +239,13 @@ function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInn
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} onXp={onXp} onCrystal={onCrystal} />
   }
 
   if (activeUnit) {
     const currentFlowKey = activeUnit.label;
     const currentBookId = activeUnit.bookId;
-    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} settings={settings} onClose={() => setActiveUnit(null)} />
+    return <Unit1Flow unitLabel={currentFlowKey} bookId={currentBookId} requireSpeak={requireSpeak} hideSkipNext={hideSkipNext} settings={settings} onClose={() => setActiveUnit(null)} onXp={onXp} onCrystal={onCrystal} />
   }
 
   return (
@@ -296,7 +296,7 @@ function TextbookDetail({ book, requireSpeak, hideSkipNext, settings, restoreInn
 }
 
 // ── 多邻国详情页（课列表）────────────────────────────────────────────────────
-function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed, onBackCatalog }) {
+function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed, onBackCatalog, onXp, onCrystal }) {
   const [quiz, setQuiz] = useState(null) // { title, questions }
 
   const unitLessons = DUOLINGO_LESSONS.filter(l => l.unit === unit.unit)
@@ -329,7 +329,7 @@ function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed, onBac
   }
 
   if (quiz) {
-    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} />
+    return <ExerciseQuiz questions={quiz.questions} title={quiz.title} onClose={() => setQuiz(null)} settings={settings} onXp={onXp} onCrystal={onCrystal} />
   }
 
   return (
@@ -364,7 +364,7 @@ function DuoDetail({ unit, settings, restoreInner, onRestoreInnerConsumed, onBac
 }
 
 // ── 主页面 ────────────────────────────────────────────────────────────────────
-export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, onInitialConsumed, settings, navRef, onClose }) {
+export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, onInitialConsumed, settings, navRef, onClose, onXp, onCrystal }) {
   const [detail, setDetail] = useState(
     initialUnit ? { type: 'duo', unit: initialUnit } : null
   )
@@ -423,6 +423,8 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
         restoreInner={studyRestore}
         onRestoreInnerConsumed={consumeStudyRestore}
         onBackCatalog={() => handleSetDetail(null)}
+        onXp={onXp}
+        onCrystal={onCrystal}
       />
     )
   }
@@ -436,6 +438,8 @@ export default function SyncPractice({ requireSpeak, hideSkipNext, initialUnit, 
         restoreInner={studyRestore}
         onRestoreInnerConsumed={consumeStudyRestore}
         onBackCatalog={() => handleSetDetail(null)}
+        onXp={onXp}
+        onCrystal={onCrystal}
       />
     )
   }

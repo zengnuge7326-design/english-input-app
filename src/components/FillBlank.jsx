@@ -4,7 +4,7 @@ import PageBackBar from './PageBackBar'
 import { fillblankBank } from '../data/fillblankData'
 import { useSound } from '../hooks/useSound'
 
-export default function FillBlank({ onClose, settings, isMember = true, onShowLogin, onXp }) {
+export default function FillBlank({ onClose, settings, isMember = true, onShowLogin, onXp, onCrystal }) {
   const [view, setView] = useState('levels')
   const [level, setLevel] = useState(null)
   const [group, setGroup] = useState(null)
@@ -52,6 +52,11 @@ export default function FillBlank({ onClose, settings, isMember = true, onShowLo
       setInput('')
       setResult(null)
     } else {
+      // 统一标准：完成一组 +1 蓝钻，零错误 +1 绿钻
+      onCrystal?.('blue', 1, 'fillblank_group_done')
+      if (score.correct === score.total && score.total > 0) {
+        onCrystal?.('green', 1, 'fillblank_zero_error')
+      }
       setView('result')
     }
   }

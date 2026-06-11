@@ -15,14 +15,17 @@ import { isG3U1ExamNode, isG3U1Node, maxSetsForG3U1Node } from './data/g3u1/plan
 import { isPepExamNode, maxSetsForPepNode } from './data/pepPractice/plan'
 import { getGradeBook } from './data/gradeBooks'
 import LessonFlow, { type LessonRewardMeta } from './LessonFlow'
+import GamePage from './GamePage'
 import MapPage from './MapPage'
 import MorePage from './MorePage'
+import VocabMatchGame from './VocabMatchGame'
 import VocabPracticeFlow from './VocabPracticeFlow'
 import WordsPage from './WordsPage'
 import TextbookPage from './textbook/TextbookPage'
 import type { VocabUnit } from './data/vocabBooks'
 import { defaultVocabBook } from './data/vocabBooks'
 import type { VocabWord } from './data/unit1Vocab'
+import { tabThemeClass } from './data/tabThemes'
 import MobilePhoneFrame from './components/MobilePhoneFrame'
 import MobileTabBar, { type MobileTabId } from './components/MobileTabBar'
 import MicPermissionSheet from '../components/MicPermissionSheet'
@@ -44,12 +47,13 @@ interface Props {
   onAddXp?: (amount: number) => void
   onCrystalEarn?: CrystalEarnFn
   onOpenShop?: () => void
+  onOpenLeaderboard?: () => void
   mainXp?: MainXpSnapshot
   mainCrystal?: MainCrystalSnapshot
   crystalPulse?: number
 }
 
-type Screen = 'main' | 'lesson' | 'vocabPractice'
+type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame'
 
 export default function MobileLearnApp({
   onClose,
@@ -58,6 +62,7 @@ export default function MobileLearnApp({
   onAddXp,
   onCrystalEarn,
   onOpenShop,
+  onOpenLeaderboard,
   mainXp,
   mainCrystal,
   crystalPulse = 0,
@@ -216,6 +221,19 @@ export default function MobileLearnApp({
     setScreen('vocabPractice')
   }
 
+  function handleStartVocabGame(bookId: string, unit: VocabUnit) {
+    setVocabBookId(bookId)
+    setPracticeWords(unit.words)
+    setPracticeUnitLabel(unit.title)
+    setScreen('vocabGame')
+  }
+
+  function handleVocabGameComplete() {
+    onAddXp?.(3)
+    setScreen('main')
+    setActiveTab('game')
+  }
+
   function handleTabChange(next: MobileTabId) {
     setActiveTab(next)
   }
@@ -230,6 +248,18 @@ export default function MobileLearnApp({
           bookId={vocabBookId}
           onExit={() => { setScreen('main'); setActiveTab('words') }}
           onComplete={handleVocabComplete}
+        />
+      </MobilePhoneFrame>
+    )
+  }
+
+  if (screen === 'vocabGame') {
+    return (
+      <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
+        <VocabMatchGame
+          words={practiceWords}
+          onExit={() => { setScreen('main'); setActiveTab('game') }}
+          onComplete={handleVocabGameComplete}
         />
       </MobilePhoneFrame>
     )
@@ -262,7 +292,7 @@ export default function MobileLearnApp({
   return (
     <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
       <MicPermissionSheet elevated preferLight />
-      <main className="flex-1 min-h-0 flex flex-col overflow-hidden">
+      <main className={`flex-1 min-h-0 flex flex-col overflow-hidden ${tabThemeClass(activeTab)}`}>
         {activeTab === 'words' && (
           <WordsPage
             bookProgress={vocabBookProgress}
@@ -285,6 +315,14 @@ export default function MobileLearnApp({
             mainXp={mainXp}
             mainCrystal={mainCrystal}
             crystalPulse={crystalPulse}
+            onOpenLeaderboard={onOpenLeaderboard}
+            onOpenShop={onOpenShop}
+          />
+        )}
+        {activeTab === 'game' && (
+          <GamePage
+            practiceBookId={practiceBookId}
+            onStartGame={handleStartVocabGame}
           />
         )}
         {activeTab === 'menu' && (

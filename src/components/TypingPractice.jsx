@@ -11,10 +11,11 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { MousePointer2, RefreshCw, Volume2, VolumeX, Zap } from 'lucide-react';
 import { LESSONS } from '../typing/lessons';
+import { settleGroup } from '../config/rewardRules';
 
 const CHAR_WIDTH = 40;
 
-export default function TypingPractice({ onClose }) {
+export default function TypingPractice({ onClose, onXp, onCrystal }) {
   const [currentLesson, setCurrentLesson] = useState(0);
   const [text, setText] = useState(LESSONS[0].content);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,6 +35,25 @@ export default function TypingPractice({ onClose }) {
   });
   /** 用户点击过某一预设后，才认为已满足浏览器的 AudioContext 手势策略 */
   const [typingAudioPrimed, setTypingAudioPrimed] = useState(false);
+
+  // 完成一关 → 统一标准结算（accuracy 100 视为零错误）
+  useEffect(() => {
+    if (!isFinished) return;
+    let firstClear = false;
+    try {
+      const key = 'typing_first_clear';
+      const done = JSON.parse(localStorage.getItem(key) || '[]');
+      if (!done.includes(currentLesson)) {
+        firstClear = true;
+        localStorage.setItem(key, JSON.stringify([...done, currentLesson]));
+      }
+    } catch { /* ignore */ }
+    const perfect = stats.accuracy >= 100;
+    const { xp, gems } = settleGroup({ correct: perfect ? 1 : 0, total: 1, firstClear });
+    onXp?.(xp);
+    for (const g of gems) onCrystal?.(g.color, g.amount, `typing_${g.reason}`, { lesson: currentLesson });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFinished]);
 
   const setupTest = useCallback((lessonIndex = currentLesson) => {
     setText(LESSONS[lessonIndex].content);

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { TranslateClozeQuestionData } from '../types'
+import { useMobileTTS } from '../hooks/useMobileTTS'
 import MobileSubmitButton from './MobileSubmitButton'
 import QuestionShell from './QuestionShell'
 
@@ -42,6 +43,7 @@ export default function TranslateClozeQuestion({
 }: Props) {
   const [value, setValue] = useState('')
   const [feedback, setFeedback] = useState<'idle' | 'right' | 'wrong'>('idle')
+  const { speak } = useMobileTTS()
   const parts = data.template.split('___')
   const canSubmit = !!value.trim() && feedback === 'idle'
 
@@ -49,7 +51,9 @@ export default function TranslateClozeQuestion({
     if (!canSubmit) return
     const ok = normalize(value) === normalize(data.answer)
     setFeedback(ok ? 'right' : 'wrong')
-    setTimeout(() => onAnswer(ok), ok ? 500 : 900)
+    // 答题后朗读完整英文句（模板填入正确答案）
+    speak(data.template.replace('___', data.answer))
+    setTimeout(() => onAnswer(ok), ok ? 800 : 1200)
   }
 
   return (

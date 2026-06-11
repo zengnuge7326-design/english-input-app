@@ -20,6 +20,8 @@ interface Props {
   mainXp?: MainXpSnapshot
   mainCrystal?: MainCrystalSnapshot
   crystalPulse?: number
+  onOpenLeaderboard?: () => void
+  onOpenShop?: () => void
 }
 
 const ISLANDS_PER_UNIT = 8
@@ -40,6 +42,8 @@ export default function MapPage({
   mainXp,
   mainCrystal,
   crystalPulse,
+  onOpenLeaderboard,
+  onOpenShop,
 }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false)
   const streak = mainXp?.streak ?? progress.streak
@@ -97,6 +101,8 @@ export default function MapPage({
         todayXp={mainXp?.todayXp}
         goal={mainXp?.goal}
         crystalPulse={crystalPulse}
+        onOpenLeaderboard={onOpenLeaderboard}
+        onOpenShop={onOpenShop}
       />
 
       <LearningPathCard

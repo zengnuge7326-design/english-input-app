@@ -340,7 +340,7 @@ const Q_LABELS = {
 }
 
 export default function ExerciseQuiz({
-  questions, title, onClose, settings, onXp, onFinish, onRetry, closeLabel = '返回上一级',
+  questions, title, onClose, settings, onXp, onCrystal, onFinish, onRetry, closeLabel = '返回上一级',
 }) {
   const [idx, setIdx] = useState(0)
   const [answeredList, setAnsweredList] = useState([]) // true/false per question
@@ -398,11 +398,16 @@ export default function ExerciseQuiz({
   const score = answeredList.filter(Boolean).length
 
   useEffect(() => {
-    if (done && onFinish && !finishNotified) {
+    if (done && !finishNotified) {
       setFinishNotified(true)
-      onFinish({ score, total: questions.length })
+      // 统一标准：完成一组 +1 蓝钻，零错误 +1 绿钻（XP 已按题发放）
+      onCrystal?.('blue', 1, 'quiz_group_done', { title })
+      if (score === questions.length && questions.length > 0) {
+        onCrystal?.('green', 1, 'quiz_zero_error', { title })
+      }
+      onFinish?.({ score, total: questions.length })
     }
-  }, [done, finishNotified, onFinish, score, questions.length])
+  }, [done, finishNotified, onFinish, onCrystal, score, questions.length, title])
 
   function handleRetry() {
     setIdx(0)

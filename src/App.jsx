@@ -1144,6 +1144,7 @@ function MainApp() {
                 setShowMobileLearn(false)
                 openTab('shop')
               }}
+              onOpenLeaderboard={() => setShowLeaderboard(true)}
               mainXp={{
                 streak: xp.streak,
                 totalXp: xp.totalXp,
@@ -1505,6 +1506,7 @@ function MainApp() {
                 title={grammarSyncQuiz.title}
                 settings={settings}
                 onXp={xp.addXP}
+                onCrystal={crystal.earn}
                 onClose={() => {
                   setGrammarSyncQuiz(null)
                   openTab('grammar')
@@ -1525,6 +1527,7 @@ function MainApp() {
                 title={coreSyncQuiz.title}
                 settings={settings}
                 onXp={xp.addXP}
+                onCrystal={crystal.earn}
                 onFinish={({ score, total }) => {
                   if (score >= 7) crystal.earn('green', 1, 'core-sync-pass', { title: coreSyncQuiz.title })
                   if (score === total) crystal.earn('purple', 1, 'core-sync-perfect', { title: coreSyncQuiz.title })
@@ -1590,12 +1593,12 @@ function MainApp() {
           )}
           {tab === 'quiz' && (
             <Quiz onImport={handleImport} onClose={() => openTab('exercise')} settings={settings}
-              onXp={xp.addXP}
+              onXp={xp.addXP} onCrystal={crystal.earn}
               isMember={UNLOCK_ALL_COURSES || isMember} onShowLogin={() => setShowLogin(true)} />
           )}
           {tab === 'fillblank' && (
             <FillBlank onClose={() => openTab('exercise')} settings={settings}
-              onXp={xp.addXP}
+              onXp={xp.addXP} onCrystal={crystal.earn}
               isMember={UNLOCK_ALL_COURSES || isMember} onShowLogin={() => setShowLogin(true)} />
           )}
           {tab === 'syncpractice' && (
@@ -1607,6 +1610,8 @@ function MainApp() {
               initialUnit={syncInitialUnit}
               onInitialConsumed={() => setSyncInitialUnit(null)}
               settings={settings}
+              onXp={xp.addXP}
+              onCrystal={crystal.earn}
             />
           )}
           <div style={{ display: tab === 'vocab' ? 'contents' : 'none' }}>
@@ -1643,10 +1648,10 @@ function MainApp() {
             />
           </div>
           {tab === 'phonics' && (
-            <PhonicsLesson onClose={() => openTab('exercise')} />
+            <PhonicsLesson onClose={() => openTab('exercise')} onXp={xp.addXP} onCrystal={crystal.earn} />
           )}
           {tab === 'typing' && (
-            <TypingPractice onClose={() => openTab('exercise')} />
+            <TypingPractice onClose={() => openTab('exercise')} onXp={xp.addXP} onCrystal={crystal.earn} />
           )}
           {tab === 'member' && (
             <MemberPage

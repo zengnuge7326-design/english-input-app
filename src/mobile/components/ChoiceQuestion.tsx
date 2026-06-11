@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { ChoiceQuestionData } from '../types'
+import { useMobileTTS } from '../hooks/useMobileTTS'
 import MobileSubmitButton from './MobileSubmitButton'
 import QuestionShell from './QuestionShell'
 
@@ -12,16 +13,22 @@ interface Props {
   onAnswer: (correct: boolean) => void
 }
 
+const HAS_EN = /[a-zA-Z]/
+
 export default function ChoiceQuestion({ data, step, total, lessonTitle, onExit, onAnswer }: Props) {
   const [picked, setPicked] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'idle' | 'right' | 'wrong'>('idle')
+  const { speak } = useMobileTTS()
   const parts = data.sentence.split('___')
 
   function submit() {
     if (!picked || feedback !== 'idle') return
     const ok = picked === data.answer
     setFeedback(ok ? 'right' : 'wrong')
-    setTimeout(() => onAnswer(ok), 600)
+    // 句子含英文 → 朗读填入正确答案后的完整句
+    const full = data.sentence.replace('___', data.answer)
+    if (HAS_EN.test(full)) speak(full)
+    setTimeout(() => onAnswer(ok), HAS_EN.test(full) ? 900 : 600)
   }
 
   return (

@@ -14,6 +14,7 @@ import turtleIcon from '../assets/icons/turtle.svg?raw'
 import checkIcon from '../assets/icons/check.svg?raw'
 import globeIcon from '../assets/icons/globe.svg?raw'
 import userRoundIcon from '../assets/icons/user-round.svg?raw'
+import gamepad2Icon from '../assets/icons/gamepad-2.svg?raw'
 
 export type MobileIconName =
   | 'home'
@@ -32,6 +33,7 @@ export type MobileIconName =
   | 'check'
   | 'globe'
   | 'user-round'
+  | 'gamepad-2'
 
 const ICONS: Record<MobileIconName, string> = {
   home: homeIcon,
@@ -50,6 +52,7 @@ const ICONS: Record<MobileIconName, string> = {
   check: checkIcon,
   globe: globeIcon,
   'user-round': userRoundIcon,
+  'gamepad-2': gamepad2Icon,
 }
 
 interface Props {

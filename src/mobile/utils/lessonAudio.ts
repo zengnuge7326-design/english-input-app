@@ -31,6 +31,12 @@ export function collectLessonAudioTexts(lesson: Lesson): string[] {
         if (line.speaker !== 'You' && line.text) texts.push(line.text)
       }
     }
+    // 答题后朗读的内容也预取（拼写/翻译填空/选择）
+    if (q.type === 'spelling') texts.push(q.answer)
+    if (q.type === 'translateCloze') texts.push(q.template.replace('___', q.answer))
+    if (q.type === 'choice' && /[a-zA-Z]/.test(q.sentence)) {
+      texts.push(q.sentence.replace('___', q.answer))
+    }
   }
   return [...new Set(texts.filter(Boolean))]
 }

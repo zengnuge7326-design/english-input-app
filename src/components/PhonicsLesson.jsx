@@ -3,6 +3,7 @@ import PageBackBar from './PageBackBar'
 import PHONICS_LESSONS from '../data/phonicsLessons.js'
 import { unlockAudio } from '../utils/audioUnlock.js'
 import { getWordPhonics, fetchWordPhonics, playWordAudio, levelLabel } from '../utils/phonicsAudio.js'
+import { settleGroup } from '../config/rewardRules.js'
 
 // ── Grapheme Button ────────────────────────────────────────────────────────────
 
@@ -387,10 +388,31 @@ const MODES = [
   { id: 'heart',   label: '心形词',   emoji: '❤️' },
 ]
 
-export default function PhonicsLesson({ onClose }) {
+export default function PhonicsLesson({ onClose, onXp, onCrystal }) {
   const [lesson, setLesson] = useState(null)
   const [mode, setMode]     = useState('intro')
   const [done, setDone]     = useState({})  // which modes completed
+
+  // 四个环节全部完成 → 统一标准结算（每课一次）
+  useEffect(() => {
+    if (!lesson) return
+    if (!MODES.every(m => done[m.id])) return
+    let firstClear = false
+    try {
+      const key = 'phonics_first_clear'
+      const cleared = JSON.parse(localStorage.getItem(key) || '[]')
+      if (!cleared.includes(lesson.id)) {
+        firstClear = true
+        localStorage.setItem(key, JSON.stringify([...cleared, lesson.id]))
+      } else {
+        return // 重复全清不再奖励，防刷
+      }
+    } catch { return }
+    const { xp, gems } = settleGroup({ correct: MODES.length, total: MODES.length, firstClear })
+    onXp?.(xp)
+    for (const g of gems) onCrystal?.(g.color, g.amount, `phonics_${g.reason}`, { lesson: lesson.id })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [done, lesson])
 
   function backToLessonList() {
     setLesson(null)
