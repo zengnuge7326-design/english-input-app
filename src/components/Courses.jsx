@@ -2,6 +2,8 @@ import { useState, useLayoutEffect } from 'react'
 import PageBackBar from './PageBackBar'
 import LockedOverlay from './LockedOverlay'
 import CoreSentences from './CoreSentences'
+import CourseParchmentBanner, { NCE_COURSE_META } from './CourseParchmentBanner'
+import TextbookParchmentCover from './TextbookParchmentCover'
 import duolingoData from '../data/duolingo.json'
 import { DUOLINGO_LESSONS } from '../data/duolingoLessons'
 import nce1Data from '../data/nce1.json'
@@ -327,6 +329,18 @@ const UNIT_INFO = {
   6: { name: 'Unit 6', desc: '精通：情感、文化、复杂语法', color: 'from-red-600 to-red-800', emoji: '🎓', cover: '/duolingo.webp' },
 }
 
+function duolingoCoverMeta(unit) {
+  const u = UNIT_INFO[unit]
+  if (!u) return null
+  return {
+    gradient: u.color,
+    label: '多邻国',
+    coverText: u.name,
+    subject: u.desc.split('：')[0],
+    emoji: u.emoji,
+  }
+}
+
 function PaywallOverlay({ onShowLogin }) {
   return (
     <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center gap-2 z-10 rounded-2xl">
@@ -412,6 +426,11 @@ export default function Courses({
       ? { name: '新概念英语第四册', desc: '精通散文，48课，774句', cover: '/nce4_cover.svg' }
       : UNIT_INFO[detail]
     const isDuolingoView = !isNce1 && !isNce2 && !isNce3 && !isNce4
+    const coverMeta = isNce1 ? NCE_COURSE_META.nce1
+      : isNce2 ? NCE_COURSE_META.nce2
+      : isNce3 ? NCE_COURSE_META.nce3
+      : isNce4 ? NCE_COURSE_META.nce4
+      : duolingoCoverMeta(detail)
     const lessons = isNce1 ? NCE1_LESSONS : isNce2 ? NCE2_LESSONS : isNce3 ? NCE3_LESSONS : isNce4 ? NCE4_LESSONS : DUOLINGO_LESSONS.filter(l => l.unit === detail)
     // For Duolingo, allow crossing unit boundaries when building the "next lesson" chain
     const fullLessons = isDuolingoView ? DUOLINGO_LESSONS : lessons
@@ -437,8 +456,10 @@ export default function Courses({
         <PageBackBar onBack={() => setDetail(null)} label="返回课程广场" />
         <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4 sm:p-6 mb-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
           <div className="flex items-center gap-3 sm:gap-0 sm:contents">
-            <div className="w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden shrink-0">
-              <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
+            <div className="w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden shrink-0 relative bg-gray-800">
+              {coverMeta && (
+                <TextbookParchmentCover {...coverMeta} variant="compact" />
+              )}
             </div>
             <div className="flex-1 min-w-0 sm:hidden">
               <div className="text-lg font-bold text-white truncate">{info.name}</div>
@@ -557,7 +578,16 @@ export default function Courses({
           onClick={() => setDetail('core')}
           className="w-full flex items-center gap-4 rounded-2xl border border-indigo-700/50 bg-gradient-to-r from-indigo-900/40 to-purple-900/30 hover:from-indigo-900/60 hover:to-purple-900/50 p-4 transition-all text-left"
         >
-          <div className="text-4xl shrink-0">⭐</div>
+          <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 relative bg-gray-800">
+            <TextbookParchmentCover
+              gradient="from-indigo-600 to-purple-800"
+              label="核心句群"
+              coverText="210"
+              subject="精选句型"
+              emoji="⭐"
+              variant="compact"
+            />
+          </div>
           <div className="flex-1 min-w-0">
             <div className="text-sm font-semibold text-white">核心句群</div>
             <div className="text-xs text-indigo-300 mt-0.5">精选高频核心句，快速突破口语</div>
@@ -570,10 +600,10 @@ export default function Courses({
       <div className="text-xs text-gray-600 mb-3 uppercase tracking-wider">新概念英语</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
         {[
-          { key: 'nce1', name: '新概念英语第一册', desc: '入门对话，69课，1421句', lessons: NCE1_LESSONS, dataMap: nce1IdMap, cover: '/nce1_cover.svg' },
-          { key: 'nce2', name: '新概念英语第二册', desc: '中级故事，96课，1113句', lessons: NCE2_LESSONS, dataMap: nce2IdMap, cover: '/nce2_cover.svg' },
-          { key: 'nce3', name: '新概念英语第三册', desc: '高级散文，60课，1320句', lessons: NCE3_LESSONS, dataMap: nce3IdMap, cover: '/nce3_cover.svg' },
-          { key: 'nce4', name: '新概念英语第四册', desc: '精通散文，48课，774句', lessons: NCE4_LESSONS, dataMap: nce4IdMap, cover: '/nce4_cover.svg' },
+          { key: 'nce1', name: '新概念英语第一册', desc: '入门对话，69课，1421句', lessons: NCE1_LESSONS, dataMap: nce1IdMap, ...NCE_COURSE_META.nce1 },
+          { key: 'nce2', name: '新概念英语第二册', desc: '中级故事，96课，1113句', lessons: NCE2_LESSONS, dataMap: nce2IdMap, ...NCE_COURSE_META.nce2 },
+          { key: 'nce3', name: '新概念英语第三册', desc: '高级散文，60课，1320句', lessons: NCE3_LESSONS, dataMap: nce3IdMap, ...NCE_COURSE_META.nce3 },
+          { key: 'nce4', name: '新概念英语第四册', desc: '精通散文，48课，774句', lessons: NCE4_LESSONS, dataMap: nce4IdMap, ...NCE_COURSE_META.nce4 },
         ].map(c => {
           const allData = c.lessons.flatMap(l => getLessonData(l.ids, c.dataMap))
           const stats = getLessonStats(allData, progress)
@@ -584,9 +614,12 @@ export default function Courses({
                 setDetail(c.key)
               }}
                 className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left">
-                <div className="w-full h-28 overflow-hidden">
-                  <img src={c.cover} alt={c.name} className="w-full h-full object-cover" />
-                </div>
+                <CourseParchmentBanner
+                  gradient={c.gradient}
+                  label={c.label}
+                  coverText={c.coverText}
+                  subject={c.subject}
+                />
                 <div className="bg-slate-800 p-3 flex flex-col gap-1">
                   <div className="text-sm font-medium text-white">{c.name}</div>
                   <div className="text-xs text-gray-500 truncate">{c.desc}</div>
@@ -629,9 +662,7 @@ export default function Courses({
                 onClick={() => setDetail(unit)}
                 className="w-full flex flex-col rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-500 cursor-pointer transition-all text-left"
               >
-                <div className="w-full h-28 overflow-hidden">
-                  <img src={info.cover} alt={info.name} className="w-full h-full object-cover" />
-                </div>
+                <CourseParchmentBanner {...duolingoCoverMeta(unit)} />
                 <div className="bg-slate-800 p-3 flex flex-col gap-1">
                   <div className="text-sm font-medium text-white">多邻国 · {info.name}</div>
                   <div className="text-xs text-gray-500 truncate">{info.desc}</div>

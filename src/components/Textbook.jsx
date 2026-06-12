@@ -2,6 +2,7 @@ import { useState, useLayoutEffect } from 'react'
 import Unit1Flow from './Unit1Flow'
 import LockedOverlay from './LockedOverlay'
 import GrammarLesson from './GrammarLesson'
+import TextbookParchmentCover from './TextbookParchmentCover'
 import { hasGrammar } from '../data/grammar'
 import { getGrammarPercent } from '../data/grammar/progress'
 
@@ -492,13 +493,15 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
 
         <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4 sm:p-6 mb-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
           <div className="flex items-center gap-3 sm:gap-0 sm:contents">
-            <div className={`w-16 h-20 sm:w-20 sm:h-28 rounded-xl overflow-hidden shrink-0 ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
+            <div className="w-16 h-20 sm:w-20 sm:h-28 rounded-xl overflow-hidden shrink-0 relative bg-gray-800">
               {book.gradient ? (
-                <div className="flex flex-col items-center justify-center w-full h-full p-2 text-center border-2 border-white/10 mix-blend-overlay shadow-inner" style={{ backdropFilter: 'brightness(1.1)' }}>
-                  <span className="text-white/80 text-[9px] font-bold tracking-widest mb-1.5 opacity-90 drop-shadow-sm">{book.label || '北师大版'}</span>
-                  <span className="text-white text-base font-black tracking-widest mb-1.5 drop-shadow-md">{book.coverText}</span>
-                  <span className="text-white/70 text-[10px] font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">{book.subject || '高中英语'}</span>
-                </div>
+                <TextbookParchmentCover
+                  gradient={book.gradient}
+                  label={book.label}
+                  coverText={book.coverText}
+                  subject={book.subject}
+                  variant="compact"
+                />
               ) : (
                 <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
               )}
@@ -716,13 +719,15 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                 : 'border-slate-700 border-dashed cursor-default opacity-40'}
             `}
           >
-            <div className={`w-full aspect-[3/4] flex items-center justify-center overflow-hidden relative ${book.gradient ? `bg-gradient-to-br ${book.gradient}` : 'bg-gray-800'}`}>
+            <div className="w-full aspect-[3/4] flex items-center justify-center overflow-hidden relative bg-gray-800">
               {book.gradient ? (
-                <div className="absolute inset-2 flex flex-col items-center justify-center p-3 text-center border-[3px] border-white/20 rounded-xl shadow-inner mix-blend-overlay" style={{ backdropFilter: 'brightness(1.1)' }}>
-                  <span className="text-white/90 text-xs font-bold tracking-widest mb-3 opacity-90 drop-shadow-sm">{book.label || '北师大版'}</span>
-                  <span className="text-white text-3xl font-black tracking-widest mb-2 drop-shadow-md">{book.coverText}</span>
-                  <span className="text-white/80 text-sm font-semibold tracking-wider mt-auto opacity-80 drop-shadow-sm">{book.subject || '高中英语'}</span>
-                </div>
+                <TextbookParchmentCover
+                  gradient={book.gradient}
+                  label={book.label}
+                  coverText={book.coverText}
+                  subject={book.subject}
+                  variant="grid"
+                />
               ) : book.cover ? (
                 <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
               ) : (

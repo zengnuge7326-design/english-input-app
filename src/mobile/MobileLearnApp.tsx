@@ -19,6 +19,7 @@ import GamePage from './GamePage'
 import MapPage from './MapPage'
 import MorePage from './MorePage'
 import VocabMatchGame from './VocabMatchGame'
+import WordDefenderGame from './games/WordDefenderGame'
 import VocabPracticeFlow from './VocabPracticeFlow'
 import WordsPage from './WordsPage'
 import TextbookPage from './textbook/TextbookPage'
@@ -60,7 +61,7 @@ interface Props {
   crystalPulse?: number
 }
 
-type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame'
+type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender'
 
 export default function MobileLearnApp({
   onClose,
@@ -251,6 +252,22 @@ export default function MobileLearnApp({
     setScreen('vocabGame')
   }
 
+  function handleStartDefender(bookId: string, unit: VocabUnit) {
+    setVocabBookId(bookId)
+    setPracticeWords(unit.words)
+    setPracticeUnitLabel(unit.title)
+    setScreen('wordDefender')
+  }
+
+  function handleDefenderComplete(result: { hit: number; total: number; combo: number; accuracy: number }) {
+    // 统一奖励：击毁数 × 2 XP，零失误 +1 绿钻，10+ 连击 +1 紫钻，全部击毁 +1 蓝钻
+    onAddXp?.(result.hit * 2)
+    if (result.hit > 0) onCrystalEarn?.('blue', 1, 'defender_round', { hit: result.hit })
+    if (result.accuracy >= 100 && result.hit > 0) onCrystalEarn?.('green', 1, 'defender_zero_error')
+    if (result.combo >= 10) onCrystalEarn?.('purple', 1, 'defender_combo_10', { combo: result.combo })
+    if (result.hit === result.total && result.total > 0) onCrystalEarn?.('gold', 1, 'defender_perfect')
+  }
+
   function handleVocabGameComplete() {
     onAddXp?.(3)
     setScreen('main')
@@ -283,6 +300,19 @@ export default function MobileLearnApp({
           words={practiceWords}
           onExit={() => { setScreen('main'); setActiveTab('game') }}
           onComplete={handleVocabGameComplete}
+        />
+      </MobilePhoneFrame>
+    )
+  }
+
+  if (screen === 'wordDefender') {
+    return (
+      <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
+        <WordDefenderGame
+          words={practiceWords}
+          unitLabel={practiceUnitLabel}
+          onExit={() => { setScreen('main'); setActiveTab('game') }}
+          onComplete={handleDefenderComplete}
         />
       </MobilePhoneFrame>
     )
@@ -355,10 +385,7 @@ export default function MobileLearnApp({
           />
         )}
         {activeTab === 'game' && (
-          <GamePage
-            practiceBookId={practiceBookId}
-            onStartGame={handleStartVocabGame}
-          />
+          <GamePage onStartDefender={handleStartDefender} />
         )}
         {activeTab === 'menu' && (
           <MorePage

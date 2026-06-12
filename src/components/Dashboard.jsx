@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from 'react'
 import { evaluateAchievements } from '../data/achievements'
 import BadgeIcon from './BadgeIcons'
+import { IconBookOpen, IconSmartphone } from './Icons'
 import { getClassLeaderboard } from '../lib/teacher'
 
 const SEEN_BADGES_KEY = 'english_seen_badges'
@@ -260,24 +261,24 @@ export default function Dashboard({ sentences, progress, xp, isMember, isFounder
         <div className="flex gap-2 sm:gap-3">
           {onOpenMobileLearn && (
             <button onClick={onOpenMobileLearn}
-              className="lg-home-panel w-1/4 min-w-0 flex flex-col items-center justify-center gap-1 px-2 py-3 sm:py-3.5 text-center hover:scale-[1.02] transition-transform active:scale-95">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-lg sm:text-xl shrink-0 shadow-md">
-                📱
+              className="lg-home-panel w-[42%] min-w-0 flex flex-row items-center justify-center gap-2.5 px-3 py-3 sm:py-3.5 hover:scale-[1.02] transition-transform active:scale-95">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center shrink-0 shadow-md text-white">
+                <IconSmartphone size={20} />
               </div>
-              <div className="text-[10px] sm:text-xs font-bold text-[#1a1a1a] leading-tight">纯手机<br className="sm:hidden" />模式学习</div>
+              <div className="text-xs sm:text-sm font-bold text-[#1a1a1a] leading-tight text-left">纯手机模式学习</div>
             </button>
           )}
           {onOpenAbout && (
             <button onClick={onOpenAbout}
-              className={`lg-home-panel flex items-center gap-3 px-4 py-3 sm:py-3.5 text-left hover:scale-[1.01] transition-transform group ${onOpenMobileLearn ? 'w-3/4 min-w-0' : 'w-full'}`}>
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-xl shrink-0 shadow-md">
-                📖
+              className={`lg-home-panel flex items-center gap-2.5 px-3 py-3 sm:py-3.5 text-left hover:scale-[1.01] transition-transform group ${onOpenMobileLearn ? 'w-[58%] min-w-0' : 'w-full'}`}>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center shrink-0 shadow-md text-white">
+                <IconBookOpen size={20} />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm sm:text-base font-bold text-[#1a1a1a]">了解本站</div>
-                <div className="text-xs text-[#7a7088] truncate">功能介绍 · 快速上手 · 隐私说明</div>
+                <div className="text-[11px] sm:text-xs text-[#7a7088] truncate">功能介绍 · 快速上手 · 隐私说明</div>
               </div>
-              <span className="text-[#9575cd] text-xl shrink-0 group-hover:translate-x-1 transition-transform">›</span>
+              <span className="text-[#9575cd] text-lg shrink-0 group-hover:translate-x-1 transition-transform">›</span>
             </button>
           )}
         </div>

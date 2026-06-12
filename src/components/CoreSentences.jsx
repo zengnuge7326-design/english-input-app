@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import PageBackBar from './PageBackBar'
 import LockedOverlay from './LockedOverlay'
+import CourseParchmentBanner from './CourseParchmentBanner'
+import TextbookParchmentCover from './TextbookParchmentCover'
 import core50Data from '../data/core50.json'
 import core100Data from '../data/core100.json'
 import core60Data from '../data/core60.json'
@@ -110,13 +112,22 @@ function LessonGrid({ lessons, dataMap, quizBank, accentColor, titlePrefix, onIm
 }
 
 // ── 课程详情头部 ─────────────────────────────────────────
-function CourseHeader({ emoji, title, subtitle, percent, attempted, total, accentColor, onStart }) {
+function CourseHeader({ emoji, title, subtitle, percent, attempted, total, accentColor, onStart, parchmentGrad, coverText, parchmentLabel, parchmentSubject }) {
   const bar  = { emerald: 'bg-emerald-500', violet: 'bg-violet-500', sky: 'bg-sky-500' }[accentColor]
   const btn  = { emerald: 'bg-emerald-600 hover:bg-emerald-500', violet: 'bg-violet-600 hover:bg-violet-500', sky: 'bg-sky-600 hover:bg-sky-500' }[accentColor]
-  const grad = { emerald: 'from-emerald-600 to-teal-800', violet: 'from-violet-600 to-purple-800', sky: 'from-sky-600 to-blue-800' }[accentColor]
+  const grad = parchmentGrad || { emerald: 'from-emerald-600 to-teal-800', violet: 'from-violet-600 to-purple-800', sky: 'from-sky-600 to-blue-800' }[accentColor]
   return (
     <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-6 flex items-center gap-6">
-      <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${grad} flex items-center justify-center text-3xl shrink-0`}>{emoji}</div>
+      <div className="w-16 h-16 rounded-xl overflow-hidden relative shrink-0 bg-gray-800">
+        <TextbookParchmentCover
+          gradient={grad}
+          label={parchmentLabel || '核心句群'}
+          coverText={coverText || ''}
+          subject={parchmentSubject || title}
+          emoji={emoji}
+          variant="compact"
+        />
+      </div>
       <div className="flex-1 min-w-0">
         <div className="text-xl font-bold text-white mb-1">{title}</div>
         <div className="text-gray-400 text-sm mb-3">{subtitle}</div>
@@ -162,6 +173,7 @@ export default function CoreSentences({
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
         <CourseHeader emoji="✨" title="50 基础句式" accentColor="emerald"
+          parchmentGrad="from-emerald-600 to-teal-800" coverText="50" parchmentLabel="Beginner" parchmentSubject="基础句式"
           subtitle="5课 · 50句 · 入门核心句型" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE50_LESSONS[0].ids.map(id => core50Map[id]).filter(Boolean), '基础句式 · L1')} />
         <LessonGrid lessons={CORE50_LESSONS} dataMap={core50Map} quizBank={CORE50_QUIZ} accentColor="emerald"
@@ -179,6 +191,7 @@ export default function CoreSentences({
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
         <CourseHeader emoji="🎯" title="100 中级句式" accentColor="violet"
+          parchmentGrad="from-violet-600 to-purple-800" coverText="100" parchmentLabel="Intermediate" parchmentSubject="中级句式"
           subtitle="10课 · 100句 · 时态 / 从句 / 逻辑表达" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE100_LESSONS[0].ids.map(id => core100Map[id]).filter(Boolean), '中级句式 · L1')} />
         <LessonGrid lessons={CORE100_LESSONS} dataMap={core100Map} quizBank={CORE100_QUIZ} accentColor="violet"
@@ -196,6 +209,7 @@ export default function CoreSentences({
       <div className="w-full max-w-5xl mx-auto px-4 py-6">
         <PageBackBar onBack={() => setSection(null)} label="返回核心句群" />
         <CourseHeader emoji="🔬" title="60 综合句式" accentColor="sky"
+          parchmentGrad="from-sky-600 to-blue-800" coverText="60" parchmentLabel="Comprehensive" parchmentSubject="综合句式"
           subtitle="6课 · 60句 · 语法体系全覆盖" percent={pct} attempted={stats.attempted} total={stats.total}
           onStart={() => onImport(CORE60_LESSONS[0].ids.map(id => core60Map[id]).filter(Boolean), '综合句式 · L1')} />
         <LessonGrid lessons={CORE60_LESSONS} dataMap={core60Map} quizBank={CORE60_QUIZ} accentColor="sky"
@@ -209,7 +223,9 @@ export default function CoreSentences({
   const cards = [
     {
       key: 'core50', section: 'core50', emoji: '✨', color: 'emerald',
-      grad: 'from-emerald-900/80 to-teal-900/80', textColor: 'text-emerald-300',
+      grad: 'from-emerald-900/80 to-teal-900/80', parchmentGrad: 'from-emerald-600 to-teal-800',
+      coverText: '50', parchmentLabel: 'Beginner', parchmentSubject: '基础句式',
+      textColor: 'text-emerald-300',
       border: 'hover:border-emerald-600/60',
       title: '50 基础句式', tag: '50 Core Patterns · Beginner',
       desc: 'I am / I have / There is / Let\'s 等入门结构',
@@ -219,7 +235,9 @@ export default function CoreSentences({
     },
     {
       key: 'core100', section: 'core100', emoji: '🎯', color: 'violet',
-      grad: 'from-violet-900/80 to-purple-900/80', textColor: 'text-violet-300',
+      grad: 'from-violet-900/80 to-purple-900/80', parchmentGrad: 'from-violet-600 to-purple-800',
+      coverText: '100', parchmentLabel: 'Intermediate', parchmentSubject: '中级句式',
+      textColor: 'text-violet-300',
       border: 'hover:border-violet-600/60',
       title: '100 中级句式', tag: '100 Patterns · Intermediate',
       desc: '时态 / 从句 / 比较级 / 被动语态 / 逻辑连词',
@@ -229,7 +247,9 @@ export default function CoreSentences({
     },
     {
       key: 'core60', section: 'core60', emoji: '🔬', color: 'sky',
-      grad: 'from-sky-900/80 to-blue-900/80', textColor: 'text-sky-300',
+      grad: 'from-sky-900/80 to-blue-900/80', parchmentGrad: 'from-sky-600 to-blue-800',
+      coverText: '60', parchmentLabel: 'Comprehensive', parchmentSubject: '综合句式',
+      textColor: 'text-sky-300',
       border: 'hover:border-sky-600/60',
       title: '60 综合句式', tag: '60 Patterns · Comprehensive',
       desc: '语法体系全覆盖 · 五大句型到进阶表达',
@@ -276,14 +296,15 @@ export default function CoreSentences({
           const card = (
             <button onClick={() => setSection(c.section)}
               className={`group relative flex flex-col rounded-2xl overflow-hidden border border-white/10 ${c.border} shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left`}>
-              {/* 头部渐变 + 大图标 + 微动 */}
-              <div className={`relative w-full h-32 bg-gradient-to-br ${c.grad} flex flex-col items-center justify-center gap-2 overflow-hidden`}>
-                {/* 装饰光晕 */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/10 blur-2xl group-hover:scale-150 transition-transform duration-500" />
-                <div className="absolute -bottom-8 -left-8 w-20 h-20 rounded-full bg-white/5 blur-xl" />
-                <span className="text-5xl drop-shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">{c.emoji}</span>
-                <span className={`${c.textColor} text-[10px] font-bold tracking-[0.18em] uppercase relative z-10 drop-shadow`}>{c.tag}</span>
-              </div>
+              {/* 羊皮卷封面 */}
+              <CourseParchmentBanner
+                className="h-32"
+                gradient={c.parchmentGrad}
+                label={c.parchmentLabel}
+                coverText={c.coverText}
+                subject={c.parchmentSubject}
+                emoji={c.emoji}
+              />
               {/* 主体 */}
               <div className="bg-gradient-to-b from-slate-800 to-slate-900 p-4 flex flex-col gap-2 flex-1">
                 <div className="flex items-baseline justify-between">
