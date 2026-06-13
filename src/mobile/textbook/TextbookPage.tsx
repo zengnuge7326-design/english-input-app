@@ -1,13 +1,29 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import UnitReader from './UnitReader'
 import { TEXTBOOK_BOOKS, type TextbookUnit } from './data/sections'
+import { JUNIOR_TEXTBOOK_BOOKS, SENIOR_TEXTBOOK_BOOKS } from './data/secondaryBooks'
 import GradeCoverIcon from '../components/GradeCoverIcon'
 import './textbook.css'
 
+type Level = 'primary' | 'junior' | 'senior'
+
+const LEVELS: { id: Level; label: string }[] = [
+  { id: 'primary', label: '小学' },
+  { id: 'junior', label: '初中' },
+  { id: 'senior', label: '高中' },
+]
+
 export default function TextbookPage() {
   const [activeUnit, setActiveUnit] = useState<TextbookUnit | null>(null)
-  // 默认全部收起，8 册铺满一屏；点册名展开该册单元
+  const [level, setLevel] = useState<Level>('primary')
+  // 默认全部收起，铺满一屏；点册名展开该册单元
   const [expandedBook, setExpandedBook] = useState<string>('')
+
+  const books = useMemo(() => {
+    if (level === 'junior') return JUNIOR_TEXTBOOK_BOOKS
+    if (level === 'senior') return SENIOR_TEXTBOOK_BOOKS
+    return TEXTBOOK_BOOKS
+  }, [level])
 
   if (activeUnit) {
     return <UnitReader unit={activeUnit} onBack={() => setActiveUnit(null)} />
@@ -19,10 +35,21 @@ export default function TextbookPage() {
     <div className={`tb-page${anyOpen ? '' : ' tb-page--fill'}`}>
       <header className="tb-page__head tb-page__head--inline">
         <h1 className="tb-page__title">课文</h1>
-        <p className="tb-page__sub">原版人教 PEP · 点击单元开始阅读</p>
+        <p className="tb-page__sub">原版教材 · 点击单元开始阅读</p>
       </header>
 
-      {TEXTBOOK_BOOKS.map((book, i) => {
+      <div className="tb-page__levels">
+        {LEVELS.map(l => (
+          <button
+            key={l.id}
+            type="button"
+            onClick={() => { setLevel(l.id); setExpandedBook('') }}
+            className={`tb-page__level${level === l.id ? ' tb-page__level--on' : ''}`}
+          >{l.label}</button>
+        ))}
+      </div>
+
+      {books.map((book, i) => {
         const isOpen = expandedBook === book.id
         return (
         <section key={book.id} className={`tb-book${isOpen ? ' tb-book--open' : ' tb-book--collapsed'}`}>

@@ -106,6 +106,26 @@ function StudentList({ token, classId }) {
   }, [token, classId])
 
   const today = new Date().toISOString().slice(0, 10)
+  // 最近 7 天日期（升序）
+  const week = Array.from({ length: 7 }, (_, i) => {
+    const d = new Date()
+    d.setDate(d.getDate() - (6 - i))
+    return d.toISOString().slice(0, 10)
+  })
+
+  // 从打卡日期集合算「当前连续天数」（今天或昨天起往前数）
+  function currentStreak(dateSet) {
+    let streak = 0
+    const d = new Date()
+    // 今天未打卡则从昨天起算，避免今天还没打卡就断成 0
+    if (!dateSet.has(d.toISOString().slice(0, 10))) d.setDate(d.getDate() - 1)
+    for (;;) {
+      const key = d.toISOString().slice(0, 10)
+      if (dateSet.has(key)) { streak += 1; d.setDate(d.getDate() - 1) }
+      else break
+    }
+    return streak
+  }
 
   if (loading) return <p className="text-gray-600 text-sm py-4 text-center">加载中…</p>
   if (students.length === 0) return (
@@ -118,7 +138,10 @@ function StudentList({ token, classId }) {
         <thead>
           <tr className="text-gray-500 text-xs border-b border-gray-800">
             <th className="text-left py-2 px-3">学生</th>
-            <th className="text-center py-2 px-3">今日打卡</th>
+            <th className="text-center py-2 px-3">今日</th>
+            <th className="text-center py-2 px-3 hidden sm:table-cell">近 7 天</th>
+            <th className="text-center py-2 px-3">连续</th>
+            <th className="text-center py-2 px-3">活跃</th>
             <th className="text-center py-2 px-3">本周句数</th>
             <th className="text-center py-2 px-3">本周词数</th>
           </tr>
@@ -126,18 +149,38 @@ function StudentList({ token, classId }) {
         <tbody>
           {students.map(s => {
             const myCheckins = checkins.filter(c => c.student_id === s.id)
-            const todayCheckin = myCheckins.find(c => c.date === today)
+            const dateSet = new Set(myCheckins.map(c => c.date))
+            const todayCheckin = dateSet.has(today)
             const weekSentences = myCheckins.reduce((a, c) => a + (c.sentences_done || 0), 0)
             const weekWords = myCheckins.reduce((a, c) => a + (c.words_done || 0), 0)
+            const activeDays = dateSet.size
+            const streak = currentStreak(dateSet)
             return (
               <tr key={s.id} className="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors">
                 <td className="py-3 px-3 text-white font-medium">{s.display_name}</td>
                 <td className="py-3 px-3 text-center">
                   {todayCheckin
-                    ? <span className="text-green-400 text-xs bg-green-900/40 border border-green-800 px-2 py-0.5 rounded-full">✓ 已打卡</span>
+                    ? <span className="text-green-400 text-xs bg-green-900/40 border border-green-800 px-2 py-0.5 rounded-full">✓</span>
                     : <span className="text-gray-600 text-xs">—</span>
                   }
                 </td>
+                <td className="py-3 px-3 hidden sm:table-cell">
+                  <div className="flex gap-1 justify-center">
+                    {week.map(date => (
+                      <span
+                        key={date}
+                        title={`${date}: ${dateSet.has(date) ? '已打卡' : '未打卡'}`}
+                        className={`w-2.5 h-2.5 rounded-sm ${dateSet.has(date) ? 'bg-green-400' : 'bg-gray-700'}`}
+                      />
+                    ))}
+                  </div>
+                </td>
+                <td className="py-3 px-3 text-center tabular-nums">
+                  {streak > 0
+                    ? <span className="text-amber-400 font-semibold">🔥{streak}</span>
+                    : <span className="text-gray-600">—</span>}
+                </td>
+                <td className="py-3 px-3 text-center text-gray-300 tabular-nums">{activeDays || '—'}</td>
                 <td className="py-3 px-3 text-center text-blue-300 tabular-nums">{weekSentences || '—'}</td>
                 <td className="py-3 px-3 text-center text-purple-300 tabular-nums">{weekWords || '—'}</td>
               </tr>
