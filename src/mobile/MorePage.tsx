@@ -2,6 +2,7 @@ import { useState } from 'react'
 import MobileGemIcon from './components/MobileGemIcon'
 import MobileIcon from './components/MobileIcon'
 import MobileInstallTip from './components/MobileInstallTip'
+import { isMobileSfxEnabled, setMobileSfxEnabled } from './hooks/useMobileSfx'
 
 interface Props {
   streak: number
@@ -33,6 +34,13 @@ export default function MorePage({
   shellMode,
 }: Props) {
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const [sfxOn, setSfxOn] = useState(isMobileSfxEnabled)
+
+  function toggleSfx() {
+    const next = !sfxOn
+    setSfxOn(next)
+    setMobileSfxEnabled(next)
+  }
 
   function handleClearProgress() {
     const ok = window.confirm(
@@ -121,7 +129,21 @@ export default function MorePage({
 
           {settingsOpen && (
             <div className="mobile-more-page__settings-panel flex flex-col gap-2 pl-1">
-              <p className="text-xs text-white/50 px-1">
+              {/* 音效开关 */}
+              <button
+                type="button"
+                onClick={toggleSfx}
+                className="mobile-more-page__row"
+                aria-pressed={sfxOn}
+              >
+                <MobileIcon name="volume-2" size={20} />
+                <span className="flex-1 text-left font-semibold">答题音效</span>
+                <span className={`mobile-more-page__switch${sfxOn ? ' mobile-more-page__switch--on' : ''}`} aria-hidden>
+                  <span className="mobile-more-page__switch-knob" />
+                </span>
+              </button>
+
+              <p className="text-xs text-white/50 px-1 mt-1">
                 清除后将从 Unit 1 第一座岛屿重新开始，水晶进度与已完成关卡全部归零。
               </p>
               <button

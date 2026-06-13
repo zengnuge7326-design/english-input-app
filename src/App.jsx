@@ -118,7 +118,7 @@ import {
   IconGraduationCap, IconDownload, IconSettings, IconSparkles, IconGamepad,
   IconArchive, IconCalendar, IconStar, IconRefresh, IconCrown, IconUsers,
   IconUser,
-  IconMenu,
+  IconMenu, IconChevronLeft,
   IconArrowLeft, IconArrowRight, IconRotateCcw,
   IconCheck, IconBookmark, IconInfo, IconSplit,
   IconCheckSquare, IconEdit, IconKeyboard, IconList, IconBell, IconMessageSquare,
@@ -579,6 +579,7 @@ function MainApp() {
   const [showCoach, setShowCoach] = useState(false)
   const [showAbout, setShowAbout] = useState(false)
   const [showMobileLearn, setShowMobileLearn] = useState(false)
+  const [showMobileShop, setShowMobileShop] = useState(false)
   const [mobileShellMode, setMobileShellMode] = useState(() => shouldHideMainChrome())
 
   useEffect(() => {
@@ -1141,10 +1142,7 @@ function MainApp() {
               }}
               onAddXp={xp.addXP}
               onCrystalEarn={crystal.earn}
-              onOpenShop={() => {
-                setShowMobileLearn(false)
-                openTab('shop')
-              }}
+              onOpenShop={() => setShowMobileShop(true)}
               onOpenLeaderboard={() => setShowLeaderboard(true)}
               unlocks={unlocks}
               crystalBalance={crystal.blue}
@@ -1157,6 +1155,36 @@ function MainApp() {
               mainCrystal={{ total: crystal.total }}
               crystalPulse={crystalPulse}
             />
+          </div>
+        )}
+
+        {/* 手机模式下宝石小店覆盖层（在壳层之上，不退出手机模式） */}
+        {showMobileLearn && showMobileShop && (
+          <div className="fixed inset-0 z-[260] flex flex-col bg-[#0b0f1a]">
+            <div className="shrink-0 flex items-center gap-2 px-3 py-2 safe-top border-b border-white/10 bg-[#0b0f1a]/95 backdrop-blur">
+              <button
+                type="button"
+                onClick={() => { setShopInitialTab(null); setShowMobileShop(false) }}
+                className="flex items-center gap-1 px-3 py-2 rounded-xl bg-white/8 hover:bg-white/14 text-white text-sm font-bold transition-colors"
+              >
+                <IconChevronLeft size={18} /> 返回
+              </button>
+              <span className="text-sm font-bold text-white/80">宝石小店</span>
+            </div>
+            <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain">
+              <Shop
+                token={token}
+                crystal={crystal}
+                inventory={shopInventory}
+                onInventoryChange={setShopInventory}
+                onEquippedChange={(equipped) => {
+                  setShopInventory(prev => ({ ...prev, equipped: equipped || { avatar: null, panda_skin: null, theme: null, flame_color: null } }))
+                }}
+                initialTab={shopInitialTab}
+                onShowLogin={() => setShowLogin(true)}
+                onClose={() => { setShopInitialTab(null); setShowMobileShop(false) }}
+              />
+            </div>
           </div>
         )}
 

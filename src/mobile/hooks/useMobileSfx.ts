@@ -6,7 +6,20 @@
  */
 import { useCallback, useRef } from 'react'
 
+const SFX_KEY = 'mobile_sfx_enabled'
+
+/** 读取音效开关（默认开） */
+export function isMobileSfxEnabled(): boolean {
+  try { return localStorage.getItem(SFX_KEY) !== '0' } catch { return true }
+}
+
+/** 设置音效开关 */
+export function setMobileSfxEnabled(on: boolean) {
+  try { localStorage.setItem(SFX_KEY, on ? '1' : '0') } catch { /* ignore */ }
+}
+
 function getCtx(ref: React.MutableRefObject<AudioContext | null>): AudioContext | null {
+  if (!isMobileSfxEnabled()) return null
   try {
     if (!ref.current) {
       const AC = window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
