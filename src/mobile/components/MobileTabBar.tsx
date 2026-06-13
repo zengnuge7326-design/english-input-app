@@ -39,7 +39,7 @@ export default function MobileTabBar({ active, onChange }: Props) {
             aria-current={isActive ? 'page' : undefined}
           >
             <CrystalTabIcon color={tab.crystal} active={isActive}>
-              <MobileIcon name={tab.icon} size={16} className="crystal-tab-icon__svg" />
+              <MobileIcon name={tab.icon} size={18} className="crystal-tab-icon__svg" />
             </CrystalTabIcon>
           </button>
         )

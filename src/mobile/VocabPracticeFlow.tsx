@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { VocabWord } from './data/unit1Vocab'
 import {
   VOCAB_PREVIEW_TYPES,
@@ -35,6 +35,7 @@ export default function VocabPracticeFlow({
 }: Props) {
   const { prefetch } = useMobileTTS()
   const { playCorrect, playWrong, playVictory } = useMobileSfx()
+  const judgedRef = useRef(false)
 
   const lesson = useMemo(
     () => buildVocabPracticeLesson(words, unitLabel, bookId),
@@ -71,9 +72,18 @@ export default function VocabPracticeFlow({
     if (qs.length > 0) startQuiz(qs, true)
   }
 
-  function handleAnswer(ok: boolean) {
+  function handleJudge(ok: boolean) {
+    judgedRef.current = true
     if (ok) playCorrect()
     else playWrong()
+  }
+
+  function handleAnswer(ok: boolean) {
+    if (!judgedRef.current) {
+      if (ok) playCorrect()
+      else playWrong()
+    }
+    judgedRef.current = false
     setResults(r => [...r, ok])
     if (quizStep + 1 >= total) {
       if (!isPreview) playVictory()
@@ -97,6 +107,7 @@ export default function VocabPracticeFlow({
     lessonTitle: lesson.title,
     onExit,
     onAnswer: handleAnswer,
+    onJudge: handleJudge,
   }
 
   if (step === 'quiz' && q) {

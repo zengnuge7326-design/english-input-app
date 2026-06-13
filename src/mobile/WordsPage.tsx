@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useMobileTTS } from './hooks/useMobileTTS'
-import BookCoverIcon from './components/BookCoverIcon'
+import GradeCoverIcon from './components/GradeCoverIcon'
 import { countVocabWords, listVocabBooks, type VocabBookData, type VocabUnit } from './data/vocabBooks'
 import { getLevelLabel, type GradeLevel } from './data/gradeBooks'
 
@@ -147,7 +147,7 @@ export default function WordsPage({ bookProgress = {}, onStartPractice }: Props)
               onClick={() => data && setView({ kind: 'units', book: data })}
             >
               <div className="mobile-vocab-card__cover">
-                <BookCoverIcon index={book.index} className="mobile-vocab-card__cover-svg" />
+                <GradeCoverIcon index={book.index - 1} className="mobile-vocab-card__cover-svg" />
               </div>
               <div className="mobile-vocab-card__body">
                 <span className="mobile-vocab-card__title">{book.title}</span>

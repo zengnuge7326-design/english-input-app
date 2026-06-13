@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { TranslateClozeQuestionData } from '../types'
 import { useMobileTTS } from '../hooks/useMobileTTS'
+import { useAutoFocus } from '../hooks/useAutoFocus'
 import MobileSubmitButton from './MobileSubmitButton'
 import QuestionShell from './QuestionShell'
 
@@ -11,6 +12,7 @@ interface Props {
   lessonTitle: string
   onExit: () => void
   onAnswer: (correct: boolean) => void
+  onJudge?: (correct: boolean) => void
 }
 
 function normalize(text: string) {
@@ -40,16 +42,20 @@ export default function TranslateClozeQuestion({
   lessonTitle,
   onExit,
   onAnswer,
+  onJudge,
 }: Props) {
   const [value, setValue] = useState('')
   const [feedback, setFeedback] = useState<'idle' | 'right' | 'wrong'>('idle')
   const { speak } = useMobileTTS()
+  const inputRef = useRef<HTMLInputElement>(null)
+  useAutoFocus(inputRef, [data.answer])
   const parts = data.template.split('___')
   const canSubmit = !!value.trim() && feedback === 'idle'
 
   function submit() {
     if (!canSubmit) return
     const ok = normalize(value) === normalize(data.answer)
+    onJudge?.(ok)
     setFeedback(ok ? 'right' : 'wrong')
     // 答题后朗读完整英文句（模板填入正确答案）
     speak(data.template.replace('___', data.answer))
@@ -79,11 +85,13 @@ export default function TranslateClozeQuestion({
           >
             <span>{parts[0]}</span>
             <input
+              ref={inputRef}
               value={value}
               onChange={e => feedback === 'idle' && setValue(e.target.value)}
               placeholder=""
               autoCapitalize="off"
               autoCorrect="off"
+              autoFocus
               spellCheck={false}
               className="mobile-quiz__cloze-blank"
               aria-label="填写缺失的单词"

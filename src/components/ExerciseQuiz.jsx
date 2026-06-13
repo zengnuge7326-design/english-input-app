@@ -1,9 +1,10 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { IconSpeaker, IconArrowLeft } from './Icons'
 import PageBackBar from './PageBackBar'
 import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
 import { unlockAudio } from '../utils/audioUnlock.js'
+import { tryClaimOnce, quizRewardScope } from '../utils/rewardClaims'
 
 // ── 工具函数 ──────────────────────────────────────────────────────────────────
 
@@ -346,15 +347,22 @@ export default function ExerciseQuiz({
   const [answeredList, setAnsweredList] = useState([]) // true/false per question
   const [showAnswer, setShowAnswer] = useState(false)
   const [finishNotified, setFinishNotified] = useState(false)
+  const [sessionRewards, setSessionRewards] = useState({ blue: 0, green: 0 })
+  const rewardsGrantedRef = useRef(false)
+  const advancingRef = useRef(false)
+  const rewardScope = quizRewardScope(title)
   const ttsSettings = settings || { rate: 0.9, ttsEngine: 'hybrid', edgeVoice: 'en-US-AvaNeural' }
   const { speak } = useTTS(ttsSettings)
   const { playCorrect, playError, playBubble, playFireworks } = useSound(settings)
   const q = questions[idx]
 
   const goNext = useCallback(() => {
+    if (advancingRef.current || !showAnswer) return
+    advancingRef.current = true
     setShowAnswer(false)
-    setIdx(i => i + 1)
-  }, [])
+    setIdx(i => Math.min(i + 1, questions.length))
+    queueMicrotask(() => { advancingRef.current = false })
+  }, [showAnswer, questions.length])
 
   // 自动播放听力题（无用户手势时部分浏览器会静音，可点「播放录音」）
   useEffect(() => {
@@ -398,31 +406,45 @@ export default function ExerciseQuiz({
   const score = answeredList.filter(Boolean).length
 
   useEffect(() => {
-    if (done && !finishNotified) {
-      setFinishNotified(true)
-      // 统一标准：完成一组 +1 蓝钻，零错误 +1 绿钻（XP 已按题发放）
-      onCrystal?.('blue', 1, 'quiz_group_done', { title })
-      if (score === questions.length && questions.length > 0) {
-        onCrystal?.('green', 1, 'quiz_zero_error', { title })
+    if (!done || finishNotified) return
+    setFinishNotified(true)
+
+    const granted = { blue: 0, green: 0 }
+    if (!rewardsGrantedRef.current) {
+      rewardsGrantedRef.current = true
+      if (tryClaimOnce(rewardScope, 'quiz_group_done')) {
+        onCrystal?.('blue', 1, 'quiz_group_done', { title })
+        granted.blue = 1
       }
-      onFinish?.({ score, total: questions.length })
+      if (score === questions.length && questions.length > 0 && tryClaimOnce(rewardScope, 'quiz_zero_error')) {
+        onCrystal?.('green', 1, 'quiz_zero_error', { title })
+        granted.green = 1
+      }
     }
-  }, [done, finishNotified, onFinish, onCrystal, score, questions.length, title])
+    setSessionRewards(granted)
+    onFinish?.({ score, total: questions.length, gemsGranted: granted })
+  }, [done, finishNotified, onFinish, onCrystal, score, questions.length, title, rewardScope])
 
   function handleRetry() {
+    advancingRef.current = false
     setIdx(0)
     setAnsweredList([])
     setShowAnswer(false)
     setFinishNotified(false)
+    setSessionRewards({ blue: 0, green: 0 })
     onRetry?.()
   }
 
   if (done) {
+    const anyGem = sessionRewards.blue + sessionRewards.green > 0
     return (
       <div className="flex flex-col items-center justify-center gap-6 py-12 px-4">
         <div className="text-6xl">{score === questions.length ? '🎉' : score >= questions.length / 2 ? '👍' : '💪'}</div>
-        <div className="text-white text-3xl font-bold">{score} / {questions.length}</div>
+        <div className="text-white text-3xl font-bold">{Math.min(score, questions.length)} / {questions.length}</div>
         <div className="text-gray-400 text-sm">{title}</div>
+        {!anyGem && (
+          <p className="text-gray-500 text-xs">本套题奖励已领取，可继续练习巩固</p>
+        )}
         <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full max-w-xs">
           {onRetry && (
             <button

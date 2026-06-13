@@ -38,6 +38,7 @@ import TeacherDashboard from './components/TeacherDashboard'
 import StudentJoin from './components/StudentJoin'
 import { useStudentCheckin } from './hooks/useStudentCheckin'
 import { unlockAudio, isAudioUnlocked } from './utils/audioUnlock'
+import { tryClaimOnce } from './utils/rewardClaims'
 import PageBackBar from './components/PageBackBar'
 import ExerciseView from './components/ExerciseView'
 import ImportPanel from './components/ImportPanel'
@@ -1534,8 +1535,13 @@ function MainApp() {
                 onXp={xp.addXP}
                 onCrystal={crystal.earn}
                 onFinish={({ score, total }) => {
-                  if (score >= 7) crystal.earn('green', 1, 'core-sync-pass', { title: coreSyncQuiz.title })
-                  if (score === total) crystal.earn('purple', 1, 'core-sync-perfect', { title: coreSyncQuiz.title })
+                  const scope = `core-sync::${coreSyncQuiz.title}`
+                  if (score >= 7 && tryClaimOnce(scope, 'pass')) {
+                    crystal.earn('green', 1, 'core-sync-pass', { title: coreSyncQuiz.title })
+                  }
+                  if (score === total && tryClaimOnce(scope, 'perfect')) {
+                    crystal.earn('purple', 1, 'core-sync-perfect', { title: coreSyncQuiz.title })
+                  }
                 }}
                 onRetry={() => handleCoreExerciseQuiz({
                   questions: coreSyncQuiz.questions,

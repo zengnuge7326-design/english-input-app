@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useMobileTTS } from '../hooks/useMobileTTS'
+import { useMobileSfx } from '../hooks/useMobileSfx'
 import type { MatchingQuestionData } from '../types'
 import MobileSubmitButton from './MobileSubmitButton'
 import QuizPlayButton from './QuizPlayButton'
@@ -12,6 +13,7 @@ interface Props {
   lessonTitle: string
   onExit: () => void
   onAnswer: (correct: boolean) => void
+  onJudge?: (correct: boolean) => void
 }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -45,8 +47,10 @@ export default function MatchingQuestion({
   lessonTitle,
   onExit,
   onAnswer,
+  onJudge,
 }: Props) {
   const { speak, prefetch } = useMobileTTS()
+  const sfx = useMobileSfx()
   const [audioOrder] = useState(() => shuffle(data.pairs.map(p => p.id)))
   const [zhOrder] = useState(() => shuffle(data.pairs.map(p => p.id)))
   const [matched, setMatched] = useState<Set<string>>(() => new Set())
@@ -86,11 +90,13 @@ export default function MatchingQuestion({
 
   function tryMatch(audioId: string, zhId: string) {
     if (audioId === zhId) {
+      sfx.playCorrect()
       setMatched(prev => new Set([...prev, audioId]))
       setPickedAudio(null)
       setPickedZh(null)
       setWrongFlash(false)
     } else {
+      sfx.playWrong()
       setWrongFlash(true)
       setTimeout(() => {
         setWrongFlash(false)
@@ -102,6 +108,7 @@ export default function MatchingQuestion({
 
   function submit() {
     if (!allMatched || feedback === 'done') return
+    onJudge?.(true)
     setFeedback('done')
     setTimeout(() => onAnswer(true), 500)
   }

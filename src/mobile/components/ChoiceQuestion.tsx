@@ -11,11 +11,12 @@ interface Props {
   lessonTitle: string
   onExit: () => void
   onAnswer: (correct: boolean) => void
+  onJudge?: (correct: boolean) => void
 }
 
 const HAS_EN = /[a-zA-Z]/
 
-export default function ChoiceQuestion({ data, step, total, lessonTitle, onExit, onAnswer }: Props) {
+export default function ChoiceQuestion({ data, step, total, lessonTitle, onExit, onAnswer, onJudge }: Props) {
   const [picked, setPicked] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'idle' | 'right' | 'wrong'>('idle')
   const { speak } = useMobileTTS()
@@ -24,6 +25,7 @@ export default function ChoiceQuestion({ data, step, total, lessonTitle, onExit,
   function submit() {
     if (!picked || feedback !== 'idle') return
     const ok = picked === data.answer
+    onJudge?.(ok)
     setFeedback(ok ? 'right' : 'wrong')
     // 句子含英文 → 朗读填入正确答案后的完整句
     const full = data.sentence.replace('___', data.answer)

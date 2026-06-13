@@ -1,30 +1,29 @@
 import { useState } from 'react'
 import UnitReader from './UnitReader'
 import { TEXTBOOK_BOOKS, type TextbookUnit } from './data/sections'
+import GradeCoverIcon from '../components/GradeCoverIcon'
 import './textbook.css'
 
 export default function TextbookPage() {
   const [activeUnit, setActiveUnit] = useState<TextbookUnit | null>(null)
-  // 默认只展开第一册，其余收起。点册名切换。
-  const [expandedBook, setExpandedBook] = useState<string>(TEXTBOOK_BOOKS[0]?.id ?? '')
+  // 默认全部收起，8 册铺满一屏；点册名展开该册单元
+  const [expandedBook, setExpandedBook] = useState<string>('')
 
   if (activeUnit) {
     return <UnitReader unit={activeUnit} onBack={() => setActiveUnit(null)} />
   }
 
+  const anyOpen = expandedBook !== ''
+
   return (
-    <div className="tb-page">
-      <header className="tb-page__head">
+    <div className={`tb-page${anyOpen ? '' : ' tb-page--fill'}`}>
+      <header className="tb-page__head tb-page__head--inline">
         <h1 className="tb-page__title">课文</h1>
         <p className="tb-page__sub">原版人教 PEP · 点击单元开始阅读</p>
       </header>
 
-      {TEXTBOOK_BOOKS.map(book => {
+      {TEXTBOOK_BOOKS.map((book, i) => {
         const isOpen = expandedBook === book.id
-        const unitCount = book.units.length
-        const totalSentences = book.units.reduce(
-          (n, u) => n + u.sections.reduce((m, s) => m + (s.sentences?.length ?? 0), 0), 0,
-        )
         return (
         <section key={book.id} className={`tb-book${isOpen ? ' tb-book--open' : ' tb-book--collapsed'}`}>
           <button
@@ -33,10 +32,11 @@ export default function TextbookPage() {
             onClick={() => setExpandedBook(isOpen ? '' : book.id)}
             aria-expanded={isOpen}
           >
-            <span className="tb-book__emoji" aria-hidden>{book.emoji}</span>
+            <span className="tb-book__cover" aria-hidden>
+              <GradeCoverIcon index={i} className="tb-book__cover-svg" />
+            </span>
             <div className="tb-book__head-text">
               <div className="tb-book__title">{book.title}</div>
-              <div className="tb-book__sub">{book.subtitle} · {unitCount} 单元 · {totalSentences} 句</div>
             </div>
             <span className="tb-book__chevron" aria-hidden>{isOpen ? '▾' : '▸'}</span>
           </button>

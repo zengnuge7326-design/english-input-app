@@ -2,6 +2,16 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { VocabWord } from '../data/unit1Vocab'
 import { useMobileTTS } from '../hooks/useMobileTTS'
 import { useMobileSfx } from '../hooks/useMobileSfx'
+import {
+  CartoonComboBolt,
+  CartoonExplosion,
+  CartoonHeart,
+  CartoonRocket,
+  CartoonUFO,
+  DefeatScene,
+  IntroScene,
+  TrophyScene,
+} from './WordDefenderSprites'
 import './wordDefender.css'
 
 interface Props {
@@ -15,10 +25,10 @@ type Phase = 'intro' | 'playing' | 'over' | 'win'
 
 interface UFOState {
   word: VocabWord
-  pool: string[]      // 字母池（含干扰）
-  picked: number[]    // 已点击的字母池索引
-  y: number           // 0 顶 → 100 底
-  speed: number       // % per second
+  pool: string[]
+  picked: number[]
+  y: number
+  speed: number
   destroyed: boolean
 }
 
@@ -29,9 +39,28 @@ interface Bullet {
 }
 
 const HEARTS_START = 3
-const UFO_HEIGHT_PCT = 35   // 击中线（飞机所在 y）
-const BASE_SPEED = 1.6      // %/s 起步
+const UFO_HEIGHT_PCT = 35
+const BASE_SPEED = 1.6
 const SPEED_INCREMENT = 0.18
+const SPEED_STORAGE_KEY = 'wdg-speed-tier'
+
+/** 5 档 UFO 下降速度倍率 */
+const SPEED_TIERS = [
+  { label: '很慢', mult: 0.45 },
+  { label: '慢', mult: 0.7 },
+  { label: '标准', mult: 1.0 },
+  { label: '快', mult: 1.35 },
+  { label: '极快', mult: 1.85 },
+] as const
+
+function readSpeedTier(): number {
+  try {
+    const n = parseInt(localStorage.getItem(SPEED_STORAGE_KEY) ?? '3', 10)
+    return n >= 1 && n <= 5 ? n : 3
+  } catch {
+    return 3
+  }
+}
 
 const DISTRACTORS = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
@@ -58,6 +87,30 @@ function buildLetterPool(word: string, distractorCount: number): string[] {
   return shuffle([...letters, ...extras])
 }
 
+function SpeedButton({ tier, onCycle }: { tier: number; onCycle: () => void }) {
+  const meta = SPEED_TIERS[tier - 1]
+  return (
+    <button
+      type="button"
+      className={`wdg__speed wdg__speed--tier-${tier}`}
+      onClick={onCycle}
+      aria-label={`速度 ${tier}/5 · ${meta.label}`}
+      title={`${meta.label} (${tier}/5)`}
+    >
+      <svg className="wdg__speed-icon" viewBox="0 0 20 20" width="16" height="16" aria-hidden>
+        <path d="M10 2 L12 8 H18 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 H8 Z" fill="currentColor" opacity="0.35" />
+        <path d="M10 6 L11 9 H14 L11.5 11 L12.5 14 L10 12 L7.5 14 L8.5 11 L6 9 H9 Z" fill="currentColor" />
+      </svg>
+      <span className="wdg__speed-bars" aria-hidden>
+        {SPEED_TIERS.map((_, i) => (
+          <span key={i} className={`wdg__speed-bar${i < tier ? ' wdg__speed-bar--on' : ''}`} />
+        ))}
+      </span>
+      <span className="wdg__speed-num">{tier}</span>
+    </button>
+  )
+}
+
 function makeUFO(word: VocabWord, level: number): UFOState {
   const distractors = word.en.length <= 3 ? 2 : word.en.length <= 5 ? 2 : 1
   return {
@@ -81,17 +134,38 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
   const [hearts, setHearts] = useState(HEARTS_START)
   const [combo, setCombo] = useState(0)
   const [maxCombo, setMaxCombo] = useState(0)
-  const [hit, setHit] = useState(0)         // 击毁数
-  const [taps, setTaps] = useState(0)       // 总点击
+  const [hit, setHit] = useState(0)
+  const [taps, setTaps] = useState(0)
   const [correctTaps, setCorrectTaps] = useState(0)
   const [bullets, setBullets] = useState<Bullet[]>([])
   const [shake, setShake] = useState(false)
   const [flash, setFlash] = useState<'good' | 'bad' | null>(null)
+  const [firing, setFiring] = useState(false)
+  const [comboPulse, setComboPulse] = useState(false)
+  const [lastTapIdx, setLastTapIdx] = useState<number | null>(null)
+  const [speedTier, setSpeedTier] = useState(readSpeedTier)
   const bulletIdRef = useRef(0)
   const rafRef = useRef<number | null>(null)
   const lastTickRef = useRef<number>(0)
+  const ufoRef = useRef(ufo)
+  const phaseRef = useRef(phase)
+  const idxRef = useRef(idx)
+  const speedTierRef = useRef(speedTier)
 
-  // 启动新 UFO
+  useEffect(() => { ufoRef.current = ufo }, [ufo])
+  useEffect(() => { phaseRef.current = phase }, [phase])
+  useEffect(() => { idxRef.current = idx }, [idx])
+  useEffect(() => { speedTierRef.current = speedTier }, [speedTier])
+
+  const cycleSpeed = useCallback(() => {
+    sfx.playTap()
+    setSpeedTier(t => {
+      const next = t >= 5 ? 1 : t + 1
+      try { localStorage.setItem(SPEED_STORAGE_KEY, String(next)) } catch { /* ignore */ }
+      return next
+    })
+  }, [sfx])
+
   const spawnNext = useCallback((nextIdx: number) => {
     if (nextIdx >= queue.length) {
       setPhase('win')
@@ -110,7 +184,6 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
     spawnNext(0)
   }
 
-  // 主循环：UFO 下降
   useEffect(() => {
     if (phase !== 'playing' || !ufo || ufo.destroyed) return
     lastTickRef.current = performance.now()
@@ -119,9 +192,9 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
       lastTickRef.current = t
       setUfo(u => {
         if (!u || u.destroyed) return u
-        const ny = u.y + u.speed * dt
+        const mult = SPEED_TIERS[speedTierRef.current - 1].mult
+        const ny = u.y + u.speed * mult * dt
         if (ny >= UFO_HEIGHT_PCT) {
-          // UFO 触底 → 扣血
           queueMicrotask(() => onUfoCrash())
           return { ...u, y: UFO_HEIGHT_PCT }
         }
@@ -133,8 +206,8 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
   }, [phase, ufo?.word.id, ufo?.destroyed])  // eslint-disable-line react-hooks/exhaustive-deps
 
-  function onUfoCrash() {
-    sfx.playWrong()
+  const onUfoCrash = useCallback(() => {
+    sfx.playDamage()
     setShake(true)
     setTimeout(() => setShake(false), 250)
     setHearts(h => {
@@ -143,88 +216,130 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
         setPhase('over')
         return 0
       }
-      // UFO 摧毁但不算击毁，进入下一题
-      setTimeout(() => spawnNext(idx + 1), 400)
+      setTimeout(() => spawnNext(idxRef.current + 1), 400)
       return nh
     })
     setCombo(0)
-  }
+  }, [sfx, spawnNext])
 
-  function fireBullet() {
+  const fireBullet = useCallback(() => {
+    sfx.playShoot()
+    setFiring(true)
+    setTimeout(() => setFiring(false), 180)
     const id = ++bulletIdRef.current
     const x = 50 + (Math.random() - 0.5) * 8
     setBullets(b => [...b, { id, x, y: 88 }])
-    // 200ms 子弹飞上去，到达 UFO
     requestAnimationFrame(() => {
       setBullets(b => b.map(x => x.id === id ? { ...x, y: 5 } : x))
     })
     setTimeout(() => {
       setBullets(b => b.filter(x => x.id !== id))
     }, 600)
-  }
+  }, [sfx])
 
-  function handleLetterTap(poolIdx: number) {
-    if (!ufo || ufo.destroyed || phase !== 'playing') return
-    if (ufo.picked.includes(poolIdx)) return
+  const handleUndo = useCallback(() => {
+    const u = ufoRef.current
+    if (!u || u.destroyed || u.picked.length === 0 || phaseRef.current !== 'playing') return
+    setUfo({ ...u, picked: u.picked.slice(0, -1) })
+  }, [])
+
+  const handleLetterTap = useCallback((poolIdx: number) => {
+    const u = ufoRef.current
+    if (!u || u.destroyed || phaseRef.current !== 'playing') return
+    if (u.picked.includes(poolIdx)) return
     setTaps(t => t + 1)
-    const expected = ufo.word.en[ufo.picked.length]?.toLowerCase()
-    const got = ufo.pool[poolIdx]
+    setLastTapIdx(poolIdx)
+    setTimeout(() => setLastTapIdx(null), 200)
+    const expected = u.word.en[u.picked.length]?.toLowerCase()
+    const got = u.pool[poolIdx]
     if (expected === got) {
-      // 命中
+      sfx.playTap()
       sfx.playCorrect()
       setCorrectTaps(c => c + 1)
       setFlash('good'); setTimeout(() => setFlash(null), 150)
       fireBullet()
-      const nextPicked = [...ufo.picked, poolIdx]
-      const isComplete = nextPicked.length >= ufo.word.en.length
-      setUfo({ ...ufo, picked: nextPicked, destroyed: isComplete })
+      const nextPicked = [...u.picked, poolIdx]
+      const isComplete = nextPicked.length >= u.word.en.length
+      setUfo({ ...u, picked: nextPicked, destroyed: isComplete })
       if (isComplete) {
-        // 击毁
+        sfx.playExplode()
         setHit(h => h + 1)
         setCombo(c => {
           const nc = c + 1
           setMaxCombo(m => Math.max(m, nc))
+          if (nc >= 3 && nc % 3 === 0) {
+            sfx.playCombo()
+            setComboPulse(true)
+            setTimeout(() => setComboPulse(false), 400)
+          }
           return nc
         })
-        // 朗读单词
-        setTimeout(() => speak(ufo.word.en, 0.9), 250)
-        setTimeout(() => spawnNext(idx + 1), 1100)
+        setTimeout(() => speak(u.word.en, 0.9), 250)
+        setTimeout(() => spawnNext(idxRef.current + 1), 1100)
       }
     } else {
-      // 失误：UFO 加速 + 屏幕红闪
       sfx.playWrong()
       setFlash('bad'); setTimeout(() => setFlash(null), 200)
       setCombo(0)
-      setUfo({ ...ufo, speed: ufo.speed * 1.45, y: Math.min(UFO_HEIGHT_PCT - 1, ufo.y + 4) })
+      setUfo({ ...u, speed: u.speed * 1.45, y: Math.min(UFO_HEIGHT_PCT - 1, u.y + 4) })
     }
-  }
+  }, [sfx, fireBullet, speak, spawnNext])
 
-  function handleUndo() {
-    if (!ufo || ufo.destroyed || ufo.picked.length === 0) return
-    setUfo({ ...ufo, picked: ufo.picked.slice(0, -1) })
-  }
+  const handleLetterTapRef = useRef(handleLetterTap)
+  handleLetterTapRef.current = handleLetterTap
+  const handleUndoRef = useRef(handleUndo)
+  handleUndoRef.current = handleUndo
 
-  // 完成结算（onComplete 必须在 phase 切换后调一次）
+  // 电脑键盘：直接输入字母 / Backspace 撤销
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (phaseRef.current !== 'playing') return
+      const u = ufoRef.current
+      if (!u || u.destroyed) return
+
+      if (e.key === 'Backspace') {
+        e.preventDefault()
+        handleUndoRef.current()
+        return
+      }
+
+      if (e.key.length === 1 && /[a-zA-Z]/.test(e.key)) {
+        e.preventDefault()
+        const ch = e.key.toLowerCase()
+        const poolIdx = u.pool.findIndex((c, i) => c.toLowerCase() === ch && !u.picked.includes(i))
+        if (poolIdx >= 0) handleLetterTapRef.current(poolIdx)
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  useEffect(() => {
+    if (phase === 'win') sfx.playVictory()
+  }, [phase, sfx])
+
   useEffect(() => {
     if (phase !== 'win' && phase !== 'over') return
     const acc = taps > 0 ? Math.round((correctTaps / taps) * 100) : 0
     onComplete({ hit, total: queue.length, combo: maxCombo, accuracy: acc })
   }, [phase])  // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ─── 渲染 ─────────────────────────────────────────────────
   if (phase === 'intro') {
     return (
       <div className="wdg flex flex-col h-[100dvh] max-h-[100dvh] overflow-hidden">
         <div className="wdg__intro flex-1 flex flex-col items-center justify-center px-6 gap-4 text-center">
-          <button className="wdg__close-abs" onClick={onExit} aria-label="返回">✕</button>
-          <div className="wdg__intro-emoji">🛸</div>
+          <div className="wdg__intro-top">
+            <button className="wdg__close-abs" onClick={onExit} aria-label="返回">✕</button>
+            <SpeedButton tier={speedTier} onCycle={cycleSpeed} />
+          </div>
+          <IntroScene />
           <h1 className="wdg__intro-title">字母飞船防御战</h1>
           <p className="wdg__intro-sub">{unitLabel} · {queue.length} 个单词</p>
           <ul className="wdg__intro-rules">
-            <li>🛸 飞船显示汉语，从空中降下</li>
-            <li>🔤 按顺序点击字母拼出英文</li>
-            <li>🚀 每对一个字母发一颗子弹</li>
-            <li>❤️ 飞船触底扣 1 血，3 血用完游戏结束</li>
+            <li><span className="wdg__rule-icon wdg__rule-icon--ufo" /> 飞船显示汉语，从空中降下</li>
+            <li><span className="wdg__rule-icon wdg__rule-icon--key" /> 按顺序拼出英文（可键盘输入）</li>
+            <li><span className="wdg__rule-icon wdg__rule-icon--laser" /> 每对一个字母发射激光</li>
+            <li><span className="wdg__rule-icon wdg__rule-icon--heart" /> 飞船触底扣 1 血，3 血结束</li>
           </ul>
           <button className="wdg__btn-primary" onClick={startGame}>开始作战</button>
         </div>
@@ -238,7 +353,7 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
     return (
       <div className="wdg flex flex-col h-[100dvh] max-h-[100dvh] overflow-hidden">
         <div className="wdg__intro flex-1 flex flex-col items-center justify-center px-6 gap-3 text-center">
-          <div className="wdg__intro-emoji">{phase === 'win' ? '🏆' : '💥'}</div>
+          {phase === 'win' ? <TrophyScene /> : <DefeatScene />}
           <h1 className="wdg__intro-title">{phase === 'win' ? '胜利！' : '战败'}</h1>
           <div className="wdg__stars" aria-hidden>
             {[1, 2, 3].map(i => (
@@ -259,29 +374,33 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
     )
   }
 
-  // playing
   return (
     <div className={`wdg flex flex-col h-[100dvh] max-h-[100dvh] overflow-hidden${shake ? ' wdg--shake' : ''}${flash ? ` wdg--flash-${flash}` : ''}`}>
       <header className="wdg__hud shrink-0 safe-top">
-        <button className="wdg__close" onClick={onExit} aria-label="返回">✕</button>
+        <div className="wdg__hud-left">
+          <button className="wdg__close" onClick={onExit} aria-label="返回">✕</button>
+          <SpeedButton tier={speedTier} onCycle={cycleSpeed} />
+        </div>
         <div className="wdg__hearts">
           {Array.from({ length: HEARTS_START }).map((_, i) => (
-            <span key={i} className={`wdg__heart${i < hearts ? '' : ' wdg__heart--gone'}`}>❤</span>
+            <CartoonHeart key={i} filled={i < hearts} className={i >= hearts ? 'wdg__heart-lost' : ''} />
           ))}
         </div>
         <div className="wdg__hud-right">
-          <span className="wdg__combo">⚡ {combo}</span>
+          <span className={`wdg__combo${comboPulse ? ' wdg__combo--pulse' : ''}`}>
+            <CartoonComboBolt /> {combo}
+          </span>
           <span className="wdg__score">击毁 {hit}/{queue.length}</span>
         </div>
       </header>
 
       <div className="wdg__arena flex-1 relative">
-        {/* 星空背景 */}
         <div className="wdg__sky" aria-hidden />
-        {/* UFO */}
+        <div className="wdg__sky wdg__sky--far" aria-hidden />
+
         {ufo && !ufo.destroyed && (
           <div className="wdg__ufo" style={{ top: `${ufo.y}%`, left: '50%' }}>
-            <div className="wdg__ufo-craft">🛸</div>
+            <CartoonUFO />
             <div className="wdg__ufo-label">{ufo.word.zh}</div>
             <div className="wdg__ufo-hp">
               <div className="wdg__ufo-hp-fill" style={{ width: `${(1 - ufo.picked.length / ufo.word.en.length) * 100}%` }} />
@@ -289,43 +408,49 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
           </div>
         )}
         {ufo && ufo.destroyed && (
-          <div className="wdg__boom" style={{ top: `${ufo.y}%`, left: '50%' }}>💥</div>
+          <div className="wdg__boom" style={{ top: `${ufo.y}%`, left: '50%' }}>
+            <CartoonExplosion />
+          </div>
         )}
 
-        {/* 子弹 */}
         {bullets.map(b => (
-          <div key={b.id} className="wdg__bullet" style={{ left: `${b.x}%`, top: `${b.y}%` }} />
+          <div key={b.id} className="wdg__bullet" style={{ left: `${b.x}%`, top: `${b.y}%` }}>
+            <span className="wdg__bullet-core" />
+            <span className="wdg__bullet-trail" />
+          </div>
         ))}
 
-        {/* 玩家飞机 */}
-        <div className="wdg__plane">🚀</div>
+        <div className={`wdg__plane${firing ? ' wdg__plane--fire' : ''}`}>
+          <CartoonRocket firing={firing} />
+        </div>
       </div>
 
       <div className="wdg__bottom shrink-0 safe-bottom">
-        {/* 拼字进度 */}
         <div className="wdg__progress">
           {ufo && ufo.word.en.split('').map((c, i) => {
             const picked = ufo.picked[i] != null
             return (
-              <span key={i} className={`wdg__slot${picked ? ' wdg__slot--filled' : ''}`}>
+              <span key={i} className={`wdg__slot${picked ? ' wdg__slot--filled wdg__slot--pop' : ''}`}>
                 {picked ? ufo.pool[ufo.picked[i]] : '_'}
               </span>
             )
           })}
         </div>
-        {/* 字母池 */}
         <div className="wdg__pool">
           {ufo?.pool.map((c, i) => (
             <button
               key={i}
               type="button"
-              className={`wdg__tile${ufo.picked.includes(i) ? ' wdg__tile--used' : ''}`}
+              className={`wdg__tile${ufo.picked.includes(i) ? ' wdg__tile--used' : ''}${lastTapIdx === i ? ' wdg__tile--tap' : ''}`}
               onClick={() => handleLetterTap(i)}
               disabled={ufo.picked.includes(i) || ufo.destroyed}
             >{c}</button>
           ))}
         </div>
-        <button type="button" className="wdg__undo" onClick={handleUndo}>⟲ 撤销</button>
+        <div className="wdg__bottom-actions">
+          <button type="button" className="wdg__undo" onClick={handleUndo}>⟲ 撤销</button>
+          <span className="wdg__kbd-hint">键盘输入 · ⌫ 撤销</span>
+        </div>
       </div>
     </div>
   )

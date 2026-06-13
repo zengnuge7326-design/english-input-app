@@ -56,6 +56,7 @@ export default function LessonFlow({ lesson, rewardMeta, onCrystalEarn, onComple
   const [showSummary, setShowSummary] = useState(false)
   const [gemsEarned, setGemsEarned] = useState<GemReward[]>([])
   const gemsGrantedRef = useRef(false)
+  const judgedRef = useRef(false)
   const correct = results.filter(Boolean).length
 
   useEffect(() => {
@@ -66,9 +67,19 @@ export default function LessonFlow({ lesson, rewardMeta, onCrystalEarn, onComple
   const q = questions[step]
   const total = questions.length
 
-  function handleAnswer(ok: boolean) {
+  // 题目判定瞬间立即出声（拼写/选择/填空等有延迟的题型）
+  function handleJudge(ok: boolean) {
+    judgedRef.current = true
     if (ok) playCorrect()
     else playWrong()
+  }
+
+  function handleAnswer(ok: boolean) {
+    if (!judgedRef.current) {
+      if (ok) playCorrect()
+      else playWrong()
+    }
+    judgedRef.current = false
     setResults(r => [...r, ok])
     if (step + 1 >= total) {
       playVictory()
@@ -84,6 +95,7 @@ export default function LessonFlow({ lesson, rewardMeta, onCrystalEarn, onComple
     lessonTitle: lesson.title,
     onExit,
     onAnswer: handleAnswer,
+    onJudge: handleJudge,
   }
 
   const questionTotal = questions.length

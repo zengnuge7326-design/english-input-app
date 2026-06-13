@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { incrementSyncPartCount } from '../utils/syncPartProgress'
+import { tryClaimOnce, syncPartRewardScope } from '../utils/rewardClaims'
 import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
 import { unlockAudio } from '../utils/audioUnlock.js'
@@ -1810,6 +1811,12 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
   const [xpFlies, setXpFlies] = useState([])      // [{id, amount}]
   const [comboFlash, setComboFlash] = useState(0) // 用于触发连击徽章脉冲
   const [shake, setShake] = useState(0)           // 用于触发题卡抖动
+  const [sessionRewards, setSessionRewards] = useState(null)
+
+  const advancingRef = useRef(false)
+  const sessionFinishedRef = useRef(false)
+  const sessionComboGemsRef = useRef(0)
+  const MAX_COMBO_GEMS_PER_SESSION = 4
 
   const ttsSettings = settings ?? {
     lang: 'en-US',
@@ -1849,7 +1856,8 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
       setXpFlies(arr => [...arr, { id: flyId, amount: 2 }])
       setTimeout(() => setXpFlies(arr => arr.filter(x => x.id !== flyId)), 1100)
       // 5/10 连击 紫钻石
-      if (c > 0 && c % 5 === 0) {
+      if (c > 0 && c % 5 === 0 && sessionComboGemsRef.current < MAX_COMBO_GEMS_PER_SESSION) {
+        sessionComboGemsRef.current += 1
         onCrystal?.('purple', c >= 10 ? 2 : 1, c >= 10 ? 'combo_10' : 'combo_5', { combo: c, source: 'sync' })
       }
     } else {
@@ -1861,34 +1869,54 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
     }
   }, [onXp, onCrystal, playCorrect, playError, playBubble, playFireworks])
 
+  const finishSession = useCallback((newScores) => {
+    if (sessionFinishedRef.current) return
+    sessionFinishedRef.current = true
+    advancingRef.current = true
+
+    setScores(newScores.slice(0, total))
+    setDone(true)
+    playVictory?.()
+
+    if (part) incrementSyncPartCount(bookId, unitLabel, part)
+
+    const correct = newScores.filter(Boolean).length
+    const pct = newScores.length ? correct / newScores.length : 0
+    const scope = syncPartRewardScope(bookId, unitLabel, part)
+    const granted = { blue: 0, green: 0, gold: 0, red: 0 }
+
+    if (tryClaimOnce(scope, 'sync_done')) {
+      onCrystal?.('blue', 1, 'sync_done', { unit: unitLabel, part, total: newScores.length, correct })
+      granted.blue = 1
+    }
+    if (pct === 1 && newScores.length > 0 && tryClaimOnce(scope, 'sync_perfect')) {
+      onCrystal?.('green', 2, 'sync_perfect', { unit: unitLabel, part })
+      granted.green = 2
+      if (isMember && tryClaimOnce(scope, 'member_bonus')) {
+        onCrystal?.('gold', 1, 'member_bonus', { unit: unitLabel, part })
+        granted.gold = 1
+      }
+    } else if (pct >= 0.8 && tryClaimOnce(scope, 'sync_good80')) {
+      onCrystal?.('red', 1, 'sentence_recover', { unit: unitLabel, part, pct: Math.round(pct * 100) })
+      granted.red = 1
+    }
+    setSessionRewards(granted)
+  }, [total, onCrystal, unitLabel, part, bookId, isMember, playVictory])
+
   const handleNext = useCallback(() => {
-    const newScores = [...scores, pendingResult]
+    if (advancingRef.current || pendingResult === null) return
+
     if (current < total - 1) {
-      setScores(newScores)
+      advancingRef.current = true
+      setScores(s => [...s, pendingResult])
       setCurrent(c => c + 1)
       setPendingResult(null)
-    } else {
-      setScores(newScores)
-      setDone(true)
-      playVictory?.()
-      if (part) incrementSyncPartCount(bookId, unitLabel, part)
-      // 完成同步习题：发钻石
-      const correct = newScores.filter(Boolean).length
-      const pct = newScores.length ? correct / newScores.length : 0
-      // 完成本身 → 蓝钻石 1 颗
-      onCrystal?.('blue', 1, 'sync_done', { unit: unitLabel, part, total: newScores.length, correct })
-      // 全对 → 额外给绿钻石；金钻石（会员专属）
-      if (pct === 1 && newScores.length > 0) {
-        onCrystal?.('green', 2, 'sync_perfect', { unit: unitLabel, part })
-        if (isMember) {
-          onCrystal?.('gold', 1, 'member_bonus', { unit: unitLabel, part })
-        }
-      } else if (pct >= 0.8) {
-        // 80% 以上 → 红钻石 1 颗（鼓励"差点全对"）
-        onCrystal?.('red', 1, 'sentence_recover', { unit: unitLabel, part, pct: Math.round(pct * 100) })
-      }
+      queueMicrotask(() => { advancingRef.current = false })
+      return
     }
-  }, [scores, pendingResult, current, total, onCrystal, unitLabel, part, bookId, isMember, playVictory])
+
+    finishSession([...scores, pendingResult])
+  }, [scores, pendingResult, current, total, finishSession])
 
   useEffect(() => {
     const fn = (e) => {
@@ -1938,8 +1966,10 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
   const q = questions[current]
 
   if (done) {
-    const correct = scores.filter(Boolean).length
-    const pct = Math.round((correct / total) * 100)
+    const correct = Math.min(scores.filter(Boolean).length, total)
+    const pct = total ? Math.round((correct / total) * 100) : 0
+    const rw = sessionRewards || { blue: 0, green: 0, gold: 0, red: 0 }
+    const anyGem = rw.blue + rw.green + rw.gold + rw.red > 0
     return (
       <div className="fixed inset-0 z-40 bg-black flex items-center justify-center px-4">
         <button
@@ -1955,36 +1985,50 @@ export default function Unit1Flow({ unitLabel, bookId, part, requireSpeak, hideS
           <div className="text-gray-400 mb-6">{unitLabel}{part ? ` · ${part}部分` : ''} · {total} 道题</div>
           <div className="text-6xl font-bold text-blue-400 mb-1">{correct}<span className="text-3xl text-gray-500">/{total}</span></div>
           <div className="text-gray-500 mb-4">正确率 {pct}%</div>
-          {/* 钻石奖励小结 — 钻石飞入动画 */}
-          <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-            <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.15s' }}>
-              <GemSVG color="blue" size={40} />
-              <span className="text-blue-300 text-xs font-bold">+1</span>
-            </div>
-            {pct === 100 && (
-              <>
+          {anyGem ? (
+            <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
+              {rw.blue > 0 && (
+                <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.15s' }}>
+                  <GemSVG color="blue" size={40} />
+                  <span className="text-blue-300 text-xs font-bold">+{rw.blue}</span>
+                </div>
+              )}
+              {rw.green > 0 && (
                 <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.35s' }}>
                   <GemSVG color="green" size={40} />
-                  <span className="text-emerald-300 text-xs font-bold">+2</span>
+                  <span className="text-emerald-300 text-xs font-bold">+{rw.green}</span>
                 </div>
-                {isMember && (
-                  <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.55s' }}>
-                    <GemSVG color="gold" size={40} />
-                    <span className="text-amber-300 text-xs font-bold">+1</span>
-                  </div>
-                )}
-              </>
-            )}
-            {pct >= 80 && pct < 100 && (
-              <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.35s' }}>
-                <GemSVG color="red" size={40} />
-                <span className="text-rose-300 text-xs font-bold">+1</span>
-              </div>
-            )}
-          </div>
+              )}
+              {rw.gold > 0 && (
+                <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.55s' }}>
+                  <GemSVG color="gold" size={40} />
+                  <span className="text-amber-300 text-xs font-bold">+{rw.gold}</span>
+                </div>
+              )}
+              {rw.red > 0 && (
+                <div className="result-gem-in flex flex-col items-center gap-0.5" style={{ animationDelay: '0.35s' }}>
+                  <GemSVG color="red" size={40} />
+                  <span className="text-rose-300 text-xs font-bold">+{rw.red}</span>
+                </div>
+              )}
+            </div>
+          ) : (
+            <p className="text-gray-500 text-sm mb-8">本部分奖励已领取，可继续练习巩固</p>
+          )}
           <div className="flex items-center justify-center gap-3">
             <button
-              onClick={() => { setCurrent(0); setScores([]); setDone(false) }}
+              onClick={() => {
+                sessionFinishedRef.current = false
+                advancingRef.current = false
+                sessionComboGemsRef.current = 0
+                syncComboRef.current = 0
+                setComboDisplay(0)
+                setSessionRewards(null)
+                setCurrent(0)
+                setScores([])
+                setPendingResult(null)
+                setDone(false)
+              }}
               className="px-6 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-sm font-semibold transition-colors"
             >
               🔁 再做一遍

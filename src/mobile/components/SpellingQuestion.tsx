@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { SpellingQuestionData } from '../types'
 import { useMobileTTS } from '../hooks/useMobileTTS'
+import { useAutoFocus } from '../hooks/useAutoFocus'
 import MobileSubmitButton from './MobileSubmitButton'
 import QuizPromptVisual from './QuizPromptVisual'
 import QuestionShell from './QuestionShell'
@@ -12,16 +13,20 @@ interface Props {
   lessonTitle: string
   onExit: () => void
   onAnswer: (correct: boolean) => void
+  onJudge?: (correct: boolean) => void
 }
 
-export default function SpellingQuestion({ data, step, total, lessonTitle, onExit, onAnswer }: Props) {
+export default function SpellingQuestion({ data, step, total, lessonTitle, onExit, onAnswer, onJudge }: Props) {
   const [value, setValue] = useState('')
   const [feedback, setFeedback] = useState<'idle' | 'right' | 'wrong'>('idle')
   const { speak } = useMobileTTS()
+  const inputRef = useRef<HTMLInputElement>(null)
+  useAutoFocus(inputRef, [data.answer])
 
   function submit() {
     if (!value.trim() || feedback !== 'idle') return
     const ok = value.trim().toLowerCase() === data.answer.toLowerCase()
+    onJudge?.(ok)              // 立即出声
     setFeedback(ok ? 'right' : 'wrong')
     // 答题后朗读正确单词，强化音形对应
     speak(data.answer)
@@ -46,11 +51,13 @@ export default function SpellingQuestion({ data, step, total, lessonTitle, onExi
       interact={
         <div className="flex flex-col gap-3">
           <input
+            ref={inputRef}
             value={value}
             onChange={e => setValue(e.target.value)}
             placeholder="输入英文…"
             autoCapitalize="off"
             autoCorrect="off"
+            autoFocus
             className={`mobile-quiz__option w-full text-center mobile-quiz__text-2xl font-mono border-2 outline-none
               ${feedback === 'right' ? 'border-[#3ecf8e] bg-[#eafff3]' : ''}
               ${feedback === 'wrong' ? 'border-[#ff7b7b] bg-[#fff0f0]' : 'mobile-quiz__option--idle'}`}
