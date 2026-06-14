@@ -6,11 +6,12 @@
  */
 import type { TextbookBook, TextbookSentence, TextbookUnit, TextbookSection } from './sections'
 
-import g7up from '../../../data/grade7_up.json'
-import g7down from '../../../data/grade7_down.json'
-import g8up from '../../../data/grade8_up.json'
-import g8down from '../../../data/grade8_down.json'
-import g9all from '../../../data/grade9_all.json'
+import g7up from '../../../data/renai_jr_7up.json'
+import g7down from '../../../data/renai_jr_7down.json'
+import g8up from '../../../data/renai_jr_8up.json'
+import g8down from '../../../data/renai_jr_8down.json'
+import g9up from '../../../data/renai_jr_9up.json'
+import g9down from '../../../data/renai_jr_9down.json'
 
 import bsdaB1 from '../../../data/bsda_b1.json'
 import bsdaB2 from '../../../data/bsda_b2.json'
@@ -60,7 +61,7 @@ function buildFlatBook(id: string, title: string, emoji: string, raw: RawSentenc
   const units = chunk(sents, UNIT_SIZE).map((part, ui) =>
     makeUnit(id, ui + 1, `第 ${ui + 1} 部分`, part),
   )
-  return { id, title, subtitle: '人教版（仁爱）初中', emoji, units }
+  return { id, title, subtitle: '仁爱科普版', emoji, units }
 }
 
 /** 有 unit 字段：按 unit 分单元 */
@@ -85,7 +86,8 @@ export const JUNIOR_TEXTBOOK_BOOKS: TextbookBook[] = [
   buildFlatBook('jr-g7down', '七年级下册', '📗', g7down as RawSentence[]),
   buildFlatBook('jr-g8up', '八年级上册', '📙', g8up as RawSentence[]),
   buildFlatBook('jr-g8down', '八年级下册', '📒', g8down as RawSentence[]),
-  buildFlatBook('jr-g9', '九年级全册', '📕', g9all as RawSentence[]),
+  buildFlatBook('jr-g9up', '九年级上册', '📕', g9up as RawSentence[]),
+  buildFlatBook('jr-g9down', '九年级下册', '📓', g9down as RawSentence[]),
 ]
 
 export const SENIOR_TEXTBOOK_BOOKS: TextbookBook[] = [

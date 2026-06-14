@@ -120,21 +120,16 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  border-radius: 0.55rem;
+  border-radius: 0.6rem;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.35),
-    inset 0 -6px 12px rgba(0, 0, 0, 0.12),
-    0 2px 8px rgba(0, 0, 0, 0.28);
-  transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.15s, filter 0.2s;
 }
 
+/* 扁平风格：去掉玻璃高光 */
 .crystal-tab-icon__shine {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 38%, transparent 62%);
-  pointer-events: none;
+  display: none;
 }
 
 .crystal-tab-icon__glyph {
@@ -549,15 +544,18 @@
 }
 
 .mobile-words-page__back {
-  width: 2.25em;
-  height: 2.25em;
-  border-radius: 0.65em;
+  width: 2.75em;
+  height: 2.75em;
+  border-radius: 0.8em;
   border: none;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.35rem;
   font-weight: 700;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 单词页 */

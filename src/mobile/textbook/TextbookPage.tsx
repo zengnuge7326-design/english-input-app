@@ -71,7 +71,6 @@ export default function TextbookPage() {
           <div className="tb-book__units">
             {book.units.map(unit => {
               const empty = unit.sections.length === 0
-              const sectionCount = unit.sections.length
               const sentenceCount = unit.sections.reduce(
                 (n, s) => n + (s.sentences?.length ?? 0), 0,
               )
@@ -86,14 +85,7 @@ export default function TextbookPage() {
                   <div className="tb-unit-card__emoji" aria-hidden>{unit.emoji}</div>
                   <div className="tb-unit-card__body">
                     <div className="tb-unit-card__title">{unit.title}</div>
-                    <div className="tb-unit-card__sub">{unit.subtitle}</div>
-                    {!empty && (
-                      <div className="tb-unit-card__meta">
-                        <span>{sectionCount} 章节</span>
-                        <span>·</span>
-                        <span>{sentenceCount} 句</span>
-                      </div>
-                    )}
+                    {!empty && <div className="tb-unit-card__sub">{sentenceCount} 句</div>}
                   </div>
                   <span className="tb-unit-card__arrow" aria-hidden>{empty ? '· · ·' : '›'}</span>
                 </button>
