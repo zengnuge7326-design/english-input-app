@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback, useEffect } from 'react'
 import { ensureMic, showMicGuide } from '../utils/micGate'
+import { speechRecognitionUsable } from '../utils/mediaCapabilities'
 
 // 浏览器语音识别（Web Speech API）。网页版 Chrome / Edge / Safari 可用。
 // 返回多候选结果，供跟读单词比对。
@@ -8,6 +9,9 @@ function getSR() {
   if (typeof window === 'undefined') return null
   return window.SpeechRecognition || window.webkitSpeechRecognition || null
 }
+
+// 本次页面会话中麦克风是否已授权（跳过 ensureMic 异步链，保持用户手势上下文）
+let _micGranted = false
 
 // 归一化：去掉非字母，转小写
 export function normWord(s) {
@@ -204,7 +208,7 @@ export function matchSentence(target, alts, minRatio = 0.55) {
 
 export function useSpeechRecognition() {
   const SR = getSR()
-  const supported = !!SR
+  const supported = speechRecognitionUsable()
   const [listening, setListening] = useState(false)
   const [heard, setHeard] = useState('')
   const recRef = useRef(null)
@@ -313,6 +317,11 @@ export function useSpeechRecognition() {
       onError?.('unsupported')
       return
     }
+    // 已授权：直接在用户手势上下文内启动识别（对 Android Chrome 很关键）
+    if (_micGranted) {
+      _startListen({ onResult, onError })
+      return
+    }
     ensureMic(purpose).then((res) => {
       if (!res.ok) {
         showMicGuide({
@@ -322,6 +331,7 @@ export function useSpeechRecognition() {
         onError?.(res.reason === 'unsupported' ? 'unsupported' : 'not-allowed')
         return
       }
+      _micGranted = true
       _startListen({ onResult, onError })
     })
   }, [SR, _startListen])

@@ -69,7 +69,7 @@ export default function QuestionShell({
             type="button"
             onClick={onExit}
             aria-label="退出"
-            className="mobile-quiz__close shrink-0 w-11 h-11 min-w-[44px] min-h-[44px] rounded-xl border font-bold active:scale-95"
+            className="mobile-quiz__close shrink-0 w-8 h-8 min-w-[32px] min-h-[32px] rounded-lg border text-xs font-bold active:scale-95"
           >
             ✕
           </button>
@@ -78,7 +78,7 @@ export default function QuestionShell({
               <span>第 {step} / {total} 题</span>
               <span>{pct}%</span>
             </div>
-            <div className="mobile-quiz__progress-track h-2 rounded-full overflow-hidden">
+            <div className="mobile-quiz__progress-track h-4 rounded-full overflow-hidden">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-[#4ecdc4] to-[#5a9cf5] transition-all duration-300"
                 style={{ width: `${pct}%` }}

@@ -155,40 +155,33 @@ export default function MatchingQuestion({
       interact={
         <div className="flex flex-col gap-4 w-full">
           <div className="mobile-quiz__match-grid w-full">
-            <div className="mobile-quiz__match-col flex flex-col gap-2.5">
-              {audioOrder.map(id => {
-                const pair = pairMap.get(id)!
-                return (
+            {audioOrder.map((audioId, rowIdx) => {
+              const zhId = zhOrder[rowIdx]
+              const audioPair = pairMap.get(audioId)!
+              const zhPair = pairMap.get(zhId)!
+              return (
+                <div key={`row-${rowIdx}`} className="mobile-quiz__match-row">
                   <button
-                    key={`a-${id}`}
                     type="button"
-                    onClick={() => pickAudio(id)}
-                    disabled={matched.has(id) || feedback === 'done'}
-                    className={audioBtnClass(id)}
+                    onClick={() => pickAudio(audioId)}
+                    disabled={matched.has(audioId) || feedback === 'done'}
+                    className={audioBtnClass(audioId)}
                     aria-label="播放音频"
                   >
-                    <QuizPlayButton size={20} active={playingId === id} />
-                    <WaveBars active={playingId === id} />
+                    <QuizPlayButton size={20} active={playingId === audioId} />
+                    <WaveBars active={playingId === audioId} />
                   </button>
-                )
-              })}
-            </div>
-            <div className="mobile-quiz__match-col flex flex-col gap-2.5">
-              {zhOrder.map(id => {
-                const pair = pairMap.get(id)!
-                return (
                   <button
-                    key={`z-${id}`}
                     type="button"
-                    onClick={() => pickZh(id)}
-                    disabled={matched.has(id) || feedback === 'done'}
-                    className={zhBtnClass(id)}
+                    onClick={() => pickZh(zhId)}
+                    disabled={matched.has(zhId) || feedback === 'done'}
+                    className={zhBtnClass(zhId)}
                   >
-                    {pair.labelZh}
+                    {zhPair.labelZh}
                   </button>
-                )
-              })}
-            </div>
+                </div>
+              )
+            })}
           </div>
           <button
             type="button"

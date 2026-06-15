@@ -4,7 +4,7 @@ import LockedOverlay from './LockedOverlay'
 import GrammarLesson from './GrammarLesson'
 import TextbookParchmentCover from './TextbookParchmentCover'
 import { hasGrammar } from '../data/grammar'
-import { getGrammarPercent } from '../data/grammar/progress'
+import { getGrammarPercent, getGrammarCount } from '../data/grammar/progress'
 
 // 环形进度组件（仿 Claude Code 小转圈风格）
 function RingProgress({ value = 0, size = 56, stroke = 4, accent = '#3b82f6', label, sub }) {
@@ -569,6 +569,8 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
             const mainPct = (percent || 0) / 100
             const g1Pct = getGrammarPercent(book.id, lesson.label, 'lesson')
             const g2Pct = getGrammarPercent(book.id, lesson.label, 'practice')
+            const g1Count = getGrammarCount(book.id, lesson.label, 'lesson')
+            const g2Count = getGrammarCount(book.id, lesson.label, 'practice')
             const accentMain = done ? '#fbbf24' : '#3b82f6'
             return (
               <div key={i} className="relative bg-slate-900/35 backdrop-blur-xl backdrop-saturate-150 border border-amber-300/40 ring-1 ring-amber-200/20 rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:border-amber-300/60 transition-all"
@@ -589,7 +591,7 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                       <span className="text-[10px] font-mono text-white/40 mt-0.5">#{i + 1}</span>
                     </div>
                     <RingProgress value={mainPct} size={56} stroke={4} accent={accentMain}
-                      label={`${Math.round(mainPct * 100)}`} sub="%" />
+                      label={stats.attempted > 0 ? `${stats.attempted}` : ''} />
                   </button>
 
                   {/* 右：两个语法按钮 — 只留 label + 右侧环形进度 */}
@@ -605,7 +607,7 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                         p-2 pl-2.5`}>
                       <span className="text-white text-sm font-bold leading-tight flex-1 text-left">语法一</span>
                       <RingProgress value={g1Pct} size={36} stroke={3} accent="#fbbf24"
-                        label={g1Pct > 0 ? `${Math.round(g1Pct * 100)}` : ''} />
+                        label={g1Count > 0 ? `${g1Count}` : ''} />
                     </button>
 
                     {/* 语法二 */}
@@ -619,7 +621,7 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                         p-2 pl-2.5`}>
                       <span className="text-white text-sm font-bold leading-tight flex-1 text-left">语法二</span>
                       <RingProgress value={g2Pct} size={36} stroke={3} accent="#e879f9"
-                        label={g2Pct > 0 ? `${Math.round(g2Pct * 100)}` : ''} />
+                        label={g2Count > 0 ? `${g2Count}` : ''} />
                     </button>
                   </div>
                 </div>

@@ -33,6 +33,7 @@ export default function PhonicsRepeatQuestion({
   const failsRef = useRef(0)
   const doneRef = useRef(false)
   const autoListenTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [micReady, setMicReady] = useState(false)
 
   const characterRole = data.characterRole ?? 'student'
 
@@ -62,6 +63,7 @@ export default function PhonicsRepeatQuestion({
       showMicGuide({ purpose: '跟读练习' })
       return
     }
+    setMicReady(true)
     startListen()
   }
 
@@ -125,12 +127,6 @@ export default function PhonicsRepeatQuestion({
     })
   }
 
-  useEffect(() => {
-    if (!supported) return
-    scheduleAutoListen(1200)
-    return clearAutoListen
-  }, [data.word, supported]) // eslint-disable-line react-hooks/exhaustive-deps
-
   useEffect(() => () => clearAutoListen(), [])
 
   function skip() {
@@ -191,9 +187,9 @@ export default function PhonicsRepeatQuestion({
           </motion.button>
           <p className={`text-center text-sm font-semibold px-2 min-h-[1.25em]
             ${phase === 'success' ? 'text-[#6ee7b7]' : phase === 'fail' ? 'text-[#fbbf24]' : 'mobile-quiz__text-muted'}`}>
-            {!supported && 'Safari 需先开启麦克风权限'}
+            {!supported && '当前设备不支持网页跟读，请用电脑 Chrome'}
             {supported && !msg && isListening && '正在听你说…'}
-            {supported && !msg && !isListening && phase === 'idle' && '跟着读出来'}
+            {supported && !msg && !isListening && phase === 'idle' && (micReady ? '跟着读出来' : '点一下麦克风，允许权限后开始跟读')}
             {msg}
           </p>
           {(!supported || msg.includes('麦克风')) && (

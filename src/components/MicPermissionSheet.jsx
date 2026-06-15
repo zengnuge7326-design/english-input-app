@@ -71,11 +71,16 @@ export default function MicPermissionSheet({ elevated = false, preferLight = fal
         return
       }
 
-      resolveRef.current = resolve
       const nextMode = pickGuideMode(probe, null)
       setMode(nextMode)
       setOpen(true)
-      settle({ ok: false, reason: settleReason(probe, nextMode) })
+
+      // 先注册 resolve，再 settle（无论哪种 mode）
+      resolveRef.current = resolve
+      if (nextMode !== 'prompt') {
+        settle({ ok: false, reason: settleReason(probe, nextMode) })
+        return
+      }
     }
 
     const offGate = setMicGateHandler(handler)

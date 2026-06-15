@@ -34,7 +34,7 @@
 }
 
 :root {
-  --mobile-tab-bar-h: 2.7rem;
+  --mobile-tab-bar-h: 3.24rem;
 }
 
 .safe-bottom {
@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: center;
   gap: 0;
-  min-height: 2.37rem;
+  min-height: 2.84rem;
   min-width: 0;
   padding: 0.1rem 0.05rem;
   border: none;
@@ -108,8 +108,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.64rem;
+  height: 2.64rem;
   flex-shrink: 0;
 }
 
@@ -214,7 +214,7 @@
 /* 主屏幕图标打开：无 Safari 底栏，导航可再薄一点 */
 @media (display-mode: standalone) {
   :root {
-    --mobile-tab-bar-h: 2.25rem;
+    --mobile-tab-bar-h: 2.7rem;
   }
 
   .mobile-tab-bar {
@@ -222,7 +222,7 @@
   }
 
   .mobile-tab-bar__item {
-    min-height: 2rem;
+    min-height: 2.88rem;
   }
 }
 
@@ -1960,6 +1960,12 @@
 }
 
 .mobile-quiz__match-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65em;
+}
+
+.mobile-quiz__match-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.65em;
@@ -1971,7 +1977,8 @@
 }
 
 .mobile-quiz__match-btn {
-  height: 3.4em;
+  min-height: 3.4em;
+  height: 100%;
   box-sizing: border-box;
   border-radius: 0.85em;
   border: 2px solid rgba(255, 255, 255, 0.14);

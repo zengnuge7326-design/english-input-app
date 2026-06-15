@@ -4,7 +4,7 @@
  * playCorrect / playWrong / playVictory
  * 与桌面 useSound 风格对齐：correct=上行双音，wrong=低频降音，victory=琶音
  */
-import { useCallback, useRef } from 'react'
+import { useCallback } from 'react'
 
 const SFX_KEY = 'mobile_sfx_enabled'
 
@@ -18,18 +18,34 @@ export function setMobileSfxEnabled(on: boolean) {
   try { localStorage.setItem(SFX_KEY, on ? '1' : '0') } catch { /* ignore */ }
 }
 
-function getCtx(ref: React.MutableRefObject<AudioContext | null>): AudioContext | null {
+// 共享单例 AudioContext —— 被任意用户手势解锁后，全局生效
+let _sharedCtx: AudioContext | null = null
+
+function getCtx(): AudioContext | null {
   if (!isMobileSfxEnabled()) return null
   try {
-    if (!ref.current) {
+    if (!_sharedCtx) {
       const AC = window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
       if (!AC) return null
-      ref.current = new AC()
+      _sharedCtx = new AC()
     }
-    if (ref.current.state === 'suspended') void ref.current.resume()
-    return ref.current
+    return _sharedCtx
   } catch {
     return null
+  }
+}
+
+/**
+ * 如果 AudioContext 仍处于 suspended 状态（移动端首次手势前）
+ * 先等 resume() 完成再播放，避免音效无声。
+ */
+function playOnCtx(fn: (ctx: AudioContext) => void) {
+  const ctx = getCtx()
+  if (!ctx) return
+  if (ctx.state === 'running') {
+    fn(ctx)
+  } else {
+    ctx.resume().then(() => fn(ctx)).catch(() => {})
   }
 }
 
@@ -66,76 +82,72 @@ function noiseBurst(ctx: AudioContext, start: number, dur: number, gain = 0.08) 
 }
 
 export function useMobileSfx() {
-  const ctxRef = useRef<AudioContext | null>(null)
-
   const playCorrect = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    tone(ctx, 660, 0, 0.12, 0.16)
-    tone(ctx, 880, 0.1, 0.18, 0.16)
+    playOnCtx(ctx => {
+      tone(ctx, 660, 0, 0.12, 0.16)
+      tone(ctx, 880, 0.1, 0.18, 0.16)
+    })
   }, [])
 
   const playWrong = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    tone(ctx, 220, 0, 0.22, 0.14, 'triangle')
-    tone(ctx, 165, 0.16, 0.3, 0.12, 'triangle')
+    playOnCtx(ctx => {
+      tone(ctx, 220, 0, 0.22, 0.14, 'triangle')
+      tone(ctx, 165, 0.16, 0.3, 0.12, 'triangle')
+    })
   }, [])
 
   const playVictory = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    const seq = [523.25, 659.25, 783.99, 1046.5]
-    seq.forEach((f, i) => tone(ctx, f, i * 0.12, 0.25, 0.15))
-    tone(ctx, 1318.5, seq.length * 0.12, 0.45, 0.12)
+    playOnCtx(ctx => {
+      const seq = [523.25, 659.25, 783.99, 1046.5]
+      seq.forEach((f, i) => tone(ctx, f, i * 0.12, 0.25, 0.15))
+      tone(ctx, 1318.5, seq.length * 0.12, 0.45, 0.12)
+    })
   }, [])
 
   /** 发射激光 */
   const playShoot = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    const osc = ctx.createOscillator()
-    const g = ctx.createGain()
-    osc.type = 'square'
-    osc.frequency.setValueAtTime(880, ctx.currentTime)
-    osc.frequency.exponentialRampToValueAtTime(220, ctx.currentTime + 0.12)
-    g.gain.setValueAtTime(0.08, ctx.currentTime)
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14)
-    osc.connect(g).connect(ctx.destination)
-    osc.start()
-    osc.stop(ctx.currentTime + 0.16)
+    playOnCtx(ctx => {
+      const osc = ctx.createOscillator()
+      const g = ctx.createGain()
+      osc.type = 'square'
+      osc.frequency.setValueAtTime(880, ctx.currentTime)
+      osc.frequency.exponentialRampToValueAtTime(220, ctx.currentTime + 0.12)
+      g.gain.setValueAtTime(0.08, ctx.currentTime)
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14)
+      osc.connect(g).connect(ctx.destination)
+      osc.start()
+      osc.stop(ctx.currentTime + 0.16)
+    })
   }, [])
 
   /** UFO 被击毁 */
   const playExplode = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    noiseBurst(ctx, 0, 0.35, 0.12)
-    tone(ctx, 120, 0, 0.3, 0.14, 'sawtooth')
-    tone(ctx, 80, 0.08, 0.4, 0.1, 'sawtooth')
+    playOnCtx(ctx => {
+      noiseBurst(ctx, 0, 0.35, 0.12)
+      tone(ctx, 120, 0, 0.3, 0.14, 'sawtooth')
+      tone(ctx, 80, 0.08, 0.4, 0.1, 'sawtooth')
+    })
   }, [])
 
   /** 飞船触底 */
   const playDamage = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    tone(ctx, 180, 0, 0.25, 0.16, 'sawtooth')
-    tone(ctx, 90, 0.12, 0.35, 0.12, 'triangle')
+    playOnCtx(ctx => {
+      tone(ctx, 180, 0, 0.25, 0.16, 'sawtooth')
+      tone(ctx, 90, 0.12, 0.35, 0.12, 'triangle')
+    })
   }, [])
 
   /** 字母键轻触 */
   const playTap = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    tone(ctx, 520, 0, 0.05, 0.06, 'sine')
+    playOnCtx(ctx => tone(ctx, 520, 0, 0.05, 0.06, 'sine'))
   }, [])
 
   /** 连击里程碑 */
   const playCombo = useCallback(() => {
-    const ctx = getCtx(ctxRef)
-    if (!ctx) return
-    tone(ctx, 784, 0, 0.08, 0.1)
-    tone(ctx, 988, 0.06, 0.12, 0.1)
+    playOnCtx(ctx => {
+      tone(ctx, 784, 0, 0.08, 0.1)
+      tone(ctx, 988, 0.06, 0.12, 0.1)
+    })
   }, [])
 
   return { playCorrect, playWrong, playVictory, playShoot, playExplode, playDamage, playTap, playCombo }

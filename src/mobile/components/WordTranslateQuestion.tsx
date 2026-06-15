@@ -65,6 +65,8 @@ export default function WordTranslateQuestion({
   const cardIdxRef = useRef(cardIdx)
   const autoListenTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const startListenRef = useRef<() => void>(() => {})
+  /** 首次须用户点击麦克风（浏览器要求用户手势才能唤起麦克风/语音识别） */
+  const [micReady, setMicReady] = useState(false)
 
   cardIdxRef.current = cardIdx
   const current = cards[cardIdx]
@@ -196,6 +198,7 @@ export default function WordTranslateQuestion({
       showMicGuide({ purpose: '跟读练习' })
       return
     }
+    setMicReady(true)
     startListen()
   }, [supported, startListen])
 
@@ -203,7 +206,7 @@ export default function WordTranslateQuestion({
   startListenRef.current = handleMicTap
 
   useEffect(() => {
-    if (deckDone || exiting || !current || !supported) return
+    if (deckDone || exiting || !current || !supported || !micReady) return
     scheduleAutoListen()
     return clearAutoListen
   }, [cardIdx, deckDone, exiting, current?.wordZh, supported])
@@ -332,9 +335,9 @@ export default function WordTranslateQuestion({
           </div>
           <p className={`text-center text-sm font-semibold px-2 min-h-[1.25em]
             ${phase === 'success' ? 'text-[#6ee7b7]' : phase === 'fail' ? 'text-[#fbbf24]' : 'mobile-quiz__text-muted'}`}>
-            {!supported && '请用 Chrome 开启口语翻译'}
+            {!supported && '当前设备不支持网页跟读，请用电脑 Chrome'}
             {supported && !msg && isListening && '正在听你说…'}
-            {supported && !msg && !isListening && !exiting && '请直接说出英文单词'}
+            {supported && !msg && !isListening && !exiting && (micReady ? '请直接说出英文单词' : '点一下麦克风，允许权限后开始跟读')}
             {msg}
           </p>
           {listening && heard && (

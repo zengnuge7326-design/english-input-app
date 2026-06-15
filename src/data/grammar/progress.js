@@ -13,11 +13,14 @@ export function saveGrammarScore(bookId, unitLabel, mode, correct, total) {
   const all = loadGrammarProgress()
   const k = `${bookId}|${unitLabel}|${mode}`
   const prev = all[k]
+  const prevCount = prev?.count ?? 0
   // 只保留最高分（避免再来一遍后把成绩刷低）
   if (!prev || (correct / Math.max(1, total)) > (prev.correct / Math.max(1, prev.total))) {
-    all[k] = { correct, total, ts: Date.now() }
-    saveAll(all)
+    all[k] = { correct, total, ts: Date.now(), count: prevCount + 1 }
+  } else {
+    all[k] = { ...prev, count: prevCount + 1 }
   }
+  saveAll(all)
 }
 
 export function getGrammarPercent(bookId, unitLabel, mode) {
@@ -26,4 +29,10 @@ export function getGrammarPercent(bookId, unitLabel, mode) {
   const s = all[k]
   if (!s || !s.total) return 0
   return Math.max(0, Math.min(1, s.correct / s.total))
+}
+
+export function getGrammarCount(bookId, unitLabel, mode) {
+  const all = loadGrammarProgress()
+  const k = `${bookId}|${unitLabel}|${mode}`
+  return all[k]?.count ?? 0
 }
