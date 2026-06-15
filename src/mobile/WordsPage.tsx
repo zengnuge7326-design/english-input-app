@@ -6,6 +6,7 @@ import { getLevelLabel, type GradeLevel } from './data/gradeBooks'
 
 interface Props {
   bookProgress?: Record<string, number>
+  unitProgress?: Record<string, number>
   onStartPractice: (bookId: string, unit: VocabUnit) => void
 }
 
@@ -14,7 +15,7 @@ type View =
   | { kind: 'units'; book: VocabBookData }
   | { kind: 'words'; book: VocabBookData; unit: VocabUnit }
 
-export default function WordsPage({ bookProgress = {}, onStartPractice }: Props) {
+export default function WordsPage({ bookProgress = {}, unitProgress = {}, onStartPractice }: Props) {
   const [view, setView] = useState<View>({ kind: 'books' })
   const [level, setLevel] = useState<GradeLevel>('primary')
   const { speak } = useMobileTTS()
@@ -97,11 +98,14 @@ export default function WordsPage({ bookProgress = {}, onStartPractice }: Props)
         </header>
 
         <div className="flex-1 overscroll-contain px-4 pb-4 min-h-0 flex flex-col gap-2">
-          {book.units.map(unit => (
+          {book.units.map(unit => {
+            const count = unitProgress[`${book.id}|${unit.unit}`] ?? 0
+            const pct = Math.min(100, Math.round((count / 3) * 100))
+            return (
             <button
               key={unit.unit}
               type="button"
-              className="mobile-vocab-card flex-1"
+              className={`mobile-vocab-card flex-1${count >= 3 ? ' mobile-vocab-card--done' : ''}`}
               onClick={() => setView({ kind: 'words', book, unit })}
             >
               <div className="mobile-vocab-card__cover">
@@ -112,8 +116,12 @@ export default function WordsPage({ bookProgress = {}, onStartPractice }: Props)
                 <span className="mobile-vocab-card__sub">{unit.subtitle}</span>
                 <span className="mobile-vocab-card__meta">{unit.words.length} 个词</span>
               </div>
+              <div className="mobile-vocab-card__bar" aria-hidden>
+                <div className="mobile-vocab-card__bar-fill" style={{ width: `${pct}%` }} />
+              </div>
             </button>
-          ))}
+            )
+          })}
         </div>
       </div>
     )

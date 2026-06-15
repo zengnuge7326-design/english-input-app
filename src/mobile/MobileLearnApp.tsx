@@ -85,8 +85,12 @@ export default function MobileLearnApp({
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null)
   const [vocabBookId, setVocabBookId] = useState<string>('g3-1')
   const [vocabBookProgress, setVocabBookProgress] = useState<Record<string, number>>({ 'g3-1': 8 })
+  const [vocabUnitProgress, setVocabUnitProgress] = useState<Record<string, number>>(() => {
+    try { return JSON.parse(localStorage.getItem('vocab_unit_progress') || '{}') } catch { return {} }
+  })
   const [practiceWords, setPracticeWords] = useState<VocabWord[]>(() => defaultVocabBook().units[0]?.words ?? [])
   const [practiceUnitLabel, setPracticeUnitLabel] = useState('Unit 1')
+  const [practiceUnitKey, setPracticeUnitKey] = useState('')
   const [skipNode, setSkipNode] = useState<MapNode | null>(null)
 
   const practiceBookId = progress.practiceBookId ?? DEFAULT_PRACTICE_BOOK_ID
@@ -230,6 +234,13 @@ export default function MobileLearnApp({
       ...prev,
       [vocabBookId]: Math.min(100, (prev[vocabBookId] ?? 0) + 25),
     }))
+    if (practiceUnitKey) {
+      setVocabUnitProgress(prev => {
+        const next = { ...prev, [practiceUnitKey]: (prev[practiceUnitKey] ?? 0) + 1 }
+        try { localStorage.setItem('vocab_unit_progress', JSON.stringify(next)) } catch {}
+        return next
+      })
+    }
     setScreen('main')
     setActiveTab('words')
   }
@@ -242,6 +253,7 @@ export default function MobileLearnApp({
     setVocabBookId(bookId)
     setPracticeWords(unit.words)
     setPracticeUnitLabel(unit.title)
+    setPracticeUnitKey(`${bookId}|${unit.unit}`)
     setScreen('vocabPractice')
   }
 
@@ -249,6 +261,7 @@ export default function MobileLearnApp({
     setVocabBookId(bookId)
     setPracticeWords(unit.words)
     setPracticeUnitLabel(unit.title)
+    setPracticeUnitKey(`${bookId}|${unit.unit}`)
     setScreen('vocabGame')
   }
 
@@ -349,6 +362,7 @@ export default function MobileLearnApp({
         {activeTab === 'words' && (
           <WordsPage
             bookProgress={vocabBookProgress}
+            unitProgress={vocabUnitProgress}
             onStartPractice={handleStartVocabPractice}
           />
         )}

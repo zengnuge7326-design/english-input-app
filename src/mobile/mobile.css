@@ -108,8 +108,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.64rem;
-  height: 2.64rem;
+  width: 3.17rem;
+  height: 3.17rem;
   flex-shrink: 0;
 }
 
@@ -544,13 +544,13 @@
 }
 
 .mobile-words-page__back {
-  width: 2.75em;
-  height: 2.75em;
-  border-radius: 0.8em;
+  width: 3.4em;
+  height: 3.4em;
+  border-radius: 0.9em;
   border: none;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1.35rem;
+  font-size: 1.75rem;
   font-weight: 700;
   flex-shrink: 0;
   display: flex;
@@ -2587,6 +2587,23 @@ html.mobile-shell-active main[data-app-main] {
 .mobile-vocab-card__sub {
   font-size: 10.5px;
   color: rgba(255,255,255,0.55);
+}
+
+/* book-level card: title + sub on one row */
+.mobile-vocab-card--book .mobile-vocab-card__body {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.mobile-vocab-card--book .mobile-vocab-card__title {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.mobile-vocab-card--book .mobile-vocab-card__sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
 }
 
 .mobile-vocab-card__bar {

@@ -2,9 +2,9 @@ import type { CrystalTabColor } from '../components/CrystalTabIcon'
 import type { MobileTabId } from '../components/MobileTabBar'
 
 export const TAB_CRYSTAL: Record<MobileTabId, CrystalTabColor> = {
-  words: 'green',
+  words: 'purple',
   lessons: 'blue',
-  practice: 'purple',
+  practice: 'green',
   game: 'orange',
   menu: 'black',
 }
