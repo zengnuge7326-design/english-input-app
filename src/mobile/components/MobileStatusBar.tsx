@@ -12,6 +12,8 @@ interface Props {
   onOpenLeaderboard?: () => void
   /** 点 💎 → 打开宝石小店 */
   onOpenShop?: () => void
+  /** 点能量位 → 返回主站 */
+  onExitApp?: () => void
 }
 
 export default function MobileStatusBar({
@@ -23,6 +25,7 @@ export default function MobileStatusBar({
   crystalPulse = 0,
   onOpenLeaderboard,
   onOpenShop,
+  onExitApp,
 }: Props) {
   const todayLabel = goal != null && todayXp != null ? `${todayXp}/${goal}` : null
 
@@ -59,10 +62,14 @@ export default function MobileStatusBar({
         <MobileIcon name="star" size={14} />
         {totalXp}
       </button>
-      <span className="mobile-home-page__pill mobile-home-page__pill--icon justify-center text-white" title="学习能量">
-        <MobileIcon name="zap" size={14} />
-        ∞
-      </span>
+      <button
+        type="button"
+        onClick={onExitApp}
+        className="mobile-home-page__pill mobile-home-page__pill--icon mobile-home-page__pill--exit justify-center text-white"
+        title="返回主站"
+      >
+        返回主站
+      </button>
     </header>
   )
 }

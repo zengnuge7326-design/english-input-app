@@ -389,6 +389,7 @@ export default function MobileLearnApp({
             crystalPulse={crystalPulse}
             onOpenLeaderboard={onOpenLeaderboard}
             onOpenShop={onOpenShop}
+            onExitApp={handleExitApp}
             onLockedNode={node => setSkipNode(node)}
           />
         )}

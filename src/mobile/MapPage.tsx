@@ -22,6 +22,7 @@ interface Props {
   crystalPulse?: number
   onOpenLeaderboard?: () => void
   onOpenShop?: () => void
+  onExitApp?: () => void
   /** 点击锁定岛（宝石跳关） */
   onLockedNode?: (node: MapNode) => void
 }
@@ -46,6 +47,7 @@ export default function MapPage({
   crystalPulse,
   onOpenLeaderboard,
   onOpenShop,
+  onExitApp,
   onLockedNode,
 }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false)
@@ -106,6 +108,7 @@ export default function MapPage({
         crystalPulse={crystalPulse}
         onOpenLeaderboard={onOpenLeaderboard}
         onOpenShop={onOpenShop}
+        onExitApp={onExitApp}
       />
 
       <LearningPathCard
