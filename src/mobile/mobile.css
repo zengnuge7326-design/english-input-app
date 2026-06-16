@@ -550,18 +550,18 @@
 }
 
 .mobile-words-page__back {
-  width: 3.4em;
-  height: 3.4em;
-  border-radius: 0.9em;
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: 0.75em;
   border: none;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1.75rem;
-  font-weight: 700;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  line-height: 0;
 }
 
 /* 单词页 */
@@ -2816,11 +2816,6 @@ html.mobile-shell-active main[data-app-main] {
   font-weight: 800;
 }
 
-/* ─── 游戏中心：按册分组 ─── */
-.game-book-group__head {
-  -webkit-tap-highlight-color: transparent;
-}
-
 /* ─── 游戏中心卡片 ─── */
 .game-card {
   display: flex; align-items: center; gap: 14px;
@@ -2872,3 +2867,87 @@ html.mobile-shell-active main[data-app-main] {
   border-color: rgba(255,255,255,0.12);
 }
 .game-card__arrow { font-size: 16px; color: rgba(255,255,255,0.55); flex-shrink: 0; }
+
+.game-card__actions {
+  display: flex; flex-direction: column; align-items: stretch; gap: 6px;
+  flex-shrink: 0;
+}
+.game-card__pick {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 10.5px; font-weight: 700; color: rgba(255,255,255,0.85);
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  white-space: nowrap;
+}
+.game-card__pick:active { transform: scale(0.96); }
+.game-card__play {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 999px;
+  border: 1px solid rgba(168,85,247,0.5);
+  background: rgba(168,85,247,0.22);
+  color: #fff;
+}
+.game-card__play:active { transform: scale(0.94); }
+.game-card__play:disabled { opacity: 0.5; }
+
+/* ─── 游戏中心：内容选择面板 ─── */
+.game-picker {
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  padding: 12px;
+}
+.game-picker__title {
+  font-size: 12px; font-weight: 800; color: rgba(255,255,255,0.75);
+  margin-bottom: 8px;
+}
+.game-picker__title-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 8px;
+}
+.game-picker__back {
+  -webkit-tap-highlight-color: transparent;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.game-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.game-picker__chip {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 11.5px; font-weight: 700; color: #fff;
+  padding: 9px 4px;
+  border-radius: 10px;
+  border: 1px solid rgba(168,85,247,0.4);
+  background: rgba(168,85,247,0.16);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-picker__chip:active { transform: scale(0.95); }
+.game-picker__chip--locked {
+  opacity: 0.4;
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.12);
+}
+.game-picker__chip--selected {
+  border-color: #fbbf24;
+  background: rgba(251,191,36,0.22);
+  color: #fde68a;
+}
+.game-picker__chip--done {
+  border-color: rgba(74,222,128,0.5);
+}

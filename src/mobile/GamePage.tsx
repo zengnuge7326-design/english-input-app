@@ -14,6 +14,12 @@ interface Level {
   index: number // 全局第几关，从 1 开始
 }
 
+interface BookGroup {
+  bookId: string
+  bookTitle: string
+  levels: Level[]
+}
+
 const PROGRESS_KEY = 'defender_progress'
 
 function loadPassed(): Set<string> {
@@ -44,17 +50,22 @@ function buildLevels(): Level[] {
   return levels
 }
 
+/** 三年级上册 → 三上 */
+function shortBookLabel(title: string) {
+  return title.replace('年级', '').replace('册', '')
+}
+
+type PickerStage = 'closed' | 'book' | 'unit'
+
 export default function GamePage({ onStartDefender }: Props) {
   const levels = useMemo(buildLevels, [])
-  const [passed, setPassed] = useState<Set<string>>(loadPassed)
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({})
-
-  // 监听通关事件：WordDefenderGame 完成后由 MobileLearnApp 写入 localStorage，
-  // 这里在每次进入游戏中心时重新读取一次即可覆盖大多数场景。
-  // （切换 tab 会重新挂载该组件，足够触发刷新）
+  const [passed] = useState<Set<string>>(loadPassed)
+  const [selected, setSelected] = useState<Level>(levels[0])
+  const [pickerStage, setPickerStage] = useState<PickerStage>('closed')
+  const [pickedBook, setPickedBook] = useState<BookGroup | null>(null)
 
   const grouped = useMemo(() => {
-    const byBook = new Map<string, { bookId: string; bookTitle: string; levels: Level[] }>()
+    const byBook = new Map<string, BookGroup>()
     for (const lv of levels) {
       if (!byBook.has(lv.bookId)) byBook.set(lv.bookId, { bookId: lv.bookId, bookTitle: lv.bookTitle, levels: [] })
       byBook.get(lv.bookId)!.levels.push(lv)
@@ -69,8 +80,24 @@ export default function GamePage({ onStartDefender }: Props) {
     return !!prev && passed.has(prev.key)
   }
 
-  function toggleBook(bookId: string) {
-    setExpanded(e => ({ ...e, [bookId]: !e[bookId] }))
+  const selUnlocked = isUnlocked(selected.index, selected.key)
+  const selDone = passed.has(selected.key)
+
+  function openPicker() {
+    setPickerStage(pickerStage === 'closed' ? 'book' : 'closed')
+    setPickedBook(null)
+  }
+
+  function pickBook(group: BookGroup) {
+    setPickedBook(group)
+    setPickerStage('unit')
+  }
+
+  function pickUnit(lv: Level) {
+    if (!isUnlocked(lv.index, lv.key)) return
+    setSelected(lv)
+    setPickerStage('closed')
+    setPickedBook(null)
   }
 
   return (
@@ -81,54 +108,73 @@ export default function GamePage({ onStartDefender }: Props) {
       </header>
 
       <div className="flex-1 overflow-y-auto overscroll-contain px-4 pb-4 min-h-0 flex flex-col gap-3">
-        {grouped.map((group, gi) => {
-          const bookDone = group.levels.every(lv => passed.has(lv.key))
-          const bookOpen = expanded[group.bookId] ?? gi === 0
-          return (
-            <div key={group.bookId} className="game-book-group rounded-2xl overflow-hidden">
-              <button
-                type="button"
-                className="game-book-group__head w-full flex items-center gap-3 px-1 py-2 text-left"
-                onClick={() => toggleBook(group.bookId)}
-              >
-                <span className="text-sm font-black text-white flex-1">{group.bookTitle}</span>
-                <span className="text-xs text-white/45">
-                  {group.levels.filter(lv => passed.has(lv.key)).length}/{group.levels.length} 关
-                  {bookDone ? ' · 已通关' : ''}
-                </span>
-                <span className={`text-white/40 font-bold transition-transform ${bookOpen ? 'rotate-180' : ''}`}>▾</span>
-              </button>
-
-              {bookOpen && (
-                <div className="flex flex-col gap-2">
-                  {group.levels.map(lv => {
-                    const unlocked = isUnlocked(lv.index, lv.key)
-                    const done = passed.has(lv.key)
-                    return (
-                      <button
-                        key={lv.key}
-                        type="button"
-                        className={`game-card game-card--defender${unlocked ? '' : ' game-card--locked'}`}
-                        disabled={!unlocked}
-                        onClick={() => unlocked && onStartDefender(lv.bookId, lv.unit)}
-                      >
-                        <div className="game-card__icon">{unlocked ? lv.unit.emoji : '🔒'}</div>
-                        <div className="game-card__body">
-                          <div className="game-card__title">字母飞船防御战</div>
-                          <div className="game-card__sub">{lv.bookTitle} · {lv.unit.title} · {lv.unit.words.length} 词</div>
-                          <div className={`game-card__tag${unlocked ? '' : ' game-card__tag--lock'}`}>
-                            第 {lv.index} 关 · {done ? '已通关' : unlocked ? '已解锁' : '未解锁'}
-                          </div>
-                        </div>
-                        <span className="game-card__arrow">{unlocked ? '▶' : '🔒'}</span>
-                      </button>
-                    )
-                  })}
-                </div>
-              )}
+        <div className="game-card game-card--defender">
+          <div className="game-card__icon">{selUnlocked ? selected.unit.emoji : '🔒'}</div>
+          <div className="game-card__body">
+            <div className="game-card__title">字母飞船防御战</div>
+            <div className={`game-card__tag${selUnlocked ? '' : ' game-card__tag--lock'}`}>
+              第 {selected.index} 关 · {selDone ? '已通关' : selUnlocked ? '已解锁' : '未解锁'}
             </div>
-          )
-        })}
+          </div>
+          <div className="game-card__actions">
+            <button type="button" className="game-card__pick" onClick={openPicker}>
+              选择内容 {pickerStage === 'closed' ? '▾' : '▴'}
+            </button>
+            <button
+              type="button"
+              className="game-card__play"
+              disabled={!selUnlocked}
+              onClick={() => selUnlocked && onStartDefender(selected.bookId, selected.unit)}
+            >
+              {selUnlocked ? '▶' : '🔒'}
+            </button>
+          </div>
+        </div>
+
+        {pickerStage === 'book' && (
+          <div className="game-picker">
+            <div className="game-picker__title">选择课本</div>
+            <div className="game-picker__grid">
+              {grouped.map(g => (
+                <button
+                  key={g.bookId}
+                  type="button"
+                  className="game-picker__chip"
+                  onClick={() => pickBook(g)}
+                >
+                  {shortBookLabel(g.bookTitle)}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {pickerStage === 'unit' && pickedBook && (
+          <div className="game-picker">
+            <div className="game-picker__title-row">
+              <button type="button" className="game-picker__back" onClick={() => setPickerStage('book')}>‹</button>
+              <span className="game-picker__title">{pickedBook.bookTitle} · 选择单元</span>
+            </div>
+            <div className="game-picker__grid">
+              {pickedBook.levels.map(lv => {
+                const unlocked = isUnlocked(lv.index, lv.key)
+                const done = passed.has(lv.key)
+                const isSelected = lv.key === selected.key
+                return (
+                  <button
+                    key={lv.key}
+                    type="button"
+                    disabled={!unlocked}
+                    className={`game-picker__chip${unlocked ? '' : ' game-picker__chip--locked'}${isSelected ? ' game-picker__chip--selected' : ''}${done ? ' game-picker__chip--done' : ''}`}
+                    onClick={() => pickUnit(lv)}
+                  >
+                    {unlocked ? lv.unit.title : '🔒'}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

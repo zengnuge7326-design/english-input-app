@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import { useMobileTTS } from './hooks/useMobileTTS'
 import GradeCoverIcon from './components/GradeCoverIcon'
+import MobileIcon from './components/MobileIcon'
 import { countVocabWords, listVocabBooks, type VocabBookData, type VocabUnit } from './data/vocabBooks'
 import { getLevelLabel, type GradeLevel } from './data/gradeBooks'
 
@@ -37,7 +38,7 @@ export default function WordsPage({ bookProgress = {}, unitProgress = {}, onStar
             onClick={() => setView({ kind: 'units', book })}
             aria-label="返回单元列表"
           >
-            ‹
+            <MobileIcon name="chevron-left" size={18} />
           </button>
           <div className="min-w-0 flex-1">
             <h1 className="text-base font-black text-white truncate">{unit.title}</h1>
@@ -89,7 +90,7 @@ export default function WordsPage({ bookProgress = {}, unitProgress = {}, onStar
             onClick={() => setView({ kind: 'books' })}
             aria-label="返回书目"
           >
-            ‹
+            <MobileIcon name="chevron-left" size={18} />
           </button>
           <div className="min-w-0 flex-1">
             <h1 className="text-base font-black text-white">{book.title}</h1>
