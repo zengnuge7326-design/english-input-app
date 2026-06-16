@@ -15,7 +15,7 @@ import { isG3U1ExamNode, isG3U1Node, maxSetsForG3U1Node } from './data/g3u1/plan
 import { isPepExamNode, maxSetsForPepNode } from './data/pepPractice/plan'
 import { getGradeBook } from './data/gradeBooks'
 import LessonFlow, { type LessonRewardMeta } from './LessonFlow'
-import GamePage from './GamePage'
+import GamePage, { markDefenderLevelPassed } from './GamePage'
 import MapPage from './MapPage'
 import MorePage from './MorePage'
 import VocabMatchGame from './VocabMatchGame'
@@ -91,6 +91,8 @@ export default function MobileLearnApp({
   const [practiceWords, setPracticeWords] = useState<VocabWord[]>(() => defaultVocabBook().units[0]?.words ?? [])
   const [practiceUnitLabel, setPracticeUnitLabel] = useState('Unit 1')
   const [practiceUnitKey, setPracticeUnitKey] = useState('')
+  const [defenderBookId, setDefenderBookId] = useState('g3-1')
+  const [defenderUnitNum, setDefenderUnitNum] = useState(1)
   const [skipNode, setSkipNode] = useState<MapNode | null>(null)
 
   const practiceBookId = progress.practiceBookId ?? DEFAULT_PRACTICE_BOOK_ID
@@ -269,16 +271,19 @@ export default function MobileLearnApp({
     setVocabBookId(bookId)
     setPracticeWords(unit.words)
     setPracticeUnitLabel(unit.title)
+    setDefenderBookId(bookId)
+    setDefenderUnitNum(unit.unit)
     setScreen('wordDefender')
   }
 
-  function handleDefenderComplete(result: { hit: number; total: number; combo: number; accuracy: number }) {
+  function handleDefenderComplete(result: { hit: number; total: number; combo: number; accuracy: number; won: boolean }) {
     // 统一奖励：击毁数 × 2 XP，零失误 +1 绿钻，10+ 连击 +1 紫钻，全部击毁 +1 蓝钻
     onAddXp?.(result.hit * 2)
     if (result.hit > 0) onCrystalEarn?.('blue', 1, 'defender_round', { hit: result.hit })
     if (result.accuracy >= 100 && result.hit > 0) onCrystalEarn?.('green', 1, 'defender_zero_error')
     if (result.combo >= 10) onCrystalEarn?.('purple', 1, 'defender_combo_10', { combo: result.combo })
     if (result.hit === result.total && result.total > 0) onCrystalEarn?.('gold', 1, 'defender_perfect')
+    if (result.won) markDefenderLevelPassed(defenderBookId, defenderUnitNum)
   }
 
   function handleVocabGameComplete() {

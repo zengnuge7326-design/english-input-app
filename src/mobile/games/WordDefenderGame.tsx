@@ -18,7 +18,7 @@ interface Props {
   words: VocabWord[]
   unitLabel?: string
   onExit: () => void
-  onComplete: (result: { hit: number; total: number; combo: number; accuracy: number }) => void
+  onComplete: (result: { hit: number; total: number; combo: number; accuracy: number; won: boolean }) => void
 }
 
 type Phase = 'intro' | 'playing' | 'over' | 'win'
@@ -321,7 +321,7 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
   useEffect(() => {
     if (phase !== 'win' && phase !== 'over') return
     const acc = taps > 0 ? Math.round((correctTaps / taps) * 100) : 0
-    onComplete({ hit, total: queue.length, combo: maxCombo, accuracy: acc })
+    onComplete({ hit, total: queue.length, combo: maxCombo, accuracy: acc, won: phase === 'win' })
   }, [phase])  // eslint-disable-line react-hooks/exhaustive-deps
 
   if (phase === 'intro') {

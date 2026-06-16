@@ -2810,6 +2810,11 @@ html.mobile-shell-active main[data-app-main] {
   font-weight: 800;
 }
 
+/* ─── 游戏中心：按册分组 ─── */
+.game-book-group__head {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ─── 游戏中心卡片 ─── */
 .game-card {
   display: flex; align-items: center; gap: 14px;
