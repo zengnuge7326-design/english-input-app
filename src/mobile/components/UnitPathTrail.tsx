@@ -10,9 +10,11 @@ interface Props {
   onSelectNode: (node: MapNode) => void
   /** 点击锁定岛（宝石跳关） */
   onLockedNode?: (node: MapNode) => void
+  /** 'grammar' = 黑水晶风格 */
+  variant?: 'default' | 'grammar'
 }
 
-export default function UnitPathTrail({ nodes, currentNodeId, currentRef, onSelectNode, onLockedNode }: Props) {
+export default function UnitPathTrail({ nodes, currentNodeId, currentRef, onSelectNode, onLockedNode, variant = 'default' }: Props) {
   const n = nodes.length
   const height = trailHeight(n)
 
@@ -27,6 +29,7 @@ export default function UnitPathTrail({ nodes, currentNodeId, currentRef, onSele
         >
           <MapIslandNode
             node={node}
+            variant={variant}
             onClick={() => onSelectNode(node)}
             onLockedClick={onLockedNode ? () => onLockedNode(node) : undefined}
           />

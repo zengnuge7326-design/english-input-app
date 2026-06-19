@@ -162,6 +162,31 @@
   filter: saturate(1.45);
 }
 
+/* 语法节点：黑曜水晶风格，区别主岛屿（覆盖各 tier 配色） */
+.map-island--grammar.map-island--orb {
+  background: linear-gradient(
+    145deg,
+    rgba(70, 78, 96, 0.62) 0%,
+    rgba(38, 44, 60, 0.7) 50%,
+    rgba(18, 22, 34, 0.78) 100%
+  );
+  box-shadow: 0 4.8px 16px rgba(0, 0, 0, 0.5), 0 0 14px rgba(120, 110, 200, 0.18);
+  -webkit-backdrop-filter: blur(9.6px) saturate(1.3);
+  backdrop-filter: blur(9.6px) saturate(1.3);
+}
+
+.map-island--grammar.map-island--orb::before {
+  background: linear-gradient(180deg, rgba(40, 44, 62, 0.85) 0%, rgba(12, 14, 24, 0.9) 100%);
+  box-shadow: 0 0 0 1px rgba(150, 140, 220, 0.25);
+  filter: saturate(1.2);
+}
+
+/* 已学语法节点透出微紫水晶光，未学/锁定保持黑曜 */
+.map-island--grammar.map-island--green.map-island--orb,
+.map-island--grammar.map-island--purple.map-island--orb {
+  box-shadow: 0 4.8px 16px rgba(0, 0, 0, 0.5), 0 0 18px rgba(150, 120, 255, 0.32);
+}
+
 .map-island__glyph {
   position: relative;
   z-index: 4;

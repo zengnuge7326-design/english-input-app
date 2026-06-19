@@ -8,6 +8,8 @@ interface Props {
   onClick: () => void
   /** 锁定岛被点击（用于宝石跳关确认） */
   onLockedClick?: () => void
+  /** 'grammar' = 黑水晶风格，区别主岛屿 */
+  variant?: 'default' | 'grammar'
 }
 
 /** 水晶进度：0=蓝 · 1=绿 · 2+=紫 · 3=紫+金星 */
@@ -93,7 +95,7 @@ function IslandStar({ gold, tier }: { gold?: boolean; tier: IslandTier }) {
   )
 }
 
-export default function MapIslandNode({ node, onClick, onLockedClick }: Props) {
+export default function MapIslandNode({ node, onClick, onLockedClick, variant = 'default' }: Props) {
   const tier = islandTier(node)
   const locked = tier === 'locked'
   const glyph = islandGlyph(node, tier)
@@ -109,6 +111,7 @@ export default function MapIslandNode({ node, onClick, onLockedClick }: Props) {
         'map-island',
         'map-island--orb',
         `map-island--${tier}`,
+        variant === 'grammar' ? 'map-island--grammar' : '',
       ].filter(Boolean).join(' ')}
       aria-label={node.title}
       title={node.title}

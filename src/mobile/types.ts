@@ -18,6 +18,7 @@ export type QuestionType =
   | 'choice'
   | 'speaking'
   | 'aichat'
+  | 'grammarConcept'
 
 export interface MapNode {
   id: string
@@ -246,6 +247,22 @@ export interface AIChatQuestionData {
   lines: { speaker: string; text: string; choices?: string[] }[]
 }
 
+/** 语法概念题：选概念 + 答后展示解析（"学"阶段） */
+export interface GrammarConceptQuestionData {
+  type: 'grammarConcept'
+  id: string
+  prompt: string
+  /** 副标题，如「核心概念」 */
+  tag?: string
+  /** 题干（概念问题） */
+  question: string
+  options: string[]
+  /** 正确选项下标 */
+  correctIndex: number
+  /** 答后展示的解析 */
+  explanation: string
+}
+
 export type QuestionData =
   | TranslateClozeQuestionData
   | WordTranslateQuestionData
@@ -262,6 +279,7 @@ export type QuestionData =
   | ChoiceQuestionData
   | SpeakingQuestionData
   | AIChatQuestionData
+  | GrammarConceptQuestionData
 
 export interface Lesson {
   id: string

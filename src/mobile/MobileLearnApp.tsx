@@ -17,6 +17,8 @@ import { getGradeBook } from './data/gradeBooks'
 import LessonFlow, { type LessonRewardMeta } from './LessonFlow'
 import GamePage, { markDefenderLevelPassed } from './GamePage'
 import MapPage from './MapPage'
+import MobileGrammarPage from './MobileGrammarPage'
+import MobileStatusBar from './components/MobileStatusBar'
 import MorePage from './MorePage'
 import VocabMatchGame from './VocabMatchGame'
 import WordDefenderGame from './games/WordDefenderGame'
@@ -48,6 +50,7 @@ interface Props {
   onExitShell?: () => void
   onAddXp?: (amount: number) => void
   onCrystalEarn?: CrystalEarnFn
+  onCrystalSpend?: (color: string, amount: number, reason: string) => Promise<boolean>
   onOpenShop?: () => void
   onOpenLeaderboard?: () => void
   /** 宝石跳关：useUnlocks 实例 + 蓝钻余额 */
@@ -59,9 +62,10 @@ interface Props {
   mainXp?: MainXpSnapshot
   mainCrystal?: MainCrystalSnapshot
   crystalPulse?: number
+  crystalSpend?: number
 }
 
-type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender'
+type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender' | 'grammar'
 
 export default function MobileLearnApp({
   onClose,
@@ -69,6 +73,7 @@ export default function MobileLearnApp({
   onExitShell,
   onAddXp,
   onCrystalEarn,
+  onCrystalSpend,
   onOpenShop,
   onOpenLeaderboard,
   unlocks,
@@ -76,6 +81,7 @@ export default function MobileLearnApp({
   mainXp,
   mainCrystal,
   crystalPulse = 0,
+  crystalSpend = 0,
 }: Props) {
   const [progress, setProgress] = useState<MobileProgress>(() => loadProgress())
   const [screen, setScreen] = useState<Screen>('main')
@@ -94,6 +100,8 @@ export default function MobileLearnApp({
   const [defenderBookId, setDefenderBookId] = useState('g3-1')
   const [defenderUnitNum, setDefenderUnitNum] = useState(1)
   const [skipNode, setSkipNode] = useState<MapNode | null>(null)
+  const [grammarUnitId, setGrammarUnitId] = useState<string | null>(null)
+  const [grammarUnitTitle, setGrammarUnitTitle] = useState<string | undefined>(undefined)
 
   const practiceBookId = progress.practiceBookId ?? DEFAULT_PRACTICE_BOOK_ID
   const selectedPracticeBook = getGradeBook(practiceBookId) ?? getGradeBook(DEFAULT_PRACTICE_BOOK_ID)!
@@ -296,6 +304,13 @@ export default function MobileLearnApp({
     setActiveTab(next)
   }
 
+  function handleUnitGrammar(unitId: string) {
+    const unit = units.find(u => u.id === unitId)
+    setGrammarUnitId(unitId)
+    setGrammarUnitTitle(unit?.title)
+    setScreen('grammar')
+  }
+
   if (screen === 'vocabPractice') {
     return (
       <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
@@ -323,6 +338,20 @@ export default function MobileLearnApp({
     )
   }
 
+  if (screen === 'grammar' && grammarUnitId) {
+    return (
+      <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
+        <MobileGrammarPage
+          unitId={grammarUnitId}
+          unitTitle={grammarUnitTitle}
+          onBack={() => { setScreen('main'); setGrammarUnitId(null) }}
+          onAddXp={onAddXp}
+          onCrystalEarn={onCrystalEarn}
+        />
+      </MobilePhoneFrame>
+    )
+  }
+
   if (screen === 'wordDefender') {
     return (
       <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
@@ -331,6 +360,8 @@ export default function MobileLearnApp({
           unitLabel={practiceUnitLabel}
           onExit={() => { setScreen('main'); setActiveTab('game') }}
           onComplete={handleDefenderComplete}
+          onCrystalEarn={onCrystalEarn}
+          onCrystalSpend={onCrystalSpend}
         />
       </MobilePhoneFrame>
     )
@@ -363,6 +394,18 @@ export default function MobileLearnApp({
   return (
     <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
       <MicPermissionSheet elevated preferLight />
+      <MobileStatusBar
+        streak={streak}
+        crystalTotal={mainCrystal?.total ?? 0}
+        totalXp={totalXp}
+        todayXp={mainXp?.todayXp}
+        goal={mainXp?.goal}
+        crystalPulse={crystalPulse}
+        crystalSpend={crystalSpend}
+        onOpenLeaderboard={onOpenLeaderboard}
+        onOpenShop={onOpenShop}
+        onExitApp={handleExitApp}
+      />
       <main className={`flex-1 min-h-0 flex flex-col overflow-hidden ${tabThemeClass(activeTab)}`}>
         {activeTab === 'words' && (
           <WordsPage
@@ -384,13 +427,8 @@ export default function MobileLearnApp({
             onContinue={handleContinue}
             bookProgress={vocabBookProgress}
             shellMode={shellMode}
-            mainXp={mainXp}
-            mainCrystal={mainCrystal}
-            crystalPulse={crystalPulse}
-            onOpenLeaderboard={onOpenLeaderboard}
-            onOpenShop={onOpenShop}
-            onExitApp={handleExitApp}
             onLockedNode={node => setSkipNode(node)}
+            onUnitGrammar={handleUnitGrammar}
           />
         )}
         {skipNode && (
@@ -405,7 +443,11 @@ export default function MobileLearnApp({
           />
         )}
         {activeTab === 'game' && (
-          <GamePage onStartDefender={handleStartDefender} />
+          <GamePage
+            onStartDefender={handleStartDefender}
+            crystalBalance={crystalBalance}
+            onCrystalSpend={onCrystalSpend}
+          />
         )}
         {activeTab === 'menu' && (
           <MorePage

@@ -2,11 +2,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import GradeBookPicker from './components/GradeBookPicker'
 import LearningPathCard from './components/LearningPathCard'
-import MobileStatusBar from './components/MobileStatusBar'
 import UnitPathTrail from './components/UnitPathTrail'
 import { getGrammarForUnit } from './data/bookGrammar'
 import type { GradeBook } from './data/gradeBooks'
-import type { MainCrystalSnapshot, MainXpSnapshot, MapNode, MobileProgress, Unit } from './types'
+import type { MapNode, MobileProgress, Unit } from './types'
 
 interface Props {
   units: Unit[]
@@ -17,14 +16,10 @@ interface Props {
   onContinue: () => void
   bookProgress?: Record<string, number>
   shellMode?: boolean
-  mainXp?: MainXpSnapshot
-  mainCrystal?: MainCrystalSnapshot
-  crystalPulse?: number
-  onOpenLeaderboard?: () => void
-  onOpenShop?: () => void
-  onExitApp?: () => void
   /** 点击锁定岛（宝石跳关） */
   onLockedNode?: (node: MapNode) => void
+  /** 点击单元右侧语法按钮 */
+  onUnitGrammar?: (unitId: string) => void
 }
 
 const ISLANDS_PER_UNIT = 8
@@ -42,17 +37,10 @@ export default function MapPage({
   onSelectNode,
   onContinue,
   bookProgress = {},
-  mainXp,
-  mainCrystal,
-  crystalPulse,
-  onOpenLeaderboard,
-  onOpenShop,
-  onExitApp,
   onLockedNode,
+  onUnitGrammar,
 }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false)
-  const streak = mainXp?.streak ?? progress.streak
-  const totalXp = mainXp?.totalXp ?? progress.totalXp
   const currentRef = useRef<HTMLDivElement>(null)
 
   const activeUnitId = useMemo(() => {
@@ -99,18 +87,6 @@ export default function MapPage({
 
   return (
     <div className="mobile-home-page flex flex-col min-h-0 flex-1">
-      <MobileStatusBar
-        streak={streak}
-        crystalTotal={mainCrystal?.total ?? 0}
-        totalXp={totalXp}
-        todayXp={mainXp?.todayXp}
-        goal={mainXp?.goal}
-        crystalPulse={crystalPulse}
-        onOpenLeaderboard={onOpenLeaderboard}
-        onOpenShop={onOpenShop}
-        onExitApp={onExitApp}
-      />
-
       <LearningPathCard
         selectedBook={selectedBook}
         activeUnit={activeUnit}
@@ -128,28 +104,37 @@ export default function MapPage({
 
               return (
                 <div key={unit.id} className="map-unit-panel rounded-2xl overflow-hidden">
-                  <button
-                    type="button"
-                    onClick={() => setExpanded(e => ({ ...e, [unit.id]: !e[unit.id] }))}
-                    className="map-unit-panel__head w-full flex items-center gap-3 px-4 py-3 text-left active:scale-[0.99] transition-transform"
-                  >
-                    <span
-                      className="map-unit-panel__emoji w-10 h-10 rounded-xl flex items-center justify-center text-lg font-black shadow"
-                      style={{ background: unit.color }}
+                  <div className="map-unit-panel__head w-full flex items-stretch gap-0">
+                    {/* 左区：折叠/展开（点击整块） */}
+                    <button
+                      type="button"
+                      onClick={() => setExpanded(e => ({ ...e, [unit.id]: !e[unit.id] }))}
+                      className="flex-1 flex items-center gap-3 px-4 py-3 text-left active:opacity-80 transition-opacity min-w-0"
                     >
-                      {unit.emoji}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-sm font-black text-white">{unit.title}</div>
-                      <div className="text-xs text-white/55">{done}/{total || ISLANDS_PER_UNIT} 关卡完成</div>
-                    </div>
-                    <motion.span
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      className="text-white/45 font-bold text-lg"
-                    >
-                      ▾
-                    </motion.span>
-                  </button>
+                      <span
+                        className="map-unit-panel__emoji w-10 h-10 rounded-xl flex items-center justify-center text-lg font-black shadow shrink-0"
+                        style={{ background: unit.color }}
+                      >
+                        {unit.emoji}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-black text-white truncate">{unit.title}</div>
+                        <div className="text-xs text-white/55">{done}/{total || ISLANDS_PER_UNIT} 关卡完成</div>
+                      </div>
+                    </button>
+                    {/* 右区：语法入口 */}
+                    {onUnitGrammar && (
+                      <button
+                        type="button"
+                        onClick={e => { e.stopPropagation(); onUnitGrammar(unit.id) }}
+                        className="shrink-0 w-32 flex flex-col items-center justify-center gap-1 border-l border-white/20 active:opacity-60 transition-opacity"
+                        aria-label="本单元语法"
+                      >
+                        <span className="text-xl leading-none">📖</span>
+                        <span className="text-[11px] leading-none font-semibold text-white/80 border-b border-white/40 pb-0.5">语法</span>
+                      </button>
+                    )}
+                  </div>
 
                   <AnimatePresence initial={false}>
                     {isOpen && (

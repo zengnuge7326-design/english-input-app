@@ -7,6 +7,7 @@ import { collectLessonAudioTexts } from './utils/lessonAudio'
 import AIChatMock from './components/AIChatMock'
 import ChoiceQuestion from './components/ChoiceQuestion'
 import DictationQuestion from './components/DictationQuestion'
+import GrammarConceptQuestion from './components/GrammarConceptQuestion'
 import ListeningQuestion from './components/ListeningQuestion'
 import MatchingQuestion from './components/MatchingQuestion'
 import StoryListenQuestion from './components/StoryListenQuestion'
@@ -195,6 +196,9 @@ export default function LessonFlow({ lesson, rewardMeta, onCrystalEarn, onComple
           )}
           {q.type === 'aichat' && (
             <AIChatMock key={q.id} data={q} {...qProps} />
+          )}
+          {q.type === 'grammarConcept' && (
+            <GrammarConceptQuestion key={q.id} data={q} {...qProps} />
           )}
         </AnimatePresence>
       </div>
