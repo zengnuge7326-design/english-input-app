@@ -61,13 +61,13 @@ export default function UnitReader({ unit, onBack }: Props) {
     <div className="tb-reader">
       <header className="tb-reader__header safe-top">
         <button type="button" className="tb-reader__back" onClick={onBack} aria-label="返回">
-          ←
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><polyline points="13,4 7,10 13,16" /></svg>
         </button>
         <div className="tb-reader__title">
           <div className="tb-reader__unit">{unit.title}</div>
           <div className="tb-reader__sub">{unit.subtitle}</div>
         </div>
-        <span className="tb-reader__emoji" aria-hidden>{unit.emoji}</span>
+        <span className="tb-reader__hint">点击模糊处<br/>显示翻译</span>
       </header>
 
       {!empty && (
@@ -77,6 +77,7 @@ export default function UnitReader({ unit, onBack }: Props) {
               key={sec.id}
               type="button"
               data-pill-id={sec.id}
+              data-kind={sec.kind}
               className={`tb-pill${activePill === sec.id ? ' tb-pill--on' : ''}`}
               onClick={() => jumpTo(sec.id)}
             >

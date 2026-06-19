@@ -56,6 +56,16 @@
   gap: 8px;
   flex-shrink: 0;
 }
+.wdg__hint {
+  display: inline-flex; align-items: center; gap: 3px;
+  height: 36px; padding: 0 9px; border-radius: 10px;
+  background: rgba(251,191,36,0.2); border: 1px solid rgba(251,191,36,0.4);
+  color: #fef08a; font-size: 12px; font-weight: 700;
+  -webkit-tap-highlight-color: transparent; flex-shrink: 0;
+  transition: background 0.15s;
+}
+.wdg__hint:active:not(:disabled) { background: rgba(251,191,36,0.35); }
+.wdg__hint:disabled { opacity: 0.3; }
 .wdg__speed {
   display: inline-flex;
   align-items: center;
@@ -529,3 +539,56 @@
 }
 .wdg__stats span { font-size: 10px; color: rgba(255,255,255,0.5); }
 .wdg__stats strong { font-size: 18px; font-weight: 900; color: #fbbf24; }
+
+/* ── Crystal miss particle ─────────────────────────────── */
+.wdg__cmiss {
+  position: absolute;
+  left: 50%; top: 12%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.wdg__cmiss-label {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #f87171;
+  animation: cmiss-float 1.1s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+  letter-spacing: -0.5px;
+}
+.wdg__cmiss-shard {
+  font-size: 0.75rem;
+  position: absolute;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+.wdg__cmiss-shard--a {
+  animation-name: cmiss-shard-a;
+}
+.wdg__cmiss-shard--b {
+  animation-name: cmiss-shard-b;
+}
+.wdg__cmiss-shard--c {
+  animation-name: cmiss-shard-c;
+}
+@keyframes cmiss-float {
+  0%   { opacity: 1; transform: translateY(0) scale(1.3); }
+  20%  { opacity: 1; transform: translateY(-8px) scale(1); }
+  80%  { opacity: 0.4; transform: translateY(-36px) scale(0.85); }
+  100% { opacity: 0; transform: translateY(-44px) scale(0.8); }
+}
+@keyframes cmiss-shard-a {
+  0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-22px, -30px) scale(0.4) rotate(-60deg); }
+}
+@keyframes cmiss-shard-b {
+  0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(20px, -28px) scale(0.4) rotate(50deg); }
+}
+@keyframes cmiss-shard-c {
+  0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(0px, -38px) scale(0.3) rotate(20deg); }
+}

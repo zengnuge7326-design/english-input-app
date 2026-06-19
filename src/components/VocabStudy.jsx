@@ -7,6 +7,8 @@ import { IconSpeaker, IconArrowLeft } from './Icons'
 import PageBackBar from './PageBackBar'
 import WordMatch from './WordMatch'
 import OceanBg from './OceanBg'
+import CatalogBookCard from './CatalogBookCard'
+import VocabBookCover from './VocabBookCover'
 import { useSpeechRecognition, matchWord } from '../hooks/useSpeechRecognition'
 import { useSound } from '../hooks/useSound'
 import { unlockAudio } from '../utils/audioUnlock'
@@ -506,35 +508,26 @@ function useRecorder() {
 
 const VOCAB_BOOKS = [...pepWords, ...renaiJuniorWords, ...bsdaWords]
 
-const GRADE_THEME = {
-  3: { grad: 'from-emerald-600 via-green-700 to-emerald-950', accent: 'text-emerald-300', border: 'hover:border-emerald-500/40', chip: 'bg-emerald-500/25 text-emerald-200', publisher: '人教版 PEP', emoji: '🌱' },
-  4: { grad: 'from-blue-600 via-blue-700 to-blue-950', accent: 'text-blue-300', border: 'hover:border-blue-500/40', chip: 'bg-blue-500/25 text-blue-200', publisher: '人教版 PEP', emoji: '📘' },
-  5: { grad: 'from-violet-600 via-purple-700 to-violet-950', accent: 'text-violet-300', border: 'hover:border-violet-500/40', chip: 'bg-violet-500/25 text-violet-200', publisher: '人教版 PEP', emoji: '📗' },
-  6: { grad: 'from-orange-600 via-amber-700 to-orange-950', accent: 'text-orange-300', border: 'hover:border-orange-500/40', chip: 'bg-orange-500/25 text-orange-200', publisher: '人教版 PEP', emoji: '📙' },
-  7: { grad: 'from-teal-600 via-cyan-800 to-teal-950', accent: 'text-teal-300', border: 'hover:border-teal-500/40', chip: 'bg-teal-500/25 text-teal-200', publisher: '仁爱科普版', emoji: '🎒' },
-  8: { grad: 'from-cyan-600 via-sky-800 to-cyan-950', accent: 'text-cyan-300', border: 'hover:border-cyan-500/40', chip: 'bg-cyan-500/25 text-cyan-200', publisher: '仁爱科普版', emoji: '✏️' },
-  9: { grad: 'from-indigo-600 via-indigo-800 to-indigo-950', accent: 'text-indigo-300', border: 'hover:border-indigo-500/40', chip: 'bg-indigo-500/25 text-indigo-200', publisher: '仁爱科普版', emoji: '🎯' },
-  '高中': { grad: 'from-rose-600 via-pink-800 to-rose-950', accent: 'text-rose-300', border: 'hover:border-rose-500/40', chip: 'bg-rose-500/25 text-rose-200', publisher: '北师大版', emoji: '🎓' },
+const BSDA_BOOK_LABEL = {
+  b1: '必修第一册', b2: '必修第二册', b3: '必修第三册',
+  s1: '选择性必修第一册', s2: '选择性必修第二册', s3: '选择性必修第三册', s4: '选择性必修第四册',
 }
 
-function bookCoverSrc(book) {
-  if (typeof book.grade !== 'number' || !book.sem) return null
-  if (book.grade >= 3 && book.grade <= 5) {
-    return `/covers/grade${book.grade}_${book.sem}.jpg`
+/** 与教材同步页 desc 同格式，单词页专用文案 */
+function vocabBookDesc(book) {
+  const n = book.units.length
+  const unitRange = n <= 1 ? 'Unit 1' : `Unit 1-${n}`
+  if (typeof book.grade === 'number' && book.grade <= 6) {
+    return `人教版${book.bookName} ${unitRange}`
   }
-  if (book.grade === 6) {
-    return `/covers/grade6_${book.sem}.svg`
+  if (typeof book.grade === 'number') {
+    const semLabel = book.sem === 'up' ? '上册' : '下册'
+    return `仁爱科普版${book.grade}年级${semLabel} ${unitRange}`
   }
-  return null
-}
-
-function bookSubtitle(book) {
-  if (typeof book.grade !== 'number') return `${book.grade} · 北师大版`
-  return `${book.grade}年级 · ${book.sem === 'up' ? '上' : '下'}册`
-}
-
-function bookWordCount(book) {
-  return book.units.reduce((s, u) => s + u.words.length, 0)
+  if (book.grade === '高中') {
+    return `北师大版${BSDA_BOOK_LABEL[book.sem] || book.bookName} ${unitRange}`
+  }
+  return `${book.bookName} ${unitRange}`
 }
 
 function bookProgressStats(book, progress = {}) {
@@ -550,124 +543,27 @@ function bookProgressStats(book, progress = {}) {
   return { total, known, pct }
 }
 
-function BookCard({ book, onSelect, progress = {} }) {
-  const theme = GRADE_THEME[book.grade] || GRADE_THEME[3]
-  const [coverOk, setCoverOk] = useState(true)
-  const coverSrc = bookCoverSrc(book)
-  const cover = coverSrc && coverOk ? coverSrc : null
-  const words = bookWordCount(book)
-  const { known, total, pct } = bookProgressStats(book, progress)
-  const done = total > 0 && known === total
-  const semLabel = book.sem === 'up' ? '上册' : book.sem === 'down' ? '下册' : null
-
-  return (
-    <button
-      type="button"
-      onClick={() => onSelect(book)}
-      className={`group relative flex flex-col rounded-2xl overflow-hidden border border-white/10 bg-slate-900/80 shadow-lg text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] ${theme.border}`}
-    >
-      <div className={`relative h-28 sm:h-32 bg-gradient-to-br ${theme.grad} overflow-hidden`}>
-        <div className="absolute -top-8 -right-8 h-28 w-28 rounded-full bg-white/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
-        <div className="absolute -bottom-10 -left-6 h-24 w-24 rounded-full bg-black/20 blur-xl" />
-        {cover ? (
-          <>
-            <img
-              src={cover}
-              alt=""
-              onError={() => setCoverOk(false)}
-              className="absolute inset-0 h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-          </>
-        ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3">
-            <span className="text-4xl drop-shadow-lg transition-transform duration-300 group-hover:scale-110">{theme.emoji}</span>
-            {typeof book.grade === 'number' && (
-              <span className="text-3xl font-black text-white/90 drop-shadow-md tabular-nums">{book.grade}</span>
-            )}
-          </div>
-        )}
-        {semLabel && (
-          <span className={`absolute top-2.5 right-2.5 rounded-full px-2.5 py-0.5 text-[10px] font-bold tracking-wide backdrop-blur-sm border border-white/20 ${theme.chip}`}>
-            {semLabel}
-          </span>
-        )}
-        <span className="absolute bottom-2 left-2.5 text-[10px] font-semibold text-white/70 tracking-wider drop-shadow">
-          {theme.publisher}
-        </span>
-      </div>
-      <div className="flex flex-col gap-2 p-4 bg-gradient-to-b from-slate-800/95 to-slate-900">
-        <div className="text-[11px] text-slate-500">{bookSubtitle(book)}</div>
-        <div className="text-base font-extrabold text-white leading-snug line-clamp-2">{book.bookName}</div>
-        <div className="flex items-center justify-between gap-2 text-xs text-slate-400">
-          <span>
-            {book.units.length} 单元 · <span className={`font-semibold ${theme.accent}`}>{words}</span> 词
-          </span>
-          {done && (
-            <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300 border border-emerald-500/30">
-              ✓ 已学完
-            </span>
-          )}
-        </div>
-        <div className="pt-1 border-t border-slate-700/60">
-          <div className="flex items-center justify-between gap-2 mb-1.5">
-            <span className="text-[11px] text-slate-500">
-              已掌握 <span className={`font-semibold tabular-nums ${known > 0 ? theme.accent : 'text-slate-500'}`}>{known}</span>/{total}
-            </span>
-            <span className={`text-[10px] font-mono tabular-nums ${pct >= 100 ? 'text-emerald-400' : 'text-slate-500'}`}>{pct}%</span>
-          </div>
-          <div className="h-1.5 w-full rounded-full bg-slate-700/70 overflow-hidden">
-            <div
-              className={`h-full rounded-full transition-all duration-700 ${done ? 'bg-emerald-500' : `bg-gradient-to-r ${theme.grad}`}`}
-              style={{ width: `${pct}%` }}
-            />
-          </div>
-        </div>
-        <div className={`text-[10px] font-semibold text-right opacity-0 transition-opacity group-hover:opacity-100 ${theme.accent}`}>
-          进入 ›
-        </div>
-      </div>
-    </button>
-  )
-}
-
 function BookGrid({ onSelect, onBack, progress = {} }) {
-  const grouped = useMemo(() => {
-    const map = new Map()
-    for (const book of VOCAB_BOOKS) {
-      const key = String(book.grade)
-      if (!map.has(key)) map.set(key, [])
-      map.get(key).push(book)
-    }
-    return [...map.entries()]
-  }, [])
-
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 py-6">
+    <div className="w-full max-w-5xl mx-auto px-4 py-6">
       {onBack && <PageBackBar onBack={onBack} label="返回" />}
-      <div className="flex items-end justify-between gap-3 mb-5 mt-2">
-        <div>
-          <h2 className="text-white text-xl font-bold">选择年级册次</h2>
-          <p className="text-xs text-slate-500 mt-1">小学 PEP · 初中仁爱 · 高中北师大</p>
-        </div>
-        <span className="text-[10px] text-slate-600 uppercase tracking-widest shrink-0">{VOCAB_BOOKS.length} 册</span>
+      <div className="flex items-center justify-between mb-6 mt-2">
+        <h2 className="text-lg font-bold text-white">单词</h2>
+        <span className="text-xs text-gray-500">共 {VOCAB_BOOKS.length} 本教材</span>
       </div>
-      <div className="flex flex-col gap-6">
-        {grouped.map(([gradeKey, books]) => {
-          const theme = GRADE_THEME[books[0]?.grade] || GRADE_THEME[3]
-          const gradeLabel = typeof books[0]?.grade === 'number' ? `${books[0].grade} 年级` : books[0]?.grade
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        {VOCAB_BOOKS.map(book => {
+          const { pct } = bookProgressStats(book, progress)
           return (
-            <section key={gradeKey}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className={`text-xs font-bold ${theme.accent}`}>{gradeLabel}</span>
-                <div className="flex-1 h-px bg-slate-700/80" />
-              </div>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {books.map(book => (
-                  <BookCard key={book.bookName} book={book} onSelect={onSelect} progress={progress} />
-                ))}
-              </div>
-            </section>
+            <CatalogBookCard
+              key={book.bookName}
+              title={book.bookName}
+              desc={vocabBookDesc(book)}
+              percent={pct}
+              statLabel={`${book.units.length} 单元 · ${pct}%`}
+              onClick={() => onSelect(book)}
+              cover={<VocabBookCover book={book} />}
+            />
           )
         })}
       </div>

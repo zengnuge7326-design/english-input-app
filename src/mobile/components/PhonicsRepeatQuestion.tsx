@@ -193,7 +193,16 @@ export default function PhonicsRepeatQuestion({
             {msg}
           </p>
           {(!supported || msg.includes('麦克风')) && (
-            <MicHelpLink purpose="跟读练习" />
+            <div className="flex flex-col items-center gap-2">
+              <MicHelpLink purpose="跟读练习" />
+              <button
+                type="button"
+                onClick={skip}
+                className="text-xs text-white/40 active:opacity-70 py-1 px-3"
+              >
+                跳过此题
+              </button>
+            </div>
           )}
           {listening && heard && (
             <p className="mobile-quiz__text-muted text-xs text-center">

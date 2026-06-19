@@ -253,39 +253,65 @@ export default function PetCatalog({
         ))}
       </div>
 
-      <div className="grid grid-cols-4 gap-2 sm:gap-3">
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
         {filtered.map(p => {
           const owned = ownedIds.has(p.id)
           const isEquipped = equippedId === p.id
           const tierStyle = TIER_STYLES[p.tier] || TIER_STYLES.N
           const price = formatPrice(p)
           const displayName = getPetDisplayName(p.id, p.name)
+          const isSSR = p.tier === 'SSR' || p.tier === 'UR'
 
           return (
             <button
               key={p.id}
               onClick={() => setSelected(p)}
-              className={`relative flex flex-col items-center rounded-xl border bg-gray-800/50 p-2 hover:bg-gray-700/50 transition-all text-center ${tierStyle.card}`}
+              className={`group relative flex flex-col items-center rounded-2xl border bg-gray-900 p-3 pb-2.5
+                hover:scale-[1.04] active:scale-[0.97] transition-all duration-200 text-center
+                ${tierStyle.card} ${owned ? 'opacity-100' : 'opacity-90 hover:opacity-100'}`}
             >
+              {/* SSR 金色光晕扫光 */}
+              {isSSR && (
+                <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-400/10 via-transparent to-amber-600/10 animate-pulse" />
+                </div>
+              )}
+
+              {/* 已装备标签 */}
               {isEquipped && (
-                <span className="absolute -top-1 -right-1 text-[9px] bg-amber-500 text-black px-1 rounded-full font-bold z-10">
+                <span className="absolute -top-1.5 -right-1.5 text-[9px] bg-amber-400 text-black px-1.5 py-0.5 rounded-full font-black z-10 shadow-lg">
                   已装备
                 </span>
               )}
               {owned && !isEquipped && (
-                <span className="absolute top-1 left-1 text-[9px] text-emerald-400">✓</span>
+                <span className="absolute top-1.5 left-1.5 text-[10px] text-emerald-400 font-bold">✓</span>
               )}
-              <PetAvatar petId={p.id} size={56} className="mb-1.5" />
-              <span className={`text-[9px] px-1 rounded ${tierStyle.badge}`}>{p.tier}</span>
-              <span className="text-[10px] text-white font-medium truncate w-full mt-0.5">{displayName}</span>
+
+              {/* 头像 */}
+              <div className={`relative w-full aspect-square mb-1.5 flex items-center justify-center
+                ${isSSR ? 'drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]' : ''}`}>
+                <img
+                  src={`/pets/${p.id}.svg`}
+                  alt={p.id}
+                  className="w-full h-full object-contain"
+                  style={{ filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))' }}
+                  onError={e => { e.currentTarget.style.display = 'none' }}
+                />
+              </div>
+
+              {/* 档位 + 名称 */}
+              <span className={`text-[9px] font-black px-1.5 py-0.5 rounded-full mb-0.5 ${tierStyle.badge}`}>{p.tier}</span>
+              <span className="text-xs text-white font-semibold truncate w-full">{displayName}</span>
+
+              {/* 价格 */}
               {price && (
-                <div className="mt-0.5 flex items-center gap-0.5 justify-center">
+                <div className="mt-1 flex items-center gap-0.5 justify-center">
                   {price.type === 'rmb' ? (
-                    <span className="text-[10px] text-amber-400">¥{price.value}</span>
+                    <span className="text-xs text-amber-400 font-bold">¥{price.value}</span>
                   ) : (
                     <>
-                      <GemSVG color={price.color} size={10} />
-                      <span className="text-[10px] text-amber-300 tabular-nums">{price.amount}</span>
+                      <GemSVG color={price.color} size={11} />
+                      <span className="text-xs text-amber-300 font-bold tabular-nums">{price.amount}</span>
                     </>
                   )}
                 </div>

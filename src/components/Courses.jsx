@@ -501,36 +501,34 @@ export default function Courses({
         )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {lessons.map((lesson, i) => {
-            // 课程已通过外层宝石锁控制，课节全部开放（单层锁标准）
-            const lessonLocked = false
+            const LESSON_COST = 30
+            const lessonKey = `duo_${lesson.unit}_${lesson.label}`
+            const lessonLocked = !isMember && i > 0 && !(unlocks?.isUnlocked?.('unit', lessonKey))
             const data = getLessonData(lesson.ids, dataMap)
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
             const fullIdx = fullLessons.indexOf(lesson)
-            return (
-              <div key={i} className="relative text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
+            const card = (
+              <div className="relative text-left bg-slate-800 border border-slate-700 hover:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-colors">
                 <div
                   role="button"
                   tabIndex={0}
                   onClick={() => {
-                    if (lessonLocked) { onShowLogin?.(); return }
+                    if (lessonLocked) return
                     onImport(data, labelFor(lesson), buildNextLoader(fullIdx))
                   }}
                   onKeyDown={e => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      if (lessonLocked) { onShowLogin?.(); return }
+                      if (lessonLocked) return
                       onImport(data, labelFor(lesson), buildNextLoader(fullIdx))
                     }
                   }}
                   className="text-left p-4 flex flex-col gap-3 flex-1 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <span className={`text-sm font-medium ${lessonLocked ? 'text-gray-500' : 'text-white'}`}>{lesson.label}</span>
-                    {lessonLocked
-                      ? <span className="text-xs text-amber-600 bg-amber-900/30 border border-amber-800/50 px-2 py-0.5 rounded-full shrink-0">🔒会员</span>
-                      : <LessonStatusBadge {...stats} />
-                    }
+                    <span className="text-sm font-medium text-white">{lesson.label}</span>
+                    <LessonStatusBadge {...stats} />
                   </div>
                   <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
                     <div
@@ -544,6 +542,21 @@ export default function Courses({
                   </div>
                 </div>
               </div>
+            )
+            return (
+              <LockedOverlay
+                key={i}
+                locked={lessonLocked}
+                cost={LESSON_COST}
+                color="gold"
+                crystalBalance={crystalBalance}
+                title={labelFor(lesson)}
+                reason={`花费 ${LESSON_COST} 金钻解锁本课`}
+                onUnlock={() => unlocks?.unlock?.('unit', lessonKey, LESSON_COST, 'gold')}
+                onGoShop={onGoShop}
+              >
+                {card}
+              </LockedOverlay>
             )
           })}
         </div>

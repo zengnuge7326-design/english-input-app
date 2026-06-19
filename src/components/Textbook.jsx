@@ -5,6 +5,7 @@ import GrammarLesson from './GrammarLesson'
 import TextbookParchmentCover from './TextbookParchmentCover'
 import { hasGrammar } from '../data/grammar'
 import { getGrammarPercent, getGrammarCount } from '../data/grammar/progress'
+import CatalogBookCard from './CatalogBookCard'
 
 // 环形进度组件（仿 Claude Code 小转圈风格）
 function RingProgress({ value = 0, size = 56, stroke = 4, accent = '#3b82f6', label, sub }) {
@@ -406,6 +407,7 @@ const TEXTBOOK_SLOTS = [
 ]
 
 import { getSyncPartCount } from '../utils/syncPartProgress'
+import { getMainLessonCount } from '../utils/mainLessonProgress'
 
 function getLessonStats(data, progress) {
   const total = data.length
@@ -539,8 +541,10 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
         {/* Half-lock notice */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {book.lessons.map((lesson, i) => {
-            // 册已通过外层宝石锁控制，册内单元全部开放（单层锁标准）
-            const lessonLocked = false
+            // 第0单元免费，其余需要解锁（会员免费）
+            const UNIT_COST = 30
+            const unitKey = `${book.id}_${lesson.label}`
+            const lessonLocked = !isMember && i > 0 && !(unlocks?.isUnlocked?.('unit', unitKey))
             const data = book.data.slice(lesson.slice[0], lesson.slice[1])
             const stats = getLessonStats(data, progress)
             const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
@@ -554,10 +558,18 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                 const next = book.lessons[idx + 1]
                 return () => {
                   const nextData = book.data.slice(next.slice[0], next.slice[1])
-                  onImport(nextData, `${book.name} · ${next.label}`, buildLoader(idx + 1))
+                  onImport(nextData, `${book.name} · ${next.label}`, buildLoader(idx + 1), {
+                    bookId: book.id,
+                    unitLabel: next.label,
+                    returnTab: 'textbook',
+                  })
                 }
               }
-              onImport(data, `${book.name} · ${lesson.label}`, buildLoader(i))
+              onImport(data, `${book.name} · ${lesson.label}`, buildLoader(i), {
+                bookId: book.id,
+                unitLabel: lesson.label,
+                returnTab: 'textbook',
+              })
             }
             const goGrammar = (mode) => {
               if (lessonLocked) { onShowLogin?.(); return }
@@ -571,15 +583,28 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
             const g2Pct = getGrammarPercent(book.id, lesson.label, 'practice')
             const g1Count = getGrammarCount(book.id, lesson.label, 'lesson')
             const g2Count = getGrammarCount(book.id, lesson.label, 'practice')
+            const mainPracticeCount = getMainLessonCount(book.id, lesson.label)
             const accentMain = done ? '#fbbf24' : '#3b82f6'
             return (
-              <div key={i} className="relative bg-slate-900/35 backdrop-blur-xl backdrop-saturate-150 border border-amber-300/40 ring-1 ring-amber-200/20 rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:border-amber-300/60 transition-all"
+              <LockedOverlay
+                key={i}
+                locked={lessonLocked}
+                cost={UNIT_COST}
+                color="gold"
+                crystalBalance={crystalBalance}
+                title={`${book.name} · ${lesson.label}`}
+                reason={`花费 ${UNIT_COST} 金钻解锁本单元`}
+                onUnlock={() => unlocks?.unlock?.('unit', unitKey, UNIT_COST, 'gold')}
+                onGoShop={onGoShop}
+              >
+              <div className="relative bg-slate-900/35 backdrop-blur-xl backdrop-saturate-150 border border-amber-300/40 ring-1 ring-amber-200/20 rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:border-amber-300/60 transition-all"
                 style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 0 12px rgba(251,191,36,0.18), 0 4px 16px rgba(0,0,0,0.25)' }}>
 
                 {/* 主区：主练习 + 两个语法按钮（顶部彩条已去掉） */}
                 <div className="px-3 pt-3 pb-2 flex gap-2">
                   {/* 左：主练习按钮 — 只留 Unit label + #N + 右侧环形进度 */}
                   <button onClick={goMain}
+                    title={`${stats.total} 句 · 已练 ${mainPracticeCount} 次`}
                     style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 3px rgba(0,0,0,0.2)' }}
                     className={`flex-1 min-w-0 rounded-2xl flex items-center gap-3 transition-all active:scale-[0.98]
                       bg-white/[0.06] backdrop-blur-xl backdrop-saturate-150 border border-white/15 hover:bg-white/[0.12] hover:border-white/25
@@ -591,7 +616,7 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                       <span className="text-[10px] font-mono text-white/40 mt-0.5">#{i + 1}</span>
                     </div>
                     <RingProgress value={mainPct} size={56} stroke={4} accent={accentMain}
-                      label={stats.attempted > 0 ? `${stats.attempted}` : ''} />
+                      label={mainPracticeCount > 0 ? `${mainPracticeCount}` : ''} />
                   </button>
 
                   {/* 右：两个语法按钮 — 只留 label + 右侧环形进度 */}
@@ -659,6 +684,7 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
                   </div>
                 </div>
               </div>
+              </LockedOverlay>
             )
           })}
         </div>
@@ -678,7 +704,7 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
           <span className="text-2xl shrink-0">⭐</span>
           <div className="flex-1 min-w-0">
             <div className="text-amber-300 font-semibold text-sm">开通会员，全部教材免钻石解锁</div>
-            <div className="text-amber-500/80 text-xs mt-0.5">学完上一册自动解锁下一册，也可用钻石提前开启</div>
+            <div className="text-amber-500/80 text-xs mt-0.5">开通会员，全部单元免钻石解锁</div>
           </div>
           <button onClick={onShowLogin} className="shrink-0 px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold transition-colors">
             登录
@@ -696,82 +722,33 @@ export default function Textbook({ onImport, onClose, historyRef, progress = {},
             bookPercents.set(b.id, s.total ? Math.round((s.attempted / s.total) * 100) : 0)
           })
           return TEXTBOOK_SLOTS.map((book) => {
-          // 第 0 本（三年级上册）免费，其余看顺序解锁
-          let locked = false
-          const COST = 80
-          if (book.name) {
-            const idx = namedSlots.findIndex(b => b.id === book.id)
-            if (idx > 0) {
-              const prevId = namedSlots[idx - 1].id
-              const prevPct = bookPercents.get(prevId) ?? 0
-              locked = !isMember &&
-                !(unlocks?.isUnlocked?.('book', book.id)) &&
-                prevPct < 60
-            }
-          }
-          const card = (
-          <button
-            onClick={() => {
-              if (!book.name) return
-              setDetail(book.id)
-            }}
-            className={`w-full flex flex-col rounded-2xl overflow-hidden border transition-all text-left
-              ${book.name
-                ? 'border-gray-700 hover:border-gray-500 cursor-pointer'
-                : 'border-slate-700 border-dashed cursor-default opacity-40'}
-            `}
-          >
-            <div className="w-full aspect-[3/4] flex items-center justify-center overflow-hidden relative bg-gray-800">
-              {book.gradient ? (
-                <TextbookParchmentCover
-                  gradient={book.gradient}
-                  label={book.label}
-                  coverText={book.coverText}
-                  subject={book.subject}
-                  variant="grid"
-                />
-              ) : book.cover ? (
-                <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
-              ) : (
-                <span className="text-3xl text-gray-700">+</span>
-              )}
-            </div>
-            <div className="bg-slate-800 p-3 flex flex-col gap-1">
-              <div className="text-sm font-medium text-white truncate">
-                {book.name || '即将上线'}
-              </div>
-              <div className="text-xs text-gray-500 truncate">
-                {book.desc || '敬请期待'}
-              </div>
-              {book.name && (() => {
-                const stats = getLessonStats(book.data, progress)
-                const percent = stats.total ? Math.round((stats.attempted / stats.total) * 100) : 0
-                return (
-                  <>
-                    <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden mt-1">
-                      <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${percent}%` }} />
-                    </div>
-                    <div className="text-xs text-gray-600">{book.lessons.length} 课 · {percent}%</div>
-                  </>
-                )
-              })()}
-            </div>
-          </button>
-          )
+          const percent = book.name ? (bookPercents.get(book.id) ?? 0) : 0
           return (
             <div key={book.id} className="relative">
-              <LockedOverlay
-                locked={locked}
-                cost={COST}
-                color="blue"
-                crystalBalance={crystalBalance}
-                title={book.name}
-                reason={`完成上一册 60%，或花费 ${COST} 钻石提前开启`}
-                onUnlock={() => unlocks?.unlock?.('book', book.id, COST, 'blue')}
-                onGoShop={onGoShop}
-              >
-                {card}
-              </LockedOverlay>
+              <CatalogBookCard
+                title={book.name || '即将上线'}
+                desc={book.desc || '敬请期待'}
+                percent={percent}
+                statLabel={book.name ? `${book.lessons.length} 课 · ${percent}%` : null}
+                showProgress={!!book.name}
+                disabled={!book.name}
+                onClick={() => { if (book.name) setDetail(book.id) }}
+                cover={
+                  book.gradient ? (
+                    <TextbookParchmentCover
+                      gradient={book.gradient}
+                      label={book.label}
+                      coverText={book.coverText}
+                      subject={book.subject}
+                      variant="grid"
+                    />
+                  ) : book.cover ? (
+                    <img src={book.cover} alt={book.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-3xl text-gray-700">+</span>
+                  )
+                }
+              />
             </div>
           )
         })

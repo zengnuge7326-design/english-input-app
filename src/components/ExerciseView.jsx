@@ -11,6 +11,7 @@ import { useTTS } from '../hooks/useTTS'
 import { useSound } from '../hooks/useSound'
 import { buildSplitChunksLevel } from '../utils/splitSentence'
 import { ensureMic } from '../utils/micGate'
+import { incrementMainLessonCount } from '../utils/mainLessonProgress'
 
 const API = 'https://okenglish.site/api'
 
@@ -92,6 +93,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
   const comboRef = useRef(0)                       // 连续答对计数（不触发重渲染）
   const [comboFloats, setComboFloats] = useState([]) // 里程碑连击飘字
   const sentenceErrorRef = useRef(0)                // 本句出错次数（用于钻石判断）
+  const consecutiveErrorRef = useRef(0)             // 连续出错计数（2次扣1宝石）
   const completedRef = useRef(false)
   const [itemBalance, setItemBalance] = useState({ hint_balance: 0, skip_balance: 0 })
   const [revealHintNonce, setRevealHintNonce] = useState(0)
@@ -159,6 +161,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     comboRef.current = 0
     setComboFloats([])
     sentenceErrorRef.current = 0
+    consecutiveErrorRef.current = 0
   }, [index, key])
 
   // Reset speak gate on new sentence / retry / setting change
@@ -450,9 +453,12 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
     } else if (sentenceErrorRef.current >= 2) {
       onCrystal?.('red', 1, 'sentence_recover', { id: sentence.id, errs: sentenceErrorRef.current })
     }
-    // 完成整个单元（最后一句）→ 蓝钻石
+    // 完成整个单元（最后一句）→ 蓝钻石 + 主练习次数 +1
     if (index === sentences.length - 1) {
       onCrystal?.('blue', 1, 'unit_complete', { lesson: grammarContext?.name || '' })
+      if (grammarContext?.bookId && grammarContext?.unitLabel) {
+        incrementMainLessonCount(grammarContext.bookId, grammarContext.unitLabel)
+      }
     }
     setPraise(PRAISES[Math.floor(Math.random() * PRAISES.length)])
     const floatId = Date.now()
@@ -980,9 +986,19 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
               hintTriggerCount={settings.hintTriggerCount || 1}
               revealHintNonce={revealHintNonce}
               errorRetryCount={settings.errorRetryCount || 2}
-              onError={() => { playError(); comboRef.current = 0; sentenceErrorRef.current += 1 }}
+              onError={() => {
+                playError()
+                comboRef.current = 0
+                sentenceErrorRef.current += 1
+                consecutiveErrorRef.current += 1
+                if (consecutiveErrorRef.current >= 2) {
+                  consecutiveErrorRef.current = 0
+                  onCrystal?.('gold', -1, 'consecutive_error', { errs: 2 })
+                }
+              }}
               onWordCorrect={() => { onWordDone?.() }}
               onWordFinal={() => {
+                consecutiveErrorRef.current = 0
                 const c = ++comboRef.current
                 playCorrect(c)
                 if (c > 0 && c % 5 === 0) {

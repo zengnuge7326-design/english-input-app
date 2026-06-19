@@ -114,7 +114,7 @@ import bsdaS2Data from './data/bsda_s2.json'
 import bsdaS3Data from './data/bsda_s3.json'
 import bsdaS4Data from './data/bsda_s4.json'
 import {
-  IconHome, IconPencil, IconBookOpen, IconBook,
+  IconHome, IconPencil, IconBookOpen, IconBook, IconSmartphone,
   IconGraduationCap, IconDownload, IconSettings, IconSparkles, IconGamepad,
   IconArchive, IconCalendar, IconStar, IconRefresh, IconCrown, IconUsers,
   IconUser,
@@ -604,6 +604,7 @@ function MainApp() {
   useHistoryLayer(showMsgCenter, () => setShowMsgCenter(false))
   useHistoryLayer(showStudentJoin, () => setShowStudentJoin(false))
   const [crystalPulse, setCrystalPulse] = useState(0)
+  const [crystalSpend, setCrystalSpend] = useState(0)
 
   // 商店背包 / 装备头像
   const [shopInventory, setShopInventory] = useState({
@@ -634,6 +635,11 @@ function MainApp() {
     if (!crystal.recent) return
     setCrystalPulse(p => p + 1)
   }, [crystal.recent])
+  // 监听 crystal.recentSpend 触发破碎动效
+  useEffect(() => {
+    if (!crystal.recentSpend) return
+    setCrystalSpend(p => p + 1)
+  }, [crystal.recentSpend])
 
   /** 所有 Tab 切换的统一入口：同步 React 状态与 history（popstate 回放时不要 push） */
   const tabRef = useRef(tab)
@@ -929,8 +935,16 @@ function MainApp() {
     }
     if (nextUnit === 'textbook') {
       navigateTo('textbook')
-    } else if (nextUnit) {
-      handleImport(nextUnit.data.slice(nextUnit.slice[0], nextUnit.slice[1]), nextUnit.label)
+    } else     if (nextUnit) {
+      const unitLabel = nextUnit.label.includes(' · ')
+        ? nextUnit.label.split(' · ').pop()
+        : nextUnit.label
+      handleImport(
+        nextUnit.data.slice(nextUnit.slice[0], nextUnit.slice[1]),
+        nextUnit.label,
+        null,
+        { bookId: nextUnit.bookId, unitLabel, returnTab: 'textbook' },
+      )
     }
   }, [showContinue, nextLessonLoader, nextUnit, handleImport])
 
@@ -1107,6 +1121,20 @@ function MainApp() {
             </span>
             <span className="text-sm font-bold tabular-nums">{crystal.total}</span>
           </button>
+
+          {!showMobileLearn && (
+            <button
+              type="button"
+              onClick={() => setShowMobileLearn(true)}
+              title="纯手机模式学习"
+              className={`flex h-11 w-14 shrink-0 items-center justify-center rounded-xl border px-1.5 shadow-lg backdrop-blur-sm transition-colors text-sm font-semibold
+                ${isHomeLight
+                  ? 'border-white/70 bg-white/55 text-[#1a1a1a] hover:bg-white/75'
+                  : 'border-slate-600/50 bg-slate-800/95 text-white hover:bg-slate-700'}`}
+            >
+              手机学
+            </button>
+          )}
         </div>
 
         {showGames && (
@@ -1142,6 +1170,7 @@ function MainApp() {
               }}
               onAddXp={xp.addXP}
               onCrystalEarn={crystal.earn}
+              onCrystalSpend={crystal.spend}
               onOpenShop={() => setShowMobileShop(true)}
               onOpenLeaderboard={() => setShowLeaderboard(true)}
               unlocks={unlocks}
@@ -1154,6 +1183,7 @@ function MainApp() {
               }}
               mainCrystal={{ total: crystal.total }}
               crystalPulse={crystalPulse}
+              crystalSpend={crystalSpend}
             />
           </div>
         )}
@@ -1176,6 +1206,7 @@ function MainApp() {
                 token={token}
                 crystal={crystal}
                 inventory={shopInventory}
+                progress={progress}
                 onInventoryChange={setShopInventory}
                 onEquippedChange={(equipped) => {
                   setShopInventory(prev => ({ ...prev, equipped: equipped || { avatar: null, panda_skin: null, theme: null, flame_color: null } }))
@@ -1256,7 +1287,13 @@ function MainApp() {
               aria-label="切换头像"
             >
               <div className={`nav-menu-avatar-slot rounded-[22%] overflow-hidden flex items-center justify-center ${isMobileMenu ? 'w-11 h-11' : 'w-16 h-16'}`}>
-                {shopInventory.equipped?.avatar ? (
+                {shopInventory.equipped?.avatar === 'custom_upload' ? (
+                  <img
+                    src={localStorage.getItem('avatar_custom_dataurl') || '/panda-icon.webp'}
+                    alt="自定义头像"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                ) : shopInventory.equipped?.avatar ? (
                   <PetAvatar
                     petId={shopInventory.equipped.avatar}
                     size={isMobileMenu ? 44 : 64}
@@ -1453,6 +1490,7 @@ function MainApp() {
               token={token}
               crystal={crystal}
               inventory={shopInventory}
+              progress={progress}
               onInventoryChange={setShopInventory}
               onEquippedChange={(equipped) => {
                 setShopInventory(prev => ({ ...prev, equipped: equipped || { avatar: null, panda_skin: null, theme: null, flame_color: null } }))

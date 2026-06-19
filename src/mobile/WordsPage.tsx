@@ -21,7 +21,6 @@ export default function WordsPage({ bookProgress = {}, unitProgress = {}, onStar
   const [level, setLevel] = useState<GradeLevel>('primary')
   const { speak } = useMobileTTS()
   const books = listVocabBooks().filter(({ book }) => book.level === level)
-  const fillScreen = level === 'primary' && books.length === 8
 
   const playWord = useCallback((word: string) => {
     speak(word, 0.9)
@@ -143,7 +142,7 @@ export default function WordsPage({ bookProgress = {}, unitProgress = {}, onStar
         </div>
       </header>
 
-      <div className={`mobile-words-books-list${fillScreen ? ' mobile-words-books-list--fill' : ''}`}>
+      <div className="mobile-words-books-list">
         {books.map(({ book, data }) => {
           const locked = !data || data.units.length === 0 || countVocabWords(data) === 0
           const pct = Math.min(100, Math.max(0, bookProgress[book.id] ?? 0))
@@ -163,12 +162,12 @@ export default function WordsPage({ bookProgress = {}, unitProgress = {}, onStar
                 <span className="mobile-vocab-card__sub">
                   {locked ? '即将上线' : `${data!.units.length} 单元 · ${countVocabWords(data!)} 词`}
                 </span>
+                {!locked && (
+                  <div className="mobile-vocab-card__bar mobile-vocab-card__bar--book" aria-hidden>
+                    <div className="mobile-vocab-card__bar-fill" style={{ width: `${pct}%` }} />
+                  </div>
+                )}
               </div>
-              {!locked && (
-                <div className="mobile-vocab-card__bar mobile-vocab-card__bar--book" aria-hidden>
-                  <div className="mobile-vocab-card__bar-fill" style={{ width: `${pct}%` }} />
-                </div>
-              )}
             </button>
           )
         })}

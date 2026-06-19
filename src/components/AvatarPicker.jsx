@@ -1,8 +1,31 @@
 /**
- * 头像选择器：默认熊猫 + 已拥有宠物
+ * 头像选择器：默认熊猫 + 已拥有宠物 + 本地上传
  */
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import PetAvatar from './PetAvatar'
+
+const CUSTOM_KEY = 'avatar_custom_dataurl'
+
+function resizeToSquare(file, size = 200) {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    const url = URL.createObjectURL(file)
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      canvas.width = size
+      canvas.height = size
+      const ctx = canvas.getContext('2d')
+      const s = Math.min(img.width, img.height)
+      const ox = (img.width - s) / 2
+      const oy = (img.height - s) / 2
+      ctx.drawImage(img, ox, oy, s, s, 0, 0, size, size)
+      URL.revokeObjectURL(url)
+      resolve(canvas.toDataURL('image/jpeg', 0.85))
+    }
+    img.onerror = reject
+    img.src = url
+  })
+}
 
 const API = 'https://okenglish.site/api'
 
@@ -15,8 +38,37 @@ export default function AvatarPicker({
   onGoToShop,
 }) {
   const [products, setProducts] = useState(productsProp)
+  const [customImg, setCustomImg] = useState(() => localStorage.getItem(CUSTOM_KEY) || null)
+  const fileRef = useRef(null)
   const pets = inventory?.pets || []
   const equippedId = inventory?.equipped?.avatar || null
+
+  async function handleFileChange(e) {
+    const file = e.target.files?.[0]
+    if (!file) return
+    try {
+      const dataUrl = await resizeToSquare(file, 200)
+      localStorage.setItem(CUSTOM_KEY, dataUrl)
+      setCustomImg(dataUrl)
+      onEquippedChange?.({ avatar: 'custom_upload' })
+      onClose?.()
+    } catch { /* ignore */ }
+    e.target.value = ''
+  }
+
+  function equipCustom() {
+    if (!customImg) {
+      fileRef.current?.click()
+      return
+    }
+    onEquippedChange?.({ avatar: 'custom_upload' })
+    onClose?.()
+  }
+
+  function handleUploadNew(e) {
+    e.stopPropagation()
+    fileRef.current?.click()
+  }
 
   useEffect(() => {
     if (productsProp.length) {
@@ -62,6 +114,15 @@ export default function AvatarPicker({
           <button onClick={onClose} className="text-gray-400 hover:text-white text-xl w-8 h-8">×</button>
         </div>
 
+        {/* 隐藏的文件输入 */}
+        <input
+          ref={fileRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+
         <div className="grid grid-cols-4 gap-3 mb-4">
           {/* 默认熊猫 */}
           <button
@@ -76,6 +137,35 @@ export default function AvatarPicker({
             </div>
             <span className="text-[10px] text-gray-400">默认</span>
           </button>
+
+          {/* 本地上传自定义头像 */}
+          <div className="flex flex-col items-center gap-1 p-2 rounded-xl border transition-all relative
+            border-gray-700 bg-gray-800/40">
+            <button
+              onClick={equipCustom}
+              className={`w-14 h-14 rounded-full overflow-hidden flex items-center justify-center transition-all
+                ${equippedId === 'custom_upload'
+                  ? 'ring-4 ring-amber-400'
+                  : 'ring-2 ring-gray-600 hover:ring-gray-400'}`}
+            >
+              {customImg ? (
+                <img src={customImg} alt="自定义" className="w-full h-full object-cover" />
+              ) : (
+                <div className="w-full h-full bg-gray-700 flex items-center justify-center text-gray-400 text-2xl">+</div>
+              )}
+            </button>
+            <span className="text-[10px] text-gray-400">
+              {customImg ? '自定义' : '上传'}
+            </span>
+            {/* 右上角小按钮：已有图片时允许重新上传 */}
+            {customImg && (
+              <button
+                onClick={handleUploadNew}
+                className="absolute top-1 right-1 w-4 h-4 rounded-full bg-gray-600 hover:bg-gray-500 text-white text-[9px] flex items-center justify-center"
+                title="重新上传"
+              >↑</button>
+            )}
+          </div>
 
           {pets.map(p => {
             const isEq = equippedId === p.item_id

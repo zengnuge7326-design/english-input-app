@@ -7,6 +7,7 @@ import { useState, useEffect, useCallback } from 'react'
 import GemSVG from './GemSVG'
 import PageBackBar from './PageBackBar'
 import PetCatalog from './PetCatalog'
+import EnglishIsland from './EnglishIsland'
 import MyInventory from './MyInventory'
 import RechargePanel from './RechargePanel'
 import DailySpinWheel from './DailySpinWheel'
@@ -25,7 +26,7 @@ const COLOR_INFO = {
 const TABS = [
   { id: 'recharge',   label: '充值' },
   { id: 'items',      label: '道具' },
-  { id: 'pets',       label: '宠物' },
+  { id: 'pets',       label: '英语岛' },
   { id: 'membership', label: '会员' },
 ]
 
@@ -55,12 +56,11 @@ function BalanceBar({ crystal, onOpenInventory }) {
       </div>
       <div className="grid grid-cols-5 gap-2">
         {['blue', 'green', 'red', 'purple', 'gold'].map(c => (
-          <div key={c} className="flex flex-col items-center gap-1">
-            <GemSVG color={c} size={28} />
-            <span className={`text-base font-bold tabular-nums ${COLOR_INFO[c].textCls}`}>
+          <div key={c} className="flex flex-col items-center gap-1.5">
+            <GemSVG color={c} size={44} />
+            <span className={`text-lg font-bold tabular-nums leading-none ${COLOR_INFO[c].textCls}`}>
               {crystal?.[c] ?? 0}
             </span>
-            <span className="text-[10px] text-gray-500">{COLOR_INFO[c].label}钻</span>
           </div>
         ))}
       </div>
@@ -235,8 +235,8 @@ function ItemsTab({ token, crystal, onBuySuccess }) {
               onClick={() => setSelected(p)}
               className="bg-gray-800/60 border border-gray-700/60 rounded-xl p-3 flex flex-col items-center text-center hover:border-indigo-500/60 hover:bg-gray-700/60 transition-all"
             >
-              <div className="mb-1.5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-b from-gray-700/50 to-gray-900/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-white/5">
-                <CartoonIcon kind="item" id={resolveProductIconId(p)} size={48} />
+              <div className="mb-1.5 flex h-20 w-20 items-center justify-center">
+                <CartoonIcon kind="item" id={resolveProductIconId(p)} size={72} />
               </div>
               <span className="text-xs font-semibold text-white truncate w-full">{p.name}</span>
               {p.desc && <span className="text-[10px] text-gray-500 truncate w-full mt-0.5">{p.desc}</span>}
@@ -351,6 +351,7 @@ export default function Shop({
   onInventoryChange,
   onEquippedChange,
   initialTab,
+  progress,
 }) {
   const [tab, setTab] = useState(initialTab || 'recharge')
   const [localBalance, setLocalBalance] = useState(null)
@@ -473,9 +474,7 @@ export default function Shop({
             token={token}
             crystal={displayCrystal}
             inventory={inventory}
-            products={products}
-            onBuySuccess={handlePetBuySuccess}
-            onEquippedChange={handleEquipped}
+            onBuySuccess={handleBuySuccess}
           />
         )}
         {tab === 'membership' && <MembershipTab token={token} crystal={displayCrystal} onBuySuccess={handleBuySuccess} />}

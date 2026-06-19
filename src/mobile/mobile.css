@@ -49,6 +49,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* 外壳带主题时，整壳（含顶部状态栏）跟随主题底色 */
+.mobile-main-shell.mobile-tab-theme {
+  background: var(--theme-bg);
+}
+
 .mobile-tab-bar {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -233,6 +238,7 @@
 
 .mobile-home-page__status {
   color: #ffffff;
+  background: transparent;
 }
 
 .mobile-home-page__status .mobile-home-page__pill {
@@ -348,8 +354,6 @@
 .learning-path-card__info {
   flex: 1;
   min-width: 0;
-  padding-right: 0.65em;
-  border-right: 2px solid rgba(255, 255, 255, 0.22);
 }
 
 .learning-path-card__meta {
@@ -2855,6 +2859,16 @@ html.mobile-shell-active main[data-app-main] {
   box-shadow: 0 0 20px rgba(168,85,247,0.18);
 }
 .game-card--defender:active { transform: scale(0.98); }
+.game-card--frog {
+  background: linear-gradient(135deg, rgba(124,179,66,0.30), rgba(56,189,248,0.16));
+  border-color: rgba(124,179,66,0.55);
+  box-shadow: 0 0 20px rgba(124,179,66,0.18);
+}
+.game-card--frog:active { transform: scale(0.98); }
+.game-card--frog .game-card__play {
+  border-color: rgba(132,204,22,0.55);
+  background: rgba(132,204,22,0.24);
+}
 .game-card--locked {
   opacity: 0.48;
   background: rgba(255,255,255,0.04);
@@ -2902,6 +2916,10 @@ html.mobile-shell-active main[data-app-main] {
   white-space: nowrap;
 }
 .game-card__icon--ship {
+  background: transparent;
+  border-radius: 0;
+}
+.game-card__icon--frog {
   background: transparent;
   border-radius: 0;
 }

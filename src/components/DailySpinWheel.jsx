@@ -1,7 +1,7 @@
 /**
  * 每日免费转盘 — POST /api/shop/daily-spin
  */
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import GemSVG from './GemSVG'
 
 const API = 'https://okenglish.site/api'
@@ -56,6 +56,34 @@ const CONIC_BG = `conic-gradient(${WHEEL_SEGMENTS.map((s, i) => {
   return `${s.color} ${a0}deg ${a1}deg`
 }).join(', ')})`
 
+const HISTORY_KEY = 'daily_spin_history'
+
+function loadHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(HISTORY_KEY) || '{}')
+  } catch { return {} }
+}
+
+function saveHistory(date, prize) {
+  const h = loadHistory()
+  h[date] = prize
+  // keep only last 30 days
+  const sorted = Object.keys(h).sort().slice(-30)
+  const trimmed = {}
+  sorted.forEach(k => { trimmed[k] = h[k] })
+  try { localStorage.setItem(HISTORY_KEY, JSON.stringify(trimmed)) } catch { /* ignore */ }
+}
+
+function getLast7Days() {
+  const days = []
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date()
+    d.setDate(d.getDate() - i)
+    days.push(d.toISOString().slice(0, 10))
+  }
+  return days
+}
+
 export default function DailySpinWheel({ token, onShowLogin, onPrizeWon }) {
   const [rotation, setRotation] = useState(0)
   const [spinning, setSpinning] = useState(false)
@@ -65,6 +93,7 @@ export default function DailySpinWheel({ token, onShowLogin, onPrizeWon }) {
   const [nextSpinAt, setNextSpinAt] = useState(null)
   const [showPrize, setShowPrize] = useState(null)
   const [error, setError] = useState('')
+  const [spinHistory, setSpinHistory] = useState(() => loadHistory())
 
   const spinToPrize = useCallback((prize) => {
     const idx = findSegmentIndex(prize)
@@ -112,6 +141,8 @@ export default function DailySpinWheel({ token, onShowLogin, onPrizeWon }) {
         try { localStorage.setItem(storageKey(), '1') } catch { /* ignore */ }
         setShowPrize(prize)
         onPrizeWon?.(prize)
+        saveHistory(todayKey(), prize)
+        setSpinHistory(loadHistory())
       }, 4200)
     } catch {
       setError('网络错误，请重试')
@@ -168,29 +199,60 @@ export default function DailySpinWheel({ token, onShowLogin, onPrizeWon }) {
           </button>
         </div>
 
-        <div className="flex-1 text-center sm:text-left min-w-0">
-          {doneToday ? (
-            <p className="text-sm text-gray-400">
-              今日已抽奖，下次可转：<span className="text-indigo-300">{formatNextSpin(nextSpinAt)}</span>
-            </p>
-          ) : !token ? (
-            <p className="text-sm text-gray-400">登录后即可免费转一次</p>
-          ) : (
-            <p className="text-sm text-gray-300">点击中央按钮抽奖，金钻与道具直接到账</p>
-          )}
-          <ul className="mt-2 text-[10px] text-gray-500 space-y-0.5">
-            <li>最高 50 金钻 · 冻结卡 · 提示卡</li>
-          </ul>
-          {error && <p className="mt-2 text-xs text-rose-400">{error}</p>}
-          {!token && (
-            <button
-              type="button"
-              onClick={onShowLogin}
-              className="mt-3 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold"
-            >
-              登录抽奖
-            </button>
-          )}
+        <div className="flex-1 min-w-0 flex flex-col gap-3">
+          <div className="text-center sm:text-left">
+            {doneToday ? (
+              <p className="text-sm text-gray-400">
+                今日已抽奖，下次可转：<span className="text-indigo-300">{formatNextSpin(nextSpinAt)}</span>
+              </p>
+            ) : !token ? (
+              <p className="text-sm text-gray-400">登录后即可免费转一次</p>
+            ) : (
+              <p className="text-sm text-gray-300">点击中央按钮抽奖，金钻与道具直接到账</p>
+            )}
+            {error && <p className="mt-1 text-xs text-rose-400">{error}</p>}
+            {!token && (
+              <button
+                type="button"
+                onClick={onShowLogin}
+                className="mt-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold"
+              >
+                登录抽奖
+              </button>
+            )}
+          </div>
+
+          {/* 7天签到历史 */}
+          <div className="rounded-xl bg-black/30 border border-white/5 p-2.5">
+            <p className="text-[10px] text-gray-500 mb-2 font-semibold tracking-wide uppercase">近7天记录</p>
+            <div className="flex gap-1.5 flex-wrap">
+              {getLast7Days().map(date => {
+                const prize = spinHistory[date]
+                const isToday = date === todayKey()
+                const weekday = ['日','一','二','三','四','五','六'][new Date(date + 'T12:00:00').getDay()]
+                return (
+                  <div key={date}
+                    className={`flex flex-col items-center gap-0.5 flex-1 min-w-[32px] py-1.5 px-0.5 rounded-lg
+                      ${isToday ? 'bg-indigo-700/40 ring-1 ring-indigo-500/50' : 'bg-white/5'}`}>
+                    <span className="text-[9px] text-gray-500">周{weekday}</span>
+                    {prize ? (
+                      <>
+                        {prize.type === 'diamond'
+                          ? <GemSVG color="gold" size={16} />
+                          : <span className="text-sm leading-none">{prize.item_id === 'freeze_card_1' ? '❄️' : '💡'}</span>
+                        }
+                        {prize.type === 'diamond' && (
+                          <span className="text-[9px] text-amber-300 font-bold leading-none">+{prize.amount}</span>
+                        )}
+                      </>
+                    ) : (
+                      <span className="text-gray-700 text-base leading-none">·</span>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
 

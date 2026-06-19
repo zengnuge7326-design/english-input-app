@@ -61,6 +61,8 @@ export function useCrystal(token) {
 
   // 最近获得记录（用于飘字动画 / 通知）
   const [recent, setRecent] = useState(null)
+  // 最近扣除记录（用于破碎动效）
+  const [recentSpend, setRecentSpend] = useState(null)
 
   // 拉取服务器状态
   useEffect(() => {
@@ -156,6 +158,7 @@ export function useCrystal(token) {
         if (d.error) return false
         setState(s => ({ ...s, ...d }))
         appendLog({ color, delta: -a, reason, ts: Date.now() })
+        setRecentSpend({ color, amount: a, reason, ts: Date.now() })
         return true
       } catch { return false }
     } else {
@@ -167,6 +170,7 @@ export function useCrystal(token) {
         return next
       })
       appendLog({ color, delta: -a, reason, ts: Date.now() })
+      setRecentSpend({ color, amount: a, reason, ts: Date.now() })
       return true
     }
   }, [token])
@@ -187,6 +191,7 @@ export function useCrystal(token) {
   }, [token])
 
   const clearRecent = useCallback(() => setRecent(null), [])
+  const clearRecentSpend = useCallback(() => setRecentSpend(null), [])
 
   const refresh = useCallback(async () => {
     if (!token) return
@@ -211,5 +216,5 @@ export function useCrystal(token) {
     return () => document.removeEventListener('visibilitychange', onHide)
   }, [flushEarn])
 
-  return { ...state, earn, spend, getLog, recent, clearRecent, refresh }
+  return { ...state, earn, spend, getLog, recent, clearRecent, recentSpend, clearRecentSpend, refresh }
 }

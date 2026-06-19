@@ -256,32 +256,19 @@ export default function Dashboard({ sentences, progress, xp, isMember, isFounder
   return (
     <div className="w-full max-w-2xl lg:max-w-5xl mx-auto px-3 sm:px-5 py-4 sm:py-6 flex flex-col gap-3 sm:gap-4">
 
-      {/* 纯手机模式 + 了解本站 */}
-      {(onOpenMobileLearn || onOpenAbout) && (
-        <div className="flex gap-2 sm:gap-3">
-          {onOpenMobileLearn && (
-            <button onClick={onOpenMobileLearn}
-              className="lg-home-panel w-[42%] min-w-0 flex flex-row items-center justify-center gap-2.5 px-3 py-3 sm:py-3.5 hover:scale-[1.02] transition-transform active:scale-95">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center shrink-0 shadow-md text-white">
-                <IconSmartphone size={20} />
-              </div>
-              <div className="text-xs sm:text-sm font-bold text-[#1a1a1a] leading-tight text-left">纯手机模式学习</div>
-            </button>
-          )}
-          {onOpenAbout && (
-            <button onClick={onOpenAbout}
-              className={`lg-home-panel flex items-center gap-2.5 px-3 py-3 sm:py-3.5 text-left hover:scale-[1.01] transition-transform group ${onOpenMobileLearn ? 'w-[58%] min-w-0' : 'w-full'}`}>
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center shrink-0 shadow-md text-white">
-                <IconBookOpen size={20} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm sm:text-base font-bold text-[#1a1a1a]">了解本站</div>
-                <div className="text-[11px] sm:text-xs text-[#7a7088] truncate">功能介绍 · 快速上手 · 隐私说明</div>
-              </div>
-              <span className="text-[#9575cd] text-lg shrink-0 group-hover:translate-x-1 transition-transform">›</span>
-            </button>
-          )}
-        </div>
+      {/* 了解本站 */}
+      {onOpenAbout && (
+        <button onClick={onOpenAbout}
+          className="lg-home-panel w-full flex items-center gap-2.5 px-3 py-3 sm:py-3.5 text-left hover:scale-[1.01] transition-transform group">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center shrink-0 shadow-md text-white">
+            <IconBookOpen size={20} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm sm:text-base font-bold text-[#1a1a1a]">了解本站</div>
+            <div className="text-[11px] sm:text-xs text-[#7a7088] truncate">功能介绍 · 快速上手 · 隐私说明</div>
+          </div>
+          <span className="text-[#9575cd] text-lg shrink-0 group-hover:translate-x-1 transition-transform">›</span>
+        </button>
       )}
 
       {/* ① 连胜火焰条 */}

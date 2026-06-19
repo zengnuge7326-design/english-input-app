@@ -365,16 +365,17 @@ function LevelSayIt({ progress, setProgress, onXp, onCrystal, sounds, sr, locked
           {ALPHABET_LETTERS.map((L, i) => {
             const isBack10 = i >= 16
             const greyed = lockedBack10 && isBack10
+            const selected = i === idx
+            const t = themeOf(L)
             return (
-              <div key={L.upper} className={greyed ? 'pointer-events-none' : ''} style={greyed ? { filter: 'grayscale(0.85) brightness(0.5)' } : undefined}>
-                <LetterCard letter={L} selected={i === idx}
-                  mastered={isLetterFullyMastered(progress, L)}
-                  stars={letterStarsCount(progress, L)}
-                  onClick={() => {
-                    if (greyed) return
-                    setIdx(i); unlockAudio(); speakLetter(L.upper)
-                  }} />
-              </div>
+              <button key={L.upper} onClick={() => { if (greyed) return; setIdx(i); unlockAudio(); speakLetter(L.upper) }}
+                disabled={greyed}
+                style={greyed ? { filter: 'grayscale(0.85) brightness(0.5)' } : undefined}
+                className={`relative aspect-square rounded-2xl bg-gradient-to-br ${t.from} ${t.to} backdrop-blur-xl backdrop-saturate-150 border border-white/10 active:scale-95 transition-all
+                  ${selected ? `ring-2 sm:ring-3 ${t.ring} ${t.glow} letter-pulse` : 'hover:scale-105'}
+                  flex items-center justify-center font-black text-2xl sm:text-3xl ${t.text} drop-shadow`}>
+                {L.upper}
+              </button>
             )
           })}
         </div>

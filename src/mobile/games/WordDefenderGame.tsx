@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { VocabWord } from '../data/unit1Vocab'
+import type { CrystalEarnFn } from '../types'
 import { useMobileTTS } from '../hooks/useMobileTTS'
 import { useMobileSfx } from '../hooks/useMobileSfx'
 import {
@@ -19,6 +20,8 @@ interface Props {
   unitLabel?: string
   onExit: () => void
   onComplete: (result: { hit: number; total: number; combo: number; accuracy: number; won: boolean }) => void
+  onCrystalEarn?: CrystalEarnFn
+  onCrystalSpend?: (color: string, amount: number, reason: string) => void
 }
 
 type Phase = 'intro' | 'playing' | 'over' | 'win'
@@ -38,7 +41,7 @@ interface Bullet {
   y: number
 }
 
-const HEARTS_START = 3
+const HEARTS_START = 5
 const UFO_HEIGHT_PCT = 35
 const BASE_SPEED = 1.6
 const SPEED_INCREMENT = 0.18
@@ -123,7 +126,7 @@ function makeUFO(word: VocabWord, level: number): UFOState {
   }
 }
 
-export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, onComplete }: Props) {
+export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, onComplete, onCrystalEarn, onCrystalSpend }: Props) {
   const { speak } = useMobileTTS()
   const sfx = useMobileSfx()
   const queue = useMemo(() => shuffle(words.filter(w => w.en && /^[a-zA-Z]+$/.test(w.en))), [words])
@@ -144,6 +147,7 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
   const [comboPulse, setComboPulse] = useState(false)
   const [lastTapIdx, setLastTapIdx] = useState<number | null>(null)
   const [speedTier, setSpeedTier] = useState(readSpeedTier)
+  const [missParticles, setMissParticles] = useState<number[]>([])
   const bulletIdRef = useRef(0)
   const rafRef = useRef<number | null>(null)
   const lastTickRef = useRef<number>(0)
@@ -243,6 +247,20 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
     setUfo({ ...u, picked: u.picked.slice(0, -1) })
   }, [])
 
+  const handleHint = useCallback(() => {
+    const u = ufoRef.current
+    if (!u || u.destroyed || phaseRef.current !== 'playing') return
+    if (hearts <= 1) return   // keep at least 1 heart
+    const nextCharIdx = u.picked.length
+    if (nextCharIdx >= u.word.en.length) return
+    const expected = u.word.en[nextCharIdx].toLowerCase()
+    const poolIdx = u.pool.findIndex((c, i) => c === expected && !u.picked.includes(i))
+    if (poolIdx < 0) return
+    sfx.playDamage()
+    setHearts(h => h - 1)
+    handleLetterTapRef.current(poolIdx)
+  }, [hearts, sfx])
+
   const handleLetterTap = useCallback((poolIdx: number) => {
     const u = ufoRef.current
     if (!u || u.destroyed || phaseRef.current !== 'playing') return
@@ -263,6 +281,7 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
       setUfo({ ...u, picked: nextPicked, destroyed: isComplete })
       if (isComplete) {
         sfx.playExplode()
+        onCrystalEarn?.('blue', 1, 'defender_word_hit')
         setHit(h => h + 1)
         setCombo(c => {
           const nc = c + 1
@@ -281,6 +300,10 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
       sfx.playWrong()
       setFlash('bad'); setTimeout(() => setFlash(null), 200)
       setCombo(0)
+      onCrystalSpend?.('blue', 1, 'defender_word_miss')
+      const pid = Date.now() + Math.random()
+      setMissParticles(p => [...p, pid])
+      setTimeout(() => setMissParticles(p => p.filter(x => x !== pid)), 1200)
       setUfo({ ...u, speed: u.speed * 1.45, y: Math.min(UFO_HEIGHT_PCT - 1, u.y + 4) })
     }
   }, [sfx, fireBullet, speak, spawnNext])
@@ -339,7 +362,8 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
             <li><span className="wdg__rule-icon wdg__rule-icon--ufo" /> 飞船显示汉语，从空中降下</li>
             <li><span className="wdg__rule-icon wdg__rule-icon--key" /> 按顺序拼出英文（可键盘输入）</li>
             <li><span className="wdg__rule-icon wdg__rule-icon--laser" /> 每对一个字母发射激光</li>
-            <li><span className="wdg__rule-icon wdg__rule-icon--heart" /> 飞船触底扣 1 血，3 血结束</li>
+            <li><span className="wdg__rule-icon wdg__rule-icon--heart" /> 飞船触碰火箭扣 1 血，5 血结束</li>
+            <li><span className="wdg__rule-icon wdg__rule-icon--key" /> 输入错误扣 1 💎</li>
           </ul>
           <button className="wdg__btn-primary" onClick={startGame}>开始作战</button>
         </div>
@@ -380,6 +404,15 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
         <div className="wdg__hud-left">
           <button className="wdg__close" onClick={onExit} aria-label="返回">✕</button>
           <SpeedButton tier={speedTier} onCycle={cycleSpeed} />
+          <button
+            type="button"
+            className="wdg__hint"
+            onClick={handleHint}
+            disabled={hearts <= 1 || !ufo || ufo.destroyed}
+            aria-label="提示答案"
+          >
+            💡<span>提示</span>
+          </button>
         </div>
         <div className="wdg__hearts">
           {Array.from({ length: HEARTS_START }).map((_, i) => (
@@ -412,6 +445,15 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
             <CartoonExplosion />
           </div>
         )}
+
+        {missParticles.map(pid => (
+          <div key={pid} className="wdg__cmiss">
+            <span className="wdg__cmiss-shard wdg__cmiss-shard--a">💎</span>
+            <span className="wdg__cmiss-shard wdg__cmiss-shard--b">💎</span>
+            <span className="wdg__cmiss-shard wdg__cmiss-shard--c">💎</span>
+            <span className="wdg__cmiss-label">-1</span>
+          </div>
+        ))}
 
         {bullets.map(b => (
           <div key={b.id} className="wdg__bullet" style={{ left: `${b.x}%`, top: `${b.y}%` }}>

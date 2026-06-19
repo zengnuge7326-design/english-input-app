@@ -25,6 +25,7 @@ export const PET_FALLBACK = {
   pet_kaiju:       { emoji: '🐙', bg: 'from-purple-500 to-indigo-700' },
   pet_godzilla:    { emoji: '🦖', bg: 'from-green-600 to-teal-700' },
   pet_kirin:       { emoji: '🐉', bg: 'from-amber-300 via-pink-400 to-purple-500' },
+  pet_baraba:      { emoji: '🦍', bg: 'from-gray-700 to-gray-900' },
 }
 
 export const TIER_STYLES = {
@@ -93,6 +94,7 @@ export const PET_DISPLAY_NAMES = {
   pet_kaiju: '深海怪兽',
   pet_godzilla: '巨型怪兽',
   pet_kirin: '麒麟',
+  pet_baraba: '巴拉巴超兽',
 }
 
 export function getPetDisplayName(petId, apiName) {

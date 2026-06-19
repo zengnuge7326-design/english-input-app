@@ -75,7 +75,7 @@ export default function SpeakingQuestion({ data, step, total, lessonTitle, onExi
         }
         if (err === 'unsupported') {
           setPhase('idle')
-          setMsg('请用 Chrome 浏览器')
+          setMsg('当前浏览器不支持跟读')
           return
         }
         if (err === 'no-speech') {
@@ -148,7 +148,16 @@ export default function SpeakingQuestion({ data, step, total, lessonTitle, onExi
             {msg}
           </p>
           {(!supported || msg.includes('麦克风')) && (
-            <MicHelpLink purpose="跟读练习" />
+            <div className="flex flex-col items-center gap-2">
+              <MicHelpLink purpose="跟读练习" />
+              <button
+                type="button"
+                onClick={skip}
+                className="text-xs text-white/40 active:opacity-70 py-1 px-3"
+              >
+                跳过此题
+              </button>
+            </div>
           )}
           {listening && heard && (
             <p className="mobile-quiz__text-muted text-xs">听到：<span className="font-mono font-bold text-white">{heard}</span></p>

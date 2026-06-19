@@ -39,11 +39,12 @@ export function detectPlatform() {
   const android = /Android/.test(ua)
   const firefox = /Firefox\//.test(ua) || /FxiOS/.test(ua)
   const edge = /Edg\//.test(ua)
+  const samsung = /SamsungBrowser/.test(ua)
   const criOS = /CriOS/.test(ua) // iOS 上的 Chrome（内核仍是 WebKit）
-  const chrome = (/Chrome\//.test(ua) && !edge) || criOS
-  const safari = /Safari\//.test(ua) && !/Chrome\//.test(ua) && !edge && !criOS && !/FxiOS/.test(ua)
+  const chrome = (/Chrome\//.test(ua) && !edge && !samsung) || criOS
+  const safari = /Safari\//.test(ua) && !/Chrome\//.test(ua) && !edge && !criOS && !/FxiOS/.test(ua) && !samsung
   const mobile = iOS || android || /Mobi/.test(ua)
-  return { iOS, android, firefox, edge, chrome, criOS, safari, mobile, ua }
+  return { iOS, android, firefox, edge, chrome, criOS, safari, samsung, mobile, ua }
 }
 
 /**
@@ -117,14 +118,44 @@ export function micGuideSteps() {
     }
   }
   if (p.android) {
+    if (p.firefox) {
+      return {
+        title: 'Android · Firefox',
+        steps: ['Firefox 暂不支持网页语音识别', '请改用 Chrome 或 Edge 打开本站'],
+        note: '',
+      }
+    }
+    if (p.samsung) {
+      return {
+        title: 'Android · 三星浏览器',
+        steps: [
+          '点地址栏左侧的 🔒 锁形图标',
+          '点「权限」→ 找到「麦克风」',
+          '设为「允许」后刷新页面',
+        ],
+        note: '若仍无法识别，可在手机「设置」→「应用」→ 三星浏览器 → 权限 中手动开启。',
+      }
+    }
+    if (p.edge) {
+      return {
+        title: 'Android · Edge',
+        steps: [
+          '点地址栏右侧的「…」菜单',
+          '选「网站权限」→「麦克风」',
+          '设为「允许」后刷新页面',
+        ],
+        note: '如未弹出授权，请确认系统已允许 Edge 使用麦克风：手机「设置」→「应用」→ Edge → 权限。',
+      }
+    }
+    // Chrome 或其他 Android 浏览器
     return {
-      title: 'Android · Chrome',
+      title: 'Android · 浏览器',
       steps: [
         '点地址栏左侧的 🔒 锁形图标',
         '选择「权限 / 网站设置」',
         '把「麦克风」设为「允许」，刷新页面',
       ],
-      note: '如未弹出授权，请确认系统已允许该浏览器使用麦克风。',
+      note: '如未弹出授权，请在手机「设置」→「应用」→ 当前浏览器 → 权限 中手动开启麦克风。',
     }
   }
   if (p.firefox) {

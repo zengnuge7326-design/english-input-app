@@ -54,7 +54,7 @@ export default function GradeCoverIcon({ index, className = '', size }: Props) {
   const id = `gc${index}`
   return (
     <svg
-      viewBox="0 0 48 48"
+      viewBox="9 4 32 40"
       width={size}
       height={size}
       fill="none"
@@ -67,8 +67,6 @@ export default function GradeCoverIcon({ index, className = '', size }: Props) {
           <stop offset="100%" stopColor={t.c2} />
         </linearGradient>
       </defs>
-      {/* 书脊阴影 */}
-      <rect x="9" y="6" width="31" height="36" rx="4" fill={t.c2} opacity="0.5" />
       {/* 封面 */}
       <rect x="11" y="6" width="29" height="36" rx="4" fill={`url(#${id}-cover)`} />
       {/* 书脊高光 */}

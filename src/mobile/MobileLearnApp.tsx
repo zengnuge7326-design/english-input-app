@@ -15,13 +15,14 @@ import { isG3U1ExamNode, isG3U1Node, maxSetsForG3U1Node } from './data/g3u1/plan
 import { isPepExamNode, maxSetsForPepNode } from './data/pepPractice/plan'
 import { getGradeBook } from './data/gradeBooks'
 import LessonFlow, { type LessonRewardMeta } from './LessonFlow'
-import GamePage, { markDefenderLevelPassed } from './GamePage'
+import GamePage, { markDefenderLevelPassed, markFrogLevelPassed, buildLevels } from './GamePage'
 import MapPage from './MapPage'
 import MobileGrammarPage from './MobileGrammarPage'
 import MobileStatusBar from './components/MobileStatusBar'
 import MorePage from './MorePage'
 import VocabMatchGame from './VocabMatchGame'
 import WordDefenderGame from './games/WordDefenderGame'
+import FrogJumpGame from './games/FrogJumpGame'
 import VocabPracticeFlow from './VocabPracticeFlow'
 import WordsPage from './WordsPage'
 import TextbookPage from './textbook/TextbookPage'
@@ -65,7 +66,7 @@ interface Props {
   crystalSpend?: number
 }
 
-type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender' | 'grammar'
+type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender' | 'frogJump' | 'grammar'
 
 export default function MobileLearnApp({
   onClose,
@@ -99,6 +100,8 @@ export default function MobileLearnApp({
   const [practiceUnitKey, setPracticeUnitKey] = useState('')
   const [defenderBookId, setDefenderBookId] = useState('g3-1')
   const [defenderUnitNum, setDefenderUnitNum] = useState(1)
+  const [frogBookId, setFrogBookId] = useState('g3-1')
+  const [frogUnitNum, setFrogUnitNum] = useState(1)
   const [skipNode, setSkipNode] = useState<MapNode | null>(null)
   const [grammarUnitId, setGrammarUnitId] = useState<string | null>(null)
   const [grammarUnitTitle, setGrammarUnitTitle] = useState<string | undefined>(undefined)
@@ -294,6 +297,38 @@ export default function MobileLearnApp({
     if (result.won) markDefenderLevelPassed(defenderBookId, defenderUnitNum)
   }
 
+  function handleStartFrog(bookId: string, unit: VocabUnit) {
+    setVocabBookId(bookId)
+    setPracticeWords(unit.words)
+    setPracticeUnitLabel(unit.title)
+    setFrogBookId(bookId)
+    setFrogUnitNum(unit.unit)
+    setScreen('frogJump')
+  }
+
+  function handleFrogComplete(result: { hit: number; total: number; combo: number; accuracy: number; won: boolean }) {
+    // 奖励对齐飞船：跳跃数 × 2 XP，零失误 +1 绿钻，10+ 连击 +1 紫钻，全部完成 +1 金钻
+    onAddXp?.(result.hit * 2)
+    if (result.hit > 0) onCrystalEarn?.('green', 1, 'frog_round', { hit: result.hit })
+    if (result.accuracy >= 100 && result.hit > 0) onCrystalEarn?.('green', 1, 'frog_zero_error')
+    if (result.combo >= 10) onCrystalEarn?.('purple', 1, 'frog_combo_10', { combo: result.combo })
+    if (result.hit === result.total && result.total > 0) onCrystalEarn?.('gold', 1, 'frog_perfect')
+    if (result.won) markFrogLevelPassed(frogBookId, frogUnitNum)
+  }
+
+  function handleFrogNextLevel() {
+    const allLevels = buildLevels()
+    const curKey = `${frogBookId}|${frogUnitNum}`
+    const curIdx = allLevels.findIndex(l => l.key === curKey)
+    if (curIdx >= 0 && curIdx < allLevels.length - 1) {
+      const next = allLevels[curIdx + 1]
+      handleStartFrog(next.bookId, next.unit)
+    } else {
+      setScreen('main')
+      setActiveTab('game')
+    }
+  }
+
   function handleVocabGameComplete() {
     onAddXp?.(3)
     setScreen('main')
@@ -367,6 +402,23 @@ export default function MobileLearnApp({
     )
   }
 
+  if (screen === 'frogJump') {
+    return (
+      <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
+        <FrogJumpGame
+          key={`${frogBookId}-${frogUnitNum}`}
+          words={practiceWords}
+          unitLabel={practiceUnitLabel}
+          onExit={() => { setScreen('main'); setActiveTab('game') }}
+          onComplete={handleFrogComplete}
+          onNextLevel={handleFrogNextLevel}
+          onCrystalEarn={onCrystalEarn}
+          onCrystalSpend={onCrystalSpend}
+        />
+      </MobilePhoneFrame>
+    )
+  }
+
   if (screen === 'lesson' && activeNode && activeLesson) {
     const setsDone = getNodeSetsCompleted(progress, activeNode.id)
     const rewardMeta: LessonRewardMeta = {
@@ -392,7 +444,7 @@ export default function MobileLearnApp({
   }
 
   return (
-    <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
+    <MobilePhoneFrame className={`mobile-main-shell h-[100dvh] max-h-[100dvh] ${tabThemeClass(activeTab)}`}>
       <MicPermissionSheet elevated preferLight />
       <MobileStatusBar
         streak={streak}
@@ -445,6 +497,7 @@ export default function MobileLearnApp({
         {activeTab === 'game' && (
           <GamePage
             onStartDefender={handleStartDefender}
+            onStartFrog={handleStartFrog}
             crystalBalance={crystalBalance}
             onCrystalSpend={onCrystalSpend}
           />

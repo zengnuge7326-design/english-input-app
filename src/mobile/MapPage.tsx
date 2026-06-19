@@ -111,12 +111,6 @@ export default function MapPage({
                       onClick={() => setExpanded(e => ({ ...e, [unit.id]: !e[unit.id] }))}
                       className="flex-1 flex items-center gap-3 px-4 py-3 text-left active:opacity-80 transition-opacity min-w-0"
                     >
-                      <span
-                        className="map-unit-panel__emoji w-10 h-10 rounded-xl flex items-center justify-center text-lg font-black shadow shrink-0"
-                        style={{ background: unit.color }}
-                      >
-                        {unit.emoji}
-                      </span>
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-black text-white truncate">{unit.title}</div>
                         <div className="text-xs text-white/55">{done}/{total || ISLANDS_PER_UNIT} 关卡完成</div>
@@ -127,12 +121,11 @@ export default function MapPage({
                       <button
                         type="button"
                         onClick={e => { e.stopPropagation(); onUnitGrammar(unit.id) }}
-                        className="relative shrink-0 w-32 flex flex-col items-center justify-center gap-1 active:opacity-60 transition-opacity"
+                        className="relative shrink-0 w-32 flex items-center justify-center active:opacity-60 transition-opacity"
                         aria-label="本单元语法"
                       >
-                        <span className="absolute left-0 top-2.5 bottom-2.5 w-px bg-white/20" aria-hidden />
-                        <span className="text-xl leading-none">📖</span>
-                        <span className="text-[11px] leading-none font-semibold text-white/80 border-b border-white/40 pb-0.5">语法</span>
+                        <span className="absolute left-0 top-3 bottom-3 w-0.5 bg-white/35" aria-hidden />
+                        <span className="text-base font-black text-white border-b-2 border-white/50 pb-0.5">语法</span>
                       </button>
                     )}
                   </div>

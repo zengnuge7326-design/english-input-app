@@ -40,11 +40,6 @@ export default function LearningPathCard({
         <div className="learning-path-card__main">
           <div className="learning-path-card__info min-w-0">
             <p className="learning-path-card__lesson">{partLabel}</p>
-            <p className="learning-path-card__unit">{unitLabel} · 学习路径</p>
-          </div>
-          <div className="learning-path-card__grammar-preview" aria-hidden>
-            <span className="learning-path-card__grammar-icon">{grammar.icon}</span>
-            <span className="learning-path-card__grammar-title">{grammar.title}</span>
           </div>
         </div>
       </motion.button>
