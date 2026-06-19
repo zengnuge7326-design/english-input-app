@@ -104,7 +104,7 @@ export default function MapPage({
 
               return (
                 <div key={unit.id} className="map-unit-panel rounded-2xl overflow-hidden">
-                  <div className="map-unit-panel__head w-full flex items-stretch gap-0">
+                  <div className="map-unit-panel__head flex items-stretch gap-0 overflow-hidden">
                     {/* 左区：折叠/展开（点击整块） */}
                     <button
                       type="button"
@@ -122,14 +122,15 @@ export default function MapPage({
                         <div className="text-xs text-white/55">{done}/{total || ISLANDS_PER_UNIT} 关卡完成</div>
                       </div>
                     </button>
-                    {/* 右区：语法入口 */}
+                    {/* 右区：语法入口（中间竖线分隔，内缩不触碰圆角） */}
                     {onUnitGrammar && (
                       <button
                         type="button"
                         onClick={e => { e.stopPropagation(); onUnitGrammar(unit.id) }}
-                        className="shrink-0 w-32 flex flex-col items-center justify-center gap-1 border-l border-white/20 active:opacity-60 transition-opacity"
+                        className="relative shrink-0 w-32 flex flex-col items-center justify-center gap-1 active:opacity-60 transition-opacity"
                         aria-label="本单元语法"
                       >
+                        <span className="absolute left-0 top-2.5 bottom-2.5 w-px bg-white/20" aria-hidden />
                         <span className="text-xl leading-none">📖</span>
                         <span className="text-[11px] leading-none font-semibold text-white/80 border-b border-white/40 pb-0.5">语法</span>
                       </button>
