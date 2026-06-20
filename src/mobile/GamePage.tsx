@@ -4,7 +4,7 @@ import { getVocabBookData, type VocabUnit } from './data/vocabBooks'
 
 const UNLOCK_COST = 10
 
-type GameId = 'defender' | 'frog'
+type GameId = 'defender' | 'frog' | 'bee'
 
 function unlockKey(game: GameId) { return `${game}_crystal_unlocks` }
 function progressKeyOf(game: GameId) { return game === 'defender' ? 'defender_progress' : `${game}_progress` }
@@ -71,6 +71,40 @@ function SpaceshipIcon() {
   )
 }
 
+function BeeIcon() {
+  return (
+    <svg viewBox="0 0 48 48" width="46" height="46" fill="none" aria-hidden>
+      <defs>
+        <radialGradient id="bi-wing" cx="50%" cy="30%" r="80%">
+          <stop offset="0%" stopColor="#bfdbfe" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#93c5fd" stopOpacity="0.3" />
+        </radialGradient>
+        <linearGradient id="bi-body" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#fcd34d" />
+          <stop offset="100%" stopColor="#f59e0b" />
+        </linearGradient>
+      </defs>
+      {/* Wings */}
+      <ellipse cx="13" cy="18" rx="11" ry="7" fill="url(#bi-wing)" transform="rotate(-20 13 18)" />
+      <ellipse cx="35" cy="18" rx="11" ry="7" fill="url(#bi-wing)" transform="rotate(20 35 18)" />
+      {/* Body */}
+      <ellipse cx="24" cy="28" rx="11" ry="14" fill="url(#bi-body)" stroke="#92400e" strokeWidth="1.5" />
+      {/* Stripes */}
+      <rect x="13" y="24" width="22" height="4" fill="#1c0a00" opacity="0.28" rx="1" />
+      <rect x="13" y="31" width="22" height="4" fill="#1c0a00" opacity="0.28" rx="1" />
+      {/* Eyes */}
+      <circle cx="20" cy="17" r="3" fill="#fff" stroke="#92400e" strokeWidth="1" />
+      <circle cx="28" cy="17" r="3" fill="#fff" stroke="#92400e" strokeWidth="1" />
+      <circle cx="21" cy="17" r="1.4" fill="#000" />
+      <circle cx="29" cy="17" r="1.4" fill="#000" />
+      {/* Stinger */}
+      <path d="M24 42 L22 46 L26 46 Z" fill="#78350f" />
+      {/* Letter B on body */}
+      <text x="24" y="31" textAnchor="middle" dominantBaseline="middle" fontSize="10" fontWeight="900" fontFamily="Courier New, monospace" fill="#000" opacity="0.55">B</text>
+    </svg>
+  )
+}
+
 function FrogIcon() {
   return (
     <svg viewBox="0 0 48 48" width="46" height="46" fill="none" aria-hidden>
@@ -100,6 +134,7 @@ function FrogIcon() {
 interface Props {
   onStartDefender: (bookId: string, unit: VocabUnit) => void
   onStartFrog: (bookId: string, unit: VocabUnit) => void
+  onStartBee: (bookId: string, unit: VocabUnit) => void
   crystalBalance?: number
   onCrystalSpend?: (color: string, amount: number, reason: string) => Promise<boolean>
 }
@@ -150,9 +185,10 @@ type PickerStage = 'closed' | 'book' | 'unit'
 const GAME_META: Record<GameId, { title: string; cardClass: string; iconClass: string; Icon: () => React.ReactElement }> = {
   defender: { title: '字母飞船防御战', cardClass: 'game-card--defender', iconClass: 'game-card__icon--ship', Icon: SpaceshipIcon },
   frog: { title: '青蛙跳', cardClass: 'game-card--frog', iconClass: 'game-card__icon--frog', Icon: FrogIcon },
+  bee: { title: '单词小蜜蜂', cardClass: 'game-card--bee', iconClass: 'game-card__icon--bee', Icon: BeeIcon },
 }
 
-export default function GamePage({ onStartDefender, onStartFrog, crystalBalance = 0, onCrystalSpend }: Props) {
+export default function GamePage({ onStartDefender, onStartFrog, onStartBee, crystalBalance = 0, onCrystalSpend }: Props) {
   const levels = useMemo(buildLevels, [])
   const [passed, setPassed] = useState<Record<GameId, Set<string>>>(() => ({
     defender: loadSet(progressKeyOf('defender')),
@@ -241,7 +277,7 @@ export default function GamePage({ onStartDefender, onStartFrog, crystalBalance 
     const sel = selected[game]
     const unlocked = isUnlocked(game, sel.index, sel.key)
     const done = passed[game].has(sel.key)
-    const start = game === 'defender' ? onStartDefender : onStartFrog
+    const start = game === 'defender' ? onStartDefender : game === 'frog' ? onStartFrog : onStartBee
     return (
       <div className={`game-card ${meta.cardClass}`} key={game}>
         <div className={`game-card__icon ${meta.iconClass}`}><meta.Icon /></div>
@@ -280,6 +316,8 @@ export default function GamePage({ onStartDefender, onStartFrog, crystalBalance 
         {pickerGame === 'defender' && pickerStage !== 'closed' && renderPicker('defender')}
         {renderCard('frog')}
         {pickerGame === 'frog' && pickerStage !== 'closed' && renderPicker('frog')}
+        {renderCard('bee')}
+        {pickerGame === 'bee' && pickerStage !== 'closed' && renderPicker('bee')}
       </div>
     </div>
   )
@@ -353,6 +391,10 @@ export function markDefenderLevelPassed(bookId: string, unitNum: number) {
 
 export function markFrogLevelPassed(bookId: string, unitNum: number) {
   markGameLevelPassed('frog', bookId, unitNum)
+}
+
+export function markBeeLevelPassed(bookId: string, unitNum: number) {
+  markGameLevelPassed('bee', bookId, unitNum)
 }
 
 function markGameLevelPassed(game: GameId, bookId: string, unitNum: number) {

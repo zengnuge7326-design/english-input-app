@@ -2869,6 +2869,20 @@ html.mobile-shell-active main[data-app-main] {
   border-color: rgba(132,204,22,0.55);
   background: rgba(132,204,22,0.24);
 }
+.game-card--bee {
+  background: linear-gradient(135deg, rgba(251,191,36,0.25), rgba(245,158,11,0.14));
+  border-color: rgba(251,191,36,0.5);
+  box-shadow: 0 0 20px rgba(251,191,36,0.16);
+}
+.game-card--bee:active { transform: scale(0.98); }
+.game-card--bee .game-card__play {
+  border-color: rgba(251,191,36,0.55);
+  background: rgba(251,191,36,0.22);
+}
+.game-card__icon--bee {
+  background: rgba(120,53,15,0.35);
+  border: 1px solid rgba(251,191,36,0.25);
+}
 .game-card--locked {
   opacity: 0.48;
   background: rgba(255,255,255,0.04);
