@@ -1072,7 +1072,8 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.mobile-learn-root .safe-top {
+.mobile-learn-root .safe-top,
+.safe-top {
   padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
 }
 

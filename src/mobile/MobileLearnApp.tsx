@@ -24,6 +24,7 @@ import VocabMatchGame from './VocabMatchGame'
 import WordDefenderGame from './games/WordDefenderGame'
 import FrogJumpGame from './games/FrogJumpGame'
 import BeeBusterGame from './games/BeeBusterGame'
+import AlphabetGame from './games/AlphabetGame'
 import VocabPracticeFlow from './VocabPracticeFlow'
 import WordsPage from './WordsPage'
 import TextbookPage from './textbook/TextbookPage'
@@ -67,7 +68,7 @@ interface Props {
   crystalSpend?: number
 }
 
-type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender' | 'frogJump' | 'grammar'
+type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender' | 'frogJump' | 'grammar' | 'alphabet' | 'beeBuster'
 
 export default function MobileLearnApp({
   onClose,
@@ -378,6 +379,21 @@ export default function MobileLearnApp({
     setScreen('grammar')
   }
 
+  function handleStartAlphabet() {
+    setScreen('alphabet')
+  }
+
+  if (screen === 'alphabet') {
+    return (
+      <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
+        <AlphabetGame
+          onExit={() => { setScreen('main'); setActiveTab('game') }}
+          onComplete={() => { setScreen('main'); setActiveTab('game') }}
+        />
+      </MobilePhoneFrame>
+    )
+  }
+
   if (screen === 'vocabPractice') {
     return (
       <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
@@ -548,6 +564,7 @@ export default function MobileLearnApp({
             onStartDefender={handleStartDefender}
             onStartFrog={handleStartFrog}
             onStartBee={handleStartBee}
+            onStartAlphabet={handleStartAlphabet}
             crystalBalance={crystalBalance}
             onCrystalSpend={onCrystalSpend}
           />

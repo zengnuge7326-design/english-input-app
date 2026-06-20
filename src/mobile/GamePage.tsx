@@ -135,6 +135,7 @@ interface Props {
   onStartDefender: (bookId: string, unit: VocabUnit) => void
   onStartFrog: (bookId: string, unit: VocabUnit) => void
   onStartBee: (bookId: string, unit: VocabUnit) => void
+  onStartAlphabet: () => void
   crystalBalance?: number
   onCrystalSpend?: (color: string, amount: number, reason: string) => Promise<boolean>
 }
@@ -188,19 +189,22 @@ const GAME_META: Record<GameId, { title: string; cardClass: string; iconClass: s
   bee: { title: '单词小蜜蜂', cardClass: 'game-card--bee', iconClass: 'game-card__icon--bee', Icon: BeeIcon },
 }
 
-export default function GamePage({ onStartDefender, onStartFrog, onStartBee, crystalBalance = 0, onCrystalSpend }: Props) {
+export default function GamePage({ onStartDefender, onStartFrog, onStartBee, onStartAlphabet, crystalBalance = 0, onCrystalSpend }: Props) {
   const levels = useMemo(buildLevels, [])
   const [passed, setPassed] = useState<Record<GameId, Set<string>>>(() => ({
     defender: loadSet(progressKeyOf('defender')),
     frog: loadSet(progressKeyOf('frog')),
+    bee: loadSet(progressKeyOf('bee')),
   }))
   const [crystalUnlocks, setCrystalUnlocks] = useState<Record<GameId, Set<string>>>(() => ({
     defender: loadSet(unlockKey('defender')),
     frog: loadSet(unlockKey('frog')),
+    bee: loadSet(unlockKey('bee')),
   }))
   const [selected, setSelected] = useState<Record<GameId, Level>>(() => ({
     defender: (loadLastPlayedKey('defender') && levels.find(l => l.key === loadLastPlayedKey('defender'))) || levels[0],
     frog: (loadLastPlayedKey('frog') && levels.find(l => l.key === loadLastPlayedKey('frog'))) || levels[0],
+    bee: (loadLastPlayedKey('bee') && levels.find(l => l.key === loadLastPlayedKey('bee'))) || levels[0],
   }))
   const [pickerGame, setPickerGame] = useState<GameId | null>(null)
   const [pickerStage, setPickerStage] = useState<PickerStage>('closed')
@@ -318,6 +322,17 @@ export default function GamePage({ onStartDefender, onStartFrog, onStartBee, cry
         {pickerGame === 'frog' && pickerStage !== 'closed' && renderPicker('frog')}
         {renderCard('bee')}
         {pickerGame === 'bee' && pickerStage !== 'closed' && renderPicker('bee')}
+        {/* 26字母乐园 — 独立游戏，无需选择课本 */}
+        <button type="button" className="game-card game-card--alphabet" onClick={onStartAlphabet}>
+          <div className="game-card__icon game-card__icon--alphabet" style={{ fontSize: 36, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>🔤</div>
+          <div className="game-card__body">
+            <div className="game-card__title">26 字母乐园</div>
+            <div className="game-card__tag">泡泡 · 怪兽 · 描红 · 3款小游戏</div>
+          </div>
+          <div className="game-card__actions" style={{ pointerEvents: 'none' }}>
+            <span className="game-card__play" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 1 }}>▶</span>
+          </div>
+        </button>
       </div>
     </div>
   )

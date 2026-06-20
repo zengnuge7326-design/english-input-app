@@ -85,7 +85,7 @@ function newBee(gs: GS, letter: string, targetChar: string): Bee {
   }
 }
 
-function spawnWave(gs: GS, words: VocabWord[]) {
+function spawnWave(gs: GS, words: VocabWord[], rnd = false) {
   const word = words[gs.wordIdx]
   if (!word || gs.wordDoneT > 0) return
   const tc = word.en[gs.spelled]?.toLowerCase()
@@ -94,19 +94,28 @@ function spawnWave(gs: GS, words: VocabWord[]) {
   const needed = Math.max(0, BEE_POOL - gs.bees.length)
   if (needed === 0) return
 
-  const hasTarget = gs.bees.some(b => b.isTarget)
   const letters: string[] = []
-  if (!hasTarget) letters.push(tc)
 
-  let attempts = 0
-  while (letters.length < needed && attempts++ < 200) {
-    const c = DIST[Math.floor(Math.random() * DIST.length)]
-    if (c !== tc && !letters.includes(c)) letters.push(c)
-  }
-  // fallback (rare): allow duplicates
-  while (letters.length < needed) {
-    const c = DIST[Math.floor(Math.random() * DIST.length)]
-    if (c !== tc) letters.push(c)
+  if (rnd) {
+    // Random mode: all letters are random (no guaranteed target in wave)
+    let attempts = 0
+    while (letters.length < needed && attempts++ < 200) {
+      const c = DIST[Math.floor(Math.random() * DIST.length)]
+      if (!letters.includes(c)) letters.push(c)
+    }
+    while (letters.length < needed) letters.push(DIST[Math.floor(Math.random() * DIST.length)])
+  } else {
+    const hasTarget = gs.bees.some(b => b.isTarget)
+    if (!hasTarget) letters.push(tc)
+    let attempts = 0
+    while (letters.length < needed && attempts++ < 200) {
+      const c = DIST[Math.floor(Math.random() * DIST.length)]
+      if (c !== tc && !letters.includes(c)) letters.push(c)
+    }
+    while (letters.length < needed) {
+      const c = DIST[Math.floor(Math.random() * DIST.length)]
+      if (c !== tc) letters.push(c)
+    }
   }
 
   // shuffle
@@ -115,8 +124,8 @@ function spawnWave(gs: GS, words: VocabWord[]) {
     [letters[i], letters[j]] = [letters[j], letters[i]]
   }
   for (let i = 0; i < letters.length; i++) {
-    const bee = newBee(gs, letters[i], tc)
-    bee.y -= i * 28   // stagger entry timing
+    const bee = newBee(gs, letters[i], tc)  // always mark correct letter as target for scoring
+    bee.y -= i * 28
     gs.bees.push(bee)
   }
 }
@@ -145,52 +154,77 @@ function hexPath(ctx: CanvasRenderingContext2D, x: number, y: number, r: number)
   ctx.closePath()
 }
 
-function drawBee(ctx: CanvasRenderingContext2D, bee: Bee) {
-  // Wings
-  const wf = Math.sin(bee.wingT) * 8
-  ctx.globalAlpha = 0.5
-  ctx.fillStyle = 'rgba(190, 215, 255, 1)'
-  ctx.beginPath(); ctx.ellipse(bee.x - 19, bee.y - 3 + wf * 0.3, 12, 6.5, -0.2, 0, Math.PI * 2); ctx.fill()
-  ctx.beginPath(); ctx.ellipse(bee.x + 19, bee.y - 3 + wf * 0.3, 12, 6.5,  0.2, 0, Math.PI * 2); ctx.fill()
-  ctx.globalAlpha = 1
+function drawBee(ctx: CanvasRenderingContext2D, bee: Bee, showTarget = true) {
+  const { x, y, wingT, flashT } = bee
+  const isTarget = bee.isTarget && showTarget
+  const wf = Math.sin(wingT * 1.8) * 10
+
+  // Antennae
+  ctx.strokeStyle = '#78350f'; ctx.lineWidth = 1.5; ctx.lineCap = 'round'
+  ctx.beginPath(); ctx.moveTo(x - 6, y - BEE_R + 2); ctx.quadraticCurveTo(x - 16, y - BEE_R - 12, x - 12, y - BEE_R - 20); ctx.stroke()
+  ctx.beginPath(); ctx.moveTo(x + 6, y - BEE_R + 2); ctx.quadraticCurveTo(x + 16, y - BEE_R - 12, x + 12, y - BEE_R - 20); ctx.stroke()
+  ctx.fillStyle = '#92400e'
+  ctx.beginPath(); ctx.arc(x - 12, y - BEE_R - 20, 3, 0, Math.PI * 2); ctx.fill()
+  ctx.beginPath(); ctx.arc(x + 12, y - BEE_R - 20, 3, 0, Math.PI * 2); ctx.fill()
+
+  // Wings (flapping)
+  ctx.globalAlpha = 0.52
+  ctx.fillStyle = isTarget ? 'rgba(220, 240, 255, 1)' : 'rgba(180, 215, 255, 1)'
+  ctx.shadowBlur = isTarget ? 12 : 4; ctx.shadowColor = isTarget ? '#bfdbfe' : '#93c5fd'
+  ctx.beginPath(); ctx.ellipse(x - 20, y - 10 + wf * 0.35, 16, 8, -0.3, 0, Math.PI * 2); ctx.fill()
+  ctx.beginPath(); ctx.ellipse(x + 20, y - 10 + wf * 0.35, 16, 8,  0.3, 0, Math.PI * 2); ctx.fill()
+  // Second wing pair (smaller, behind)
+  ctx.globalAlpha = 0.32
+  ctx.beginPath(); ctx.ellipse(x - 14, y + 4 - wf * 0.2, 10, 5, -0.4, 0, Math.PI * 2); ctx.fill()
+  ctx.beginPath(); ctx.ellipse(x + 14, y + 4 - wf * 0.2, 10, 5,  0.4, 0, Math.PI * 2); ctx.fill()
+  ctx.globalAlpha = 1; ctx.shadowBlur = 0
 
   // Glow
-  ctx.shadowBlur = bee.isTarget ? 18 : 6
-  ctx.shadowColor = bee.isTarget ? '#fbbf24' : '#92400e'
+  ctx.shadowBlur = isTarget ? 22 : 7
+  ctx.shadowColor = isTarget ? '#fbbf24' : '#92400e'
 
-  // Body hex
-  hexPath(ctx, bee.x, bee.y, BEE_R)
-  if (bee.flashT > 0) {
-    ctx.fillStyle = `rgba(255, 80, 80, ${0.6 + bee.flashT * 0.4})`
+  // Body (oval)
+  const bw = BEE_R * 0.85, bh = BEE_R * 1.15
+  if (flashT > 0) {
+    ctx.fillStyle = `rgba(255, 80, 80, ${0.7 + flashT * 0.3})`
   } else {
-    ctx.fillStyle = bee.isTarget ? 'rgba(251,191,36,0.92)' : 'rgba(113,52,13,0.88)'
+    ctx.fillStyle = isTarget ? '#fbbf24' : '#b45309'
   }
-  ctx.fill()
-  ctx.strokeStyle = bee.isTarget ? '#fcd34d' : '#78350f'
-  ctx.lineWidth = 2
-  ctx.stroke()
+  ctx.beginPath(); ctx.ellipse(x, y, bw, bh, 0, 0, Math.PI * 2); ctx.fill()
+  ctx.strokeStyle = isTarget ? '#fcd34d' : '#78350f'; ctx.lineWidth = 2; ctx.stroke()
   ctx.shadowBlur = 0
 
-  // Stripes
+  // Black stripes (clipped to body)
   ctx.save()
-  hexPath(ctx, bee.x, bee.y, BEE_R)
-  ctx.clip()
-  ctx.strokeStyle = 'rgba(0,0,0,0.22)'
-  ctx.lineWidth = 5
-  for (const dy of [-8, 0, 8]) {
-    ctx.beginPath()
-    ctx.moveTo(bee.x - BEE_R, bee.y + dy)
-    ctx.lineTo(bee.x + BEE_R, bee.y + dy)
-    ctx.stroke()
+  ctx.beginPath(); ctx.ellipse(x, y, bw, bh, 0, 0, Math.PI * 2); ctx.clip()
+  ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.lineWidth = 6; ctx.lineCap = 'butt'
+  for (const dy of [-10, 0, 10]) {
+    ctx.beginPath(); ctx.moveTo(x - bw - 2, y + dy); ctx.lineTo(x + bw + 2, y + dy); ctx.stroke()
   }
   ctx.restore()
 
+  // Head (small circle on top)
+  ctx.fillStyle = '#78350f'
+  ctx.shadowBlur = 4; ctx.shadowColor = '#92400e'
+  ctx.beginPath(); ctx.ellipse(x, y - bh + 6, bw * 0.52, bw * 0.52, 0, 0, Math.PI * 2); ctx.fill()
+  ctx.shadowBlur = 0
+  // Eyes
+  ctx.fillStyle = '#fff'
+  ctx.beginPath(); ctx.arc(x - 5, y - bh + 4, 4, 0, Math.PI * 2); ctx.fill()
+  ctx.beginPath(); ctx.arc(x + 5, y - bh + 4, 4, 0, Math.PI * 2); ctx.fill()
+  ctx.fillStyle = '#1e1b4b'
+  ctx.beginPath(); ctx.arc(x - 4.5, y - bh + 4, 2, 0, Math.PI * 2); ctx.fill()
+  ctx.beginPath(); ctx.arc(x + 5.5, y - bh + 4, 2, 0, Math.PI * 2); ctx.fill()
+
+  // Stinger
+  ctx.fillStyle = '#78350f'
+  ctx.beginPath(); ctx.moveTo(x - 4, y + bh - 3); ctx.lineTo(x + 4, y + bh - 3); ctx.lineTo(x, y + bh + 10); ctx.closePath(); ctx.fill()
+
   // Letter
-  ctx.font = "bold 17px 'Courier New', monospace"
-  ctx.textAlign = 'center'
-  ctx.textBaseline = 'middle'
-  ctx.fillStyle = bee.isTarget ? '#000' : '#fde68a'
-  ctx.fillText(bee.letter.toUpperCase(), bee.x, bee.y + 1)
+  ctx.font = "bold 16px 'Courier New', monospace"
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
+  ctx.fillStyle = isTarget ? '#000' : '#fef3c7'
+  ctx.fillText(bee.letter.toUpperCase(), x, y + 2)
 }
 
 function drawShip(ctx: CanvasRenderingContext2D, px: number, py: number, t: number) {
@@ -299,7 +333,7 @@ function drawHUD(ctx: CanvasRenderingContext2D, gs: GS, words: VocabWord[], unit
 }
 
 // ─── Main draw ────────────────────────────────────────────────────────────────
-function draw(ctx: CanvasRenderingContext2D, gs: GS, words: VocabWord[], unitLabel: string, frameT: number) {
+function draw(ctx: CanvasRenderingContext2D, gs: GS, words: VocabWord[], unitLabel: string, frameT: number, rnd = false) {
   const shaking = gs.shakeT > 0
   if (shaking) {
     ctx.save()
@@ -334,7 +368,7 @@ function draw(ctx: CanvasRenderingContext2D, gs: GS, words: VocabWord[], unitLab
   ctx.globalAlpha = 1
 
   if (gs.phase === 'playing' || gs.wordDoneT > 0) {
-    for (const bee of gs.bees) drawBee(ctx, bee)
+    for (const bee of gs.bees) drawBee(ctx, bee, !rnd)
     for (const b of gs.bullets) drawBullet(ctx, b)
     drawShip(ctx, gs.px, gs.py, frameT)
     drawHUD(ctx, gs, words, unitLabel)
@@ -367,7 +401,7 @@ function draw(ctx: CanvasRenderingContext2D, gs: GS, words: VocabWord[], unitLab
 // ─── Update ───────────────────────────────────────────────────────────────────
 type Sfx = ReturnType<typeof useMobileSfx>
 
-function update(gs: GS, words: VocabWord[], dt: number, sfx: Sfx) {
+function update(gs: GS, words: VocabWord[], dt: number, sfx: Sfx, rnd: boolean, invin: boolean) {
   const spf = dt / (1000 / 60)   // scale factor: 1.0 at 60fps
 
   // Stars
@@ -395,7 +429,7 @@ function update(gs: GS, words: VocabWord[], dt: number, sfx: Sfx) {
       gs.spelled = 0
       if (gs.wordIdx >= words.length) { gs.phase = 'win'; return }
       gs.bees = []
-      spawnWave(gs, words)
+      spawnWave(gs, words, rnd)
     }
     return  // freeze game during celebration
   }
@@ -405,9 +439,9 @@ function update(gs: GS, words: VocabWord[], dt: number, sfx: Sfx) {
   const tc = word.en[gs.spelled]?.toLowerCase()
 
   // Anti-stuck: ensure pool always has bees
-  if (gs.bees.length < BEE_POOL) spawnWave(gs, words)
-  // Anti-stuck: ensure at least 1 target exists
-  if (tc && !gs.bees.some(b => b.isTarget)) {
+  if (gs.bees.length < BEE_POOL) spawnWave(gs, words, rnd)
+  // Anti-stuck: ensure at least 1 target exists (only in normal mode)
+  if (!rnd && tc && !gs.bees.some(b => b.isTarget)) {
     const bee = newBee(gs, tc, tc)
     bee.y -= gs.bees.length * 28
     gs.bees.push(bee)
@@ -432,7 +466,7 @@ function update(gs: GS, words: VocabWord[], dt: number, sfx: Sfx) {
 
     // Bee exits bottom
     if (bee.y > CH + BEE_R) {
-      if (bee.isTarget) {
+      if (bee.isTarget && !invin) {
         gs.hearts--; gs.combo = 0; gs.shakeT = 280
         sfx.playDamage()
         if (gs.hearts <= 0) { gs.phase = 'over'; return }
@@ -444,10 +478,15 @@ function update(gs: GS, words: VocabWord[], dt: number, sfx: Sfx) {
     // Bee collides with player
     if (Math.hypot(bee.x - gs.px, bee.y - gs.py) < BEE_R + 15) {
       burst(gs, bee.x, bee.y, '#ef4444', 8)
-      gs.hearts--; gs.combo = 0; gs.shakeT = 320
-      sfx.playDamage()
-      gs.bees.splice(i, 1)
-      if (gs.hearts <= 0) { gs.phase = 'over'; return }
+      if (!invin) {
+        gs.hearts--; gs.combo = 0; gs.shakeT = 320
+        sfx.playDamage()
+        gs.bees.splice(i, 1)
+        if (gs.hearts <= 0) { gs.phase = 'over'; return }
+      } else {
+        gs.shakeT = 140
+        gs.bees.splice(i, 1)
+      }
     }
   }
 
@@ -488,15 +527,19 @@ function update(gs: GS, words: VocabWord[], dt: number, sfx: Sfx) {
         // Update target flags on remaining bees
         const nextTc = word.en[gs.spelled].toLowerCase()
         for (const rb of gs.bees) rb.isTarget = rb.letter === nextTc
-        spawnWave(gs, words)
+        spawnWave(gs, words, rnd)
       }
     } else {
       burst(gs, bee.x, bee.y, '#ef4444', 8)
       sfx.playWrong()
       bee.flashT = 1
       gs.bees.splice(hitBeeIdx, 1)
-      gs.hearts--; gs.combo = 0; gs.shakeT = 240
-      if (gs.hearts <= 0) { gs.phase = 'over'; return }
+      if (!invin) {
+        gs.hearts--; gs.combo = 0; gs.shakeT = 240
+        if (gs.hearts <= 0) { gs.phase = 'over'; return }
+      } else {
+        gs.shakeT = 100
+      }
     }
   }
 }
@@ -526,12 +569,18 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
 
   const [speedTier, setSpeedTier] = useState(readSpeedTier)
   const [phase, setPhase] = useState<GS['phase']>('playing')
+  const [randomMode, setRandomMode] = useState(false)
+  const [invincible, setInvincible] = useState(false)
+  const randomModeRef = useRef(false)
+  const invincibleRef = useRef(false)
   const sfx = useMobileSfx()
 
   // keep refs in sync
   useEffect(() => { wordsRef.current = words }, [words])
   useEffect(() => { unitRef.current = unitLabel }, [unitLabel])
   useEffect(() => { sfxRef.current = sfx }, [sfx])
+  useEffect(() => { randomModeRef.current = randomMode }, [randomMode])
+  useEffect(() => { invincibleRef.current = invincible }, [invincible])
 
   // persist speed + propagate to running game
   useEffect(() => {
@@ -542,6 +591,8 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
   // ─── Game loop (runs once on mount) ───────────────────────────────────────
   useEffect(() => {
     const canvas = canvasRef.current!
+    canvas.width = CW
+    canvas.height = CH
     const ctx = canvas.getContext('2d')!
 
     const gs = initGS(SPEED_TIERS[speedTier - 1].mult)
@@ -556,8 +607,8 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
       const dt = Math.min(50, ts - (gs.lastT || ts))
       gs.lastT = ts
 
-      if (gs.phase === 'playing') update(gs, wordsRef.current, dt, sfxRef.current)
-      draw(ctx, gs, wordsRef.current, unitRef.current, ts)
+      if (gs.phase === 'playing') update(gs, wordsRef.current, dt, sfxRef.current, randomModeRef.current, invincibleRef.current)
+      draw(ctx, gs, wordsRef.current, unitRef.current, ts, randomModeRef.current)
 
       rafRef.current = requestAnimationFrame(loop)
 
@@ -705,6 +756,14 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
             >{t.label}</button>
           ))}
         </div>
+        <button type="button"
+          className={`bbg__speed-btn${randomMode ? ' bbg__speed-btn--active' : ''}`}
+          onClick={() => setRandomMode(v => !v)}
+          title="随机模式：蜜蜂不提示目标字母">随机</button>
+        <button type="button"
+          className={`bbg__speed-btn${invincible ? ' bbg__speed-btn--active' : ''}`}
+          onClick={() => setInvincible(v => !v)}
+          title="无敌模式：生命不减少">无敌</button>
       </div>
 
       {/* Canvas */}
