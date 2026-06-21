@@ -362,10 +362,17 @@ export default function FrogJumpGame({ words, unitLabel = 'Unit 1', onExit, onCo
 
   const handleLetterTapRef = useRef(handleLetterTap); handleLetterTapRef.current = handleLetterTap
   const handleUndoRef       = useRef(handleUndo);       handleUndoRef.current       = handleUndo
+  const onNextLevelRef      = useRef(onNextLevel);       onNextLevelRef.current      = onNextLevel
+  const startGameRef        = useRef(startGame);         startGameRef.current        = startGame
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (phaseRef.current !== 'playing') return
+      const ph = phaseRef.current
+      if (e.key === 'Enter') {
+        if (ph === 'win' && onNextLevelRef.current) { onNextLevelRef.current(); return }
+        if (ph === 'win' || ph === 'over') { startGameRef.current(); return }
+      }
+      if (ph !== 'playing') return
       const p = padRef.current; if (!p || p.landed) return
       if (e.key === 'Backspace') { e.preventDefault(); handleUndoRef.current(); return }
       if (e.key.length === 1 && /[a-zA-Z]/.test(e.key)) {

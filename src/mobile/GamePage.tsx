@@ -4,11 +4,11 @@ import { getVocabBookData, type VocabUnit } from './data/vocabBooks'
 
 const UNLOCK_COST = 10
 
-type GameId = 'defender' | 'frog' | 'bee'
+type GameId = 'defender' | 'frog' | 'bee' | 'raiden'
 
 function unlockKey(game: GameId) { return `${game}_crystal_unlocks` }
-function progressKeyOf(game: GameId) { return game === 'defender' ? 'defender_progress' : `${game}_progress` }
-function lastPlayedKeyOf(game: GameId) { return game === 'defender' ? 'defender_last_played' : `${game}_last_played` }
+function progressKeyOf(game: GameId) { return `${game}_progress` }
+function lastPlayedKeyOf(game: GameId) { return `${game}_last_played` }
 
 function loadSet(key: string): Set<string> {
   try {
@@ -105,6 +105,51 @@ function BeeIcon() {
   )
 }
 
+function RaidenIcon() {
+  return (
+    <svg viewBox="0 0 48 48" width="46" height="46" fill="none" aria-hidden>
+      <defs>
+        <linearGradient id="ri-body" x1="0.5" y1="0" x2="0.5" y2="1">
+          <stop offset="0%" stopColor="#00e5ff" />
+          <stop offset="100%" stopColor="#0284c7" />
+        </linearGradient>
+        <radialGradient id="ri-flame" cx="50%" cy="10%" r="80%">
+          <stop offset="0%" stopColor="#fef08a" />
+          <stop offset="50%" stopColor="#f97316" />
+          <stop offset="100%" stopColor="#ef4444" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="ri-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#00e5ff" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="#00e5ff" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      {/* glow */}
+      <ellipse cx="24" cy="26" rx="14" ry="10" fill="url(#ri-glow)" />
+      {/* flames */}
+      <ellipse cx="18" cy="40" rx="3.5" ry="7" fill="url(#ri-flame)" />
+      <ellipse cx="30" cy="40" rx="3.5" ry="7" fill="url(#ri-flame)" />
+      <ellipse cx="18" cy="38" rx="1.5" ry="3" fill="#fef9c3" opacity="0.9" />
+      <ellipse cx="30" cy="38" rx="1.5" ry="3" fill="#fef9c3" opacity="0.9" />
+      {/* wings */}
+      <path d="M16 28 L4 40 L16 34 Z" fill="#0369a1" opacity="0.9" />
+      <path d="M32 28 L44 40 L32 34 Z" fill="#0369a1" opacity="0.9" />
+      {/* body */}
+      <ellipse cx="24" cy="22" rx="8" ry="16" fill="url(#ri-body)" />
+      {/* cockpit */}
+      <ellipse cx="24" cy="16" rx="4.5" ry="6" fill="#082f49" />
+      <ellipse cx="23" cy="14.5" rx="2.5" ry="3.5" fill="#7dd3fc" opacity="0.8" />
+      {/* nose */}
+      <path d="M24 4 L19 12 L29 12 Z" fill="#22d3ee" />
+      {/* laser burst */}
+      <line x1="24" y1="4" x2="24" y2="0" stroke="#fff" strokeWidth="1.5" opacity="0.7" />
+      {/* stars */}
+      <circle cx="6" cy="8" r="1" fill="white" opacity="0.6" />
+      <circle cx="42" cy="12" r="1" fill="white" opacity="0.7" />
+      <circle cx="40" cy="6" r="0.7" fill="white" opacity="0.5" />
+    </svg>
+  )
+}
+
 function FrogIcon() {
   return (
     <svg viewBox="0 0 48 48" width="46" height="46" fill="none" aria-hidden>
@@ -135,6 +180,7 @@ interface Props {
   onStartDefender: (bookId: string, unit: VocabUnit) => void
   onStartFrog: (bookId: string, unit: VocabUnit) => void
   onStartBee: (bookId: string, unit: VocabUnit) => void
+  onStartRaiden: (bookId: string, unit: VocabUnit) => void
   onStartAlphabet: () => void
   crystalBalance?: number
   onCrystalSpend?: (color: string, amount: number, reason: string) => Promise<boolean>
@@ -187,24 +233,28 @@ const GAME_META: Record<GameId, { title: string; cardClass: string; iconClass: s
   defender: { title: '字母飞船防御战', cardClass: 'game-card--defender', iconClass: 'game-card__icon--ship', Icon: SpaceshipIcon },
   frog: { title: '青蛙跳', cardClass: 'game-card--frog', iconClass: 'game-card__icon--frog', Icon: FrogIcon },
   bee: { title: '单词小蜜蜂', cardClass: 'game-card--bee', iconClass: 'game-card__icon--bee', Icon: BeeIcon },
+  raiden: { title: '雷电单词战', cardClass: 'game-card--raiden', iconClass: 'game-card__icon--raiden', Icon: RaidenIcon },
 }
 
-export default function GamePage({ onStartDefender, onStartFrog, onStartBee, onStartAlphabet, crystalBalance = 0, onCrystalSpend }: Props) {
+export default function GamePage({ onStartDefender, onStartFrog, onStartBee, onStartRaiden, onStartAlphabet, crystalBalance = 0, onCrystalSpend }: Props) {
   const levels = useMemo(buildLevels, [])
   const [passed, setPassed] = useState<Record<GameId, Set<string>>>(() => ({
     defender: loadSet(progressKeyOf('defender')),
     frog: loadSet(progressKeyOf('frog')),
     bee: loadSet(progressKeyOf('bee')),
+    raiden: loadSet(progressKeyOf('raiden')),
   }))
   const [crystalUnlocks, setCrystalUnlocks] = useState<Record<GameId, Set<string>>>(() => ({
     defender: loadSet(unlockKey('defender')),
     frog: loadSet(unlockKey('frog')),
     bee: loadSet(unlockKey('bee')),
+    raiden: loadSet(unlockKey('raiden')),
   }))
   const [selected, setSelected] = useState<Record<GameId, Level>>(() => ({
     defender: (loadLastPlayedKey('defender') && levels.find(l => l.key === loadLastPlayedKey('defender'))) || levels[0],
     frog: (loadLastPlayedKey('frog') && levels.find(l => l.key === loadLastPlayedKey('frog'))) || levels[0],
     bee: (loadLastPlayedKey('bee') && levels.find(l => l.key === loadLastPlayedKey('bee'))) || levels[0],
+    raiden: (loadLastPlayedKey('raiden') && levels.find(l => l.key === loadLastPlayedKey('raiden'))) || levels[0],
   }))
   const [pickerGame, setPickerGame] = useState<GameId | null>(null)
   const [pickerStage, setPickerStage] = useState<PickerStage>('closed')
@@ -281,7 +331,7 @@ export default function GamePage({ onStartDefender, onStartFrog, onStartBee, onS
     const sel = selected[game]
     const unlocked = isUnlocked(game, sel.index, sel.key)
     const done = passed[game].has(sel.key)
-    const start = game === 'defender' ? onStartDefender : game === 'frog' ? onStartFrog : onStartBee
+    const start = game === 'defender' ? onStartDefender : game === 'frog' ? onStartFrog : game === 'bee' ? onStartBee : onStartRaiden
     return (
       <div className={`game-card ${meta.cardClass}`} key={game}>
         <div className={`game-card__icon ${meta.iconClass}`}><meta.Icon /></div>
@@ -322,6 +372,8 @@ export default function GamePage({ onStartDefender, onStartFrog, onStartBee, onS
         {pickerGame === 'frog' && pickerStage !== 'closed' && renderPicker('frog')}
         {renderCard('bee')}
         {pickerGame === 'bee' && pickerStage !== 'closed' && renderPicker('bee')}
+        {renderCard('raiden')}
+        {pickerGame === 'raiden' && pickerStage !== 'closed' && renderPicker('raiden')}
         {/* 26字母乐园 — 独立游戏，无需选择课本 */}
         <button type="button" className="game-card game-card--alphabet" onClick={onStartAlphabet}>
           <div className="game-card__icon game-card__icon--alphabet" style={{ fontSize: 36, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>🔤</div>
@@ -410,6 +462,10 @@ export function markFrogLevelPassed(bookId: string, unitNum: number) {
 
 export function markBeeLevelPassed(bookId: string, unitNum: number) {
   markGameLevelPassed('bee', bookId, unitNum)
+}
+
+export function markRaidenLevelPassed(bookId: string, unitNum: number) {
+  markGameLevelPassed('raiden', bookId, unitNum)
 }
 
 function markGameLevelPassed(game: GameId, bookId: string, unitNum: number) {

@@ -15,7 +15,7 @@ import { isG3U1ExamNode, isG3U1Node, maxSetsForG3U1Node } from './data/g3u1/plan
 import { isPepExamNode, maxSetsForPepNode } from './data/pepPractice/plan'
 import { getGradeBook } from './data/gradeBooks'
 import LessonFlow, { type LessonRewardMeta } from './LessonFlow'
-import GamePage, { markDefenderLevelPassed, markFrogLevelPassed, markBeeLevelPassed, buildLevels } from './GamePage'
+import GamePage, { markDefenderLevelPassed, markFrogLevelPassed, markBeeLevelPassed, markRaidenLevelPassed, buildLevels } from './GamePage'
 import MapPage from './MapPage'
 import MobileGrammarPage from './MobileGrammarPage'
 import MobileStatusBar from './components/MobileStatusBar'
@@ -25,6 +25,7 @@ import WordDefenderGame from './games/WordDefenderGame'
 import FrogJumpGame from './games/FrogJumpGame'
 import BeeBusterGame from './games/BeeBusterGame'
 import AlphabetGame from './games/AlphabetGame'
+import RaidenGame from './games/RaidenGame'
 import VocabPracticeFlow from './VocabPracticeFlow'
 import WordsPage from './WordsPage'
 import TextbookPage from './textbook/TextbookPage'
@@ -68,7 +69,7 @@ interface Props {
   crystalSpend?: number
 }
 
-type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender' | 'frogJump' | 'grammar' | 'alphabet' | 'beeBuster'
+type Screen = 'main' | 'lesson' | 'vocabPractice' | 'vocabGame' | 'wordDefender' | 'frogJump' | 'grammar' | 'alphabet' | 'beeBuster' | 'raiden'
 
 export default function MobileLearnApp({
   onClose,
@@ -106,6 +107,8 @@ export default function MobileLearnApp({
   const [frogUnitNum, setFrogUnitNum] = useState(1)
   const [beeBookId, setBeeBookId] = useState('g3-1')
   const [beeUnitNum, setBeeUnitNum] = useState(1)
+  const [raidenBookId, setRaidenBookId] = useState('g3-1')
+  const [raidenUnitNum, setRaidenUnitNum] = useState(1)
   const [skipNode, setSkipNode] = useState<MapNode | null>(null)
   const [grammarUnitId, setGrammarUnitId] = useState<string | null>(null)
   const [grammarUnitTitle, setGrammarUnitTitle] = useState<string | undefined>(undefined)
@@ -288,6 +291,7 @@ export default function MobileLearnApp({
     setPracticeUnitLabel(unit.title)
     setDefenderBookId(bookId)
     setDefenderUnitNum(unit.unit)
+    try { localStorage.setItem('defender_last_played', `${bookId}|${unit.unit}`) } catch { /* ignore */ }
     setScreen('wordDefender')
   }
 
@@ -301,12 +305,25 @@ export default function MobileLearnApp({
     if (result.won) markDefenderLevelPassed(defenderBookId, defenderUnitNum)
   }
 
+  function handleDefenderNextLevel() {
+    const allLevels = buildLevels()
+    const curKey = `${defenderBookId}|${defenderUnitNum}`
+    const curIdx = allLevels.findIndex(l => l.key === curKey)
+    if (curIdx >= 0 && curIdx < allLevels.length - 1) {
+      const next = allLevels[curIdx + 1]
+      handleStartDefender(next.bookId, next.unit)
+    } else {
+      setScreen('main'); setActiveTab('game')
+    }
+  }
+
   function handleStartFrog(bookId: string, unit: VocabUnit) {
     setVocabBookId(bookId)
     setPracticeWords(unit.words)
     setPracticeUnitLabel(unit.title)
     setFrogBookId(bookId)
     setFrogUnitNum(unit.unit)
+    try { localStorage.setItem('frog_last_played', `${bookId}|${unit.unit}`) } catch { /* ignore */ }
     setScreen('frogJump')
   }
 
@@ -339,6 +356,7 @@ export default function MobileLearnApp({
     setPracticeUnitLabel(unit.title)
     setBeeBookId(bookId)
     setBeeUnitNum(unit.unit)
+    try { localStorage.setItem('bee_last_played', `${bookId}|${unit.unit}`) } catch { /* ignore */ }
     setScreen('beeBuster')
   }
 
@@ -357,6 +375,37 @@ export default function MobileLearnApp({
     if (curIdx >= 0 && curIdx < allLevels.length - 1) {
       const next = allLevels[curIdx + 1]
       handleStartBee(next.bookId, next.unit)
+    } else {
+      setScreen('main'); setActiveTab('game')
+    }
+  }
+
+  function handleStartRaiden(bookId: string, unit: VocabUnit) {
+    setVocabBookId(bookId)
+    setPracticeWords(unit.words)
+    setPracticeUnitLabel(unit.title)
+    setRaidenBookId(bookId)
+    setRaidenUnitNum(unit.unit)
+    try { localStorage.setItem('raiden_last_played', `${bookId}|${unit.unit}`) } catch { /* ignore */ }
+    setScreen('raiden')
+  }
+
+  function handleRaidenComplete(result: { hit: number; total: number; combo: number; accuracy: number; won: boolean }) {
+    onAddXp?.(result.hit * 3)
+    if (result.hit > 0) onCrystalEarn?.('green', 1, 'raiden_round', { hit: result.hit })
+    if (result.accuracy >= 100 && result.hit > 0) onCrystalEarn?.('green', 1, 'raiden_zero_error')
+    if (result.combo >= 5) onCrystalEarn?.('purple', 1, 'raiden_combo_5', { combo: result.combo })
+    if (result.hit === result.total && result.total > 0) onCrystalEarn?.('gold', 1, 'raiden_perfect')
+    if (result.won) markRaidenLevelPassed(raidenBookId, raidenUnitNum)
+  }
+
+  function handleRaidenNextLevel() {
+    const allLevels = buildLevels()
+    const curKey = `${raidenBookId}|${raidenUnitNum}`
+    const curIdx = allLevels.findIndex(l => l.key === curKey)
+    if (curIdx >= 0 && curIdx < allLevels.length - 1) {
+      const next = allLevels[curIdx + 1]
+      handleStartRaiden(next.bookId, next.unit)
     } else {
       setScreen('main'); setActiveTab('game')
     }
@@ -443,6 +492,7 @@ export default function MobileLearnApp({
           unitLabel={practiceUnitLabel}
           onExit={() => { setScreen('main'); setActiveTab('game') }}
           onComplete={handleDefenderComplete}
+          onNextLevel={handleDefenderNextLevel}
           onCrystalEarn={onCrystalEarn}
           onCrystalSpend={onCrystalSpend}
         />
@@ -477,6 +527,23 @@ export default function MobileLearnApp({
           onExit={() => { setScreen('main'); setActiveTab('game') }}
           onComplete={handleBeeComplete}
           onNextLevel={handleBeeNextLevel}
+          onCrystalEarn={onCrystalEarn}
+          onCrystalSpend={onCrystalSpend}
+        />
+      </MobilePhoneFrame>
+    )
+  }
+
+  if (screen === 'raiden') {
+    return (
+      <MobilePhoneFrame className="mobile-main-shell h-[100dvh] max-h-[100dvh]">
+        <RaidenGame
+          key={`${raidenBookId}-${raidenUnitNum}`}
+          words={practiceWords}
+          unitLabel={practiceUnitLabel}
+          onExit={() => { setScreen('main'); setActiveTab('game') }}
+          onComplete={handleRaidenComplete}
+          onNextLevel={handleRaidenNextLevel}
           onCrystalEarn={onCrystalEarn}
           onCrystalSpend={onCrystalSpend}
         />
@@ -564,6 +631,7 @@ export default function MobileLearnApp({
             onStartDefender={handleStartDefender}
             onStartFrog={handleStartFrog}
             onStartBee={handleStartBee}
+            onStartRaiden={handleStartRaiden}
             onStartAlphabet={handleStartAlphabet}
             crystalBalance={crystalBalance}
             onCrystalSpend={onCrystalSpend}

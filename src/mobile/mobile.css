@@ -2884,6 +2884,20 @@ html.mobile-shell-active main[data-app-main] {
   background: rgba(120,53,15,0.35);
   border: 1px solid rgba(251,191,36,0.25);
 }
+.game-card--raiden {
+  background: linear-gradient(135deg, rgba(0,229,255,0.22), rgba(2,132,199,0.14));
+  border-color: rgba(0,229,255,0.5);
+  box-shadow: 0 0 20px rgba(0,229,255,0.18);
+}
+.game-card--raiden:active { transform: scale(0.98); }
+.game-card--raiden .game-card__play {
+  border-color: rgba(0,229,255,0.55);
+  background: rgba(0,229,255,0.22);
+}
+.game-card__icon--raiden {
+  background: rgba(2,8,23,0.6);
+  border: 1px solid rgba(0,229,255,0.25);
+}
 .game-card--locked {
   opacity: 0.48;
   background: rgba(255,255,255,0.04);

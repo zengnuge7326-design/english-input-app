@@ -2,7 +2,8 @@
 export function registerPwaServiceWorker() {
   if (!('serviceWorker' in navigator)) return
   window.addEventListener('load', () => {
-    const swUrl = new URL('sw.js', window.location.origin + import.meta.env.BASE_URL).href
+    const base = import.meta.env.BASE_URL.replace(/\/?$/, '/')
+    const swUrl = new URL('sw.js', window.location.origin + base).href
     navigator.serviceWorker.register(swUrl).catch(() => {
       /* 离线/开发环境失败可忽略 */
     })

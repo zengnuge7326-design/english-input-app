@@ -17,10 +17,11 @@
 .bbg__topbar {
   position: relative;
   flex-shrink: 0;
+  box-sizing: content-box;
   height: 44px;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: env(safe-area-inset-top, 0px) 10px 0;
   gap: 6px;
   background: rgba(10, 10, 26, 0.97);
   border-bottom: 1px solid rgba(0, 255, 255, 0.08);

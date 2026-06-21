@@ -20,6 +20,7 @@ interface Props {
   unitLabel?: string
   onExit: () => void
   onComplete: (result: { hit: number; total: number; combo: number; accuracy: number; won: boolean }) => void
+  onNextLevel?: () => void
   onCrystalEarn?: CrystalEarnFn
   onCrystalSpend?: (color: string, amount: number, reason: string) => void
 }
@@ -126,7 +127,7 @@ function makeUFO(word: VocabWord, level: number): UFOState {
   }
 }
 
-export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, onComplete, onCrystalEarn, onCrystalSpend }: Props) {
+export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, onComplete, onNextLevel, onCrystalEarn, onCrystalSpend }: Props) {
   const { speak } = useMobileTTS()
   const sfx = useMobileSfx()
   const queue = useMemo(() => shuffle(words.filter(w => w.en && /^[a-zA-Z]+$/.test(w.en))), [words])
@@ -153,11 +154,13 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
   const lastTickRef = useRef<number>(0)
   const ufoRef = useRef(ufo)
   const phaseRef = useRef(phase)
+  const onNextLevelRef = useRef(onNextLevel)
   const idxRef = useRef(idx)
   const speedTierRef = useRef(speedTier)
 
   useEffect(() => { ufoRef.current = ufo }, [ufo])
   useEffect(() => { phaseRef.current = phase }, [phase])
+  useEffect(() => { onNextLevelRef.current = onNextLevel }, [onNextLevel])
   useEffect(() => { idxRef.current = idx }, [idx])
   useEffect(() => { speedTierRef.current = speedTier }, [speedTier])
 
@@ -326,6 +329,12 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
         return
       }
 
+      if (e.key === 'Enter') {
+        const ph = phaseRef.current
+        if (ph === 'win' && onNextLevelRef.current) { onNextLevelRef.current(); return }
+        if (ph === 'win' || ph === 'over') { startGame(); return }
+      }
+
       if (e.key.length === 1 && /[a-zA-Z]/.test(e.key)) {
         e.preventDefault()
         const ch = e.key.toLowerCase()
@@ -389,9 +398,12 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
             <div><span>准度</span><strong>{acc}%</strong></div>
             <div><span>最高连击</span><strong>{maxCombo}</strong></div>
           </div>
-          <div className="flex gap-3 mt-2">
+          <div className="flex gap-3 mt-2 flex-wrap justify-center">
             <button className="wdg__btn-secondary" onClick={onExit}>返回</button>
             <button className="wdg__btn-primary" onClick={startGame}>再来一局</button>
+            {phase === 'win' && onNextLevel && (
+              <button className="wdg__btn-primary" onClick={onNextLevel}>下一关 →</button>
+            )}
           </div>
         </div>
       </div>
@@ -488,10 +500,6 @@ export default function WordDefenderGame({ words, unitLabel = 'Unit 1', onExit, 
               disabled={ufo.picked.includes(i) || ufo.destroyed}
             >{c}</button>
           ))}
-        </div>
-        <div className="wdg__bottom-actions">
-          <button type="button" className="wdg__undo" onClick={handleUndo}>⟲ 撤销</button>
-          <span className="wdg__kbd-hint">键盘输入 · ⌫ 撤销</span>
         </div>
       </div>
     </div>

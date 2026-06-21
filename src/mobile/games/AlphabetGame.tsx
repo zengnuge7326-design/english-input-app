@@ -227,6 +227,7 @@ function updateMonster(gs: MonsterGS, dt: number, spf: number): 'complete' | nul
   let closestT: Candy | null = null; let closestD = Infinity
   for (let i = gs.candies.length - 1; i >= 0; i--) {
     const c = gs.candies[i]
+    if (!c) continue // 数组可能在本轮被清空（吃到目标时），守护越界
     if (!c.alive) { c.x += c.vx * spf; c.y += c.vy * spf; c.vy += 0.35 * spf; c.alpha = Math.max(0, c.alpha - 0.042 * spf); if (c.y > CH + 60 || c.alpha <= 0) gs.candies.splice(i, 1); continue }
     c.y += c.vy * spf
     if (c.isTarget) { const d = Math.hypot(c.x - gs.mx, c.y - gs.my); if (d < closestD) { closestD = d; closestT = c } }
@@ -239,6 +240,7 @@ function updateMonster(gs: MonsterGS, dt: number, spf: number): 'complete' | nul
         if (gs.score >= 13) { gs.done = true; playSuccess(); gs.confetti = makeConfetti(); speak('Amazing! You matched them all!'); return null }
         gs.pairIdx = gs.score % ALL_PAIRS.length; gs.spawnT = 32; gs.candies = []
         setTimeout(() => speak(`Find little ${ALL_PAIRS[gs.pairIdx][0].toLowerCase()}`), 700)
+        break // candies 已清空，跳出本轮遍历
       } else if (!c.isTarget && gs.mstate !== 'SHAKE') {
         gs.mstate = 'SHAKE'; gs.stT = 0; playWrong()
         speak(`Oops! That is ${c.letter}. Find little ${ALL_PAIRS[gs.pairIdx][0].toLowerCase()}.`)
@@ -310,7 +312,7 @@ function drawMonster(ctx: CanvasRenderingContext2D, gs: MonsterGS) {
     ctx.save(); ctx.globalAlpha = c.alpha
     const r = 26; const col = CANDY_COLS[c.letter.charCodeAt(0) % CANDY_COLS.length]
     const cg = ctx.createRadialGradient(c.x - r * 0.25, c.y - r * 0.28, 2, c.x, c.y, r)
-    cg.addColorStop(0, '#fff'); cg.addColorStop(0.35, col + 'ee'); cg.addColorStop(1, col)
+    cg.addColorStop(0, col + 'ff'); cg.addColorStop(0.5, col); cg.addColorStop(1, col + 'cc')
     ctx.beginPath()
     const rr = 10; ctx.moveTo(c.x - r + rr, c.y - r); ctx.arcTo(c.x + r, c.y - r, c.x + r, c.y + r, rr); ctx.arcTo(c.x + r, c.y + r, c.x - r, c.y + r, rr); ctx.arcTo(c.x - r, c.y + r, c.x - r, c.y - r, rr); ctx.arcTo(c.x - r, c.y - r, c.x + r, c.y - r, rr); ctx.closePath()
     ctx.fillStyle = cg; ctx.fill(); ctx.strokeStyle = 'rgba(255,255,255,0.28)'; ctx.lineWidth = 2; ctx.stroke()
@@ -455,35 +457,45 @@ export default function AlphabetGame({ onExit, onComplete }: Props) {
     if (s === 'trace') { tracingRef.current = initTracing(0); setTimeout(() => speak('Trace the letter A'), 400) }
   }, [])
 
-  // RAF loop
+  // RAF loop — deps=[inGame] so the loop only restarts on menu↔game transitions,
+  // NOT on every screen change within the game (bubble/monster/trace).
+  // This prevents a parent re-render from cancelling the RAF permanently in production.
+  const inGame = screen !== 'menu'
   useEffect(() => {
-    if (screen === 'menu') return
+    if (!inGame) return
     const canvas = canvasRef.current!
     canvas.width = CW; canvas.height = CH
     const ctx = canvas.getContext('2d')!
     lastTsRef.current = performance.now()
+    let alive = true
 
     function loop(ts: number) {
-      const dt = Math.min(48, ts - lastTsRef.current); lastTsRef.current = ts
-      const spf = dt / (1000 / 60)
-      const s = screenRef.current
-      if (s === 'bubble' && bubbleRef.current) {
-        const res = updateBubble(bubbleRef.current, dt, spf)
-        drawBubble(ctx, bubbleRef.current, ts)
-        if (res === 'advance') { const next = bubbleRef.current.level + 1; bubbleRef.current = initBubble(next); speak(`Level ${next + 1}! ${BUBBLE_LEVELS[next].name}`) }
-        else if (res === 'complete') { onCompleteRef.current?.() }
-      } else if (s === 'monster' && monsterRef.current) {
-        updateMonster(monsterRef.current, dt, spf); drawMonster(ctx, monsterRef.current)
-      } else if (s === 'trace' && tracingRef.current) {
-        tickParticles(tracingRef.current.particles, spf, 0.08)
-        if (tracingRef.current.done) tickConfetti(tracingRef.current.confetti, spf)
-        drawTracing(ctx, tracingRef.current, ts)
-      }
+      if (!alive) return
+      // 先调度下一帧，再绘制：即使本帧 update/draw 抛错，循环也不会被打死（避免黑屏/卡死）
       rafRef.current = requestAnimationFrame(loop)
+      try {
+        const dt = Math.min(48, ts - lastTsRef.current); lastTsRef.current = ts
+        const spf = dt / (1000 / 60)
+        const s = screenRef.current
+        if (s === 'bubble' && bubbleRef.current) {
+          const res = updateBubble(bubbleRef.current, dt, spf)
+          drawBubble(ctx, bubbleRef.current, ts)
+          if (res === 'advance') { const next = bubbleRef.current.level + 1; bubbleRef.current = initBubble(next); speak(`Level ${next + 1}! ${BUBBLE_LEVELS[next].name}`) }
+          else if (res === 'complete') { onCompleteRef.current?.() }
+        } else if (s === 'monster' && monsterRef.current) {
+          updateMonster(monsterRef.current, dt, spf); drawMonster(ctx, monsterRef.current)
+        } else if (s === 'trace' && tracingRef.current) {
+          tickParticles(tracingRef.current.particles, spf, 0.08)
+          if (tracingRef.current.done) tickConfetti(tracingRef.current.confetti, spf)
+          drawTracing(ctx, tracingRef.current, ts)
+        }
+      } catch (e) {
+        console.error('[AlphabetGame] loop error', e)
+      }
     }
     rafRef.current = requestAnimationFrame(loop)
-    return () => cancelAnimationFrame(rafRef.current)
-  }, [screen])
+    return () => { alive = false; cancelAnimationFrame(rafRef.current) }
+  }, [inGame])
 
   // Bubble tap
   useEffect(() => {

@@ -564,6 +564,8 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
   const sfxRef = useRef<Sfx>(null as unknown as Sfx)
   const rafRef = useRef(0)
   const phaseNotifiedRef = useRef(false)
+  const onNextLevelRef = useRef(onNextLevel)
+  const handleRetryRef = useRef<() => void>(() => {})
   const touchRef = useRef({ startX: 0, startY: 0, lastX: 0, lastY: 0, moved: false, active: false })
   const frameTRef = useRef(0)
 
@@ -709,6 +711,11 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
 
     function onKeyDown(e: KeyboardEvent) {
       if (e.code === 'Space') { e.preventDefault(); fire() }
+      if (e.key === 'Enter') {
+        const ph = gsRef.current?.phase
+        if (ph === 'win' && onNextLevelRef.current) { onNextLevelRef.current(); return }
+        if (ph === 'win' || ph === 'over') handleRetryRef.current()
+      }
     }
 
     canvas.addEventListener('touchstart', onTouchStart, { passive: false })
@@ -727,6 +734,8 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
     }
   }, [speedTier]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  onNextLevelRef.current = onNextLevel
+
   function handleRetry() {
     const gs = initGS(SPEED_TIERS[speedTier - 1].mult)
     gsRef.current = gs
@@ -734,6 +743,7 @@ export default function BeeBusterGame({ words, unitLabel = '', onExit, onComplet
     spawnWave(gs, wordsRef.current)
     setPhase('playing')
   }
+  handleRetryRef.current = handleRetry
 
   const gs = gsRef.current
 
