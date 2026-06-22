@@ -125,8 +125,9 @@ export function useCrystal(token) {
       if (!token) saveLocal(next)
       return next
     })
-    // 飘字提示
-    setRecent({ color, amount: a, reason, ts: Date.now() })
+    // 飘字提示（颜色随机，仅作视觉效果；真实余额按 total 统一结算）
+    const animColor = COLORS[Math.floor(Math.random() * COLORS.length)]
+    setRecent({ color: animColor, amount: a, reason, ts: Date.now() })
     // 本地流水（无论登录与否都记，方便面板展示）
     appendLog({ color, delta: a, reason, ts: Date.now() })
 
@@ -142,37 +143,93 @@ export function useCrystal(token) {
    * 返回 Promise<boolean>，true=成功
    */
   const spend = useCallback(async (color, amount, reason = 'redeem', meta = null) => {
-    if (!COLORS.includes(color)) return false
+    // 统一为「总数」消费：余额按 total 校验；实际从能覆盖的颜色扣（金色优先，
+    // 兼容后端统一金币——迁移后 gold === total 必命中）。传入 color 仅作历史兼容。
     const a = Math.max(1, Math.min(500, parseInt(amount) || 0))
     if (!a) return false
-    if (stateRef.current[color] < a) return false
+    const s = stateRef.current
+    if ((s.total || 0) < a) return false
+    // 选择实际扣除颜色：金色够则用金色；否则用余额最多的颜色
+    let useColor = 'gold'
+    if ((s.gold || 0) < a) {
+      const richest = [...COLORS].sort((x, y) => (s[y] || 0) - (s[x] || 0))[0]
+      useColor = (s[richest] || 0) >= a ? richest : 'gold'
+    }
 
     if (token) {
       try {
         const r = await fetch(`${API}/crystal/spend`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-          body: JSON.stringify({ color, amount: a, reason, meta }),
+          body: JSON.stringify({ color: useColor, amount: a, reason, meta }),
         })
         const d = await r.json()
         if (d.error) return false
-        setState(s => ({ ...s, ...d }))
-        appendLog({ color, delta: -a, reason, ts: Date.now() })
-        setRecentSpend({ color, amount: a, reason, ts: Date.now() })
+        setState(st => ({ ...st, ...d }))
+        appendLog({ color: useColor, delta: -a, reason, ts: Date.now() })
+        setRecentSpend({ color: useColor, amount: a, reason, ts: Date.now() })
         return true
       } catch { return false }
     } else {
-      setState(s => {
-        const next = { ...s, [color]: s[color] - a }
+      setState(st => {
+        const next = { ...st, [useColor]: Math.max(0, (st[useColor] || 0) - a) }
         next.total = next.blue + next.green + next.red + next.purple + next.gold
         next.towerLevel = Math.floor(next.total / 100)
         saveLocal(next)
         return next
       })
-      appendLog({ color, delta: -a, reason, ts: Date.now() })
-      setRecentSpend({ color, amount: a, reason, ts: Date.now() })
+      appendLog({ color: useColor, delta: -a, reason, ts: Date.now() })
+      setRecentSpend({ color: useColor, amount: a, reason, ts: Date.now() })
       return true
     }
+  }, [token])
+
+  /**
+   * 惩罚扣除（答错等）——立即从总余额扣减，随机色「减号」动效。
+   * 与购物 spend 不同：spend 需指定颜色且校验该色余额；penalize 面向「统一总数」，
+   * 从有余额的颜色里扣（金色最后扣，过渡期保护已充值金币；后端统一金币后即只扣金色）。
+   * @returns {Promise<boolean>}
+   */
+  const penalize = useCallback(async (amount = 1, reason = 'penalty', meta = null) => {
+    const a = Math.max(1, Math.min(50, parseInt(amount) || 0))
+    if (!a) return false
+    const s = stateRef.current
+    if ((s.total || 0) <= 0) return false
+    // 选择扣除颜色：非金色按余额从多到少，金色排最后
+    const order = [...COLORS].sort((x, y) => {
+      if (x === 'gold') return 1
+      if (y === 'gold') return -1
+      return (s[y] || 0) - (s[x] || 0)
+    })
+    const color = order.find(c => (s[c] || 0) > 0) || 'gold'
+    const ded = Math.min(a, s[color] || 0)
+    if (ded <= 0) return false
+
+    // 乐观更新：总数立即减少
+    setState(st => {
+      const next = { ...st, [color]: Math.max(0, (st[color] || 0) - ded) }
+      next.total = next.blue + next.green + next.red + next.purple + next.gold
+      next.towerLevel = Math.floor(next.total / 100)
+      if (!token) saveLocal(next)
+      return next
+    })
+    // 随机色「减号」动效
+    const animColor = COLORS[Math.floor(Math.random() * COLORS.length)]
+    setRecentSpend({ color: animColor, amount: ded, reason, ts: Date.now(), penalty: true })
+    appendLog({ color, delta: -ded, reason, ts: Date.now() })
+
+    if (token) {
+      try {
+        const r = await fetch(`${API}/crystal/spend`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+          body: JSON.stringify({ color, amount: ded, reason, meta }),
+        })
+        const d = await r.json()
+        if (!d.error) setState(st => ({ ...st, ...d }))
+      } catch { /* 网络失败保留乐观值，下次 refresh 校准 */ }
+    }
+    return true
   }, [token])
 
   // 获取流水（登录从 server，未登录从 local）
@@ -216,5 +273,5 @@ export function useCrystal(token) {
     return () => document.removeEventListener('visibilitychange', onHide)
   }, [flushEarn])
 
-  return { ...state, earn, spend, getLog, recent, clearRecent, recentSpend, clearRecentSpend, refresh }
+  return { ...state, earn, spend, penalize, getLog, recent, clearRecent, recentSpend, clearRecentSpend, refresh }
 }

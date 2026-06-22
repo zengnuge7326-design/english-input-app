@@ -33,7 +33,7 @@ function calcMatch(targetSentence, spokenText) {
 }
 
 
-export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, onPatchSettings, initialIndex = 0, onProgressChange, onNav, userId, token, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson, onBack, grammarContext = null, onSentenceDone, onWordDone, onXp, onCrystal }) {
+export default function ExerciseView({ sentences, progress, onMarkMastered, onMarkReview, onIncrementAttempts, settings, onPatchSettings, initialIndex = 0, onProgressChange, onNav, userId, token, showChineseGuide = true, onToggleChineseGuide, hasNextLesson = false, onNextLesson, onBack, grammarContext = null, onSentenceDone, onWordDone, onXp, onCrystal, onPenalize }) {
   const readingMode = grammarContext?.source === 'gutenberg'
   const [index, setIndex] = useState(initialIndex)
   const [completed, setCompleted] = useState(false)
@@ -993,7 +993,7 @@ export default function ExerciseView({ sentences, progress, onMarkMastered, onMa
                 consecutiveErrorRef.current += 1
                 if (consecutiveErrorRef.current >= 2) {
                   consecutiveErrorRef.current = 0
-                  onCrystal?.('gold', -1, 'consecutive_error', { errs: 2 })
+                  onPenalize?.(1, 'consecutive_error', { errs: 2 })
                 }
               }}
               onWordCorrect={() => { onWordDone?.() }}

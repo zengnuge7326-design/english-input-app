@@ -15,14 +15,6 @@ import CartoonIcon, { resolveProductIconId } from './cartoon/CartoonIcon'
 
 const API = 'https://okenglish.site/api'
 
-const COLOR_INFO = {
-  blue:   { label: '蓝', textCls: 'text-blue-400' },
-  green:  { label: '绿', textCls: 'text-emerald-400' },
-  red:    { label: '红', textCls: 'text-rose-400' },
-  purple: { label: '紫', textCls: 'text-purple-400' },
-  gold:   { label: '金', textCls: 'text-amber-400' },
-}
-
 const TABS = [
   { id: 'recharge',   label: '充值' },
   { id: 'items',      label: '道具' },
@@ -36,33 +28,26 @@ const EMPTY_EQUIPPED = { avatar: null, panda_skin: null, theme: null, flame_colo
 function BalanceBar({ crystal, onOpenInventory }) {
   return (
     <div className="bg-gray-900/80 border border-gray-700/60 rounded-2xl p-4 mb-4">
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between">
         <span className="text-sm font-bold text-white flex items-center gap-1.5">
           <GemSVG color="gold" size={20} />
           我的钻石
         </span>
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-gray-500">共 <span className="text-white font-semibold tabular-nums">{crystal?.total ?? 0}</span> 颗</span>
-          {onOpenInventory && (
-            <button
-              type="button"
-              onClick={onOpenInventory}
-              className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-gray-700/80 text-gray-200 hover:bg-gray-600 border border-gray-600/60"
-            >
-              🎒 背包
-            </button>
-          )}
-        </div>
+        {onOpenInventory && (
+          <button
+            type="button"
+            onClick={onOpenInventory}
+            className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-gray-700/80 text-gray-200 hover:bg-gray-600 border border-gray-600/60"
+          >
+            🎒 背包
+          </button>
+        )}
       </div>
-      <div className="grid grid-cols-5 gap-2">
-        {['blue', 'green', 'red', 'purple', 'gold'].map(c => (
-          <div key={c} className="flex flex-col items-center gap-1.5">
-            <GemSVG color={c} size={44} />
-            <span className={`text-lg font-bold tabular-nums leading-none ${COLOR_INFO[c].textCls}`}>
-              {crystal?.[c] ?? 0}
-            </span>
-          </div>
-        ))}
+      <div className="flex items-center justify-center gap-3 mt-3">
+        <GemSVG color="gold" size={52} />
+        <span className="text-4xl font-black tabular-nums leading-none text-amber-300">
+          {crystal?.total ?? 0}
+        </span>
       </div>
     </div>
   )
@@ -127,8 +112,10 @@ function BuyModal({ product, token, crystal, onSuccess, onClose }) {
   }
 
   const price = product.price?.[0]
-  const priceColor = price?.color
   const priceAmount = price?.amount
+  // 统一为金色总数：价格按金色展示，余额按总数校验（扣费由服务端权威结算）
+  const balanceTotal = crystal?.total ?? 0
+  const insufficient = priceAmount != null && balanceTotal < priceAmount
 
   return (
     <div className="fixed inset-0 z-[200] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
@@ -150,24 +137,20 @@ function BuyModal({ product, token, crystal, onSuccess, onClose }) {
           <span className="text-sm text-gray-400">价格</span>
           {product.rmb_price ? (
             <span className="text-amber-400 font-bold">¥{product.rmb_price}</span>
-          ) : priceColor ? (
+          ) : priceAmount != null ? (
             <span className="flex items-center gap-1 font-bold">
-              <GemSVG color={priceColor} size={18} />
-              <span className={COLOR_INFO[priceColor]?.textCls ?? 'text-white'}>{priceAmount}</span>
+              <GemSVG color="gold" size={18} />
+              <span className="text-amber-300">{priceAmount}</span>
             </span>
           ) : <span className="text-gray-400">—</span>}
         </div>
 
-        {/* 余额检查 */}
-        {priceColor && (
+        {/* 余额检查（统一金色总数） */}
+        {priceAmount != null && (
           <div className="text-xs text-center text-gray-500 mb-4">
-            当前 {COLOR_INFO[priceColor]?.label}钻：
-            <span className={`font-semibold ml-1 ${COLOR_INFO[priceColor]?.textCls}`}>
-              {crystal?.[priceColor] ?? 0}
-            </span>
-            {(crystal?.[priceColor] ?? 0) < (priceAmount ?? 0) && (
-              <span className="text-rose-400 ml-1">（不足）</span>
-            )}
+            当前钻石：
+            <span className="font-semibold ml-1 text-amber-300">{balanceTotal}</span>
+            {insufficient && <span className="text-rose-400 ml-1">（不足）</span>}
           </div>
         )}
 
@@ -245,8 +228,8 @@ function ItemsTab({ token, crystal, onBuySuccess }) {
                   <span className="text-amber-400 text-xs font-bold">¥{p.rmb_price}</span>
                 ) : price ? (
                   <>
-                    <GemSVG color={price.color} size={14} />
-                    <span className={`text-xs font-bold ${COLOR_INFO[price.color]?.textCls ?? 'text-white'}`}>{price.amount}</span>
+                    <GemSVG color="gold" size={14} />
+                    <span className="text-xs font-bold text-amber-300">{price.amount}</span>
                   </>
                 ) : null}
               </div>
@@ -319,8 +302,8 @@ function MembershipTab({ token, crystal, onBuySuccess }) {
                   <span className="text-amber-400 font-bold text-sm">¥{p.rmb_price}</span>
                 ) : price ? (
                   <>
-                    <GemSVG color={price.color} size={16} />
-                    <span className={`font-bold text-sm ${COLOR_INFO[price.color]?.textCls ?? 'text-white'}`}>{price.amount}</span>
+                    <GemSVG color="gold" size={16} />
+                    <span className="font-bold text-sm text-amber-300">{price.amount}</span>
                   </>
                 ) : null}
               </div>

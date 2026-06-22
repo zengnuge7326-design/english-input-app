@@ -266,6 +266,18 @@ body {
   pointer-events: none;
 }
 
+/* 扣除：钻石下落 + 震一下，配红色「−N」 */
+@keyframes gem-drop {
+  0%   { transform: translate(-50%, -55%) scale(0.4) rotate(8deg); opacity: 0; }
+  15%  { transform: translate(-50%, -55%) scale(1.2) rotate(-6deg); opacity: 1; }
+  30%  { transform: translate(-50%, -50%) scale(1.0) rotate(3deg); opacity: 1; }
+  100% { transform: translate(-50%, 35%) scale(0.7) rotate(-4deg); opacity: 0; }
+}
+.gem-drop {
+  animation: gem-drop 1.4s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+  pointer-events: none;
+}
+
 /* 💎 顶部徽章被击中时的脉冲 */
 @keyframes crystal-pulse {
   0%, 100% { transform: scale(1); filter: brightness(1); }

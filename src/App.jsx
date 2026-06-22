@@ -1176,7 +1176,7 @@ function MainApp() {
                 : 'border-purple-500/50 bg-purple-900/60 text-purple-200 hover:bg-purple-800/80'}`}
           >
             <span key={crystalPulse} className="inline-flex shrink-0 items-center justify-center crystal-pulse">
-              <GemSVG color="blue" size={18} />
+              <GemSVG color="gold" size={18} />
             </span>
             <span className="text-sm font-bold tabular-nums">{crystal.total}</span>
           </button>
@@ -1233,7 +1233,7 @@ function MainApp() {
               onOpenShop={() => setShowMobileShop(true)}
               onOpenLeaderboard={() => setShowLeaderboard(true)}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               mainXp={{
                 streak: xp.streak,
                 totalXp: xp.totalXp,
@@ -1288,7 +1288,7 @@ function MainApp() {
         )}
 
         {/* 钻石飘字 + 面板（全局） */}
-        <CrystalFloat recent={crystal.recent} onPlaySound={playCrystal} />
+        <CrystalFloat recent={crystal.recent} recentSpend={crystal.recentSpend} onPlaySound={playCrystal} />
         {showCrystalPanel && (
           <CrystalPanel crystal={crystal} onClose={() => setShowCrystalPanel(false)} />
         )}
@@ -1571,7 +1571,7 @@ function MainApp() {
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
               onSyncPractice={(data, label, unitNum) => {
                 if (unitNum) {
@@ -1601,7 +1601,7 @@ function MainApp() {
               onXp={xp.addXP}
               onCrystal={crystal.earn}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
             />
           </div>
@@ -1615,7 +1615,7 @@ function MainApp() {
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
             />
           </div>
@@ -1626,7 +1626,7 @@ function MainApp() {
               isMember={UNLOCK_ALL_COURSES || isMember}
               onShowLogin={() => setShowLogin(true)}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
             />
           </div>
@@ -1714,6 +1714,7 @@ function MainApp() {
               onWordDone={onWordDone}
               onXp={xp.addXP}
               onCrystal={crystal.earn}
+              onPenalize={crystal.penalize}
             />
           )}
           {tab === 'list' && (
@@ -1755,7 +1756,7 @@ function MainApp() {
               isMember={UNLOCK_ALL_COURSES || isMember} onShowLogin={() => setShowLogin(true)} settings={settings}
               onXp={xp.addXP} onCrystal={crystal.earn}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
             />
           </div>
@@ -1767,7 +1768,7 @@ function MainApp() {
               onCrystal={crystal.earn}
               isMember={UNLOCK_ALL_COURSES || isMember}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
             />
           </div>
@@ -1779,7 +1780,7 @@ function MainApp() {
               onCrystal={crystal.earn}
               isMember={UNLOCK_ALL_COURSES || isMember}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
             />
           </div>
@@ -1793,7 +1794,7 @@ function MainApp() {
               onCrystal={crystal.earn}
               isMember={UNLOCK_ALL_COURSES || isMember}
               unlocks={unlocks}
-              crystalBalance={crystal.blue}
+              crystalBalance={crystal.total}
               onGoShop={() => openTab('shop')}
             />
           )}
