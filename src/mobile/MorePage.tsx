@@ -34,7 +34,28 @@ export default function MorePage({
   shellMode,
 }: Props) {
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const [dataOpen, setDataOpen] = useState(false)
   const [sfxOn, setSfxOn] = useState(isMobileSfxEnabled)
+
+  // 学习数据明细（纯本地读取，无需后端）
+  const learnStats = (() => {
+    function loadSetCount(key: string): number {
+      try { const a = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(a) ? a.length : 0 } catch { return 0 }
+    }
+    function loadObjCount(key: string): number {
+      try { const o = JSON.parse(localStorage.getItem(key) || '{}'); return o && typeof o === 'object' ? Object.keys(o).length : 0 } catch { return 0 }
+    }
+    return {
+      games: [
+        { label: '飞船防卫', n: loadSetCount('defender_progress') },
+        { label: '青蛙跳', n: loadSetCount('frog_progress') },
+        { label: '单词小蜜蜂', n: loadSetCount('bee_progress') },
+        { label: '雷电单词战', n: loadSetCount('raiden_progress') },
+      ],
+      vocabUnits: loadObjCount('vocab_unit_progress'),
+    }
+  })()
+  const gameTotal = learnStats.games.reduce((a, g) => a + g.n, 0)
 
   function toggleSfx() {
     const next = !sfxOn
@@ -87,6 +108,42 @@ export default function MorePage({
             今日经验 {todayXp}/{goal} · 达标后连胜 +1
           </p>
         )}
+
+        {/* 学习数据明细 */}
+        <div className="flex flex-col gap-2">
+          <button
+            type="button"
+            onClick={() => setDataOpen(v => !v)}
+            className="mobile-more-page__row"
+            aria-expanded={dataOpen}
+          >
+            <MobileIcon name="zap" size={20} />
+            <span className="flex-1 text-left font-semibold">学习数据</span>
+            <span className="text-white/40">{dataOpen ? '▾' : '›'}</span>
+          </button>
+          {dataOpen && (
+            <div className="mobile-more-page__settings-panel flex flex-col gap-2 pl-1 text-sm">
+              <div className="flex items-center justify-between px-1 text-white/70">
+                <span>教材已学单元</span>
+                <span className="font-bold text-white tabular-nums">{learnStats.vocabUnits}</span>
+              </div>
+              <div className="flex items-center justify-between px-1 text-white/70">
+                <span>游戏通关总数</span>
+                <span className="font-bold text-white tabular-nums">{gameTotal}</span>
+              </div>
+              <div className="h-px bg-white/10 my-0.5" />
+              {learnStats.games.map(g => (
+                <div key={g.label} className="flex items-center justify-between px-1 text-white/55 text-xs">
+                  <span>{g.label}</span>
+                  <span className="tabular-nums">{g.n} 关</span>
+                </div>
+              ))}
+              <p className="text-[11px] text-white/40 px-1 mt-1">
+                经验 {totalXp} · 今日 {todayXp ?? 0}/{goal ?? 20} · 连胜 {streak} 天
+              </p>
+            </div>
+          )}
+        </div>
 
         <MobileInstallTip />
 

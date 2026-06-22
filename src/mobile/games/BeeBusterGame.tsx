@@ -16,11 +16,11 @@ const HEARTS_START = 5
 const SPEED_KEY = 'bbg-speed-tier'
 
 const SPEED_TIERS = [
-  { label: '很慢', mult: 0.38 },
   { label: '慢',   mult: 0.65 },
   { label: '标准', mult: 1.0  },
   { label: '快',   mult: 1.45 },
   { label: '极快', mult: 2.1  },
+  { label: '最快', mult: 4.2  },
 ] as const
 
 function readSpeedTier() {
@@ -228,31 +228,69 @@ function drawBee(ctx: CanvasRenderingContext2D, bee: Bee, showTarget = true) {
 }
 
 function drawShip(ctx: CanvasRenderingContext2D, px: number, py: number, t: number) {
-  // Engine flame
-  const flicker = 0.7 + Math.sin(t * 0.014) * 0.3
-  const grad = ctx.createRadialGradient(px, py + 18, 0, px, py + 8, 22 * flicker)
-  grad.addColorStop(0, 'rgba(34,211,238,0.65)')
-  grad.addColorStop(1, 'rgba(34,211,238,0)')
-  ctx.fillStyle = grad
-  ctx.fillRect(px - 22, py + 4, 44, 28)
+  ctx.save()
+  ctx.translate(px, py)
 
-  // Body
-  ctx.shadowBlur = 14; ctx.shadowColor = '#22d3ee'
-  ctx.fillStyle = '#22d3ee'
+  // Twin engine flames (flickering, layered)
+  const flicker = 0.7 + Math.sin(t * 0.05) * 0.3
+  const flicker2 = 0.7 + Math.sin(t * 0.07 + 1.3) * 0.3
+  for (const [ex, fl] of [[-6, flicker], [6, flicker2]] as const) {
+    const fg = ctx.createLinearGradient(0, 10, 0, 10 + 26 * fl)
+    fg.addColorStop(0, 'rgba(255,255,255,0.95)')
+    fg.addColorStop(0.3, 'rgba(56,232,255,0.85)')
+    fg.addColorStop(1, 'rgba(34,150,238,0)')
+    ctx.fillStyle = fg
+    ctx.beginPath()
+    ctx.moveTo(ex - 3.2, 11); ctx.lineTo(ex + 3.2, 11)
+    ctx.lineTo(ex, 11 + 26 * fl); ctx.closePath(); ctx.fill()
+  }
+
+  // Wings (swept-back), darker metal
+  ctx.fillStyle = '#0e7490'
   ctx.beginPath()
-  ctx.moveTo(px, py - 20)
-  ctx.lineTo(px - 15, py + 12)
-  ctx.lineTo(px - 7, py + 6)
-  ctx.lineTo(px, py + 15)
-  ctx.lineTo(px + 7, py + 6)
-  ctx.lineTo(px + 15, py + 12)
+  ctx.moveTo(-3, -2); ctx.lineTo(-20, 14); ctx.lineTo(-11, 14); ctx.lineTo(-3, 6); ctx.closePath(); ctx.fill()
+  ctx.beginPath()
+  ctx.moveTo(3, -2); ctx.lineTo(20, 14); ctx.lineTo(11, 14); ctx.lineTo(3, 6); ctx.closePath(); ctx.fill()
+
+  // Fuselage — vertical metallic gradient
+  const body = ctx.createLinearGradient(-9, 0, 9, 0)
+  body.addColorStop(0, '#0891b2')
+  body.addColorStop(0.45, '#67e8f9')
+  body.addColorStop(0.5, '#e0fbff')
+  body.addColorStop(0.55, '#67e8f9')
+  body.addColorStop(1, '#0891b2')
+  ctx.shadowBlur = 14; ctx.shadowColor = '#22d3ee'
+  ctx.fillStyle = body
+  ctx.beginPath()
+  ctx.moveTo(0, -22)            // nose tip
+  ctx.quadraticCurveTo(-7, -8, -8, 6)
+  ctx.lineTo(-5, 12)
+  ctx.lineTo(5, 12)
+  ctx.lineTo(8, 6)
+  ctx.quadraticCurveTo(7, -8, 0, -22)
   ctx.closePath()
   ctx.fill()
   ctx.shadowBlur = 0
 
-  // Cockpit
-  ctx.fillStyle = 'rgba(255,255,255,0.28)'
-  ctx.beginPath(); ctx.ellipse(px, py - 5, 4, 7.5, 0, 0, Math.PI * 2); ctx.fill()
+  // Nose highlight
+  ctx.fillStyle = 'rgba(255,255,255,0.5)'
+  ctx.beginPath(); ctx.moveTo(0, -22); ctx.quadraticCurveTo(-2, -12, -1.5, -4); ctx.lineTo(1.5, -4); ctx.quadraticCurveTo(2, -12, 0, -22); ctx.closePath(); ctx.fill()
+
+  // Cockpit canopy (glassy blue)
+  const cp = ctx.createRadialGradient(-1.5, -5, 0.5, 0, -4, 6)
+  cp.addColorStop(0, '#dbf9ff')
+  cp.addColorStop(0.5, '#38bdf8')
+  cp.addColorStop(1, '#0c4a6e')
+  ctx.fillStyle = cp
+  ctx.beginPath(); ctx.ellipse(0, -5, 3.6, 6.5, 0, 0, Math.PI * 2); ctx.fill()
+
+  // Wing-tip lights
+  ctx.fillStyle = '#fde047'
+  ctx.beginPath(); ctx.arc(-19, 13.5, 1.4, 0, Math.PI * 2); ctx.fill()
+  ctx.fillStyle = '#f87171'
+  ctx.beginPath(); ctx.arc(19, 13.5, 1.4, 0, Math.PI * 2); ctx.fill()
+
+  ctx.restore()
 }
 
 function drawBullet(ctx: CanvasRenderingContext2D, b: Bullet) {

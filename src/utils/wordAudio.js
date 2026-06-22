@@ -28,6 +28,35 @@ let _wordSpeakId = 0
 
 const PLAY_TIMEOUT_MS = 1200
 
+// ── Persistent audio cache (Cache Storage) ────────────────────────────────
+// The server synthesizes audio on the fly (Edge-TTS), which is slow the FIRST
+// time per phrase. We persist each fetched clip in Cache Storage so that on any
+// later session it loads instantly from disk instead of re-hitting the network.
+const TTS_CACHE_NAME = 'tts-audio-v1'
+let _ttsCachePromise = null
+function getTtsCache() {
+  if (_ttsCachePromise) return _ttsCachePromise
+  if (typeof caches === 'undefined') { _ttsCachePromise = Promise.resolve(null); return _ttsCachePromise }
+  _ttsCachePromise = caches.open(TTS_CACHE_NAME).catch(() => null)
+  return _ttsCachePromise
+}
+
+/** fetch() that reads from / writes to the persistent Cache Storage. */
+async function cachedAudioFetch(url) {
+  const cache = await getTtsCache()
+  if (cache) {
+    try {
+      const hit = await cache.match(url)
+      if (hit && hit.ok) return hit
+    } catch { /* ignore */ }
+  }
+  const res = await fetch(url, { credentials: 'omit' })
+  if (cache && res.ok) {
+    try { await cache.put(url, res.clone()) } catch { /* quota/opaque — ignore */ }
+  }
+  return res
+}
+
 function normalizeKey(text = '') {
   return String(text)
     .toLowerCase()
@@ -86,7 +115,7 @@ function prefetchWordUrl(url) {
   if (pending) return pending
 
   _wordPrefetching.add(url)
-  const p = fetch(url, { credentials: 'omit' })
+  const p = cachedAudioFetch(url)
     .then(res => {
       if (!res.ok) throw new Error(String(res.status))
       return res.blob()
@@ -238,7 +267,7 @@ export function playWordAsync(text, options = {}) {
       audio.src = cached
       audio.play().catch(done)
     } else {
-      fetch(url, { credentials: 'omit' })
+      cachedAudioFetch(url)
         .then(r => { if (!r.ok) throw new Error(String(r.status)); return r.blob() })
         .then(blob => {
           const blobUrl = URL.createObjectURL(blob)

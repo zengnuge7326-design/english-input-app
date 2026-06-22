@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { playWordImmediate, preloadWords } from '../../utils/wordAudio.js'
+import { unlockAudio } from '../../utils/audioUnlock'
 import './alphabet.css'
 
 const CW = 450
@@ -29,12 +31,16 @@ function playSuccess() {
 }
 function playStroke() { playTone(660, 'sine', 0.1, 0.12) }
 
+// Use the neural server voice (same as the rest of the app) instead of the
+// browser's robotic speechSynthesis. Single capital letters are read as their
+// names ("A" → "ay"); falls back to speechSynthesis only if the network voice
+// is unavailable (handled inside playWordImmediate).
 function speak(text: string) {
+  const t = text?.trim()
+  if (!t) return
   try {
-    window.speechSynthesis.cancel()
-    const u = new SpeechSynthesisUtterance(text)
-    u.lang = 'en-US'; u.rate = 0.82; u.pitch = 1.05
-    window.speechSynthesis.speak(u)
+    unlockAudio()
+    playWordImmediate(t, { rate: 0.92 })
   } catch { /* ignore */ }
 }
 
@@ -360,14 +366,21 @@ interface TracingGS { letterIdx: number; strokeIdx: number; nodeIdx: number; dra
 function initTracing(letterIdx = 0): TracingGS {
   return { letterIdx, strokeIdx: 0, nodeIdx: 0, drawing: false, curPath: [], donePaths: [], doneColors: [], particles: [], confetti: [], done: false }
 }
+// Catmull-Rom spline → cubic béziers. Produces a genuinely smooth curve through
+// every point instead of stiff straight segments, even with few/uneven samples.
 function smoothPath(ctx: CanvasRenderingContext2D, pts: Pt[]) {
   if (pts.length < 2) return
+  if (pts.length === 2) { ctx.moveTo(pts[0].x, pts[0].y); ctx.lineTo(pts[1].x, pts[1].y); return }
   ctx.moveTo(pts[0].x, pts[0].y)
-  for (let i = 1; i < pts.length - 1; i++) {
-    const mx = (pts[i].x + pts[i + 1].x) / 2, my = (pts[i].y + pts[i + 1].y) / 2
-    ctx.quadraticCurveTo(pts[i].x, pts[i].y, mx, my)
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1] ?? pts[i]
+    const p1 = pts[i]
+    const p2 = pts[i + 1]
+    const p3 = pts[i + 2] ?? p2
+    const cp1x = p1.x + (p2.x - p0.x) / 6, cp1y = p1.y + (p2.y - p0.y) / 6
+    const cp2x = p2.x - (p3.x - p1.x) / 6, cp2y = p2.y - (p3.y - p1.y) / 6
+    ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y)
   }
-  ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y)
 }
 
 function drawTracing(ctx: CanvasRenderingContext2D, gs: TracingGS, ts: number) {
@@ -378,9 +391,13 @@ function drawTracing(ctx: CanvasRenderingContext2D, gs: TracingGS, ts: number) {
   for (let x = 0; x < CW; x += 28) for (let y = 0; y < CH; y += 28) ctx.fillRect(x, y, 1.5, 1.5)
   ctx.strokeStyle = 'rgba(255,255,255,0.04)'; ctx.lineWidth = 1
   for (let y = OY; y <= OY + SH; y += SH / 4) { ctx.beginPath(); ctx.moveTo(OX - 18, y); ctx.lineTo(OX + SW + 18, y); ctx.stroke() }
-  // Ghost
-  ctx.strokeStyle = 'rgba(255,255,255,0.06)'; ctx.lineWidth = 40; ctx.lineCap = 'round'; ctx.lineJoin = 'round'
+  // Ghost guide — clearer so kids can see the path to trace
+  ctx.strokeStyle = 'rgba(255,255,255,0.16)'; ctx.lineWidth = 40; ctx.lineCap = 'round'; ctx.lineJoin = 'round'
   for (const st of strokes) { ctx.beginPath(); smoothPath(ctx, st); ctx.stroke() }
+  // Dashed centerline hint over the ghost
+  ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.28)'; ctx.lineWidth = 2; ctx.setLineDash([6, 10])
+  for (const st of strokes) { ctx.beginPath(); smoothPath(ctx, st); ctx.stroke() }
+  ctx.restore()
   // Done strokes
   gs.donePaths.forEach((path, i) => {
     if (path.length < 2) return
@@ -450,6 +467,13 @@ export default function AlphabetGame({ onExit, onComplete }: Props) {
   const onCompleteRef = useRef(onComplete)
   useEffect(() => { onCompleteRef.current = onComplete }, [onComplete])
 
+  // Warm the neural-voice cache so the FIRST time a letter is spoken it already
+  // uses the high-quality server voice instead of the robotic browser fallback.
+  useEffect(() => {
+    const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+    preloadWords([...upper, 'Great job!', 'Amazing! You matched them all!'])
+  }, [])
+
   const goScreen = useCallback((s: AlgScreen) => {
     screenRef.current = s; setScreen(s)
     if (s === 'bubble') { bubbleRef.current = initBubble(0); setTimeout(() => speak('Find the letter A'), 400) }
@@ -501,23 +525,36 @@ export default function AlphabetGame({ onExit, onComplete }: Props) {
   useEffect(() => {
     if (screen !== 'bubble') return
     const canvas = canvasRef.current!
+    let lastTouchT = 0  // dedupe: ignore the click that follows a touchend
     function tap(e: TouchEvent | MouseEvent) {
       e.preventDefault()
-      const rect = canvas.getBoundingClientRect(); const sc = CW / rect.width
-      const cx = e instanceof TouchEvent ? (e.changedTouches[0].clientX - rect.left) * sc : (e.clientX - rect.left) * sc
-      const cy = e instanceof TouchEvent ? (e.changedTouches[0].clientY - rect.top) * sc : (e.clientY - rect.top) * sc
+      const now = performance.now()
+      if (e instanceof TouchEvent) lastTouchT = now
+      else if (now - lastTouchT < 600) return  // synthesized click after touch — skip
+      // Map client → canvas coords with INDEPENDENT x/y scale (canvas is stretched to fill,
+      // so its display aspect ratio differs from the 450×800 buffer).
+      const rect = canvas.getBoundingClientRect()
+      const scX = CW / rect.width, scY = CH / rect.height
+      const clientX = e instanceof TouchEvent ? e.changedTouches[0].clientX : e.clientX
+      const clientY = e instanceof TouchEvent ? e.changedTouches[0].clientY : e.clientY
+      const cx = (clientX - rect.left) * scX
+      const cy = (clientY - rect.top) * scY
       const gs = bubbleRef.current; if (!gs || gs.done) return
-      for (let i = gs.bubbles.length - 1; i >= 0; i--) {
+      // Pick the CLOSEST bubble within a forgiving radius (fat-finger tolerance).
+      const TOL = 18
+      let best = -1, bestD = Infinity
+      for (let i = 0; i < gs.bubbles.length; i++) {
         const b = gs.bubbles[i]; if (b.popping) continue
-        if (Math.hypot(cx - b.x, cy - b.y) < b.r) {
-          if (b.letter === gs.target) {
-            b.popping = true; burst(gs.particles, b.x, b.y, [B_COLS[b.ci][0], B_COLS[b.ci][1], '#fff', '#ffd93d'], 15); playPop(); speak(b.letter); gs.score++
-            if (gs.score >= 10) { gs.done = true; gs.advT = 2700; playSuccess(); gs.confetti = makeConfetti(); speak('Great job!') }
-            else { const others = BUBBLE_LEVELS[gs.level].letters.filter(l => l !== gs.target); gs.target = others[Math.floor(Math.random() * others.length)]; setTimeout(() => speak(gs.target), 900) }
-          } else { b.wiggle = 28; playWrong(); speak(`That is ${b.letter}. Find ${gs.target}.`) }
-          break
-        }
+        const d = Math.hypot(cx - b.x, cy - b.y)
+        if (d < b.r + TOL && d < bestD) { bestD = d; best = i }
       }
+      if (best < 0) return
+      const b = gs.bubbles[best]
+      if (b.letter === gs.target) {
+        b.popping = true; burst(gs.particles, b.x, b.y, [B_COLS[b.ci][0], B_COLS[b.ci][1], '#fff', '#ffd93d'], 15); playPop(); speak(b.letter); gs.score++
+        if (gs.score >= 10) { gs.done = true; gs.advT = 2700; playSuccess(); gs.confetti = makeConfetti(); speak('Great job!') }
+        else { const others = BUBBLE_LEVELS[gs.level].letters.filter(l => l !== gs.target); gs.target = others[Math.floor(Math.random() * others.length)]; setTimeout(() => speak(gs.target), 900) }
+      } else { b.wiggle = 28; playWrong(); speak(`That is ${b.letter}. Find ${gs.target}.`) }
     }
     canvas.addEventListener('touchend', tap as EventListener, { passive: false })
     canvas.addEventListener('click', tap as EventListener)
@@ -558,34 +595,44 @@ export default function AlphabetGame({ onExit, onComplete }: Props) {
   useEffect(() => {
     if (screen !== 'trace') return
     const canvas = canvasRef.current!
-    function cvPos(clientX: number, clientY: number): Pt { const r = canvas.getBoundingClientRect(); const s = CW / r.width; return { x: (clientX - r.left) * s, y: (clientY - r.top) * s } }
+    // Independent x/y scale — canvas buffer (450×800) is stretched to fill its box.
+    function cvPos(clientX: number, clientY: number): Pt {
+      const r = canvas.getBoundingClientRect()
+      const scX = CW / r.width, scY = CH / r.height
+      return { x: (clientX - r.left) * scX, y: (clientY - r.top) * scY }
+    }
+    const START_TOL = 54   // forgiving start zone
+    const NODE_TOL = 52    // forgiving node-advance zone
+    function finishStroke(gs: TracingGS, strokes: Pt[][]) {
+      const col = NEONS[gs.strokeIdx % NEONS.length]
+      gs.donePaths.push([...gs.curPath]); gs.doneColors.push(col); gs.curPath = []; gs.drawing = false; gs.strokeIdx++; gs.nodeIdx = 0
+      burst(gs.particles, CW / 2, CH / 2, [col, '#fff', '#ffd93d'], 12); playStroke()
+      if (gs.strokeIdx >= strokes.length) {
+        gs.done = true; playSuccess(); gs.confetti = makeConfetti(); speak(TRACE_LETTERS[gs.letterIdx])
+        setTimeout(() => {
+          if (!tracingRef.current) return
+          const ni = tracingRef.current.letterIdx + 1
+          if (ni < TRACE_LETTERS.length) { tracingRef.current = initTracing(ni); speak('Now trace ' + TRACE_LETTERS[ni]) }
+          else { onCompleteRef.current?.(); speak('Amazing! You finished all the letters!') }
+        }, 2300)
+      }
+    }
     function startTrace(pos: Pt) {
       const gs = tracingRef.current; if (!gs || gs.done) return
       const strokes = scaleStrokes(TRACE_LETTERS[gs.letterIdx]); if (gs.strokeIdx >= strokes.length) return
       const sp = strokes[gs.strokeIdx][0]
-      if (Math.hypot(pos.x - sp.x, pos.y - sp.y) < 44) { gs.drawing = true; gs.curPath = [pos]; gs.nodeIdx = 1 }
+      if (Math.hypot(pos.x - sp.x, pos.y - sp.y) < START_TOL) { gs.drawing = true; gs.curPath = [pos]; gs.nodeIdx = 1 }
     }
     function moveTrace(pos: Pt) {
       const gs = tracingRef.current; if (!gs || !gs.drawing || gs.done) return
       gs.curPath.push(pos)
       const strokes = scaleStrokes(TRACE_LETTERS[gs.letterIdx]); const st = strokes[gs.strokeIdx]; if (!st || gs.nodeIdx >= st.length) return
-      if (Math.hypot(pos.x - st[gs.nodeIdx].x, pos.y - st[gs.nodeIdx].y) < 44) {
+      // Greedily advance through every upcoming node we are now close to, so quick
+      // strokes that skip past several nodes still register instead of stalling.
+      while (gs.nodeIdx < st.length && Math.hypot(pos.x - st[gs.nodeIdx].x, pos.y - st[gs.nodeIdx].y) < NODE_TOL) {
         gs.nodeIdx++
-        if (gs.nodeIdx >= st.length) {
-          const col = NEONS[gs.strokeIdx % NEONS.length]
-          gs.donePaths.push([...gs.curPath]); gs.doneColors.push(col); gs.curPath = []; gs.drawing = false; gs.strokeIdx++; gs.nodeIdx = 0
-          burst(gs.particles, CW / 2, CH / 2, [col, '#fff', '#ffd93d'], 12); playStroke()
-          if (gs.strokeIdx >= strokes.length) {
-            gs.done = true; playSuccess(); gs.confetti = makeConfetti(); speak(TRACE_LETTERS[gs.letterIdx])
-            setTimeout(() => {
-              if (!tracingRef.current) return
-              const ni = tracingRef.current.letterIdx + 1
-              if (ni < TRACE_LETTERS.length) { tracingRef.current = initTracing(ni); speak('Now trace ' + TRACE_LETTERS[ni]) }
-              else { onCompleteRef.current?.(); speak('Amazing! You finished all the letters!') }
-            }, 2300)
-          }
-        }
       }
+      if (gs.nodeIdx >= st.length) finishStroke(gs, strokes)
     }
     function endTrace() { const gs = tracingRef.current; if (gs?.drawing) { gs.drawing = false; gs.curPath = []; gs.nodeIdx = 0 } }
     const onTS = (e: TouchEvent) => { e.preventDefault(); startTrace(cvPos(e.touches[0].clientX, e.touches[0].clientY)) }

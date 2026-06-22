@@ -103,7 +103,7 @@ export default function MicPermissionSheet({ elevated = false, preferLight = fal
     } catch {
       setBusy(false)
       setMode('denied')
-      settle({ ok: false, reason: 'denied' })
+      // keep the sheet open so the user can follow the steps and retry in-place
     }
   }, [settle])
 
@@ -194,16 +194,14 @@ export default function MicPermissionSheet({ elevated = false, preferLight = fal
             {guide.note && (
               <p className={noteClass}>💡 {guide.note}</p>
             )}
-            {mode === 'unsupported' && (
-              <button
-                type="button"
-                onClick={handleAllow}
-                disabled={busy}
-                className="w-full mb-2 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white font-bold transition-colors"
-              >
-                {busy ? '请在弹框中选择「允许」…' : '尝试允许麦克风'}
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={handleAllow}
+              disabled={busy}
+              className="w-full mb-2 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white font-bold transition-colors"
+            >
+              {busy ? '正在请求麦克风…' : (mode === 'denied' ? '我已允许，重试' : '尝试允许麦克风')}
+            </button>
             <button type="button" onClick={() => close('dismissed')} className={dismissBtnClass}>
               我知道了
             </button>

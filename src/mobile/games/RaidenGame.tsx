@@ -181,6 +181,7 @@ const PIXEL_SCALE = 3
 const HEARTS_MAX = 5
 const ENEMY_BASE_SPEED = 42     // px/s — calm baseline, tuned by speed tier
 const ESCAPE_FRAC = 0.95        // enemy "escapes" only near the very bottom (the word area)
+const PLAYER_PATROL_SPEED = 70  // px/s — slow steady left/right drift, keeps ship lively
 
 // ── Speed button ──────────────────────────────────────────────────────────────
 function SpeedButton({ tier, onCycle }: { tier: number; onCycle: () => void }) {
@@ -244,6 +245,8 @@ export default function RaidenGame({ words, unitLabel = 'Unit 1', onExit, onComp
   const lastTRef   = useRef(0)
   const canvasWRef = useRef(390)
   const canvasHRef = useRef(700)
+  const playerXRef = useRef(195)   // live ship x — auto-patrols left/right
+  const playerDirRef = useRef(1)   // +1 → right, -1 → left
 
   useEffect(() => { phaseRef.current = phase }, [phase])
   useEffect(() => { speedRef.current = speedTier }, [speedTier])
@@ -278,8 +281,8 @@ export default function RaidenGame({ words, unitLabel = 'Unit 1', onExit, onComp
   }, [sfx])
 
   const playerXY = useCallback(() => {
-    const W = canvasWRef.current, H = canvasHRef.current
-    return { x: W / 2, y: H - 64 }
+    const H = canvasHRef.current
+    return { x: playerXRef.current, y: H - 64 }
   }, [])
 
   const spawnEnemy = useCallback((idx: number) => {
@@ -295,6 +298,7 @@ export default function RaidenGame({ words, unitLabel = 'Unit 1', onExit, onComp
     setCurrentWord(word)
     setChoices(makeChoices(word, queue))
     lockedRef.current = false
+    typedRef.current = ''
   }, [queue])
 
   function resetGameVars() {
@@ -305,6 +309,7 @@ export default function RaidenGame({ words, unitLabel = 'Unit 1', onExit, onComp
 
   function startGame() {
     resetGameVars()
+    playerXRef.current = canvasWRef.current / 2; playerDirRef.current = Math.random() < 0.5 ? -1 : 1
     setHearts(HEARTS_MAX); setScore(0); setCombo(0); setMaxCombo(0)
     setHit(0); setTaps(0); setCorrectTaps(0)
     setFlash(null); setChoiceResult(null)
@@ -403,6 +408,14 @@ export default function RaidenGame({ words, unitLabel = 'Unit 1', onExit, onComp
       for (const cl of cloudsRef.current) {
         cl.y += cl.speed * 120 * dt
         if (cl.y > H + 80) { cl.y = -100; cl.x = Math.random() * (W - cl.width) }
+      }
+
+      // Ship patrols left/right at a calm constant speed (not stiff)
+      {
+        const margin = (SPRITES.player[0].length * PIXEL_SCALE) / 2 + 10
+        playerXRef.current += playerDirRef.current * PLAYER_PATROL_SPEED * dt
+        if (playerXRef.current <= margin) { playerXRef.current = margin; playerDirRef.current = 1 }
+        else if (playerXRef.current >= W - margin) { playerXRef.current = W - margin; playerDirRef.current = -1 }
       }
 
       const en = enemyRef.current
@@ -574,15 +587,37 @@ export default function RaidenGame({ words, unitLabel = 'Unit 1', onExit, onComp
     return () => clearTimeout(t)
   }, [phase, onNextLevel])
 
-  const onNextLevelRef = useRef(onNextLevel); onNextLevelRef.current = onNextLevel
-  const startGameRef   = useRef(startGame);   startGameRef.current   = startGame
+  const onNextLevelRef  = useRef(onNextLevel); onNextLevelRef.current = onNextLevel
+  const startGameRef    = useRef(startGame);   startGameRef.current   = startGame
+  const currentWordRef  = useRef(currentWord); currentWordRef.current = currentWord
+  const choicesRef      = useRef(choices);     choicesRef.current     = choices
+  const handleAnswerRef = useRef(handleAnswer); handleAnswerRef.current = handleAnswer
+  const typedRef        = useRef('')
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key !== 'Enter') return
       const ph = phaseRef.current
-      if (ph === 'win' && onNextLevelRef.current) { onNextLevelRef.current(); return }
-      if (ph === 'win' || ph === 'over') startGameRef.current()
+      if (e.key === 'Enter') {
+        if (ph === 'win' && onNextLevelRef.current) { onNextLevelRef.current(); return }
+        if (ph === 'win' || ph === 'over') startGameRef.current()
+        return
+      }
+      // Type-to-shoot: when a physical keyboard is present, typing the full
+      // English word destroys the enemy — same effect as picking the right choice.
+      if (ph !== 'playing' || lockedRef.current) return
+      const word = currentWordRef.current; if (!word) return
+      const answer = word.en.toLowerCase()
+      if (e.key === 'Backspace') { typedRef.current = typedRef.current.slice(0, -1); return }
+      if (e.key.length !== 1 || !/[a-zA-Z]/.test(e.key)) return
+      let typed = typedRef.current + e.key.toLowerCase()
+      // keep only the longest suffix that is still a prefix of the answer
+      while (typed && !answer.startsWith(typed)) typed = typed.slice(1)
+      typedRef.current = typed
+      if (typed === answer) {
+        typedRef.current = ''
+        const idx = choicesRef.current.indexOf(answer)
+        handleAnswerRef.current(idx, answer)
+      }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
