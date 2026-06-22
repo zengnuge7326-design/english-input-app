@@ -419,6 +419,7 @@ function MainApp() {
   const textbookHistoryRef = useRef({ applyStudy: () => {} })
   const coursesHistoryRef = useRef({ applyStudy: () => {} })
   const syncPracticeNavRef = useRef({ applyStudy: () => {} })
+  const syncReadyRef = useRef(false)   // 仅当登录后的「恢复检查」完成才允许自动备份
   const [historyDepth, setHistoryDepth] = useState(0)
   const isPopStateRef = useRef(false)
   const [showSettings, setShowSettings] = useState(false)
@@ -879,9 +880,9 @@ function MainApp() {
     setStudentInfo(null)
   }
 
-  async function handleUploadSync() {
-    if (!token) return
-    setSyncStatus('上传中…')
+  async function uploadSyncCore(silent) {
+    if (!token) return false
+    if (!silent) setSyncStatus('上传中…')
     const data = {}
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i)
@@ -890,8 +891,24 @@ function MainApp() {
       }
     }
     const res = await apiPost('/sync', { data }, token)
-    setSyncStatus(res.ok ? '已同步 ✓' : '同步失败')
-    setTimeout(() => setSyncStatus(''), 2500)
+    if (!silent) {
+      setSyncStatus(res.ok ? '已同步 ✓' : '同步失败')
+      setTimeout(() => setSyncStatus(''), 2500)
+    }
+    return !!res.ok
+  }
+
+  function handleUploadSync() { return uploadSyncCore(false) }
+
+  // 本地是否已有学习数据（用于判断「全新设备 / 被清空」需要自动恢复）
+  function hasLocalLearningData() {
+    try {
+      const p = JSON.parse(localStorage.getItem('english_input_progress') || '{}')
+      if (p && Object.keys(p).length) return true
+      const v = JSON.parse(localStorage.getItem('vocab_unit_progress') || '{}')
+      if (v && Object.keys(v).length) return true
+    } catch { /* ignore */ }
+    return false
   }
 
   async function handleDownloadSync() {
@@ -907,6 +924,48 @@ function MainApp() {
       setTimeout(() => setSyncStatus(''), 2000)
     }
   }
+
+  // ── 自动云同步：登录后若本地无进度则自动从云端恢复，避免换设备/清缓存导致进度丢失 ──
+  useEffect(() => {
+    if (!token) { syncReadyRef.current = false; return }
+    // 每个页面会话只尝试一次自动恢复，防止 reload 循环
+    if (sessionStorage.getItem('sync_autorestore_done')) { syncReadyRef.current = true; return }
+    let cancelled = false
+    ;(async () => {
+      // 本地已有进度：不覆盖，直接进入自动备份模式
+      if (hasLocalLearningData()) {
+        sessionStorage.setItem('sync_autorestore_done', '1')
+        if (!cancelled) syncReadyRef.current = true
+        return
+      }
+      // 本地为空（全新设备/清过缓存）：尝试从云端拉回
+      try {
+        const res = await apiGet('/sync', token)
+        if (cancelled) return
+        sessionStorage.setItem('sync_autorestore_done', '1')
+        if (res?.data && Object.keys(res.data).length) {
+          Object.entries(res.data).forEach(([k, v]) => {
+            if (k !== 'auth_token' && k !== 'auth_username') localStorage.setItem(k, v)
+          })
+          // 重新加载让各 hook 读取恢复后的数据
+          window.location.reload()
+          return
+        }
+      } catch { /* 网络失败：保持本地，不阻塞 */ }
+      if (!cancelled) syncReadyRef.current = true
+    })()
+    return () => { cancelled = true }
+  }, [token])
+
+  // ── 自动云备份：登录后定时 + 页面隐藏时静默上传 localStorage 到云端 ──
+  useEffect(() => {
+    if (!token) return
+    const backup = () => { if (syncReadyRef.current) uploadSyncCore(true) }
+    const onHide = () => { if (document.visibilityState === 'hidden') backup() }
+    document.addEventListener('visibilitychange', onHide)
+    const iv = setInterval(backup, 120000)
+    return () => { document.removeEventListener('visibilitychange', onHide); clearInterval(iv) }
+  }, [token]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (tab === 'exercise') {
